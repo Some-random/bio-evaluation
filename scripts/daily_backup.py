@@ -31,7 +31,7 @@ SECRET_PATTERNS = (
     re.compile(rb"-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----"),
     re.compile(rb"\bAKIA[A-Z0-9]{16}\b"),
 )
-EXCLUDED_DIRS = {".git", ".local", ".venv", "__pycache__", ".ssh", "logs"}
+EXCLUDED_DIRS = {".git", ".local", ".venv", "__pycache__", ".ssh"}
 SENSITIVE_NAMES = {
     ".git-credentials", "credentials.json", "secrets.json", "secrets.yml",
     "secrets.yaml", "token.txt", "github_token", "github_token.txt",
@@ -50,7 +50,7 @@ def secret_filename(path):
         or (name.startswith(".env") and name != ".env.example")
         or "openai_key" in name
         or name in SENSITIVE_NAMES
-        or p.suffix.lower() in {".pem", ".key", ".p12", ".pfx", ".log"}
+        or p.suffix.lower() in {".pem", ".key", ".p12", ".pfx"}
     )
 
 

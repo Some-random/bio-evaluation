@@ -3,6 +3,8 @@ from pathlib import Path
 import tempfile
 import unittest
 import zipfile
+from unittest.mock import patch
+from types import SimpleNamespace
 
 spec = importlib.util.spec_from_file_location(
     "daily_backup", Path(__file__).resolve().parents[1] / "scripts/daily_backup.py"
@@ -35,6 +37,19 @@ class CredentialProtectionTests(unittest.TestCase):
                     archive.writestr(name, "synthetic")
                 with self.assertRaises(backup.BackupError):
                     backup.scan_file(file)
+
+    def test_public_remote_stops_before_push(self):
+        settings = {"owner":"example", "repo_name":"bio-evaluation", "visibility":"private"}
+        responses = [
+            SimpleNamespace(returncode=0, stdout="example\n"),
+            SimpleNamespace(returncode=0, stdout="https://github.com/example/bio-evaluation.git\n"),
+        ]
+        with patch.object(backup, "run", side_effect=responses), \
+             patch.object(backup, "checked", return_value='{"private":false}'), \
+             patch.object(backup, "push") as push:
+            with self.assertRaises(backup.BackupError):
+                backup.private_remote(settings)
+            push.assert_not_called()
 
 
 if __name__ == "__main__":
