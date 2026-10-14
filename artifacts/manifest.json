@@ -1,0 +1,281 @@
+{
+  "format": "concatenated gzip tar parts",
+  "parts": [
+    "evaluation-assets.tar.gz.part0000"
+  ],
+  "archive_sha256": "8cc0eb7a252694b33773e7919bd6113dacc0324e0d425d33f6ab994bc0532e34",
+  "files": [
+    {
+      "path": "data/model_inputs.preparation.jsonl",
+      "bytes": 67157088,
+      "sha256": "6122299d221d6d130efc79e2bf5c48f60fb67634a7393406ac6d2d83109b8de5"
+    },
+    {
+      "path": "results/interpretation_notes.jsonl",
+      "bytes": 323353,
+      "sha256": "25b2eec57d3f02cef6768c6b57d7f85b9435c3f944b0098a326481b65e377242"
+    },
+    {
+      "path": "sources/additional_fetch_manifest.json",
+      "bytes": 7288,
+      "sha256": "4c6e65f6f54fcdc6993e2aed6e3f2579e6bab9fd7fcb99fd0ea867acf205cd47"
+    },
+    {
+      "path": "sources/biot5__biot5_plus__README.md",
+      "bytes": 5146,
+      "sha256": "c7b70668ce7b4b2f7b487c7a8c27b4c27ae67ecb1244725f21a4736a08aa6a14"
+    },
+    {
+      "path": "sources/biot5__biot5_plus__evaluation_mol_instruction_protein.sh",
+      "bytes": 1247,
+      "sha256": "d1fe841a19b2d21e3d9a82b6e3ce9160d8172a8a82f04b0fca5cad0efd035901"
+    },
+    {
+      "path": "sources/biot5__biot5_plus__metrics__pro_understand_metrics__pro_understand_metrics.py",
+      "bytes": 2176,
+      "sha256": "6717c828e0a9bacdf761f1499672ab551938326fed723e1c805a23ebc9c6d2a9"
+    },
+    {
+      "path": "sources/biot5__biot5_plus__utils__molinst_ni_dataset.py",
+      "bytes": 7804,
+      "sha256": "c772939d2b356c8968e7f492ae24f55420e9329397a093fbbf28853086b3a448"
+    },
+    {
+      "path": "sources/biot5_data__splits_plus__molinst__eval__protein_catalytic_activity__test_tasks.txt",
+      "bytes": 43,
+      "sha256": "54ef39bb379d43370cdacfe309f5dd9a5a220260adc4c2a61b7557018f06f9fe"
+    },
+    {
+      "path": "sources/biot5_data__splits_plus__molinst__eval__protein_domain_motif__test_tasks.txt",
+      "bytes": 37,
+      "sha256": "14cb406c2396f3553ca80bc5e3fe75c1e4c7832ca44bfa3e955902e3b24c7b31"
+    },
+    {
+      "path": "sources/biot5_data__splits_plus__molinst__eval__protein_general_function__test_tasks.txt",
+      "bytes": 41,
+      "sha256": "8ce98b25534c15694895aedb7cd6e348269147a061f254c11993a906f93d5f82"
+    },
+    {
+      "path": "sources/biot5_data__splits_plus__molinst__eval__protein_protein_function__test_tasks.txt",
+      "bytes": 41,
+      "sha256": "7d4e2316137dd5d7c5c58e46c520e9f75df5dbf3498dbc778bb59825a93edcaa"
+    },
+    {
+      "path": "sources/biot5_data__tasks_plus__task222_catalytic_activity_molinst_pro_test.json",
+      "bytes": 3591632,
+      "sha256": "8f53b17f74fcc3e0b32f1e68d8374405d70c1187ceb23db48665f19874e9d4e1"
+    },
+    {
+      "path": "sources/biot5_data__tasks_plus__task225_domain_motif_molinst_pro_test.json",
+      "bytes": 3374945,
+      "sha256": "b504bf077617661f855a2ad811e25edb1aeb7e98a8d636966c21e7baa02f6f46"
+    },
+    {
+      "path": "sources/biot5_data__tasks_plus__task228_protein_function_molinst_pro_test.json",
+      "bytes": 7511935,
+      "sha256": "7a984a304f7764056e789470e16797a75c120c1d13143cd1eb03728f2512c744"
+    },
+    {
+      "path": "sources/biot5_data__tasks_plus__task231_general_function_molinst_pro_test.json",
+      "bytes": 5693962,
+      "sha256": "eba4893a25e35a1467f67897402365aaf69fbdad9b1bf8abbc5c32723c6d04e6"
+    },
+    {
+      "path": "sources/biot5_hf.json",
+      "bytes": 33686,
+      "sha256": "240b5ad7bf0a3f2c12c12aad66bbb4c8e6b74fb9f1c0ca9677fa1b7a2bb03999"
+    },
+    {
+      "path": "sources/biot5_hf_files.json",
+      "bytes": 120673,
+      "sha256": "dbd20ecfc541da804d9cb988765747ec39ba129e0f5ca9082379c69eb5361f22"
+    },
+    {
+      "path": "sources/biot5_test_fetch_manifest.json",
+      "bytes": 3107,
+      "sha256": "4ed4d0a8b045df4c95c1e90ac48cce8501f8cc389fa9c89446d2107250199e50"
+    },
+    {
+      "path": "sources/biot5_tree.json",
+      "bytes": 23610,
+      "sha256": "e57e01cc51c443bb1d648feeeee895ad456f88836f07004f247f9618b1e91cda"
+    },
+    {
+      "path": "sources/mol__README.md",
+      "bytes": 32511,
+      "sha256": "a7be47ab94cac6ee7fa6231fec8c2cf5c17a3843b7226623bf3d11fc36f55555"
+    },
+    {
+      "path": "sources/mol__evaluation__README.md",
+      "bytes": 2384,
+      "sha256": "f13d3d406254f8316425984b8312978466cc2154b8836dca7e12039045b4021e"
+    },
+    {
+      "path": "sources/mol__evaluation__protein__eval.py",
+      "bytes": 349,
+      "sha256": "a6f786cbeb18be152539298628152ef218b3bda35e42092c9f341dacb935fb2f"
+    },
+    {
+      "path": "sources/mol_hf.json",
+      "bytes": 1159,
+      "sha256": "9e1e608a5482f8a421de6c29b75958cdfaf96358ec01f17350818394ff754db4"
+    },
+    {
+      "path": "sources/mol_hf_files.json",
+      "bytes": 2625,
+      "sha256": "786d4fd4d6620527b315e93ce6f644a5bd0716d6ba3ea1ac7ddfbfcfc8239d2a"
+    },
+    {
+      "path": "sources/mol_tree.json",
+      "bytes": 13472,
+      "sha256": "a603204aff01a64a456f5e8900c02e56b1167f07413e2cd9de145c8d4c98b0ec"
+    },
+    {
+      "path": "sources/muta__dataset__finetune_dataset.py",
+      "bytes": 1545,
+      "sha256": "b7cccd107d6e325c9260ebebec8fc65086476239754c75b4c7e9795fddf0e93c"
+    },
+    {
+      "path": "sources/muta__evaluator.py",
+      "bytes": 16468,
+      "sha256": "ea1bb273baa1b9158724dfacfecbf4e8ccbd823ae6258613cbd0279beda096dd"
+    },
+    {
+      "path": "sources/muta__model__mutaplm.py",
+      "bytes": 40169,
+      "sha256": "4bb049287115a37b3162dc32b91cbe8201043a11d67f4e3f03b51ef15c89bd40"
+    },
+    {
+      "path": "sources/muta__scripts__test__mutaplm_engineer.sh",
+      "bytes": 436,
+      "sha256": "d95a87084682ae1952a1210d5aae926631b2c32267f5822e1d1579a5c7481fae"
+    },
+    {
+      "path": "sources/muta__scripts__test__mutaplm_explain.sh",
+      "bytes": 445,
+      "sha256": "5d55a6d0be1c587f0eb45a809f08db8488019a4ccfb2ba0f3a75d70938d6ff22"
+    },
+    {
+      "path": "sources/muta__structural_split__test_easy.csv",
+      "bytes": 1030473,
+      "sha256": "0aa4de8e44c5aec90af92daf3fb1038d8fce7b7b5ffd97cfdacd22d73fcad3f5"
+    },
+    {
+      "path": "sources/muta__structural_split__test_hard.csv",
+      "bytes": 884158,
+      "sha256": "1fe43147d65c599b54bfac4398aedf0cd75bf737e1e6e4e3bd2c7dd5b2101b44"
+    },
+    {
+      "path": "sources/muta__structural_split__test_medium.csv",
+      "bytes": 925229,
+      "sha256": "944fa409eff2b1342e504b136dd5a0129d65bd4ead0aeaec17b0e4a900dc4298"
+    },
+    {
+      "path": "sources/muta__temporal_split__test.csv",
+      "bytes": 3860725,
+      "sha256": "50a9d12c3ff95c7732a51ccf661d5b10998f1e14c400419cdcc83ccbd7f3a999"
+    },
+    {
+      "path": "sources/muta_files.json",
+      "bytes": 2931,
+      "sha256": "d1b8ddf356047a72c52d0aaf73c4f59ff1dcb3049df8670177b2ed3d1e9c39c7"
+    },
+    {
+      "path": "sources/muta_hf.json",
+      "bytes": 926,
+      "sha256": "eed4fea4a55fd32d5ba660543a55b775eb08f951b829315be9ad89e54fcd25d6"
+    },
+    {
+      "path": "sources/muta_tree.json",
+      "bytes": 13013,
+      "sha256": "360ad0f5763af67bf83d53838f820eb608410e14d056c6e037afe6dcbc735a90"
+    },
+    {
+      "path": "sources/openai_luna.md",
+      "bytes": 3969,
+      "sha256": "2e4861582095740f5ea84b14bb18fa476a49c426b397b779b964bc144397b451"
+    },
+    {
+      "path": "sources/openai_pricing.md",
+      "bytes": 23231,
+      "sha256": "e0767b5009dcc929a2f9eeb9ce6096a57ff12e5d8c011de9d69ff145aef2fc28"
+    },
+    {
+      "path": "sources/openai_token_counting.md",
+      "bytes": 22672,
+      "sha256": "a446c08afd6dca0e252e69a3ebf82c117d45b8f60b304dc09a21340e3b6a07f6"
+    },
+    {
+      "path": "sources/pg_DATA.md",
+      "bytes": 2858,
+      "sha256": "4d606ea83bf44a7bda5e5d39e54191141a1a5284ed7f320fb3a5ed4ce130dcaf"
+    },
+    {
+      "path": "sources/pg_README.md",
+      "bytes": 7927,
+      "sha256": "01d5f8def4779e518f9f59b6ba0a2afd2dc64905f0811160e7b00634d4c5dcad"
+    },
+    {
+      "path": "sources/pg__BENCHMARK_USE_POLICY.md",
+      "bytes": 1479,
+      "sha256": "631459fff80ac003a4469a517c393a6802f9b233bb64b58ed555c5d733560c85"
+    },
+    {
+      "path": "sources/pg__config__models.py",
+      "bytes": 16163,
+      "sha256": "91aa8037a15d9742e34a1ca29f2f555434e721607b06379d4a4c23fc1ca37395"
+    },
+    {
+      "path": "sources/pg__examples__model.json",
+      "bytes": 511,
+      "sha256": "c1502f0fc85e42abaef891b13ddc004b4e11df78c14f3dc0fb32bb65d95c4e06"
+    },
+    {
+      "path": "sources/pg__prompts__inference_prompt.md",
+      "bytes": 1343,
+      "sha256": "038b095c69a50a6c48eb9f045582526942428e2a99adfd47b560fc0c1a313b1c"
+    },
+    {
+      "path": "sources/pg__src__assays.py",
+      "bytes": 3184,
+      "sha256": "612b5a36d2155f575290a7e0d6d5b3fd505b9604443b3d6af4f9ee91896a0c86"
+    },
+    {
+      "path": "sources/pg__src__payloads.py",
+      "bytes": 8707,
+      "sha256": "d570e79a03a97eaae42564b652985c95d32863eec608d8697559d2b35ca81a48"
+    },
+    {
+      "path": "sources/pg__src__prompt.py",
+      "bytes": 5019,
+      "sha256": "54932a0c3ed58e7aa76e29a99cd8928bc7997956ed2c7d63d473719bb911e456"
+    },
+    {
+      "path": "sources/pg_installed_manifest.json",
+      "bytes": 664549,
+      "sha256": "cdb7073cee6a651538c9db042be5fc84ca486d3164e646a686615f95b75cb908"
+    },
+    {
+      "path": "sources/pg_release.json",
+      "bytes": 4045,
+      "sha256": "060e3a985a249f57264b20cda5800528e1336aacd748c43fbaaf6ae3043a8bc0"
+    },
+    {
+      "path": "sources/pg_tree.json",
+      "bytes": 18688,
+      "sha256": "68668240d9cd8e01a627656f520bfa5e5bb23d18de551ce0f732c1c0a33a30c8"
+    },
+    {
+      "path": "sources/proteingym-llm-eval-v1.2.tar.gz",
+      "bytes": 2882774,
+      "sha256": "b40ca6bb30741a652243e90e08a485ef48a52691bff8a075ec0f396200cf6f8a"
+    },
+    {
+      "path": "sources/source_fetch_manifest.json",
+      "bytes": 2717,
+      "sha256": "2562423466e99ceac811e8ef5bbb149a11437fd6808d0309596fdf0f57a5037a"
+    }
+  ],
+  "contains_evaluation_material": true,
+  "use_restriction": "Backup only. Never use held-out evaluation material for training, solver retrieval or test-driven tuning."
+}
