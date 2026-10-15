@@ -1,0 +1,81 @@
+{
+  "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_022",
+  "frozen_at_utc": "2026-10-15T07:37:28.261706+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "endpoint": "http://127.0.0.1:8029/v1",
+  "approved_task_ids": [
+    "P07"
+  ],
+  "variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_FLUORESCENCE_PYTORCH",
+  "input_file": "data/local_catalog_extended_shards/P07/shard_022/model_inputs.jsonl",
+  "review_file": "configs/local_extended_p07_shard_022_review.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "generation_choice_basis": "Publisher sampling defaults; one fixed seed, medium thinking and 4096 total output tokens fixed before Qwen benchmark outputs; no search or test-driven changes.",
+  "source_dataset_revision": "20c9d114234a5136c4087920480e7fa2d586a653061f0cd141f626a984ede8bd",
+  "prompt_policy": "Exact frozen prepared user prompt, full original sequence and fixed native outcome objective; native ten-class ontology additionally retained for P03. No prompt alteration across shards.",
+  "metric_policy": "Stable native scorer: all-case localization accuracy or one GLOBAL full-test Spearman. Missing/invalid outputs remain explicit; no shard-correlation averaging or prediction replacement.",
+  "scorer_reference_sha256": "6646734617ba389e58607a5b3d8e7c03340f8915b6330bdc9f082352ab34d8a3",
+  "frozen_files_sha256": {
+    "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+    "scripts/score_local_catalog_extended.py": "71701e33509f5f7b1ad041ce66ad1a28193ae8675e13eb37a22ed7c1fd38d3d0",
+    "scripts/prepare_catalog_extended.py": "4682e082253d346be856e885c4d8e18f0fb57ddada13d2dab1938161709b250f",
+    "scripts/prepare_local_extended_shards.py": "02f10c3838e6865fcebb1dfbc0b83f0d08b126181f19a128a840c3885fcfc44f",
+    "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a",
+    "scripts/aggregate_local_extended_shards.py": "740a5d44f931ef0e1434e8253ccab0245acbc649a10d5446976fa990cb7dc580",
+    "configs/local_labbench_b07.json": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680",
+    "data/catalog_extended/P07/model_inputs.jsonl": "d0a9983ffe8d08fd5bb681e1e09defd26e2915947cc4e1a399d5f230d60fd7a4",
+    "data/local_catalog_extended_shards/P07/full/model_inputs.jsonl": "e679c0fd48ad30d7f833aaa5282e79f9456d4bac14c73437822114de42fb5fc2",
+    "configs/local_extended_p07_review.json": "a15996a5764bfe5f33f84bcec2149624c6fa1ff501d8ca3155667151b3f286fa",
+    "data/catalog_extended/P07/preparation.json": "bb6d615b218d133927e359faa1264026ba3f26c01016fd958bfcf5d0dc304c38",
+    "data/local_catalog_extended_shards/P07/shard_022/model_inputs.jsonl": "7d06eb4ba78d24f1c83bf7202d21404256e95db94db2df0388c3b9eb3ae8869f",
+    "configs/local_extended_p07_shard_022_review.json": "be41a09dc2bab728462cf40e020df712fa222f286baed0279af9827290362fe0"
+  },
+  "tool_access": [],
+  "paper_comparison": "Complete pinned released test and native metric; zero-shot prompted Qwen differs from trained specialist baselines. P08 PyTorch release12851 differs from original2019 paper12839.",
+  "pretraining_contamination": "Unknown; local inference and shuffled choices cannot establish contamination-free performance.",
+  "runner": "scripts/run_local_labbench_multimodal.py",
+  "scorer_reference_file": "data/catalog_extended/P07/scorer_references.jsonl",
+  "model_facing_fields": [
+    "objective",
+    "sequence"
+  ],
+  "source_release_url": "https://s3.amazonaws.com/songlabdata/proteindata/data_pytorch/fluorescence.tar.gz",
+  "input_modalities": [
+    "amino_acid_sequence",
+    "task_instruction"
+  ],
+  "full_test_case_count": 27217,
+  "shard_count": 27,
+  "shard_size": 1024,
+  "aggregate_only": false,
+  "generator_execution_allowed": true,
+  "case_scope": "task_shard_only",
+  "gpu_ids": [
+    4
+  ],
+  "serving_config_file": "configs/local_model_gpu4.json",
+  "server_record_file": ".local/local_model_server_gpu4.json",
+  "shard_index": 22,
+  "source_start_index": 22528,
+  "source_stop_index": 23552,
+  "aggregate_config_file": "configs/local_extended_p07_aggregate.json",
+  "full_input_file": "data/local_catalog_extended_shards/P07/full/model_inputs.jsonl",
+  "full_input_sha256": "e679c0fd48ad30d7f833aaa5282e79f9456d4bac14c73437822114de42fb5fc2",
+  "full_review_file": "configs/local_extended_p07_review.json",
+  "full_review_sha256": "a15996a5764bfe5f33f84bcec2149624c6fa1ff501d8ca3155667151b3f286fa",
+  "assignment_index": 25
+}

@@ -1,0 +1,90 @@
+{
+  "scope": "One-time reviewed local evaluations on one declared TP1 replica of the same pinned checkpoint.",
+  "accept_more": true,
+  "jobs": [
+    {
+      "config": "configs/local_labbench_b03.json",
+      "executor": "scripts/execute_local_labbench_suite.py"
+    },
+    {
+      "config": "configs/local_catalog_p10.json",
+      "executor": "scripts/execute_local_catalog.py"
+    },
+    {
+      "config": "configs/local_catalog_p11.json",
+      "executor": "scripts/execute_local_catalog.py"
+    },
+    {
+      "config": "configs/local_dti_human.json",
+      "executor": "scripts/local_dti_execute.py"
+    },
+    {
+      "config": "configs/local_vqamed2019.json",
+      "executor": "scripts/execute_vqamed2019_native.py"
+    },
+    {
+      "config": "configs/local_genomics_n01.json",
+      "executor": "scripts/execute_local_genomics.py"
+    },
+    {
+      "config": "configs/local_medical_v01.json",
+      "executor": "scripts/execute_local_medical.py"
+    },
+    {
+      "config": "configs/local_description_p23_shard_000.json",
+      "executor": "scripts/execute_local_description_shard.py"
+    },
+    {
+      "config": "configs/local_description_p24_shard_000.json",
+      "executor": "scripts/execute_local_description_shard.py"
+    },
+    {
+      "config": "configs/local_description_p26_shard_000.json",
+      "executor": "scripts/execute_local_description_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p03_shard_000.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_001.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_005.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_009.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_013.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_017.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_021.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_025.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p08_shard_002.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p08_shard_006.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p08_shard_010.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    }
+  ]
+}

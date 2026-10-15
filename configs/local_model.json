@@ -21,10 +21,35 @@
   "solver_tools": [],
   "benchmark_inference_authorized": true,
   "approved_task_ids": [
-    "B01"
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B07",
+    "B08",
+    "P01",
+    "P02",
+    "P03",
+    "P06",
+    "P07",
+    "P08",
+    "P10",
+    "P11",
+    "V01",
+    "V02",
+    "P43",
+    "N01",
+    "N02",
+    "N03",
+    "P23",
+    "P24",
+    "P25",
+    "P26",
+    "V04"
   ],
   "flagged_pathogen_fitness_tasks": "held; do not transfer blocked requests to this model",
-  "setup_scope": "Completed setup and synthetic checks; now authorized to evaluate only the reviewed B01 case allowlist on one GPU.",
+  "setup_scope": "User authorized local evaluations across the catalog on 15 October. Dispatch only tasks with frozen input-only reviews/configurations; flagged tasks and provider hold unchanged.",
   "selection_basis": "User selected Qwen3.8-27B first on one GPU. Original BF16 weights and native vision retained; no protected test scores used.",
   "sources": [
     "https://huggingface.co/Qwen/Qwen3.8-27B",
@@ -42,6 +67,8 @@
   "evaluation_authorization": {
     "user_request": "so wh don't you start evlauting? what is the first thing you will evlaute?",
     "recorded_at_utc": "2026-10-15T05:14:14.750188+00:00",
-    "scope": "Reviewed B01 public subset only; separate local baseline; original OpenAI inference hold preserved."
+    "scope": "Reviewed B01 public subset only; separate local baseline; original OpenAI inference hold preserved.",
+    "expanded_at_utc": "2026-10-15T07:01:33.688965+00:00",
+    "latest_user_request": "Evaluate all other benchmarks on existing local vLLM and compare with published results; keep working until finished."
   }
 }

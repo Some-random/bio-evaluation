@@ -1,0 +1,11 @@
+{
+  "reviewed_and_frozen_at_utc": "2026-10-15T08:12:46.891400+00:00",
+  "config_file": "configs/local_vqamed2019.json",
+  "config_sha256": "65845c1b77e7020781f3e310d16d4d1348202f31aa09c8eb076d72f62a8c6ec6",
+  "cases": 500,
+  "gpu_ids": [
+    6
+  ],
+  "metric_qualification": "Strict accuracy reconstructed from original organizer protocol plus reference syntax. Exact historical2019 executable not recovered. BLEU withheld until original smoothing/tokenization/aggregation verified; no later-year scorer silently substituted.",
+  "openai_calls": false
+}

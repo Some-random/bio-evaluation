@@ -1,0 +1,171 @@
+{
+  "synthetic_nonbiological_only": true,
+  "server": {
+    "pid": 681239,
+    "proc_start_ticks": "197762301",
+    "model": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "gpu_ids": [
+      5
+    ],
+    "server_log": "logs/local_model/qwen38_27b_server.log"
+  },
+  "request": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reply Yes if two plus two equals four, otherwise No. Reply only Yes or No."
+      }
+    ],
+    "max_tokens": 1,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "min_p": 0.0,
+    "n": 1,
+    "seed": 42,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "allowed_token_ids": [
+      9175,
+      2665
+    ],
+    "logprobs": true,
+    "top_logprobs": 2,
+    "logprob_token_ids": [
+      9175,
+      2665
+    ],
+    "return_tokens_as_token_ids": true,
+    "return_token_ids": true
+  },
+  "response": {
+    "id": "chatcmpl-b2dec364d2685d92",
+    "object": "chat.completion",
+    "created": 1792049880,
+    "model": "Qwen/Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Yes",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": {
+          "content": [
+            {
+              "token": "token_id:9175",
+              "logprob": -0.01874997466802597,
+              "bytes": [
+                89,
+                101,
+                115
+              ],
+              "top_logprobs": [
+                {
+                  "token": "token_id:9175",
+                  "logprob": -0.01874997466802597,
+                  "bytes": [
+                    116,
+                    111,
+                    107,
+                    101,
+                    110,
+                    95,
+                    105,
+                    100,
+                    58,
+                    57,
+                    49,
+                    55,
+                    53
+                  ]
+                },
+                {
+                  "token": "token_id:2665",
+                  "logprob": -4.393750190734863,
+                  "bytes": [
+                    116,
+                    111,
+                    107,
+                    101,
+                    110,
+                    95,
+                    105,
+                    100,
+                    58,
+                    50,
+                    54,
+                    54,
+                    53
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": [
+          9175
+        ],
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.31.0-2c601694",
+    "usage": {
+      "prompt_tokens": 30,
+      "total_tokens": 31,
+      "completion_tokens": 1,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": [
+      248045,
+      846,
+      198,
+      20206,
+      7179,
+      413,
+      1330,
+      5346,
+      1330,
+      16327,
+      2943,
+      11,
+      5752,
+      2233,
+      13,
+      17308,
+      1132,
+      7179,
+      466,
+      2233,
+      13,
+      248046,
+      198,
+      248045,
+      74455,
+      198,
+      248068,
+      271,
+      248069,
+      271
+    ],
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  }
+}

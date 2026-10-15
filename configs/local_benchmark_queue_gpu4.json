@@ -1,0 +1,90 @@
+{
+  "scope": "One-time reviewed local evaluation jobs on pinned TP1 GPU4 replica.",
+  "accept_more": true,
+  "jobs": [
+    {
+      "config": "configs/local_labbench_b08.json",
+      "executor": "scripts/execute_local_labbench_suite.py"
+    },
+    {
+      "config": "configs/local_labbench_b04.json",
+      "executor": "scripts/execute_local_labbench_suite.py"
+    },
+    {
+      "config": "configs/local_labbench_b05.json",
+      "executor": "scripts/execute_local_labbench_suite.py"
+    },
+    {
+      "config": "configs/local_dti_biosnap.json",
+      "executor": "scripts/local_dti_execute.py"
+    },
+    {
+      "config": "configs/local_genomics_n02.json",
+      "executor": "scripts/execute_local_genomics.py"
+    },
+    {
+      "config": "configs/local_catalog_p01.json",
+      "executor": "scripts/execute_local_catalog.py"
+    },
+    {
+      "config": "configs/local_medical_v02.json",
+      "executor": "scripts/execute_local_medical.py"
+    },
+    {
+      "config": "configs/local_description_p23_shard_001.json",
+      "executor": "scripts/execute_local_description_shard.py"
+    },
+    {
+      "config": "configs/local_description_p24_shard_001.json",
+      "executor": "scripts/execute_local_description_shard.py"
+    },
+    {
+      "config": "configs/local_description_p26_shard_001.json",
+      "executor": "scripts/execute_local_description_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p03_shard_001.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_002.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_006.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_010.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_014.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_018.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_022.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_026.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p08_shard_003.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p08_shard_007.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p08_shard_011.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    }
+  ]
+}

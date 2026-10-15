@@ -1,0 +1,19 @@
+{
+  "gpu": 4,
+  "port": 8029,
+  "synthetic_only": true,
+  "image_count": 2,
+  "expected": "YES",
+  "text": "YES",
+  "passed": true,
+  "usage": {
+    "prompt_tokens": 153,
+    "total_tokens": 155,
+    "completion_tokens": 2,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "checked_at_utc": "2026-10-15T07:22:23.427169+00:00"
+}

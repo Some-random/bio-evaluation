@@ -1,0 +1,23 @@
+{
+  "pid": 841739,
+  "updated_at_utc": "2026-10-15T08:15:09.017208+00:00",
+  "scope": "Offline reporting only for existing one-time authorized queues",
+  "queued_jobs": 74,
+  "finished_jobs": 6,
+  "failed_run_ids": [],
+  "queues_sealed": false,
+  "inference_started_or_retried_by_supervisor": false,
+  "report_status": {
+    "update_executed_interpretations.py": {
+      "exit_code": 0,
+      "stdout": "{\"records_preserved\": 99, \"executed_variants_added\": 0, \"total_records\": 99}\n",
+      "stderr": ""
+    },
+    "summarize_local_suite.py": {
+      "exit_code": 0,
+      "stdout": "{\"coverage\": {\"catalog_settings\": 64, \"expected_catalog_settings\": 64, \"settings_with_completed_native_variant\": 5, \"settings_with_completed_adapted_variant\": 2, \"settings_without_completed_native_variant\": 59, \"settings_with_any_aggregate_scores\": 7, \"state_counts\": {\"queued\": 16, \"assay_scope_review_pending\": 3, \"running\": 4, \"source_protocol_unresolved\": 3, \"completed_adapted_variant_native_incomplete\": 1, \"not_prepared\": 5, \"native_protocol_setup_pending\": 10, \"prohibited_or_held\": 2, \"source_unavailable\": 4, \"adapter_required\": 3, \"native_training_regime_blocked\": 1, \"external_evaluator_pending\": 7, \"completed_native_variant\": 5}}, \"outputs\": [\"reports/LOCAL_SUITE_RESULTS.json\", \"reports/LOCAL_SUITE_RESULTS.md\", \"results/local_suite_metrics.csv\"], \"warnings\": []}\n",
+      "stderr": ""
+    }
+  },
+  "stage": "monitoring"
+}

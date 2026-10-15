@@ -1,0 +1,98 @@
+{
+  "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_000",
+  "frozen_at_utc": "2026-10-15T07:55:02.400831+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "endpoint": "http://127.0.0.1:8027/v1",
+  "approved_task_ids": [
+    "P23"
+  ],
+  "variant": "QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE",
+  "input_file": "data/local_description_shards/P23/shard_000/model_inputs.jsonl",
+  "review_file": "configs/local_description_p23_shard_000_review.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "generation_choice_basis": "Publisher sampling defaults; one fixed seed, medium thinking and 4096 total output tokens fixed before Qwen benchmark outputs; no search or test-driven changes.",
+  "source_dataset_revision": "9f70da9e8f0df32e7e62846f7ad78a829b00c0fd",
+  "prompt_policy": "Exact source per-instance instruction and pinned Alpaca template; complete native sequence decoded from BioT5 amino-acid tokens, no512-token encoder truncation; fixed zero-shot Qwen adaptation.",
+  "metric_policy": "Gold-only native Mol-Instructions HF ROUGE defaults, all four metrics; official BootstrapAggregator mid.fmeasure, seed42, no stemming. Full-test metric computed once globally from all raw final content.",
+  "scorer_reference_sha256": "cfdd9b2706f22a67c696151f51def8ac8cdc7ce4fc6b49f9983ffc25f95ce7cf",
+  "frozen_files_sha256": {
+    "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+    "scripts/score_local_descriptions.py": "493467519637eb39a127a1c554e392a428c4991d0bed9693fbeaef716dd546f8",
+    "scripts/prepare_catalog_descriptions.py": "656f67338cb3cd8a1490bd079b3daa38a1e244927ea2ab1089240cf34db2dba8",
+    "scripts/prepare_local_extended_shards.py": "02f10c3838e6865fcebb1dfbc0b83f0d08b126181f19a128a840c3885fcfc44f",
+    "scripts/aggregate_local_extended_shards.py": "740a5d44f931ef0e1434e8253ccab0245acbc649a10d5446976fa990cb7dc580",
+    "scripts/prepare_local_description_shards.py": "78811d7579d62c9a39f4c737189c385ad9dfd50f21944ef3d0a6fe8c5f65d0e5",
+    "scripts/execute_local_description_shard.py": "f5499c242be444f4ec344d3d81f5ad55adfe4747b571b9c8c65a6f34f87e184f",
+    "scripts/aggregate_local_description_shards.py": "f047dfc21ba27c86634e9327dd3339ceed71928872b092b6020b01235d090f40",
+    "sources/catalog_descriptions__biot5__utils__templates__alpaca.json": "853c698d1e733655a429232100e31a33beeab2a29d0b98ba63232c90e0f379de",
+    "sources/catalog_descriptions__hf__rouge_pinned.py": "805b71b855be6dc270ce2366639a4e264c2a1fb93a2c8a50f9fb9ef5a2b9c21a",
+    "sources/mol__evaluation__protein__eval.py": "a6f786cbeb18be152539298628152ef218b3bda35e42092c9f341dacb935fb2f",
+    "sources/biot5__biot5_plus__metrics__pro_understand_metrics__pro_understand_metrics.py": "6717c828e0a9bacdf761f1499672ab551938326fed723e1c805a23ebc9c6d2a9",
+    "configs/local_labbench_b07.json": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680",
+    "data/catalog_descriptions/P23/model_inputs.jsonl": "729374bab4431aa2cc96cdcec9f75648f5aa6215dc0c25614fec7ba38b6e1d25",
+    "data/catalog_descriptions/P23/native_serialized_inputs.jsonl": "26d2aee6397d4675e2dfe8dc5ef5e62917ec876f063e13fe433af2bb7c9291e0",
+    "data/catalog_descriptions/P23/preparation.json": "9417df3d5a587d9e5d24ceca2ed2ed418a90b2b9571e196cda2ab25f45e74e29",
+    "data/local_description_shards/P23/full/model_inputs.jsonl": "3800ec581d62d72fb9920cba84289931774a64d55b5364fa784c4f1c85633de7",
+    "configs/local_description_p23_review.json": "7874d2c85d2ae9b45692c41e0845b531116bd48ff5790aa4868f273891018f99",
+    "sources/biot5_data__splits_plus__molinst__eval__protein_protein_function__test_tasks.txt": "7d4e2316137dd5d7c5c58e46c520e9f75df5dbf3498dbc778bb59825a93edcaa",
+    "data/local_description_shards/P23/shard_000/model_inputs.jsonl": "dbdc7ba9bafa9d05324b90c1023767fce1a6f4cfa1ef6b0e514b55b323ec877a",
+    "configs/local_description_p23_shard_000_review.json": "10e979160de769f922662b966fdd8abc8d0d4c6ccce46a47ad02368d2bf01822"
+  },
+  "tool_access": [],
+  "paper_comparison": "Native Mol-Instructions gold-only HF ROUGE; pinned BioT5+ wrapper computes references_new but passes [gold,decoded_input] pairs to ROUGE, so exact BioT5+ paper metric equivalence remains unresolved.",
+  "pretraining_contamination": "Unknown; local inference and shuffled choices cannot establish contamination-free performance.",
+  "runner": "scripts/run_local_labbench_multimodal.py",
+  "scorer_reference_file": "data/catalog_descriptions/P23/scorer_references.jsonl",
+  "model_facing_fields": [
+    "instruction",
+    "sequence"
+  ],
+  "reviewed": true,
+  "input_review_complete": true,
+  "execution_authorized": false,
+  "execution_approval_file": "configs/local_description_execution_approval.json",
+  "shard_plan_file": "reports/local_description_shard_plan.json",
+  "source_artifacts_sha256": {
+    "sources/biot5_data__tasks_plus__task228_protein_function_molinst_pro_test.json": "7a984a304f7764056e789470e16797a75c120c1d13143cd1eb03728f2512c744",
+    "sources/biot5_data__splits_plus__molinst__eval__protein_protein_function__test_tasks.txt": "7d4e2316137dd5d7c5c58e46c520e9f75df5dbf3498dbc778bb59825a93edcaa"
+  },
+  "input_modalities": [
+    "amino_acid_sequence",
+    "text"
+  ],
+  "explanation_support_score": null,
+  "full_test_case_count": 3494,
+  "shard_count": 4,
+  "shard_size": 1024,
+  "aggregate_only": false,
+  "generator_execution_allowed": true,
+  "case_scope": "task_shard_only",
+  "gpu_ids": [
+    6
+  ],
+  "serving_config_file": "configs/local_model_gpu6.json",
+  "server_record_file": ".local/local_model_server_gpu6.json",
+  "shard_index": 0,
+  "source_start_index": 0,
+  "source_stop_index": 1024,
+  "aggregate_config_file": "configs/local_description_p23_aggregate.json",
+  "full_input_file": "data/local_description_shards/P23/full/model_inputs.jsonl",
+  "full_input_sha256": "3800ec581d62d72fb9920cba84289931774a64d55b5364fa784c4f1c85633de7",
+  "full_review_file": "configs/local_description_p23_review.json",
+  "full_review_sha256": "7874d2c85d2ae9b45692c41e0845b531116bd48ff5790aa4868f273891018f99",
+  "assignment_index": 0
+}

@@ -1,0 +1,378 @@
+{
+  "created_at_utc": "2026-10-15T07:36:36.881757+00:00",
+  "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+  "tasks": [
+    {
+      "task_id": "N01",
+      "prepared_case_count": 290,
+      "prepared_variant": "NATIVE_LLM_INTERFACE_FULL_RELEASE_WINDOWS_PREPARED",
+      "source_dataset": "wanglab/kegg",
+      "source_dataset_revision": "9f0ef941a362f0e308e11861ed82c36338e23586",
+      "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+      "source_splits_in_order": [
+        "test",
+        "val"
+      ],
+      "split_counts": {
+        "test": 146,
+        "val": 144
+      },
+      "split_evidence": "Pinned official eval_kegg_dna_vllm.py:40-43 concatenates test then val (146+144=290). This resolves released evaluator count/order, without proving archived author predictions or exact paper-run identity.",
+      "source_files": [
+        {
+          "dataset": "wanglab/kegg",
+          "revision": "9f0ef941a362f0e308e11861ed82c36338e23586",
+          "source_path": "data/test-00000-of-00001.parquet",
+          "url": "https://huggingface.co/datasets/wanglab/kegg/resolve/9f0ef941a362f0e308e11861ed82c36338e23586/data/test-00000-of-00001.parquet",
+          "local_path": "sources/genomic_contract_audit_2026-10-15/kegg__data__test-00000-of-00001.parquet",
+          "bytes": 617838,
+          "sha256": "9e24e2e29c9583d3208bc042a446ac38211ec81478dc5352f72f3cc9054962d7",
+          "publisher_lfs_sha256": "9e24e2e29c9583d3208bc042a446ac38211ec81478dc5352f72f3cc9054962d7",
+          "publisher_sha256_matched": true
+        },
+        {
+          "dataset": "wanglab/kegg",
+          "revision": "9f0ef941a362f0e308e11861ed82c36338e23586",
+          "source_path": "data/val-00000-of-00001.parquet",
+          "url": "https://huggingface.co/datasets/wanglab/kegg/resolve/9f0ef941a362f0e308e11861ed82c36338e23586/data/val-00000-of-00001.parquet",
+          "local_path": "sources/genomic_contract_audit_2026-10-15/kegg__data__val-00000-of-00001.parquet",
+          "bytes": 621955,
+          "sha256": "0b4fd81fb6634f61691fbe05a9ecbb7f90d64aa496761ca5a99efa5f8f88cec9",
+          "publisher_lfs_sha256": "0b4fd81fb6634f61691fbe05a9ecbb7f90d64aa496761ca5a99efa5f8f88cec9",
+          "publisher_sha256_matched": true
+        }
+      ],
+      "native_required_inputs": [
+        "reference DNA window",
+        "variant DNA window",
+        "original question with native gene/chromosome context",
+        "complete pathway/network/gene context within question"
+      ],
+      "prepared_model_input_fields": [
+        "messages.user.content"
+      ],
+      "input_modalities": [
+        "text",
+        "DNA_sequence_text"
+      ],
+      "learned_encoder_required_for_source_DNA_LLM_specialist": true,
+      "learned_encoder_required_for_source_LLM_only_interface": false,
+      "native_metric_names": [
+        "accuracy",
+        "macro_f1",
+        "macro_precision",
+        "macro_recall"
+      ],
+      "class_vocabulary_count": 37,
+      "positive_class_for_VEP_f1": null,
+      "scorer_only_fields": [
+        "answer",
+        "normalized_label",
+        "reasoning"
+      ],
+      "sequence_length_ranges": {
+        "reference_sequence": {
+          "min": 4001,
+          "max": 4068
+        },
+        "variant_sequence": {
+          "min": 4000,
+          "max": 4260
+        }
+      },
+      "chromosome_context_counts": {
+        "1": 23,
+        "3": 13,
+        "9": 17,
+        "21": 37,
+        "19": 11,
+        "14": 35,
+        "4": 26,
+        "6": 34,
+        "16": 5,
+        "11": 4,
+        "10": 15,
+        "20": 19,
+        "5": 3,
+        "12": 6,
+        "7": 14,
+        "13": 5,
+        "17": 11,
+        "2": 10,
+        "23": 2
+      },
+      "output_sha256": {
+        "model_inputs.jsonl": "72b9008ed766e7b5b080e7ba5758adb0be7357ef9cbc76f30e260b275015a119",
+        "input_provenance.jsonl": "57fe8fbd4f36a80b2873a8eaf92977b196b0c4596b8c2d76eb50ffb1fe1b5b41",
+        "scorer_references.jsonl": "a39e8f991ff892aaaa32f966f0cdefcbca433acb98606a9549aeb01edd0e19ea"
+      },
+      "source_rows_retained": "All declared source rows, in source order; no label/outcome-based filtering.",
+      "input_scope": "Published human-genomic clinical-variant interpretation and disease prediction; no engineering or pathogen-fitness objective. Source question scaffolds/context were inspected separately from held-out answers; labels are exported only to the scorer side.",
+      "inference_status": "prepared_not_dispatched",
+      "paper_reproduction": false,
+      "protocol_caveats": [
+        "Full released DNA windows are retained. Official DNA/hybrid evaluator defaults crop 1024 bases from each end for long windows; exact paper preprocessing varies by path. This full-window preparation is not an assertion of identical paper inputs.",
+        "Source LLM-only baselines use task fine-tuning; a future prompted Qwen run has a different training regime and must record its own frozen decoder and output protocol.",
+        "The released N01 evaluator reports multiclass substring accuracy only; paper macro-F1/precision/recall require an explicitly frozen multiclass scorer, class set and answer normalization.",
+        "The released VEP test hook searches the complete generated text for the ground-truth class. This can credit ambiguous answers and rationale mentions; strict final-label scoring is a separately labeled adaptation.",
+        "Paper temperature-0 statement and released VEP temperature-0.6 generation code differ; neither author run identity nor same-case predictions is archived here.",
+        "Correct disease/class predictions do not verify teacher or generated mechanisms. KEGG teacher rationales are scorer-only generated references; independent explanation support is unassessed.",
+        "Prior pretraining exposure is unknown. N01's original BioReason release is not a replacement for N04's network holdout, and none of N01–N03 replaces N05's expression-conditioned inputs."
+      ]
+    },
+    {
+      "task_id": "N02",
+      "prepared_case_count": 1233,
+      "prepared_variant": "NATIVE_LLM_INTERFACE_FULL_RELEASE_WINDOWS_PREPARED",
+      "source_dataset": "wanglab/variant_effect_coding",
+      "source_dataset_revision": "7684ab820d728fb5362328757079a1390a3f43bb",
+      "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+      "source_splits_in_order": [
+        "test"
+      ],
+      "split_counts": {
+        "test": 1233
+      },
+      "split_evidence": "Pinned official train_dna_qwen.py:513-523 uses the released test split; all 1,233 question contexts identify chromosome 8, matching the chromosome-heldout contract.",
+      "source_files": [
+        {
+          "dataset": "wanglab/variant_effect_coding",
+          "revision": "7684ab820d728fb5362328757079a1390a3f43bb",
+          "source_path": "test-00000-of-00001.parquet",
+          "url": "https://huggingface.co/datasets/wanglab/variant_effect_coding/resolve/7684ab820d728fb5362328757079a1390a3f43bb/test-00000-of-00001.parquet",
+          "local_path": "sources/genomic_contract_audit_2026-10-15/variant_effect_coding__test-00000-of-00001.parquet",
+          "bytes": 3053295,
+          "sha256": "d34a8aa9a218c12ad75f225a148353940eb51e217ebafad012403e94345e2f29",
+          "publisher_lfs_sha256": "d34a8aa9a218c12ad75f225a148353940eb51e217ebafad012403e94345e2f29",
+          "publisher_sha256_matched": true
+        }
+      ],
+      "native_required_inputs": [
+        "reference DNA window",
+        "variant DNA window",
+        "original question with native gene/chromosome context"
+      ],
+      "prepared_model_input_fields": [
+        "messages.user.content"
+      ],
+      "input_modalities": [
+        "text",
+        "DNA_sequence_text"
+      ],
+      "learned_encoder_required_for_source_DNA_LLM_specialist": true,
+      "learned_encoder_required_for_source_LLM_only_interface": false,
+      "native_metric_names": [
+        "accuracy",
+        "f1"
+      ],
+      "class_vocabulary_count": 2,
+      "positive_class_for_VEP_f1": "pathogenic",
+      "scorer_only_fields": [
+        "answer",
+        "normalized_label",
+        "disease annotations within answer"
+      ],
+      "sequence_length_ranges": {
+        "reference_sequence": {
+          "min": 4096,
+          "max": 4096
+        },
+        "variant_sequence": {
+          "min": 4096,
+          "max": 4096
+        }
+      },
+      "chromosome_context_counts": {
+        "8": 1233
+      },
+      "output_sha256": {
+        "model_inputs.jsonl": "11033222384607922dd13ba92e46d8f8637e2f780fd5a526a31baceb6eab5a13",
+        "input_provenance.jsonl": "a410d06e0ebf0353b0a8988e71223d7393bf73400ad351b0aad678edc1cecec1",
+        "scorer_references.jsonl": "55299da4884b45508706d5086d1f4a339829acb054673d691b40809608cfce04"
+      },
+      "source_rows_retained": "All declared source rows, in source order; no label/outcome-based filtering.",
+      "input_scope": "Published human-genomic clinical-variant interpretation and disease prediction; no engineering or pathogen-fitness objective. Source question scaffolds/context were inspected separately from held-out answers; labels are exported only to the scorer side.",
+      "inference_status": "prepared_not_dispatched",
+      "paper_reproduction": false,
+      "protocol_caveats": [
+        "Full released DNA windows are retained. Official DNA/hybrid evaluator defaults crop 1024 bases from each end for long windows; exact paper preprocessing varies by path. This full-window preparation is not an assertion of identical paper inputs.",
+        "Source LLM-only baselines use task fine-tuning; a future prompted Qwen run has a different training regime and must record its own frozen decoder and output protocol.",
+        "The released N01 evaluator reports multiclass substring accuracy only; paper macro-F1/precision/recall require an explicitly frozen multiclass scorer, class set and answer normalization.",
+        "The released VEP test hook searches the complete generated text for the ground-truth class. This can credit ambiguous answers and rationale mentions; strict final-label scoring is a separately labeled adaptation.",
+        "Paper temperature-0 statement and released VEP temperature-0.6 generation code differ; neither author run identity nor same-case predictions is archived here.",
+        "Correct disease/class predictions do not verify teacher or generated mechanisms. KEGG teacher rationales are scorer-only generated references; independent explanation support is unassessed.",
+        "Prior pretraining exposure is unknown. N01's original BioReason release is not a replacement for N04's network holdout, and none of N01–N03 replaces N05's expression-conditioned inputs."
+      ]
+    },
+    {
+      "task_id": "N03",
+      "prepared_case_count": 873,
+      "prepared_variant": "NATIVE_LLM_INTERFACE_FULL_RELEASE_WINDOWS_PREPARED",
+      "source_dataset": "wanglab/variant_effect_non_snv",
+      "source_dataset_revision": "aeba75d031b8cb507b3962ab486aa22700afa31c",
+      "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+      "source_splits_in_order": [
+        "test"
+      ],
+      "split_counts": {
+        "test": 873
+      },
+      "split_evidence": "Pinned official train_dna_qwen.py:530-547 uses the released test split and renames mutated_sequence to variant_sequence; 873 rows match the reported non-SNV test size.",
+      "source_files": [
+        {
+          "dataset": "wanglab/variant_effect_non_snv",
+          "revision": "aeba75d031b8cb507b3962ab486aa22700afa31c",
+          "source_path": "test-00000-of-00001.parquet",
+          "url": "https://huggingface.co/datasets/wanglab/variant_effect_non_snv/resolve/aeba75d031b8cb507b3962ab486aa22700afa31c/test-00000-of-00001.parquet",
+          "local_path": "sources/genomic_contract_audit_2026-10-15/variant_effect_non_snv__test-00000-of-00001.parquet",
+          "bytes": 2709693,
+          "sha256": "41d1e1062cc6dc5f32dd63725026057505c7e78404938aa951b168bb555465ee",
+          "publisher_lfs_sha256": "41d1e1062cc6dc5f32dd63725026057505c7e78404938aa951b168bb555465ee",
+          "publisher_sha256_matched": true
+        }
+      ],
+      "native_required_inputs": [
+        "reference DNA window",
+        "variant DNA window",
+        "original question with native gene/chromosome context"
+      ],
+      "prepared_model_input_fields": [
+        "messages.user.content"
+      ],
+      "input_modalities": [
+        "text",
+        "DNA_sequence_text"
+      ],
+      "learned_encoder_required_for_source_DNA_LLM_specialist": true,
+      "learned_encoder_required_for_source_LLM_only_interface": false,
+      "native_metric_names": [
+        "accuracy",
+        "f1"
+      ],
+      "class_vocabulary_count": 2,
+      "positive_class_for_VEP_f1": "pathogenic",
+      "scorer_only_fields": [
+        "answer",
+        "normalized_label",
+        "disease annotations within answer"
+      ],
+      "sequence_length_ranges": {
+        "reference_sequence": {
+          "min": 4096,
+          "max": 4096
+        },
+        "mutated_sequence": {
+          "min": 4096,
+          "max": 4096
+        }
+      },
+      "chromosome_context_counts": {
+        "1": 68,
+        "2": 57,
+        "3": 71,
+        "4": 44,
+        "5": 27,
+        "6": 38,
+        "7": 30,
+        "8": 15,
+        "9": 104,
+        "10": 56,
+        "11": 40,
+        "12": 48,
+        "13": 10,
+        "14": 16,
+        "15": 53,
+        "16": 48,
+        "17": 25,
+        "18": 5,
+        "19": 36,
+        "20": 35,
+        "21": 9,
+        "22": 21,
+        "X": 17
+      },
+      "output_sha256": {
+        "model_inputs.jsonl": "dd0208a2ef387caebe8d51cccf80dbf13340b40afa8f3ea28b261cea01437e12",
+        "input_provenance.jsonl": "fb8b7c8b8844e5d4448928e019d9a3b0b80ec424d9a2d3a27c239be49d153048",
+        "scorer_references.jsonl": "1a7e3ee4704c1e8a77556d7d5f77505fe275ee914bd566a1699d89c6e98c6c33"
+      },
+      "source_rows_retained": "All declared source rows, in source order; no label/outcome-based filtering.",
+      "input_scope": "Published human-genomic clinical-variant interpretation and disease prediction; no engineering or pathogen-fitness objective. Source question scaffolds/context were inspected separately from held-out answers; labels are exported only to the scorer side.",
+      "inference_status": "prepared_not_dispatched",
+      "paper_reproduction": false,
+      "protocol_caveats": [
+        "Full released DNA windows are retained. Official DNA/hybrid evaluator defaults crop 1024 bases from each end for long windows; exact paper preprocessing varies by path. This full-window preparation is not an assertion of identical paper inputs.",
+        "Source LLM-only baselines use task fine-tuning; a future prompted Qwen run has a different training regime and must record its own frozen decoder and output protocol.",
+        "The released N01 evaluator reports multiclass substring accuracy only; paper macro-F1/precision/recall require an explicitly frozen multiclass scorer, class set and answer normalization.",
+        "The released VEP test hook searches the complete generated text for the ground-truth class. This can credit ambiguous answers and rationale mentions; strict final-label scoring is a separately labeled adaptation.",
+        "Paper temperature-0 statement and released VEP temperature-0.6 generation code differ; neither author run identity nor same-case predictions is archived here.",
+        "Correct disease/class predictions do not verify teacher or generated mechanisms. KEGG teacher rationales are scorer-only generated references; independent explanation support is unassessed.",
+        "Prior pretraining exposure is unknown. N01's original BioReason release is not a replacement for N04's network holdout, and none of N01–N03 replaces N05's expression-conditioned inputs."
+      ]
+    }
+  ],
+  "inference_performed": false,
+  "training_performed": false,
+  "source_reference_answers_exposed_to_solver": false,
+  "N04_N05_substitution": false,
+  "existing_configs_authorizations_results_changed": false,
+  "source_code_files": [
+    {
+      "source_path": "bioreason/dataset/kegg.py",
+      "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+      "url": "https://raw.githubusercontent.com/bowang-lab/BioReason/684ff7c09eb1d65e70925c114a7a05a1fcc0403f/bioreason/dataset/kegg.py",
+      "local_path": "sources/genomic_contract_audit_2026-10-15/bioreason__dataset__kegg.py",
+      "sha256": "6e4838560589c8998a4faac5c560bdbf96e22d34a9db401ff4137adb91208d86",
+      "bytes": 10836
+    },
+    {
+      "source_path": "bioreason/dataset/utils.py",
+      "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+      "url": "https://raw.githubusercontent.com/bowang-lab/BioReason/684ff7c09eb1d65e70925c114a7a05a1fcc0403f/bioreason/dataset/utils.py",
+      "local_path": "sources/genomic_contract_audit_2026-10-15/bioreason__dataset__utils.py",
+      "sha256": "0d587b9ecd29df6ecc713aea363ee06c045c654b6c7f7ec94e5928f0a2aa730a",
+      "bytes": 1861
+    },
+    {
+      "source_path": "bioreason/dataset/variant_effect.py",
+      "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+      "url": "https://raw.githubusercontent.com/bowang-lab/BioReason/684ff7c09eb1d65e70925c114a7a05a1fcc0403f/bioreason/dataset/variant_effect.py",
+      "local_path": "sources/genomic_contract_audit_2026-10-15/bioreason__dataset__variant_effect.py",
+      "sha256": "44efcef40e963f85112fd66790dad878038c22422f586ce3b7704439c1ccb2a1",
+      "bytes": 2972
+    },
+    {
+      "source_path": "bioreason/dna_modules/nucleotide_module.py",
+      "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+      "url": "https://raw.githubusercontent.com/bowang-lab/BioReason/684ff7c09eb1d65e70925c114a7a05a1fcc0403f/bioreason/dna_modules/nucleotide_module.py",
+      "local_path": "sources/genomic_contract_audit_2026-10-15/bioreason__dna_modules__nucleotide_module.py",
+      "sha256": "c574f5c59f0a78d347e6e7477a20d5e7c09d4e72152192539322f1128f9eca38",
+      "bytes": 10253
+    },
+    {
+      "source_path": "eval_kegg_dna_vllm.py",
+      "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+      "url": "https://raw.githubusercontent.com/bowang-lab/BioReason/684ff7c09eb1d65e70925c114a7a05a1fcc0403f/eval_kegg_dna_vllm.py",
+      "local_path": "sources/genomic_contract_audit_2026-10-15/eval_kegg_dna_vllm.py",
+      "sha256": "af51ec4b1105cacc779dda02da02d962983eeacb27ab2ce1f5bfa365133e110d",
+      "bytes": 17129
+    },
+    {
+      "source_path": "reason.py",
+      "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+      "url": "https://raw.githubusercontent.com/bowang-lab/BioReason/684ff7c09eb1d65e70925c114a7a05a1fcc0403f/reason.py",
+      "local_path": "sources/genomic_contract_audit_2026-10-15/reason.py",
+      "sha256": "984cdaf27de0bc2c33b8dc751a8c7ef5c452d8adb2ff67dbbf4da412dc5b95c1",
+      "bytes": 23484
+    },
+    {
+      "source_path": "train_dna_qwen.py",
+      "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+      "url": "https://raw.githubusercontent.com/bowang-lab/BioReason/684ff7c09eb1d65e70925c114a7a05a1fcc0403f/train_dna_qwen.py",
+      "local_path": "sources/genomic_contract_audit_2026-10-15/train_dna_qwen.py",
+      "sha256": "1ef931050222c73d567a0bbaf4f64f07e1c936182e36c594ecfec60b11158a03",
+      "bytes": 42677
+    }
+  ],
+  "source_class_vocabulary_sha256": "c4b862ba2194b50a6ad12297ebcc41f74c6c67c8b3d7605fb1837f22f1c7755a"
+}

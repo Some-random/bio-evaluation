@@ -1,0 +1,30 @@
+{
+  "enqueued_at_utc": "2026-10-15T07:49:47.340904+00:00",
+  "plan_file": "reports/local_extended_shard_plan.json",
+  "plan_sha256": "26620c3bd89b95900f83ee0f12e6cf471686bd2735d536a228349d3b1ce1e9fd",
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "full_task_case_counts": {
+    "P03": 2773,
+    "P07": 27217,
+    "P08": 12851
+  },
+  "jobs_by_gpu": {
+    "4": 11,
+    "5": 10,
+    "6": 11,
+    "7": 11
+  },
+  "no_new_reasoning_condition": true,
+  "root_review": "Full source-order coverage and frozen hashes checked. Permitted native localization, fluorescence and folding-stability targets; complete sequences retained; unchanged4k baseline recipe. No test-outcome-driven selection."
+}

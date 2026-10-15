@@ -172,3 +172,40 @@ The first local Qwen LitQA2 run completed on October 15 at 05:35 UTC: 197/197 re
 On October 15 the user reauthorized creating a private repository and uploading the whole evaluation project. `Some-random/bio-evaluation` was created and its private flag/push permission verified. This authorizes a one-time snapshot, without a recurring schedule. An initial packaging job prepared local checkpoint archive copies while the optional checkpoint scope question was pending; no weight assets were uploaded. Credentials, environments, caches, transient process state and unrelated Affibody work remain local. Consult `.local/github_upload/progress.json` before starting another uploader. The upload uses the existing connection/proxy and opens no SSH session. All evaluation holds and solver leakage restrictions remain unchanged. The old daily schedule stays disabled.
 
 The user then clarified the checkpoint scope: **"Keep the public checkpoint local; back up model references only."** This supersedes the preceding checkpoint-release interpretation. Upload code, evaluation data, public sources, raw outputs, results, logs, reports and pinned model references, but no model weights or checkpoint archive parts. `configs/backup.json` records this choice. The original checkpoint remains local; temporary upload copies may be removed once their uploader is stopped. This remains a one-time upload, with no new daily schedule and no changes to evaluation authorization.
+
+On October 15 the user explicitly expanded local evaluation to all other benchmark settings and requested continuing until they are evaluated and compared with public results. This supersedes the earlier B01-only execution scope for permitted tasks. Use the existing pinned local Qwen server on GPU 5; no OpenAI calls, paid model APIs, new model/head training, test-guided tuning, or transfer of flagged requests. Task/case input reviews and frozen native/adapted protocols remain necessary and can be completed autonomously. Do not treat unavailable native structural/oracle/measurement protocols as completed by a text adaptation; report exact blockers. The first completed LitQA2 artifacts and code snapshots remain frozen.
+
+For the expanded all-benchmark run, retain the prior user-authorized ceiling of eight GPUs. The initial27B run used one GPU; identical independent TP1 replicas may now use the observed idle GPUs6,7,4 in addition to the unchanged GPU5 server. Leave occupied GPUs0-3 and all unrelated jobs untouched. Share the same verified BF16 checkpoint without additional disk copies; freeze each run's serving endpoint, physical GPU and server identity. This is throughput scaling of one fixed baseline, not test-driven model selection.
+
+For the expanded suite, the central local allowlist now includes reviewed
+B02/B03/B04/B05/B07/B08, P01/P02/P03/P06/P07/P08/P10/P11/P23-P26/P43,
+V01/V02 and N01-N03 in addition to completed B01. Consult the exact frozen
+configs and queue dispatch reports; this does not authorize B06 or held P18.
+Four identical TP1 replicas use GPUs4-7 and share the original pinned BF16
+checkpoint. The 73 queued jobs cover 79,815 cases across24 additional settings;
+counts include completed jobs and native dataset-specific/sharded runs.
+
+P03/P07/P08 use43 disjoint source-order shards and offline global metrics;
+P23-P26 use11 approved description shards and one full-task native Mol ROUGE
+calculation per task. Exact-plan approval is in
+`configs/local_description_execution_approval.json`; queued description jobs
+must use their gated executor. P43 uses three exact DrugBAN test sets and a
+separately frozen one-token Yes/No conditional-likelihood adapter for native
+AUROC/AP. Never use sampled hard labels as ranking scores or tune thresholds.
+N01-N03 retain full released DNA windows and native source question scaffolds;
+permissive native continuation scoring and strict final-label diagnostics
+remain separate. These zero-shot adaptations do not reproduce trained heads
+or specialist representations. All permits were reviewed before dispatch;
+no OpenAI calls, paid inference, training or flagged-request transfer occurs.
+
+The optional16,384-output-token reasoning condition is proposed only in
+`configs/proposed_long_reasoning_protocol.json`. A user answer is still pending;
+it must not be run without affirmative authorization. Existing4,096-token
+runs continue unchanged. Preserve all outputs, including truncated or invalid
+responses, and their native denominators.
+
+`scripts/update_executed_interpretations.py` appends completed whole-task
+interpretations while preserving every original catalog/preparation record
+and the frozen B01 record. Do not use the old destructive interpretation
+generator. Explanation support remains unassessed independently of outcome
+scores. Public pretraining exposure remains unknown.

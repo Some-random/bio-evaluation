@@ -1,0 +1,62 @@
+{
+  "run_id": "qwen38_27b_dti_bindingdb_likelihood_2026-10-15",
+  "execution_authorized": false,
+  "runner_file": "scripts/local_dti_run.py",
+  "scorer_file": "scripts/local_dti_score.py",
+  "executor_file": "scripts/local_dti_execute.py",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "dataset": "bindingdb",
+  "variant": "QWEN_DTI_FIRST_TOKEN_CONDITIONAL_YES_NO_LIKELIHOOD",
+  "endpoint": "http://127.0.0.1:8026/v1",
+  "server_state_file": ".local/local_model_server.json",
+  "approved_task_ids": [
+    "P43"
+  ],
+  "generation": {
+    "max_tokens": 1,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "min_p": 0.0,
+    "n": 1,
+    "seed": 42,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "allowed_token_ids": [
+      9175,
+      2665
+    ],
+    "logprobs": true,
+    "top_logprobs": 2,
+    "logprob_token_ids": [
+      9175,
+      2665
+    ],
+    "return_tokens_as_token_ids": true,
+    "return_token_ids": true
+  },
+  "concurrency": 4,
+  "input_file": "data/local_dti/bindingdb/model_inputs.jsonl",
+  "review_file": "data/local_dti/bindingdb/review.proposed.json",
+  "scorer_reference_file": "data/catalog_sequence_tasks/P43/scorer_references.jsonl",
+  "scorer_reference_sha256": "1399f4590451aa507fd5ccee1847b8856c7d19193615e7f4284fe6d9b78d6c45",
+  "source_input_file": "data/catalog_sequence_tasks/P43/model_inputs.jsonl",
+  "source_input_sha256": "d3d75fc8a681a2a44fe3ebd345fbebd9596254559c54473bdbcfd897a2a7c7ff",
+  "score_definition": "softmax over raw FIRST-token logp(Yes),logp(No); not sampled hard-label accuracy",
+  "frozen_files_sha256": {
+    "data/local_dti/bindingdb/model_inputs.jsonl": "919372f7cb328810efe6c367d634ca7c10dde1fd1e855ac819d0916a23de3ae4",
+    "data/local_dti/bindingdb/review.proposed.json": "630eb7397e3a9fb20ca1e513e2cab6c21720a8d1afba40131f86d681ecd2c6db",
+    "data/catalog_sequence_tasks/P43/scorer_references.jsonl": "1399f4590451aa507fd5ccee1847b8856c7d19193615e7f4284fe6d9b78d6c45",
+    "data/catalog_sequence_tasks/P43/model_inputs.jsonl": "d3d75fc8a681a2a44fe3ebd345fbebd9596254559c54473bdbcfd897a2a7c7ff",
+    "scripts/local_dti_common.py": "ab21a25db5ae874c1598ec1fb538d3678c8a74690183ec476073dc1fd042a7cf",
+    "scripts/local_dti_prepare.py": "52f89b2f6793c0651c4bc8471a9b689cd632d460b949bfc047e37ccbf48dd08b",
+    "scripts/local_dti_run.py": "b327ff912c61355132dcfd832aa1ee1269866a75c4b2e44a3728329be58582a2",
+    "scripts/local_dti_score.py": "56c7c3ebf9431b17844d773c3f95244b3059bd83a05c0b0eb0f533cdf645b404",
+    "scripts/local_dti_execute.py": "7c462171d51cc0a6ef856a5b961d66842dd474c196ab2e28c65fc2d16991014c"
+  },
+  "solver_tools": [],
+  "no_training": true,
+  "adapter_note": "Required numerical-output interface, fixed before DTI outputs; no reasoning-budget experiment. Native BioT5 raw-score ratio is not reproduced."
+}

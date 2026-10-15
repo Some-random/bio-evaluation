@@ -1,0 +1,67 @@
+{
+  "run_id": "qwen38_27b_v02_native_test_2026-10-15",
+  "frozen_at_utc": "2026-10-15T07:31:49.593678+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "endpoint": "http://127.0.0.1:8029/v1",
+  "gpu_ids": [
+    4
+  ],
+  "approved_task_ids": [
+    "V02"
+  ],
+  "variant": "NATIVE_TEST_QUESTION_IMAGE_LOCAL_ZERO_SHOT",
+  "input_file": "data/medical_vqa/V02/model_inputs.jsonl",
+  "review_file": "configs/local_medical_v02_review.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "generation_choice_basis": "Publisher sampling defaults; one fixed seed, medium thinking and 4096 total output tokens fixed before Qwen benchmark outputs; no search or test-driven changes.",
+  "source_dataset_revision": "a9083ce6c34ac3ffb17671a605962924d8a8f9e9",
+  "source_code_revision": "b9a98a736d2ef05bcf5ff345be6403fb3a664eaf",
+  "prompt_policy": "Original source question string unchanged; one original image; no answer-type-derived instruction, reference/caption, candidate answer list or system message.",
+  "metric_policy": "Pinned original LLaVA-Med scorer normalization; OPEN token recall and CLOSED source-rule hit accuracy in separate groups, all eligible cases retained. No mixed overall accuracy or test-derived answer candidates.",
+  "scorer_reference_sha256": "3985fdf5c9c9b26e1f687b5064e108dbdba3f15118e1322286d119355982a634",
+  "frozen_files_sha256": {
+    "configs/local_medical_v02_review.json": "501b7aff951d66c004085bb0e743d098837bf67897469dc0e1f842189d04622f",
+    "data/medical_vqa/V02/image_manifest.json": "893173a4027aacb88db3efea1292e045111a7472fd2f70d00fe33f0862c1d7e8",
+    "data/medical_vqa/V02/model_inputs.jsonl": "6cb74763bedf19832a3e761838af71e0363fd69b47b51a6bcac473ddcd1241c8",
+    "scripts/execute_local_medical.py": "49e12b978e41ba5b08a6da0329219e16321de62e727420cf9dae5afc1f5b72a0",
+    "scripts/prepare_local_medical_runs.py": "944570df8a43ebfcac6b57b16c75cf7b77c80e4b981cedeeb4e3898f127b2543",
+    "scripts/prepare_medical_vqa.py": "7989c3776968c1c49ab4130274f570a45c812245b2cce8cfd67281f453cae6d2",
+    "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+    "scripts/score_local_medical_vqa.py": "be93dfa21f1c2af0959381fdd59b56627e6bb701c796ebe834c6fc1df8c83f22",
+    "sources/medical_vqa/llava_v1_README.md": "bbe4934769e343583ee8a33d97d5a1f80c93ffb761806fb3ba022c183d908edc",
+    "sources/medical_vqa/llava_v1_evaluate_metrics.py": "cbcf8cae0fbe6f91a323d5b100291af969c2884e572103de62459f0c4daa5bc8",
+    "sources/medical_vqa/llava_v1_glossary.py": "59d5ac151e48c5868e6945c26520c4f2c50189bcf009ea3ab9a686e7a3f486f4",
+    "sources/medical_vqa/llava_v1_model_vqa_med.py": "e42ee79ea1380fa45c686ceb423a42497a6c775877a11b25534a8b28fa4f7547",
+    "sources/medical_vqa/llava_v1_run_eval.py": "20b8a98f950b579e8c20b3cb052054ca1a1d6886cb8de24bc04181b5cceface0",
+    "sources/medical_vqa/llava_v1_utils.py": "221f83206502ff236e11d22494681db70165ab28e29cab2105ee844af4cb167d"
+  },
+  "tool_access": [],
+  "paper_comparison": "Original dataset question/image test and pinned LLaVA-Med headline scorer; new zero-shot Qwen chat/sampling/training regime differs from task-trained paper systems. Open scoring differs across papers; compare only matching metrics.",
+  "pretraining_contamination": "Unknown; local inference and shuffled choices cannot establish contamination-free performance.",
+  "runner": "scripts/run_local_labbench_multimodal.py",
+  "scorer_reference_file": "data/medical_vqa/V02/labels.jsonl",
+  "model_facing_fields": [
+    "original_question_text",
+    "original_image_bytes"
+  ],
+  "serving_config_file": "configs/local_model_gpu4.json",
+  "server_record_file": ".local/local_model_server_gpu4.json",
+  "input_modalities": [
+    "original_image",
+    "question_text"
+  ]
+}

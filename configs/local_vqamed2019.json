@@ -1,0 +1,73 @@
+{
+  "run_id": "qwen38_27b_v04_original_test500_2026-10-15",
+  "frozen_at_utc": "2026-10-15T08:12:46.891400+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "endpoint": "http://127.0.0.1:8027/v1",
+  "gpu_ids": [
+    6
+  ],
+  "approved_task_ids": [
+    "V04"
+  ],
+  "variant": "NATIVE_IMAGECLEF2019_QUESTION_IMAGE_QUALIFIED_STRICT_ACCURACY",
+  "input_file": "data/vqamed2019_native/model_inputs.jsonl",
+  "review_file": "configs/local_vqamed2019_review.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "generation_choice_basis": "Publisher sampling defaults; one fixed seed, medium thinking and 4096 total output tokens fixed before Qwen benchmark outputs; no search or test-driven changes.",
+  "source_dataset_revision": "e673406ebc64cf499397e8abc0b63771b2db4bb9",
+  "source_code_revision": "e673406ebc64cf499397e8abc0b63771b2db4bb9",
+  "prompt_policy": "Exactly the original question and original JPEG bytes; no added label/class/category/answer/instruction or evidence.",
+  "metric_policy": "Strict accuracy reconstructed from original organizer protocol plus reference syntax. Exact historical2019 executable not recovered. BLEU withheld until original smoothing/tokenization/aggregation verified; no later-year scorer silently substituted.",
+  "scorer_reference_sha256": "bd10a21b8813be1599871ef21c9309ce08030e0e4b8104bc38e59ab725978e85",
+  "frozen_files_sha256": {
+    "data/vqamed2019_native/model_inputs.jsonl": "99c922b66d48358474c212be79ce3081ca5e4229f06d2f9ce13ef9a0cdda081f",
+    "configs/local_vqamed2019_review.json": "1fdb7546cdf955e8e1f4410b14c56e9b7255a9a866f982e8fbf25f35e9a565b5",
+    "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+    "scripts/prepare_vqamed2019_native.py": "13a9b728912b1904a65fbc477f8842deb558098ac02abd105ccf2ecd7ffc47b9",
+    "scripts/score_vqamed2019_native.py": "9a2ccb768a8078f5fe9f93128e97c71e27faee491bf66bbb0b799b9afbb2241d",
+    "scripts/execute_vqamed2019_native.py": "a181de49879c66e51213a10bd11e7917f3293438c74a6527833607d17f544adc",
+    "scripts/score_local_medical_vqa.py": "be93dfa21f1c2af0959381fdd59b56627e6bb701c796ebe834c6fc1df8c83f22",
+    "scripts/prepare_medical_vqa.py": "7989c3776968c1c49ab4130274f570a45c812245b2cce8cfd67281f453cae6d2",
+    "reports/vqamed2019_native_preparation.json": "9e10b86c64e7dd819d416ecea6053672f7be16fddca0eed808104232a446caa7",
+    "data/vqamed2019_native/image_manifest.json": "5cde20b87b56b86b733316caa56c118c566f2ddfd2575df0eef9599b75f0693e",
+    "sources/vqamed2019/README-VQA-Med-2019-Data.txt": "171c98b1f891dc4c81eb4ddaff04a0ef13580eb21388aafb60a734b67f16c2ef",
+    "sources/vqamed2019/README.md": "42b5cf4344aacb90b8b3199c13ea0f7403c555154042c3010bdb9009fc146b23",
+    "sources/vqamed2019/VQAMed2019Test__README-VQA-Med-2019-TestSet.txt": "5e64b4a3227968e1e2af2c8295955bdc3029f1e0ce2661eeb703e419b05aa02b",
+    "sources/vqamed2019/test_images.zip": "75165e03c9cbf534768fc9c581195bb96605183fb3a1ff2b5d7e4956e627d933",
+    "sources/vqamed2019/VQAMed2019Test__VQAMed2019_Test_Questions.txt": "c3159f4b74d5ca8727cbf7d281492ff23004777056e0e62cb9143d6e817fbfd9",
+    "sources/vqamed2019/VQAMed2019Test__VQAMed2019_Test_Questions_w_Ref_Answers.txt": "25235509ccb72f4e8cb1240a92f97a7690119541472a68f24b010cd031254f2b"
+  },
+  "tool_access": [],
+  "paper_comparison": "Same original500 test IDs/images/questions; zero-shot Qwen and explicit fixed scorer reconstruction, not target-fine-tuned MedVInT or a claim of byte-identical challenge scoring. Historical strict-accuracy executable not recovered; normalization/reference syntax reconstructed prospectively from organizers. Native2019BLEU withheld rather than substitute another year or arbitrary metric. No claim of matched target fine-tuning or closed/open metric equivalence.",
+  "pretraining_contamination": "Unknown; local inference and shuffled choices cannot establish contamination-free performance.",
+  "runner": "scripts/run_local_labbench_multimodal.py",
+  "scorer_reference_file": "data/vqamed2019_native/scorer_references.jsonl",
+  "model_facing_fields": [
+    "original_question",
+    "original_image_bytes"
+  ],
+  "serving_config_file": "configs/local_model_gpu6.json",
+  "server_record_file": ".local/local_model_server_gpu6.json",
+  "input_modalities": [
+    "text",
+    "image"
+  ],
+  "scorer": "scripts/score_vqamed2019_native.py",
+  "executor": "scripts/execute_vqamed2019_native.py",
+  "case_scope": "original_complete_ImageCLEF2019_test500",
+  "reporting_protocol_kind": "adapted"
+}

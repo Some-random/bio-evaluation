@@ -1,0 +1,2631 @@
+{
+  "created_at_utc": "2026-10-15T07:05:17.596960+00:00",
+  "scope": "All 64 biological catalog settings; 14 general controls excluded from this report.",
+  "status": "primary_source_audit_complete_with_explicit_numeric_and_artifact_gaps",
+  "protocol_change_authorized": false,
+  "inference_performed_by_this_audit": false,
+  "references": {
+    "LAB": {
+      "url": "https://arxiv.org/html/2407.10362v1",
+      "version": "v1, 2024-07-14",
+      "verified": "paper Tables 1–4, Appendix B.1 and Appendix D; official pinned source code"
+    },
+    "LAB_CODE": {
+      "url": "https://github.com/Future-House/LAB-Bench/tree/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838",
+      "version": "998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838",
+      "verified": "local source tree, evaluator, zero_shot.py, openai_utils.py, score_baseline.py"
+    },
+    "RYZE": {
+      "url": "https://arxiv.org/html/2606.00902v1",
+      "version": "v1",
+      "verified": "Table 1, Table 3, Sections 2.5 and 3.1"
+    },
+    "BIOT5": {
+      "url": "https://arxiv.org/html/2402.17810v2",
+      "version": "v2, 2024-05-31",
+      "verified": "Tables 6 and 8; Figure 2; Appendices G.2–G.6"
+    },
+    "PROTST": {
+      "url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "version": "ICML/PMLR 202 (2023)",
+      "verified": "Tables 2–3 (p.6), 11 (p.15), 12–13 (p.16); Section 4.2; Appendix B"
+    },
+    "NATURE": {
+      "url": "https://arxiv.org/html/2502.07527v3",
+      "version": "v3",
+      "verified": "Tables 8–11, 20; Sections 4 and 7.2"
+    },
+    "MUTA": {
+      "url": "https://arxiv.org/html/2410.22949v1",
+      "version": "v1, 2024-10-30",
+      "verified": "Tables 1–3, A10–A12; Sections 4.2–4.3 and Appendices C.4, D.2"
+    },
+    "BIOREASON": {
+      "url": "https://arxiv.org/html/2505.23579v2",
+      "version": "v2",
+      "verified": "Tables 1–2 and Section 5.3"
+    },
+    "POST": {
+      "url": "https://arxiv.org/html/2606.16517v1",
+      "version": "v1",
+      "verified": "Appendices A, B.4, C.3–C.4, D.3–D.4"
+    },
+    "BIOPRO_V1": {
+      "url": "https://www.biorxiv.org/content/10.64898/2026.03.19.712954v1.full",
+      "version": "v1; v2 direct fetch unavailable",
+      "verified": "indexed primary full text, Sections 4.3–4.4; do not substitute v1 numbers for v2 aspect-level scores"
+    },
+    "BIOPRO_CODE": {
+      "url": "https://github.com/bowang-lab/BioReason-Pro",
+      "version": "current official README inspected; local snapshot retained",
+      "verified": "released temporal test card and required protein/GO representations"
+    },
+    "PFA": {
+      "url": "https://arxiv.org/html/2609.28921v1",
+      "version": "v1",
+      "verified": "Tables 1–9, Sections 2–4"
+    },
+    "PROTEOR": {
+      "url": "https://arxiv.org/html/2605.02937v1",
+      "version": "v1",
+      "verified": "Tables 1–2, Section 4.1"
+    },
+    "STRIDE": {
+      "url": "https://arxiv.org/html/2603.03573v1",
+      "version": "v1",
+      "verified": "Tables 3–4; Sections 4.1, 4.3 and 5"
+    },
+    "LLAVA": {
+      "url": "https://arxiv.org/pdf/2306.00890",
+      "version": "resolved PDF is arXiv v1, 2023-06-01",
+      "verified": "Tables 1, 3 and 4; Sections 5.1–5.2; this is not the v1.5 model release"
+    },
+    "PMC": {
+      "url": "https://arxiv.org/html/2305.10415v6",
+      "version": "v6",
+      "verified": "Tables 2–3 and Section 4.1"
+    },
+    "MOL": {
+      "url": "https://arxiv.org/html/2306.08018v4",
+      "version": "v4",
+      "verified": "Figure 5 and protein-task definitions; plot values not transcribed"
+    },
+    "PG": {
+      "url": "https://github.com/rohitarorayyc/proteingym-llm/blob/main/BENCHMARK_USE_POLICY.md",
+      "version": "pinned local public documentation; no protected test inspection",
+      "verified": "evaluation-only policy and DATA.md manifest; public leaderboard retrieval unavailable"
+    }
+  },
+  "global_rules": [
+    "Published values are transcribed rounded values, not newly measured scores. Missing values are null or empty lists, never zeros.",
+    "A paper score is directly comparable only when task/split/test IDs, solver evidence, metric implementation, failure accounting and aggregation match. Training regime and inference resources are disclosed separately.",
+    "No claim of contamination-free evaluation; public pretraining exposure is unknown.",
+    "No prompt/model selection or benchmark tuning from these scores. Protected PG-LLM material was not inspected.",
+    "Outcome scores do not independently validate mechanisms or explanation correctness."
+  ],
+  "lab_protocol": {
+    "source_ids": [
+      "LAB",
+      "LAB_CODE"
+    ],
+    "published_main_population": "2457 public+private questions; released public population1967",
+    "prompt": "official zero-shot chain-of-thought MCQ template; shuffled choices; abstention option",
+    "tools": "none for paper model baselines; human experts could use non-AI tools",
+    "metrics": {
+      "accuracy": "correct/all",
+      "precision": "correct/attempted",
+      "coverage": "attempted/all"
+    },
+    "runs": 3,
+    "paper_parser": "regex then Claude2 fallback if needed",
+    "local_parser_difference": "strict offline parsing; disclose fallback differences; do not treat malformed outputs as absent cases",
+    "generation_defaults": "Pinned OpenAI wrapper supplies model and messages, leaving sampling/token settings to provider defaults. No exact common temperature/limit established from inspected original paper/code.",
+    "author_per_case_outputs_found": false,
+    "author_output_search": "Pinned official repository tree + README + primary-source targeted search, 2026-10-15. Absence here is not proof that no archive exists elsewhere.",
+    "public_only_category_values": "Supplemental Figure7 graphical; exact values not inferred",
+    "ryze_public_overall_accuracy_percent": {
+      "qwen3_vl_8b": 35.4,
+      "gpt5_2": 44.2,
+      "biovlm_8b": 48.0
+    },
+    "ryze_aggregation": "sample-weighted; reviewed subsets cannot be compared as exact same-case averages"
+  },
+  "task_count": 64,
+  "tasks": [
+    {
+      "task_id": "P01",
+      "task": "Solubility — PEER",
+      "native_metric": "Accuracy",
+      "catalog_native_inputs": "Protein sequence",
+      "catalog_reference_evidence": "Dataset experimental/curated labels",
+      "catalog_split_contract": "Preserve the official PEER solubility split; exact test size not re-established.",
+      "catalog_source_url": "https://arxiv.org/html/2402.17810v2\nhttps://arxiv.org/html/2502.07527v3",
+      "published_baselines": [
+        {
+          "model": "BioT5+",
+          "metrics": {
+            "accuracy_percent": 74.37
+          },
+          "source_id": "BIOT5",
+          "source_url": "https://arxiv.org/html/2402.17810v2",
+          "source_locator": "Table 6",
+          "protocol": "supervised multitask instruction tuning on official PEER splits",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": {
+            "accuracy_percent": 0.19
+          },
+          "uncertainty_note": "Table prints mean ± dispersion; number of runs/dispersion definition not independently re-established here."
+        },
+        {
+          "model": "NatureLM",
+          "metrics": {
+            "1B_accuracy": 0.684,
+            "8B_accuracy": 0.714,
+            "8x7B_accuracy": 0.698
+          },
+          "source_id": "NATURE",
+          "source_url": "https://arxiv.org/html/2502.07527v3",
+          "source_locator": "Table 20, Section 7.2",
+          "protocol": "task-trained scientific model; adopted PEER splits",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Keep source test IDs, pair construction, class labels and metric. Zero-shot Qwen is a separate training regime from trained BioT5+/NatureLM systems."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P02",
+      "task": "Binary localization — DeepLoc/PEER",
+      "native_metric": "Accuracy",
+      "catalog_native_inputs": "Protein sequence",
+      "catalog_reference_evidence": "Curated localization labels",
+      "catalog_split_contract": "Binary task; do not substitute the separate ten-compartment label set.",
+      "catalog_source_url": "https://arxiv.org/html/2402.17810v2\nhttps://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "BioT5+",
+          "metrics": {
+            "accuracy_percent": 90.41
+          },
+          "source_id": "BIOT5",
+          "source_url": "https://arxiv.org/html/2402.17810v2",
+          "source_locator": "Table 6",
+          "protocol": "supervised multitask instruction tuning on official PEER splits",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": {
+            "accuracy_percent": 0.07
+          },
+          "uncertainty_note": "Table prints mean ± dispersion; number of runs/dispersion definition not independently re-established here."
+        },
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "fixed_encoder": {
+              "accuracy_percent": 92.87
+            },
+            "full_model_tuning": {
+              "accuracy_percent": 92.35
+            }
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 2, printed p.6",
+          "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Keep source test IDs, pair construction, class labels and metric. Zero-shot Qwen is a separate training regime from trained BioT5+/NatureLM systems.",
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P03",
+      "task": "Subcellular localization — DeepLoc",
+      "native_metric": "Accuracy",
+      "catalog_native_inputs": "Protein sequence; label descriptions in zero-shot mode",
+      "catalog_reference_evidence": "Curated compartment labels",
+      "catalog_split_contract": "Official DeepLoc split. ProtST also tests zero-/few-shot transfer; record shots and whether a supervised head is fitted.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "fixed_encoder": {
+              "accuracy_percent": 82.0
+            },
+            "full_model_tuning": {
+              "accuracy_percent": 78.73
+            }
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 2, printed p.6",
+          "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        },
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "zero_shot_accuracy_percent": 43.49
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 11, printed p.15",
+          "protocol": "zero-shot embedding similarity to label names in published pretraining template",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized.",
+        "Zero-shot ProtST uses sequence/text embedding comparison; Qwen generative labels are an explicitly different system interface."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P04",
+      "task": "Beta-lactamase activity — PEER",
+      "native_metric": "Spearman correlation",
+      "catalog_native_inputs": "Protein/variant sequence",
+      "catalog_reference_evidence": "Existing experimental measurements",
+      "catalog_split_contract": "Official PEER beta-lactamase split.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "fixed_encoder": {
+              "spearman": 0.578
+            },
+            "full_model_tuning": {
+              "spearman": 0.895
+            }
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 2, printed p.6",
+          "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P05",
+      "task": "AAV variant fitness — FLIP",
+      "native_metric": "Spearman correlation",
+      "catalog_native_inputs": "Protein/variant sequence",
+      "catalog_reference_evidence": "Existing experimental measurements",
+      "catalog_split_contract": "FLIP AAV two_vs_many split.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "fixed_encoder": {
+              "spearman": 0.46
+            },
+            "full_model_tuning": {
+              "spearman": 0.85
+            }
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 2, printed p.6",
+          "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized.",
+        "FLIP two_vs_many split and assay direction; retain scope holds on unreviewed viral-capsid engineering."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P06",
+      "task": "Thermostability — FLIP/Meltome",
+      "native_metric": "Spearman correlation",
+      "catalog_native_inputs": "Protein/variant sequence",
+      "catalog_reference_evidence": "Existing experimental measurements",
+      "catalog_split_contract": "FLIP meltome human_cell configuration.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "fixed_encoder": {
+              "spearman": 0.68
+            },
+            "full_model_tuning": {
+              "spearman": 0.681
+            }
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 2, printed p.6",
+          "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized.",
+        "FLIP human_cell split; do not merge other Meltome species/cell splits."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P07",
+      "task": "GFP fluorescence — TAPE",
+      "native_metric": "Spearman correlation",
+      "catalog_native_inputs": "Protein/variant sequence",
+      "catalog_reference_evidence": "Existing experimental measurements",
+      "catalog_split_contract": "TAPE fluorescence split; sequence-distance extrapolation is part of the benchmark.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "fixed_encoder": {
+              "spearman": 0.523
+            },
+            "full_model_tuning": {
+              "spearman": 0.682
+            }
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 2, printed p.6",
+          "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized.",
+        "Use separate TAPE fluorescence/stability splits and target definitions; never substitute classification for regression."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P08",
+      "task": "Protein stability regression — TAPE",
+      "native_metric": "Spearman correlation",
+      "catalog_native_inputs": "Protein/variant sequence",
+      "catalog_reference_evidence": "Existing experimental measurements",
+      "catalog_split_contract": "Official TAPE stability split; retain the numerical target.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "fixed_encoder": {
+              "spearman": 0.766
+            },
+            "full_model_tuning": {
+              "spearman": 0.751
+            }
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 2, printed p.6",
+          "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized.",
+        "Use separate TAPE fluorescence/stability splits and target definitions; never substitute classification for regression."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P09",
+      "task": "Stability classification — NatureLM/PEER",
+      "native_metric": "Accuracy",
+      "catalog_native_inputs": "Protein sequence",
+      "catalog_reference_evidence": "A binarized stability label in this paper's setup",
+      "catalog_split_contract": "NatureLM §7.2 uses classification. Exact label-conversion rule not resolved in this review.",
+      "catalog_source_url": "https://arxiv.org/html/2502.07527v3",
+      "published_baselines": [
+        {
+          "model": "NatureLM",
+          "metrics": {
+            "1B_accuracy": 0.682,
+            "8B_accuracy": 0.635,
+            "8x7B_accuracy": 0.723
+          },
+          "source_id": "NATURE",
+          "source_url": "https://arxiv.org/html/2502.07527v3",
+          "source_locator": "Table 20, Section 7.2",
+          "protocol": "task-trained scientific model; adopted PEER splits",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Match NatureLM/PEER stability classification labels and processed split. This is not continuous TAPE stability regression (P08); threshold/preprocessing artifact remains to be pinned."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P10",
+      "task": "Human protein–protein interaction — PEER",
+      "native_metric": "Accuracy",
+      "catalog_native_inputs": "Two full protein sequences",
+      "catalog_reference_evidence": "Curated interaction positives and dataset-specific negatives",
+      "catalog_split_contract": "Official human PEER PPI split; preserve negative construction.",
+      "catalog_source_url": "https://arxiv.org/html/2402.17810v2\nhttps://arxiv.org/html/2502.07527v3",
+      "published_baselines": [
+        {
+          "model": "BioT5+",
+          "metrics": {
+            "accuracy_percent": 85.09
+          },
+          "source_id": "BIOT5",
+          "source_url": "https://arxiv.org/html/2402.17810v2",
+          "source_locator": "Table 6",
+          "protocol": "supervised multitask instruction tuning on official PEER splits",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": {
+            "accuracy_percent": 0.4
+          },
+          "uncertainty_note": "Table prints mean ± dispersion; number of runs/dispersion definition not independently re-established here."
+        },
+        {
+          "model": "NatureLM",
+          "metrics": {
+            "1B_accuracy": 0.781,
+            "8B_accuracy": 0.848,
+            "8x7B_accuracy": 0.776
+          },
+          "source_id": "NATURE",
+          "source_url": "https://arxiv.org/html/2502.07527v3",
+          "source_locator": "Table 20, Section 7.2",
+          "protocol": "task-trained scientific model; adopted PEER splits",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Keep source test IDs, pair construction, class labels and metric. Zero-shot Qwen is a separate training regime from trained BioT5+/NatureLM systems."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P11",
+      "task": "Yeast protein–protein interaction — PEER",
+      "native_metric": "Accuracy",
+      "catalog_native_inputs": "Two full protein sequences",
+      "catalog_reference_evidence": "Curated interaction positives and dataset-specific negatives",
+      "catalog_split_contract": "Official yeast PEER PPI split; preserve negative construction.",
+      "catalog_source_url": "https://arxiv.org/html/2402.17810v2\nhttps://arxiv.org/html/2502.07527v3",
+      "published_baselines": [
+        {
+          "model": "BioT5+",
+          "metrics": {
+            "accuracy_percent": 66.16
+          },
+          "source_id": "BIOT5",
+          "source_url": "https://arxiv.org/html/2402.17810v2",
+          "source_locator": "Table 6",
+          "protocol": "supervised multitask instruction tuning on official PEER splits",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": {
+            "accuracy_percent": 0.43
+          },
+          "uncertainty_note": "Table prints mean ± dispersion; number of runs/dispersion definition not independently re-established here."
+        },
+        {
+          "model": "NatureLM",
+          "metrics": {
+            "1B_accuracy": 0.561,
+            "8B_accuracy": 0.604,
+            "8x7B_accuracy": 0.586
+          },
+          "source_id": "NATURE",
+          "source_url": "https://arxiv.org/html/2502.07527v3",
+          "source_locator": "Table 20, Section 7.2",
+          "protocol": "task-trained scientific model; adopted PEER splits",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Keep source test IDs, pair construction, class labels and metric. Zero-shot Qwen is a separate training regime from trained BioT5+/NatureLM systems."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P12",
+      "task": "Enzyme Commission labels — DeepFRI split",
+      "native_metric": "Micro-AP/AUPR; Fmax",
+      "catalog_native_inputs": "Protein sequence",
+      "catalog_reference_evidence": "Curated enzyme-function annotations",
+      "catalog_split_contract": "ProtST uses the DeepFRI task split with a 95% sequence-identity cutoff.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "aupr": 0.894,
+            "fmax": 0.878
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 3, printed p.6",
+          "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P13",
+      "task": "GO biological process — DeepFRI split",
+      "native_metric": "Micro-AP/AUPR; Fmax",
+      "catalog_native_inputs": "Protein sequence",
+      "catalog_reference_evidence": "Ontology-linked curated annotations",
+      "catalog_split_contract": "Keep BP/MF/CC separate; ProtST's DeepFRI-derived split.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "aupr": 0.328,
+            "fmax": 0.48
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 3, printed p.6",
+          "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P14",
+      "task": "GO molecular function — DeepFRI split",
+      "native_metric": "Micro-AP/AUPR; Fmax",
+      "catalog_native_inputs": "Protein sequence",
+      "catalog_reference_evidence": "Ontology-linked curated annotations",
+      "catalog_split_contract": "Keep BP/MF/CC separate; ProtST's DeepFRI-derived split.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "aupr": 0.644,
+            "fmax": 0.661
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 3, printed p.6",
+          "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P15",
+      "task": "GO cellular component — DeepFRI split",
+      "native_metric": "Micro-AP/AUPR; Fmax",
+      "catalog_native_inputs": "Protein sequence",
+      "catalog_reference_evidence": "Ontology-linked curated annotations",
+      "catalog_split_contract": "Keep BP/MF/CC separate; ProtST's DeepFRI-derived split.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "aupr": 0.364,
+            "fmax": 0.488
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 3, printed p.6",
+          "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "ProtST supervised scores require the published learned protein encoder plus trained task head. A sequence-text Qwen run is a useful baseline with different representation/training; no new head training is authorized."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P16",
+      "task": "Reaction class — zero-/few-shot",
+      "native_metric": "Accuracy",
+      "catalog_native_inputs": "Protein sequence plus reaction-label descriptions",
+      "catalog_reference_evidence": "Existing reaction-category labels",
+      "catalog_split_contract": "ProtST zero-shot/few-shot experiment; shots and ensemble settings must be recorded.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "zero_shot_accuracy_percent": 29.85
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 11, printed p.15",
+          "protocol": "zero-shot embedding similarity to label names in published pretraining template",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Zero-shot ProtST uses sequence/text embedding comparison; Qwen generative labels are an explicitly different system interface."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P17",
+      "task": "ProteinGym DMS substitution benchmark",
+      "native_metric": "Spearman primary; suite also reports ranking/classification summaries",
+      "catalog_native_inputs": "Reference and variant sequences; optional structure/MSA only if the protocol allows",
+      "catalog_reference_evidence": "Measured DMS assay scores",
+      "catalog_split_contract": "Pin release: modern v1.3 substitution subset has 217 assays; an older paper may use an earlier snapshot.",
+      "catalog_source_url": "https://github.com/OATML-Markslab/ProteinGym",
+      "published_baselines": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "uniprot_level_mean_spearman": 0.412
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 12, printed p.16",
+          "protocol": "original ProteinGym substitution snapshot; not current expanded release",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Pin original assay release, score orientation and UniProt-level aggregation. Assay-level mean over an expanded current release is not this paper metric."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P18",
+      "task": "PG-LLM / ProteinGym-LLM ranking",
+      "native_metric": "Per-assay Spearman",
+      "catalog_native_inputs": "Full reference sequence, assay description, shuffled candidate sequences",
+      "catalog_reference_evidence": "Held-out experimental scores",
+      "catalog_split_contract": "eval-data-v1.2: 217 assays; N=10/50/100; seeds 1/2/3; labels separate from model-facing inputs.",
+      "catalog_source_url": "https://github.com/rohitarorayyc/proteingym-llm",
+      "published_baselines": [],
+      "comparison_status": "held_no_protected_test_inspection",
+      "comparability_requirements": [],
+      "unverified_or_missing": [
+        "Public leaderboard endpoint unavailable to browser; no verified published scalar copied. Existing flagged-request hold preserved. No candidate/test rows or outcomes inspected in this research."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P19",
+      "task": "PFArena T1: single-mutant generation",
+      "native_metric": "Recall@40; normalized maximum recovered score",
+      "catalog_native_inputs": "Reference protein + objective; no target-specific mutant measurements",
+      "catalog_reference_evidence": "Existing experimental mutation measurements",
+      "catalog_split_contract": "123 assays; budget 40; 594,695 measured single mutants in the reported source universe",
+      "catalog_source_url": "https://arxiv.org/html/2609.28921v1",
+      "published_baselines": [
+        {
+          "model": "ESM-2",
+          "metrics": {
+            "nms_at_40": 0.7854,
+            "recall_at_40": 0.037
+          },
+          "source_id": "PFA",
+          "source_url": "https://arxiv.org/html/2609.28921v1",
+          "source_locator": "Table 6",
+          "protocol": "published native PFArena task; macro over 123 assays",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_assay_count": 123
+        },
+        {
+          "model": "GPT-6 Astra",
+          "metrics": {
+            "nms_at_40": 0.7966,
+            "recall_at_40": 0.0254
+          },
+          "source_id": "PFA",
+          "source_url": "https://arxiv.org/html/2609.28921v1",
+          "source_locator": "Table 6",
+          "protocol": "published native PFArena task; macro over 123 assays",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_assay_count": 123
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Keep official candidate pool, context visibility, assay-normalization and macro aggregation. T1 budget=40; T2–T4 complete ranking with top-5 diagnostics. Do not reconstruct targets from held-out labels.",
+        "Standalone source LLM used API-default sampling/reasoning, max completion32768 for GPT6 Astra and up to10 complete failure retries; agents allow40 tool rounds. Local budgets/retry rules must be declared separately."
+      ],
+      "unverified_or_missing": [
+        "Exact official processed task download/split artifact not recovered; paper values are contextual until artifacts are available."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P20",
+      "task": "PFArena T2: measurement-free multi-mutant ranking",
+      "native_metric": "Spearman; NDCG; normalized max@K; Recall@K",
+      "catalog_native_inputs": "Reference + objective + candidate combinations; no target-specific measured labels",
+      "catalog_reference_evidence": "Existing experimental mutation measurements",
+      "catalog_split_contract": "74 assays; 6,288 candidates",
+      "catalog_source_url": "https://arxiv.org/html/2609.28921v1",
+      "published_baselines": [
+        {
+          "model": "ESM-2",
+          "metrics": {
+            "spearman": 0.2539,
+            "ndcg": 0.8634,
+            "nms_at_5": 0.7831,
+            "recall_at_5": 0.1892
+          },
+          "source_id": "PFA",
+          "source_url": "https://arxiv.org/html/2609.28921v1",
+          "source_locator": "Table 7",
+          "protocol": "published native PFArena task; macro over 74 assays",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_assay_count": 74
+        },
+        {
+          "model": "GPT-6 Astra",
+          "metrics": {
+            "spearman": 0.2726,
+            "ndcg": 0.8635,
+            "nms_at_5": 0.7967,
+            "recall_at_5": 0.2216
+          },
+          "source_id": "PFA",
+          "source_url": "https://arxiv.org/html/2609.28921v1",
+          "source_locator": "Table 7",
+          "protocol": "published native PFArena task; macro over 74 assays",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_assay_count": 74
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Keep official candidate pool, context visibility, assay-normalization and macro aggregation. T1 budget=40; T2–T4 complete ranking with top-5 diagnostics. Do not reconstruct targets from held-out labels.",
+        "Standalone source LLM used API-default sampling/reasoning, max completion32768 for GPT6 Astra and up to10 complete failure retries; agents allow40 tool rounds. Local budgets/retry rules must be declared separately."
+      ],
+      "unverified_or_missing": [
+        "Exact official processed task download/split artifact not recovered; paper values are contextual until artifacts are available."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P21",
+      "task": "PFArena T3: anchor-informed ranking",
+      "native_metric": "Spearman; NDCG; normalized max@K; Recall@K",
+      "catalog_native_inputs": "A measured anchor mutant + strictly extending candidate combinations",
+      "catalog_reference_evidence": "Existing experimental mutation measurements",
+      "catalog_split_contract": "67 assays; 3,648 candidates",
+      "catalog_source_url": "https://arxiv.org/html/2609.28921v1",
+      "published_baselines": [
+        {
+          "model": "ESM-2",
+          "metrics": {
+            "spearman": 0.3128,
+            "ndcg": 0.884,
+            "nms_at_5": 0.8099,
+            "recall_at_5": 0.3045
+          },
+          "source_id": "PFA",
+          "source_url": "https://arxiv.org/html/2609.28921v1",
+          "source_locator": "Table 8",
+          "protocol": "published native PFArena task; macro over 67 assays",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_assay_count": 67
+        },
+        {
+          "model": "GPT-6 Astra",
+          "metrics": {
+            "spearman": 0.3516,
+            "ndcg": 0.8886,
+            "nms_at_5": 0.8258,
+            "recall_at_5": 0.3134
+          },
+          "source_id": "PFA",
+          "source_url": "https://arxiv.org/html/2609.28921v1",
+          "source_locator": "Table 8",
+          "protocol": "published native PFArena task; macro over 67 assays",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_assay_count": 67
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Keep official candidate pool, context visibility, assay-normalization and macro aggregation. T1 budget=40; T2–T4 complete ranking with top-5 diagnostics. Do not reconstruct targets from held-out labels.",
+        "Standalone source LLM used API-default sampling/reasoning, max completion32768 for GPT6 Astra and up to10 complete failure retries; agents allow40 tool rounds. Local budgets/retry rules must be declared separately."
+      ],
+      "unverified_or_missing": [
+        "Exact official processed task download/split artifact not recovered; paper values are contextual until artifacts are available."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P22",
+      "task": "PFArena T4: single-mutant-informed ranking",
+      "native_metric": "Spearman; NDCG; normalized max@K; Recall@K",
+      "catalog_native_inputs": "Component single-mutant measurements + candidate multi-mutants",
+      "catalog_reference_evidence": "Existing experimental mutation measurements",
+      "catalog_split_contract": "29 assays; 2,638 candidates; 28,609 single-mutant context records",
+      "catalog_source_url": "https://arxiv.org/html/2609.28921v1",
+      "published_baselines": [
+        {
+          "model": "ESM-2",
+          "metrics": {
+            "spearman": 0.3153,
+            "ndcg": 0.8828,
+            "nms_at_5": 0.8129,
+            "recall_at_5": 0.2276
+          },
+          "source_id": "PFA",
+          "source_url": "https://arxiv.org/html/2609.28921v1",
+          "source_locator": "Table 9",
+          "protocol": "published native PFArena task; macro over 29 assays",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_assay_count": 29
+        },
+        {
+          "model": "GPT-6 Astra",
+          "metrics": {
+            "spearman": 0.5988,
+            "ndcg": 0.9274,
+            "nms_at_5": 0.8935,
+            "recall_at_5": 0.4483
+          },
+          "source_id": "PFA",
+          "source_url": "https://arxiv.org/html/2609.28921v1",
+          "source_locator": "Table 9",
+          "protocol": "published native PFArena task; macro over 29 assays",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_assay_count": 29
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Keep official candidate pool, context visibility, assay-normalization and macro aggregation. T1 budget=40; T2–T4 complete ranking with top-5 diagnostics. Do not reconstruct targets from held-out labels.",
+        "Standalone source LLM used API-default sampling/reasoning, max completion32768 for GPT6 Astra and up to10 complete failure retries; agents allow40 tool rounds. Local budgets/retry rules must be declared separately."
+      ],
+      "unverified_or_missing": [
+        "Exact official processed task download/split artifact not recovered; paper values are contextual until artifacts are available."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P23",
+      "task": "Mol-Instructions: Protein function generation",
+      "native_metric": "ROUGE-L in BioT5+ protein-text experiments",
+      "catalog_native_inputs": "Full protein sequence and instruction",
+      "catalog_reference_evidence": "Reference descriptions/annotations in Mol-Instructions",
+      "catalog_split_contract": "Use the Mol-Instructions task-specific split; not one interchangeable pool of protein questions.",
+      "catalog_source_url": "https://arxiv.org/html/2402.17810v2",
+      "published_baselines": [],
+      "comparison_status": "published_graph_only_exact_values_not_transcribed",
+      "comparability_requirements": [
+        "Use official Mol-Instructions test-task IDs, prompts, complete FASTA, task boundaries and native BLEU/METEOR/ROUGE implementations; references remain scorer-only. Do not compare 100-scale and unit-scale text metrics without conversion."
+      ],
+      "unverified_or_missing": [
+        "BioT5+ Figure 2 and Mol-Instructions Figure 5 show task comparison; no exact values were read from bars. Exact numeric table or archived author predictions still needed."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P24",
+      "task": "Mol-Instructions: Catalytic activity generation",
+      "native_metric": "ROUGE-L in BioT5+ protein-text experiments",
+      "catalog_native_inputs": "Full protein sequence and instruction",
+      "catalog_reference_evidence": "Reference descriptions/annotations in Mol-Instructions",
+      "catalog_split_contract": "Use the Mol-Instructions task-specific split; not one interchangeable pool of protein questions.",
+      "catalog_source_url": "https://arxiv.org/html/2402.17810v2",
+      "published_baselines": [],
+      "comparison_status": "published_graph_only_exact_values_not_transcribed",
+      "comparability_requirements": [
+        "Use official Mol-Instructions test-task IDs, prompts, complete FASTA, task boundaries and native BLEU/METEOR/ROUGE implementations; references remain scorer-only. Do not compare 100-scale and unit-scale text metrics without conversion."
+      ],
+      "unverified_or_missing": [
+        "BioT5+ Figure 2 and Mol-Instructions Figure 5 show task comparison; no exact values were read from bars. Exact numeric table or archived author predictions still needed."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P25",
+      "task": "Mol-Instructions: Domain and motif generation",
+      "native_metric": "ROUGE-L in BioT5+ protein-text experiments",
+      "catalog_native_inputs": "Full protein sequence and instruction",
+      "catalog_reference_evidence": "Reference descriptions/annotations in Mol-Instructions",
+      "catalog_split_contract": "Use the Mol-Instructions task-specific split; not one interchangeable pool of protein questions.",
+      "catalog_source_url": "https://arxiv.org/html/2402.17810v2",
+      "published_baselines": [],
+      "comparison_status": "published_graph_only_exact_values_not_transcribed",
+      "comparability_requirements": [
+        "Use official Mol-Instructions test-task IDs, prompts, complete FASTA, task boundaries and native BLEU/METEOR/ROUGE implementations; references remain scorer-only. Do not compare 100-scale and unit-scale text metrics without conversion."
+      ],
+      "unverified_or_missing": [
+        "BioT5+ Figure 2 and Mol-Instructions Figure 5 show task comparison; no exact values were read from bars. Exact numeric table or archived author predictions still needed."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P26",
+      "task": "Mol-Instructions: Functional description generation",
+      "native_metric": "ROUGE-L in BioT5+ protein-text experiments",
+      "catalog_native_inputs": "Full protein sequence and instruction",
+      "catalog_reference_evidence": "Reference descriptions/annotations in Mol-Instructions",
+      "catalog_split_contract": "Use the Mol-Instructions task-specific split; not one interchangeable pool of protein questions.",
+      "catalog_source_url": "https://arxiv.org/html/2402.17810v2",
+      "published_baselines": [],
+      "comparison_status": "published_graph_only_exact_values_not_transcribed",
+      "comparability_requirements": [
+        "Use official Mol-Instructions test-task IDs, prompts, complete FASTA, task boundaries and native BLEU/METEOR/ROUGE implementations; references remain scorer-only. Do not compare 100-scale and unit-scale text metrics without conversion."
+      ],
+      "unverified_or_missing": [
+        "BioT5+ Figure 2 and Mol-Instructions Figure 5 show task comparison; no exact values were read from bars. Exact numeric table or archived author predictions still needed."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P27",
+      "task": "NatureLM protein description",
+      "native_metric": "ROUGE-L",
+      "catalog_native_inputs": "Protein sequence",
+      "catalog_reference_evidence": "NCBI-derived reference descriptions",
+      "catalog_split_contract": "Paper reports a temporal split; exact frozen test release/count not recovered.",
+      "catalog_source_url": "https://arxiv.org/html/2502.07527v3",
+      "published_baselines": [
+        {
+          "model": "NatureLM",
+          "metrics": {
+            "1B_rouge_l": 0.548,
+            "8B_rouge_l": 0.572,
+            "8x7B_rouge_l": 0.585
+          },
+          "source_id": "NATURE",
+          "source_url": "https://arxiv.org/html/2502.07527v3",
+          "source_locator": "Table 11",
+          "protocol": "temporal NCBI protein-description holdout",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Requires exact temporal NCBI test collection and reference preprocessing. Mol-Instructions descriptions are a different test."
+      ],
+      "unverified_or_missing": [
+        "Exact processed NCBI temporal test artifact not recovered."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P28",
+      "task": "BioReason-Pro temporal GO test",
+      "native_metric": "Fmax; information-accretion-weighted Fmax",
+      "catalog_native_inputs": "Protein representations and the context permitted by the released evaluator",
+      "catalog_reference_evidence": "New curated target-aspect annotations",
+      "catalog_split_contract": "Released test data: 8,630 proteins; preserve the specified temporal and annotation cutoffs.",
+      "catalog_source_url": "https://www.biorxiv.org/content/10.64898/2026.03.19.712954v2.full",
+      "published_baselines": [],
+      "comparison_status": "published_summary_verified_aspect_values_unresolved",
+      "comparability_requirements": [
+        "Match 8,630-protein temporal IDs, ontology/IA files, parent propagation, allowed InterPro/PPI context and upstream GO-GPT/encoder evidence. Greedy, term-frequency and best-of-10 oracle are separate protocols; oracle answer selection is not deployable inference."
+      ],
+      "unverified_or_missing": [
+        "Requested paper v2 direct access failed. Primary v1 text reports rounded overall weighted summaries, but aspect-level score tables and exact aggregation were not verified; no scalar substituted for BP/MF/CC scores."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P29",
+      "task": "Bio-posttrain species-held-out GO test",
+      "native_metric": "Propagated GO-F1",
+      "catalog_native_inputs": "Protein inputs and permitted contextual annotations",
+      "catalog_reference_evidence": "Reference GO annotations",
+      "catalog_split_contract": "Two held-out species in the paper; exact species/counts not established in this review. Also discusses inherited temporal protocol.",
+      "catalog_source_url": "https://arxiv.org/html/2606.16517v1",
+      "published_baselines": [
+        {
+          "model": "Qwen3-4B-Thinking + ESM-3 (GRPO beta=0.001, 1 epoch)",
+          "metrics": {
+            "id_go_f1_at_4k": 0.935,
+            "ood_go_f1_at_4k": 0.956
+          },
+          "source_id": "POST",
+          "source_url": "https://arxiv.org/html/2606.16517v1",
+          "source_locator": "Appendix Table 9",
+          "protocol": "4K RL examples, species-held-out protein test",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "metric_ambiguity": "B.4 and D.3 call metric propagated GO-F1; Appendix Table 4 caption elsewhere calls protein metric Fmax. Preserve methods definition and resolve with released scorer."
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Require species-defined ID/OOD artifacts and native ESM-3/InterPro inputs, no PPI/GO-graph inputs in B.4. Do not substitute BioReason-Pro temporal split or its Fmax."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P30",
+      "task": "MutaDescribe mutation explanation",
+      "native_metric": "BLEU-2; ROUGE-L; GPT-4-plus-human categorical review",
+      "catalog_native_inputs": "Reference and mutant sequences/change, plus model-specific protein context",
+      "catalog_reference_evidence": "Expert-source annotations, publication-enriched descriptions; synthetic reversals present in corpus",
+      "catalog_split_contract": "Random split then similarity tiers: Easy 460, Medium 384, Hard 404. Separate temporal test has 1,611 examples.",
+      "catalog_source_url": "https://arxiv.org/html/2410.22949v1",
+      "published_baselines": [
+        {
+          "model": "MutaPLM",
+          "metrics": {
+            "easy": {
+              "rouge_l_percent": 25.8,
+              "bleu2_percent": 18.77
+            },
+            "medium": {
+              "rouge_l_percent": 21.07,
+              "bleu2_percent": 12.59
+            },
+            "hard": {
+              "rouge_l_percent": 16.51,
+              "bleu2_percent": 8.69
+            },
+            "reported_average": {
+              "rouge_l_percent": 21.34,
+              "bleu2_percent": 13.61
+            }
+          },
+          "source_id": "MUTA",
+          "source_url": "https://arxiv.org/html/2410.22949v1",
+          "source_locator": "Table 2",
+          "protocol": "structural/similarity test splits: 460 easy, 384 medium, 404 hard",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_counts": {
+            "easy": 460,
+            "medium": 384,
+            "hard": 404
+          }
+        },
+        {
+          "model": "MutaPLM",
+          "metrics": {
+            "rouge_l_percent": 16.51,
+            "bleu2_percent": 10.83,
+            "bleu4_percent": 6.15,
+            "meteor_percent": 17.84,
+            "rouge1_percent": 18.99,
+            "rouge2_percent": 6.92
+          },
+          "source_id": "MUTA",
+          "source_url": "https://arxiv.org/html/2410.22949v1",
+          "source_locator": "Table A10",
+          "protocol": "temporal test split; not the structural hard test",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 1611
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Match structural vs temporal IDs, source prompt/input contract, tokenizer and metric implementation. Do not inject gold functional descriptions or effect text into an explanation prompt. Known-position prediction differs from full 19L retrieval."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P31",
+      "task": "MutaDescribe mutation engineering — position supplied",
+      "native_metric": "Accuracy",
+      "catalog_native_inputs": "Protein, desired effect, correct mutation position",
+      "catalog_reference_evidence": "Annotated reference mutation",
+      "catalog_split_contract": "Same similarity/temporal splits as MutaDescribe; supplied position simplifies the task.",
+      "catalog_source_url": "https://arxiv.org/html/2410.22949v1",
+      "published_baselines": [
+        {
+          "model": "MutaPLM",
+          "metrics": {
+            "accuracy_percent": {
+              "easy": 56.08,
+              "medium": 48.69,
+              "hard": 55.19,
+              "reported_average": 53.51
+            }
+          },
+          "source_id": "MUTA",
+          "source_url": "https://arxiv.org/html/2410.22949v1",
+          "source_locator": "Table 3",
+          "protocol": "structural/similarity tests; known-position accuracy and unrestricted top-50 recall are distinct tasks",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        },
+        {
+          "model": "MutaPLM",
+          "metrics": {
+            "accuracy_percent": 58.5
+          },
+          "source_id": "MUTA",
+          "source_url": "https://arxiv.org/html/2410.22949v1",
+          "source_locator": "Table A11",
+          "protocol": "temporal test split",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 1611
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Match structural vs temporal IDs, source prompt/input contract, tokenizer and metric implementation. Do not inject gold functional descriptions or effect text into an explanation prompt. Known-position prediction differs from full 19L retrieval."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P32",
+      "task": "MutaDescribe mutation engineering — position unknown",
+      "native_metric": "Recall@50",
+      "catalog_native_inputs": "Protein and desired effect",
+      "catalog_reference_evidence": "Annotated reference mutation",
+      "catalog_split_contract": "Search covers 19 × sequence-length substitutions; preserve the paper's candidate definition.",
+      "catalog_source_url": "https://arxiv.org/html/2410.22949v1",
+      "published_baselines": [
+        {
+          "model": "MutaPLM",
+          "metrics": {
+            "recall_at_50_percent": {
+              "easy": 43.47,
+              "medium": 34.89,
+              "hard": 43.81,
+              "reported_average": 40.94
+            }
+          },
+          "source_id": "MUTA",
+          "source_url": "https://arxiv.org/html/2410.22949v1",
+          "source_locator": "Table 3",
+          "protocol": "structural/similarity tests; known-position accuracy and unrestricted top-50 recall are distinct tasks",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        },
+        {
+          "model": "MutaPLM",
+          "metrics": {
+            "recall_at_50_percent": 46.05
+          },
+          "source_id": "MUTA",
+          "source_url": "https://arxiv.org/html/2410.22949v1",
+          "source_locator": "Table A11",
+          "protocol": "temporal test split",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 1611
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Match structural vs temporal IDs, source prompt/input contract, tokenizer and metric implementation. Do not inject gold functional descriptions or effect text into an explanation prompt. Known-position prediction differs from full 19L retrieval."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P33",
+      "task": "MutaPLM low-N fitness regression",
+      "native_metric": "Spearman",
+      "catalog_native_inputs": "Variant representations; a separately fitted regression head",
+      "catalog_reference_evidence": "Experimental Spike–ACE2 and avGFP measurements",
+      "catalog_split_contract": "192 training and 48 validation samples; five random seeds. Remaining held-out data evaluated per source.",
+      "catalog_source_url": "https://arxiv.org/html/2410.22949v1",
+      "published_baselines": [
+        {
+          "model": "MutaPLM",
+          "metrics": {
+            "avgfp_spearman": 0.596
+          },
+          "source_id": "MUTA",
+          "source_url": "https://arxiv.org/html/2410.22949v1",
+          "source_locator": "Table A12",
+          "protocol": "192 train + 48 validation examples; trained regression MLP; avGFP component only",
+          "value_status": "published_rounded_as_printed",
+          "run_count": 5,
+          "reported_std": {
+            "avgfp_spearman": 0.032
+          },
+          "scope_note": "Spike–ACE2 component remains held; no requests or candidate payloads inspected for comparison research."
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Low-N supervised feature/head protocol is not reproduced by zero-shot scalar text output; no new head fitting is authorized."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P34",
+      "task": "MutaPLM iterative sequence optimization",
+      "native_metric": "Mean predicted fitness trajectory and dispersion",
+      "catalog_native_inputs": "Starting protein + textual objective + search procedure",
+      "catalog_reference_evidence": "ESM landscape-model predictions, not new experiments",
+      "catalog_split_contract": "Six landscapes: AAV, AMIE, avGFP, E4B, LGK, UBE2I; 20 independent runs; preserve beam/search settings.",
+      "catalog_source_url": "https://arxiv.org/html/2410.22949v1",
+      "published_baselines": [],
+      "comparison_status": "published_curve_only_exact_values_not_transcribed",
+      "comparability_requirements": [],
+      "unverified_or_missing": [
+        "Multi-round optimization shown in Figure 5; exact published per-round numeric table unavailable in inspected text. Native six-protein objectives/oracles/query budgets required."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P35",
+      "task": "ProtST text-to-protein retrieval",
+      "native_metric": "Top-retrieval inspection; docking scores in case studies",
+      "catalog_native_inputs": "Text query and a protein search collection",
+      "catalog_reference_evidence": "GO annotations and selected docking analyses",
+      "catalog_split_contract": "Selected queries such as heme binding; not a universal, fixed retrieval benchmark with one headline Recall@K.",
+      "catalog_source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+      "published_baselines": [],
+      "comparison_status": "qualitative_native_case_study_no_universal_scalar",
+      "comparability_requirements": [],
+      "unverified_or_missing": [
+        "ProtST Section 4.4/Appendix D report selected retrieval and docking cases, not a universal fixed Recall@K scoreboard."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P36",
+      "task": "BioT5+ description-guided protein design",
+      "native_metric": "Qualitative cases and sequence/reference comparisons",
+      "catalog_native_inputs": "Desired property/function in text",
+      "catalog_reference_evidence": "Selected reference/case comparisons",
+      "catalog_split_contract": "The paper does not define a generally established benchmark for this task.",
+      "catalog_source_url": "https://arxiv.org/html/2402.17810v2",
+      "published_baselines": [],
+      "comparison_status": "qualitative_native_case_study_no_universal_scalar",
+      "comparability_requirements": [],
+      "unverified_or_missing": [
+        "BioT5+ Appendix G.3 says no established benchmark and presents case studies; no invented aggregate or exact-sequence score."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P37",
+      "task": "NatureLM unconditional generation",
+      "native_metric": "Length distribution; clustering-based diversity; pLDDT",
+      "catalog_native_inputs": "Protein generation prompt/prefix",
+      "catalog_reference_evidence": "Sequence statistics and OmegaFold predictions",
+      "catalog_split_contract": "Generated samples compared with natural sequences; not a labeled holdout prediction set.",
+      "catalog_source_url": "https://arxiv.org/html/2502.07527v3",
+      "published_baselines": [
+        {
+          "model": "NatureLM (8x7B)",
+          "metrics": {
+            "average_length": 318,
+            "diversity_50pct_clusters_per_sequence": 0.989,
+            "omegafold_mean_plddt_short_sequences": 75.9
+          },
+          "source_id": "NATURE",
+          "source_url": "https://arxiv.org/html/2502.07527v3",
+          "source_locator": "Table 8",
+          "protocol": "unconditional generation; pLDDT computed only on sequences shorter than 100 residues",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Match prompt/generation count, validity filter, 50%-identity cluster implementation, length distribution and OmegaFold short-sequence evaluator; no experimental folding claim."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P38",
+      "task": "NatureLM stability/solubility-conditioned generation",
+      "native_metric": "Predicted property scores; diversity",
+      "catalog_native_inputs": "Property instruction",
+      "catalog_reference_evidence": "SFM-Protein stability/solubility predictor",
+      "catalog_split_contract": "Paper uses a natural UR50 reference subset of 1,000 sequences in the conditioned comparison.",
+      "catalog_source_url": "https://arxiv.org/html/2502.07527v3",
+      "published_baselines": [
+        {
+          "model": "NatureLM (8x7B)",
+          "metrics": {
+            "stability_oracle_mean_probability": 0.655,
+            "stability_oracle_fraction_above_half": 0.812
+          },
+          "source_id": "NATURE",
+          "source_url": "https://arxiv.org/html/2502.07527v3",
+          "source_locator": "Table 9",
+          "protocol": "stability-conditioned generation using SFM-Protein classifier; not measured stability",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Require same released oracle, prompts, generation budget and classifier threshold. Solubility values remain plot-only; do not convert proxy scores into measurements."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P39",
+      "task": "NatureLM heme-binding case study",
+      "native_metric": "Qualitative description/complex screening",
+      "catalog_native_inputs": "Text or heme-related input",
+      "catalog_reference_evidence": "Generated descriptions and Protenix predicted complexes",
+      "catalog_split_contract": "Selected candidates; no standard released labeled test-set size.",
+      "catalog_source_url": "https://arxiv.org/html/2502.07527v3",
+      "published_baselines": [],
+      "comparison_status": "qualitative_native_case_study_no_universal_scalar",
+      "comparability_requirements": [],
+      "unverified_or_missing": [
+        "NatureLM Section 4.5 is a selected heme-design pipeline/case study with keyword screening and Protenix; no population wet-lab success metric."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P40",
+      "task": "RAbD CDR-H3 redesign",
+      "native_metric": "NatureLM: AAR. Proteo-R1: AAR, RMSD, lDDT, TM-score, DockQ.",
+      "catalog_native_inputs": "Antigen, antibody framework, fixed complex context; H3 masked",
+      "catalog_reference_evidence": "Reference antibody–antigen structures/sequences",
+      "catalog_split_contract": "60 complexes; retain paper-specific renumbering, masked region and preprocessing.",
+      "catalog_source_url": "https://arxiv.org/html/2502.07527v3\nhttps://arxiv.org/html/2605.02937v1",
+      "published_baselines": [
+        {
+          "model": "NatureLM (8x7B)",
+          "metrics": {
+            "aar": 0.376
+          },
+          "source_id": "NATURE",
+          "source_url": "https://arxiv.org/html/2502.07527v3",
+          "source_locator": "Table 10",
+          "protocol": "60 RAbD complexes; sequence-only antigen/framework input",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 60
+        },
+        {
+          "model": "Proteo-R1",
+          "metrics": {
+            "aar_percent": 10.75,
+            "lddt": 0.9693,
+            "tmscore": 0.9816,
+            "rmsd_angstrom": 2.46,
+            "dockq": 0.801
+          },
+          "source_id": "PROTEOR",
+          "source_url": "https://arxiv.org/html/2605.02937v1",
+          "source_locator": "Table 2",
+          "protocol": "60 RAbD complexes, IMGT renumbering, H3-only masked; full structure/sequence generation",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 60
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Specify sequence-only vs structural input, H3-only vs all-six-CDR masking, exact split, sample count/selection and postprocessing. Qwen text generation alone cannot supply native geometric/interface metrics. Oracle-anchor variant is excluded from reported comparator."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P41",
+      "task": "Proteo-R1 all-CDR SAbDab holdout",
+      "native_metric": "Structural/recovery/interface metrics; Rosetta-derived energy and clash diagnostics",
+      "catalog_native_inputs": "Antigen/framework/docking context with CDR sequence/geometry masked",
+      "catalog_reference_evidence": "Held-out SAbDab complexes",
+      "catalog_split_contract": "Release-time filtering and 50%-identity H3 clusters; 9:0.5:0.5 cluster split. Exact test count not established.",
+      "catalog_source_url": "https://arxiv.org/html/2605.02937v1",
+      "published_baselines": [
+        {
+          "model": "Proteo-R1",
+          "metrics": {
+            "per_cdr_rmsd_angstrom": {
+              "H1": 1.33,
+              "H2": 1.13,
+              "H3": 3.81,
+              "L1": 1.54,
+              "L2": 0.85,
+              "L3": 1.51
+            },
+            "h3_loop_rmsd_angstrom": 4.51,
+            "interface_improvement_percent": 56.58,
+            "internal_clashes_percent": 0.5,
+            "external_clashes_percent": 0.14,
+            "backbone_jsd": 0.2661
+          },
+          "source_id": "PROTEOR",
+          "source_url": "https://arxiv.org/html/2605.02937v1",
+          "source_locator": "Table 1",
+          "protocol": "simultaneous all-six-CDR redesign; held-out SAbDab complex/framework and known pose",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Specify sequence-only vs structural input, H3-only vs all-six-CDR masking, exact split, sample count/selection and postprocessing. Qwen text generation alone cannot supply native geometric/interface metrics. Oracle-anchor variant is excluded from reported comparator."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P42",
+      "task": "STRIDE GFP generated-candidate evaluation",
+      "native_metric": "Predicted improvement/success; uniqueness; novelty",
+      "catalog_native_inputs": "Reference GFP + editing objective",
+      "catalog_reference_evidence": "Fixed SaProt fluorescence predictor",
+      "catalog_split_contract": "100 candidates per method from a common source; separate replace-only and full-edit settings.",
+      "catalog_source_url": "https://arxiv.org/html/2603.03573v1",
+      "published_baselines": [
+        {
+          "model": "STRIDE",
+          "metrics": {
+            "success_count": 61,
+            "attempt_count": 100,
+            "unique_improved_count": 59,
+            "novel_unique_improved_count": 53
+          },
+          "source_id": "STRIDE",
+          "source_url": "https://arxiv.org/html/2603.03573v1",
+          "source_locator": "Table 4",
+          "protocol": "replace_only; fixed avGFP source, 1–3 edit operations, fixed fluorescence predictor",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 100,
+          "source_inconsistency": null
+        },
+        {
+          "model": "STRIDE",
+          "metrics": {
+            "success_count": 89,
+            "attempt_count": 100,
+            "unique_improved_count": 78,
+            "novel_unique_improved_count": 76
+          },
+          "source_id": "STRIDE",
+          "source_url": "https://arxiv.org/html/2603.03573v1",
+          "source_locator": "Table 3",
+          "protocol": "add_delete_replace; fixed avGFP source, 1–3 edit operations, fixed fluorescence predictor",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 100,
+          "source_inconsistency": "Full-action Table3 prints Unique 78/79 although success=89/100 and narrative unique=78; preserve counts and flag denominator inconsistency."
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Match exact WT source, edit budget, decoder, oracle checkpoint, novelty reference pool and 100 candidates per condition. Primary comparison is replace-only; indel scores are an oracle reliability stress test, not measured fluorescence."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P43",
+      "task": "Drug–target interaction — BioSNAP/Human/BindingDB",
+      "native_metric": "AUROC in BioT5+ comparisons",
+      "catalog_native_inputs": "Small-molecule representation and protein sequence",
+      "catalog_reference_evidence": "Dataset-specific interaction/affinity-derived labels",
+      "catalog_split_contract": "Three source benchmarks; preserve each split/negative/threshold rule.",
+      "catalog_source_url": "https://arxiv.org/html/2402.17810v2",
+      "published_baselines": [
+        {
+          "model": "BioT5+",
+          "metrics": {
+            "biosnap_auroc": 0.939,
+            "human_auroc": 0.987,
+            "bindingdb_auroc": 0.964
+          },
+          "source_id": "BIOT5",
+          "source_url": "https://arxiv.org/html/2402.17810v2",
+          "source_locator": "Table 8",
+          "protocol": "supervised DTI; source-specific paired drug SELFIES and protein sequences",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": {
+            "biosnap_auroc": 0.001,
+            "human_auroc": 0.001,
+            "bindingdb_auroc": 0.001
+          }
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Keep source test IDs, pair construction, class labels and metric. Zero-shot Qwen is a separate training regime from trained BioT5+/NatureLM systems."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "P44",
+      "task": "BioReason-Pro explanation assessment",
+      "native_metric": "Judge rubrics; qualitative/expert review",
+      "catalog_native_inputs": "Protein/context plus generated explanation",
+      "catalog_reference_evidence": "Reference annotations, model judging and selected expert analyses",
+      "catalog_split_contract": "Separate from the 8,630-protein GO-label metric; exact scored explanation subset not established here.",
+      "catalog_source_url": "https://www.biorxiv.org/content/10.64898/2026.03.19.712954v2.full",
+      "published_baselines": [],
+      "comparison_status": "native_judge_and_expert_protocol_needed",
+      "comparability_requirements": [
+        "Separate GO endpoint score from explanation assessment; native reference evidence and judge must remain scorer-side. Unsupported claims differ from contradicted claims; local substitutions get separate variant IDs."
+      ],
+      "unverified_or_missing": [
+        "Primary v1 describes GPT-5.1 judge axes and human comparison; version2 exact numeric table/score aggregation not verified. No local judge substituted."
+      ],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "B01",
+      "task": "LAB-Bench / LitQA2",
+      "native_metric": "Accuracy; selective precision and coverage when abstention is enabled",
+      "catalog_native_inputs": "Literature question; access to papers depends on evaluation protocol",
+      "catalog_reference_evidence": "Benchmark reference answers curated by task creators",
+      "catalog_split_contract": "Public subset commonly 1,967 questions across eight categories; original full set and private portion differ. Pin dataset revision.",
+      "catalog_source_url": "https://arxiv.org/html/2407.10362v1\nhttps://arxiv.org/html/2606.00902v1",
+      "published_baselines": [
+        {
+          "model": "GPT-4o",
+          "metrics": {
+            "accuracy": 0.27,
+            "precision": 0.46,
+            "coverage": 0.58
+          },
+          "source_id": "LAB",
+          "source_url": "https://arxiv.org/html/2407.10362v1",
+          "source_locator": "Appendix Tables 2–4",
+          "protocol": "full public+private; no tools; native zero-shot CoT; abstention choice",
+          "value_status": "published_rounded_as_printed",
+          "run_count": 3,
+          "reported_std": null,
+          "test_case_count": 248,
+          "reported_decimal_places": 2
+        },
+        {
+          "model": "Ryze public-set evaluation",
+          "metrics": {
+            "qwen3_vl_8b_accuracy_percent": 38.7,
+            "gpt5_2_accuracy_percent": 45.7,
+            "biovlm_8b_accuracy_percent": 65.5
+          },
+          "source_id": "RYZE",
+          "source_url": "https://arxiv.org/html/2606.00902v1",
+          "source_locator": "Table 1",
+          "protocol": "1,967 public cases total; sample-weighted overall aggregation",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 199,
+          "reported_decimal_places": 1,
+          "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
+        }
+      ],
+      "comparison_status": "contextual_only_until_same_case_protocol_match",
+      "comparability_requirements": [
+        "Native public question/choice transformation, abstention and official metrics; preserve images for FigQA/TableQA, title+DOI for SuppQA, full protocol for ProtocolQA. Reviewed subsets and seeded single runs differ from full-set three-run means."
+      ],
+      "unverified_or_missing": [
+        "No archived author per-case predictions found in pinned official LAB tree, official README or targeted primary-source search; cannot rescore author models on our reviewed IDs."
+      ],
+      "published_full_case_count": 248,
+      "released_public_case_count": 199,
+      "local_model_result_in_this_report": {
+        "model": "Qwen3.8-27B BF16",
+        "reviewed_case_count": 197,
+        "correct": 77,
+        "accuracy": 0.39086294416243655,
+        "precision": 0.4095744680851064,
+        "coverage": 0.9543147208121827,
+        "runs": 1,
+        "scope": "reviewed public subset; two held cases",
+        "source_path": "results/runs/qwen38_27b_litqa2_public_reviewed_2026-10-15/scores.json",
+        "comparison_claim": "contextual side-by-side; cannot infer full-set superiority or significance"
+      }
+    },
+    {
+      "task_id": "B02",
+      "task": "LAB-Bench / DbQA",
+      "native_metric": "Accuracy; selective precision and coverage when abstention is enabled",
+      "catalog_native_inputs": "Database-oriented question; resource access must be stated",
+      "catalog_reference_evidence": "Benchmark reference answers curated by task creators",
+      "catalog_split_contract": "Public subset commonly 1,967 questions across eight categories; original full set and private portion differ. Pin dataset revision.",
+      "catalog_source_url": "https://arxiv.org/html/2407.10362v1\nhttps://arxiv.org/html/2606.00902v1",
+      "published_baselines": [
+        {
+          "model": "Ryze public-set evaluation",
+          "metrics": {
+            "qwen3_vl_8b_accuracy_percent": 31.2,
+            "gpt5_2_accuracy_percent": 41.7,
+            "biovlm_8b_accuracy_percent": 48.9
+          },
+          "source_id": "RYZE",
+          "source_url": "https://arxiv.org/html/2606.00902v1",
+          "source_locator": "Table 1",
+          "protocol": "1,967 public cases total; sample-weighted overall aggregation",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 520,
+          "reported_decimal_places": 1,
+          "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
+        }
+      ],
+      "comparison_status": "contextual_only_until_same_case_protocol_match",
+      "comparability_requirements": [
+        "Native public question/choice transformation, abstention and official metrics; preserve images for FigQA/TableQA, title+DOI for SuppQA, full protocol for ProtocolQA. Reviewed subsets and seeded single runs differ from full-set three-run means."
+      ],
+      "unverified_or_missing": [
+        "Original paper prints per-subtask metrics; no exact category aggregate transcribed. Public-only Figure7 is graphical; no inferred numbers.",
+        "No archived author per-case predictions found in pinned official LAB tree, official README or targeted primary-source search; cannot rescore author models on our reviewed IDs."
+      ],
+      "published_full_case_count": 650,
+      "released_public_case_count": 520,
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "B03",
+      "task": "LAB-Bench / SuppQA",
+      "native_metric": "Accuracy; selective precision and coverage when abstention is enabled",
+      "catalog_native_inputs": "Question about supplementary information; supplied/retrieved documents if allowed",
+      "catalog_reference_evidence": "Benchmark reference answers curated by task creators",
+      "catalog_split_contract": "Public subset commonly 1,967 questions across eight categories; original full set and private portion differ. Pin dataset revision.",
+      "catalog_source_url": "https://arxiv.org/html/2407.10362v1\nhttps://arxiv.org/html/2606.00902v1",
+      "published_baselines": [
+        {
+          "model": "GPT-4o",
+          "metrics": {
+            "accuracy": 0.13,
+            "precision": 0.47,
+            "coverage": 0.29
+          },
+          "source_id": "LAB",
+          "source_url": "https://arxiv.org/html/2407.10362v1",
+          "source_locator": "Appendix Tables 2–4",
+          "protocol": "full public+private; no tools; native zero-shot CoT; abstention choice",
+          "value_status": "published_rounded_as_printed",
+          "run_count": 3,
+          "reported_std": null,
+          "test_case_count": 102,
+          "reported_decimal_places": 2
+        },
+        {
+          "model": "Ryze public-set evaluation",
+          "metrics": {
+            "qwen3_vl_8b_accuracy_percent": 24.8,
+            "gpt5_2_accuracy_percent": 48.8,
+            "biovlm_8b_accuracy_percent": 44.2
+          },
+          "source_id": "RYZE",
+          "source_url": "https://arxiv.org/html/2606.00902v1",
+          "source_locator": "Table 1",
+          "protocol": "1,967 public cases total; sample-weighted overall aggregation",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 82,
+          "reported_decimal_places": 1,
+          "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
+        }
+      ],
+      "comparison_status": "contextual_only_until_same_case_protocol_match",
+      "comparability_requirements": [
+        "Native public question/choice transformation, abstention and official metrics; preserve images for FigQA/TableQA, title+DOI for SuppQA, full protocol for ProtocolQA. Reviewed subsets and seeded single runs differ from full-set three-run means."
+      ],
+      "unverified_or_missing": [
+        "No archived author per-case predictions found in pinned official LAB tree, official README or targeted primary-source search; cannot rescore author models on our reviewed IDs."
+      ],
+      "published_full_case_count": 102,
+      "released_public_case_count": 82,
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "B04",
+      "task": "LAB-Bench / FigQA",
+      "native_metric": "Accuracy; selective precision and coverage when abstention is enabled",
+      "catalog_native_inputs": "Figure and associated question",
+      "catalog_reference_evidence": "Benchmark reference answers curated by task creators",
+      "catalog_split_contract": "Public subset commonly 1,967 questions across eight categories; original full set and private portion differ. Pin dataset revision.",
+      "catalog_source_url": "https://arxiv.org/html/2407.10362v1\nhttps://arxiv.org/html/2606.00902v1",
+      "published_baselines": [
+        {
+          "model": "GPT-4o",
+          "metrics": {
+            "accuracy": 0.29,
+            "precision": 0.3,
+            "coverage": 0.97
+          },
+          "source_id": "LAB",
+          "source_url": "https://arxiv.org/html/2407.10362v1",
+          "source_locator": "Appendix Tables 2–4",
+          "protocol": "full public+private; no tools; native zero-shot CoT; abstention choice",
+          "value_status": "published_rounded_as_printed",
+          "run_count": 3,
+          "reported_std": null,
+          "test_case_count": 226,
+          "reported_decimal_places": 2
+        },
+        {
+          "model": "Ryze public-set evaluation",
+          "metrics": {
+            "qwen3_vl_8b_accuracy_percent": 24.7,
+            "gpt5_2_accuracy_percent": 36.5,
+            "biovlm_8b_accuracy_percent": 35.2
+          },
+          "source_id": "RYZE",
+          "source_url": "https://arxiv.org/html/2606.00902v1",
+          "source_locator": "Table 1",
+          "protocol": "1,967 public cases total; sample-weighted overall aggregation",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 181,
+          "reported_decimal_places": 1,
+          "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
+        }
+      ],
+      "comparison_status": "contextual_only_until_same_case_protocol_match",
+      "comparability_requirements": [
+        "Native public question/choice transformation, abstention and official metrics; preserve images for FigQA/TableQA, title+DOI for SuppQA, full protocol for ProtocolQA. Reviewed subsets and seeded single runs differ from full-set three-run means."
+      ],
+      "unverified_or_missing": [
+        "No archived author per-case predictions found in pinned official LAB tree, official README or targeted primary-source search; cannot rescore author models on our reviewed IDs."
+      ],
+      "published_full_case_count": 226,
+      "released_public_case_count": 181,
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "B05",
+      "task": "LAB-Bench / TableQA",
+      "native_metric": "Accuracy; selective precision and coverage when abstention is enabled",
+      "catalog_native_inputs": "Table and question",
+      "catalog_reference_evidence": "Benchmark reference answers curated by task creators",
+      "catalog_split_contract": "Public subset commonly 1,967 questions across eight categories; original full set and private portion differ. Pin dataset revision.",
+      "catalog_source_url": "https://arxiv.org/html/2407.10362v1\nhttps://arxiv.org/html/2606.00902v1",
+      "published_baselines": [
+        {
+          "model": "GPT-4o",
+          "metrics": {
+            "accuracy": 0.71,
+            "precision": 0.75,
+            "coverage": 0.95
+          },
+          "source_id": "LAB",
+          "source_url": "https://arxiv.org/html/2407.10362v1",
+          "source_locator": "Appendix Tables 2–4",
+          "protocol": "full public+private; no tools; native zero-shot CoT; abstention choice",
+          "value_status": "published_rounded_as_printed",
+          "run_count": 3,
+          "reported_std": null,
+          "test_case_count": 305,
+          "reported_decimal_places": 2
+        },
+        {
+          "model": "Ryze public-set evaluation",
+          "metrics": {
+            "qwen3_vl_8b_accuracy_percent": 34.0,
+            "gpt5_2_accuracy_percent": 36.9,
+            "biovlm_8b_accuracy_percent": 45.6
+          },
+          "source_id": "RYZE",
+          "source_url": "https://arxiv.org/html/2606.00902v1",
+          "source_locator": "Table 1",
+          "protocol": "1,967 public cases total; sample-weighted overall aggregation",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 244,
+          "reported_decimal_places": 1,
+          "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
+        }
+      ],
+      "comparison_status": "contextual_only_until_same_case_protocol_match",
+      "comparability_requirements": [
+        "Native public question/choice transformation, abstention and official metrics; preserve images for FigQA/TableQA, title+DOI for SuppQA, full protocol for ProtocolQA. Reviewed subsets and seeded single runs differ from full-set three-run means."
+      ],
+      "unverified_or_missing": [
+        "No archived author per-case predictions found in pinned official LAB tree, official README or targeted primary-source search; cannot rescore author models on our reviewed IDs."
+      ],
+      "published_full_case_count": 305,
+      "released_public_case_count": 244,
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "B06",
+      "task": "LAB-Bench / ProtocolQA",
+      "native_metric": "Accuracy; selective precision and coverage when abstention is enabled",
+      "catalog_native_inputs": "A procedure-related scenario and question",
+      "catalog_reference_evidence": "Benchmark reference answers curated by task creators",
+      "catalog_split_contract": "Public subset commonly 1,967 questions across eight categories; original full set and private portion differ. Pin dataset revision.",
+      "catalog_source_url": "https://arxiv.org/html/2407.10362v1\nhttps://arxiv.org/html/2606.00902v1",
+      "published_baselines": [
+        {
+          "model": "GPT-4o",
+          "metrics": {
+            "accuracy": 0.53,
+            "precision": 0.56,
+            "coverage": 0.95
+          },
+          "source_id": "LAB",
+          "source_url": "https://arxiv.org/html/2407.10362v1",
+          "source_locator": "Appendix Tables 2–4",
+          "protocol": "full public+private; no tools; native zero-shot CoT; abstention choice",
+          "value_status": "published_rounded_as_printed",
+          "run_count": 3,
+          "reported_std": null,
+          "test_case_count": 135,
+          "reported_decimal_places": 2
+        },
+        {
+          "model": "Ryze public-set evaluation",
+          "metrics": {
+            "qwen3_vl_8b_accuracy_percent": 38.3,
+            "gpt5_2_accuracy_percent": 65.7,
+            "biovlm_8b_accuracy_percent": 72.3
+          },
+          "source_id": "RYZE",
+          "source_url": "https://arxiv.org/html/2606.00902v1",
+          "source_locator": "Table 1",
+          "protocol": "1,967 public cases total; sample-weighted overall aggregation",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 108,
+          "reported_decimal_places": 1,
+          "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
+        }
+      ],
+      "comparison_status": "contextual_only_until_same_case_protocol_match",
+      "comparability_requirements": [
+        "Native public question/choice transformation, abstention and official metrics; preserve images for FigQA/TableQA, title+DOI for SuppQA, full protocol for ProtocolQA. Reviewed subsets and seeded single runs differ from full-set three-run means."
+      ],
+      "unverified_or_missing": [
+        "No archived author per-case predictions found in pinned official LAB tree, official README or targeted primary-source search; cannot rescore author models on our reviewed IDs."
+      ],
+      "published_full_case_count": 135,
+      "released_public_case_count": 108,
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "B07",
+      "task": "LAB-Bench / SeqQA",
+      "native_metric": "Accuracy; selective precision and coverage when abstention is enabled",
+      "catalog_native_inputs": "Sequence plus a transformation/analysis question",
+      "catalog_reference_evidence": "Benchmark reference answers curated by task creators",
+      "catalog_split_contract": "Public subset commonly 1,967 questions across eight categories; original full set and private portion differ. Pin dataset revision.",
+      "catalog_source_url": "https://arxiv.org/html/2407.10362v1\nhttps://arxiv.org/html/2606.00902v1",
+      "published_baselines": [
+        {
+          "model": "Ryze public-set evaluation",
+          "metrics": {
+            "qwen3_vl_8b_accuracy_percent": 43.4,
+            "gpt5_2_accuracy_percent": 47.0,
+            "biovlm_8b_accuracy_percent": 42.8
+          },
+          "source_id": "RYZE",
+          "source_url": "https://arxiv.org/html/2606.00902v1",
+          "source_locator": "Table 1",
+          "protocol": "1,967 public cases total; sample-weighted overall aggregation",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 600,
+          "reported_decimal_places": 1,
+          "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
+        }
+      ],
+      "comparison_status": "contextual_only_until_same_case_protocol_match",
+      "comparability_requirements": [
+        "Native public question/choice transformation, abstention and official metrics; preserve images for FigQA/TableQA, title+DOI for SuppQA, full protocol for ProtocolQA. Reviewed subsets and seeded single runs differ from full-set three-run means."
+      ],
+      "unverified_or_missing": [
+        "Original paper prints per-subtask metrics; no exact category aggregate transcribed. Public-only Figure7 is graphical; no inferred numbers.",
+        "No archived author per-case predictions found in pinned official LAB tree, official README or targeted primary-source search; cannot rescore author models on our reviewed IDs."
+      ],
+      "published_full_case_count": 750,
+      "released_public_case_count": 600,
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "B08",
+      "task": "LAB-Bench / Cloning scenarios",
+      "native_metric": "Accuracy; selective precision and coverage when abstention is enabled",
+      "catalog_native_inputs": "Scenario and sequence/context information",
+      "catalog_reference_evidence": "Benchmark reference answers curated by task creators",
+      "catalog_split_contract": "Public subset commonly 1,967 questions across eight categories; original full set and private portion differ. Pin dataset revision.",
+      "catalog_source_url": "https://arxiv.org/html/2407.10362v1\nhttps://arxiv.org/html/2606.00902v1",
+      "published_baselines": [
+        {
+          "model": "GPT-4o",
+          "metrics": {
+            "accuracy": 0.28,
+            "precision": 0.37,
+            "coverage": 0.77
+          },
+          "source_id": "LAB",
+          "source_url": "https://arxiv.org/html/2407.10362v1",
+          "source_locator": "Appendix Tables 2–4",
+          "protocol": "full public+private; no tools; native zero-shot CoT; abstention choice",
+          "value_status": "published_rounded_as_printed",
+          "run_count": 3,
+          "reported_std": null,
+          "test_case_count": 41,
+          "reported_decimal_places": 2
+        },
+        {
+          "model": "Ryze public-set evaluation",
+          "metrics": {
+            "qwen3_vl_8b_accuracy_percent": 24.2,
+            "gpt5_2_accuracy_percent": 36.4,
+            "biovlm_8b_accuracy_percent": 38.4
+          },
+          "source_id": "RYZE",
+          "source_url": "https://arxiv.org/html/2606.00902v1",
+          "source_locator": "Table 1",
+          "protocol": "1,967 public cases total; sample-weighted overall aggregation",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 33,
+          "reported_decimal_places": 1,
+          "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
+        }
+      ],
+      "comparison_status": "contextual_only_until_same_case_protocol_match",
+      "comparability_requirements": [
+        "Native public question/choice transformation, abstention and official metrics; preserve images for FigQA/TableQA, title+DOI for SuppQA, full protocol for ProtocolQA. Reviewed subsets and seeded single runs differ from full-set three-run means."
+      ],
+      "unverified_or_missing": [
+        "No archived author per-case predictions found in pinned official LAB tree, official README or targeted primary-source search; cannot rescore author models on our reviewed IDs."
+      ],
+      "published_full_case_count": 41,
+      "released_public_case_count": 33,
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "V01",
+      "task": "VQA-RAD",
+      "native_metric": "Closed-question accuracy; open scoring is paper-specific (e.g. token recall in original LLaVA-Med)",
+      "catalog_native_inputs": "Radiology images with questions",
+      "catalog_reference_evidence": "Curated image/answer records",
+      "catalog_split_contract": "Use task's official train/test split; do not use total corpus size as test size.",
+      "catalog_source_url": "https://arxiv.org/abs/2306.00890\nhttps://arxiv.org/html/2305.10415v6",
+      "published_baselines": [
+        {
+          "model": "LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0",
+          "metrics": {
+            "open_token_recall_percent": 28.23,
+            "closed_accuracy_percent": 61.4
+          },
+          "source_id": "LLAVA",
+          "source_url": "https://arxiv.org/pdf/2306.00890",
+          "source_locator": "Table 4(b), PDF p.9",
+          "protocol": "zero-shot downstream transfer; original v1 release",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 451
+        },
+        {
+          "model": "LLaVA-Med 7B, BioMedCLIP, 60K-IM, downstream FT=9",
+          "metrics": {
+            "open_token_recall_percent": 64.75,
+            "closed_accuracy_percent": 83.09
+          },
+          "source_id": "LLAVA",
+          "source_url": "https://arxiv.org/pdf/2306.00890",
+          "source_locator": "Table 4(a,b), PDF p.9",
+          "protocol": "supervised downstream tuning; original v1 release",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 451
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Native image/question IDs and English-only SLAKE split; closed accuracy and open token recall remain separate. Match candidate-answer construction, normalization and scorer; dataset fine-tuning is a different training regime."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "V02",
+      "task": "SLAKE — English",
+      "native_metric": "Closed-question accuracy; open scoring is paper-specific (e.g. token recall in original LLaVA-Med)",
+      "catalog_native_inputs": "Medical images with English questions",
+      "catalog_reference_evidence": "Curated visual questions/answers",
+      "catalog_split_contract": "English subset; exact partition and normalization must match the target paper.",
+      "catalog_source_url": "https://arxiv.org/abs/2306.00890\nhttps://arxiv.org/html/2305.10415v6",
+      "published_baselines": [
+        {
+          "model": "LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0",
+          "metrics": {
+            "open_token_recall_percent": 39.17,
+            "closed_accuracy_percent": 52.16
+          },
+          "source_id": "LLAVA",
+          "source_url": "https://arxiv.org/pdf/2306.00890",
+          "source_locator": "Table 4(b), PDF p.9",
+          "protocol": "zero-shot downstream transfer; original v1 release",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 1061
+        },
+        {
+          "model": "LLaVA-Med 7B, BioMedCLIP, 60K-IM, downstream FT=9",
+          "metrics": {
+            "open_token_recall_percent": 87.11,
+            "closed_accuracy_percent": 86.78
+          },
+          "source_id": "LLAVA",
+          "source_url": "https://arxiv.org/pdf/2306.00890",
+          "source_locator": "Table 4(a,b), PDF p.9",
+          "protocol": "supervised downstream tuning; original v1 release",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 1061
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Native image/question IDs and English-only SLAKE split; closed accuracy and open token recall remain separate. Match candidate-answer construction, normalization and scorer; dataset fine-tuning is a different training regime."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "V03",
+      "task": "PathVQA",
+      "native_metric": "Closed-question accuracy; open scoring is paper-specific (e.g. token recall in original LLaVA-Med)",
+      "catalog_native_inputs": "Pathology images with questions",
+      "catalog_reference_evidence": "Dataset image/answer pairs",
+      "catalog_split_contract": "Official split; keep closed/open question groups separate.",
+      "catalog_source_url": "https://arxiv.org/abs/2306.00890",
+      "published_baselines": [
+        {
+          "model": "LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0",
+          "metrics": {
+            "open_token_recall_percent": 12.3,
+            "closed_accuracy_percent": 54.05
+          },
+          "source_id": "LLAVA",
+          "source_url": "https://arxiv.org/pdf/2306.00890",
+          "source_locator": "Table 4(b), PDF p.9",
+          "protocol": "zero-shot downstream transfer; original v1 release",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 6761
+        },
+        {
+          "model": "LLaVA-Med 7B, BioMedCLIP, 60K-IM, downstream FT=9",
+          "metrics": {
+            "open_token_recall_percent": 39.6,
+            "closed_accuracy_percent": 91.09
+          },
+          "source_id": "LLAVA",
+          "source_url": "https://arxiv.org/pdf/2306.00890",
+          "source_locator": "Table 4(a,b), PDF p.9",
+          "protocol": "supervised downstream tuning; original v1 release",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 6761
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Native image/question IDs and English-only SLAKE split; closed accuracy and open token recall remain separate. Match candidate-answer construction, normalization and scorer; dataset fine-tuning is a different training regime."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "V04",
+      "task": "ImageCLEF-VQA 2019",
+      "native_metric": "Closed-question accuracy; open scoring is paper-specific (e.g. token recall in original LLaVA-Med)",
+      "catalog_native_inputs": "Medical images and questions",
+      "catalog_reference_evidence": "Challenge reference answers",
+      "catalog_split_contract": "The 2019 challenge snapshot, not an arbitrary later VQA-Med release.",
+      "catalog_source_url": "https://arxiv.org/html/2305.10415v6",
+      "published_baselines": [
+        {
+          "model": "MedVInT-TE",
+          "metrics": {
+            "overall_accuracy_percent": 70.5
+          },
+          "source_id": "PMC",
+          "source_url": "https://arxiv.org/html/2305.10415v6",
+          "source_locator": "Table 2",
+          "protocol": "fine-tuned on target ImageCLEF-VQA2019; free-text answering",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "reported_interval": {
+            "overall_accuracy_percent": [
+              62.8,
+              78.2
+            ]
+          },
+          "uncertainty_note": "Parenthesized range preserved; interval coverage and sampling procedure not independently re-established here."
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Pin exact ImageCLEF2019 task split, answer normalization and fine-tuning regime; no mixture with other challenge years."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "V05",
+      "task": "PMC-VQA held-out evaluation",
+      "native_metric": "MCQ accuracy; paper's open/blank-answer accuracy and BLEU",
+      "catalog_native_inputs": "Image, question, and optionally answer choices",
+      "catalog_reference_evidence": "Synthetic figure-derived labels; manually checked clean subset",
+      "catalog_split_contract": "v6: 50,000 initial image-disjoint test examples; 2,000 manually reviewed clean test examples. Older site names differ.",
+      "catalog_source_url": "https://arxiv.org/html/2305.10415v6",
+      "published_baselines": [
+        {
+          "model": "MedVInT-TD / PMC-LLaMA / PMC-CLIP",
+          "metrics": {
+            "choice_accuracy_percent": 40.3,
+            "blank_accuracy_percent": 33.6,
+            "blank_bleu1_percent": 21.5
+          },
+          "source_id": "PMC",
+          "source_url": "https://arxiv.org/html/2305.10415v6",
+          "source_locator": "Table 3",
+          "protocol": "clean PMC-VQA-test (2,000), trained on PMC-VQA",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 2000,
+          "reported_interval": {
+            "choice_accuracy_percent": [
+              37.2,
+              43.8
+            ],
+            "blank_accuracy_percent": [
+              29.9,
+              36.5
+            ],
+            "blank_bleu1_percent": [
+              19.4,
+              24.0
+            ]
+          },
+          "uncertainty_note": "Parenthesized intervals preserved; coverage definition not independently re-established."
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Use manually reviewed 2,000-case PMC-VQA-test, not 50,000 initial test; choice and blank metrics differ. Captions are privileged GPT4-oracle input and must not be given to ordinary visual baseline."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "V06",
+      "task": "LLaVA-Med visual conversation",
+      "native_metric": "GPT-assisted relative response assessment",
+      "catalog_native_inputs": "Biomedical image and conversational questions",
+      "catalog_reference_evidence": "Text-only GPT-4 answers generated using captions and inline mentions",
+      "catalog_split_contract": "Released qa50 evaluation files; 50-image setting. Use original/v1.5 code and model version consistently.",
+      "catalog_source_url": "https://arxiv.org/abs/2306.00890",
+      "published_baselines": [
+        {
+          "model": "LLaVA-Med 60K-IM",
+          "metrics": {
+            "gpt4_relative_chat_score_percent": 50.2
+          },
+          "source_id": "LLAVA",
+          "source_url": "https://arxiv.org/pdf/2306.00890",
+          "source_locator": "Table 1, PDF p.6",
+          "protocol": "193 questions on 50 unseen PMC15M images; GPT4 caption/inline-mention reference and judge",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 193
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Match official conversation set, reference responses, GPT4 judge model and rubric; a local substitute judge is an adapted result. Do not expose reference captions/inline mentions to image-only solver."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "V07",
+      "task": "Ryze extraction component tests",
+      "native_metric": "Dataset-specific QA accuracy",
+      "catalog_native_inputs": "Document/chart/slide and question",
+      "catalog_reference_evidence": "ArXivQA, SlideVQA and ChartQA reference answers",
+      "catalog_split_contract": "Auxiliary component evaluation, separate from final LAB-Bench scores.",
+      "catalog_source_url": "https://arxiv.org/html/2606.00902v1",
+      "published_baselines": [
+        {
+          "model": "Ryze document pipeline",
+          "metrics": {
+            "arxivqa_accuracy_percent": 73.12,
+            "slidevqa_accuracy_percent": 66.48,
+            "chartqa_accuracy_percent": 75.8
+          },
+          "source_id": "RYZE",
+          "source_url": "https://arxiv.org/html/2606.00902v1",
+          "source_locator": "Table 3",
+          "protocol": "OCR/document extraction component comparison",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Requires original document extraction pipeline and all three component test splits. These component scores are not LAB-Bench figure/table scores."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "N01",
+      "task": "BioReason KEGG pathway/disease test",
+      "native_metric": "Accuracy; macro-F1/precision/recall",
+      "catalog_native_inputs": "Reference/variant DNA and pathway context",
+      "catalog_reference_evidence": "KEGG-linked annotations",
+      "catalog_split_contract": "290 test entries in main table; 1,449 overall entries across splits.",
+      "catalog_source_url": "https://arxiv.org/html/2505.23579v2",
+      "published_baselines": [
+        {
+          "model": "Qwen3-4B",
+          "metrics": {
+            "accuracy_percent": 90.0,
+            "macro_f1_percent": 79.66,
+            "macro_precision_percent": 88.24,
+            "macro_recall_percent": 75.08
+          },
+          "source_id": "BIOREASON",
+          "source_url": "https://arxiv.org/html/2505.23579v2",
+          "source_locator": "Table 1",
+          "protocol": "LLM-only task baseline, 290 KEGG test examples",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 290
+        },
+        {
+          "model": "Evo2 + Qwen3-4B + GRPO",
+          "metrics": {
+            "accuracy_percent": 98.28,
+            "macro_f1_percent": 93.05,
+            "macro_precision_percent": 94.12,
+            "macro_recall_percent": 92.48
+          },
+          "source_id": "BIOREASON",
+          "source_url": "https://arxiv.org/html/2505.23579v2",
+          "source_locator": "Table 1",
+          "protocol": "trained DNA-LLM hybrid, 290 KEGG test examples",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 290
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Use original biological input contract and held-out IDs. Table baselines were task-trained; hybrid uses learned DNA encoder. Standalone local Qwen sequence text is a different representation/training regime; final-label score does not establish rationale correctness."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "N02",
+      "task": "BioReason VEP-Coding",
+      "native_metric": "Accuracy; F1",
+      "catalog_native_inputs": "Reference/variant DNA and prompt",
+      "catalog_reference_evidence": "Curated clinical variant labels",
+      "catalog_split_contract": "Main reported test approximately 1.23K; chromosome 8 held out.",
+      "catalog_source_url": "https://arxiv.org/html/2505.23579v2",
+      "published_baselines": [
+        {
+          "model": "Qwen3-4B",
+          "metrics": {
+            "accuracy_percent": 48.99,
+            "f1_percent": 39.58
+          },
+          "source_id": "BIOREASON",
+          "source_url": "https://arxiv.org/html/2505.23579v2",
+          "source_locator": "Table 2",
+          "protocol": "native variant-effect binary test; deterministic T=0",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": null,
+          "test_size_note": "Paper rounds VEP-Coding test size to 1.23K; exact count not inferred."
+        },
+        {
+          "model": "Evo2 + Qwen3-4B",
+          "metrics": {
+            "accuracy_percent": 80.21,
+            "f1_percent": 80.0
+          },
+          "source_id": "BIOREASON",
+          "source_url": "https://arxiv.org/html/2505.23579v2",
+          "source_locator": "Table 2",
+          "protocol": "native variant-effect binary test; deterministic T=0",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": null,
+          "test_size_note": "Paper rounds VEP-Coding test size to 1.23K; exact count not inferred."
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Use original biological input contract and held-out IDs. Table baselines were task-trained; hybrid uses learned DNA encoder. Standalone local Qwen sequence text is a different representation/training regime; final-label score does not establish rationale correctness."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "N03",
+      "task": "BioReason VEP-Non-SNV",
+      "native_metric": "Accuracy; F1",
+      "catalog_native_inputs": "Variant representation/context",
+      "catalog_reference_evidence": "Curated variant labels",
+      "catalog_split_contract": "873 test examples in the main report.",
+      "catalog_source_url": "https://arxiv.org/html/2505.23579v2",
+      "published_baselines": [
+        {
+          "model": "Qwen3-4B",
+          "metrics": {
+            "accuracy_percent": 61.86,
+            "f1_percent": 67.6
+          },
+          "source_id": "BIOREASON",
+          "source_url": "https://arxiv.org/html/2505.23579v2",
+          "source_locator": "Table 2",
+          "protocol": "native variant-effect binary test; deterministic T=0",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 873,
+          "test_size_note": null
+        },
+        {
+          "model": "Evo2 + Qwen3-4B",
+          "metrics": {
+            "accuracy_percent": 83.85,
+            "f1_percent": 85.02
+          },
+          "source_id": "BIOREASON",
+          "source_url": "https://arxiv.org/html/2505.23579v2",
+          "source_locator": "Table 2",
+          "protocol": "native variant-effect binary test; deterministic T=0",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "test_case_count": 873,
+          "test_size_note": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Use original biological input contract and held-out IDs. Table baselines were task-trained; hybrid uses learned DNA encoder. Standalone local Qwen sequence text is a different representation/training regime; final-label score does not establish rationale correctness."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "N04",
+      "task": "Bio-posttrain KEGG network holdout",
+      "native_metric": "Accuracy",
+      "catalog_native_inputs": "DNA representations and pathway context",
+      "catalog_reference_evidence": "Task reference annotations",
+      "catalog_split_contract": "Adapted KEGG split by pathway networks; not automatically BioReason's original 290-example test.",
+      "catalog_source_url": "https://arxiv.org/html/2606.16517v1",
+      "published_baselines": [
+        {
+          "model": "Bio-posttrain Qwen3-4B",
+          "metrics": {
+            "base_ood_accuracy": 0.668,
+            "sft_rl_ood_accuracy": 0.917,
+            "cpt_sft_rl_ood_accuracy": 0.97
+          },
+          "source_id": "POST",
+          "source_url": "https://arxiv.org/html/2606.16517v1",
+          "source_locator": "Appendix Table 5",
+          "protocol": "adapted native OOD test; strongest source configurations, not matched training budget",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Use adapted held-out pathway networks and DNA embeddings; original random290-case KEGG test does not measure this OOD protocol."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    },
+    {
+      "task_id": "N05",
+      "task": "Bio-posttrain MEDEA target selection",
+      "native_metric": "Normalized gene-answer accuracy",
+      "catalog_native_inputs": "Candidate genes, expression representations, disease and cell context",
+      "catalog_reference_evidence": "Adapted MEDEA task answers",
+      "catalog_split_contract": "Held-out disease: hepatoblastoma; additional cell-type analyses reported.",
+      "catalog_source_url": "https://arxiv.org/html/2606.16517v1",
+      "published_baselines": [
+        {
+          "model": "Bio-posttrain Qwen3-4B",
+          "metrics": {
+            "base_ood_accuracy": 0.197,
+            "sft_rl_ood_accuracy": 0.744,
+            "cpt_sft_rl_ood_accuracy": 0.765
+          },
+          "source_id": "POST",
+          "source_url": "https://arxiv.org/html/2606.16517v1",
+          "source_locator": "Appendix Table 5",
+          "protocol": "adapted native OOD test; strongest source configurations, not matched training budget",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "comparison_status": "native_artifacts_and_protocol_must_match",
+      "comparability_requirements": [
+        "Supply native five-candidate normal/disease TranscriptFormer embeddings with disease/cell context, hepatoblastoma OOD. Gene-list-only baseline does not reproduce task information."
+      ],
+      "unverified_or_missing": [],
+      "local_model_result_in_this_report": null
+    }
+  ],
+  "comparison_reference_counts": {
+    "tasks_with_directly_verified_numeric_reference": 53,
+    "baseline_records": 79,
+    "tasks_without_verified_numeric_reference": [
+      "P18",
+      "P23",
+      "P24",
+      "P25",
+      "P26",
+      "P28",
+      "P34",
+      "P35",
+      "P36",
+      "P39",
+      "P44"
+    ]
+  }
+}

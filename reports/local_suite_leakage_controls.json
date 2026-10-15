@@ -1,0 +1,2019 @@
+{
+  "checked_at_utc": "2026-10-15T08:14:22.942405+00:00",
+  "scope": "Expanded local Qwen evaluation queues; no solver training/fine-tuning or retrieval",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "queued_run_count": 74,
+  "controls": {
+    "explicit_input_schema_allowlist": true,
+    "references_and_teacher_rationales_excluded_from_solver_requests": true,
+    "native_task_defining_context_retained": true,
+    "no_solver_tools_or_repository_access": true,
+    "no_test_guided_model_or_prompt_selection": true,
+    "immutable_protocol_and_source_hashes": true,
+    "one_generation_per_case_no_silent_retries": true,
+    "raw_requests_responses_locked_before_scoring_reference_read": true,
+    "native_and_adapted_protocols_separately_reported": true,
+    "separate_outcome_and_explanation_support": true,
+    "openai_api_inference": false,
+    "flagged_requests_transferred": false
+  },
+  "limits": {
+    "public_benchmark_pretraining_exposure": "unknown",
+    "cannot_claim_contamination_free": true,
+    "prompt_hashes_exclude_label_leakage_but_do_not_prove_absence_of_pretraining_memorization": true,
+    "future_temporal_or_private_test_validation": "Only source-authorized existing temporal tests may be used; no fabricated new benchmark labels."
+  },
+  "runs": [
+    {
+      "task_ids": [
+        "B07"
+      ],
+      "run_id": "qwen38_27b_b07_public_reviewed_2026-10-15",
+      "config_file": "configs/local_labbench_b07.json",
+      "input_file": "data/local_labbench_suite/B07/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/labbench_native_complete/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": true,
+      "actual_solver_tools": [],
+      "answer_keys_available_to_solver": false,
+      "model_selection_on_test": false
+    },
+    {
+      "task_ids": [
+        "B02"
+      ],
+      "run_id": "qwen38_27b_b02_public_reviewed_2026-10-15",
+      "config_file": "configs/local_labbench_b02.json",
+      "input_file": "data/local_labbench_suite/B02/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/labbench_native_complete/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P23"
+      ],
+      "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_003",
+      "config_file": "configs/local_description_p23_shard_003.json",
+      "input_file": "data/local_description_shards/P23/shard_003/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P23/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P25"
+      ],
+      "run_id": "qwen38_27b_p25_description_full_parallel_2026-10-15_shard_001",
+      "config_file": "configs/local_description_p25_shard_001.json",
+      "input_file": "data/local_description_shards/P25/shard_001/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P25/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_000",
+      "config_file": "configs/local_extended_p07_shard_000.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_000/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_004",
+      "config_file": "configs/local_extended_p07_shard_004.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_004/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_008",
+      "config_file": "configs/local_extended_p07_shard_008.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_008/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_012",
+      "config_file": "configs/local_extended_p07_shard_012.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_012/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_016",
+      "config_file": "configs/local_extended_p07_shard_016.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_016/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_020",
+      "config_file": "configs/local_extended_p07_shard_020.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_020/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_024",
+      "config_file": "configs/local_extended_p07_shard_024.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_024/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_001",
+      "config_file": "configs/local_extended_p08_shard_001.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_001/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_005",
+      "config_file": "configs/local_extended_p08_shard_005.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_005/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_009",
+      "config_file": "configs/local_extended_p08_shard_009.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_009/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "B08"
+      ],
+      "run_id": "qwen38_27b_b08_public_reviewed_2026-10-15",
+      "config_file": "configs/local_labbench_b08.json",
+      "input_file": "data/local_labbench_suite/B08/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/labbench_native_complete/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": true,
+      "actual_solver_tools": [],
+      "answer_keys_available_to_solver": false,
+      "model_selection_on_test": false
+    },
+    {
+      "task_ids": [
+        "B04"
+      ],
+      "run_id": "qwen38_27b_b04_public_reviewed_2026-10-15",
+      "config_file": "configs/local_labbench_b04.json",
+      "input_file": "data/local_labbench_suite/B04/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/labbench_native_complete/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": true,
+      "actual_solver_tools": [],
+      "answer_keys_available_to_solver": false,
+      "model_selection_on_test": false
+    },
+    {
+      "task_ids": [
+        "B05"
+      ],
+      "run_id": "qwen38_27b_b05_public_reviewed_2026-10-15",
+      "config_file": "configs/local_labbench_b05.json",
+      "input_file": "data/local_labbench_suite/B05/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/labbench_native_complete/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": true,
+      "actual_solver_tools": [],
+      "answer_keys_available_to_solver": false,
+      "model_selection_on_test": false
+    },
+    {
+      "task_ids": [
+        "P43"
+      ],
+      "run_id": "qwen38_27b_dti_biosnap_likelihood_2026-10-15",
+      "config_file": "configs/local_dti_biosnap.json",
+      "input_file": "data/local_dti/biosnap/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_sequence_tasks/P43/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 1,
+        "temperature": 1.0,
+        "top_p": 1.0,
+        "top_k": -1,
+        "min_p": 0.0,
+        "n": 1,
+        "seed": 42,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "allowed_token_ids": [
+          9175,
+          2665
+        ],
+        "logprobs": true,
+        "top_logprobs": 2,
+        "logprob_token_ids": [
+          9175,
+          2665
+        ],
+        "return_tokens_as_token_ids": true,
+        "return_token_ids": true
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": true,
+      "actual_solver_tools": [],
+      "answer_keys_available_to_solver": false,
+      "model_selection_on_test": false
+    },
+    {
+      "task_ids": [
+        "N02"
+      ],
+      "run_id": "qwen38_27b_n02_full_windows_2026-10-15",
+      "config_file": "configs/local_genomics_n02.json",
+      "input_file": "data/catalog_genomic_tasks/N02/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_genomic_tasks/N02/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "official_released_test",
+      "actual_dispatch_manifest_exists": true,
+      "actual_solver_tools": [],
+      "answer_keys_available_to_solver": false,
+      "model_selection_on_test": false
+    },
+    {
+      "task_ids": [
+        "P01"
+      ],
+      "run_id": "qwen38_27b_p01_original_test_2026-10-15",
+      "config_file": "configs/local_catalog_p01.json",
+      "input_file": "data/local_catalog_suite/P01/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_sequence_tasks/P01/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "V02"
+      ],
+      "run_id": "qwen38_27b_v02_native_test_2026-10-15",
+      "config_file": "configs/local_medical_v02.json",
+      "input_file": "data/medical_vqa/V02/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/medical_vqa/V02/labels.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P23"
+      ],
+      "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_001",
+      "config_file": "configs/local_description_p23_shard_001.json",
+      "input_file": "data/local_description_shards/P23/shard_001/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P23/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P24"
+      ],
+      "run_id": "qwen38_27b_p24_description_full_parallel_2026-10-15_shard_001",
+      "config_file": "configs/local_description_p24_shard_001.json",
+      "input_file": "data/local_description_shards/P24/shard_001/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P24/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P26"
+      ],
+      "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15_shard_001",
+      "config_file": "configs/local_description_p26_shard_001.json",
+      "input_file": "data/local_description_shards/P26/shard_001/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P26/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P03"
+      ],
+      "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15_shard_001",
+      "config_file": "configs/local_extended_p03_shard_001.json",
+      "input_file": "data/local_catalog_extended_shards/P03/shard_001/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P03/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_002",
+      "config_file": "configs/local_extended_p07_shard_002.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_002/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_006",
+      "config_file": "configs/local_extended_p07_shard_006.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_006/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_010",
+      "config_file": "configs/local_extended_p07_shard_010.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_010/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_014",
+      "config_file": "configs/local_extended_p07_shard_014.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_014/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_018",
+      "config_file": "configs/local_extended_p07_shard_018.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_018/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_022",
+      "config_file": "configs/local_extended_p07_shard_022.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_022/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_026",
+      "config_file": "configs/local_extended_p07_shard_026.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_026/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_003",
+      "config_file": "configs/local_extended_p08_shard_003.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_003/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_007",
+      "config_file": "configs/local_extended_p08_shard_007.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_007/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_011",
+      "config_file": "configs/local_extended_p08_shard_011.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_011/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "B03"
+      ],
+      "run_id": "qwen38_27b_b03_public_reviewed_2026-10-15",
+      "config_file": "configs/local_labbench_b03.json",
+      "input_file": "data/local_labbench_suite/B03/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/labbench_native_complete/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": true,
+      "actual_solver_tools": [],
+      "answer_keys_available_to_solver": false,
+      "model_selection_on_test": false
+    },
+    {
+      "task_ids": [
+        "P10"
+      ],
+      "run_id": "qwen38_27b_p10_original_test_2026-10-15",
+      "config_file": "configs/local_catalog_p10.json",
+      "input_file": "data/local_catalog_suite/P10/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_sequence_tasks/P10/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": true,
+      "actual_solver_tools": [],
+      "answer_keys_available_to_solver": false,
+      "model_selection_on_test": false
+    },
+    {
+      "task_ids": [
+        "P11"
+      ],
+      "run_id": "qwen38_27b_p11_original_test_2026-10-15",
+      "config_file": "configs/local_catalog_p11.json",
+      "input_file": "data/local_catalog_suite/P11/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_sequence_tasks/P11/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": true,
+      "actual_solver_tools": [],
+      "answer_keys_available_to_solver": false,
+      "model_selection_on_test": false
+    },
+    {
+      "task_ids": [
+        "P43"
+      ],
+      "run_id": "qwen38_27b_dti_human_likelihood_2026-10-15",
+      "config_file": "configs/local_dti_human.json",
+      "input_file": "data/local_dti/human/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_sequence_tasks/P43/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 1,
+        "temperature": 1.0,
+        "top_p": 1.0,
+        "top_k": -1,
+        "min_p": 0.0,
+        "n": 1,
+        "seed": 42,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "allowed_token_ids": [
+          9175,
+          2665
+        ],
+        "logprobs": true,
+        "top_logprobs": 2,
+        "logprob_token_ids": [
+          9175,
+          2665
+        ],
+        "return_tokens_as_token_ids": true,
+        "return_token_ids": true
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "V04"
+      ],
+      "run_id": "qwen38_27b_v04_original_test500_2026-10-15",
+      "config_file": "configs/local_vqamed2019.json",
+      "input_file": "data/vqamed2019_native/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/vqamed2019_native/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "original_complete_ImageCLEF2019_test500",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "N01"
+      ],
+      "run_id": "qwen38_27b_n01_full_windows_2026-10-15",
+      "config_file": "configs/local_genomics_n01.json",
+      "input_file": "data/catalog_genomic_tasks/N01/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_genomic_tasks/N01/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "official_released_test_then_val_290",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "V01"
+      ],
+      "run_id": "qwen38_27b_v01_native_test_2026-10-15",
+      "config_file": "configs/local_medical_v01.json",
+      "input_file": "data/medical_vqa/V01/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/medical_vqa/V01/labels.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P23"
+      ],
+      "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_000",
+      "config_file": "configs/local_description_p23_shard_000.json",
+      "input_file": "data/local_description_shards/P23/shard_000/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P23/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P24"
+      ],
+      "run_id": "qwen38_27b_p24_description_full_parallel_2026-10-15_shard_000",
+      "config_file": "configs/local_description_p24_shard_000.json",
+      "input_file": "data/local_description_shards/P24/shard_000/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P24/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P26"
+      ],
+      "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15_shard_000",
+      "config_file": "configs/local_description_p26_shard_000.json",
+      "input_file": "data/local_description_shards/P26/shard_000/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P26/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P03"
+      ],
+      "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15_shard_000",
+      "config_file": "configs/local_extended_p03_shard_000.json",
+      "input_file": "data/local_catalog_extended_shards/P03/shard_000/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P03/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_001",
+      "config_file": "configs/local_extended_p07_shard_001.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_001/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_005",
+      "config_file": "configs/local_extended_p07_shard_005.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_005/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_009",
+      "config_file": "configs/local_extended_p07_shard_009.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_009/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_013",
+      "config_file": "configs/local_extended_p07_shard_013.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_013/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_017",
+      "config_file": "configs/local_extended_p07_shard_017.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_017/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_021",
+      "config_file": "configs/local_extended_p07_shard_021.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_021/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_025",
+      "config_file": "configs/local_extended_p07_shard_025.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_025/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_002",
+      "config_file": "configs/local_extended_p08_shard_002.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_002/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_006",
+      "config_file": "configs/local_extended_p08_shard_006.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_006/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_010",
+      "config_file": "configs/local_extended_p08_shard_010.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_010/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P06"
+      ],
+      "run_id": "qwen38_27b_p06_original_test_2026-10-15",
+      "config_file": "configs/local_catalog_p06.json",
+      "input_file": "data/local_catalog_suite/P06/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_sequence_tasks/P06/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": true,
+      "actual_solver_tools": [],
+      "answer_keys_available_to_solver": false,
+      "model_selection_on_test": false
+    },
+    {
+      "task_ids": [
+        "P43"
+      ],
+      "run_id": "qwen38_27b_dti_bindingdb_likelihood_2026-10-15",
+      "config_file": "configs/local_dti_bindingdb.json",
+      "input_file": "data/local_dti/bindingdb/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_sequence_tasks/P43/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 1,
+        "temperature": 1.0,
+        "top_p": 1.0,
+        "top_k": -1,
+        "min_p": 0.0,
+        "n": 1,
+        "seed": 42,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "allowed_token_ids": [
+          9175,
+          2665
+        ],
+        "logprobs": true,
+        "top_logprobs": 2,
+        "logprob_token_ids": [
+          9175,
+          2665
+        ],
+        "return_tokens_as_token_ids": true,
+        "return_token_ids": true
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "N03"
+      ],
+      "run_id": "qwen38_27b_n03_full_windows_2026-10-15",
+      "config_file": "configs/local_genomics_n03.json",
+      "input_file": "data/catalog_genomic_tasks/N03/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_genomic_tasks/N03/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "official_released_test",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P02"
+      ],
+      "run_id": "qwen38_27b_p02_original_test_2026-10-15",
+      "config_file": "configs/local_catalog_p02.json",
+      "input_file": "data/local_catalog_suite/P02/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_sequence_tasks/P02/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": null,
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P23"
+      ],
+      "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_002",
+      "config_file": "configs/local_description_p23_shard_002.json",
+      "input_file": "data/local_description_shards/P23/shard_002/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P23/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P25"
+      ],
+      "run_id": "qwen38_27b_p25_description_full_parallel_2026-10-15_shard_000",
+      "config_file": "configs/local_description_p25_shard_000.json",
+      "input_file": "data/local_description_shards/P25/shard_000/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P25/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P26"
+      ],
+      "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15_shard_002",
+      "config_file": "configs/local_description_p26_shard_002.json",
+      "input_file": "data/local_description_shards/P26/shard_002/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_descriptions/P26/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P03"
+      ],
+      "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15_shard_002",
+      "config_file": "configs/local_extended_p03_shard_002.json",
+      "input_file": "data/local_catalog_extended_shards/P03/shard_002/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P03/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_003",
+      "config_file": "configs/local_extended_p07_shard_003.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_003/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_007",
+      "config_file": "configs/local_extended_p07_shard_007.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_007/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_011",
+      "config_file": "configs/local_extended_p07_shard_011.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_011/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_015",
+      "config_file": "configs/local_extended_p07_shard_015.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_015/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_019",
+      "config_file": "configs/local_extended_p07_shard_019.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_019/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P07"
+      ],
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_023",
+      "config_file": "configs/local_extended_p07_shard_023.json",
+      "input_file": "data/local_catalog_extended_shards/P07/shard_023/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P07/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_000",
+      "config_file": "configs/local_extended_p08_shard_000.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_000/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_004",
+      "config_file": "configs/local_extended_p08_shard_004.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_004/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_008",
+      "config_file": "configs/local_extended_p08_shard_008.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_008/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    },
+    {
+      "task_ids": [
+        "P08"
+      ],
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_012",
+      "config_file": "configs/local_extended_p08_shard_012.json",
+      "input_file": "data/local_catalog_extended_shards/P08/shard_012/model_inputs.jsonl",
+      "reference_file_scorer_only": "data/catalog_extended/P08/scorer_references.jsonl",
+      "solver_tools": [],
+      "generation_frozen": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "case_scope": "task_shard_only",
+      "actual_dispatch_manifest_exists": false
+    }
+  ]
+}

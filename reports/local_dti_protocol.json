@@ -1,0 +1,315 @@
+{
+  "protocol_variant": "QWEN_DTI_FIRST_TOKEN_CONDITIONAL_YES_NO_LIKELIHOOD",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "generation": {
+    "max_tokens": 1,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "min_p": 0.0,
+    "n": 1,
+    "seed": 42,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "allowed_token_ids": [
+      9175,
+      2665
+    ],
+    "logprobs": true,
+    "top_logprobs": 2,
+    "logprob_token_ids": [
+      9175,
+      2665
+    ],
+    "return_tokens_as_token_ids": true,
+    "return_token_ids": true
+  },
+  "label_token_ids": {
+    "Yes": 9175,
+    "No": 2665
+  },
+  "tokenization": "Yes and No are each one exact token without leading whitespace, verified with pinned local checkpoint tokenizer. Other spellings are excluded.",
+  "score_definition": "exp(logpYes-max)/(exp(logpYes-max)+exp(logpNo-max)) from raw first-token conditional model log-likelihoods",
+  "normalization": "vLLM0.31 defaults raw full-vocabulary logprobs. Pair renormalization is explicit; raw pair mass is retained and checked<=1. Fixed allowed labels only constrain sampled token.",
+  "api_requirement": "logprob_token_ids explicitly requests both labels; top_logprobs2 alone could omit one because defaults return raw vocabulary logprobs. Token IDs also returned for provenance.",
+  "classification_adapter": "One fixed no-thinking,one-token numerical score interface, not a reasoning-budget ablation. No actual P43 outputs used to choose settings.",
+  "metrics": "Separate AUROC and sklearn average_precision_score(AUPRC/AP) for each original dataset; full metric absent if any approved case score missing/invalid; no filled score or test-threshold tuning.",
+  "native_BioT5_caveat": "Pinned BioT5 source takes a ratio of raw first-token Yes/No generation scores rather than softmax probabilities and tunes a threshold using test ROC. This explicit Qwen likelihood adapter is not exact architecture/paper reproduction.",
+  "reference_separation": "Runner reads frozen model inputs/review only; labels read only by offline scorer. No solver tools/retrieval/head fitting.",
+  "actual_biological_dispatch_by_this_preparation": 0,
+  "source_files": {
+    "data/catalog_sequence_tasks/P43/model_inputs.jsonl": "d3d75fc8a681a2a44fe3ebd345fbebd9596254559c54473bdbcfd897a2a7c7ff",
+    "data/catalog_sequence_tasks/P43/scorer_references.jsonl": "1399f4590451aa507fd5ccee1847b8856c7d19193615e7f4284fe6d9b78d6c45",
+    "sources/biot5__biot5_plus__utils__train_utils.py": "37878719b9a5f266e9c3cf9f15c72c733f2c77cb0e07e79af6dff6dbcbba5f8c",
+    "sources/biot5__biot5_plus__metrics__dti_metrics__dti_metrics.py": "2eb5d44b4aa8c4bbe3d13f9541a6df132a03a2291b6dc817427b3246fdff5d3d"
+  },
+  "updated_at_utc": "2026-10-15T07:51:00.319989+00:00",
+  "synthetic_negative_probe": {
+    "synthetic_nonbiological_only": true,
+    "server": {
+      "pid": 681239,
+      "proc_start_ticks": "197762301",
+      "model": "Qwen/Qwen3.8-27B",
+      "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "gpu_ids": [
+        5
+      ],
+      "server_log": "logs/local_model/qwen38_27b_server.log"
+    },
+    "payload": {
+      "model": "Qwen/Qwen3.8-27B",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply Yes if two plus two equals five, otherwise No. Reply only Yes or No."
+        }
+      ],
+      "max_tokens": 1,
+      "temperature": 1.0,
+      "top_p": 1.0,
+      "top_k": -1,
+      "min_p": 0.0,
+      "n": 1,
+      "seed": 42,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "allowed_token_ids": [
+        9175,
+        2665
+      ],
+      "logprobs": true,
+      "top_logprobs": 2,
+      "logprob_token_ids": [
+        9175,
+        2665
+      ],
+      "return_tokens_as_token_ids": true,
+      "return_token_ids": true
+    },
+    "payload_sha256": "e33f329851ddcbba50324c7ec7012c957d12c311c8bd4dc0e48871d28eb081d9",
+    "response": {
+      "id": "chatcmpl-833c9bad3c2ddd22",
+      "object": "chat.completion",
+      "created": 1792050302,
+      "model": "Qwen/Qwen3.8-27B",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "No",
+            "refusal": null,
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "reasoning": null
+          },
+          "logprobs": {
+            "content": [
+              {
+                "token": "token_id:2665",
+                "logprob": -0.003172723576426506,
+                "bytes": [
+                  78,
+                  111
+                ],
+                "top_logprobs": [
+                  {
+                    "token": "token_id:2665",
+                    "logprob": -0.003172723576426506,
+                    "bytes": [
+                      116,
+                      111,
+                      107,
+                      101,
+                      110,
+                      95,
+                      105,
+                      100,
+                      58,
+                      50,
+                      54,
+                      54,
+                      53
+                    ]
+                  },
+                  {
+                    "token": "token_id:9175",
+                    "logprob": -6.753172874450684,
+                    "bytes": [
+                      116,
+                      111,
+                      107,
+                      101,
+                      110,
+                      95,
+                      105,
+                      100,
+                      58,
+                      57,
+                      49,
+                      55,
+                      53
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "finish_reason": "length",
+          "stop_reason": null,
+          "token_ids": [
+            2665
+          ],
+          "routed_experts": null
+        }
+      ],
+      "service_tier": null,
+      "system_fingerprint": "vllm-0.31.0-2c601694",
+      "usage": {
+        "prompt_tokens": 30,
+        "total_tokens": 31,
+        "completion_tokens": 1,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "prompt_logprobs": null,
+      "prompt_token_ids": [
+        248045,
+        846,
+        198,
+        20206,
+        7179,
+        413,
+        1330,
+        5346,
+        1330,
+        16327,
+        4097,
+        11,
+        5752,
+        2233,
+        13,
+        17308,
+        1132,
+        7179,
+        466,
+        2233,
+        13,
+        248046,
+        198,
+        248045,
+        74455,
+        198,
+        248068,
+        271,
+        248069,
+        271
+      ],
+      "prompt_text": null,
+      "kv_transfer_params": null,
+      "ec_transfer_params": null,
+      "metrics": null
+    },
+    "response_sha256": "c4ada09512e25452a44504b9637d04a02983d0c0c98c2526436f880a78096dc6",
+    "score": {
+      "positive_score": 0.0011695100888128944,
+      "negative_score": 0.9988304899111871,
+      "logprob_yes": -6.753172874450684,
+      "logprob_no": -0.003172723576426506,
+      "raw_pair_probability_mass": 0.9979994746466031,
+      "log_odds_yes_no": -6.750000150874257,
+      "sampled_token_id": 2665,
+      "sampled_label": "No",
+      "prompt_token_ids_sha256": "cd2ed5d19da3258e59bc223bdbb07eb05262d5d2ad032eb17f06430ce7b9bc43",
+      "prompt_token_count": 30,
+      "reasoning_tokens": 0,
+      "system_fingerprint": "vllm-0.31.0-2c601694",
+      "score_basis": "Both raw FIRST-token conditional log-likelihoods; sampled label is not the ranking score"
+    }
+  },
+  "proposed_runs": [
+    {
+      "dataset": "human",
+      "cases": 1200,
+      "config": "configs/local_dti_human.proposed.json",
+      "input_file": "data/local_dti/human/model_inputs.jsonl",
+      "input_sha256": "6bc948d7941822fd33935926e2ade4524115bd4fee248404a6e3c5435b381ee3",
+      "execution_authorized": false,
+      "reviewed": false
+    },
+    {
+      "dataset": "biosnap",
+      "cases": 5493,
+      "config": "configs/local_dti_biosnap.proposed.json",
+      "input_file": "data/local_dti/biosnap/model_inputs.jsonl",
+      "input_sha256": "f887ace454b10219282c80e34ce52b5c7abd4b29dc9985724c971a327049dad5",
+      "execution_authorized": false,
+      "reviewed": false
+    },
+    {
+      "dataset": "bindingdb",
+      "cases": 9840,
+      "config": "configs/local_dti_bindingdb.proposed.json",
+      "input_file": "data/local_dti/bindingdb/model_inputs.jsonl",
+      "input_sha256": "919372f7cb328810efe6c367d634ca7c10dde1fd1e855ac819d0916a23de3ae4",
+      "execution_authorized": false,
+      "reviewed": false
+    }
+  ],
+  "synthetic_positive_probe": {
+    "source_file": "reports/local_dti_synthetic_probe.json",
+    "response_sha256": "489ea411d778fc805fd31bebdda9aec073a0f4e1b9566a8649d1c1352b9eec10",
+    "score": {
+      "positive_score": 0.9875683517994891,
+      "negative_score": 0.012431648200510903,
+      "logprob_yes": -0.01874997466802597,
+      "logprob_no": -4.393750190734863,
+      "raw_pair_probability_mass": 0.9937790238224093,
+      "log_odds_yes_no": 4.375000216066837,
+      "sampled_token_id": 9175,
+      "sampled_label": "Yes",
+      "prompt_token_ids_sha256": "fdae1c143843b24065f61e22fe82b791de8988c41cb7574cc16fbf54e339cdd5",
+      "prompt_token_count": 30,
+      "reasoning_tokens": 0,
+      "system_fingerprint": "vllm-0.31.0-2c601694",
+      "score_basis": "Both raw FIRST-token conditional log-likelihoods; sampled label is not the ranking score"
+    }
+  },
+  "original_split_identity": {
+    "source_file": "reports/local_dti_source_identity.json",
+    "sha256": "e78df6983ad8a311b8969cb621e2e4a21cbbabb63a04244f3d3d8a11e1ef5ddd",
+    "datasets": [
+      {
+        "dataset": "human",
+        "cases": 1200,
+        "ordered_graph_sequence_and_label_equal": true,
+        "chemical_parse_failures": 0
+      },
+      {
+        "dataset": "biosnap",
+        "cases": 5493,
+        "ordered_graph_sequence_and_label_equal": true,
+        "chemical_parse_failures": 0
+      },
+      {
+        "dataset": "bindingdb",
+        "cases": 9840,
+        "ordered_graph_sequence_and_label_equal": true,
+        "chemical_parse_failures": 0
+      }
+    ]
+  },
+  "installed_vllm_sources": {
+    ".venv-vllm/lib/python3.12/site-packages/vllm/entrypoints/openai/chat_completion/protocol.py": "4bdc71f668e4820d8ae5bae2a153fed0296b430cd6353ace8c0c27cfb982ebc1",
+    ".venv-vllm/lib/python3.12/site-packages/vllm/v1/sample/sampler.py": "d299305528479ff505b416b759db208fcf08ca6e86cc1f7cfc38be85bbd0e844",
+    ".venv-vllm/lib/python3.12/site-packages/vllm/config/model.py": "e33d28deab39c42b1c209116296dcb6e98c6da8b4e42ee0dbca0e8bf098c534c"
+  },
+  "actual_prompt_audit": "Archived returned prompt-token IDs must match usage length and the pinned closed-thinking assistant suffix; both raw candidate logprobs, sampled token ID/text/channel, one completion token and zero reasoning tokens verified.",
+  "activation": "Root reviews case IDs/holds, freezes final config/review/hashes, enables local P43 scope plus execution_authorized. Then .venv/bin/python scripts/local_dti_execute.py --config FINAL_CONFIG. Proposed files intentionally cannot dispatch."
+}

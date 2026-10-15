@@ -1,0 +1,29 @@
+{
+  "execution_authorized": true,
+  "reviewed_at_utc": "2026-10-15T07:57:27.461921+00:00",
+  "reviewer": "root",
+  "plan_sha256": "c115c1e5d33b6d607fc8b4bf0443cfd0fdea553bb5bebd07e4c5c03741feba25",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+  "approved_task_ids": [
+    "P23",
+    "P24",
+    "P25",
+    "P26"
+  ],
+  "approved_config_sha256": {
+    "configs/local_description_p23_shard_000.json": "d966893dc6e1b26b8007091f22d1278ccb063c7ee956676e45eb14e51cc86aa4",
+    "configs/local_description_p23_shard_001.json": "c2f74c96e6c7f838cb358cd340253aad641452120faafc1946b79c6d8f654a48",
+    "configs/local_description_p23_shard_002.json": "76f8a716cb8e0c742ec9a0a00261f8f066b02e3f8feab75796e082bd061a9aec",
+    "configs/local_description_p23_shard_003.json": "9cafe05ab0915ba5c2bfbb4094435cc3991751a27f761b804cdcf000c934b1f9",
+    "configs/local_description_p24_shard_000.json": "6402ec936d1904a339cde52150250497e718e42252dd571240cec13a818cc691",
+    "configs/local_description_p24_shard_001.json": "3e892a0cb8f584589c26e9493fa0e167c18b1299bb78a184ffe66d9e3ee02c60",
+    "configs/local_description_p25_shard_000.json": "6c135afc9789c5c7e28cbe0a0e95dd99ae308d19159f727010abc47e55bfe15d",
+    "configs/local_description_p25_shard_001.json": "ca75b16cd08337b6b1d68d101620aa2a9bee96e7b06cd88e574df6bd70a96006",
+    "configs/local_description_p26_shard_000.json": "61bb721a41d3604ce8eb32f8356356a66135d7ff54a79b6f932cf0dfa3e9c3f8",
+    "configs/local_description_p26_shard_001.json": "6550f83250c76e5ff4c2f571544a7ef0b958027d0f80b9438ca5651da0942921",
+    "configs/local_description_p26_shard_002.json": "389e754742335ab4ab2b9521569e48ecf6e98c898fafa84e56de44cba758d1a8"
+  },
+  "scope_review": "All original source-ordered annotation-description cases. Complete source-provided sequence and per-instance instruction retained; original Alpaca rendering and global gold-only native Mol ROUGE frozen. Native BioT5+ pair-reference wrapper mismatch disclosed. No design/optimization, outcome-selected inputs or rationale validation. No new reasoning-budget condition."
+}

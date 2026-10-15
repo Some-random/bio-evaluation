@@ -1,0 +1,61 @@
+{
+  "run_id": "qwen38_27b_b03_public_reviewed_2026-10-15",
+  "frozen_at_utc": "2026-10-15T07:16:43.824210+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "endpoint": "http://127.0.0.1:8027/v1",
+  "gpu_ids": [
+    6
+  ],
+  "approved_task_ids": [
+    "B03"
+  ],
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "input_file": "data/local_labbench_suite/B03/model_inputs.jsonl",
+  "review_file": "configs/local_labbench_b03_review.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "generation_choice_basis": "Publisher sampling defaults; one fixed seed, medium thinking and 4096 total output tokens fixed before Qwen benchmark outputs; no search or test-driven changes.",
+  "source_dataset_revision": "5c77cec648430f30611808808861eb86f81d5eaa",
+  "source_code_revision": "998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838",
+  "prompt_policy": "Original native public zero-shot COT prompt bytes and seed-42 shuffled choices retained; no new system prompt.",
+  "metric_policy": "Official deterministic MCQ parsing without optional LLM fallback; official accuracy, selective precision, coverage; invalid completions count incorrect and non-abstaining.",
+  "scorer_reference_sha256": "c7129db0155bd8513abb43b53c2c53bfd4051df7ea01f25708f289cbb78c7702",
+  "frozen_files_sha256": {
+    "configs/local_labbench_b03_review.json": "77e8873286f9d878432c668c458dcf9ac604c2912009298927cb60a7dafeb8cb",
+    "data/local_labbench_suite/B03/model_inputs.jsonl": "a4d48d39d5e13769788840d8a70605dc8527ac1e8911a225709c9bebe12eba42",
+    "reports/labbench_native_complete_preparation.json": "8b0379d8462db1994241409ebe7efacc220f0e0e0748ef1cdfdb52c6658e55f8",
+    "scripts/execute_local_labbench_suite.py": "f6004ff0cfc7889ca18e3d9c97255b0dae4d2054174051d7e6901a4598e22e69",
+    "scripts/prepare_local_labbench_run.py": "2749dabb8e62db7b228266881fe50b8aa77e63cc827ec110d732b934986cb65a",
+    "scripts/run_local_labbench.py": "8cafb737ce5b324a7c1c1dca5261e396b46d9df0be19f82d0448add8549bc108",
+    "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+    "scripts/score_local_labbench_suite.py": "e290c74383ff836bad375bcdf6b2b77214e8135d66d0091a189b13a2f44f02f6",
+    "scripts/score_results.py": "42829c0861687bfc9217c36d43162b5f835de10c7621f566b0d85605354b331b",
+    "sources/chembench_constant.py": "71b4a92edfbe5b33e9a327b0773a2ae9cfd9946b48452f13127929a29e91021d"
+  },
+  "tool_access": [],
+  "paper_comparison": "Native public prompts, choices, required context/images and metrics. Reviewed public release; one fixed-seed run, not the original full public/private three-run paper mean. Strict deterministic parser; no model extraction fallback.",
+  "pretraining_contamination": "Unknown; local inference and shuffled choices cannot establish contamination-free performance.",
+  "runner": "scripts/run_local_labbench_multimodal.py",
+  "scorer_reference_file": "data/labbench_native_complete/scorer_references.jsonl",
+  "model_facing_fields": [
+    "choices",
+    "doi",
+    "paper_title",
+    "question"
+  ],
+  "serving_config_file": "configs/local_model_gpu6.json",
+  "server_record_file": ".local/local_model_server_gpu6.json"
+}

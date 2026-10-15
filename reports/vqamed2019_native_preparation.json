@@ -1,0 +1,65 @@
+{
+  "task_id": "V04",
+  "cases": 500,
+  "unique_images": 500,
+  "source_revision": "e673406ebc64cf499397e8abc0b63771b2db4bb9",
+  "source_files": {
+    "sources/vqamed2019/README-VQA-Med-2019-Data.txt": {
+      "sha256": "171c98b1f891dc4c81eb4ddaff04a0ef13580eb21388aafb60a734b67f16c2ef",
+      "publisher_git_blob": "05e0881d03256fddb4e246ab9f56b6e63c1fc2eb",
+      "bytes": 3418,
+      "url": "https://raw.githubusercontent.com/abachaa/VQA-Med-2019/e673406ebc64cf499397e8abc0b63771b2db4bb9/README-VQA-Med-2019-Data.txt"
+    },
+    "sources/vqamed2019/README.md": {
+      "sha256": "42b5cf4344aacb90b8b3199c13ea0f7403c555154042c3010bdb9009fc146b23",
+      "publisher_git_blob": "0faa2936d1e2239ab68b0d9c8380a3370f5c32ef",
+      "bytes": 3212,
+      "url": "https://raw.githubusercontent.com/abachaa/VQA-Med-2019/e673406ebc64cf499397e8abc0b63771b2db4bb9/README.md"
+    },
+    "sources/vqamed2019/VQAMed2019Test__README-VQA-Med-2019-TestSet.txt": {
+      "sha256": "5e64b4a3227968e1e2af2c8295955bdc3029f1e0ce2661eeb703e419b05aa02b",
+      "publisher_git_blob": "4b9d69bad34371f58eb85f1598d4483e82c0ac9a",
+      "bytes": 1961,
+      "url": "https://raw.githubusercontent.com/abachaa/VQA-Med-2019/e673406ebc64cf499397e8abc0b63771b2db4bb9/VQAMed2019Test/README-VQA-Med-2019-TestSet.txt"
+    },
+    "sources/vqamed2019/test_images.zip": {
+      "sha256": "75165e03c9cbf534768fc9c581195bb96605183fb3a1ff2b5d7e4956e627d933",
+      "publisher_git_blob": "f6ba63d9fd8e958161c7191856bb4b3defef714c",
+      "bytes": 21457798,
+      "url": "https://raw.githubusercontent.com/abachaa/VQA-Med-2019/e673406ebc64cf499397e8abc0b63771b2db4bb9/VQAMed2019Test/VQAMed2019_Test_Images.zip"
+    },
+    "sources/vqamed2019/VQAMed2019Test__VQAMed2019_Test_Questions.txt": {
+      "sha256": "c3159f4b74d5ca8727cbf7d281492ff23004777056e0e62cb9143d6e817fbfd9",
+      "publisher_git_blob": "2074565c7675b2613744792ba968af65491a20a4",
+      "bytes": 24370,
+      "url": "https://raw.githubusercontent.com/abachaa/VQA-Med-2019/e673406ebc64cf499397e8abc0b63771b2db4bb9/VQAMed2019Test/VQAMed2019_Test_Questions.txt"
+    },
+    "sources/vqamed2019/VQAMed2019Test__VQAMed2019_Test_Questions_w_Ref_Answers.txt": {
+      "sha256": "25235509ccb72f4e8cb1240a92f97a7690119541472a68f24b010cd031254f2b",
+      "publisher_git_blob": "5d6a4b9b0d4801b34db83853ae56c83502b200d4",
+      "bytes": 36698,
+      "url": "https://raw.githubusercontent.com/abachaa/VQA-Med-2019/e673406ebc64cf499397e8abc0b63771b2db4bb9/VQAMed2019Test/VQAMed2019_Test_Questions_w_Ref_Answers.txt"
+    }
+  },
+  "license": "Publisher CC BY4.0",
+  "native_case_order_verified": true,
+  "category_counts_scorer_only": {
+    "modality": 125,
+    "plane": 125,
+    "organ": 125,
+    "abnormality": 125
+  },
+  "model_facing_fields": [
+    "original_question",
+    "original_image_bytes"
+  ],
+  "reference_answer_source": "Original challenge reference answers manually validated by two medical doctors; # alternatives and parenthesized optional parts preserved scorer-side.",
+  "metric_qualification": "Strict accuracy reconstructed from original organizer protocol plus reference syntax. Exact historical2019 executable not recovered. BLEU withheld until original smoothing/tokenization/aggregation verified; no later-year scorer silently substituted.",
+  "paper_comparison": "Same original500 test IDs/images/questions; zero-shot Qwen and explicit fixed scorer reconstruction, not target-fine-tuned MedVInT or a claim of byte-identical challenge scoring.",
+  "prepared_files_sha256": {
+    "model_inputs.jsonl": "99c922b66d48358474c212be79ce3081ca5e4229f06d2f9ce13ef9a0cdda081f",
+    "scorer_references.jsonl": "bd10a21b8813be1599871ef21c9309ce08030e0e4b8104bc38e59ab725978e85",
+    "image_manifest.json": "5cde20b87b56b86b733316caa56c118c566f2ddfd2575df0eef9599b75f0693e"
+  },
+  "inference_dispatched": false
+}

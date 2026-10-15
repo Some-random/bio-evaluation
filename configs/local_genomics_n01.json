@@ -1,0 +1,70 @@
+{
+  "run_id": "qwen38_27b_n01_full_windows_2026-10-15",
+  "proposal_status": "frozen_for_authorized_execution",
+  "created_at_utc": "2026-10-15T07:54:18.956110+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "gpu_ids": [
+    6
+  ],
+  "endpoint": "http://127.0.0.1:8027/v1",
+  "serving_config_file": "configs/local_model_gpu6.json",
+  "server_record_file": ".local/local_model_server_gpu6.json",
+  "approved_task_ids": [
+    "N01"
+  ],
+  "variant": "NATIVE_LLM_INTERFACE_FULL_RELEASE_WINDOWS_PREPARED",
+  "input_file": "data/catalog_genomic_tasks/N01/model_inputs.jsonl",
+  "review_file": "configs/local_genomics_n01_review.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "runner": "scripts/run_local_labbench_multimodal.py",
+  "executor": "scripts/execute_local_genomics.py",
+  "scorer": "scripts/score_local_genomics.py",
+  "scorer_reference_file": "data/catalog_genomic_tasks/N01/scorer_references.jsonl",
+  "scorer_reference_sha256": "a39e8f991ff892aaaa32f966f0cdefcbca433acb98606a9549aeb01edd0e19ea",
+  "class_vocabulary_file": "data/catalog_genomic_tasks/N01/class_vocabulary.json",
+  "source_dataset_revision": "9f0ef941a362f0e308e11861ed82c36338e23586",
+  "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+  "tool_access": [],
+  "input_modalities": [
+    "DNA_sequence_text",
+    "text"
+  ],
+  "model_facing_fields": [
+    "reference_sequence",
+    "variant_sequence",
+    "question",
+    "pathway_network_and_gene_context_in_question"
+  ],
+  "case_scope": "official_released_test_then_val_290",
+  "prompt_policy": "Original source LLM user string and complete released DNA windows; no additional output instruction, class list, label, teacher rationale, retrieval or tool.",
+  "metric_policy": "Primary source predicates on qualified reasoning+final continuation, never prompt text. STRICT_FINAL_LABEL is a separate final-content diagnostic; N01 global37 zero-division0 macro scores supplemental. Scorer code freezes all details before outcomes.",
+  "paper_comparison": "Full released windows and prompted Qwen differ from specialist representations/SFT, some source cropping and author decoding. Native decoded-byte equivalence is not claimed. N04 network holdout and N05 expression measurement contracts are not replaced.",
+  "frozen_files_sha256": {
+    "configs/local_genomics_n01_review.json": "333884415b91d577cd483ae0ba88e566fd337d1abd18ebd1d7d3e90e8663556b",
+    "data/catalog_genomic_tasks/N01/class_vocabulary.json": "349e7a2f9bcd1126eadc58d61a88dd327af01dee39b2be639a048e96b702f65b",
+    "data/catalog_genomic_tasks/N01/input_provenance.jsonl": "57fe8fbd4f36a80b2873a8eaf92977b196b0c4596b8c2d76eb50ffb1fe1b5b41",
+    "data/catalog_genomic_tasks/N01/model_inputs.jsonl": "72b9008ed766e7b5b080e7ba5758adb0be7357ef9cbc76f30e260b275015a119",
+    "data/catalog_genomic_tasks/N01/preparation.json": "4404dabd9b17c127a391e29827aa3e2d1cea36e27e8b8f4b769e172fa4077e11",
+    "scripts/execute_local_genomics.py": "1c20c0bb95a2dde59c97d289f902eb07379cb75345f7d99eb6e589c7f8f300f9",
+    "scripts/prepare_local_genomic_proposals.py": "00c47d40796816f04ffcd725e596002abf5115dc561c9f8c78474c171b0a0bee",
+    "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+    "scripts/score_local_genomics.py": "31b786c16b70e4914268c561244f1fd3ed5c4e049e7ae7a79da3ac973c2e5240"
+  },
+  "frozen_at_utc": "2026-10-15T07:55:53.507864+00:00",
+  "reporting_protocol_kind": "adapted",
+  "reporting_protocol_classification": "Complete released raw-DNA-window Qwen baseline; native input scaffolds/predicates retained, specialist DNA representations/SFT and source decoder/truncation not reproduced."
+}

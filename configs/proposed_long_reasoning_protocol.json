@@ -1,0 +1,12 @@
+{
+  "status": "proposed_not_authorized_not_dispatched",
+  "proposed_at_utc": "2026-10-15T07:40:44.972290+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "current_total_output_tokens": 4096,
+  "proposed_total_output_tokens": 16384,
+  "scope": "New separately reported condition for reasoning-enabled benchmarks. Keep all existing4k outputs; use complete permitted task case lists, never only incorrect/truncated cases. No change to source inputs, label access, model, seed, sampling or tools. No PG-LLM/flagged requests.",
+  "rationale": "All33 CloningScenarios responses and most observed SeqQA completions exhausted4k budget before a final answer; this is an output-validity limitation, not a reference-based prompt optimization.",
+  "potential_cost": "Local GPU time and output-token upper bound can rise up to4x per case; no OpenAI inference/API charges.",
+  "execution_guard": "Do not dispatch this new condition until user explicitly selects it. Existing authorized runs continue."
+}

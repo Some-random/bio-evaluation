@@ -1,0 +1,46 @@
+[
+  {
+    "task": "P10",
+    "source_file": "sources/catalog_human_ppi.zip",
+    "actual_original_test_count": 237,
+    "export_count": 237,
+    "ordered_sequence_pair_and_label_multiset_equal": true,
+    "row_order_equal": true,
+    "native_canonical_sha256": "701347008e871037c2980c5768ecc228a79425edca3e1346e39374228c330eaa",
+    "export_canonical_sha256": "701347008e871037c2980c5768ecc228a79425edca3e1346e39374228c330eaa",
+    "note": "Pinned TorchDrug test-size docstring is stale; actual publisher-MD5-matched LMDB agrees exactly with BioT5+ export, including labels. No solver output involved."
+  },
+  {
+    "task": "P11",
+    "source_file": "sources/catalog_yeast_ppi.zip",
+    "actual_original_test_count": 394,
+    "export_count": 394,
+    "ordered_sequence_pair_and_label_multiset_equal": true,
+    "row_order_equal": true,
+    "native_canonical_sha256": "7d5c0800365d9d9350faf30abc4765933552e9085212b7327f7c4f8074972bea",
+    "export_canonical_sha256": "7d5c0800365d9d9350faf30abc4765933552e9085212b7327f7c4f8074972bea",
+    "note": "Pinned TorchDrug test-size docstring is stale; actual publisher-MD5-matched LMDB agrees exactly with BioT5+ export, including labels. No solver output involved."
+  },
+  {
+    "task": "P01",
+    "actual_original_test_count": 1999,
+    "export_count": 1999,
+    "sequence_and_label_multiset_equal": true,
+    "row_order_equal": true,
+    "native_canonical_sha256": "e99603623a843b11f660bb9bc8603d4f197bdc5019cb751be65bfd2a6b2f9d71",
+    "export_canonical_sha256": "e99603623a843b11f660bb9bc8603d4f197bdc5019cb751be65bfd2a6b2f9d71",
+    "original_publisher_md5_matched": true,
+    "note": "Complete original source test sequence and label records agree with BioT5+ test export. No solver output involved."
+  },
+  {
+    "task": "P02",
+    "actual_original_test_count": 1749,
+    "export_count": 1749,
+    "sequence_and_label_multiset_equal": true,
+    "row_order_equal": true,
+    "native_canonical_sha256": "2aaf80f1b567ecd8401ab1d874626bdc69e9fdab4bc4fb8ed0577d072bfd2c70",
+    "export_canonical_sha256": "2aaf80f1b567ecd8401ab1d874626bdc69e9fdab4bc4fb8ed0577d072bfd2c70",
+    "original_publisher_md5_matched": true,
+    "note": "Complete original source test sequence and label records agree with BioT5+ test export. No solver output involved."
+  }
+]

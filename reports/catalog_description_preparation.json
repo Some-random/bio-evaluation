@@ -1,0 +1,277 @@
+{
+  "mode": "offline_preparation_no_inference",
+  "tasks": [
+    {
+      "task": "P25",
+      "cases": 1400,
+      "variant": "QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE",
+      "source_file": "sources/biot5_data__tasks_plus__task225_domain_motif_molinst_pro_test.json",
+      "source_revision": "9f70da9e8f0df32e7e62846f7ad78a829b00c0fd",
+      "source_sha256": "b504bf077617661f855a2ad811e25edb1aeb7e98a8d636966c21e7baa02f6f46",
+      "test_list_file": "sources/biot5_data__splits_plus__molinst__eval__protein_domain_motif__test_tasks.txt",
+      "test_list_sha256": "14cb406c2396f3553ca80bc5e3fe75c1e4c7832ca44bfa3e955902e3b24c7b31",
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task225_domain_motif_molinst_pro_test.json",
+      "exact_official_BioT5_export_test": true,
+      "original_Mol_Instructions_raw_archive_identity_verified": false,
+      "instruction_selection": "Exact per-instance instruction, as in pinned DataCollatorForMolinstNI; no task Definition substitution or random prompt selection",
+      "prompt_template": "sources/catalog_descriptions__biot5__utils__templates__alpaca.json",
+      "native_template_sha256": "853c698d1e733655a429232100e31a33beeab2a29d0b98ba63232c90e0f379de",
+      "native_serialization_retained": true,
+      "full_sequences_retained": true,
+      "sequence_lengths": {
+        "min": 56,
+        "max": 768
+      },
+      "native_unique_instruction_count": 10,
+      "input_allowlist": [
+        "instruction",
+        "complete decoded amino-acid sequence"
+      ],
+      "scorer_only_fields": [
+        "output"
+      ],
+      "native_protocol_adaptations": [
+        "BioT5 amino-acid special tokens decoded for Qwen",
+        "Complete sequences retained instead of native512-token encoder truncation",
+        "Zero-shot Qwen rather than fitted BioT5/Mol-Instructions specialist"
+      ],
+      "metric_protocol": "Official Mol-Instructions gold-only HuggingFace ROUGE defaults: default tokenizer, use_stemmer=False, all four default ROUGE types, BootstrapAggregator mid.fmeasure; fixed scoring RNG seed42 disclosed",
+      "BioT5_metric_source_caveat": "Pinned BioT5+ wrapper computes references_new but passes [gold, decoded_input] pairs to ROUGE. This is not silently corrected or claimed equivalent; exact BioT5-paper metric comparison is unresolved.",
+      "likely_task_demands": {
+        "labels": [
+          "biological_annotation_prediction",
+          "sequence_representation",
+          "reference_description_generation"
+        ],
+        "status": "provisional; no internal model computation inferred"
+      },
+      "reference_answer_source": "Native task output description, separate from solver inputs",
+      "allowed_score_claim": "Lexical agreement with source reference descriptions under the fixed zero-shot full-sequence baseline",
+      "unsupported_score_claim": "ROUGE does not verify every functional fact, causal mechanism, independent rationale or lack of pretraining exposure",
+      "explanation_support_score": null,
+      "inference_dispatched": 0,
+      "training_or_head_fitting": false,
+      "files": {
+        "model_inputs.jsonl": {
+          "bytes": 2584902,
+          "sha256": "b245fb2203863ff7fb6e06a91e33454f53bf9f744295bc8b69c11645b6b2369c"
+        },
+        "native_serialized_inputs.jsonl": {
+          "bytes": 6703780,
+          "sha256": "003c5fa2371e26864f8b778bf587a1ee711c3afdcb41eb32d13a4ebaca6aa22e"
+        },
+        "scorer_references.jsonl": {
+          "bytes": 621786,
+          "sha256": "40a1e0048746de57ca1258251e1e7fb53b93283841706934dd0c1ee7fdd73ca6"
+        }
+      }
+    },
+    {
+      "task": "P24",
+      "cases": 1601,
+      "variant": "QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE",
+      "source_file": "sources/biot5_data__tasks_plus__task222_catalytic_activity_molinst_pro_test.json",
+      "source_revision": "9f70da9e8f0df32e7e62846f7ad78a829b00c0fd",
+      "source_sha256": "8f53b17f74fcc3e0b32f1e68d8374405d70c1187ceb23db48665f19874e9d4e1",
+      "test_list_file": "sources/biot5_data__splits_plus__molinst__eval__protein_catalytic_activity__test_tasks.txt",
+      "test_list_sha256": "54ef39bb379d43370cdacfe309f5dd9a5a220260adc4c2a61b7557018f06f9fe",
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task222_catalytic_activity_molinst_pro_test.json",
+      "exact_official_BioT5_export_test": true,
+      "original_Mol_Instructions_raw_archive_identity_verified": false,
+      "instruction_selection": "Exact per-instance instruction, as in pinned DataCollatorForMolinstNI; no task Definition substitution or random prompt selection",
+      "prompt_template": "sources/catalog_descriptions__biot5__utils__templates__alpaca.json",
+      "native_template_sha256": "853c698d1e733655a429232100e31a33beeab2a29d0b98ba63232c90e0f379de",
+      "native_serialization_retained": true,
+      "full_sequences_retained": true,
+      "sequence_lengths": {
+        "min": 10,
+        "max": 768
+      },
+      "native_unique_instruction_count": 5,
+      "input_allowlist": [
+        "instruction",
+        "complete decoded amino-acid sequence"
+      ],
+      "scorer_only_fields": [
+        "output"
+      ],
+      "native_protocol_adaptations": [
+        "BioT5 amino-acid special tokens decoded for Qwen",
+        "Complete sequences retained instead of native512-token encoder truncation",
+        "Zero-shot Qwen rather than fitted BioT5/Mol-Instructions specialist"
+      ],
+      "metric_protocol": "Official Mol-Instructions gold-only HuggingFace ROUGE defaults: default tokenizer, use_stemmer=False, all four default ROUGE types, BootstrapAggregator mid.fmeasure; fixed scoring RNG seed42 disclosed",
+      "BioT5_metric_source_caveat": "Pinned BioT5+ wrapper computes references_new but passes [gold, decoded_input] pairs to ROUGE. This is not silently corrected or claimed equivalent; exact BioT5-paper metric comparison is unresolved.",
+      "likely_task_demands": {
+        "labels": [
+          "biological_annotation_prediction",
+          "sequence_representation",
+          "reference_description_generation"
+        ],
+        "status": "provisional; no internal model computation inferred"
+      },
+      "reference_answer_source": "Native task output description, separate from solver inputs",
+      "allowed_score_claim": "Lexical agreement with source reference descriptions under the fixed zero-shot full-sequence baseline",
+      "unsupported_score_claim": "ROUGE does not verify every functional fact, causal mechanism, independent rationale or lack of pretraining exposure",
+      "explanation_support_score": null,
+      "inference_dispatched": 0,
+      "training_or_head_fitting": false,
+      "files": {
+        "model_inputs.jsonl": {
+          "bytes": 2886130,
+          "sha256": "ab26937b1d5beeeab0810a73691560cff9fbf9abed70c0926a3a7d760d21aa37"
+        },
+        "native_serialized_inputs.jsonl": {
+          "bytes": 6952463,
+          "sha256": "b430e71d56b67809d5ae0f370c64dd0a7a6b5416bb99c79dcc3830fba18368c3"
+        },
+        "scorer_references.jsonl": {
+          "bytes": 815059,
+          "sha256": "ca156ede2de4de9bcb88c3fbf1adf49b32086f4bc41bb491fe7289cb7814e01b"
+        }
+      }
+    },
+    {
+      "task": "P26",
+      "cases": 2633,
+      "variant": "QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE",
+      "source_file": "sources/biot5_data__tasks_plus__task231_general_function_molinst_pro_test.json",
+      "source_revision": "9f70da9e8f0df32e7e62846f7ad78a829b00c0fd",
+      "source_sha256": "eba4893a25e35a1467f67897402365aaf69fbdad9b1bf8abbc5c32723c6d04e6",
+      "test_list_file": "sources/biot5_data__splits_plus__molinst__eval__protein_general_function__test_tasks.txt",
+      "test_list_sha256": "8ce98b25534c15694895aedb7cd6e348269147a061f254c11993a906f93d5f82",
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task231_general_function_molinst_pro_test.json",
+      "exact_official_BioT5_export_test": true,
+      "original_Mol_Instructions_raw_archive_identity_verified": false,
+      "instruction_selection": "Exact per-instance instruction, as in pinned DataCollatorForMolinstNI; no task Definition substitution or random prompt selection",
+      "prompt_template": "sources/catalog_descriptions__biot5__utils__templates__alpaca.json",
+      "native_template_sha256": "853c698d1e733655a429232100e31a33beeab2a29d0b98ba63232c90e0f379de",
+      "native_serialization_retained": true,
+      "full_sequences_retained": true,
+      "sequence_lengths": {
+        "min": 5,
+        "max": 768
+      },
+      "native_unique_instruction_count": 7,
+      "input_allowlist": [
+        "instruction",
+        "complete decoded amino-acid sequence"
+      ],
+      "scorer_only_fields": [
+        "output"
+      ],
+      "native_protocol_adaptations": [
+        "BioT5 amino-acid special tokens decoded for Qwen",
+        "Complete sequences retained instead of native512-token encoder truncation",
+        "Zero-shot Qwen rather than fitted BioT5/Mol-Instructions specialist"
+      ],
+      "metric_protocol": "Official Mol-Instructions gold-only HuggingFace ROUGE defaults: default tokenizer, use_stemmer=False, all four default ROUGE types, BootstrapAggregator mid.fmeasure; fixed scoring RNG seed42 disclosed",
+      "BioT5_metric_source_caveat": "Pinned BioT5+ wrapper computes references_new but passes [gold, decoded_input] pairs to ROUGE. This is not silently corrected or claimed equivalent; exact BioT5-paper metric comparison is unresolved.",
+      "likely_task_demands": {
+        "labels": [
+          "biological_annotation_prediction",
+          "sequence_representation",
+          "reference_description_generation"
+        ],
+        "status": "provisional; no internal model computation inferred"
+      },
+      "reference_answer_source": "Native task output description, separate from solver inputs",
+      "allowed_score_claim": "Lexical agreement with source reference descriptions under the fixed zero-shot full-sequence baseline",
+      "unsupported_score_claim": "ROUGE does not verify every functional fact, causal mechanism, independent rationale or lack of pretraining exposure",
+      "explanation_support_score": null,
+      "inference_dispatched": 0,
+      "training_or_head_fitting": false,
+      "files": {
+        "model_inputs.jsonl": {
+          "bytes": 4212920,
+          "sha256": "9645ed93fb45425987691167bf470b9f8fe8204bfa276cef5f75043918da0ca7"
+        },
+        "native_serialized_inputs.jsonl": {
+          "bytes": 10180527,
+          "sha256": "f541b6f6407f65d6a5df0113f35c3a2df24221258a7ef6132f7283c9b583fff2"
+        },
+        "scorer_references.jsonl": {
+          "bytes": 1749026,
+          "sha256": "103222e9c7d308acebf602e0d0672632e94c85dd83acce59c17f18bd90946588"
+        }
+      }
+    },
+    {
+      "task": "P23",
+      "cases": 3494,
+      "variant": "QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE",
+      "source_file": "sources/biot5_data__tasks_plus__task228_protein_function_molinst_pro_test.json",
+      "source_revision": "9f70da9e8f0df32e7e62846f7ad78a829b00c0fd",
+      "source_sha256": "7a984a304f7764056e789470e16797a75c120c1d13143cd1eb03728f2512c744",
+      "test_list_file": "sources/biot5_data__splits_plus__molinst__eval__protein_protein_function__test_tasks.txt",
+      "test_list_sha256": "7d4e2316137dd5d7c5c58e46c520e9f75df5dbf3498dbc778bb59825a93edcaa",
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task228_protein_function_molinst_pro_test.json",
+      "exact_official_BioT5_export_test": true,
+      "original_Mol_Instructions_raw_archive_identity_verified": false,
+      "instruction_selection": "Exact per-instance instruction, as in pinned DataCollatorForMolinstNI; no task Definition substitution or random prompt selection",
+      "prompt_template": "sources/catalog_descriptions__biot5__utils__templates__alpaca.json",
+      "native_template_sha256": "853c698d1e733655a429232100e31a33beeab2a29d0b98ba63232c90e0f379de",
+      "native_serialization_retained": true,
+      "full_sequences_retained": true,
+      "sequence_lengths": {
+        "min": 8,
+        "max": 768
+      },
+      "native_unique_instruction_count": 38,
+      "input_allowlist": [
+        "instruction",
+        "complete decoded amino-acid sequence"
+      ],
+      "scorer_only_fields": [
+        "output"
+      ],
+      "native_protocol_adaptations": [
+        "BioT5 amino-acid special tokens decoded for Qwen",
+        "Complete sequences retained instead of native512-token encoder truncation",
+        "Zero-shot Qwen rather than fitted BioT5/Mol-Instructions specialist"
+      ],
+      "metric_protocol": "Official Mol-Instructions gold-only HuggingFace ROUGE defaults: default tokenizer, use_stemmer=False, all four default ROUGE types, BootstrapAggregator mid.fmeasure; fixed scoring RNG seed42 disclosed",
+      "BioT5_metric_source_caveat": "Pinned BioT5+ wrapper computes references_new but passes [gold, decoded_input] pairs to ROUGE. This is not silently corrected or claimed equivalent; exact BioT5-paper metric comparison is unresolved.",
+      "likely_task_demands": {
+        "labels": [
+          "biological_annotation_prediction",
+          "sequence_representation",
+          "reference_description_generation"
+        ],
+        "status": "provisional; no internal model computation inferred"
+      },
+      "reference_answer_source": "Native task output description, separate from solver inputs",
+      "allowed_score_claim": "Lexical agreement with source reference descriptions under the fixed zero-shot full-sequence baseline",
+      "unsupported_score_claim": "ROUGE does not verify every functional fact, causal mechanism, independent rationale or lack of pretraining exposure",
+      "explanation_support_score": null,
+      "inference_dispatched": 0,
+      "training_or_head_fitting": false,
+      "files": {
+        "model_inputs.jsonl": {
+          "bytes": 5942588,
+          "sha256": "729374bab4431aa2cc96cdcec9f75648f5aa6215dc0c25614fec7ba38b6e1d25"
+        },
+        "native_serialized_inputs.jsonl": {
+          "bytes": 13792572,
+          "sha256": "26d2aee6397d4675e2dfe8dc5ef5e62917ec876f063e13fe433af2bb7c9291e0"
+        },
+        "scorer_references.jsonl": {
+          "bytes": 2136803,
+          "sha256": "cfdd9b2706f22a67c696151f51def8ac8cdc7ce4fc6b49f9983ffc25f95ce7cf"
+        }
+      }
+    }
+  ],
+  "source_code_revision": "cf65ae6dff63fdea8883dd17d46728a61bba386c",
+  "scorer_source": "sources/mol__evaluation__protein__eval.py",
+  "rouge_source": "sources/catalog_descriptions__hf__rouge_pinned.py",
+  "rouge_revision": "1bc20e7e9df922e5dfb597c31a4ea8467a89caff",
+  "rouge_score_version": "0.1.2",
+  "P27": {
+    "status": "distinct_temporal_split_not_recovered",
+    "basis": "NatureLM paper section4.4 uses NCBI sequence/annotation pairs with temporal division. Pinned official SFM/NatureLM tree and README expose models/notebooks but no frozen description test release or cutoff IDs.",
+    "source": "https://arxiv.org/html/2502.07527v3#S4.SS4",
+    "substitution_with_P26_permitted": false,
+    "remaining": "Obtain author-released temporal test artifact, cutoff and metric configuration; P26 is not this split."
+  }
+}

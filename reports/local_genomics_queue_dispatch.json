@@ -1,0 +1,35 @@
+{
+  "reviewed_and_frozen_at_utc": "2026-10-15T07:55:53.507864+00:00",
+  "runs": [
+    {
+      "task_id": "N01",
+      "cases": 290,
+      "config_file": "configs/local_genomics_n01.json",
+      "configuration_sha256": "ce80184b42ea3f983a20cfa86d5fb0db8dba1b317b3903d2e3e6cb03c920eac2",
+      "gpu_ids": [
+        6
+      ]
+    },
+    {
+      "task_id": "N02",
+      "cases": 1233,
+      "config_file": "configs/local_genomics_n02.json",
+      "configuration_sha256": "d2072c4583e6418f67b13c273c2e0cc5a5ba25facb4ba82ba13dbc7a789dd719",
+      "gpu_ids": [
+        4
+      ]
+    },
+    {
+      "task_id": "N03",
+      "cases": 873,
+      "config_file": "configs/local_genomics_n03.json",
+      "configuration_sha256": "12c2034afd2063cde061b8d9e24f463653ab8bbb81ae33bad7bd3625e20af72d",
+      "gpu_ids": [
+        7
+      ]
+    }
+  ],
+  "scope_review": "Human clinical-allele and pathway outcome prediction, complete native released DNA windows plus source-defined questions/context. No target answers or teacher rationales in requests. Native permissive continuation predicates and strict final-label diagnostics remain separately reported, with source-decoder qualification. No transferred flagged requests, operational instructions or optimization.",
+  "openai_calls": false,
+  "generation_total_output_tokens": 4096
+}

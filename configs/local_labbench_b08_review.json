@@ -1,0 +1,83 @@
+{
+  "task_id": "B08",
+  "reviewed_at_utc": "2026-10-15T07:17:46.059162+00:00",
+  "input_review_only": true,
+  "text_only_scope_review": true,
+  "basis": "Semantic input-only review of every selected task question and all answer-choice texts, without scorer reference answers, model responses or outcome-based selection. Only B04, B05 and B08 were exposed for this review; B06/ProtocolQA was not reopened. Long DNA literals in B08 were collapsed only for analyst display; original source and inference inputs remain unchanged.",
+  "full_public_cases": 33,
+  "approved_cases": 33,
+  "held_case_count": 0,
+  "approved_case_ids": [
+    "8cd98408-8672-4330-911e-57bff9ec334a",
+    "908754dd-ffea-48f6-a969-25e954bfe68f",
+    "deb05431-8569-408d-aa7b-ddde9ab3f69c",
+    "44aa0f62-8e7b-4f1c-bdbc-e0387900fa57",
+    "2f6249e8-cd4a-4a7b-a305-aacd2d835322",
+    "85bfae8c-5ca5-4cc7-a304-642262294715",
+    "bd28bcb5-5a5c-46d2-b5af-5db33320166e",
+    "9d3a3927-ff0d-4705-ba78-4349354b11df",
+    "cd903976-1e8c-409a-b081-ec41500e29f9",
+    "8e10fbe3-f669-4b1b-b6d5-cf3535a8ed8d",
+    "dc904e78-65ff-482e-b104-e89ebcfe1bc0",
+    "76e1095d-3448-474c-8c17-6383f77c986d",
+    "b11a0173-498c-46fa-9edc-fe8817611ca5",
+    "f2dc06d4-a5e9-474f-baf6-63458486ce83",
+    "156fa4dc-bd5e-401c-b1e2-dd94a51e8c4d",
+    "3088b5cb-e333-43e6-b749-badcfdbebe7d",
+    "24f6a29d-11b2-41ed-b1ac-c70a943e97d2",
+    "a8d80f58-a25e-4545-87a0-691c7352cfac",
+    "1be88c95-0fb5-493e-9690-0e9e33012e46",
+    "abc79dc8-71d3-4326-a969-b4cc174eea68",
+    "f794f9e7-bc34-4dac-854f-09b23a6f7dab",
+    "1a875073-1900-46bc-bfae-fa609193c9c5",
+    "b7c4fe33-b7e9-450c-994d-91cafc81d68f",
+    "8c8bfe7d-0aa3-4c84-a573-e04f1e8fd92a",
+    "0dbed315-e82f-4394-81ea-eee2678ac674",
+    "f74cfd34-fd73-4418-81a4-f1a427da6ba1",
+    "ebcf6e9e-c666-4b37-88e3-7794e30b5866",
+    "751ac767-1d34-4e26-b5fc-55b933623807",
+    "0e442d2a-1ef5-47bb-bd74-c65f44c6c909",
+    "9eff2923-3836-4cbc-8f01-e45d38f7d706",
+    "09ca0782-1451-4cd0-a2e3-3312065ede40",
+    "348d17b7-1c53-4872-9df7-6fdf1e868727",
+    "00540e26-a387-4841-93f2-506d4c8e5c6c"
+  ],
+  "held_cases": [],
+  "selection_based_on_model_outputs": false,
+  "source_input_path": "data/labbench_native_complete/model_inputs.jsonl",
+  "source_input_sha256": "407fb8c3e47adde416e611e6edbbf8931108873f993930f0f139ec4be82a7fc0",
+  "task_inputs_sha256": "d6dc6b1875221104b671fb7a35d8a7c7194b1d67afec98853b175c7feac8bfe5",
+  "task_inputs_sha256_basis": "Concatenated complete original JSONL lines for this task, including original newline bytes, in source order.",
+  "approved_case_order": "original source task order",
+  "review_scope": "Local Qwen baseline only; this input-only review does not dispatch cases or modify execution authorization. OpenAI hold, held B06 review and previously flagged P18 requests remain unchanged.",
+  "flagged_P18_requests_transferred": false,
+  "native_images_required": false,
+  "image_contents_reviewed": false,
+  "native_image_references": 0,
+  "input_modalities": [
+    "text",
+    "sequence"
+  ],
+  "required_model_facing_fields": [
+    "question",
+    "choices",
+    "complete_sequences"
+  ],
+  "provisional_task_demands": [
+    "sequence manipulation",
+    "standard molecular cloning knowledge",
+    "generic reporter/guide-RNA construct interpretation"
+  ],
+  "review_findings": [
+    "All 33 text questions and answer-choice texts were reviewed. Their contexts concern generic plasmids, restriction/Gibson/Golden Gate cloning, routine selection, reporter expression, sequence transformations and generic guide-RNA/yeast constructs.",
+    "No reviewed text requests pathogen-fitness enhancement, immune escape, transmissibility enhancement, toxin enhancement, evasion of controls or transfer of previously rejected requests.",
+    "Long literal DNA strings were collapsed solely for analyst display. No model-facing sequence, question, choice or other source field was changed or removed."
+  ],
+  "protocol_caveats": [
+    "Preserve original native question/choice transformations, abstention, metric names and complete required inputs.",
+    "Preserve every complete source sequence and all native choices; analyst display collapsing must never enter model requests.",
+    "No tools, retrieval, answer-bearing scorer information, new training or test-guided configuration changes are authorized by this review.",
+    "A single seeded local run on released public cases differs from repeated full-paper evaluation.",
+    "Correct final choices do not validate generated rationales; pretraining exposure remains unknown."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "frozen_at_utc": "2026-10-15T07:53:31.069581+00:00",
+  "runs": [
+    {
+      "dataset": "human",
+      "cases": 1200,
+      "gpu_ids": [
+        6
+      ],
+      "config": "configs/local_dti_human.json",
+      "config_sha256": "606206a59af611e3cd0203f6e3774f208e1408b2f5356cf637b32f4dae7926c7"
+    },
+    {
+      "dataset": "biosnap",
+      "cases": 5493,
+      "gpu_ids": [
+        4
+      ],
+      "config": "configs/local_dti_biosnap.json",
+      "config_sha256": "ed5caf9c4e50be5252408f2c0e2fb1bdaf1d0a6cc91a5c3742a07b0a398eba54"
+    },
+    {
+      "dataset": "bindingdb",
+      "cases": 9840,
+      "gpu_ids": [
+        7
+      ],
+      "config": "configs/local_dti_bindingdb.json",
+      "config_sha256": "3b4f54100ab5a4ef8934ffebdf51b3ec786e524fdb3a3e98717e4b4a67122b73"
+    }
+  ],
+  "scope": "All16533 native source test cases, separate dataset AUROC/AP; zero-shot likelihood adapter not exact specialist/paper architecture. No training or threshold fitting.",
+  "openai_calls": false
+}

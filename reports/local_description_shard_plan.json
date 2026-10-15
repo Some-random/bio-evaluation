@@ -1,0 +1,217 @@
+{
+  "frozen_at_utc": "2026-10-15T07:55:02.400831+00:00",
+  "execution_authorized": false,
+  "input_review_complete": true,
+  "shard_size": 1024,
+  "partition_policy": "Consecutive original source-order1024-row slices, all IDs once; no label/output-based selection.",
+  "replica_order": [
+    {
+      "gpu_ids": [
+        6
+      ],
+      "port": 8027
+    },
+    {
+      "gpu_ids": [
+        4
+      ],
+      "port": 8029
+    },
+    {
+      "gpu_ids": [
+        7
+      ],
+      "port": 8028
+    },
+    {
+      "gpu_ids": [
+        5
+      ],
+      "port": 8026
+    }
+  ],
+  "source_recipe_file": "configs/local_labbench_b07.json",
+  "source_recipe_sha256": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "concurrency": 4,
+  "tasks": [
+    {
+      "task_id": "P23",
+      "aggregate_config_file": "configs/local_description_p23_aggregate.json",
+      "aggregate_config_sha256": "61ad393d6b74ee32115c2f3c69a5ec533b541ec2dd45fa804c594315b617d591",
+      "aggregate_run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15",
+      "full_test_case_count": 3494,
+      "shard_count": 4,
+      "shards": [
+        {
+          "config_file": "configs/local_description_p23_shard_000.json",
+          "config_sha256": "d966893dc6e1b26b8007091f22d1278ccb063c7ee956676e45eb14e51cc86aa4",
+          "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_000",
+          "shard_index": 0,
+          "cases": 1024,
+          "gpu_ids": [
+            6
+          ],
+          "endpoint": "http://127.0.0.1:8027/v1"
+        },
+        {
+          "config_file": "configs/local_description_p23_shard_001.json",
+          "config_sha256": "c2f74c96e6c7f838cb358cd340253aad641452120faafc1946b79c6d8f654a48",
+          "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_001",
+          "shard_index": 1,
+          "cases": 1024,
+          "gpu_ids": [
+            4
+          ],
+          "endpoint": "http://127.0.0.1:8029/v1"
+        },
+        {
+          "config_file": "configs/local_description_p23_shard_002.json",
+          "config_sha256": "76f8a716cb8e0c742ec9a0a00261f8f066b02e3f8feab75796e082bd061a9aec",
+          "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_002",
+          "shard_index": 2,
+          "cases": 1024,
+          "gpu_ids": [
+            7
+          ],
+          "endpoint": "http://127.0.0.1:8028/v1"
+        },
+        {
+          "config_file": "configs/local_description_p23_shard_003.json",
+          "config_sha256": "9cafe05ab0915ba5c2bfbb4094435cc3991751a27f761b804cdcf000c934b1f9",
+          "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_003",
+          "shard_index": 3,
+          "cases": 422,
+          "gpu_ids": [
+            5
+          ],
+          "endpoint": "http://127.0.0.1:8026/v1"
+        }
+      ]
+    },
+    {
+      "task_id": "P24",
+      "aggregate_config_file": "configs/local_description_p24_aggregate.json",
+      "aggregate_config_sha256": "8df035db48793679f251f3764554c93d796bc73e191c52350305a93acde17bca",
+      "aggregate_run_id": "qwen38_27b_p24_description_full_parallel_2026-10-15",
+      "full_test_case_count": 1601,
+      "shard_count": 2,
+      "shards": [
+        {
+          "config_file": "configs/local_description_p24_shard_000.json",
+          "config_sha256": "6402ec936d1904a339cde52150250497e718e42252dd571240cec13a818cc691",
+          "run_id": "qwen38_27b_p24_description_full_parallel_2026-10-15_shard_000",
+          "shard_index": 0,
+          "cases": 1024,
+          "gpu_ids": [
+            6
+          ],
+          "endpoint": "http://127.0.0.1:8027/v1"
+        },
+        {
+          "config_file": "configs/local_description_p24_shard_001.json",
+          "config_sha256": "3e892a0cb8f584589c26e9493fa0e167c18b1299bb78a184ffe66d9e3ee02c60",
+          "run_id": "qwen38_27b_p24_description_full_parallel_2026-10-15_shard_001",
+          "shard_index": 1,
+          "cases": 577,
+          "gpu_ids": [
+            4
+          ],
+          "endpoint": "http://127.0.0.1:8029/v1"
+        }
+      ]
+    },
+    {
+      "task_id": "P25",
+      "aggregate_config_file": "configs/local_description_p25_aggregate.json",
+      "aggregate_config_sha256": "9d814fb9e7a3b64a147bf4ea6e3bde778b825e107b8a241929848bbe20ebd461",
+      "aggregate_run_id": "qwen38_27b_p25_description_full_parallel_2026-10-15",
+      "full_test_case_count": 1400,
+      "shard_count": 2,
+      "shards": [
+        {
+          "config_file": "configs/local_description_p25_shard_000.json",
+          "config_sha256": "6c135afc9789c5c7e28cbe0a0e95dd99ae308d19159f727010abc47e55bfe15d",
+          "run_id": "qwen38_27b_p25_description_full_parallel_2026-10-15_shard_000",
+          "shard_index": 0,
+          "cases": 1024,
+          "gpu_ids": [
+            7
+          ],
+          "endpoint": "http://127.0.0.1:8028/v1"
+        },
+        {
+          "config_file": "configs/local_description_p25_shard_001.json",
+          "config_sha256": "ca75b16cd08337b6b1d68d101620aa2a9bee96e7b06cd88e574df6bd70a96006",
+          "run_id": "qwen38_27b_p25_description_full_parallel_2026-10-15_shard_001",
+          "shard_index": 1,
+          "cases": 376,
+          "gpu_ids": [
+            5
+          ],
+          "endpoint": "http://127.0.0.1:8026/v1"
+        }
+      ]
+    },
+    {
+      "task_id": "P26",
+      "aggregate_config_file": "configs/local_description_p26_aggregate.json",
+      "aggregate_config_sha256": "bcf3febbf7f433319f922d8bae49d6350d44f0028a1bf4dfdbf1b2750d20156f",
+      "aggregate_run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15",
+      "full_test_case_count": 2633,
+      "shard_count": 3,
+      "shards": [
+        {
+          "config_file": "configs/local_description_p26_shard_000.json",
+          "config_sha256": "61bb721a41d3604ce8eb32f8356356a66135d7ff54a79b6f932cf0dfa3e9c3f8",
+          "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15_shard_000",
+          "shard_index": 0,
+          "cases": 1024,
+          "gpu_ids": [
+            6
+          ],
+          "endpoint": "http://127.0.0.1:8027/v1"
+        },
+        {
+          "config_file": "configs/local_description_p26_shard_001.json",
+          "config_sha256": "6550f83250c76e5ff4c2f571544a7ef0b958027d0f80b9438ca5651da0942921",
+          "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15_shard_001",
+          "shard_index": 1,
+          "cases": 1024,
+          "gpu_ids": [
+            4
+          ],
+          "endpoint": "http://127.0.0.1:8029/v1"
+        },
+        {
+          "config_file": "configs/local_description_p26_shard_002.json",
+          "config_sha256": "389e754742335ab4ab2b9521569e48ecf6e98c898fafa84e56de44cba758d1a8",
+          "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15_shard_002",
+          "shard_index": 2,
+          "cases": 585,
+          "gpu_ids": [
+            7
+          ],
+          "endpoint": "http://127.0.0.1:8028/v1"
+        }
+      ]
+    }
+  ],
+  "inference_dispatched": false,
+  "authorizations_or_queues_modified": false,
+  "metric_policy": "Native Mol-Instructions gold-only HF ROUGE; pinned BioT5+ wrapper computes references_new but passes [gold,decoded_input] pairs to ROUGE, so exact BioT5+ paper metric equivalence remains unresolved.",
+  "global_metric_policy": "Run native gold-only ROUGE exactly once over the complete ordered union for each task; no averaging of shard bootstrap scores."
+}

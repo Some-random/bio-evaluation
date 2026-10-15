@@ -1,0 +1,290 @@
+{
+  "datasets": {
+    "V01": {
+      "status": "prepared_native_test",
+      "task": "V01",
+      "variant": "NATIVE_TEST_QUESTION_IMAGE_LOCAL_ZERO_SHOT",
+      "cases": 451,
+      "unique_images": 203,
+      "answer_groups": {
+        "CLOSED": 272,
+        "OPEN": 179
+      },
+      "input_file": "data/medical_vqa/V01/model_inputs.jsonl",
+      "label_file": "data/medical_vqa/V01/labels.jsonl",
+      "case_ids_file": "data/medical_vqa/V01/ordered_case_ids.json",
+      "image_manifest": "data/medical_vqa/V01/image_manifest.json",
+      "files": [
+        {
+          "path": "data/medical_vqa/V01/image_manifest.json",
+          "bytes": 76679,
+          "sha256": "9767221e94b9bbd1eeb9f02858f10d8f91366cd2b56f00f17a03fad9d81821f2"
+        },
+        {
+          "path": "data/medical_vqa/V01/input_provenance.jsonl",
+          "bytes": 169997,
+          "sha256": "e2d5dc1fd5ca21330fdf2e47c948ee86146ebd547542429a9b4312f2b50dc906"
+        },
+        {
+          "path": "data/medical_vqa/V01/labels.jsonl",
+          "bytes": 121290,
+          "sha256": "a74706f83760a3dbd6199ccab465a1a35136ca67cdb6c819219e62ba765ec59c"
+        },
+        {
+          "path": "data/medical_vqa/V01/model_inputs.jsonl",
+          "bytes": 31858255,
+          "sha256": "c375b0deb95fffc15076b5730f958e67830a4952ed73aba9f3ab444066f5ba15"
+        },
+        {
+          "path": "data/medical_vqa/V01/ordered_case_ids.json",
+          "bytes": 6078,
+          "sha256": "ca7c084f6780035ebb96336883d6a84f3b8244f66147c3a600603c8b9bfb4b06"
+        }
+      ],
+      "model_facing_fields": [
+        "original_question_text",
+        "original_image_bytes"
+      ],
+      "scorer_only_fields": [
+        "target_answer",
+        "answer_type",
+        "source_qid"
+      ],
+      "prompt_policy": "Original source question string unchanged; one original image; no answer-type-derived instruction, reference/caption, candidate answer list or system message.",
+      "model_comparison": "Qwen zero-shot image/question baseline; native dataset/split/metrics, distinct model chat template and task-training regime from paper systems.",
+      "contamination": "Public release; prior model exposure unknown. Native VQA-RAD has train/test image overlap; no local training or retrieval uses these artifacts.",
+      "source_homepage": "https://osf.io/89kps/",
+      "source_release": "original OSF files, version1, 2018-06-13",
+      "selection": "Original row order; phrase_type in {test_freeform,test_para}; no target-answer filtering.",
+      "license": {
+        "name": "CC0 1.0 Universal",
+        "text": "Statement of Purpose\n\nThe laws of most jurisdictions throughout the world automatically confer exclusive Copyright and Related Rights (defined below) upon the creator and subsequent owner(s) (each and all, an \"owner\") of an original work of authorship and/or a database (each, a \"Work\").\n\nCertain owners wish to permanently relinquish those rights to a Work for the purpose of contributing to a commons of creative, cultural and scientific works (\"Commons\") that the public can reliably and without fear of later claims of infringement build upon, modify, incorporate in other works, reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes. These owners may contribute to the Commons to promote the ideal of a free culture and the further production of creative, cultural and scientific works, or to gain reputation or greater distribution for their Work in part through the use and efforts of others.\n\nFor these and/or other purposes and motivations, and without any expectation of additional consideration or compensation, the person associating CC0 with a Work (the \"Affirmer\"), to the extent that he or she is an owner of Copyright and Related Rights in the Work, voluntarily elects to apply CC0 to the Work and publicly distribute the Work under its terms, with knowledge of his or her Copyright and Related Rights in the Work and the meaning and intended legal effect of CC0 on those rights.\n\n1. Copyright and Related Rights. A Work made available under CC0 may be protected by copyright and related or neighboring rights (\"Copyright and Related Rights\"). Copyright and Related Rights include, but are not limited to, the following:\n\nthe right to reproduce, adapt, distribute, perform, display, communicate, and translate a Work;\nmoral rights retained by the original author(s) and/or performer(s);\npublicity and privacy rights pertaining to a person's image or likeness depicted in a Work;\nrights protecting against unfair competition in regards to a Work, subject to the limitations in paragraph 4(a), below;\nrights protecting the extraction, dissemination, use and reuse of data in a Work;\ndatabase rights (such as those arising under Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, and under any national implementation thereof, including any amended or successor version of such directive); and\nother similar, equivalent or corresponding rights throughout the world based on applicable law or treaty, and any national implementations thereof.\n2. Waiver. To the greatest extent permitted by, but not in contravention of, applicable law, Affirmer hereby overtly, fully, permanently, irrevocably and unconditionally waives, abandons, and surrenders all of Affirmer's Copyright and Related Rights and associated claims and causes of action, whether now known or unknown (including existing as well as future claims and causes of action), in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the \"Waiver\"). Affirmer makes the Waiver for the benefit of each member of the public at large and to the detriment of Affirmer's heirs and successors, fully intending that such Waiver shall not be subject to revocation, rescission, cancellation, termination, or any other legal or equitable action to disrupt the quiet enjoyment of the Work by the public as contemplated by Affirmer's express Statement of Purpose.\n\n3. Public License Fallback. Should any part of the Waiver for any reason be judged legally invalid or ineffective under applicable law, then the Waiver shall be preserved to the maximum extent permitted taking into account Affirmer's express Statement of Purpose. In addition, to the extent the Waiver is so judged Affirmer hereby grants to each affected person a royalty-free, non transferable, non sublicensable, non exclusive, irrevocable and unconditional license to exercise Affirmer's Copyright and Related Rights in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the \"License\"). The License shall be deemed effective as of the date CC0 was applied by Affirmer to the Work. Should any part of the License for any reason be judged legally invalid or ineffective under applicable law, such partial invalidity or ineffectiveness shall not invalidate the remainder of the License, and in such case Affirmer hereby affirms that he or she will not (i) exercise any of his or her remaining Copyright and Related Rights in the Work or (ii) assert any associated claims and causes of action with respect to the Work, in either case contrary to Affirmer's express Statement of Purpose.\n\n4. Limitations and Disclaimers.\n\nNo trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document.\nAffirmer offers the Work as-is and makes no representations or warranties of any kind concerning the Work, express, implied, statutory or otherwise, including without limitation warranties of title, merchantability, fitness for a particular purpose, non infringement, or the absence of latent or other defects, accuracy, or the present or absence of errors, whether or not discoverable, all to the greatest extent permissible under applicable law.\nAffirmer disclaims responsibility for clearing rights of other persons that may apply to the Work or any use thereof, including without limitation any person's Copyright and Related Rights in the Work. Further, Affirmer disclaims responsibility for obtaining any necessary consents, permissions or other rights required for any use of the Work.\nAffirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.\n",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "required_fields": []
+      },
+      "source_files": [
+        {
+          "path": "sources/medical_vqa/rad_original.json",
+          "url": "https://osf.io/download/6qdas/",
+          "bytes": 1419295,
+          "sha256": "948b7156059b864cf72344fb10669233526b175c243e5a046d20d4201d297a95",
+          "publisher_sha256": "948b7156059b864cf72344fb10669233526b175c243e5a046d20d4201d297a95",
+          "publisher_digest_verified": true
+        },
+        {
+          "path": "sources/medical_vqa/rad_original_images.zip",
+          "url": "https://files.osf.io/v1/resources/89kps/providers/osfstorage/5b21453986d8510011c277bc/?zip=",
+          "bytes": 15606023,
+          "sha256": "c663e4cb2db515d5c215c20a8cb167a0a74a11051028bc7d927e176219f65b14",
+          "full_archive_image_count": 315,
+          "every_image_publisher_sha256_verified": true
+        },
+        {
+          "path": "sources/medical_vqa/rad_osf_license.json",
+          "url": "https://api.osf.io/v2/licenses/563c1cf88c5e4a3877f9e96c/",
+          "bytes": 6681,
+          "sha256": "852c5c07ec6c25ae6d8e89a120d3133a53371b6c5f043cee1f86d4ef8fe9468c"
+        },
+        {
+          "path": "sources/medical_vqa/rad_image_listing.json",
+          "url": "https://api.osf.io/v2/nodes/89kps/files/osfstorage/5b21453986d8510011c277bc/?page%5Bsize%5D=100",
+          "bytes": 213225,
+          "sha256": "681550d5df02ecc0ab245178dee85b56cfdce8f28bd3454b37dc798a663e9740"
+        },
+        {
+          "path": "sources/medical_vqa/rad_image_listing_page2.json",
+          "url": "https://api.osf.io/v2/nodes/89kps/files/osfstorage/5b21453986d8510011c277bc/?page=2&page%5Bsize%5D=100",
+          "bytes": 213419,
+          "sha256": "5ed30675576c8083bd1c7883f3afe5ba03889e0300079cab01587331943b5350"
+        },
+        {
+          "path": "sources/medical_vqa/rad_image_listing_page3.json",
+          "url": "https://api.osf.io/v2/nodes/89kps/files/osfstorage/5b21453986d8510011c277bc/?page=3&page%5Bsize%5D=100",
+          "bytes": 213420,
+          "sha256": "6e923b0337d6c518833288c3f2a41691833b3b1dab4984b0c1c0689948920190"
+        },
+        {
+          "path": "sources/medical_vqa/rad_image_listing_page4.json",
+          "url": "https://api.osf.io/v2/nodes/89kps/files/osfstorage/5b21453986d8510011c277bc/?page=4&page%5Bsize%5D=100",
+          "bytes": 32264,
+          "sha256": "b1ea022a1b5f0fcc1541ab5270a5044b43048098c1154bb5fe7bfe73eea7d915"
+        }
+      ]
+    },
+    "V02": {
+      "status": "prepared_native_test",
+      "task": "V02",
+      "variant": "NATIVE_TEST_QUESTION_IMAGE_LOCAL_ZERO_SHOT",
+      "cases": 1061,
+      "unique_images": 96,
+      "answer_groups": {
+        "OPEN": 645,
+        "CLOSED": 416
+      },
+      "input_file": "data/medical_vqa/V02/model_inputs.jsonl",
+      "label_file": "data/medical_vqa/V02/labels.jsonl",
+      "case_ids_file": "data/medical_vqa/V02/ordered_case_ids.json",
+      "image_manifest": "data/medical_vqa/V02/image_manifest.json",
+      "files": [
+        {
+          "path": "data/medical_vqa/V02/image_manifest.json",
+          "bytes": 37222,
+          "sha256": "893173a4027aacb88db3efea1292e045111a7472fd2f70d00fe33f0862c1d7e8"
+        },
+        {
+          "path": "data/medical_vqa/V02/input_provenance.jsonl",
+          "bytes": 412618,
+          "sha256": "2bdd6864f00cbb4b8ed37123c56a846fde41480209b61c535403fa8332efd97d"
+        },
+        {
+          "path": "data/medical_vqa/V02/labels.jsonl",
+          "bytes": 287571,
+          "sha256": "3985fdf5c9c9b26e1f687b5064e108dbdba3f15118e1322286d119355982a634"
+        },
+        {
+          "path": "data/medical_vqa/V02/model_inputs.jsonl",
+          "bytes": 142593512,
+          "sha256": "6cb74763bedf19832a3e761838af71e0363fd69b47b51a6bcac473ddcd1241c8"
+        },
+        {
+          "path": "data/medical_vqa/V02/ordered_case_ids.json",
+          "bytes": 15918,
+          "sha256": "934194439fadbca0389f51c4cfc06ef791e3be2ff37b71eacff179b5645743f2"
+        }
+      ],
+      "model_facing_fields": [
+        "original_question_text",
+        "original_image_bytes"
+      ],
+      "scorer_only_fields": [
+        "target_answer",
+        "answer_type",
+        "source_qid"
+      ],
+      "prompt_policy": "Original source question string unchanged; one original image; no answer-type-derived instruction, reference/caption, candidate answer list or system message.",
+      "model_comparison": "Qwen zero-shot image/question baseline; native dataset/split/metrics, distinct model chat template and task-training regime from paper systems.",
+      "contamination": "Public release; prior model exposure unknown. Native VQA-RAD has train/test image overlap; no local training or retrieval uses these artifacts.",
+      "source_homepage": "https://www.med-vqa.com/slake/",
+      "source_dataset": "BoKelvin/SLAKE",
+      "source_revision": "a9083ce6c34ac3ffb17671a605962924d8a8f9e9",
+      "license": "CC-BY-4.0, as declared on author HuggingFace card",
+      "source_release_caveat": "Author website notes SLAKE1.0 was cleaned after original publication; exact 1061-case English test agrees with LLaVA-Med paper counts.",
+      "selection": "Original test.json row order; q_lang == en only; no target-answer filtering.",
+      "source_files": [
+        {
+          "path": "sources/medical_vqa/slake_original_test.json",
+          "url": "https://huggingface.co/datasets/BoKelvin/SLAKE/resolve/a9083ce6c34ac3ffb17671a605962924d8a8f9e9/test.json",
+          "bytes": 635829,
+          "sha256": "6be8f7b4c5a46cdbc713a5210a25b6ed5aa1fd1574c83cefb4f998131f17c2c3",
+          "publisher_git_blob_sha1": "a6d8ca96e30bfd5a27d1dadc2fa30da2ba791041",
+          "publisher_digest_verified": true
+        },
+        {
+          "path": "sources/medical_vqa/slake_original_imgs.zip",
+          "url": "https://huggingface.co/datasets/BoKelvin/SLAKE/resolve/a9083ce6c34ac3ffb17671a605962924d8a8f9e9/imgs.zip",
+          "bytes": 212343373,
+          "sha256": "44eb7d9214e1ac5b7946e237b669401866df9114fd9a3618c5a84fbffcded0b0",
+          "publisher_sha256": "44eb7d9214e1ac5b7946e237b669401866df9114fd9a3618c5a84fbffcded0b0",
+          "publisher_digest_verified": true
+        },
+        {
+          "path": "sources/medical_vqa/slake_original_README.md",
+          "url": "https://huggingface.co/datasets/BoKelvin/SLAKE/resolve/a9083ce6c34ac3ffb17671a605962924d8a8f9e9/README.md",
+          "bytes": 568,
+          "sha256": "9e55939536c0d457f0cde9242eaba4d192d555c0c886545532b109173ccf76a2"
+        }
+      ]
+    }
+  },
+  "updated_at_utc": "2026-10-15T07:19:57.802880+00:00",
+  "inference_dispatched": false,
+  "native_scoring_source_revision": "b9a98a736d2ef05bcf5ff345be6403fb3a664eaf",
+  "native_scoring_files": [
+    {
+      "path": "sources/medical_vqa/llava_v1_evaluate_metrics.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/eval_metrics/evaluate_metrics.py",
+      "bytes": 4433,
+      "sha256": "cbcf8cae0fbe6f91a323d5b100291af969c2884e572103de62459f0c4daa5bc8",
+      "publisher_git_blob_sha1": "8286d22d896459798d98a15de02e2fb83d61b344",
+      "publisher_digest_verified": true
+    },
+    {
+      "path": "sources/medical_vqa/llava_v1_glossary.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/eval_metrics/glossary.py",
+      "bytes": 4434,
+      "sha256": "59d5ac151e48c5868e6945c26520c4f2c50189bcf009ea3ab9a686e7a3f486f4",
+      "publisher_git_blob_sha1": "b8b8abeca9b814047ec7673373df17d77dd07df9",
+      "publisher_digest_verified": true
+    },
+    {
+      "path": "sources/medical_vqa/llava_v1_utils.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/eval_metrics/utils.py",
+      "bytes": 1354,
+      "sha256": "221f83206502ff236e11d22494681db70165ab28e29cab2105ee844af4cb167d",
+      "publisher_git_blob_sha1": "60d8dda18f3ec12e08b67f77bb13aff776b8d1f0",
+      "publisher_digest_verified": true
+    },
+    {
+      "path": "sources/medical_vqa/llava_v1_run_eval.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/run_eval.py",
+      "bytes": 6440,
+      "sha256": "20b8a98f950b579e8c20b3cb052054ca1a1d6886cb8de24bc04181b5cceface0",
+      "publisher_git_blob_sha1": "e2d4dc96e40caa96be367969936f9bfc9105bb37",
+      "publisher_digest_verified": true
+    },
+    {
+      "path": "sources/medical_vqa/llava_v1_model_vqa_med.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/model_vqa_med.py",
+      "bytes": 14436,
+      "sha256": "e42ee79ea1380fa45c686ceb423a42497a6c775877a11b25534a8b28fa4f7547",
+      "publisher_git_blob_sha1": "4983b4a8cbac6796d14898c4d86ee1a9abf1580a",
+      "publisher_digest_verified": true
+    },
+    {
+      "path": "sources/medical_vqa/llava_v1_README.md",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/README.md",
+      "bytes": 25192,
+      "sha256": "bbe4934769e343583ee8a33d97d5a1f80c93ffb761806fb3ba022c183d908edc",
+      "publisher_git_blob_sha1": "ca87dd3b6524f7ec26467dd5b303c538e8e45755",
+      "publisher_digest_verified": true
+    }
+  ],
+  "scorer_contract": {
+    "normalization": "Unchanged official glossary.normalize_word; lowercase, punctuation, articles, numeric words and contractions.",
+    "open_metric": "Mean calculate_f1score(prediction,reference)[2] token recall over all OPEN cases; invalid/missing outputs count zero.",
+    "closed_metric": "Unchanged run_eval.py CLOSED branch: normalized output contains yes or no and contains normalized target. Substring quirks preserved and disclosed.",
+    "additional_diagnostics": "Native open token precision and F1 can be reported separately. Native named exactmatch is not strict exact equality.",
+    "candidate_remapped_open_accuracy": "Not prepared: requires source training-derived candidate.json; not reconstructed from test labels.",
+    "parser": "Full final assistant content string, no answer-key-assisted extraction or paid grader."
+  },
+  "restrictions": [
+    "Preparation only; no model inference or authorization edits.",
+    "Source answers, answer groups, image metadata and reference contexts stay scorer-side.",
+    "Public benchmark exposure unknown; no contamination-free claim.",
+    "Research evaluation, not clinical deployment."
+  ],
+  "artifact_validation": {
+    "V01": {
+      "passed": true,
+      "model_inputs": 451,
+      "scorer_labels": 451,
+      "ordered_ids_match": true,
+      "all_inline_images_equal_preserved_originals": true,
+      "all_question_hashes_match_input_provenance": true,
+      "labels_absent_from_input_schema": true,
+      "unique_images": 203
+    },
+    "V02": {
+      "passed": true,
+      "model_inputs": 1061,
+      "scorer_labels": 1061,
+      "ordered_ids_match": true,
+      "all_inline_images_equal_preserved_originals": true,
+      "all_question_hashes_match_input_provenance": true,
+      "labels_absent_from_input_schema": true,
+      "unique_images": 96
+    }
+  },
+  "group_preprocessing": "Original answer_type whitespace is stripped on scorer side only; solver prompt is unchanged and does not use answer_type.",
+  "preparation_complete": true
+}

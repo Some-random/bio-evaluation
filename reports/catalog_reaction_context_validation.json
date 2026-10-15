@@ -1,0 +1,24 @@
+{
+  "task_id": "P16",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "tokenizer_class": "Qwen2Tokenizer",
+  "cases_checked_for_input_byte_length": 5651,
+  "full_class_context_tokens": 44542,
+  "largest_input_by_bytes": {
+    "case_id": "Reaction:test:572",
+    "utf8_bytes": 145172,
+    "actual_chat_template_tokens_without_truncation": 2
+  },
+  "empty_user_chat_template_tokens": 2,
+  "source_sequence_bytes": {
+    "min": 20,
+    "max": 1119
+  },
+  "all_case_conservative_input_plus_output_token_bound": 150292,
+  "bound_basis": "Max complete input UTF8bytes +1024fixed-chat/control reserve +4096output. Pinned byte-level Qwen2 BPE tokencount cannot exceed raw bytecount; actual complete longest-byte prompt also tokenized with no truncation.",
+  "model_context_limit": 262144,
+  "frozen_output_tokens": 4096,
+  "fits_without_any_input_truncation": true,
+  "inference_dispatched": 0
+}

@@ -1,0 +1,71 @@
+{
+  "source": "Author DrugBAN random test splits, pinned immutable revision",
+  "packages": {
+    "selfies": "2.2.0",
+    "rdkit": "2024.9.6"
+  },
+  "selfies_module_version_attribute": "2.1.1",
+  "datasets": [
+    {
+      "dataset": "human",
+      "cases": 1200,
+      "source_csv": "sources/local_dti_drugban_human_test.csv",
+      "source_sha256": "b8d9664fc15e3bbc6abf6a82cc1e12ba512c33d31f06baf25b95786911d4f005",
+      "source_revision": "9923f8c99959e00263103ff9ac61ba0eaccc8e02",
+      "source_split": "DrugBAN datasets/human/random/test.csv",
+      "ordered_full_protein_sequences_equal": true,
+      "ordered_labels_equal": true,
+      "ordered_isomeric_graph_matches": 1200,
+      "chemical_parse_failures": 0,
+      "parse_failure_details": [],
+      "ordered_graph_sequence_and_label_equal": true,
+      "complete_graph_sequence_label_multiset_equal": true,
+      "native_canonical_row_sha256": "defd52eadb52e657ec4cb138e39190fcea105b04a7901ffd3dd776984006e8da",
+      "export_canonical_row_sha256": "defd52eadb52e657ec4cb138e39190fcea105b04a7901ffd3dd776984006e8da",
+      "chemical_standardization": "RDKit parse and canonical isomeric SMILES only; preserve salts/charges/stereochemistry, no component removal or gold-derived repair",
+      "solver_inputs_changed": false,
+      "no_inference": true
+    },
+    {
+      "dataset": "biosnap",
+      "cases": 5493,
+      "source_csv": "sources/local_dti_drugban_biosnap_test.csv",
+      "source_sha256": "27cd0e8fce7225540a5fda9744b8990ffc60b2c0bec206b4b33255026b08b6d1",
+      "source_revision": "9923f8c99959e00263103ff9ac61ba0eaccc8e02",
+      "source_split": "DrugBAN datasets/biosnap/random/test.csv",
+      "ordered_full_protein_sequences_equal": true,
+      "ordered_labels_equal": true,
+      "ordered_isomeric_graph_matches": 5493,
+      "chemical_parse_failures": 0,
+      "parse_failure_details": [],
+      "ordered_graph_sequence_and_label_equal": true,
+      "complete_graph_sequence_label_multiset_equal": true,
+      "native_canonical_row_sha256": "ce567a3933d917858a66d8db2aadea36f0adfb400997a474767032373352a3ed",
+      "export_canonical_row_sha256": "ce567a3933d917858a66d8db2aadea36f0adfb400997a474767032373352a3ed",
+      "chemical_standardization": "RDKit parse and canonical isomeric SMILES only; preserve salts/charges/stereochemistry, no component removal or gold-derived repair",
+      "solver_inputs_changed": false,
+      "no_inference": true
+    },
+    {
+      "dataset": "bindingdb",
+      "cases": 9840,
+      "source_csv": "sources/local_dti_drugban_bindingdb_test.csv",
+      "source_sha256": "6c4b810ae1fb91b1f2f497fa898d336d9c775bab0671ebb0f42cf66c2ad8ad67",
+      "source_revision": "9923f8c99959e00263103ff9ac61ba0eaccc8e02",
+      "source_split": "DrugBAN datasets/bindingdb/random/test.csv",
+      "ordered_full_protein_sequences_equal": true,
+      "ordered_labels_equal": true,
+      "ordered_isomeric_graph_matches": 9840,
+      "chemical_parse_failures": 0,
+      "parse_failure_details": [],
+      "ordered_graph_sequence_and_label_equal": true,
+      "complete_graph_sequence_label_multiset_equal": true,
+      "native_canonical_row_sha256": "9c864b96d142ab92f883e4482e43852ddc3462c49f7205a58504b4ff4a196a32",
+      "export_canonical_row_sha256": "9c864b96d142ab92f883e4482e43852ddc3462c49f7205a58504b4ff4a196a32",
+      "chemical_standardization": "RDKit parse and canonical isomeric SMILES only; preserve salts/charges/stereochemistry, no component removal or gold-derived repair",
+      "solver_inputs_changed": false,
+      "no_inference": true
+    }
+  ],
+  "interpretation": "Identity verification is scorer-side provenance only, not new predictive context or label-based case selection. Any mismatches stay explicit; no scored inputs are repaired."
+}

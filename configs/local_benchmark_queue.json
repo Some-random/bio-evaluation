@@ -1,0 +1,62 @@
+{
+  "scope": "One-time local evaluations across permitted catalog tasks; task/case reviews and frozen protocols required; no provider calls or flagged requests.",
+  "accept_more": true,
+  "jobs": [
+    {
+      "config": "configs/local_labbench_b07.json",
+      "executor": "scripts/execute_local_labbench_suite.py"
+    },
+    {
+      "config": "configs/local_labbench_b02.json",
+      "executor": "scripts/execute_local_labbench_suite.py"
+    },
+    {
+      "config": "configs/local_description_p23_shard_003.json",
+      "executor": "scripts/execute_local_description_shard.py"
+    },
+    {
+      "config": "configs/local_description_p25_shard_001.json",
+      "executor": "scripts/execute_local_description_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_000.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_004.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_008.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_012.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_016.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_020.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p07_shard_024.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p08_shard_001.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p08_shard_005.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    },
+    {
+      "config": "configs/local_extended_p08_shard_009.json",
+      "executor": "scripts/execute_local_extended_shard.py"
+    }
+  ]
+}

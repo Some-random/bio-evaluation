@@ -1,0 +1,61 @@
+{
+  "run_id": "qwen38_27b_p01_original_test_2026-10-15",
+  "frozen_at_utc": "2026-10-15T07:21:45.643166+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "endpoint": "http://127.0.0.1:8029/v1",
+  "gpu_ids": [
+    4
+  ],
+  "approved_task_ids": [
+    "P01"
+  ],
+  "variant": "QWEN_FULL_SEQUENCE_TEXT_BIOT5_TEST",
+  "input_file": "data/local_catalog_suite/P01/model_inputs.jsonl",
+  "review_file": "configs/local_catalog_p01_review.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "generation_choice_basis": "Publisher sampling defaults; one fixed seed, medium thinking and 4096 total output tokens fixed before Qwen benchmark outputs; no search or test-driven changes.",
+  "source_dataset_revision": "9f70da9e8f0df32e7e62846f7ad78a829b00c0fd",
+  "prompt_policy": "Pinned source task definition and complete decoded sequence(s); fixed zero-shot user prompt. Numeric assay objective and units fixed before inference. No LAB-Bench prompt or choice template is used.",
+  "metric_policy": "Native task accuracy for categorical outcomes; native Spearman for the numerical assay split. Invalid/missing outputs remain explicit; no label-dependent repairs or invented numerical replacements.",
+  "scorer_reference_sha256": "63cbf7b4894e0dac14d8bcc71d3e09c03375b81ad88473c5df7d461e96da5ff0",
+  "frozen_files_sha256": {
+    "configs/local_catalog_p01_review.json": "41c14efe6916877cb2653e6d363c8d156ed481dcb0dc7cdade884aaa94117579",
+    "data/catalog_sequence_tasks/P01/model_inputs.jsonl": "2a0a165c875b4715a1a995bdc24963d59424d32aaad4772187d230320a3604c8",
+    "data/local_catalog_suite/P01/model_inputs.jsonl": "e6d431e29670fde3609a8de14eed61c1ca8bcb3ad3c8f401cbff6f7d52755a22",
+    "reports/catalog_split_identity_2026-10-15.json": "34c4ed4fe8bd60bd3930dda8718a2b27e635642685a8a6682667134f6de58128",
+    "scripts/catalog_metric_helpers.py": "3c4b72488249d0e6f10735d0d861405e052b55387387e5c99d2aa792ef1c8232",
+    "scripts/execute_local_catalog.py": "ff0f95a5e9ddd28ee5feeb4ae7f100c7884c9bb93eb02735289be0c6f88a0def",
+    "scripts/prepare_local_catalog_run.py": "652f50c820ec371069cf28aa02347f612dbb3442417c4f6aaf2dfe4b95b7e44b",
+    "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+    "scripts/score_local_catalog_tasks.py": "c5c9b8abbdeb25a15a63a6e9cad4b0c5267079765e3ea3e5fa1c96a3222028ab"
+  },
+  "tool_access": [],
+  "paper_comparison": "Verified original test rows and native task metric; prompted zero-shot full-sequence Qwen adaptation versus trained specialist/multitask systems. Same labels/split do not imply matched training or information resources.",
+  "pretraining_contamination": "Unknown; local inference and shuffled choices cannot establish contamination-free performance.",
+  "runner": "scripts/run_local_labbench_multimodal.py",
+  "scorer_reference_file": "data/catalog_sequence_tasks/P01/scorer_references.jsonl",
+  "model_facing_fields": [
+    "Protein",
+    "definition"
+  ],
+  "serving_config_file": "configs/local_model_gpu4.json",
+  "server_record_file": ".local/local_model_server_gpu4.json",
+  "input_modalities": [
+    "amino_acid_sequence",
+    "task_instruction"
+  ]
+}

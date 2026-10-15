@@ -1,0 +1,69 @@
+{
+  "run_id": "qwen38_27b_n03_full_windows_2026-10-15",
+  "proposal_status": "frozen_for_authorized_execution",
+  "created_at_utc": "2026-10-15T07:54:19.144611+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "gpu_ids": [
+    7
+  ],
+  "endpoint": "http://127.0.0.1:8028/v1",
+  "serving_config_file": "configs/local_model_gpu7.json",
+  "server_record_file": ".local/local_model_server_gpu7.json",
+  "approved_task_ids": [
+    "N03"
+  ],
+  "variant": "NATIVE_LLM_INTERFACE_FULL_RELEASE_WINDOWS_PREPARED",
+  "input_file": "data/catalog_genomic_tasks/N03/model_inputs.jsonl",
+  "review_file": "configs/local_genomics_n03_review.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "runner": "scripts/run_local_labbench_multimodal.py",
+  "executor": "scripts/execute_local_genomics.py",
+  "scorer": "scripts/score_local_genomics.py",
+  "scorer_reference_file": "data/catalog_genomic_tasks/N03/scorer_references.jsonl",
+  "scorer_reference_sha256": "1a7e3ee4704c1e8a77556d7d5f77505fe275ee914bd566a1699d89c6e98c6c33",
+  "class_vocabulary_file": "data/catalog_genomic_tasks/N03/class_vocabulary.json",
+  "source_dataset_revision": "aeba75d031b8cb507b3962ab486aa22700afa31c",
+  "source_code_revision": "684ff7c09eb1d65e70925c114a7a05a1fcc0403f",
+  "tool_access": [],
+  "input_modalities": [
+    "DNA_sequence_text",
+    "text"
+  ],
+  "model_facing_fields": [
+    "reference_sequence",
+    "variant_sequence",
+    "question"
+  ],
+  "case_scope": "official_released_test",
+  "prompt_policy": "Original source LLM user string and complete released DNA windows; no additional output instruction, class list, label, teacher rationale, retrieval or tool.",
+  "metric_policy": "Primary source predicates on qualified reasoning+final continuation, never prompt text. STRICT_FINAL_LABEL is a separate final-content diagnostic; N01 global37 zero-division0 macro scores supplemental. Scorer code freezes all details before outcomes.",
+  "paper_comparison": "Full released windows and prompted Qwen differ from specialist representations/SFT, some source cropping and author decoding. Native decoded-byte equivalence is not claimed. N04 network holdout and N05 expression measurement contracts are not replaced.",
+  "frozen_files_sha256": {
+    "configs/local_genomics_n03_review.json": "7b55c514aa97af2c180d5ae75650a8b750151049f5d043ba7acc362acdb06314",
+    "data/catalog_genomic_tasks/N03/class_vocabulary.json": "e6c5274e72233b5b6a62a7e131bd8f80573361a1411cb0a8eee016dfbd1eb9be",
+    "data/catalog_genomic_tasks/N03/input_provenance.jsonl": "fb8b7c8b8844e5d4448928e019d9a3b0b80ec424d9a2d3a27c239be49d153048",
+    "data/catalog_genomic_tasks/N03/model_inputs.jsonl": "dd0208a2ef387caebe8d51cccf80dbf13340b40afa8f3ea28b261cea01437e12",
+    "data/catalog_genomic_tasks/N03/preparation.json": "b2f21794166d1ca97330257c27184ac640a02b8dc89ddb1577dfe321a226f42c",
+    "scripts/execute_local_genomics.py": "1c20c0bb95a2dde59c97d289f902eb07379cb75345f7d99eb6e589c7f8f300f9",
+    "scripts/prepare_local_genomic_proposals.py": "00c47d40796816f04ffcd725e596002abf5115dc561c9f8c78474c171b0a0bee",
+    "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+    "scripts/score_local_genomics.py": "31b786c16b70e4914268c561244f1fd3ed5c4e049e7ae7a79da3ac973c2e5240"
+  },
+  "frozen_at_utc": "2026-10-15T07:55:53.507864+00:00",
+  "reporting_protocol_kind": "adapted",
+  "reporting_protocol_classification": "Complete released raw-DNA-window Qwen baseline; native input scaffolds/predicates retained, specialist DNA representations/SFT and source decoder/truncation not reproduced."
+}
