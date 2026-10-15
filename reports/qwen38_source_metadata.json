@@ -1,0 +1,34 @@
+{
+  "Qwen/Qwen3.8-27B": {
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "weights_bytes": 55563006776,
+    "weight_files": 18,
+    "license": "apache-2.0",
+    "gated": false,
+    "pipeline_tag": "image-text-to-text"
+  },
+  "Qwen/Qwen3.8-Flash-Next": {
+    "revision": "de4b8e4d43b917e7706784d8bb445c9af86a3540",
+    "weights_bytes": 360000192888,
+    "weight_files": 131,
+    "license": "other",
+    "gated": false,
+    "pipeline_tag": "image-text-to-text"
+  },
+  "Qwen/Qwen3.8-Flash-Next-FP8": {
+    "revision": "236dfdf285828023ca3bcd3f37366c58a3469b13",
+    "weights_bytes": 185523317458,
+    "weight_files": 131,
+    "license": "other",
+    "gated": false,
+    "pipeline_tag": "image-text-to-text"
+  },
+  "Qwen/Qwen3.8-2.4T-A95B": {
+    "revision": "207bd685a7e3696cfaff12ded7c6a7ea0f88c996",
+    "weights_bytes": 4892365649336,
+    "weight_files": 213,
+    "license": "other",
+    "gated": false,
+    "pipeline_tag": "text-generation"
+  }
+}

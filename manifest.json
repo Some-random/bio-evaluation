@@ -1,0 +1,263 @@
+{
+  "status": "offline preparation; no paid requests",
+  "data_and_source_versions": {
+    "pg_code": "3f5f1d31e79365922bf13ddca1942bed0b609db3",
+    "muta_code": "495815b2069419d19d9449a59070d0fb24b596d1",
+    "biot5_code": "cf65ae6dff63fdea8883dd17d46728a61bba386c",
+    "muta_data": "72c80b39a569bb86b8cea93fa55a271d665581d0",
+    "biot5_data": "9f70da9e8f0df32e7e62846f7ad78a829b00c0fd"
+  },
+  "files": {
+    "sources/pg_DATA.md": {
+      "sha256": "4d606ea83bf44a7bda5e5d39e54191141a1a5284ed7f320fb3a5ed4ce130dcaf",
+      "bytes": 2858
+    },
+    "sources/pg_release.json": {
+      "sha256": "060e3a985a249f57264b20cda5800528e1336aacd748c43fbaaf6ae3043a8bc0",
+      "bytes": 4045
+    },
+    "sources/pg_README.md": {
+      "sha256": "01d5f8def4779e518f9f59b6ba0a2afd2dc64905f0811160e7b00634d4c5dcad",
+      "bytes": 7927
+    },
+    "sources/pg_tree.json": {
+      "sha256": "68668240d9cd8e01a627656f520bfa5e5bb23d18de551ce0f732c1c0a33a30c8",
+      "bytes": 18688
+    },
+    "sources/mol_tree.json": {
+      "sha256": "a603204aff01a64a456f5e8900c02e56b1167f07413e2cd9de145c8d4c98b0ec",
+      "bytes": 13472
+    },
+    "sources/biot5_tree.json": {
+      "sha256": "e57e01cc51c443bb1d648feeeee895ad456f88836f07004f247f9618b1e91cda",
+      "bytes": 23610
+    },
+    "sources/muta_tree.json": {
+      "sha256": "360ad0f5763af67bf83d53838f820eb608410e14d056c6e037afe6dcbc735a90",
+      "bytes": 13013
+    },
+    "sources/muta_hf.json": {
+      "sha256": "eed4fea4a55fd32d5ba660543a55b775eb08f951b829315be9ad89e54fcd25d6",
+      "bytes": 926
+    },
+    "sources/muta_files.json": {
+      "sha256": "d1b8ddf356047a72c52d0aaf73c4f59ff1dcb3049df8670177b2ed3d1e9c39c7",
+      "bytes": 2931
+    },
+    "sources/openai_pricing.md": {
+      "sha256": "e0767b5009dcc929a2f9eeb9ce6096a57ff12e5d8c011de9d69ff145aef2fc28",
+      "bytes": 23231
+    },
+    "sources/openai_luna.md": {
+      "sha256": "2e4861582095740f5ea84b14bb18fa476a49c426b397b779b964bc144397b451",
+      "bytes": 3969
+    },
+    "sources/openai_token_counting.md": {
+      "sha256": "a446c08afd6dca0e252e69a3ebf82c117d45b8f60b304dc09a21340e3b6a07f6",
+      "bytes": 22672
+    },
+    "sources/source_fetch_manifest.json": {
+      "sha256": "2562423466e99ceac811e8ef5bbb149a11437fd6808d0309596fdf0f57a5037a",
+      "bytes": 2717
+    },
+    "sources/pg__src__prompt.py": {
+      "sha256": "54932a0c3ed58e7aa76e29a99cd8928bc7997956ed2c7d63d473719bb911e456",
+      "bytes": 5019
+    },
+    "sources/biot5_data__tasks_plus__task228_protein_function_molinst_pro_test.json": {
+      "sha256": "7a984a304f7764056e789470e16797a75c120c1d13143cd1eb03728f2512c744",
+      "bytes": 7511935
+    },
+    "sources/pg__prompts__inference_prompt.md": {
+      "sha256": "038b095c69a50a6c48eb9f045582526942428e2a99adfd47b560fc0c1a313b1c",
+      "bytes": 1343
+    },
+    "sources/pg__src__payloads.py": {
+      "sha256": "d570e79a03a97eaae42564b652985c95d32863eec608d8697559d2b35ca81a48",
+      "bytes": 8707
+    },
+    "sources/pg__src__assays.py": {
+      "sha256": "612b5a36d2155f575290a7e0d6d5b3fd505b9604443b3d6af4f9ee91896a0c86",
+      "bytes": 3184
+    },
+    "sources/pg__examples__model.json": {
+      "sha256": "c1502f0fc85e42abaef891b13ddc004b4e11df78c14f3dc0fb32bb65d95c4e06",
+      "bytes": 511
+    },
+    "sources/biot5_data__splits_plus__molinst__eval__protein_protein_function__test_tasks.txt": {
+      "sha256": "7d4e2316137dd5d7c5c58e46c520e9f75df5dbf3498dbc778bb59825a93edcaa",
+      "bytes": 41
+    },
+    "sources/pg__config__models.py": {
+      "sha256": "91aa8037a15d9742e34a1ca29f2f555434e721607b06379d4a4c23fc1ca37395",
+      "bytes": 16163
+    },
+    "sources/pg__BENCHMARK_USE_POLICY.md": {
+      "sha256": "631459fff80ac003a4469a517c393a6802f9b233bb64b58ed555c5d733560c85",
+      "bytes": 1479
+    },
+    "sources/muta__evaluator.py": {
+      "sha256": "ea1bb273baa1b9158724dfacfecbf4e8ccbd823ae6258613cbd0279beda096dd",
+      "bytes": 16468
+    },
+    "sources/muta__dataset__finetune_dataset.py": {
+      "sha256": "b7cccd107d6e325c9260ebebec8fc65086476239754c75b4c7e9795fddf0e93c",
+      "bytes": 1545
+    },
+    "sources/biot5_data__splits_plus__molinst__eval__protein_domain_motif__test_tasks.txt": {
+      "sha256": "14cb406c2396f3553ca80bc5e3fe75c1e4c7832ca44bfa3e955902e3b24c7b31",
+      "bytes": 37
+    },
+    "sources/muta__scripts__test__mutaplm_explain.sh": {
+      "sha256": "5d55a6d0be1c587f0eb45a809f08db8488019a4ccfb2ba0f3a75d70938d6ff22",
+      "bytes": 445
+    },
+    "sources/muta__scripts__test__mutaplm_engineer.sh": {
+      "sha256": "d95a87084682ae1952a1210d5aae926631b2c32267f5822e1d1579a5c7481fae",
+      "bytes": 436
+    },
+    "sources/biot5__biot5_plus__README.md": {
+      "sha256": "c7b70668ce7b4b2f7b487c7a8c27b4c27ae67ecb1244725f21a4736a08aa6a14",
+      "bytes": 5146
+    },
+    "sources/biot5__biot5_plus__utils__molinst_ni_dataset.py": {
+      "sha256": "c772939d2b356c8968e7f492ae24f55420e9329397a093fbbf28853086b3a448",
+      "bytes": 7804
+    },
+    "sources/biot5_test_fetch_manifest.json": {
+      "sha256": "4ed4d0a8b045df4c95c1e90ac48cce8501f8cc389fa9c89446d2107250199e50",
+      "bytes": 3107
+    },
+    "sources/biot5__biot5_plus__evaluation_mol_instruction_protein.sh": {
+      "sha256": "d1fe841a19b2d21e3d9a82b6e3ce9160d8172a8a82f04b0fca5cad0efd035901",
+      "bytes": 1247
+    },
+    "sources/biot5__biot5_plus__metrics__pro_understand_metrics__pro_understand_metrics.py": {
+      "sha256": "6717c828e0a9bacdf761f1499672ab551938326fed723e1c805a23ebc9c6d2a9",
+      "bytes": 2176
+    },
+    "sources/mol__README.md": {
+      "sha256": "a7be47ab94cac6ee7fa6231fec8c2cf5c17a3843b7226623bf3d11fc36f55555",
+      "bytes": 32511
+    },
+    "sources/mol__evaluation__README.md": {
+      "sha256": "f13d3d406254f8316425984b8312978466cc2154b8836dca7e12039045b4021e",
+      "bytes": 2384
+    },
+    "sources/mol_hf.json": {
+      "sha256": "9e1e608a5482f8a421de6c29b75958cdfaf96358ec01f17350818394ff754db4",
+      "bytes": 1159
+    },
+    "sources/mol__evaluation__protein__eval.py": {
+      "sha256": "a6f786cbeb18be152539298628152ef218b3bda35e42092c9f341dacb935fb2f",
+      "bytes": 349
+    },
+    "sources/mol_hf_files.json": {
+      "sha256": "786d4fd4d6620527b315e93ce6f644a5bd0716d6ba3ea1ac7ddfbfcfc8239d2a",
+      "bytes": 2625
+    },
+    "sources/biot5_hf.json": {
+      "sha256": "240b5ad7bf0a3f2c12c12aad66bbb4c8e6b74fb9f1c0ca9677fa1b7a2bb03999",
+      "bytes": 33686
+    },
+    "sources/biot5_data__splits_plus__molinst__eval__protein_general_function__test_tasks.txt": {
+      "sha256": "8ce98b25534c15694895aedb7cd6e348269147a061f254c11993a906f93d5f82",
+      "bytes": 41
+    },
+    "sources/muta__structural_split__test_easy.csv": {
+      "sha256": "0aa4de8e44c5aec90af92daf3fb1038d8fce7b7b5ffd97cfdacd22d73fcad3f5",
+      "bytes": 1030473
+    },
+    "sources/muta__structural_split__test_hard.csv": {
+      "sha256": "1fe43147d65c599b54bfac4398aedf0cd75bf737e1e6e4e3bd2c7dd5b2101b44",
+      "bytes": 884158
+    },
+    "sources/muta__structural_split__test_medium.csv": {
+      "sha256": "944fa409eff2b1342e504b136dd5a0129d65bd4ead0aeaec17b0e4a900dc4298",
+      "bytes": 925229
+    },
+    "sources/proteingym-llm-eval-v1.2.tar.gz": {
+      "sha256": "b40ca6bb30741a652243e90e08a485ef48a52691bff8a075ec0f396200cf6f8a",
+      "bytes": 2882774
+    },
+    "sources/muta__temporal_split__test.csv": {
+      "sha256": "50a9d12c3ff95c7732a51ccf661d5b10998f1e14c400419cdcc83ccbd7f3a999",
+      "bytes": 3860725
+    },
+    "sources/additional_fetch_manifest.json": {
+      "sha256": "4c6e65f6f54fcdc6993e2aed6e3f2579e6bab9fd7fcb99fd0ea867acf205cd47",
+      "bytes": 7288
+    },
+    "sources/pg_installed_manifest.json": {
+      "sha256": "cdb7073cee6a651538c9db042be5fc84ca486d3164e646a686615f95b75cb908",
+      "bytes": 664549
+    },
+    "sources/muta__model__mutaplm.py": {
+      "sha256": "4bb049287115a37b3162dc32b91cbe8201043a11d67f4e3f03b51ef15c89bd40",
+      "bytes": 40169
+    },
+    "sources/biot5_hf_files.json": {
+      "sha256": "dbd20ecfc541da804d9cb988765747ec39ba129e0f5ca9082379c69eb5361f22",
+      "bytes": 120673
+    },
+    "sources/biot5_data__splits_plus__molinst__eval__protein_catalytic_activity__test_tasks.txt": {
+      "sha256": "54ef39bb379d43370cdacfe309f5dd9a5a220260adc4c2a61b7557018f06f9fe",
+      "bytes": 43
+    },
+    "sources/biot5_data__tasks_plus__task225_domain_motif_molinst_pro_test.json": {
+      "sha256": "b504bf077617661f855a2ad811e25edb1aeb7e98a8d636966c21e7baa02f6f46",
+      "bytes": 3374945
+    },
+    "sources/biot5_data__tasks_plus__task222_catalytic_activity_molinst_pro_test.json": {
+      "sha256": "8f53b17f74fcc3e0b32f1e68d8374405d70c1187ceb23db48665f19874e9d4e1",
+      "bytes": 3591632
+    },
+    "sources/biot5_data__tasks_plus__task231_general_function_molinst_pro_test.json": {
+      "sha256": "eba4893a25e35a1467f67897402365aaf69fbdad9b1bf8abbc5c32723c6d04e6",
+      "bytes": 5693962
+    },
+    "scripts/fetch_sources.py": {
+      "sha256": "f857dc405db82398af96d4f2513e02f1f8e6ffbd02f8bdc0d49c1f15c77ef520",
+      "bytes": 2563
+    },
+    "scripts/preflight.py": {
+      "sha256": "bff4026ce3628241683ea177e474a49d485234681339565d4c92ab346f02db68",
+      "bytes": 12271
+    },
+    "configs/field_allowlists.json": {
+      "sha256": "61bc098cfa638b8831d30dd83e6f22ef52ca1ab643b3e8893959cd626e866cdf",
+      "bytes": 543
+    },
+    "configs/proposed_run.json": {
+      "sha256": "7a17b56471f77a8a1b62fcb18a6993fb95823f53c6613cc93f30d2de2058c160",
+      "bytes": 1267
+    },
+    "tests/test_preflight.py": {
+      "sha256": "f296a0e68c67a4425d3352259b03f11af0e0bee2b43901958ae8d6706b83a8f2",
+      "bytes": 3214
+    }
+  },
+  "counts": {
+    "P18": 651,
+    "P23": 3494,
+    "P24": 1601,
+    "P25": 1400,
+    "P26": 2633,
+    "P30": 2859,
+    "P31": 2859,
+    "P32": 2859
+  },
+  "tests": {
+    "synthetic_leakage_and_serialization": 8,
+    "passed": 8,
+    "runner": "python3 -m unittest discover -s tests -v"
+  },
+  "readiness_rows": 64,
+  "remaining": [
+    "final MutaDescribe text-protocol review",
+    "inference runner",
+    "metric wrappers",
+    "exact provider token counts",
+    "configured API access and budget"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "_status": "Template only. This is not a runnable harness and does not approve paid inference.",
+  "mode": "dry_run",
+  "approved_scope": null,
+  "approval_present_in_user_environment": false,
+  "budget": {
+    "currency": "USD",
+    "max_total": null,
+    "max_calls": null,
+    "max_gpu_hours": null
+  },
+  "models": [],
+  "model_entry_fields": [
+    "label",
+    "provider",
+    "exact_model_id",
+    "version_or_revision",
+    "input_interface",
+    "native_or_prompted_regime",
+    "reasoning_or_sampling_settings"
+  ],
+  "case_selection": {
+    "source": "official_release",
+    "first_wave": [
+      "B01",
+      "B02",
+      "B03",
+      "B06",
+      "B07",
+      "B08",
+      "P18",
+      "P23",
+      "P24",
+      "P25",
+      "P26",
+      "P30",
+      "P31",
+      "P32"
+    ],
+    "diagnostic_fixtures": "artificial_or_permitted_development_only"
+  },
+  "variants": [
+    "NATIVE"
+  ],
+  "auxiliary_text": {
+    "enabled": false,
+    "requires": [
+      "task_permission",
+      "field_allowlist",
+      "source_provenance",
+      "fixed_case_ids",
+      "frozen_selection_rule"
+    ],
+    "excluded_ids_in_initial_handoff": [
+      "P18"
+    ]
+  },
+  "solver_tools": {
+    "retrieval": false,
+    "browser": false,
+    "structure_prediction": false
+  },
+  "sampling": {
+    "shots": "official_protocol_or_preregistered_adapter",
+    "attempts_per_case": "official_protocol_or_fixed_before_run",
+    "output_budget": null
+  },
+  "reporting": {
+    "official_metrics": true,
+    "coverage_required": true,
+    "separate_assay_and_task_aggregation": true,
+    "new_context_comparisons_supplemental": true
+  }
+}

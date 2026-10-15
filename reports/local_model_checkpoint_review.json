@@ -1,0 +1,24 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "architecture": [
+    "Qwen3_5ForConditionalGeneration"
+  ],
+  "model_type": "qwen3_5",
+  "quantization_method": null,
+  "dtype": "bfloat16",
+  "has_vision_config": true,
+  "checkpoint_shards": 18,
+  "weight_bytes": 55563006776,
+  "native_max_position_embeddings": 262144,
+  "configured_gpu_ids": [
+    4
+  ],
+  "benchmark_cases_dispatched": 0,
+  "weights_downloaded": true,
+  "download_status": "complete",
+  "model_server_started": true,
+  "weight_sha256_verified": true,
+  "repository_files_verified": 32,
+  "synthetic_checks_passed": true
+}

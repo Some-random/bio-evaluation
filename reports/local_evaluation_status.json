@@ -1,0 +1,23 @@
+{
+  "stage": "completed",
+  "run_id": "qwen38_27b_litqa2_public_reviewed_2026-10-15",
+  "model": "Qwen/Qwen3.8-27B",
+  "completed_cases": 197,
+  "held_cases": 2,
+  "metrics": {
+    "accuracy": 0.39086294416243655,
+    "precision": 0.4095744680851064,
+    "coverage": 0.9543147208121827,
+    "n_total": 197,
+    "n_correct": 77,
+    "n_sure": 188
+  },
+  "wall_minutes": 20.46,
+  "gpu_ids": [
+    5
+  ],
+  "source_scores": "results/runs/qwen38_27b_litqa2_public_reviewed_2026-10-15/scores.json",
+  "source_audit": "results/runs/qwen38_27b_litqa2_public_reviewed_2026-10-15/artifact_audit.json",
+  "other_local_benchmark_runs_completed": 0,
+  "local_native_LAB_prepared_cases": 1967
+}

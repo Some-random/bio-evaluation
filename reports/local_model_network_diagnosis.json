@@ -1,0 +1,43 @@
+{
+  "checked_at_PST": "2026-10-14T20:17:16.086728-08:00",
+  "source_log": ".cache/huggingface/xet/logs/xet_20261015T005158623+0000_323519.log",
+  "failed_destination_host": "us.aws.cdn.hf.co",
+  "route_observation": {
+    "proxy_scheme": "socks5h",
+    "proxy_host": "127.0.0.1",
+    "proxy_port": 17892,
+    "listener_process": "sshd",
+    "listener_pid": 3974860,
+    "meaning": "SOCKS endpoint is forwarded through an existing SSH connection; no new SSH connection was opened"
+  },
+  "warning_counts": {
+    "connection_timed_out": 63,
+    "request_timed_out": 1,
+    "tls_handshake_eof": 27,
+    "incomplete_http_message": 3
+  },
+  "retry_exhaustion_error_records": 15,
+  "first_warning_UTC": "2026-10-15T01:21:26.811642Z",
+  "last_warning_UTC": "2026-10-15T04:01:56.926989Z",
+  "outer_error_sanitized": "File reconstruction error: CAS Client Error: Request middleware error: error sending request for url (us.aws.cdn.hf.co; signed URL omitted)",
+  "fresh_probe": {
+    "test": "read the first 64 KiB of remaining public shard 17 through the current proxy",
+    "source_host": "huggingface.co",
+    "download_model": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "http_status": 206,
+    "final_host": "us.aws.cdn.hf.co",
+    "redirect_statuses": [
+      302
+    ],
+    "bytes_read": 65536,
+    "elapsed_seconds": 5.45
+  },
+  "established": "The original transfer encountered repeated connection/request timeouts and prematurely closed TLS/HTTP connections while fetching public checkpoint data, then exhausted internal retries.",
+  "inference": "An intermittent connectivity problem along the proxy/tunnel/upstream/CDN route is supported by the mixed transport failures and a subsequent successful HTTP 206 read of 64 KiB through the same route.",
+  "unresolved": "These logs do not identify whether the forwarded proxy, its upstream network, an intermediate device, or the CDN caused the failures. The remote trace does not establish why the desktop app window closed.",
+  "provider_policy_rejection_observed_in_these_events": false,
+  "OpenAI_inference_used_for_this_download": false,
+  "changes_made": "Read-only diagnostics and one bounded public-file range probe; no SSH, firewall, proxy, watchdog, or security settings changed.",
+  "documentation": "https://huggingface.co/docs/hub/models-downloading#downloading-behind-a-proxy-or-firewall"
+}

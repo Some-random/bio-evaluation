@@ -1,0 +1,47 @@
+{
+  "counts": {
+    "B01": 199,
+    "B02": 520,
+    "B03": 82,
+    "B04": 181,
+    "B05": 244,
+    "B06": 108,
+    "B07": 600,
+    "B08": 33
+  },
+  "unavailable_image_partitions": [],
+  "shuffle_seed": 42,
+  "dataset_revision": "5c77cec648430f30611808808861eb86f81d5eaa",
+  "official_code_revision": "998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838",
+  "public_subset_only": true,
+  "reference_passages_sent": false,
+  "native_required_source_links": {
+    "B03": "paper title and DOI supplied, as required by the official task class"
+  },
+  "native_required_context": {
+    "B06": "complete protocol plus question",
+    "B04": "original figure image",
+    "B05": "original table image"
+  },
+  "corrected_prior_omissions": [
+    "B03 paper title/DOI",
+    "B06 full protocol"
+  ],
+  "previous_inputs_and_running_manifest_modified": false,
+  "rendering_code_sha256": "dc28825d2f060a6e6f259370e2bb2dcf029d45285d0f9266ae7f83964810019e",
+  "task_code_sha256": {
+    "LitQA2": "b4cb4418ee202914f824158f828bb91d90dfeb7105dc605483f1f709e4b8144e",
+    "DbQA": "97f1da79464526769f7237307ea1614a92ea7a3122f913e6ebc08a7c71358918",
+    "SuppQA": "a4a18a46369a0cb9c9d3ac61fc71560f3c924e29df3c9eaa2889be8b8b3217bf",
+    "FigQA": "35889c8dbff8a410a8977dd19ef6896b59cc7ede75b19dd9b2822a55fc318398",
+    "TableQA": "f0fd22ba3aab1bb8064784f8c168ba95ac482c4f63c9a35744071656f9a4f289",
+    "ProtocolQA": "604864a1fb00734b4835c5431646ea7484f4d666ec3d214f347e63d14382bd63",
+    "SeqQA": "97f1da79464526769f7237307ea1614a92ea7a3122f913e6ebc08a7c71358918",
+    "CloningScenarios": "97f1da79464526769f7237307ea1614a92ea7a3122f913e6ebc08a7c71358918"
+  },
+  "model_inputs_sha256": "407fb8c3e47adde416e611e6edbbf8931108873f993930f0f139ec4be82a7fc0",
+  "scorer_references_sha256": "c7129db0155bd8513abb43b53c2c53bfd4051df7ea01f25708f289cbb78c7702",
+  "paper_full_private_case_set_comparison": false,
+  "tools": [],
+  "prompt_sha256": "e1ec85a5ab68cd14f681f428a7a9736f295d2c53b68158ed0c91b3e840481a0f"
+}

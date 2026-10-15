@@ -1,0 +1,39 @@
+{
+  "model": "Qwen/Qwen3.5-397B-A17B-FP8",
+  "revision": "ea5b4f81096f3901c91dea97f81324302495781d",
+  "checkpoint_precision": "publisher FP8 checkpoint; not a BF16 reproduction",
+  "weights_bytes": 406151669464,
+  "weight_files": 94,
+  "license": "apache-2.0",
+  "vllm_version": "0.31.0",
+  "python_version": "3.12",
+  "gpu_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "user_authorized_gpu_limit": 8,
+  "tensor_parallel_size": 8,
+  "gpu_memory_utilization": 0.8,
+  "max_model_len": 262144,
+  "max_num_seqs": 8,
+  "host": "127.0.0.1",
+  "port": 8026,
+  "model_directory": null,
+  "solver_tools": [],
+  "benchmark_inference_authorized": false,
+  "approved_task_ids": [],
+  "flagged_pathogen_fitness_tasks": "held; do not transfer blocked requests to this model",
+  "setup_scope": "runtime installation, public checkpoint acquisition, serving and synthetic smoke checks only",
+  "selection_basis": "provisional choice from public general and multimodal evaluations plus verified 8-H200 serving support; not selected on protected biological test scores",
+  "sources": [
+    "https://huggingface.co/Qwen/Qwen3.5-397B-A17B-FP8",
+    "https://huggingface.co/Qwen/Qwen3.5-397B-A17B",
+    "https://docs.vllm.ai/projects/recipes/en/latest/Qwen/Qwen3.5.html"
+  ]
+}

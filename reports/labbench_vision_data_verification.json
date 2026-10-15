@@ -1,0 +1,24 @@
+{
+  "checked_at_utc": "2026-10-15T05:21:36.331850+00:00",
+  "revision": "5c77cec648430f30611808808861eb86f81d5eaa",
+  "outcomes": [
+    {
+      "subset": "FigQA",
+      "state": "verified",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/lab_data__FigQA__train-00000-of-00001.parquet",
+      "bytes": 227002936,
+      "sha256": "0fb49d673e3f09846e3e3a6801326bf9ee72cae8b11545fc4cd1903d3d10fead",
+      "url": "https://huggingface.co/datasets/futurehouse/lab-bench/resolve/5c77cec648430f30611808808861eb86f81d5eaa/FigQA/train-00000-of-00001.parquet"
+    },
+    {
+      "subset": "TableQA",
+      "state": "verified",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/lab_data__TableQA__train-00000-of-00001.parquet",
+      "bytes": 106149774,
+      "sha256": "6af76a6a16fa460809f84dceb906c1be0a904ac49dbd760fa8998f16ad2b5a04",
+      "url": "https://huggingface.co/datasets/futurehouse/lab-bench/resolve/5c77cec648430f30611808808861eb86f81d5eaa/TableQA/train-00000-of-00001.parquet"
+    }
+  ],
+  "frozen_benchmark_inputs_modified": false,
+  "model_cases_dispatched": 0
+}

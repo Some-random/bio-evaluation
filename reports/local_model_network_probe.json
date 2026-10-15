@@ -1,0 +1,13 @@
+{
+  "test": "read the first 64 KiB of remaining public shard 17 through the current proxy",
+  "source_host": "huggingface.co",
+  "download_model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "http_status": 206,
+  "final_host": "us.aws.cdn.hf.co",
+  "redirect_statuses": [
+    302
+  ],
+  "bytes_read": 65536,
+  "elapsed_seconds": 5.45
+}

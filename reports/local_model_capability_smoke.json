@@ -1,0 +1,91 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "gpu_ids": [
+    5
+  ],
+  "benchmark_cases_dispatched": 0,
+  "scope": "synthetic checks only; not evidence of biological benchmark performance",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "text",
+      "expected": "ready",
+      "text": "READY",
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 16,
+        "total_tokens": 18,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "latency_seconds": 0.177,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "max_tokens": 16,
+      "reasoning_characters": 0
+    },
+    {
+      "check": "reasoning_interface",
+      "expected": "19",
+      "text": "\n\n19",
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 55,
+        "total_tokens": 92,
+        "completion_tokens": 37,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 32
+        }
+      },
+      "latency_seconds": 1.274,
+      "chat_template_kwargs": {
+        "enable_thinking": true,
+        "reasoning_effort": "low"
+      },
+      "max_tokens": 512,
+      "reasoning_characters": 85
+    },
+    {
+      "check": "vision",
+      "expected": "blue",
+      "text": " blue",
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 90,
+        "total_tokens": 92,
+        "completion_tokens": 2,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "latency_seconds": 0.277,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "max_tokens": 32,
+      "reasoning_characters": 0,
+      "synthetic_image": {
+        "size": [
+          128,
+          128
+        ],
+        "RGB": [
+          0,
+          0,
+          255
+        ],
+        "png_sha256": "e18de54cccc9074846cb77e32690b21ce5c37055b27067a2f84fdcf08b5139db"
+      }
+    }
+  ]
+}

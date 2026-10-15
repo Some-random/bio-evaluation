@@ -1,0 +1,19 @@
+{
+  "status": "Preparation only; no paid inference authorization",
+  "approved": false,
+  "max_spend_usd": null,
+  "api_key_environment_variable": "OPENAI_API_KEY",
+  "proposed_model": "gpt-6-luna",
+  "provider_account_access_verified": false,
+  "proposed_processing": "batch",
+  "tasks": ["P18", "P23", "P24", "P25", "P26", "P30", "P31", "P32"],
+  "pilot": {"cases_per_task": 100, "selection": "SHA256(case_id), independent of labels", "purpose": "frozen pipeline and coverage pilot; no test-driven model/prompt selection"},
+  "P18": {"protocol": "native primary N=50, three seeds", "reasoning_effort": "max", "max_output_tokens": 128000},
+  "other_tasks": {"protocol": "separately labeled full-sequence TEXT adapter", "reasoning_effort": "medium", "max_output_tokens": 4096},
+  "P30_P31_P32": {"status": "draft prompts; official text-baseline protocol review still required"},
+  "solver_tools": [],
+  "auxiliary_text_variants": false,
+  "judge_calls": false,
+  "required_before_execution": ["complete inference and metric wrappers", "finalize task protocols", "exact provider token counts", "API access", "approved application-level budget", "frozen request and source manifest"],
+  "protect_future_training": {"exclude_paths": ["data/", "sources/", "results/"]}
+}

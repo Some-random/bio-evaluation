@@ -1,0 +1,37 @@
+{
+  "checked_at_pst": "2026-10-14T21:36:07.266097-08:00",
+  "biological_settings": 64,
+  "general_control_groups": 14,
+  "metadata_rows": 94,
+  "prepared_variants": 17,
+  "prepared_case_count": 20520,
+  "prepared_inputs_sha256": "6122299d221d6d130efc79e2bf5c48f60fb67634a7393406ac6d2d83109b8de5",
+  "all_task_variant_keys_unique": true,
+  "original_metrics_and_compatibility_retained": true,
+  "demand_classifications_provisional": true,
+  "addendum_sha256": "4b1103e8085446ab687a10b7e91d3fb54baacc8d3db0b66a1ceaccb4dd5a67a0",
+  "benchmark_inference_performed": true,
+  "illustrative_examples_used_as_data": false,
+  "notes": "Catalog contracts, eight complete native public preparations and the executed local reviewed B01 variant remain distinct. Exact executed inputs and native outcomes reconciled; explanations unassessed.",
+  "protected_preparation_and_protocol_artifacts_unchanged": true,
+  "protected_artifacts_checked": 25,
+  "output_hashes": {
+    "results/interpretation_notes.jsonl": "25b2eec57d3f02cef6768c6b57d7f85b9435c3f944b0098a326481b65e377242",
+    "reports/interpretation_table.csv": "17fdd069ddbc03d9e64cdd3ac49db9abc8272b2d76dceb9658694096e33c7936",
+    "reports/INTERPRETATION_TABLE.md": "a6450f622585889f64ae0e1bb8c555ef28ea8c7040e026eeb1bb73d1dc019a45",
+    "scripts/interpretations.py": "e4a72c8a89b6429b86a29ec0077188b75c795f5afcc027a6ffba15dccdb60a5c"
+  },
+  "completed_local_run_ids": [
+    "qwen38_27b_litqa2_public_reviewed_2026-10-15"
+  ],
+  "legacy_protein_preparation": {
+    "variants": 8,
+    "case_count": 18356,
+    "input_sha256": "6122299d221d6d130efc79e2bf5c48f60fb67634a7393406ac6d2d83109b8de5"
+  },
+  "prepared_count_scope": "Sum across protocol metadata records; includes overlapping public/full-reviewed cohorts and is not a unique-case count.",
+  "current_prepared_inputs_sha256": {
+    "data/labbench_native_complete/model_inputs.jsonl": "407fb8c3e47adde416e611e6edbbf8931108873f993930f0f139ec4be82a7fc0",
+    "data/local_labbench_litqa2/model_inputs.jsonl": "8dcab1262e5b0e1805b3cbd21897e1ecb566680f71407f4598213c0a59c28b3b"
+  }
+}

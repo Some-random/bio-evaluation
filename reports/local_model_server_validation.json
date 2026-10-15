@@ -1,0 +1,48 @@
+{
+  "checked_at_PST": "2026-10-14T21:03:46.161943-08:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "server_pid": 681239,
+  "endpoint": "http://127.0.0.1:8026/v1",
+  "health_http_status": 200,
+  "advertised_model": {
+    "id": "Qwen/Qwen3.8-27B",
+    "object": "model",
+    "created": 1792040626,
+    "owned_by": "vllm",
+    "root": "/data/rustfs1/dongweij/bio-evaluation/models/Qwen3.8-27B",
+    "parent": null,
+    "max_model_len": 262144,
+    "permission": [
+      {
+        "id": "modelperm-90eafd7feedb57f0",
+        "object": "model_permission",
+        "created": 1792040626,
+        "allow_create_engine": false,
+        "allow_sampling": true,
+        "allow_logprobs": true,
+        "allow_search_indices": false,
+        "allow_view": true,
+        "allow_fine_tuning": false,
+        "organization": "*",
+        "group": null,
+        "is_blocking": false
+      }
+    ]
+  },
+  "tensor_parallel_size": 1,
+  "assigned_gpu_ids": [
+    5
+  ],
+  "observed_own_gpu_processes": [
+    {
+      "pid": 682069,
+      "gpu_index": 5,
+      "gpu_name": "NVIDIA H200",
+      "used_memory_MiB": 84712
+    }
+  ],
+  "observed_gpu_count": 1,
+  "synthetic_checks_passed": true,
+  "benchmark_cases_dispatched": 0
+}
