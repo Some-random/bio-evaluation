@@ -271,6 +271,12 @@ def private_remote(settings):
     return slug
 
 
+def remote_refs(*patterns):
+    """Read private remote refs using the same scoped login as the push."""
+    return checked(["git", "-c", "credential.helper=", "-c",
+                    "credential.helper=!gh auth git-credential", "ls-remote", "origin", *patterns], timeout=90)
+
+
 def push():
     # A per-command credential helper avoids shared/global Git configuration.
     helper = "!gh auth git-credential"

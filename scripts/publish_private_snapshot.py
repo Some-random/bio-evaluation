@@ -287,7 +287,7 @@ def publish(model):
     backup.private_remote(settings)
     status(stage="pushing_code_and_evaluation_files", commit=commit)
     backup.push()
-    remote_head = checked(["git", "ls-remote", "origin", "refs/heads/main"]).split()[0]
+    remote_head = backup.remote_refs("refs/heads/main").split()[0]
     if remote_head != commit:
         raise backup.BackupError("Remote main does not match the uploaded workspace commit")
     status(stage="code_and_evaluation_files_uploaded", code_uploaded=True, commit=commit)
