@@ -28,10 +28,11 @@ SECRET_PATTERNS = (
     re.compile(rb"\bsk-(?:proj-)?[A-Za-z0-9_-]{32,}"),
     re.compile(rb"\bgh[pousr]_[A-Za-z0-9]{30,}"),
     re.compile(rb"\bgithub_pat_[A-Za-z0-9_]{40,}"),
+    re.compile(rb"\bhf_[A-Za-z0-9]{30,}"),
     re.compile(rb"-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----"),
     re.compile(rb"\bAKIA[A-Z0-9]{16}\b"),
 )
-EXCLUDED_DIRS = {".git", ".local", ".venv", "__pycache__", ".ssh"}
+EXCLUDED_DIRS = {".git", ".local", ".venv", ".venv-vllm", ".cache", "models", "__pycache__", ".ssh"}
 SENSITIVE_NAMES = {
     ".git-credentials", "credentials.json", "secrets.json", "secrets.yml",
     "secrets.yaml", "token.txt", "github_token", "github_token.txt",
@@ -106,6 +107,11 @@ def scan_file(path):
 def run(argv, *, input_text=None, timeout=180):
     env = os.environ.copy()
     env.update(GIT_TERMINAL_PROMPT="0", GH_PROMPT_DISABLED="1")
+    if argv[0] == "gh":
+        for name in ["HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy"]:
+            value = env.get(name, "")
+            if value.startswith("socks5h://"):
+                env[name] = "socks5://" + value[len("socks5h://"):]
     try:
         result = subprocess.run(
             argv, cwd=ROOT, env=env, input=input_text, capture_output=True,
@@ -173,7 +179,7 @@ def build_archive(entries):
     fd, temporary = tempfile.mkstemp(prefix=".tmp-", dir=target)
     try:
         with os.fdopen(fd, "wb") as stream:
-            with gzip.GzipFile(fileobj=stream, mode="wb", filename="", mtime=0) as compressed:
+            with gzip.GzipFile(fileobj=stream, mode="wb", filename="", mtime=0, compresslevel=1) as compressed:
                 with tarfile.open(fileobj=compressed, mode="w|", format=tarfile.PAX_FORMAT) as archive:
                     for relative, path in sorted(entries):
                         info = tarfile.TarInfo(relative.as_posix())
@@ -269,7 +275,7 @@ def push():
     # A per-command credential helper avoids shared/global Git configuration.
     helper = "!gh auth git-credential"
     checked(["git", "-c", "credential.helper=", "-c", "credential.helper=" + helper,
-             "push", "--set-upstream", "origin", "HEAD:main"], timeout=300)
+             "push", "--set-upstream", "origin", "HEAD:main"], timeout=1800)
 
 
 def backup(local_only=False):

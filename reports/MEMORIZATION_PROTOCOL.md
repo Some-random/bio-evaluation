@@ -1,7 +1,7 @@
 # Contamination and memorization protocol
 
 Prior exposure to these public benchmarks is UNKNOWN. A prompt cannot erase
-information already learned by a closed model, and a negative black-box audit
+information already learned by a model, and a negative black-box audit
 does not establish that exposure never happened. Current detection methods
 have substantial limitations ([Samuel et al., COLING 2025](https://aclanthology.org/2025.coling-main.338/)).
 
@@ -65,3 +65,27 @@ This prevents our requests from being used for provider training by default;
 it does not remove prior contamination. Do not send private unpublished lab or
 collaboration data without separate authorization. A fresh measured holdout
 has not yet been acquired or evaluated in this workspace.
+
+## Current local Qwen run
+
+The first local baseline is pinned Qwen3.8-27B on the 197 input-reviewed public
+LitQA2 cases. Source/checkpoint versions, prompt bytes, ordered case IDs, scorer
+references, sampling settings and code hashes were frozen before generation in
+`configs/local_labbench_litqa2.json`. The two held cases were chosen from input
+review, without scoring keys or model outcomes.
+
+The model receives one independent user message per case: native question,
+shuffled choices and instructions. Multiple-choice answer options remain legitimate
+input; the answer-to-option mapping stays with the offline scorer. The dispatch
+process does not parse scorer references. No tools, retrieval, extra files or
+past case conversations are supplied to the solver. Requests and responses are
+paired by hashes, one generation is allowed per case, and interrupted uncertain
+calls are not automatically resampled. Settings remain fixed regardless of scores.
+
+This prevents the configured runtime from handing the solver answer keys; it does
+not establish absence of pretraining exposure. Public weights, local execution,
+randomized choice order and medium thinking do not erase memorized benchmark
+questions or paper facts. No fresh-outcome holdout or memorization diagnostic is
+being substituted for this native-protocol public baseline. Five public questions
+had previously been scored with another model; this history is disclosed and was
+not used to tune the Qwen model or prompt.

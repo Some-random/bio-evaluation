@@ -1,0 +1,19 @@
+{
+  "python": "3.12.15",
+  "vllm": "0.31.0",
+  "torch": "2.13.0+cu132",
+  "torch_cuda": "13.2",
+  "transformers": "5.17.0",
+  "cuda_available": true,
+  "visible_gpu_count": 1,
+  "test_type": "runtime, synthetic CUDA operations and CLI checks only; no model weights or benchmark inputs",
+  "synthetic_matmul_ok": true,
+  "gpu": "NVIDIA H200",
+  "vllm_cuda_kernel_ok": true,
+  "checkpoint_architecture_registered": true,
+  "vllm_cli_help_exit_code": 0,
+  "model_server_started": true,
+  "checkpoint_weights_downloaded": true,
+  "full_model_validation_report": "local_model_server_validation.json",
+  "full_checkpoint_verification_report": "local_model_complete_verification.json"
+}

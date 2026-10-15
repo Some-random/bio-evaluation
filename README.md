@@ -1,42 +1,20 @@
-# Protein-first biological evaluation preparation
+# Biological evaluation workspace
 
-Prioritized settings: P18, P23–P26 and P30–P32.
+Private research workspace covering 64 biological evaluation settings. The first local Qwen3.8-27B run completed on 15 October 2026 UTC: **197 reviewed public LAB-Bench LitQA2 questions, 77 correct (39.1% accuracy), 41.0% precision and 95.4% coverage**. No requests failed and all outputs parsed. This is one seeded public subset run; explanation support is unassessed and pretraining exposure is unknown.
 
-- [Cost and run plan](reports/COST_AND_RUN_PLAN.md)
-- [Memorization protocol](reports/MEMORIZATION_PROTOCOL.md)
-- [Machine-readable cost calculations](reports/cost_estimate.json)
-- [Readiness of all 64 settings](reports/per_task_readiness.csv)
-- [Task demands and score interpretation](reports/INTERPRETATION_TABLE.md)
-- [Private repository and daily backup](reports/BACKUP_SETUP.md)
+- [First local results and paper context](reports/FIRST_LOCAL_EVALUATION.md)
 - [Current evaluation overview](reports/PROJECT_OVERVIEW.md)
-- [Full interpretation table](reports/interpretation_table.csv)
-- Interpretation metadata keyed by task and protocol variant: `results/interpretation_notes.jsonl`
-- Original handoff: `handoff/bio_eval_agent_handoff_2026-10-13/`
+- [Task demands and score interpretation](reports/INTERPRETATION_TABLE.md)
+- [Readiness of all 64 settings](reports/per_task_readiness.csv)
+- [Leakage and memorization controls](reports/MEMORIZATION_PROTOCOL.md)
+- [Verified checkpoint and server setup](reports/LOCAL_MODEL_SETUP.md)
+- [Native LAB-Bench input corrections](reports/LABBENCH_NATIVE_INPUT_REVIEW_2026-10-15.md)
+- [Private snapshot and restore instructions](reports/BACKUP_SETUP.md)
 
-Verified public test inputs and draft label-separated text adapters are
-available. Eight synthetic leakage/serialization tests pass. Preparation
-uses CPU and no API credentials or paid model calls. The inference runner,
-metric wrappers, and final MutaDescribe text-protocol review remain pending.
+All eight public LAB-Bench categories have complete native preparation (1,967 cases), including required figure/table images, paper titles/DOIs and full protocols. Other local evaluation case reviews and frozen execution configs are pending. The OpenAI inference hold and held pathogen-fitness requests remain in place. This repository is an archive and working record, not permission to run unreviewed tasks or change native benchmark restrictions.
 
-```bash
-python3 -m unittest discover -s tests -v
-python3 scripts/preflight.py
-python3 scripts/interpretations.py
-```
+Code, configurations, reports, handoff materials and interpretation metadata are stored directly in Git. `artifacts/manifest.json` inventories the compressed snapshot of all data, sources, raw requests/responses, results and logs. Parts in `artifacts/` remain below GitHub's individual-file limit. The complete original BF16 Qwen checkpoint, including all 18 weight files and supporting files, is packaged in the private `snapshot-2026-10-15` release; it is published only after GitHub's asset sizes and SHA-256 digests match the local manifest. See `reports/qwen_checkpoint_release_manifest.json` for checkpoint part/file hashes.
 
-`configs/proposed_run.json` is an unapproved proposal, not an execution command.
-Do not use protected outcomes to select models or tune prompts.
+Credentials, virtual environments, package/build/download caches and transient process state remain local. Source-pinned model files, evaluation data and work are preserved. No unrelated Affibody workspace is included. This upload is one-time; automatic daily uploads remain disabled.
 
-Read `/data/rustfs1/dongweij/EXECUTION_EXAMPLES.md` before continuing.
-Demand classifications are provisional and independent of text-interface
-compatibility. Keep valid prediction tasks, including those that may require
-learned protein representations. Outcome correctness and explanation support
-are recorded separately; unsupported mechanisms are not automatically false.
-The addendum's examples are never benchmark data or ablation authorization.
-
-The daily private-backup workflow is separate from benchmark inference. It
-preserves this evaluation workspace, including compressed inputs, cached sources
-and results, while keeping credentials and transient state local. GitHub server
-authentication is required for repository creation and unattended pushes.
-Backups contain evaluation material and must not become solver context or
-training/retrieval data.
+This repository and its archives contain scorer-only reference answers. Keep them outside solver tools, training and retrieval corpora. Task-demand labels remain provisional; outcome agreement does not establish explanation correctness. Read [the execution addendum](handoff/EXECUTION_EXAMPLES.md) and `AGENTS.md` before continuing. The addendum's illustrative examples are not benchmark data.

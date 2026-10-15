@@ -1,0 +1,105 @@
+{
+  "revision": "5c77cec648430f30611808808861eb86f81d5eaa",
+  "files": [
+    {
+      "subset": "FigQA",
+      "status": 200,
+      "files": [
+        {
+          "type": "file",
+          "oid": "f389f5c9b55027a2b965aacc6e827ff5a7fba950",
+          "size": 227002936,
+          "lfs": {
+            "oid": "0fb49d673e3f09846e3e3a6801326bf9ee72cae8b11545fc4cd1903d3d10fead",
+            "size": 227002936,
+            "pointerSize": 134
+          },
+          "xetHash": "820e70e2e5711b9f0409246cc17fc55853500f5d5524d04507b41118953ef66c",
+          "path": "FigQA/train-00000-of-00001.parquet",
+          "lastCommit": {
+            "id": "7d1631a17fa5028d201815d33f7c5192725f85f8",
+            "title": "Upload dataset",
+            "date": "2025-09-27T00:42:25.000Z"
+          },
+          "securityFileStatus": {
+            "status": "safe",
+            "protectAiScan": {
+              "status": "unscanned"
+            },
+            "avScan": {
+              "status": "safe",
+              "message": "No security issues detected",
+              "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+            },
+            "pickleImportScan": {
+              "status": "unscanned",
+              "pickleImports": [],
+              "version": "0.0.0"
+            },
+            "virusTotalScan": {
+              "status": "unscanned",
+              "message": "File not scanned in VirusTotal",
+              "reportLink": "https://www.virustotal.com/gui/file/0fb49d673e3f09846e3e3a6801326bf9ee72cae8b11545fc4cd1903d3d10fead?utm_source=huggingface"
+            }
+          }
+        }
+      ],
+      "existing_candidates": [
+        {
+          "name": "/data/rustfs1/dongweij/bio-evaluation/sources/lab__FigQA__task.py",
+          "bytes": 936
+        }
+      ]
+    },
+    {
+      "subset": "TableQA",
+      "status": 200,
+      "files": [
+        {
+          "type": "file",
+          "oid": "557ad483123f55d40b9c2f4b0b025cae92b1780b",
+          "size": 106149774,
+          "lfs": {
+            "oid": "6af76a6a16fa460809f84dceb906c1be0a904ac49dbd760fa8998f16ad2b5a04",
+            "size": 106149774,
+            "pointerSize": 134
+          },
+          "xetHash": "359e272e171d26d5c7df83d68bd91300992ba744632d4719a242dec57acbb4fd",
+          "path": "TableQA/train-00000-of-00001.parquet",
+          "lastCommit": {
+            "id": "92e667717aaeef7911d7f05419b4a305048a3fe6",
+            "title": "Upload dataset",
+            "date": "2025-09-27T00:42:16.000Z"
+          },
+          "securityFileStatus": {
+            "status": "queued",
+            "protectAiScan": {
+              "status": "unscanned"
+            },
+            "avScan": {
+              "status": "safe",
+              "message": "No security issues detected",
+              "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+            },
+            "pickleImportScan": {
+              "status": "unscanned",
+              "pickleImports": [],
+              "version": "0.0.0"
+            },
+            "virusTotalScan": {
+              "status": "queued",
+              "message": "QUEUED",
+              "reportLink": "https://www.virustotal.com/gui/file/6af76a6a16fa460809f84dceb906c1be0a904ac49dbd760fa8998f16ad2b5a04?utm_source=huggingface"
+            }
+          }
+        }
+      ],
+      "existing_candidates": [
+        {
+          "name": "/data/rustfs1/dongweij/bio-evaluation/sources/lab__TableQA__task.py",
+          "bytes": 997
+        }
+      ]
+    }
+  ]
+}

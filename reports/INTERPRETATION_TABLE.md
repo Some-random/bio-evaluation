@@ -1,6 +1,6 @@
 # Interpretation alongside the evaluation records
 
-This table describes task contracts and score interpretation. No biological inference scores exist yet; prepared inputs have not been submitted to a solver. Demand labels are provisional analyst inferences, never claims about internal model computation.
+This table describes task contracts and score interpretation. The reviewed local LitQA2 run is complete; executed results and exact supplied-input provenance are recorded below and in its run directory. Catalog-only and prepared rows remain distinct from executed results. Demand labels are provisional analyst inferences, never claims about internal model computation.
 
 ## Prepared protein settings
 
@@ -27,10 +27,31 @@ Native metrics and restrictions remain unchanged. Coverage, invalid outputs, tra
 
 ## Full catalog metadata
 
-`../results/interpretation_notes.jsonl` and `interpretation_table.csv` cover 64 biological settings, 14 separately identified general controls, and 7 additional existing prepared TEXT variants. Adding metadata does not add execution permissions. The execution scope remains the eight prioritized protein settings; budget approval and protocol blockers remain recorded in the existing configuration.
+`../results/interpretation_notes.jsonl` and `interpretation_table.csv` cover 64 biological settings, 14 separately identified general controls, and 7 additional existing prepared TEXT variants. Adding metadata does not add execution permissions. The user expanded scope to all 64 biological settings. Current local execution is restricted to reviewed B01 case IDs; other task-specific protocol, source and case-review blockers remain explicit.
 
 Join future score rows by BOTH `task_id` and `protocol_variant`; also retain model, source/scorer/prompt versions, context condition and run identifiers. Do not silently merge native and adapted protocols. Replace the current not-run input observation with exact dispatched-request provenance when inference is actually executed.
 
 The full table preserves original A–F compatibility and metrics. Classification basis points to source catalog fields, cached protocol code for prepared variants, and explicitly marked analyst inference. Other source leads remain subject to release verification. Neither benchmark names nor compatibility codes establish reasoning suitability.
 
 Addendum read: `/data/rustfs1/dongweij/EXECUTION_EXAMPLES.md`. SHA-256: `4b1103e8085446ab687a10b7e91d3fb54baacc8d3db0b66a1ceaccb4dd5a67a0`. Every scenario/value in that file is illustrative; none has been added to benchmark inputs or a training corpus.
+## Prepared native public LAB-Bench inputs
+
+These 1,967 cases are preparation records, not completed results. B01 local execution uses its separate reviewed run variant. Complete inputs live in `../data/labbench_native_complete/`; the earlier incomplete SuppQA and ProtocolQA preparation is retired for future native runs.
+
+| Task | Cases | Native model-facing information | Likely demands (provisional) | Reference source / interpretation |
+|---|---:|---|---|---|
+| B01 | 199 | question; shuffled_choices; native_COT_instructions | biological_knowledge_use; answer_selection; possible_recall_or_inference | Creator-curated answers. Good: reference agreement with declared resources. Bad: limited answer recovery; explanations and internal computation remain unverified. |
+| B02 | 520 | question; shuffled_choices; native_COT_instructions | biological_knowledge_use; database_fact_answer_selection | Creator-curated answers. Good: reference agreement with declared resources. Bad: limited answer recovery; explanations and internal computation remain unverified. |
+| B03 | 82 | paper_title; DOI; question; shuffled_choices; native_COT_instructions | biological_knowledge_use; source_locator_use; answer_selection | Creator-curated answers. Good: reference agreement with declared resources. Bad: limited answer recovery; explanations and internal computation remain unverified. |
+| B04 | 181 | original_figure_image; question; shuffled_choices; native_COT_instructions | visual_information_extraction; evidence_interpretation; biological_knowledge_use | Creator-curated answers. Good: reference agreement with declared resources. Bad: limited answer recovery; explanations and internal computation remain unverified. |
+| B05 | 244 | all_original_table_images; question; shuffled_choices; native_COT_instructions | visual_information_extraction; table_evidence_operations; biological_knowledge_use | Creator-curated answers. Good: reference agreement with declared resources. Bad: limited answer recovery; explanations and internal computation remain unverified. |
+| B06 | 108 | complete_native_protocol; question; shuffled_choices; native_COT_instructions | protocol_context_use; biological_knowledge_use; scenario_analysis | Creator-curated answers. Good: reference agreement with declared resources. Bad: limited answer recovery; explanations and internal computation remain unverified. |
+| B07 | 600 | complete_native_question_including_any_sequences; shuffled_choices; native_COT_instructions | sequence_or_gene_context_use; biological_knowledge_use; scenario_analysis | Creator-curated answers. Good: reference agreement with declared resources. Bad: limited answer recovery; explanations and internal computation remain unverified. |
+| B08 | 33 | complete_native_question_and_scenario_sequences; shuffled_choices; native_COT_instructions | cloning_scenario_context_use; sequence_information_use; biological_knowledge_use | Creator-curated answers. Good: reference agreement with declared resources. Bad: limited answer recovery; explanations and internal computation remain unverified. |
+## Executed local LitQA2 baseline
+
+| Run / outcome | Likely demands (provisional) | Actually supplied | Reference answer source | Score interpretation |
+|---|---|---|---|---|
+| qwen38_27b_litqa2_public_reviewed_2026-10-15; 197/197 completed; accuracy 0.3909, precision 0.4096, coverage 0.9543 | Biological knowledge, answer selection; recall and inference contributions unresolved | 197 original question/choice prompts and native COT instructions; no papers, retrieval tools or answer keys | Creator-curated public labels, pinned and scorer-only | Good: agreement under these resources. Bad: limited answer recovery; does not isolate knowledge versus reasoning. Explanations unassessed. |
+
+Two input-reviewed cases were held before inference. This is a public-subset result with native prompts and metrics, not the full paper evaluation. Prior exposure to the public dataset is unknown.

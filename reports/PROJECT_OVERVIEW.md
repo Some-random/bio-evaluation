@@ -1,16 +1,26 @@
 # Current evaluation situation
 
-Status checked 14 October 2026 UTC. We have a catalog of 64 biological settings,
-with eight protein settings prioritized and 18,356 model-facing requests
-prepared. These are settings, not independent datasets. No biological model
-inference or scored comparison has been run. The OpenAI key authenticated
-successfully; billable inference and quota remain untested.
+Status checked 15 October 2026 UTC. The complete Qwen3.8-27B BF16 checkpoint is
+verified and running on one H200 (GPU 5). The first local benchmark run is complete:
+**197 input-reviewed public LAB-Bench LitQA2 questions**. It achieved 77/197 correct
+(39.1% accuracy), 41.0% precision and 95.4% coverage, with zero request/parser/truncation
+failures. Two cases were held
+before inference. Check the saved progress and final scores in
+`results/runs/qwen38_27b_litqa2_public_reviewed_2026-10-15/` and the frozen plan in
+`FIRST_LOCAL_EVALUATION.md`. The separate offline scorer and
+request/output audit both passed. See `local_evaluation_status.json` for the completed status.
+
+The catalog covers 64 biological settings, not 64 independent datasets. Previous
+preparation and historical API results are separate from this Qwen baseline.
+OpenAI inference remains suspended after the reported policy warning. Flagged
+pathogen-fitness requests are not being transferred to the local model.
 
 ## Which evaluations are useful?
 
 | Settings | Purpose and evidence | Practical priority and limit |
 |---|---|---|
-| P18: ProteinGym-LLM | Rank candidate protein variants against held-out experimental fitness measurements. | Strong first test of biological prediction. Frozen native inputs are verified; runner and native metric integration still need completion. Agreement with measured ordering does not establish mechanism or contamination-free generalization. |
+| B01: LAB-Bench LitQA2 | Answer questions about published biological findings; creator-curated multiple-choice references. | First local run: 197 reviewed public cases, exact prepared native prompts/choices, fixed generation settings, native accuracy/precision/coverage. Public-subset and single-run differences from the paper are explicit. |
+| P18: ProteinGym-LLM | Rank candidate protein variants against held-out experimental fitness measurements. | Held after the policy incident; no local dispatch. It remains a valid biological prediction task, but blocked pathogen-fitness requests cannot be transferred. Native-only and evaluation-only restrictions remain. |
 | P23–P26: protein descriptions | Predict function, catalytic activity, domains/motifs and general descriptions from full sequences. References are annotations/descriptions. | Useful complementary coverage. Prepared TEXT adaptations are separately labeled; lexical metrics do not independently validate every biological claim. |
 | P30: mutation explanations | Produce a mutation-effect explanation against source effect descriptions. | Useful for explanation assessment after the exact text protocol is resolved. Prediction accuracy, reference wording and mechanistic support are different outcomes. |
 | P31–P32: mutation engineering | Recover a reference substitution given a desired effect, with or without a supplied position. | Useful design/proposal tasks after protocol review. Reference recovery is not an experimental success rate; unannotated alternatives are unresolved. |
@@ -23,12 +33,15 @@ differences disclosed. No new encoder/head training is authorized.
 
 ## Execution path
 
-Finish exact protocols, a resumable runner and native scorers. Verify parsing,
-errors and metrics using synthetic or permitted development fixtures. Freeze
-model, prompts, task inputs, case selection and resource budgets before scored
-execution. The proposed pilot is 100 cases per task selected without labels;
-use it to check the pipeline and coverage, not to choose models/prompts using
-protected outcomes. A paid-run budget remains unapproved.
+The local LitQA2 runner, frozen manifest and offline native metric integration
+are implemented. Seven synthetic contract checks passed; every selected prompt
+matches the prepared native prompt byte-for-byte. Runtime requests contain no
+answer-key fields. One generation is permitted per reviewed case; uncertain
+interrupted requests are not silently resampled. No test outcomes choose models,
+prompts or budgets. Complete native public inputs for all eight LAB-Bench categories are now prepared
+in `data/labbench_native_complete/` (1,967 cases), including required images, titles/DOIs
+and full protocols. Other tasks still require case review and frozen execution configs
+before local dispatch.
 
 Lock predictions before scoring. Use native splits, aggregation and invalid-output
 rules; report coverage, failures, costs and exact versions. Keep adapted/native
@@ -71,7 +84,7 @@ scientific claim, seal labels and lock predictions before opening them. This
 reduces known exposure risks; it does not prove unknown provider training data
 are clean. No fresh measured holdout has been acquired yet.
 
-The daily private backup is for reproducibility and recovery. Privacy of the
-repository does not make its contents safe to expose to a solver: it includes
-held-out benchmark material. See `BACKUP_SETUP.md` for backup and authentication
-status, and `MEMORIZATION_PROTOCOL.md` for the detailed evaluation controls.
+The user canceled daily GitHub updates, and the scheduled upload remains disabled.
+Local reports, configuration and outputs are retained for reproducibility. Any
+evaluation archive contains held-out material and must stay outside solver
+resources. See `MEMORIZATION_PROTOCOL.md` for the detailed evaluation controls.

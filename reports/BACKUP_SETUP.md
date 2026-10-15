@@ -1,55 +1,32 @@
-# Private repository and daily backup
+# Private repository snapshot
 
-The user requested a private repository and daily uploads for this evaluation
-workspace on 14 October 2026 UTC. Repository creation and pushes are authorized;
-paid biological inference remains separately unapproved.
+On 15 October 2026 UTC the user requested creating a private repository and uploading this evaluation workspace. Repository: [Some-random/bio-evaluation](https://github.com/Some-random/bio-evaluation). GitHub privacy and push permission were verified before data transfer. This is a one-time upload; the previously canceled daily schedule remains disabled.
 
-The proposed name is `bio-evaluation`, under the GitHub account authenticated
-on this server. Set `owner` in `configs/backup.json` for an explicit account.
-The backup verifies GitHub's private flag before every push and never changes
-an existing remote or forces a push. A repository-name collision stops creation.
+The snapshot includes:
 
-Code, protocols, the original handoff, configuration, reports and interpretation
-metadata are committed directly. All permitted files in `data/`, `sources/`,
-`results/` and `logs/` are included in a deterministic compressed archive under `artifacts/`.
-The archive is split into parts of at most 90 MiB to fit GitHub's file limits.
-Its manifest records every included data file's size and SHA-256 hash.
+- Code, tests, configurations, reports, original handoff and interpretation metadata in Git.
+- All evaluation inputs, cached public sources, raw requests/responses, scored results and logs in `artifacts/evaluation-assets.tar.gz.part*`, with per-file SHA-256 hashes in `artifacts/manifest.json`.
+- The entire pinned Qwen3.8-27B BF16 checkpoint in the private `snapshot-2026-10-15` release: 18 weight files, 14 publisher supporting files and our completion receipt. Every publisher file is checked against its pinned digest while packaging; every uploaded part is checked against GitHub's size and SHA-256 digest. The original license is retained.
 
-Credentials, local backup runtime state, environments and caches stay
-local. Credential filename rules and common credential-content checks run before
-commit or upload; archive members are checked too. These checks are useful
-guards, not a guarantee that every possible secret format can be detected.
-Snapshots contain held-out evaluation material: do not use the backup repository
-as model training material, a solver retrieval index, or a solver workspace.
+The checkpoint release contains 512 MiB uncompressed tar parts and a manifest. GitHub's release assets remain private with this repository. The release stays draft until all expected assets are verified; an interrupted upload resumes by matching existing asset digests. No completed asset is blindly overwritten.
 
-The daily cron entry is `/etc/cron.d/dongwei-bio-evaluation-backup`, scheduled
-at **10:00 UTC / 02:00 PST (fixed UTC−8)**. It runs on the server independently
-of this chat while the server and cron service are running. It commits first,
-then uploads; a failed upload preserves the local commit for the next run.
-Runtime status is `.local/backup_status.json`; job logs are `.local/backup.log`.
+Credentials, `.local/` process state, virtual environments and caches stay local. The source checkpoint files are preserved, so caches and installed packages do not need to be duplicated. No unrelated Affibody files are included. The backup does not change model execution scope or submit any benchmark inference.
 
-Authenticate on the server without pasting a credential into chat:
+`scripts/publish_private_snapshot.py` performs the one-time snapshot and upload. It uses the existing GitHub CLI login, with per-process proxy scheme handling; it opens no SSH connection and changes no global proxy or Git credential setting. Credential filename/content checks include archive members and existing Git history. Runtime progress is `.local/github_upload/progress.json` and the worker log is `.local/github_upload/worker.log`. A process lock prevents duplicate jobs.
+
+To restore evaluation data after cloning, verify the concatenated SHA-256 in `artifacts/manifest.json` and the listed per-file hashes, then extract the archive into a trusted copy of this workspace:
 
 ```bash
-gh auth login --hostname github.com --git-protocol https --web
-python3 /data/rustfs1/dongweij/bio-evaluation/scripts/daily_backup.py
+cat artifacts/evaluation-assets.tar.gz.part* | tar -xzf -
 ```
 
-The GitHub CLI must retain authentication on this server for unattended pushes.
-A connected chat plugin alone does not establish server authentication.
-Creating a private repo needs account permission; an OpenAI API key cannot
-provide GitHub access. No unrelated workspace or Affibody files are included.
-Manually created Git commits require a history review before the automatic job
-will upload them; ordinary uncommitted workspace changes are handled automatically.
-
-Restore archived files into a separate trusted directory after joining the
-parts in manifest order. For the current archive, this command lists contents:
+To restore the complete checkpoint, authenticate to GitHub for this private repo, download its release parts, verify their sizes/SHA-256 against `reports/qwen_checkpoint_release_manifest.json`, and join them in manifest order:
 
 ```bash
-cat artifacts/evaluation-assets.tar.gz.part* | tar -tzf -
+gh release download snapshot-2026-10-15 --repo Some-random/bio-evaluation --pattern 'qwen-checkpoint.tar.part*' --dir .local/checkpoint-release
+cat .local/checkpoint-release/qwen-checkpoint.tar.part* | tar -xf -
 ```
 
-Before extraction, verify the concatenated SHA-256 against `artifacts/manifest.json`.
-The archived paths retain their original top folders, including any evaluation logs.
-Future large files should be placed in those directories. No model responses
-or numerical biological scores existed when the backup was first prepared.
+This recreates `models/Qwen3.8-27B/`. The archive manifest records the checksum of the joined tar and every original file. Keep downloaded restore parts on a disk with sufficient space. The standard model download recipe also remains available if preferred.
+
+Archives contain held-out reference labels and prior incident logs. Do not give the repository or backups to benchmark solver tools, use them as a training or retrieval corpus, or resume held biological requests through another provider.

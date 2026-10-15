@@ -1,0 +1,38 @@
+{
+  "source_url": "https://arxiv.org/html/2407.10362v3",
+  "source_tables": [
+    2,
+    3,
+    4
+  ],
+  "verified_at_utc": "2026-10-15T05:16:14.466110+00:00",
+  "task": "LAB-Bench LitQA2",
+  "dataset_scope": "248 questions, both public and private",
+  "aggregation": "Reported paper values rounded to 2 decimals, averaged over 3 model runs",
+  "models": [
+    {
+      "model": "gpt-4o",
+      "accuracy": 0.27,
+      "precision": 0.46,
+      "coverage": 0.58,
+      "tools": []
+    },
+    {
+      "model": "Meta-Llama-3-70B-Instruct",
+      "accuracy": 0.35,
+      "precision": 0.38,
+      "coverage": 0.92,
+      "tools": []
+    },
+    {
+      "model": "claude-3-5-sonnet-20240620",
+      "accuracy": 0.06,
+      "precision": 0.47,
+      "coverage": 0.12,
+      "tools": []
+    }
+  ],
+  "interpretation": "Historical context only. Our 197 reviewed public cases, one seeded run, checkpoint era and output budget differ. Exact item-matched comparison requires released per-case historical model outputs, which are not present in the fetched source tree.",
+  "parser_difference": "Paper describes Claude-2 fallback after regex failure; pinned public code does not configure an extractor by default. Our frozen scorer uses its deterministic parsing path only; invalid-answer count is disclosed.",
+  "human_baseline": "Omitted from model table: humans had tools and literature access, unlike these tool-free model runs."
+}

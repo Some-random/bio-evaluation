@@ -1,0 +1,15 @@
+{
+  "model": "Qwen/Qwen3.8-Flash-Next-FP8",
+  "revision": "236dfdf285828023ca3bcd3f37366c58a3469b13",
+  "architecture": [
+    "Qwen4ExpForConditionalGeneration"
+  ],
+  "model_type": "qwen4_exp",
+  "quantization_method": "fp8",
+  "has_vision_config": true,
+  "checkpoint_shards": 131,
+  "weight_bytes": 185523317458,
+  "native_max_position_embeddings": 262144,
+  "benchmark_cases_dispatched": 0,
+  "weights_downloaded": false
+}

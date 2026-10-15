@@ -1,0 +1,34 @@
+{
+  "runs": [
+    {
+      "run_id": "labbench_text_full_2026-10-14",
+      "saved_responses": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "task_counts": {
+        "B01": 5
+      },
+      "planned_cases": 1542
+    },
+    {
+      "run_id": "p18_native_n50_full_2026-10-14",
+      "saved_responses": 418,
+      "statuses": {
+        "transport_error": 373,
+        "provider_error": 43,
+        "token_count_failed": 2
+      },
+      "task_counts": {
+        "P18": 418
+      },
+      "planned_cases": 651
+    }
+  ],
+  "policy_blocks": 43,
+  "blocked_task_ids": [
+    "P18"
+  ],
+  "local_results_preserved": true,
+  "api_generation_enabled": false
+}

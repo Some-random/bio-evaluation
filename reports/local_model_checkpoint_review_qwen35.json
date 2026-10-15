@@ -1,0 +1,12 @@
+{
+  "architecture": [
+    "Qwen3_5MoeForConditionalGeneration"
+  ],
+  "model_type": "qwen3_5_moe",
+  "checkpoint_shards": 94,
+  "quantization_method": "fp8",
+  "has_vision_config": true,
+  "native_max_position_embeddings": 262144,
+  "max_length_in_server_config": 262144,
+  "benchmark_cases_dispatched": 0
+}

@@ -2,6 +2,9 @@
 .env.*
 !.env.example
 .venv/
+.venv-vllm/
+.cache/
+models/
 __pycache__/
 data/
 sources/

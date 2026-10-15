@@ -1,0 +1,21 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "gpu_ids": [
+    4
+  ],
+  "setup_pid": 328177,
+  "model_server_started": false,
+  "weights_downloaded": true,
+  "benchmark_cases_dispatched": 0,
+  "scope": "checkpoint setup and fixed synthetic checks only",
+  "download_pid": 323516,
+  "stage": "failed",
+  "updated_at_PST": "2026-10-14T20:47:20.943993-08:00",
+  "attempt": 1,
+  "returncode": -15,
+  "weight_sha256_verified": true,
+  "server_pid": 663836,
+  "error_type": "RuntimeError",
+  "diagnostic": "See local download/server/smoke logs; no benchmark requests were submitted."
+}

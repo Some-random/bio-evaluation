@@ -1,9 +1,18 @@
 {
   "repo_name": "bio-evaluation",
-  "owner": null,
+  "owner": "Some-random",
   "visibility": "private",
   "daily_time_pst": "02:00",
   "daily_time_utc": "10:00",
-  "archive_directories": ["data", "sources", "results", "logs"],
-  "description": "Private workspace for reproducible biological evaluation: protocols, code, inputs, results, and interpretation."
+  "archive_directories": [
+    "data",
+    "sources",
+    "results",
+    "logs"
+  ],
+  "description": "Private workspace for reproducible biological evaluation: protocols, code, inputs, results, and interpretation.",
+  "daily_enabled": false,
+  "current_workflow": "scripts/publish_private_snapshot.py",
+  "include_checkpoint_in_private_release": true,
+  "checkpoint_release_tag": "snapshot-2026-10-15"
 }

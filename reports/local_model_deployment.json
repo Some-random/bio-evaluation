@@ -1,0 +1,21 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "gpu_ids": [
+    5
+  ],
+  "setup_pid": 681199,
+  "model_server_started": true,
+  "weights_downloaded": true,
+  "benchmark_cases_dispatched": 0,
+  "scope": "checkpoint setup and fixed synthetic checks only",
+  "stage": "ready",
+  "updated_at_PST": "2026-10-14T21:02:29.292158-08:00",
+  "weight_verification_reused": true,
+  "weight_sha256_verified": true,
+  "server_pid": 681239,
+  "synthetic_checks_passed": true,
+  "endpoint": "http://127.0.0.1:8026/v1",
+  "context_limit": 262144,
+  "gpu_memory_utilization": 0.65
+}
