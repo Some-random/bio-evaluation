@@ -13,6 +13,6 @@
   "description": "Private workspace for reproducible biological evaluation: protocols, code, inputs, results, and interpretation.",
   "daily_enabled": false,
   "current_workflow": "scripts/publish_private_snapshot.py",
-  "include_checkpoint_in_private_release": true,
+  "include_checkpoint_in_private_release": false,
   "checkpoint_release_tag": "snapshot-2026-10-15"
 }

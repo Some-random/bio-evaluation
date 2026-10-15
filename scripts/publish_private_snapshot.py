@@ -1,7 +1,8 @@
-"""One-time private workspace backup plus the complete checkpoint as release assets.
+"""One-time private workspace backup with model references only by default.
 
 No inference and no schedule changes. Reuses the existing GitHub login and proxy.
-Credentials/environments/caches are excluded; model files are publisher-verified.
+Credentials/environments/caches are excluded. Public weights stay local unless
+checkpoint release upload is explicitly enabled in the backup configuration.
 """
 import concurrent.futures as cf
 import datetime as dt
@@ -11,6 +12,7 @@ import io
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import tarfile
@@ -194,12 +196,54 @@ def scan_history():
             result = subprocess.run(["git", "cat-file", "blob", oid], cwd=ROOT, capture_output=True)
             if result.returncode:
                 raise backup.BackupError("A Git history blob could not be inspected")
-            suffix = ".tar.gz" if result.stdout.startswith(b"\x1f\x8b") else Path(name).suffix
+            multipart = re.fullmatch(r"artifacts/evaluation-assets\.tar\.gz\.part\d{4}", name)
+            # A gzip stream can span multiple Git blobs. Scan each raw part now,
+            # then join the exact historical parts below before inspecting tar.
+            suffix = ".bin" if multipart else ".tar.gz" if result.stdout.startswith(b"\x1f\x8b") else Path(name).suffix
             path = Path(directory) / (oid + suffix)
             path.write_bytes(result.stdout)
             backup.scan_file(path)
             blobs += 1
+        archive_hashes = set()
+        versions = checked(["git", "log", "--format=%H", "--", "artifacts/manifest.json"]).splitlines()
+        for version in versions:
+            manifest = json.loads(checked(["git", "show", f"{version}:artifacts/manifest.json"]))
+            digest = manifest["archive_sha256"]
+            if digest in archive_hashes:
+                continue
+            parts = manifest["parts"]
+            if not parts or any(not re.fullmatch(r"evaluation-assets\.tar\.gz\.part\d{4}", p) for p in parts):
+                raise backup.BackupError("Historical evaluation archive part names are invalid")
+            joined = Path(directory) / "joined-evaluation-assets.tar.gz"
+            sha, size = hashlib.sha256(), 0
+            with joined.open("wb") as handle:
+                for part in parts:
+                    result = subprocess.run(["git", "show", f"{version}:artifacts/{part}"], cwd=ROOT, capture_output=True)
+                    if result.returncode:
+                        raise backup.BackupError("A historical evaluation archive part is missing")
+                    size += len(result.stdout)
+                    if size > 2 * 1024**3:
+                        raise backup.BackupError("A historical evaluation archive exceeds the scan limit")
+                    sha.update(result.stdout)
+                    handle.write(result.stdout)
+            if sha.hexdigest() != digest:
+                raise backup.BackupError("A historical evaluation archive checksum differs from its manifest")
+            previous_limit = backup.MAX_ARCHIVE_SCAN
+            try:
+                # This outer workspace snapshot is larger than individual source
+                # archives; retain a finite bound while inspecting its members.
+                backup.MAX_ARCHIVE_SCAN = 4 * 1024**3
+                backup.scan_file(joined)
+            finally:
+                backup.MAX_ARCHIVE_SCAN = previous_limit
+            archive_hashes.add(digest)
     status(history_blobs_scanned=blobs)
+
+
+def configured_checkpoint(settings):
+    if settings.get("include_checkpoint_in_private_release") is True:
+        return checkpoint_archive()
+    return None
 
 
 def release_assets(slug, release_id):
@@ -247,6 +291,14 @@ def publish(model):
     if remote_head != commit:
         raise backup.BackupError("Remote main does not match the uploaded workspace commit")
     status(stage="code_and_evaluation_files_uploaded", code_uploaded=True, commit=commit)
+    # Re-read the scope after the potentially long Git push. A user can narrow
+    # the backup while it is running without authorizing any weight upload.
+    if model is None or backup.config().get("include_checkpoint_in_private_release") is not True:
+        verify_private(api("repos/" + slug), slug)
+        status(stage="complete", all_uploaded=True, private_verified=True,
+               repo_url=record["url"], model_references_only=True,
+               checkpoint_assets_uploaded=0, scheduled_uploads_enabled=False)
+        return
     existing = backup.run(["gh", "api", f"repos/{slug}/releases/tags/{TAG}"], timeout=60)
     if existing.returncode:
         notes = STATE / "release_notes.md"
@@ -327,7 +379,7 @@ def main():
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     try:
         scan_history()
-        model = checkpoint_archive()
+        model = configured_checkpoint(backup.config())
         publish(model)
     except Exception as error:
         status(stage="failed", error_type=type(error).__name__,
