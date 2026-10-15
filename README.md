@@ -1,5 +1,11 @@
 # Biological evaluation workspace
 
+Foundation-model papers and literature notes live in the [shared biological
+foundation-model catalog](https://github.com/Some-random/paper-extraction-lab/blob/main/reports/bio_foundation_review_2026-10-15/README.md).
+It combines model sources, training datasets and amounts, extraction/curation,
+figure and citation handling, and disclosure gaps in one entry per model.
+This workspace retains evaluation protocols and run provenance.
+
 Private research workspace covering 64 biological evaluation settings. The first local Qwen3.8-27B run completed on 15 October 2026 UTC: **197 reviewed public LAB-Bench LitQA2 questions, 77 correct (39.1% accuracy), 41.0% precision and 95.4% coverage**. No requests failed and all outputs parsed. This is one seeded public subset run; explanation support is unassessed and pretraining exposure is unknown.
 
 - [First local results and paper context](reports/FIRST_LOCAL_EVALUATION.md)
