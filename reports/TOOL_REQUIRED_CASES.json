@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "verified_on_utc": "2026-10-16",
-  "qualification": "The native tasks require structural outputs and computation. A particular brand of external tool is not logically mandatory: a capable model could produce coordinates itself. For the current Qwen chat baseline, using a suitable structure/design tool is the practical route; no matched tool-ablation or measured Qwen failure is claimed.",
+  "qualification": "These native tasks include structural outputs and simple numerical answers obtained through structural computation. A particular external tool is not logically mandatory for every possible solution. The BioEmu example demonstrates the released computational route behind a one-number answer; it does not establish that no other predictor could estimate the same quantity. No matched tool ablation or measured Qwen failure is claimed.",
   "cases": [
     {
       "title": "Predict a protein's three-dimensional structure from its sequence",
@@ -17,7 +17,10 @@
       "source_url": "https://arxiv.org/html/2409.06744v2#S2.SS2.SSS1",
       "case_source_url": "https://github.com/bjing2016/EigenFold/blob/master/splits/cameo2022.csv",
       "structure_source_url": "https://www.rcsb.org/structure/7VRF",
-      "source_locations": ["ProteinBench sections 2.2.1 and 3.2.1", "EigenFold splits/cameo2022.csv, row name 7vrf.A.pdb"],
+      "source_locations": [
+        "ProteinBench sections 2.2.1 and 3.2.1",
+        "EigenFold splits/cameo2022.csv, row name 7vrf.A.pdb"
+      ],
       "case_id_if_verified": "7vrf.A.pdb",
       "case_verification_scope": "Verified in the released CAMEO2022 source cohort; not a locally dispatched Qwen case, and no exact ProteinBench retained-row preprocessing is claimed.",
       "evidence_scope": "native task requirement; not a measured Qwen failure"
@@ -34,9 +37,113 @@
       "case_source_url": "https://github.com/blt2114/MotifBench/blob/main/test_cases.csv",
       "input_geometry_url": "https://github.com/blt2114/MotifBench/blob/main/motif_pdbs/01_1LDB.pdb",
       "structure_source_url": "https://www.rcsb.org/structure/1LDB",
-      "source_locations": ["MotifBench test_cases.csv, first case", "motif_pdbs/01_1LDB.pdb", "README: Prepare backbone directory structure and metadata; Acknowledgement"],
+      "source_locations": [
+        "MotifBench test_cases.csv, first case",
+        "motif_pdbs/01_1LDB.pdb",
+        "README: Prepare backbone directory structure and metadata; Acknowledgement"
+      ],
       "case_id_if_verified": "01_1LDB",
       "case_verification_scope": "Verified official motif input and output contract; not a locally dispatched Qwen case.",
+      "evidence_scope": "native task requirement; not a measured Qwen failure"
+    },
+    {
+      "id": "bioemu_stability_1enh_q6c",
+      "main_example": true,
+      "title": "Does one amino-acid change make this protein less stable?",
+      "dataset": "BioEmu folding-free-energy benchmark (catalog main-53)",
+      "plain_question": "Given this protein sequence, does the benchmark's Q6C mutation make it less stable, and by how much?",
+      "plain_answer": "Experimental reference: +0.90936 kcal/mol in ΔΔG, meaning the Q6C variant is less stable than the released 1ENH baseline. This is not a local model prediction.",
+      "input": "Released 48-residue baseline 1ENH: AFSSEQLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA\nReleased 48-residue mutant 1ENH__Q6C: AFSSECLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA",
+      "input_sequences": {
+        "wild_type": {
+          "case_id": "1ENH",
+          "sequence": "AFSSEQLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA",
+          "length": 48
+        },
+        "mutant": {
+          "case_id": "1ENH__Q6C",
+          "sequence": "AFSSECLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA",
+          "length": 48
+        }
+      },
+      "numbering_caveat": "Q6C is the released benchmark label and position 6 in these 48-residue sequences; it must not be assumed to be residue 6 of the full protein or the PDB author numbering.",
+      "required_output": "One numerical change in folding free energy, ΔΔG = ΔG(mutant) − ΔG(baseline), in kcal/mol. Its sign supports the simpler less-stable/more-stable interpretation.",
+      "why_text_answer_is_insufficient": "A number is easy to print. Reproducing the released BioEmu estimate requires structural ensembles, geometric contact calculations and population statistics behind that number; an unsupported language-model guess does not reproduce this method.",
+      "tool_route": "Sequence alignment and AlphaFold2 Evoformer embeddings → BioEmu structural ensembles → native-contact scores → folded populations → ΔG values → mutant-minus-baseline ΔΔG.",
+      "tool_role": "AlphaFold2 supplies internal embeddings; BioEmu samples ensembles; the benchmark computes the final stability estimate. The user-facing answer is a number, not a coordinate file.",
+      "intermediate_steps": [
+        "For each sequence, obtain or reuse cached alignments and AlphaFold2 Evoformer single/pair embeddings; the release uses the ColabFold/MMseqs2 route when alignments are not supplied.",
+        "Sample BioEmu conformations for baseline and mutant. The released system metadata recommends 5,000 samples for each of these two cases.",
+        "Compute each sample's fraction of native contacts against the benchmark reference structure.",
+        "Convert contact scores to smooth foldedness with the native sigmoid (threshold 0.5, steepness 10), then average to estimate folded population p.",
+        "At the evaluator default 295 K, calculate ΔG = −k_B T ln[p/(1−p)] and subtract baseline ΔG from mutant ΔG."
+      ],
+      "experimental_reference": {
+        "unit": "kcal/mol",
+        "source_field_semantics": "Copied from dg_exp/ddg_exp in released system_info.csv; not recomputed model results.",
+        "wild_type_dg_exp": -2.6133610372863805,
+        "mutant_dg_exp": -1.7039971386292438,
+        "mutant_ddg_exp": 0.9093638986571366,
+        "display_ddg_exp": "+0.90936",
+        "interpretation": "Positive mutant-minus-baseline ΔΔG indicates destabilization under the benchmark convention."
+      },
+      "recommended_samples_per_sequence": 5000,
+      "result_scope": "Not run with Qwen or BioEmu in this workspace for this example. The displayed answer is the released experimental reference; the question is an analyst paraphrase of the native numerical task.",
+      "source_url": "https://github.com/microsoft/bioemu-benchmarks/blob/63edbfa2ee5f489d66a4bece96f242a1d28e567d/bioemu_benchmarks/assets/folding_free_energies_benchmark_0.1/folding_free_energies/system_info.csv",
+      "case_source_url": "https://github.com/microsoft/bioemu-benchmarks/blob/63edbfa2ee5f489d66a4bece96f242a1d28e567d/bioemu_benchmarks/assets/folding_free_energies_benchmark_0.1/folding_free_energies/testcases.csv",
+      "method_source_url": "https://github.com/microsoft/bioemu-benchmarks",
+      "paper_url": "https://doi.org/10.1126/science.adv9817",
+      "protein_identity_url": "https://www.rcsb.org/structure/1ENH",
+      "source_revisions": {
+        "microsoft/bioemu-benchmarks": "63edbfa2ee5f489d66a4bece96f242a1d28e567d",
+        "microsoft/bioemu": "8451d90a0e9e22bd6d76da4186f4facc89b607a8"
+      },
+      "evidence_files": [
+        {
+          "repository": "microsoft/bioemu-benchmarks",
+          "commit": "63edbfa2ee5f489d66a4bece96f242a1d28e567d",
+          "path": "bioemu_benchmarks/assets/folding_free_energies_benchmark_0.1/folding_free_energies/testcases.csv",
+          "url": "https://github.com/microsoft/bioemu-benchmarks/blob/63edbfa2ee5f489d66a4bece96f242a1d28e567d/bioemu_benchmarks/assets/folding_free_energies_benchmark_0.1/folding_free_energies/testcases.csv",
+          "sha256": "8521bc6a30328a9cdfc84fbe4e7395442875f6bc2596ef2331349efd854353f5"
+        },
+        {
+          "repository": "microsoft/bioemu-benchmarks",
+          "commit": "63edbfa2ee5f489d66a4bece96f242a1d28e567d",
+          "path": "bioemu_benchmarks/assets/folding_free_energies_benchmark_0.1/folding_free_energies/system_info.csv",
+          "url": "https://github.com/microsoft/bioemu-benchmarks/blob/63edbfa2ee5f489d66a4bece96f242a1d28e567d/bioemu_benchmarks/assets/folding_free_energies_benchmark_0.1/folding_free_energies/system_info.csv",
+          "sha256": "f0f7bed353a55d64a77bd81173b57d0261a80bfe438a993bd1c4afbe28b75892"
+        },
+        {
+          "repository": "microsoft/bioemu-benchmarks",
+          "commit": "63edbfa2ee5f489d66a4bece96f242a1d28e567d",
+          "path": "bioemu_benchmarks/eval/folding_free_energies/free_energies.py",
+          "url": "https://github.com/microsoft/bioemu-benchmarks/blob/63edbfa2ee5f489d66a4bece96f242a1d28e567d/bioemu_benchmarks/eval/folding_free_energies/free_energies.py",
+          "sha256": "a830fd29726ac321e6ac84437023f21e6dd9ea86a3c9620a7c824cb99e7f284c"
+        },
+        {
+          "repository": "microsoft/bioemu-benchmarks",
+          "commit": "63edbfa2ee5f489d66a4bece96f242a1d28e567d",
+          "path": "bioemu_benchmarks/eval/folding_free_energies/evaluate.py",
+          "url": "https://github.com/microsoft/bioemu-benchmarks/blob/63edbfa2ee5f489d66a4bece96f242a1d28e567d/bioemu_benchmarks/eval/folding_free_energies/evaluate.py",
+          "sha256": "a50f6d9c5dd3f31ad06cc3b59a503e5ac4e9c741702ea3a16702ab2484996c17"
+        },
+        {
+          "repository": "microsoft/bioemu",
+          "commit": "8451d90a0e9e22bd6d76da4186f4facc89b607a8",
+          "path": "src/bioemu/get_embeds.py",
+          "url": "https://github.com/microsoft/bioemu/blob/8451d90a0e9e22bd6d76da4186f4facc89b607a8/src/bioemu/get_embeds.py",
+          "sha256": "9d177d8a9f7556e5dd55cf214f67ff9e43be0a683cc19011ba3a3ced90045e71"
+        }
+      ],
+      "source_locations": [
+        "testcases.csv: 1ENH and 1ENH__Q6C",
+        "system_info.csv: same two cases",
+        "get_embeds.py: get_colabfold_embeds",
+        "evaluate.py: evaluate_folding_free_energies",
+        "free_energies.py: _foldedness_from_fnc, _compute_dG, compute_dg_ddg_from_fnc"
+      ],
+      "case_id_if_verified": "1ENH__Q6C",
+      "case_verification_scope": "Exact released baseline/mutant sequences, labels, experimental values and recommended sample counts verified against pinned official files. This verifies the reference example, not a local model prediction.",
       "evidence_scope": "native task requirement; not a measured Qwen failure"
     }
   ]

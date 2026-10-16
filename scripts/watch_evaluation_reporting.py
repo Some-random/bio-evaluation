@@ -26,6 +26,7 @@ OWNED = (
     "reports/EVALUATION_PROGRESS.json",
     "reports/TASK_HIERARCHY_DATA.json",
     "reports/EVALUATION_OVERVIEW.md",
+    "reports/WORKED_EXAMPLES.md",
     "reports/TASK_HIERARCHY_COMPLETE.md",
     "reports/RESULTS_GROUPED.md",
     "reports/TASK_COVERAGE_MAP.csv",

@@ -2,7 +2,7 @@
   "created_at_utc": "2026-10-16T20:02:01.055835+00:00",
   "source": "Saved Qwen/Qwen3.8-27B request and response records, native gold choices, and byte-identical image assets.",
   "scope_notes": [
-    "Two selected correct examples, not a representative sample or proof of performance on all biological tasks.",
+    "Three selected correct examples, not a representative sample or proof of performance on all biological tasks.",
     "Assistant final text and reasoning text are reproduced exactly from saved response fields. No trace was reconstructed or invented.",
     "Reasoning is an unverified model-generated rationale, not proof that the explanation is correct or caused the correct answer.",
     "Image values and final choices were checked against the actual saved image and native gold label. No biological mechanism validation is claimed."
@@ -154,6 +154,78 @@
         "accuracy": 0.8811475409836066
       },
       "source_run_path": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16",
+      "source_scope_note": "Selected correct saved case from the completed native public image-based evaluation; no new inference or rescoring."
+    },
+    {
+      "task_id": "B04",
+      "case_id": "cf6ac735-33af-4243-bfcf-4c28e3267345",
+      "main_example": true,
+      "plain_question": "By day 30, which of the three groups still has surviving subjects?",
+      "main_answer": "None of the three groups; all survival curves reach 0% before day 30.",
+      "question_and_options_exact": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: In panel a, at day 30, which group still has surviving subjects? \n\nOptions:\n(A) None of the above\n(B) WT + Ive\n(C) Insufficient information to answer the question\n(D) WT + Nemadipine\n(E) WT\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing.",
+      "native_gold": {
+        "task": "B04",
+        "case_id": "cf6ac735-33af-4243-bfcf-4c28e3267345",
+        "subtask": "figqa-v1-public",
+        "target_choice": "A",
+        "unsure_choice": "C",
+        "choice_count": 5
+      },
+      "local_score_record": {
+        "task": "B04",
+        "case_id": "cf6ac735-33af-4243-bfcf-4c28e3267345",
+        "subtask": "figqa-v1-public",
+        "answer": "A",
+        "correct": true,
+        "sure": true,
+        "parsed": true,
+        "finish_reason": "stop"
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "assistant_final_text_exact": "\n\nLooking at panel a, by day 30 all three survival curves (WT, WT + Nemadipine, and WT + Ive) have reached 0% survival. Therefore no group has surviving subjects at that time point.\n\n[ANSWER]A[/ANSWER]",
+      "assistant_final_source_field": "response.choices[0].message.content",
+      "model_reasoning_text_exact": "The question asks about panel a, at day 30, which group still has surviving subjects. Looking at the survival curve, at day 30 all curves appear to be at 0% survival. Let me look carefully. The x-axis goes to 30. At day 30, all three lines (WT blue circles, WT+Nemadipine red triangles, WT+Ive green squares) are at 0. The curves reach 0 around day 26-28 and stay at 0 through day 30. So at day 30, none have surviving subjects.\n\nLet me look at the rightmost points. The green squares seem to extend to day 30 at 0. The blue circles reach 0 around day 27. The red triangles reach 0 around day 26. At day 30, all are 0.\n\nThus the answer is (A) None of the above.\n\nLet me double check the question phrasing: \"which group still has surviving subjects?\" If all are at 0, then none have surviving subjects, so answer A.\n\nThus [ANSWER]A[/ANSWER].\n",
+      "model_reasoning_source_field": "response.choices[0].message.reasoning",
+      "rationale_label": "Unverified model-generated rationale from the saved Qwen run; not evidence that the reasoning is valid or caused the correct answer.",
+      "request": {
+        "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/requests/c4e6521a0418fac0560645fa46b854d1f1ede470d3eb9c3bd1bf3ff45f5c816a.json",
+        "sha256": "26909c4944f09c7430c7f322c6fcf9b7c4b64ca289b4bea76b33cf62a28facb6"
+      },
+      "response": {
+        "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/responses/c4e6521a0418fac0560645fa46b854d1f1ede470d3eb9c3bd1bf3ff45f5c816a.json",
+        "sha256": "54caa9394a5863b7dc563c096dfae2733ac7f513849a2d3454ae30dc9331bec6"
+      },
+      "native_gold_source": {
+        "path": ".local/parallel_labbench/runs/B04/data/labbench_native_complete/scorer_references.jsonl",
+        "sha256": "c7129db0155bd8513abb43b53c2c53bfd4051df7ea01f25708f289cbb78c7702",
+        "field": "target_choice"
+      },
+      "score_source": {
+        "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/per_case_scores.json",
+        "sha256": "9f341c6d4f4ec75e27412d0cebcfa67a5c6e8bc40c0e16e923ac09fb66241fcc"
+      },
+      "images": [
+        {
+          "sha256": "fe75b489b5c72935f2f4232c1b0e6fc06bf4f8bf952152bc6ca97a8cedcc314e",
+          "bytes": 351507,
+          "mime_type": "image/jpeg",
+          "bytes_equal_saved_request": true,
+          "path": "reports/example_assets/b04-cf6ac735-33af-4243-bfcf-4c28e3267345.jpg",
+          "report_asset_path": "example_assets/b04-cf6ac735-33af-4243-bfcf-4c28e3267345.jpg"
+        }
+      ],
+      "verification": {
+        "answer": "A — None of the above",
+        "image_check": "Panel a: all three survival curves are at 0% by day 30. The final choice agrees with the native gold label.",
+        "rationale_note": "The saved final explanation and the stated endpoint agree with the supplied plot. The generated reasoning remains an unverified rationale; no biological mechanism claim is validated."
+      },
+      "dataset_result": {
+        "correct": 131,
+        "total": 181,
+        "accuracy": 0.7237569060773481
+      },
+      "source_run_path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16",
       "source_scope_note": "Selected correct saved case from the completed native public image-based evaluation; no new inference or rescoring."
     }
   ]

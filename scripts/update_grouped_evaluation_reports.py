@@ -127,53 +127,147 @@ def scientific_requirements(group, protocol):
 
 
 def quoted_record(value):
-    return ["> " + html.escape(line, quote=False) if line else ">"
-        for line in value.strip().splitlines()]
+    # Escape trailing spaces as entities so Git's whitespace check does not
+    # reject verbatim source text that legitimately includes them.
+    def escaped(line):
+        return html.escape(line.rstrip(" "), quote=False) + "&#32;" * (len(line) - len(line.rstrip(" ")))
+    return ["> " + escaped(line) if line else ">" for line in value.strip().splitlines()]
+
+
+def example_records():
+    good = json.loads((REPORTS / "ADVISOR_GOOD_EXAMPLES.json").read_text())["examples"]
+    tool_cases = json.loads((REPORTS / "TOOL_REQUIRED_CASES.json").read_text())["cases"]
+    return good, tool_cases
+
+
+def main_example(examples):
+    selected = [example for example in examples if example.get("main_example")]
+    assert len(selected) == 1, "Select exactly one main example of each kind"
+    return selected[0]
+
+
+def example_question(example):
+    return example["question_and_options_exact"].split("Question: ", 1)[1].split("\n\nOptions:", 1)[0].strip()
+
+
+def example_images(example, title):
+    out = []
+    for source_image in example["images"]:
+        path = source_image["report_asset_path"]
+        assert not Path(path).is_absolute() and ".." not in Path(path).parts
+        out += [f'<img src="{html.escape(path, quote=True)}" alt="{html.escape(title, quote=True)}" width="600">', ""]
+    return out
 
 
 def advisor_examples():
-    good = json.loads((REPORTS / "ADVISOR_GOOD_EXAMPLES.json").read_text())
-    out = ["## Worked examples", "",
-        "The first two examples are saved Qwen answers that match their reference labels. "
-        "The reasoning text is copied from the model's saved output; a correct answer does not independently validate every step.", ""]
+    good, tool_cases = example_records()
+    example = main_example(good)
+    assert example["local_score_record"]["correct"]
+    assert example["local_score_record"]["answer"] == example["native_gold"]["target_choice"]
+    out = ["## Worked examples", "", "### Good result: read a graph and answer a simple question", "",
+        f"**Question:** {example.get('plain_question', example_question(example))}", ""]
+    out += example_images(example, "Survival curves: read panel a at day 30")
+    out += [f"**Qwen's answer:** {example['main_answer']}", "",
+        "**Saved explanation (excerpt):**", ""] + quoted_record(
+            example["assistant_final_text_exact"].split("[ANSWER]", 1)[0]) + [""]
+    result = example["dataset_result"]
+    out += [f"The answer matches the reference label. LAB-Bench FigQA accuracy: "
+        f"**{100 * result['accuracy']:.1f}%** ({result['correct']}/{result['total']}).", ""]
+
+    example = main_example(tool_cases)
+    original = example["input_sequences"]["wild_type"]
+    assert len(original["sequence"]) == original["length"]
+    out += ["### Tool-use challenge: does one change make a protein less stable?", "",
+        "**Question:** Given the protein below, replace amino acid 6 from Q to C. "
+        "Does it become less stable, and by how much?", "",
+        "```text", original["sequence"], "```", "",
+        "**Reference answer (experiment):** Yes—less stable, with a change of about "
+        f"**{example['experimental_reference']['mutant_ddg_exp']:+.2f} kcal/mol** in folding free energy.", "",
+        "**How the published BioEmu workflow gets to a one-number answer:**", "",
+        "1. Find related sequences and compute AlphaFold2 representations of the original and changed proteins.",
+        "2. Use BioEmu to sample possible shapes; the benchmark recommends **5,000 per protein**.",
+        "3. Compare them with the supplied benchmark reference structure to estimate how often each protein is folded, then calculate its folding free energy.",
+        "4. Subtract the two energies to predict the stability change.", "",
+        "Evaluation compares the predicted number with the experimental reference. "
+        "The question and answer are simple; producing a supported prediction involves substantial intermediate computation.", "",
+        "This illustrates a published tool workflow. We have not run this case with Qwen or BioEmu here, "
+        "so it is not a measured Qwen failure. "
+        f"[Released reference]({example['source_url']}) · [Published method]({example['paper_url']})", "",
+        "[More worked examples, complete saved reasoning, exact inputs and tool details](WORKED_EXAMPLES.md)", ""]
+    return out
+
+
+def worked_examples():
+    good, tool_cases = example_records()
+    out = ["# Worked examples and tool workflows", "",
+        "[Back to the task map](EVALUATION_OVERVIEW.md)", "",
+        "The overview keeps one correct answer and one tool-use challenge. This document retains the full examples and saved reasoning. "
+        "Correct answers do not independently validate every step of a model's explanation. "
+        "Tool workflows below are source-backed examples, not measured Qwen failures.", "",
+        "## Correct answers from saved Qwen runs", ""]
     titles = {"B04": "Reading a biological figure", "B05": "Comparing values in a scientific table"}
-    for example in good["examples"]:
+    for example in sorted(good, key=lambda item: not item.get("main_example", False)):
         score = example["local_score_record"]
         assert score["correct"] and score["answer"] == example["native_gold"]["target_choice"]
-        prompt = example["question_and_options_exact"]
-        question = prompt.split("Question: ", 1)[1].split("\n\nOptions:", 1)[0].strip()
-        out += [f"### Correct example: {titles[example['task_id']]}", "", question, ""]
-        for source_image in example["images"]:
-            path = source_image["report_asset_path"]
-            assert not Path(path).is_absolute() and ".." not in Path(path).parts
-            out += [f'<img src="{html.escape(path, quote=True)}" alt="{titles[example["task_id"]]}" width="600">', ""]
+        out += [f"### {example_question(example)}", "",
+            f"**Task:** {titles[example['task_id']]} ({example['task_id']}). "
+            f"**Case:** `{example['case_id']}`.", "",
+            "**Exact question and choices:**", ""] + quoted_record(example["question_and_options_exact"]) + [""]
+        out += example_images(example, titles[example["task_id"]])
         out += ["**Saved model reasoning, verbatim:**", ""] + quoted_record(example["model_reasoning_text_exact"]) + ["",
             "**Saved final answer, verbatim:**", ""] + quoted_record(example["assistant_final_text_exact"]) + [""]
         result = example["dataset_result"]
         out += [f"Reference choice: **{score['answer']}** — correct. "
             f"Dataset accuracy: **{100 * result['accuracy']:.1f}%** ({result['correct']}/{result['total']}).", ""]
     out += ["[Exact example records and source hashes](ADVISOR_GOOD_EXAMPLES.json)", "",
-        "## Challenges requiring external computation", "",
-        "These illustrate why some evaluations need more than a text or image answer. "
-        "They are source-defined task requirements, not measured Qwen failures. "
-        "The required structures and scores must be computed; AlphaFold is one relevant model, not the only possible implementation.", ""]
-    tool_cases = json.loads((REPORTS / "TOOL_REQUIRED_CASES.json").read_text())
-    for example in tool_cases["cases"]:
+        "[Additional protein-sequence examples and their limitations](EXAMPLES_SEQUENCE_VISION_TOOLS.md)", "",
+        "## Simple answer, substantial computation", ""]
+    for example in sorted(tool_cases, key=lambda item: not item.get("main_example", False)):
         dataset = re.sub(r" \(catalog main-\d+\)", "", example["dataset"])
         out += [f"### {example['title']}", "", f"**Dataset:** {dataset}", "",
             f"**Input:** {example['input']}", ""]
+        if example.get("plain_question"):
+            out += [f"**Plain-language question:** {example['plain_question']}", "",
+                f"**Reference answer:** {example['plain_answer']}", "",
+                f"**Evidence scope:** {example['result_scope']}", ""]
+        for name, sequence in example.get("input_sequences", {}).items():
+            assert len(sequence["sequence"]) == sequence["length"]
+            out += [f"**{name.replace('_', ' ').capitalize()}** (`{sequence['case_id']}`, {sequence['length']} amino acids):", "",
+                "```text", sequence["sequence"], "```", ""]
+        if example.get("numbering_caveat"):
+            out += [example["numbering_caveat"], ""]
         if example.get("input_sequence"):
             sequence = example["input_sequence"]
             assert len(sequence) == example["input_sequence_length"]
             out += ["```text", sequence, "```", ""]
         out += [f"**Required answer:** {example['required_output']}", "",
-            f"**Why a prose answer is insufficient:** {example['why_text_answer_is_insufficient']}", "",
+            f"**What must be computed:** {example['why_text_answer_is_insufficient']}", "",
             f"**Tool route:** {example['tool_route']}", "",
             f"[Native task and evaluation source]({example['source_url']})", ""]
+        if example.get("intermediate_steps"):
+            out += [f"{index}. {step}" for index, step in enumerate(example["intermediate_steps"], 1)] + [""]
+            reference = example["experimental_reference"]
+            out += ["The evaluator compares predicted energies with the experimental records. "
+                f"For this pair, the released reference energies are {reference['wild_type_dg_exp']:.5f} "
+                f"and {reference['mutant_dg_exp']:.5f} kcal/mol; their difference is "
+                f"**{reference['display_ddg_exp']} kcal/mol**. "
+                "These are reference measurements, not values computed by a run in this repository.", ""]
+        if example.get("evidence_files"):
+            out += ["**Source code and records:** " + " · ".join(
+                f"[{Path(record['path']).name}]({record['url']})" for record in example["evidence_files"]), ""]
         if example.get("case_source_url"):
             out += [f"[Released example input]({example['case_source_url']})", ""]
-    out += ["[Actual external-model computations and results reported in the papers](PUBLISHED_TOOL_USE_EXAMPLES.md)", ""]
-    return out
+    out += ["## What AlphaFold contributes", "",
+        "AlphaFold predicts a protein's three-dimensional structure from its amino-acid sequence. "
+        "In the BioEmu workflow above, AlphaFold2 supplies learned internal representations; BioEmu then samples many conformations. "
+        "The final stability estimate requires additional calculations over that ensemble. "
+        "A single predicted structure does not itself establish the experimental stability change. "
+        f"[BioEmu method]({main_example(tool_cases)['paper_url']})", "",
+        "These examples document particular released workflows. They do not show that every possible solver must use AlphaFold, "
+        "or that a general-purpose model has been tested successfully as their tool-using controller.", "",
+        "[More external-model computations and results reported in the papers](PUBLISHED_TOOL_USE_EXAMPLES.md)", "",
+        "[Full tool-case records, revisions and source hashes](TOOL_REQUIRED_CASES.json)", ""]
+    return "\n".join(out)
 
 
 def overview(data):
@@ -247,53 +341,53 @@ def overview(data):
         return [f"main-{value:02d}" for value in values]
 
     megatasks = [
-        ("Protein properties, interactions and developability", [
-            ("Protein solubility", main_ids(1, 11)),
-            ("Protein localization", main_ids(2, 12)),
+        ("Protein traits and interactions", [
+            ("Whether proteins dissolve", main_ids(1, 11)),
+            ("Where proteins go in a cell", main_ids(2, 12)),
             ("Protein activity, stability and production", main_ids(3, 4, 5, 6, 8, 14)),
-            ("Protein interactions and interfaces", main_ids(7, 10, 13)),
+            ("Which proteins bind each other", main_ids(7, 10, 13)),
             ("Antibody properties", main_ids(9)),
         ]),
-        ("Protein function, annotations and descriptions", [
-            ("Gene Ontology and enzyme annotation", main_ids(15, 18, 20, 21)),
+        ("What proteins do", [
+            ("Assigning protein functions and enzyme classes", main_ids(15, 18, 20, 21)),
             ("Protein function descriptions", main_ids(16, 17)),
             ("Biochemical reaction classification", main_ids(19)),
             ("Protein retrieval from descriptions", ["diagnostic-01"]),
             ("Evidence support for protein explanations", ["diagnostic-02"]),
         ]),
-        ("Mutation effects, fitness and engineering", [
-            ("Mutation-effect explanation", main_ids(22)),
-            ("Mutation fitness prediction and ranking", main_ids(23, 24, 25, 27, 30, 32)),
-            ("Mutation engineering and optimization", main_ids(26) + ["diagnostic-03"]),
+        ("Effects of protein mutations", [
+            ("Explaining mutation effects", main_ids(22)),
+            ("Predicting and ranking mutation effects", main_ids(23, 24, 25, 27, 30, 32)),
+            ("Choosing mutations to improve a protein", main_ids(26) + ["diagnostic-03"]),
             ("Binding affinity and immune interactions", main_ids(28, 29, 31)),
         ]),
-        ("Scientific evidence and biological knowledge", [
+        ("Answering biology research questions", [
             ("Biological research question answering", main_ids(33, 34, 35)),
         ]),
-        ("Protein design", [
+        ("Designing proteins", [
             ("Antibody design", main_ids(36, 37, 45, 46)),
-            ("Inverse folding", main_ids(38, 39)),
+            ("Finding a sequence for a desired shape", main_ids(38, 39)),
             ("Protein sequence and structure generation", main_ids(40, 41, 42) + ["diagnostic-04", "diagnostic-05"]),
-            ("Functional-motif scaffolding", main_ids(43, 44)),
-            ("Target-binder design", main_ids(47) + ["diagnostic-07"]),
-            ("GFP sequence optimization", ["diagnostic-06"]),
+            ("Building around a functional protein part", main_ids(43, 44)),
+            ("Designing proteins that bind a target", main_ids(47) + ["diagnostic-07"]),
+            ("Making fluorescent proteins brighter", ["diagnostic-06"]),
         ]),
-        ("Structure and conformational prediction", [
+        ("Protein shapes and motion", [
             ("Local structure and residue prediction", main_ids(48, 54)),
             ("Protein structure ranking", main_ids(49)),
             ("Protein folding", main_ids(50)),
-            ("Protein conformations and dynamics", main_ids(51, 52, 53)),
+            ("Protein shape changes, motion and stability", main_ids(51, 52, 53)),
             ("Structure-derived questions and output checks", ["diagnostic-08"]),
         ]),
-        ("Biomedical visual evidence", [
+        ("Understanding biomedical images", [
             ("Biomedical visual question answering", main_ids(55)),
             ("Scientific figures, documents and visual conversations", main_ids(56, 57) + ["diagnostic-09"]),
         ]),
-        ("Other biological modalities and molecular interactions", [
+        ("DNA, RNA and small molecules", [
             ("Molecular interactions and binding affinity", main_ids(58, 63, 64, 67)),
             ("Pathway and disease prediction", main_ids(59, 61)),
             ("Variant-effect prediction", main_ids(60)),
-            ("Expression-conditioned gene selection", main_ids(62)),
+            ("Choosing genes using expression data", main_ids(62)),
             ("RNA structure ranking", main_ids(65)),
             ("Small-molecule properties", main_ids(66)),
         ]),
@@ -307,24 +401,25 @@ def overview(data):
         "# Biological evaluation overview", "",
         "General-purpose baseline: **Qwen3.8-27B**, with text and image inputs.", "",
         "This catalog spans biological prediction, scientific evidence, protein design and three-dimensional structure. "
-        "The map below shows the task families without opening the detailed catalog.", "",
+        "The map below shows **34 task families in 8 categories** without opening the detailed catalog. "
+        "The counts are task families, not datasets or individual test questions.", "",
         "## Task map", "",
-        "| Category | Task families | Typical information and answer |", "|---|---|---|",
+        "| Category | Number of task families | Tasks | Typical question or output |", "|---|---:|---|---|",
     ]
     typical = [
-        "Protein sequences → properties, locations and interactions",
-        "Protein sequences → functions, annotations and descriptions",
-        "Sequences, variants and assay context → effects, rankings and proposals",
-        "Questions with literature, figures, tables or sequences → evidence-based answers",
-        "Descriptions, motifs or target geometry → protein sequences and structures",
-        "Sequences or atomic coordinates → structures, ensembles and structural scores",
-        "Biomedical images and documents → answers or extracted evidence",
-        "DNA, RNA, expression and molecular inputs → biological endpoints",
+        "Will this protein dissolve? Where does it go? What does it bind?",
+        "What is this protein's function? Which reaction does it carry out?",
+        "What happens after changing a protein? Which change works best?",
+        "Answer a question using papers, figures, tables, protocols or sequences",
+        "Propose a protein sequence or shape that meets specified requirements",
+        "What shape does this protein take? How does it move or stay folded?",
+        "Answer questions about medical images and scientific figures",
+        "Predict genetic effects, gene activity, molecular binding and chemical properties",
     ]
     for (category, families), interface in zip(megatasks, typical):
-        out.append("| " + " | ".join(cell(value) for value in [category,
+        out.append("| " + " | ".join(cell(value) for value in [category, len(families),
             "; ".join(family for family, _ in families), interface]) + " |")
-    out += [""] + advisor_examples()
+    out += [f"| **Total** | **{sum(len(families) for _, families in megatasks)}** | | |", ""] + advisor_examples()
     out += ["## Dataset catalog", "",
         "Each row is one dataset or source-defined evaluation condition. Expand a category for detail. "
         "The input/computation column describes the scientific requirement, including external models where needed.", "",
@@ -587,6 +682,7 @@ def main():
     validate(data)
     outputs = {
         "EVALUATION_OVERVIEW.md": overview(data),
+        "WORKED_EXAMPLES.md": worked_examples(),
         "TASK_HIERARCHY_COMPLETE.md": complete_inventory(data),
         "RESULTS_GROUPED.md": grouped_results(data),
         "TASK_COVERAGE_MAP.csv": coverage_csv(data),
