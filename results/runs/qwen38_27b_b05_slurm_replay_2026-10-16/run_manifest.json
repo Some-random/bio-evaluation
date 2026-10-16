@@ -1,0 +1,137 @@
+{
+  "configuration": {
+    "run_id": "qwen38_27b_b05_slurm_replay_2026-10-16",
+    "frozen_at_utc": "2026-10-15T07:22:05.119854+00:00",
+    "model": "Qwen/Qwen3.8-27B",
+    "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+    "endpoint": "http://127.0.0.1:8029/v1",
+    "gpu_ids": [
+      0
+    ],
+    "approved_task_ids": [
+      "B05"
+    ],
+    "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+    "input_file": "data/local_labbench_suite/B05/model_inputs.jsonl",
+    "review_file": "configs/local_labbench_b05_review.json",
+    "concurrency": 4,
+    "generation": {
+      "max_tokens": 4096,
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 20,
+      "seed": 42,
+      "n": 1,
+      "chat_template_kwargs": {
+        "enable_thinking": true,
+        "reasoning_effort": "medium"
+      }
+    },
+    "generation_choice_basis": "Publisher sampling defaults; one fixed seed, medium thinking and 4096 total output tokens fixed before Qwen benchmark outputs; no search or test-driven changes.",
+    "source_dataset_revision": "5c77cec648430f30611808808861eb86f81d5eaa",
+    "source_code_revision": "998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838",
+    "prompt_policy": "Original native public zero-shot COT prompt bytes and seed-42 shuffled choices retained; no new system prompt.",
+    "metric_policy": "Official deterministic MCQ parsing without optional LLM fallback; official accuracy, selective precision, coverage; invalid completions count incorrect and non-abstaining.",
+    "scorer_reference_sha256": "c7129db0155bd8513abb43b53c2c53bfd4051df7ea01f25708f289cbb78c7702",
+    "frozen_files_sha256": {
+      "configs/local_labbench_b05_review.json": "6c0a6859d2e3a6f85a7c0bf62e5027b31c9df99c1a0703dd6fc6a1d09bf7431e",
+      "data/local_labbench_suite/B05/model_inputs.jsonl": "06e7c4aa7537f7003e3e098845450e72f104eb54b6520cc7a4a8a7afce04c3bf",
+      "reports/labbench_native_complete_preparation.json": "8b0379d8462db1994241409ebe7efacc220f0e0e0748ef1cdfdb52c6658e55f8",
+      "scripts/execute_local_labbench_suite.py": "f6004ff0cfc7889ca18e3d9c97255b0dae4d2054174051d7e6901a4598e22e69",
+      "scripts/prepare_local_labbench_run.py": "2749dabb8e62db7b228266881fe50b8aa77e63cc827ec110d732b934986cb65a",
+      "scripts/run_local_labbench.py": "8cafb737ce5b324a7c1c1dca5261e396b46d9df0be19f82d0448add8549bc108",
+      "scripts/run_local_labbench_multimodal.py": "7bf9c8cd7c83a814de9febfd80458d1d6d5f55be3ffc063e0f7f21243e618a25",
+      "scripts/score_local_labbench_suite.py": "e290c74383ff836bad375bcdf6b2b77214e8135d66d0091a189b13a2f44f02f6",
+      "scripts/score_results.py": "42829c0861687bfc9217c36d43162b5f835de10c7621f566b0d85605354b331b",
+      "sources/chembench_constant.py": "71b4a92edfbe5b33e9a327b0773a2ae9cfd9946b48452f13127929a29e91021d"
+    },
+    "tool_access": [],
+    "paper_comparison": "Native public prompts, choices, required context/images and metrics. Reviewed public release; one fixed-seed run, not the original full public/private three-run paper mean. Strict deterministic parser; no model extraction fallback.",
+    "pretraining_contamination": "Unknown; local inference and shuffled choices cannot establish contamination-free performance.",
+    "runner": "scripts/run_local_labbench_multimodal.py",
+    "scorer_reference_file": "data/labbench_native_complete/scorer_references.jsonl",
+    "model_facing_fields": [
+      "choices",
+      "images_sha256",
+      "question"
+    ],
+    "serving_config_file": "configs/local_model.json",
+    "server_record_file": ".local/local_model_server.json",
+    "replay_of_run": "qwen38_27b_b05_public_reviewed_2026-10-15",
+    "original_config_sha256": "62bf02361c5f43878eef0e13f03312b2dd361153176d8a86e013ed54900eb45b",
+    "infrastructure_adaptation": "Separate Slurm TP1 allocation exposes one GPU as logical device0; loopback endpoint and process identity are recorded per run. Native inputs and generation parameters unchanged."
+  },
+  "configuration_sha256": "4d2d24f46bfdca8e0761f1b1b9d2bcbc066cbe6af047f148ca87be6178097f49",
+  "runner_sha256": "7bf9c8cd7c83a814de9febfd80458d1d6d5f55be3ffc063e0f7f21243e618a25",
+  "case_contract_sha256": "a37e1a7b4bb6d9e018a91bb2533f328b28c2ebe4978c64078ab0df269945c66a",
+  "planned_cases": 244,
+  "model_selection_on_test": false,
+  "solver_tools": [],
+  "answer_keys_available_to_solver": false,
+  "serving_configuration": {
+    "host": "127.0.0.1",
+    "port": 8029,
+    "gpu_ids": [
+      0
+    ],
+    "model": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "tensor_parallel_size": 1,
+    "model_directory": "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+    "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+    "max_num_seqs": 4
+  },
+  "server": {
+    "pid": 3308458,
+    "proc_start_ticks": "900242084",
+    "model": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "gpu_ids": [
+      0
+    ],
+    "host": "127.0.0.1",
+    "port": 8029,
+    "endpoint": "http://127.0.0.1:8029/v1",
+    "slurm_job_id": "237551",
+    "slurm_job_gpus": "5",
+    "cuda_visible_devices": "0",
+    "hostname": "ampere6.stanford.edu",
+    "command": [
+      "/tmp/bio-labbench-237551-kIY5lg/python/bin/python3.12",
+      "-m",
+      "vllm.entrypoints.cli.main",
+      "serve",
+      "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+      "--served-model-name",
+      "Qwen/Qwen3.8-27B",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8029",
+      "--dtype",
+      "bfloat16",
+      "--tensor-parallel-size",
+      "1",
+      "--gpu-memory-utilization",
+      "0.90",
+      "--max-model-len",
+      "49152",
+      "--max-num-seqs",
+      "4",
+      "--reasoning-parser",
+      "qwen3",
+      "--enable-prefix-caching",
+      "--limit-mm-per-prompt",
+      "{\"image\": 3, \"video\": 0}"
+    ],
+    "max_model_len": 49152,
+    "observed_gpu_processes": [
+      {
+        "pid": 3308975,
+        "gpu_uuid": "GPU-ebca6162-08cf-3e73-cdaa-4c3a189cefa1",
+        "used_memory": "71546 MiB"
+      }
+    ]
+  }
+}

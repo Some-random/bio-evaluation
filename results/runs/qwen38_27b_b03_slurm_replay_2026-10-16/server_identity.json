@@ -1,0 +1,52 @@
+{
+  "pid": 4112443,
+  "proc_start_ticks": "900235555",
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "gpu_ids": [
+    0
+  ],
+  "host": "127.0.0.1",
+  "port": 8027,
+  "endpoint": "http://127.0.0.1:8027/v1",
+  "slurm_job_id": "237547",
+  "slurm_job_gpus": "0",
+  "cuda_visible_devices": "0",
+  "hostname": "ampere1.stanford.edu",
+  "command": [
+    "/tmp/bio-labbench-237547-n2bTSw/python/bin/python3.12",
+    "-m",
+    "vllm.entrypoints.cli.main",
+    "serve",
+    "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+    "--served-model-name",
+    "Qwen/Qwen3.8-27B",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8027",
+    "--dtype",
+    "bfloat16",
+    "--tensor-parallel-size",
+    "1",
+    "--gpu-memory-utilization",
+    "0.90",
+    "--max-model-len",
+    "16384",
+    "--max-num-seqs",
+    "4",
+    "--reasoning-parser",
+    "qwen3",
+    "--enable-prefix-caching",
+    "--limit-mm-per-prompt",
+    "{\"image\": 1, \"video\": 0}"
+  ],
+  "max_model_len": 16384,
+  "observed_gpu_processes": [
+    {
+      "pid": 4113393,
+      "gpu_uuid": "GPU-df650358-bdf9-5eec-30dd-1eedf3560b50",
+      "used_memory": "71546 MiB"
+    }
+  ]
+}

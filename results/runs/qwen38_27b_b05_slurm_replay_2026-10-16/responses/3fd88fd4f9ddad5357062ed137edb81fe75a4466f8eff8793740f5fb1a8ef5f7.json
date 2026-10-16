@@ -1,0 +1,57 @@
+{
+  "task": "B05",
+  "case_id": "30d26305-f6de-4636-87a2-0fbaf6e05e66",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "request_sha256": "5942dca9c5e32b2902b2cf986af4d3bfb261568c165ee4aeaf49e418403438c0",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-aa3f992b8dacae7c",
+    "object": "chat.completion",
+    "created": 1792131739,
+    "model": "Qwen/Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\nLooking at the NIHSS row in the table, the AUC values are:\n- At admission: 0.581\n- 24 h: 0.701\n- 72 h: 0.751\n- 7 d: 0.730\n- 1 m: 0.672\n- 3 m: 0.518\n\nThe highest value is 0.751, which occurs at 72 h.\n\n[ANSWER]E[/ANSWER]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": "The question asks for the time point with the highest AUC value for NIHSS. Looking at the table, the NIHSS section lists AUC values: At admission 0.581, 24 h 0.701, 72 h 0.751, 7 d 0.730, 1 m 0.672, 3 m 0.518. The highest is 0.751 at 72 h. So the answer is E (72 h). Let me double check: 0.751 > 0.730 > 0.701 > 0.672 > 0.581 > 0.518. Yes, 72 h is highest. Answer E.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.31.0-044a22dd",
+    "usage": {
+      "prompt_tokens": 4213,
+      "total_tokens": 4512,
+      "completion_tokens": 299,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 177
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "elapsed_seconds": 20.676,
+  "saved_at_utc": "2026-10-16T06:22:40.366433+00:00",
+  "status": "completed",
+  "text": "\n\nLooking at the NIHSS row in the table, the AUC values are:\n- At admission: 0.581\n- 24 h: 0.701\n- 72 h: 0.751\n- 7 d: 0.730\n- 1 m: 0.672\n- 3 m: 0.518\n\nThe highest value is 0.751, which occurs at 72 h.\n\n[ANSWER]E[/ANSWER]",
+  "finish_reason": "stop"
+}

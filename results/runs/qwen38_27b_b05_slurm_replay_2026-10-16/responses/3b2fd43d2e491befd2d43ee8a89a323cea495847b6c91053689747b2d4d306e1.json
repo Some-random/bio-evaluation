@@ -1,0 +1,57 @@
+{
+  "task": "B05",
+  "case_id": "22ace34f-aa6a-450e-86d0-24eb8bf9ac85",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "request_sha256": "16e66957b8f49acf31d84267d7f2a3cb406ef7a826d180848e7b5cef08881b6f",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-b8b9fdd3e53a9cc9",
+    "object": "chat.completion",
+    "created": 1792131726,
+    "model": "Qwen/Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\nLooking at the \"Cysteine location\" column, all proteins are listed as \"Active Site\" except **XPO1**, which is listed as \"Non‑active site.\" The liganded cysteine for XPO1 is **C528**.\n\n[ANSWER]B[/ANSWER]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": "The question asks: At which residue position is the cysteine liganded for the one protein in the table where its cysteine is not in the active site?\n\nLooking at the table, I need to find the protein where the \"Cysteine location\" is NOT \"Active Site\". Scanning the column:\n- BTK: Active site\n- TGM2: Active Site\n- MAP2K7: Active Site\n- XPO1: Non-active site\n- CASP5: Active Site\n- CASP8: Active Site\n- ERCC3: Active Site\n- PARK7: Active Site\n- GSTO1: Active Site\n- ALDH2: Active Site\n- CTSZ: Active Site\n\nSo XPO1 is the one with \"Non-active site\". Its liganded cysteine is C528.\n\nThus the residue position is 528, which corresponds to option (B).\n\nLet me double check the options: (B) 528. Yes.\n\nTherefore the answer is B.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.31.0-044a22dd",
+    "usage": {
+      "prompt_tokens": 16427,
+      "total_tokens": 16712,
+      "completion_tokens": 285,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 220
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "elapsed_seconds": 21.896,
+  "saved_at_utc": "2026-10-16T06:22:28.113069+00:00",
+  "status": "completed",
+  "text": "\n\nLooking at the \"Cysteine location\" column, all proteins are listed as \"Active Site\" except **XPO1**, which is listed as \"Non‑active site.\" The liganded cysteine for XPO1 is **C528**.\n\n[ANSWER]B[/ANSWER]",
+  "finish_reason": "stop"
+}
