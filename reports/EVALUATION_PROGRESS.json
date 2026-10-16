@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-16T09:55:58.870596+00:00",
+  "generatedAt": "2026-10-16T10:01:38.230638+00:00",
   "scoreSnapshotAt": "2026-10-16T04:25:25.541726+00:00",
-  "runSnapshotAt": "2026-10-16T09:55:58.870596+00:00",
+  "runSnapshotAt": "2026-10-16T10:01:38.230638+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-16T09:55:58.870596+00:00",
+    "updatedAt": "2026-10-16T10:01:38.230638+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/RESULTS_AT_A_GLANCE.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
-    ".local/remaining_evaluations/supervisor_status.json": "71b24f01d7ada72fa040ddb0b13223c9624a720fc22edd3a2fc1fc7fb32fb083",
-    ".local/remaining_evaluations/upload_status.json": "a1bbf717e6793a2c86ba9b3660aa5f8dee4e5b8cb99917bf72d517d8ff7aa974"
+    ".local/remaining_evaluations/supervisor_status.json": "57ed953e06594912653192630b9b6b13865b7bdd1da7187c59532aac35f6db2c",
+    ".local/remaining_evaluations/upload_status.json": "6edc94a97684db41d14c2fa37f12e57ddc85ac286256a5e4a189506e310864e3"
   },
   "uploader": {
     "stage": "watching",
-    "commitSha": "910c8db453de0733490c86888231a71c5eef1082",
+    "commitSha": "0416a60eeba90816e3095bf06d8ab8e63de07512",
     "repositoryPrivateVerified": true
   },
   "scheduler": {
@@ -177,7 +177,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 3016,
+    "uploaded": 3098,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -186,10 +186,10 @@
     {
       "taskId": "P03",
       "planned": 2773,
-      "uploaded": 1749,
+      "uploaded": 1788,
       "saved": null,
       "generationRuns": 3,
-      "terminalRuns": 0,
+      "terminalRuns": 1,
       "allTerminal": false,
       "nativeMetricsValid": null,
       "progressSource": "uploaded_trajectories",
@@ -202,7 +202,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 1267,
+      "uploaded": 1310,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 0,
@@ -393,7 +393,7 @@
   "countNote": "Progress counts exclude aggregate runs. Uploaded counts reflect archived trajectories at the uploader heartbeat; saved is unknown unless explicitly reported. Counts do not establish benchmark completion.",
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/supervisor_status.json",
-    "snapshotAt": "2026-10-16T09:55:58.870596+00:00",
+    "snapshotAt": "2026-10-16T10:01:38.230638+00:00",
     "fallback": false,
     "selection": "most_recent_valid_run_snapshot"
   },
