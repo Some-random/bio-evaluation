@@ -426,10 +426,12 @@
       "id": "P27",
       "task": "NatureLM protein description",
       "label": "Needs data or protocol",
-      "shortReason": "NatureLM temporal test IDs, annotation cutoff and reference preprocessing are missing.",
-      "reason": "Protein-to-description generation is compatible with Qwen. The exact temporal test case IDs, annotation snapshot/cutoff and executable ROUGE reference preprocessing remain unrecovered, so another protein-description dataset would be a different protocol.",
+      "shortReason": "Publisher unchanged; exact temporal test IDs, sequence/reference snapshots, cutoff and ROUGE-L preprocessing remain missing.",
+      "reason": "Protein-to-description generation is compatible with Qwen. The rechecked publisher commit is unchanged; its source tree and NatureLM notebooks were restored, but the exact temporal test case IDs, sequence/reference snapshots, annotation cutoff and executable ROUGE-L preprocessing remain unrecovered. Mol-Instructions or arbitrary current NCBI proteins would define a different protocol.",
       "evidence": [
-        "reports/remaining_native_source_recovery_2026-10-15.json"
+        "reports/remaining_native_source_recovery_2026-10-15.json",
+        "reports/SOURCE_PREPARATION_2026-10-16.json",
+        "handoff/source_preparation_2026-10-16/README.md"
       ],
       "confidence": "medium",
       "modelCompatibility": "compatible",
@@ -879,11 +881,13 @@
       "id": "V06",
       "task": "LLaVA-Med visual conversation",
       "label": "Needs scoring protocol",
-      "shortReason": "Original images and GPT-assisted relative-judging protocol are not prepared.",
-      "reason": "Qwen vision is supported, so images are not the blocker. The native visual-conversation assessment still needs the original qa50 image assets, reference-answer mapping and GPT-assisted relative-judging contract; the external-provider hold is unchanged.",
+      "shortReason": "193 questions mapped and 19/50 images recovered; remaining images and native GPT-4 judging are blocked.",
+      "reason": "Qwen can accept the native image/question inputs. The official QA50 release and reference mapping are now verified: 193 questions for 50 images, with the native GPT-4-0314 judging contract recovered. Nineteen exact original images are available, covering 73 questions. All legacy archive URLs return 404; the remaining 31 PMC pages returned a browser/reCAPTCHA challenge. The external-provider hold still prevents native GPT judging; a substitute judge would change the metric.",
       "evidence": [
         "reports/catalog_execution_review_2026-10-15.json",
-        "reports/local_model_capability_smoke.json"
+        "reports/local_model_capability_smoke.json",
+        "reports/SOURCE_PREPARATION_2026-10-16.json",
+        "handoff/source_preparation_2026-10-16/README.md"
       ],
       "confidence": "medium",
       "modelCompatibility": "compatible",
@@ -894,11 +898,13 @@
       "id": "V07",
       "task": "Ryze extraction component tests",
       "label": "Needs data or protocol",
-      "shortReason": "Exact Ryze component slices, page/media mapping and extraction scoring recipe are unrecovered.",
-      "reason": "Qwen can process images and answer questions, but the exact ArXivQA/SlideVQA/ChartQA component IDs, full page context, extraction configuration and downstream answer/scorer recipe are missing. Synthetic placeholder data in the published runner are not the benchmark.",
+      "shortReason": "Publisher unchanged; exact component IDs, original media/page mapping and Table 3 pipeline/scoring contract remain missing.",
+      "reason": "Qwen can process images, but the rechecked publisher commit is unchanged and still provides no recovered exact ArXivQA/SlideVQA/ChartQA component manifest, full media/page mapping, extraction condition, downstream answer-model/prompt or native scoring/aggregation contract. Five implementation files were restored with publisher hash verification. Generic synthetic fallback rows are not benchmark data, and direct Qwen image QA would be a different setting.",
       "evidence": [
         "reports/remaining_native_source_recovery_2026-10-15.json",
-        "reports/local_model_capability_smoke.json"
+        "reports/local_model_capability_smoke.json",
+        "reports/SOURCE_PREPARATION_2026-10-16.json",
+        "handoff/source_preparation_2026-10-16/README.md"
       ],
       "confidence": "medium",
       "modelCompatibility": "compatible",

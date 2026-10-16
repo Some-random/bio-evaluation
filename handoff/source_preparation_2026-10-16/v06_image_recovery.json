@@ -1,0 +1,967 @@
+{
+  "created_at_utc": "2026-10-16T08:34:17.342517+00:00",
+  "source_manifest": "sources/llava_main/data/llava_med_test_image_urls.jsonl",
+  "current_pmc_assets_not_publisher_historical_hash_verified": true,
+  "inference_performed": false,
+  "attempted": 50,
+  "recovered": 19,
+  "images": [
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/97/e8/PMC6230409.tar.gz",
+      "image_file_path": "PMC6230409/CRIID2018-6870768.001.jpg",
+      "pair_id": "30510823_fig1",
+      "checked_at_utc": "2026-10-16T08:33:04.688927+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/30510823_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/701b/6230409/c641a5b23b47/CRIID2018-6870768.001.jpg",
+      "image_bytes": 166878,
+      "image_sha256": "681fcc5fa0245cfc716a1b4faa3315f777d106a818e03be131a5781d48f17ab6",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6230409/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC6230409.html",
+      "pmc_page_sha256": "b592f7c6510a17f01906f561c00230464f7e7eff226a4253af0fcf9fd4a34257",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/f2/b7/PMC6647920.tar.gz",
+      "image_file_path": "PMC6647920/AJM-9-111-g005.jpg",
+      "pair_id": "31404134_F5",
+      "checked_at_utc": "2026-10-16T08:33:04.689262+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/31404134_F5.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3c45/6647920/e2eb65b6397d/AJM-9-111-g005.jpg",
+      "image_bytes": 49540,
+      "image_sha256": "268604bd0d13a5318522daa9b900d76955d0ced1ef3c7cc26ed2ef34ecbd7147",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6647920/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC6647920.html",
+      "pmc_page_sha256": "a5a90b1676d59f9c1d5cd12397118b8d9f3400db41283dc44ec383df78149a62",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/15/fb/PMC7252099.tar.gz",
+      "image_file_path": "PMC7252099/gr1_lrg.jpg",
+      "pair_id": "32418875_fig1",
+      "checked_at_utc": "2026-10-16T08:33:04.690367+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/32418875_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6ae7/7252099/ee791a082755/gr1_lrg.jpg",
+      "image_bytes": 123861,
+      "image_sha256": "2b085ce6605ddec9c4ffc397ed37be3a3f3a9a18ef8fd54a8ccd45045b1821de",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7252099/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC7252099.html",
+      "pmc_page_sha256": "40b15c7e7abdacf6776e3324544f6da8e763f9b37dbeee1892edc57da30562a6",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/cd/6e/PMC2988167.tar.gz",
+      "image_file_path": "PMC2988167/LI-27-196-g003.jpg",
+      "pair_id": "21139713_F0003",
+      "checked_at_utc": "2026-10-16T08:33:04.692467+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/21139713_F0003.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c6ac/2988167/6cf198abd535/LI-27-196-g003.jpg",
+      "image_bytes": 83501,
+      "image_sha256": "507d2bcb3359c79be2adf56c55849a199c91cb6b13366c85d79ea746d779ccfe",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2988167/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC2988167.html",
+      "pmc_page_sha256": "12ff11ba4a063104b92c58c5bacffedc12121b268113cbb79872435390addcce",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/e6/e0/PMC8465084.tar.gz",
+      "image_file_path": "PMC8465084/healthcare-09-01099-g003.jpg",
+      "pair_id": "34574873_healthcare-09-01099-f003",
+      "checked_at_utc": "2026-10-16T08:33:05.279543+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/34574873_healthcare-09-01099-f003.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/553e/8465084/30b1ebe618dd/healthcare-09-01099-g003.jpg",
+      "image_bytes": 61056,
+      "image_sha256": "1dea9ada7a88e7e396b7a32b84e8c6a39e7291667c2480f20d5a48ee22455bfa",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8465084/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC8465084.html",
+      "pmc_page_sha256": "9e9c29de567d8390eab35772aeb19bb62ef86b9ab3f1212e489c1e7ad83a4e2d",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/91/04/PMC3603106.tar.gz",
+      "image_file_path": "PMC3603106/IJEM-16-438-g001.jpg",
+      "pair_id": "23565458_F1",
+      "checked_at_utc": "2026-10-16T08:33:05.281514+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/23565458_F1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3709/3603106/9f4281e54617/IJEM-16-438-g001.jpg",
+      "image_bytes": 33615,
+      "image_sha256": "834851431db39c1ba3b1fd8320f022df23acc0680cfce18960570211faa8f6f7",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3603106/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC3603106.html",
+      "pmc_page_sha256": "b05ca5e35b80eb02be32181a721e57db3fe493ce66234704c3836e60ef2260a5",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/b5/41/PMC2762569.tar.gz",
+      "image_file_path": "PMC2762569/IJO-43-420-g003.jpg",
+      "pair_id": "19838397_F0003",
+      "checked_at_utc": "2026-10-16T08:33:05.283475+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/19838397_F0003.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e7c7/2762569/4eb8daedc29a/IJO-43-420-g003.jpg",
+      "image_bytes": 75633,
+      "image_sha256": "7063d4bb469b5266b345c4a3f6a1761be2cb5bad5fdba7a73a368a5db94a70a5",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2762569/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC2762569.html",
+      "pmc_page_sha256": "f3713f070a89ea71dab14cae417501145393f850fe4ba24e8aca3d18a11dffea",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/9e/26/PMC7906545.tar.gz",
+      "image_file_path": "PMC7906545/PAMJ-34-137-g004.jpg",
+      "pair_id": "33708306_f0004",
+      "checked_at_utc": "2026-10-16T08:33:05.283898+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/33708306_f0004.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6d24/7906545/d1fd6b5d03d1/PAMJ-34-137-g004.jpg",
+      "image_bytes": 65001,
+      "image_sha256": "b2fd5a54ccc9c5408b38b52c4a88d9a57f5a63800d10cc8c42a4d41a49c096f9",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7906545/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC7906545.html",
+      "pmc_page_sha256": "aef56f3936ae0acb2ba2ac78a4af4d337e5cdde4bf5ebbac0359f84aebf8714d",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/e9/65/PMC6937890.tar.gz",
+      "image_file_path": "PMC6937890/AER-13-695-g001.jpg",
+      "pair_id": "32009718_F1",
+      "checked_at_utc": "2026-10-16T08:33:05.493595+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/32009718_F1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/89c1/6937890/ccae6d45df64/AER-13-695-g001.jpg",
+      "image_bytes": 47637,
+      "image_sha256": "00f5aa1edcb441403a77bb9d72cb9c0effaec2962c01e41807d26ed641d5a4c9",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6937890/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC6937890.html",
+      "pmc_page_sha256": "d2586c1fbe026bd44589dd481f05c615d00ec05103fc565df1099e510ec113c8",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/34/0c/PMC3590515.tar.gz",
+      "image_file_path": "PMC3590515/JOACP-29-114-g001.jpg",
+      "pair_id": "23493967_F1",
+      "checked_at_utc": "2026-10-16T08:33:05.498249+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/23493967_F1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3134/3590515/0df774143ada/JOACP-29-114-g001.jpg",
+      "image_bytes": 120558,
+      "image_sha256": "22f9c12c5b2911d6ed5143f4061fff35fce0dfadad4398290b028a7a877ce322",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3590515/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC3590515.html",
+      "pmc_page_sha256": "e16d0ed122860c768230da5d1d8e5e60719e4937b0b67f8862996109b5e111c1",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/47/df/PMC5949520.tar.gz",
+      "image_file_path": "PMC5949520/kjn-14-28-g004.jpg",
+      "pair_id": "29774196_F4",
+      "checked_at_utc": "2026-10-16T08:33:05.499585+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/29774196_F4.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/6edd/5949520/af1595b56b8b/kjn-14-28-g004.jpg",
+      "image_bytes": 651504,
+      "image_sha256": "b266b9bf9c6ad258394fc070cf797e94d21f51670261cd7a171ccfd2be3ca039",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5949520/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC5949520.html",
+      "pmc_page_sha256": "b0b5c0afdda427e9155b016127d2b1b55c9f089a68ccc5b09dc744131eb101b4",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/8e/1d/PMC6251248.tar.gz",
+      "image_file_path": "PMC6251248/JCIS-8-47-g010.jpg",
+      "pair_id": "30546931_F9",
+      "checked_at_utc": "2026-10-16T08:33:05.500561+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/30546931_F9.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/94b8/6251248/f05c6da831f0/JCIS-8-47-g010.jpg",
+      "image_bytes": 60284,
+      "image_sha256": "4b50345d1fa3f9fae362c56513514cf0d4587b536adf06dc79e367c7408e0e7e",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6251248/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC6251248.html",
+      "pmc_page_sha256": "0d299f655853712f61bd3846d37c8ce9534c38257a150f8b8174a1d73f7e5204",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/5d/f1/PMC6431524.tar.gz",
+      "image_file_path": "PMC6431524/CRIPU2019-3981681.002.jpg",
+      "pair_id": "30984437_fig2",
+      "checked_at_utc": "2026-10-16T08:33:05.710550+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/30984437_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c7e1/6431524/9f3693ce4513/CRIPU2019-3981681.002.jpg",
+      "image_bytes": 131198,
+      "image_sha256": "93df8fd6f2d191216731966cb02b75a044171ab3748bee0bad7e6eaab3673bb5",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6431524/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC6431524.html",
+      "pmc_page_sha256": "c454c6df9d43d2283ee38693017e651ba527b751d97e6277d78ef30658ae43ad",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/ba/ff/PMC2924565.tar.gz",
+      "image_file_path": "PMC2924565/kju-51-583-g003.jpg",
+      "pair_id": "20733967_F3",
+      "checked_at_utc": "2026-10-16T08:33:05.712829+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/20733967_F3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5eb5/2924565/baf9f9528378/kju-51-583-g003.jpg",
+      "image_bytes": 103595,
+      "image_sha256": "ae961f19ce81e442f70859e78772acbb3da9c1219f34aaec221fe090fc306793",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2924565/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC2924565.html",
+      "pmc_page_sha256": "d2d96f9dfd07947176fc5afde6dff6b9ab483db0e8a97b39143f56356fa1e4e3",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/0d/0f/PMC8057282.tar.gz",
+      "image_file_path": "PMC8057282/amjcaserep-22-e930902-g001.jpg",
+      "pair_id": "33864678_f1-amjcaserep-22-e930902",
+      "checked_at_utc": "2026-10-16T08:33:05.714039+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/33864678_f1-amjcaserep-22-e930902.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/1dc1/8057282/5e05e0892bfb/amjcaserep-22-e930902-g001.jpg",
+      "image_bytes": 81197,
+      "image_sha256": "3ae8444e9cb54f5b0c456a4656facc0fbc4432b8dd73bcc41131048b6c215e66",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8057282/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC8057282.html",
+      "pmc_page_sha256": "627affd23cfbaa216c330ebc0724a5b5a70391d0e85d8fa0a488328964bba0bc",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/8c/3d/PMC4043618.tar.gz",
+      "image_file_path": "PMC4043618/ETM-07-06-1521-g01.jpg",
+      "pair_id": "24926336_f2-etm-07-06-1521",
+      "checked_at_utc": "2026-10-16T08:33:05.715219+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/24926336_f2-etm-07-06-1521.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8529/4043618/095b0b90509a/ETM-07-06-1521-g01.jpg",
+      "image_bytes": 91858,
+      "image_sha256": "4e0897f4fd6a08f7168084d07d0013887ec5d4e3d1425410daf0e06221c0d595",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4043618/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC4043618.html",
+      "pmc_page_sha256": "c8d368b06a5057ba72a928132cc6d7c0fc491e9e5ce1d92dfa7199584e4c7c23",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/5f/1d/PMC2515304.tar.gz",
+      "image_file_path": "PMC2515304/1744-859X-7-9-3.jpg",
+      "pair_id": "18652673_F3",
+      "checked_at_utc": "2026-10-16T08:33:05.921150+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/18652673_F3.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5313/2515304/56fd7d89ca55/1744-859X-7-9-3.jpg",
+      "image_bytes": 29251,
+      "image_sha256": "9e79886d7a7c963d5be0eb9a01f32b35161509a99b791d35551d408432f9d8fc",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2515304/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC2515304.html",
+      "pmc_page_sha256": "14c35d19c066237a033a8a8156af6d47b9a2b40b2fbaded32ff0fde470de9782",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/9c/e1/PMC7371717.tar.gz",
+      "image_file_path": "PMC7371717/gr2.jpg",
+      "pair_id": "32715172_fig2",
+      "checked_at_utc": "2026-10-16T08:33:05.926267+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/32715172_fig2.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8c3d/7371717/bab2dcc16e97/gr2.jpg",
+      "image_bytes": 564348,
+      "image_sha256": "3f229a20b78b6f56f7606fc3ab6d3a47eb710a96334d5b8f90c83fb5c002d52f",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7371717/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC7371717.html",
+      "pmc_page_sha256": "2b3163e19633cd1ca47d9c9de8ebd38bc7ae9000efc42bd0ae2705731ab769dc",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/9c/87/PMC6416376.tar.gz",
+      "image_file_path": "PMC6416376/gr1.jpg",
+      "pair_id": "30911703_fig1",
+      "checked_at_utc": "2026-10-16T08:33:05.928442+00:00",
+      "status": "recovered_from_exact_original_pmc_image_filename",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "image_path": "data/V06/images/30911703_fig1.jpg",
+      "image_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7b10/6416376/15db71d04626/gr1.jpg",
+      "image_bytes": 214151,
+      "image_sha256": "af67a03c00ca45c29516b04d90a70875d04b15996d5975fcdb0573437560949a",
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6416376/",
+      "pmc_page_path": "sources/llava_main/pmc_pages/PMC6416376.html",
+      "pmc_page_sha256": "d853f8a8232a9c0e069f169e4771061a7c765b88edf772aaf418e4ad9e6650b7",
+      "exact_article_id_and_filename_matched": true,
+      "historical_publisher_image_digest_verified": false
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/76/48/PMC4035495.tar.gz",
+      "image_file_path": "PMC4035495/13244_2014_311_Fig23_HTML.jpg",
+      "pair_id": "24554380_Fig23",
+      "checked_at_utc": "2026-10-16T08:33:05.929340+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4035495/",
+      "pmc_page_bytes": 21310,
+      "pmc_page_sha256": "e814c846fcc5005ea36686192da3bf595a8f36d02fcaabdf010b3aa590b01422",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/ab/fe/PMC5037259.tar.gz",
+      "image_file_path": "PMC5037259/gr2.jpg",
+      "pair_id": "27679760_fig2",
+      "checked_at_utc": "2026-10-16T08:33:06.129442+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5037259/",
+      "pmc_page_bytes": 21310,
+      "pmc_page_sha256": "5da1e355a6ed5ee0b2b2bb9e8202a592573f1e7eb16d6b58d38b86365172dea9",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/ae/08/PMC5764069.tar.gz",
+      "image_file_path": "PMC5764069/trd-2-trd015-g004.jpg",
+      "pair_id": "29354481_trd-2-trd015-g004",
+      "checked_at_utc": "2026-10-16T08:33:06.141327+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5764069/",
+      "pmc_page_bytes": 21308,
+      "pmc_page_sha256": "fbb3ded7ae764696e09be64db4be87ef297319785c3414515ea10a0e154924ed",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/a5/23/PMC6119206.tar.gz",
+      "image_file_path": "PMC6119206/CG-CGCR180050F004.jpg",
+      "pair_id": "30214911_F4",
+      "checked_at_utc": "2026-10-16T08:33:06.146623+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6119206/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "937aec69bfd316e42b107787b9d7a58382a9b2ec177b19bafdbb0cec425ebedd",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/3c/be/PMC2873261.tar.gz",
+      "image_file_path": "PMC2873261/1471-2490-10-8-5.jpg",
+      "pair_id": "20406459_F5",
+      "checked_at_utc": "2026-10-16T08:33:06.148170+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2873261/",
+      "pmc_page_bytes": 21312,
+      "pmc_page_sha256": "ed8b6b8a5cd84f48000efe40ecdb4ae18c38e50ca12bff767a4bc6fb00161cef",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/88/d9/PMC8120933.tar.gz",
+      "image_file_path": "PMC8120933/gr2.jpg",
+      "pair_id": "34026556_fig2",
+      "checked_at_utc": "2026-10-16T08:33:06.335251+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8120933/",
+      "pmc_page_bytes": 21312,
+      "pmc_page_sha256": "616fcf7b301d299eb3edfe05c00de3261032b392006476c99a8ba34ce4578ad7",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/f1/15/PMC3249941.tar.gz",
+      "image_file_path": "PMC3249941/IJRI-21-270-g005.jpg",
+      "pair_id": "22223938_F5",
+      "checked_at_utc": "2026-10-16T08:33:06.345887+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3249941/",
+      "pmc_page_bytes": 21312,
+      "pmc_page_sha256": "1bcaaf1b6de44b7af7b5731c4e55abfd7586e574795af3e64be9a4254b00345d",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/77/8b/PMC2629892.tar.gz",
+      "image_file_path": "PMC2629892/kjo-21-251-g003.jpg",
+      "pair_id": "18063892_F3",
+      "checked_at_utc": "2026-10-16T08:33:06.355819+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2629892/",
+      "pmc_page_bytes": 21310,
+      "pmc_page_sha256": "90aa540b8a116415c0003f56edd5d8ffb48edc04a0e6ec17b42913820c5f84c9",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/50/37/PMC7276600.tar.gz",
+      "image_file_path": "PMC7276600/JOCR-9-82-g005.jpg",
+      "pair_id": "32548036_F5",
+      "checked_at_utc": "2026-10-16T08:33:06.358043+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7276600/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "3fbb942cbcea52bd1c8a9be9038eb2ef86c6ad12794359bb44a1e8dd3f275f9a",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/89/92/PMC5848365.tar.gz",
+      "image_file_path": "PMC5848365/OJO-11-97-g005.jpg",
+      "pair_id": "29563712_F5",
+      "checked_at_utc": "2026-10-16T08:33:06.541057+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5848365/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "2df08bc3581726e2cfe6839e77e08e9894be8863351991333cfd47bc3e00d71d",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/2f/c1/PMC3237213.tar.gz",
+      "image_file_path": "PMC3237213/IJNM-26-109-g002.jpg",
+      "pair_id": "22174521_F2",
+      "checked_at_utc": "2026-10-16T08:33:06.549433+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3237213/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "0c227fee073cb0e007bacfbe8a1fbf6dda854199067177cb4b5fe293b0d7471e",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/92/2f/PMC5387358.tar.gz",
+      "image_file_path": "PMC5387358/12891_2017_1516_Fig5_HTML.jpg",
+      "pair_id": "28399828_Fig5",
+      "checked_at_utc": "2026-10-16T08:33:06.570530+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5387358/",
+      "pmc_page_bytes": 21310,
+      "pmc_page_sha256": "cc9fe495105aba19ec84a26bb09a5307119d50c60a8da6959a45690e903680ee",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/3c/db/PMC5663786.tar.gz",
+      "image_file_path": "PMC5663786/ejohg-07-095-g003.jpg",
+      "pair_id": "29201784_F3",
+      "checked_at_utc": "2026-10-16T08:33:06.571522+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5663786/",
+      "pmc_page_bytes": 21310,
+      "pmc_page_sha256": "4c9399d58f6fc54146163457ab1fb40ef0f38fde41ffbe7379a7cef4c6b86d70",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/ce/1e/PMC6121004.tar.gz",
+      "image_file_path": "PMC6121004/fimmu-09-01938-g0005.jpg",
+      "pair_id": "30210495_F5",
+      "checked_at_utc": "2026-10-16T08:33:06.749483+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6121004/",
+      "pmc_page_bytes": 21310,
+      "pmc_page_sha256": "94576bf188b8542c8cf908191f832d974d997343d4008ab179a4c1d977ddbc9f",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/63/c2/PMC2887077.tar.gz",
+      "image_file_path": "PMC2887077/gm154-8.jpg",
+      "pair_id": "20465800_F8",
+      "checked_at_utc": "2026-10-16T08:33:06.754311+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2887077/",
+      "pmc_page_bytes": 21310,
+      "pmc_page_sha256": "03936135fcbb53890d99b784fadae0f199c976250974b9f33f966b852b6ebff8",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/6b/31/PMC8256904.tar.gz",
+      "image_file_path": "PMC8256904/gr-14-194-g007.jpg",
+      "pair_id": "34267836_F7",
+      "checked_at_utc": "2026-10-16T08:33:06.782027+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8256904/",
+      "pmc_page_bytes": 21310,
+      "pmc_page_sha256": "9544104bcb530a07c0741701fef6e7c6bb75ac4f6941eff4401755710b772db1",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/de/59/PMC3410298.tar.gz",
+      "image_file_path": "PMC3410298/jclinpath-2012-200774fig2.jpg",
+      "pair_id": "22569536_fig2",
+      "checked_at_utc": "2026-10-16T08:33:06.782242+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3410298/",
+      "pmc_page_bytes": 21309,
+      "pmc_page_sha256": "3c0ec419876bba1cc30d00380a446a0c4468a48dd94c4fe17562705236a70063",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/56/95/PMC2270292.tar.gz",
+      "image_file_path": "PMC2270292/pmed.0050054.g001.jpg",
+      "pair_id": "18318598_pmed-0050054-g001",
+      "checked_at_utc": "2026-10-16T08:33:06.953782+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2270292/",
+      "pmc_page_bytes": 21307,
+      "pmc_page_sha256": "48df1d11c8232cc633226c58bba79f36cf27b55e79fc57bf4bd8cdf6b67ed42c",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/71/75/PMC7478259.tar.gz",
+      "image_file_path": "PMC7478259/IJBMS-23-1091-g004.jpg",
+      "pair_id": "32952957_F4",
+      "checked_at_utc": "2026-10-16T08:33:06.963831+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7478259/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "ec4fae8479750f1a6d573a1dbebd4cd0ae3e5950adef2a7bdb8a1de87c6e5f9f",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/8f/a6/PMC5968292.tar.gz",
+      "image_file_path": "PMC5968292/crg-0012-0099-g02.jpg",
+      "pair_id": "29805352_F2",
+      "checked_at_utc": "2026-10-16T08:33:06.993272+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5968292/",
+      "pmc_page_bytes": 21312,
+      "pmc_page_sha256": "f4780f732d5af78ed08e05d4047c28f6060f40eaa03ec069d02f293067e628a2",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/14/b5/PMC3329521.tar.gz",
+      "image_file_path": "PMC3329521/pone.0033860.g004.jpg",
+      "pair_id": "22529899_pone-0033860-g004",
+      "checked_at_utc": "2026-10-16T08:33:06.994348+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3329521/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "c9d078e6a4322f4df744a87bef6a594af45aa348dc5f81ed05fbb349c7ae9fd4",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/93/b9/PMC5823290.tar.gz",
+      "image_file_path": "PMC5823290/radcr306-fig-0002.jpg",
+      "pair_id": "29484042_f0015",
+      "checked_at_utc": "2026-10-16T08:33:07.158066+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5823290/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "bc6a52da6c45b7232d331846d14dc26e67c0dc6ea6a9e233ba016c16cc956b7c",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/84/cc/PMC6160631.tar.gz",
+      "image_file_path": "PMC6160631/ijcn-12-007-g003.jpg",
+      "pair_id": "30279704_F3",
+      "checked_at_utc": "2026-10-16T08:33:07.174000+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6160631/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "0e2bbd71398d29787fe1b01b0fd1559ea4dc5cc4def7a4eca66ea285cba1b853",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/18/94/PMC6484696.tar.gz",
+      "image_file_path": "PMC6484696/gr3.jpg",
+      "pair_id": "30910324_fig3",
+      "checked_at_utc": "2026-10-16T08:33:07.200034+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6484696/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "828456e5bac82d72a331cfffbaf5ce577f7f1042ae518a55157d86fad0318e9d",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/19/9f/PMC2905189.tar.gz",
+      "image_file_path": "PMC2905189/OJO-2-96-g004.jpg",
+      "pair_id": "20671840_F0004",
+      "checked_at_utc": "2026-10-16T08:33:07.203521+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2905189/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "73e09721be76ed26abb0fb6d181aa9b4da40e9280efafd8e00521b16394ec765",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/01/26/PMC8079721.tar.gz",
+      "image_file_path": "PMC8079721/fneur-12-648548-g0001.jpg",
+      "pair_id": "33935946_F1",
+      "checked_at_utc": "2026-10-16T08:33:07.364323+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8079721/",
+      "pmc_page_bytes": 21311,
+      "pmc_page_sha256": "1efd9115699d326606f102262ad894720ecbd2645c80274c86636594e36938fd",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/d3/2c/PMC3948888.tar.gz",
+      "image_file_path": "PMC3948888/pone.0091649.g004.jpg",
+      "pair_id": "24614132_pone-0091649-g004",
+      "checked_at_utc": "2026-10-16T08:33:07.381554+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3948888/",
+      "pmc_page_bytes": 21309,
+      "pmc_page_sha256": "bab3fcbd4228fc5b33eb3d060ae6f17ec1083c9f444913ba83accf6091b49e14",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/14/bc/PMC2518921.tar.gz",
+      "image_file_path": "PMC2518921/1471-244X-8-66-1.jpg",
+      "pair_id": "18673566_F1",
+      "checked_at_utc": "2026-10-16T08:33:07.406975+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2518921/",
+      "pmc_page_bytes": 21310,
+      "pmc_page_sha256": "52c75632703712ed2cee0ab0ddccfbfde2688f29e433ee6c04e5e46417f14c01",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/5b/c5/PMC7504327.tar.gz",
+      "image_file_path": "PMC7504327/materials-13-03795-g015.jpg",
+      "pair_id": "32867401_materials-13-03795-f015",
+      "checked_at_utc": "2026-10-16T08:33:07.410394+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7504327/",
+      "pmc_page_bytes": 21309,
+      "pmc_page_sha256": "298ab6f89f0210286ead9f11bb64e3d66fc45c4f084a4711c520c0113bb9d39b",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/bd/0f/PMC6215588.tar.gz",
+      "image_file_path": "PMC6215588/BMRI2018-3896946.002.jpg",
+      "pair_id": "30420960_fig2",
+      "checked_at_utc": "2026-10-16T08:33:07.569595+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6215588/",
+      "pmc_page_bytes": 21309,
+      "pmc_page_sha256": "23b2caffe73a7113c24481c9445f946636bcf91f0d3185770dab947eab8c79a5",
+      "pmc_browser_challenge": true
+    },
+    {
+      "pmc_tar_url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/2a/c8/PMC3785345.tar.gz",
+      "image_file_path": "PMC3785345/ccrep-1-2008-057f4c.jpg",
+      "pair_id": "24179348_f4c-ccrep-1-2008-057",
+      "checked_at_utc": "2026-10-16T08:33:07.590104+00:00",
+      "status": "blocked",
+      "error_type": "PublicSourceAccessChallenge",
+      "error": "PMC returned a browser/reCAPTCHA challenge rather than the article; no challenge solving or bypass attempted.",
+      "original_package_acquisition": {
+        "status": "blocked",
+        "error_type": "HTTPError",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "pmc_page_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3785345/",
+      "pmc_page_bytes": 21310,
+      "pmc_page_sha256": "75cfe99316ec690290ba98cefbdcdf42cb80fe20c902807f0f0c309e54abcb46",
+      "pmc_browser_challenge": true
+    }
+  ]
+}

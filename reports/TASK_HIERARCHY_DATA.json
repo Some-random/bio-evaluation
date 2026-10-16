@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-10-16T07:48:08.243558+00:00",
+    "generatedAt": "2026-10-16T08:38:27.741586+00:00",
     "scoreSnapshotAt": "2026-10-16T04:25:25.541726+00:00",
-    "runSnapshotAt": "2026-10-16T07:35:08.569499+00:00",
+    "runSnapshotAt": "2026-10-16T08:38:27.741586+00:00",
     "model": {
       "name": "Qwen/Qwen3.8-27B",
       "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
@@ -17,7 +17,7 @@
     "activeWorkers": 8,
     "scheduledSettings": 10,
     "plannedCases": 83690,
-    "savedResponses": 294,
+    "savedResponses": null,
     "completedSettings": 25,
     "githubUrl": "https://github.com/Some-random/bio-evaluation",
     "packageUrl": "https://github.com/Some-random/bio-evaluation/blob/main/handoff/Bio_Evaluation_Agent_Package_2026-10-16/START_HERE.md",
@@ -35,7 +35,23 @@
       "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json": "7d415be7c08da72976cc07537ff1d420054f40a809a69db44f6df20b818f58c2",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv": "c813f6702a0af51e272e344bfbc02d913541103d3f4acf849e4547ac78c3764c",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/AGENT_TASK_MAPPING.csv": "3f17b92ccf2c19e8475b0eba88c396363dad1a5d1e6ae8644dffb9161fbb70ec",
-      "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx": "3bbe6cee62c15266814fa082825a9f6349c32d34e976855eda604bef68336f6f"
+      "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx": "3bbe6cee62c15266814fa082825a9f6349c32d34e976855eda604bef68336f6f",
+      "reports/EVALUATION_PROGRESS.json": "cadb3c71225b051e11af1add4a9e05637498e680f73576b7e262205aa8f3aa92"
+    },
+    "localResultRows": 28,
+    "uploadedResponses": 1536,
+    "heartbeat": {
+      "status": "fresh",
+      "updatedAt": "2026-10-16T08:38:27.741586+00:00",
+      "staleAfterSeconds": 300
+    },
+    "taskStatusCounts": {
+      "Results available": 23,
+      "Partial": 3,
+      "Running / queued": 10,
+      "Source-blocked": 6,
+      "Deferred / held": 2,
+      "Status unverified": 20
     }
   },
   "categories": [
@@ -4825,90 +4841,120 @@
       "dataset": "Subcellular localization — DeepLoc",
       "status": "Running / queued",
       "planned": 2773,
-      "completed": 185,
-      "lengthStopped": 3,
-      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/CURRENT_EXECUTION_STATUS_2026-10-16.json"
+      "completed": null,
+      "lengthStopped": null,
+      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
+      "uploaded": 912,
+      "saved": null,
+      "progressSource": "uploaded_trajectories"
     },
     {
       "taskId": "P07",
       "dataset": "GFP fluorescence — TAPE",
       "status": "Running / queued",
       "planned": 27217,
-      "completed": 109,
-      "lengthStopped": 100,
-      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/CURRENT_EXECUTION_STATUS_2026-10-16.json"
+      "completed": null,
+      "lengthStopped": null,
+      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
+      "uploaded": 624,
+      "saved": null,
+      "progressSource": "uploaded_trajectories"
     },
     {
       "taskId": "P08",
       "dataset": "Protein stability regression — TAPE",
       "status": "Running / queued",
       "planned": 12851,
-      "completed": 0,
-      "lengthStopped": 0,
-      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/CURRENT_EXECUTION_STATUS_2026-10-16.json"
+      "completed": null,
+      "lengthStopped": null,
+      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
+      "uploaded": 0,
+      "saved": null,
+      "progressSource": "uploaded_trajectories"
     },
     {
       "taskId": "P12",
       "dataset": "Enzyme Commission labels — DeepFRI split",
       "status": "Running / queued",
       "planned": 1919,
-      "completed": 0,
-      "lengthStopped": 0,
-      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/CURRENT_EXECUTION_STATUS_2026-10-16.json"
+      "completed": null,
+      "lengthStopped": null,
+      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
+      "uploaded": 0,
+      "saved": null,
+      "progressSource": "uploaded_trajectories"
     },
     {
       "taskId": "P13",
       "dataset": "GO biological process — DeepFRI split",
       "status": "Running / queued",
       "planned": 3416,
-      "completed": 0,
-      "lengthStopped": 0,
-      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/CURRENT_EXECUTION_STATUS_2026-10-16.json"
+      "completed": null,
+      "lengthStopped": null,
+      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
+      "uploaded": 0,
+      "saved": null,
+      "progressSource": "uploaded_trajectories"
     },
     {
       "taskId": "P14",
       "dataset": "GO molecular function — DeepFRI split",
       "status": "Running / queued",
       "planned": 3416,
-      "completed": 0,
-      "lengthStopped": 0,
-      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/CURRENT_EXECUTION_STATUS_2026-10-16.json"
+      "completed": null,
+      "lengthStopped": null,
+      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
+      "uploaded": 0,
+      "saved": null,
+      "progressSource": "uploaded_trajectories"
     },
     {
       "taskId": "P15",
       "dataset": "GO cellular component — DeepFRI split",
       "status": "Running / queued",
       "planned": 3416,
-      "completed": 0,
-      "lengthStopped": 0,
-      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/CURRENT_EXECUTION_STATUS_2026-10-16.json"
+      "completed": null,
+      "lengthStopped": null,
+      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
+      "uploaded": 0,
+      "saved": null,
+      "progressSource": "uploaded_trajectories"
     },
     {
       "taskId": "P16",
       "dataset": "Reaction class — zero-/few-shot",
       "status": "Running / queued",
       "planned": 5651,
-      "completed": 0,
-      "lengthStopped": 0,
-      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/CURRENT_EXECUTION_STATUS_2026-10-16.json"
+      "completed": null,
+      "lengthStopped": null,
+      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
+      "uploaded": 0,
+      "saved": null,
+      "progressSource": "uploaded_trajectories"
     },
     {
       "taskId": "P28",
       "dataset": "BioReason-Pro temporal GO test",
       "status": "Running / queued",
       "planned": 8159,
-      "completed": 0,
-      "lengthStopped": 0,
-      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/CURRENT_EXECUTION_STATUS_2026-10-16.json"
+      "completed": null,
+      "lengthStopped": null,
+      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
+      "uploaded": 0,
+      "saved": null,
+      "progressSource": "uploaded_trajectories"
     },
     {
       "taskId": "P29",
       "dataset": "Bio-posttrain species-held-out GO test",
       "status": "Running / queued",
       "planned": 14872,
-      "completed": 0,
-      "lengthStopped": 0,
-      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/CURRENT_EXECUTION_STATUS_2026-10-16.json"
+      "completed": null,
+      "lengthStopped": null,
+      "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
+      "uploaded": 0,
+      "saved": null,
+      "progressSource": "uploaded_trajectories"
     }
   ],
   "modelNotes": [

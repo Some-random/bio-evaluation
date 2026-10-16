@@ -1,0 +1,107 @@
+{
+  "created_at_utc": "2026-10-16T08:37:20.828706+00:00",
+  "scope": "Public source recovery and metadata validation only. No inference, judge calls, frozen config changes, scoring or training.",
+  "inference_performed": false,
+  "provider_keys_read": false,
+  "existing_frozen_files_modified": false,
+  "new_execution_ready_settings": 0,
+  "artifacts_root": ".local/continuation_2026-10-16/source_prep",
+  "verification": {
+    "source_assets": 30,
+    "publisher_git_blobs_verified": 26,
+    "publisher_lfs_payloads_sha256_verified": 4,
+    "source_and_recovered_image_hashes_revalidated": true
+  },
+  "tasks": [
+    {
+      "task_id": "V06",
+      "task": "LLaVA-Med visual conversation (QA50)",
+      "status": "source_partially_recovered_native_external_judge_still_held",
+      "native_source_pin": "30697ca50b5c29a8e955c99330b259776aef27b9",
+      "original_v1_code_pin": "b9a98a736d2ef05bcf5ff345be6403fb3a664eaf",
+      "questions_verified": 193,
+      "original_images_expected": 50,
+      "question_types": {
+        "conversation": 143,
+        "detailed_description": 50
+      },
+      "questions_matched_to_source_manifest": 193,
+      "images_recovered": 19,
+      "questions_with_recovered_images": 73,
+      "source_archive_urls_http_404": 50,
+      "remaining_images": 31,
+      "remaining_source_blocker": "PMC article pages for the remaining 31 images returned a browser/reCAPTCHA challenge. No challenge solving, bypass, mirror substitution or alternate image selection was attempted.",
+      "image_identity": "Recovered bytes use the exact source PMCID and exact original source image filename, from the original NCBI article image URL. Current bytes are hashed; historical publisher image hashes are not available.",
+      "input_allowlist": [
+        "question_id",
+        "image",
+        "pair_id",
+        "text"
+      ],
+      "solver_excluded_fields": [
+        "gpt4_answer",
+        "fig_caption",
+        "in_text_mention",
+        "domain",
+        "type",
+        "fig_label"
+      ],
+      "data_inputs": "data/V06/input_only_questions.jsonl",
+      "source_image_index": "data/V06/source_image_index.jsonl",
+      "native_judge": "GPT-4-0314; teacher answer is assistant 1 and model answer assistant 2; judge sees caption and inline mentions; helpfulness/relevance/accuracy/detail scored 1 through 10.",
+      "native_metric": "100 * mean(model_answer_score / teacher_answer_score), grouped by question type/domain and overall, as in the pinned official evaluator; do not substitute ratio of aggregate means.",
+      "native_score_blocker": "Native evaluation requires the external GPT-4 judge. The current provider hold remains active; no local substitute judge or fabricated native score.",
+      "qwen_capability_vs_execution": "Qwen vision can accept image/question inputs; model compatibility does not resolve missing assets, input review/freeze, or the native external judge.",
+      "primary_sources": [
+        "https://github.com/microsoft/LLaVA-Med/blob/30697ca50b5c29a8e955c99330b259776aef27b9/README.md#evaluation",
+        "https://github.com/microsoft/LLaVA-Med/blob/30697ca50b5c29a8e955c99330b259776aef27b9/llava/eval/eval_multimodal_chat_gpt_score.py",
+        "https://github.com/microsoft/LLaVA-Med/blob/30697ca50b5c29a8e955c99330b259776aef27b9/llava/eval/summarize_gpt_review.py"
+      ]
+    },
+    {
+      "task_id": "V07",
+      "task": "Ryze extraction component tests",
+      "status": "exact_component_manifest_and_execution_recipe_unrecovered",
+      "publisher_commit": "41b2d77ec0651b9f51b657f524415ee3cc38e115",
+      "publisher_commit_changed_since_previous_audit": false,
+      "newly_restored_source_files": 5,
+      "source_tree_blob_count": 81,
+      "exact_cases_verified": 0,
+      "blockers": [
+        "Exact component case IDs, splits and source-media/page mapping for ArXivQA, SlideVQA and ChartQA are not present in the inspected public tree.",
+        "Extraction condition, answer-model checkpoint/prompt and exact scoring/aggregation contract for Table 3 remain unrecovered.",
+        "The generic benchmark loader generates synthetic placeholder data when no benchmark JSON exists; those rows are not benchmark evidence."
+      ],
+      "resolution": "Obtain author component manifest and execution recipe; generic direct Qwen image QA is a different baseline and does not complete this extraction setting.",
+      "primary_sources": [
+        "https://github.com/Chivier/Ryze/tree/41b2d77ec0651b9f51b657f524415ee3cc38e115",
+        "https://arxiv.org/html/2606.00902v1#S3.SS3"
+      ]
+    },
+    {
+      "task_id": "P27",
+      "task": "NatureLM temporal NCBI protein-description test",
+      "status": "exact_temporal_test_release_unrecovered",
+      "publisher_commit": "bcb1351bc6490d4a98cae74e7eead30a028fae00",
+      "publisher_commit_changed_since_previous_audit": false,
+      "newly_restored_source_files": 3,
+      "exact_cases_verified": 0,
+      "blockers": [
+        "The current publisher tree still lacks the exact temporal test case IDs, source sequence/reference snapshots, cutoff and executable ROUGE-L preprocessing."
+      ],
+      "resolution": "Obtain author temporal manifest and scoring contract. Do not replace it with Mol-Instructions or arbitrary current NCBI proteins.",
+      "primary_sources": [
+        "https://github.com/microsoft/SFM/tree/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM",
+        "https://arxiv.org/html/2502.07527v3#S4.SS4"
+      ]
+    }
+  ],
+  "reproducible_handoff": "handoff/source_preparation_2026-10-16/",
+  "private_source_bundle": {
+    "local_path": ".local/continuation_2026-10-16/source_prep/source_prep_bundle.tar.gz",
+    "sha256": "63ff12232b04294201ac9b46ea717a930774f5010e0999abebf70dc20778e4bb",
+    "bytes": 2294029,
+    "members": 64,
+    "published_to_git": false
+  }
+}

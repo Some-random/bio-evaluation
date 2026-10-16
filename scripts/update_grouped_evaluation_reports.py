@@ -55,11 +55,16 @@ def validate(data):
     assert sum(group["kind"] == "main" for group in groups) == 67
     assert sum(group["kind"] == "diagnostic" for group in groups) == 9
     assert len(ids) == len(set(ids)) == 64
-    assert sum(len(group["results"]) for group in groups) == 28
+    assert sum(len(group["results"]) for group in groups) == data["meta"].get("localResultRows", 28)
     assert sum(category["count"] for category in data["categories"]) == 67
     assert "Protein design" in categories(data)
     assert sum(run["planned"] for run in data["runs"]) == data["meta"]["plannedCases"]
-    assert sum(run["completed"] for run in data["runs"]) == data["meta"]["savedResponses"]
+    if data["meta"]["savedResponses"] is not None:
+        assert sum(run["completed"] for run in data["runs"]) == data["meta"]["savedResponses"]
+    else:
+        assert all(run["completed"] is None for run in data["runs"])
+    if "uploadedResponses" in data["meta"]:
+        assert sum(run["uploaded"] for run in data["runs"]) == data["meta"]["uploadedResponses"]
 
 
 def snapshot_note(data):
@@ -142,12 +147,19 @@ def overview(data):
         "Source-blocked": "Blocked", "Deferred / held": "On hold",
         "Status unverified": "Run status unconfirmed",
     }
+    progress_by_task = {run["taskId"]: run for run in data["runs"]}
 
     def display_status(group, protocol):
         value = protocol["status"] if protocol else group["status"]
         if value == "Status unverified" and group["scope"] == "Catalog only":
             return "Listed for consideration"
-        return statuses[value]
+        state = statuses[value]
+        progress = progress_by_task.get(protocol["taskId"]) if protocol else None
+        if value == "Running / queued" and progress and progress.get("planned"):
+            uploaded = progress.get("uploaded")
+            if uploaded is not None:
+                state += f" · {100 * uploaded / progress['planned']:.1f}% trajectories uploaded"
+        return state
 
     def snapshot(value):
         return value[:10] + " " + value[11:16] + " UTC"
@@ -226,6 +238,9 @@ def overview(data):
         "Published scores are separate reference results; full protocol notes are at the end.", "",
         "Expand a category to see its tasks and datasets.", "",
     ]
+    heartbeat = meta.get("heartbeat", {})
+    if heartbeat.get("status") in {"stale", "missing", "invalid"}:
+        out[6:6] = ["**The run-status heartbeat is " + heartbeat["status"] + "; current activity is unconfirmed.**", ""]
     all_notes = []
     for category, families in megatasks:
         out += ["<details>", f"<summary><h2>{category}</h2></summary>", ""]
@@ -524,7 +539,8 @@ def main():
         else:
             target.write_text(content)
     print(json.dumps({"checked" if args.check else "written": list(outputs), "main_groups": 67,
-        "diagnostic_groups": 9, "registry_ids": 64, "local_result_rows": 28,
+        "diagnostic_groups": 9, "registry_ids": 64,
+        "local_result_rows": sum(len(group["results"]) for group in data["groups"]),
         "source_snapshot_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}))
 
 

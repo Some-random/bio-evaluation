@@ -2,7 +2,7 @@
 
 Model: **Qwen3.8-27B**.
 
-Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 07:35 UTC**.
+Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 08:38 UTC**.
 
 **25 of 64 evaluation settings have finished runs.** An asterisk (*) marks incomplete coverage or scoring.
 
@@ -31,7 +31,7 @@ Expand a category to see its tasks and datasets.
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
 | Binary protein localization | DeepLoc — binary and 10-compartment localization<br>Binary localization — DeepLoc/PEER | Finished · Ready | accuracy 27.4% | BioT5+: accuracy 90.41% ± 0.07 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
-| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued* · Ready | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
+| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued · 32.9% trajectories uploaded* · Ready | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
 | Localization and sorting signals | PFMBench localization and sorting-signal panel | Needs data or protocol<br>Needs PFMBench splits, label vocabularies and binary/multilabel scoring. | — | ESM2-Adapter, Table 1 means: DeepLocMulti Accuracy 0.7666; DeepLoc2Multi F1 0.7505; DeepLocBinary AUROC 0.9338; SortingSignal F1 0.8598 · [source](https://arxiv.org/html/2506.14796v1) |
 
 #### Protein activity, stability and production
@@ -40,8 +40,8 @@ Expand a category to see its tasks and datasets.
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
-| Protein stability* | TAPE / Rocklin stability | Running or queued* · Ready | — | Spearman: ProtST-ESM-2 0.738; ESM-2 0.718. · [source](https://arxiv.org/html/2206.02096v2) |
+| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued · 2.3% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
+| Protein stability* | TAPE / Rocklin stability | Running or queued · 0.0% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.738; ESM-2 0.718. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein thermostability prediction* | FLIP — AAV and Meltome<br>Thermostability — FLIP/Meltome | Partial* · Ready<br>Existing sequence regression runner and native Spearman scorer are available. | **Diagnostic only:** spearman undefined; spearman_parsed_only 0.0254<br>Full native primary metric undefined. | ProtST-ESM-1b: fixed encoder.spearman 0.68; full model tuning.spearman 0.681; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Enzyme activity* | Envision β-lactamase — PEER split | Needs data or protocol*<br>Beta-lactamase assay scope and complete native test inputs are not cleared. | — | Spearman: ProtST-ESM-2 0.879; ESM-2 0.867. · [source](https://arxiv.org/html/2206.02096v2) |
 | AAV variant fitness prediction* | FLIP — AAV and Meltome<br>AAV variant fitness — FLIP | Needs data or protocol*<br>FLIP AAV test archive and assay-specific input review remain unfinished. | — | Spearman, ProtST-ESM-2 vs ESM-2: AAV 0.825 vs 0.817; Meltome 0.682 vs 0.672. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
@@ -78,12 +78,12 @@ Expand a category to see its tasks and datasets.
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Enzyme Commission annotation* | DeepFRI-derived EC and GO test splits<br>Enzyme Commission labels — DeepFRI split | Running or queued* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Gene Ontology: biological process* | DeepFRI-derived EC and GO test splits<br>GO biological process — DeepFRI split | Running or queued* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Gene Ontology: molecular function* | DeepFRI-derived EC and GO test splits<br>GO molecular function — DeepFRI split | Running or queued* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Gene Ontology: cellular component* | DeepFRI-derived EC and GO test splits<br>GO cellular component — DeepFRI split | Running or queued* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Temporal Gene Ontology annotation* | BioReason-Pro temporal GO test | Running or queued* · Ready | — | Official repository headline: BioReason-Pro 73.6% Fmax. · [source](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data) |
-| Species-held-out Gene Ontology annotation* | Bio-posttrain species-held-out protein GO | Running or queued* · Ready | — | Species-held-out GO evaluation is described; a verified numeric result for the exact protein split is not transcribed here. · [source](https://arxiv.org/html/2606.16517v1) |
+| Enzyme Commission annotation* | DeepFRI-derived EC and GO test splits<br>Enzyme Commission labels — DeepFRI split | Running or queued · 0.0% trajectories uploaded* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Gene Ontology: biological process* | DeepFRI-derived EC and GO test splits<br>GO biological process — DeepFRI split | Running or queued · 0.0% trajectories uploaded* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Gene Ontology: molecular function* | DeepFRI-derived EC and GO test splits<br>GO molecular function — DeepFRI split | Running or queued · 0.0% trajectories uploaded* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Gene Ontology: cellular component* | DeepFRI-derived EC and GO test splits<br>GO cellular component — DeepFRI split | Running or queued · 0.0% trajectories uploaded* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Temporal Gene Ontology annotation* | BioReason-Pro temporal GO test | Running or queued · 0.0% trajectories uploaded* · Ready | — | Official repository headline: BioReason-Pro 73.6% Fmax. · [source](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data) |
+| Species-held-out Gene Ontology annotation* | Bio-posttrain species-held-out protein GO | Running or queued · 0.0% trajectories uploaded* · Ready | — | Species-held-out GO evaluation is described; a verified numeric result for the exact protein split is not transcribed here. · [source](https://arxiv.org/html/2606.16517v1) |
 | Enzyme and Gene Ontology annotation | PFMBench GO/EC annotation panel | Needs data or protocol<br>Needs PFMBench splits, GO/EC vocabularies and native F1 scoring. | — | ESM2-Adapter, Table 1 means: GO-CC F1 0.6130; GO-MF F1 0.6488; GO-BP F1 0.5412; EC F1 0.7379 · [source](https://arxiv.org/html/2506.14796v1) |
 
 #### Protein function descriptions
@@ -96,7 +96,7 @@ Expand a category to see its tasks and datasets.
 | Catalytic activity description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Catalytic activity generation | Finished · Ready | rouge1 0.0541; rouge2 0.0140; rougeL 0.0396; rougeLsum 0.0473 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
 | Protein domain and motif description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Domain and motif generation | Finished · Ready | rouge1 0.0354; rouge2 0.0047; rougeL 0.0259; rougeLsum 0.0306 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
 | Protein functional description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Functional description generation | Finished · Ready | rouge1 0.0800; rouge2 0.0123; rougeL 0.0494; rougeLsum 0.0649 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
-| Protein description generation* | NatureLM's NCBI protein-description holdout | Needs data or protocol*<br>NatureLM temporal test IDs, annotation cutoff and reference preprocessing are missing. | — | ROUGE-L: NatureLM-8x7B 0.585; fine-tuned Llama-3-8B 0.324; GPT-4o 0.091. · [source](https://arxiv.org/html/2502.07527v3) |
+| Protein description generation* | NatureLM's NCBI protein-description holdout | Needs data or protocol*<br>Publisher unchanged; exact temporal test IDs, sequence/reference snapshots, cutoff and ROUGE-L preprocessing remain missing. | — | ROUGE-L: NatureLM-8x7B 0.585; fine-tuned Llama-3-8B 0.324; GPT-4o 0.091. · [source](https://arxiv.org/html/2502.07527v3) |
 
 #### Biochemical reaction classification
 
@@ -104,7 +104,7 @@ Expand a category to see its tasks and datasets.
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Biochemical reaction classification* | ProtST reaction classification — zero/few-shot | Running or queued* · Ready | — | Zero-/few-shot results are reported, but a numeric value for the exact zero-shot reaction setting is not transcribed here. Do not substitute the fully supervised reaction score. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Biochemical reaction classification* | ProtST reaction classification — zero/few-shot | Running or queued · 0.0% trajectories uploaded* · Ready | — | Zero-/few-shot results are reported, but a numeric value for the exact zero-shot reaction setting is not transcribed here. Do not substitute the fully supervised reaction score. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 
 #### Evidence support for protein explanations
 
@@ -329,8 +329,8 @@ Expand a category to see its tasks and datasets.
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
 | Scientific figure question answering | PMC-VQA figure question answering | Finished · Ready | native_td_final_character_accuracy 0.0200; adapted_full_text_closest_choice_accuracy 0.4975; adapted_full_text_released_label_accuracy 0.4975; strict_final_label_accuracy 0.0070 | MedVInT-TD / PMC-LLaMA / PMC-CLIP: choice accuracy 40.3%; blank accuracy 33.6%; blank bleu1 21.5%; n=2000; Table 3 · [source](https://arxiv.org/html/2305.10415v6) |
-| Biomedical visual conversations* | LLaVA-Med biomedical visual conversations | Needs scoring protocol*<br>Original images and GPT-assisted relative-judging protocol are not prepared. | — | GPT-assisted relative answer-quality comparisons are reported. A verified single aggregate for the specified qa50 setting is not transcribed here. · [source](https://arxiv.org/abs/2306.00890) |
-| Scientific document and figure extraction* | Ryze document-extraction component tests | Needs data or protocol*<br>Exact Ryze component slices, page/media mapping and extraction scoring recipe are unrecovered. | — | Ryze extraction-component accuracy: ArXivQA 73.12%, SlideVQA 66.48%, ChartQA 75.8%. · [source](https://arxiv.org/html/2606.00902v1) |
+| Biomedical visual conversations* | LLaVA-Med biomedical visual conversations | Needs scoring protocol*<br>193 questions mapped and 19/50 images recovered; remaining images and native GPT-4 judging are blocked. | — | GPT-assisted relative answer-quality comparisons are reported. A verified single aggregate for the specified qa50 setting is not transcribed here. · [source](https://arxiv.org/abs/2306.00890) |
+| Scientific document and figure extraction* | Ryze document-extraction component tests | Needs data or protocol*<br>Publisher unchanged; exact component IDs, original media/page mapping and Table 3 pipeline/scoring contract remain missing. | — | Ryze extraction-component accuracy: ArXivQA 73.12%, SlideVQA 66.48%, ChartQA 75.8%. · [source](https://arxiv.org/html/2606.00902v1) |
 
 </details>
 
@@ -1598,7 +1598,7 @@ Published source size/units: Temporal split; exact test count and frozen process
 
 Do not replace its temporal test with arbitrary UniProt rows and claim exact reproduction.
 
-**Protein description generation — Needs data or protocol:** Protein-to-description generation is compatible with Qwen. The exact temporal test case IDs, annotation snapshot/cutoff and executable ROUGE reference preprocessing remain unrecovered, so another protein-description dataset would be a different protocol.
+**Protein description generation — Needs data or protocol:** Protein-to-description generation is compatible with Qwen. The rechecked publisher commit is unchanged; its source tree and NatureLM notebooks were restored, but the exact temporal test case IDs, sequence/reference snapshots, annotation cutoff and executable ROUGE-L preprocessing remain unrecovered. Mol-Instructions or arbitrary current NCBI proteins would define a different protocol.
 
 Model compatibility: compatible
 
@@ -1606,7 +1606,9 @@ Evidence:
 
 ```json
 [
-  "reports/remaining_native_source_recovery_2026-10-15.json"
+  "reports/remaining_native_source_recovery_2026-10-15.json",
+  "reports/SOURCE_PREPARATION_2026-10-16.json",
+  "handoff/source_preparation_2026-10-16/README.md"
 ]
 ```
 
@@ -4002,7 +4004,7 @@ Published source size/units: Published 50-image conversation-evaluation setting;
 
 Teacher reference has textual context that the image may not reveal. Judgment is not direct clinician-verified molecular truth.
 
-**Biomedical visual conversations — Needs scoring protocol:** Qwen vision is supported, so images are not the blocker. The native visual-conversation assessment still needs the original qa50 image assets, reference-answer mapping and GPT-assisted relative-judging contract; the external-provider hold is unchanged.
+**Biomedical visual conversations — Needs scoring protocol:** Qwen can accept the native image/question inputs. The official QA50 release and reference mapping are now verified: 193 questions for 50 images, with the native GPT-4-0314 judging contract recovered. Nineteen exact original images are available, covering 73 questions. All legacy archive URLs return 404; the remaining 31 PMC pages returned a browser/reCAPTCHA challenge. The external-provider hold still prevents native GPT judging; a substitute judge would change the metric.
 
 Model compatibility: compatible
 
@@ -4011,7 +4013,9 @@ Evidence:
 ```json
 [
   "reports/catalog_execution_review_2026-10-15.json",
-  "reports/local_model_capability_smoke.json"
+  "reports/local_model_capability_smoke.json",
+  "reports/SOURCE_PREPARATION_2026-10-16.json",
+  "handoff/source_preparation_2026-10-16/README.md"
 ]
 ```
 
@@ -4029,7 +4033,7 @@ Published source size/units: Does document/figure extraction preserve informatio
 
 These tests evaluate extraction/document understanding, not protein engineering.
 
-**Scientific document and figure extraction — Needs data or protocol:** Qwen can process images and answer questions, but the exact ArXivQA/SlideVQA/ChartQA component IDs, full page context, extraction configuration and downstream answer/scorer recipe are missing. Synthetic placeholder data in the published runner are not the benchmark.
+**Scientific document and figure extraction — Needs data or protocol:** Qwen can process images, but the rechecked publisher commit is unchanged and still provides no recovered exact ArXivQA/SlideVQA/ChartQA component manifest, full media/page mapping, extraction condition, downstream answer-model/prompt or native scoring/aggregation contract. Five implementation files were restored with publisher hash verification. Generic synthetic fallback rows are not benchmark data, and direct Qwen image QA would be a different setting.
 
 Model compatibility: compatible
 
@@ -4038,7 +4042,9 @@ Evidence:
 ```json
 [
   "reports/remaining_native_source_recovery_2026-10-15.json",
-  "reports/local_model_capability_smoke.json"
+  "reports/local_model_capability_smoke.json",
+  "reports/SOURCE_PREPARATION_2026-10-16.json",
+  "handoff/source_preparation_2026-10-16/README.md"
 ]
 ```
 

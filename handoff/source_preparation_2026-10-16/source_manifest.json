@@ -1,0 +1,355 @@
+{
+  "created_at_utc": "2026-10-16T08:32:09.107868+00:00",
+  "repository_pins": {
+    "llava_main": [
+      "microsoft/LLaVA-Med",
+      "30697ca50b5c29a8e955c99330b259776aef27b9"
+    ],
+    "llava_v1": [
+      "microsoft/LLaVA-Med",
+      "b9a98a736d2ef05bcf5ff345be6403fb3a664eaf"
+    ],
+    "ryze": [
+      "Chivier/Ryze",
+      "41b2d77ec0651b9f51b657f524415ee3cc38e115"
+    ],
+    "naturelm": [
+      "microsoft/SFM",
+      "bcb1351bc6490d4a98cae74e7eead30a028fae00"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "sources/llava_main/LICENSE",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/30697ca50b5c29a8e955c99330b259776aef27b9/LICENSE",
+      "bytes": 10675,
+      "sha256": "97ced7cd38b716cb7d8079353bb25fc2cf133a732b5707102d14995e5ef48e97",
+      "git_blob_sha1": "60b9d4ee3f3e345ea4bbe33ece5b304a22a6257f",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_main/README.md",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/30697ca50b5c29a8e955c99330b259776aef27b9/README.md",
+      "bytes": 13527,
+      "sha256": "ff465bed48e028d299a7f189473d4842772e52e34d7aa2afa01fca52ba9add43",
+      "git_blob_sha1": "70596bbbd091bc0d94a1e143ee1f0a190332513f",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_main/data/eval/llava_med_eval_qa50_fig_captions.json",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/30697ca50b5c29a8e955c99330b259776aef27b9/data/eval/llava_med_eval_qa50_fig_captions.json",
+      "bytes": 53066,
+      "sha256": "64a4de84f8959a049ab9de68572318c6a299194b24368084159ef1f4a259aa66",
+      "git_blob_sha1": "a2f43fb15c7be82da9f216a03c672194dbfc1ee1",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": "64a4de84f8959a049ab9de68572318c6a299194b24368084159ef1f4a259aa66",
+      "git_blob_source_representation": "lfs_pointer"
+    },
+    {
+      "path": "sources/llava_main/data/eval/llava_med_eval_qa50_qa.jsonl",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/30697ca50b5c29a8e955c99330b259776aef27b9/data/eval/llava_med_eval_qa50_qa.jsonl",
+      "bytes": 262328,
+      "sha256": "48c6b680a962dbf8caf63e3ded2bef7770dccf9c2602f32e5f05f4b907266f25",
+      "git_blob_sha1": "568b962e04b7948823e918fc03d309dc4203847d",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": "48c6b680a962dbf8caf63e3ded2bef7770dccf9c2602f32e5f05f4b907266f25",
+      "git_blob_source_representation": "lfs_pointer"
+    },
+    {
+      "path": "sources/llava_main/data/eval/llava_med_qa50_instruct_caption_in_text_cleaned-60k-3epoch.json",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/30697ca50b5c29a8e955c99330b259776aef27b9/data/eval/llava_med_qa50_instruct_caption_in_text_cleaned-60k-3epoch.json",
+      "bytes": 103392,
+      "sha256": "442b2ea3bda35ddcd57475f350ee6b2e938da02835792232925b01fde0a288ef",
+      "git_blob_sha1": "d4522d1d14195dacdeaf812109a2c87c1c6832d3",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": "442b2ea3bda35ddcd57475f350ee6b2e938da02835792232925b01fde0a288ef",
+      "git_blob_source_representation": "lfs_pointer"
+    },
+    {
+      "path": "sources/llava_main/data/llava_med_test_image_urls.jsonl",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/30697ca50b5c29a8e955c99330b259776aef27b9/data/llava_med_test_image_urls.jsonl",
+      "bytes": 8734,
+      "sha256": "a4bdcdfd61d1c47ded4407ab8c8c39e0b518bd8e44aa62d318c10eb1be8e56de",
+      "git_blob_sha1": "540f6410dd9106273bd67122454913bbe93de88a",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": "a4bdcdfd61d1c47ded4407ab8c8c39e0b518bd8e44aa62d318c10eb1be8e56de",
+      "git_blob_source_representation": "lfs_pointer"
+    },
+    {
+      "path": "sources/llava_main/git_tree.json",
+      "url": "https://api.github.com/repos/microsoft/LLaVA-Med/git/trees/30697ca50b5c29a8e955c99330b259776aef27b9?recursive=1",
+      "bytes": 17333,
+      "sha256": "972c0765525e1e6c7868994d931e72abf17e26495d0c16eeccb7b1601b59c076",
+      "git_blob_sha1": "79819a3b7c6d70273adcb86ef989d4f45d892572",
+      "publisher_blob_verified": false,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_main/llava/eval/eval_multimodal_chat_gpt_score.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/30697ca50b5c29a8e955c99330b259776aef27b9/llava/eval/eval_multimodal_chat_gpt_score.py",
+      "bytes": 4834,
+      "sha256": "3266c2561463b59596e79fa250c6124215298af1f22eeb413fbee83fe3e6df33",
+      "git_blob_sha1": "31bdf95ddab53987b24c69f58faf25b0ea6314cf",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_main/llava/eval/llm.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/30697ca50b5c29a8e955c99330b259776aef27b9/llava/eval/llm.py",
+      "bytes": 4174,
+      "sha256": "2489093614dc137e762e425e11b069d4ea9dc8b5373eff199e8c693578679c47",
+      "git_blob_sha1": "2394f3cd459f575479fffd1fb7ff1a08068bb332",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_main/llava/eval/model_vqa.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/30697ca50b5c29a8e955c99330b259776aef27b9/llava/eval/model_vqa.py",
+      "bytes": 4416,
+      "sha256": "0c6bb7129faec627d1d7cf5d2e73f45be42cf88e71b29349b8e092c15f9d7289",
+      "git_blob_sha1": "4f7a09eb1f5dffded5c21ed756136c3a69c9603e",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_main/llava/eval/summarize_gpt_review.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/30697ca50b5c29a8e955c99330b259776aef27b9/llava/eval/summarize_gpt_review.py",
+      "bytes": 1836,
+      "sha256": "076731cc687fea4a014642a068b23babf8f51a0a508af2a55295126e9039da24",
+      "git_blob_sha1": "971961b4e8e9a7edf329b54a63e0b0b2096fa2e9",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_v1/LICENSE",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/LICENSE",
+      "bytes": 10675,
+      "sha256": "97ced7cd38b716cb7d8079353bb25fc2cf133a732b5707102d14995e5ef48e97",
+      "git_blob_sha1": "60b9d4ee3f3e345ea4bbe33ece5b304a22a6257f",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_v1/README.md",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/README.md",
+      "bytes": 25192,
+      "sha256": "bbe4934769e343583ee8a33d97d5a1f80c93ffb761806fb3ba022c183d908edc",
+      "git_blob_sha1": "ca87dd3b6524f7ec26467dd5b303c538e8e45755",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_v1/git_tree.json",
+      "url": "https://api.github.com/repos/microsoft/LLaVA-Med/git/trees/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf?recursive=1",
+      "bytes": 59024,
+      "sha256": "77832ed9dc040887da77e8aaf9903f938be627fa4e9861734e3cdde7b3f13a3e",
+      "git_blob_sha1": "e644ef0a81f7dd53bcdb6f62d1661ee74b11c360",
+      "publisher_blob_verified": false,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_v1/llava/data/download_images.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/data/download_images.py",
+      "bytes": 1602,
+      "sha256": "0fe397b730c8b5d359f34d126b67c6866b391fe86f39d18c73ccb953240a3fe3",
+      "git_blob_sha1": "36a49a2a93932d26fa66bd33a6c73b489cee2d48",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_v1/llava/eval/eval_multimodal_chat_gpt_score.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/eval_multimodal_chat_gpt_score.py",
+      "bytes": 5989,
+      "sha256": "5ae7261faac5659cef10f6533c25aca2f2678d670fa991c6d93453109e5dbd13",
+      "git_blob_sha1": "f12759f0c2bfd5d472d2cdb7099a83720eb57cd6",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_v1/llava/eval/model_vqa.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/model_vqa.py",
+      "bytes": 9045,
+      "sha256": "93466cb38c2b13a4f684ef06c04d4ed28d7bcf47f520494997ab322b85c580ae",
+      "git_blob_sha1": "880e433c5def6842adbbb878368867b088447701",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/llava_v1/llava/eval/summarize_gpt_review.py",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/summarize_gpt_review.py",
+      "bytes": 965,
+      "sha256": "2a86dcaba8e4017a08c0db67053295946fb0e2bf6fb8f9f0df593f45923f5ae8",
+      "git_blob_sha1": "f871f7f820868a1271b2466832768bcda10c38cc",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/naturelm/LICENSE",
+      "url": "https://raw.githubusercontent.com/microsoft/SFM/bcb1351bc6490d4a98cae74e7eead30a028fae00/LICENSE",
+      "bytes": 1141,
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+      "git_blob_sha1": "9e841e7a26e4eb057b24511e7b92d42b257a80e5",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/naturelm/NatureLM/8x7b_base_model.ipynb",
+      "url": "https://raw.githubusercontent.com/microsoft/SFM/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM/8x7b_base_model.ipynb",
+      "bytes": 4136,
+      "sha256": "7069266fd4e390780bdbf13ca617deef1881440f55884520a129d9702623a79c",
+      "git_blob_sha1": "c0470c1f0bec77e76967cef8ad3bde0de84d3669",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/naturelm/NatureLM/8x7b_inst_model.ipynb",
+      "url": "https://raw.githubusercontent.com/microsoft/SFM/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM/8x7b_inst_model.ipynb",
+      "bytes": 3405,
+      "sha256": "6162a444778558674a6543472a6a31e310006b7254c6ef797a869cb9a2b6b033",
+      "git_blob_sha1": "caf388050f59a30c11219287c12c16581bcdacd2",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/naturelm/NatureLM/README.md",
+      "url": "https://raw.githubusercontent.com/microsoft/SFM/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM/README.md",
+      "bytes": 1511,
+      "sha256": "02f627fd44588c3736d1ca4419fd87ec05c762ea9c1265fae73914825194a1fc",
+      "git_blob_sha1": "a7ac89e556f7273910d3d02df62a4f43e44f58a8",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/naturelm/git_tree.json",
+      "url": "https://api.github.com/repos/microsoft/SFM/git/trees/bcb1351bc6490d4a98cae74e7eead30a028fae00?recursive=1",
+      "bytes": 3279,
+      "sha256": "c1246c9458c3e1684ae4d43f468583bd3868803bb765883eb895f01f24d29f3e",
+      "git_blob_sha1": "ac227d832ab2cc6c12ec86a8b1e4dd06ce2d46ac",
+      "publisher_blob_verified": false,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/ryze/LICENSE",
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/LICENSE",
+      "bytes": 34523,
+      "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+      "git_blob_sha1": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/ryze/README.md",
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/README.md",
+      "bytes": 2504,
+      "sha256": "476a9df8a2f3ace00ad83bac9629e7bc4a4ee85504dfedae0d49643dc73ce74c",
+      "git_blob_sha1": "fde50be7c4d294fccdb9c1bcd86cb6ae519f4fd2",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/ryze/git_tree.json",
+      "url": "https://api.github.com/repos/Chivier/Ryze/git/trees/41b2d77ec0651b9f51b657f524415ee3cc38e115?recursive=1",
+      "bytes": 23494,
+      "sha256": "0931e7b713aa91944b871030d57b69421fd32cd6fba83625ea8a5ac0fa9c2b6f",
+      "git_blob_sha1": "f4384d0ae98e4945f64b3502889fcc48f60542b3",
+      "publisher_blob_verified": false,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/ryze/src/ryze/data/ocr.py",
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/data/ocr.py",
+      "bytes": 4995,
+      "sha256": "cfa1cbe6cc143f7e84659fb7eadf906a8b2d79bdb27dda08c47b4166ea47488b",
+      "git_blob_sha1": "636924d8b04038826bdc276f6aa84a7368d1fc30",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/ryze/src/ryze/eval/benchmark.py",
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/eval/benchmark.py",
+      "bytes": 7965,
+      "sha256": "986197e6cad1b903b1d902a4220c035ca84213ba6c74cc5d7b7075eb31b55082",
+      "git_blob_sha1": "2a780124e424e9492c261fa0dc3dd9690f68bade",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/ryze/src/ryze/eval/evaluator.py",
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/eval/evaluator.py",
+      "bytes": 13380,
+      "sha256": "55128c9c3efd5a5064f673aa269b0f249c52c4ca4ac072cd115a74cf48f7895f",
+      "git_blob_sha1": "19f0cdea3ae6270ac7155b91747b58d9d7402284",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    },
+    {
+      "path": "sources/ryze/src/ryze/eval/metrics.py",
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/eval/metrics.py",
+      "bytes": 7526,
+      "sha256": "5cb2c6e2603ab39975a821c48bab4bdd898b2fa5ade5c385faea9ab36a9be1f6",
+      "git_blob_sha1": "236dfafe7af4f29ddb81b34f5146376160a3e0a6",
+      "publisher_blob_verified": true,
+      "http_status": 200,
+      "publisher_lfs_sha256": null,
+      "git_blob_source_representation": "file"
+    }
+  ],
+  "inference_performed": false,
+  "provider_keys_read": false
+}

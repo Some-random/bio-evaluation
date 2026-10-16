@@ -1,0 +1,393 @@
+{
+  "generatedAt": "2026-10-16T08:38:27.741586+00:00",
+  "scoreSnapshotAt": "2026-10-16T04:25:25.541726+00:00",
+  "runSnapshotAt": "2026-10-16T08:38:27.741586+00:00",
+  "heartbeat": {
+    "status": "fresh",
+    "updatedAt": "2026-10-16T08:38:27.741586+00:00",
+    "staleAfterSeconds": 300
+  },
+  "sourceHashes": {
+    "reports/RESULTS_AT_A_GLANCE.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
+    ".local/remaining_evaluations/supervisor_status.json": "621880d0053bea159af7947b41342d810f898d6ae1d9119d280c5a97da31c7fc"
+  },
+  "uploader": {
+    "stage": "watching",
+    "commitSha": "92b9055f5e302d64657e3929ee6c034cb7e9a7e6",
+    "repositoryPrivateVerified": true
+  },
+  "scheduler": {
+    "activeWorkers": 8,
+    "jobs": [
+      {
+        "job_id": "237724",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237723",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237722",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237721",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237718",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237717",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237694",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237693",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237692",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237691",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237690",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237689",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237688",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237687",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237685",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237684",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237683",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237682",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237681",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237680",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237678",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237677",
+        "state": "PENDING",
+        "node_or_reason": "(Dependency)"
+      },
+      {
+        "job_id": "237664",
+        "state": "RUNNING",
+        "node_or_reason": "ampere6"
+      },
+      {
+        "job_id": "237663",
+        "state": "RUNNING",
+        "node_or_reason": "ampere7"
+      },
+      {
+        "job_id": "237676",
+        "state": "RUNNING",
+        "node_or_reason": "ampere6"
+      },
+      {
+        "job_id": "237675",
+        "state": "RUNNING",
+        "node_or_reason": "ampere8"
+      },
+      {
+        "job_id": "237674",
+        "state": "RUNNING",
+        "node_or_reason": "ampere9"
+      },
+      {
+        "job_id": "237673",
+        "state": "RUNNING",
+        "node_or_reason": "ampere5"
+      },
+      {
+        "job_id": "237671",
+        "state": "RUNNING",
+        "node_or_reason": "ampere7"
+      },
+      {
+        "job_id": "237672",
+        "state": "RUNNING",
+        "node_or_reason": "ampere7"
+      }
+    ]
+  },
+  "registrySealed": true,
+  "allTerminal": false,
+  "allSuccessfulNativeMetrics": false,
+  "totals": {
+    "planned": 83690,
+    "uploaded": 1536,
+    "saved": null,
+    "scheduledSettings": 10,
+    "generationRuns": 76
+  },
+  "tasks": [
+    {
+      "taskId": "P03",
+      "planned": 2773,
+      "uploaded": 912,
+      "saved": null,
+      "generationRuns": 3,
+      "terminalRuns": 0,
+      "allTerminal": false,
+      "nativeMetricsValid": null,
+      "progressSource": "uploaded_trajectories",
+      "runIds": [
+        "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_000",
+        "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_001",
+        "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_002"
+      ]
+    },
+    {
+      "taskId": "P07",
+      "planned": 27217,
+      "uploaded": 624,
+      "saved": null,
+      "generationRuns": 27,
+      "terminalRuns": 0,
+      "allTerminal": false,
+      "nativeMetricsValid": null,
+      "progressSource": "uploaded_trajectories",
+      "runIds": [
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_000",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_001",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_002",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_003",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_004",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_005",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_006",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_007",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_008",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_009",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_010",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_011",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_012",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_013",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_014",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_015",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_016",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_017",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_018",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_019",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_020",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_021",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_022",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_023",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025",
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026"
+      ]
+    },
+    {
+      "taskId": "P08",
+      "planned": 12851,
+      "uploaded": 0,
+      "saved": null,
+      "generationRuns": 13,
+      "terminalRuns": 0,
+      "allTerminal": false,
+      "nativeMetricsValid": null,
+      "progressSource": "uploaded_trajectories",
+      "runIds": [
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_000",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_001",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012"
+      ]
+    },
+    {
+      "taskId": "P12",
+      "planned": 1919,
+      "uploaded": 0,
+      "saved": null,
+      "generationRuns": 1,
+      "terminalRuns": 0,
+      "allTerminal": false,
+      "nativeMetricsValid": null,
+      "progressSource": "uploaded_trajectories",
+      "runIds": [
+        "qwen38_27b_p12_restored_replay_2026-10-16"
+      ]
+    },
+    {
+      "taskId": "P13",
+      "planned": 3416,
+      "uploaded": 0,
+      "saved": null,
+      "generationRuns": 1,
+      "terminalRuns": 0,
+      "allTerminal": false,
+      "nativeMetricsValid": null,
+      "progressSource": "uploaded_trajectories",
+      "runIds": [
+        "qwen38_27b_p13_restored_replay_2026-10-16"
+      ]
+    },
+    {
+      "taskId": "P14",
+      "planned": 3416,
+      "uploaded": 0,
+      "saved": null,
+      "generationRuns": 1,
+      "terminalRuns": 0,
+      "allTerminal": false,
+      "nativeMetricsValid": null,
+      "progressSource": "uploaded_trajectories",
+      "runIds": [
+        "qwen38_27b_p14_restored_replay_2026-10-16"
+      ]
+    },
+    {
+      "taskId": "P15",
+      "planned": 3416,
+      "uploaded": 0,
+      "saved": null,
+      "generationRuns": 1,
+      "terminalRuns": 0,
+      "allTerminal": false,
+      "nativeMetricsValid": null,
+      "progressSource": "uploaded_trajectories",
+      "runIds": [
+        "qwen38_27b_p15_restored_replay_2026-10-16"
+      ]
+    },
+    {
+      "taskId": "P16",
+      "planned": 5651,
+      "uploaded": 0,
+      "saved": null,
+      "generationRuns": 6,
+      "terminalRuns": 0,
+      "allTerminal": false,
+      "nativeMetricsValid": null,
+      "progressSource": "uploaded_trajectories",
+      "runIds": [
+        "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
+        "qwen38_27b_p16_slurm_replay_2026-10-16_shard_001",
+        "qwen38_27b_p16_slurm_replay_2026-10-16_shard_002",
+        "qwen38_27b_p16_slurm_replay_2026-10-16_shard_003",
+        "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004",
+        "qwen38_27b_p16_slurm_replay_2026-10-16_shard_005"
+      ]
+    },
+    {
+      "taskId": "P28",
+      "planned": 8159,
+      "uploaded": 0,
+      "saved": null,
+      "generationRuns": 8,
+      "terminalRuns": 0,
+      "allTerminal": false,
+      "nativeMetricsValid": null,
+      "progressSource": "uploaded_trajectories",
+      "runIds": [
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_000",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_001",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_002",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_003",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_004",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_005",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_006",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_007"
+      ]
+    },
+    {
+      "taskId": "P29",
+      "planned": 14872,
+      "uploaded": 0,
+      "saved": null,
+      "generationRuns": 15,
+      "terminalRuns": 0,
+      "allTerminal": false,
+      "nativeMetricsValid": null,
+      "progressSource": "uploaded_trajectories",
+      "runIds": [
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_000",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_001",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_001",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_002",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_004",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007"
+      ]
+    }
+  ],
+  "countNote": "Progress counts exclude aggregate runs. Uploaded counts reflect archived trajectories at the uploader heartbeat; saved is unknown unless explicitly reported. Counts do not establish benchmark completion."
+}
