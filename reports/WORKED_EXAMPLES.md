@@ -6,11 +6,11 @@ The overview keeps one correct answer and one tool-use challenge. This document 
 
 ## Correct answers from saved Qwen runs
 
-### Which of the following changes is most directly related to neurodegenerative disease?
+### Based on single-nuclei RNA sequencing data, myotendinous junction myonuclei are enriched for genes involved in which of the following functions?
 
-**Evaluation dataset:** [LAB-Bench FigQA](https://github.com/Future-House/LAB-Bench/tree/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/FigQA).
+**Evaluation dataset:** [LAB-Bench LitQA2](https://huggingface.co/datasets/futurehouse/lab-bench/tree/5c77cec648430f30611808808861eb86f81d5eaa).
 
-**Task:** Reading a biological figure (B04). **Case:** `5e7f5ee7-9469-405a-910d-aecd090ca206`.
+**Task:** Biological knowledge and literature question answering (B01). **Case:** `e6b0f9e5-e976-47dc-b839-0b2fca967e9e`.
 
 **Exact question and choices:**
 
@@ -18,50 +18,57 @@ The overview keeps one correct answer and one tool-use challenge. This document 
 > Please answer by responding with the letter of the correct answer.
 > Think step by step.
 >
-> Question: Which of the following changes is most directly related to neurodegenerative disease?
+> Question: Based on single-nuclei RNA sequencing data, myotendinous junction myonuclei are enriched for genes involved in which of the following functions?
 >
 > Options:
-> (A) Increase in S-nitrosylated GAPDH
-> (B) Decrease in sirtuin1 activator
+> (A) synaptic transmission
+> (B) signal transduction
 > (C) Insufficient information to answer the question
-> (D) Increased acetylation of Tau
-> (E) Increase in P300/CBP
+> (D) cell–matrix interactions
+> (E) protein synthesis
 >
 > You MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].
 > For example, '[ANSWER]&lt;answer&gt;[/ANSWER]', where &lt;answer&gt; is the correct letter.
 > Always answer in exactly this format of a single letter between the two tags, even if you are unsure.
 > We require this because we use automatic parsing.
 
-<img src="example_assets/b04-5e7f5ee7-9469-405a-910d-aecd090ca206.jpg" alt="Reading a biological figure" width="600">
-
 **Saved model reasoning, verbatim:**
 
-> The question asks which change is most directly related to neurodegenerative disease, based on the diagram.
+> The question asks about myotendinous junction myonuclei and what genes they are enriched for based on single-nuclei RNA sequencing data.
 >
-> Looking at the diagram: Brain Injury → GAPDH → S-nitrosylated GAPDH. S-nitrosylated GAPDH activates p300/CBP and inhibits sirtuin1. p300/CBP acetylates TAU (adding AC groups), while sirtuin1 deacetylates TAU (removes AC). The acetylated TAU (AC- Tau) leads to two outcomes: Elevated Plasma Ac-Tau and Neurodegenerative Disease.
+> Myotendinous junctions are the points where muscle fibers (myofibrils) connect to tendons. These are specialized regions of the muscle cell where the actin filaments of the sarcomere connect to the extracellular matrix components that form the tendon.
 >
-> So the most direct precursor to Neurodegenerative Disease in the diagram is the acetylated Tau (increased acetylation of Tau). The arrow goes directly from AC-Tau to Neurodegenerative Disease.
+> Let me think about what would be enriched in myotendinous junction myonuclei:
 >
-> Let's check options:
-> (A) Increase in S-nitrosylated GAPDH - upstream, indirect.
-> (B) Decrease in sirtuin1 activator - would lead to less sirtuin1 activity, more acetylation, but indirect.
-> (C) Insufficient info - no.
-> (D) Increased acetylation of Tau - directly leads to neurodegenerative disease.
-> (E) Increase in P300/CBP - upstream.
+> - Myotendinous junctions are where muscle cells interface with the extracellular matrix (ECM). This involves integrins, laminins, and other cell-matrix adhesion molecules.
+> - Genes involved in cell-matrix interactions would be expected to be enriched in these myonuclei because the junction requires specialized proteins for connecting the muscle to the tendon/matrix.
+> - Synaptic transmission would be more relevant to neuromuscular junctions, not myotendinous junctions.
+> - Signal transduction is a general function and wouldn't be specifically enriched.
+> - Protein synthesis is a general cellular function.
 >
-> The diagram shows AC-Tau with arrows to both Elevated Plasma Ac-Tau and Neurodegenerative Disease. So increased acetylation of Tau is the most direct.
+> Based on research using single-nuclei RNA sequencing of skeletal muscle, myotendinous junction myonuclei have been shown to be enriched for genes involved in cell-matrix interactions. This makes biological sense because the myotendinous junction is specifically where the muscle cell's contractile apparatus connects to the extracellular matrix of the tendon.
 >
-> Thus answer D.
+> Studies have shown that myonuclei at the myotendinous junction express higher levels of genes related to extracellular matrix organization and cell-matrix adhesion, including integrins and other matrix-related proteins.
 >
-> I need to provide step-by-step reasoning then the tagged answer.
+> The answer should be (D) cell–matrix interactions.
 
 **Saved final answer, verbatim:**
 
-> Tracing the pathway in the diagram: Brain injury leads to S‑nitrosylated GAPDH, which activates p300/CBP (an acetyltransferase) and suppresses sirtuin1 (a deacetylase). The net effect is hyper‑acetylation of TAU (the TAU boxes with "AC" marks). Arrows from this acetylated TAU point directly to "Neurodegenerative Disease" (and to elevated plasma Ac‑Tau). Therefore, the change immediately upstream of the disease state is increased acetylation of Tau, making it the most directly related change.
+> Looking at this question, I need to consider the biology of myotendinous junctions and what single-nuclei RNA sequencing has revealed about the myonuclei located at these specialized sites.
+>
+> Myotendinous junctions are the specialized regions where muscle fibers connect to tendons. At these junctions, the actin filaments of the sarcomere anchor to the extracellular matrix (ECM) components (collagen, laminin, fibronectin) that form the tendon.
+>
+> Key reasoning:
+> - **Synaptic transmission (A):** This would be relevant to neuromuscular junctions, not myotendinous junctions.
+> - **Signal transduction (B):** A general cellular process, not specific to the myotendinous junction.
+> - **Cell-matrix interactions (D):** The myotendinous junction is fundamentally a site where the muscle cell interfaces with the extracellular matrix. This region requires specialized integrins, dystrophin-glycoprotein complex components, and other adhesion/matrix proteins. Single-nuclei RNA sequencing studies have shown that myonuclei at myotendinous junctions are enriched for genes encoding proteins involved in cell-matrix interactions and ECM organization.
+> - **Protein synthesis (E):** A general cellular function, not specifically enriched at this junction.
+>
+> The biological function of the myotendinous junction is to transmit force from the contracting muscle to the extracellular matrix/tendon, making cell-matrix interaction genes the expected enrichment.
 >
 > [ANSWER]D[/ANSWER]
 
-Reference choice: **D** — correct. Dataset accuracy: **72.4%** (131/181).
+Reference choice: **D** — correct. Dataset accuracy: **39.1%** (77/197).
 
 ### In panel e, which of the following sheath lengths do cortex oligodendrocytes produce at the highest frequency?
 
@@ -230,6 +237,63 @@ Reference choice: **E** — correct. Dataset accuracy: **88.1%** (215/244).
 
 Reference choice: **A** — correct. Dataset accuracy: **72.4%** (131/181).
 
+### Which of the following changes is most directly related to neurodegenerative disease?
+
+**Evaluation dataset:** [LAB-Bench FigQA](https://github.com/Future-House/LAB-Bench/tree/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/FigQA).
+
+**Task:** Reading a biological figure (B04). **Case:** `5e7f5ee7-9469-405a-910d-aecd090ca206`.
+
+**Exact question and choices:**
+
+> The following is a multiple choice question about biology.
+> Please answer by responding with the letter of the correct answer.
+> Think step by step.
+>
+> Question: Which of the following changes is most directly related to neurodegenerative disease?
+>
+> Options:
+> (A) Increase in S-nitrosylated GAPDH
+> (B) Decrease in sirtuin1 activator
+> (C) Insufficient information to answer the question
+> (D) Increased acetylation of Tau
+> (E) Increase in P300/CBP
+>
+> You MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].
+> For example, '[ANSWER]&lt;answer&gt;[/ANSWER]', where &lt;answer&gt; is the correct letter.
+> Always answer in exactly this format of a single letter between the two tags, even if you are unsure.
+> We require this because we use automatic parsing.
+
+<img src="example_assets/b04-5e7f5ee7-9469-405a-910d-aecd090ca206.jpg" alt="Reading a biological figure" width="600">
+
+**Saved model reasoning, verbatim:**
+
+> The question asks which change is most directly related to neurodegenerative disease, based on the diagram.
+>
+> Looking at the diagram: Brain Injury → GAPDH → S-nitrosylated GAPDH. S-nitrosylated GAPDH activates p300/CBP and inhibits sirtuin1. p300/CBP acetylates TAU (adding AC groups), while sirtuin1 deacetylates TAU (removes AC). The acetylated TAU (AC- Tau) leads to two outcomes: Elevated Plasma Ac-Tau and Neurodegenerative Disease.
+>
+> So the most direct precursor to Neurodegenerative Disease in the diagram is the acetylated Tau (increased acetylation of Tau). The arrow goes directly from AC-Tau to Neurodegenerative Disease.
+>
+> Let's check options:
+> (A) Increase in S-nitrosylated GAPDH - upstream, indirect.
+> (B) Decrease in sirtuin1 activator - would lead to less sirtuin1 activity, more acetylation, but indirect.
+> (C) Insufficient info - no.
+> (D) Increased acetylation of Tau - directly leads to neurodegenerative disease.
+> (E) Increase in P300/CBP - upstream.
+>
+> The diagram shows AC-Tau with arrows to both Elevated Plasma Ac-Tau and Neurodegenerative Disease. So increased acetylation of Tau is the most direct.
+>
+> Thus answer D.
+>
+> I need to provide step-by-step reasoning then the tagged answer.
+
+**Saved final answer, verbatim:**
+
+> Tracing the pathway in the diagram: Brain injury leads to S‑nitrosylated GAPDH, which activates p300/CBP (an acetyltransferase) and suppresses sirtuin1 (a deacetylase). The net effect is hyper‑acetylation of TAU (the TAU boxes with "AC" marks). Arrows from this acetylated TAU point directly to "Neurodegenerative Disease" (and to elevated plasma Ac‑Tau). Therefore, the change immediately upstream of the disease state is increased acetylation of Tau, making it the most directly related change.
+>
+> [ANSWER]D[/ANSWER]
+
+Reference choice: **D** — correct. Dataset accuracy: **72.4%** (131/181).
+
 [Exact example records and source hashes](ADVISOR_GOOD_EXAMPLES.json)
 
 [Additional protein-sequence examples and their limitations](EXAMPLES_SEQUENCE_VISION_TOOLS.md)
@@ -242,6 +306,10 @@ Reference choice: **A** — correct. Dataset accuracy: **72.4%** (131/181).
 
 **Input:** Released 48-residue baseline 1ENH: AFSSEQLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA
 Released 48-residue mutant 1ENH__Q6C: AFSSECLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA
+
+**Category:** Protein shapes and motion → Protein shape changes, motion and stability.
+
+Developed alongside BioEmu to evaluate protein-ensemble models; the same evaluator also accepts ensembles generated by other models. Folding-stability targets come from experimental measurements. [Dataset provenance](https://github.com/microsoft/bioemu-benchmarks/blob/63edbfa2ee5f489d66a4bece96f242a1d28e567d/DATASET_CARD.md)
 
 **What is BioEmu?** BioEmu is an AI model that takes a protein sequence and generates many possible three-dimensional shapes. It approximates the mixture of shapes a protein adopts, which would otherwise be expensive to explore with molecular simulations. These samples can be used to estimate how often the protein stays folded.
 
