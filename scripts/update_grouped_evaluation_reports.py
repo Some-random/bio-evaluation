@@ -123,6 +123,66 @@ def overview(data):
     def snapshot(value):
         return value[:10] + " " + value[11:16] + " UTC"
 
+    def main_ids(*values):
+        return [f"main-{value:02d}" for value in values]
+
+    megatasks = [
+        ("Protein properties, interactions and developability", [
+            ("Protein solubility", main_ids(1, 11)),
+            ("Protein localization", main_ids(2, 12)),
+            ("Protein activity, stability and production", main_ids(3, 4, 5, 6, 8, 14)),
+            ("Protein interactions and interfaces", main_ids(7, 10, 13)),
+            ("Antibody properties", main_ids(9)),
+        ]),
+        ("Protein function, annotations and descriptions", [
+            ("Gene Ontology and enzyme annotation", main_ids(15, 18, 20, 21)),
+            ("Protein function descriptions", main_ids(16, 17)),
+            ("Biochemical reaction classification", main_ids(19)),
+            ("Protein retrieval from descriptions", ["diagnostic-01"]),
+            ("Evidence support for protein explanations", ["diagnostic-02"]),
+        ]),
+        ("Mutation effects, fitness and engineering", [
+            ("Mutation-effect explanation", main_ids(22)),
+            ("Mutation fitness prediction and ranking", main_ids(23, 24, 25, 27, 30, 32)),
+            ("Mutation engineering and optimization", main_ids(26) + ["diagnostic-03"]),
+            ("Binding affinity and immune interactions", main_ids(28, 29, 31)),
+        ]),
+        ("Scientific evidence and biological knowledge", [
+            ("Biological research question answering", main_ids(33, 34, 35)),
+        ]),
+        ("Protein design", [
+            ("Antibody design", main_ids(36, 37, 45, 46)),
+            ("Inverse folding", main_ids(38, 39)),
+            ("Protein sequence and structure generation", main_ids(40, 41, 42) + ["diagnostic-04", "diagnostic-05"]),
+            ("Functional-motif scaffolding", main_ids(43, 44)),
+            ("Target-binder design", main_ids(47) + ["diagnostic-07"]),
+            ("GFP sequence optimization", ["diagnostic-06"]),
+        ]),
+        ("Structure and conformational prediction", [
+            ("Local structure and residue prediction", main_ids(48, 54)),
+            ("Protein structure ranking", main_ids(49)),
+            ("Protein folding", main_ids(50)),
+            ("Protein conformations and dynamics", main_ids(51, 52, 53)),
+            ("Structure-derived questions and output checks", ["diagnostic-08"]),
+        ]),
+        ("Biomedical visual evidence", [
+            ("Biomedical visual question answering", main_ids(55)),
+            ("Scientific figures, documents and visual conversations", main_ids(56, 57) + ["diagnostic-09"]),
+        ]),
+        ("Other biological modalities and molecular interactions", [
+            ("Molecular interactions and binding affinity", main_ids(58, 63, 64, 67)),
+            ("Pathway and disease prediction", main_ids(59, 61)),
+            ("Variant-effect prediction", main_ids(60)),
+            ("Expression-conditioned gene selection", main_ids(62)),
+            ("RNA structure ranking", main_ids(65)),
+            ("Small-molecule properties", main_ids(66)),
+        ]),
+    ]
+    group_by_id = {group["id"]: group for group in data["groups"]}
+    assigned = [group_id for _, families in megatasks for _, ids in families for group_id in ids]
+    assert len(assigned) == len(set(assigned)) == len(group_by_id) == 76
+    assert set(assigned) == set(group_by_id)
+
     out = [
         "# Biological evaluation overview", "",
         "Model: **Qwen3.8-27B**.", "",
@@ -132,65 +192,86 @@ def overview(data):
         "**Listed for consideration** means additional datasets outside the original 64-setting list. "
         "**Run status unconfirmed** means no verified completion record. Published scores are reference results; "
         "full protocol notes are expandable below.", "",
+        "Expand a category, then a task group, to see datasets and scores.", "",
     ]
-    for category in categories(data):
-        entries = [group for group in data["groups"] if group["category"] == category]
-        out += [f"## {category}", "", "| Task | Dataset/protocol | Status | Qwen result | Published reference |",
-            "|---|---|---|---|---|"]
-        for group in entries:
-            for protocol in group["protocols"] or [None]:
-                task_id = protocol["taskId"] if protocol else None
-                rows = [row for row in group["results"] if row["taskId"] == task_id] if protocol else []
-                for result in rows or [None]:
-                    name = names.get(task_id, group["task"])
-                    if not protocol and group["dataset"].startswith("Prompteina"):
-                        name = "GM2A-targeted binder design"
-                    elif not protocol and group["dataset"].startswith("Proteo-R1 internal"):
-                        name = "Structure-derived questions and output-format checks"
-                    state = display_status(group, protocol)
-                    if (protocol and state != "Finished") or (result and result["incomplete"]):
-                        name += "*"
-                    caveat = caveats.get(task_id)
-                    if group["dataset"].startswith("Prompteina"):
-                        caveat = "Single published target campaign."
-                    elif group["dataset"].startswith("Proteo-R1 internal"):
-                        caveat = "Independent held-out questions remain unresolved."
-                    if caveat:
-                        name += "<br>" + caveat
-                    dataset = group["dataset"]
-                    if protocol and len(group["protocols"]) > 1:
-                        dataset += "<br>" + protocol["title"]
-                    if result and len(rows) > 1:
-                        dataset += "<br>" + result["title"]
-                    local = result["metricText"] if result else "—"
-                    if result and result["completionScope"] == "diagnostic_only_primary_metrics_invalid":
-                        local = "**Diagnostic only:** " + local + "<br>Full native primary metric undefined."
-                    published = result["publishedText"] if result else group["literatureText"]
-                    if result and result["publishedUrl"]:
-                        published += f" · [source]({result['publishedUrl']})"
-                    elif group["sourceUrl"]:
-                        published += f" · [source]({group['sourceUrl']})"
-                    out.append("| " + " | ".join(cell(value) for value in [name, dataset, state, local, published]) + " |")
-        out += ["", "<details>", "<summary>Protocols, qualifications and complete source records</summary>", ""]
-        for group in entries:
-            out += [f"**{group['dataset']}**", ""]
-            for note in group["notes"]:
-                if not note.startswith(("Catalog coverage only;", "Case study or diagnostic; kept separate")):
-                    out += [text(note), ""]
-            if group.get("sourceSize"):
-                out += ["Published source size/units: " + text(group["sourceSize"]), ""]
-            for protocol in group["protocols"]:
-                out += [f"**{names.get(protocol['taskId'], group['task'])}:** "
-                    f"{text(protocol.get('nativeMetric'))}. {text(protocol.get('nativeSplit'))}", ""]
-                if protocol.get("limitation"):
-                    out += [text(protocol["limitation"]), ""]
-                if protocol.get("blocker"):
-                    out += [text(protocol["blocker"]), ""]
-            for result in group["results"]:
-                out += result_details(result)
-            if not group["results"]:
-                out += ["Published reference record: " + text(group["literatureText"]), ""]
-            out += [source_links(group), ""]
+    for category, families in megatasks:
+        count_label = f"{len(families)} task group" + ("s" if len(families) != 1 else "")
+        out += ["<details>", f"<summary><strong>{category}</strong> · {count_label}</summary>", ""]
+        for family, group_ids in families:
+            entries = [group_by_id[group_id] for group_id in group_ids]
+            family_results = [result for group in entries for result in group["results"]]
+            incomplete_results = [result for result in family_results if result["incomplete"]
+                or result["completionScope"] == "diagnostic_only_primary_metrics_invalid"]
+            running = any(protocol["status"] == "Running / queued" for group in entries for protocol in group["protocols"])
+            dataset_count = f"{len(entries)} dataset group" + ("s" if len(entries) != 1 else "")
+            cue = ""
+            if family_results:
+                cue = " · partial results*" if len(incomplete_results) == len(family_results) else " · results available"
+                if incomplete_results and len(incomplete_results) < len(family_results):
+                    cue += " · partial results*"
+            if running:
+                cue += " · running or queued"
+            nested_family = len(families) > 1
+            if nested_family:
+                out += ["<details>", f"<summary><strong>{family}</strong> · {dataset_count}{cue}</summary>", ""]
+            out += ["| Task | Dataset/protocol | Status | Qwen result | Published reference |", "|---|---|---|---|---|"]
+            for group in entries:
+                for protocol in group["protocols"] or [None]:
+                    task_id = protocol["taskId"] if protocol else None
+                    rows = [row for row in group["results"] if row["taskId"] == task_id] if protocol else []
+                    for result in rows or [None]:
+                        name = names.get(task_id, group["task"])
+                        if not protocol and group["dataset"].startswith("Prompteina"):
+                            name = "GM2A-targeted binder design"
+                        elif not protocol and group["dataset"].startswith("Proteo-R1 internal"):
+                            name = "Structure-derived questions and output-format checks"
+                        state = display_status(group, protocol)
+                        if (protocol and state != "Finished") or (result and result["incomplete"]):
+                            name += "*"
+                        caveat = caveats.get(task_id)
+                        if group["dataset"].startswith("Prompteina"):
+                            caveat = "Single published target campaign."
+                        elif group["dataset"].startswith("Proteo-R1 internal"):
+                            caveat = "Independent held-out questions remain unresolved."
+                        if caveat:
+                            name += "<br>" + caveat
+                        dataset = group["dataset"]
+                        if protocol and len(group["protocols"]) > 1:
+                            dataset += "<br>" + protocol["title"]
+                        if result and len(rows) > 1:
+                            dataset += "<br>" + result["title"]
+                        local = result["metricText"] if result else "—"
+                        if result and result["completionScope"] == "diagnostic_only_primary_metrics_invalid":
+                            local = "**Diagnostic only:** " + local + "<br>Full native primary metric undefined."
+                        published = result["publishedText"] if result else group["literatureText"]
+                        if result and result["publishedUrl"]:
+                            published += f" · [source]({result['publishedUrl']})"
+                        elif group["sourceUrl"]:
+                            published += f" · [source]({group['sourceUrl']})"
+                        out.append("| " + " | ".join(cell(value) for value in [name, dataset, state, local, published]) + " |")
+            out += ["", "<details>", "<summary>Protocols, qualifications and complete source records</summary>", ""]
+            for group in entries:
+                out += [f"**{group['dataset']}**", ""]
+                for note in group["notes"]:
+                    if not note.startswith(("Catalog coverage only;", "Case study or diagnostic; kept separate")):
+                        out += [text(note), ""]
+                if group.get("sourceSize"):
+                    out += ["Published source size/units: " + text(group["sourceSize"]), ""]
+                for protocol in group["protocols"]:
+                    out += [f"**{names.get(protocol['taskId'], group['task'])}:** "
+                        f"{text(protocol.get('nativeMetric'))}. {text(protocol.get('nativeSplit'))}", ""]
+                    if protocol.get("limitation"):
+                        out += [text(protocol["limitation"]), ""]
+                    if protocol.get("blocker"):
+                        out += [text(protocol["blocker"]), ""]
+                for result in group["results"]:
+                    out += result_details(result)
+                if not group["results"]:
+                    out += ["Published reference record: " + text(group["literatureText"]), ""]
+                out += [source_links(group), ""]
+            out += ["</details>", ""]
+            if nested_family:
+                out += ["</details>", ""]
         out += ["</details>", ""]
     out += [f"[Raw run artifacts and uploaded trajectories]({meta['githubUrl']}/tree/main/results/runs)", ""]
     return "\n".join(out)

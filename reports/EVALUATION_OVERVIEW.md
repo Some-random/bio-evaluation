@@ -8,27 +8,18 @@ Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 07:35 UTC**.
 
 **Listed for consideration** means additional datasets outside the original 64-setting list. **Run status unconfirmed** means no verified completion record. Published scores are reference results; full protocol notes are expandable below.
 
-## Protein properties, interactions and developability
+Expand a category, then a task group, to see datasets and scores.
+
+<details>
+<summary><strong>Protein properties, interactions and developability</strong> · 5 task groups</summary>
+
+<details>
+<summary><strong>Protein solubility</strong> · 2 dataset groups · results available</summary>
 
 | Task | Dataset/protocol | Status | Qwen result | Published reference |
 |---|---|---|---|---|
 | Protein solubility | DeepSol solubility — PEER split | Finished | accuracy 24.2% | BioT5+: accuracy 74.37% ± 0.19 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
-| Binary protein localization | DeepLoc — binary and 10-compartment localization<br>Binary localization — DeepLoc/PEER | Finished | accuracy 27.4% | BioT5+: accuracy 90.41% ± 0.07 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
-| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
-| Enzyme activity* | Envision β-lactamase — PEER split | Run status unconfirmed | — | Spearman: ProtST-ESM-2 0.879; ESM-2 0.867. · [source](https://arxiv.org/html/2206.02096v2) |
-| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
-| Protein stability* | TAPE / Rocklin stability | Running or queued | — | Spearman: ProtST-ESM-2 0.738; ESM-2 0.718. · [source](https://arxiv.org/html/2206.02096v2) |
-| AAV variant fitness prediction* | FLIP — AAV and Meltome<br>AAV variant fitness — FLIP | Run status unconfirmed | — | Spearman, ProtST-ESM-2 vs ESM-2: AAV 0.825 vs 0.817; Meltome 0.682 vs 0.672. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Protein thermostability prediction* | FLIP — AAV and Meltome<br>Thermostability — FLIP/Meltome | Partial | **Diagnostic only:** spearman undefined; spearman_parsed_only 0.0254<br>Full native primary metric undefined. | ProtST-ESM-1b: fixed encoder.spearman 0.68; full model tuning.spearman 0.681; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Human protein–protein interaction prediction | Human/Pan and yeast/Guo PPI — PEER<br>Human protein–protein interaction — PEER | Finished | accuracy 50.2% | BioT5+ (supervised): accuracy 85.09% ± 0.4 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
-| Yeast protein–protein interaction prediction | Human/Pan and yeast/Guo PPI — PEER<br>Yeast protein–protein interaction — PEER | Finished | accuracy 45.2% | BioT5+ (supervised): accuracy 66.16% ± 0.43 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
-| Protein stability classification* | NatureLM/PEER binarized stability — paper-specific protocol | Run status unconfirmed | — | NatureLM-8x7B: 72.3% accuracy; SFM-Protein-650M: 58.3%, in NatureLM's stability-classification setup. · [source](https://arxiv.org/html/2502.07527v3) |
-| Antibody properties | FLAb / FLAb2 antibody property collection | Listed for consideration | — | No version-matched aggregate model score transcribed; repository supplies per-assay zero-/few-shot evaluation outputs. · [source](https://github.com/Graylab/FLAb) |
-| Protein interface contacts | ATOM3D interface contacts (PIP) | Listed for consideration | — | AUROC: 3D-CNN 0.844; GNN 0.669; non-3D baseline 0.841. · [source](https://arxiv.org/html/2012.04035v3) |
 | Protein solubility | PFMBench solubility panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: DeepSol AUROC 0.8467; DeepSoluE AUROC 0.7699; ProtSolM AUROC 0.8572; eSOL Spearman 0.2761 · [source](https://arxiv.org/html/2506.14796v1) |
-| Localization and sorting signals | PFMBench localization and sorting-signal panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: DeepLocMulti Accuracy 0.7666; DeepLoc2Multi F1 0.7505; DeepLocBinary AUROC 0.9338; SortingSignal F1 0.8598 · [source](https://arxiv.org/html/2506.14796v1) |
-| Protein and metal interactions | PFMBench protein and metal-interaction panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: Human_PPI AUROC 0.4828; Yeast_PPI AUROC 0.5343; PPI_Affinity Spearman -0.0047; MetalIonBinding Accuracy 0.7066 · [source](https://arxiv.org/html/2506.14796v1) |
-| Protein production and enzyme conditions | PFMBench production and enzyme-operating panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: Optimal_pH Spearman 0.0564; DeepET_Topt Spearman 0.2628; Cloning_CLF AUROC 0.8160; Material_Production Accuracy 0.7982; Enzyme_Eff. Spearman 0.2173; Antib._Res. Accuracy 0.6185; Thermostability AUROC 0.9553 · [source](https://arxiv.org/html/2506.14796v1) |
 
 <details>
 <summary>Protocols, qualifications and complete source records</summary>
@@ -122,6 +113,32 @@ Not binding affinity, thermostability, or a guarantee of solubility under every 
 </details>
 
 [Source 1](https://arxiv.org/html/2206.02096v2), [Source 2](https://arxiv.org/html/2402.17810v2), [Source 3](https://github.com/DeepGraphLearning/PEER_Benchmark)
+
+**PFMBench solubility panel**
+
+These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
+
+Published source size/units: Test sizes: DeepSol: 6,934; DeepSoluE: 1,454; ProtSolM: 7,173; eSOL: 311
+
+Published reference record: ESM2-Adapter, Table 1 means: DeepSol AUROC 0.8467; DeepSoluE AUROC 0.7699; ProtSolM AUROC 0.8572; eSOL Spearman 0.2761
+
+[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Protein localization</strong> · 2 dataset groups · results available · running or queued</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Binary protein localization | DeepLoc — binary and 10-compartment localization<br>Binary localization — DeepLoc/PEER | Finished | accuracy 27.4% | BioT5+: accuracy 90.41% ± 0.07 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
+| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
+| Localization and sorting signals | PFMBench localization and sorting-signal panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: DeepLocMulti Accuracy 0.7666; DeepLoc2Multi F1 0.7505; DeepLocBinary AUROC 0.9338; SortingSignal F1 0.8598 · [source](https://arxiv.org/html/2506.14796v1) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **DeepLoc — binary and 10-compartment localization**
 
@@ -221,6 +238,36 @@ Location is a different question from molecular activity or binding specificity.
 </details>
 
 [Source 1](https://arxiv.org/html/2206.02096v2), [Source 2](https://arxiv.org/html/2402.17810v2), [Source 3](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf), [Source 4](https://github.com/DeepGraphLearning/PEER_Benchmark), [Source 5](https://github.com/DeepGraphLearning/ProtST)
+
+**PFMBench localization and sorting-signal panel**
+
+These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
+
+Published source size/units: Test sizes: DeepLocMulti: 751; DeepLoc2Multi: 2,744; DeepLocBinary: 848; SortingSignal: 186
+
+Published reference record: ESM2-Adapter, Table 1 means: DeepLocMulti Accuracy 0.7666; DeepLoc2Multi F1 0.7505; DeepLocBinary AUROC 0.9338; SortingSignal F1 0.8598
+
+[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Protein activity, stability and production</strong> · 6 dataset groups · partial results* · running or queued</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Enzyme activity* | Envision β-lactamase — PEER split | Run status unconfirmed | — | Spearman: ProtST-ESM-2 0.879; ESM-2 0.867. · [source](https://arxiv.org/html/2206.02096v2) |
+| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
+| Protein stability* | TAPE / Rocklin stability | Running or queued | — | Spearman: ProtST-ESM-2 0.738; ESM-2 0.718. · [source](https://arxiv.org/html/2206.02096v2) |
+| AAV variant fitness prediction* | FLIP — AAV and Meltome<br>AAV variant fitness — FLIP | Run status unconfirmed | — | Spearman, ProtST-ESM-2 vs ESM-2: AAV 0.825 vs 0.817; Meltome 0.682 vs 0.672. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Protein thermostability prediction* | FLIP — AAV and Meltome<br>Thermostability — FLIP/Meltome | Partial | **Diagnostic only:** spearman undefined; spearman_parsed_only 0.0254<br>Full native primary metric undefined. | ProtST-ESM-1b: fixed encoder.spearman 0.68; full model tuning.spearman 0.681; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Protein stability classification* | NatureLM/PEER binarized stability — paper-specific protocol | Run status unconfirmed | — | NatureLM-8x7B: 72.3% accuracy; SFM-Protein-650M: 58.3%, in NatureLM's stability-classification setup. · [source](https://arxiv.org/html/2502.07527v3) |
+| Protein production and enzyme conditions | PFMBench production and enzyme-operating panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: Optimal_pH Spearman 0.0564; DeepET_Topt Spearman 0.2628; Cloning_CLF AUROC 0.8160; Material_Production Accuracy 0.7982; Enzyme_Eff. Spearman 0.2173; Antib._Res. Accuracy 0.6185; Thermostability AUROC 0.9553 · [source](https://arxiv.org/html/2506.14796v1) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **Envision β-lactamase — PEER split**
 
@@ -347,6 +394,47 @@ All planned requests finished, but the full-test primary metric is undefined. Pa
 </details>
 
 [Source 1](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf), [Source 2](https://github.com/J-SNACKKB/FLIP), [Source 3](https://github.com/J-SNACKKB/FLIP)
+
+**NatureLM/PEER binarized stability — paper-specific protocol**
+
+Keep separate from TAPE's continuous stability regression. Do not silently change the paper's endpoint.
+
+Published source size/units: NatureLM §7.2 uses classification. Exact label-conversion rule not resolved in this review.
+
+**Protein stability classification:** Accuracy. NatureLM §7.2 uses classification. Exact label-conversion rule not resolved in this review.
+
+Keep separate from TAPE's continuous stability regression. Do not silently change the paper's endpoint.
+
+Published reference record: NatureLM-8x7B: 72.3% accuracy; SFM-Protein-650M: 58.3%, in NatureLM's stability-classification setup.
+
+[Source 1](https://arxiv.org/html/2502.07527v3), [Source 2](https://github.com/microsoft/SFM)
+
+**PFMBench production and enzyme-operating panel**
+
+These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
+
+Published source size/units: Test sizes: Optimal_pH: 959; DeepET_Topt: 185; Cloning_CLF: 2,778; Material_Production: 2,775; Enzyme_Eff.: 1,290; Antib._Res.: 339; Thermostability: 4,184
+
+Published reference record: ESM2-Adapter, Table 1 means: Optimal_pH Spearman 0.0564; DeepET_Topt Spearman 0.2628; Cloning_CLF AUROC 0.8160; Material_Production Accuracy 0.7982; Enzyme_Eff. Spearman 0.2173; Antib._Res. Accuracy 0.6185; Thermostability AUROC 0.9553
+
+[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Protein interactions and interfaces</strong> · 3 dataset groups · results available</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Human protein–protein interaction prediction | Human/Pan and yeast/Guo PPI — PEER<br>Human protein–protein interaction — PEER | Finished | accuracy 50.2% | BioT5+ (supervised): accuracy 85.09% ± 0.4 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
+| Yeast protein–protein interaction prediction | Human/Pan and yeast/Guo PPI — PEER<br>Yeast protein–protein interaction — PEER | Finished | accuracy 45.2% | BioT5+ (supervised): accuracy 66.16% ± 0.43 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
+| Protein interface contacts | ATOM3D interface contacts (PIP) | Listed for consideration | — | AUROC: 3D-CNN 0.844; GNN 0.669; non-3D baseline 0.841. · [source](https://arxiv.org/html/2012.04035v3) |
+| Protein and metal interactions | PFMBench protein and metal-interaction panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: Human_PPI AUROC 0.4828; Yeast_PPI AUROC 0.5343; PPI_Affinity Spearman -0.0047; MetalIonBinding Accuracy 0.7066 · [source](https://arxiv.org/html/2506.14796v1) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **Human/Pan and yeast/Guo PPI — PEER**
 
@@ -524,30 +612,6 @@ Full source test, all invalid answers retained as failures; zero-shot full seque
 
 [Source 1](https://arxiv.org/html/2206.02096v2), [Source 2](https://arxiv.org/html/2402.17810v2), [Source 3](https://github.com/DeepGraphLearning/PEER_Benchmark)
 
-**NatureLM/PEER binarized stability — paper-specific protocol**
-
-Keep separate from TAPE's continuous stability regression. Do not silently change the paper's endpoint.
-
-Published source size/units: NatureLM §7.2 uses classification. Exact label-conversion rule not resolved in this review.
-
-**Protein stability classification:** Accuracy. NatureLM §7.2 uses classification. Exact label-conversion rule not resolved in this review.
-
-Keep separate from TAPE's continuous stability regression. Do not silently change the paper's endpoint.
-
-Published reference record: NatureLM-8x7B: 72.3% accuracy; SFM-Protein-650M: 58.3%, in NatureLM's stability-classification setup.
-
-[Source 1](https://arxiv.org/html/2502.07527v3), [Source 2](https://github.com/microsoft/SFM)
-
-**FLAb / FLAb2 antibody property collection**
-
-15 reference datasets are excluded from automated scoring; counts are corpus totals. Each assay has its own units, direction and split.
-
-Published source size/units: Current repository: 241 datasets; >3 million assay points. Category counts 31/132/7/4/9/33/25 respectively (see details); not one held-out set.
-
-Published reference record: No version-matched aggregate model score transcribed; repository supplies per-assay zero-/few-shot evaluation outputs.
-
-[Source 1](https://github.com/Graylab/FLAb), [Source 2](https://github.com/Graylab/FLAb)
-
 **ATOM3D interface contacts (PIP)**
 
 Residue-pair contact prediction is not sequence-pair binary PPI and not binding affinity.
@@ -557,26 +621,6 @@ Published source size/units: DIPS training and DB5 testing; exact processed test
 Published reference record: AUROC: 3D-CNN 0.844; GNN 0.669; non-3D baseline 0.841.
 
 [Source 1](https://arxiv.org/html/2012.04035v3), [Source 2](https://www.atom3d.ai/pip.html)
-
-**PFMBench solubility panel**
-
-These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
-
-Published source size/units: Test sizes: DeepSol: 6,934; DeepSoluE: 1,454; ProtSolM: 7,173; eSOL: 311
-
-Published reference record: ESM2-Adapter, Table 1 means: DeepSol AUROC 0.8467; DeepSoluE AUROC 0.7699; ProtSolM AUROC 0.8572; eSOL Spearman 0.2761
-
-[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
-
-**PFMBench localization and sorting-signal panel**
-
-These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
-
-Published source size/units: Test sizes: DeepLocMulti: 751; DeepLoc2Multi: 2,744; DeepLocBinary: 848; SortingSignal: 186
-
-Published reference record: ESM2-Adapter, Table 1 means: DeepLocMulti Accuracy 0.7666; DeepLoc2Multi F1 0.7505; DeepLocBinary AUROC 0.9338; SortingSignal F1 0.8598
-
-[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
 
 **PFMBench protein and metal-interaction panel**
 
@@ -588,19 +632,41 @@ Published reference record: ESM2-Adapter, Table 1 means: Human_PPI AUROC 0.4828;
 
 [Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
 
-**PFMBench production and enzyme-operating panel**
-
-These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
-
-Published source size/units: Test sizes: Optimal_pH: 959; DeepET_Topt: 185; Cloning_CLF: 2,778; Material_Production: 2,775; Enzyme_Eff.: 1,290; Antib._Res.: 339; Thermostability: 4,184
-
-Published reference record: ESM2-Adapter, Table 1 means: Optimal_pH Spearman 0.0564; DeepET_Topt Spearman 0.2628; Cloning_CLF AUROC 0.8160; Material_Production Accuracy 0.7982; Enzyme_Eff. Spearman 0.2173; Antib._Res. Accuracy 0.6185; Thermostability AUROC 0.9553
-
-[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+</details>
 
 </details>
 
-## Protein function, annotations and descriptions
+<details>
+<summary><strong>Antibody properties</strong> · 1 dataset group</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Antibody properties | FLAb / FLAb2 antibody property collection | Listed for consideration | — | No version-matched aggregate model score transcribed; repository supplies per-assay zero-/few-shot evaluation outputs. · [source](https://github.com/Graylab/FLAb) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
+
+**FLAb / FLAb2 antibody property collection**
+
+15 reference datasets are excluded from automated scoring; counts are corpus totals. Each assay has its own units, direction and split.
+
+Published source size/units: Current repository: 241 datasets; >3 million assay points. Category counts 31/132/7/4/9/33/25 respectively (see details); not one held-out set.
+
+Published reference record: No version-matched aggregate model score transcribed; repository supplies per-assay zero-/few-shot evaluation outputs.
+
+[Source 1](https://github.com/Graylab/FLAb), [Source 2](https://github.com/Graylab/FLAb)
+
+</details>
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Protein function, annotations and descriptions</strong> · 5 task groups</summary>
+
+<details>
+<summary><strong>Gene Ontology and enzyme annotation</strong> · 4 dataset groups · running or queued</summary>
 
 | Task | Dataset/protocol | Status | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -608,17 +674,9 @@ Published reference record: ESM2-Adapter, Table 1 means: Optimal_pH Spearman 0.0
 | Gene Ontology: biological process* | DeepFRI-derived EC and GO test splits<br>GO biological process — DeepFRI split | Running or queued | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Gene Ontology: molecular function* | DeepFRI-derived EC and GO test splits<br>GO molecular function — DeepFRI split | Running or queued | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Gene Ontology: cellular component* | DeepFRI-derived EC and GO test splits<br>GO cellular component — DeepFRI split | Running or queued | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Protein function description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Protein function generation | Finished | rouge1 0.0631; rouge2 0.0139; rougeL 0.0431; rougeLsum 0.0542 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
-| Catalytic activity description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Catalytic activity generation | Finished | rouge1 0.0541; rouge2 0.0140; rougeL 0.0396; rougeLsum 0.0473 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
-| Protein domain and motif description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Domain and motif generation | Finished | rouge1 0.0354; rouge2 0.0047; rougeL 0.0259; rougeLsum 0.0306 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
-| Protein functional description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Functional description generation | Finished | rouge1 0.0800; rouge2 0.0123; rougeL 0.0494; rougeLsum 0.0649 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
-| Protein description generation* | NatureLM's NCBI protein-description holdout | Run status unconfirmed | — | ROUGE-L: NatureLM-8x7B 0.585; fine-tuned Llama-3-8B 0.324; GPT-4o 0.091. · [source](https://arxiv.org/html/2502.07527v3) |
 | Temporal Gene Ontology annotation* | BioReason-Pro temporal GO test | Running or queued | — | Official repository headline: BioReason-Pro 73.6% Fmax. · [source](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data) |
-| Biochemical reaction classification* | ProtST reaction classification — zero/few-shot | Running or queued | — | Zero-/few-shot results are reported, but a numeric value for the exact zero-shot reaction setting is not transcribed here. Do not substitute the fully supervised reaction score. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Species-held-out Gene Ontology annotation* | Bio-posttrain species-held-out protein GO | Running or queued | — | Species-held-out GO evaluation is described; a verified numeric result for the exact protein split is not transcribed here. · [source](https://arxiv.org/html/2606.16517v1) |
 | Enzyme and Gene Ontology annotation | PFMBench GO/EC annotation panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: GO-CC F1 0.6130; GO-MF F1 0.6488; GO-BP F1 0.5412; EC F1 0.7379 · [source](https://arxiv.org/html/2506.14796v1) |
-| Protein retrieval from functional descriptions* | ProtST text-to-protein retrieval examples | Run status unconfirmed | — | Selected text-to-protein retrieval and docking case studies are reported; no single fixed-corpus Recall@K benchmark result is transcribed. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Evidence support for protein-function explanations* | BioReason-Pro explanation review | Run status unconfirmed | — | Repository reports an LLM-judge score of 8/10 and expert preference over UniProt descriptions in 79% of reviewed cases. · [source](https://www.biorxiv.org/content/10.64898/2026.03.19.712954v2.full) |
 
 <details>
 <summary>Protocols, qualifications and complete source records</summary>
@@ -648,6 +706,64 @@ Not a free-form rationale score. GO label incompleteness and ontology propagatio
 Published reference record: Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472.
 
 [Source 1](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf), [Source 2](https://github.com/DeepGraphLearning/ProtST)
+
+**BioReason-Pro temporal GO test**
+
+Headline aggregation; exact BP/MF/CC definition must come from official evaluator. Not interchangeable with species-held-out evaluation.
+
+Published source size/units: Released test: 8,630 proteins.
+
+**Temporal Gene Ontology annotation:** Fmax; information-accretion-weighted Fmax. Released test data: 8,630 proteins; preserve the specified temporal and annotation cutoffs.
+
+No observed label is not proof of no function. Separate predicted context from gold annotations.
+
+Published reference record: Official repository headline: BioReason-Pro 73.6% Fmax.
+
+[Source 1](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data), [Source 2](https://raw.githubusercontent.com/bowang-lab/BioReason-Pro/main/README.md), [Source 3](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data)
+
+**Bio-posttrain species-held-out protein GO**
+
+Do not substitute the original BioReason-Pro 8,630-protein split or its Fmax scorer without documenting the change.
+
+Author resolve_gold_terms_from_row unions curated leaf/ancestor fields AND go_pred_leaf while go_pred is supplied as context. Native reference and input are dependent: the metric can reward recovery/copying of supplied predictions and does not isolate novel function inference. Preserve that augmented target as primary; curated-only reference union is a separate fixed diagnostic, also with predictor overlap and unknown historical independence. Never select the more favorable metric or remove native context.
+
+Published source size/units: Two held-out species in the paper; exact species/counts not established in this review. Also discusses inherited temporal protocol.
+
+**Species-held-out Gene Ontology annotation:** Propagated GO-F1. Two held-out species in the paper; exact species/counts not established in this review. Also discusses inherited temporal protocol.
+
+Do not substitute the original BioReason-Pro 8,630-protein split or its Fmax scorer without documenting the change.
+
+Published reference record: Species-held-out GO evaluation is described; a verified numeric result for the exact protein split is not transcribed here.
+
+[Source 1](https://arxiv.org/html/2606.16517v1), [Source 2](https://github.com/mims-harvard/bio-posttrain)
+
+**PFMBench GO/EC annotation panel**
+
+These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
+
+Published source size/units: Test sizes: GO-CC: 1,400; GO-MF: 2,787; GO-BP: 2,664; EC: 1,604
+
+Published reference record: ESM2-Adapter, Table 1 means: GO-CC F1 0.6130; GO-MF F1 0.6488; GO-BP F1 0.5412; EC F1 0.7379
+
+[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Protein function descriptions</strong> · 2 dataset groups · results available</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Protein function description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Protein function generation | Finished | rouge1 0.0631; rouge2 0.0139; rougeL 0.0431; rougeLsum 0.0542 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
+| Catalytic activity description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Catalytic activity generation | Finished | rouge1 0.0541; rouge2 0.0140; rougeL 0.0396; rougeLsum 0.0473 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
+| Protein domain and motif description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Domain and motif generation | Finished | rouge1 0.0354; rouge2 0.0047; rougeL 0.0259; rougeLsum 0.0306 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
+| Protein functional description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Functional description generation | Finished | rouge1 0.0800; rouge2 0.0123; rougeL 0.0494; rougeLsum 0.0649 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
+| Protein description generation* | NatureLM's NCBI protein-description holdout | Run status unconfirmed | — | ROUGE-L: NatureLM-8x7B 0.585; fine-tuned Llama-3-8B 0.324; GPT-4o 0.091. · [source](https://arxiv.org/html/2502.07527v3) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **Mol-Instructions — four protein-description subsets**
 
@@ -859,19 +975,19 @@ Published reference record: ROUGE-L: NatureLM-8x7B 0.585; fine-tuned Llama-3-8B 
 
 [Source 1](https://arxiv.org/html/2502.07527v3), [Source 2](https://github.com/microsoft/SFM)
 
-**BioReason-Pro temporal GO test**
+</details>
 
-Headline aggregation; exact BP/MF/CC definition must come from official evaluator. Not interchangeable with species-held-out evaluation.
+</details>
 
-Published source size/units: Released test: 8,630 proteins.
+<details>
+<summary><strong>Biochemical reaction classification</strong> · 1 dataset group · running or queued</summary>
 
-**Temporal Gene Ontology annotation:** Fmax; information-accretion-weighted Fmax. Released test data: 8,630 proteins; preserve the specified temporal and annotation cutoffs.
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Biochemical reaction classification* | ProtST reaction classification — zero/few-shot | Running or queued | — | Zero-/few-shot results are reported, but a numeric value for the exact zero-shot reaction setting is not transcribed here. Do not substitute the fully supervised reaction score. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 
-No observed label is not proof of no function. Separate predicted context from gold annotations.
-
-Published reference record: Official repository headline: BioReason-Pro 73.6% Fmax.
-
-[Source 1](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data), [Source 2](https://raw.githubusercontent.com/bowang-lab/BioReason-Pro/main/README.md), [Source 3](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data)
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **ProtST reaction classification — zero/few-shot**
 
@@ -887,31 +1003,19 @@ Published reference record: Zero-/few-shot results are reported, but a numeric v
 
 [Source 1](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf), [Source 2](https://github.com/DeepGraphLearning/ProtST)
 
-**Bio-posttrain species-held-out protein GO**
+</details>
 
-Do not substitute the original BioReason-Pro 8,630-protein split or its Fmax scorer without documenting the change.
+</details>
 
-Author resolve_gold_terms_from_row unions curated leaf/ancestor fields AND go_pred_leaf while go_pred is supplied as context. Native reference and input are dependent: the metric can reward recovery/copying of supplied predictions and does not isolate novel function inference. Preserve that augmented target as primary; curated-only reference union is a separate fixed diagnostic, also with predictor overlap and unknown historical independence. Never select the more favorable metric or remove native context.
+<details>
+<summary><strong>Protein retrieval from descriptions</strong> · 1 dataset group</summary>
 
-Published source size/units: Two held-out species in the paper; exact species/counts not established in this review. Also discusses inherited temporal protocol.
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Protein retrieval from functional descriptions* | ProtST text-to-protein retrieval examples | Run status unconfirmed | — | Selected text-to-protein retrieval and docking case studies are reported; no single fixed-corpus Recall@K benchmark result is transcribed. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 
-**Species-held-out Gene Ontology annotation:** Propagated GO-F1. Two held-out species in the paper; exact species/counts not established in this review. Also discusses inherited temporal protocol.
-
-Do not substitute the original BioReason-Pro 8,630-protein split or its Fmax scorer without documenting the change.
-
-Published reference record: Species-held-out GO evaluation is described; a verified numeric result for the exact protein split is not transcribed here.
-
-[Source 1](https://arxiv.org/html/2606.16517v1), [Source 2](https://github.com/mims-harvard/bio-posttrain)
-
-**PFMBench GO/EC annotation panel**
-
-These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
-
-Published source size/units: Test sizes: GO-CC: 1,400; GO-MF: 2,787; GO-BP: 2,664; EC: 1,604
-
-Published reference record: ESM2-Adapter, Table 1 means: GO-CC F1 0.6130; GO-MF F1 0.6488; GO-BP F1 0.5412; EC F1 0.7379
-
-[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **ProtST text-to-protein retrieval examples**
 
@@ -926,6 +1030,20 @@ Docking and known annotations support case analysis; they do not prove all retri
 Published reference record: Selected text-to-protein retrieval and docking case studies are reported; no single fixed-corpus Recall@K benchmark result is transcribed.
 
 [Source 1](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Evidence support for protein explanations</strong> · 1 dataset group</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Evidence support for protein-function explanations* | BioReason-Pro explanation review | Run status unconfirmed | — | Repository reports an LLM-judge score of 8/10 and expert preference over UniProt descriptions in 79% of reviewed cases. · [source](https://www.biorxiv.org/content/10.64898/2026.03.19.712954v2.full) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **BioReason-Pro explanation review**
 
@@ -943,7 +1061,15 @@ Published reference record: Repository reports an LLM-judge score of 8/10 and ex
 
 </details>
 
-## Mutation-effect interpretation
+</details>
+
+</details>
+
+<details>
+<summary><strong>Mutation effects, fitness and engineering</strong> · 4 task groups</summary>
+
+<details>
+<summary><strong>Mutation-effect explanation</strong> · 1 dataset group</summary>
 
 | Task | Dataset/protocol | Status | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -968,7 +1094,10 @@ Published reference record: Main-test average ROUGE-L / BLEU-2 (0–100): MutaPL
 
 </details>
 
-## Mutation ranking, affinity and local optimization
+</details>
+
+<details>
+<summary><strong>Mutation fitness prediction and ranking</strong> · 6 dataset groups</summary>
 
 | Task | Dataset/protocol | Status | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -978,15 +1107,9 @@ Published reference record: Main-test average ROUGE-L / BLEU-2 (0–100): MutaPL
 | Multi-mutant ranking without measurements* | PFArena — four task settings<br>PFArena T2: measurement-free multi-mutant ranking | Blocked | — | Paper's GPT-6 Astra vs ESM-2: T1 Recall@40 0.0254 vs 0.0370; T2 Spearman 0.2726 vs 0.2539; T3 0.3516 vs 0.3128; T4 0.5988 vs 0.3153. · [source](https://arxiv.org/html/2609.28921v1) |
 | Mutation ranking with anchor measurements* | PFArena — four task settings<br>PFArena T3: anchor-informed ranking | Blocked | — | Paper's GPT-6 Astra vs ESM-2: T1 Recall@40 0.0254 vs 0.0370; T2 Spearman 0.2726 vs 0.2539; T3 0.3516 vs 0.3128; T4 0.5988 vs 0.3153. · [source](https://arxiv.org/html/2609.28921v1) |
 | Mutation ranking with single-mutant measurements* | PFArena — four task settings<br>PFArena T4: single-mutant-informed ranking | Blocked | — | Paper's GPT-6 Astra vs ESM-2: T1 Recall@40 0.0254 vs 0.0370; T2 Spearman 0.2726 vs 0.2539; T3 0.3516 vs 0.3128; T4 0.5988 vs 0.3153. · [source](https://arxiv.org/html/2609.28921v1) |
-| Mutation engineering with a supplied position* | MutaDescribe — mutation engineering<br>MutaDescribe mutation engineering — position supplied | Run status unconfirmed | — | MutaPLM vs fine-tuned ESM-2: position known accuracy 53.51% vs 51.43%; position unknown Recall@50 40.94% vs 33.77%. · [source](https://arxiv.org/html/2410.22949v1) |
-| Mutation engineering with an unknown position* | MutaDescribe — mutation engineering<br>MutaDescribe mutation engineering — position unknown | Run status unconfirmed | — | MutaPLM vs fine-tuned ESM-2: position known accuracy 53.51% vs 51.43%; position unknown Recall@50 40.94% vs 33.77%. · [source](https://arxiv.org/html/2410.22949v1) |
 | Low-data fitness regression* | MutaPLM low-data fitness regression | Run status unconfirmed | — | Low-data regression curves are reported with 192 train / 48 validation examples; no exact assay-specific point estimate is transcribed here. · [source](https://arxiv.org/html/2410.22949v1) |
-| Antibody affinity ranking | AbBiBench antibody affinity ranking | Listed for consideration | — | Current 16-column leaderboard mean Spearman: ProteinMPNN 0.30; ESM-IF1 0.28; AntiFold 0.21; ESM2 0.02. · [source](https://github.com/MSBMI-SAFE/AbBiBench) |
-| Mutation effects on binding affinity | ATOM3D SKEMPI-derived mutation affinity (MSP) | Listed for consideration | — | AUROC: GNN 0.621; 3D-CNN 0.574. · [source](https://arxiv.org/html/2012.04035v3) |
 | Mutation and fitness prediction | PFMBench mutation/fitness panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: PETA_CHS_SOL Spearman 0.2738; PETA_LGK_SOL Spearman 0.1558; PETA_TEM_SOL Spearman 0.1433; FLIP_AAV Spearman 0.9412; FLIP_GB1 Spearman 0.9517; TAPE_Stab Spearman 0.3211; TAPE_Fluor Spearman 0.6812; BetaLactamase Spearman 0.5740 · [source](https://arxiv.org/html/2506.14796v1) |
-| Peptide–MHC and TCR–pMHC interactions | PFMBench peptide–MHC and TCR–pMHC panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: Pept.HLA/MHC Aff. AUROC 0.9631; TCR.PMHC Aff. AUROC 0.9312 · [source](https://arxiv.org/html/2506.14796v1) |
 | Zero-shot mutation-effect ranking | PFMBench ProteinGym zero-shot protocol | Listed for consideration | — | Table 1 reports pretrained ESM2 ProteinGym Spearman 0.4390; do not compare directly to a different snapshot's score. · [source](https://arxiv.org/html/2506.14796v1) |
-| Protein-sequence optimization against fitness predictors*<br>Predictor-scored optimization; not measured laboratory success. | MutaPLM iterative optimization | Run status unconfirmed | — | The paper reports predicted-fitness improvement trajectories across six landscapes; these are oracle-based search outcomes, not experimentally measured hit rates. · [source](https://arxiv.org/html/2410.22949v1) |
 
 <details>
 <summary>Protocols, qualifications and complete source records</summary>
@@ -1053,6 +1176,56 @@ Published reference record: Paper's GPT-6 Astra vs ESM-2: T1 Recall@40 0.0254 vs
 
 [Source 1](https://arxiv.org/html/2609.28921v1), [Source 2](https://arxiv.org/html/2609.28921v1)
 
+**MutaPLM low-data fitness regression**
+
+This is supervised low-N prediction, not zero-shot generation. Do not reuse the labeled seed points as test examples.
+
+Published source size/units: 192 training + 48 validation examples; five seeds; assay-specific remaining test records
+
+**Low-data fitness regression:** Spearman. 192 training and 48 validation samples; five random seeds. Remaining held-out data evaluated per source.
+
+This is supervised low-N prediction, not zero-shot generation. Do not reuse the labeled seed points as test examples.
+
+Published reference record: Low-data regression curves are reported with 192 train / 48 validation examples; no exact assay-specific point estimate is transcribed here.
+
+[Source 1](https://arxiv.org/html/2410.22949v1), [Source 2](https://github.com/PharMolix/MutaPLM)
+
+**PFMBench mutation/fitness panel**
+
+These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
+
+Published source size/units: Test sizes: PETA_CHS_SOL: 484; PETA_LGK_SOL: 1,914; PETA_TEM_SOL: 808; FLIP_AAV: 16,517; FLIP_GB1: 1,745; TAPE_Stab: 6,898; TAPE_Fluor: 27,217; BetaLactamase: 520
+
+Published reference record: ESM2-Adapter, Table 1 means: PETA_CHS_SOL Spearman 0.2738; PETA_LGK_SOL Spearman 0.1558; PETA_TEM_SOL Spearman 0.1433; FLIP_AAV Spearman 0.9412; FLIP_GB1 Spearman 0.9517; TAPE_Stab Spearman 0.3211; TAPE_Fluor Spearman 0.6812; BetaLactamase Spearman 0.5740
+
+[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+
+**PFMBench ProteinGym zero-shot protocol**
+
+These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
+
+Published source size/units: Paper table does not specify the release-matched evaluation denominator.
+
+Published reference record: Table 1 reports pretrained ESM2 ProteinGym Spearman 0.4390; do not compare directly to a different snapshot's score.
+
+[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Mutation engineering and optimization</strong> · 2 dataset groups</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Mutation engineering with a supplied position* | MutaDescribe — mutation engineering<br>MutaDescribe mutation engineering — position supplied | Run status unconfirmed | — | MutaPLM vs fine-tuned ESM-2: position known accuracy 53.51% vs 51.43%; position unknown Recall@50 40.94% vs 33.77%. · [source](https://arxiv.org/html/2410.22949v1) |
+| Mutation engineering with an unknown position* | MutaDescribe — mutation engineering<br>MutaDescribe mutation engineering — position unknown | Run status unconfirmed | — | MutaPLM vs fine-tuned ESM-2: position known accuracy 53.51% vs 51.43%; position unknown Recall@50 40.94% vs 33.77%. · [source](https://arxiv.org/html/2410.22949v1) |
+| Protein-sequence optimization against fitness predictors*<br>Predictor-scored optimization; not measured laboratory success. | MutaPLM iterative optimization | Run status unconfirmed | — | The paper reports predicted-fitness improvement trajectories across six landscapes; these are oracle-based search outcomes, not experimentally measured hit rates. · [source](https://arxiv.org/html/2410.22949v1) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
+
 **MutaDescribe — mutation engineering**
 
 Same source dataset, different task. These are reference-recovery rates, not prospective wet-lab success.
@@ -1071,19 +1244,35 @@ Published reference record: MutaPLM vs fine-tuned ESM-2: position known accuracy
 
 [Source 1](https://arxiv.org/html/2410.22949v1), [Source 2](https://huggingface.co/datasets/PharMolix/MutaDescribe)
 
-**MutaPLM low-data fitness regression**
+**MutaPLM iterative optimization**
 
-This is supervised low-N prediction, not zero-shot generation. Do not reuse the labeled seed points as test examples.
+Predictor-scored search experiment A learned scorer can be exploited; this experiment is not prospective laboratory success.
 
-Published source size/units: 192 training + 48 validation examples; five seeds; assay-specific remaining test records
+Published source size/units: Do iterative proposals improve the predicted assay objective? Six landscapes: AAV, AMIE, avGFP, E4B, LGK, UBE2I; 20 independent runs; preserve beam/search settings.
 
-**Low-data fitness regression:** Spearman. 192 training and 48 validation samples; five random seeds. Remaining held-out data evaluated per source.
+**Protein-sequence optimization against fitness predictors:** Mean predicted fitness trajectory and dispersion. Six landscapes: AAV, AMIE, avGFP, E4B, LGK, UBE2I; 20 independent runs; preserve beam/search settings.
 
-This is supervised low-N prediction, not zero-shot generation. Do not reuse the labeled seed points as test examples.
+A learned scorer can be exploited; this experiment is not prospective laboratory success.
 
-Published reference record: Low-data regression curves are reported with 192 train / 48 validation examples; no exact assay-specific point estimate is transcribed here.
+Published reference record: The paper reports predicted-fitness improvement trajectories across six landscapes; these are oracle-based search outcomes, not experimentally measured hit rates.
 
-[Source 1](https://arxiv.org/html/2410.22949v1), [Source 2](https://github.com/PharMolix/MutaPLM)
+[Source 1](https://arxiv.org/html/2410.22949v1)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Binding affinity and immune interactions</strong> · 3 dataset groups</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Antibody affinity ranking | AbBiBench antibody affinity ranking | Listed for consideration | — | Current 16-column leaderboard mean Spearman: ProteinMPNN 0.30; ESM-IF1 0.28; AntiFold 0.21; ESM2 0.02. · [source](https://github.com/MSBMI-SAFE/AbBiBench) |
+| Mutation effects on binding affinity | ATOM3D SKEMPI-derived mutation affinity (MSP) | Listed for consideration | — | AUROC: GNN 0.621; 3D-CNN 0.574. · [source](https://arxiv.org/html/2012.04035v3) |
+| Peptide–MHC and TCR–pMHC interactions | PFMBench peptide–MHC and TCR–pMHC panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: Pept.HLA/MHC Aff. AUROC 0.9631; TCR.PMHC Aff. AUROC 0.9312 · [source](https://arxiv.org/html/2506.14796v1) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **AbBiBench antibody affinity ranking**
 
@@ -1105,16 +1294,6 @@ Published reference record: AUROC: GNN 0.621; 3D-CNN 0.574.
 
 [Source 1](https://arxiv.org/html/2012.04035v3), [Source 2](https://www.atom3d.ai/msp.html)
 
-**PFMBench mutation/fitness panel**
-
-These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
-
-Published source size/units: Test sizes: PETA_CHS_SOL: 484; PETA_LGK_SOL: 1,914; PETA_TEM_SOL: 808; FLIP_AAV: 16,517; FLIP_GB1: 1,745; TAPE_Stab: 6,898; TAPE_Fluor: 27,217; BetaLactamase: 520
-
-Published reference record: ESM2-Adapter, Table 1 means: PETA_CHS_SOL Spearman 0.2738; PETA_LGK_SOL Spearman 0.1558; PETA_TEM_SOL Spearman 0.1433; FLIP_AAV Spearman 0.9412; FLIP_GB1 Spearman 0.9517; TAPE_Stab Spearman 0.3211; TAPE_Fluor Spearman 0.6812; BetaLactamase Spearman 0.5740
-
-[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
-
 **PFMBench peptide–MHC and TCR–pMHC panel**
 
 These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
@@ -1125,33 +1304,14 @@ Published reference record: ESM2-Adapter, Table 1 means: Pept.HLA/MHC Aff. AUROC
 
 [Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
 
-**PFMBench ProteinGym zero-shot protocol**
-
-These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
-
-Published source size/units: Paper table does not specify the release-matched evaluation denominator.
-
-Published reference record: Table 1 reports pretrained ESM2 ProteinGym Spearman 0.4390; do not compare directly to a different snapshot's score.
-
-[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
-
-**MutaPLM iterative optimization**
-
-Predictor-scored search experiment A learned scorer can be exploited; this experiment is not prospective laboratory success.
-
-Published source size/units: Do iterative proposals improve the predicted assay objective? Six landscapes: AAV, AMIE, avGFP, E4B, LGK, UBE2I; 20 independent runs; preserve beam/search settings.
-
-**Protein-sequence optimization against fitness predictors:** Mean predicted fitness trajectory and dispersion. Six landscapes: AAV, AMIE, avGFP, E4B, LGK, UBE2I; 20 independent runs; preserve beam/search settings.
-
-A learned scorer can be exploited; this experiment is not prospective laboratory success.
-
-Published reference record: The paper reports predicted-fitness improvement trajectories across six landscapes; these are oracle-based search outcomes, not experimentally measured hit rates.
-
-[Source 1](https://arxiv.org/html/2410.22949v1)
+</details>
 
 </details>
 
-## Scientific evidence and biological knowledge
+</details>
+
+<details>
+<summary><strong>Scientific evidence and biological knowledge</strong> · 1 task group</summary>
 
 | Task | Dataset/protocol | Status | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -1790,28 +1950,20 @@ Published reference record: Original BioBERT multi-phase training: 68.1% accurac
 
 </details>
 
-## Protein design
+</details>
+
+<details>
+<summary><strong>Protein design</strong> · 6 task groups</summary>
+
+<details>
+<summary><strong>Antibody design</strong> · 4 dataset groups</summary>
 
 | Task | Dataset/protocol | Status | Qwen result | Published reference |
 |---|---|---|---|---|
 | Antibody design: CDR-H3 redesign* | RAbD — CDR-H3 redesign | Run status unconfirmed | — | Proteo-R1 vs BoltzGen: AAR 10.75% vs 39.07%; RMSD 2.46 Å vs 2.69 Å; DockQ 0.801 vs 0.473. · [source](https://arxiv.org/html/2605.02937v1) |
 | Antibody design: multi-CDR redesign* | SAbDab — Proteo-R1 all-CDR holdout | Run status unconfirmed | — | Proteo-R1 vs MFDesign: H3 RMSD 3.81 Å vs 3.71 Å; Loop-RMSD 4.51 Å vs 4.28 Å; IMP 56.58 vs 59.16 (paper's scale). · [source](https://arxiv.org/html/2605.02937v1) |
-| Sequence design by inverse folding | CATH 4.2 / TS50 / TS500 inverse folding | Listed for consideration | — | PiFold repository: CATH recovery 51.66%; TS50 58.72%; TS500 60.42%. · [source](https://github.com/a4bio/pifold) |
-| Sequence design by inverse folding | ProteinBench inverse folding — CASP15 / CAMEO / synthetic backbones | Listed for consideration | — | AAR, CASP15/CAMEO: LM-Design 0.516/0.570; ProteinMPNN 0.450/0.468. · [source](https://arxiv.org/html/2409.06744v2) |
-| Unconditional protein backbone generation | ProteinBench unconditional backbone generation | Listed for consideration | — | At length 100: RFdiffusion scTM 0.98 ± 0.12 and scRMSD 0.48 ± 0.56 Å; FrameFlow 0.94 ± 0.08 and 0.70 ± 0.70 Å. · [source](https://arxiv.org/html/2409.06744v2) |
-| Unconditional protein sequence generation | ProteinBench unconditional sequence generation | Listed for consideration | — | At length 100, predicted AF2 pLDDT: DPLM-650M 85.38 ± 14.20; ProGen2-700M 64.00 ± 21.26. · [source](https://arxiv.org/html/2409.06744v2) |
-| Joint sequence and structure generation | ProteinBench joint sequence–structure generation | Listed for consideration | — | Multiflow at length 100: scTM 0.96 ± 0.04; scRMSD 1.10 ± 0.71 Å. At length 200: scTM 0.95; scRMSD 1.61 Å. · [source](https://arxiv.org/html/2409.06744v2) |
-| Functional-motif scaffolding | MotifBench functional-motif scaffolding | Listed for consideration | — | Official leaderboard snapshot: RFdiffusion3 43.52 ± 1.35 (Aug 2026); RFdiffusion 21.95 (Feb 2025), in MotifBench-score units. · [source](https://github.com/blt2114/MotifBench) |
-| Functional-motif scaffolding | ProteinBench motif scaffolding — legacy motif panel | Listed for consideration | — | Comparative motif-scaffolding results are reported; exact figure-derived score not transcribed. · [source](https://arxiv.org/html/2409.06744v2) |
 | Antibody design: CDR-H3 redesign | ProteinBench antibody design — processed RAbD | Listed for consideration | — | DiffAb: AAR 35.04 ± 8.36%, RMSD 2.53 ± 0.60 Å; MEAN: AAR 33.47%, RMSD 1.82 Å. · [source](https://arxiv.org/html/2409.06744v2) |
 | Antibody design: epitope-conditioned design | CHIMERA-Bench epitope-conditioned antibody design | Listed for consideration | — | Epitope-group H3: RAAD AAR 0.37, RMSD 1.75 Å, DockQ 0.58; dyMEAN EpiF1 0.23 (RAAD 0.11). · [source](https://arxiv.org/html/2603.13431v1) |
-| Target-binder design | ProtDBench de novo target-binder design | Listed for consideration | — | PD-L1 passing-backbone counts: PXDesign 1,247; BoltzGen 549; RFdiffusion3 542; BindCraft 231. TNFα: PXDesign 57; BoltzGen 15. · [source](https://arxiv.org/html/2605.04118v1) |
-| Text-conditioned protein-sequence design*<br>Qualitative designs; no measured design-success rate. | BioT5+ description-guided protein generation | Run status unconfirmed | — | Description-guided protein designs are presented as qualitative cases rather than a fixed, experimentally validated design-success rate. · [source](https://arxiv.org/html/2402.17810v2) |
-| Unconditional protein generation*<br>Structure quality is predicted; function is not experimentally established. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM unconditional generation | Run status unconfirmed | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
-| Protein generation for predicted stability and solubility*<br>Stability and solubility are predicted, not measured. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM stability/solubility-conditioned generation | Run status unconfirmed | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
-| Heme-binding protein candidate generation*<br>Heme binding is a predicted candidate property, not demonstrated binding. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM heme-binding case study | Run status unconfirmed | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
-| GFP sequence optimization against a fluorescence predictor*<br>Scored by a fluorescence predictor; not a wet-lab result. | STRIDE GFP sequence optimization | Partial | replace_only.qualified_oracle_success 0.0000; replace_only.improved_sequence_uniqueness undefined; replace_only.native_novelty undefined; full_atomic.qualified_oracle_success 0.0000; full_atomic.improved_sequence_uniqueness undefined; full_atomic.native_novelty undefined | STRIDE: success count 61; attempt count 100; unique improved count 59; n=100; Table 4 · [source](https://arxiv.org/html/2603.03573v1) |
-| GM2A-targeted binder design<br>Single published target campaign. | Prompteina text-conditioned protein design — GM2A campaign | Listed for consideration | — | 9 of 89 assayed designs classified as binders; 8 fitted apparent KD values. Strongest apparent KD: 107 nM. · [source](https://arxiv.org/html/2610.13917v1) |
 
 <details>
 <summary>Protocols, qualifications and complete source records</summary>
@@ -1844,6 +1996,41 @@ Published reference record: Proteo-R1 vs MFDesign: H3 RMSD 3.81 Å vs 3.71 Å; L
 
 [Source 1](https://arxiv.org/html/2605.02937v1), [Source 2](https://arxiv.org/html/2605.02937v1)
 
+**ProteinBench antibody design — processed RAbD**
+
+Same parent resource does not mean identical split or scorer. This is a distinct protocol, not 55 additional independent complexes.
+
+Published source size/units: 55 retained RAbD complexes; differs from the 60-complex protocol in the earlier catalog.
+
+Published reference record: DiffAb: AAR 35.04 ± 8.36%, RMSD 2.53 ± 0.60 Å; MEAN: AAR 33.47%, RMSD 1.82 Å.
+
+[Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
+
+**CHIMERA-Bench epitope-conditioned antibody design**
+
+EpiF1 measures intended-site contact, not empirical selectivity across off-target molecules.
+
+Published source size/units: 2,922 complexes total. Test: 292 epitope-group; 292 antigen-fold; 293 temporal. Splits are alternatives, not additive test sets.
+
+Published reference record: Epitope-group H3: RAAD AAR 0.37, RMSD 1.75 Å, DockQ 0.58; dyMEAN EpiF1 0.23 (RAAD 0.11).
+
+[Source 1](https://arxiv.org/html/2603.13431v1), [Source 2](https://github.com/mansoor181/chimera-bench)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Inverse folding</strong> · 2 dataset groups</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Sequence design by inverse folding | CATH 4.2 / TS50 / TS500 inverse folding | Listed for consideration | — | PiFold repository: CATH recovery 51.66%; TS50 58.72%; TS500 60.42%. · [source](https://github.com/a4bio/pifold) |
+| Sequence design by inverse folding | ProteinBench inverse folding — CASP15 / CAMEO / synthetic backbones | Listed for consideration | — | AAR, CASP15/CAMEO: LM-Design 0.516/0.570; ProteinMPNN 0.450/0.468. · [source](https://arxiv.org/html/2409.06744v2) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
+
 **CATH 4.2 / TS50 / TS500 inverse folding**
 
 Recovery is not experimental fold/function validation; named size does not replace retained-record manifest.
@@ -1863,6 +2050,26 @@ Published source size/units: 32 CASP15 structures; 332 CAMEO complexes; syntheti
 Published reference record: AAR, CASP15/CAMEO: LM-Design 0.516/0.570; ProteinMPNN 0.450/0.468.
 
 [Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Protein sequence and structure generation</strong> · 5 dataset groups</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Unconditional protein backbone generation | ProteinBench unconditional backbone generation | Listed for consideration | — | At length 100: RFdiffusion scTM 0.98 ± 0.12 and scRMSD 0.48 ± 0.56 Å; FrameFlow 0.94 ± 0.08 and 0.70 ± 0.70 Å. · [source](https://arxiv.org/html/2409.06744v2) |
+| Unconditional protein sequence generation | ProteinBench unconditional sequence generation | Listed for consideration | — | At length 100, predicted AF2 pLDDT: DPLM-650M 85.38 ± 14.20; ProGen2-700M 64.00 ± 21.26. · [source](https://arxiv.org/html/2409.06744v2) |
+| Joint sequence and structure generation | ProteinBench joint sequence–structure generation | Listed for consideration | — | Multiflow at length 100: scTM 0.96 ± 0.04; scRMSD 1.10 ± 0.71 Å. At length 200: scTM 0.95; scRMSD 1.61 Å. · [source](https://arxiv.org/html/2409.06744v2) |
+| Text-conditioned protein-sequence design*<br>Qualitative designs; no measured design-success rate. | BioT5+ description-guided protein generation | Run status unconfirmed | — | Description-guided protein designs are presented as qualitative cases rather than a fixed, experimentally validated design-success rate. · [source](https://arxiv.org/html/2402.17810v2) |
+| Unconditional protein generation*<br>Structure quality is predicted; function is not experimentally established. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM unconditional generation | Run status unconfirmed | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
+| Protein generation for predicted stability and solubility*<br>Stability and solubility are predicted, not measured. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM stability/solubility-conditioned generation | Run status unconfirmed | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
+| Heme-binding protein candidate generation*<br>Heme binding is a predicted candidate property, not demonstrated binding. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM heme-binding case study | Run status unconfirmed | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **ProteinBench unconditional backbone generation**
 
@@ -1893,56 +2100,6 @@ Published source size/units: Length-stratified generated samples; exact per-sett
 Published reference record: Multiflow at length 100: scTM 0.96 ± 0.04; scRMSD 1.10 ± 0.71 Å. At length 200: scTM 0.95; scRMSD 1.61 Å.
 
 [Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
-
-**MotifBench functional-motif scaffolding**
-
-Score is not percentage of experimentally functional proteins. Preserve sampling and evaluator versions.
-
-Published source size/units: 30 motif problems; standard submission 100 scaffolds per problem.
-
-Published reference record: Official leaderboard snapshot: RFdiffusion3 43.52 ± 1.35 (Aug 2026); RFdiffusion 21.95 (Feb 2025), in MotifBench-score units.
-
-[Source 1](https://github.com/blt2114/MotifBench), [Source 2](https://github.com/blt2114/MotifBench)
-
-**ProteinBench motif scaffolding — legacy motif panel**
-
-Do not merge the legacy panel with MotifBench or reuse their scores interchangeably.
-
-Published source size/units: Legacy 17 (25) motif-problem panel described by ProteinBench; not MotifBench's separate 30-problem set.
-
-Published reference record: Comparative motif-scaffolding results are reported; exact figure-derived score not transcribed.
-
-[Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
-
-**ProteinBench antibody design — processed RAbD**
-
-Same parent resource does not mean identical split or scorer. This is a distinct protocol, not 55 additional independent complexes.
-
-Published source size/units: 55 retained RAbD complexes; differs from the 60-complex protocol in the earlier catalog.
-
-Published reference record: DiffAb: AAR 35.04 ± 8.36%, RMSD 2.53 ± 0.60 Å; MEAN: AAR 33.47%, RMSD 1.82 Å.
-
-[Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
-
-**CHIMERA-Bench epitope-conditioned antibody design**
-
-EpiF1 measures intended-site contact, not empirical selectivity across off-target molecules.
-
-Published source size/units: 2,922 complexes total. Test: 292 epitope-group; 292 antigen-fold; 293 temporal. Splits are alternatives, not additive test sets.
-
-Published reference record: Epitope-group H3: RAAD AAR 0.37, RMSD 1.75 Å, DockQ 0.58; dyMEAN EpiF1 0.23 (RAAD 0.11).
-
-[Source 1](https://arxiv.org/html/2603.13431v1), [Source 2](https://github.com/mansoor181/chimera-bench)
-
-**ProtDBench de novo target-binder design**
-
-Counts of computational passes, not wet-lab hit fractions. Exact target-specific conditions and verifier must match.
-
-Published source size/units: 10 target proteins; 24 h on one A100 per method/target setting. Includes generation, inverse folding and scoring.
-
-Published reference record: PD-L1 passing-backbone counts: PXDesign 1,247; BoltzGen 549; RFdiffusion3 542; BindCraft 231. TNFα: PXDesign 57; BoltzGen 15.
-
-[Source 1](https://arxiv.org/html/2605.04118v1), [Source 2](https://arxiv.org/html/2605.04118v1)
 
 **BioT5+ description-guided protein generation**
 
@@ -1979,6 +2136,90 @@ Self-description is not independent validation; predicted complexes are not meas
 Published reference record: Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding.
 
 [Source 1](https://arxiv.org/html/2502.07527v3)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Functional-motif scaffolding</strong> · 2 dataset groups</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Functional-motif scaffolding | MotifBench functional-motif scaffolding | Listed for consideration | — | Official leaderboard snapshot: RFdiffusion3 43.52 ± 1.35 (Aug 2026); RFdiffusion 21.95 (Feb 2025), in MotifBench-score units. · [source](https://github.com/blt2114/MotifBench) |
+| Functional-motif scaffolding | ProteinBench motif scaffolding — legacy motif panel | Listed for consideration | — | Comparative motif-scaffolding results are reported; exact figure-derived score not transcribed. · [source](https://arxiv.org/html/2409.06744v2) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
+
+**MotifBench functional-motif scaffolding**
+
+Score is not percentage of experimentally functional proteins. Preserve sampling and evaluator versions.
+
+Published source size/units: 30 motif problems; standard submission 100 scaffolds per problem.
+
+Published reference record: Official leaderboard snapshot: RFdiffusion3 43.52 ± 1.35 (Aug 2026); RFdiffusion 21.95 (Feb 2025), in MotifBench-score units.
+
+[Source 1](https://github.com/blt2114/MotifBench), [Source 2](https://github.com/blt2114/MotifBench)
+
+**ProteinBench motif scaffolding — legacy motif panel**
+
+Do not merge the legacy panel with MotifBench or reuse their scores interchangeably.
+
+Published source size/units: Legacy 17 (25) motif-problem panel described by ProteinBench; not MotifBench's separate 30-problem set.
+
+Published reference record: Comparative motif-scaffolding results are reported; exact figure-derived score not transcribed.
+
+[Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Target-binder design</strong> · 2 dataset groups</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Target-binder design | ProtDBench de novo target-binder design | Listed for consideration | — | PD-L1 passing-backbone counts: PXDesign 1,247; BoltzGen 549; RFdiffusion3 542; BindCraft 231. TNFα: PXDesign 57; BoltzGen 15. · [source](https://arxiv.org/html/2605.04118v1) |
+| GM2A-targeted binder design<br>Single published target campaign. | Prompteina text-conditioned protein design — GM2A campaign | Listed for consideration | — | 9 of 89 assayed designs classified as binders; 8 fitted apparent KD values. Strongest apparent KD: 107 nM. · [source](https://arxiv.org/html/2610.13917v1) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
+
+**ProtDBench de novo target-binder design**
+
+Counts of computational passes, not wet-lab hit fractions. Exact target-specific conditions and verifier must match.
+
+Published source size/units: 10 target proteins; 24 h on one A100 per method/target setting. Includes generation, inverse folding and scoring.
+
+Published reference record: PD-L1 passing-backbone counts: PXDesign 1,247; BoltzGen 549; RFdiffusion3 542; BindCraft 231. TNFα: PXDesign 57; BoltzGen 15.
+
+[Source 1](https://arxiv.org/html/2605.04118v1), [Source 2](https://arxiv.org/html/2605.04118v1)
+
+**Prompteina text-conditioned protein design — GM2A campaign**
+
+Prospective experimental campaign A single target campaign, not a general fixed test set or aggregate success rate. 52.4M captions is a training size.
+
+Published source size/units: Generate target binders from language specifications; measure selected designs prospectively. 1,000-design computational budget; 90 selected; 89 expressed and assayed.
+
+Published reference record: 9 of 89 assayed designs classified as binders; 8 fitted apparent KD values. Strongest apparent KD: 107 nM.
+
+[Source 1](https://arxiv.org/html/2610.13917v1)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>GFP sequence optimization</strong> · 1 dataset group · partial results*</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| GFP sequence optimization against a fluorescence predictor*<br>Scored by a fluorescence predictor; not a wet-lab result. | STRIDE GFP sequence optimization | Partial | replace_only.qualified_oracle_success 0.0000; replace_only.improved_sequence_uniqueness undefined; replace_only.native_novelty undefined; full_atomic.qualified_oracle_success 0.0000; full_atomic.improved_sequence_uniqueness undefined; full_atomic.native_novelty undefined | STRIDE: success count 61; attempt count 100; unique improved count 59; n=100; Table 4 · [source](https://arxiv.org/html/2603.03573v1) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **STRIDE GFP sequence optimization**
 
@@ -2076,30 +2317,22 @@ These 100 candidates are not a wet-lab test set. Correctly applying edits does n
 
 [Source 1](https://arxiv.org/html/2603.03573v1)
 
-**Prompteina text-conditioned protein design — GM2A campaign**
-
-Prospective experimental campaign A single target campaign, not a general fixed test set or aggregate success rate. 52.4M captions is a training size.
-
-Published source size/units: Generate target binders from language specifications; measure selected designs prospectively. 1,000-design computational budget; 90 selected; 89 expressed and assayed.
-
-Published reference record: 9 of 89 assayed designs classified as binders; 8 fitted apparent KD values. Strongest apparent KD: 107 nM.
-
-[Source 1](https://arxiv.org/html/2610.13917v1)
+</details>
 
 </details>
 
-## Structure and conformational prediction
+</details>
+
+<details>
+<summary><strong>Structure and conformational prediction</strong> · 5 task groups</summary>
+
+<details>
+<summary><strong>Local structure and residue prediction</strong> · 2 dataset groups</summary>
 
 | Task | Dataset/protocol | Status | Qwen result | Published reference |
 |---|---|---|---|---|
 | Residue identity from local structure | ATOM3D residue identity from local structure (RES) | Listed for consideration | — | ATOM3D 3D-CNN test accuracy: 0.451. · [source](https://arxiv.org/html/2012.04035v3) |
-| Protein structure ranking | ATOM3D protein structure ranking (PSR) | Listed for consideration | — | Per-target mean Spearman: GNN 0.515; 3D-CNN 0.431. Global correlations are different metrics. · [source](https://arxiv.org/html/2012.04035v3) |
-| Single-state protein folding | ProteinBench single-state folding — CAMEO 2022 | Listed for consideration | — | AF2 mean/median TM-score 0.871/0.952, RMSD 3.21/1.64 Å; ESMFold 0.847/0.929 and 3.98/2.10 Å. · [source](https://arxiv.org/html/2409.06744v2) |
-| Multistate protein conformations | ProteinBench multistate conformations — apo/holo and BPTI | Listed for consideration | — | Apo/holo TM-ensemble: AlphaFlow-PDB 0.873; MSA-depth256 0.867. BPTI N=1000: ConfDiff-ESM-force ensemble RMSD 1.36 Å. · [source](https://arxiv.org/html/2409.06744v2) |
-| Protein conformational ensembles | ProteinBench ensemble distribution — ATLAS | Listed for consideration | — | AlphaFlow-MD: per-target RMSF correlation 0.85 and PCA-Wasserstein 1.55; ConfDiff PCA-Wasserstein 1.41 (paper's units). · [source](https://arxiv.org/html/2409.06744v2) |
-| Protein states, dynamics and free energy | BioEmu benchmark collection — states, dynamics and free energy | Listed for consideration | — | Official model card: domain-motion coverage 83%; cryptic-pocket apo/holo coverage 55%/88%; experimental stability MAE ~0.9 kcal/mol, Spearman ~0.6. · [source](https://github.com/microsoft/bioemu/blob/main/MODEL_CARD.md) |
 | Structure-derived protein prediction | PFMBench structure-derived prediction panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: Contact Top L/5 0.7199; FoldClass Accuracy 0.7859; SecondaryStructure Accuracy 0.7601 · [source](https://arxiv.org/html/2506.14796v1) |
-| Structure-derived questions and output-format checks<br>Independent held-out questions remain unresolved. | Proteo-R1 internal alignment / structural / CDR diagnostics | Listed for consideration | — | Selected Stage-II M3: contact 58.3%; interface 15.1%; hotspot 11.6%. Separate Stage-I schema 81.4%. No overall score. · [source](https://arxiv.org/html/2605.02937v1) |
 
 <details>
 <summary>Protocols, qualifications and complete source records</summary>
@@ -2114,6 +2347,30 @@ Published reference record: ATOM3D 3D-CNN test accuracy: 0.451.
 
 [Source 1](https://arxiv.org/html/2012.04035v3), [Source 2](https://www.atom3d.ai/)
 
+**PFMBench structure-derived prediction panel**
+
+These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
+
+Published source size/units: Test sizes: Contact: 1,501; FoldClass: 1,630; SecondaryStructure: 8,262
+
+Published reference record: ESM2-Adapter, Table 1 means: Contact Top L/5 0.7199; FoldClass Accuracy 0.7859; SecondaryStructure Accuracy 0.7601
+
+[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Protein structure ranking</strong> · 1 dataset group</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Protein structure ranking | ATOM3D protein structure ranking (PSR) | Listed for consideration | — | Per-target mean Spearman: GNN 0.515; 3D-CNN 0.431. Global correlations are different metrics. · [source](https://arxiv.org/html/2012.04035v3) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
+
 **ATOM3D protein structure ranking (PSR)**
 
 Ranking a supplied set of structures is not de novo structure generation.
@@ -2124,6 +2381,20 @@ Published reference record: Per-target mean Spearman: GNN 0.515; 3D-CNN 0.431. G
 
 [Source 1](https://arxiv.org/html/2012.04035v3), [Source 2](https://www.atom3d.ai/)
 
+</details>
+
+</details>
+
+<details>
+<summary><strong>Protein folding</strong> · 1 dataset group</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Single-state protein folding | ProteinBench single-state folding — CAMEO 2022 | Listed for consideration | — | AF2 mean/median TM-score 0.871/0.952, RMSD 3.21/1.64 Å; ESMFold 0.847/0.929 and 3.98/2.10 Å. · [source](https://arxiv.org/html/2409.06744v2) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
+
 **ProteinBench single-state folding — CAMEO 2022**
 
 Models may have different MSA/template access. This is a historical target cohort, not the live CAMEO leaderboard.
@@ -2133,6 +2404,22 @@ Published source size/units: 183 proteins (<750 residues), released Aug–Oct 20
 Published reference record: AF2 mean/median TM-score 0.871/0.952, RMSD 3.21/1.64 Å; ESMFold 0.847/0.929 and 3.98/2.10 Å.
 
 [Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Protein conformations and dynamics</strong> · 3 dataset groups</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Multistate protein conformations | ProteinBench multistate conformations — apo/holo and BPTI | Listed for consideration | — | Apo/holo TM-ensemble: AlphaFlow-PDB 0.873; MSA-depth256 0.867. BPTI N=1000: ConfDiff-ESM-force ensemble RMSD 1.36 Å. · [source](https://arxiv.org/html/2409.06744v2) |
+| Protein conformational ensembles | ProteinBench ensemble distribution — ATLAS | Listed for consideration | — | AlphaFlow-MD: per-target RMSF correlation 0.85 and PCA-Wasserstein 1.55; ConfDiff PCA-Wasserstein 1.41 (paper's units). · [source](https://arxiv.org/html/2409.06744v2) |
+| Protein states, dynamics and free energy | BioEmu benchmark collection — states, dynamics and free energy | Listed for consideration | — | Official model card: domain-motion coverage 83%; cryptic-pocket apo/holo coverage 55%/88%; experimental stability MAE ~0.9 kcal/mol, Spearman ~0.6. · [source](https://github.com/microsoft/bioemu/blob/main/MODEL_CARD.md) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **ProteinBench multistate conformations — apo/holo and BPTI**
 
@@ -2164,15 +2451,19 @@ Published reference record: Official model card: domain-motion coverage 83%; cry
 
 [Source 1](https://github.com/microsoft/bioemu/blob/main/MODEL_CARD.md), [Source 2](https://github.com/microsoft/bioemu-benchmarks)
 
-**PFMBench structure-derived prediction panel**
+</details>
 
-These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
+</details>
 
-Published source size/units: Test sizes: Contact: 1,501; FoldClass: 1,630; SecondaryStructure: 8,262
+<details>
+<summary><strong>Structure-derived questions and output checks</strong> · 1 dataset group</summary>
 
-Published reference record: ESM2-Adapter, Table 1 means: Contact Top L/5 0.7199; FoldClass Accuracy 0.7859; SecondaryStructure Accuracy 0.7601
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Structure-derived questions and output-format checks<br>Independent held-out questions remain unresolved. | Proteo-R1 internal alignment / structural / CDR diagnostics | Listed for consideration | — | Selected Stage-II M3: contact 58.3%; interface 15.1%; hotspot 11.6%. Separate Stage-I schema 81.4%. No overall score. · [source](https://arxiv.org/html/2605.02937v1) |
 
-[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **Proteo-R1 internal alignment / structural / CDR diagnostics**
 
@@ -2186,7 +2477,15 @@ Published reference record: Selected Stage-II M3: contact 58.3%; interface 15.1%
 
 </details>
 
-## Biomedical visual evidence
+</details>
+
+</details>
+
+<details>
+<summary><strong>Biomedical visual evidence</strong> · 2 task groups</summary>
+
+<details>
+<summary><strong>Biomedical visual question answering</strong> · 1 dataset group · results available</summary>
 
 | Task | Dataset/protocol | Status | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -2194,9 +2493,6 @@ Published reference record: Selected Stage-II M3: contact 58.3%; interface 15.1%
 | Medical image question answering in English | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>SLAKE — English | Finished | open_token_recall 51.0%; closed_accuracy 84.6% | LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0: open token recall 39.17%; closed accuracy 52.16%; n=1061; Table 4(b), PDF p.9 · [source](https://arxiv.org/pdf/2306.00890) |
 | Pathology image question answering | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>PathVQA | Finished | open_token_recall 26.4%; closed_accuracy_corrected 0.8587 | LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0: open token recall 12.3%; closed accuracy 54.05%; n=6761; Table 4(b), PDF p.9 · [source](https://arxiv.org/pdf/2306.00890) |
 | Medical image question answering | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>ImageCLEF-VQA 2019 | Finished | strict_accuracy 0.0% | MedVInT-TE: overall accuracy 70.5%; Table 2 · [source](https://arxiv.org/html/2305.10415v6) |
-| Scientific figure question answering | PMC-VQA figure question answering | Finished | native_td_final_character_accuracy 0.0200; adapted_full_text_closest_choice_accuracy 0.4975; adapted_full_text_released_label_accuracy 0.4975; strict_final_label_accuracy 0.0070 | MedVInT-TD / PMC-LLaMA / PMC-CLIP: choice accuracy 40.3%; blank accuracy 33.6%; blank bleu1 21.5%; n=2000; Table 3 · [source](https://arxiv.org/html/2305.10415v6) |
-| Biomedical visual conversations* | LLaVA-Med biomedical visual conversations | Run status unconfirmed | — | GPT-assisted relative answer-quality comparisons are reported. A verified single aggregate for the specified qa50 setting is not transcribed here. · [source](https://arxiv.org/abs/2306.00890) |
-| Scientific document and figure extraction* | Ryze document-extraction component tests | Run status unconfirmed | — | Ryze extraction-component accuracy: ArXivQA 73.12%, SlideVQA 66.48%, ChartQA 75.8%. · [source](https://arxiv.org/html/2606.00902v1) |
 
 <details>
 <summary>Protocols, qualifications and complete source records</summary>
@@ -2506,6 +2802,22 @@ Prediction-only audit: 500 multiline finals, 15–263 words (median 70); verbose
 
 [Source 1](https://arxiv.org/abs/2306.00890), [Source 2](https://arxiv.org/html/2305.10415v6), [Source 3](https://arxiv.org/abs/2306.00890), [Source 4](https://arxiv.org/html/2305.10415v6), [Source 5](https://github.com/microsoft/LLaVA-Med), [Source 6](https://github.com/xiaoman-zhang/PMC-VQA)
 
+</details>
+
+</details>
+
+<details>
+<summary><strong>Scientific figures, documents and visual conversations</strong> · 3 dataset groups · results available</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Scientific figure question answering | PMC-VQA figure question answering | Finished | native_td_final_character_accuracy 0.0200; adapted_full_text_closest_choice_accuracy 0.4975; adapted_full_text_released_label_accuracy 0.4975; strict_final_label_accuracy 0.0070 | MedVInT-TD / PMC-LLaMA / PMC-CLIP: choice accuracy 40.3%; blank accuracy 33.6%; blank bleu1 21.5%; n=2000; Table 3 · [source](https://arxiv.org/html/2305.10415v6) |
+| Biomedical visual conversations* | LLaVA-Med biomedical visual conversations | Run status unconfirmed | — | GPT-assisted relative answer-quality comparisons are reported. A verified single aggregate for the specified qa50 setting is not transcribed here. · [source](https://arxiv.org/abs/2306.00890) |
+| Scientific document and figure extraction* | Ryze document-extraction component tests | Run status unconfirmed | — | Ryze extraction-component accuracy: ArXivQA 73.12%, SlideVQA 66.48%, ChartQA 75.8%. · [source](https://arxiv.org/html/2606.00902v1) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
+
 **PMC-VQA figure question answering**
 
 Specify initial versus cleaned test set. Caption-derived labels need not be visually answerable without filtering.
@@ -2623,22 +2935,23 @@ Published reference record: Ryze extraction-component accuracy: ArXivQA 73.12%, 
 
 </details>
 
-## Other biological modalities and molecular interactions
+</details>
+
+</details>
+
+<details>
+<summary><strong>Other biological modalities and molecular interactions</strong> · 6 task groups</summary>
+
+<details>
+<summary><strong>Molecular interactions and binding affinity</strong> · 4 dataset groups · results available</summary>
 
 | Task | Dataset/protocol | Status | Qwen result | Published reference |
 |---|---|---|---|---|
 | Drug–target interaction | Drug–target interaction: BioSNAP / Human / BindingDB<br>Drug–target interaction — BioSNAP/Human/BindingDB · bindingdb | Finished | AUROC 0.5036; AP 0.4103 | BioT5+ (supervised): AUROC 0.964 ± 0.001; Table 8 · [source](https://arxiv.org/html/2402.17810v2) |
 | Drug–target interaction | Drug–target interaction: BioSNAP / Human / BindingDB<br>Drug–target interaction — BioSNAP/Human/BindingDB · biosnap | Finished | AUROC 0.5336; AP 0.5217 | BioT5+ (supervised): AUROC 0.939 ± 0.001; Table 8 · [source](https://arxiv.org/html/2402.17810v2) |
 | Drug–target interaction | Drug–target interaction: BioSNAP / Human / BindingDB<br>Drug–target interaction — BioSNAP/Human/BindingDB · human | Finished | AUROC 0.4747; AP 0.4194 | BioT5+ (supervised): AUROC 0.987 ± 0.001; Table 8 · [source](https://arxiv.org/html/2402.17810v2) |
-| Pathway and disease prediction | BioReason KEGG pathway/disease | Finished | accuracy 0.0%; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.supplemental_macro_f1_fixed_global_vocabulary 0.0000; STRICT_FINAL_LABEL.supplemental_macro_precision_fixed_global_vocabulary 0.0000; STRICT_FINAL_LABEL.supplemental_macro_recall_fixed_global_vocabulary 0.0000 | Qwen3-4B: accuracy 90.0%; macro f1 79.66%; macro precision 88.24%; n=290; Table 1 · [source](https://arxiv.org/html/2505.23579v2) |
-| Coding-variant effect prediction | BioReason VEP coding and non-SNV<br>BioReason VEP-Coding | Finished | accuracy 49.1%; f1 0.5213; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.f1 0.0000 | Qwen3-4B: accuracy 48.99%; f1 39.58%; Table 2 · [source](https://arxiv.org/html/2505.23579v2) |
-| Non-SNV variant effect prediction | BioReason VEP coding and non-SNV<br>BioReason VEP-Non-SNV | Finished | accuracy 89.0%; f1 0.9053; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.f1 0.0000 | Qwen3-4B: accuracy 61.86%; f1 67.6%; n=873; Table 2 · [source](https://arxiv.org/html/2505.23579v2) |
-| Network-held-out pathway prediction* | Bio-posttrain KEGG unseen-network holdout | Blocked | — | Qwen3-4B DNA OOD accuracy: SFT 0.753; SFT+RL 0.917; biology-CPT+SFT+RL 0.970. · [source](https://arxiv.org/html/2606.16517v1) |
-| Expression-conditioned gene selection* | Bio-posttrain MEDEA expression-conditioned gene selection | Blocked | — | The paper reports RNA target-selection ID/OOD experiments. An exact numeric result is not transcribed in this table. · [source](https://arxiv.org/html/2606.16517v1) |
 | Protein–ligand binding affinity | ATOM3D protein–ligand affinity (LBA) | Listed for consideration | — | 3D-CNN: RMSE 1.416, Spearman 0.553; GNN: RMSE 1.570, Spearman 0.628. · [source](https://arxiv.org/html/2012.04035v3) |
 | Ligand efficacy | ATOM3D ligand efficacy (LEP) | Listed for consideration | — | AUROC: GNN 0.740; 3D-CNN 0.589. · [source](https://arxiv.org/html/2012.04035v3) |
-| RNA structure ranking | ATOM3D RNA structure ranking (RSR) | Listed for consideration | — | Mean per-target Spearman: 3D-CNN 0.264; GNN 0.234. · [source](https://arxiv.org/html/2012.04035v3) |
-| Small-molecule properties | ATOM3D small-molecule properties (SMP / QM9) | Listed for consideration | — | ENN dipole MAE 0.052 D; 3D-CNN 0.754 D. Property-specific scores must remain separate. · [source](https://arxiv.org/html/2012.04035v3) |
 | Protein–ligand binding affinity | PFMBench PDBbind / BindingDB affinity panel | Listed for consideration | — | ESM2-Adapter, Table 1 means: PDBBind Spearman 0.1677; BindingDB Spearman 0.1922 · [source](https://arxiv.org/html/2506.14796v1) |
 
 <details>
@@ -2845,6 +3158,51 @@ AUROC/AP are separate dataset fractions, not pooled. One-token conditional Yes/N
 
 [Source 1](https://arxiv.org/html/2402.17810v2), [Source 2](https://github.com/QizhiPei/BioT5)
 
+**ATOM3D protein–ligand affinity (LBA)**
+
+Target transformation and split must match. Not antibody–antigen affinity.
+
+Published source size/units: 30%-identity split: train 3,507, validation 466, test 490 complexes. The 60% split is a different protocol.
+
+Published reference record: 3D-CNN: RMSE 1.416, Spearman 0.553; GNN: RMSE 1.570, Spearman 0.628.
+
+[Source 1](https://arxiv.org/html/2012.04035v3), [Source 2](https://www.atom3d.ai/)
+
+**ATOM3D ligand efficacy (LEP)**
+
+Activity/efficacy is distinct from affinity. Source molecule count is not a test denominator.
+
+Published source size/units: 527 source small molecules; final retained train/test counts not transcribed.
+
+Published reference record: AUROC: GNN 0.740; 3D-CNN 0.589.
+
+[Source 1](https://arxiv.org/html/2012.04035v3), [Source 2](https://www.atom3d.ai/lep.html)
+
+**PFMBench PDBbind / BindingDB affinity panel**
+
+These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
+
+Published source size/units: Test sizes: PDBBind: 1,836; BindingDB: 1,139
+
+Published reference record: ESM2-Adapter, Table 1 means: PDBBind Spearman 0.1677; BindingDB Spearman 0.1922
+
+[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Pathway and disease prediction</strong> · 2 dataset groups · results available</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Pathway and disease prediction | BioReason KEGG pathway/disease | Finished | accuracy 0.0%; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.supplemental_macro_f1_fixed_global_vocabulary 0.0000; STRICT_FINAL_LABEL.supplemental_macro_precision_fixed_global_vocabulary 0.0000; STRICT_FINAL_LABEL.supplemental_macro_recall_fixed_global_vocabulary 0.0000 | Qwen3-4B: accuracy 90.0%; macro f1 79.66%; macro precision 88.24%; n=290; Table 1 · [source](https://arxiv.org/html/2505.23579v2) |
+| Network-held-out pathway prediction* | Bio-posttrain KEGG unseen-network holdout | Blocked | — | Qwen3-4B DNA OOD accuracy: SFT 0.753; SFT+RL 0.917; biology-CPT+SFT+RL 0.970. · [source](https://arxiv.org/html/2606.16517v1) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
+
 **BioReason KEGG pathway/disease**
 
 Correct final disease labels do not verify every generated mechanistic statement.
@@ -2937,6 +3295,37 @@ Correct final disease labels do not verify every generated mechanistic statement
 </details>
 
 [Source 1](https://arxiv.org/html/2505.23579v2), [Source 2](https://huggingface.co/datasets/wanglab/kegg)
+
+**Bio-posttrain KEGG unseen-network holdout**
+
+Pin the adapted split and preprocessing.
+
+Published source size/units: Adapted KEGG split by pathway networks; not automatically BioReason's original 290-example test.
+
+**Network-held-out pathway prediction:** Accuracy. Adapted KEGG split by pathway networks; not automatically BioReason's original 290-example test.
+
+Pin the adapted split and preprocessing.
+
+Exact network-held-out CSVs/IDs unavailable; author genomics link redirects to sign-in. Original N01 is not a substitute.
+
+Published reference record: Qwen3-4B DNA OOD accuracy: SFT 0.753; SFT+RL 0.917; biology-CPT+SFT+RL 0.970.
+
+[Source 1](https://arxiv.org/html/2606.16517v1), [Source 2](https://github.com/mims-harvard/bio-posttrain)
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>Variant-effect prediction</strong> · 1 dataset group · results available</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Coding-variant effect prediction | BioReason VEP coding and non-SNV<br>BioReason VEP-Coding | Finished | accuracy 49.1%; f1 0.5213; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.f1 0.0000 | Qwen3-4B: accuracy 48.99%; f1 39.58%; Table 2 · [source](https://arxiv.org/html/2505.23579v2) |
+| Non-SNV variant effect prediction | BioReason VEP coding and non-SNV<br>BioReason VEP-Non-SNV | Finished | accuracy 89.0%; f1 0.9053; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.f1 0.0000 | Qwen3-4B: accuracy 61.86%; f1 67.6%; n=873; Table 2 · [source](https://arxiv.org/html/2505.23579v2) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **BioReason VEP coding and non-SNV**
 
@@ -3110,21 +3499,19 @@ Non-SNV classification should not be merged with single-amino-acid design accura
 
 [Source 1](https://arxiv.org/html/2505.23579v2), [Source 2](https://github.com/bowang-lab/BioReason)
 
-**Bio-posttrain KEGG unseen-network holdout**
+</details>
 
-Pin the adapted split and preprocessing.
+</details>
 
-Published source size/units: Adapted KEGG split by pathway networks; not automatically BioReason's original 290-example test.
+<details>
+<summary><strong>Expression-conditioned gene selection</strong> · 1 dataset group</summary>
 
-**Network-held-out pathway prediction:** Accuracy. Adapted KEGG split by pathway networks; not automatically BioReason's original 290-example test.
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Expression-conditioned gene selection* | Bio-posttrain MEDEA expression-conditioned gene selection | Blocked | — | The paper reports RNA target-selection ID/OOD experiments. An exact numeric result is not transcribed in this table. · [source](https://arxiv.org/html/2606.16517v1) |
 
-Pin the adapted split and preprocessing.
-
-Exact network-held-out CSVs/IDs unavailable; author genomics link redirects to sign-in. Original N01 is not a substitute.
-
-Published reference record: Qwen3-4B DNA OOD accuracy: SFT 0.753; SFT+RL 0.917; biology-CPT+SFT+RL 0.970.
-
-[Source 1](https://arxiv.org/html/2606.16517v1), [Source 2](https://github.com/mims-harvard/bio-posttrain)
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **Bio-posttrain MEDEA expression-conditioned gene selection**
 
@@ -3142,25 +3529,19 @@ Published reference record: The paper reports RNA target-selection ID/OOD experi
 
 [Source 1](https://arxiv.org/html/2606.16517v1), [Source 2](https://github.com/mims-harvard/bio-posttrain)
 
-**ATOM3D protein–ligand affinity (LBA)**
+</details>
 
-Target transformation and split must match. Not antibody–antigen affinity.
+</details>
 
-Published source size/units: 30%-identity split: train 3,507, validation 466, test 490 complexes. The 60% split is a different protocol.
+<details>
+<summary><strong>RNA structure ranking</strong> · 1 dataset group</summary>
 
-Published reference record: 3D-CNN: RMSE 1.416, Spearman 0.553; GNN: RMSE 1.570, Spearman 0.628.
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| RNA structure ranking | ATOM3D RNA structure ranking (RSR) | Listed for consideration | — | Mean per-target Spearman: 3D-CNN 0.264; GNN 0.234. · [source](https://arxiv.org/html/2012.04035v3) |
 
-[Source 1](https://arxiv.org/html/2012.04035v3), [Source 2](https://www.atom3d.ai/)
-
-**ATOM3D ligand efficacy (LEP)**
-
-Activity/efficacy is distinct from affinity. Source molecule count is not a test denominator.
-
-Published source size/units: 527 source small molecules; final retained train/test counts not transcribed.
-
-Published reference record: AUROC: GNN 0.740; 3D-CNN 0.589.
-
-[Source 1](https://arxiv.org/html/2012.04035v3), [Source 2](https://www.atom3d.ai/lep.html)
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
 
 **ATOM3D RNA structure ranking (RSR)**
 
@@ -3172,6 +3553,20 @@ Published reference record: Mean per-target Spearman: 3D-CNN 0.264; GNN 0.234.
 
 [Source 1](https://arxiv.org/html/2012.04035v3), [Source 2](https://www.atom3d.ai/rsr.html)
 
+</details>
+
+</details>
+
+<details>
+<summary><strong>Small-molecule properties</strong> · 1 dataset group</summary>
+
+| Task | Dataset/protocol | Status | Qwen result | Published reference |
+|---|---|---|---|---|
+| Small-molecule properties | ATOM3D small-molecule properties (SMP / QM9) | Listed for consideration | — | ENN dipole MAE 0.052 D; 3D-CNN 0.754 D. Property-specific scores must remain separate. · [source](https://arxiv.org/html/2012.04035v3) |
+
+<details>
+<summary>Protocols, qualifications and complete source records</summary>
+
 **ATOM3D small-molecule properties (SMP / QM9)**
 
 Adjacency only; not protein biology. Units depend on property.
@@ -3182,15 +3577,9 @@ Published reference record: ENN dipole MAE 0.052 D; 3D-CNN 0.754 D. Property-spe
 
 [Source 1](https://arxiv.org/html/2012.04035v3), [Source 2](https://www.atom3d.ai/)
 
-**PFMBench PDBbind / BindingDB affinity panel**
+</details>
 
-These are PFMBench-specific processed datasets/splits, not interchangeable with PEER/ProtST results. F1 is not Fmax. Affinity-named AUROC tasks are classification, not KD regression. Exact loaders required.
-
-Published source size/units: Test sizes: PDBBind: 1,836; BindingDB: 1,139
-
-Published reference record: ESM2-Adapter, Table 1 means: PDBBind Spearman 0.1677; BindingDB Spearman 0.1922
-
-[Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
+</details>
 
 </details>
 

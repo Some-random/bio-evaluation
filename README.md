@@ -2,7 +2,7 @@
 
 ## [All tasks and results](reports/EVALUATION_OVERVIEW.md)
 
-**Model: Qwen3.8-27B.** Every task, dataset, status, local result and published comparison is listed on that page.
+**Model: Qwen3.8-27B.** Expand a category and task group to see its datasets, status, local scores and published comparisons.
 
 <details>
 <summary>Source data and technical records</summary>
