@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-16T09:45:29.470980+00:00",
+  "generatedAt": "2026-10-16T09:48:53.949414+00:00",
   "scoreSnapshotAt": "2026-10-16T04:25:25.541726+00:00",
-  "runSnapshotAt": "2026-10-16T09:45:29.470980+00:00",
+  "runSnapshotAt": "2026-10-16T09:48:53.949414+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-16T09:45:29.470980+00:00",
+    "updatedAt": "2026-10-16T09:48:53.949414+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/RESULTS_AT_A_GLANCE.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
-    ".local/remaining_evaluations/supervisor_status.json": "ef990e7a89890af1460786d194b429319b8017cc915f1adade7e3b640c17cd78",
-    ".local/remaining_evaluations/upload_status.json": "c5422aa96b8ab795188c408d8299a996db60bcdfe279aee14fff7e631082e836"
+    ".local/remaining_evaluations/supervisor_status.json": "f01e7bb5f9df3b7e785276c0d6f4d242f7ea55903adb8c069066487c50db7140",
+    ".local/remaining_evaluations/upload_status.json": "3daaa00644b15022a14fa85b167aa47a9663c5ec8eae1fd32690c3721332a46e"
   },
   "uploader": {
-    "stage": "watching",
-    "commitSha": "cfb02c214de61103dee117117f3568e9c0656aba",
+    "stage": "retry_pending",
+    "commitSha": "42e47859698b1a4c88977071746cd3dfbdc90caf",
     "repositoryPrivateVerified": true
   },
   "scheduler": {
@@ -177,7 +177,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 2823,
+    "uploaded": 2881,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -186,7 +186,7 @@
     {
       "taskId": "P03",
       "planned": 2773,
-      "uploaded": 1640,
+      "uploaded": 1671,
       "saved": null,
       "generationRuns": 3,
       "terminalRuns": 0,
@@ -202,7 +202,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 1183,
+      "uploaded": 1210,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 0,
@@ -392,10 +392,21 @@
   ],
   "countNote": "Progress counts exclude aggregate runs. Uploaded counts reflect archived trajectories at the uploader heartbeat; saved is unknown unless explicitly reported. Counts do not establish benchmark completion.",
   "runSnapshotSource": {
-    "path": ".local/remaining_evaluations/supervisor_status.json",
-    "snapshotAt": "2026-10-16T09:45:29.470980+00:00",
-    "fallback": false,
+    "path": ".local/remaining_evaluations/upload_status.json",
+    "snapshotAt": "2026-10-16T09:48:53.949414+00:00",
+    "fallback": true,
     "selection": "most_recent_valid_run_snapshot"
   },
-  "metadataErrors": []
+  "metadataErrors": [
+    {
+      "source": ".local/remaining_evaluations/supervisor_status.json",
+      "reason": "no_valid_run_snapshot"
+    }
+  ],
+  "metadataNotice": {
+    "source": ".local/remaining_evaluations/supervisor_status.json",
+    "stage": "retry_pending",
+    "updatedAt": "2026-10-16T09:50:41.792017+00:00",
+    "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
+  }
 }
