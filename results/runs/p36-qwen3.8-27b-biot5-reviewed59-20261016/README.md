@@ -1,6 +1,6 @@
 # P36 — reviewed 59-case Qwen baseline
 
-12/59 saved request/response pairs archived: 7 completed, 5 error responses. Incremental backup; subset scoring remains pending.
+13/59 saved request/response pairs archived: 7 completed, 6 error responses. Incremental backup; subset scoring remains pending.
 
 [Case index](trajectory_index.json) · [Trajectory SHA manifests](trajectory_batches) · [Latest metadata archive](latest_metadata.json) · [Frozen condition](frozen_config.json)
 
