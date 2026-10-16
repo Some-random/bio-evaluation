@@ -6,11 +6,11 @@ The overview keeps one correct answer and one tool-use challenge. This document 
 
 ## Correct answers from saved Qwen runs
 
-### Based on single-nuclei RNA sequencing data, myotendinous junction myonuclei are enriched for genes involved in which of the following functions?
+### In 5XFAD mice, what effect does microglia-specific Ifnar1 deletion have on post-synaptic terminals?
 
 **Evaluation dataset:** [LAB-Bench LitQA2](https://huggingface.co/datasets/futurehouse/lab-bench/tree/5c77cec648430f30611808808861eb86f81d5eaa).
 
-**Task:** Biological knowledge and literature question answering (B01). **Case:** `e6b0f9e5-e976-47dc-b839-0b2fca967e9e`.
+**Task:** Biological knowledge and literature question answering (B01). **Case:** `b1d5a5f5-6e89-4dfb-b60d-5a9824b015f3`.
 
 **Exact question and choices:**
 
@@ -18,14 +18,14 @@ The overview keeps one correct answer and one tool-use challenge. This document 
 > Please answer by responding with the letter of the correct answer.
 > Think step by step.
 >
-> Question: Based on single-nuclei RNA sequencing data, myotendinous junction myonuclei are enriched for genes involved in which of the following functions?
+> Question: In 5XFAD mice, what effect does microglia-specific Ifnar1 deletion have on post-synaptic terminals?
 >
 > Options:
-> (A) synaptic transmission
-> (B) signal transduction
-> (C) Insufficient information to answer the question
-> (D) cell–matrix interactions
-> (E) protein synthesis
+> (A) increased synaptophysin+ density
+> (B) increased loss
+> (C) no effect
+> (D) attenuation of loss
+> (E) Insufficient information to answer the question
 >
 > You MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].
 > For example, '[ANSWER]&lt;answer&gt;[/ANSWER]', where &lt;answer&gt; is the correct letter.
@@ -34,41 +34,52 @@ The overview keeps one correct answer and one tool-use challenge. This document 
 
 **Saved model reasoning, verbatim:**
 
-> The question asks about myotendinous junction myonuclei and what genes they are enriched for based on single-nuclei RNA sequencing data.
+> The question asks about the effect of microglia-specific Ifnar1 deletion on post-synaptic terminals in 5XFAD mice.
 >
-> Myotendinous junctions are the points where muscle fibers (myofibrils) connect to tendons. These are specialized regions of the muscle cell where the actin filaments of the sarcomere connect to the extracellular matrix components that form the tendon.
+> 5XFAD mice are a well-known transgenic mouse model of Alzheimer's disease that carry five mutations associated with familial Alzheimer's disease.
 >
-> Let me think about what would be enriched in myotendinous junction myonuclei:
+> Ifnar1 encodes the interferon-alpha/beta receptor. In the context of neuroinflammation and Alzheimer's disease, type I interferon signaling plays a role in the inflammatory response.
 >
-> - Myotendinous junctions are where muscle cells interface with the extracellular matrix (ECM). This involves integrins, laminins, and other cell-matrix adhesion molecules.
-> - Genes involved in cell-matrix interactions would be expected to be enriched in these myonuclei because the junction requires specialized proteins for connecting the muscle to the tendon/matrix.
-> - Synaptic transmission would be more relevant to neuromuscular junctions, not myotendinous junctions.
-> - Signal transduction is a general function and wouldn't be specifically enriched.
-> - Protein synthesis is a general cellular function.
+> Microglia are the resident immune cells of the brain, and their activation in Alzheimer's disease can contribute to synaptic loss.
 >
-> Based on research using single-nuclei RNA sequencing of skeletal muscle, myotendinous junction myonuclei have been shown to be enriched for genes involved in cell-matrix interactions. This makes biological sense because the myotendinous junction is specifically where the muscle cell's contractile apparatus connects to the extracellular matrix of the tendon.
+> In research on 5XFAD mice, studies have examined the role of interferon signaling in microglia and its effect on synaptopathy. The key study I'm thinking of is one that showed that in 5XFAD mice, there is a loss of synapses (both pre- and post-synaptic), and that this is mediated by interferon signaling in microglia.
 >
-> Studies have shown that myonuclei at the myotendinous junction express higher levels of genes related to extracellular matrix organization and cell-matrix adhesion, including integrins and other matrix-related proteins.
+> Specifically, research has shown that:
+> - In 5XFAD mice, there is progressive synaptic loss
+> - Microglia contribute to this synaptic loss through interferon signaling
+> - Ifnar1 (type I interferon receptor) deletion in microglia attenuates the synaptic loss
 >
-> The answer should be (D) cell–matrix interactions.
+> Looking at the options:
+> (A) increased synaptophysin+ density - synaptophysin is a pre-synaptic marker
+> (B) increased loss - this would mean the deletion worsens the problem
+> (C) no effect
+> (D) attenuation of loss - this would mean the deletion reduces/prevents the synaptic loss
+> (E) Insufficient information
+>
+> The study by Dera et al. (2020) in Nature Neuroscience showed that type I interferon signaling in microglia drives synapse loss in Alzheimer's disease models. They found that microglia-specific Ifnar1 deletion attenuated the loss of synapses in 5XFAD mice.
+>
+> For post-synaptic terminals specifically (marked by PSD95), the Ifnar1 deletion in microglia would attenuate the loss.
+>
+> So the answer should be (D) attenuation of loss.
 
 **Saved final answer, verbatim:**
 
-> Looking at this question, I need to consider the biology of myotendinous junctions and what single-nuclei RNA sequencing has revealed about the myonuclei located at these specialized sites.
+> Looking at this question, I need to consider what is known about the role of type I interferon signaling in microglia in the 5XFAD Alzheimer's disease mouse model.
 >
-> Myotendinous junctions are the specialized regions where muscle fibers connect to tendons. At these junctions, the actin filaments of the sarcomere anchor to the extracellular matrix (ECM) components (collagen, laminin, fibronectin) that form the tendon.
+> In 5XFAD mice, there is progressive synaptic pathology, including loss of both pre-synaptic (synaptophysin+) and post-synaptic (PSD95+) terminals. Research has demonstrated that type I interferon (IFN) signaling in microglia contributes to this synapse loss.
 >
-> Key reasoning:
-> - **Synaptic transmission (A):** This would be relevant to neuromuscular junctions, not myotendinous junctions.
-> - **Signal transduction (B):** A general cellular process, not specific to the myotendinous junction.
-> - **Cell-matrix interactions (D):** The myotendinous junction is fundamentally a site where the muscle cell interfaces with the extracellular matrix. This region requires specialized integrins, dystrophin-glycoprotein complex components, and other adhesion/matrix proteins. Single-nuclei RNA sequencing studies have shown that myonuclei at myotendinous junctions are enriched for genes encoding proteins involved in cell-matrix interactions and ECM organization.
-> - **Protein synthesis (E):** A general cellular function, not specifically enriched at this junction.
+> Studies (notably Dera et al., 2020) showed that in 5XFAD mice, microglia-specific deletion of Ifnar1 (the type I interferon receptor) **attenuates** the progressive loss of synapses, including post-synaptic terminals. This indicates that IFN signaling through microglia is a driver of synapse loss in this model, and removing this receptor in microglia protects against that loss.
 >
-> The biological function of the myotendinous junction is to transmit force from the contracting muscle to the extracellular matrix/tendon, making cell-matrix interaction genes the expected enrichment.
+> The correct answer is (D) attenuation of loss.
 >
 > [ANSWER]D[/ANSWER]
 
 Reference choice: **D** — correct. Dataset accuracy: **39.1%** (77/197).
+
+**Source check:**
+
+- Citation correction: the saved answer names Dera et al., 2020, and the saved reasoning additionally names Nature Neuroscience. The verified source is [Roy et al. (2022), Immunity](https://pmc.ncbi.nlm.nih.gov/articles/PMC9109419/), DOI 10.1016/j.immuni.2022.03.018.
+- Cell-type distinction: microglia-specific Ifnar1 deletion attenuated loss of post-synaptic terminals through reduced selective engulfment. Neural-cell Ifnar1 deletion restored pre-synaptic terminals and decreased plaque accumulation. The source reports these as distinct results.
 
 ### In panel e, which of the following sheath lengths do cortex oligodendrocytes produce at the highest frequency?
 
@@ -293,6 +304,70 @@ Reference choice: **A** — correct. Dataset accuracy: **72.4%** (131/181).
 > [ANSWER]D[/ANSWER]
 
 Reference choice: **D** — correct. Dataset accuracy: **72.4%** (131/181).
+
+### Based on single-nuclei RNA sequencing data, myotendinous junction myonuclei are enriched for genes involved in which of the following functions?
+
+**Evaluation dataset:** [LAB-Bench LitQA2](https://huggingface.co/datasets/futurehouse/lab-bench/tree/5c77cec648430f30611808808861eb86f81d5eaa).
+
+**Task:** Biological knowledge and literature question answering (B01). **Case:** `e6b0f9e5-e976-47dc-b839-0b2fca967e9e`.
+
+**Exact question and choices:**
+
+> The following is a multiple choice question about biology.
+> Please answer by responding with the letter of the correct answer.
+> Think step by step.
+>
+> Question: Based on single-nuclei RNA sequencing data, myotendinous junction myonuclei are enriched for genes involved in which of the following functions?
+>
+> Options:
+> (A) synaptic transmission
+> (B) signal transduction
+> (C) Insufficient information to answer the question
+> (D) cell–matrix interactions
+> (E) protein synthesis
+>
+> You MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].
+> For example, '[ANSWER]&lt;answer&gt;[/ANSWER]', where &lt;answer&gt; is the correct letter.
+> Always answer in exactly this format of a single letter between the two tags, even if you are unsure.
+> We require this because we use automatic parsing.
+
+**Saved model reasoning, verbatim:**
+
+> The question asks about myotendinous junction myonuclei and what genes they are enriched for based on single-nuclei RNA sequencing data.
+>
+> Myotendinous junctions are the points where muscle fibers (myofibrils) connect to tendons. These are specialized regions of the muscle cell where the actin filaments of the sarcomere connect to the extracellular matrix components that form the tendon.
+>
+> Let me think about what would be enriched in myotendinous junction myonuclei:
+>
+> - Myotendinous junctions are where muscle cells interface with the extracellular matrix (ECM). This involves integrins, laminins, and other cell-matrix adhesion molecules.
+> - Genes involved in cell-matrix interactions would be expected to be enriched in these myonuclei because the junction requires specialized proteins for connecting the muscle to the tendon/matrix.
+> - Synaptic transmission would be more relevant to neuromuscular junctions, not myotendinous junctions.
+> - Signal transduction is a general function and wouldn't be specifically enriched.
+> - Protein synthesis is a general cellular function.
+>
+> Based on research using single-nuclei RNA sequencing of skeletal muscle, myotendinous junction myonuclei have been shown to be enriched for genes involved in cell-matrix interactions. This makes biological sense because the myotendinous junction is specifically where the muscle cell's contractile apparatus connects to the extracellular matrix of the tendon.
+>
+> Studies have shown that myonuclei at the myotendinous junction express higher levels of genes related to extracellular matrix organization and cell-matrix adhesion, including integrins and other matrix-related proteins.
+>
+> The answer should be (D) cell–matrix interactions.
+
+**Saved final answer, verbatim:**
+
+> Looking at this question, I need to consider the biology of myotendinous junctions and what single-nuclei RNA sequencing has revealed about the myonuclei located at these specialized sites.
+>
+> Myotendinous junctions are the specialized regions where muscle fibers connect to tendons. At these junctions, the actin filaments of the sarcomere anchor to the extracellular matrix (ECM) components (collagen, laminin, fibronectin) that form the tendon.
+>
+> Key reasoning:
+> - **Synaptic transmission (A):** This would be relevant to neuromuscular junctions, not myotendinous junctions.
+> - **Signal transduction (B):** A general cellular process, not specific to the myotendinous junction.
+> - **Cell-matrix interactions (D):** The myotendinous junction is fundamentally a site where the muscle cell interfaces with the extracellular matrix. This region requires specialized integrins, dystrophin-glycoprotein complex components, and other adhesion/matrix proteins. Single-nuclei RNA sequencing studies have shown that myonuclei at myotendinous junctions are enriched for genes encoding proteins involved in cell-matrix interactions and ECM organization.
+> - **Protein synthesis (E):** A general cellular function, not specifically enriched at this junction.
+>
+> The biological function of the myotendinous junction is to transmit force from the contracting muscle to the extracellular matrix/tendon, making cell-matrix interaction genes the expected enrichment.
+>
+> [ANSWER]D[/ANSWER]
+
+Reference choice: **D** — correct. Dataset accuracy: **39.1%** (77/197).
 
 [Exact example records and source hashes](ADVISOR_GOOD_EXAMPLES.json)
 
