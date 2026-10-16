@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-16T19:03:57.707504+00:00",
+  "generatedAt": "2026-10-16T19:08:20.215295+00:00",
   "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-  "runSnapshotAt": "2026-10-16T19:03:57.707504+00:00",
+  "runSnapshotAt": "2026-10-16T19:08:20.215295+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-16T19:03:57.707504+00:00",
+    "updatedAt": "2026-10-16T19:08:20.215295+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
     "reports/RESULTS_AT_A_GLANCE.json": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
-    ".local/remaining_evaluations/supervisor_status.json": "275daae19d3a859c4a56f262b901d80b1f4c06349fddb220090f521b3170ad2f",
-    ".local/remaining_evaluations/upload_status.json": "426adb9f0417b26c7f7210426d23b0fd89a9a6aa27bfa36024b18eb102f58503"
+    ".local/remaining_evaluations/supervisor_status.json": "f0043443ad33330f197fde224e8ec4f33264d260233804dc3d15082636be3efb",
+    ".local/remaining_evaluations/upload_status.json": "28344fec3c40ddbab394753436a3caa51b0bfd553441966f843bfe3d4729bcb5"
   },
   "uploader": {
     "stage": "watching",
-    "commitSha": "a7179722a48e4a06cbd40f4e4775463e6fc97d81",
+    "commitSha": "b1e078f087d6b892594b58f6cd3edfb6481536fd",
     "repositoryPrivateVerified": true
   },
   "scheduler": {
@@ -176,7 +176,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 10600,
+    "uploaded": 10752,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -201,7 +201,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 6605,
+      "uploaded": 6722,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 5,
@@ -342,7 +342,7 @@
     {
       "taskId": "P28",
       "planned": 8159,
-      "uploaded": 1222,
+      "uploaded": 1257,
       "saved": null,
       "generationRuns": 8,
       "terminalRuns": 0,
@@ -408,7 +408,7 @@
   ],
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/supervisor_status.json",
-    "snapshotAt": "2026-10-16T19:03:57.707504+00:00",
+    "snapshotAt": "2026-10-16T19:08:20.215295+00:00",
     "fallback": false,
     "selection": "most_recent_valid_run_snapshot"
   },
