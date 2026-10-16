@@ -2,7 +2,7 @@
 
 [Overview](EVALUATION_OVERVIEW.md) · [Complete inventory](TASK_HIERARCHY_COMPLETE.md) · [Coverage crosswalk](TASK_COVERAGE_MAP.csv)
 
-Stored scores: **2026-10-16T04:25:25.541726+00:00**. Running-work snapshot: **2026-10-16T10:47:03.743166+00:00**. These are timestamped reports, not a live feed.
+Stored scores: **2026-10-16T04:25:25.541726+00:00**. Running-work snapshot: **2026-10-16T10:54:17.784790+00:00**. These are timestamped reports, not a live feed.
 
 Only existing stored local outcomes are shown. The category order matches the complete inventory. **\*** marks incomplete coverage or scoring; count records are in expandable details. Undefined values remain undefined. Published values are separate contextual comparisons, not matched replications, pooled scores or claims of superiority. All reference records and alternate metric values are retained in the details.
 
