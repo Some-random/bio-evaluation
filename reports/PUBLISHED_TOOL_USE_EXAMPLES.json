@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "verified_on_utc": "2026-10-16",
+  "status": "published_paper_results_not_local_runs",
+  "scope": "Four reported uses of external protein models in catalog papers; no new inference.",
+  "alphafold2": {
+    "input": "Amino-acid sequence, with sequence-alignment and optional template evidence in the AF2 pipeline.",
+    "output": "Predicted three-dimensional protein structure and confidence scores.",
+    "plddt": "Per-residue prediction confidence from 0 to 100; not experimentally measured stability or function.",
+    "source_urls": [
+      "https://www.nature.com/articles/s41586-021-03819-2",
+      "https://github.com/google-deepmind/alphafold#alphafold-output"
+    ]
+  },
+  "sources": {
+    "proteinbench": {
+      "title": "ProteinBench: A Holistic Evaluation of Protein Foundation Models",
+      "version": "arXiv:2409.06744v2",
+      "url": "https://arxiv.org/html/2409.06744v2"
+    },
+    "naturelm": {
+      "title": "Nature Language Model: Deciphering the Language of Nature for Scientific Discovery",
+      "version": "arXiv:2502.07527v3",
+      "url": "https://arxiv.org/html/2502.07527v3#S4.SS1"
+    }
+  },
+  "examples": [
+    {
+      "id": "proteinbench_inverse_folding_af2",
+      "catalog_label": "ProteinBench inverse folding — synthetic backbones",
+      "source_id": "proteinbench",
+      "sections": ["2.1.1", "3.1.1"],
+      "table": "2",
+      "status": "published_not_local",
+      "solver_model": "ProteinMPNN",
+      "external_models": [{"model": "AlphaFold2", "role": "offline_evaluator"}],
+      "pipeline": ["RFdiffusion backbone", "ProteinMPNN sequence", "AlphaFold2 structure", "backbone comparison / confidence"],
+      "sample_conditions": {
+        "selected_length_residues": 100,
+        "source_lengths_residues": [100, 200, 300, 400, 500],
+        "backbones_per_length": 10,
+        "sampling_temperature": 0.1
+      },
+      "reported_results": [
+        {"metric": "scTM", "value": 0.962, "unit": "dimensionless", "summary": "median"},
+        {"metric": "pLDDT", "value": 94.14, "unit": "confidence_0_to_100", "summary": "median"}
+      ]
+    },
+    {
+      "id": "proteinbench_backbone_proteinmpnn_esmfold",
+      "catalog_label": "ProteinBench unconditional backbone generation",
+      "source_id": "proteinbench",
+      "sections": ["2.1.2", "3.1.2"],
+      "table": "3",
+      "status": "published_not_local",
+      "solver_model": "RFdiffusion",
+      "external_models": [
+        {"model": "ProteinMPNN", "role": "offline_evaluation_sequence_assignment"},
+        {"model": "ESMFold", "role": "offline_evaluation_refolding"}
+      ],
+      "pipeline": ["RFdiffusion backbone", "ProteinMPNN sequence", "ESMFold structure", "backbone comparison"],
+      "sample_conditions": {
+        "selected_length_residues": 100,
+        "table_lengths_residues": [50, 100, 300, 500],
+        "generated_sample_count": null,
+        "generated_sample_count_status": "not_verified"
+      },
+      "reported_results": [
+        {"metric": "scRMSD", "value": 0.48, "reported_plus_minus": 0.56, "unit": "angstrom", "summary": "Table 3 caption says median; plus/minus retained as printed"}
+      ]
+    },
+    {
+      "id": "proteinbench_sequence_design_af2",
+      "catalog_label": "ProteinBench unconditional sequence generation",
+      "source_id": "proteinbench",
+      "sections": ["2.1.3", "3.1.3"],
+      "table": "4",
+      "status": "published_not_local",
+      "solver_model": "DPLM (650M)",
+      "external_models": [{"model": "AlphaFold2", "role": "offline_confidence_evaluator"}],
+      "pipeline": ["DPLM sequence", "AlphaFold2 pLDDT"],
+      "sample_conditions": {
+        "selected_length_residues": 100,
+        "sequences_per_model_per_length": 50,
+        "table_lengths_residues": [100, 200, 300, 500]
+      },
+      "reported_results": [
+        {"metric": "pLDDT", "value": 85.38, "reported_plus_minus": 14.20, "unit": "confidence_0_to_100", "summary": "mean with reported dispersion"}
+      ],
+      "qualification": "Methods 2.1.3 mentions both ESMFold and AF2. AF2 attribution here follows the explicit Table 4 caption and section 3.1.3."
+    },
+    {
+      "id": "naturelm_unconditional_omegafold",
+      "catalog_task_id": "P37",
+      "catalog_label": "NatureLM unconditional generation",
+      "source_id": "naturelm",
+      "sections": ["4.1"],
+      "table": "8",
+      "status": "published_not_local",
+      "solver_model": "NatureLM (8x7B)",
+      "external_models": [{"model": "OmegaFold", "role": "offline_confidence_evaluator"}],
+      "pipeline": ["NatureLM sequence", "OmegaFold pLDDT"],
+      "sample_conditions": {
+        "prompt": "<protein>",
+        "plddt_subset_length_residues": "<100",
+        "sample_count": null,
+        "sample_count_status": "not_verified"
+      },
+      "reported_results": [
+        {"metric": "pLDDT", "value": 75.9, "unit": "confidence_0_to_100", "summary": "average"}
+      ],
+      "qualification": "Table 8 short-sequence confidence subset; do not conflate it with whole-cohort average length 318 or the separate unrestricted-length comparison."
+    }
+  ],
+  "interpretation": {
+    "tool_execution": "These papers report executing external models during evaluation.",
+    "autonomous_llm_tool_use": "Not established by these examples.",
+    "local_replication": "Not claimed; these are published reference values.",
+    "measurement": "Predicted structure/confidence and structural agreement do not establish experimentally measured stability or biological function."
+  }
+}

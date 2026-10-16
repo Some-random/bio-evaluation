@@ -1,0 +1,40 @@
+{
+  "checked_at_utc": "2026-10-16T19:23:38.409064+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "original BF16",
+  "image_support": {
+    "architectures": [
+      "Qwen3_5ForConditionalGeneration"
+    ],
+    "language_model_only": false,
+    "vision_config_present": true,
+    "image_token_id": 248056
+  },
+  "actual_image_runs": [
+    {
+      "task_id": "B04",
+      "run_id": "qwen38_27b_b04_slurm_replay_2026-10-16",
+      "request_count": 181,
+      "image_count": 181,
+      "image_input_in_every_request": true,
+      "correct": 131,
+      "total": 181,
+      "accuracy": 0.7237569060773481,
+      "record_source": ".local/parallel_labbench/runs/B04/results/runs/qwen38_27b_b04_slurm_replay_2026-10-16"
+    },
+    {
+      "task_id": "B05",
+      "run_id": "qwen38_27b_b05_slurm_replay_2026-10-16",
+      "request_count": 244,
+      "image_count": 262,
+      "image_input_in_every_request": true,
+      "correct": 215,
+      "total": 244,
+      "accuracy": 0.8811475409836066,
+      "record_source": ".local/parallel_labbench/runs/B05/results/runs/qwen38_27b_b05_slurm_replay_2026-10-16"
+    }
+  ],
+  "video_tested": false,
+  "model_card": "https://huggingface.co/Qwen/Qwen3.8-27B"
+}

@@ -1,0 +1,90 @@
+{
+  "source": "Exact archived approved public B04/B05 requests/responses; images extracted byte-for-byte without changes.",
+  "inference_performed": false,
+  "examples": [
+    {
+      "task_id": "B04",
+      "case_id": "ae3a0d60-8c22-4402-8ab2-43a6e87cde18",
+      "question_and_options": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: In panel e, which of the following sheath lengths do cortex oligodendrocytes produce at the highest frequency? \n\nOptions:\n(A) Insufficient information to answer the question\n(B) 10\n(C) 30\n(D) 20\n(E) 5\n(F) 15\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing.",
+      "request_path": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/requests/064914b3964646c1cdafeb942c89fca7d3f28a2978f4943a7fd5cac37fe780f0.json",
+      "response_path": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/responses/064914b3964646c1cdafeb942c89fca7d3f28a2978f4943a7fd5cac37fe780f0.json",
+      "images": [
+        {
+          "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/trajectory_review/b04-ae3a0d60-8c22-4402-8ab2-43a6e87cde18.jpg",
+          "sha256": "210de746b01e82103e1a2a95ade2221a1984278cb26b10cc3c0b9e91dc289b84",
+          "bytes": 841850,
+          "mime_type": "image/jpeg",
+          "report_path": "example_assets/b04-ae3a0d60-8c22-4402-8ab2-43a6e87cde18.jpg"
+        }
+      ],
+      "reference": {
+        "task": "B04",
+        "case_id": "ae3a0d60-8c22-4402-8ab2-43a6e87cde18",
+        "subtask": "figqa-v1-public",
+        "target_choice": "D",
+        "unsure_choice": "A",
+        "choice_count": 6
+      },
+      "local_score_record": {
+        "task": "B04",
+        "case_id": "ae3a0d60-8c22-4402-8ab2-43a6e87cde18",
+        "subtask": "figqa-v1-public",
+        "answer": "D",
+        "correct": true,
+        "sure": true,
+        "parsed": true,
+        "finish_reason": "stop"
+      },
+      "response_status": "completed",
+      "response_final_content": "\n\nLooking at panel **e** (Cerebellar slice culture), the teal bars represent cortex oligodendrocytes. The tallest cortex bar occurs at the 20 µm bin (≈20% frequency), with neighboring bins (10–15 µm and 30 µm) being lower. This is consistent with the fitted peak in panel f at a log length of ~1.2–1.3 (≈15–20 µm).\n\nTherefore, the sheath length produced at the highest frequency by cortex oligodendrocytes is **20 µm**.\n\n[ANSWER]D[/ANSWER]",
+      "response_record_sha256": "7d1f8bacd78abfe6307534f92e6d943f95acaee2d9ca050e9eaab27019fa2bd5",
+      "official_image_url": "https://raw.githubusercontent.com/Future-House/LAB-Bench/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/FigQA/figs/088.jpg",
+      "official_github_image_url": "https://github.com/Future-House/LAB-Bench/blob/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/FigQA/figs/088.jpg",
+      "original_paper_doi": "http://doi.org/10.1016/j.cub.2015.07.056",
+      "official_image_bytes_match_saved_request": true,
+      "official_image_sha256": "210de746b01e82103e1a2a95ade2221a1984278cb26b10cc3c0b9e91dc289b84"
+    },
+    {
+      "task_id": "B05",
+      "case_id": "5d3f8067-fe32-4abb-9646-276150413965",
+      "question_and_options": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which model shows the lowest MSE when chi1 = 300?\n\nOptions:\n(A) OPLS4a\n(B) OPLS3e\n(C) Both OPLS4a and OPLS3e have the same lowest value for MSE when chi1 = 300\n(D) Insufficient information to answer the question\n(E) OPLS4\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing.",
+      "request_path": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/requests/03347599650da332c163393327a395437cfe58c2b6f1bda16bdca9bce0011cc6.json",
+      "response_path": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/responses/03347599650da332c163393327a395437cfe58c2b6f1bda16bdca9bce0011cc6.json",
+      "images": [
+        {
+          "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/trajectory_review/b05-5d3f8067-fe32-4abb-9646-276150413965.png",
+          "sha256": "af89673b38bb3b84331a63111f23e56b09552d902c685bd78f13992d91977bb4",
+          "bytes": 164554,
+          "mime_type": "image/png",
+          "report_path": "example_assets/b05-5d3f8067-fe32-4abb-9646-276150413965.png"
+        }
+      ],
+      "reference": {
+        "task": "B05",
+        "case_id": "5d3f8067-fe32-4abb-9646-276150413965",
+        "subtask": "tableqa-v1-public",
+        "target_choice": "E",
+        "unsure_choice": "D",
+        "choice_count": 5
+      },
+      "local_score_record": {
+        "task": "B05",
+        "case_id": "5d3f8067-fe32-4abb-9646-276150413965",
+        "subtask": "tableqa-v1-public",
+        "answer": "E",
+        "correct": true,
+        "sure": true,
+        "parsed": true,
+        "finish_reason": "stop"
+      },
+      "response_status": "completed",
+      "response_final_content": "\n\nLooking at the \"MSE (chi1 = 300)\" column:\n- OPLS3e: +0.5 ± 0.2\n- OPLS4a: +0.5 ± 0.2\n- OPLS4: +0.2 ± 0.2\n\nThe lowest value is +0.2, corresponding to OPLS4.\n\n[ANSWER]E[/ANSWER]",
+      "response_record_sha256": "ffdca69a7e4879bd700d069dc80859d9c2eb8fcd259f8ad78b01da45a5aa4978",
+      "official_image_url": "https://raw.githubusercontent.com/Future-House/LAB-Bench/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/TableQA/tables/153.png",
+      "official_github_image_url": "https://github.com/Future-House/LAB-Bench/blob/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/TableQA/tables/153.png",
+      "original_paper_doi": "https://doi.org/10.1021/acs.jctc.1c00302",
+      "official_image_bytes_match_saved_request": true,
+      "official_image_sha256": "af89673b38bb3b84331a63111f23e56b09552d902c685bd78f13992d91977bb4"
+    }
+  ]
+}

@@ -209,3 +209,15 @@ interpretations while preserving every original catalog/preparation record
 and the frozen B01 record. Do not use the old destructive interpretation
 generator. Explanation support remains unassessed independently of outcome
 scores. Public pretraining exposure remains unknown.
+
+On October 16, after being told that GitHub now reports this repository as
+public and that the private-only uploader blocked the prepared examples, the
+user explicitly instructed: "prepare everytying publicly". Public publication
+of this evaluation project's reports, code, permitted source/data records and
+saved trajectories to `Some-random/bio-evaluation` is now authorized. This
+supersedes the earlier private-destination restriction. Verify the exact
+repository identity, actual visibility and push permission before publishing;
+record the real visibility rather than asserting that it remains private.
+The earlier exclusions for model weights, credentials, environments, caches
+and unrelated Affibody data remain in force. This changes publication only,
+not frozen inference protocols, biological input reviews or compute limits.
