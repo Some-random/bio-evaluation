@@ -2,7 +2,7 @@
 
 Model: **Qwen3.8-27B**.
 
-Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 10:39 UTC**.
+Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 10:44 UTC**.
 
 **25 of 64 evaluation settings have finished runs.** An asterisk (*) marks incomplete coverage or scoring.
 
@@ -31,7 +31,7 @@ Expand a category to see its tasks and datasets.
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
 | Binary protein localization | DeepLoc — binary and 10-compartment localization<br>Binary localization — DeepLoc/PEER | Finished · Ready | accuracy 27.4% | BioT5+: accuracy 90.41% ± 0.07 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
-| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued · 72.7% trajectories uploaded* · Ready | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
+| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued · 74.0% trajectories uploaded* · Ready | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
 | Localization and sorting signals | PFMBench localization and sorting-signal panel | Needs data or protocol<br>Needs PFMBench splits, label vocabularies and binary/multilabel scoring. | — | ESM2-Adapter, Table 1 means: DeepLocMulti Accuracy 0.7666; DeepLoc2Multi F1 0.7505; DeepLocBinary AUROC 0.9338; SortingSignal F1 0.8598 · [source](https://arxiv.org/html/2506.14796v1) |
 
 #### Protein activity, stability and production
@@ -40,7 +40,7 @@ Expand a category to see its tasks and datasets.
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued · 6.2% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
+| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued · 6.4% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein stability* | TAPE / Rocklin stability | Running or queued · 0.0% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.738; ESM-2 0.718. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein thermostability prediction* | FLIP — AAV and Meltome<br>Thermostability — FLIP/Meltome | Partial* · Ready<br>Existing sequence regression runner and native Spearman scorer are available. | **Diagnostic only:** spearman undefined; spearman_parsed_only 0.0254<br>Full native primary metric undefined. | ProtST-ESM-1b: fixed encoder.spearman 0.68; full model tuning.spearman 0.681; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Enzyme activity* | Envision β-lactamase — PEER split | Needs data or protocol*<br>Beta-lactamase assay scope and complete native test inputs are not cleared. | — | Spearman: ProtST-ESM-2 0.879; ESM-2 0.867. · [source](https://arxiv.org/html/2206.02096v2) |
@@ -204,7 +204,7 @@ Expand a category to see its tasks and datasets.
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Text-conditioned protein-sequence design*<br>Lexical sequence overlap; biological function untested. | BioT5+ description-guided protein generation | Running partial subset · 49.2% trajectories uploaded* · Ready | [59-case reviewed subset](https://github.com/Some-random/bio-evaluation/tree/main/results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016). Full benchmark incomplete. | Description-guided protein designs are presented as qualitative cases rather than a fixed, experimentally validated design-success rate. · [source](https://arxiv.org/html/2402.17810v2) |
+| Text-conditioned protein-sequence design*<br>Lexical sequence overlap; biological function untested. | BioT5+ description-guided protein generation | Running partial subset · 50.8% trajectories uploaded* · Ready | [59-case reviewed subset](https://github.com/Some-random/bio-evaluation/tree/main/results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016). Full benchmark incomplete. | Description-guided protein designs are presented as qualitative cases rather than a fixed, experimentally validated design-success rate. · [source](https://arxiv.org/html/2402.17810v2) |
 | Unconditional protein backbone generation | ProteinBench unconditional backbone generation | Needs additional models/tools<br>Needs backbone coordinate generation, inverse folding and refolding checks. | — | At length 100: RFdiffusion scTM 0.98 ± 0.12 and scRMSD 0.48 ± 0.56 Å; FrameFlow 0.94 ± 0.08 and 0.70 ± 0.70 Å. · [source](https://arxiv.org/html/2409.06744v2) |
 | Unconditional protein sequence generation | ProteinBench unconditional sequence generation | Needs additional models/tools<br>Qwen can propose sequences; native scoring still needs a fixed folding evaluator. | — | At length 100, predicted AF2 pLDDT: DPLM-650M 85.38 ± 14.20; ProGen2-700M 64.00 ± 21.26. · [source](https://arxiv.org/html/2409.06744v2) |
 | Joint sequence and structure generation | ProteinBench joint sequence–structure generation | Needs additional models/tools<br>Needs joint sequence/coordinate generation and structural consistency evaluators. | — | Multiflow at length 100: scTM 0.96 ± 0.04; scRMSD 1.10 ± 0.71 Å. At length 200: scTM 0.95; scRMSD 1.61 Å. · [source](https://arxiv.org/html/2409.06744v2) |

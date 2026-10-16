@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-16T10:39:04.167387+00:00",
+  "generatedAt": "2026-10-16T10:44:36.431330+00:00",
   "scoreSnapshotAt": "2026-10-16T04:25:25.541726+00:00",
-  "runSnapshotAt": "2026-10-16T10:39:04.167387+00:00",
+  "runSnapshotAt": "2026-10-16T10:44:36.431330+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-16T10:39:04.167387+00:00",
+    "updatedAt": "2026-10-16T10:44:36.431330+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/RESULTS_AT_A_GLANCE.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
-    ".local/remaining_evaluations/supervisor_status.json": "3a1e697c8fca48abd1d63893fc2e2462439df724f4e01dec706e0a3eca94cf92",
-    ".local/remaining_evaluations/upload_status.json": "43ca129a4054561587f3b7e9d3d5d45c7bbc8bb270314545636c2085e75e19fb"
+    ".local/remaining_evaluations/supervisor_status.json": "ab69ba907f07dd0d548a5f56808f89b7a01531bde350c24bbc9bd9fbb6689219",
+    ".local/remaining_evaluations/upload_status.json": "1786c5092c7d763edd192b4091d54ecd556db746c82a6786ba6d167bc39c8eb1"
   },
   "uploader": {
     "stage": "watching",
-    "commitSha": "d93d92186fd029d1297eec2bce6491b3b412b81e",
+    "commitSha": "cdb527cf711ec81c5125ccb3c85fae1bdbb05774",
     "repositoryPrivateVerified": true
   },
   "scheduler": {
@@ -177,7 +177,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 3697,
+    "uploaded": 3784,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -186,7 +186,7 @@
     {
       "taskId": "P03",
       "planned": 2773,
-      "uploaded": 2017,
+      "uploaded": 2052,
       "saved": null,
       "generationRuns": 3,
       "terminalRuns": 1,
@@ -202,7 +202,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 1680,
+      "uploaded": 1732,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 0,
@@ -393,7 +393,7 @@
   "countNote": "Progress counts exclude aggregate runs. Uploaded counts reflect archived trajectories at the uploader heartbeat; saved is unknown unless explicitly reported. Counts do not establish benchmark completion.",
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/supervisor_status.json",
-    "snapshotAt": "2026-10-16T10:39:04.167387+00:00",
+    "snapshotAt": "2026-10-16T10:44:36.431330+00:00",
     "fallback": false,
     "selection": "most_recent_valid_run_snapshot"
   },
