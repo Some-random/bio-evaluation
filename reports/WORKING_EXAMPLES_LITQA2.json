@@ -1,0 +1,186 @@
+{
+  "created_at_utc": "2026-10-16T19:08:07.973101+00:00",
+  "task_id": "B01",
+  "dataset": "LAB-Bench / LitQA2",
+  "model": "Qwen/Qwen3.8-27B",
+  "run_id": "qwen38_27b_litqa2_replay_2026-10-16",
+  "aggregate": {
+    "correct": 77,
+    "evaluated": 197,
+    "accuracy": 0.39086294416243655,
+    "accuracy_percent": 39.08629441624365,
+    "parsed": 197,
+    "stop_finish_reason": 197,
+    "invalid_outputs": 0
+  },
+  "published_comparison": {
+    "source_url": "https://arxiv.org/html/2606.00902v1#S3.T1",
+    "source_locator": "Table 1",
+    "public_case_count": 199,
+    "comparators": [
+      {
+        "model": "Qwen3-VL-8B",
+        "accuracy_percent": 38.7
+      },
+      {
+        "model": "GPT-5.2",
+        "accuracy_percent": 45.7
+      }
+    ],
+    "gap_to_qwen3_vl_8b_percentage_points": 0.3862944162436506,
+    "qualification": "Numerical comparison, not reproduction: this Qwen3.8-27B run covers 197 of 199 public cases; model, decoder and repeat settings differ."
+  },
+  "selection_note": "Three selected correct examples, not a representative sample or an estimate of overall accuracy.",
+  "explanation_assessment": "Explanations are omitted and unassessed. Correct answer choices do not validate explanations.",
+  "provenance": {
+    "scores": {
+      "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/scores.json",
+      "sha256": "5b8d04effeec755cb0c0ba3de29dde6b47ce8a7b34a0743766ef4d40f6c4a4fb"
+    },
+    "per_case_scores": {
+      "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/per_case_scores.json",
+      "sha256": "9aec9deab0775fac041ae6b7c01ac74380fe79a87511d1287d906aca607b0e61"
+    },
+    "native_gold": {
+      "original_path": "data/labbench/scorer_references.jsonl",
+      "frozen_local_path": ".local/litqa2_replay/baseline/results/runs/qwen38_27b_litqa2_public_reviewed_2026-10-15/frozen_files/data/labbench/scorer_references.jsonl",
+      "sha256": "2236079f908f00e7d413ff0f73de3bb3644148edf3b7f3a40c1f697cda4c7346",
+      "field": "target_choice"
+    }
+  },
+  "examples": [
+    {
+      "case_id": "76184ccf-4bf0-469e-a442-11d04b4ff8b0",
+      "title": "Olfactory receptor contacts",
+      "question": "Active olfactory receptor genes increase their contacts with greek island regions by what factor in mouse olfactory neurons?",
+      "options": [
+        {
+          "label": "A",
+          "text": "27 fold"
+        },
+        {
+          "label": "B",
+          "text": "2.7 fold"
+        },
+        {
+          "label": "C",
+          "text": "1.7 fold"
+        },
+        {
+          "label": "D",
+          "text": "3.0 fold"
+        },
+        {
+          "label": "E",
+          "text": "2.0 fold"
+        },
+        {
+          "label": "F",
+          "text": "Insufficient information to answer the question"
+        }
+      ],
+      "saved_final_answer_excerpt": "[ANSWER]B[/ANSWER]",
+      "excerpt_note": "Exact answer-tag excerpt from the saved final response; the rest of the final response and reasoning are omitted.",
+      "expected_choice": "B",
+      "expected_option_text": "2.7 fold",
+      "expected_choice_source_field": "target_choice",
+      "per_case_correct": true,
+      "per_case_parsed": true,
+      "finish_reason": "stop",
+      "request": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/requests/4a27cff2f3f6541679935df8ca4e70602334c42b9db464f182dd222a71234e78.json",
+        "sha256": "66f2190ba7a40c35fd647ecfe7cfd00dd11873ea62c97a8162e5ff56f7925e62"
+      },
+      "response": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/responses/4a27cff2f3f6541679935df8ca4e70602334c42b9db464f182dd222a71234e78.json",
+        "sha256": "2c97cc25e8908026304bba7cbb906449041e30f69ea5997124fa5e6ad4b66132"
+      }
+    },
+    {
+      "case_id": "5c4c602c-9624-4eae-ac44-efe4c0dd10e6",
+      "title": "Nav1.6 oligosaccharide density",
+      "question": "At which amino acid position is a large oligosaccharide density observed in the cryo-EM map of Nav1.6?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Trp324"
+        },
+        {
+          "label": "B",
+          "text": "Leu288"
+        },
+        {
+          "label": "C",
+          "text": "Insufficient information to answer the question"
+        },
+        {
+          "label": "D",
+          "text": "Asn326"
+        },
+        {
+          "label": "E",
+          "text": "Phe302"
+        }
+      ],
+      "saved_final_answer_excerpt": "[ANSWER]D[/ANSWER]",
+      "excerpt_note": "Exact answer-tag excerpt from the saved final response; the rest of the final response and reasoning are omitted.",
+      "expected_choice": "D",
+      "expected_option_text": "Asn326",
+      "expected_choice_source_field": "target_choice",
+      "per_case_correct": true,
+      "per_case_parsed": true,
+      "finish_reason": "stop",
+      "request": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/requests/a6aafe0b7c9b625dd73f024c3a3e6ba89160e415ba7a202f49e54282d5cc6634.json",
+        "sha256": "5a3187d801fb7bd6b9b310ea9298aa23d7e15590fd6a8cce334dd91290b64cda"
+      },
+      "response": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/responses/a6aafe0b7c9b625dd73f024c3a3e6ba89160e415ba7a202f49e54282d5cc6634.json",
+        "sha256": "c423bc1b97d674ee09c018096f611fd0906da40060fd8fa2740654796a3cf8da"
+      }
+    },
+    {
+      "case_id": "e6b0f9e5-e976-47dc-b839-0b2fca967e9e",
+      "title": "Myotendinous junction myonuclei",
+      "question": "Based on single-nuclei RNA sequencing data, myotendinous junction myonuclei are enriched for genes involved in which of the following functions?",
+      "options": [
+        {
+          "label": "A",
+          "text": "synaptic transmission"
+        },
+        {
+          "label": "B",
+          "text": "signal transduction"
+        },
+        {
+          "label": "C",
+          "text": "Insufficient information to answer the question"
+        },
+        {
+          "label": "D",
+          "text": "cell–matrix interactions"
+        },
+        {
+          "label": "E",
+          "text": "protein synthesis"
+        }
+      ],
+      "saved_final_answer_excerpt": "[ANSWER]D[/ANSWER]",
+      "excerpt_note": "Exact answer-tag excerpt from the saved final response; the rest of the final response and reasoning are omitted.",
+      "expected_choice": "D",
+      "expected_option_text": "cell–matrix interactions",
+      "expected_choice_source_field": "target_choice",
+      "per_case_correct": true,
+      "per_case_parsed": true,
+      "finish_reason": "stop",
+      "request": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/requests/e9aafc33c850efbc807af98561260c3fd5633389474720b802f2976182c3c080.json",
+        "sha256": "1e546c5be91a073ba88bf9a4a57a49875d333202559e75c50ad215d057428f51"
+      },
+      "response": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/responses/e9aafc33c850efbc807af98561260c3fd5633389474720b802f2976182c3c080.json",
+        "sha256": "92f8bc27b5d5b542154442b116f768e2bdcd26fe895a7c97a691db5eb3db323d"
+      }
+    }
+  ]
+}
