@@ -1,0 +1,46 @@
+{
+  "run_id": "qwen38_27b_b04_slurm_replay_2026-10-16",
+  "asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b04_slurm_replay_2026-10-16-requests-793ddfcad8281fcb170f.tar.gz",
+  "asset_id": 646402095,
+  "archive_sha256": "810628400a691f3b16f02a5f59a9231cefa40dc5770b8ce552cb4b8b4a9135f5",
+  "archive_bytes": 1717699,
+  "cases": [
+    {
+      "case_id": "e3c5fea7-205c-4bf9-b65a-9c1b3b71aaf5",
+      "filename": "492d493ff8c1a45d3ac9d40a9596733202ca4a0abdf6687c7dc58e7e192d5d2c.json",
+      "request_member": "requests/492d493ff8c1a45d3ac9d40a9596733202ca4a0abdf6687c7dc58e7e192d5d2c.json",
+      "request_sha256": "d60aa262d02f9b57cd1ca7e68c4b2af35f4e668b81f551629a9ea3b9c4c1891d",
+      "payload_sha256": "86d4483d1154971a1948db6bfa56efcffd81bbc91538505749bb81a5485c68c2",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b04_slurm_replay_2026-10-16-requests-793ddfcad8281fcb170f.tar.gz",
+      "request_archive_sha256": "810628400a691f3b16f02a5f59a9231cefa40dc5770b8ce552cb4b8b4a9135f5",
+      "response": "responses/492d493ff8c1a45d3ac9d40a9596733202ca4a0abdf6687c7dc58e7e192d5d2c.json",
+      "response_sha256": "887100531de7f9b79adfcc64dc423f828647c06cc3e7497341e6d19fcc2b4237"
+    },
+    {
+      "case_id": "e8156b3a-7338-45ef-bc72-59e4b4a52906",
+      "filename": "9925618766831a911f7f542dfdf9c395e9978ec4fcd8d92695f07cd0bbdfa8bd.json",
+      "request_member": "requests/9925618766831a911f7f542dfdf9c395e9978ec4fcd8d92695f07cd0bbdfa8bd.json",
+      "request_sha256": "ca5dfd3d291a5f7265def346fcf83c41707b6ccd5c3779ebf4eb561cac376fd6",
+      "payload_sha256": "1f729f0284aae3713187e3270e1ab06e3fc4dac8c158c8e8b9868dbb5f6e4362",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b04_slurm_replay_2026-10-16-requests-793ddfcad8281fcb170f.tar.gz",
+      "request_archive_sha256": "810628400a691f3b16f02a5f59a9231cefa40dc5770b8ce552cb4b8b4a9135f5",
+      "response": "responses/9925618766831a911f7f542dfdf9c395e9978ec4fcd8d92695f07cd0bbdfa8bd.json",
+      "response_sha256": "1cb29edb94e364366e3ceb8b42699fd81ed6f9e3cd930a4b9b10133b915676a5"
+    },
+    {
+      "case_id": "e95aed27-de33-4036-a589-8e95965f6969",
+      "filename": "f538abf3af9375f3954bd84bc32598007b5d8d01dd6430aa4861677cebdeaa85.json",
+      "request_member": "requests/f538abf3af9375f3954bd84bc32598007b5d8d01dd6430aa4861677cebdeaa85.json",
+      "request_sha256": "11739d307f4ed458c46c6046d876ef8e093224b489197a2329f560e8dc7a8511",
+      "payload_sha256": "c6cab92ad63e7200e32bda75a1436815e36447687dcafcd31b106a12fe81ad7e",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b04_slurm_replay_2026-10-16-requests-793ddfcad8281fcb170f.tar.gz",
+      "request_archive_sha256": "810628400a691f3b16f02a5f59a9231cefa40dc5770b8ce552cb4b8b4a9135f5",
+      "response": "responses/f538abf3af9375f3954bd84bc32598007b5d8d01dd6430aa4861677cebdeaa85.json",
+      "response_sha256": "61a72176cdd7e762825c212861e9192df730bdc0174e67238907462787b31bee"
+    }
+  ],
+  "raw_request_json_preserved": true,
+  "image_data_preserved": true,
+  "server_digest": "sha256:810628400a691f3b16f02a5f59a9231cefa40dc5770b8ce552cb4b8b4a9135f5",
+  "created_at_utc": "2026-10-16T06:35:33.059234+00:00"
+}
