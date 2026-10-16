@@ -1,0 +1,4 @@
+run_id,task_id,protocol_variant,model,metric,value,planned,completed,case_scope
+qwen38_27b_b04_slurm_replay_2026-10-16,B04,NATIVE_PUBLIC_COT_LOCAL_REVIEWED,Qwen/Qwen3.8-27B,accuracy,0.7237569060773481,181,181,reviewed_public_subset
+qwen38_27b_b04_slurm_replay_2026-10-16,B04,NATIVE_PUBLIC_COT_LOCAL_REVIEWED,Qwen/Qwen3.8-27B,precision,0.7277777777777777,181,181,reviewed_public_subset
+qwen38_27b_b04_slurm_replay_2026-10-16,B04,NATIVE_PUBLIC_COT_LOCAL_REVIEWED,Qwen/Qwen3.8-27B,coverage,0.994475138121547,181,181,reviewed_public_subset
