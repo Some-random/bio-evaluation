@@ -1,8 +1,14 @@
 {
   "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_001",
   "task_id": "P03",
-  "stage": "executing",
+  "stage": "completed",
   "slurm_job_id": "237664",
   "worker_id": "extended1",
-  "command_results": []
+  "command_results": [
+    {
+      "label": "execute",
+      "exit_code": 0
+    }
+  ],
+  "completion_sha256": "a584efc47f4ba7ba55c3c141f11f7063ef564e9e3f575bce7dfe73944c5ff87b"
 }
