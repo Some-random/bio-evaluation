@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bioreason-pro"
+version = "0.1.0"
+description = "Protein Function Prediction with Multimodal Reasoning"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "torch>=2.6.0,<2.8.0",
+    "torchvision",
+    "transformers>=4.51.0,<5.0.0",
+    "accelerate",
+    "datasets",
+    "peft",
+    "pytorch_lightning",
+    "wandb",
+    "trl",
+    "vllm>=0.9.0",
+    "bitsandbytes",
+    "deepspeed",
+    # Training only. Imported unconditionally by train_protein_llm.py and
+    # bioreason2/models/protein_llm.py; requires a CUDA GPU at import time.
+    "unsloth",
+    "unsloth_zoo",
+    # esm>=3.2.1 must be installed separately: pip install esm --no-deps (conflicts with vllm on transformers version).
+    # --no-deps strips esm's own requirements, so the ones we actually need are re-declared here.
+    # Deliberately NOT re-declared: transformers<4.48.2 and torchtext, which are the conflict.
+    "biopython",        # Bio.PDB, imported directly by bioreason2/dataset/cafa5/collate.py
+    "biotite",
+    "einops",
+    "msgpack-numpy",
+    "scikit-learn",
+    "tenacity",
+    "attrs",
+    "cloudpathlib",
+    "brotli",
+    "zstd",
+    "goatools",
+    "cafaeval",
+    "colorama",
+    # flash-attn must be installed separately: pip install flash-attn --no-build-isolation
+    "typing-extensions",
+    "triton",
+    "sentence-transformers",
+    "torch_geometric",
+    "networkx",
+    "obonet",
+    "huggingface_hub",
+    "safetensors",
+    "requests",
+    "tqdm",
+    "pandas",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "mypy",
+]
+
+[tool.setuptools]
+packages = ["bioreason2"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true

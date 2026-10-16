@@ -1,0 +1,252 @@
+{
+  "generation_exit_code": 0,
+  "scoring_exit_code": 0,
+  "finished_at_utc": "2026-10-16T13:47:50.762560+00:00",
+  "aggregate_only": true,
+  "full_test_id_union_validation": {
+    "complete": true,
+    "union_matches_full_test_ids": true,
+    "expected_test_case_count": 2773,
+    "unique_observed_case_count": 2773,
+    "missing_case_count": 0,
+    "extra_case_count": 0
+  },
+  "parallel_gpu_metadata": {
+    "mode": "independent TP1 replicas of one pinned checkpoint",
+    "gpu_ids": [
+      0
+    ],
+    "gpu_id_namespace": "worker-local CUDA_VISIBLE_DEVICES ordinals",
+    "physical_gpu_uuids": [
+      "GPU-76490cba-3050-6234-10fa-fe267e1f0b78",
+      "GPU-788ee711-8676-c6fc-0dae-1d847151dc79",
+      "GPU-e1032ebc-f448-0e5d-7211-b9b86a6afc45"
+    ],
+    "physical_gpu_count": 3,
+    "replica_count": 3,
+    "configured_pool_worker_count": 8,
+    "replica_count_basis": "distinct hostname, Slurm job ID, worker ID and endpoint",
+    "replica_details": [
+      {
+        "hostname": "ampere6.stanford.edu",
+        "slurm_job_id": "237664",
+        "worker_id": "extended1",
+        "endpoint": "http://127.0.0.1:8027/v1",
+        "physical_gpu_uuid": "GPU-788ee711-8676-c6fc-0dae-1d847151dc79",
+        "logical_gpu_ids": [
+          0
+        ]
+      },
+      {
+        "hostname": "ampere7.stanford.edu",
+        "slurm_job_id": "237663",
+        "worker_id": "extended0",
+        "endpoint": "http://127.0.0.1:8026/v1",
+        "physical_gpu_uuid": "GPU-76490cba-3050-6234-10fa-fe267e1f0b78",
+        "logical_gpu_ids": [
+          0
+        ]
+      },
+      {
+        "hostname": "ampere7.stanford.edu",
+        "slurm_job_id": "237671",
+        "worker_id": "extended2",
+        "endpoint": "http://127.0.0.1:8028/v1",
+        "physical_gpu_uuid": "GPU-e1032ebc-f448-0e5d-7211-b9b86a6afc45",
+        "logical_gpu_ids": [
+          0
+        ]
+      }
+    ],
+    "shard_count": 3,
+    "per_replica_concurrency": 4,
+    "servers": [
+      {
+        "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_000",
+        "gpu_ids": [
+          0
+        ],
+        "endpoint": "http://127.0.0.1:8026/v1",
+        "server": {
+          "pid": 3222110,
+          "proc_start_ticks": "574530612",
+          "model": "Qwen/Qwen3.8-27B",
+          "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+          "gpu_ids": [
+            0
+          ],
+          "host": "127.0.0.1",
+          "port": 8026,
+          "endpoint": "http://127.0.0.1:8026/v1",
+          "slurm_job_id": "237663",
+          "slurm_job_gpus": "5",
+          "cuda_visible_devices": "0",
+          "hostname": "ampere7.stanford.edu",
+          "observed_gpu_processes": [
+            {
+              "pid": 3222667,
+              "gpu_uuid": "GPU-76490cba-3050-6234-10fa-fe267e1f0b78",
+              "used_memory": "71546 MiB"
+            }
+          ],
+          "command": [
+            "/tmp/bio-remaining-237663-kmHt4x/python/bin/python3.12",
+            "-m",
+            "vllm.entrypoints.cli.main",
+            "serve",
+            "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+            "--served-model-name",
+            "Qwen/Qwen3.8-27B",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "8026",
+            "--dtype",
+            "bfloat16",
+            "--tensor-parallel-size",
+            "1",
+            "--gpu-memory-utilization",
+            "0.90",
+            "--max-model-len",
+            "32768",
+            "--max-num-seqs",
+            "4",
+            "--reasoning-parser",
+            "qwen3",
+            "--enable-prefix-caching",
+            "--limit-mm-per-prompt",
+            "{\"image\": 1, \"video\": 0}"
+          ],
+          "max_model_len": 32768,
+          "pool_worker_id": "extended0"
+        }
+      },
+      {
+        "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_001",
+        "gpu_ids": [
+          0
+        ],
+        "endpoint": "http://127.0.0.1:8027/v1",
+        "server": {
+          "pid": 3368107,
+          "proc_start_ticks": "900575552",
+          "model": "Qwen/Qwen3.8-27B",
+          "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+          "gpu_ids": [
+            0
+          ],
+          "host": "127.0.0.1",
+          "port": 8027,
+          "endpoint": "http://127.0.0.1:8027/v1",
+          "slurm_job_id": "237664",
+          "slurm_job_gpus": "4",
+          "cuda_visible_devices": "0",
+          "hostname": "ampere6.stanford.edu",
+          "observed_gpu_processes": [
+            {
+              "pid": 3368659,
+              "gpu_uuid": "GPU-788ee711-8676-c6fc-0dae-1d847151dc79",
+              "used_memory": "71546 MiB"
+            }
+          ],
+          "command": [
+            "/tmp/bio-remaining-237664-NREVap/python/bin/python3.12",
+            "-m",
+            "vllm.entrypoints.cli.main",
+            "serve",
+            "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+            "--served-model-name",
+            "Qwen/Qwen3.8-27B",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "8027",
+            "--dtype",
+            "bfloat16",
+            "--tensor-parallel-size",
+            "1",
+            "--gpu-memory-utilization",
+            "0.90",
+            "--max-model-len",
+            "32768",
+            "--max-num-seqs",
+            "4",
+            "--reasoning-parser",
+            "qwen3",
+            "--enable-prefix-caching",
+            "--limit-mm-per-prompt",
+            "{\"image\": 1, \"video\": 0}"
+          ],
+          "max_model_len": 32768,
+          "pool_worker_id": "extended1"
+        }
+      },
+      {
+        "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_002",
+        "gpu_ids": [
+          0
+        ],
+        "endpoint": "http://127.0.0.1:8028/v1",
+        "server": {
+          "pid": 3224639,
+          "proc_start_ticks": "574546833",
+          "model": "Qwen/Qwen3.8-27B",
+          "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+          "gpu_ids": [
+            0
+          ],
+          "host": "127.0.0.1",
+          "port": 8028,
+          "endpoint": "http://127.0.0.1:8028/v1",
+          "slurm_job_id": "237671",
+          "slurm_job_gpus": "0",
+          "cuda_visible_devices": "0",
+          "hostname": "ampere7.stanford.edu",
+          "observed_gpu_processes": [
+            {
+              "pid": 3225286,
+              "gpu_uuid": "GPU-e1032ebc-f448-0e5d-7211-b9b86a6afc45",
+              "used_memory": "71546 MiB"
+            }
+          ],
+          "command": [
+            "/tmp/bio-remaining-237671-fhrB1o/python/bin/python3.12",
+            "-m",
+            "vllm.entrypoints.cli.main",
+            "serve",
+            "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+            "--served-model-name",
+            "Qwen/Qwen3.8-27B",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "8028",
+            "--dtype",
+            "bfloat16",
+            "--tensor-parallel-size",
+            "1",
+            "--gpu-memory-utilization",
+            "0.90",
+            "--max-model-len",
+            "32768",
+            "--max-num-seqs",
+            "4",
+            "--reasoning-parser",
+            "qwen3",
+            "--enable-prefix-caching",
+            "--limit-mm-per-prompt",
+            "{\"image\": 1, \"video\": 0}"
+          ],
+          "max_model_len": 32768,
+          "pool_worker_id": "extended2"
+        }
+      }
+    ]
+  },
+  "source_shard_provenance_sha256": "b6d77f841eaf5cf9fac62e7c8314fcc62c451cef2e70340ed854ceb134115605",
+  "configuration_sha256": "e8b35f4da24178cafc60b476762f9cdfb90248a5e7311f8e1af70d23db0ad75f",
+  "run_manifest_sha256": "0a70bd50c625d0bec3d94579d811cc2b7f246bef6234e007d4d0c43c4ca1ea81",
+  "case_scope": "full_frozen_reviewed_released_test",
+  "retry_or_resampling": false,
+  "scores_sha256": "b2502d3ded2d81fc3f03c8260cd6d2db01dc5ae914e6d84e5ae6c81c18882e4a"
+}

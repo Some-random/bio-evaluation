@@ -1,0 +1,191 @@
+{
+  "task_id": "P28",
+  "frozen_at_utc": "2026-10-16T07:09:05.855218+00:00",
+  "source_recipe_file": "configs/local_labbench_b07.json",
+  "source_recipe_sha256": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "concurrency": 4,
+  "aggregate_config_file": "configs/local_bioreason_p28_aggregate.json",
+  "aggregate_config_sha256": "1e73ddf7bad439a6c4371b2babb45331b6b0905def871427a5240dd2e686afb9",
+  "aggregate_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16",
+  "full_test_case_count": 8159,
+  "released_test_case_count": 8630,
+  "native_excluded_case_count": 471,
+  "shard_size": 1024,
+  "shard_count": 8,
+  "shards": [
+    {
+      "config_file": "configs/local_bioreason_p28_shard_000.json",
+      "config_sha256": "e161ce5605af8ab49513f2dd43f3351ce34beabe132915db093eeab55f2264b7",
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_000",
+      "shard_index": 0,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8026/v1"
+    },
+    {
+      "config_file": "configs/local_bioreason_p28_shard_001.json",
+      "config_sha256": "62bd36ee1bd7312e59883475c900469b3f65120b9c26bd7056dc76e1c888193b",
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_001",
+      "shard_index": 1,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8027/v1"
+    },
+    {
+      "config_file": "configs/local_bioreason_p28_shard_002.json",
+      "config_sha256": "43253a66a0c3d971e65306c1e84557c35c00fe8038867ee566ebf37b1bec4907",
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_002",
+      "shard_index": 2,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8028/v1"
+    },
+    {
+      "config_file": "configs/local_bioreason_p28_shard_003.json",
+      "config_sha256": "e121da70714005d213ff5ef5f1575230c64e0f0ded7c1d5875edfc0243075313",
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_003",
+      "shard_index": 3,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8029/v1"
+    },
+    {
+      "config_file": "configs/local_bioreason_p28_shard_004.json",
+      "config_sha256": "c9a464497c981ba3bcfcbd0fe82bb035e74c03050a2e64a793f17eaf0db7a4d6",
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_004",
+      "shard_index": 4,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8030/v1"
+    },
+    {
+      "config_file": "configs/local_bioreason_p28_shard_005.json",
+      "config_sha256": "09615a4fb05e2d80554bbbd3cce47a61015ec4192db070f4b09f364d8fb39fa6",
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_005",
+      "shard_index": 5,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8031/v1"
+    },
+    {
+      "config_file": "configs/local_bioreason_p28_shard_006.json",
+      "config_sha256": "956dc05f3e3acf4da96c1156f7ce308c852cf91616bded3beb68942788cb3c88",
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_006",
+      "shard_index": 6,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8032/v1"
+    },
+    {
+      "config_file": "configs/local_bioreason_p28_shard_007.json",
+      "config_sha256": "6e301f4f878419e0840eafe75c26ecc05be077c5ea1385fec3c369ae45dc0924",
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_007",
+      "shard_index": 7,
+      "cases": 991,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8033/v1"
+    }
+  ],
+  "full_test_id_union_validation": {
+    "complete": true,
+    "union_matches_full_test_ids": true,
+    "expected_test_case_count": 8159,
+    "unique_observed_case_count": 8159,
+    "missing_case_count": 0,
+    "extra_case_count": 0
+  },
+  "replica_order": [
+    {
+      "gpu_ids": [
+        0
+      ],
+      "port": 8026,
+      "slurm_lane": 0
+    },
+    {
+      "gpu_ids": [
+        0
+      ],
+      "port": 8027,
+      "slurm_lane": 1
+    },
+    {
+      "gpu_ids": [
+        0
+      ],
+      "port": 8028,
+      "slurm_lane": 2
+    },
+    {
+      "gpu_ids": [
+        0
+      ],
+      "port": 8029,
+      "slurm_lane": 3
+    },
+    {
+      "gpu_ids": [
+        0
+      ],
+      "port": 8030,
+      "slurm_lane": 4
+    },
+    {
+      "gpu_ids": [
+        0
+      ],
+      "port": 8031,
+      "slurm_lane": 5
+    },
+    {
+      "gpu_ids": [
+        0
+      ],
+      "port": 8032,
+      "slurm_lane": 6
+    },
+    {
+      "gpu_ids": [
+        0
+      ],
+      "port": 8033,
+      "slurm_lane": 7
+    }
+  ],
+  "partition_policy": "Consecutive source-order1024 slices after native471ID exclusions; every eligible row once, no labels/outcomes used.",
+  "incomplete_output_policy": "Wait for every planned shard terminal; preserve all eligible missing/failed/empty predictions as empty GO sets in one global metric. Nonzero source generation remains nonzero aggregate generation; invalid provenance blocks. No retry/resampling or successful-only selection.",
+  "global_metric_policy": "Compute native CAFA metrics ONCE from full combined predictions; no shard Fmax or IA-weighted Fmax averaging.",
+  "inference_dispatched": false,
+  "authorizations_or_queues_modified": false,
+  "deployment_adaptation": "Independent Slurm allocations use logicalGPU0; physical GPU UUID and job identity logged separately."
+}

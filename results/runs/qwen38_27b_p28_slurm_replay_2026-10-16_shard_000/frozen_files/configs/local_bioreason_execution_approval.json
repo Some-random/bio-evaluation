@@ -1,0 +1,24 @@
+{
+  "execution_authorized": true,
+  "approved_task_ids": [
+    "P28"
+  ],
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+  "plan_sha256": "24c1cd8cc7a8902371745350eb6076d2af6f2cedf02380295aa3cfeca6987156",
+  "approved_config_sha256": {
+    "configs/local_bioreason_p28_shard_000.json": "e161ce5605af8ab49513f2dd43f3351ce34beabe132915db093eeab55f2264b7",
+    "configs/local_bioreason_p28_shard_001.json": "62bd36ee1bd7312e59883475c900469b3f65120b9c26bd7056dc76e1c888193b",
+    "configs/local_bioreason_p28_shard_002.json": "43253a66a0c3d971e65306c1e84557c35c00fe8038867ee566ebf37b1bec4907",
+    "configs/local_bioreason_p28_shard_003.json": "e121da70714005d213ff5ef5f1575230c64e0f0ded7c1d5875edfc0243075313",
+    "configs/local_bioreason_p28_shard_004.json": "c9a464497c981ba3bcfcbd0fe82bb035e74c03050a2e64a793f17eaf0db7a4d6",
+    "configs/local_bioreason_p28_shard_005.json": "09615a4fb05e2d80554bbbd3cce47a61015ec4192db070f4b09f364d8fb39fa6",
+    "configs/local_bioreason_p28_shard_006.json": "956dc05f3e3acf4da96c1156f7ce308c852cf91616bded3beb68942788cb3c88",
+    "configs/local_bioreason_p28_shard_007.json": "6e301f4f878419e0840eafe75c26ecc05be077c5ea1385fec3c369ae45dc0924"
+  },
+  "incomplete_output_policy": "Wait for every planned shard terminal; preserve all eligible missing/failed/empty predictions as empty GO sets in one global metric. Nonzero source generation remains nonzero aggregate generation; invalid provenance blocks. No retry/resampling or successful-only selection.",
+  "activation_order": "Review exact frozen plan/configs and authorize this approval before centralP28allowlist activation; run only through gated shard executor. Generic runner ignores perconfig execution_authorized false.",
+  "approved_at_utc": "2026-10-16T07:09:05.949619+00:00",
+  "basis": "Complete native eligible protein annotation test after original471common-protein exclusions; full source sequence and permitted non-gold organism/InterPro/STRING/go_pred context, no label-dependent aspect/summary selector. One generation per case, no engineering requests. Same4096recipe; complete8159case global scorer and declared incomplete policy. Separate Qwen raw-sequence adaptation rather than native learned protein/projector regime. User reauthorized remaining permitted evaluations; exact same cases/recipe restored for isolated Slurm run. No inference dispatched during preparation."
+}
