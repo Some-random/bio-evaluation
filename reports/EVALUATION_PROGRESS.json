@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-10-16T08:48:20.774773+00:00",
+  "generatedAt": "2026-10-16T08:53:13.116187+00:00",
   "scoreSnapshotAt": "2026-10-16T04:25:25.541726+00:00",
-  "runSnapshotAt": "2026-10-16T08:48:20.774773+00:00",
+  "runSnapshotAt": "2026-10-16T08:53:13.116187+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-16T08:48:20.774773+00:00",
+    "updatedAt": "2026-10-16T08:53:13.116187+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/RESULTS_AT_A_GLANCE.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
-    ".local/remaining_evaluations/supervisor_status.json": "96ae8ff891375385b774953edfec12a0f90b85d7e255e8b2c5d5e59528880789"
+    ".local/remaining_evaluations/supervisor_status.json": "2cda8fd5462e6e1d90c77d7fbd7a80f65aeebc0637c52ccf205afe05301c1b50",
+    ".local/remaining_evaluations/upload_status.json": "be06b38d032b658bc207d389dbd43970bff3ad2ab271f00f145bf9c3a2c4674c"
   },
   "uploader": {
     "stage": "watching",
-    "commitSha": "10b14f62b3f963569ce1b9d7e82a4bc45a789e99",
+    "commitSha": "2f4fd43201a0c2143a108ee23e89e6dba7c45ea1",
     "repositoryPrivateVerified": true
   },
   "scheduler": {
@@ -176,7 +177,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 1734,
+    "uploaded": 1823,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -185,7 +186,7 @@
     {
       "taskId": "P03",
       "planned": 2773,
-      "uploaded": 1027,
+      "uploaded": 1077,
       "saved": null,
       "generationRuns": 3,
       "terminalRuns": 0,
@@ -201,7 +202,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 707,
+      "uploaded": 746,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 0,
@@ -389,5 +390,12 @@
       ]
     }
   ],
-  "countNote": "Progress counts exclude aggregate runs. Uploaded counts reflect archived trajectories at the uploader heartbeat; saved is unknown unless explicitly reported. Counts do not establish benchmark completion."
+  "countNote": "Progress counts exclude aggregate runs. Uploaded counts reflect archived trajectories at the uploader heartbeat; saved is unknown unless explicitly reported. Counts do not establish benchmark completion.",
+  "runSnapshotSource": {
+    "path": ".local/remaining_evaluations/supervisor_status.json",
+    "snapshotAt": "2026-10-16T08:53:13.116187+00:00",
+    "fallback": false,
+    "selection": "most_recent_valid_run_snapshot"
+  },
+  "metadataErrors": []
 }
