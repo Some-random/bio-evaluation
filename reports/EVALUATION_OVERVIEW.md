@@ -20,29 +20,35 @@ This catalog spans biological prediction, scientific evidence, protein design an
 
 ## Worked examples
 
-### Good result: read a graph and answer a simple question
+### Good result: Trace a biological pathway from brain injury to disease
 
-**Question:** By day 30, which of the three groups still has surviving subjects?
+**Evaluation dataset:** [LAB-Bench FigQA](https://github.com/Future-House/LAB-Bench/tree/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/FigQA).
 
-<img src="example_assets/b04-cf6ac735-33af-4243-bfcf-4c28e3267345.jpg" alt="Survival curves: read panel a at day 30" width="600">
+**Question:** According to the diagram, which change is most directly linked to neurodegenerative disease?
 
-**Qwen's answer:** None of the three groups; all survival curves reach 0% before day 30.
+Tau is a protein. The AC labels mark acetyl groups attached to it. The task is to distinguish the final protein change from earlier steps in the pathway.
+
+<img src="example_assets/b04-5e7f5ee7-9469-405a-910d-aecd090ca206.jpg" alt="Trace a biological pathway from brain injury to disease" width="600">
+
+**Qwen's answer:** Increased acetylation of tau—the addition of acetyl groups to the tau protein.
 
 **Saved explanation (excerpt):**
 
-> Looking at panel a, by day 30 all three survival curves (WT, WT + Nemadipine, and WT + Ive) have reached 0% survival. Therefore no group has surviving subjects at that time point.
+> Tracing the pathway in the diagram: Brain injury leads to S‑nitrosylated GAPDH, which activates p300/CBP (an acetyltransferase) and suppresses sirtuin1 (a deacetylase). The net effect is hyper‑acetylation of TAU (the TAU boxes with "AC" marks). Arrows from this acetylated TAU point directly to "Neurodegenerative Disease" (and to elevated plasma Ac‑Tau). Therefore, the change immediately upstream of the disease state is increased acetylation of Tau, making it the most directly related change.
 
-The answer matches the reference label. LAB-Bench FigQA accuracy: **72.4%** (131/181).
+The answer matches the reference label. Dataset accuracy: **72.4%** (131/181).
 
 ### Tool-use challenge: does one change make a protein less stable?
 
-**Question:** Given the protein below, replace amino acid 6 from Q to C. Does it become less stable, and by how much?
+**Evaluation dataset:** [BioEmu folding-free-energy benchmark](https://github.com/microsoft/bioemu-benchmarks/blob/63edbfa2ee5f489d66a4bece96f242a1d28e567d/bioemu_benchmarks/assets/folding_free_energies_benchmark_0.1/folding_free_energies/system_info.csv) — protein stability.
 
-```text
-AFSSEQLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA
-```
+**Question:** Given the protein below, replace amino acid 6 from **Q** to **C**. Does it become less stable, and by how much?
+
+AFSSE**Q**LARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA
 
 **Reference answer (experiment):** Yes—less stable, with a change of about **+0.91 kcal/mol** in folding free energy.
+
+**What is BioEmu?** BioEmu is an AI model that takes a protein sequence and generates many possible three-dimensional shapes. It approximates the mixture of shapes a protein adopts, which would otherwise be expensive to explore with molecular simulations. These samples can be used to estimate how often the protein stays folded.
 
 **How the published BioEmu workflow gets to a one-number answer:**
 
@@ -52,8 +58,6 @@ AFSSEQLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA
 4. Subtract the two energies to predict the stability change.
 
 Evaluation compares the predicted number with the experimental reference. The question and answer are simple; producing a supported prediction involves substantial intermediate computation.
-
-This illustrates a published tool workflow. We have not run this case with Qwen or BioEmu here, so it is not a measured Qwen failure. [Released reference](https://github.com/microsoft/bioemu-benchmarks/blob/63edbfa2ee5f489d66a4bece96f242a1d28e567d/bioemu_benchmarks/assets/folding_free_energies_benchmark_0.1/folding_free_energies/system_info.csv) · [Published method](https://doi.org/10.1126/science.adv9817)
 
 [More worked examples, complete saved reasoning, exact inputs and tool details](WORKED_EXAMPLES.md)
 

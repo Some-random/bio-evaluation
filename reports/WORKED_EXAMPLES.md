@@ -6,9 +6,11 @@ The overview keeps one correct answer and one tool-use challenge. This document 
 
 ## Correct answers from saved Qwen runs
 
-### In panel a, at day 30, which group still has surviving subjects?
+### Which of the following changes is most directly related to neurodegenerative disease?
 
-**Task:** Reading a biological figure (B04). **Case:** `cf6ac735-33af-4243-bfcf-4c28e3267345`.
+**Evaluation dataset:** [LAB-Bench FigQA](https://github.com/Future-House/LAB-Bench/tree/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/FigQA).
+
+**Task:** Reading a biological figure (B04). **Case:** `5e7f5ee7-9469-405a-910d-aecd090ca206`.
 
 **Exact question and choices:**
 
@@ -16,43 +18,54 @@ The overview keeps one correct answer and one tool-use challenge. This document 
 > Please answer by responding with the letter of the correct answer.
 > Think step by step.
 >
-> Question: In panel a, at day 30, which group still has surviving subjects?&#32;
+> Question: Which of the following changes is most directly related to neurodegenerative disease?
 >
 > Options:
-> (A) None of the above
-> (B) WT + Ive
+> (A) Increase in S-nitrosylated GAPDH
+> (B) Decrease in sirtuin1 activator
 > (C) Insufficient information to answer the question
-> (D) WT + Nemadipine
-> (E) WT
+> (D) Increased acetylation of Tau
+> (E) Increase in P300/CBP
 >
 > You MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].
 > For example, '[ANSWER]&lt;answer&gt;[/ANSWER]', where &lt;answer&gt; is the correct letter.
 > Always answer in exactly this format of a single letter between the two tags, even if you are unsure.
 > We require this because we use automatic parsing.
 
-<img src="example_assets/b04-cf6ac735-33af-4243-bfcf-4c28e3267345.jpg" alt="Reading a biological figure" width="600">
+<img src="example_assets/b04-5e7f5ee7-9469-405a-910d-aecd090ca206.jpg" alt="Reading a biological figure" width="600">
 
 **Saved model reasoning, verbatim:**
 
-> The question asks about panel a, at day 30, which group still has surviving subjects. Looking at the survival curve, at day 30 all curves appear to be at 0% survival. Let me look carefully. The x-axis goes to 30. At day 30, all three lines (WT blue circles, WT+Nemadipine red triangles, WT+Ive green squares) are at 0. The curves reach 0 around day 26-28 and stay at 0 through day 30. So at day 30, none have surviving subjects.
+> The question asks which change is most directly related to neurodegenerative disease, based on the diagram.
 >
-> Let me look at the rightmost points. The green squares seem to extend to day 30 at 0. The blue circles reach 0 around day 27. The red triangles reach 0 around day 26. At day 30, all are 0.
+> Looking at the diagram: Brain Injury → GAPDH → S-nitrosylated GAPDH. S-nitrosylated GAPDH activates p300/CBP and inhibits sirtuin1. p300/CBP acetylates TAU (adding AC groups), while sirtuin1 deacetylates TAU (removes AC). The acetylated TAU (AC- Tau) leads to two outcomes: Elevated Plasma Ac-Tau and Neurodegenerative Disease.
 >
-> Thus the answer is (A) None of the above.
+> So the most direct precursor to Neurodegenerative Disease in the diagram is the acetylated Tau (increased acetylation of Tau). The arrow goes directly from AC-Tau to Neurodegenerative Disease.
 >
-> Let me double check the question phrasing: "which group still has surviving subjects?" If all are at 0, then none have surviving subjects, so answer A.
+> Let's check options:
+> (A) Increase in S-nitrosylated GAPDH - upstream, indirect.
+> (B) Decrease in sirtuin1 activator - would lead to less sirtuin1 activity, more acetylation, but indirect.
+> (C) Insufficient info - no.
+> (D) Increased acetylation of Tau - directly leads to neurodegenerative disease.
+> (E) Increase in P300/CBP - upstream.
 >
-> Thus [ANSWER]A[/ANSWER].
+> The diagram shows AC-Tau with arrows to both Elevated Plasma Ac-Tau and Neurodegenerative Disease. So increased acetylation of Tau is the most direct.
+>
+> Thus answer D.
+>
+> I need to provide step-by-step reasoning then the tagged answer.
 
 **Saved final answer, verbatim:**
 
-> Looking at panel a, by day 30 all three survival curves (WT, WT + Nemadipine, and WT + Ive) have reached 0% survival. Therefore no group has surviving subjects at that time point.
+> Tracing the pathway in the diagram: Brain injury leads to S‑nitrosylated GAPDH, which activates p300/CBP (an acetyltransferase) and suppresses sirtuin1 (a deacetylase). The net effect is hyper‑acetylation of TAU (the TAU boxes with "AC" marks). Arrows from this acetylated TAU point directly to "Neurodegenerative Disease" (and to elevated plasma Ac‑Tau). Therefore, the change immediately upstream of the disease state is increased acetylation of Tau, making it the most directly related change.
 >
-> [ANSWER]A[/ANSWER]
+> [ANSWER]D[/ANSWER]
 
-Reference choice: **A** — correct. Dataset accuracy: **72.4%** (131/181).
+Reference choice: **D** — correct. Dataset accuracy: **72.4%** (131/181).
 
 ### In panel e, which of the following sheath lengths do cortex oligodendrocytes produce at the highest frequency?
+
+**Evaluation dataset:** [LAB-Bench FigQA](https://github.com/Future-House/LAB-Bench).
 
 **Task:** Reading a biological figure (B04). **Case:** `ae3a0d60-8c22-4402-8ab2-43a6e87cde18`.
 
@@ -113,6 +126,8 @@ Reference choice: **D** — correct. Dataset accuracy: **72.4%** (131/181).
 
 ### Which model shows the lowest MSE when chi1 = 300?
 
+**Evaluation dataset:** [LAB-Bench TableQA](https://github.com/Future-House/LAB-Bench).
+
 **Task:** Comparing values in a scientific table (B05). **Case:** `5d3f8067-fe32-4abb-9646-276150413965`.
 
 **Exact question and choices:**
@@ -167,6 +182,54 @@ Reference choice: **D** — correct. Dataset accuracy: **72.4%** (131/181).
 
 Reference choice: **E** — correct. Dataset accuracy: **88.1%** (215/244).
 
+### In panel a, at day 30, which group still has surviving subjects?
+
+**Evaluation dataset:** [LAB-Bench FigQA](https://github.com/Future-House/LAB-Bench).
+
+**Task:** Reading a biological figure (B04). **Case:** `cf6ac735-33af-4243-bfcf-4c28e3267345`.
+
+**Exact question and choices:**
+
+> The following is a multiple choice question about biology.
+> Please answer by responding with the letter of the correct answer.
+> Think step by step.
+>
+> Question: In panel a, at day 30, which group still has surviving subjects?&#32;
+>
+> Options:
+> (A) None of the above
+> (B) WT + Ive
+> (C) Insufficient information to answer the question
+> (D) WT + Nemadipine
+> (E) WT
+>
+> You MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].
+> For example, '[ANSWER]&lt;answer&gt;[/ANSWER]', where &lt;answer&gt; is the correct letter.
+> Always answer in exactly this format of a single letter between the two tags, even if you are unsure.
+> We require this because we use automatic parsing.
+
+<img src="example_assets/b04-cf6ac735-33af-4243-bfcf-4c28e3267345.jpg" alt="Reading a biological figure" width="600">
+
+**Saved model reasoning, verbatim:**
+
+> The question asks about panel a, at day 30, which group still has surviving subjects. Looking at the survival curve, at day 30 all curves appear to be at 0% survival. Let me look carefully. The x-axis goes to 30. At day 30, all three lines (WT blue circles, WT+Nemadipine red triangles, WT+Ive green squares) are at 0. The curves reach 0 around day 26-28 and stay at 0 through day 30. So at day 30, none have surviving subjects.
+>
+> Let me look at the rightmost points. The green squares seem to extend to day 30 at 0. The blue circles reach 0 around day 27. The red triangles reach 0 around day 26. At day 30, all are 0.
+>
+> Thus the answer is (A) None of the above.
+>
+> Let me double check the question phrasing: "which group still has surviving subjects?" If all are at 0, then none have surviving subjects, so answer A.
+>
+> Thus [ANSWER]A[/ANSWER].
+
+**Saved final answer, verbatim:**
+
+> Looking at panel a, by day 30 all three survival curves (WT, WT + Nemadipine, and WT + Ive) have reached 0% survival. Therefore no group has surviving subjects at that time point.
+>
+> [ANSWER]A[/ANSWER]
+
+Reference choice: **A** — correct. Dataset accuracy: **72.4%** (131/181).
+
 [Exact example records and source hashes](ADVISOR_GOOD_EXAMPLES.json)
 
 [Additional protein-sequence examples and their limitations](EXAMPLES_SEQUENCE_VISION_TOOLS.md)
@@ -179,6 +242,8 @@ Reference choice: **E** — correct. Dataset accuracy: **88.1%** (215/244).
 
 **Input:** Released 48-residue baseline 1ENH: AFSSEQLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA
 Released 48-residue mutant 1ENH__Q6C: AFSSECLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA
+
+**What is BioEmu?** BioEmu is an AI model that takes a protein sequence and generates many possible three-dimensional shapes. It approximates the mixture of shapes a protein adopts, which would otherwise be expensive to explore with molecular simulations. These samples can be used to estimate how often the protein stays folded.
 
 **Plain-language question:** Given this protein sequence, does the benchmark's Q6C mutation make it less stable, and by how much?
 
