@@ -2,7 +2,7 @@
   "created_at_utc": "2026-10-16T20:02:01.055835+00:00",
   "source": "Saved Qwen/Qwen3.8-27B request and response records, native gold choices, and byte-identical image assets.",
   "scope_notes": [
-    "Three selected correct examples, not a representative sample or proof of performance on all biological tasks.",
+    "Four selected correct examples, not a representative sample or proof of performance on all biological tasks.",
     "Assistant final text and reasoning text are reproduced exactly from saved response fields. No trace was reconstructed or invented.",
     "Reasoning is an unverified model-generated rationale, not proof that the explanation is correct or caused the correct answer.",
     "Image values and final choices were checked against the actual saved image and native gold label. No biological mechanism validation is claimed."
@@ -159,7 +159,7 @@
     {
       "task_id": "B04",
       "case_id": "cf6ac735-33af-4243-bfcf-4c28e3267345",
-      "main_example": true,
+      "main_example": false,
       "plain_question": "By day 30, which of the three groups still has surviving subjects?",
       "main_answer": "None of the three groups; all survival curves reach 0% before day 30.",
       "question_and_options_exact": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: In panel a, at day 30, which group still has surviving subjects? \n\nOptions:\n(A) None of the above\n(B) WT + Ive\n(C) Insufficient information to answer the question\n(D) WT + Nemadipine\n(E) WT\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing.",
@@ -219,6 +219,82 @@
         "answer": "A — None of the above",
         "image_check": "Panel a: all three survival curves are at 0% by day 30. The final choice agrees with the native gold label.",
         "rationale_note": "The saved final explanation and the stated endpoint agree with the supplied plot. The generated reasoning remains an unverified rationale; no biological mechanism claim is validated."
+      },
+      "dataset_result": {
+        "correct": 131,
+        "total": 181,
+        "accuracy": 0.7237569060773481
+      },
+      "source_run_path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16",
+      "source_scope_note": "Selected correct saved case from the completed native public image-based evaluation; no new inference or rescoring."
+    },
+    {
+      "task_id": "B04",
+      "case_id": "5e7f5ee7-9469-405a-910d-aecd090ca206",
+      "main_example": true,
+      "dataset_name": "LAB-Bench FigQA",
+      "dataset_url": "https://github.com/Future-House/LAB-Bench/tree/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/FigQA",
+      "main_title": "Trace a biological pathway from brain injury to disease",
+      "main_answer": "Increased acetylation of tau—the addition of acetyl groups to the tau protein.",
+      "plain_question": "According to the diagram, which change is most directly linked to neurodegenerative disease?",
+      "plain_context": "Tau is a protein. The AC labels mark acetyl groups attached to it. The task is to distinguish the final protein change from earlier steps in the pathway.",
+      "question_and_options_exact": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which of the following changes is most directly related to neurodegenerative disease?\n\nOptions:\n(A) Increase in S-nitrosylated GAPDH\n(B) Decrease in sirtuin1 activator\n(C) Insufficient information to answer the question\n(D) Increased acetylation of Tau\n(E) Increase in P300/CBP\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing.",
+      "native_gold": {
+        "task": "B04",
+        "case_id": "5e7f5ee7-9469-405a-910d-aecd090ca206",
+        "subtask": "figqa-v1-public",
+        "target_choice": "D",
+        "unsure_choice": "C",
+        "choice_count": 5
+      },
+      "local_score_record": {
+        "task": "B04",
+        "case_id": "5e7f5ee7-9469-405a-910d-aecd090ca206",
+        "subtask": "figqa-v1-public",
+        "answer": "D",
+        "correct": true,
+        "sure": true,
+        "parsed": true,
+        "finish_reason": "stop"
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "assistant_final_text_exact": "\n\nTracing the pathway in the diagram: Brain injury leads to S‑nitrosylated GAPDH, which activates p300/CBP (an acetyltransferase) and suppresses sirtuin1 (a deacetylase). The net effect is hyper‑acetylation of TAU (the TAU boxes with \"AC\" marks). Arrows from this acetylated TAU point directly to \"Neurodegenerative Disease\" (and to elevated plasma Ac‑Tau). Therefore, the change immediately upstream of the disease state is increased acetylation of Tau, making it the most directly related change.\n\n[ANSWER]D[/ANSWER]",
+      "assistant_final_source_field": "response.choices[0].message.content",
+      "model_reasoning_text_exact": "The question asks which change is most directly related to neurodegenerative disease, based on the diagram.\n\nLooking at the diagram: Brain Injury → GAPDH → S-nitrosylated GAPDH. S-nitrosylated GAPDH activates p300/CBP and inhibits sirtuin1. p300/CBP acetylates TAU (adding AC groups), while sirtuin1 deacetylates TAU (removes AC). The acetylated TAU (AC- Tau) leads to two outcomes: Elevated Plasma Ac-Tau and Neurodegenerative Disease.\n\nSo the most direct precursor to Neurodegenerative Disease in the diagram is the acetylated Tau (increased acetylation of Tau). The arrow goes directly from AC-Tau to Neurodegenerative Disease.\n\nLet's check options:\n(A) Increase in S-nitrosylated GAPDH - upstream, indirect.\n(B) Decrease in sirtuin1 activator - would lead to less sirtuin1 activity, more acetylation, but indirect.\n(C) Insufficient info - no.\n(D) Increased acetylation of Tau - directly leads to neurodegenerative disease.\n(E) Increase in P300/CBP - upstream.\n\nThe diagram shows AC-Tau with arrows to both Elevated Plasma Ac-Tau and Neurodegenerative Disease. So increased acetylation of Tau is the most direct.\n\nThus answer D.\n\nI need to provide step-by-step reasoning then the tagged answer.\n",
+      "model_reasoning_source_field": "response.choices[0].message.reasoning",
+      "rationale_label": "Unverified model-generated rationale from the saved Qwen run; not evidence that the reasoning is valid or caused the correct answer.",
+      "request": {
+        "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/requests/454b5592732cf36c73ccc0dc687d65ee6bb63caf1de234802b9b8943386d7748.json",
+        "sha256": "0605a8e16702dce05e2c18f575558ba2f230055b66b310de55bbf5c6d06b6358"
+      },
+      "response": {
+        "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/responses/454b5592732cf36c73ccc0dc687d65ee6bb63caf1de234802b9b8943386d7748.json",
+        "sha256": "bb637dac375542b24e28bc0b58f575a073c574b91ed8175e9e405ff5c2e2a6c7"
+      },
+      "native_gold_source": {
+        "path": ".local/parallel_labbench/runs/B04/data/labbench_native_complete/scorer_references.jsonl",
+        "sha256": "c7129db0155bd8513abb43b53c2c53bfd4051df7ea01f25708f289cbb78c7702",
+        "field": "target_choice"
+      },
+      "score_source": {
+        "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/per_case_scores.json",
+        "sha256": "9f341c6d4f4ec75e27412d0cebcfa67a5c6e8bc40c0e16e923ac09fb66241fcc"
+      },
+      "images": [
+        {
+          "sha256": "ca3e2db14e989a0447003b7d829b8387afa9f7265bd41fcdf6da1eb6082056cf",
+          "bytes": 488263,
+          "mime_type": "image/jpeg",
+          "bytes_equal_saved_request": true,
+          "path": "reports/example_assets/b04-5e7f5ee7-9469-405a-910d-aecd090ca206.jpg",
+          "report_asset_path": "example_assets/b04-5e7f5ee7-9469-405a-910d-aecd090ca206.jpg"
+        }
+      ],
+      "verification": {
+        "answer": "D — Increased acetylation of Tau",
+        "image_check": "In the actual saved diagram, the TAU box bearing AC labels has a direct arrow to Neurodegenerative Disease. S-nitrosylated GAPDH, p300/CBP and sirtuin1 are earlier nodes. The final choice agrees with the native gold label.",
+        "rationale_note": "The saved explanation follows the supplied pathway diagram. This verifies diagram interpretation, not the biological mechanism independently or a causal role for the generated reasoning."
       },
       "dataset_result": {
         "correct": 131,

@@ -43,12 +43,13 @@ class AdvisorOverviewTests(unittest.TestCase):
             "tool_route": "A structure predictor and comparison", "source_url": "https://example.invalid/synthetic"},
             {"title": "Synthetic stability question", "dataset": "Synthetic stability dataset", "main_example": True,
              "input": "Original and changed artificial sequences", "input_sequences": {
-                 "wild_type": {"case_id": "synthetic-wt", "sequence": "AAAA", "length": 4}},
+                 "wild_type": {"case_id": "synthetic-wt", "sequence": "AAAAAQ", "length": 6}},
              "plain_question": "Is the synthetic variant more stable?", "plain_answer": "Synthetic reference value.",
              "experimental_reference": {"mutant_ddg_exp": 0.5},
              "result_scope": "Synthetic fixture, not a measurement.",
              "required_output": "A single stability number", "why_text_answer_is_insufficient": "The number needs computation.",
              "tool_route": "Embeddings, sampling and calculation", "source_url": "https://example.invalid/reference",
+             "case_source_url": "https://example.invalid/testcases",
              "paper_url": "https://example.invalid/paper"}]}
         (self.reports / "ADVISOR_GOOD_EXAMPLES.json").write_text(json.dumps(good))
         (self.reports / "TOOL_REQUIRED_CASES.json").write_text(json.dumps(tools))
@@ -67,7 +68,13 @@ class AdvisorOverviewTests(unittest.TestCase):
         self.assertIn("## Worked examples", before_details)
         self.assertIn("The synthetic answer is one.", before_details)
         self.assertIn("+0.50 kcal/mol", before_details)
-        self.assertIn("not a measured Qwen failure", before_details)
+        self.assertIn("AAAAA**Q**", before_details)
+        self.assertIn("What is BioEmu?", before_details)
+        self.assertIn("Evaluation dataset:", before_details)
+        self.assertIn("LAB-Bench FigQA", before_details)
+        self.assertIn("BioEmu folding-free-energy benchmark", before_details)
+        self.assertNotIn("This illustrates a published tool workflow", before_details)
+        self.assertNotIn("not a measured Qwen failure", before_details)
         self.assertIn("WORKED_EXAMPLES.md", before_details)
         self.assertNotIn("Additional final answer.", before_details)
         self.assertNotIn("Numerical 3D coordinates", before_details)

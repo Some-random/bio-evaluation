@@ -159,30 +159,55 @@ def example_images(example, title):
     return out
 
 
+def example_dataset(example):
+    default = {"B04": "LAB-Bench FigQA", "B05": "LAB-Bench TableQA"}
+    name = example.get("dataset_name") or default[example["task_id"]]
+    url = example.get("dataset_url") or "https://github.com/Future-House/LAB-Bench"
+    return f"[{name}]({url})"
+
+
+def highlight_amino_acid(sequence, position):
+    assert 1 <= position <= len(sequence)
+    return sequence[:position - 1] + "**" + sequence[position - 1] + "**" + sequence[position:]
+
+
+def bioemu_description():
+    return ("BioEmu is an AI model that takes a protein sequence and generates many possible three-dimensional shapes. "
+        "It approximates the mixture of shapes a protein adopts, which would otherwise be expensive to explore "
+        "with molecular simulations. These samples can be used to estimate how often the protein stays folded.")
+
+
 def advisor_examples():
     good, tool_cases = example_records()
     example = main_example(good)
     assert example["local_score_record"]["correct"]
     assert example["local_score_record"]["answer"] == example["native_gold"]["target_choice"]
-    out = ["## Worked examples", "", "### Good result: read a graph and answer a simple question", "",
+    title = example.get("main_title", "Interpret biological evidence")
+    out = ["## Worked examples", "", f"### Good result: {title}", "",
+        f"**Evaluation dataset:** {example_dataset(example)}.", "",
         f"**Question:** {example.get('plain_question', example_question(example))}", ""]
-    out += example_images(example, "Survival curves: read panel a at day 30")
+    if example.get("plain_context"):
+        out += [example["plain_context"], ""]
+    out += example_images(example, title)
     out += [f"**Qwen's answer:** {example['main_answer']}", "",
         "**Saved explanation (excerpt):**", ""] + quoted_record(
             example["assistant_final_text_exact"].split("[ANSWER]", 1)[0]) + [""]
     result = example["dataset_result"]
-    out += [f"The answer matches the reference label. LAB-Bench FigQA accuracy: "
+    out += [f"The answer matches the reference label. Dataset accuracy: "
         f"**{100 * result['accuracy']:.1f}%** ({result['correct']}/{result['total']}).", ""]
 
     example = main_example(tool_cases)
     original = example["input_sequences"]["wild_type"]
     assert len(original["sequence"]) == original["length"]
     out += ["### Tool-use challenge: does one change make a protein less stable?", "",
-        "**Question:** Given the protein below, replace amino acid 6 from Q to C. "
+        f"**Evaluation dataset:** [BioEmu folding-free-energy benchmark]({example['source_url']}) "
+        "— protein stability.", "",
+        "**Question:** Given the protein below, replace amino acid 6 from **Q** to **C**. "
         "Does it become less stable, and by how much?", "",
-        "```text", original["sequence"], "```", "",
+        highlight_amino_acid(original["sequence"], 6), "",
         "**Reference answer (experiment):** Yes—less stable, with a change of about "
         f"**{example['experimental_reference']['mutant_ddg_exp']:+.2f} kcal/mol** in folding free energy.", "",
+        "**What is BioEmu?** " + bioemu_description(), "",
         "**How the published BioEmu workflow gets to a one-number answer:**", "",
         "1. Find related sequences and compute AlphaFold2 representations of the original and changed proteins.",
         "2. Use BioEmu to sample possible shapes; the benchmark recommends **5,000 per protein**.",
@@ -190,9 +215,6 @@ def advisor_examples():
         "4. Subtract the two energies to predict the stability change.", "",
         "Evaluation compares the predicted number with the experimental reference. "
         "The question and answer are simple; producing a supported prediction involves substantial intermediate computation.", "",
-        "This illustrates a published tool workflow. We have not run this case with Qwen or BioEmu here, "
-        "so it is not a measured Qwen failure. "
-        f"[Released reference]({example['source_url']}) · [Published method]({example['paper_url']})", "",
         "[More worked examples, complete saved reasoning, exact inputs and tool details](WORKED_EXAMPLES.md)", ""]
     return out
 
@@ -210,6 +232,7 @@ def worked_examples():
         score = example["local_score_record"]
         assert score["correct"] and score["answer"] == example["native_gold"]["target_choice"]
         out += [f"### {example_question(example)}", "",
+            f"**Evaluation dataset:** {example_dataset(example)}.", "",
             f"**Task:** {titles[example['task_id']]} ({example['task_id']}). "
             f"**Case:** `{example['case_id']}`.", "",
             "**Exact question and choices:**", ""] + quoted_record(example["question_and_options_exact"]) + [""]
@@ -227,7 +250,8 @@ def worked_examples():
         out += [f"### {example['title']}", "", f"**Dataset:** {dataset}", "",
             f"**Input:** {example['input']}", ""]
         if example.get("plain_question"):
-            out += [f"**Plain-language question:** {example['plain_question']}", "",
+            out += ["**What is BioEmu?** " + bioemu_description(), "",
+                f"**Plain-language question:** {example['plain_question']}", "",
                 f"**Reference answer:** {example['plain_answer']}", "",
                 f"**Evidence scope:** {example['result_scope']}", ""]
         for name, sequence in example.get("input_sequences", {}).items():
