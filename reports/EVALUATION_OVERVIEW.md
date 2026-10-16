@@ -2,142 +2,60 @@
 
 General-purpose baseline: **Qwen3.8-27B**, with text and image inputs.
 
-This catalog spans biological prediction, scientific evidence, protein design and three-dimensional structure. The map below shows the task families without opening the detailed catalog.
+This catalog spans biological prediction, scientific evidence, protein design and three-dimensional structure. The map below shows **34 task families in 8 categories** without opening the detailed catalog. The counts are task families, not datasets or individual test questions.
 
 ## Task map
 
-| Category | Task families | Typical information and answer |
-|---|---|---|
-| Protein properties, interactions and developability | Protein solubility; Protein localization; Protein activity, stability and production; Protein interactions and interfaces; Antibody properties | Protein sequences → properties, locations and interactions |
-| Protein function, annotations and descriptions | Gene Ontology and enzyme annotation; Protein function descriptions; Biochemical reaction classification; Protein retrieval from descriptions; Evidence support for protein explanations | Protein sequences → functions, annotations and descriptions |
-| Mutation effects, fitness and engineering | Mutation-effect explanation; Mutation fitness prediction and ranking; Mutation engineering and optimization; Binding affinity and immune interactions | Sequences, variants and assay context → effects, rankings and proposals |
-| Scientific evidence and biological knowledge | Biological research question answering | Questions with literature, figures, tables or sequences → evidence-based answers |
-| Protein design | Antibody design; Inverse folding; Protein sequence and structure generation; Functional-motif scaffolding; Target-binder design; GFP sequence optimization | Descriptions, motifs or target geometry → protein sequences and structures |
-| Structure and conformational prediction | Local structure and residue prediction; Protein structure ranking; Protein folding; Protein conformations and dynamics; Structure-derived questions and output checks | Sequences or atomic coordinates → structures, ensembles and structural scores |
-| Biomedical visual evidence | Biomedical visual question answering; Scientific figures, documents and visual conversations | Biomedical images and documents → answers or extracted evidence |
-| Other biological modalities and molecular interactions | Molecular interactions and binding affinity; Pathway and disease prediction; Variant-effect prediction; Expression-conditioned gene selection; RNA structure ranking; Small-molecule properties | DNA, RNA, expression and molecular inputs → biological endpoints |
+| Category | Number of task families | Tasks | Typical question or output |
+|---|---:|---|---|
+| Protein traits and interactions | 5 | Whether proteins dissolve; Where proteins go in a cell; Protein activity, stability and production; Which proteins bind each other; Antibody properties | Will this protein dissolve? Where does it go? What does it bind? |
+| What proteins do | 5 | Assigning protein functions and enzyme classes; Protein function descriptions; Biochemical reaction classification; Protein retrieval from descriptions; Evidence support for protein explanations | What is this protein's function? Which reaction does it carry out? |
+| Effects of protein mutations | 4 | Explaining mutation effects; Predicting and ranking mutation effects; Choosing mutations to improve a protein; Binding affinity and immune interactions | What happens after changing a protein? Which change works best? |
+| Answering biology research questions | 1 | Biological research question answering | Answer a question using papers, figures, tables, protocols or sequences |
+| Designing proteins | 6 | Antibody design; Finding a sequence for a desired shape; Protein sequence and structure generation; Building around a functional protein part; Designing proteins that bind a target; Making fluorescent proteins brighter | Propose a protein sequence or shape that meets specified requirements |
+| Protein shapes and motion | 5 | Local structure and residue prediction; Protein structure ranking; Protein folding; Protein shape changes, motion and stability; Structure-derived questions and output checks | What shape does this protein take? How does it move or stay folded? |
+| Understanding biomedical images | 2 | Biomedical visual question answering; Scientific figures, documents and visual conversations | Answer questions about medical images and scientific figures |
+| DNA, RNA and small molecules | 6 | Molecular interactions and binding affinity; Pathway and disease prediction; Variant-effect prediction; Choosing genes using expression data; RNA structure ranking; Small-molecule properties | Predict genetic effects, gene activity, molecular binding and chemical properties |
+| **Total** | **34** | | |
 
 ## Worked examples
 
-The first two examples are saved Qwen answers that match their reference labels. The reasoning text is copied from the model's saved output; a correct answer does not independently validate every step.
+### Good result: read a graph and answer a simple question
 
-### Correct example: Reading a biological figure
+**Question:** By day 30, which of the three groups still has surviving subjects?
 
-In panel e, which of the following sheath lengths do cortex oligodendrocytes produce at the highest frequency?
+<img src="example_assets/b04-cf6ac735-33af-4243-bfcf-4c28e3267345.jpg" alt="Survival curves: read panel a at day 30" width="600">
 
-<img src="example_assets/b04-ae3a0d60-8c22-4402-8ab2-43a6e87cde18.jpg" alt="Reading a biological figure" width="600">
+**Qwen's answer:** None of the three groups; all survival curves reach 0% before day 30.
 
-**Saved model reasoning, verbatim:**
+**Saved explanation (excerpt):**
 
-> The question asks about panel e, which is the "Cerebellar slice culture" histogram. I need to look at the cortex (blue/teal) bars and find which length bin has the highest frequency.
->
-> Looking at panel e, the x-axis has bins: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, &gt;120. The cortex (teal) bars: at 10 it's around 3, at 20 it's around 14, then there's a tall bar around 20-25 reaching ~20, then ~15, ~12.5, ~8, etc.
->
-> Let me look more carefully. The bars in panel e for cortex: first bar (10) ~3, second bar (~15-20?) ~14, third bar (20) ~20 (the tallest), fourth ~15, fifth ~12.5, etc.
->
-> The x-axis labels are 10, 20, 30, 40... but the bars appear between labels. Let's think about bin positions. Typically the labels are at the bin centers or bin edges. In panel A, the tallest cortex bar is at the position between 10 and 20? Actually in panel A, the first bar is small (~4) before the 10 label, then a tall bar ~29 at around 10-15, then ~23 at 15-20, then ~17 at 20-25... Hmm.
->
-> Let's look at the labels alignment. In panel e, the labels 10, 20, 30... The tallest teal bar appears to be aligned near the 20 label. Let's look: there's a bar at ~3 (before 10), bar at ~14 (at 10-15?), bar at ~20 (at 20), bar at ~15 (at 20-25?), bar at ~12.5 (at 30)...
->
-> This is getting too detailed. The options are 5, 10, 15, 20, 30. The peak of the cortex distribution in panel e is around 20 μm. Looking at the figure, the tallest teal bar is at the bin corresponding to 20. So answer D (20).
->
-> Let me cross check with panel f (log length fit) for cerebellar slice cortex: peak around log length 1.2-1.3, which is 10^1.25 ≈ 17-20 μm. Yes consistent with ~20.
->
-> Thus the highest frequency sheath length for cortex oligodendrocytes in panel e is 20 μm.
->
-> So answer D.
->
-> I'll provide reasoning and final.
+> Looking at panel a, by day 30 all three survival curves (WT, WT + Nemadipine, and WT + Ive) have reached 0% survival. Therefore no group has surviving subjects at that time point.
 
-**Saved final answer, verbatim:**
+The answer matches the reference label. LAB-Bench FigQA accuracy: **72.4%** (131/181).
 
-> Looking at panel **e** (Cerebellar slice culture), the teal bars represent cortex oligodendrocytes. The tallest cortex bar occurs at the 20 µm bin (≈20% frequency), with neighboring bins (10–15 µm and 30 µm) being lower. This is consistent with the fitted peak in panel f at a log length of ~1.2–1.3 (≈15–20 µm).
->
-> Therefore, the sheath length produced at the highest frequency by cortex oligodendrocytes is **20 µm**.
->
-> [ANSWER]D[/ANSWER]
+### Tool-use challenge: does one change make a protein less stable?
 
-Reference choice: **D** — correct. Dataset accuracy: **72.4%** (131/181).
-
-### Correct example: Comparing values in a scientific table
-
-Which model shows the lowest MSE when chi1 = 300?
-
-<img src="example_assets/b05-5d3f8067-fe32-4abb-9646-276150413965.png" alt="Comparing values in a scientific table" width="600">
-
-**Saved model reasoning, verbatim:**
-
-> The question asks which model shows the lowest MSE when chi1 = 300. Let me look at the table column "MSE (chi1 = 300)".
->
-> Values:
-> - OPLS3e: +0.5 ± 0.2
-> - OPLS4a (OPLS4 with superscript a): +0.5 ± 0.2
-> - OPLS4: +0.2 ± 0.2
->
-> The lowest value is +0.2 for OPLS4. The options are (A) OPLS4a, (B) OPLS3e, (C) both OPLS4a and OPLS3e same lowest, (D) insufficient, (E) OPLS4.
->
-> The lowest is OPLS4 at +0.2. So answer E.
->
-> Let me double check: OPLS3e = 0.5, OPLS4a = 0.5, OPLS4 = 0.2. Lowest is 0.2 = OPLS4. So E.
->
-> Thus answer is E.
-
-**Saved final answer, verbatim:**
-
-> Looking at the "MSE (chi1 = 300)" column:
-> - OPLS3e: +0.5 ± 0.2
-> - OPLS4a: +0.5 ± 0.2
-> - OPLS4: +0.2 ± 0.2
->
-> The lowest value is +0.2, corresponding to OPLS4.
->
-> [ANSWER]E[/ANSWER]
-
-Reference choice: **E** — correct. Dataset accuracy: **88.1%** (215/244).
-
-[Exact example records and source hashes](ADVISOR_GOOD_EXAMPLES.json)
-
-## Challenges requiring external computation
-
-These illustrate why some evaluations need more than a text or image answer. They are source-defined task requirements, not measured Qwen failures. The required structures and scores must be computed; AlphaFold is one relevant model, not the only possible implementation.
-
-### Predict a protein's three-dimensional structure from its sequence
-
-**Dataset:** ProteinBench single-state folding — CAMEO2022
-
-**Input:** A released CAMEO2022 example is 7VRF chain A, the Drosophila Oxpecker chromodomain. The source row contains the 71-residue seqres sequence below and a 61-residue resolved seq field. Exact ProteinBench preprocessing of this row has not been independently reconstructed.
+**Question:** Given the protein below, replace amino acid 6 from Q to C. Does it become less stable, and by how much?
 
 ```text
-NVKEKSSEYIVEKFLGKRYLRGRPQYLTKWEGYPIEQCTWEPLENLGKCMTLIADYEAELFQQSREKKNDQ
+AFSSEQLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA
 ```
 
-**Required answer:** A predicted three-dimensional protein structure: numerical atomic/backbone coordinates that can be compared with the experimental reference using native structural metrics such as TM-score and RMSD.
+**Reference answer (experiment):** Yes—less stable, with a change of about **+0.91 kcal/mol** in folding free energy.
 
-**Why a prose answer is insufficient:** Naming the fold or describing the protein does not supply the required coordinates. A language model can serialize coordinates in principle, but reliable folding and structural comparison require capabilities not validated in our Qwen chat baseline.
+**How the published BioEmu workflow gets to a one-number answer:**
 
-**Tool route:** Pass the permitted sequence and prescribed sequence-alignment/template inputs to a folding model, then return its coordinate file and run structural comparison. AlphaFold2, OpenFold and ESMFold are evaluated folding models in ProteinBench; the selected model and access protocol must be recorded.
+1. Find related sequences and compute AlphaFold2 representations of the original and changed proteins.
+2. Use BioEmu to sample possible shapes; the benchmark recommends **5,000 per protein**.
+3. Compare them with the supplied benchmark reference structure to estimate how often each protein is folded, then calculate its folding free energy.
+4. Subtract the two energies to predict the stability change.
 
-[Native task and evaluation source](https://arxiv.org/html/2409.06744v2#S2.SS2.SSS1)
+Evaluation compares the predicted number with the experimental reference. The question and answer are simple; producing a supported prediction involves substantial intermediate computation.
 
-[Released example input](https://github.com/bjing2016/EigenFold/blob/master/splits/cameo2022.csv)
+This illustrates a published tool workflow. We have not run this case with Qwen or BioEmu here, so it is not a measured Qwen failure. [Released reference](https://github.com/microsoft/bioemu-benchmarks/blob/63edbfa2ee5f489d66a4bece96f242a1d28e567d/bioemu_benchmarks/assets/folding_free_energies_benchmark_0.1/folding_free_energies/system_info.csv) · [Published method](https://doi.org/10.1126/science.adv9817)
 
-### Build a scaffold around a specified three-dimensional motif
-
-**Dataset:** MotifBench functional-motif scaffolding
-
-**Input:** Official case 01_1LDB supplies the atomic coordinates of chain A residues 186–206 from lactate dehydrogenase 1LDB and specifies a 125-residue scaffold. Its released motif PDB contains the input geometry; the sequence identity of this motif is fixed.
-
-**Required answer:** For native benchmark submission, 100 designed scaffold PDB files of the specified length, each retaining the motif geometry, plus scaffold_info.csv describing the motif placement. Evaluation assigns sequences, refolds them and compares structures.
-
-**Why a prose answer is insufficient:** A proposed amino-acid string or explanation lacks the scaffold coordinates and motif placement that the benchmark accepts. The new geometry must also survive computed refolding checks; merely asserting that the design folds cannot supply those results.
-
-**Tool route:** Use a motif-conditioned structure generator to produce scaffold coordinates. The official evaluation then uses ProteinMPNN for sequence assignment, ESMFold for refolding, and geometric comparison; Foldseek supports clustering and novelty evaluation. AlphaFold is not the prescribed refolding tool here.
-
-[Native task and evaluation source](https://github.com/blt2114/MotifBench#evaluation)
-
-[Released example input](https://github.com/blt2114/MotifBench/blob/main/test_cases.csv)
-
-[Actual external-model computations and results reported in the papers](PUBLISHED_TOOL_USE_EXAMPLES.md)
+[More worked examples, complete saved reasoning, exact inputs and tool details](WORKED_EXAMPLES.md)
 
 ## Dataset catalog
 
@@ -146,16 +64,16 @@ Each row is one dataset or source-defined evaluation condition. Expand a categor
 Qwen results and published reference results use the stated protocols and are not automatically matched comparisons. **—** means no verified Qwen result is displayed; **\*** marks limited coverage or scoring. Source qualifications are collected at the end.
 
 <details>
-<summary><h2>Protein properties, interactions and developability</h2></summary>
+<summary><h2>Protein traits and interactions</h2></summary>
 
-#### Protein solubility
+#### Whether proteins dissolve
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
 | Protein solubility | DeepSol solubility — PEER split | Protein sequence | accuracy 24.2% | BioT5+: accuracy 74.37% ± 0.19 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
 |  | PFMBench solubility panel | Protein sequences/features; partner/context inputs for interaction tasks | — | ESM2-Adapter, Table 1 means: DeepSol AUROC 0.8467; DeepSoluE AUROC 0.7699; ProtSolM AUROC 0.8572; eSOL Spearman 0.2761 · [source](https://arxiv.org/html/2506.14796v1) |
 
-#### Protein localization
+#### Where proteins go in a cell
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -175,7 +93,7 @@ Qwen results and published reference results use the stated protocols and are no
 | Protein stability classification | NatureLM/PEER binarized stability — paper-specific protocol | Protein sequence | — | NatureLM-8x7B: 72.3% accuracy; SFM-Protein-650M: 58.3%, in NatureLM's stability-classification setup. · [source](https://arxiv.org/html/2502.07527v3) |
 | Protein production and enzyme conditions | PFMBench production and enzyme-operating panel | Protein sequences/features; partner/context inputs for interaction tasks | — | ESM2-Adapter, Table 1 means: Optimal_pH Spearman 0.0564; DeepET_Topt Spearman 0.2628; Cloning_CLF AUROC 0.8160; Material_Production Accuracy 0.7982; Enzyme_Eff. Spearman 0.2173; Antib._Res. Accuracy 0.6185; Thermostability AUROC 0.9553 · [source](https://arxiv.org/html/2506.14796v1) |
 
-#### Protein interactions and interfaces
+#### Which proteins bind each other
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -193,9 +111,9 @@ Qwen results and published reference results use the stated protocols and are no
 </details>
 
 <details>
-<summary><h2>Protein function, annotations and descriptions</h2></summary>
+<summary><h2>What proteins do</h2></summary>
 
-#### Gene Ontology and enzyme annotation
+#### Assigning protein functions and enzyme classes
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -238,15 +156,15 @@ Qwen results and published reference results use the stated protocols and are no
 </details>
 
 <details>
-<summary><h2>Mutation effects, fitness and engineering</h2></summary>
+<summary><h2>Effects of protein mutations</h2></summary>
 
-#### Mutation-effect explanation
+#### Explaining mutation effects
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
 | Mutation-effect explanation | MutaDescribe — mutation explanation | Reference and mutant sequences/change, plus model-specific protein context | — | Main-test average ROUGE-L / BLEU-2 (0–100): MutaPLM 21.34 / 13.61; GPT-4-0613, 5-shot kNN: 12.31 / 9.69. · [source](https://arxiv.org/html/2410.22949v1) |
 
-#### Mutation fitness prediction and ranking
+#### Predicting and ranking mutation effects
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -260,7 +178,7 @@ Qwen results and published reference results use the stated protocols and are no
 | Zero-shot mutation-effect ranking | PFMBench ProteinGym zero-shot protocol | Protein sequences/features; partner/context inputs for interaction tasks | — | Table 1 reports pretrained ESM2 ProteinGym Spearman 0.4390; do not compare directly to a different snapshot's score. · [source](https://arxiv.org/html/2506.14796v1) |
 | Low-data fitness regression | MutaPLM low-data fitness regression | Variant representations; a separately fitted regression head | — | Low-data regression curves are reported with 192 train / 48 validation examples; no exact assay-specific point estimate is transcribed here. · [source](https://arxiv.org/html/2410.22949v1) |
 
-#### Mutation engineering and optimization
+#### Choosing mutations to improve a protein
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -279,7 +197,7 @@ Qwen results and published reference results use the stated protocols and are no
 </details>
 
 <details>
-<summary><h2>Scientific evidence and biological knowledge</h2></summary>
+<summary><h2>Answering biology research questions</h2></summary>
 
 #### Biological research question answering
 
@@ -299,7 +217,7 @@ Qwen results and published reference results use the stated protocols and are no
 </details>
 
 <details>
-<summary><h2>Protein design</h2></summary>
+<summary><h2>Designing proteins</h2></summary>
 
 #### Protein sequence and structure generation
 
@@ -313,7 +231,7 @@ Qwen results and published reference results use the stated protocols and are no
 | Protein generation for predicted stability and solubility<br>Stability and solubility are predicted, not measured. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM stability/solubility-conditioned generation | Property-conditioned sequences and independent property predictors | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
 | Heme-binding protein candidate generation<br>Heme binding is a predicted candidate property, not demonstrated binding. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM heme-binding case study | Heme-related description; candidate sequences and complex screening | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
 
-#### GFP sequence optimization
+#### Making fluorescent proteins brighter
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -328,21 +246,21 @@ Qwen results and published reference results use the stated protocols and are no
 | Antibody design: multi-CDR redesign | SAbDab — Proteo-R1 all-CDR holdout | Antigen/framework/docking context with CDR sequence/geometry masked | — | Proteo-R1 vs MFDesign: H3 RMSD 3.81 Å vs 3.71 Å; Loop-RMSD 4.51 Å vs 4.28 Å; IMP 56.58 vs 59.16 (paper's scale). · [source](https://arxiv.org/html/2605.02937v1) |
 | Antibody design: epitope-conditioned design | CHIMERA-Bench epitope-conditioned antibody design | Antigen/framework/epitope context → CDR sequence+structure | — | Epitope-group H3: RAAD AAR 0.37, RMSD 1.75 Å, DockQ 0.58; dyMEAN EpiF1 0.23 (RAAD 0.11). · [source](https://arxiv.org/html/2603.13431v1) |
 
-#### Inverse folding
+#### Finding a sequence for a desired shape
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
 | Sequence design by inverse folding | CATH 4.2 / TS50 / TS500 inverse folding | Backbone coordinates → amino-acid sequence; coordinate-conditioned design | — | PiFold repository: CATH recovery 51.66%; TS50 58.72%; TS500 60.42%. · [source](https://github.com/a4bio/pifold) |
 |  | ProteinBench inverse folding — CASP15 / CAMEO / synthetic backbones | Backbone coordinates → sequence; AlphaFold2 refolding evaluation | — | AAR, CASP15/CAMEO: LM-Design 0.516/0.570; ProteinMPNN 0.450/0.468. · [source](https://arxiv.org/html/2409.06744v2) |
 
-#### Functional-motif scaffolding
+#### Building around a functional protein part
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
 | Functional-motif scaffolding | MotifBench functional-motif scaffolding | Motif coordinates → scaffold; ProteinMPNN, ESMFold and structural comparison | — | Official leaderboard snapshot: RFdiffusion3 43.52 ± 1.35 (Aug 2026); RFdiffusion 21.95 (Feb 2025), in MotifBench-score units. · [source](https://github.com/blt2114/MotifBench) |
 |  | ProteinBench motif scaffolding — legacy motif panel | Motif coordinates → scaffold; native structural evaluator | — | Comparative motif-scaffolding results are reported; exact figure-derived score not transcribed. · [source](https://arxiv.org/html/2409.06744v2) |
 
-#### Target-binder design
+#### Designing proteins that bind a target
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -352,7 +270,7 @@ Qwen results and published reference results use the stated protocols and are no
 </details>
 
 <details>
-<summary><h2>Structure and conformational prediction</h2></summary>
+<summary><h2>Protein shapes and motion</h2></summary>
 
 #### Local structure and residue prediction
 
@@ -379,7 +297,7 @@ Qwen results and published reference results use the stated protocols and are no
 |---|---|---|---|---|
 | Single-state protein folding | ProteinBench single-state folding — CAMEO 2022 | Protein sequence → 3D coordinates; folding model and structural comparison | — | AF2 mean/median TM-score 0.871/0.952, RMSD 3.21/1.64 Å; ESMFold 0.847/0.929 and 3.98/2.10 Å. · [source](https://arxiv.org/html/2409.06744v2) |
 
-#### Protein conformations and dynamics
+#### Protein shape changes, motion and stability
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -390,7 +308,7 @@ Qwen results and published reference results use the stated protocols and are no
 </details>
 
 <details>
-<summary><h2>Biomedical visual evidence</h2></summary>
+<summary><h2>Understanding biomedical images</h2></summary>
 
 #### Biomedical visual question answering
 
@@ -412,7 +330,7 @@ Qwen results and published reference results use the stated protocols and are no
 </details>
 
 <details>
-<summary><h2>Other biological modalities and molecular interactions</h2></summary>
+<summary><h2>DNA, RNA and small molecules</h2></summary>
 
 #### Molecular interactions and binding affinity
 
@@ -439,7 +357,7 @@ Qwen results and published reference results use the stated protocols and are no
 | Coding-variant effect prediction | BioReason VEP coding and non-SNV<br>BioReason VEP-Coding | Reference/variant DNA and prompt; Variant representation/context | accuracy 49.1%; f1 0.5213; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.f1 0.0000 | Qwen3-4B: accuracy 48.99%; f1 39.58%; Table 2 · [source](https://arxiv.org/html/2505.23579v2) |
 | Non-SNV variant effect prediction | BioReason VEP coding and non-SNV<br>BioReason VEP-Non-SNV | Reference/variant DNA and prompt; Variant representation/context | accuracy 89.0%; f1 0.9053; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.f1 0.0000 | Qwen3-4B: accuracy 61.86%; f1 67.6%; n=873; Table 2 · [source](https://arxiv.org/html/2505.23579v2) |
 
-#### Expression-conditioned gene selection
+#### Choosing genes using expression data
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
@@ -462,9 +380,9 @@ Qwen results and published reference results use the stated protocols and are no
 <details>
 <summary>Dataset definitions, scientific qualifications and sources</summary>
 
-## Protein properties, interactions and developability
+## Protein traits and interactions
 
-#### Protein solubility
+#### Whether proteins dissolve
 
 #### DeepSol solubility — PEER split
 
@@ -488,7 +406,7 @@ Published source size/units: Test sizes: DeepSol: 6,934; DeepSoluE: 1,454; ProtS
 
 [Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
 
-#### Protein localization
+#### Where proteins go in a cell
 
 #### DeepLoc — binary and 10-compartment localization
 
@@ -596,7 +514,7 @@ Published source size/units: Test sizes: Optimal_pH: 959; DeepET_Topt: 185; Clon
 
 [Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
 
-#### Protein interactions and interfaces
+#### Which proteins bind each other
 
 #### Human/Pan and yeast/Guo PPI — PEER
 
@@ -644,9 +562,9 @@ Published source size/units: Current repository: 241 datasets; >3 million assay 
 
 [Source 1](https://github.com/Graylab/FLAb), [Source 2](https://github.com/Graylab/FLAb)
 
-## Protein function, annotations and descriptions
+## What proteins do
 
-#### Gene Ontology and enzyme annotation
+#### Assigning protein functions and enzyme classes
 
 #### DeepFRI-derived EC and GO test splits
 
@@ -794,9 +712,9 @@ Docking and known annotations support case analysis; they do not prove all retri
 
 [Source 1](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf)
 
-## Mutation effects, fitness and engineering
+## Effects of protein mutations
 
-#### Mutation-effect explanation
+#### Explaining mutation effects
 
 #### MutaDescribe — mutation explanation
 
@@ -810,7 +728,7 @@ Similarity tiers do not make the entire split homology-disjoint. Judge output is
 
 [Source 1](https://arxiv.org/html/2410.22949v1), [Source 2](https://huggingface.co/datasets/PharMolix/MutaDescribe)
 
-#### Mutation fitness prediction and ranking
+#### Predicting and ranking mutation effects
 
 #### ProteinGym substitutions — historical ProtST evaluation
 
@@ -888,7 +806,7 @@ Published source size/units: Paper table does not specify the release-matched ev
 
 [Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
 
-#### Mutation engineering and optimization
+#### Choosing mutations to improve a protein
 
 #### MutaDescribe — mutation engineering
 
@@ -944,7 +862,7 @@ Published source size/units: Test sizes: Pept.HLA/MHC Aff.: 8,406; TCR.PMHC Aff.
 
 [Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
 
-## Scientific evidence and biological knowledge
+## Answering biology research questions
 
 #### Biological research question answering
 
@@ -1018,7 +936,7 @@ Published source size/units: 1,000 expert-labeled records total; official evalua
 
 [Source 1](https://arxiv.org/abs/1909.06146), [Source 2](https://github.com/pubmedqa/pubmedqa)
 
-## Protein design
+## Designing proteins
 
 #### Protein sequence and structure generation
 
@@ -1078,7 +996,7 @@ Self-description is not independent validation; predicted complexes are not meas
 
 [Source 1](https://arxiv.org/html/2502.07527v3)
 
-#### GFP sequence optimization
+#### Making fluorescent proteins brighter
 
 #### STRIDE GFP sequence optimization
 
@@ -1134,7 +1052,7 @@ Published source size/units: 2,922 complexes total. Test: 292 epitope-group; 292
 
 [Source 1](https://arxiv.org/html/2603.13431v1), [Source 2](https://github.com/mansoor181/chimera-bench)
 
-#### Inverse folding
+#### Finding a sequence for a desired shape
 
 #### CATH 4.2 / TS50 / TS500 inverse folding
 
@@ -1152,7 +1070,7 @@ Published source size/units: 32 CASP15 structures; 332 CAMEO complexes; syntheti
 
 [Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
 
-#### Functional-motif scaffolding
+#### Building around a functional protein part
 
 #### MotifBench functional-motif scaffolding
 
@@ -1170,7 +1088,7 @@ Published source size/units: Legacy 17 (25) motif-problem panel described by Pro
 
 [Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
 
-#### Target-binder design
+#### Designing proteins that bind a target
 
 #### ProtDBench de novo target-binder design
 
@@ -1188,7 +1106,7 @@ Published source size/units: Generate target binders from language specification
 
 [Source 1](https://arxiv.org/html/2610.13917v1)
 
-## Structure and conformational prediction
+## Protein shapes and motion
 
 #### Local structure and residue prediction
 
@@ -1238,7 +1156,7 @@ Published source size/units: 183 proteins (<750 residues), released Aug–Oct 20
 
 [Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
 
-#### Protein conformations and dynamics
+#### Protein shape changes, motion and stability
 
 #### ProteinBench multistate conformations — apo/holo and BPTI
 
@@ -1264,7 +1182,7 @@ Published source size/units: Multiple panels: domain motion, local unfolding, cr
 
 [Source 1](https://github.com/microsoft/bioemu/blob/main/MODEL_CARD.md), [Source 2](https://github.com/microsoft/bioemu-benchmarks)
 
-## Biomedical visual evidence
+## Understanding biomedical images
 
 #### Biomedical visual question answering
 
@@ -1340,7 +1258,7 @@ These tests evaluate extraction/document understanding, not protein engineering.
 
 [Source 1](https://arxiv.org/html/2606.00902v1)
 
-## Other biological modalities and molecular interactions
+## DNA, RNA and small molecules
 
 #### Molecular interactions and binding affinity
 
@@ -1436,7 +1354,7 @@ Non-SNV classification should not be merged with single-amino-acid design accura
 
 [Source 1](https://arxiv.org/html/2505.23579v2), [Source 2](https://github.com/bowang-lab/BioReason)
 
-#### Expression-conditioned gene selection
+#### Choosing genes using expression data
 
 #### Bio-posttrain MEDEA expression-conditioned gene selection
 
