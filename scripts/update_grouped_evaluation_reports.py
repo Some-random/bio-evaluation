@@ -192,11 +192,13 @@ def overview(data):
         "**Listed for consideration** means additional datasets outside the original 64-setting list. "
         "**Run status unconfirmed** means no verified completion record. Published scores are reference results; "
         "full protocol notes are expandable below.", "",
-        "Expand a category, then a task group, to see datasets and scores.", "",
+        "Expand a category to see its tasks and datasets.", "",
     ]
+    all_notes = []
     for category, families in megatasks:
         count_label = f"{len(families)} task group" + ("s" if len(families) != 1 else "")
         out += ["<details>", f"<summary><strong>{category}</strong> · {count_label}</summary>", ""]
+        all_notes += [f"## {category}", ""]
         for family, group_ids in families:
             entries = [group_by_id[group_id] for group_id in group_ids]
             family_results = [result for group in entries for result in group["results"]]
@@ -211,10 +213,8 @@ def overview(data):
                     cue += " · partial results*"
             if running:
                 cue += " · running or queued"
-            nested_family = len(families) > 1
-            if nested_family:
-                out += ["<details>", f"<summary><strong>{family}</strong> · {dataset_count}{cue}</summary>", ""]
-            out += ["| Task | Dataset/protocol | Status | Qwen result | Published reference |", "|---|---|---|---|---|"]
+            out += [f"### {family}", "", dataset_count + cue, ""]
+            table_rows = []
             for group in entries:
                 for protocol in group["protocols"] or [None]:
                     task_id = protocol["taskId"] if protocol else None
@@ -225,9 +225,11 @@ def overview(data):
                             name = "GM2A-targeted binder design"
                         elif not protocol and group["dataset"].startswith("Proteo-R1 internal"):
                             name = "Structure-derived questions and output-format checks"
+                        task_key = name
                         state = display_status(group, protocol)
                         if (protocol and state != "Finished") or (result and result["incomplete"]):
                             name += "*"
+                            state += "*"
                         caveat = caveats.get(task_id)
                         if group["dataset"].startswith("Prompteina"):
                             caveat = "Single published target campaign."
@@ -248,31 +250,47 @@ def overview(data):
                             published += f" · [source]({result['publishedUrl']})"
                         elif group["sourceUrl"]:
                             published += f" · [source]({group['sourceUrl']})"
-                        out.append("| " + " | ".join(cell(value) for value in [name, dataset, state, local, published]) + " |")
-            out += ["", "<details>", "<summary>Protocols, qualifications and complete source records</summary>", ""]
+                        table_rows.append({"key": task_key, "task": name, "dataset": dataset,
+                            "state": state, "local": local, "published": published, "caveat": caveat})
+            task_order = list(dict.fromkeys(row["key"] for row in table_rows))
+            table_rows = [row for task_key in task_order for row in table_rows if row["key"] == task_key]
+            single_task = len(task_order) == 1
+            if single_task:
+                for caveat in dict.fromkeys(row["caveat"] for row in table_rows if row["caveat"]):
+                    out += [caveat, ""]
+                out += ["| Dataset/protocol | Status | Qwen result | Published reference |", "|---|---|---|---|"]
+            else:
+                out += ["| Task | Dataset/protocol | Status | Qwen result | Published reference |", "|---|---|---|---|---|"]
+            previous_task = None
+            for row in table_rows:
+                values = [row["dataset"], row["state"], row["local"], row["published"]]
+                if not single_task:
+                    values.insert(0, "" if row["key"] == previous_task else row["task"])
+                out.append("| " + " | ".join(cell(value) for value in values) + " |")
+                previous_task = row["key"]
+            out.append("")
+            all_notes += [f"### {family}", ""]
             for group in entries:
-                out += [f"**{group['dataset']}**", ""]
+                all_notes += [f"#### {group['dataset']}", ""]
                 for note in group["notes"]:
                     if not note.startswith(("Catalog coverage only;", "Case study or diagnostic; kept separate")):
-                        out += [text(note), ""]
+                        all_notes += [text(note), ""]
                 if group.get("sourceSize"):
-                    out += ["Published source size/units: " + text(group["sourceSize"]), ""]
+                    all_notes += ["Published source size/units: " + text(group["sourceSize"]), ""]
                 for protocol in group["protocols"]:
-                    out += [f"**{names.get(protocol['taskId'], group['task'])}:** "
+                    all_notes += [f"**{names.get(protocol['taskId'], group['task'])}:** "
                         f"{text(protocol.get('nativeMetric'))}. {text(protocol.get('nativeSplit'))}", ""]
                     if protocol.get("limitation"):
-                        out += [text(protocol["limitation"]), ""]
+                        all_notes += [text(protocol["limitation"]), ""]
                     if protocol.get("blocker"):
-                        out += [text(protocol["blocker"]), ""]
+                        all_notes += [text(protocol["blocker"]), ""]
                 for result in group["results"]:
-                    out += result_details(result)
+                    all_notes += [f"##### {result['title']}", ""] + result_details(result)[3:-2]
                 if not group["results"]:
-                    out += ["Published reference record: " + text(group["literatureText"]), ""]
-                out += [source_links(group), ""]
-            out += ["</details>", ""]
-            if nested_family:
-                out += ["</details>", ""]
+                    all_notes += ["Published reference record: " + text(group["literatureText"]), ""]
+                all_notes += [source_links(group), ""]
         out += ["</details>", ""]
+    out += ["<details>", "<summary>Protocol notes and sources</summary>", ""] + all_notes + ["</details>", ""]
     out += [f"[Raw run artifacts and uploaded trajectories]({meta['githubUrl']}/tree/main/results/runs)", ""]
     return "\n".join(out)
 
