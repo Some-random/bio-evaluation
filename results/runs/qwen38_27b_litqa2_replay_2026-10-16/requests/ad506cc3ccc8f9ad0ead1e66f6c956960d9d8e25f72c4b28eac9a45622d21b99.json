@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "745f5a0d-5f8f-405e-bb46-f37b3d1f0678",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "831665c1e271bcb69f3bba4d5dc561d587aee11bd3339cea20cf6cab55645a62",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which of the following training characteristics within the target brain region could explain inter individual differences in clinical response to real-time functional magnetic resonance imaging neurofeedback in patients with major depressive disorder?\n\nOptions:\n(A) Insufficient information to answer the question\n(B) Signal amplitude\n(C) Mean left amygdala activation\n(D) None of the above\n(E) Signal changes in the left amygdala\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}
