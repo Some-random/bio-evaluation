@@ -4,6 +4,8 @@ Model: **Qwen3.8-27B**.
 
 Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 10:11 UTC**.
 
+**The run-status heartbeat is stale; current activity is unconfirmed.**
+
 **25 of 64 evaluation settings have finished runs.** An asterisk (*) marks incomplete coverage or scoring.
 
 **37 of 64 settings are runnable with the current setup.** Text and vision inputs are supported. Runnable means the required inputs, execution path and scorer are available; it includes explicitly marked reviewed subsets and does not guarantee correct or valid predictions.
@@ -204,7 +206,7 @@ Expand a category to see its tasks and datasets.
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Text-conditioned protein-sequence design*<br>Lexical sequence overlap; biological function untested. | BioT5+ description-guided protein generation | Running partial subset · 37.3% trajectories uploaded* · Ready | [59-case reviewed subset](https://github.com/Some-random/bio-evaluation/tree/main/results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016). Full benchmark incomplete. | Description-guided protein designs are presented as qualitative cases rather than a fixed, experimentally validated design-success rate. · [source](https://arxiv.org/html/2402.17810v2) |
+| Text-conditioned protein-sequence design*<br>Lexical sequence overlap; biological function untested. | BioT5+ description-guided protein generation | Running partial subset · 39.0% trajectories uploaded* · Ready | [59-case reviewed subset](https://github.com/Some-random/bio-evaluation/tree/main/results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016). Full benchmark incomplete. | Description-guided protein designs are presented as qualitative cases rather than a fixed, experimentally validated design-success rate. · [source](https://arxiv.org/html/2402.17810v2) |
 | Unconditional protein backbone generation | ProteinBench unconditional backbone generation | Needs additional models/tools<br>Needs backbone coordinate generation, inverse folding and refolding checks. | — | At length 100: RFdiffusion scTM 0.98 ± 0.12 and scRMSD 0.48 ± 0.56 Å; FrameFlow 0.94 ± 0.08 and 0.70 ± 0.70 Å. · [source](https://arxiv.org/html/2409.06744v2) |
 | Unconditional protein sequence generation | ProteinBench unconditional sequence generation | Needs additional models/tools<br>Qwen can propose sequences; native scoring still needs a fixed folding evaluator. | — | At length 100, predicted AF2 pLDDT: DPLM-650M 85.38 ± 14.20; ProGen2-700M 64.00 ± 21.26. · [source](https://arxiv.org/html/2409.06744v2) |
 | Joint sequence and structure generation | ProteinBench joint sequence–structure generation | Needs additional models/tools<br>Needs joint sequence/coordinate generation and structural consistency evaluators. | — | Multiflow at length 100: scTM 0.96 ± 0.04; scRMSD 1.10 ± 0.71 Å. At length 200: scTM 0.95; scRMSD 1.61 Å. · [source](https://arxiv.org/html/2409.06744v2) |

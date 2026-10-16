@@ -36,14 +36,14 @@
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv": "c813f6702a0af51e272e344bfbc02d913541103d3f4acf849e4547ac78c3764c",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/AGENT_TASK_MAPPING.csv": "3f17b92ccf2c19e8475b0eba88c396363dad1a5d1e6ae8644dffb9161fbb70ec",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx": "3bbe6cee62c15266814fa082825a9f6349c32d34e976855eda604bef68336f6f",
-      "reports/EVALUATION_PROGRESS.json": "76bed0732b3a9b51952f73b2629aed497b451829a97ec187af72175dd9fa02b1",
-      ".local/remaining_evaluations/supervisor_status.json": "ef1909bf01290b6e7327eeefd3e5afc150d925dcce86b20a2531fe561be9627b",
+      "reports/EVALUATION_PROGRESS.json": "ee2db22be4f51edd393d84096a46ea84cdb2c067fed20b659148f2030029a92d",
+      ".local/remaining_evaluations/supervisor_status.json": "8c39232fbfb41d89579b94e7209e853c09a96711bea6bff18e12e86b527fd945",
       ".local/remaining_evaluations/upload_status.json": "9f966601a6896a2734b62eb087ac0e98dba31a5527ed82cc1ef8ca7dc3481b6c"
     },
     "localResultRows": 28,
     "uploadedResponses": 3244,
     "heartbeat": {
-      "status": "fresh",
+      "status": "stale",
       "updatedAt": "2026-10-16T10:11:32.079702+00:00",
       "staleAfterSeconds": 300
     },
@@ -56,13 +56,23 @@
       "Status unverified": 20
     },
     "runSnapshotSource": {
-      "path": ".local/remaining_evaluations/supervisor_status.json",
+      "path": ".local/remaining_evaluations/upload_status.json",
       "snapshotAt": "2026-10-16T10:11:32.079702+00:00",
-      "fallback": false,
+      "fallback": true,
       "selection": "most_recent_valid_run_snapshot"
     },
-    "metadataErrors": [],
-    "metadataNotice": null
+    "metadataErrors": [
+      {
+        "source": ".local/remaining_evaluations/supervisor_status.json",
+        "reason": "no_valid_run_snapshot"
+      }
+    ],
+    "metadataNotice": {
+      "source": ".local/remaining_evaluations/supervisor_status.json",
+      "stage": "retry_pending",
+      "updatedAt": "2026-10-16T10:17:46.429548+00:00",
+      "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
+    }
   },
   "categories": [
     {
