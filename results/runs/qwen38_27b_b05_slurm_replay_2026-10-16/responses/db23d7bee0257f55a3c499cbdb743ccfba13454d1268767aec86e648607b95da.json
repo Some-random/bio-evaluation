@@ -1,0 +1,57 @@
+{
+  "task": "B05",
+  "case_id": "28973681-8abf-4381-8be9-b5d923ce2bdf",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "request_sha256": "8923d2ebaef5f843a7a724afc1bbfde0489e1a29371aa08fb9dfbcb87054653c",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-a7283ece2996d43a",
+    "object": "chat.completion",
+    "created": 1792133389,
+    "model": "Qwen/Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\nLooking at the table, I need inhibitors that (1) act on clathrin‑mediated endocytosis and (2) do **not** change the cytoskeleton or membrane composition.\n\n- **Potassium depletion** – disrupts clathrin lattices (no cytoskeleton/membrane change). ✓\n- **Cytosolic acidification** – inhibits budding of clathrin‑coated pits. ✓\n- **Chlorpromazine** – removes clathrin/AP2 from the cell surface. ✓\n- **Dynasore** – inhibits dynamin GTPase (used in clathrin‑mediated uptake). ✓\n\nExcluded:\n- **Hyperosmolar conditions** – disperses the plasma membrane (alters membrane). ✗\n- **Statins / cyclodextrin / nystatin / filipin** – alter cholesterol/membrane composition and act on lipid‑raft endocytosis. ✗\n- **Cytochalasin D / Latrunculins** – disassemble actin cytoskeleton. ✗\n- **Amilorides** – act on macropinocytosis, not clathrin‑mediated endocytosis. ✗\n\nThus the correct set is Potassium Depletion, Cytosolic acidification, Chlorpromazine, Dynasore.\n\n[ANSWER]A[/ANSWER]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": "The question asks which inhibitors inhibit clathrin-mediated endocytosis WITHOUT altering cellular cytoskeletal or membrane composition.\n\nLet me look at the table carefully.\n\nUnder \"Clathrin-mediated endocytosis\":\n- Hyperosmolar conditions: Dispersion of plasma membrane (this alters membrane composition/structure)\n- Potassium depletion: Clathrin lattices\n- Cytosolic acidification: Inhibits the budding of clathrin-coated pits\n- Chlorpromazine: Loss of clathrin and AP2 adaptor complex from the cell surface\n\nUnder \"Macropinocytosis\":\n- Amilorides: Inhibitors of Na+/H+ exchange\n- Cytochalasin D; Latrunculins: Disassembly of the actin cytoskeleton (cytoskeletal alteration)\n\nUnder \"Lipid raft-dependent endocytosis\":\n- Methyl-β-cyclodextrin: Cholesterol extraction (membrane composition)\n- Nystatin; Filipin: Cholesterol sequestration (membrane composition)\n- Statins: Inhibition of cholesterol synthesis (membrane composition)\n\nUnder \"Clathrin- and caveolae-mediated endocytosis\":\n- Dynasore: Inhibition of dynamin GTPase activity\n\nNow the question: inhibit clathrin-mediated endocytosis without altering cytoskeletal or membrane composition.\n\nSo we need inhibitors that work on clathrin-mediated endocytosis but don't touch cytoskeleton or membrane composition.\n\nLet's consider each candidate:\n- Potassium depletion: affects clathrin lattices - not cytoskeleton, not membrane composition. OK.\n- Cytosolic acidification: inhibits budding of clathrin-coated pits - not cytoskeleton/membrane composition. OK.\n- Chlorpromazine: loss of clathrin and AP2 from cell surface - not cytoskeleton/membrane composition. OK.\n- Dynasore: inhibits dynamin GTPase activity - dynamin is involved in clathrin-mediated endocytosis. Not cytoskeleton, not membrane composition. OK.\n- Hyperosmolar conditions: dispersion of plasma membrane - this DOES alter membrane. So exclude.\n- Statins: cholesterol synthesis - membrane composition. Also statins are listed under lipid raft, not clathrin. Exclude.\n- Amilorides: macropinocytosis, not clathrin. Exclude.\n- Cytochalasin D / Latrunculins: cytoskeleton. Exclude.\n\nSo the set that inhibits clathrin-mediated endocytosis without altering cytoskeleton or membrane composition = Potassium depletion, Cytosolic acidification, Chlorpromazine, Dynasore.\n\nThat matches option A.\n\nCheck option D: includes Hyperosmolar conditions which disperses plasma membrane (alters membrane). So D is wrong.\n\nOption A: Potassium Depletion, Cytosolic acidification, Chlorpromazine, Dynasore. Yes.\n\nThus answer A.\n\nLet me double check dynasore: it's listed under \"Clathrin- and caveolae-mediated endocytosis\" with mode \"Inhibition of dynamin GTPase activity\". Dynamin is a GTPase, not cytoskeleton, not membrane composition. It does inhibit clathrin-mediated endocytosis. Good.\n\nTherefore A is correct.\n\nI'll provide step-by-step reasoning then the answer tag.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.31.0-044a22dd",
+    "usage": {
+      "prompt_tokens": 3543,
+      "total_tokens": 4581,
+      "completion_tokens": 1038,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 738
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "elapsed_seconds": 61.609,
+  "saved_at_utc": "2026-10-16T06:50:51.304174+00:00",
+  "status": "completed",
+  "text": "\n\nLooking at the table, I need inhibitors that (1) act on clathrin‑mediated endocytosis and (2) do **not** change the cytoskeleton or membrane composition.\n\n- **Potassium depletion** – disrupts clathrin lattices (no cytoskeleton/membrane change). ✓\n- **Cytosolic acidification** – inhibits budding of clathrin‑coated pits. ✓\n- **Chlorpromazine** – removes clathrin/AP2 from the cell surface. ✓\n- **Dynasore** – inhibits dynamin GTPase (used in clathrin‑mediated uptake). ✓\n\nExcluded:\n- **Hyperosmolar conditions** – disperses the plasma membrane (alters membrane). ✗\n- **Statins / cyclodextrin / nystatin / filipin** – alter cholesterol/membrane composition and act on lipid‑raft endocytosis. ✗\n- **Cytochalasin D / Latrunculins** – disassemble actin cytoskeleton. ✗\n- **Amilorides** – act on macropinocytosis, not clathrin‑mediated endocytosis. ✗\n\nThus the correct set is Potassium Depletion, Cytosolic acidification, Chlorpromazine, Dynasore.\n\n[ANSWER]A[/ANSWER]",
+  "finish_reason": "stop"
+}
