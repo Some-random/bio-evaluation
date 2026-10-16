@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-16T11:08:54.710518+00:00",
+  "generatedAt": "2026-10-16T11:16:35.596833+00:00",
   "scoreSnapshotAt": "2026-10-16T04:25:25.541726+00:00",
-  "runSnapshotAt": "2026-10-16T11:08:54.710518+00:00",
+  "runSnapshotAt": "2026-10-16T11:16:35.596833+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-16T11:08:54.710518+00:00",
+    "updatedAt": "2026-10-16T11:16:35.596833+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/RESULTS_AT_A_GLANCE.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
-    ".local/remaining_evaluations/supervisor_status.json": "b2e72a8c8652165716ba16c341aa0a9875ac9880261b09de8a17140c40c94fc6",
-    ".local/remaining_evaluations/upload_status.json": "711863f9fc782eeb459ca11a47cb67b36fa3582a21eb48f89c9371c844bb3e59"
+    ".local/remaining_evaluations/supervisor_status.json": "0cdbab884de3128c5a9827674576b2772697d84dece4661740844184dff4f7b3",
+    ".local/remaining_evaluations/upload_status.json": "dfd2747594d226a9d3a71ff98b8a5135e09d09e2dc333a977f2405d7dbac6796"
   },
   "uploader": {
     "stage": "watching",
-    "commitSha": "b1890bbf6ba657a9a25ecd4afe987abf4bda448c",
+    "commitSha": "f11ad213f8c46f2ed6db88cbfb259765abe0c3cc",
     "repositoryPrivateVerified": true
   },
   "scheduler": {
@@ -121,19 +121,9 @@
         "node_or_reason": "(Dependency)"
       },
       {
-        "job_id": "237678",
-        "state": "PENDING",
-        "node_or_reason": "(Dependency)"
-      },
-      {
         "job_id": "237677",
         "state": "PENDING",
         "node_or_reason": "(Dependency)"
-      },
-      {
-        "job_id": "237664",
-        "state": "RUNNING",
-        "node_or_reason": "ampere6"
       },
       {
         "job_id": "237663",
@@ -169,6 +159,15 @@
         "job_id": "237672",
         "state": "RUNNING",
         "node_or_reason": "ampere7"
+      },
+      {
+        "job_id": "237678",
+        "state": "RUNNING",
+        "node_or_reason": "ampere6"
+      },
+      {
+        "job_id": "237664",
+        "state": "not_in_active_queue"
       }
     ]
   },
@@ -177,7 +176,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 4183,
+    "uploaded": 4277,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -186,10 +185,10 @@
     {
       "taskId": "P03",
       "planned": 2773,
-      "uploaded": 2207,
+      "uploaded": 2227,
       "saved": null,
       "generationRuns": 3,
-      "terminalRuns": 1,
+      "terminalRuns": 2,
       "allTerminal": false,
       "nativeMetricsValid": null,
       "progressSource": "uploaded_trajectories",
@@ -202,7 +201,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 1976,
+      "uploaded": 2050,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 0,
@@ -393,7 +392,7 @@
   "countNote": "Progress counts exclude aggregate runs. Uploaded counts reflect archived trajectories at the uploader heartbeat; saved is unknown unless explicitly reported. Counts do not establish benchmark completion.",
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/supervisor_status.json",
-    "snapshotAt": "2026-10-16T11:08:54.710518+00:00",
+    "snapshotAt": "2026-10-16T11:16:35.596833+00:00",
     "fallback": false,
     "selection": "most_recent_valid_run_snapshot"
   },
