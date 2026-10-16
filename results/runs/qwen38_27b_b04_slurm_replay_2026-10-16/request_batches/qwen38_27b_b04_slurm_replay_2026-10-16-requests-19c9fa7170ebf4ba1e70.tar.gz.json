@@ -1,0 +1,35 @@
+{
+  "run_id": "qwen38_27b_b04_slurm_replay_2026-10-16",
+  "asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b04_slurm_replay_2026-10-16-requests-19c9fa7170ebf4ba1e70.tar.gz",
+  "asset_id": 646441201,
+  "archive_sha256": "a64821117f9a528e2b560bedfaef1e5f5c0ca31f4f460ba6f861b5b4f00040ef",
+  "archive_bytes": 1153049,
+  "cases": [
+    {
+      "case_id": "c47ef43f-0954-4725-9da6-a4380fe77602",
+      "filename": "3d415ec4f4f672473ffedec55784c5113658dfeb9d6c288ea61af59cc207658e.json",
+      "request_member": "requests/3d415ec4f4f672473ffedec55784c5113658dfeb9d6c288ea61af59cc207658e.json",
+      "request_sha256": "27e7b0b4717ce30168a679d5bd4a6d23d3ddfbda80c2dcf63e23ac95da4f19a7",
+      "payload_sha256": "4e733b4bc3ba32e8f47a417d94de81fc4271ade6cd13356996cc89e6b36882fc",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b04_slurm_replay_2026-10-16-requests-19c9fa7170ebf4ba1e70.tar.gz",
+      "request_archive_sha256": "a64821117f9a528e2b560bedfaef1e5f5c0ca31f4f460ba6f861b5b4f00040ef",
+      "response": "responses/3d415ec4f4f672473ffedec55784c5113658dfeb9d6c288ea61af59cc207658e.json",
+      "response_sha256": "4ce8fc96f86c591cdba7325e422cf33e005f3308c72c7c6c939b8c11a7666119"
+    },
+    {
+      "case_id": "c1e7ea04-0c6f-4f6a-a827-5cec8be3d9a1",
+      "filename": "52733fd84a2a978f6d63a5f44a2a43d93c67662cff491bbe07e321f6b8b9fb18.json",
+      "request_member": "requests/52733fd84a2a978f6d63a5f44a2a43d93c67662cff491bbe07e321f6b8b9fb18.json",
+      "request_sha256": "0c3e19be3d335bbab99a6b63a0221fb1ee398011c755fa6bd7f1e02a50f33961",
+      "payload_sha256": "19f2427fc6df09b787cdb232710b2dc683f183d99bb82a53274ef30512a4877c",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b04_slurm_replay_2026-10-16-requests-19c9fa7170ebf4ba1e70.tar.gz",
+      "request_archive_sha256": "a64821117f9a528e2b560bedfaef1e5f5c0ca31f4f460ba6f861b5b4f00040ef",
+      "response": "responses/52733fd84a2a978f6d63a5f44a2a43d93c67662cff491bbe07e321f6b8b9fb18.json",
+      "response_sha256": "60bdadeba6610d92ce649d1253cf28cf12ba6f2ed31e7d95366bc1243bfc2bec"
+    }
+  ],
+  "raw_request_json_preserved": true,
+  "image_data_preserved": true,
+  "server_digest": "sha256:a64821117f9a528e2b560bedfaef1e5f5c0ca31f4f460ba6f861b5b4f00040ef",
+  "created_at_utc": "2026-10-16T06:52:27.703357+00:00"
+}
