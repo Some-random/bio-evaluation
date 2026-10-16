@@ -2,7 +2,7 @@
 
 Model: **Qwen3.8-27B**.
 
-Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 08:38 UTC**.
+Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 08:41 UTC**.
 
 **25 of 64 evaluation settings have finished runs.** An asterisk (*) marks incomplete coverage or scoring.
 
@@ -31,7 +31,7 @@ Expand a category to see its tasks and datasets.
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
 | Binary protein localization | DeepLoc — binary and 10-compartment localization<br>Binary localization — DeepLoc/PEER | Finished · Ready | accuracy 27.4% | BioT5+: accuracy 90.41% ± 0.07 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
-| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued · 32.9% trajectories uploaded* · Ready | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
+| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued · 34.1% trajectories uploaded* · Ready | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
 | Localization and sorting signals | PFMBench localization and sorting-signal panel | Needs data or protocol<br>Needs PFMBench splits, label vocabularies and binary/multilabel scoring. | — | ESM2-Adapter, Table 1 means: DeepLocMulti Accuracy 0.7666; DeepLoc2Multi F1 0.7505; DeepLocBinary AUROC 0.9338; SortingSignal F1 0.8598 · [source](https://arxiv.org/html/2506.14796v1) |
 
 #### Protein activity, stability and production
@@ -40,7 +40,7 @@ Expand a category to see its tasks and datasets.
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued · 2.3% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
+| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued · 2.4% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein stability* | TAPE / Rocklin stability | Running or queued · 0.0% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.738; ESM-2 0.718. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein thermostability prediction* | FLIP — AAV and Meltome<br>Thermostability — FLIP/Meltome | Partial* · Ready<br>Existing sequence regression runner and native Spearman scorer are available. | **Diagnostic only:** spearman undefined; spearman_parsed_only 0.0254<br>Full native primary metric undefined. | ProtST-ESM-1b: fixed encoder.spearman 0.68; full model tuning.spearman 0.681; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Enzyme activity* | Envision β-lactamase — PEER split | Needs data or protocol*<br>Beta-lactamase assay scope and complete native test inputs are not cleared. | — | Spearman: ProtST-ESM-2 0.879; ESM-2 0.867. · [source](https://arxiv.org/html/2206.02096v2) |
