@@ -1,0 +1,25 @@
+{
+  "activated_at_utc": "2026-10-15T09:51:16.031799+00:00",
+  "task_id": "P42",
+  "config_file": "configs/local_stride_gfp_p42.json",
+  "configuration_sha256": "6537318a1b0d15dd0360fecdd329654ffabec13477d0bb2314f6321559f69c63",
+  "cases": 200,
+  "slots_per_regime": 100,
+  "gpu_ids": [
+    3
+  ],
+  "oracle_device": "cpu",
+  "oracle_threads": {
+    "intra_op": 8,
+    "inter_op": 1
+  },
+  "frozen_runtime_sha256": "07669ac79122e4badacf0fd501efdcf71fd68cc7e1b46916dcadecacb159a566",
+  "frozen_state_audit_sha256": "da0fe49e9e2537f3f4af9822ee0c1afb6943cdf33e1c65a79f22ed00d9e6c4be",
+  "all200_generations_before_oracle_forward": true,
+  "native_novelty": null,
+  "source_model_weights_public_references_only": true,
+  "preflight": "passed",
+  "inference_dispatched_by_activation": false,
+  "queue_order": "Wholecohort immediatelyaftercurrentV05; no currentrun interruption or retriedcases.",
+  "openai_evaluation_api_calls": 0
+}

@@ -1,0 +1,562 @@
+{
+  "activated_at_utc": "2026-10-15T09:12:44.421243+00:00",
+  "old_plan_file": "reports/local_extended_shard_plan.json",
+  "old_plan_sha256": "26620c3bd89b95900f83ee0f12e6cf471686bd2735d536a228349d3b1ce1e9fd",
+  "new_plan_file": "reports/local_extended_seven_gpu_plan.json",
+  "new_plan_sha256": "ea72dca22bf0fc38f0b674fd6100c2b8627f35dd63c45609ca143a39e90be5bb",
+  "original_unstarted_audit": {
+    "checked_at_utc": "2026-10-15T09:12:44.426098+00:00",
+    "original_shard_count": 43,
+    "checked_run_count_including_aggregates": 46,
+    "all_original_runs_unstarted": true,
+    "runs": [
+      {
+        "task_id": "P03",
+        "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15",
+        "kind": "aggregate",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P03",
+        "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15_shard_000",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P03",
+        "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15_shard_001",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P03",
+        "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15_shard_002",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15",
+        "kind": "aggregate",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_000",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_001",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_002",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_003",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_004",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_005",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_006",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_007",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_008",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_009",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_010",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_011",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_012",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_013",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_014",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_015",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_016",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_017",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_018",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_019",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_020",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_021",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_022",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_023",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_024",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_025",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P07",
+        "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_shard_026",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15",
+        "kind": "aggregate",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_000",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_001",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_002",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_003",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_004",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_005",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_006",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_007",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_008",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_009",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_010",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_011",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      },
+      {
+        "task_id": "P08",
+        "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_shard_012",
+        "kind": "shard",
+        "run_folder_exists": false,
+        "manifest_exists": false,
+        "request_file_count": 0,
+        "response_file_count": 0,
+        "scores_exist": false,
+        "completion_exists": false
+      }
+    ]
+  },
+  "original_offline_watcher_stopped": {
+    "pid": 829407,
+    "plan": "reports/local_extended_shard_plan.json",
+    "started_at_utc": "2026-10-15T07:49:47.340904+00:00"
+  },
+  "old_shards_removed": 43,
+  "new_shards_queued": 43,
+  "old_inference_requests": 0,
+  "queue_hashes": {
+    "configs/local_benchmark_queue_gpu1.json": {
+      "before_sha256": "a91343b683bb6c37886119462ed17ae5077e20796dd599dd9bb7da72b777d220",
+      "after_sha256": "44050a7a6ec908a13eb199fdb65b1aa3c24af84d4623ec1ae93b48c43c8de312"
+    },
+    "configs/local_benchmark_queue_gpu2.json": {
+      "before_sha256": "20feb74cf143ee3df9db31395a862dcf098b3d0b5c97a25f96ba42764e5ffaba",
+      "after_sha256": "fe1c1feaafb23798d413314674aa793221102ba94783a0f2afd6d8079384cfbb"
+    },
+    "configs/local_benchmark_queue_gpu3.json": {
+      "before_sha256": "2905a40a8d70e190f652abf6413c2aeafff4198e7735d77a0a38aba3672f4de1",
+      "after_sha256": "77c487ff128bca8df060e876eec540e8327e6af548dd8bd7174dc7b22763dd7e"
+    },
+    "configs/local_benchmark_queue_gpu4.json": {
+      "before_sha256": "881a802cf82969742efe966bd7434548dc1e9405cdfa23ca26b160fffbdf04b4",
+      "after_sha256": "74cec51cf2319a7aa751e63c8e5f4d264638eacb4304d2b7049c3cf1168039e6"
+    },
+    "configs/local_benchmark_queue.json": {
+      "before_sha256": "3faa4875609db692ec901294106cef7a64734e8ca96615a44622e1a022d54f86",
+      "after_sha256": "2c4129b62c9f2294e4451d19dc374efb09b465e012dccd7cf5f9af157943cf1b"
+    },
+    "configs/local_benchmark_queue_gpu6.json": {
+      "before_sha256": "b8d3792d2b34be8ee87b2dd495b3f47847e3fdc47e2b4674298f11c3d4c43c31",
+      "after_sha256": "db27900780cae62d9a4553b5b9d4db94153ff750a5d16a4278acc70202f6e8a3"
+    },
+    "configs/local_benchmark_queue_gpu7.json": {
+      "before_sha256": "6d4805e505c30b17143b3ebdd32a800b90feab0f25751014b99b693635c3a125",
+      "after_sha256": "43a4e164024e11221f82e4c78ec5078d426b66eef16f69de8a6f161ff66a9b14"
+    }
+  },
+  "approval_sha256": "b0c7933202d59c22084eb97112ba84f0eb87f72841dde09a4f832a8698b55e2e",
+  "reason": "Resource allocation only; all original source cases/generation/messages preserved.",
+  "frozen_input_preflight": "passed"
+}

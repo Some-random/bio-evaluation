@@ -1,0 +1,678 @@
+{
+  "reviewed_at_utc": "2026-10-15T08:52:33.237129+00:00",
+  "task_ids": [
+    "P12",
+    "P13",
+    "P14",
+    "P15"
+  ],
+  "scope": "Natural protein annotation source preparation, native scoring contract and disabled Qwen confidence adaptation",
+  "source_revisions": {
+    "flatironinstitute/DeepFRI": "3bd6c7eae67894ccedbe1117e33b3abe544bca71",
+    "DeepGraphLearning/torchdrug": "6066fbd82360abb5f270cba1eca560af01b8cc90",
+    "DeepGraphLearning/ProtST": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+  },
+  "source_manifest": "sources/deepfri_contract_audit_2026-10-15/source_manifest.json",
+  "source_manifest_sha256": "a6e12d9d831d70965f7b57ed1c724608a4fa04997944b2b8c83f7e6942309d3b",
+  "tasks": [
+    {
+      "task_id": "P12",
+      "branch": "EC",
+      "status": "source_prepared_disabled_confidence_adaptation_frozen",
+      "counts": {
+        "global_classes": 538,
+        "released_fasta_headers": 1920,
+        "test95_csv_ids": 1919,
+        "released_test95_list_ids": 1919,
+        "released_test95_full_sequences": 1919,
+        "archive_pdbs": 1919,
+        "current_rdkit_projection_retained": 1853,
+        "current_rdkit_projection_rejected": 66,
+        "modeled_equal_released_fasta": 105,
+        "modeled_different_from_released_fasta": 1748,
+        "retained_without_released_fasta": 0,
+        "modeled_sequences_over_native_550_limit": 400
+      },
+      "membership": {
+        "fasta_outside_released_test95_list": [
+          "4UDF-1B"
+        ],
+        "released_test95_list_missing_fasta": [],
+        "released_test95_list_missing_archive_pdb": [],
+        "archive_pdb_outside_released_test95_list": [],
+        "retained_without_scorer_reference": []
+      },
+      "parser_rejection_counts": {
+        "rdkit_MolFromPDBFile_returned_None": 66
+      },
+      "native_docstring_test_count": 1840,
+      "preparation_file": "data/catalog_deepfri_tasks/P12/preparation.json",
+      "preparation_sha256": "72aef2d8ba32c06c3d5b96d19aa3003a04b39aa9b331924161a9506b029d5a37",
+      "proposed_config": "configs/local_deepfri_p12_sparse_confidence_proposed.json",
+      "proposed_config_sha256": "1b3e4b7656aa6ec3a180c28f96058bd36dcdf123caee3ba07c00f2a762b4a922",
+      "enabled": false,
+      "proposal_status": "proposed_disabled_requires_root_authorization",
+      "missing_class_descriptions": 0,
+      "transferred_or_deleted_current_EC_descriptions": 12
+    },
+    {
+      "task_id": "P13",
+      "branch": "BP",
+      "status": "source_prepared_disabled_confidence_adaptation_frozen",
+      "counts": {
+        "global_classes": 1943,
+        "released_fasta_headers": 3416,
+        "test95_csv_ids": 3416,
+        "released_test95_list_ids": 3416,
+        "released_test95_full_sequences": 3416,
+        "archive_pdbs": 3415,
+        "current_rdkit_projection_retained": 3129,
+        "current_rdkit_projection_rejected": 286,
+        "modeled_equal_released_fasta": 142,
+        "modeled_different_from_released_fasta": 2987,
+        "retained_without_released_fasta": 0,
+        "modeled_sequences_over_native_550_limit": 723
+      },
+      "membership": {
+        "fasta_outside_released_test95_list": [],
+        "released_test95_list_missing_fasta": [],
+        "released_test95_list_missing_archive_pdb": [
+          "5JM5-A"
+        ],
+        "archive_pdb_outside_released_test95_list": [],
+        "retained_without_scorer_reference": []
+      },
+      "parser_rejection_counts": {
+        "rdkit_MolFromPDBFile_returned_None": 286
+      },
+      "native_docstring_test_count": 2991,
+      "preparation_file": "data/catalog_deepfri_tasks/P13/preparation.json",
+      "preparation_sha256": "03b9ca7b5ef64b5428ed0f46a407630f9d07cf28d5abe1e305df17959fa9dbde",
+      "proposed_config": "configs/local_deepfri_p13_sparse_confidence_proposed.json",
+      "proposed_config_sha256": "e2408f53603a12e114f0e3508ae6453dbe3fb31ac619879815e194c0e2c94ad7",
+      "enabled": false,
+      "proposal_status": "proposed_disabled_requires_root_authorization",
+      "missing_class_descriptions": 0,
+      "transferred_or_deleted_current_EC_descriptions": 0
+    },
+    {
+      "task_id": "P14",
+      "branch": "MF",
+      "status": "source_prepared_disabled_confidence_adaptation_frozen",
+      "counts": {
+        "global_classes": 489,
+        "released_fasta_headers": 3416,
+        "test95_csv_ids": 3416,
+        "released_test95_list_ids": 3416,
+        "released_test95_full_sequences": 3416,
+        "archive_pdbs": 3415,
+        "current_rdkit_projection_retained": 3129,
+        "current_rdkit_projection_rejected": 286,
+        "modeled_equal_released_fasta": 142,
+        "modeled_different_from_released_fasta": 2987,
+        "retained_without_released_fasta": 0,
+        "modeled_sequences_over_native_550_limit": 723
+      },
+      "membership": {
+        "fasta_outside_released_test95_list": [],
+        "released_test95_list_missing_fasta": [],
+        "released_test95_list_missing_archive_pdb": [
+          "5JM5-A"
+        ],
+        "archive_pdb_outside_released_test95_list": [],
+        "retained_without_scorer_reference": []
+      },
+      "parser_rejection_counts": {
+        "rdkit_MolFromPDBFile_returned_None": 286
+      },
+      "native_docstring_test_count": 2991,
+      "preparation_file": "data/catalog_deepfri_tasks/P14/preparation.json",
+      "preparation_sha256": "a787e01c59ebd839114c4330fd8505b1acb8f2d702e3af90a0f77fc3da701a68",
+      "proposed_config": "configs/local_deepfri_p14_sparse_confidence_proposed.json",
+      "proposed_config_sha256": "759d75e6338249f45a98b32c185e0d533e129110cee163979190ffdce5099d29",
+      "enabled": false,
+      "proposal_status": "proposed_disabled_requires_root_authorization",
+      "missing_class_descriptions": 0,
+      "transferred_or_deleted_current_EC_descriptions": 0
+    },
+    {
+      "task_id": "P15",
+      "branch": "CC",
+      "status": "source_prepared_disabled_confidence_adaptation_frozen",
+      "counts": {
+        "global_classes": 320,
+        "released_fasta_headers": 3416,
+        "test95_csv_ids": 3416,
+        "released_test95_list_ids": 3416,
+        "released_test95_full_sequences": 3416,
+        "archive_pdbs": 3415,
+        "current_rdkit_projection_retained": 3129,
+        "current_rdkit_projection_rejected": 286,
+        "modeled_equal_released_fasta": 142,
+        "modeled_different_from_released_fasta": 2987,
+        "retained_without_released_fasta": 0,
+        "modeled_sequences_over_native_550_limit": 723
+      },
+      "membership": {
+        "fasta_outside_released_test95_list": [],
+        "released_test95_list_missing_fasta": [],
+        "released_test95_list_missing_archive_pdb": [
+          "5JM5-A"
+        ],
+        "archive_pdb_outside_released_test95_list": [],
+        "retained_without_scorer_reference": []
+      },
+      "parser_rejection_counts": {
+        "rdkit_MolFromPDBFile_returned_None": 286
+      },
+      "native_docstring_test_count": 2991,
+      "preparation_file": "data/catalog_deepfri_tasks/P15/preparation.json",
+      "preparation_sha256": "3cab8035c504622c04954e467275cf2a501bbe8a105bb4ffb6b5ff297cf6050d",
+      "proposed_config": "configs/local_deepfri_p15_sparse_confidence_proposed.json",
+      "proposed_config_sha256": "03213b10820a7bc172f775aabe4f25f1a9336adab123c9a6b5d8659981b90130",
+      "enabled": false,
+      "proposal_status": "proposed_disabled_requires_root_authorization",
+      "missing_class_descriptions": 0,
+      "transferred_or_deleted_current_EC_descriptions": 0
+    }
+  ],
+  "acquired_test_zip_provenance": [
+    {
+      "artifact": "sources/deepfri_contract_audit_2026-10-15/EnzymeCommission.test.zip",
+      "sha256": "472bc3f0dd045b9bf21cf632f17f4fff4db22bd682b63bd74b6674dbfb0d502b",
+      "bytes": 94934652,
+      "crc32": "7d6fcb7a",
+      "source_url": "https://zenodo.org/api/records/6622158/files/EnzymeCommission.zip/content",
+      "parent_archive_bytes": 1034145814,
+      "parent_member": "EnzymeCommission/test.zip",
+      "parent_member_data_offset": 841668592,
+      "parent_archive_index_sha256": "082126a5494a53004291714aaceec8b4a7affb1fe77b505f2ad1b533e896bf5d",
+      "integrity_qualification": "Member CRC/size and bounded ranges verified; complete parent archive MD5 not verified because training/validation members were not downloaded.",
+      "no_training_or_validation_structures_acquired": true
+    },
+    {
+      "artifact": "sources/deepfri_contract_audit_2026-10-15/GeneOntology.test.zip",
+      "sha256": "53d61a9e2956e7e4a8ee7843eacbea210c9e19e9db0f6d47616e0a0cf1789f93",
+      "bytes": 176325834,
+      "crc32": "f6a2ad0a",
+      "source_url": "https://zenodo.org/api/records/6622158/files/GeneOntology.zip/content",
+      "parent_archive_bytes": 1691808865,
+      "parent_member": "GeneOntology/test.zip",
+      "parent_member_data_offset": 1515351572,
+      "parent_archive_index_sha256": "fa23c5dc9fcf8901656246c614bb3212a896fe9712e6ca177fc3138ff7525fa5",
+      "integrity_qualification": "Member CRC/size and bounded ranges verified; complete parent archive MD5 not verified because training/validation members were not downloaded.",
+      "no_training_or_validation_structures_acquired": true
+    }
+  ],
+  "native_case_identity_qualification": "No released author processed pickle/dependency lock was located. Current RDKit 2024.09.6 residue projection retains 1,853 EC / 3,129 GO, not printed 1,840/2,991, and does not execute every TorchDrug graph/feature operation. Released full-FASTA test-list inputs are a distinct source-qualified adaptation.",
+  "native_sequence_contract": "ProtST PretrainESM consumes graph.residue_type rather than coordinates. Annotation configuration deterministically keeps first 550 modeled residues. Full PDB-modeled residues and full released FASTA are preserved separately; no missing residues are invented.",
+  "github_vs_native_zenodo": "Zenodo replaces retired EC 1BVS-A with 7OA5-A and GO 6BJ0-A with 6UIQ-A in annotations/FASTA; common-ID sequences match GitHub. EC CSV retains 1BVS-A but is used only to exclude zero flags. EC FASTA has extra 4UDF-1B outside test list. GO 5JM5-A is in full FASTA/test list but absent from the PDB archive.",
+  "native_metric_contract": {
+    "source_code_revisions": {
+      "ProtST": "db53a76ed2430eb66dd9c8134ace99fd60980fb3",
+      "TorchDrug": "6066fbd82360abb5f270cba1eca560af01b8cc90",
+      "DeepFRI": "3bd6c7eae67894ccedbe1117e33b3abe544bca71"
+    },
+    "native_metric_names": [
+      "auprc@micro",
+      "f1_max"
+    ],
+    "source_functions": [
+      {
+        "source_path": "sources/deepfri_contract_audit_2026-10-15/torchdrug__torchdrug__metrics__metric.py",
+        "file_sha256": "760f376d4125ab2cc9332c9e83b944d4464da51aea577d75266d9247aca81776",
+        "function": "area_under_prc",
+        "line": 32,
+        "function_source_sha256": "9ad0a5d87c26587eea73ab7d30f3b0f1bc926da95693c2fd352a3ec8329891eb"
+      },
+      {
+        "source_path": "sources/deepfri_contract_audit_2026-10-15/torchdrug__torchdrug__metrics__metric.py",
+        "file_sha256": "760f376d4125ab2cc9332c9e83b944d4464da51aea577d75266d9247aca81776",
+        "function": "f1_max",
+        "line": 234,
+        "function_source_sha256": "bd3e2a05e7145a8ed7fd5a60c98b47a8320809964735420db88ae29c5abac86a"
+      },
+      {
+        "source_path": "sources/deepfri_contract_audit_2026-10-15/torchdrug__torchdrug__tasks__property_prediction.py",
+        "file_sha256": "ccc3fec3f4584058869cebc10b9656cd462b1eb443183ccf78b5b5bb19c7721e",
+        "function": "MultipleBinaryClassification.evaluate",
+        "line": 314,
+        "function_source_sha256": "94a81696cd6efb6cbe6f85c252b612f78834a58a98fefdc7405c0f229a3115f6"
+      },
+      {
+        "source_path": "sources/deepfri_contract_audit_2026-10-15/deepfri__deepfrier__utils.py",
+        "file_sha256": "96f2eb9a1aea9b8fd0504469557f67944013ba30a146ce335b81090be314e3c6",
+        "function": "_micro_aupr",
+        "line": 115,
+        "function_source_sha256": "9c5df2c9d0cc586fe205661060233ef455ceedcadaffeebe89ee6560b3e211a4"
+      }
+    ],
+    "confidence_contract": "One genuine finite score per case/class in fixed source-global class order; original ProtST outputs learned-head BCE logits, no thresholded-label substitution. The disabled Qwen proposal explicitly defines omitted sparse numeric-map entries as zero before inference. Malformed/missing/truncated outputs do not become all-zero vectors.",
+    "auprc_micro_definition": "Flatten every case/class pair, sort descending using torch.argsort; sum precision at positive ranks and divide by number of positives plus 1e-10. This is rank average precision.",
+    "f1_max_definition": "Sort labels within each protein; update per-protein cumulative precision/recall at global descending score ranks. Mean precision uses proteins with at least one predicted term; mean recall uses all proteins (zero-target rows contribute zero). Return maximum harmonic mean over every rank position, epsilon 1e-10. Not a fixed 0.01 threshold grid.",
+    "tie_qualification": "Source torch.argsort tie order and within-tie rank evaluation are retained. Sparse omitted zeros make this consequential; future scorer must pin CPU/Torch/thread/case/class ordering before responses. Author dependency/device ordering is unavailable, so exact tie-equivalence is unverified.",
+    "deepfri_original_metric_difference": "DeepFRI utils._micro_aupr calls sklearn.average_precision_score(average=micro), which groups tied thresholds; it can differ from TorchDrug rank AP on tied scores. Do not merge these metric names or choose the better result.",
+    "output_score_ontology_propagation": "No score propagation in audited ProtST/TorchDrug MultipleBinaryClassification.predict/evaluate. Use provided target matrix directly. Do not add max-child-to-parent prediction propagation silently.",
+    "no_metrics_computed": true,
+    "no_model_inference": true
+  },
+  "ontology_contract": {
+    "released_global_go_vocabulary": {
+      "MF": 489,
+      "BP": 1943,
+      "CC": 320
+    },
+    "class_ids_and_names_source": "Exact native Zenodo nrPDB-GO_annot.tsv header; ordered global vocabulary, never selected from test-positive labels",
+    "annotation_closure_source": {
+      "source_path": "sources/deepfri_contract_audit_2026-10-15/deepfri__preprocessing__create_nrPDB_GO_annot.py",
+      "file_sha256": "2316acc05393c8ec5ac68fba5c981d2b6cdd59a78402be159673497c1f35e010",
+      "function": "read_sifts",
+      "line": 109,
+      "function_source_sha256": "0663e2e96e65e336e2867af868f752901fe6bbc31b46049c38ddffa9f512466e"
+    },
+    "closure_definition": "obonet OBO graph child-to-parent reachability: networkx.descendants(go_graph, go_id), plus the term itself, excluding GO:0008150/GO:0003674/GO:0005575. Source does not explicitly filter edge relation types; all relations parsed into that graph are traversed. Global class filtering uses >49 and <=5000 annotated proteins before released splits.",
+    "root_terms_excluded": [
+      "GO:0008150",
+      "GO:0003674",
+      "GO:0005575"
+    ],
+    "runtime_score_propagation": "none in verified ProtST/TorchDrug evaluator",
+    "exact_author_obo_artifact_available": false,
+    "exact_blocker": "Pinned DeepFRI data_collection.sh downloads unversioned http://purl.obolibrary.org/obo/go/go-basic.obo. No OBO file, historical release identifier or checksum appears in pinned repository tree or native Zenodo archive member listings. Filename date 2019.06.18 alone does not identify the exact ontology bytes.",
+    "affects": "Regenerating historical annotation closure or adding ontology-based output score propagation; native supplied-target AP/Fmax does not need a newly reconstructed graph.",
+    "next_step": "Obtain author OBO/checksum or explicit release identity if annotation/graph reproduction is required. Do not substitute current GO or an inferred nearby archived release while claiming exact native equivalence.",
+    "current_go_substitution_performed": false
+  },
+  "head_availability": {
+    "audited_official_ProtST_github_release_count": 0,
+    "pretrained_checkpoint_metadata": [
+      {
+        "checkpoint_url": "https://protsl.s3.us-east-2.amazonaws.com/checkpoints/protst_esm1b.pth",
+        "artifact_role_advertised_by_official_readme": "pretraining checkpoint",
+        "weights_downloaded": false,
+        "unpickling_performed": false,
+        "bytes": 8531223409,
+        "etag": "\"c43abdfa338b8b337520f9cbfb2ad184-509\"",
+        "last_modified": "Mon, 23 Jan 2023 02:05:32 GMT",
+        "container": "PyTorch ZIP",
+        "metadata_member": "archive/data.pkl",
+        "metadata_bytes": 287471,
+        "metadata_sha256": "fee29606fb15b2ccbfd962c6a1938f07c319225d365e6460ddc37af761296da5",
+        "parameter_name_prefix_counts": {
+          "protein_model": 902,
+          "text_model": 454,
+          "mlm_head": 4,
+          "fusion_model": 28,
+          "mmp_protein_head": 4,
+          "mmp_text_head": 4
+        },
+        "task_head_candidate_names": [],
+        "projection_names": [
+          "protein_model.graph_mlp.layers.0.weight",
+          "protein_model.graph_mlp.layers.0.bias",
+          "protein_model.graph_mlp.layers.1.weight",
+          "protein_model.graph_mlp.layers.1.bias",
+          "protein_model.residue_mlp.layers.0.weight",
+          "protein_model.residue_mlp.layers.0.bias",
+          "protein_model.residue_mlp.layers.1.weight",
+          "protein_model.residue_mlp.layers.1.bias",
+          "text_model.text_mlp.layers.0.weight",
+          "text_model.text_mlp.layers.0.bias",
+          "text_model.text_mlp.layers.1.weight",
+          "text_model.text_mlp.layers.1.bias",
+          "text_model.word_mlp.layers.0.weight",
+          "text_model.word_mlp.layers.0.bias",
+          "text_model.word_mlp.layers.1.weight",
+          "text_model.word_mlp.layers.1.bias",
+          "protein_model.graph_mlp",
+          "protein_model.graph_mlp.layers",
+          "protein_model.graph_mlp.layers.0",
+          "protein_model.graph_mlp.layers.1",
+          "protein_model.residue_mlp",
+          "protein_model.residue_mlp.layers",
+          "protein_model.residue_mlp.layers.0",
+          "protein_model.residue_mlp.layers.1",
+          "text_model.text_mlp",
+          "text_model.text_mlp.layers",
+          "text_model.text_mlp.layers.0",
+          "text_model.text_mlp.layers.1",
+          "text_model.word_mlp",
+          "text_model.word_mlp.layers"
+        ],
+        "acquired_ranges": [
+          {
+            "start": 8531223387,
+            "end": 8531223408,
+            "bytes": 22,
+            "sha256": "588449cfea4f33a26d935c83fcceffb8e912d62df687e945286eda962ae0a0fb"
+          },
+          {
+            "start": 8531223367,
+            "end": 8531223386,
+            "bytes": 20,
+            "sha256": "62b877e1da376d350a8a24bd969425fa86a0fe0c326a3c920561b9b8585ae858"
+          },
+          {
+            "start": 8531223311,
+            "end": 8531223366,
+            "bytes": 56,
+            "sha256": "40b8a50f50fa5e84d4ba7b6f4a6d3ac7e49aeae4bb83e95580587a34fef514f0"
+          },
+          {
+            "start": 8531090330,
+            "end": 8531223310,
+            "bytes": 132981,
+            "sha256": "77faeaba4680bde716e8c089837bd146bfe5c71becd79b7a7e6ee9587480896b"
+          },
+          {
+            "start": 0,
+            "end": 29,
+            "bytes": 30,
+            "sha256": "890b8c389ac60781667d58cb47705bbcc9a12b9c22a585c53175af18d3e489bd"
+          },
+          {
+            "start": 30,
+            "end": 45,
+            "bytes": 16,
+            "sha256": "b458b5f2055385f3dd013e91c3a1ed01d6eb4110e4c1bc88ce2168e8f1847a9a"
+          },
+          {
+            "start": 46,
+            "end": 63,
+            "bytes": 18,
+            "sha256": "dcab4d7622a9cd9e031a235459d331b7eece1b33fd218b0e55ed4f7caee4b176"
+          },
+          {
+            "start": 64,
+            "end": 287534,
+            "bytes": 287471,
+            "sha256": "fee29606fb15b2ccbfd962c6a1938f07c319225d365e6460ddc37af761296da5"
+          }
+        ]
+      },
+      {
+        "checkpoint_url": "https://protsl.s3.us-east-2.amazonaws.com/checkpoints/protst_esm2.pth",
+        "artifact_role_advertised_by_official_readme": "pretraining checkpoint",
+        "weights_downloaded": false,
+        "unpickling_performed": false,
+        "bytes": 8515448805,
+        "etag": "\"1001262adad44f943f9a45ed75896913-508\"",
+        "last_modified": "Mon, 23 Jan 2023 02:09:00 GMT",
+        "container": "PyTorch ZIP",
+        "metadata_member": "archive/data.pkl",
+        "metadata_bytes": 293912,
+        "metadata_sha256": "7dd90a671c4cde1bdd3be9d8ce4a3a518382b8ff7a17777b29da8024b9a8c956",
+        "parameter_name_prefix_counts": {
+          "protein_model": 963,
+          "text_model": 454,
+          "mlm_head": 4,
+          "fusion_model": 28,
+          "mmp_protein_head": 4,
+          "mmp_text_head": 4
+        },
+        "task_head_candidate_names": [],
+        "projection_names": [
+          "protein_model.graph_mlp.layers.0.weight",
+          "protein_model.graph_mlp.layers.0.bias",
+          "protein_model.graph_mlp.layers.1.weight",
+          "protein_model.graph_mlp.layers.1.bias",
+          "protein_model.residue_mlp.layers.0.weight",
+          "protein_model.residue_mlp.layers.0.bias",
+          "protein_model.residue_mlp.layers.1.weight",
+          "protein_model.residue_mlp.layers.1.bias",
+          "text_model.text_mlp.layers.0.weight",
+          "text_model.text_mlp.layers.0.bias",
+          "text_model.text_mlp.layers.1.weight",
+          "text_model.text_mlp.layers.1.bias",
+          "text_model.word_mlp.layers.0.weight",
+          "text_model.word_mlp.layers.0.bias",
+          "text_model.word_mlp.layers.1.weight",
+          "text_model.word_mlp.layers.1.bias",
+          "protein_model.graph_mlp",
+          "protein_model.graph_mlp.layers",
+          "protein_model.graph_mlp.layers.0",
+          "protein_model.graph_mlp.layers.1",
+          "protein_model.residue_mlp",
+          "protein_model.residue_mlp.layers",
+          "protein_model.residue_mlp.layers.0",
+          "protein_model.residue_mlp.layers.1",
+          "text_model.text_mlp",
+          "text_model.text_mlp.layers",
+          "text_model.text_mlp.layers.0",
+          "text_model.text_mlp.layers.1",
+          "text_model.word_mlp",
+          "text_model.word_mlp.layers"
+        ],
+        "acquired_ranges": [
+          {
+            "start": 8515448783,
+            "end": 8515448804,
+            "bytes": 22,
+            "sha256": "3912d1c92d603057b3a12f797875520f7f70c46642566fa355cab82b819d4b80"
+          },
+          {
+            "start": 8515448763,
+            "end": 8515448782,
+            "bytes": 20,
+            "sha256": "50be2f79765f82e1078f0a84911a908b19fd1964d65d53cbaea1239997ada4f5"
+          },
+          {
+            "start": 8515448707,
+            "end": 8515448762,
+            "bytes": 56,
+            "sha256": "0350a6e4c8f38770bd0ac70b9cf10e565d5fd1e84b880e9f6dc1bd75a94f1428"
+          },
+          {
+            "start": 8515314010,
+            "end": 8515448706,
+            "bytes": 134697,
+            "sha256": "45a8914230a751594e5e7bf5a0f26b84a1ecc24238011ed92f143669c1358175"
+          },
+          {
+            "start": 0,
+            "end": 29,
+            "bytes": 30,
+            "sha256": "890b8c389ac60781667d58cb47705bbcc9a12b9c22a585c53175af18d3e489bd"
+          },
+          {
+            "start": 30,
+            "end": 45,
+            "bytes": 16,
+            "sha256": "b458b5f2055385f3dd013e91c3a1ed01d6eb4110e4c1bc88ce2168e8f1847a9a"
+          },
+          {
+            "start": 46,
+            "end": 63,
+            "bytes": 18,
+            "sha256": "dcab4d7622a9cd9e031a235459d331b7eece1b33fd218b0e55ed4f7caee4b176"
+          },
+          {
+            "start": 64,
+            "end": 293975,
+            "bytes": 293912,
+            "sha256": "7dd90a671c4cde1bdd3be9d8ce4a3a518382b8ff7a17777b29da8024b9a8c956"
+          }
+        ]
+      },
+      {
+        "checkpoint_url": "https://protsl.s3.us-east-2.amazonaws.com/checkpoints/protst_protbert.pth",
+        "artifact_role_advertised_by_official_readme": "pretraining checkpoint",
+        "weights_downloaded": false,
+        "unpickling_performed": false,
+        "bytes": 5738217996,
+        "etag": "\"58d49d32a3ab46b6a55775445ae727b6-343\"",
+        "last_modified": "Mon, 23 Jan 2023 02:25:32 GMT",
+        "container": "PyTorch ZIP",
+        "metadata_member": "archive/data.pkl",
+        "metadata_bytes": 295632,
+        "metadata_sha256": "5c02c0386d7da72efecce57517edc0481e8a86e546a36fb506d85141d9ea4bbc",
+        "parameter_name_prefix_counts": {
+          "protein_model": 1057,
+          "text_model": 454,
+          "mlm_head": 4,
+          "fusion_model": 28,
+          "mmp_protein_head": 4,
+          "mmp_text_head": 4
+        },
+        "task_head_candidate_names": [],
+        "projection_names": [
+          "protein_model.graph_mlp.layers.0.weight",
+          "protein_model.graph_mlp.layers.0.bias",
+          "protein_model.graph_mlp.layers.1.weight",
+          "protein_model.graph_mlp.layers.1.bias",
+          "protein_model.residue_mlp.layers.0.weight",
+          "protein_model.residue_mlp.layers.0.bias",
+          "protein_model.residue_mlp.layers.1.weight",
+          "protein_model.residue_mlp.layers.1.bias",
+          "text_model.text_mlp.layers.0.weight",
+          "text_model.text_mlp.layers.0.bias",
+          "text_model.text_mlp.layers.1.weight",
+          "text_model.text_mlp.layers.1.bias",
+          "text_model.word_mlp.layers.0.weight",
+          "text_model.word_mlp.layers.0.bias",
+          "text_model.word_mlp.layers.1.weight",
+          "text_model.word_mlp.layers.1.bias",
+          "protein_model.graph_mlp",
+          "protein_model.graph_mlp.layers",
+          "protein_model.graph_mlp.layers.0",
+          "protein_model.graph_mlp.layers.1",
+          "protein_model.residue_mlp",
+          "protein_model.residue_mlp.layers",
+          "protein_model.residue_mlp.layers.0",
+          "protein_model.residue_mlp.layers.1",
+          "text_model.text_mlp",
+          "text_model.text_mlp.layers",
+          "text_model.text_mlp.layers.0",
+          "text_model.text_mlp.layers.1",
+          "text_model.word_mlp",
+          "text_model.word_mlp.layers"
+        ],
+        "acquired_ranges": [
+          {
+            "start": 5738217974,
+            "end": 5738217995,
+            "bytes": 22,
+            "sha256": "21a92c2ca1c150afae501af8172ca5b1157e6e914156d8a965324fe6906d6f6c"
+          },
+          {
+            "start": 5738217954,
+            "end": 5738217973,
+            "bytes": 20,
+            "sha256": "b1f97894a5df17bad6d43d075714ff88b3a14c315615b1c59dff072a7d31b25a"
+          },
+          {
+            "start": 5738217898,
+            "end": 5738217953,
+            "bytes": 56,
+            "sha256": "4570fa381bd9363b0751ad22a35b566bbbabb35ec99320e9aa6d4edc0d94cef4"
+          },
+          {
+            "start": 5738099866,
+            "end": 5738217897,
+            "bytes": 118032,
+            "sha256": "0b6759fa8dd53aeca520663ac12c7918e9d0f5fafaf5462a2ae19fc0d35a1e5d"
+          },
+          {
+            "start": 0,
+            "end": 29,
+            "bytes": 30,
+            "sha256": "890b8c389ac60781667d58cb47705bbcc9a12b9c22a585c53175af18d3e489bd"
+          },
+          {
+            "start": 30,
+            "end": 45,
+            "bytes": 16,
+            "sha256": "b458b5f2055385f3dd013e91c3a1ed01d6eb4110e4c1bc88ce2168e8f1847a9a"
+          },
+          {
+            "start": 46,
+            "end": 63,
+            "bytes": 18,
+            "sha256": "dcab4d7622a9cd9e031a235459d331b7eece1b33fd218b0e55ed4f7caee4b176"
+          },
+          {
+            "start": 64,
+            "end": 295695,
+            "bytes": 295632,
+            "sha256": "5c02c0386d7da72efecce57517edc0481e8a86e546a36fb506d85141d9ea4bbc"
+          }
+        ]
+      }
+    ],
+    "verified_frozen_EC_GO_task_head_available": false,
+    "blocker": "All three advertised ProtST checkpoints contain backbones/pretraining heads, no downstream task MLP. Source constructs a fresh task head and trains 50 epochs. New training is prohibited.",
+    "next_step": "Obtain author frozen task checkpoints, class order and processed-case/dependency identity for native specialist reproduction without training. The separately frozen Qwen confidence adaptation needs no new head.",
+    "different_DeepFRI_specialist_models": [
+      {
+        "url": "https://users.flatironinstitute.org/~renfrew/DeepFRI_data/trained_models.tar.gz",
+        "artifact_role": "Released DeepFRI trained specialist models; different baseline from Qwen/ProtST; contents not yet acquired",
+        "http_status": 200,
+        "content_length": "903786708",
+        "last_modified": "Thu, 12 Jan 2023 20:01:46 GMT",
+        "etag": "\"63c0672a-35deb0d4\""
+      },
+      {
+        "url": "https://users.flatironinstitute.org/~renfrew/DeepFRI_data/newest_trained_models.tar.gz",
+        "artifact_role": "Released DeepFRI trained specialist models; different baseline from Qwen/ProtST; contents not yet acquired",
+        "http_status": 200,
+        "content_length": "872246438",
+        "last_modified": "Thu, 12 Jan 2023 20:01:49 GMT",
+        "etag": "\"63c0672d-33fd6ca6\""
+      }
+    ]
+  },
+  "qwen_proposal": {
+    "variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE",
+    "generation_recipe_unchanged": true,
+    "max_output_tokens": 4096,
+    "token_budget_audit": "reports/DEEPFRI_SPARSE_CONFIDENCE_TOKEN_BUDGET_2026-10-15.json",
+    "all_cases_fit_context": true,
+    "total_cases": 12167,
+    "total_prompt_tokens_no_cache_savings": 183005770,
+    "total_max_output_tokens": 49836032,
+    "prefix_cache_qualification": "Fixed class vocabulary follows varying sequence; no ordinary shared-prefix savings assumed.",
+    "scorer": "scripts/score_local_deepfri_confidence.py",
+    "scorer_sha256": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7",
+    "new_eight_gpu_executor": "scripts/execute_local_deepfri_confidence_eight_gpu.py",
+    "new_eight_gpu_executor_sha256": "b9ce4e0ea156496e1ddf73e36ef98cd779c0bb8949f25df3806da350b3c9ad77",
+    "protocol_sha256": "57ad4feaff6c5742a877eed2876547f8234e257cd7a9876552119d3ee6ba28da",
+    "runtime": {
+      "python": "3.12.15",
+      "torch": "2.13.0+cu132",
+      "numpy": "2.3.5",
+      "tie_grouped_sklearn_runtime": {
+        "python": "3.10.12",
+        "sklearn": "1.5.2",
+        "numpy": "1.21.5"
+      },
+      "device": "cpu",
+      "dtype": "float32",
+      "num_threads": 1,
+      "num_interop_threads": 1
+    },
+    "strict_sparse_contract": "Explicit final JSON numeric scores map. Omitted permitted IDs zero by prospective definition; explicit empty scores object valid. Constant/binary/tied vectors retained. Missing/malformed/truncated output invalid; no repair or label-list conversion. Any invalid planned vector makes full native AP/Fmax null; parsed-only diagnostics distinct.",
+    "all_zero_reference": "Predeclared all-zero full matrix offline diagnostic, never model predictions or missing-output replacements."
+  },
+  "verification": {
+    "reporter_tests": 10,
+    "source_preparation_tests": 4,
+    "sparse_contract_tests": 3,
+    "range_zip_tests": 2,
+    "confidence_scorer_tests": 6,
+    "inference_performed": false,
+    "providers_called": false,
+    "training_performed": false,
+    "central_authorizations_or_queues_changed": false,
+    "B06_or_flagged_P18_content_opened": false,
+    "original_B01_or_interpretation_registry_modified": false,
+    "genomic_scorer_sha256_unchanged": true
+  },
+  "caveats": [
+    "Released full test-list scope differs from paper/author processed PDB identity.",
+    "Prompted confidence scores differ from trained specialist representations and heads.",
+    "Absent curated labels do not prove biological absence.",
+    "Prediction agreement does not validate explanation, probability calibration or mechanisms.",
+    "Prior public benchmark exposure is unknown.",
+    "Historical ontology bytes and author GPU tie behavior are unavailable; current GO and score propagation were not substituted."
+  ]
+}

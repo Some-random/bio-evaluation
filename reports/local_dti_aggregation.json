@@ -1,4 +1,24 @@
 {
-  "status": "pending",
-  "detail": "Datasets pending: human, bindingdb"
+  "status": "complete",
+  "run_id": "qwen38_27b_p43_all_native_tests_2026-10-15",
+  "completion": {
+    "generation_exit_code": 0,
+    "scoring_exit_code": 0,
+    "finished_at_utc": "2026-10-15T09:46:41.654323+00:00",
+    "aggregate_only": true,
+    "source_dataset_provenance_sha256": "fb541b614c8aead90c81c45c65026259b8bacf0a1169dab0bf2510c667482030",
+    "full_test_id_union_validation": {
+      "complete": true,
+      "union_matches_full_test_ids": true,
+      "expected_test_case_count": 16533,
+      "unique_observed_case_count": 16533,
+      "missing_case_count": 0,
+      "extra_case_count": 0
+    },
+    "scores_sha256": "b372230404e5ae10c71f84c2a360211758088e2364e5979a22c84aa8881c9dc2",
+    "run_manifest_sha256": "32b04b4bcba5537baa74ff53a680a87c2e599cecbea74a524fe76027acebcd69",
+    "case_inputs_sha256": "c4f31b97e944b39a8351e9c7f13c808d02c779c7b99ce3b0f9441e458c8f0949",
+    "source_manifest_sha256": "e8e2775461021e0577bf662206441aa38dde7b25d709a3fdbaec3abf07dc4557",
+    "scoring_output_lock_sha256": "d011572211a8b626d2dfb214d0890c38d90c79f0204e51740686a2231da4c61e"
+  }
 }

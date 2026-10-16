@@ -1,0 +1,71 @@
+{
+  "task_id": "P15",
+  "run_id": "qwen38_27b_p15_sparse_confidence_test95_2026-10-15",
+  "proposal_status": "disabled_requires_native_confidence_scorer_and_root_authorization",
+  "enabled": false,
+  "created_at_utc": "2026-10-15T08:33:43.380623+00:00",
+  "approved_task_ids": [
+    "P15"
+  ],
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "gpu_ids": [
+    4
+  ],
+  "endpoint": "http://127.0.0.1:8029/v1",
+  "serving_config_file": "configs/local_model_gpu4.json",
+  "server_record_file": ".local/local_model_server_gpu4.json",
+  "variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE",
+  "reporting_protocol_kind": "adapted",
+  "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
+  "planned": 3416,
+  "class_count": 320,
+  "branch": "CC",
+  "input_file": "data/catalog_deepfri_tasks/P15/model_inputs.jsonl",
+  "review_file": "configs/local_deepfri_p15_review_proposed.json",
+  "class_vocabulary_file": "data/catalog_deepfri_tasks/P15/class_vocabulary.json",
+  "output_contract_file": "configs/local_deepfri_sparse_confidence_output_contract_proposed.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "candidate_runner": "scripts/run_local_labbench_multimodal.py",
+  "executor": null,
+  "scorer": null,
+  "activation_blockers": [
+    "Exact source-native confidence scorer/runtime/tie ordering and output-lock verification are not implemented/frozen for this proposal.",
+    "Local root authorization and central allowlist remain unchanged.",
+    "Input token-budget audit must pass before activation."
+  ],
+  "tool_access": [],
+  "input_modalities": [
+    "full_protein_sequence_text",
+    "global_class_ids_and_descriptions"
+  ],
+  "model_facing_fields": [
+    "full_protein_sequence",
+    "complete_fixed_global_class_vocabulary",
+    "prospective_sparse_numeric_confidence_output_instruction"
+  ],
+  "source_dataset_revision": "Zenodo 6622158 native selected members; hashes in source/provenance files",
+  "source_code_revision": "ProtST db53a76ed2430eb66dd9c8134ace99fd60980fb3; TorchDrug 6066fbd82360abb5f270cba1eca560af01b8cc90",
+  "paper_comparison": "Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation.",
+  "frozen_files_sha256": {
+    "data/catalog_deepfri_tasks/P15/model_inputs.jsonl": "928dcd948598a51ac22819f667a38d04f42de2238c79b5bf27f1e45cfc3f6cb1",
+    "data/catalog_deepfri_tasks/P15/input_provenance.jsonl": "36c7e2176452002a5b18cb45a70c6f9526f653f0b01fd1bb73afb32fc0383dc0",
+    "data/catalog_deepfri_tasks/P15/class_vocabulary.json": "c4c845512167e808bb9f7ad0454a828643d455f66216e5bafc5565826a992537",
+    "configs/local_deepfri_p15_review_proposed.json": "ca257b03ea3c9ef236eaa4d938c4904147e098db8fb6232e537d32f08efdeafb",
+    "configs/local_deepfri_sparse_confidence_output_contract_proposed.json": "da11d72f3b921f5bf61f7f1613ed1756122cbfa12404c4084a28323f6bc2acf5",
+    "scripts/prepare_local_deepfri_proposals.py": "fbc2387a1c109257657540bde19f6c546ee9b8dc36f6f324886724601bbc50d6"
+  }
+}

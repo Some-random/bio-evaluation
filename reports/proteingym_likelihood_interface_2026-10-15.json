@@ -1,0 +1,383 @@
+{
+  "status": "synthetic_interface_proven_no_benchmark_authorization",
+  "task_candidate": "P17 benign GFP component only",
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "gpu_ids": [
+    5
+  ],
+  "new_server": false,
+  "synthetic_requests": 2,
+  "benchmark_inputs_read": false,
+  "biological_inference": false,
+  "source_version": "0.31.0",
+  "request_recipe": {
+    "endpoint": "/v1/completions",
+    "prompt": "explicit prefix_token_ids + suffix_token_ids; no automatic special tokens",
+    "add_special_tokens": false,
+    "prompt_logprobs": 0,
+    "echo": true,
+    "max_tokens": 0,
+    "return_token_ids": true,
+    "logprobs": "omitted, avoiding duplicate legacy arrays",
+    "stream": false,
+    "n": 1
+  },
+  "score": {
+    "definition": "sum_i logP(suffix_token_i | fixed_prefix_tokens, previous_suffix_tokens), excluding all prefix terms; all original source sequence encoded separately, no tokenizer-token normalization",
+    "normalizer": "Installed runner computes float32 logits.log_softmax over full vocabulary before gathering actual prompt token; requesting0 means selected token only, not renormalization over a candidate subset. Prompt logprobs bypass sampling processors. Installed model default raw_logprobs; active command has no override.",
+    "first_token": "First prompt entry null. Without a nonempty fixed prefix, first suffix token cannot be scored. With fixed nonempty token prefix every suffix term is scored.",
+    "eos": "No automatic EOS; optional explicit EOS must be appended as a token ID and scored separately. Synthetic proof tested tokenizer EOS248046. Root P17 definition excludes EOS.",
+    "internal_generation": "echo=true/max_tokens=0 is internally translated to one generated token. Its token IDs and completion usage may appear; never include it or its score in likelihood.",
+    "clipping": "Installed serving replaces prompt -inf with -9999.0. Treat sentinel as invalid, together with missing/nonfinite/nonpositive-probability anomalies, rather than silently accepting clipped likelihood."
+  },
+  "proofs": [
+    {
+      "case_id": "synthetic_ascii_no_prefix_no_eos",
+      "wire_bytes": 1292,
+      "elapsed_seconds": 2.806725683854893,
+      "prompt_token_count": 11,
+      "first_token_has_no_logprob": true,
+      "actual_prompt_ids_match_cpu_tokenizer_or_supplied_ids": true,
+      "selected_token_only_at_every_scored_position": true,
+      "token_rows": [
+        {
+          "position": 0,
+          "token_id": 32,
+          "logprob": null
+        },
+        {
+          "position": 1,
+          "token_id": 20701,
+          "logprob": -9.009381294250488,
+          "rank": 1316,
+          "decoded_token": " toy"
+        },
+        {
+          "position": 2,
+          "token_id": 8598,
+          "logprob": -7.1204514503479,
+          "rank": 78,
+          "decoded_token": " clock"
+        },
+        {
+          "position": 3,
+          "token_id": 15339,
+          "logprob": -7.798025131225586,
+          "rank": 94,
+          "decoded_token": " reads"
+        },
+        {
+          "position": 4,
+          "token_id": 220,
+          "logprob": -0.46151578426361084,
+          "rank": 1,
+          "decoded_token": " "
+        },
+        {
+          "position": 5,
+          "token_id": 16,
+          "logprob": -1.1274793148040771,
+          "rank": 1,
+          "decoded_token": "1"
+        },
+        {
+          "position": 6,
+          "token_id": 22,
+          "logprob": -5.072417736053467,
+          "rank": 13,
+          "decoded_token": "7"
+        },
+        {
+          "position": 7,
+          "token_id": 25,
+          "logprob": -0.7757002711296082,
+          "rank": 1,
+          "decoded_token": ":"
+        },
+        {
+          "position": 8,
+          "token_id": 19,
+          "logprob": -1.8878507614135742,
+          "rank": 3,
+          "decoded_token": "4"
+        },
+        {
+          "position": 9,
+          "token_id": 17,
+          "logprob": -2.3425447940826416,
+          "rank": 3,
+          "decoded_token": "2"
+        },
+        {
+          "position": 10,
+          "token_id": 13,
+          "logprob": -0.879298985004425,
+          "rank": 1,
+          "decoded_token": "."
+        }
+      ],
+      "target_token_start": 0,
+      "target_token_end_exclusive": 11,
+      "all_target_tokens_scored": false,
+      "target_sum_log_likelihood_if_all_scored": null,
+      "sum_available_target_terms": -36.47466552257538,
+      "explicit_eos_index": null,
+      "explicit_eos_logprob": null,
+      "generated_token_ids_ignored": [
+        3437
+      ],
+      "generation_scores_used": false,
+      "usage": {
+        "prompt_tokens": 11,
+        "total_tokens": 12,
+        "completion_tokens": 1,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "legacy_completion_logprobs": null
+    },
+    {
+      "case_id": "synthetic_unicode_fixed_token_prefix_explicit_eos",
+      "wire_bytes": 1323,
+      "elapsed_seconds": 9.578696405049413,
+      "prompt_token_count": 11,
+      "first_token_has_no_logprob": true,
+      "actual_prompt_ids_match_cpu_tokenizer_or_supplied_ids": true,
+      "selected_token_only_at_every_scored_position": true,
+      "token_rows": [
+        {
+          "position": 0,
+          "token_id": 11985,
+          "logprob": null
+        },
+        {
+          "position": 1,
+          "token_id": 25,
+          "logprob": -3.733788251876831,
+          "rank": 8,
+          "decoded_token": ":"
+        },
+        {
+          "position": 2,
+          "token_id": 198,
+          "logprob": -3.2706243991851807,
+          "rank": 3,
+          "decoded_token": "\n"
+        },
+        {
+          "position": 3,
+          "token_id": 895,
+          "logprob": -9.746484756469727,
+          "rank": 1635,
+          "decoded_token": "ca"
+        },
+        {
+          "position": 4,
+          "token_id": 56868,
+          "logprob": -1.4232732057571411,
+          "rank": 1,
+          "decoded_token": "fé"
+        },
+        {
+          "position": 5,
+          "token_id": 10838,
+          "logprob": -10.41519546508789,
+          "rank": 1454,
+          "decoded_token": ""
+        },
+        {
+          "position": 6,
+          "token_id": 100,
+          "logprob": -4.231579303741455,
+          "rank": 16,
+          "decoded_token": ""
+        },
+        {
+          "position": 7,
+          "token_id": 102,
+          "logprob": -4.538951396942139,
+          "rank": 11,
+          "decoded_token": " 🧩"
+        },
+        {
+          "position": 8,
+          "token_id": 25087,
+          "logprob": -11.611404418945312,
+          "rank": 4201,
+          "decoded_token": ""
+        },
+        {
+          "position": 9,
+          "token_id": 117,
+          "logprob": -3.430499792098999,
+          "rank": 5,
+          "decoded_token": " Ź"
+        },
+        {
+          "position": 10,
+          "token_id": 248046,
+          "logprob": -11.619762420654297,
+          "rank": 1067,
+          "decoded_token": "<|im_end|>"
+        }
+      ],
+      "target_token_start": 3,
+      "target_token_end_exclusive": 10,
+      "all_target_tokens_scored": true,
+      "target_sum_log_likelihood_if_all_scored": -45.397388339042664,
+      "sum_available_target_terms": -45.397388339042664,
+      "explicit_eos_index": 10,
+      "explicit_eos_logprob": -11.619762420654297,
+      "generated_token_ids_ignored": [
+        198
+      ],
+      "generation_scores_used": false,
+      "usage": {
+        "prompt_tokens": 11,
+        "total_tokens": 12,
+        "completion_tokens": 1,
+        "prompt_tokens_details": null,
+        "completion_tokens_details": null
+      },
+      "legacy_completion_logprobs": null
+    }
+  ],
+  "offset_and_unicode_caveats": {
+    "authoritative_boundary": "Exact prompt_token_ids and saved suffix_start/end, not decoded-token text or its string offsets.",
+    "CPU_offsets": "Original UTF8 and fast-tokenizer character offsets saved; Unicode byte pieces may share/overlap character spans.",
+    "normalization": "The decomposed synthetic Unicode suffix tokenizes to contextual decoded precomposed text. This is tokenizer behavior; never mutate original source bytes. ASCII amino-acid inputs are a distinct restricted domain.",
+    "merging_counterexample": {
+      "prefix": {
+        "text": "prefix: ",
+        "utf8_base64": "cHJlZml4OiA=",
+        "token_ids": [
+          11510,
+          25,
+          220
+        ],
+        "character_offsets": [
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "single_token_decodes": [
+          "prefix",
+          ":",
+          " "
+        ]
+      },
+      "target": {
+        "text": "painted cube",
+        "utf8_base64": "cGFpbnRlZCBjdWJl",
+        "token_ids": [
+          79,
+          29243,
+          22997
+        ],
+        "character_offsets": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            7,
+            12
+          ]
+        ],
+        "single_token_decodes": [
+          "p",
+          "ainted",
+          " cube"
+        ]
+      },
+      "canonical_joint": {
+        "text": "prefix: painted cube",
+        "utf8_base64": "cHJlZml4OiBwYWludGVkIGN1YmU=",
+        "token_ids": [
+          11510,
+          25,
+          23235,
+          22997
+        ],
+        "character_offsets": [
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            15
+          ],
+          [
+            15,
+            20
+          ]
+        ],
+        "single_token_decodes": [
+          "prefix",
+          ":",
+          " painted",
+          " cube"
+        ]
+      },
+      "separate_tokenization_equals_joint": false
+    },
+    "explicit_concatenation": "Separately encode(prefix)+encode(sequence) gives a declared hard token boundary. It may differ from encode(prefix+sequence). Never drop tokens based only on character length or tokenize prefix independently and slice a jointly tokenized sequence."
+  },
+  "storage_estimate_1000_prompt_tokens": {
+    "observed_11token_wire_bytes": [
+      1292,
+      1323
+    ],
+    "typical_selected_only_wire_bytes_approx": 110000,
+    "conservative_planning_wire_bytes_for_short_ASCII_sequence_tokens": 262144,
+    "conservative_planning_archive_bytes_including_requests_raw_base64_raw_utf8_parsed_and_token_metadata": 1048576,
+    "qualification": "Approximate planning figures, not a hard universal vocabulary bound. Only one actual token entry per prompt position, no topN. Long decoded token strings, pretty JSON and duplicated raw archives change size. No1000-token GPU probe performed."
+  },
+  "interpretation": {
+    "likely_demands_provisional": "Causal sequence compatibility under a fixed text-model prefix; learned sequence representations and tokenization can dominate. No internal reasoning inference.",
+    "information_supplied": "Only declared fixed prefix and full variant sequence. Assay labels/reference outcomes remain offline scorer-only.",
+    "reference_source": "P17 native DMS outcomes are not acquired by this interface audit.",
+    "what_good_score_would_establish": "Correlation of the declared Qwen causal likelihood adaptation with a particular source assay after full-coverage frozen evaluation.",
+    "not_established": "Equality to amino-acid PLM pseudolikelihood, ProtST masked-head scores, experimental validity, mechanistic explanations or absence of memorization."
+  },
+  "files_sha256": {
+    "sources/proteingym_likelihood_interface_2026-10-15/models_identity.json": "a20642bee3c431ae68cada3f743b40f1329c62909ff5e9b3bee7cc4ce8f75b91",
+    "sources/proteingym_likelihood_interface_2026-10-15/server_identity.json": "1c3c2c09685e73186bb9d14ec663ff324197a46db9c0f1061befb737559a488a",
+    "sources/proteingym_likelihood_interface_2026-10-15/source_receipts.json": "b5669a3166fd2c82d09831328df5f0445a70e1f0e0db5acbdb21156294bef8a3",
+    "sources/proteingym_likelihood_interface_2026-10-15/synthetic_ascii_no_prefix_no_eos.request.json": "1116ebf5421d6c527ef5e0c367ce83fe3359cda4ea9a06204e385e7ba8383e7d",
+    "sources/proteingym_likelihood_interface_2026-10-15/synthetic_ascii_no_prefix_no_eos.response.json": "de876c3958098947f447b732dd4c4c90910cfaeb98883dde5a8c21f763be220d",
+    "sources/proteingym_likelihood_interface_2026-10-15/synthetic_ascii_no_prefix_no_eos.validation.json": "8006502b7190a9862fe9400f4bbe976aeff05fadc6ce966fab841b10206ed42c",
+    "sources/proteingym_likelihood_interface_2026-10-15/synthetic_call_plan.json": "b9735b2f506886f681e0136a7655c1f048e9e8eb00ee8ae122fa54aa65c2a54f",
+    "sources/proteingym_likelihood_interface_2026-10-15/synthetic_proof_summary.json": "3f00a4950ecf77add8fe3144efef34eb287291145cb25fddf7acdf09076abc21",
+    "sources/proteingym_likelihood_interface_2026-10-15/synthetic_unicode_fixed_token_prefix_explicit_eos.request.json": "a4fcddeb9a9aad31aa63068a88b8f4504a99e0f0e54a66cfbf4565eb603f3af5",
+    "sources/proteingym_likelihood_interface_2026-10-15/synthetic_unicode_fixed_token_prefix_explicit_eos.response.json": "b772b645ac7b46ab7b91504f19dec02be861710f005627f869bc92da6fcb1986",
+    "sources/proteingym_likelihood_interface_2026-10-15/synthetic_unicode_fixed_token_prefix_explicit_eos.validation.json": "7cc1460cce68662c84b5251b59e43ff2309a00f2ea7defefea2e5dbfe00cb61e",
+    "sources/proteingym_likelihood_interface_2026-10-15/tokenizer_cpu_audit.json": "3785bbfca1739492d189e78ee918e0b3cc2a0146e3a5cbab9c984e463652d515",
+    "sources/proteingym_likelihood_interface_2026-10-15/vllm__config__model.py": "e33d28deab39c42b1c209116296dcb6e98c6da8b4e42ee0dbca0e8bf098c534c",
+    "sources/proteingym_likelihood_interface_2026-10-15/vllm__entrypoints__generate__base__serving.py": "9bffd4141b12973b37c08b19d603f2694c42d6fb41f9d1569c349445dc7d00b2",
+    "sources/proteingym_likelihood_interface_2026-10-15/vllm__entrypoints__openai__completion__protocol.py": "4616cd6887ef0a23fd8a77468e82f2668e3d0b53075112f2d97f3de960c22c81",
+    "sources/proteingym_likelihood_interface_2026-10-15/vllm__entrypoints__openai__completion__serving.py": "aac889978efb034b95ab81ec59695d83ba7c879ab48cd5be2448c980f109a3bd",
+    "sources/proteingym_likelihood_interface_2026-10-15/vllm__v1__sample__sampler.py": "d299305528479ff505b416b759db208fcf08ca6e86cc1f7cfc38be85bbd0e844",
+    "sources/proteingym_likelihood_interface_2026-10-15/vllm__v1__worker__gpu__sample__prompt_logprob.py": "d65ae509ee6da4f4bedd7626807462a91bf6817613d907b02880c18b9af45d27",
+    "sources/proteingym_likelihood_interface_2026-10-15/vllm__v1__worker__gpu_model_runner.py": "bb903dffcb5a6e5b8a477daf0854b3812e135349d61fc20c6133f91cd3c9752a"
+  }
+}

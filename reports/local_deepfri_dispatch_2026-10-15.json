@@ -1,0 +1,38 @@
+{
+  "activated_at_utc": "2026-10-15T09:06:50.266164+00:00",
+  "planned_cases": 12167,
+  "tasks": [
+    {
+      "task": "P12",
+      "gpu": 1,
+      "config": "configs/local_deepfri_p12_sparse_confidence.json",
+      "config_sha256": "2a556579bed575f6e30431a52c6a80bffb4b2c1a6d52b070cc10c371c0dc619c",
+      "cases": 1919
+    },
+    {
+      "task": "P13",
+      "gpu": 2,
+      "config": "configs/local_deepfri_p13_sparse_confidence.json",
+      "config_sha256": "8e28dda61f3b6355e890ad09083a40522da0390facd41d41216a09d21a3e2da0",
+      "cases": 3416
+    },
+    {
+      "task": "P14",
+      "gpu": 3,
+      "config": "configs/local_deepfri_p14_sparse_confidence.json",
+      "config_sha256": "58be72f4ad3fba51c67f1a8b0d3f8eeb172408ddd08ffd5374fac56e324d1396",
+      "cases": 3416
+    },
+    {
+      "task": "P15",
+      "gpu": 1,
+      "config": "configs/local_deepfri_p15_sparse_confidence.json",
+      "config_sha256": "204b6e064f8a7d1e114e1e333cc2824ee6e90d622a556e09aabf10dfeb8fc67c",
+      "cases": 3416
+    }
+  ],
+  "protocol": "prospective sparse numeric confidence adaptation, no native trained head",
+  "task_data_selection_based_on_outputs": false,
+  "reasoning_budget": 4096,
+  "openai_evaluation_api_calls": 0
+}

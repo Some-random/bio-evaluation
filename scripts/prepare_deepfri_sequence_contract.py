@@ -109,7 +109,8 @@ def ec_names(directory):
 
 
 def vocabulary(directory, stem, branch, index):
-    annotation = directory / ("deepfri__preprocessing__data__nrPDB-" + stem + "_annot.tsv")
+    dataset, code = ("EnzymeCommission", "EC") if index is None else ("GeneOntology", "GO")
+    annotation = directory / ("zenodo__" + dataset + "__nrPDB-" + code + "_annot.tsv")
     with annotation.open() as stream:
         reader = csv.reader(stream, delimiter="\t")
         header = [next(reader) for _ in range(3 if index is None else 12)]
@@ -189,6 +190,11 @@ def modeled_sequence(mol):
         atom_to_residue.append(len(symbols) - 1)
     if not symbols:
         return {"status": "empty_modeled_residues"}
+    # The source appends dummy GLY residue 1/insertion-space then slices the
+    # final residue. When the actual last residue has this exact key, its
+    # bookkeeping can collide. Do not silently repair that source boundary.
+    if last == (1, " ", "GLY"):
+        return {"status": "native_dummy_residue_boundary_collision_requires_full_loader"}
     parent = list(range(len(symbols)))
 
     def find(item):
@@ -224,6 +230,20 @@ def audit_structure_test(directory, dataset, fasta, excluded_ids, output):
     provenance = json.loads(archive.with_suffix(".zip.provenance.json").read_text())
     if sha256(archive) != provenance["sha256"]:
         raise ValueError("Test ZIP differs from frozen acquisition provenance")
+    parser_metadata = {
+        "rdkit_version": rdBase.rdkitVersion, "python_projection_sha256": sha256(__file__),
+        "test_zip_sha256": provenance["sha256"], "test_zip_bytes": provenance["bytes"],
+        "fasta_records_sha256": hashlib.sha256(json.dumps(fasta, sort_keys=True).encode()).hexdigest(),
+        "excluded_test_ids_sha256": hashlib.sha256(json.dumps(sorted(excluded_ids)).encode()).hexdigest(),
+    }
+    metadata_path = output.with_suffix(".metadata.json")
+    if output.exists() and metadata_path.exists():
+        previous = json.loads(metadata_path.read_text())
+        if (previous.get("contract") == parser_metadata
+                and previous.get("audit_sha256") == sha256(output)):
+            audit = [json.loads(line) for line in output.read_text().splitlines()]
+            retained = [row for row in audit if row["status"] == "retained_current_rdkit_residue_projection" and not row["excluded_by_test95_csv"]]
+            return audit, retained, parser_metadata
     audit = []
     with zipfile.ZipFile(archive) as source, tempfile.TemporaryDirectory(prefix="deepfri-test-pdb-") as tmp:
         local = pathlib.Path(tmp) / "case.pdb"
@@ -242,8 +262,9 @@ def audit_structure_test(directory, dataset, fasta, excluded_ids, output):
                 row["modeled_equals_released_fasta"] = row["full_modeled_residue_sequence"] == sequence if sequence is not None else None
             audit.append(row)
     write_jsonl(output, audit)
+    write_json(metadata_path, {"contract": parser_metadata, "audit_sha256": sha256(output)})
     retained = [row for row in audit if row["status"] == "retained_current_rdkit_residue_projection" and not row["excluded_by_test95_csv"]]
-    return audit, retained, {"rdkit_version": rdBase.rdkitVersion, "python_projection_sha256": sha256(__file__), "test_zip_sha256": provenance["sha256"], "test_zip_bytes": provenance["bytes"]}
+    return audit, retained, parser_metadata
 
 
 def main():
@@ -254,18 +275,24 @@ def main():
     directory = args.source_directory
     datasets = {}
     for dataset, stem in [("EnzymeCommission", "EC_2020.04"), ("GeneOntology", "GO_2019.06.18")]:
-        prefix = "deepfri__preprocessing__data__nrPDB-" + stem
+        code = "EC" if dataset == "EnzymeCommission" else "GO"
+        prefix = "zenodo__" + dataset + "__nrPDB-" + code
         fasta = read_fasta(directory / (prefix + "_test_sequences.fasta"))
-        split_ids, excluded_ids = read_split(directory / (prefix + "_test.csv"))
+        csv_ids, excluded_ids = read_split(directory / (prefix + "_test.csv"))
         test_list = (directory / (prefix + "_test.txt")).read_text().split()
-        if set(split_ids) != set(test_list):
-            raise ValueError("95% CSV and released test list disagree")
+        if len(test_list) != len(set(test_list)):
+            raise ValueError("Duplicate released test-list ID")
+        # The native loader uses CSV only to exclude rows flagged zero, not as
+        # a whitelist. Preserve renamed PDB IDs in the native Zenodo test list.
+        split_ids = [case_id for case_id in test_list if case_id not in set(excluded_ids)]
         audit, retained, parser_metadata = audit_structure_test(directory, dataset, fasta, set(excluded_ids), args.output_directory / dataset / "pdb_parser_audit.jsonl")
-        datasets[dataset] = (fasta, split_ids, audit, retained, parser_metadata)
+        parser_metadata["csv_ids_not_test_list"] = sorted(set(csv_ids) - set(test_list))
+        parser_metadata["test_list_ids_not_csv"] = sorted(set(test_list) - set(csv_ids))
+        datasets[dataset] = (fasta, split_ids, audit, retained, parser_metadata, csv_ids)
     summaries = []
     for task_id, (dataset, stem, branch, index) in TASKS.items():
         out = args.output_directory / task_id
-        fasta, split_ids, audit, retained, parser_metadata = datasets[dataset]
+        fasta, split_ids, audit, retained, parser_metadata, csv_ids = datasets[dataset]
         vocab = vocabulary(directory, stem, branch, index)
         write_json(out / "class_vocabulary.json", vocab)
         terms = {row["class_id"]: row["index"] for row in vocab["classes"]}
@@ -284,8 +311,8 @@ def main():
         summary = {
             "task_id": task_id, "dataset": dataset, "branch": branch, "test_cutoff": 0.95,
             "status": "source_only_prepared_confidence_adapter_not_frozen",
-            "counts": {"global_classes": len(terms), "released_fasta_headers": len(fasta), "test95_csv_ids": len(split_ids), "released_test95_full_sequences": len(released), "archive_pdbs": len(audit), "current_rdkit_projection_retained": len(retained), "current_rdkit_projection_rejected": len(audit) - len(retained), "modeled_equal_released_fasta": sum(row.get("modeled_equals_released_fasta") is True for row in retained), "modeled_different_from_released_fasta": sum(row.get("modeled_equals_released_fasta") is False for row in retained), "retained_without_released_fasta": sum(not row["released_full_fasta_available"] for row in retained), "modeled_sequences_over_native_550_limit": sum(row["modeled_residue_count"] > 550 for row in retained)},
-            "membership": {"fasta_outside_test95_csv": sorted(set(fasta) - set(split_ids)), "test95_csv_missing_fasta": sorted(set(split_ids) - set(fasta)), "test95_csv_missing_archive_pdb": sorted(set(split_ids) - pdb_ids), "archive_pdb_outside_test95_csv": sorted(pdb_ids - set(split_ids)), "retained_without_scorer_reference": sorted(set(retained_ids) - set(references))},
+            "counts": {"global_classes": len(terms), "released_fasta_headers": len(fasta), "test95_csv_ids": len(csv_ids), "released_test95_list_ids": len(split_ids), "released_test95_full_sequences": len(released), "archive_pdbs": len(audit), "current_rdkit_projection_retained": len(retained), "current_rdkit_projection_rejected": len(audit) - len(retained), "modeled_equal_released_fasta": sum(row.get("modeled_equals_released_fasta") is True for row in retained), "modeled_different_from_released_fasta": sum(row.get("modeled_equals_released_fasta") is False for row in retained), "retained_without_released_fasta": sum(not row["released_full_fasta_available"] for row in retained), "modeled_sequences_over_native_550_limit": sum(row["modeled_residue_count"] > 550 for row in retained)},
+            "membership": {"fasta_outside_released_test95_list": sorted(set(fasta) - set(split_ids)), "released_test95_list_missing_fasta": sorted(set(split_ids) - set(fasta)), "released_test95_list_missing_archive_pdb": sorted(set(split_ids) - pdb_ids), "archive_pdb_outside_released_test95_list": sorted(pdb_ids - set(split_ids)), "retained_without_scorer_reference": sorted(set(retained_ids) - set(references))},
             "parser_rejection_counts": dict(collections.Counter(row["status"] for row in audit if row["status"] != "retained_current_rdkit_residue_projection")),
             "ordered_current_rdkit_retained_case_ids": retained_ids,
             "parser_metadata": parser_metadata,

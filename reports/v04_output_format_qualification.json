@@ -1,0 +1,21 @@
+{
+  "recorded_at_utc": "2026-10-15T09:07:35.906581+00:00",
+  "run_id": "qwen38_27b_v04_original_test500_2026-10-15",
+  "task_id": "V04",
+  "native_qualified_strict_accuracy": 0.0,
+  "prediction_only_format_audit": {
+    "count": 500,
+    "median_whitespace_words": 70.0,
+    "min_whitespace_words": 15,
+    "max_whitespace_words": 263,
+    "multiline": 500,
+    "markdown_bold": 487,
+    "reference_answers_read_for_format_audit": false
+  },
+  "protocol": "Original question and image only; no additional terse-answer instruction. Whole final assistant answer matched exactly against normalized permitted reference strings.",
+  "interpretation": "Zero strict exact-match score for this specified output condition. All500 answers contain15\u2013263words, median70, so answer delivery and matching are material limitations. This does not establish500incorrect clinical predictions or absence of visual evidence use. No post-hoc answer extraction, semantic rescoring, test-selected parser or rerun was performed.",
+  "explanation_correctness": "Unassessed independently. A correct prediction would not validate its explanation; unsupported explanation is not automatically false.",
+  "raw_score_preserved": true,
+  "score_sha256": "f026572c716d7755439e0775538f56a6d88e2cd33b74319f5c454bc97e4fe22d",
+  "source": "https://lhncbc.nlm.nih.gov/LHC-publications/PDF/pub9992.pdf"
+}

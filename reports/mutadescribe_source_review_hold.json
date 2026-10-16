@@ -1,0 +1,15 @@
+{
+  "recorded_at_utc": "2026-10-15T09:06:50.266164+00:00",
+  "task_ids": [
+    "P30",
+    "P31",
+    "P32"
+  ],
+  "stage": "source_review_interrupted_by_biological_safety_check",
+  "triggered_agent": "/root/catalog_execution_review",
+  "exact_trigger_case_unknown": true,
+  "inference_dispatched": false,
+  "scope_status": "not_fully_reviewed_not_authorized",
+  "reason": "Provider safety check stopped the mixed descriptive/mutation-engineering source review. No bypass/rephrase/alternate-model retry of the flagged material. This does not classify all released descriptive cases as prohibited. Preserve existing drafts and hold unreviewed scope.",
+  "actual_model_generations": 0
+}

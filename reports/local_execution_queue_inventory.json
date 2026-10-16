@@ -1,0 +1,1829 @@
+{
+  "recorded_at_utc": "2026-10-15T10:23:17.144733+00:00",
+  "queued_job_count": 116,
+  "queued_case_count": 130083,
+  "task_count": 35,
+  "task_case_counts": {
+    "B02": 520,
+    "B03": 82,
+    "B04": 181,
+    "B05": 244,
+    "B07": 600,
+    "B08": 33,
+    "N01": 290,
+    "N02": 1233,
+    "N03": 873,
+    "P01": 1999,
+    "P02": 1749,
+    "P03": 2773,
+    "P06": 1366,
+    "P07": 27217,
+    "P08": 12851,
+    "P10": 237,
+    "P11": 394,
+    "P12": 1919,
+    "P13": 3416,
+    "P14": 3416,
+    "P15": 3416,
+    "P16": 5651,
+    "P23": 3494,
+    "P24": 1601,
+    "P25": 1400,
+    "P26": 2633,
+    "P28": 8159,
+    "P29": 14872,
+    "P42": 200,
+    "P43": 16533,
+    "V01": 451,
+    "V02": 1061,
+    "V03": 6719,
+    "V04": 500,
+    "V05": 2000
+  },
+  "queues": [
+    {
+      "path": "configs/local_benchmark_queue.json",
+      "accept_more": true,
+      "jobs": 15
+    },
+    {
+      "path": "configs/local_benchmark_queue_gpu1.json",
+      "accept_more": true,
+      "jobs": 15
+    },
+    {
+      "path": "configs/local_benchmark_queue_gpu2.json",
+      "accept_more": true,
+      "jobs": 11
+    },
+    {
+      "path": "configs/local_benchmark_queue_gpu3.json",
+      "accept_more": true,
+      "jobs": 13
+    },
+    {
+      "path": "configs/local_benchmark_queue_gpu4.json",
+      "accept_more": true,
+      "jobs": 22
+    },
+    {
+      "path": "configs/local_benchmark_queue_gpu6.json",
+      "accept_more": true,
+      "jobs": 22
+    },
+    {
+      "path": "configs/local_benchmark_queue_gpu7.json",
+      "accept_more": true,
+      "jobs": 18
+    }
+  ],
+  "cases_partitioned_by_frozen_source_order": true,
+  "case_selection_based_on_model_outputs": false,
+  "inference_rerouted_from_policy_rejections": false,
+  "user_openai_evaluation_api_calls": 0,
+  "checkpoints_duplicated": false,
+  "all_64_settings_complete": false,
+  "counting_note": "Queue totals include finished jobs and disjoint shards, exclude earlier B01; units vary by task and must not be pooled as one accuracy.",
+  "runs": [
+    {
+      "task_id": "B07",
+      "run_id": "qwen38_27b_b07_public_reviewed_2026-10-15",
+      "config": "configs/local_labbench_b07.json",
+      "configuration_sha256": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 600,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 9,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V03",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_004",
+      "config": "configs/local_pathvqa_seven_gpu_shard_004.json",
+      "configuration_sha256": "28d1123a2ca55d9cbcabe40b6efd2e49616ef346e2537c0a68c42a3abf9cd98c",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": true,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "B02",
+      "run_id": "qwen38_27b_b02_public_reviewed_2026-10-15",
+      "config": "configs/local_labbench_b02.json",
+      "configuration_sha256": "7da372f70b393f5c316d3c0ef585a58992f4b53310bb30123857689d4e972f91",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 520,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 9,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P23",
+      "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_003",
+      "config": "configs/local_description_p23_shard_003.json",
+      "configuration_sha256": "9cafe05ab0915ba5c2bfbb4094435cc3991751a27f761b804cdcf000c934b1f9",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 422,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P25",
+      "run_id": "qwen38_27b_p25_description_full_parallel_2026-10-15_shard_001",
+      "config": "configs/local_description_p25_shard_001.json",
+      "configuration_sha256": "ca75b16cd08337b6b1d68d101620aa2a9bee96e7b06cd88e574df6bd70a96006",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 376,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P16",
+      "run_id": "qwen38_27b_p16_full_descriptions_parallel_2026-10-15_shard_003",
+      "config": "configs/local_reaction_p16_shard_003.json",
+      "configuration_sha256": "e46a87a44f171ae59ea473a3fc1e895782cba388c803ed8652c72dad3716eee2",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 35,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P28",
+      "run_id": "qwen38_27b_p28_full_native_eligible_parallel_2026-10-15_shard_004",
+      "config": "configs/local_bioreason_p28_shard_004.json",
+      "configuration_sha256": "3fec68eccd70924c4a50c4ac4a32b71019bafc368535ea43db40bf30bd0f35f8",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 52,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_004",
+      "config": "configs/local_posttrain_protein_p29_id_shard_004.json",
+      "configuration_sha256": "1595d59172e724c1c98ad23f8abb1667dc34c9b85e1336e88364106fef4d175c",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_004",
+      "config": "configs/local_posttrain_protein_p29_ood_shard_004.json",
+      "configuration_sha256": "94ccaa2f5b152d9a7a3162c6ef44267e795141099b43ce01a4f4f56f46b02dc4",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_001",
+      "config": "configs/local_extended_seven_gpu_p07_shard_001.json",
+      "configuration_sha256": "bdd975374bebbf382c077f4b0fb3ad220ff0130d99c2d7bf8e6113b30abc1333",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_008",
+      "config": "configs/local_extended_seven_gpu_p07_shard_008.json",
+      "configuration_sha256": "df985b061bea22999ac75e0d9c7cc2a7011f72d21a4588e49fee6a522630fa84",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_015",
+      "config": "configs/local_extended_seven_gpu_p07_shard_015.json",
+      "configuration_sha256": "da73f2d400964312dde4889fc5a9a8f13f34527ae3d3e08b17b46191071f9d3d",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_022",
+      "config": "configs/local_extended_seven_gpu_p07_shard_022.json",
+      "configuration_sha256": "4ed84bf8f8070595c021a90402f4f4e410994092725e81f5e4ba7d4a121f5997",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_002",
+      "config": "configs/local_extended_seven_gpu_p08_shard_002.json",
+      "configuration_sha256": "099a889905555c6d97095cd62f1b541c35d7fed4975e1d4b5e8500ac3ac1e4b6",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_009",
+      "config": "configs/local_extended_seven_gpu_p08_shard_009.json",
+      "configuration_sha256": "6ab21711ede9d20eae3acf08deb940dda9dd1ca8a013a847c1cfb2f277ef314a",
+      "gpu_ids": [
+        5
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P28",
+      "run_id": "qwen38_27b_p28_full_native_eligible_parallel_2026-10-15_shard_000",
+      "config": "configs/local_bioreason_p28_shard_000.json",
+      "configuration_sha256": "91f3ae3dc6a6e40e693c9a32a77aa3b997e1316d8fc04683fb5e227339c5fc04",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1024,
+      "manifest_present": true,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 52,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V03",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_000",
+      "config": "configs/local_pathvqa_seven_gpu_shard_000.json",
+      "configuration_sha256": "48177904d769467a4184e9d3ca8069ba0313f40bb3e625637f82fbd23de12d3e",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P28",
+      "run_id": "qwen38_27b_p28_full_native_eligible_parallel_2026-10-15_shard_007",
+      "config": "configs/local_bioreason_p28_shard_007.json",
+      "configuration_sha256": "70caea127ad7c22674f9682b9460e202d4302db4dd4b4475aefa82c92471a4e3",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 991,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 52,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P12",
+      "run_id": "qwen38_27b_p12_sparse_confidence_test95_2026-10-15",
+      "config": "configs/local_deepfri_p12_sparse_confidence.json",
+      "configuration_sha256": "2a556579bed575f6e30431a52c6a80bffb4b2c1a6d52b070cc10c371c0dc619c",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1919,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P15",
+      "run_id": "qwen38_27b_p15_sparse_confidence_test95_2026-10-15",
+      "config": "configs/local_deepfri_p15_sparse_confidence.json",
+      "configuration_sha256": "204b6e064f8a7d1e114e1e333cc2824ee6e90d622a556e09aabf10dfeb8fc67c",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 3416,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P03",
+      "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15_seven_gpu_shard_000",
+      "config": "configs/local_extended_seven_gpu_p03_shard_000.json",
+      "configuration_sha256": "96b013392e4b12e843529bd79a90e16bb2c5d16e4299cd08446154d57dd53606",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_000",
+      "config": "configs/local_posttrain_protein_p29_id_shard_000.json",
+      "configuration_sha256": "130da148c1434eb4e6c76d38c0e446076e29e567032fa2c3403012705647d7f2",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_000",
+      "config": "configs/local_posttrain_protein_p29_ood_shard_000.json",
+      "configuration_sha256": "b0ce3f223bff0b0a2c468334938a3c2f24a8faca3c11cc1b5bb85784cff76b7b",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_007",
+      "config": "configs/local_posttrain_protein_p29_ood_shard_007.json",
+      "configuration_sha256": "3dfa5d701d9c1cf6fbb356d0de47fab5882799f4db541d20a7e7b9aae5d0ab44",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 715,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_004",
+      "config": "configs/local_extended_seven_gpu_p07_shard_004.json",
+      "configuration_sha256": "8966750b18370252601c22768e3267d320b5de8019e0ec453a6f5a653e47affd",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_011",
+      "config": "configs/local_extended_seven_gpu_p07_shard_011.json",
+      "configuration_sha256": "0a0f9aa3f19702ea0e02afa5ec5e3b2407f2e8f9dbe1477ca01476122f81dad1",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_018",
+      "config": "configs/local_extended_seven_gpu_p07_shard_018.json",
+      "configuration_sha256": "9bebbcf4e48a26c8ccf92dfa092d4ab70998d8e701405f77ee5f49f72e000477",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_025",
+      "config": "configs/local_extended_seven_gpu_p07_shard_025.json",
+      "configuration_sha256": "3e8c61f06086fde3dc48cf956b7f2b69d57328c0cb2fe974e64c264de4cae17a",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_005",
+      "config": "configs/local_extended_seven_gpu_p08_shard_005.json",
+      "configuration_sha256": "b1a4e2a765a653f1db5ca8b5b3f8e9b50a9d4bf5c6b3806f061c58cbf42942b1",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_012",
+      "config": "configs/local_extended_seven_gpu_p08_shard_012.json",
+      "configuration_sha256": "0315ced005db544dcc2d803b097597052bd07aa8c5c25f7ce02d88cd2c38cc91",
+      "gpu_ids": [
+        1
+      ],
+      "planned_cases": 563,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P28",
+      "run_id": "qwen38_27b_p28_full_native_eligible_parallel_2026-10-15_shard_001",
+      "config": "configs/local_bioreason_p28_shard_001.json",
+      "configuration_sha256": "e943cb9bcaa52beabf2691fcda762768067ec252c54e77be838c55ec81784647",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 1024,
+      "manifest_present": true,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 52,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V03",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_001",
+      "config": "configs/local_pathvqa_seven_gpu_shard_001.json",
+      "configuration_sha256": "637441b1375601da53207abe0fb252fd373e1773ac87fa08d46b405c809d64a9",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P13",
+      "run_id": "qwen38_27b_p13_sparse_confidence_test95_2026-10-15",
+      "config": "configs/local_deepfri_p13_sparse_confidence.json",
+      "configuration_sha256": "8e28dda61f3b6355e890ad09083a40522da0390facd41d41216a09d21a3e2da0",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 3416,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P03",
+      "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15_seven_gpu_shard_001",
+      "config": "configs/local_extended_seven_gpu_p03_shard_001.json",
+      "configuration_sha256": "df2fa653e7dd41de1cd4a1b879e99244dd6d50a5235fa189aed8037b75991522",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_001",
+      "config": "configs/local_posttrain_protein_p29_id_shard_001.json",
+      "configuration_sha256": "40133acb8bd6f54f6fa544946e12b1dd3a7b2dee95f2bb7f5d42beb1102785b4",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_001",
+      "config": "configs/local_posttrain_protein_p29_ood_shard_001.json",
+      "configuration_sha256": "b1f99aa27ca987563da353648cfdc1797364bc48e082a5e3985921dd91acbe70",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_005",
+      "config": "configs/local_extended_seven_gpu_p07_shard_005.json",
+      "configuration_sha256": "4701e99c0ebc4abdca2bae81cdf69f891d1bc08d6601c6960ab0d7c2a05d2775",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_012",
+      "config": "configs/local_extended_seven_gpu_p07_shard_012.json",
+      "configuration_sha256": "32e649478c69f0878c1b2877d07f08b529cb5f460e73d1fa6964ed0771f58131",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_019",
+      "config": "configs/local_extended_seven_gpu_p07_shard_019.json",
+      "configuration_sha256": "78d80eedbc12c5b1e4b6c3ca835f09909f1201db47026d31b90564134392a1d8",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_026",
+      "config": "configs/local_extended_seven_gpu_p07_shard_026.json",
+      "configuration_sha256": "9751eff2b6469e851bea4cf3daebc0775a4adb109f282fbadf11f7a68a1a0b93",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 593,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_006",
+      "config": "configs/local_extended_seven_gpu_p08_shard_006.json",
+      "configuration_sha256": "db3b6895225c18ba2b7ed9f2527b00e9b5a2a5d2c340b9bccc5bcaca0e569103",
+      "gpu_ids": [
+        2
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V05",
+      "run_id": "qwen38_27b_v05_pmcvqa_clean2000_td_2026-10-15",
+      "config": "configs/local_pmcvqa_v05.json",
+      "configuration_sha256": "24c5288ea21669db732758b9fe1921bc75b409b34e7e4b911f556d48ad023d6b",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 2000,
+      "manifest_present": true,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 14,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P42",
+      "run_id": "qwen38_27b_p42_gfp_qualified_two_regimes_2026-10-15",
+      "config": "configs/local_stride_gfp_p42.json",
+      "configuration_sha256": "6537318a1b0d15dd0360fecdd329654ffabec13477d0bb2314f6321559f69c63",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 200,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 35,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V03",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_002",
+      "config": "configs/local_pathvqa_seven_gpu_shard_002.json",
+      "configuration_sha256": "878dbb855eecd5a7ec0d52fb6f78c8840fc4903f16e188a58f1b21f4114351f5",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P28",
+      "run_id": "qwen38_27b_p28_full_native_eligible_parallel_2026-10-15_shard_002",
+      "config": "configs/local_bioreason_p28_shard_002.json",
+      "configuration_sha256": "bdf541af117f7bb19fa6650c18286327b76651e74f7294636ecce1777beac6b0",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 52,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P14",
+      "run_id": "qwen38_27b_p14_sparse_confidence_test95_2026-10-15",
+      "config": "configs/local_deepfri_p14_sparse_confidence.json",
+      "configuration_sha256": "58be72f4ad3fba51c67f1a8b0d3f8eeb172408ddd08ffd5374fac56e324d1396",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 3416,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P03",
+      "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15_seven_gpu_shard_002",
+      "config": "configs/local_extended_seven_gpu_p03_shard_002.json",
+      "configuration_sha256": "93df3459b15502a6dc22f27adae381034c60a51a41ef4fe262b79d70494dcd7a",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 725,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_002",
+      "config": "configs/local_posttrain_protein_p29_id_shard_002.json",
+      "configuration_sha256": "687b92c88affe377fe762c1e8232ad000492c8ff052d1d187176ec1c5bd9814a",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_002",
+      "config": "configs/local_posttrain_protein_p29_ood_shard_002.json",
+      "configuration_sha256": "d66218c00a4935bd3fbc3d39c888ea950b3a93407ca968c0aa30db52b13846a7",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_006",
+      "config": "configs/local_extended_seven_gpu_p07_shard_006.json",
+      "configuration_sha256": "c6d8a5386d874812a181e7bc5cd170c3c946c66a9c52b57dbe274f71f8db44b7",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_013",
+      "config": "configs/local_extended_seven_gpu_p07_shard_013.json",
+      "configuration_sha256": "385e5e8542a2eafc52d974b7dbf515c8dceb00dca99e1ead66695e738a2c03ec",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_020",
+      "config": "configs/local_extended_seven_gpu_p07_shard_020.json",
+      "configuration_sha256": "42b503966c728de28cc3af26d06583b55ac6a19ecf414c71859bb01a6c4f3fd8",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_000",
+      "config": "configs/local_extended_seven_gpu_p08_shard_000.json",
+      "configuration_sha256": "ef5570a75054d471caacf1dc54b7362c0c966448457043b16dc4d32f01ad4e80",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_007",
+      "config": "configs/local_extended_seven_gpu_p08_shard_007.json",
+      "configuration_sha256": "f2741ea1a9d6565f914bc41b10171a3fcad5fb94fdfdad07b00671af4dfe48b7",
+      "gpu_ids": [
+        3
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "B08",
+      "run_id": "qwen38_27b_b08_public_reviewed_2026-10-15",
+      "config": "configs/local_labbench_b08.json",
+      "configuration_sha256": "690cbf3f5c3297da451707a6b2455e9908e86baa08e5c1edcadffc028876a69c",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 33,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 10,
+      "solver_tools": []
+    },
+    {
+      "task_id": "B04",
+      "run_id": "qwen38_27b_b04_public_reviewed_2026-10-15",
+      "config": "configs/local_labbench_b04.json",
+      "configuration_sha256": "f20b4101bffd21725d11a66a074af4da01833e0d711dfc9a98bd463ec43292dc",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 181,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 10,
+      "solver_tools": []
+    },
+    {
+      "task_id": "B05",
+      "run_id": "qwen38_27b_b05_public_reviewed_2026-10-15",
+      "config": "configs/local_labbench_b05.json",
+      "configuration_sha256": "62bf02361c5f43878eef0e13f03312b2dd361153176d8a86e013ed54900eb45b",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 244,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 10,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P43",
+      "run_id": "qwen38_27b_dti_biosnap_likelihood_2026-10-15",
+      "config": "configs/local_dti_biosnap.json",
+      "configuration_sha256": "ed5caf9c4e50be5252408f2c0e2fb1bdaf1d0a6cc91a5c3742a07b0a398eba54",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 5493,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 10,
+      "solver_tools": []
+    },
+    {
+      "task_id": "N02",
+      "run_id": "qwen38_27b_n02_full_windows_2026-10-15",
+      "config": "configs/local_genomics_n02.json",
+      "configuration_sha256": "d2072c4583e6418f67b13c273c2e0cc5a5ba25facb4ba82ba13dbc7a789dd719",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1233,
+      "manifest_present": true,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 9,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V03",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_003",
+      "config": "configs/local_pathvqa_seven_gpu_shard_003.json",
+      "configuration_sha256": "fac0ef3e3c14128cac7d36de685b1aa5c1a6770e644176c1911d1dcebc305b49",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P01",
+      "run_id": "qwen38_27b_p01_original_test_2026-10-15",
+      "config": "configs/local_catalog_p01.json",
+      "configuration_sha256": "30e99a8c3037d68a6cba57774950ab980b21b8aba0c2cdbb0f45f741e69d96d5",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1999,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 9,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V02",
+      "run_id": "qwen38_27b_v02_native_test_2026-10-15",
+      "config": "configs/local_medical_v02.json",
+      "configuration_sha256": "500fffc8d322ecc6e18cfec4c3c36d13f31c388c726e3f306a2a02422bb0dbbb",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1061,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 14,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P23",
+      "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_001",
+      "config": "configs/local_description_p23_shard_001.json",
+      "configuration_sha256": "c2f74c96e6c7f838cb358cd340253aad641452120faafc1946b79c6d8f654a48",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P24",
+      "run_id": "qwen38_27b_p24_description_full_parallel_2026-10-15_shard_001",
+      "config": "configs/local_description_p24_shard_001.json",
+      "configuration_sha256": "3e892a0cb8f584589c26e9493fa0e167c18b1299bb78a184ffe66d9e3ee02c60",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 577,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P26",
+      "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15_shard_001",
+      "config": "configs/local_description_p26_shard_001.json",
+      "configuration_sha256": "6550f83250c76e5ff4c2f571544a7ef0b958027d0f80b9438ca5651da0942921",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P16",
+      "run_id": "qwen38_27b_p16_full_descriptions_parallel_2026-10-15_shard_001",
+      "config": "configs/local_reaction_p16_shard_001.json",
+      "configuration_sha256": "1b92f6fc217b1d867a9a4742811cf73352b9a63c6f9d8a10a88ca7b48ea8b408",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 35,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P16",
+      "run_id": "qwen38_27b_p16_full_descriptions_parallel_2026-10-15_shard_005",
+      "config": "configs/local_reaction_p16_shard_005.json",
+      "configuration_sha256": "cb6e91c960b83abb603cc281b5fd49a3746299e958078da3187cdc27005e8119",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 531,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 35,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P28",
+      "run_id": "qwen38_27b_p28_full_native_eligible_parallel_2026-10-15_shard_003",
+      "config": "configs/local_bioreason_p28_shard_003.json",
+      "configuration_sha256": "d21cda4babe7d6f93eb9ec4009aaca8db8c72bd6cad22a9122220f15d86d1ecc",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 52,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_003",
+      "config": "configs/local_posttrain_protein_p29_id_shard_003.json",
+      "configuration_sha256": "1d6ab566c2b26433e1d6aa9cfe8a4886527f09d6587af4b67ddfac6193132eaf",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_003",
+      "config": "configs/local_posttrain_protein_p29_ood_shard_003.json",
+      "configuration_sha256": "28dde9bc93479484719f9756cb3e7f975338e3df33d5eef560a0757e171b5f93",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_000",
+      "config": "configs/local_extended_seven_gpu_p07_shard_000.json",
+      "configuration_sha256": "9f0201da3f6295cf877dce29ff66caa58e8bc47221f397ba38fa712ee54c9621",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_007",
+      "config": "configs/local_extended_seven_gpu_p07_shard_007.json",
+      "configuration_sha256": "22eee0eaf4d5a9c6f6bc3be0e394e09c9d848ee5ec64ec211c2c3aa3364ecdbe",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_014",
+      "config": "configs/local_extended_seven_gpu_p07_shard_014.json",
+      "configuration_sha256": "eb29a445cc1de346ba4f213e207dca6142585e28791a96430ba5cfa33edbd004",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_021",
+      "config": "configs/local_extended_seven_gpu_p07_shard_021.json",
+      "configuration_sha256": "82bac5d594ecb34d64d954c69ec8e7f1d7d0372b6e3e093e766f6fac43e13fd4",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_001",
+      "config": "configs/local_extended_seven_gpu_p08_shard_001.json",
+      "configuration_sha256": "7c9b6aa376758ed7dbe456772f702707850107d426d1427a108cbdfef4852f7e",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_008",
+      "config": "configs/local_extended_seven_gpu_p08_shard_008.json",
+      "configuration_sha256": "9044c8c0c28c30f8a4535a3bc2d4dba561e801735589b020afdb72381529de4f",
+      "gpu_ids": [
+        4
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "B03",
+      "run_id": "qwen38_27b_b03_public_reviewed_2026-10-15",
+      "config": "configs/local_labbench_b03.json",
+      "configuration_sha256": "576ff4671279c35319f08dcd137d17c8da36151af492c55a37c8a4529e506743",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 82,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 10,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P10",
+      "run_id": "qwen38_27b_p10_original_test_2026-10-15",
+      "config": "configs/local_catalog_p10.json",
+      "configuration_sha256": "5306ea7c955a9abf0e413ff78ba90c6916b270b0251e1a317b0c6e18f57d9ffa",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 237,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 9,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P11",
+      "run_id": "qwen38_27b_p11_original_test_2026-10-15",
+      "config": "configs/local_catalog_p11.json",
+      "configuration_sha256": "aeaee6adc03658f15bdc6498fcc4f12b372aa18e29645e96ce829cd9967cba8e",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 394,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 9,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P43",
+      "run_id": "qwen38_27b_dti_human_likelihood_2026-10-15",
+      "config": "configs/local_dti_human.json",
+      "configuration_sha256": "606206a59af611e3cd0203f6e3774f208e1408b2f5356cf637b32f4dae7926c7",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1200,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 10,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V04",
+      "run_id": "qwen38_27b_v04_original_test500_2026-10-15",
+      "config": "configs/local_vqamed2019.json",
+      "configuration_sha256": "65845c1b77e7020781f3e310d16d4d1348202f31aa09c8eb076d72f62a8c6ec6",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 500,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 16,
+      "solver_tools": []
+    },
+    {
+      "task_id": "N01",
+      "run_id": "qwen38_27b_n01_full_windows_2026-10-15",
+      "config": "configs/local_genomics_n01.json",
+      "configuration_sha256": "ce80184b42ea3f983a20cfa86d5fb0db8dba1b317b3903d2e3e6cb03c920eac2",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 290,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 9,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V03",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_005",
+      "config": "configs/local_pathvqa_seven_gpu_shard_005.json",
+      "configuration_sha256": "cd4a39fc17fce83b609e9160d6bd7bca34824aaa6a8614785e81b700ff47ef61",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": true,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V01",
+      "run_id": "qwen38_27b_v01_native_test_2026-10-15",
+      "config": "configs/local_medical_v01.json",
+      "configuration_sha256": "7ab5745e1722b97af47d1d6c9defe01d592644b236eade0990b7de0fe609dd21",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 451,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 14,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P23",
+      "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_000",
+      "config": "configs/local_description_p23_shard_000.json",
+      "configuration_sha256": "d966893dc6e1b26b8007091f22d1278ccb063c7ee956676e45eb14e51cc86aa4",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P24",
+      "run_id": "qwen38_27b_p24_description_full_parallel_2026-10-15_shard_000",
+      "config": "configs/local_description_p24_shard_000.json",
+      "configuration_sha256": "6402ec936d1904a339cde52150250497e718e42252dd571240cec13a818cc691",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P26",
+      "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15_shard_000",
+      "config": "configs/local_description_p26_shard_000.json",
+      "configuration_sha256": "61bb721a41d3604ce8eb32f8356356a66135d7ff54a79b6f932cf0dfa3e9c3f8",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P16",
+      "run_id": "qwen38_27b_p16_full_descriptions_parallel_2026-10-15_shard_000",
+      "config": "configs/local_reaction_p16_shard_000.json",
+      "configuration_sha256": "fa90e23b8bef33514758e22be5a0876c4b01e80fd5f52211955aab5e2d6db304",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 35,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P16",
+      "run_id": "qwen38_27b_p16_full_descriptions_parallel_2026-10-15_shard_004",
+      "config": "configs/local_reaction_p16_shard_004.json",
+      "configuration_sha256": "19b267efa1b908b693b55afe153fff98699c060baf08e220ed280f9a3f451d32",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 35,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P28",
+      "run_id": "qwen38_27b_p28_full_native_eligible_parallel_2026-10-15_shard_005",
+      "config": "configs/local_bioreason_p28_shard_005.json",
+      "configuration_sha256": "8701f4234ebe1eb477a1809ecd3bc880cc4e72717ac6d9df266a3bebf90e3d36",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 52,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_005",
+      "config": "configs/local_posttrain_protein_p29_id_shard_005.json",
+      "configuration_sha256": "991b682b743f9bf51b64ac809afcd9bd31684c1e05ddbe65e35cd6230fd2a5b8",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_005",
+      "config": "configs/local_posttrain_protein_p29_ood_shard_005.json",
+      "configuration_sha256": "79bf44bfd7cb03b452196c27446ea2a8c4060e317ac98c4901c201e6c275680d",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_002",
+      "config": "configs/local_extended_seven_gpu_p07_shard_002.json",
+      "configuration_sha256": "e0bfd5dc615551c8ded58cb3b157d4a2ee93d279ae50d3044edabf700f38462d",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_009",
+      "config": "configs/local_extended_seven_gpu_p07_shard_009.json",
+      "configuration_sha256": "aaafd74177eb5ba94740e37fdd0db00b53c489dc164d95af379853ba48203d10",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_016",
+      "config": "configs/local_extended_seven_gpu_p07_shard_016.json",
+      "configuration_sha256": "240b6bf16e5a29f26b1265ed7d410e8614206e9da647084b9fca7850c5f58f60",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_023",
+      "config": "configs/local_extended_seven_gpu_p07_shard_023.json",
+      "configuration_sha256": "ff7d7ac7447ed73b03c762a35f91940cc20d3684ce0f7cd7ae19a80449fd18ff",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_003",
+      "config": "configs/local_extended_seven_gpu_p08_shard_003.json",
+      "configuration_sha256": "b3000919e4c372b3653bdbd2ca32586f4ebe177d28a6482caca8ab502c629875",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_010",
+      "config": "configs/local_extended_seven_gpu_p08_shard_010.json",
+      "configuration_sha256": "6d26096b2154b2d25f9023765fdf7bb32556eaa9d97b24807ebafbfdd28f988c",
+      "gpu_ids": [
+        6
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P06",
+      "run_id": "qwen38_27b_p06_original_test_2026-10-15",
+      "config": "configs/local_catalog_p06.json",
+      "configuration_sha256": "b808aba1c2f5840cccd7c6ab2367acfe401c48147b446947adb57e3d36a6b670",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1366,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 9,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P43",
+      "run_id": "qwen38_27b_dti_bindingdb_likelihood_2026-10-15",
+      "config": "configs/local_dti_bindingdb.json",
+      "configuration_sha256": "3b4f54100ab5a4ef8934ffebdf51b3ec786e524fdb3a3e98717e4b4a67122b73",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 9840,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": null,
+      "frozen_dependency_count": 10,
+      "solver_tools": []
+    },
+    {
+      "task_id": "V03",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_006",
+      "config": "configs/local_pathvqa_seven_gpu_shard_006.json",
+      "configuration_sha256": "488dd8dfebb76ec29124f5a40297befd2856ad529d2c2b6216f33a15a37bba66",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 575,
+      "manifest_present": true,
+      "terminal": true,
+      "terminal_status": "generation_audited",
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "N03",
+      "run_id": "qwen38_27b_n03_full_windows_2026-10-15",
+      "config": "configs/local_genomics_n03.json",
+      "configuration_sha256": "12c2034afd2063cde061b8d9e24f463653ab8bbb81ae33bad7bd3625e20af72d",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 873,
+      "manifest_present": true,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 9,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P02",
+      "run_id": "qwen38_27b_p02_original_test_2026-10-15",
+      "config": "configs/local_catalog_p02.json",
+      "configuration_sha256": "eb0ff0ef5964841eddb00ff773cf978ce8245547384f18731443a9b925da9890",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1749,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 9,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P23",
+      "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15_shard_002",
+      "config": "configs/local_description_p23_shard_002.json",
+      "configuration_sha256": "76f8a716cb8e0c742ec9a0a00261f8f066b02e3f8feab75796e082bd061a9aec",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P25",
+      "run_id": "qwen38_27b_p25_description_full_parallel_2026-10-15_shard_000",
+      "config": "configs/local_description_p25_shard_000.json",
+      "configuration_sha256": "6c135afc9789c5c7e28cbe0a0e95dd99ae308d19159f727010abc47e55bfe15d",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P26",
+      "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15_shard_002",
+      "config": "configs/local_description_p26_shard_002.json",
+      "configuration_sha256": "389e754742335ab4ab2b9521569e48ecf6e98c898fafa84e56de44cba758d1a8",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 585,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 21,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P16",
+      "run_id": "qwen38_27b_p16_full_descriptions_parallel_2026-10-15_shard_002",
+      "config": "configs/local_reaction_p16_shard_002.json",
+      "configuration_sha256": "cec2c48ebde3452d4f16762325284721bf6273224a6fa8b800be935594ba848e",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 35,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P28",
+      "run_id": "qwen38_27b_p28_full_native_eligible_parallel_2026-10-15_shard_006",
+      "config": "configs/local_bioreason_p28_shard_006.json",
+      "configuration_sha256": "e548810d6ab1c513847c60e1a3424ec72380af70f7765357f33e6994712deb73",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 52,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_006",
+      "config": "configs/local_posttrain_protein_p29_id_shard_006.json",
+      "configuration_sha256": "91af4f8b561cf2604ec1d460a06ddf403e49f75d8d278574b024350095605a8e",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 845,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P29",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_006",
+      "config": "configs/local_posttrain_protein_p29_ood_shard_006.json",
+      "configuration_sha256": "e9548d621d15280b410a5a7eab2a901260a06f98f08d1132aeb178e105fcf92d",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 56,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_003",
+      "config": "configs/local_extended_seven_gpu_p07_shard_003.json",
+      "configuration_sha256": "8e30a9dcd4c88727bfbd0709b485db5e14b9807287d6403dbfe84ecc5661adaa",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_010",
+      "config": "configs/local_extended_seven_gpu_p07_shard_010.json",
+      "configuration_sha256": "4d6ac9fb9840f0c36da98015db67641824c9a15cafe777bd3ada05fb9f8d85ea",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_017",
+      "config": "configs/local_extended_seven_gpu_p07_shard_017.json",
+      "configuration_sha256": "8e8ad74e5357e5ed744234f69de3f4065fe697d9618e8bd2c1beaf1b6c064c52",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu_shard_024",
+      "config": "configs/local_extended_seven_gpu_p07_shard_024.json",
+      "configuration_sha256": "1cab15414bf94195c726efe6ef1d0f2022e219fbb34606178505fb354035a65c",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_004",
+      "config": "configs/local_extended_seven_gpu_p08_shard_004.json",
+      "configuration_sha256": "6dd1c6bee1be2befd6676e926df82d01b149479d39392f588210b61076fe052d",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu_shard_011",
+      "config": "configs/local_extended_seven_gpu_p08_shard_011.json",
+      "configuration_sha256": "49efc5116e0caeb1584c3887af4a7033276a81427e708b67c76647ab7e424c53",
+      "gpu_ids": [
+        7
+      ],
+      "planned_cases": 1024,
+      "manifest_present": false,
+      "terminal": false,
+      "terminal_status": null,
+      "frozen_dependency_count": 19,
+      "solver_tools": []
+    }
+  ]
+}

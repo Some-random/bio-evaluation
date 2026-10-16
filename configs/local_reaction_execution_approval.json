@@ -1,0 +1,21 @@
+{
+  "execution_authorized": true,
+  "reviewed_at_utc": "2026-10-15T08:22:28.411694+00:00",
+  "reviewer": "root",
+  "plan_sha256": "b0476c5fb0ff253933e173cafced234708035027eb6f4d659621efce370ff67b",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+  "approved_task_ids": [
+    "P16"
+  ],
+  "approved_config_sha256": {
+    "configs/local_reaction_p16_shard_000.json": "fa90e23b8bef33514758e22be5a0876c4b01e80fd5f52211955aab5e2d6db304",
+    "configs/local_reaction_p16_shard_001.json": "1b92f6fc217b1d867a9a4742811cf73352b9a63c6f9d8a10a88ca7b48ea8b408",
+    "configs/local_reaction_p16_shard_002.json": "cec2c48ebde3452d4f16762325284721bf6273224a6fa8b800be935594ba848e",
+    "configs/local_reaction_p16_shard_003.json": "e46a87a44f171ae59ea473a3fc1e895782cba388c803ed8652c72dad3716eee2",
+    "configs/local_reaction_p16_shard_004.json": "19b267efa1b908b693b55afe153fff98699c060baf08e220ed280f9a3f451d32",
+    "configs/local_reaction_p16_shard_005.json": "cb6e91c960b83abb603cc281b5fd49a3746299e958078da3187cdc27005e8119"
+  },
+  "scope_review": "All5651 source-ordered native reaction-annotation cases, full protein and fixed384complete class descriptions. Existing protein annotation prediction; no design/optimization/operational objectives. Full-description text adaptation versus native embedding/128label-token encoding explicit. Exact native accuracy after global ID union; no output-based selection/training."
+}

@@ -1,0 +1,41 @@
+{
+  "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15",
+  "run_folder_exists": false,
+  "manifest_exists": false,
+  "request_files": 0,
+  "response_files": 0,
+  "scores_exist": false,
+  "completion_exists": false,
+  "checked_at_utc": "2026-10-15T09:28:21.190953+00:00",
+  "original_config_file": "configs/local_pathvqa.json",
+  "original_config_sha256": "f7fd6790b07464d9ee894076e5a9c68a96a07250c53de421a46469cefb7d7294",
+  "original_frozen_files_sha256": {
+    "sources/pathvqa_native/llava_v1_run_eval_pvqa.py": "1ac2c91878e0d0cda14946a28d8ba1468f48327c88a27701f43fea088353219b",
+    "sources/medical_vqa/llava_v1_evaluate_metrics.py": "cbcf8cae0fbe6f91a323d5b100291af969c2884e572103de62459f0c4daa5bc8",
+    "sources/medical_vqa/llava_v1_glossary.py": "59d5ac151e48c5868e6945c26520c4f2c50189bcf009ea3ab9a686e7a3f486f4",
+    "sources/medical_vqa/llava_v1_utils.py": "221f83206502ff236e11d22494681db70165ab28e29cab2105ee844af4cb167d",
+    "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+    "scripts/prepare_pathvqa_native.py": "9e34517640ee56a69c7a5beaa90e2b6838447f614fe789bb4fedc719886fef4f",
+    "scripts/score_local_pathvqa.py": "51f04ea0db376e51898e48297aeb984b61996d00a6d600dfffb0a038818281e8",
+    "scripts/execute_local_pathvqa.py": "99359309d83f49be001c8f892c41e2af09c85d1c99d8789907a42dca0a40b0c0",
+    "reports/pathvqa_native_preparation.json": "b7a7a39c228867185efe72a93ed2e57ff8e7ed5a9be811422a1ea905e085a2a9",
+    "configs/local_pathvqa_review.json": "49cd6b759cd45ebeb162c3c534c5ee5d02efe98cd392250ea9d84c8927a4c37c",
+    "data/pathvqa_native/V03/image_manifest.json": "4fd14e94cfbc98334f87e8f1a45dfdeee916313007cf5d294498d34bde35da24",
+    "data/pathvqa_native/V03/source_identity.json": "8f6889e23ce5b27020e788439b7ad4a1ce523d63aacfb26a8902d4b0a3f6ca74",
+    "data/pathvqa_native/V03/ordered_case_ids.json": "02c1a2e70c74e075b5aab0d3ac5ea24c84fa52dfd28fe31cc534a69557824a69",
+    "data/pathvqa_native/V03/model_inputs.jsonl": "d177b6dde001e1354ec8e5ba1a15a219ebb5afd3b62dccaa99ed2b51eedad007"
+  },
+  "all_model_payloads_identical": true,
+  "payload_proof_sha256": "d79f4c2bfb60b48d54eacfaa2672c61b3f8afcd8af45fda467c1ec3e9c9a53d4",
+  "case_count": 6719,
+  "full_test_id_union_validation": {
+    "complete": true,
+    "union_matches_full_test_ids": true,
+    "expected_test_case_count": 6719,
+    "unique_observed_case_count": 6719,
+    "missing_case_count": 0,
+    "extra_case_count": 0,
+    "duplicate_case_count": 0,
+    "ordered_case_ids_sha256": "ac3287db5f312961bbb6637ffa1b9c466f61a8d66b145ab277e8e28b6d63929a"
+  }
+}

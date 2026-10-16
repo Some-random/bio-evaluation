@@ -1,0 +1,19 @@
+{
+  "pid": 982068,
+  "updated_at_utc": "2026-10-16T04:25:18.090407+00:00",
+  "stage": "monitoring_existing_one_time_queues",
+  "terminal_events_resumed": {},
+  "queue_states": {
+    "local_benchmark_queue.json": "existing_worker_untouched",
+    "local_benchmark_queue_gpu1.json": "terminal_or_uncertain_no_automatic_restart",
+    "local_benchmark_queue_gpu2.json": "existing_worker_untouched",
+    "local_benchmark_queue_gpu3.json": "terminal_or_uncertain_no_automatic_restart",
+    "local_benchmark_queue_gpu4.json": "existing_worker_untouched",
+    "local_benchmark_queue_gpu6.json": "existing_worker_untouched",
+    "local_benchmark_queue_gpu7.json": "existing_worker_untouched"
+  },
+  "failed_or_uncertain_generations_retried": false,
+  "healthy_workers_stopped": false,
+  "new_evaluation_scope_added": false,
+  "provider_calls": false
+}

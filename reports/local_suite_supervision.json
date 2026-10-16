@@ -1,21 +1,81 @@
 {
-  "pid": 841739,
-  "updated_at_utc": "2026-10-15T08:15:09.017208+00:00",
+  "pid": 1082973,
+  "updated_at_utc": "2026-10-16T04:25:25.560676+00:00",
   "scope": "Offline reporting only for existing one-time authorized queues",
-  "queued_jobs": 74,
-  "finished_jobs": 6,
-  "failed_run_ids": [],
+  "queued_jobs": 116,
+  "finished_jobs": 49,
+  "failed_run_ids": [
+    "qwen38_27b_p12_sparse_confidence_test95_2026-10-15",
+    "qwen38_27b_p14_sparse_confidence_test95_2026-10-15"
+  ],
   "queues_sealed": false,
+  "terminal_failures_without_scores": [],
+  "aggregate_states": [
+    {
+      "run_id": "qwen38_27b_p28_full_native_eligible_parallel_2026-10-15",
+      "status": "pending"
+    },
+    {
+      "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15",
+      "status": "complete"
+    },
+    {
+      "run_id": "qwen38_27b_p24_description_full_parallel_2026-10-15",
+      "status": "complete"
+    },
+    {
+      "run_id": "qwen38_27b_p25_description_full_parallel_2026-10-15",
+      "status": "complete"
+    },
+    {
+      "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15",
+      "status": "complete"
+    },
+    {
+      "run_id": "qwen38_27b_p03_full_test_parallel_2026-10-15_seven_gpu",
+      "status": "pending"
+    },
+    {
+      "run_id": "qwen38_27b_p07_full_test_parallel_2026-10-15_seven_gpu",
+      "status": "pending"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_parallel_2026-10-15_seven_gpu",
+      "status": "pending"
+    },
+    {
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu",
+      "status": "complete"
+    },
+    {
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15",
+      "status": "pending"
+    },
+    {
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15",
+      "status": "pending"
+    },
+    {
+      "run_id": "qwen38_27b_p16_full_descriptions_parallel_2026-10-15",
+      "status": "pending"
+    }
+  ],
+  "aggregate_failures": [],
   "inference_started_or_retried_by_supervisor": false,
   "report_status": {
     "update_executed_interpretations.py": {
       "exit_code": 0,
-      "stdout": "{\"records_preserved\": 99, \"executed_variants_added\": 0, \"total_records\": 99}\n",
+      "stdout": "{\"records_preserved\": 119, \"executed_variants_added\": 0, \"total_records\": 119}\n",
       "stderr": ""
     },
     "summarize_local_suite.py": {
       "exit_code": 0,
-      "stdout": "{\"coverage\": {\"catalog_settings\": 64, \"expected_catalog_settings\": 64, \"settings_with_completed_native_variant\": 5, \"settings_with_completed_adapted_variant\": 2, \"settings_without_completed_native_variant\": 59, \"settings_with_any_aggregate_scores\": 7, \"state_counts\": {\"queued\": 16, \"assay_scope_review_pending\": 3, \"running\": 4, \"source_protocol_unresolved\": 3, \"completed_adapted_variant_native_incomplete\": 1, \"not_prepared\": 5, \"native_protocol_setup_pending\": 10, \"prohibited_or_held\": 2, \"source_unavailable\": 4, \"adapter_required\": 3, \"native_training_regime_blocked\": 1, \"external_evaluator_pending\": 7, \"completed_native_variant\": 5}}, \"outputs\": [\"reports/LOCAL_SUITE_RESULTS.json\", \"reports/LOCAL_SUITE_RESULTS.md\", \"results/local_suite_metrics.csv\"], \"warnings\": []}\n",
+      "stdout": "{\"coverage\": {\"catalog_settings\": 64, \"expected_catalog_settings\": 64, \"settings_with_completed_native_variant\": 9, \"settings_with_completed_adapted_variant\": 11, \"settings_without_completed_native_variant\": 55, \"settings_with_any_aggregate_scores\": 28, \"state_counts\": {\"completed_adapted_variant_native_incomplete\": 11, \"queued\": 4, \"assay_scope_review_pending\": 3, \"scored_primary_metrics_undefined\": 1, \"source_protocol_unresolved\": 10, \"failed_or_stopped\": 2, \"running\": 3, \"prohibited_or_held\": 2, \"source_access_gated_case_review_pending\": 4, \"partial_task_coverage\": 4, \"generation_complete_unscored\": 2, \"unreviewed_source_scope_held\": 3, \"native_training_regime_blocked\": 1, \"source_acquisition_pending\": 1, \"native_protocol_setup_pending\": 1, \"external_evaluator_pending\": 2, \"completed_native_variant\": 9, \"source_access_authentication_blocked\": 1}}, \"outputs\": [\"reports/LOCAL_SUITE_RESULTS.json\", \"reports/LOCAL_SUITE_RESULTS.md\", \"results/local_suite_metrics.csv\"], \"warnings\": []}\n",
+      "stderr": ""
+    },
+    "update_results_at_a_glance.py": {
+      "exit_code": 0,
+      "stdout": "{\"outputs\": [\"reports/RESULTS_AT_A_GLANCE.json\", \"reports/RESULTS_AT_A_GLANCE.md\"], \"completed_rows\": 27, \"whole_declared_settings\": 25, \"warnings\": []}\n",
       "stderr": ""
     }
   },

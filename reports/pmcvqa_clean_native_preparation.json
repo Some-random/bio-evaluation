@@ -1,0 +1,131 @@
+{
+  "task_id": "V05",
+  "status": "prepared_full_native_clean2000_test",
+  "inference_dispatched": false,
+  "variant": "NATIVE_PMCVQA_CLEAN2000_TD_PROMPT_QWEN_ZERO_SHOT",
+  "cases": 2000,
+  "required_unique_images": 1440,
+  "source_revision": "b56ae594f794867893143b337b4118a835794647",
+  "source_code_revision": "1678ec2c97f0b2bf84591ddccd2e84932630e450",
+  "source_csv": "sources/pmcvqa_native/test_clean.csv",
+  "source_csv_sha256": "8523073108666b8f5231c3d40004a7b74a57381ea54ec9a3019edf1b33eab8f7",
+  "image_archive": {
+    "url": "https://huggingface.co/datasets/xmcmic/PMC-VQA/resolve/b56ae594f794867893143b337b4118a835794647/images.zip",
+    "publisher_archive_bytes": 18945102275,
+    "publisher_expected_full_sha256": "cc9f909d6804d0b58111ec8aa7c7b564eece237f24fdcb701916c47beec8285e",
+    "full_archive_sha256_verified": false,
+    "acquisition_scope": "Only all1440clean-test required JPEG members via strict publisher HTTP ranges and ZIP CRC/length validation"
+  },
+  "native_scoring_files": [
+    {
+      "path": "sources/pmcvqa_native/src__MedVInT_TD__Dataset__PMC_QA_Dataset.py",
+      "sha256": "e2a5b5cff3e8844decd975619a6903bd5baaf4a630fae273e10f05b9c8632ab8",
+      "publisher_git_blob_sha1": "0d9ec2d9265a642b5a7561757c846d3837eab047",
+      "publisher_digest_verified": true,
+      "url": "https://raw.githubusercontent.com/xiaoman-zhang/PMC-VQA/1678ec2c97f0b2bf84591ddccd2e84932630e450/src/MedVInT_TD/Dataset/PMC_QA_Dataset.py"
+    },
+    {
+      "path": "sources/pmcvqa_native/src__MedVInT_TD__test.py",
+      "sha256": "f80a62f6ed217f6f1d037c3a21f15a89abaeeda15c92bdf3924ba5750f76943d",
+      "publisher_git_blob_sha1": "d058c0a61c52c58738c9ae5b4032682770c445d4",
+      "publisher_digest_verified": true,
+      "url": "https://raw.githubusercontent.com/xiaoman-zhang/PMC-VQA/1678ec2c97f0b2bf84591ddccd2e84932630e450/src/MedVInT_TD/test.py"
+    },
+    {
+      "path": "sources/pmcvqa_native/src__MedVInT_TE__test.py",
+      "sha256": "087f24ee7cb309e72405a3dede717a0dad8f8766cf4a47f254ea231c39933e94",
+      "publisher_git_blob_sha1": "02ecb3b239d256de4c325af1e536ac2d7240dbef",
+      "publisher_digest_verified": true,
+      "url": "https://raw.githubusercontent.com/xiaoman-zhang/PMC-VQA/1678ec2c97f0b2bf84591ddccd2e84932630e450/src/MedVInT_TE/test.py"
+    }
+  ],
+  "native_target_vs_released_label_mismatches": 1,
+  "released_label_distribution": {
+    "B": 638,
+    "D": 315,
+    "A": 437,
+    "C": 610
+  },
+  "model_facing_fields": [
+    "source_TD_question_all_four_choices_prompt",
+    "original_JPEG_bytes"
+  ],
+  "scorer_only_fields": [
+    "Answer",
+    "Answer_label",
+    "native_target_index",
+    "target_index"
+  ],
+  "prompt_policy": "Unchanged source TD Test choice order and concatenation: Question: +Question+Choices:+combined A/B/C/D+The Answer is:. No answer, label, figure caption, extra instruction or system message. Full source question/all choices and image retained.",
+  "metric_policy": {
+    "primary": "native_td_final_character_accuracy: unchanged native TD generated_texts[i][-1], then AST-extracted difflib SequenceMatcher closest-choice mapping for prediction and source Answer label; original tie rule, no trim/lowercase/normalization.",
+    "separate_adaptations": [
+      "adapted_full_text_closest_choice_accuracy uses full final assistant string and native Answer-derived target",
+      "adapted_full_text_released_label_accuracy uses full final assistant string and released Answer_label",
+      "strict_final_label_accuracy uses preregistered last-line A/B/C/D parser and released Answer_label"
+    ],
+    "missing_policy": "Every frozen test case in all denominators; missing/failed/empty predictions score0, no invented closest-choice fill; undefined native mapping and failed outputs disclosed.",
+    "no_test_tuning": true
+  },
+  "source_qualifications": [
+    "Published clean CSV uses Answer and Answer_label; TD code expects misspelled Anwser and also reads absent Caption. Schema adapter keeps Answer scorer-only; no caption supplied.",
+    "TD native scorer consumes only decoded final character, which can be sensitive to punctuation/whitespace. Full-text score is an explicit adaptation, not silently called the same native score.",
+    "Native Answer-derived target and released Answer_label disagree for1/2000 source cases; preserve all cases/both references, no target-driven filtering.",
+    "TE source evaluation uses a different label-based get_generated_texts procedure; no TE exact-paper score or trained-head reproduction claim.",
+    "Original full19GB image archive is partially acquired by exact publisher ZIP ranges; full archive SHA256 is not verified. Required member CRC/length/JPEG signatures and range/image SHA256 are verified separately."
+  ],
+  "interpretation": {
+    "likely_demands": {
+      "labels": [
+        "medical_visual_evidence_interpretation",
+        "medical_knowledge",
+        "multiple_choice_question_answering"
+      ],
+      "status": "provisional analyst description, no inference about internal computation"
+    },
+    "actually_supplied": "Source TD question plus all four source choices and original required JPEG only",
+    "reference_answer_source": "Pinned public PMC-VQA clean-test Answer and Answer_label annotations, stored separately for offline scorer",
+    "good_score_establishes": "Recovery of source choice targets under this specified model/input/output-adapter/metric",
+    "bad_score_establishes": "Limited answer recovery under this protocol; does not isolate reasoning or establish clinical competence",
+    "explanation_correctness": "Unassessed independently of chosen answers; absent mechanistic support is not automatic falsity"
+  },
+  "comparison_to_paper": "Fixed local zero-shot Qwen vision baseline on complete native clean2000 set and source TD question/choice strings. Qwen chat, image preprocessing, free generation and training differ from MedVInT. Match metric/output extraction and clean split before comparing; full-text metric is adapted, TE systems are not exact reproductions. Public pretraining exposure unknown.",
+  "unique_images": 1440,
+  "input_file": "data/pmcvqa_clean_native/model_inputs.jsonl",
+  "label_file": "data/pmcvqa_clean_native/labels.jsonl",
+  "image_manifest": "data/pmcvqa_clean_native/image_manifest.json",
+  "image_acquisition_report": "reports/pmcvqa_clean_image_acquisition.json",
+  "publisher_full_archive_sha256_verified": false,
+  "files": [
+    {
+      "path": "data/pmcvqa_clean_native/image_manifest.json",
+      "sha256": "2bc5f2d919c6019a87293fdd91b7040b2bf3e7fd26f547efccb4ba7e2a1722f9",
+      "bytes": 981203
+    },
+    {
+      "path": "data/pmcvqa_clean_native/input_contracts.jsonl",
+      "sha256": "aa21077b74c7c9d8bda4dc7676a637862c7be47ecc18fb8044a220b787437632",
+      "bytes": 820460
+    },
+    {
+      "path": "data/pmcvqa_clean_native/labels.jsonl",
+      "sha256": "7e34a58d61b76cd9d25bfbb1b474e7f422492dee3a6ffb6abcdc44750b2b10ba",
+      "bytes": 1028908
+    },
+    {
+      "path": "data/pmcvqa_clean_native/labels_before_image_binding.jsonl",
+      "sha256": "c89cc50786e49a275d2485133c10b8204282fb0f755fea80d1d97c80764c2743",
+      "bytes": 860908
+    },
+    {
+      "path": "data/pmcvqa_clean_native/model_inputs.jsonl",
+      "sha256": "0d708edb83de896fe31daec9139de49bfd6aebaf833c8bb084a98604c4932826",
+      "bytes": 439081502
+    },
+    {
+      "path": "data/pmcvqa_clean_native/ordered_case_ids.json",
+      "sha256": "6831caafe152efe9f045c186cf669bbcf070d2c62bd4f1b9d6db48a6d15c1907",
+      "bytes": 48003
+    }
+  ]
+}

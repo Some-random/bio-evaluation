@@ -1,0 +1,101 @@
+{
+  "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_000",
+  "frozen_at_utc": "2026-10-15T09:28:21.190953+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "endpoint": "http://127.0.0.1:8031/v1",
+  "approved_task_ids": [
+    "V03"
+  ],
+  "variant": "SOURCE_QUALIFIED_PATHVQA_HF_TEST_IMAGE_ZERO_SHOT",
+  "input_file": "data/local_pathvqa_seven_gpu/shard_000/model_inputs.jsonl",
+  "review_file": "configs/local_pathvqa_seven_gpu_shard_000_review.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "generation_choice_basis": "Publisher sampling defaults; one fixed seed, medium thinking and 4096 total output tokens fixed before Qwen benchmark outputs; no search or test-driven changes.",
+  "source_dataset_revision": "1685832883334b5bb5beaf4e4b333fdeecaa4ad9",
+  "source_code_revision": "b9a98a736d2ef05bcf5ff345be6403fb3a664eaf",
+  "prompt_policy": "Exact pinned mirror question and original embedded image bytes only. No answer-group hint, caption, answer candidates, labels or system message. No source row removed, modified or selected by model outcomes.",
+  "metric_policy": {
+    "open_headline": "Pinned official LLaVA-Med normalize_word and calculate_f1score recall, macro per OPEN case; do not substitute generic multiset recall.",
+    "closed_headline": "Declared corrected source substring accuracy with every CLOSED case in denominator; native PathVQA-specific bug-compatible score separately reported with its defective denominator. Strict normalized exact Yes/No accuracy is a separate diagnostic.",
+    "native_cli_blockers": [
+      "run_eval_pvqa.py omits wrong opposite-label predictions from closed denominator",
+      "run_eval_pvqa.py calls calculate_appearance_with_normalization with2arguments but pinned helper requires3; no full native CLI success claim"
+    ],
+    "missing_output_policy": "Keep every frozen case in corrected group denominators; missing/empty outputs score0. Report failures and truncations. Native bug-compatible diagnostic retains source omission behavior and cannot be treated as unbiased accuracy.",
+    "no_combined_metric": true
+  },
+  "scorer_reference_sha256": "692bfa892dc3e3a53d199d49184e024dae9ae220fe568686067232f8ef507182",
+  "frozen_files_sha256": {
+    "sources/pathvqa_native/llava_v1_run_eval_pvqa.py": "1ac2c91878e0d0cda14946a28d8ba1468f48327c88a27701f43fea088353219b",
+    "sources/medical_vqa/llava_v1_evaluate_metrics.py": "cbcf8cae0fbe6f91a323d5b100291af969c2884e572103de62459f0c4daa5bc8",
+    "sources/medical_vqa/llava_v1_glossary.py": "59d5ac151e48c5868e6945c26520c4f2c50189bcf009ea3ab9a686e7a3f486f4",
+    "sources/medical_vqa/llava_v1_utils.py": "221f83206502ff236e11d22494681db70165ab28e29cab2105ee844af4cb167d",
+    "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+    "scripts/prepare_pathvqa_native.py": "9e34517640ee56a69c7a5beaa90e2b6838447f614fe789bb4fedc719886fef4f",
+    "scripts/score_local_pathvqa.py": "51f04ea0db376e51898e48297aeb984b61996d00a6d600dfffb0a038818281e8",
+    "scripts/execute_local_pathvqa.py": "99359309d83f49be001c8f892c41e2af09c85d1c99d8789907a42dca0a40b0c0",
+    "reports/pathvqa_native_preparation.json": "b7a7a39c228867185efe72a93ed2e57ff8e7ed5a9be811422a1ea905e085a2a9",
+    "configs/local_pathvqa_review.json": "49cd6b759cd45ebeb162c3c534c5ee5d02efe98cd392250ea9d84c8927a4c37c",
+    "data/pathvqa_native/V03/image_manifest.json": "4fd14e94cfbc98334f87e8f1a45dfdeee916313007cf5d294498d34bde35da24",
+    "data/pathvqa_native/V03/source_identity.json": "8f6889e23ce5b27020e788439b7ad4a1ce523d63aacfb26a8902d4b0a3f6ca74",
+    "data/pathvqa_native/V03/ordered_case_ids.json": "02c1a2e70c74e075b5aab0d3ac5ea24c84fa52dfd28fe31cc534a69557824a69",
+    "data/pathvqa_native/V03/model_inputs.jsonl": "d177b6dde001e1354ec8e5ba1a15a219ebb5afd3b62dccaa99ed2b51eedad007",
+    "scripts/run_local_labbench_eight_gpu.py": "de0c69b2eea33d618a7674791d6ae448fd8c086a7ba081e948dafdfdcaed4493",
+    "scripts/prepare_local_pathvqa_seven_gpu.py": "bed5240f22d34080d10efc80cd298f2896e2956c79c9f4077c449ac50d428855",
+    "scripts/execute_local_pathvqa_seven_gpu.py": "221c39c918e0afc4ef02523430f2527b7a84122f10d9fb61e96b333b0e4feb12",
+    "scripts/aggregate_local_pathvqa_seven_gpu.py": "8a65defb20f01bff2b7f5cac7108f978b48dd9b40ab5c82f1d22f38bb22b9137",
+    "configs/local_pathvqa.json": "f7fd6790b07464d9ee894076e5a9c68a96a07250c53de421a46469cefb7d7294",
+    "data/local_pathvqa_seven_gpu/shard_000/model_inputs.jsonl": "a7c5e5d7a913bcb9e748b5bbf41a819ccd0abc425a11232acaceb6d056d4e713",
+    "configs/local_pathvqa_seven_gpu_shard_000_review.json": "95b31aa4daccaf597d7cc765cf5132287ae75b558be5c22a32a739b08e8b1bf5"
+  },
+  "tool_access": [],
+  "paper_comparison": "Full released6719-row deduplicated/normalized mirror test, with full questions and images; source native6761 questions differ by42 duplicate rows and text normalization. Model is a zero-shot Qwen vision baseline against task-trained source systems. Compare only metric/split-compatible results with this explicit caveat; no exact paper reproduction or contamination-free claim.",
+  "pretraining_contamination": "Unknown; local inference and shuffled choices cannot establish contamination-free performance.",
+  "runner": "scripts/run_local_labbench_eight_gpu.py",
+  "scorer_reference_file": "data/pathvqa_native/V03/labels.jsonl",
+  "model_facing_fields": [
+    "released_question_text",
+    "released_original_image_bytes"
+  ],
+  "input_modalities": [
+    "image",
+    "question_text"
+  ],
+  "scorer": "scripts/score_local_pathvqa.py",
+  "executor": "scripts/execute_local_pathvqa_seven_gpu.py",
+  "case_scope": "task_shard_only",
+  "reporting_protocol_kind": "adapted",
+  "aggregate_only": false,
+  "generator_execution_allowed": true,
+  "full_test_case_count": 6719,
+  "shard_size": 1024,
+  "shard_count": 7,
+  "routing_plan_file": "reports/local_pathvqa_seven_gpu_plan.json",
+  "execution_approval_file": "configs/local_pathvqa_seven_gpu_execution_approval.json",
+  "original_unstarted_run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15",
+  "shard_index": 0,
+  "source_start_index": 0,
+  "source_stop_index": 1024,
+  "aggregate_config_file": "configs/local_pathvqa_seven_gpu_aggregate.json",
+  "full_input_file": "data/pathvqa_native/V03/model_inputs.jsonl",
+  "full_review_file": "configs/local_pathvqa_review.json",
+  "gpu_ids": [
+    1
+  ],
+  "serving_config_file": "configs/local_model_gpu1.json",
+  "server_record_file": ".local/local_model_server_gpu1.json"
+}

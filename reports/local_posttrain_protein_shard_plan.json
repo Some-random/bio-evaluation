@@ -1,0 +1,509 @@
+{
+  "task_id": "P29",
+  "frozen_at_utc": "2026-10-15T09:13:59.107742+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "concurrency": 4,
+  "shards": [
+    {
+      "config_file": "configs/local_posttrain_protein_p29_id_shard_000.json",
+      "config_sha256": "130da148c1434eb4e6c76d38c0e446076e29e567032fa2c3403012705647d7f2",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_000",
+      "native_split": "id",
+      "shard_index": 0,
+      "global_shard_index": 0,
+      "cases": 1024,
+      "gpu_ids": [
+        1
+      ],
+      "endpoint": "http://127.0.0.1:8031/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_id_shard_001.json",
+      "config_sha256": "40133acb8bd6f54f6fa544946e12b1dd3a7b2dee95f2bb7f5d42beb1102785b4",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_001",
+      "native_split": "id",
+      "shard_index": 1,
+      "global_shard_index": 1,
+      "cases": 1024,
+      "gpu_ids": [
+        2
+      ],
+      "endpoint": "http://127.0.0.1:8032/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_id_shard_002.json",
+      "config_sha256": "687b92c88affe377fe762c1e8232ad000492c8ff052d1d187176ec1c5bd9814a",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_002",
+      "native_split": "id",
+      "shard_index": 2,
+      "global_shard_index": 2,
+      "cases": 1024,
+      "gpu_ids": [
+        3
+      ],
+      "endpoint": "http://127.0.0.1:8033/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_id_shard_003.json",
+      "config_sha256": "1d6ab566c2b26433e1d6aa9cfe8a4886527f09d6587af4b67ddfac6193132eaf",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_003",
+      "native_split": "id",
+      "shard_index": 3,
+      "global_shard_index": 3,
+      "cases": 1024,
+      "gpu_ids": [
+        4
+      ],
+      "endpoint": "http://127.0.0.1:8029/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_id_shard_004.json",
+      "config_sha256": "1595d59172e724c1c98ad23f8abb1667dc34c9b85e1336e88364106fef4d175c",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_004",
+      "native_split": "id",
+      "shard_index": 4,
+      "global_shard_index": 4,
+      "cases": 1024,
+      "gpu_ids": [
+        5
+      ],
+      "endpoint": "http://127.0.0.1:8026/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_id_shard_005.json",
+      "config_sha256": "991b682b743f9bf51b64ac809afcd9bd31684c1e05ddbe65e35cd6230fd2a5b8",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_005",
+      "native_split": "id",
+      "shard_index": 5,
+      "global_shard_index": 5,
+      "cases": 1024,
+      "gpu_ids": [
+        6
+      ],
+      "endpoint": "http://127.0.0.1:8027/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_id_shard_006.json",
+      "config_sha256": "91af4f8b561cf2604ec1d460a06ddf403e49f75d8d278574b024350095605a8e",
+      "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_006",
+      "native_split": "id",
+      "shard_index": 6,
+      "global_shard_index": 6,
+      "cases": 845,
+      "gpu_ids": [
+        7
+      ],
+      "endpoint": "http://127.0.0.1:8028/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_ood_shard_000.json",
+      "config_sha256": "b0ce3f223bff0b0a2c468334938a3c2f24a8faca3c11cc1b5bb85784cff76b7b",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_000",
+      "native_split": "ood",
+      "shard_index": 0,
+      "global_shard_index": 7,
+      "cases": 1024,
+      "gpu_ids": [
+        1
+      ],
+      "endpoint": "http://127.0.0.1:8031/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_ood_shard_001.json",
+      "config_sha256": "b1f99aa27ca987563da353648cfdc1797364bc48e082a5e3985921dd91acbe70",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_001",
+      "native_split": "ood",
+      "shard_index": 1,
+      "global_shard_index": 8,
+      "cases": 1024,
+      "gpu_ids": [
+        2
+      ],
+      "endpoint": "http://127.0.0.1:8032/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_ood_shard_002.json",
+      "config_sha256": "d66218c00a4935bd3fbc3d39c888ea950b3a93407ca968c0aa30db52b13846a7",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_002",
+      "native_split": "ood",
+      "shard_index": 2,
+      "global_shard_index": 9,
+      "cases": 1024,
+      "gpu_ids": [
+        3
+      ],
+      "endpoint": "http://127.0.0.1:8033/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_ood_shard_003.json",
+      "config_sha256": "28dde9bc93479484719f9756cb3e7f975338e3df33d5eef560a0757e171b5f93",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_003",
+      "native_split": "ood",
+      "shard_index": 3,
+      "global_shard_index": 10,
+      "cases": 1024,
+      "gpu_ids": [
+        4
+      ],
+      "endpoint": "http://127.0.0.1:8029/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_ood_shard_004.json",
+      "config_sha256": "94ccaa2f5b152d9a7a3162c6ef44267e795141099b43ce01a4f4f56f46b02dc4",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_004",
+      "native_split": "ood",
+      "shard_index": 4,
+      "global_shard_index": 11,
+      "cases": 1024,
+      "gpu_ids": [
+        5
+      ],
+      "endpoint": "http://127.0.0.1:8026/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_ood_shard_005.json",
+      "config_sha256": "79bf44bfd7cb03b452196c27446ea2a8c4060e317ac98c4901c201e6c275680d",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_005",
+      "native_split": "ood",
+      "shard_index": 5,
+      "global_shard_index": 12,
+      "cases": 1024,
+      "gpu_ids": [
+        6
+      ],
+      "endpoint": "http://127.0.0.1:8027/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_ood_shard_006.json",
+      "config_sha256": "e9548d621d15280b410a5a7eab2a901260a06f98f08d1132aeb178e105fcf92d",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_006",
+      "native_split": "ood",
+      "shard_index": 6,
+      "global_shard_index": 13,
+      "cases": 1024,
+      "gpu_ids": [
+        7
+      ],
+      "endpoint": "http://127.0.0.1:8028/v1"
+    },
+    {
+      "config_file": "configs/local_posttrain_protein_p29_ood_shard_007.json",
+      "config_sha256": "3dfa5d701d9c1cf6fbb356d0de47fab5882799f4db541d20a7e7b9aae5d0ab44",
+      "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_007",
+      "native_split": "ood",
+      "shard_index": 7,
+      "global_shard_index": 14,
+      "cases": 715,
+      "gpu_ids": [
+        1
+      ],
+      "endpoint": "http://127.0.0.1:8031/v1"
+    }
+  ],
+  "aggregates": [
+    {
+      "native_split": "id",
+      "aggregate_config_file": "configs/local_posttrain_protein_p29_id_aggregate.json",
+      "aggregate_config_sha256": "c331d1384b1e497a6950a8f85bd3f0c4458674fb64e48cfdd0ff5f0ca3b610ab",
+      "aggregate_run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15",
+      "source_recipe_file": "configs/local_labbench_b07.json",
+      "source_recipe_sha256": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680",
+      "full_test_case_count": 6989,
+      "global_shard_start_index": 0,
+      "shards": [
+        {
+          "config_file": "configs/local_posttrain_protein_p29_id_shard_000.json",
+          "config_sha256": "130da148c1434eb4e6c76d38c0e446076e29e567032fa2c3403012705647d7f2",
+          "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_000",
+          "native_split": "id",
+          "shard_index": 0,
+          "global_shard_index": 0,
+          "cases": 1024,
+          "gpu_ids": [
+            1
+          ],
+          "endpoint": "http://127.0.0.1:8031/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_id_shard_001.json",
+          "config_sha256": "40133acb8bd6f54f6fa544946e12b1dd3a7b2dee95f2bb7f5d42beb1102785b4",
+          "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_001",
+          "native_split": "id",
+          "shard_index": 1,
+          "global_shard_index": 1,
+          "cases": 1024,
+          "gpu_ids": [
+            2
+          ],
+          "endpoint": "http://127.0.0.1:8032/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_id_shard_002.json",
+          "config_sha256": "687b92c88affe377fe762c1e8232ad000492c8ff052d1d187176ec1c5bd9814a",
+          "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_002",
+          "native_split": "id",
+          "shard_index": 2,
+          "global_shard_index": 2,
+          "cases": 1024,
+          "gpu_ids": [
+            3
+          ],
+          "endpoint": "http://127.0.0.1:8033/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_id_shard_003.json",
+          "config_sha256": "1d6ab566c2b26433e1d6aa9cfe8a4886527f09d6587af4b67ddfac6193132eaf",
+          "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_003",
+          "native_split": "id",
+          "shard_index": 3,
+          "global_shard_index": 3,
+          "cases": 1024,
+          "gpu_ids": [
+            4
+          ],
+          "endpoint": "http://127.0.0.1:8029/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_id_shard_004.json",
+          "config_sha256": "1595d59172e724c1c98ad23f8abb1667dc34c9b85e1336e88364106fef4d175c",
+          "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_004",
+          "native_split": "id",
+          "shard_index": 4,
+          "global_shard_index": 4,
+          "cases": 1024,
+          "gpu_ids": [
+            5
+          ],
+          "endpoint": "http://127.0.0.1:8026/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_id_shard_005.json",
+          "config_sha256": "991b682b743f9bf51b64ac809afcd9bd31684c1e05ddbe65e35cd6230fd2a5b8",
+          "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_005",
+          "native_split": "id",
+          "shard_index": 5,
+          "global_shard_index": 5,
+          "cases": 1024,
+          "gpu_ids": [
+            6
+          ],
+          "endpoint": "http://127.0.0.1:8027/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_id_shard_006.json",
+          "config_sha256": "91af4f8b561cf2604ec1d460a06ddf403e49f75d8d278574b024350095605a8e",
+          "run_id": "qwen38_27b_p29_id_full_released_rl_context_parallel_2026-10-15_shard_006",
+          "native_split": "id",
+          "shard_index": 6,
+          "global_shard_index": 6,
+          "cases": 845,
+          "gpu_ids": [
+            7
+          ],
+          "endpoint": "http://127.0.0.1:8028/v1"
+        }
+      ],
+      "full_test_id_union_validation": {
+        "complete": true,
+        "union_matches_full_test_ids": true,
+        "expected_test_case_count": 6989,
+        "unique_observed_case_count": 6989,
+        "missing_case_count": 0,
+        "extra_case_count": 0
+      },
+      "incomplete_output_policy": "Wait for every source shard terminal; lock all outputs/missing slots before labels; preserve every planned failure as empty GO set. Score native augmented-reference mean GO-F1 once per complete ID/OOD union, curated-only diagnostic separately. Nonzero source generation remains nonzero aggregate status. No retries/resampling or score selection.",
+      "global_metric_policy": "One native augmented-reference mean GO-F1 evaluation from complete combined raw predictions per ID/OOD split, with fixed curated-only diagnostic and organism subgroup accounting. No shard metrics averaged."
+    },
+    {
+      "native_split": "ood",
+      "aggregate_config_file": "configs/local_posttrain_protein_p29_ood_aggregate.json",
+      "aggregate_config_sha256": "c1a076cc381a86bd96dfa41f6441c1e9dfcc0bbe71c767cd242435ffabd50fbd",
+      "aggregate_run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15",
+      "source_recipe_file": "configs/local_labbench_b07.json",
+      "source_recipe_sha256": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680",
+      "full_test_case_count": 7883,
+      "global_shard_start_index": 7,
+      "shards": [
+        {
+          "config_file": "configs/local_posttrain_protein_p29_ood_shard_000.json",
+          "config_sha256": "b0ce3f223bff0b0a2c468334938a3c2f24a8faca3c11cc1b5bb85784cff76b7b",
+          "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_000",
+          "native_split": "ood",
+          "shard_index": 0,
+          "global_shard_index": 7,
+          "cases": 1024,
+          "gpu_ids": [
+            1
+          ],
+          "endpoint": "http://127.0.0.1:8031/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_ood_shard_001.json",
+          "config_sha256": "b1f99aa27ca987563da353648cfdc1797364bc48e082a5e3985921dd91acbe70",
+          "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_001",
+          "native_split": "ood",
+          "shard_index": 1,
+          "global_shard_index": 8,
+          "cases": 1024,
+          "gpu_ids": [
+            2
+          ],
+          "endpoint": "http://127.0.0.1:8032/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_ood_shard_002.json",
+          "config_sha256": "d66218c00a4935bd3fbc3d39c888ea950b3a93407ca968c0aa30db52b13846a7",
+          "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_002",
+          "native_split": "ood",
+          "shard_index": 2,
+          "global_shard_index": 9,
+          "cases": 1024,
+          "gpu_ids": [
+            3
+          ],
+          "endpoint": "http://127.0.0.1:8033/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_ood_shard_003.json",
+          "config_sha256": "28dde9bc93479484719f9756cb3e7f975338e3df33d5eef560a0757e171b5f93",
+          "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_003",
+          "native_split": "ood",
+          "shard_index": 3,
+          "global_shard_index": 10,
+          "cases": 1024,
+          "gpu_ids": [
+            4
+          ],
+          "endpoint": "http://127.0.0.1:8029/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_ood_shard_004.json",
+          "config_sha256": "94ccaa2f5b152d9a7a3162c6ef44267e795141099b43ce01a4f4f56f46b02dc4",
+          "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_004",
+          "native_split": "ood",
+          "shard_index": 4,
+          "global_shard_index": 11,
+          "cases": 1024,
+          "gpu_ids": [
+            5
+          ],
+          "endpoint": "http://127.0.0.1:8026/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_ood_shard_005.json",
+          "config_sha256": "79bf44bfd7cb03b452196c27446ea2a8c4060e317ac98c4901c201e6c275680d",
+          "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_005",
+          "native_split": "ood",
+          "shard_index": 5,
+          "global_shard_index": 12,
+          "cases": 1024,
+          "gpu_ids": [
+            6
+          ],
+          "endpoint": "http://127.0.0.1:8027/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_ood_shard_006.json",
+          "config_sha256": "e9548d621d15280b410a5a7eab2a901260a06f98f08d1132aeb178e105fcf92d",
+          "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_006",
+          "native_split": "ood",
+          "shard_index": 6,
+          "global_shard_index": 13,
+          "cases": 1024,
+          "gpu_ids": [
+            7
+          ],
+          "endpoint": "http://127.0.0.1:8028/v1"
+        },
+        {
+          "config_file": "configs/local_posttrain_protein_p29_ood_shard_007.json",
+          "config_sha256": "3dfa5d701d9c1cf6fbb356d0de47fab5882799f4db541d20a7e7b9aae5d0ab44",
+          "run_id": "qwen38_27b_p29_ood_full_released_rl_context_parallel_2026-10-15_shard_007",
+          "native_split": "ood",
+          "shard_index": 7,
+          "global_shard_index": 14,
+          "cases": 715,
+          "gpu_ids": [
+            1
+          ],
+          "endpoint": "http://127.0.0.1:8031/v1"
+        }
+      ],
+      "full_test_id_union_validation": {
+        "complete": true,
+        "union_matches_full_test_ids": true,
+        "expected_test_case_count": 7883,
+        "unique_observed_case_count": 7883,
+        "missing_case_count": 0,
+        "extra_case_count": 0
+      },
+      "incomplete_output_policy": "Wait for every source shard terminal; lock all outputs/missing slots before labels; preserve every planned failure as empty GO set. Score native augmented-reference mean GO-F1 once per complete ID/OOD union, curated-only diagnostic separately. Nonzero source generation remains nonzero aggregate status. No retries/resampling or score selection.",
+      "global_metric_policy": "One native augmented-reference mean GO-F1 evaluation from complete combined raw predictions per ID/OOD split, with fixed curated-only diagnostic and organism subgroup accounting. No shard metrics averaged."
+    }
+  ],
+  "full_test_case_count": 14872,
+  "shard_size": 1024,
+  "shard_count": 15,
+  "replica_order": [
+    {
+      "gpu_ids": [
+        1
+      ],
+      "port": 8031
+    },
+    {
+      "gpu_ids": [
+        2
+      ],
+      "port": 8032
+    },
+    {
+      "gpu_ids": [
+        3
+      ],
+      "port": 8033
+    },
+    {
+      "gpu_ids": [
+        4
+      ],
+      "port": 8029
+    },
+    {
+      "gpu_ids": [
+        5
+      ],
+      "port": 8026
+    },
+    {
+      "gpu_ids": [
+        6
+      ],
+      "port": 8027
+    },
+    {
+      "gpu_ids": [
+        7
+      ],
+      "port": 8028
+    }
+  ],
+  "partition_policy": "Each native split separately, original source-order consecutive1024 rows, exact union/no duplicates; roundrobin across GPU1–7. No labels, targets, outputs or model scores used for partition.",
+  "incomplete_output_policy": "Wait for every source shard terminal; lock all outputs/missing slots before labels; preserve every planned failure as empty GO set. Score native augmented-reference mean GO-F1 once per complete ID/OOD union, curated-only diagnostic separately. Nonzero source generation remains nonzero aggregate status. No retries/resampling or score selection.",
+  "execution_authorized": false,
+  "inference_dispatched": false,
+  "authorizations_or_queues_modified": false
+}

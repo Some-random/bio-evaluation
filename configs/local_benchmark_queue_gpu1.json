@@ -1,0 +1,69 @@
+{
+  "scope": "One-time same-checkpoint authorized local benchmark queue",
+  "gpu_ids": [
+    1
+  ],
+  "accept_more": true,
+  "jobs": [
+    {
+      "config": "configs/local_bioreason_p28_shard_000.json",
+      "executor": "scripts/execute_local_bioreason_shard.py"
+    },
+    {
+      "config": "configs/local_pathvqa_seven_gpu_shard_000.json",
+      "executor": "scripts/execute_local_pathvqa_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_bioreason_p28_shard_007.json",
+      "executor": "scripts/execute_local_bioreason_shard.py"
+    },
+    {
+      "config": "configs/local_deepfri_p12_sparse_confidence.json",
+      "executor": "scripts/execute_local_deepfri_confidence_eight_gpu.py"
+    },
+    {
+      "config": "configs/local_deepfri_p15_sparse_confidence.json",
+      "executor": "scripts/execute_local_deepfri_confidence_eight_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p03_shard_000.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_id_shard_000.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_000.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_007.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p07_shard_004.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p07_shard_011.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p07_shard_018.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p07_shard_025.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p08_shard_005.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p08_shard_012.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    }
+  ]
+}

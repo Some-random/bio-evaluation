@@ -1,0 +1,161 @@
+{
+  "environment": ".venv-oracles",
+  "python_executable": ".venv-oracles/bin/python",
+  "python_version": "3.10.12",
+  "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.35",
+  "packages": [
+    {
+      "name": "accelerate",
+      "version": "0.34.2"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.7.22"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2"
+    },
+    {
+      "name": "filelock",
+      "version": "3.32.3"
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.7.0"
+    },
+    {
+      "name": "huggingface-hub",
+      "version": "0.25.2"
+    },
+    {
+      "name": "idna",
+      "version": "3.20"
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6"
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.3"
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0"
+    },
+    {
+      "name": "networkx",
+      "version": "3.4.2"
+    },
+    {
+      "name": "numpy",
+      "version": "1.26.4"
+    },
+    {
+      "name": "packaging",
+      "version": "24.1"
+    },
+    {
+      "name": "peft",
+      "version": "0.12.0"
+    },
+    {
+      "name": "pip",
+      "version": "25.0.1"
+    },
+    {
+      "name": "psutil",
+      "version": "6.0.0"
+    },
+    {
+      "name": "PySocks",
+      "version": "1.7.1"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.2"
+    },
+    {
+      "name": "regex",
+      "version": "2026.9.29"
+    },
+    {
+      "name": "requests",
+      "version": "2.32.3"
+    },
+    {
+      "name": "safetensors",
+      "version": "0.4.5"
+    },
+    {
+      "name": "setuptools",
+      "version": "59.6.0"
+    },
+    {
+      "name": "sympy",
+      "version": "1.13.1"
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.19.1"
+    },
+    {
+      "name": "torch",
+      "version": "2.6.0+cpu"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.66.5"
+    },
+    {
+      "name": "transformers",
+      "version": "4.44.2"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0"
+    }
+  ],
+  "core_versions": {
+    "torch": "2.6.0+cpu",
+    "transformers": "4.44.2",
+    "peft": "0.12.0",
+    "accelerate": "0.34.2",
+    "numpy": "1.26.4",
+    "huggingface-hub": "0.25.2",
+    "tokenizers": "0.19.1",
+    "safetensors": "0.4.5"
+  },
+  "critical_installed_files_sha256": {
+    ".venv-oracles/lib/python3.10/site-packages/torch/__init__.py": "5a190666c3853aa236c4d48ed64e2d4bbcd23bd32c21e64c0867646a6852e43f",
+    ".venv-oracles/lib/python3.10/site-packages/transformers/__init__.py": "540375635e245202f27aad8e5ad7b666906a35fb7cd60f2deb4331cf8dc3496a",
+    ".venv-oracles/lib/python3.10/site-packages/peft/__init__.py": "fa26417a0d3fcd8a7a80044838b0798123f989f03af215e594b4b6fe608f1143",
+    ".venv-oracles/lib/python3.10/site-packages/numpy/__init__.py": "22cd1535fa14d74ef6f457cca149ffdc80875f460be313b8f895273f78bc402e",
+    ".venv-oracles/lib/python3.10/site-packages/tokenizers/__init__.py": "644e596a052fa1b05272b1c141d1286e1c78c2a3346ecabd17d68b62404d8d84",
+    ".venv-oracles/lib/python3.10/site-packages/torch/serialization.py": "db42dbd71fcd9ca4fb83283350bacde067659b5a53dd647588236a0693bb0d38",
+    ".venv-oracles/lib/python3.10/site-packages/transformers/modeling_utils.py": "d178a8810e5bd846ab3c36bf7391740f2208bb29a2fbceeffc217a55974252c1",
+    ".venv-oracles/lib/python3.10/site-packages/transformers/models/esm/modeling_esm.py": "03e3784d40a04802164f62ccc611b8066f7fee71cf3a661c6582f1889ac68c1d",
+    ".venv-oracles/lib/python3.10/site-packages/transformers/models/esm/tokenization_esm.py": "1c3e895f0777de84b0300beeb206802a96fe9053db234a4f5f3dd394bc92077b",
+    ".venv-oracles/lib/python3.10/site-packages/peft/peft_model.py": "f05d76aed5c275e9f721d1b1405e548413097786697925c007fe30dc4a2f82ba",
+    ".venv-oracles/lib/python3.10/site-packages/peft/utils/save_and_load.py": "acf74f3e3c6999cd0c4c883cc0c72d100d7a46adceb4bb29e9d36c381b72d1e1",
+    ".venv-oracles/lib/python3.10/site-packages/peft/utils/other.py": "d0452bec9e3533d880712fe15e04816e709b4d8192b00ab18a9d72d91e413aae",
+    ".venv-oracles/lib/python3.10/site-packages/peft/tuners/lora/layer.py": "4667be1d279ae5546255f81bbe632a47074ac648ed8f2a35ad5f40458d18767b"
+  },
+  "torch_cuda_build": null,
+  "device": "cpu",
+  "dtype": "float32",
+  "torch_num_threads": 8,
+  "torch_num_interop_threads": 1,
+  "native_scorer_source": "sources/stride__scripts__eval__score_fluorescence.py",
+  "native_scorer_sha256": "ae06c6f200d81ad6b7f764921fba17379076d2e6413cae781cc3bbffd3ed9ad2",
+  "weights_only_loading": true,
+  "network_during_model_load_or_scoring": false,
+  "benchmark_forwards_performed": 0,
+  "active_environments_modified": false,
+  "numeric_qualification": "CPU FP32 native architecture/preprocessing; different hardware and pinned library versions from unpinned author historical runtime. No byte-identical GPU score claim."
+}

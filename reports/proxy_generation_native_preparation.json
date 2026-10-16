@@ -1,0 +1,123 @@
+{
+  "stage": "necessary_public_evaluator_assets_verified_deferred_for_P28",
+  "inference_dispatched": false,
+  "generation_or_optimization_dispatched": false,
+  "new_head_training": false,
+  "P34": {
+    "source_repository": "https://github.com/PharMolix/MutaPLM",
+    "source_revision": "495815b2069419d19d9449a59070d0fb24b596d1",
+    "original_proxy_source": "https://github.com/HeliXonProtein/proximal-exploration",
+    "proxy_source_revision": "9ed7a814f0cd17920728641a58736f781bff9ece",
+    "oracle": "ESM-1b650M frozen pretrained encoder plus original task-specific trained Attention1d/MLP decoder; raw backbone is not substitute",
+    "landscapes": [
+      "AAV",
+      "AMIE",
+      "avGFP",
+      "E4B",
+      "LGK",
+      "UBE2I"
+    ],
+    "AAV_scope": "pending separate input review; no AAV sequences/weights acquired by selected asset worker",
+    "prepared_asset_scope": [
+      "AMIE",
+      "avGFP",
+      "E4B",
+      "LGK",
+      "UBE2I"
+    ],
+    "budget": {
+      "independent_runs": 20,
+      "torch_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "rounds": 10,
+      "beam_candidates": 20,
+      "scorer_calls_per_run_including_initial": 201,
+      "scorer_calls_per_landscape": 4020
+    },
+    "native_selection": "Model joint position/residue score tensor plus previous selected model scores; flatten and torch.multinomial without replacement. Proxy evaluated after proposals, not fed back to pick next beam. Preserve native one-substitution-per-round, counts and model-weighted sampling; Qwen text proposal adapter is not yet frozen.",
+    "aggregation": "Per-run round mean and cumulative round maximum; aggregate over20runs. Paper describes SD bands; original evaluator logs population variance and mistakenly uses max-score variance on mean-score print line. Preserve both identified output conventions explicitly.",
+    "starting_sequence": "Original PEX source archive esm1b_landscape/<task>/starting_sequence.json selected for the5nonheld tasks; original MutaPLM FitnessDataset expects the same-named start file. Identity to paper starts is source-chain qualified, no replacementWT guessed.",
+    "evaluator_assets": "sources/proxy_generation_native/pex_selected_assets_receipt.json once worker completes; weights only under models/proxy_generation_native/pex_esm1b_heads/",
+    "whole_landscape_archive_sha256_verified": false,
+    "remaining_before_execution": [
+      "CPU-only shape/class compatibility inspection of selected original five trained heads; all selected source starts/heads are already acquired",
+      "Pin/download original ESM-1b encoder in compatible format; no trained decoder substitution",
+      "Freeze Qwen-compatible proposal/sampling contract and approved cases; no oracle-feedback redesign",
+      "Resolve native tensor sampling normalization and native failure handling in source before dispatch"
+    ]
+  },
+  "P42": {
+    "source_repository": "https://github.com/daiheng-zhang/STRIDE",
+    "source_revision": "1e331e8c6d80677fcf446d84bb2de8811dfecc09",
+    "reference_contract": "data/proxy_generation_native/P42/native_reference_contract.json",
+    "regimes": [
+      "replace_only",
+      "full_insert_delete_replace"
+    ],
+    "native_sample_defaults": {
+      "candidate_count": 100,
+      "seed": 42,
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "max_tokens": 1024,
+      "batch_size": 10
+    },
+    "oracle": {
+      "base": "westlake-repl/SaProt_650M_AF2",
+      "base_revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+      "adapter": "SaProtHub/Model-Fluorescence-650M",
+      "adapter_revision": "8226f15a8ea237db4a972afa453041c1b2deb237",
+      "adapter_sha256": "7696e185bae99f07f4624922321d042f14bb412178788c4d6549da2aec60ae5a",
+      "trained_head_verified": "weights_only CPU inventory confirms classifier.dense1280x1280 + out_proj1x1280 and biases; all400state tensors finite. No forward.",
+      "input_contract": "Original STRIDE predict_batch uses full AA sequence and inserts # after each AA when no # present, masking structure tokens; tokenizer max_length1024, padding/truncation as source. Adapter metadata training_data_typeAA explicitly supports this native structure-free input. No Foldseek/AF2 token reconstruction added.",
+      "target_units": "Predicted log fluorescence from trained SaProt regression head, no unit conversion",
+      "base_sha256": "513c39088804b74309d961174d5fc7aeabfb9b79d2814cdc7e465d4fe4b9f216",
+      "necessary_assets_acquired": true,
+      "forward_or_biological_inference_dispatched": false
+    },
+    "native_metrics": {
+      "success": "improved candidate count /100, strictly oracle(candidate)>oracle(source)",
+      "uniqueness": "exact unique improved sequences / improved samples",
+      "novelty": "exact unique improved sequences absent from exact positive SFT training set / unique improved sequences"
+    },
+    "concrete_remaining_contracts": [
+      "Published inference script has no replace-only/full-edit or1-3edit-budget switch; paper defines regimes and1-3atomicedit comparator. Must freeze exact prospective regime validation before new baseline generation.",
+      "Exact positive SFT membership D+ (including pseudo-improved indel augmentation) is not present in inspected native source tree, only preprocessing/example scaffolds. Native novelty cannot substitute allTAPEtrain or another corpus.",
+      "Native parser requires </think> then protein JSON; current Qwen reasoning/final channel adaptation needs explicit frozen handling, no outcome-based repair."
+    ],
+    "positive_training_set_missing": true,
+    "oracle_outcomes_are_not_new_experiments": true
+  },
+  "asset_process_state": ".local/proxy_oracle_acquisition_process.json",
+  "asset_plan": "sources/proxy_generation_native/necessary_oracle_assets_plan.json",
+  "asset_progress": "reports/proxy_oracle_acquisition.json",
+  "storage_policy": "Public model weights under models/ only; no duplicate .pt/bin alternative copies, repository backs references only.",
+  "resource_plan": {
+    "SaProt_storage_bytes": 2622034211,
+    "selected_ESM1b_head_bytes": 23658275,
+    "oracle_execution": "No GPUforward or biological inference now. Later isolated CPU/oneapprovedGPU evaluator, batch8sourceSaProt; do not modify running vLLM environment or occupy other jobs.",
+    "ESM1b_encoder": "metadata-only until P28 infrastructure completed; approximately2.6GB additional base if approved nativecompatible artifact needed."
+  },
+  "interpretation": "Any future score establishes fixed predictor/search-protocol outcomes. It does not establish measured fluorescence, enzyme performance, mechanism correctness or contamination-free reasoning.",
+  "asset_acquisition_report_sha256": "d28280868974a025b5b9fb0ade5ab51c4dba189ccb8b714385bcf94faaca5086"
+}

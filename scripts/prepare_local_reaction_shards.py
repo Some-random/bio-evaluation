@@ -11,6 +11,7 @@ SCORER = "scripts/score_local_reaction.py"
 PLAN_FILE = "reports/local_reaction_shard_plan.json"
 APPROVAL_FILE = "configs/local_reaction_execution_approval.json"
 SCRIPTS = [RUNNER, SCORER, "scripts/prepare_catalog_reaction.py", "scripts/prepare_local_extended_shards.py",
+           "scripts/check_reaction_context.py",
            "scripts/prepare_local_reaction_shards.py", "scripts/execute_local_reaction_shard.py",
            "scripts/aggregate_local_reaction_shards.py"]
 
@@ -119,8 +120,10 @@ def prepare():
                   "data/catalog_reaction/P16/class_ontology.json", "data/catalog_reaction/P16/class_context.txt",
                   "data/catalog_reaction/P16/ordered_case_ids.json", "data/catalog_reaction/P16/preparation.json",
                   "reports/catalog_reaction_preparation.json", "reports/catalog_reaction_validation.json",
-                  "reports/catalog_reaction_context_validation.json", "configs/local_labbench_b07.json"]
+                  "reports/catalog_reaction_context_validation.json", "reports/REACTION_PROTOCOL_AND_EXECUTION.md",
+                  "sources/catalog_reaction_ensemble_source_fetch.json", "configs/local_labbench_b07.json"]
     dependencies += [record["path"] for record in source_preparation["native_code_provenance"]["records"]]
+    dependencies += [record["path"] for record in json.loads((ROOT / "sources/catalog_reaction_ensemble_source_fetch.json").read_text())["records"]]
     frozen = {name: file_digest(ROOT / name) for name in dependencies}
     settings["frozen_files_sha256"] = frozen
     shards = []

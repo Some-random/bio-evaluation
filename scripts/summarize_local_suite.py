@@ -14,15 +14,24 @@ from datetime import datetime, timezone
 import hashlib
 import io
 import json
+import math
 from pathlib import Path
 import tempfile
 
 
 CATALOG = "handoff/bio_eval_agent_handoff_2026-10-13/references/evaluation_catalog.json"
 COMPARISONS = "reports/PUBLISHED_BENCHMARK_COMPARISONS_2026-10-15.json"
+SOURCE_RECOVERY = "reports/remaining_native_source_recovery_2026-10-15.json"
+POSTTRAIN_GAPS = "reports/posttrain_native_gap_audit.json"
+P34_FEASIBILITY = "reports/p34_five_landscape_feasibility_2026-10-15.json"
+NATURE_GENERATION_FEASIBILITY = "reports/naturelm_generation_feasibility_2026-10-15.json"
+DESIGN_FEASIBILITY = "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
+VISION_INTEGRITY = "reports/labbench_vision_aggregate_integrity_qualification.json"
 SUCCESS_STATUSES = {"completed", "cached", "success", "ok"}
 FINAL_STATES = {"completed_scored", "completed_scored_with_failures"}
-COUNT_METRICS = {"planned", "completed", "parsed", "invalid", "invalid_outputs", "missing", "held", "total"}
+COUNT_METRICS = {"planned", "completed", "parsed", "correct", "invalid", "invalid_outputs", "missing", "held", "total",
+                 "eligible", "denominator", "requests_saved", "responses_saved", "failed", "truncated", "truncated_outputs",
+                 "missing_or_failed_outputs", "test_case_count", "case_count", "class_count", "label_count"}
 CONFIG_FIELDS = {
     "run_id", "task_id", "task_ids", "approved_task_ids", "model",
     "model_revision", "protocol_variant", "variant", "checkpoint_precision",
@@ -30,7 +39,7 @@ CONFIG_FIELDS = {
     "source_code_revision", "case_scope", "gpu_ids", "frozen_at_utc",
     "shard_count", "shard_index", "shard_id", "parent_run_id",
     "aggregated_from_shards", "source_shard_run_ids",
-    "reporting_protocol_kind",
+    "reporting_protocol_kind", "dataset", "native_split", "full_native_metric_set_complete",
 }
 INTERPRETATION_FIELDS = {
     "task_id", "protocol_variant", "input_interface", "required_inputs",
@@ -49,6 +58,7 @@ CAVEATS = [
     "Native input modalities, restrictions, split units and metric names remain distinct. An adapted text result does not complete a native structural, embedding, image, measurement or external-evaluator setting.",
     "The reporter reads aggregate files only, performs no inference, retries or provider calls, and changes no inference configurations or frozen results. Its view is a snapshot while workers may continue.",
     "A finished shard is partial task coverage. Whole-task completion from shards requires an explicit completed aggregate score whose offline validation proves the unique case-ID union matches the full declared test set, with no missing or extra cases.",
+    "Execution can complete while full-planned primary metrics remain undefined. Parsed-only, strict-label, offline reference and other diagnostics remain separate and cannot establish valid whole-task benchmark completion.",
 ]
 
 
@@ -86,9 +96,60 @@ def _protocol_kind(variant):
 
 
 def _has_metrics(metrics):
-    return isinstance(metrics, dict) and any(
-        key not in COUNT_METRICS and not key.startswith("n_") for key in metrics
-    )
+    return isinstance(metrics, dict) and any(_metric_leaves(metrics))
+
+
+def _metric_leaves(metrics):
+    """Reported scalar scores (including undefined ones), excluding counts/prose."""
+    for path, value in _flatten_metrics(metrics):
+        leaf = path[-1].lower()
+        if (leaf in COUNT_METRICS or leaf.startswith(("n_", "num_")) or leaf.endswith(("_count", "_counts"))
+                or isinstance(value, bool)):
+            continue
+        if value is None or _number(value) is not None:
+            yield path, value
+
+
+def _primary_metric_validity(score):
+    """Resolve old/new score contracts without promoting diagnostics to primary.
+
+    This is reporting metadata only: original score fields and metric values
+    remain unchanged. Legacy full-test Spearman cannot be rescued by a finite
+    parsed-only correlation, another auxiliary metric, or numeric case counts.
+    """
+    if not score:
+        return None, "No aggregate score artifact."
+    declared = score.get("full_planned_primary_metrics_valid")
+    if declared is False:
+        return False, "Frozen scorer explicitly marks full-planned primary metrics invalid."
+    if declared is not None and declared is not True:
+        return False, "Frozen primary-validity flag is not a boolean true/false contract."
+    metrics = score.get("metrics", {})
+    if not isinstance(metrics, dict):
+        return False, "Aggregate contains no scalar primary metric object."
+    leaves = list(_metric_leaves(metrics))
+    primary = [(path, value) for path, value in leaves if not any(
+        "parsed_only" in part.lower() or "diagnostic" in part.lower()
+        or part.upper().startswith("OFFLINE_") or part.upper() == "STRICT_FINAL_LABEL" for part in path)]
+    names = score.get("primary_metric_names")
+    if names:
+        if not isinstance(names, list) or any(not isinstance(name, str) for name in names):
+            return False, "Declared primary metric names are not a fixed string list."
+        selected = []
+        for name in names:
+            matches = [(path, value) for path, value in primary if ".".join(path) == name or path[-1] == name]
+            if not matches:
+                return False, "A declared primary metric is missing from the reported scalar metrics: " + name
+            selected.extend(matches)
+        primary = selected
+        basis = "Declared fixed primary metric names, excluding diagnostic/count namespaces."
+    elif any(key.lower() == "spearman" for key in metrics):
+        primary = [(path, value) for path, value in primary if len(path) == 1 and path[0].lower() == "spearman"]
+        basis = "Legacy full-test Spearman contract; parsed-only and auxiliary values cannot complete it."
+    else:
+        basis = "Legacy reported primary scalar metrics, excluding diagnostic/count/prose namespaces."
+    valid = bool(primary) and all(_number(value) is not None and math.isfinite(value) for _, value in primary)
+    return valid, basis
 
 
 def _modalities(fields, description=""):
@@ -183,11 +244,27 @@ def _shard_coverage(score, config, progress):
     expected = _number(validation.get("expected_test_case_count"))
     valid_union = (validation.get("complete") is True and validation.get("union_matches_full_test_ids") is True
                    and expected is not None and expected > 0 and validation.get("unique_observed_case_count") == expected
-                   and validation.get("missing_case_count") == 0 and validation.get("extra_case_count") == 0)
+                   and validation.get("missing_case_count") == 0 and validation.get("extra_case_count") == 0
+                   and validation.get("duplicate_case_count", 0) == 0)
+    # P43 is one catalog setting with three separately scored native source
+    # tests. A completed dataset remains a component even without shard flags.
+    # The dedicated aggregate validates all 16,533 exact IDs, while preserving
+    # dataset-specific AUROC/AP instead of inventing a pooled paper metric.
+    component_setting = "P43" in (_task_ids(score) or _task_ids(config))
+    dataset = _first(score.get("dataset"), config.get("dataset"))
+    component_union = (valid_union and expected == 16533
+                       and scope in {"native_source_test_union_separate_dataset_metrics",
+                                     "complete_three_native_tests_separate_metrics"})
+    coverage_complete = ((not uses_shards or valid_union)
+                         and (not component_setting or component_union))
     return {
         **metadata, "uses_shards": uses_shards, "full_test_id_union_validation": validation,
+        "uses_dataset_components": component_setting, "dataset_component": dataset,
         "complete_aggregate_union_verified": valid_union,
-        "task_coverage_complete": not uses_shards or valid_union,
+        "task_coverage_complete": coverage_complete,
+        "partial_coverage_reason": ("P43 dataset component; complete 16,533-ID three-test union unverified"
+                                    if component_setting and not component_union else
+                                    "shard only; full test-ID union unverified" if not coverage_complete else None),
     }
 
 
@@ -209,6 +286,44 @@ def _run_state(scores, progress, planned, terminal, metrics):
     if progress:
         return "running" if stage == "running" or terminal else "pending", failures
     return "queued", failures
+
+
+def _qualify_p29_split_coverage(runs):
+    """One setting needs both fixed source splits; their metrics stay separate."""
+    expected = {"id": 6989, "ood": 7883}
+    groups = {}
+    for run in runs:
+        if run["task_ids"] != ["P29"]:
+            continue
+        split = run.get("native_split")
+        validation = run["sharding"]["full_test_id_union_validation"]
+        component_complete = (split in expected and run["task_coverage_complete"]
+            and run["sharding"]["complete_aggregate_union_verified"]
+            and validation.get("expected_test_case_count") == expected[split]
+            and validation.get("unique_observed_case_count") == expected[split]
+            and run["planned"] == expected[split] and run["completed"] == expected[split]
+            and run["state"] in FINAL_STATES and run["task_specific_metrics"])
+        run["native_split_coverage_complete"] = component_complete
+        run["task_coverage_complete"] = run["sharding"]["task_coverage_complete"] = False
+        run["sharding"]["partial_coverage_reason"] = "P29 needs both exact full ID6,989 and OOD7,883 source unions (14,872 total); one split or shard is partial setting coverage."
+        identity = tuple(run.get(key) for key in ["model", "model_revision", "protocol_variant", "protocol_kind"])
+        if component_complete and all(identity):
+            groups.setdefault(identity, {}).setdefault(split, []).append(run)
+    for splits in groups.values():
+        # Never pick a better same-split run if multiple eligible executions
+        # appear. Root can reconcile their identities without outcome selection.
+        if set(splits) != set(expected) or any(len(values) != 1 for values in splits.values()):
+            continue
+        components = [splits[split][0] for split in expected]
+        record = {"complete": True, "required_native_split_counts": expected,
+                  "full_setting_case_count": sum(expected.values()),
+                  "source_split_unions": {run["native_split"]: {"run_id": run["run_id"],
+                      "validation": run["sharding"]["full_test_id_union_validation"]} for run in components},
+                  "policy": "Both fixed source split unions validated separately under the same model/revision/variant. ID/OOD metrics remain separate; no pooled metric or average is created."}
+        for run in components:
+            run["task_coverage_complete"] = run["sharding"]["task_coverage_complete"] = True
+            run["sharding"]["partial_coverage_reason"] = None
+            run["full_setting_split_coverage_validation"] = record
 
 
 def build_report(root: Path, generated_at: str | None = None):
@@ -277,6 +392,91 @@ def build_report(root: Path, generated_at: str | None = None):
     execution_review = read_json("reports/catalog_execution_review_2026-10-15.json", {}) or {}
     execution_by_task = {entry.get("id", entry.get("task_id")): entry for entry in execution_review.get("tasks", [])}
     protocol_hold = read_json("reports/labbench_protocol_review_hold.json", {}) or {}
+    source_review_hold = read_json("reports/mutadescribe_source_review_hold.json", {}) or {}
+    v04_qualification = read_json("reports/v04_output_format_qualification.json", {}) or {}
+    vision_doc = read_json(VISION_INTEGRITY, {}) or {}
+    recovery_doc = read_json(SOURCE_RECOVERY, {}) or {}
+    gap_doc = read_json(POSTTRAIN_GAPS, {}) or {}
+    p34_doc = read_json(P34_FEASIBILITY, {}) or {}
+    nature_generation_doc = read_json(NATURE_GENERATION_FEASIBILITY, {}) or {}
+    design_doc = read_json(DESIGN_FEASIBILITY, {}) or {}
+    source_reviews = {}
+    for entry in recovery_doc.get("tasks", []):
+        task_id = entry.get("task_id")
+        if task_id in {"P09", "P19", "P20", "P21", "P22", "P27", "V07"}:
+            review = _pick(entry, {"task_id", "status", "task", "required_native_information", "reference_answer_source",
+                "native_metric", "native_cases_verified", "official_release", "verified_facts", "blockers", "resolution",
+                "execution_authorized", "inference_performed", "prepared_model_cases"})
+            review.update(source_file=SOURCE_RECOVERY, source_sha256=provenance[SOURCE_RECOVERY],
+                          report_created_at_utc=recovery_doc.get("created_at_utc"))
+            source_reviews[task_id] = review
+    for task_id in ["N04", "N05"]:
+        entry = gap_doc.get(task_id)
+        if isinstance(entry, dict):
+            review = _pick(entry, {"status", "task_identity", "required_artifacts", "author_release_link", "required_input_contract",
+                "metric_contract", "source_locator", "split_fallback_hazard", "missing", "no_substitution", "execution_authorized",
+                "required_inputs", "native_metric_from_paper", "author_code_tree_audit", "upstream_artifacts_verified"})
+            review.update(task_id=task_id, source_file=POSTTRAIN_GAPS, source_sha256=provenance[POSTTRAIN_GAPS],
+                          report_date_utc=gap_doc.get("date_utc"),
+                          publisher_source=_pick(gap_doc, {"source_code_repository", "source_code_revision", "paper_source"}))
+            if entry.get("unauthenticated_observation"):
+                review["unauthenticated_observation"] = _pick(entry["unauthenticated_observation"], {"url", "http_status", "sha256", "checked_utc"})
+            source_reviews[task_id] = review
+    if p34_doc.get("task_id") == "P34":
+        oracle = p34_doc.get("oracle_and_metrics", {})
+        source_reviews["P34"] = {
+            "task_id": "P34", "status": p34_doc.get("status"),
+            "reporting_state": "source_protocol_unresolved",
+            "source_file": P34_FEASIBILITY, "source_sha256": provenance[P34_FEASIBILITY],
+            "report_date_utc": p34_doc.get("date"),
+            "required_native_information": "Full current protein, fixed source function/objective, native ESM-token position axis and all33 residue classes; exact source proposal/prior/sampler and fixed trained landscape oracle. A Qwen replacement head needs a prospectively frozen likelihood interface.",
+            "native_metric": oracle.get("metrics"),
+            "reference_answer_source": oracle.get("reference_source"),
+            "native_split_contract": "Five permitted landscapes are a qualified subset; the sixth remains held. No full six-landscape completion is established.",
+            "allowed_landscapes": p34_doc.get("allowed_landscapes", []),
+            "entire_six_landscape_paper_setting_completed": p34_doc.get("entire_six_landscape_paper_setting_completed", False),
+            "prediction_task_retained": p34_doc.get("conclusion", {}).get("prediction_task_retained", True),
+            "missing_learned_head_is_not_task_exclusion": p34_doc.get("conclusion", {}).get("missing_learned_qwen_joint_head_is_not_a_task_exclusion"),
+            "qualified_adapter_mathematically_possible": p34_doc.get("conclusion", {}).get("qualified_adapter_mathematically_possible"),
+            "source_paper_protocol_differences": p34_doc.get("source_paper_protocol_differences", []),
+            "full_five_budget_if_complete": oracle.get("full_five_budget_if_complete"),
+            "likelihood_runtime_cost": _pick(p34_doc.get("likelihood_runtime_cost", {}), {
+                "status", "exact_expression", "conditional_all_five_initial_length_unchanged_complete_label_evaluations",
+                "conditional_all_five_initial_length_unchanged_prefix_free_event_evaluations", "http_qualification", "wall_clock", "base_weights_if_later_authorized_bytes"}),
+            "blockers": p34_doc.get("remaining_blockers_or_decisions", []),
+            "execution_authorized": False, "inference_performed": False, "prepared_model_cases": 0,
+            "source_only_audit_not_execution": True,
+        }
+    for entry in nature_generation_doc.get("tasks", []):
+        task_id = entry.get("task_id")
+        if task_id not in {"P37", "P38"}:
+            continue
+        interpretation = entry.get("interpretation", {})
+        review = _pick(entry, {"task_id", "status", "native_metrics", "natural_reference", "partial_native_metric_feasibility", "source_prompt_or_input"})
+        review.update({
+            "reporting_state": "source_protocol_unresolved",
+            "source_file": NATURE_GENERATION_FEASIBILITY, "source_sha256": provenance[NATURE_GENERATION_FEASIBILITY],
+            "report_date_utc": nature_generation_doc.get("created_at_utc"),
+            "required_native_information": interpretation.get("information_supplied_to_solver"),
+            "native_metric": "; ".join(entry.get("native_metrics", {}).keys()),
+            "reference_answer_source": interpretation.get("reference_answer_source"),
+            "native_split_contract": "Native generated cohort counts, sampling manifest and exact reference snapshot remain unrecovered. Illustrative prompts are not benchmark cases or a generation budget.",
+            "blockers": entry.get("residual_blockers", []),
+            "prediction_task_retained": nature_generation_doc.get("native_tasks_retained", True),
+            "execution_authorized": False, "inference_performed": nature_generation_doc.get("inference_performed", False),
+            "prepared_model_cases": 0, "source_only_audit_not_execution": True,
+        })
+        source_reviews[task_id] = review
+    for entry in design_doc.get("tasks", []):
+        task_id = entry.get("task_id")
+        if task_id not in {"P35", "P36", "P39", "P40", "P41"}:
+            continue
+        review = _pick(entry, {"task_id", "status", "reporting_state", "task", "required_native_information", "native_metric",
+            "reference_answer_source", "native_split_contract", "artifact_availability", "blockers", "prospective_feasibility", "publisher_source",
+            "prediction_task_retained", "execution_authorized", "inference_performed", "prepared_model_cases", "native_dispatch_ready"})
+        review.update(source_file=DESIGN_FEASIBILITY, source_sha256=provenance[DESIGN_FEASIBILITY],
+                      report_created_at_utc=design_doc.get("created_at_utc"), source_only_audit_not_execution=True)
+        source_reviews[task_id] = review
     configs_by_run, config_paths, run_queues = {}, {}, {}
     jobs = [(queue_path, job) for queue_path, document in queue_docs.items() for job in document.get("jobs", [])]
     for queue_path, job in jobs:
@@ -290,6 +490,26 @@ def build_report(root: Path, generated_at: str | None = None):
             configs_by_run[config["run_id"]] = config
             config_paths[config["run_id"]] = path
             run_queues.setdefault(config["run_id"], []).append(queue_path)
+    # Terminal queue history also covers failures before a run manifest exists.
+    # A historical row must match the config's exact run ID before it can alter
+    # status; it never authorizes retries or changes inference configuration.
+    queue_history = {}
+    for progress_path, document in queue_progress_docs.items():
+        finished = document.get("finished", {})
+        if not isinstance(finished, dict):
+            continue
+        for config_path, record in finished.items():
+            if not isinstance(record, dict) or _number(record.get("exit_code")) is None:
+                continue
+            config = _pick(read_json(config_path, {}) or {}, CONFIG_FIELDS)
+            run_id = config.get("run_id")
+            if not run_id or record.get("run_id") != run_id:
+                warnings.append(f"Terminal queue history run/config mismatch: {progress_path}: {config_path}; status not applied.")
+                continue
+            configs_by_run.setdefault(run_id, config)
+            config_paths.setdefault(run_id, config_path)
+            queue_history.setdefault(run_id, []).append({"source_path": progress_path, "config_file": config_path,
+                **_pick(record, {"run_id", "exit_code", "finished_at_utc"})})
     comparison_doc = read_json(COMPARISONS, {}) or {}
     comparisons = {}
     for entry in comparison_doc.get("tasks", []):
@@ -298,7 +518,7 @@ def build_report(root: Path, generated_at: str | None = None):
             "unverified_or_missing", "published_full_case_count", "released_public_case_count",
         })
 
-    score_docs, progress_docs, score_paths = {}, {}, {}
+    score_docs, progress_docs, score_paths, completion_docs = {}, {}, {}, {}
     for path in sorted((root / "results/runs").glob("*/scores.json")):
         relative = path.relative_to(root)
         doc = read_json(relative, {}) or {}
@@ -309,7 +529,9 @@ def build_report(root: Path, generated_at: str | None = None):
         doc = read_json(path.relative_to(root), {}) or {}
         run_id = _first(doc.get("run_id"), doc.get("run"), path.parent.name)
         progress_docs[run_id] = doc
-    known_runs = set(score_docs) | set(configs_by_run) | set(registry_by_run)
+    for path in sorted((root / "results/runs").glob("*/completion.json")):
+        completion_docs[path.parent.name] = read_json(path.relative_to(root), {}) or {}
+    known_runs = set(score_docs) | set(configs_by_run) | set(registry_by_run) | set(queue_history)
     if first_status.get("run_id"):
         known_runs.add(first_status["run_id"])
     # Historic API progress lacks local model/task metadata and is not a local
@@ -331,6 +553,7 @@ def build_report(root: Path, generated_at: str | None = None):
         task_ids = _task_ids(score) or _task_ids(config) or _task_ids(progress) or sorted({e["task_id"] for e in registry_entries})
         variant = _first(score.get("protocol_variant"), score.get("variant"), config.get("protocol_variant"), config.get("variant"), registry.get("protocol_variant"))
         metrics = score.get("metrics", {})
+        primary_valid, primary_validity_basis = _primary_metric_validity(score)
         planned = _first(_number(score.get("planned")), _number(progress.get("planned")))
         statuses = score.get("statuses", progress.get("statuses", {}))
         status_total = sum(v for v in statuses.values() if _number(v) is not None) if statuses else None
@@ -340,23 +563,95 @@ def build_report(root: Path, generated_at: str | None = None):
                           _number(score.get("completed")),
                           _number(progress.get("finished")), status_total)
         state, failures = _run_state(score, progress, planned, terminal, metrics)
+        completion = completion_docs.get(run_id, {})
+        terminal_checks = []
+        if any(record["exit_code"] != 0 for record in queue_history.get(run_id, [])):
+            terminal_checks.append("Matching terminal queue history records a nonzero exit code; this config is not retried.")
+        if completion:
+            if completion.get("generation_exit_code") is not None and completion["generation_exit_code"] != 0:
+                terminal_checks.append("Terminal generation exit code is nonzero; available scored outputs remain visible as incomplete execution.")
+            if completion.get("scoring_exit_code") is not None and completion["scoring_exit_code"] != 0:
+                terminal_checks.append("Terminal completion records a failed scorer.")
+            if score and completion.get("scoring_exit_code") is None:
+                terminal_checks.append("Scores exist but terminal completion does not verify successful scoring.")
+            expected_score = completion.get("scores_sha256")
+            if expected_score and expected_score != provenance.get(score_paths.get(run_id)):
+                terminal_checks.append("Terminal scores SHA-256 differs from the current aggregate score file.")
+                warnings.append(f"Terminal score hash mismatch for {run_id}; completed coverage excluded.")
+            expected_config = completion.get("configuration_sha256")
+            if expected_config and config_paths.get(run_id) and expected_config != provenance.get(config_paths[run_id]):
+                terminal_checks.append("Terminal configuration SHA-256 differs from the current queued config.")
+                warnings.append(f"Terminal configuration hash mismatch for {run_id}; completed coverage excluded.")
+        if terminal_checks:
+            state = "failed_or_stopped"
         supplied = registry.get("actual_supplied_information", {})
         observed_fields = supplied.get("observed_model_input_fields", score.get("observed_model_input_fields", []))
         observed_interface = registry.get("input_interface") if supplied.get("status") == "dispatched" else None
         observed_modalities = _first(score.get("input_modalities"), _modalities(observed_fields, observed_interface))
         configured_modalities = _first(config.get("input_modalities"), _modalities(config.get("model_facing_fields", [])))
         sharding = _shard_coverage(score, config, progress)
+        format_qualification = None
+        if v04_qualification.get("run_id") == run_id and v04_qualification.get("task_id") in task_ids:
+            format_qualification = _pick(v04_qualification, {
+                "task_id", "run_id", "native_qualified_strict_accuracy", "prediction_only_format_audit",
+                "protocol", "interpretation", "explanation_correctness", "raw_score_preserved", "score_sha256", "source",
+            })
+            format_qualification["source_file"] = "reports/v04_output_format_qualification.json"
+            format_qualification["score_sha256_matches"] = v04_qualification.get("score_sha256") == provenance.get(score_paths.get(run_id))
+            format_qualification["display_caveat"] = (
+                "V04's zero score measures whole-final strict exact matching under the frozen original question-plus-image condition. "
+                "The prediction-only format audit found 500 multiline final answers, 15–263 words each (median 70), with 487 using bold Markdown. "
+                "This does not establish 500 incorrect clinical predictions or absence of visual evidence use. Explanation correctness is unassessed; score and parser remain unchanged."
+            )
+            if not format_qualification["score_sha256_matches"]:
+                format_qualification["display_caveat"] = "Historical V04 output-format qualification has a score-hash mismatch with the current aggregate; reconcile versions before applying its 500-answer interpretation. This reporter performed no rescoring or score changes."
+                warnings.append(f"Output-format qualification score hash does not match current aggregate for {run_id}; qualification requires version reconciliation.")
+        input_integrity_qualification = None
+        vision_rows = [row for row in vision_doc.get("audited_runs", []) if row.get("run_id") == run_id and row.get("task_id") in task_ids]
+        if len(vision_rows) == 1:
+            row = vision_rows[0]
+            matches = row.get("score_sha256") == provenance.get(score_paths.get(run_id))
+            input_integrity_qualification = {**row, "qualification_kind": "vision_source_and_request_integrity",
+                "source_file": VISION_INTEGRITY, "source_sha256": provenance[VISION_INTEGRITY],
+                "source_audit": vision_doc.get("source_audit"), "score_sha256_matches": matches,
+                "pretraining_exposure": vision_doc.get("pretraining_exposure"),
+                "evidence_read": "Compact aggregate metadata only; per-case proofs, original inputs, requests, answers and model reasoning are not opened by this reporter."}
+            check_names = ["source_choices_and_target_mapping_verified", "actual_request_provenance_verified",
+                           "no_extra_reference_fields_detected", "publisher_images_verified"]
+            checks_passed = all(row.get(name) is True for name in check_names)
+            input_integrity_qualification["source_checks_all_passed"] = checks_passed
+            caveat = (f"Source choices/target mapping, publisher images and saved request provenance reconciled for {row.get('cases')} cases; no extra scorer-reference fields were detected in requests. "
+                      if checks_passed else "The aggregate input-integrity audit reports unresolved source checks; inspect its recorded evidence. ")
+            if row.get("task_id") == "B04":
+                encoding = vision_doc.get("B04_native_wrapper_encoding", {})
+                input_integrity_qualification["source_encoding_diagnostic"] = vision_doc.get("source_encoding_diagnostic")
+                input_integrity_qualification["native_wrapper_encoding"] = encoding
+                caveat += ("Local FigQA retained original publisher JPEG bytes. The pinned native author wrapper re-encodes images using PIL Image.save(); "
+                           f"a diagnostic Pillow {encoding.get('diagnostic_pillow_version')} replay changed encoded bytes for {encoding.get('encoded_bytes_changed')}/{encoding.get('cases')} images "
+                           f"and decoded RGB pixels for {encoding.get('decoded_pixels_changed')}/{encoding.get('cases')}. "
+                           "Historical runtime/encoding equality is unknown and the accuracy effect is unassessed; this does not explain the score gap. ")
+            else:
+                caveat += "TableQA retained original publisher PNG images; no local case/image/target mapping mismatch was detected. "
+            caveat += "Public pretraining exposure remains unknown, and these checks do not validate explanations or establish stronger reasoning."
+            if not matches:
+                caveat = "Historical vision source-integrity qualification has a score-hash mismatch with the current aggregate; reconcile versions before applying its case checks or encoding diagnosis. No rescoring was performed."
+                warnings.append(f"Vision input-integrity qualification score hash mismatch for {run_id}; qualification requires version reconciliation.")
+            input_integrity_qualification["display_caveat"] = caveat
         run = {
             "run_id": run_id, "task_ids": task_ids, "protocol_variant": variant,
             "protocol_kind": _first(score.get("reporting_protocol_kind"), config.get("reporting_protocol_kind"), _protocol_kind(variant)), "state": state,
             "protocol_classification_basis": "Explicit repository reporting nomenclature or frozen reporting_protocol_kind metadata; no task-demand/internal-computation inference.",
-            "task_specific_metrics": len(task_ids) == 1 and _has_metrics(metrics),
+            "task_specific_metrics": len(task_ids) == 1 and _has_metrics(metrics) and primary_valid is True,
             "task_coverage_complete": sharding["task_coverage_complete"],
             "sharding": sharding, "source_queues": run_queues.get(run_id, []),
+            "terminal_queue_history": queue_history.get(run_id, []), "terminal_status_qualifications": terminal_checks,
+            "terminal_completion": _pick(completion, {"generation_exit_code", "generation_audit_exit_code", "scoring_exit_code",
+                "finished_at_utc", "status", "configuration_sha256", "run_manifest_sha256", "scores_sha256", "retry_or_resampling"}),
             "model": _first(score.get("model"), config.get("model"), registry.get("model"), status.get("model")),
             "model_revision": _first(score.get("model_revision"), config.get("model_revision"), registry.get("model_revision")),
             "checkpoint_precision": _first(score.get("checkpoint_precision"), config.get("checkpoint_precision")),
             "case_scope": _first(score.get("case_scope"), config.get("case_scope"), "unspecified; consult frozen run protocol"),
+            "native_split": _first(score.get("native_split"), config.get("native_split")),
             "planned": planned, "finished": terminal, "completed": _first(score.get("completed"), statuses.get("completed")),
             "parsed": score.get("parsed"), "invalid_outputs": score.get("invalid_outputs"),
             "failure_count": failures, "statuses": statuses, "finish_reasons": score.get("finish_reasons", {}),
@@ -378,6 +673,13 @@ def build_report(root: Path, generated_at: str | None = None):
             "metric_counts": score.get("metric_counts"),
             "primary_metric_names": score.get("primary_metric_names"),
             "primary_metric_status": score.get("primary_metric_status"),
+            "full_planned_primary_metrics_valid": primary_valid,
+            "reported_full_planned_primary_metrics_valid": score.get("full_planned_primary_metrics_valid"),
+            "primary_metric_validity_basis": primary_validity_basis,
+            "full_native_metric_set_complete": _first(score.get("full_native_metric_set_complete"), config.get("full_native_metric_set_complete")),
+            "confidence_diagnostics": score.get("confidence_diagnostics"),
+            "output_format_qualification": format_qualification,
+            "input_integrity_qualification": input_integrity_qualification,
             "strict_diagnostic_namespace": score.get("strict_diagnostic_namespace"),
             "native_decode_byte_equivalence_claimed": score.get("native_decode_byte_equivalence_claimed"),
             "scorer_sha256": score.get("scorer_sha256"),
@@ -394,6 +696,8 @@ def build_report(root: Path, generated_at: str | None = None):
             warnings.append(f"Run {run_id} has aggregate metrics across multiple tasks; no per-task completion inferred.")
         runs.append(run)
 
+    _qualify_p29_split_coverage(runs)
+
     tasks = []
     for source in source_tasks:
         task_id = source["id"]
@@ -401,14 +705,29 @@ def build_report(root: Path, generated_at: str | None = None):
         task_runs = [r for r in runs if task_id in r["task_ids"]]
         complete = [r for r in task_runs if r["state"] in FINAL_STATES and r["task_specific_metrics"] and r["task_coverage_complete"]]
         completed_shards = [r for r in task_runs if r["state"] in FINAL_STATES and not r["task_coverage_complete"]]
-        native = [r for r in complete if r["protocol_kind"] == "native"]
+        native = [r for r in complete if r["protocol_kind"] == "native" and r.get("full_native_metric_set_complete") is not False]
         adapted = [r for r in complete if r["protocol_kind"] == "adapted"]
         execution = execution_by_task.get(task_id, {})
+        reviewed_source = source_reviews.get(task_id)
         qualified_hold = _pick(protocol_hold, {"task_id", "stage", "total_public_cases", "review_complete", "reason", "known_held_case_ids", "remaining_cases", "provider_hold_unchanged"}) if protocol_hold.get("task_id") == task_id else None
+        qualified_source_hold = None
+        if task_id in source_review_hold.get("task_ids", []):
+            qualified_source_hold = _pick(source_review_hold, {
+                "recorded_at_utc", "task_ids", "stage", "triggered_agent", "exact_trigger_case_unknown",
+                "inference_dispatched", "scope_status", "reason", "actual_model_generations",
+            })
+            qualified_source_hold["source_file"] = "reports/mutadescribe_source_review_hold.json"
+            qualified_source_hold["classification_qualification"] = "Unreviewed source scope remains held; the exact triggering case is unknown. This hold does not classify every released descriptive case as prohibited."
         blocker = _catalog_blocker(execution) if execution else _native_blocker(ready.get("readiness", ""), ready.get("notes", ""))
+        if reviewed_source:
+            blocker = (reviewed_source.get("reporting_state") or
+                       ("source_access_gated_case_review_pending" if task_id in {"P19", "P20", "P21", "P22"}
+                        else "source_access_authentication_blocked" if task_id == "N04" else "source_protocol_unresolved"))
         if qualified_hold:
             blocker = "prohibited_or_held"
-        if blocker == "prohibited_or_held":
+        if qualified_source_hold:
+            blocker = state = "unreviewed_source_scope_held"
+        elif blocker == "prohibited_or_held":
             state = blocker
         elif native:
             state = "completed_native_variant"
@@ -418,13 +737,17 @@ def build_report(root: Path, generated_at: str | None = None):
             state = "generation_complete_unscored"
         elif any(r["state"] == "queued" for r in task_runs):
             state = "queued"
-        elif completed_shards:
-            state = "partial_task_coverage"
         elif adapted:
             state = "completed_adapted_variant_native_incomplete"
+        elif completed_shards:
+            state = "partial_task_coverage"
+        elif any(r["state"] in FINAL_STATES and r.get("full_planned_primary_metrics_valid") is False for r in task_runs):
+            state = "scored_primary_metrics_undefined"
+        elif any(r["state"] in FINAL_STATES and r.get("full_native_metric_set_complete") is False for r in task_runs):
+            state = "scored_native_metric_set_incomplete"
         elif any(r["state"] == "failed_or_stopped" for r in task_runs):
             state = "failed_or_stopped"
-        elif blocker in {"external_evaluator_unavailable", "external_evaluator_pending", "protocol_unavailable", "source_unavailable", "source_protocol_mismatch", "source_protocol_unresolved", "source_acquisition_pending", "native_training_regime_blocked", "native_protocol_setup_pending", "assay_scope_review_pending", "blocked"}:
+        elif blocker in {"external_evaluator_unavailable", "external_evaluator_pending", "protocol_unavailable", "source_unavailable", "source_protocol_mismatch", "source_protocol_unresolved", "source_acquisition_pending", "native_training_regime_blocked", "native_protocol_setup_pending", "assay_scope_review_pending", "source_access_gated_case_review_pending", "source_access_authentication_blocked", "blocked"}:
             state = blocker
         elif str(execution.get("status", "")).startswith("prepared_verified") or "prepared_execution" in str(execution.get("status", "")):
             state = "prepared"
@@ -436,11 +759,38 @@ def build_report(root: Path, generated_at: str | None = None):
             state = "not_prepared"
         native_blockers = []
         if not native:
+            for run in task_runs:
+                if run["terminal_status_qualifications"]:
+                    native_blockers.append({"kind": "terminal_execution_failure", "run_id": run["run_id"],
+                        "evidence": " ".join(run["terminal_status_qualifications"]),
+                        "terminal_queue_history": run["terminal_queue_history"], "source": "Aggregate completion and matching queue terminal history only; no retry performed."})
+            if qualified_source_hold:
+                native_blockers.append({"kind": "unreviewed_source_scope_held", "evidence": qualified_source_hold.get("reason"),
+                                        "source": qualified_source_hold["source_file"], "qualification": qualified_source_hold["classification_qualification"]})
             if qualified_hold:
                 native_blockers.append({"kind": "input_review_hold", "evidence": qualified_hold.get("reason"), "source": "reports/labbench_protocol_review_hold.json", "qualification": qualified_hold.get("remaining_cases")})
             if completed_shards:
-                native_blockers.append({"kind": "shard_union_not_validated", "evidence": "Finished shards do not establish the full test-ID union; a completed validated aggregate score is required."})
-            if execution.get("blockers"):
+                native_blockers.append({"kind": "partial_source_coverage", "evidence": "Finished shards or dataset components do not establish the full test-ID union; a completed validated aggregate score is required."})
+            for run in task_runs:
+                if run.get("full_native_metric_set_complete") is False:
+                    native_blockers.append({"kind": "native_metric_set_incomplete", "run_id": run["run_id"],
+                        "evidence": "Only the declared qualified metric subset is available; unscored required native metrics remain null. This does not complete the full native protocol."})
+                if run["state"] in FINAL_STATES and run["full_planned_primary_metrics_valid"] is False:
+                    native_blockers.append({"kind": "full_planned_primary_metrics_undefined", "run_id": run["run_id"],
+                        "evidence": "Execution completed on the declared cases but full-planned primary scoring is invalid/undefined. Finite parsed-only, strict-label, offline reference, auxiliary or count values do not complete the primary benchmark contract.",
+                        "validity_basis": run["primary_metric_validity_basis"]})
+            if reviewed_source:
+                source_notes = reviewed_source.get("blockers", reviewed_source.get("missing", []))
+                native_blockers.extend({"kind": blocker, "evidence": note, "source": reviewed_source["source_file"],
+                                        "source_sha256": reviewed_source["source_sha256"], "qualified_metadata": True} for note in source_notes)
+                if task_id in {"P19", "P20", "P21", "P22"}:
+                    native_blockers.insert(0, {"kind": blocker, "evidence": "Official PFArena release recovered; unauthenticated schema access returned HTTP 401. No gated raw data downloaded or access terms accepted; task/case review remains pending.",
+                                              "source": reviewed_source["source_file"], "qualified_metadata": True})
+                if task_id == "V07":
+                    native_blockers.append({"kind": "synthetic_fallback_not_benchmark_data", "evidence": "The source BenchmarkRunner creates synthetic placeholder rows if a benchmark JSON is absent. These are not valid Ryze component test data and cannot complete V07.", "source": reviewed_source["source_file"]})
+                if task_id == "N04":
+                    native_blockers.insert(0, {"kind": blocker, "evidence": "The author Drive release redirects unauthenticated access to Google sign-in. HTTP 200 is the sign-in page, not the native CSV test release; no random-split fallback or N01 substitution.", "source": reviewed_source["source_file"]})
+            elif execution.get("blockers"):
                 native_blockers.extend({"kind": blocker or "dated_execution_review_blocker", "evidence": note,
                                         "source": "reports/catalog_execution_review_2026-10-15.json", "qualified_metadata": True,
                                         "current_execution_takes_precedence": bool(task_runs)} for note in execution["blockers"])
@@ -449,18 +799,28 @@ def build_report(root: Path, generated_at: str | None = None):
             if not native_blockers:
                 native_blockers.append({"kind": "no_completed_native_task_score", "evidence": "No completed task-specific native aggregate score in this snapshot."})
         tasks.append({
-            "task_id": task_id, "task_name": source["task"], "state": state,
+            "task_id": task_id, "task_name": ("Bio-posttrain MEDEA target selection" if task_id == "N05" and reviewed_source else source["task"]), "state": state,
             "native_variant_completed": bool(native), "adapted_variant_completed": bool(adapted),
-            "completed_native_variants": [r["protocol_variant"] for r in native],
-            "completed_adapted_variants": [r["protocol_variant"] for r in adapted],
+            "completed_native_variants": list(dict.fromkeys(r["protocol_variant"] for r in native)),
+            "completed_adapted_variants": list(dict.fromkeys(r["protocol_variant"] for r in adapted)),
             "run_ids": [r["run_id"] for r in task_runs],
             "completed_shard_run_ids": [r["run_id"] for r in completed_shards],
             "execution_review": _pick(execution, {"status", "blockers", "next_step", "prepared_or_downloaded_case_count", "native_dataset_identity_verified", "prepared_input_file", "comparison_limit"}),
             "qualified_input_review_hold": qualified_hold,
-            "native_metric": source.get("metrics"), "native_input_contract": source.get("model_input"),
-            "native_split_contract": source.get("split_configuration"),
-            "native_reference_evidence": source.get("reference_evidence"),
-            "source_access_status": source.get("access_status"), "source_url": source.get("access_url"),
+            "qualified_source_review_hold": qualified_source_hold,
+            "qualified_native_source_review": reviewed_source,
+            "result_qualifications": [qualification for r in task_runs for qualification in
+                [r.get("output_format_qualification"), r.get("input_integrity_qualification")] if qualification],
+            "native_metric": (_first(reviewed_source.get("native_metric"), reviewed_source.get("native_metric_from_paper"), reviewed_source.get("metric_contract"), source.get("metrics")) if reviewed_source else source.get("metrics")),
+            "native_input_contract": (_first(reviewed_source.get("required_native_information"), reviewed_source.get("required_inputs"), reviewed_source.get("required_input_contract"), source.get("model_input")) if reviewed_source else source.get("model_input")),
+            "native_split_contract": (_first(reviewed_source.get("native_split_contract"),
+                "Exact adapted split/case-order manifest unresolved; see qualified native source review." if task_id in {"N04", "N05"} else None,
+                source.get("split_configuration")) if reviewed_source else source.get("split_configuration")),
+            "native_reference_evidence": (_first(reviewed_source.get("reference_answer_source"), "Exact adapted split/references are unrecovered; see qualified native source review.") if reviewed_source else source.get("reference_evidence")),
+            "source_access_status": reviewed_source.get("status") if reviewed_source else source.get("access_status"),
+            "source_url": (_first(reviewed_source.get("official_release", {}).get("dataset_url"), reviewed_source.get("author_release_link"),
+                                   reviewed_source.get("publisher_source", {}).get("source_code_repository"), source.get("access_url")) if reviewed_source else source.get("access_url")),
+            "original_catalog_contract": _pick(source, {"task", "metrics", "model_input", "split_configuration", "reference_evidence", "access_status", "access_url"}),
             "original_readiness": ready.get("readiness"), "readiness_notes": ready.get("notes"),
             "prepared_case_count": ready.get("prepared_case_count"),
             "native_completion_blockers": native_blockers,
@@ -524,10 +884,15 @@ def render_markdown(report):
             run["task_ids"], f"{run['run_id']} / {run['protocol_variant']}", run["state"],
             f"{run['model']} / {run['model_revision']}", f"{run['finished']} / {run['planned']}",
             f"{run['failure_count']} / {run['invalid_outputs']} / {run['held_before_inference']}",
-            "declared variant scope" if run["task_coverage_complete"] else "shard only; full test-ID union unverified",
+            "declared variant scope" if run["task_coverage_complete"] else run["sharding"]["partial_coverage_reason"],
         ])) + " |")
     lines += ["", "Queues: " + _cell([q["source_path"] for q in report["queues"]["configurations"]]) + ". "
               + report["queues"]["gpu_metadata_caveat"], ""]
+    for run in report["runs"]:
+        if run["terminal_status_qualifications"]:
+            lines += [f"- Terminal qualification for `{run['run_id']}`: {_cell(' '.join(run['terminal_status_qualifications']))} Queue history: {_cell(run['terminal_queue_history'])}."]
+        if run["state"] in FINAL_STATES and run["full_planned_primary_metrics_valid"] is False:
+            lines += [f"- `{run['run_id']}` completed execution; its full-planned primary score is undefined/invalid and does not count as valid benchmark completion. {_cell(run['primary_metric_validity_basis'])} Reported diagnostic values remain separate."]
     lines += ["", "Metrics retain their original names and units. Partial runs remain partial; undefined values remain null. Counts inside a metric object are retained as counts.", "",
               "| Task IDs | Run | Metric path | Value |", "| --- | --- | --- | --- |"]
     for run in report["runs"]:
@@ -557,13 +922,22 @@ def render_markdown(report):
                 lines += [f"- Local run scope: {_cell(run['comparison_to_paper'])}"]
             if task["task_id"] in run["task_ids"] and run.get("primary_metric_status"):
                 lines += [f"- Primary scoring status: {_cell(run['primary_metric_status'])}; diagnostic namespace: {_cell(run.get('strict_diagnostic_namespace'))}. Native decoded-byte equivalence claimed: {_cell(run.get('native_decode_byte_equivalence_claimed'))}."]
+            if task["task_id"] in run["task_ids"] and run.get("output_format_qualification"):
+                lines += [f"- Result qualification: {_cell(run['output_format_qualification']['display_caveat'])}"]
+            if task["task_id"] in run["task_ids"] and run.get("input_integrity_qualification"):
+                lines += [f"- Source/input qualification: {_cell(run['input_integrity_qualification']['display_caveat'])}"]
         lines += [""]
     lines += ["## Coverage and blockers for every catalog setting", "",
-              "Current aggregate scores/progress take precedence over older readiness snapshots. Preparation alone does not establish dispatch or completion. Native contracts below do not establish what was actually dispatched; exact observed/configured fields remain separate in the JSON.", "",
-              "| ID | Setting | Current state | Native input contract / metric | Native completion blocker | Published comparison |",
+              "Current aggregate scores/progress and matching terminal failure records take precedence over older readiness snapshots. Dated source-recovery audits qualify corrected native source contracts; the immutable original catalog fields and source hashes remain in the JSON. Preparation alone does not establish dispatch or completion. Native contracts below do not establish what was actually dispatched; exact observed/configured fields remain separate in the JSON.", "",
+              "| ID | Setting | Current state | Native input contract / metric | Native completion blocker / result qualification | Published comparison |",
               "| --- | --- | --- | --- | --- | --- |"]
     for task in report["tasks"]:
         blockers = "; ".join(b["kind"] + ": " + str(b["evidence"]) for b in task["native_completion_blockers"]) or "none for this completed variant; paper-scope caveats remain"
+        if task["result_qualifications"]:
+            blockers += "; Result qualification: " + " ".join(row["display_caveat"] for row in task["result_qualifications"])
+        if task["qualified_native_source_review"]:
+            review = task["qualified_native_source_review"]
+            blockers += "; Qualified source review: " + review["source_file"] + " (SHA-256 " + review["source_sha256"] + ")"
         comparison = task["published_comparison"]
         lines.append("| " + " | ".join(map(_cell, [task["task_id"], task["task_name"], task["state"],
             f"{task['native_input_contract']} / {task['native_metric']}", blockers,
@@ -577,11 +951,15 @@ def render_markdown(report):
 
 
 def render_metrics_csv(report):
-    fields = ["task_id", "task_name", "task_state", "run_id", "run_state", "protocol_variant", "protocol_kind", "task_coverage_complete", "sharding", "source_queues",
+    fields = ["task_id", "task_name", "task_state", "run_id", "run_state", "protocol_variant", "protocol_kind", "native_split",
+              "task_coverage_complete", "native_split_coverage_complete", "full_setting_split_coverage_validation", "sharding", "source_queues",
               "model", "model_revision", "checkpoint_precision", "case_scope", "planned", "finished", "completed",
-              "parsed", "invalid_outputs", "failure_count", "held_before_inference", "native_metric", "input_modalities",
+              "parsed", "invalid_outputs", "failure_count", "held_before_inference", "full_planned_primary_metrics_valid",
+              "reported_full_planned_primary_metrics_valid", "primary_metric_validity_basis", "native_metric", "input_modalities",
+              "full_native_metric_set_complete",
               "observed_model_input_fields", "configured_model_input_fields", "metric_name", "metric_path_json", "metric_value_json",
-              "comparison_status", "published_baseline_count", "native_completion_blockers", "source_scores"]
+              "comparison_status", "published_baseline_count", "native_completion_blockers", "result_qualifications", "source_scores",
+              "terminal_queue_history", "terminal_status_qualifications", "terminal_completion", "qualified_native_source_review"]
     buf = io.StringIO(newline="")
     writer = csv.DictWriter(buf, fieldnames=fields)
     writer.writeheader()
@@ -597,7 +975,8 @@ def render_metrics_csv(report):
                            metric_value_json=json.dumps(value, ensure_ascii=False) if path else "",
                            comparison_status=task["published_comparison"].get("comparison_status"),
                            published_baseline_count=len(task["published_comparison"].get("published_baselines", [])),
-                           native_completion_blockers=task["native_completion_blockers"])
+                           native_completion_blockers=task["native_completion_blockers"], result_qualifications=task["result_qualifications"],
+                           qualified_native_source_review=task["qualified_native_source_review"])
                 writer.writerow({key: json.dumps(value, ensure_ascii=False, sort_keys=True) if isinstance(value, (dict, list)) else value for key, value in row.items()})
     return buf.getvalue()
 

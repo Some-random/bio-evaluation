@@ -1,6 +1,6 @@
 """Append executed protocol interpretations without regenerating older records.
 
-Offline reporting only. Existing task/variant records are preserved exactly;
+Offline reporting only. Existing task/variant/split records are preserved exactly;
 conflicting executions need a separately named variant, never replacement.
 """
 import argparse
@@ -20,6 +20,10 @@ def digest(value):
 
 def file_digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def registry_key(row):
+    return row["task_id"], row["protocol_variant"], row.get("native_split")
 
 
 def executed_record(base, folder):
@@ -55,6 +59,9 @@ def executed_record(base, folder):
                outcome_score=scores["metrics"], explanation_support_score=None,
                score_status="completed_with_invalid_outputs" if scores.get("invalid_outputs", 0) else "completed",
                execution_scope_status="user_authorized_reviewed_local_evaluation")
+    if scores.get("native_split", config.get("native_split")) is not None:
+        row["native_split"] = scores.get("native_split", config.get("native_split"))
+        row["execution_coverage"] = "Complete declared native split only; other required splits remain separate and are not implied complete."
     fields = request.get("supplied_fields", config.get("model_facing_fields", []))
     row["prepared_model_facing_fields"] = fields
     row["required_inputs"] = fields
@@ -67,16 +74,32 @@ def executed_record(base, folder):
         "request_hashes_verified": True, "reference_answers_or_explanations_supplied": False,
         "solver_tools": [], "full_request_contract_audit_source": str(folder.relative_to(ROOT) / "scores.json"),
         "representative_request_sha256": file_digest(request_path),
-        "native_required_images_preserved": "image" in modalities or "images" in modalities,
+        "native_required_images_preserved": any("image" in str(item).lower() for item in modalities),
         "generation": config["generation"],
     }
     interpretation = scores.get("interpretation", {})
-    for key in ("reference_answer_source", "good_score_establishes", "bad_score_establishes"):
-        if interpretation.get(key):
-            row[key] = interpretation[key]
-    if interpretation.get("task_demands"):
-        row["task_demands"] = {**interpretation["task_demands"],
+    if not isinstance(interpretation, dict):
+        row["execution_interpretation_note"] = interpretation
+        interpretation = {}
+    aliases = {"reference_answer_source": "reference_evidence",
+               "good_score_establishes": "good_score", "bad_score_establishes": "bad_score"}
+    for key, fallback in aliases.items():
+        value = interpretation.get(key, interpretation.get(fallback))
+        if value:
+            row[key] = value
+    demands = interpretation.get("task_demands", interpretation.get("likely_demands"))
+    if demands is None and isinstance(interpretation.get("likely_demands_provisional"), list):
+        demands = {"labels": interpretation["likely_demands_provisional"]}
+    if isinstance(demands, dict):
+        row["task_demands"] = {**demands,
             "status": "provisional_analyst_inference", "internal_model_computation_established": False}
+    if config.get("approved_task_ids") == ["P29"]:
+        row["actual_supplied_information"].update(
+            reference_answers_or_explanations_supplied=True,
+            direct_curated_reference_files_or_teacher_explanations_supplied=False,
+            native_predictor_context_contributes_to_scoring_target=True,
+            reference_input_dependence=scores.get("native_reference_qualification"))
+        row["input_reference_dependence"] = scores.get("native_reference_qualification")
     row["mechanism_reference_available"] = "not_independently_assessed"
     row["mechanism_reference_note"] = "Outcome scoring does not validate generated explanations. Unsupported claims are not automatically false."
     row["explanation_support"] = {**row.get("explanation_support", {}),
@@ -100,11 +123,11 @@ def executed_record(base, folder):
 
 def merge_records(records, additions):
     result = list(records)
-    index = {(row["task_id"], row["protocol_variant"]): row for row in records}
+    index = {registry_key(row): row for row in records}
     if len(index) != len(records):
         raise ValueError("Duplicate task/variant registry key")
     for row in additions:
-        key = row["task_id"], row["protocol_variant"]
+        key = registry_key(row)
         if key in index:
             if index[key].get("run_id") != row.get("run_id"):
                 raise ValueError("Protocol variant collision requires separate naming: " + str(key))
@@ -136,7 +159,7 @@ def write_tables(records):
         if not row.get("run_id"):
             continue
         supplied = row["actual_supplied_information"]
-        values = [row["task_id"] + " / " + row["protocol_variant"],
+        values = [row["task_id"] + " / " + row["protocol_variant"] + (" / split " + row["native_split"] if row.get("native_split") else ""),
             row["task_demands"], supplied.get("observed_model_input_fields", []),
             row["reference_answer_source"],
             {"score": row["outcome_score"], "validity": row.get("output_validity"), "explanation_support": "not assessed"},
@@ -149,7 +172,7 @@ def write_tables(records):
 def update():
     path = ROOT / "results/interpretation_notes.jsonl"
     records = [json.loads(line) for line in path.read_text().splitlines() if line]
-    existing = {(row["task_id"], row["protocol_variant"]): row for row in records}
+    existing = {registry_key(row): row for row in records}
     additions = []
     for folder in sorted((ROOT / "results/runs").glob("qwen38*")):
         if not all((folder / name).is_file() for name in ("scores.json", "completion.json", "run_manifest.json")):
@@ -160,10 +183,10 @@ def update():
             continue  # Earlier frozen B01 record remains exactly as recorded.
         if task == "P43" and scores.get("dataset"):
             continue  # Three native datasets share one whole-setting registry key.
-        key = task, scores.get("protocol_variant")
+        key = task, scores.get("protocol_variant"), scores.get("native_split")
         if key in existing and existing[key].get("run_id") == folder.name:
             continue
-        base = existing.get((task, "NATIVE_PUBLIC_COT")) or existing.get((task, "NATIVE"))
+        base = existing.get((task, "NATIVE_PUBLIC_COT", None)) or existing.get((task, "NATIVE", None))
         if base is None:
             raise ValueError("No original interpretation contract: " + task)
         row = executed_record(base, folder)

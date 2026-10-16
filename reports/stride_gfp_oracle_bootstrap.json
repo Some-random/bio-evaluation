@@ -1,0 +1,24 @@
+{
+  "isolated_environment": ".venv-oracles",
+  "artifacts": [
+    {
+      "name": "pip",
+      "version": "25.0.1",
+      "metadata_url": "https://pypi.org/pypi/pip/25.0.1/json",
+      "url": "https://files.pythonhosted.org/packages/c9/bc/b7db44f5f39f9d0494071bddae6880eb645970366d0a200022a1a93d57f5/pip-25.0.1-py3-none-any.whl",
+      "sha256": "c46efd13b6aa8279f33f2864459c8ce587ea6a1a59ee20de055868d8f7688f7f",
+      "local_bootstrap_wheel": ".local/stride_gfp_oracle_bootstrap/pip-25.0.1-py3-none-any.whl",
+      "bytes": 1841526
+    },
+    {
+      "name": "PySocks",
+      "version": "1.7.1",
+      "metadata_url": "https://pypi.org/pypi/PySocks/1.7.1/json",
+      "url": "https://files.pythonhosted.org/packages/8d/59/b4572118e098ac8e46e399a1dd0f2d85403ce8bbaad9ec79373ed6badaf9/PySocks-1.7.1-py3-none-any.whl",
+      "sha256": "2725bd0a9925919b9b51739eea5f9e2bae91e83288108a9ad338b2e3a4435ee5",
+      "local_bootstrap_wheel": ".local/stride_gfp_oracle_bootstrap/PySocks-1.7.1-py3-none-any.whl",
+      "bytes": 16725
+    }
+  ],
+  "active_environments_modified": false
+}

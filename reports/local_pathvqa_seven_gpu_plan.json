@@ -1,0 +1,122 @@
+{
+  "frozen_at_utc": "2026-10-15T09:28:21.190953+00:00",
+  "task_id": "V03",
+  "original_config_file": "configs/local_pathvqa.json",
+  "original_config_sha256": "f7fd6790b07464d9ee894076e5a9c68a96a07250c53de421a46469cefb7d7294",
+  "original_unstarted_run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15",
+  "aggregate_config_file": "configs/local_pathvqa_seven_gpu_aggregate.json",
+  "aggregate_config_sha256": "5b24032cec15725e5cbe908e63af9f20dd650078a2461f1e415c0000534f2c71",
+  "aggregate_run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu",
+  "full_test_case_count": 6719,
+  "shard_size": 1024,
+  "shard_count": 7,
+  "shards": [
+    {
+      "config_file": "configs/local_pathvqa_seven_gpu_shard_000.json",
+      "config_sha256": "48177904d769467a4184e9d3ca8069ba0313f40bb3e625637f82fbd23de12d3e",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_000",
+      "shard_index": 0,
+      "cases": 1024,
+      "gpu_ids": [
+        1
+      ],
+      "endpoint": "http://127.0.0.1:8031/v1"
+    },
+    {
+      "config_file": "configs/local_pathvqa_seven_gpu_shard_001.json",
+      "config_sha256": "637441b1375601da53207abe0fb252fd373e1773ac87fa08d46b405c809d64a9",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_001",
+      "shard_index": 1,
+      "cases": 1024,
+      "gpu_ids": [
+        2
+      ],
+      "endpoint": "http://127.0.0.1:8032/v1"
+    },
+    {
+      "config_file": "configs/local_pathvqa_seven_gpu_shard_002.json",
+      "config_sha256": "878dbb855eecd5a7ec0d52fb6f78c8840fc4903f16e188a58f1b21f4114351f5",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_002",
+      "shard_index": 2,
+      "cases": 1024,
+      "gpu_ids": [
+        3
+      ],
+      "endpoint": "http://127.0.0.1:8033/v1"
+    },
+    {
+      "config_file": "configs/local_pathvqa_seven_gpu_shard_003.json",
+      "config_sha256": "fac0ef3e3c14128cac7d36de685b1aa5c1a6770e644176c1911d1dcebc305b49",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_003",
+      "shard_index": 3,
+      "cases": 1024,
+      "gpu_ids": [
+        4
+      ],
+      "endpoint": "http://127.0.0.1:8029/v1"
+    },
+    {
+      "config_file": "configs/local_pathvqa_seven_gpu_shard_004.json",
+      "config_sha256": "28d1123a2ca55d9cbcabe40b6efd2e49616ef346e2537c0a68c42a3abf9cd98c",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_004",
+      "shard_index": 4,
+      "cases": 1024,
+      "gpu_ids": [
+        5
+      ],
+      "endpoint": "http://127.0.0.1:8026/v1"
+    },
+    {
+      "config_file": "configs/local_pathvqa_seven_gpu_shard_005.json",
+      "config_sha256": "cd4a39fc17fce83b609e9160d6bd7bca34824aaa6a8614785e81b700ff47ef61",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_005",
+      "shard_index": 5,
+      "cases": 1024,
+      "gpu_ids": [
+        6
+      ],
+      "endpoint": "http://127.0.0.1:8027/v1"
+    },
+    {
+      "config_file": "configs/local_pathvqa_seven_gpu_shard_006.json",
+      "config_sha256": "488dd8dfebb76ec29124f5a40297befd2856ad529d2c2b6216f33a15a37bba66",
+      "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_006",
+      "shard_index": 6,
+      "cases": 575,
+      "gpu_ids": [
+        7
+      ],
+      "endpoint": "http://127.0.0.1:8028/v1"
+    }
+  ],
+  "full_test_id_union_validation": {
+    "complete": true,
+    "union_matches_full_test_ids": true,
+    "expected_test_case_count": 6719,
+    "unique_observed_case_count": 6719,
+    "missing_case_count": 0,
+    "extra_case_count": 0,
+    "duplicate_case_count": 0,
+    "ordered_case_ids_sha256": "ac3287db5f312961bbb6637ffa1b9c466f61a8d66b145ab277e8e28b6d63929a"
+  },
+  "runner": "scripts/run_local_labbench_eight_gpu.py",
+  "runner_sha256": "de0c69b2eea33d618a7674791d6ae448fd8c086a7ba081e948dafdfdcaed4493",
+  "scorer": "scripts/score_local_pathvqa.py",
+  "execution_approval_file": "configs/local_pathvqa_seven_gpu_execution_approval.json",
+  "unstarted_payload_audit_file": "reports/local_pathvqa_seven_gpu_unstarted_audit.json",
+  "unstarted_payload_audit_sha256": "4e346d27ee5f2d24a155ce102b6ad413995e2a00b3ed7c7625d7f87c3a62e0dd",
+  "inference_dispatched": false,
+  "authorizations_or_queues_modified": false,
+  "metric_policy": {
+    "open_headline": "Pinned official LLaVA-Med normalize_word and calculate_f1score recall, macro per OPEN case; do not substitute generic multiset recall.",
+    "closed_headline": "Declared corrected source substring accuracy with every CLOSED case in denominator; native PathVQA-specific bug-compatible score separately reported with its defective denominator. Strict normalized exact Yes/No accuracy is a separate diagnostic.",
+    "native_cli_blockers": [
+      "run_eval_pvqa.py omits wrong opposite-label predictions from closed denominator",
+      "run_eval_pvqa.py calls calculate_appearance_with_normalization with2arguments but pinned helper requires3; no full native CLI success claim"
+    ],
+    "missing_output_policy": "Keep every frozen case in corrected group denominators; missing/empty outputs score0. Report failures and truncations. Native bug-compatible diagnostic retains source omission behavior and cannot be treated as unbiased accuracy.",
+    "no_combined_metric": true
+  },
+  "source_qualification": "Full released6719-row deduplicated/normalized mirror test, with full questions and images; source native6761 questions differ by42 duplicate rows and text normalization. Model is a zero-shot Qwen vision baseline against task-trained source systems. Compare only metric/split-compatible results with this explicit caveat; no exact paper reproduction or contamination-free claim.",
+  "aggregation_policy": "One original full-case scorer call after exact ordered case/image/payload union and terminal raw provenance audit. No shard metric averages; native corrected/bug diagnostics unchanged; actual source servers retained."
+}

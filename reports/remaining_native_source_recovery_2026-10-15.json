@@ -1,0 +1,769 @@
+{
+  "created_at_utc": "2026-10-15T09:14:54.903974+00:00",
+  "created_at_pst": "2026-10-15T01:14:54.903974-08:00",
+  "scope": "Read-only primary source recovery for P09, P19\u2013P22, P27 and V07. New source copies and reports only.",
+  "task_count": 7,
+  "new_complete_source_identifiable_execution_proposals": 0,
+  "inference_performed": false,
+  "execution_authorized": false,
+  "provider_keys_read": false,
+  "ssh_connections_opened": 0,
+  "model_weights_downloaded": false,
+  "existing_frozen_files_modified": false,
+  "held_material_reopened_or_rerouted": false,
+  "source_change_summary": "Official PFArena code and gated dataset entry point recovered, replacing the earlier unknown-link blocker. Other inspected tasks remain blocked on exact source protocols/artifacts.",
+  "preserved_scope_notes": [
+    "P09 remains a valid prediction setting; learned protein representations may matter.",
+    "P27 is not replaced by P26.",
+    "P19\u2013P22 are source-only recovery: no mutation input rows, objective-specific generation or candidate ranking was executed.",
+    "V07 remains a pipeline component setting; generic sample rows and alternate datasets are not benchmark evidence.",
+    "No protected test outcome was used for source choice, prompt selection, parser tuning or model selection."
+  ],
+  "publisher_sources": {
+    "nature_commit": "bcb1351bc6490d4a98cae74e7eead30a028fae00",
+    "nature_current_tree_path": "sources/remaining_native_recovery/nature_current_tree.json",
+    "nature_branches_returned": 1,
+    "nature_releases_returned": 0,
+    "nature_notebook_code_cells_inspected_without_execution": true,
+    "pfarena_github_commit": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+    "pfarena_hf_revision": "5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+    "pfarena_hf_file_entries": 772,
+    "pfarena_hf_used_storage_bytes": 1015018728,
+    "pfarena_schema_HEAD_http_status": 401,
+    "ryze_main_commit": "41b2d77ec0651b9f51b657f524415ee3cc38e115",
+    "ryze_second_branch_commit": "a1a5d4033523a02c72aeea040bddc48276a3f4d6",
+    "verified_source_blob_count": 16
+  },
+  "tasks": [
+    {
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "actual_information_supplied_to_solver": "None. This audit made no solver requests.",
+      "explanation_correctness": "Unassessed independently of outcome prediction. Correct predictions would not validate rationales; unsupported mechanisms are not automatically false.",
+      "pretraining_contamination_status": "Unknown; public source availability cannot establish absence from pretraining.",
+      "task_id": "P09",
+      "task": "NatureLM stability classification",
+      "status": "native_label_conversion_and_processed_test_unresolved",
+      "provisional_task_demands": [
+        "learned sequence-to-property prediction",
+        "protein representation",
+        "binary decision"
+      ],
+      "required_native_information": "Complete protein amino acid sequence and source task instruction; native binary stability endpoint.",
+      "reference_answer_source": "NatureLM processed binary stability labels; described as adopting PEER datasets and splits, with the conversion artifact absent from recovered release.",
+      "native_metric": "Accuracy",
+      "native_cases_verified": 0,
+      "verified_facts": [
+        {
+          "claim": "NatureLM Section 7.2 and Table 20 explicitly report binary stability classification, not continuous regression.",
+          "url": "https://arxiv.org/html/2502.07527v3#S7.SS2"
+        },
+        {
+          "claim": "The current publisher main branch has two inference notebooks, README/configuration/lock files and administrative files, with no processed stability test or label conversion implementation. Both notebooks were inspected as JSON code cells without execution.",
+          "url": "https://github.com/microsoft/SFM/tree/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM"
+        },
+        {
+          "claim": "The cited SFM-Protein paper Section 4.3 reports stability regression with Spearman; that citation does not recover the NatureLM binary endpoint.",
+          "url": "https://arxiv.org/html/2410.24022#S4.SS3"
+        }
+      ],
+      "blockers": [
+        "Exact NatureLM binary labels, conversion threshold/rule and processed case manifest are absent from the recovered publisher artifacts.",
+        "PEER/TAPE continuous stability P08 cannot establish the missing binary conversion."
+      ],
+      "resolution": "Obtain the NatureLM-author processed binary test and conversion implementation, then reconcile all IDs and labels before freezing a native scorer and source-preserving Qwen adaptation.",
+      "good_score_establishes": "Agreement with the specified binary stability endpoint once recovered, under the disclosed model and training regime.",
+      "bad_score_establishes": "Poor agreement under that endpoint and input regime; it would not isolate verbal reasoning or prove absence of protein representations."
+    },
+    {
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "actual_information_supplied_to_solver": "None. This audit made no solver requests.",
+      "explanation_correctness": "Unassessed independently of outcome prediction. Correct predictions would not validate rationales; unsupported mechanisms are not automatically false.",
+      "pretraining_contamination_status": "Unknown; public source availability cannot establish absence from pretraining.",
+      "task_id": "P27",
+      "task": "NatureLM NCBI protein description",
+      "status": "native_temporal_test_and_reference_preprocessing_unresolved",
+      "provisional_task_demands": [
+        "learned sequence-to-function prediction",
+        "biological knowledge",
+        "natural-language annotation generation"
+      ],
+      "required_native_information": "Complete released test protein sequence and native instruction, without reference annotation.",
+      "reference_answer_source": "NatureLM authors\u2019 NCBI-derived human-readable annotations under their temporal holdout.",
+      "native_metric": "ROUGE-L",
+      "native_cases_verified": 0,
+      "verified_facts": [
+        {
+          "claim": "Section 4.4 describes NCBI sequence/annotation pairs, a temporal partition and ROUGE-L. The inspected section does not specify the exact cutoff, case count, released IDs or executable preprocessing.",
+          "url": "https://arxiv.org/html/2502.07527v3#S4.SS4"
+        },
+        {
+          "claim": "The pinned publisher tree and two inference notebooks provide no temporal test collection or ROUGE evaluation implementation; one main branch and no GitHub releases were returned by the publisher API.",
+          "url": "https://github.com/microsoft/SFM/tree/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM"
+        }
+      ],
+      "blockers": [
+        "Frozen temporal case IDs, annotation snapshots/cutoff and executable ROUGE reference preprocessing are unrecovered."
+      ],
+      "resolution": "Obtain the author temporal manifest, original sequences/references, cutoff and scorer settings. Mol-Instructions P26 and arbitrary contemporary NCBI rows cannot be called this holdout.",
+      "good_score_establishes": "Lexical recovery of this reference annotation collection under the declared ROUGE-L implementation; not full verification of every mechanistic claim.",
+      "bad_score_establishes": "Limited reference-text overlap under the supplied sequence-only regime; alternative accurate annotations can also have low overlap."
+    },
+    {
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "actual_information_supplied_to_solver": "None. This audit made no solver requests.",
+      "explanation_correctness": "Unassessed independently of outcome prediction. Correct predictions would not validate rationales; unsupported mechanisms are not automatically false.",
+      "pretraining_contamination_status": "Unknown; public source availability cannot establish absence from pretraining.",
+      "task_id": "P19",
+      "task": "PFArena T1 single-mutant generation",
+      "status": "official_release_found_gated_access_and_case_review_pending",
+      "provisional_task_demands": [
+        "learned variant-property prediction",
+        "biological prior knowledge",
+        "candidate prioritization"
+      ],
+      "required_native_information": "Reference protein and objective; no target-specific mutant measurements.",
+      "reference_answer_source": "Original publisher-normalized experimental DMS_score columns in the official PFArena bundle.",
+      "native_metric": "NMS@40; Recall@40",
+      "native_assays_publisher_described": 123,
+      "publisher_norm_data_file_entries": 123,
+      "native_cases_verified": 0,
+      "official_release": {
+        "github_url": "https://github.com/AMix-Bio/PFArena/tree/e8f8b3c404d39783a43eaa96ae461f313730114d",
+        "github_commit": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+        "dataset_url": "https://huggingface.co/datasets/AMix-Bio/PFArena/tree/5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+        "dataset_revision": "5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+        "gated": "auto",
+        "unauthenticated_schema_HEAD_http_status": 401,
+        "gate_acceptance_attempted": false,
+        "raw_candidate_or_label_files_downloaded": false
+      },
+      "verified_facts": [
+        {
+          "claim": "Publisher README links this exact Hugging Face dataset, describes the four source task directories and keeps target DMS_score fields out of inference.",
+          "url": "https://github.com/AMix-Bio/PFArena/blob/e8f8b3c404d39783a43eaa96ae461f313730114d/README.md"
+        },
+        {
+          "claim": "Publisher API metadata exposes the file manifest, but an unauthenticated HEAD on assay_columns.md returns HTTP 401. Metadata access does not establish raw-data access.",
+          "url": "https://huggingface.co/datasets/AMix-Bio/PFArena/tree/5be3973dd45a9d7d33572f016be18f8ef941f2ff"
+        },
+        {
+          "claim": "The recovered evaluator supports strict coverage. The shipped shell wrapper enables lenient behavior that can replace missing entire queries with deterministic randomized predictions; this is not a model output.",
+          "url": "https://github.com/AMix-Bio/PFArena/blob/e8f8b3c404d39783a43eaa96ae461f313730114d/code/evaluation/full.py"
+        }
+      ],
+      "blockers": [
+        "The authenticated gated download was not attempted, and no data-access terms were accepted.",
+        "Original assay/case goals require review before any local execution; no held pathogen-fitness rows may be retried or transferred.",
+        "The released prompt, native budgets, sampling/failure policy and strict coverage condition must be frozen before any new run."
+      ],
+      "resolution": "Resolve authorized publisher dataset access, review the original assay manifest, preserve complete candidates/context and freeze an explicitly qualified local protocol. Source recovery does not authorize inference.",
+      "good_score_establishes": "Recovery of high-scoring measured variants and/or correct rankings within the original assay universe and task budget; not wet-lab validation or explanation correctness.",
+      "bad_score_establishes": "Limited measured-variant recovery under the supplied evidence and budget; missing outputs and illegal proposals must remain visible, and no randomized replacement may be attributed to the model."
+    },
+    {
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "actual_information_supplied_to_solver": "None. This audit made no solver requests.",
+      "explanation_correctness": "Unassessed independently of outcome prediction. Correct predictions would not validate rationales; unsupported mechanisms are not automatically false.",
+      "pretraining_contamination_status": "Unknown; public source availability cannot establish absence from pretraining.",
+      "task_id": "P20",
+      "task": "PFArena T2 measurement-free multi-mutant ranking",
+      "status": "official_release_found_gated_access_and_case_review_pending",
+      "provisional_task_demands": [
+        "learned variant-property prediction",
+        "biological prior knowledge",
+        "candidate prioritization"
+      ],
+      "required_native_information": "Reference protein, objective and complete source candidate pool; no target-specific measured labels.",
+      "reference_answer_source": "Original publisher-normalized experimental DMS_score columns in the official PFArena bundle.",
+      "native_metric": "Spearman; NDCG; NMS@5; Recall@5",
+      "native_assays_publisher_described": 74,
+      "publisher_norm_data_file_entries": 74,
+      "native_cases_verified": 0,
+      "official_release": {
+        "github_url": "https://github.com/AMix-Bio/PFArena/tree/e8f8b3c404d39783a43eaa96ae461f313730114d",
+        "github_commit": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+        "dataset_url": "https://huggingface.co/datasets/AMix-Bio/PFArena/tree/5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+        "dataset_revision": "5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+        "gated": "auto",
+        "unauthenticated_schema_HEAD_http_status": 401,
+        "gate_acceptance_attempted": false,
+        "raw_candidate_or_label_files_downloaded": false
+      },
+      "verified_facts": [
+        {
+          "claim": "Publisher README links this exact Hugging Face dataset, describes the four source task directories and keeps target DMS_score fields out of inference.",
+          "url": "https://github.com/AMix-Bio/PFArena/blob/e8f8b3c404d39783a43eaa96ae461f313730114d/README.md"
+        },
+        {
+          "claim": "Publisher API metadata exposes the file manifest, but an unauthenticated HEAD on assay_columns.md returns HTTP 401. Metadata access does not establish raw-data access.",
+          "url": "https://huggingface.co/datasets/AMix-Bio/PFArena/tree/5be3973dd45a9d7d33572f016be18f8ef941f2ff"
+        },
+        {
+          "claim": "The recovered evaluator supports strict coverage. The shipped shell wrapper enables lenient behavior that can replace missing entire queries with deterministic randomized predictions; this is not a model output.",
+          "url": "https://github.com/AMix-Bio/PFArena/blob/e8f8b3c404d39783a43eaa96ae461f313730114d/code/evaluation/full.py"
+        }
+      ],
+      "blockers": [
+        "The authenticated gated download was not attempted, and no data-access terms were accepted.",
+        "Original assay/case goals require review before any local execution; no held pathogen-fitness rows may be retried or transferred.",
+        "The released prompt, native budgets, sampling/failure policy and strict coverage condition must be frozen before any new run."
+      ],
+      "resolution": "Resolve authorized publisher dataset access, review the original assay manifest, preserve complete candidates/context and freeze an explicitly qualified local protocol. Source recovery does not authorize inference.",
+      "good_score_establishes": "Recovery of high-scoring measured variants and/or correct rankings within the original assay universe and task budget; not wet-lab validation or explanation correctness.",
+      "bad_score_establishes": "Limited measured-variant recovery under the supplied evidence and budget; missing outputs and illegal proposals must remain visible, and no randomized replacement may be attributed to the model."
+    },
+    {
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "actual_information_supplied_to_solver": "None. This audit made no solver requests.",
+      "explanation_correctness": "Unassessed independently of outcome prediction. Correct predictions would not validate rationales; unsupported mechanisms are not automatically false.",
+      "pretraining_contamination_status": "Unknown; public source availability cannot establish absence from pretraining.",
+      "task_id": "P21",
+      "task": "PFArena T3 anchor-informed multi-mutant ranking",
+      "status": "official_release_found_gated_access_and_case_review_pending",
+      "provisional_task_demands": [
+        "learned variant-property prediction",
+        "experimental-context integration",
+        "candidate prioritization"
+      ],
+      "required_native_information": "Native measured anchor and its strictly extending source candidates; hidden candidate scores remain scorer-only.",
+      "reference_answer_source": "Original publisher-normalized experimental DMS_score columns in the official PFArena bundle.",
+      "native_metric": "Spearman; NDCG; NMS@5; Recall@5",
+      "native_assays_publisher_described": 67,
+      "publisher_norm_data_file_entries": 67,
+      "native_cases_verified": 0,
+      "official_release": {
+        "github_url": "https://github.com/AMix-Bio/PFArena/tree/e8f8b3c404d39783a43eaa96ae461f313730114d",
+        "github_commit": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+        "dataset_url": "https://huggingface.co/datasets/AMix-Bio/PFArena/tree/5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+        "dataset_revision": "5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+        "gated": "auto",
+        "unauthenticated_schema_HEAD_http_status": 401,
+        "gate_acceptance_attempted": false,
+        "raw_candidate_or_label_files_downloaded": false
+      },
+      "verified_facts": [
+        {
+          "claim": "Publisher README links this exact Hugging Face dataset, describes the four source task directories and keeps target DMS_score fields out of inference.",
+          "url": "https://github.com/AMix-Bio/PFArena/blob/e8f8b3c404d39783a43eaa96ae461f313730114d/README.md"
+        },
+        {
+          "claim": "Publisher API metadata exposes the file manifest, but an unauthenticated HEAD on assay_columns.md returns HTTP 401. Metadata access does not establish raw-data access.",
+          "url": "https://huggingface.co/datasets/AMix-Bio/PFArena/tree/5be3973dd45a9d7d33572f016be18f8ef941f2ff"
+        },
+        {
+          "claim": "The recovered evaluator supports strict coverage. The shipped shell wrapper enables lenient behavior that can replace missing entire queries with deterministic randomized predictions; this is not a model output.",
+          "url": "https://github.com/AMix-Bio/PFArena/blob/e8f8b3c404d39783a43eaa96ae461f313730114d/code/evaluation/full.py"
+        }
+      ],
+      "blockers": [
+        "The authenticated gated download was not attempted, and no data-access terms were accepted.",
+        "Original assay/case goals require review before any local execution; no held pathogen-fitness rows may be retried or transferred.",
+        "The released prompt, native budgets, sampling/failure policy and strict coverage condition must be frozen before any new run."
+      ],
+      "resolution": "Resolve authorized publisher dataset access, review the original assay manifest, preserve complete candidates/context and freeze an explicitly qualified local protocol. Source recovery does not authorize inference.",
+      "good_score_establishes": "Recovery of high-scoring measured variants and/or correct rankings within the original assay universe and task budget; not wet-lab validation or explanation correctness.",
+      "bad_score_establishes": "Limited measured-variant recovery under the supplied evidence and budget; missing outputs and illegal proposals must remain visible, and no randomized replacement may be attributed to the model."
+    },
+    {
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "actual_information_supplied_to_solver": "None. This audit made no solver requests.",
+      "explanation_correctness": "Unassessed independently of outcome prediction. Correct predictions would not validate rationales; unsupported mechanisms are not automatically false.",
+      "pretraining_contamination_status": "Unknown; public source availability cannot establish absence from pretraining.",
+      "task_id": "P22",
+      "task": "PFArena T4 single-mutant-informed multi-mutant ranking",
+      "status": "official_release_found_gated_access_and_case_review_pending",
+      "provisional_task_demands": [
+        "learned variant-property prediction",
+        "experimental-context integration",
+        "candidate prioritization"
+      ],
+      "required_native_information": "Native measured component-single-mutant context and the complete multi-mutant candidate pool; candidate target scores remain scorer-only.",
+      "reference_answer_source": "Original publisher-normalized experimental DMS_score columns in the official PFArena bundle.",
+      "native_metric": "Spearman; NDCG; NMS@5; Recall@5",
+      "native_assays_publisher_described": 29,
+      "publisher_norm_data_file_entries": 58,
+      "native_cases_verified": 0,
+      "official_release": {
+        "github_url": "https://github.com/AMix-Bio/PFArena/tree/e8f8b3c404d39783a43eaa96ae461f313730114d",
+        "github_commit": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+        "dataset_url": "https://huggingface.co/datasets/AMix-Bio/PFArena/tree/5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+        "dataset_revision": "5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+        "gated": "auto",
+        "unauthenticated_schema_HEAD_http_status": 401,
+        "gate_acceptance_attempted": false,
+        "raw_candidate_or_label_files_downloaded": false
+      },
+      "verified_facts": [
+        {
+          "claim": "Publisher README links this exact Hugging Face dataset, describes the four source task directories and keeps target DMS_score fields out of inference.",
+          "url": "https://github.com/AMix-Bio/PFArena/blob/e8f8b3c404d39783a43eaa96ae461f313730114d/README.md"
+        },
+        {
+          "claim": "Publisher API metadata exposes the file manifest, but an unauthenticated HEAD on assay_columns.md returns HTTP 401. Metadata access does not establish raw-data access.",
+          "url": "https://huggingface.co/datasets/AMix-Bio/PFArena/tree/5be3973dd45a9d7d33572f016be18f8ef941f2ff"
+        },
+        {
+          "claim": "The recovered evaluator supports strict coverage. The shipped shell wrapper enables lenient behavior that can replace missing entire queries with deterministic randomized predictions; this is not a model output.",
+          "url": "https://github.com/AMix-Bio/PFArena/blob/e8f8b3c404d39783a43eaa96ae461f313730114d/code/evaluation/full.py"
+        }
+      ],
+      "blockers": [
+        "The authenticated gated download was not attempted, and no data-access terms were accepted.",
+        "Original assay/case goals require review before any local execution; no held pathogen-fitness rows may be retried or transferred.",
+        "The released prompt, native budgets, sampling/failure policy and strict coverage condition must be frozen before any new run."
+      ],
+      "resolution": "Resolve authorized publisher dataset access, review the original assay manifest, preserve complete candidates/context and freeze an explicitly qualified local protocol. Source recovery does not authorize inference.",
+      "good_score_establishes": "Recovery of high-scoring measured variants and/or correct rankings within the original assay universe and task budget; not wet-lab validation or explanation correctness.",
+      "bad_score_establishes": "Limited measured-variant recovery under the supplied evidence and budget; missing outputs and illegal proposals must remain visible, and no randomized replacement may be attributed to the model."
+    },
+    {
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "actual_information_supplied_to_solver": "None. This audit made no solver requests.",
+      "explanation_correctness": "Unassessed independently of outcome prediction. Correct predictions would not validate rationales; unsupported mechanisms are not automatically false.",
+      "pretraining_contamination_status": "Unknown; public source availability cannot establish absence from pretraining.",
+      "task_id": "V07",
+      "task": "Ryze document-extraction component tests",
+      "status": "paper_component_slices_and_answer_pipeline_unreleased_in_inspected_code",
+      "provisional_task_demands": [
+        "visual evidence extraction",
+        "document and layout understanding",
+        "evidence selection across pages",
+        "dataset-specific answer production"
+      ],
+      "required_native_information": "Original document/figure/slide images, native question and permitted extraction output. Multi-page SlideVQA must retain the original document context.",
+      "reference_answer_source": "Original ArXivQA, SlideVQA and ChartQA reference answers on the exact Ryze component slices, still unrecovered.",
+      "native_metric": "Dataset-specific QA accuracy; Ryze component parser/tolerances and component aggregation still unresolved.",
+      "native_cases_verified": 0,
+      "verified_facts": [
+        {
+          "claim": "Ryze Section 3.3/Table 3 compares OCR conditions on three components. It does not state component test case IDs/counts, answer-model checkpoint, prompt, split selection or executable accuracy normalization.",
+          "url": "https://arxiv.org/html/2606.00902v1#S3.SS3"
+        },
+        {
+          "claim": "The pinned public BenchmarkRunner creates a synthetic sample benchmark when a requested JSON file does not exist; those placeholder rows are not any of the three component tests.",
+          "url": "https://github.com/Chivier/Ryze/blob/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/eval/benchmark.py"
+        },
+        {
+          "claim": "The inspected main OCR processor renders PDF pages and calls Tesseract with --psm 6. It does not implement the full named GLM-OCR/chart/cross-reference/cleansing condition from Table 3.",
+          "url": "https://github.com/Chivier/Ryze/blob/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/data/ocr.py"
+        },
+        {
+          "claim": "Generic evaluation code computes BLEU/ROUGE/exact-match metrics, with no named loader or source split manifest for these component tests. The second public branch retains identical benchmark.py, metrics.py and ocr.py blobs.",
+          "url": "https://github.com/Chivier/Ryze/tree/41b2d77ec0651b9f51b657f524415ee3cc38e115"
+        }
+      ],
+      "upstream_public_candidates": [
+        {
+          "name": "ArXivQA scientific-figure collection (candidate identity, not confirmed Ryze component slice)",
+          "url": "https://huggingface.co/datasets/MMInstruction/ArxivQA",
+          "qualification": "This name also identifies unrelated text-only collections; Ryze does not provide an identifier resolving the ambiguity."
+        },
+        {
+          "name": "SlideVQA original author repository",
+          "url": "https://github.com/nttmdlab-nlp/SlideVQA",
+          "qualification": "Original upstream source exists; the Ryze split/subset, page context and extraction configuration are unverified."
+        },
+        {
+          "name": "ChartQA original author repository",
+          "url": "https://github.com/vis-nlp/ChartQA",
+          "qualification": "Original human/augmented source tests exist; Ryze does not specify their selection/weighting or answer normalization."
+        }
+      ],
+      "blockers": [
+        "Exact Ryze component IDs/splits, original media mapping and human/augmented aggregation are not recovered.",
+        "The extraction implementation/configuration and downstream answer model/prompt/scorer required to reproduce Table 3 are unrecovered."
+      ],
+      "resolution": "Obtain the author component manifest and Table 3 execution recipe. Direct Qwen image QA could be a different declared baseline, but cannot complete this extraction-component setting or reproduce the Ryze pipeline by renaming it.",
+      "good_score_establishes": "Answer-relevant information preservation and downstream QA performance of the declared extraction/answer pipeline on the recovered slices.",
+      "bad_score_establishes": "A failure somewhere in extraction, evidence selection or answer generation under that pipeline; it would not isolate protein reasoning or identify a single failure stage without an authorized separate experiment."
+    }
+  ],
+  "source_acquisitions": [
+    {
+      "name": "nature_repo",
+      "url": "https://api.github.com/repos/microsoft/SFM",
+      "acquired_at_utc": "2026-10-15T09:08:39.578191+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 6015,
+      "sha256": "e43194c55efdee8c09206ca51a85dd37d5156058264e8ea08a621e7dbe0f7f2b",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/nature_repo.json"
+    },
+    {
+      "name": "nature_latest_commit",
+      "url": "https://api.github.com/repos/microsoft/SFM/commits/main",
+      "acquired_at_utc": "2026-10-15T09:08:39.583087+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 66037,
+      "sha256": "a13b578533b0a57bbe7b91bedd6741e670870c47cff0fdc8e4d5b890d17c067b",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/nature_latest_commit.json"
+    },
+    {
+      "name": "nature_branches",
+      "url": "https://api.github.com/repos/microsoft/SFM/branches?per_page=100",
+      "acquired_at_utc": "2026-10-15T09:08:39.584552+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 195,
+      "sha256": "1ab03b7c37ea341c4210801646a9350dfed8813a8a1f7991ea01771a51be00a7",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/nature_branches.json"
+    },
+    {
+      "name": "nature_releases",
+      "url": "https://api.github.com/repos/microsoft/SFM/releases?per_page=100",
+      "acquired_at_utc": "2026-10-15T09:08:40.749664+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/nature_releases.json"
+    },
+    {
+      "name": "nature_issues",
+      "url": "https://api.github.com/repos/microsoft/SFM/issues?state=all&per_page=100",
+      "acquired_at_utc": "2026-10-15T09:08:40.968993+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 21232,
+      "sha256": "9301265b3e54977b32870989f4a411488b4bd89053c7d8af6c619bf24aaadfe1",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/nature_issues.json"
+    },
+    {
+      "name": "ryze_latest_commit",
+      "url": "https://api.github.com/repos/Chivier/Ryze/commits/main",
+      "acquired_at_utc": "2026-10-15T09:08:41.014319+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 4721,
+      "sha256": "d71152dde0dae6f1dc81aa4bd20fb40132a64ca3d7f3c175d8111a4e7e9a6012",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/ryze_latest_commit.json"
+    },
+    {
+      "name": "ryze_branches",
+      "url": "https://api.github.com/repos/Chivier/Ryze/branches?per_page=100",
+      "acquired_at_utc": "2026-10-15T09:08:41.930580+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 399,
+      "sha256": "c7cec31e87fe7392b8d25d5ab4a5ee51b4c1e6408499268e08b0c61108b664d1",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/ryze_branches.json"
+    },
+    {
+      "name": "ryze_releases",
+      "url": "https://api.github.com/repos/Chivier/Ryze/releases?per_page=100",
+      "acquired_at_utc": "2026-10-15T09:08:42.341599+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/ryze_releases.json"
+    },
+    {
+      "name": "pfarena_github_search",
+      "url": "https://api.github.com/search/repositories?q=PFArena&per_page=100",
+      "acquired_at_utc": "2026-10-15T09:08:42.382039+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 10139,
+      "sha256": "6ed7b82741ccc500aeffb88c54a173df9ed9bfdfba3da72c84b61b0a12080c2e",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/pfarena_github_search.json"
+    },
+    {
+      "name": "nature_hf_datasets",
+      "url": "https://huggingface.co/api/datasets?search=NatureLM&limit=100",
+      "acquired_at_utc": "2026-10-15T09:08:43.204278+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 1688,
+      "sha256": "9228213d08d812a6e795e26d51dce256601acb13b2d77325956a27602b8513cb",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/nature_hf_datasets.json"
+    },
+    {
+      "name": "pfarena_hf_datasets",
+      "url": "https://huggingface.co/api/datasets?search=PFArena&limit=100",
+      "acquired_at_utc": "2026-10-15T09:08:43.634991+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 1378,
+      "sha256": "1d104f54224b513bb09feadf15d82857770a16b991399fdc394bc21c8a817bad",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/pfarena_hf_datasets.json"
+    },
+    {
+      "name": "ryze_hf_datasets",
+      "url": "https://huggingface.co/api/datasets?search=Ryze&limit=100",
+      "acquired_at_utc": "2026-10-15T09:08:43.752263+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 7710,
+      "sha256": "803e90f6bcdd3b6050f532668b51ee561a004ae067ddab4724b58523b76f9d6a",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/ryze_hf_datasets.json"
+    },
+    {
+      "name": "nature_current_tree",
+      "url": "https://api.github.com/repos/microsoft/SFM/git/trees/bcb1351bc6490d4a98cae74e7eead30a028fae00?recursive=1",
+      "acquired_at_utc": "2026-10-15T09:09:51.405048+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 3279,
+      "sha256": "c1246c9458c3e1684ae4d43f468583bd3868803bb765883eb895f01f24d29f3e",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/nature_current_tree.json"
+    },
+    {
+      "name": "pfarena_commit",
+      "url": "https://api.github.com/repos/AMix-Bio/PFArena/commits/main",
+      "acquired_at_utc": "2026-10-15T09:09:51.410004+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 10027,
+      "sha256": "2d9a6d9f6f9797eaf43dd241e21fcb5d21f96440454ada69d985e25fce8905f3",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/pfarena_commit.json"
+    },
+    {
+      "name": "pfarena_tree",
+      "url": "https://api.github.com/repos/AMix-Bio/PFArena/git/trees/main?recursive=1",
+      "acquired_at_utc": "2026-10-15T09:09:51.411590+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 34357,
+      "sha256": "4996a8a9d64e584f8ec43a9da3ea47cfe6b971183f8b5622a85b3f5a63932252",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/pfarena_tree.json"
+    },
+    {
+      "name": "pfarena_hf_metadata",
+      "url": "https://huggingface.co/api/datasets/AMix-Bio/PFArena/revision/5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+      "acquired_at_utc": "2026-10-15T09:09:52.683342+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 85031,
+      "sha256": "14333cfb193eba6a667f79ba1c9f07a340d2b0cb7d1e2c7b2870d666bb8c6339",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/pfarena_hf_metadata.json"
+    },
+    {
+      "name": "ryze_ray_tree",
+      "url": "https://api.github.com/repos/Chivier/Ryze/git/trees/a1a5d4033523a02c72aeea040bddc48276a3f4d6?recursive=1",
+      "acquired_at_utc": "2026-10-15T09:09:53.846963+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 25616,
+      "sha256": "66876374ef966bb8dda1e4413ab0f5971eb40751ac43e8acb957be8b1cf9428b",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/ryze_ray_tree.json"
+    },
+    {
+      "name": "nature_pr3_files",
+      "url": "https://api.github.com/repos/microsoft/SFM/pulls/3/files?per_page=100",
+      "acquired_at_utc": "2026-10-15T09:09:53.873204+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 5079,
+      "sha256": "ab56ec733f7eb280a360d9b48009594064a71392dbc1ee2ab9013b040a4c2902",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/nature_pr3_files.json"
+    },
+    {
+      "name": "nature_pr4_files",
+      "url": "https://api.github.com/repos/microsoft/SFM/pulls/4/files?per_page=100",
+      "acquired_at_utc": "2026-10-15T09:09:54.423824+00:00",
+      "http_status": 200,
+      "status": "acquired",
+      "bytes": 61663,
+      "sha256": "26768c14a6b99f2d0b25683f4741d122b1c25515699ee4168ecbddcd99d16148",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/nature_pr4_files.json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/SFM/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM/8x7b_base_model.ipynb",
+      "source_commit": "bcb1351bc6490d4a98cae74e7eead30a028fae00",
+      "source_path": "NatureLM/8x7b_base_model.ipynb",
+      "expected_git_blob_sha1": "c0470c1f0bec77e76967cef8ad3bde0de84d3669",
+      "status": "acquired_verified",
+      "bytes": 4136,
+      "sha256": "7069266fd4e390780bdbf13ca617deef1881440f55884520a129d9702623a79c",
+      "git_blob_sha1": "c0470c1f0bec77e76967cef8ad3bde0de84d3669",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/microsoft__SFM__NatureLM__8x7b_base_model.ipynb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/SFM/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM/8x7b_inst_model.ipynb",
+      "source_commit": "bcb1351bc6490d4a98cae74e7eead30a028fae00",
+      "source_path": "NatureLM/8x7b_inst_model.ipynb",
+      "expected_git_blob_sha1": "caf388050f59a30c11219287c12c16581bcdacd2",
+      "status": "acquired_verified",
+      "bytes": 3405,
+      "sha256": "6162a444778558674a6543472a6a31e310006b7254c6ef797a869cb9a2b6b033",
+      "git_blob_sha1": "caf388050f59a30c11219287c12c16581bcdacd2",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/microsoft__SFM__NatureLM__8x7b_inst_model.ipynb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/SFM/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM/README.md",
+      "source_commit": "bcb1351bc6490d4a98cae74e7eead30a028fae00",
+      "source_path": "NatureLM/README.md",
+      "expected_git_blob_sha1": "a7ac89e556f7273910d3d02df62a4f43e44f58a8",
+      "status": "acquired_verified",
+      "bytes": 1511,
+      "sha256": "02f627fd44588c3736d1ca4419fd87ec05c762ea9c1265fae73914825194a1fc",
+      "git_blob_sha1": "a7ac89e556f7273910d3d02df62a4f43e44f58a8",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/microsoft__SFM__NatureLM__README.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/data/ocr.py",
+      "source_commit": "41b2d77ec0651b9f51b657f524415ee3cc38e115",
+      "source_path": "src/ryze/data/ocr.py",
+      "expected_git_blob_sha1": "636924d8b04038826bdc276f6aa84a7368d1fc30",
+      "status": "acquired_verified",
+      "bytes": 4995,
+      "sha256": "cfa1cbe6cc143f7e84659fb7eadf906a8b2d79bdb27dda08c47b4166ea47488b",
+      "git_blob_sha1": "636924d8b04038826bdc276f6aa84a7368d1fc30",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/Chivier__Ryze__src__ryze__data__ocr.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/eval/benchmark.py",
+      "source_commit": "41b2d77ec0651b9f51b657f524415ee3cc38e115",
+      "source_path": "src/ryze/eval/benchmark.py",
+      "expected_git_blob_sha1": "2a780124e424e9492c261fa0dc3dd9690f68bade",
+      "status": "acquired_verified",
+      "bytes": 7965,
+      "sha256": "986197e6cad1b903b1d902a4220c035ca84213ba6c74cc5d7b7075eb31b55082",
+      "git_blob_sha1": "2a780124e424e9492c261fa0dc3dd9690f68bade",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/Chivier__Ryze__src__ryze__eval__benchmark.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/eval/evaluator.py",
+      "source_commit": "41b2d77ec0651b9f51b657f524415ee3cc38e115",
+      "source_path": "src/ryze/eval/evaluator.py",
+      "expected_git_blob_sha1": "19f0cdea3ae6270ac7155b91747b58d9d7402284",
+      "status": "acquired_verified",
+      "bytes": 13380,
+      "sha256": "55128c9c3efd5a5064f673aa269b0f249c52c4ca4ac072cd115a74cf48f7895f",
+      "git_blob_sha1": "19f0cdea3ae6270ac7155b91747b58d9d7402284",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/Chivier__Ryze__src__ryze__eval__evaluator.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/eval/metrics.py",
+      "source_commit": "41b2d77ec0651b9f51b657f524415ee3cc38e115",
+      "source_path": "src/ryze/eval/metrics.py",
+      "expected_git_blob_sha1": "236dfafe7af4f29ddb81b34f5146376160a3e0a6",
+      "status": "acquired_verified",
+      "bytes": 7526,
+      "sha256": "5cb2c6e2603ab39975a821c48bab4bdd898b2fa5ade5c385faea9ab36a9be1f6",
+      "git_blob_sha1": "236dfafe7af4f29ddb81b34f5146376160a3e0a6",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/Chivier__Ryze__src__ryze__eval__metrics.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/configs/default_config_v2.json",
+      "source_commit": "41b2d77ec0651b9f51b657f524415ee3cc38e115",
+      "source_path": "configs/default_config_v2.json",
+      "expected_git_blob_sha1": "2188f9bd7fe85c653e79f33ecdfacd04a494301a",
+      "status": "acquired_verified",
+      "bytes": 2197,
+      "sha256": "3502a2db1e928163533078bbedddd80172743ff7d5cdcb526f4b9fcd7c1ea7a1",
+      "git_blob_sha1": "2188f9bd7fe85c653e79f33ecdfacd04a494301a",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/Chivier__Ryze__configs__default_config_v2.json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/README.md",
+      "source_commit": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+      "source_path": "README.md",
+      "expected_git_blob_sha1": "ba9ad3199601eb78d1e640cc6aaa0e1209099c28",
+      "status": "acquired_verified",
+      "bytes": 16115,
+      "sha256": "683796bf3d7bc644238ecb82bb939b1649e8fa877294de92d3278c4d49fb09dc",
+      "git_blob_sha1": "ba9ad3199601eb78d1e640cc6aaa0e1209099c28",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/AMix-Bio__PFArena__README.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/evaluation/evaluate.py",
+      "source_commit": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+      "source_path": "code/evaluation/evaluate.py",
+      "expected_git_blob_sha1": "a155d4ca00b64e4c285d853d245471489423074a",
+      "status": "acquired_verified",
+      "bytes": 2017,
+      "sha256": "cc643e781a65ca7004b18913cbc4f60e9fbb4f0921d2707071bac36220892252",
+      "git_blob_sha1": "a155d4ca00b64e4c285d853d245471489423074a",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/AMix-Bio__PFArena__code__evaluation__evaluate.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/evaluation/full.py",
+      "source_commit": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+      "source_path": "code/evaluation/full.py",
+      "expected_git_blob_sha1": "b3500748d632217f655ff9cb807a3bfc77d9a3e5",
+      "status": "acquired_verified",
+      "bytes": 32097,
+      "sha256": "035b34122c1015eab5fa9caa3b680452aba6730e41a523ecf0342461fdb8747f",
+      "git_blob_sha1": "b3500748d632217f655ff9cb807a3bfc77d9a3e5",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/AMix-Bio__PFArena__code__evaluation__full.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/evaluation/run_evaluate.sh",
+      "source_commit": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+      "source_path": "code/evaluation/run_evaluate.sh",
+      "expected_git_blob_sha1": "eae040c8ded7c3c4ca6d342ec32bd32b4496858c",
+      "status": "acquired_verified",
+      "bytes": 2496,
+      "sha256": "40814256f46a123b272c7eae1c78727cf08a6b8960f0444aedd88059c443d716",
+      "git_blob_sha1": "eae040c8ded7c3c4ca6d342ec32bd32b4496858c",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/AMix-Bio__PFArena__code__evaluation__run_evaluate.sh"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/data/dataset.py",
+      "source_commit": "41b2d77ec0651b9f51b657f524415ee3cc38e115",
+      "source_path": "src/ryze/data/dataset.py",
+      "expected_git_blob_sha1": "5fb117b0b6edc851de4aa23ca346ce0b1886e59a",
+      "status": "acquired_verified",
+      "bytes": 8404,
+      "sha256": "9e48cbd7487dfb2c975b678985a029cddcea1dd30b076c444140097a7303f081",
+      "git_blob_sha1": "5fb117b0b6edc851de4aa23ca346ce0b1886e59a",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/Chivier__Ryze__src__ryze__data__dataset.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/data/processor.py",
+      "source_commit": "41b2d77ec0651b9f51b657f524415ee3cc38e115",
+      "source_path": "src/ryze/data/processor.py",
+      "expected_git_blob_sha1": "ef9f6a30ef06244ed3e0930c3b19e90d441cc0aa",
+      "status": "acquired_verified",
+      "bytes": 4910,
+      "sha256": "907033240fd072de6a74c9e5bb51e56fa5946cb95f0103bb1ee62f30e054b8ee",
+      "git_blob_sha1": "ef9f6a30ef06244ed3e0930c3b19e90d441cc0aa",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/Chivier__Ryze__src__ryze__data__processor.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/41b2d77ec0651b9f51b657f524415ee3cc38e115/src/ryze/figure/read_figure.py",
+      "source_commit": "41b2d77ec0651b9f51b657f524415ee3cc38e115",
+      "source_path": "src/ryze/figure/read_figure.py",
+      "expected_git_blob_sha1": "6ed95b48a2d7f629891e1e015e8a4f06b9d97927",
+      "status": "acquired_verified",
+      "bytes": 139,
+      "sha256": "75f2032795a51ca0dc581ec1a6d6d2bc9dfcb1b0290b0441429a6e14805cc883",
+      "git_blob_sha1": "6ed95b48a2d7f629891e1e015e8a4f06b9d97927",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/Chivier__Ryze__src__ryze__figure__read_figure.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Chivier/Ryze/a1a5d4033523a02c72aeea040bddc48276a3f4d6/src/ryze/eval/evaluator.py",
+      "source_commit": "a1a5d4033523a02c72aeea040bddc48276a3f4d6",
+      "source_path": "src/ryze/eval/evaluator.py",
+      "status": "acquired_verified",
+      "bytes": 13694,
+      "sha256": "c22d20ca782b841a3c08bd67b3f5b346832a477c37699ff43ff40e6bc591846a",
+      "git_blob_sha1": "9495e25fe9767b4367545b9e658485de0fad4766",
+      "path": "/data/rustfs1/dongweij/bio-evaluation/sources/remaining_native_recovery/Chivier__Ryze__ray__src__ryze__eval__evaluator.py"
+    }
+  ],
+  "validation": {
+    "all_acquired_sha256_recomputed": true,
+    "all_source_blob_git_sha1_recomputed": true,
+    "no_source_code_executed": true,
+    "original_catalog_and_scores_unchanged": true
+  },
+  "interpretation_rule": "Task-demand labels are provisional. Score interpretations concern declared inputs/targets/protocols and do not infer the model\u2019s internal computation."
+}

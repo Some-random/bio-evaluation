@@ -1,0 +1,61 @@
+{
+  "scope": "One-time same-checkpoint authorized local benchmark queue",
+  "gpu_ids": [
+    3
+  ],
+  "accept_more": true,
+  "jobs": [
+    {
+      "config": "configs/local_pmcvqa_v05.json",
+      "executor": "scripts/execute_local_pmcvqa.py"
+    },
+    {
+      "config": "configs/local_stride_gfp_p42.json",
+      "executor": "scripts/execute_local_stride_gfp.py"
+    },
+    {
+      "config": "configs/local_pathvqa_seven_gpu_shard_002.json",
+      "executor": "scripts/execute_local_pathvqa_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_bioreason_p28_shard_002.json",
+      "executor": "scripts/execute_local_bioreason_shard.py"
+    },
+    {
+      "config": "configs/local_deepfri_p14_sparse_confidence.json",
+      "executor": "scripts/execute_local_deepfri_confidence_eight_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p03_shard_002.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_id_shard_002.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_002.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p07_shard_006.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p07_shard_013.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p07_shard_020.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p08_shard_000.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_extended_seven_gpu_p08_shard_007.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
+    }
+  ]
+}

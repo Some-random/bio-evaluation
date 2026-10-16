@@ -1,0 +1,233 @@
+{
+  "task_id": "P42",
+  "status": "disabled_pending_root_review_and_specialized_runner_runtime_freeze",
+  "execution_authorized": false,
+  "generation_authorized": false,
+  "oracle_forward_authorized": false,
+  "proposal_kind": "qualified_adaptation_with_partial_native_metrics",
+  "exact_native_paper_replication": false,
+  "original_paper": "https://arxiv.org/html/2603.03573v1",
+  "source_revision": "1e331e8c6d80677fcf446d84bb2de8811dfecc09",
+  "model_id": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "model_precision": "BF16",
+  "source_sequence_sha256": "dd295bd4496d5e13da909a2c59492f00f923f7957a774feeaafaf8c5c235828c",
+  "inputs": [
+    {
+      "regime": "replace_only",
+      "path": "data/stride_gfp_qualified_p42/replace_only.inputs.proposed.jsonl",
+      "sha256": "d9ceafea19174fc7b3263ecf3fea5bf5cc17dcadcb7a93d28db0540f3a50c406",
+      "rows": 100,
+      "variant": "QWEN_GFP_QUALIFIED_REPLACE_ONLY_ENDPOINT_1_TO_3",
+      "prospective_prompt_addition": "\nEvaluation condition for this sample:\nMake only amino-acid replacements and preserve the sequence length. The final sequence must differ from WT at exactly 1, 2, or 3 amino-acid positions. Return one candidate under these constraints.\n"
+    },
+    {
+      "regime": "full_atomic",
+      "path": "data/stride_gfp_qualified_p42/full_atomic.inputs.proposed.jsonl",
+      "sha256": "b81eb377fa9a3d8950af34ec3dc4e5b5c73168023afb88c162c631066b18514b",
+      "rows": 100,
+      "variant": "QWEN_GFP_QUALIFIED_FULL_ATOMIC_ENDPOINT_1_TO_3",
+      "prospective_prompt_addition": "\nEvaluation condition for this sample:\nINSERT, DELETE, and REPLACE of individual amino acids are permitted. The minimum number of these operations needed to transform WT into the final sequence must be exactly 1, 2, or 3. Return one candidate under these constraints.\n"
+    }
+  ],
+  "total_candidate_slots": 200,
+  "candidate_slots_per_regime": 100,
+  "seed_schedule": {
+    "rule": "42 + sample_index",
+    "range_inclusive": [
+      42,
+      141
+    ],
+    "reused_across_regimes": true,
+    "qualification": "Explicit HTTP sampling adaptation from publisher persistent RNG and n=10 batching. No identical-prompt seed42 reuse for every candidate."
+  },
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": -1,
+    "min_p": 0.0,
+    "max_tokens": 1024,
+    "n": 1,
+    "presence_penalty": 0.0,
+    "frequency_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "enable_thinking": true
+  },
+  "sampling_controls": {
+    "preserve_all_duplicates": true,
+    "no_retries_or_output_repair": true,
+    "no_sampling_until_valid_or_improved": true,
+    "no_oracle_feedback_or_candidate_selection": true,
+    "all_200_generations_frozen_before_oracle_scoring": true
+  },
+  "system_and_user_roles": "Retain both native messages; append only the declared regime endpoint constraint to the user message.",
+  "channel_handling": "Archive actual reasoning/final independently. For source parser compatibility only, an explicit reasoning field is reconstructed as <think>reasoning</think>final. Never recover a candidate from reasoning-only JSON or repair malformed final JSON.",
+  "validity": {
+    "alphabet": "uppercase AA20, no sequence normalization or cropping",
+    "replace_only": "same length and Hamming distance 1..3",
+    "full_atomic": "Levenshtein distance 1..3 under unit INSERT/DELETE/REPLACE costs",
+    "endpoint_vs_trajectory": "Endpoint distance proves existence of a short edit path, not correctness or length of a model-generated trajectory. Trajectory correctness remains unassessed."
+  },
+  "oracle": {
+    "assets": [
+      {
+        "repository": "SaProtHub/Model-Fluorescence-650M",
+        "revision": "8226f15a8ea237db4a972afa453041c1b2deb237",
+        "path": "adapter_config.json",
+        "target": "models/proxy_generation_native/saprot_fluorescence_adapter/adapter_config.json",
+        "bytes": 521,
+        "sha256": "39abd7a975b9d0610078f2b06103dee2f3761a8e28126c1fb9ebad1603ffb423",
+        "git_blob_sha1": "18993710585ec453efdfdf2a50f53e238b4a76fd",
+        "url": "https://huggingface.co/SaProtHub/Model-Fluorescence-650M/resolve/8226f15a8ea237db4a972afa453041c1b2deb237/adapter_config.json",
+        "publisher_digest_verified": true
+      },
+      {
+        "repository": "SaProtHub/Model-Fluorescence-650M",
+        "revision": "8226f15a8ea237db4a972afa453041c1b2deb237",
+        "path": "adapter_model.bin",
+        "target": "models/proxy_generation_native/saprot_fluorescence_adapter/adapter_model.bin",
+        "bytes": 15513663,
+        "sha256": "7696e185bae99f07f4624922321d042f14bb412178788c4d6549da2aec60ae5a",
+        "git_blob_sha1": "b5095e66c34c054f47bc194db2dae1584f9ab22a",
+        "url": "https://huggingface.co/SaProtHub/Model-Fluorescence-650M/resolve/8226f15a8ea237db4a972afa453041c1b2deb237/adapter_model.bin",
+        "publisher_digest_verified": true
+      },
+      {
+        "repository": "SaProtHub/Model-Fluorescence-650M",
+        "revision": "8226f15a8ea237db4a972afa453041c1b2deb237",
+        "path": "metadata.json",
+        "target": "models/proxy_generation_native/saprot_fluorescence_adapter/metadata.json",
+        "bytes": 88,
+        "sha256": "829f38928602ed15e9040a3f111fec1fffc82892c0a70c4b3b3b7607589f1e9f",
+        "git_blob_sha1": "f3d905b85a336e8f14f8716e5c549327319f705c",
+        "url": "https://huggingface.co/SaProtHub/Model-Fluorescence-650M/resolve/8226f15a8ea237db4a972afa453041c1b2deb237/metadata.json",
+        "publisher_digest_verified": true
+      },
+      {
+        "repository": "westlake-repl/SaProt_650M_AF2",
+        "revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+        "path": "config.json",
+        "target": "models/proxy_generation_native/saprot_base/config.json",
+        "bytes": 647,
+        "sha256": "927bf8961c93e0667cecb6f928aa7077e1a7f55c8483ae58173f155261f1c3b3",
+        "git_blob_sha1": "7c43c2eaa6ed3d35e206d1fbd2533ba69a7da0d3",
+        "url": "https://huggingface.co/westlake-repl/SaProt_650M_AF2/resolve/d9b9ad00ef61c0990e611b2b43f2231c7de24b38/config.json",
+        "publisher_digest_verified": true
+      },
+      {
+        "repository": "westlake-repl/SaProt_650M_AF2",
+        "revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+        "path": "pytorch_model.bin",
+        "target": "models/proxy_generation_native/saprot_base/pytorch_model.bin",
+        "bytes": 2606517773,
+        "sha256": "513c39088804b74309d961174d5fc7aeabfb9b79d2814cdc7e465d4fe4b9f216",
+        "git_blob_sha1": "4df4029c70cc8fa0b039a34c808a1c4dca1f4026",
+        "url": "https://huggingface.co/westlake-repl/SaProt_650M_AF2/resolve/d9b9ad00ef61c0990e611b2b43f2231c7de24b38/pytorch_model.bin",
+        "publisher_digest_verified": true
+      },
+      {
+        "repository": "westlake-repl/SaProt_650M_AF2",
+        "revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+        "path": "special_tokens_map.json",
+        "target": "models/proxy_generation_native/saprot_base/special_tokens_map.json",
+        "bytes": 125,
+        "sha256": "3aedcd4211c0d43aec4e607ff60a63255f3174ead795e997350f09a5f8cd9ee1",
+        "git_blob_sha1": "ba0f9b53dbbf27934f7555e5d31e37bdea9317f1",
+        "url": "https://huggingface.co/westlake-repl/SaProt_650M_AF2/resolve/d9b9ad00ef61c0990e611b2b43f2231c7de24b38/special_tokens_map.json",
+        "publisher_digest_verified": true
+      },
+      {
+        "repository": "westlake-repl/SaProt_650M_AF2",
+        "revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+        "path": "tokenizer_config.json",
+        "target": "models/proxy_generation_native/saprot_base/tokenizer_config.json",
+        "bytes": 40,
+        "sha256": "bfd8a81f4215e59174634eec71eea99aa1841d8692bdf5c60e9ecaa12904fde8",
+        "git_blob_sha1": "aad24fba9f1bad2d74ed79d414ddcd60e6b0f812",
+        "url": "https://huggingface.co/westlake-repl/SaProt_650M_AF2/resolve/d9b9ad00ef61c0990e611b2b43f2231c7de24b38/tokenizer_config.json",
+        "publisher_digest_verified": true
+      },
+      {
+        "repository": "westlake-repl/SaProt_650M_AF2",
+        "revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+        "path": "vocab.txt",
+        "target": "models/proxy_generation_native/saprot_base/vocab.txt",
+        "bytes": 1354,
+        "sha256": "d4289b3ff55d50b1aa33a3141ec344fc2a69cb3dca43aeefe9fccfee371ffd28",
+        "git_blob_sha1": "1e8f43a0d265641e3d16f0a6931f27aae233f77f",
+        "url": "https://huggingface.co/westlake-repl/SaProt_650M_AF2/resolve/d9b9ad00ef61c0990e611b2b43f2231c7de24b38/vocab.txt",
+        "publisher_digest_verified": true
+      }
+    ],
+    "device": "cpu",
+    "dtype": "float32",
+    "runtime_environment": "NEW isolated CPU environment, not the active vLLM environment; exact dependency lock must be frozen before any load/forward.",
+    "native_preprocessing": "Append # after each amino acid, pinned EsmTokenizer, padding=True, truncation=True, max_length=1024; retain full eligible sequences.",
+    "head_load_requirement": "Restore the pinned trained classifier and all LoRA adapter tensors. Audit loaded keys; never score with a random/unrestored classification head.",
+    "forward_order": "Source once, then exact first-occurrence unique eligible candidates in frozen regime/source-order; map cached scores back to all duplicate slots.",
+    "maximum_distinct_sequence_scores": 201,
+    "numeric_comparison": "Raw finite float32 oracle scores; strict candidate > source, no tolerance/rounding/threshold selection."
+  },
+  "metrics": {
+    "qualified_oracle_success": "number of eligible improved samples /100, preserving invalid/missing generation slots as failures",
+    "improved_sequence_uniqueness": "distinct improved AA strings / improved sample count; null if denominator0",
+    "native_novelty": null,
+    "native_novelty_status": "blocked_missing_exact_positive_SFT_Dplus_membership",
+    "missing_oracle_handling": "Any eligible candidate with missing/nonfinite score withholds primary success/uniqueness; never impute score0.",
+    "diagnostics": [
+      "format delivery",
+      "endpoint validity",
+      "length finish count",
+      "length-changing endpoints",
+      "duplicate count",
+      "oracle failures"
+    ],
+    "task_completion_claim": "Qualified success/uniqueness may complete; P42 full native metric set remains incomplete while novelty/protocol recovery is blocked."
+  },
+  "frozen_dependencies": [
+    {
+      "path": "scripts/stride_gfp_qualified_contract.py",
+      "sha256": "bccb1a295bed84534f1554dcb6d3b7f80a5e4ee017ee95f635be59cae765a547"
+    },
+    {
+      "path": "scripts/prepare_stride_gfp_qualified_proposal.py",
+      "sha256": "e1d4994d601b13ef7ca14c79df27cbdb529879b99159a0262e2821331047ee5b"
+    },
+    {
+      "path": "sources/proxy_generation_native/stride__scripts__eval__infer_protein_vllm.py",
+      "sha256": "9e6a632b5ad722924f0baf0a2f77740971e2dc0911b947bbf045ff85b922c588"
+    },
+    {
+      "path": "sources/stride__scripts__eval__score_fluorescence.py",
+      "sha256": "ae06c6f200d81ad6b7f764921fba17379076d2e6413cae781cc3bbffd3ed9ad2"
+    },
+    {
+      "path": "data/proxy_generation_native/P42/native_reference_contract.json",
+      "sha256": "101e7c3f7daa2118a1ff38c29f81b170c50dbf89885a09f97654ba416b6da94d"
+    },
+    {
+      "path": "sources/proxy_generation_native/saprot_adapter_tensor_inventory.json",
+      "sha256": "07bd9a5c098d5f6a1890d43e1cff0bb6477df954b2c320bc91114f4086d9e5d6"
+    }
+  ],
+  "remaining_execution_gates": [
+    "Root approves concrete qualified case/protocol scope.",
+    "New specialized runner preserves native system+user roles and records per-slot distinct seeds/raw channels.",
+    "Freeze HTTP request, scorer wrapper and separate CPU oracle runtime/dependencies.",
+    "Freeze all asset/tokenizer/preprocessing hashes and audit trained classifier restoration before forward.",
+    "Audit actual prompt tokens plus1024 output against publisher4096 context bound."
+  ],
+  "interpretation": {
+    "likely_demands_provisional": [
+      "learned sequence-property prediction",
+      "local candidate proposal",
+      "instruction-following under endpoint constraints"
+    ],
+    "information_supplied": "Publisher GFP anchor, native goal/system/user prompt and declared endpoint regime constraint; no oracle outputs, labels, D+ membership, tools or training.",
+    "reference_evidence": "Fixed trained SaProt regression-head predictions, not new laboratory measurements.",
+    "good_score": "Higher oracle-scored candidates within this declared endpoint budget and sampling protocol.",
+    "bad_score": "Limited eligible delivery or oracle improvement under this budget; does not isolate reasoning capability.",
+    "rationale_correctness": "Unassessed separately from outcome scores; unsupported mechanisms are not automatically false.",
+    "contamination": "Prior exposure to public GFP data is unknown."
+  }
+}

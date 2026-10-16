@@ -1,0 +1,57 @@
+{
+  "activated_at_utc": "2026-10-15T09:32:44.215464+00:00",
+  "plan_file": "reports/local_pathvqa_seven_gpu_plan.json",
+  "plan_sha256": "f76650716cdd9220929e2a9659476e1a1e914f1e6315b99757a00c0d6dc32053",
+  "approval_sha256": "a1c233aef724eb9ec7cebffa7e74d7dc4b3771688afbecaead7546a806091193",
+  "original_unstarted": {
+    "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15",
+    "run_folder_exists": false,
+    "manifest_exists": false,
+    "request_files": 0,
+    "response_files": 0,
+    "scores_exist": false,
+    "completion_exists": false
+  },
+  "original_fulljob_removed": [
+    {
+      "config": "configs/local_pathvqa.json",
+      "executor": "scripts/execute_local_pathvqa.py"
+    }
+  ],
+  "new_shards_queued": [
+    {
+      "config": "configs/local_pathvqa_seven_gpu_shard_000.json",
+      "executor": "scripts/execute_local_pathvqa_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_pathvqa_seven_gpu_shard_001.json",
+      "executor": "scripts/execute_local_pathvqa_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_pathvqa_seven_gpu_shard_002.json",
+      "executor": "scripts/execute_local_pathvqa_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_pathvqa_seven_gpu_shard_003.json",
+      "executor": "scripts/execute_local_pathvqa_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_pathvqa_seven_gpu_shard_004.json",
+      "executor": "scripts/execute_local_pathvqa_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_pathvqa_seven_gpu_shard_005.json",
+      "executor": "scripts/execute_local_pathvqa_seven_gpu.py"
+    },
+    {
+      "config": "configs/local_pathvqa_seven_gpu_shard_006.json",
+      "executor": "scripts/execute_local_pathvqa_seven_gpu.py"
+    }
+  ],
+  "full_case_count": 6719,
+  "payload_and_frozen_dependency_preflight": "passed",
+  "unique_frozen_files_checked": 33,
+  "queue_order_basis": "Each complete fixed shard is the next independent job after current active generation; BindingDBshortlikelihoodcomponent retains immediate place afterP06. No modeloutcome/case selection.",
+  "raw_outputs_already_generated": 0,
+  "openai_evaluation_api_calls": 0
+}

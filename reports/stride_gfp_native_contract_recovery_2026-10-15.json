@@ -1,0 +1,250 @@
+{
+  "created_at_utc": "2026-10-15T09:35:24.842781+00:00",
+  "task_id": "P42",
+  "scope": "GFP fluorescence only; no other protein targets or molecule tasks.",
+  "status": "qualified_two_regime_execution_prepared_native_novelty_and_exact_paper_protocol_blocked",
+  "inference_dispatched": false,
+  "oracle_model_loaded_by_this_agent": false,
+  "oracle_forward_performed": false,
+  "new_training": false,
+  "model_assets_downloaded": false,
+  "native_source_revision": "1e331e8c6d80677fcf446d84bb2de8811dfecc09",
+  "paper_v1": "https://arxiv.org/html/2603.03573v1",
+  "paper_v2": "https://arxiv.org/html/2603.03573v2",
+  "published_proceedings": "https://proceedings.mlr.press/v306/zhang26ik.html",
+  "paper_contract_summary": "v1 reports100 candidates per regime, strict fixed-oracle improvement, exact-string uniqueness among improved samples, and novelty against positive SFT D+. Its beneficial TAPE counts are3280/785; augmented counts7153/1789. The requested settings are replace-only and full atomic editing. The exact prompt/validation implementation and D+ strings are unrecovered. v2 explicitly qualifies indel scores as an oracle stress test and corrects the full-action uniqueness denominator78/79 to78/89. It does not supply the missing D+ release in the inspected sections.",
+  "source_findings": [
+    {
+      "finding": "The public generation CLI has one unrestricted GFP prompt and no action-space or edit-budget argument. It samples100 outputs in batches of10 with persistent RNG seed42.",
+      "source": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/scripts/eval/infer_protein_vllm.py"
+    },
+    {
+      "finding": "The CLI parser splits at the first literal closing think delimiter and JSON-loads the entire remaining text. It accepts a dictionary with a string protein field, without checking an edit trajectory or amino-acid alphabet.",
+      "source": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/scripts/eval/infer_protein_vllm.py"
+    },
+    {
+      "finding": "Default preprocessing keeps delta >=0, excluding WT unless requested. The paper defines strictly beneficial variants. Default settings cannot identify the exact paper training membership or establish which arguments authors used.",
+      "source": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/scripts/data/prepare_gfp_delta.py"
+    },
+    {
+      "finding": "The random-edit augmentation CLI defaults to1000 rows, seed42 and1\u20133 operations. It writes unscored sequences/actions, permits replacement by the original residue, and supplies no oracle-improvement filter or train/validation partition.",
+      "source": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/scripts/data/augment_gfp_random_edit.py"
+    },
+    {
+      "finding": "Released ShareGPT construction routes supplied stage tags and emits1-based replacement text for same-length variants; it supplies no complete native D+ manifest.",
+      "source": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/scripts/data/build_gfp_sharegpt.py"
+    },
+    {
+      "finding": "The published method describes0-based evolving-sequence indices. The released GFP reward implementation instead validates1-based descending edits with insertion offsets, so its parser cannot be silently called identical to the described method.",
+      "source": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/GRPO/gfp_reward.py"
+    },
+    {
+      "finding": "The public Edit Flows sampling CLI offers length and step parameters but no1\u20133 atomic-budget or replace-only switch.",
+      "source": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/baseline/edit_flows/sample.py"
+    },
+    {
+      "finding": "The training config references local GFP ShareGPT train/validation files and local output adapters; it does not identify an uploaded exact processed sequence-membership release.",
+      "source": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/configs/sft/protein_sft_qwen3_14b_qlora.yml"
+    },
+    {
+      "finding": "The current public branch is the pinned revision; no tags/releases were returned. Issue1 requests processed datasets/checkpoints and has zero comments. This documents an unresolved artifact request, not proof that no private artifact exists.",
+      "source": "https://github.com/daiheng-zhang/STRIDE/issues/1"
+    }
+  ],
+  "Dplus_status": {
+    "exact_membership_recovered": false,
+    "exact_novelty_computable": false,
+    "missing": [
+      "Exact retained positive train sequences and their deduplication/overlap policy.",
+      "Exact synthetic-augmentation draws, predictor-filtered survivors and final train/validation assignment.",
+      "Clarification of whether the evaluated D+ combines or replaces subsets, plus the exact source run arguments."
+    ],
+    "not_substituted": [
+      "All TAPE train sequences",
+      "A newly regenerated random augmentation",
+      "An arbitrary SaProt/UniProt corpus"
+    ],
+    "public_release_evidence": {
+      "github_main_revision": "1e331e8c6d80677fcf446d84bb2de8811dfecc09",
+      "branches": 1,
+      "tags": 0,
+      "releases": 0,
+      "issue_url": "https://github.com/daiheng-zhang/STRIDE/issues/1",
+      "issue_state": "open",
+      "issue_comments": 0,
+      "hugging_face_paper_linked_models": 0,
+      "hugging_face_paper_linked_datasets": 0
+    },
+    "source_search_limit": "Public publisher code/links, metadata and named Hub searches only. No private artifacts, sign-in gates or author communications were accessed."
+  },
+  "native_vs_qualified_metrics": [
+    {
+      "metric": "Success",
+      "native_requirement": "Fixed-oracle score(candidate)>score(anchor),100 samples per action regime.",
+      "qualified_feasibility": "Feasible after root authorizes frozen predictor/runtime. Prospective AA20 and endpoint1\u20133 rules, new model and per-slot HTTP seeds are explicitly qualified.",
+      "exact_native_reproduction": false
+    },
+    {
+      "metric": "Uniqueness",
+      "native_requirement": "Exact distinct improved sequences / improved samples, preserving repeated samples.",
+      "qualified_feasibility": "Feasible on the same eligible improved cohort; undefined denominator stays null.",
+      "exact_native_reproduction": false
+    },
+    {
+      "metric": "Novelty",
+      "native_requirement": "Exact membership against the original positive SFT training D+.",
+      "qualified_feasibility": "Withheld/null; no replacement reference set.",
+      "exact_native_reproduction": false
+    },
+    {
+      "metric": "Trajectory execution correctness",
+      "native_requirement": "An explicit, declared trajectory parser/indexing rule and actual generated edit program.",
+      "qualified_feasibility": "Unassessed. Endpoint Hamming/Levenshtein distance is not evidence that a generated rationale is executable.",
+      "exact_native_reproduction": false
+    }
+  ],
+  "qualified_proposal": {
+    "original_disabled_proposal": "configs/stride_gfp_qualified_p42.proposed.json",
+    "original_disabled_proposal_sha256": "7dfa4f2a5943f31a2061f490938736709eb65984f40354c5cbaa7e74b93ba644",
+    "disabled_execution_candidate": "configs/local_stride_gfp_p42.candidate.json",
+    "disabled_execution_candidate_sha256": "428e221e1d10731fa462fa84267a1f856877ebf2fa76b053bd8523c8fe4c1095",
+    "combined_input_file": "data/stride_gfp_qualified_p42/all_regimes.inputs.proposed.jsonl",
+    "combined_input_sha256": "e21510dbbad929d00c85d4a1cedf339cf9774319d1abfc012088bd404896b23c",
+    "candidate_slots": 200,
+    "per_regime": 100,
+    "native_roles_preserved": [
+      "system",
+      "user"
+    ],
+    "seed_adaptation": "42+sample_index for0..99 per regime; this differs from persistent native RNG in10-choice batches. No repeated identical prompt+seed42 calls, outcome-based retries, resampling or repair.",
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "top_k": -1,
+      "min_p": 0.0,
+      "max_tokens": 1024,
+      "n": 1,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "repetition_penalty": 1.0,
+      "enable_thinking": true
+    },
+    "endpoint": "http://127.0.0.1:8033/v1",
+    "physical_gpu": 3,
+    "oracle_source": "Already publisher-verified trained SaProt base+fluorescence adapter; no download or forward occurred here.",
+    "endpoint_rules": {
+      "alphabet": "uppercase AA20, no sequence normalization or cropping",
+      "replace_only": "same length and Hamming distance 1..3",
+      "full_atomic": "Levenshtein distance 1..3 under unit INSERT/DELETE/REPLACE costs",
+      "endpoint_vs_trajectory": "Endpoint distance proves existence of a short edit path, not correctness or length of a model-generated trajectory. Trajectory correctness remains unassessed."
+    },
+    "channel_rule": "Archive actual reasoning/final independently. For source parser compatibility only, an explicit reasoning field is reconstructed as <think>reasoning</think>final. Never recover a candidate from reasoning-only JSON or repair malformed final JSON.",
+    "sample_completion_and_scoring_boundary": "One200-slot run. Preserve full raw request/response bytes and every missing slot; seal all200 before separate CPU scorer loads/forwards the predictor. Generation completion is distinct from scoring and full native metric completion.",
+    "root_owned_remaining_gates": [
+      "Finalize the isolated CPU oracle runtime/scorer and trained-head restoration audits.",
+      "Root review/allowlist/final activation plus exact frozen source/config/runtime hashes.",
+      "Insert one specialized generation+scoring job on GPU3 after active V05."
+    ]
+  },
+  "new_generation_and_contract_code": [
+    {
+      "path": "scripts/stride_gfp_qualified_contract.py",
+      "sha256": "bccb1a295bed84534f1554dcb6d3b7f80a5e4ee017ee95f635be59cae765a547"
+    },
+    {
+      "path": "scripts/prepare_stride_gfp_qualified_proposal.py",
+      "sha256": "e1d4994d601b13ef7ca14c79df27cbdb529879b99159a0262e2821331047ee5b"
+    },
+    {
+      "path": "scripts/run_local_stride_gfp.py",
+      "sha256": "d8613adaeaa1ef81435d0a1d758dec8d0ac58bbe45ba1bacf62effcb495d233e"
+    },
+    {
+      "path": "scripts/execute_local_stride_gfp.py",
+      "sha256": "99643d1ff56cf4c733f265151415ff656a3532a7dcb9875e49f77b8e4e091ace"
+    }
+  ],
+  "tokenizer_validation": {
+    "created_at_utc": "2026-10-15T09:26:06.349659+00:00",
+    "model_id": "Qwen/Qwen3.8-27B",
+    "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "tokenizer_only_no_model_forward": true,
+    "proposal_sha256": "7dfa4f2a5943f31a2061f490938736709eb65984f40354c5cbaa7e74b93ba644",
+    "rows": [
+      {
+        "regime": "replace_only",
+        "case_count": 100,
+        "min_prompt_tokens": 304,
+        "max_prompt_tokens": 304,
+        "max_prompt_plus_output_tokens": 1328,
+        "publisher_context_bound": 4096,
+        "prompt_hashes_distinct": 1,
+        "seeds_distinct": 100,
+        "input_sha256": "d9ceafea19174fc7b3263ecf3fea5bf5cc17dcadcb7a93d28db0540f3a50c406"
+      },
+      {
+        "regime": "full_atomic",
+        "case_count": 100,
+        "min_prompt_tokens": 309,
+        "max_prompt_tokens": 309,
+        "max_prompt_plus_output_tokens": 1333,
+        "publisher_context_bound": 4096,
+        "prompt_hashes_distinct": 1,
+        "seeds_distinct": 100,
+        "input_sha256": "b81eb377fa9a3d8950af34ec3dc4e5b5c73168023afb88c162c631066b18514b"
+      }
+    ],
+    "validation": "Explicit input_ids token counts match independent encode(rendered_chat, add_special_tokens=False) on every case.",
+    "supersedes_invalid_audit": "reports/stride_gfp_qualified_prompt_validation_incorrect_superseded.json used mapping-key count, not tokens; do not use it.",
+    "all_200_cases_passed": true,
+    "execution_authorized": false
+  },
+  "synthetic_validation": {
+    "contract_tests": 7,
+    "runner_tests": 8,
+    "passed": 15,
+    "framework": "standard-library unittest",
+    "actual_benchmark_calls": 0,
+    "coverage": [
+      "fixed denominator and duplicates",
+      "strict improvement",
+      "missing-oracle withholding",
+      "endpoint Hamming/Levenshtein distinction",
+      "separate final/reasoning channels",
+      "full raw HTTP archive",
+      "role/seed/metadata guards",
+      "uncertain calls never retried",
+      "terminal slot locking"
+    ]
+  },
+  "interpretation": {
+    "likely_demands_provisional": [
+      "learned sequence-property prediction",
+      "local candidate proposal",
+      "instruction-following under endpoint constraints"
+    ],
+    "information_supplied": "Publisher GFP anchor, native goal/system/user prompt and declared endpoint regime constraint; no oracle outputs, labels, D+ membership, tools or training.",
+    "reference_evidence": "Fixed trained SaProt regression-head predictions, not new laboratory measurements.",
+    "good_score": "Higher oracle-scored candidates within this declared endpoint budget and sampling protocol.",
+    "bad_score": "Limited eligible delivery or oracle improvement under this budget; does not isolate reasoning capability.",
+    "rationale_correctness": "Unassessed separately from outcome scores; unsupported mechanisms are not automatically false.",
+    "contamination": "Prior exposure to public GFP data is unknown."
+  },
+  "actual_information_supplied_to_solver": "None. Only tokenizer and synthetic CPU contract checks ran.",
+  "source_acquisition_manifests": [
+    "sources/stride_native_contract_recovery/metadata_acquisition.json",
+    "sources/stride_native_contract_recovery/code_acquisition.json",
+    "sources/stride_native_contract_recovery/artifact_metadata_acquisition.json"
+  ],
+  "access_blockers": [
+    {
+      "url": "https://openreview.net/forum?id=g9J8AyE0xy",
+      "observed": "Web browser verification challenge; standard public API request returned403. No bypass attempted."
+    },
+    {
+      "url": "https://api.github.com/repos/mlresearch/v306/contents/assets/zhang26ik",
+      "observed": "404 for the advertised proceedings asset folder through GitHub API; no supplemental D+ file recovered."
+    }
+  ],
+  "existing_frozen_files_modified": false
+}

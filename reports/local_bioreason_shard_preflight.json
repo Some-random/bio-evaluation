@@ -1,0 +1,75 @@
+{
+  "task_id": "P28",
+  "status": "disabled_frozen_preflight_passed",
+  "plan_file": "reports/local_bioreason_shard_plan.json",
+  "plan_sha256": "69df7f2f0a5ef2b81f70ec496819e3ceab4ee3faa1b11426ef555a4bf6d15f98",
+  "aggregate_config_file": "configs/local_bioreason_p28_aggregate.json",
+  "aggregate_config_sha256": "dd524b533bdaee3fff5f8f67318d0689f54dcffbb95f5f1215477756b8eb67d7",
+  "aggregate_run_id": "qwen38_27b_p28_full_native_eligible_parallel_2026-10-15",
+  "full_test_id_union_validation": {
+    "complete": true,
+    "union_matches_full_test_ids": true,
+    "expected_test_case_count": 8159,
+    "unique_observed_case_count": 8159,
+    "missing_case_count": 0,
+    "extra_case_count": 0
+  },
+  "shard_sizes": [
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    991
+  ],
+  "shard_gpu_ids": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      1
+    ]
+  ],
+  "runner_file": "scripts/run_local_labbench_eight_gpu.py",
+  "runner_sha256": "de0c69b2eea33d618a7674791d6ae448fd8c086a7ba081e948dafdfdcaed4493",
+  "files_sha256": {
+    "scripts/local_bioreason_shards.py": "08a2dc54ce1e687ef96b270dec1ea4e2a09d9e342965629d19a66e42ceeb30ea",
+    "scripts/prepare_local_bioreason_shards.py": "e572ccbd24e209fdabcc9ac27fc33ca9117c1aa12b411410ff7496222510926d",
+    "scripts/execute_local_bioreason_shard.py": "177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb",
+    "scripts/aggregate_local_bioreason_shards.py": "cae48cc770b259bf88134ad2428009a3547e8338266510ffcc9a5e35dbdb3915",
+    "tests/test_local_bioreason_shards.py": "06ce750413bbb0b9870aa954f11a4197ce0bc70f9da4774bc8332831c51c9e15"
+  },
+  "infrastructure_tests_passed": 9,
+  "native_contract_tests_passed": 5,
+  "independent_read_only_review": "no_blocking_defect_reported",
+  "default_execution_gate_rejection_verified_for_all_shards": true,
+  "references_read": false,
+  "inference_dispatched": false,
+  "allowlist_or_queues_modified": false,
+  "gated_executor": "scripts/execute_local_bioreason_shard.py",
+  "offline_aggregator": "scripts/aggregate_local_bioreason_shards.py",
+  "activation_order": "Root must approve exact frozen plan/configs via separate approval before centralP28allowlist activation; queues must use gated executor only.",
+  "incomplete_output_policy": "Wait for every planned shard terminal; preserve all eligible missing/failed/empty predictions as empty GO sets in one global metric. Nonzero source generation remains nonzero aggregate generation; invalid provenance blocks. No retry/resampling or successful-only selection.",
+  "native_global_metric_calls_planned": 1,
+  "shard_metric_calls_planned": 0
+}

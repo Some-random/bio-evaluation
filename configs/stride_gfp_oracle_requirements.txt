@@ -1,0 +1,15 @@
+# Isolated .venv-oracles only. Install torch2.6.0+cpu from the official CPU index.
+torch==2.6.0+cpu
+transformers==4.44.2
+peft==0.12.0
+accelerate==0.34.2
+numpy==1.26.4
+huggingface-hub==0.25.2
+tokenizers==0.19.1
+safetensors==0.4.5
+packaging==24.1
+PyYAML==6.0.2
+tqdm==4.66.5
+psutil==6.0.0
+requests==2.32.3
+PySocks==1.7.1

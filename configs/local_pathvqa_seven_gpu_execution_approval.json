@@ -1,0 +1,18 @@
+{
+  "approved": true,
+  "plan_file": "reports/local_pathvqa_seven_gpu_plan.json",
+  "plan_sha256": "f76650716cdd9220929e2a9659476e1a1e914f1e6315b99757a00c0d6dc32053",
+  "approved_config_sha256": {
+    "configs/local_pathvqa_seven_gpu_aggregate.json": "5b24032cec15725e5cbe908e63af9f20dd650078a2461f1e415c0000534f2c71",
+    "configs/local_pathvqa_seven_gpu_shard_000.json": "48177904d769467a4184e9d3ca8069ba0313f40bb3e625637f82fbd23de12d3e",
+    "configs/local_pathvqa_seven_gpu_shard_001.json": "637441b1375601da53207abe0fb252fd373e1773ac87fa08d46b405c809d64a9",
+    "configs/local_pathvqa_seven_gpu_shard_002.json": "878dbb855eecd5a7ec0d52fb6f78c8840fc4903f16e188a58f1b21f4114351f5",
+    "configs/local_pathvqa_seven_gpu_shard_003.json": "fac0ef3e3c14128cac7d36de685b1aa5c1a6770e644176c1911d1dcebc305b49",
+    "configs/local_pathvqa_seven_gpu_shard_004.json": "28d1123a2ca55d9cbcabe40b6efd2e49616ef346e2537c0a68c42a3abf9cd98c",
+    "configs/local_pathvqa_seven_gpu_shard_005.json": "cd4a39fc17fce83b609e9160d6bd7bca34824aaa6a8614785e81b700ff47ef61",
+    "configs/local_pathvqa_seven_gpu_shard_006.json": "488dd8dfebb76ec29124f5a40297befd2856ad529d2c2b6216f33a15a37bba66"
+  },
+  "root_activation_required": true,
+  "approved_at_utc": "2026-10-15T09:32:44.215464+00:00",
+  "basis": "Only resource routing for wholly unstarted complete6719publisher-mirror case set; original full source inputs/images/question/model/generation/metrics preserved. Seven GPUs exclude unrelatedGPU0. Original frozen full config remains untouched and original queuedfulljob is superseded before dispatch. Fullsource proof qualifications, native corrected/bug metrics and per-server provenance retained. No output-basedcase selection or retries."
+}

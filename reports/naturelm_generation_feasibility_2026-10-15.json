@@ -1,0 +1,323 @@
+{
+  "created_at_utc": "2026-10-15",
+  "scope_task_ids": [
+    "P37",
+    "P38"
+  ],
+  "status": "native_contract_and_oracle_artifact_blockers_no_execution_proposal_frozen",
+  "inference_performed": false,
+  "oracle_forwards_performed": false,
+  "checkpoint_downloads_performed": false,
+  "new_training_performed": false,
+  "author_contact_performed": false,
+  "frozen_existing_files_changed": false,
+  "native_tasks_retained": true,
+  "interface_compatibility_not_reasoning_suitability": true,
+  "sources": [
+    {
+      "id": "NATURE_PAPER",
+      "url": "https://arxiv.org/html/2502.07527v3",
+      "locator": "Sections4.1–4.2,Tables8–9,FiguresS14/S16",
+      "local_sections": [
+        "S4_SS1.html",
+        "S4_SS2.html",
+        "paper_Figure_S16.html"
+      ],
+      "local_files_sha256": {
+        "sources/naturelm_generation_audit_2026-10-15/S4_SS1.html": "b63241946be491b33b8eff8f3399969e445ea2db51b50babf219cc678e47edff",
+        "sources/naturelm_generation_audit_2026-10-15/S4_SS2.html": "c78240ce3b9e00a8899e1aae2a7a612f2c63c9ee95f7ae8f10ae5d2d658f2653",
+        "sources/naturelm_generation_audit_2026-10-15/paper_Figure_S16.html": "239a27a172f169e2629964e1b02a34bfe0a0d577b633ae80ad739fd535bc8afe"
+      }
+    },
+    {
+      "id": "NATURE_CODE",
+      "url": "https://github.com/microsoft/SFM/tree/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM",
+      "revision": "bcb1351bc6490d4a98cae74e7eead30a028fae00",
+      "locator": "Entireseven-fileNatureLM tree;twoinference notebooks;NatureLMREADME checkpoint links",
+      "local_file": "sources/naturelm_generation_audit_2026-10-15/sfm_tree.json",
+      "local_sha256": "c1246c9458c3e1684ae4d43f468583bd3868803bb765883eb895f01f24d29f3e"
+    },
+    {
+      "id": "NATURE_BASE",
+      "url": "https://huggingface.co/microsoft/NatureLM-8x7B/tree/e1150df2e00f819b87de473d6af5c2105b21ccaa",
+      "revision": "e1150df2e00f819b87de473d6af5c2105b21ccaa",
+      "locator": "Complete47-file publisher modeltree metadata;generation_config.json;science_tokens.py",
+      "local_file": "sources/naturelm_generation_audit_2026-10-15/nature_base_model_metadata.json",
+      "local_sha256": "d834cfff6961dcca3aa956f9167aa5804efe28a724058fa4892ae2b0a9f76274"
+    },
+    {
+      "id": "NATURE_INST",
+      "url": "https://huggingface.co/microsoft/NatureLM-8x7B-Inst/tree/fcef847f23e2ae146ff4d77b434f6b775b594407",
+      "revision": "fcef847f23e2ae146ff4d77b434f6b775b594407",
+      "locator": "Complete47-filepublisher modeltree metadata;generation_config.json",
+      "local_file": "sources/naturelm_generation_audit_2026-10-15/nature_instruction_model_metadata.json",
+      "local_sha256": "6c1a3e66d49204185d0b35f66790508cd573fb6c9e4b12c6535b3ba04ccb10d9"
+    },
+    {
+      "id": "SFM_PAPER",
+      "url": "https://arxiv.org/html/2410.24022",
+      "locator": "Sections4.3–4.4:stabilityregression vs solubilityclassification;not a releasedNatureLMbinary-stabilityoracle",
+      "local_sections": [
+        "SFM_Protein_S4_SS3.html",
+        "SFM_Protein_S4_SS4.html"
+      ],
+      "local_files_sha256": {
+        "sources/naturelm_generation_audit_2026-10-15/SFM_Protein_S4_SS3.html": "855c79730c73cfbf14f1eb049cc3b683cc00b98e2b0b96c800dfa318a8e0c789",
+        "sources/naturelm_generation_audit_2026-10-15/SFM_Protein_S4_SS4.html": "65b33711bdc5110fc8f90716dbd47a76f5496c34e8e942d8f58caa6a91456f7b"
+      }
+    },
+    {
+      "id": "OMEGA",
+      "url": "https://github.com/HeliXonProtein/OmegaFold/tree/313c873ad190b64506a497c926649e15fcd88fcd",
+      "revision": "313c873ad190b64506a497c926649e15fcd88fcd",
+      "locator": "README;pipeline.py:344–424;confidence.py:get_all_confidence;nativeauthorselected variant/aggregationunrecovered",
+      "local_file": "sources/naturelm_generation_audit_2026-10-15/omega_tree.json",
+      "local_sha256": "aa88061735437cd1ed5846f760a3fa14ef6ac046c4709775e04dfd47be5ec09c"
+    }
+  ],
+  "source_inventory_file": "sources/naturelm_generation_audit_2026-10-15/source_inventory.json",
+  "released_generator_artifacts": [
+    {
+      "repository": "microsoft/NatureLM-8x7B",
+      "revision": "e1150df2e00f819b87de473d6af5c2105b21ccaa",
+      "gated": false,
+      "model_file_count": 47,
+      "safetensor_shards": 35,
+      "safetensor_weight_bytes": 93438186896,
+      "checkpoint_downloaded": false,
+      "role": "Original generator reference only; a Qwen adaptation does not require downloading it.",
+      "specialist_property_heads_present_in_tree": false
+    },
+    {
+      "repository": "microsoft/NatureLM-8x7B-Inst",
+      "revision": "fcef847f23e2ae146ff4d77b434f6b775b594407",
+      "gated": false,
+      "model_file_count": 47,
+      "safetensor_shards": 35,
+      "safetensor_weight_bytes": 93505295760,
+      "checkpoint_downloaded": false,
+      "role": "Original generator reference only; a Qwen adaptation does not require downloading it.",
+      "specialist_property_heads_present_in_tree": false
+    }
+  ],
+  "source_tree_finding": {
+    "NatureLM_paths": [
+      "NatureLM/.pre-commit-config.yaml",
+      "NatureLM/.python-version",
+      "NatureLM/8x7b_base_model.ipynb",
+      "NatureLM/8x7b_inst_model.ipynb",
+      "NatureLM/README.md",
+      "NatureLM/pyproject.toml",
+      "NatureLM/uv.lock"
+    ],
+    "native_evaluation_or_reference_artifacts_present": false,
+    "scope": "Inspected pinned publisher GitHub tree, linked HF generator repositories, official paper/project links and publisher/SFM-Protein model metadata queries. Absence findings are limited to these locations.",
+    "HF_exact_SFM_Protein_search_records": 0,
+    "HF_microsoft_SFM_search_records": 0,
+    "HF_NatureLM_dataset_search": "Only unrelated audio data and an unverified third-party subset were found; neither was used as a native protein reference."
+  },
+  "generic_notebook_settings_not_native_budgets": {
+    "examples": "Molecule and aspirin demonstrations only; not the native protein generation experiment.",
+    "max_new_tokens": 100,
+    "temperature": 0.7,
+    "do_sample": true,
+    "not_native_protein_evaluation_recipe": true,
+    "generation_config": "Only BOS=1, EOS=2 and Transformers-version defaults; not protein-specific experiment settings."
+  },
+  "tasks": [
+    {
+      "task_id": "P37",
+      "task": "NatureLM unconditional protein generation",
+      "status": "native_sampling_clustering_and_folding_contract_unresolved",
+      "source_prompt_or_input": {
+        "start_prefix": "<protein>",
+        "end_tag_declared_in_tokenizer": "</protein>",
+        "condition": "No function/property/organism/length target supplied",
+        "native_tokenizer": "Dedicatedscienceentitytokens,unlikeQwenliteralstring tokenization",
+        "benchmark_examples_used_as_cases": false,
+        "native_generation_case_count": null,
+        "native_case_ids": null
+      },
+      "native_metrics": {
+        "mean_length": {
+          "unit": "residues",
+          "eligible": "Validgeneratedsequences; exactvalidity/filteringimplementationunrecovered"
+        },
+        "diversity": {
+          "definition": "Numberof50%-identityclusters / totalgeneratedsequencecount",
+          "unit": "fraction",
+          "clustering_software": null,
+          "alignment_coverage_identity_and_greedy_order_settings": null,
+          "invalid_sequence_denominator_policy": null
+        },
+        "mean_plddt": {
+          "evaluator": "OmegaFold",
+          "sequence_length_filter": "strictlyless_than100residues",
+          "unit": "reported0–100confidence",
+          "native_model_variant_revision_recycles_seed": null,
+          "aggregation_per_residue_vs_overall_weighted_confidence": null
+        }
+      },
+      "published_values": {
+        "source": "NATURE_PAPER",
+        "locator": "Table8",
+        "value_status": "v3HTMLrounded_as_printed",
+        "NatureLM8x7B": {
+          "mean_length": 318,
+          "diversity": 0.989,
+          "mean_plddt_short": 75.9
+        },
+        "Mixtral8x7B": {
+          "mean_length": 53,
+          "diversity": 0.906,
+          "mean_plddt_short": 69.9
+        },
+        "GPT4": {
+          "mean_length": 46,
+          "diversity": 0.816,
+          "mean_plddt_short": 65.1
+        }
+      },
+      "source_disagreement": "Table 8 short-sequence pLDDT values for 8B/8x7B are 71.8/75.9; later Section 4.1 prose reports 69.8/78.1 without length constraints. Preserve conditions/locators separately; do not select a more favorable number.",
+      "natural_reference": {
+        "source": "UR50randomsubset",
+        "reported_mean_length_about": 311,
+        "case_count": null,
+        "release_version": null,
+        "ids_available": false
+      },
+      "residual_blockers": [
+        "Native generated sample counts per model, prompt and condition, allocation/order, RNG seeds and batching.",
+        "Native temperature, top-p/top-k, output-token limit, stopping, validity and filtering policy.",
+        "Author raw generated samples or per-generation records were not available in inspected publisher locations.",
+        "UR50 release, exact reference IDs and sampling seed are unrecovered; do not substitute a new random cohort.",
+        "A 50% identity threshold alone does not fix clustering algorithm, coverage or ordering.",
+        "Public OmegaFold code and weights exist, but NatureLM model variant, revision, recycling, pseudo-MSA settings/RNG and confidence aggregation are unverified; weights were not acquired."
+      ],
+      "partial_native_metric_feasibility": "Length statistics can be computed for a prospectively frozen cohort. Clustering and OmegaFold metrics require declared implementations/runtime approval. Unknown native generation count, stopping and filtering prevent exact-budget paper comparison. No invented count or substitute natural reference was proposed.",
+      "interpretation": {
+        "likely_demands_provisional": "Unconditional protein sequence distribution modeling and learned sequence/structure regularities; specialist representations may be essential.",
+        "information_supplied_to_solver": "Verified source start prefix only; no actual dispatch.",
+        "reference_answer_source": "No per-case gold sequence; output cohort statistics and external folding-confidence predictor.",
+        "good_score_establishes": "Declared cohort length, diversity and folding confidence under the frozen pipeline; not novelty, measured function, laboratory folding or explanation correctness.",
+        "bad_score_establishes": "Limited delivery or cohort proxy properties under the declared adaptation; not absence of all protein reasoning capability.",
+        "explanation_support_score": null
+      }
+    },
+    {
+      "task_id": "P38",
+      "task": "NatureLM stability/solubility-conditioned protein generation",
+      "status": "exact_property_classifiers_and_native_sampling_reference_contract_unrecovered",
+      "source_prompt_or_input": {
+        "prompt_inventory_file": "sources/naturelm_generation_audit_2026-10-15/paper_Figure_S16_prompt_inventory.json",
+        "prompt_inventory_sha256": "8a44d1ab3779ed2ad35176490fb991a6de061a2cdc45f9b48c14a3cf1e84cfb6",
+        "source_locator": "FigureS16",
+        "source_condition_counts": {
+          "stable": 10,
+          "soluble": 10,
+          "insoluble": 10
+        },
+        "native_generated_count_per_condition": null,
+        "native_prompt_allocation_and_order": null,
+        "illustrative_source_prompts_not_benchmark_cases": true,
+        "actual_dispatch": null
+      },
+      "native_metrics": {
+        "stability_mean_probability": {
+          "evaluator": "SFM-Protein fine-tunedbinaryclassifier",
+          "unit": "probability0–1",
+          "head_checkpoint_modelsize_preprocessing_probability_channel": null
+        },
+        "stability_fraction_above_half": {
+          "threshold": 0.5,
+          "comparison": "strictgreaterthan",
+          "unit": "fraction",
+          "native_failure_denominator": null
+        },
+        "solubility_distributions": {
+          "evaluator": "SFM-Protein fine-tunedsolubilityclassifier",
+          "conditions": [
+            "soluble",
+            "insoluble"
+          ],
+          "numeric_paper_table": null,
+          "no_plot_digitization": true
+        }
+      },
+      "published_values": {
+        "source": "NATURE_PAPER",
+        "locator": "Table9",
+        "value_status": "rounded_as_printed",
+        "NatureLM8x7B": {
+          "stability_mean_probability": 0.655,
+          "stability_fraction_above_half": 0.812
+        },
+        "naturalUR50": {
+          "stability_mean_probability": 0.552,
+          "stability_fraction_above_half": 0.704
+        }
+      },
+      "natural_reference": {
+        "count": 1000,
+        "this_is_generation_budget": false,
+        "source": "UR50",
+        "release_version": null,
+        "ids_available": false,
+        "sampling_seed": null
+      },
+      "residual_blockers": [
+        "Native generated sample counts per model, prompt and condition, allocation/order, RNG seeds and batching.",
+        "Native temperature, top-p/top-k, output-token limit, stopping, validity and filtering policy.",
+        "Author raw generated samples or per-generation records were not available in inspected publisher locations.",
+        "UR50 release, exact reference IDs and sampling seed are unrecovered; do not substitute a new random cohort.",
+        "Exact trained SFM-Protein stability and solubility classifier heads, tokenizer/configuration and probability orientation were not found in inspected author locations.",
+        "SFM-Protein Section 4.3 reports stability regression, which does not establish the required NatureLM binary classifier conversion/head. No new head or substitute predictor is permitted.",
+        "The generated sample counts, formats and failure rules cannot be inferred from 1,000 natural reference sequences or the Figure S16 prompt inventory."
+      ],
+      "partial_native_metric_feasibility": "Native property scores require the actual trained classifiers. Generic length or lexical heuristics cannot substitute for stability/solubility. Prompt inventory alone is not a run-ready benchmark and does not authorize invented balanced replicates.",
+      "interpretation": {
+        "likely_demands_provisional": "Conditioned protein sequence generation, property-associated sequence regularities and learned biophysical representations.",
+        "information_supplied_to_solver": "Legitimate condition text only; no oracle probabilities, natural-reference IDs or sequence exemplars; no actual dispatch.",
+        "reference_answer_source": "Trained classifier proxy probabilities and a separate natural UR50 reference cohort.",
+        "good_score_establishes": "Frozen classifier confidence/threshold frequency under the declared generation protocol; not measured stability/solubility or rationale correctness.",
+        "bad_score_establishes": "Poor condition delivery or property-predictor agreement under the declared protocol; not proof that outputs are experimentally unstable or insoluble.",
+        "explanation_support_score": null
+      }
+    }
+  ],
+  "omega_fold_future_dependency": {
+    "repository_revision": "313c873ad190b64506a497c926649e15fcd88fcd",
+    "source_available": true,
+    "code_license": "Apache-2.0",
+    "checkpoint_urls": [
+      "https://helixon.s3.amazonaws.com/release1.pt",
+      "https://helixon.s3.amazonaws.com/release2.pt"
+    ],
+    "checkpoint_acquired": false,
+    "publisher_docs_default_model": 1,
+    "publisher_docs_default_num_cycle": 10,
+    "publisher_docs_default_num_pseudo_msa": 15,
+    "publisher_docs_default_pseudo_msa_mask_rate": 0.12,
+    "NatureLM_selected_values_verified": false,
+    "native_confidence_aggregation_warning": "OmegaFold get_all_confidence uses local-neighbor-weighted residue confidence; NatureLM average pLDDT does not identify that aggregation versus an unweighted residue mean. Do not silently substitute either.",
+    "existing_frozen_oracle_environment_must_not_be_changed": "Keep .venv-oracles frozen for P42; any future OmegaFold installation needs a separate reviewed runtime."
+  },
+  "call_compute_estimates": {
+    "status": "symbolic_only_native_generationN_andoutputlimit_unknown",
+    "OpenAI_or_paid_API_calls": 0,
+    "OpenAI_or_paid_API_cost_usd": 0,
+    "local_hardware_cost_usd": null,
+    "generation": "N37 + Nstable + Nsoluble + Ninsoluble requests if n=1; native batching is unknown.",
+    "maximum_output_token_work": "Sum of N_condition × native_token_limit_condition; native counts and limits are unknown.",
+    "P37_fold_items": "Eligible valid outputs shorter than 100 residues, at most N37; do not infer counts from histogram plots.",
+    "P38_predictor_items_if_exactreference_recovered": "Nstable + Nsoluble + Ninsoluble + 2000 natural-reference items (1000 for each classifier); actual batch counts are unknown.",
+    "GPU_or_CPU_wallclock_estimate": null,
+    "reason": "Without native counts/limits, workload and an authorized timing forward, numerical wall-clock estimates would be unsupported. Reuse the existing Qwen checkpoint; no extra generator storage is needed."
+  },
+  "proposal_decision": {
+    "execution_authorized": false,
+    "new_run_configs_created": false,
+    "reason": "Exact native budgets and metrics cannot currently be preserved. These remain valid biological generation tasks, blocked by protocol/oracle/reference gaps rather than text-interface suitability.",
+    "future_resolution": "Recover author generation manifest, sampling/validity rules, cluster command, OmegaFold version/weights/settings/aggregation, both trained property heads, and UR50 snapshot/IDs. Freeze a qualified Qwen input/channel/termination condition and denominator before any calls; lock all outputs before external oracle scoring; retain unresolved metrics as null."
+  }
+}

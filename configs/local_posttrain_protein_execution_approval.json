@@ -1,0 +1,31 @@
+{
+  "execution_authorized": true,
+  "approved_task_ids": [
+    "P29"
+  ],
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+  "plan_sha256": "ba54d8bdafef53efd9d471eb2a777804ac6b0c20ddfe03e9e80ff1466347e26b",
+  "approved_config_sha256": {
+    "configs/local_posttrain_protein_p29_id_shard_000.json": "130da148c1434eb4e6c76d38c0e446076e29e567032fa2c3403012705647d7f2",
+    "configs/local_posttrain_protein_p29_id_shard_001.json": "40133acb8bd6f54f6fa544946e12b1dd3a7b2dee95f2bb7f5d42beb1102785b4",
+    "configs/local_posttrain_protein_p29_id_shard_002.json": "687b92c88affe377fe762c1e8232ad000492c8ff052d1d187176ec1c5bd9814a",
+    "configs/local_posttrain_protein_p29_id_shard_003.json": "1d6ab566c2b26433e1d6aa9cfe8a4886527f09d6587af4b67ddfac6193132eaf",
+    "configs/local_posttrain_protein_p29_id_shard_004.json": "1595d59172e724c1c98ad23f8abb1667dc34c9b85e1336e88364106fef4d175c",
+    "configs/local_posttrain_protein_p29_id_shard_005.json": "991b682b743f9bf51b64ac809afcd9bd31684c1e05ddbe65e35cd6230fd2a5b8",
+    "configs/local_posttrain_protein_p29_id_shard_006.json": "91af4f8b561cf2604ec1d460a06ddf403e49f75d8d278574b024350095605a8e",
+    "configs/local_posttrain_protein_p29_ood_shard_000.json": "b0ce3f223bff0b0a2c468334938a3c2f24a8faca3c11cc1b5bb85784cff76b7b",
+    "configs/local_posttrain_protein_p29_ood_shard_001.json": "b1f99aa27ca987563da353648cfdc1797364bc48e082a5e3985921dd91acbe70",
+    "configs/local_posttrain_protein_p29_ood_shard_002.json": "d66218c00a4935bd3fbc3d39c888ea950b3a93407ca968c0aa30db52b13846a7",
+    "configs/local_posttrain_protein_p29_ood_shard_003.json": "28dde9bc93479484719f9756cb3e7f975338e3df33d5eef560a0757e171b5f93",
+    "configs/local_posttrain_protein_p29_ood_shard_004.json": "94ccaa2f5b152d9a7a3162c6ef44267e795141099b43ce01a4f4f56f46b02dc4",
+    "configs/local_posttrain_protein_p29_ood_shard_005.json": "79bf44bfd7cb03b452196c27446ea2a8c4060e317ac98c4901c201e6c275680d",
+    "configs/local_posttrain_protein_p29_ood_shard_006.json": "e9548d621d15280b410a5a7eab2a901260a06f98f08d1132aeb178e105fcf92d",
+    "configs/local_posttrain_protein_p29_ood_shard_007.json": "3dfa5d701d9c1cf6fbb356d0de47fab5882799f4db541d20a7e7b9aae5d0ab44"
+  },
+  "incomplete_output_policy": "Wait for every source shard terminal; lock all outputs/missing slots before labels; preserve every planned failure as empty GO set. Score native augmented-reference mean GO-F1 once per complete ID/OOD union, curated-only diagnostic separately. Nonzero source generation remains nonzero aggregate status. No retries/resampling or score selection.",
+  "activation_order": "Root reviews exact frozen plan/target qualification, authorizes this exact approval, then centralP29allowlist, then gated shard executor only. Generic runner ignores perconfig execution flag.",
+  "approved_at_utc": "2026-10-15T09:18:47.951046+00:00",
+  "basis": "Whole-task source-input review of natural protein GO function annotation from complete sequence, organism, InterPro and supplied learned GO predictions; no engineering/operational request. Preserve original14,872released ID/OOD cases and complete permitted context. Explicit native augmented-target/input dependence, seed-only baseline and separate curated diagnostic; neither highscore norseedrecovery establishes novel inference or internal copying. Native learned-system/training/input-code differences disclosed; one frozen4096output percase, no sourcecontextablation."
+}

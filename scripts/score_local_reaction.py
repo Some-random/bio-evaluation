@@ -136,6 +136,7 @@ def score(folder):
                "planned": len(cases), "requests_saved": requests, "completed": completed, "parsed": metrics["parsed"],
                "invalid_outputs": metrics["invalid"], "missing_or_failed_outputs": sum(not r["completed"] for r in scored),
                "statuses": dict(states), "finish_reasons": dict(finishes), "token_usage": dict(usage), "metrics": metrics,
+               "truncated_outputs": sum(r["finish_reason"] == "length" for r in scored),
                "input_modalities": ["amino_acid_sequence", "text"], "scoring_output_lock_sha256": lock["contract_sha256"],
                "case_scope": scope, "held_before_inference": len(review.get("held_cases", [])), "explanation_support_score": None,
                "comparison_to_paper": "Native released Reaction test and384-class top1 accuracy; prompted Qwen has different representation/context/pretraining from ProtST. Closest native full-description comparator21.91% accuracy, ProtST Table11 printedp15 (rounded); paper pretraining-name29.85% is a separate label-text variant. Native text embeddings truncate each description at128tokens; Qwen receives all complete descriptions jointly.",

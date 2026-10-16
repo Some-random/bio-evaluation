@@ -1,0 +1,189 @@
+{
+  "status": "complete",
+  "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu",
+  "completion": {
+    "generation_exit_code": 0,
+    "source_generation_exit_codes": {
+      "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_000": 0,
+      "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_001": 0,
+      "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_002": 0,
+      "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_003": 0,
+      "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_004": 0,
+      "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_005": 0,
+      "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_006": 0
+    },
+    "scoring_exit_code": 0,
+    "aggregate_only": true,
+    "retry_or_resampling": false,
+    "status": "completed",
+    "finished_at_utc": "2026-10-15T14:37:52.291327+00:00",
+    "configuration_sha256": "5b24032cec15725e5cbe908e63af9f20dd650078a2461f1e415c0000534f2c71",
+    "scorer_sha256": "51f04ea0db376e51898e48297aeb984b61996d00a6d600dfffb0a038818281e8",
+    "aggregate_builder_sha256": "8a65defb20f01bff2b7f5cac7108f978b48dd9b40ab5c82f1d22f38bb22b9137",
+    "run_manifest_sha256": "04bdf5cf78c756592b432e01823013e3e86372588d7a223dc688973c8698db24",
+    "source_shard_provenance_sha256": "be155914e3cbb49ecc79daa6085f0b4bf8b2c1cf789f5545e7f402628bfdc316",
+    "native_scoring_attempt_sha256": "ee756ab2a136ea2d7a70866b6f755ecb45f1665d87cddc41572fe360372e64f6",
+    "full_test_id_union_validation": {
+      "complete": true,
+      "union_matches_full_test_ids": true,
+      "expected_test_case_count": 6719,
+      "unique_observed_case_count": 6719,
+      "missing_case_count": 0,
+      "extra_case_count": 0,
+      "duplicate_case_count": 0,
+      "ordered_case_ids_sha256": "ac3287db5f312961bbb6637ffa1b9c466f61a8d66b145ab277e8e28b6d63929a"
+    },
+    "parallel_gpu_metadata": {
+      "mode": "independent TP1 replicas of one pinned checkpoint; offline full-union scoring",
+      "gpu_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "replica_count": 7,
+      "shard_count": 7,
+      "per_replica_concurrency": 4,
+      "servers": [
+        {
+          "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_000",
+          "gpu_ids": [
+            1
+          ],
+          "endpoint": "http://127.0.0.1:8031/v1",
+          "server": {
+            "pid": 911635,
+            "proc_start_ticks": "199142580",
+            "model": "Qwen/Qwen3.8-27B",
+            "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+            "gpu_ids": [
+              1
+            ],
+            "port": 8031,
+            "server_log": "logs/local_model/qwen38_27b_server_gpu1.log"
+          },
+          "generation_exit_code": 0
+        },
+        {
+          "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_001",
+          "gpu_ids": [
+            2
+          ],
+          "endpoint": "http://127.0.0.1:8032/v1",
+          "server": {
+            "pid": 917680,
+            "proc_start_ticks": "199152132",
+            "model": "Qwen/Qwen3.8-27B",
+            "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+            "gpu_ids": [
+              2
+            ],
+            "port": 8032,
+            "server_log": "logs/local_model/qwen38_27b_server_gpu2.log"
+          },
+          "generation_exit_code": 0
+        },
+        {
+          "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_002",
+          "gpu_ids": [
+            3
+          ],
+          "endpoint": "http://127.0.0.1:8033/v1",
+          "server": {
+            "pid": 922169,
+            "proc_start_ticks": "199162184",
+            "model": "Qwen/Qwen3.8-27B",
+            "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+            "gpu_ids": [
+              3
+            ],
+            "port": 8033,
+            "server_log": "logs/local_model/qwen38_27b_server_gpu3.log"
+          },
+          "generation_exit_code": 0
+        },
+        {
+          "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_003",
+          "gpu_ids": [
+            4
+          ],
+          "endpoint": "http://127.0.0.1:8029/v1",
+          "server": {
+            "pid": 793906,
+            "proc_start_ticks": "198558195",
+            "model": "Qwen/Qwen3.8-27B",
+            "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+            "gpu_ids": [
+              4
+            ],
+            "port": 8029,
+            "server_log": "logs/local_model/qwen38_27b_server_gpu4.log"
+          },
+          "generation_exit_code": 0
+        },
+        {
+          "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_004",
+          "gpu_ids": [
+            5
+          ],
+          "endpoint": "http://127.0.0.1:8026/v1",
+          "server": {
+            "pid": 681239,
+            "proc_start_ticks": "197762301",
+            "model": "Qwen/Qwen3.8-27B",
+            "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+            "gpu_ids": [
+              5
+            ],
+            "server_log": "logs/local_model/qwen38_27b_server.log"
+          },
+          "generation_exit_code": 0
+        },
+        {
+          "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_005",
+          "gpu_ids": [
+            6
+          ],
+          "endpoint": "http://127.0.0.1:8027/v1",
+          "server": {
+            "pid": 789346,
+            "proc_start_ticks": "198539593",
+            "model": "Qwen/Qwen3.8-27B",
+            "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+            "gpu_ids": [
+              6
+            ],
+            "port": 8027,
+            "server_log": "logs/local_model/qwen38_27b_server_gpu6.log"
+          },
+          "generation_exit_code": 0
+        },
+        {
+          "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu_shard_006",
+          "gpu_ids": [
+            7
+          ],
+          "endpoint": "http://127.0.0.1:8028/v1",
+          "server": {
+            "pid": 791668,
+            "proc_start_ticks": "198549147",
+            "model": "Qwen/Qwen3.8-27B",
+            "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+            "gpu_ids": [
+              7
+            ],
+            "port": 8028,
+            "server_log": "logs/local_model/qwen38_27b_server_gpu7.log"
+          },
+          "generation_exit_code": 0
+        }
+      ]
+    },
+    "case_scope": "complete_publisher_mirror_test6719_native_identity_qualified",
+    "scores_sha256": "9275fc494595cfdb04a83e59169462a3958d3763813d8e3c5fe8754f79e5f580",
+    "scoring_output_lock_sha256": "5035716dc449de4ab475cdfdec375993a9f8f63268f84a92c6d447b58bf3ddb0"
+  }
+}

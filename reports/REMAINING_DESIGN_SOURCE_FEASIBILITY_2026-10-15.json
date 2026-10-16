@@ -1,0 +1,1176 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-15T10:22:47.162955+00:00",
+  "scope_task_ids": [
+    "P35",
+    "P36",
+    "P39",
+    "P40",
+    "P41"
+  ],
+  "status": "source_only_audit_complete_no_execution_protocol_activated",
+  "native_tasks_retained": true,
+  "scope": {
+    "official_metadata_and_generic_code_only": false,
+    "new_raw_sequences_structures_design_cases_acquired": true,
+    "inference_or_oracle_forwards": 0,
+    "training_calls": 0,
+    "large_weights_downloaded": false,
+    "existing_frozen_files_changed": false,
+    "execution_configs_authorizations_queues_changed": false,
+    "held_source_retry_or_reroute": false,
+    "restricted_scope": [
+      "B06/ProtocolQA",
+      "P18 flagged pathogen-fitness",
+      "P30-P32 held source review",
+      "AAV/Spike material"
+    ],
+    "current_runtime_context": "Seven existing identical pinned Qwen3.8-27B TP1 vLLM replicas on GPUs1-7; user ceiling8GPUs. GPU0 now idle, but no restart/deployment requested or performed.",
+    "source_content_scope": "Generic official code, metadata, five independently reviewed benign ProtST query lines, and a SHA-verified P36 JSON inspected by a deterministic metadata-only parser. P36 inputs/targets were never printed or exposed to the assistant; all5876cases remain unreviewed and undispatched.",
+    "P36_raw_artifact_acquired_but_content_not_model_reviewed": true
+  },
+  "source_repositories": {
+    "protst": {
+      "repo": "DeepGraphLearning/ProtST",
+      "branch": "main",
+      "commit": "db53a76ed2430eb66dd9c8134ace99fd60980fb3",
+      "tree_entries": 68,
+      "tree_sha256": "3729e59fac57d1158b29a36675ebd335ee4eb25a7004c71e509f18e2be755207",
+      "html_url": "https://github.com/DeepGraphLearning/ProtST",
+      "license": "Apache-2.0"
+    },
+    "biot5": {
+      "repo": "QizhiPei/BioT5",
+      "branch": "main",
+      "commit": "cf65ae6dff63fdea8883dd17d46728a61bba386c",
+      "tree_entries": 82,
+      "tree_sha256": "e57e01cc51c443bb1d648feeeee895ad456f88836f07004f247f9618b1e91cda",
+      "html_url": "https://github.com/QizhiPei/BioT5",
+      "license": "MIT"
+    },
+    "nature": {
+      "repo": "microsoft/SFM",
+      "branch": "main",
+      "commit": "bcb1351bc6490d4a98cae74e7eead30a028fae00",
+      "tree_entries": 14,
+      "tree_sha256": "1da13ef700dfd63450924e77b9bd89701a83c173f5c70311292c52450f2ec586",
+      "html_url": "https://github.com/microsoft/SFM",
+      "license": "MIT"
+    },
+    "proteor1": {
+      "repo": "smiles724/Proteo-R1",
+      "branch": "main",
+      "commit": "ffaa787bce5f30e4cb41e2de5d0b0daab0059243",
+      "tree_entries": 213,
+      "tree_sha256": "6ece1814140f7122019469130acb7879650687ecefd4ed62d2ba4671664b9262",
+      "html_url": "https://github.com/smiles724/Proteo-R1",
+      "license": "Apache-2.0"
+    }
+  },
+  "component_reports": [
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/component_summary.json",
+      "bytes": 17658,
+      "sha256": "a28715456c111f411aac7ddeb70efd6d358b524259454da9dc7e4c01b776c8f7"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/component_summary.json",
+      "bytes": 16107,
+      "sha256": "55438425487eee825ca9c900235474644dc55482fc94e46d6f20816767dfccb1"
+    }
+  ],
+  "tasks": [
+    {
+      "prediction_task_retained": true,
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "native_dispatch_ready": false,
+      "no_new_training_required_for_released_pretrained_model": true,
+      "task_id": "P35",
+      "task": "ProtST text-to-protein retrieval",
+      "status": "native_retrieval_corpus_and_representation_runtime_pending",
+      "reporting_state": "source_acquisition_pending",
+      "required_native_information": "Fixed author GO-MF query file and complete retained GeneOntology corpus (train, validation and 95%-filtered test); PDB-modeled residue identities, native ESM-1b preprocessing, trained joint protein/text projections and normalized embedding ranking.",
+      "native_metric": "Released retrieval command returns top-k PDB IDs per query (default k=20); no aggregate Recall@K/accuracy evaluator is defined by this command. Paper heme top-four illustration and downstream docking are separate qualitative evidence.",
+      "reference_answer_source": "GO annotations and case-study structural/docking evidence; no recovered fixed per-query relevance-gold and aggregate headline metric contract.",
+      "artifact_availability": {
+        "query_file": {
+          "path": "sources/remaining_design_source_audit_2026-10-15/protst__data__zero_shot_retrieval__t2p_prompt_go_mf.txt",
+          "bytes": 498,
+          "sha256": "39a4c730a73b63c01391ca575b1ef89725091974e423b74e8138af78cf41c81e",
+          "publisher_path": "data/zero_shot_retrieval/t2p_prompt_go_mf.txt",
+          "git_blob_sha1": "3af5f2ccf1eea9b360f70d37cdb97d88ac76de38",
+          "raw_file_opened": true,
+          "query_count": 5,
+          "input_review_only": true,
+          "review_status": "five_benign_generic_cofactor_binding_retrieval_queries",
+          "query_topics": [
+            "ATP",
+            "heme",
+            "GTP",
+            "pyridoxal5phosphate",
+            "NAD"
+          ],
+          "inference_authorization_changed": false
+        },
+        "dataset_archive": {
+          "url": "https://zenodo.org/api/records/6622158/files/GeneOntology.zip/content",
+          "total_bytes": 1691808865,
+          "source_expected_md5": "376be1f088cd1fe720e1eaafb701b5cb",
+          "whole_archive_md5_verified": false,
+          "test_zip_already_available_from_prior_audit": 176325834,
+          "missing_train_zip_bytes": 1357815291,
+          "missing_valid_zip_bytes": 148647452,
+          "missing_train_valid_bytes": 1506462743
+        },
+        "native_checkpoint": {
+          "url": "https://protsl.s3.us-east-2.amazonaws.com/checkpoints/protst_esm1b.pth",
+          "bytes": 8531223409,
+          "weights_downloaded": false,
+          "parameter_metadata_has_trained_projection_names": true,
+          "new_downstream_head_training_needed": false
+        }
+      },
+      "source_contract": {
+        "dataset_split_call": false,
+        "search_universe": "build_dataset returns the full configured GeneOntology object; no .split() call occurs. Test-only search would change the ranking universe.",
+        "source_counts": "TorchDrug historical docstring counts 27,496 train / 3,053 valid / 2,991 test are not verified current retained identities. Earlier current-RDKit residue projection retained 3,129 test cases and did not execute every TorchDrug graph operation; full corpus retention/order remains unverified.",
+        "native_sequence": "PDB-modeled graph.residue_type. Retrieval config does not apply the annotation 550-residue crop. Native TorchDrug ESM limits its own sequence to 1,022 residues; released complete FASTA must not silently replace modeled residues.",
+        "representations": "Pretrained ESM-1b and PubMedBERT-abs, mean readout, 512-dimensional joint projections. Both outputs are L2-normalized; score is exp(logit_scale)*text_feature @ protein_feature.T.",
+        "query_tokenization": "Maximum 128 text tokens before prepended CLS, truncation enabled; fixed source query order.",
+        "selection": "Global torch.topk over complete corpus, default20; output PDB path order per query. Historical tie/runtime equivalence not established."
+      },
+      "blockers": [
+        "The full native search universe requires train.zip+valid.zip (1,506,462,743 bytes); current selective DeepFRI acquisition contains test.zip only. Full case-retention/order must be audited rather than inferred from stale loader counts.",
+        "The 8,531,223,409-byte trained joint checkpoint is metadata-audited only. Existing Qwen vLLM endpoints do not expose the ProtST learned latent features; a separate frozen native representation runtime would be required without training.",
+        "The five source queries are independently input-reviewed benign cofactor-binding retrieval goals. Released code has no aggregate relevance evaluator. Native or adapted ranked output is valid retrieval evidence, but an aggregate metric/relevance rule cannot be manufactured from the qualitative paper illustration."
+      ],
+      "prospective_feasibility": {
+        "current_seven_vllm": "A prospectively frozen scalar conditional-likelihood adapter over every query/corpus pair is a legitimate new retrieval condition. Preserve the entire native ordered search universe and source queries; do not call its scores ProtST latent embeddings. Chat-generated top-k guesses are a different protocol.",
+        "within_eight_gpu_ceiling": "A separate frozen pretrained ProtST inference backend could plausibly fit one H200; no measured memory or wall clock, download, environment change or forward was performed. Root would allocate an idle GPU after source/protocol approval, rather than alter current replicas.",
+        "compute_expression": "Native: N_source_retained protein encodings +5text encodings, then5xN dot products. Qualified Qwen per-pair scalar likelihood:5xN conditional score requests if one pair/request; N and batching/current throughput are unverified.",
+        "next_step": "Recover fixed queries for independent input review; selectively acquire missing corpus archives if authorized, reconstruct parser-retained source order and frozen embedding backend, then report exact top-k case-study outputs separately from any preregistered new metric.",
+        "qualified_likelihood_adapter": {
+          "source_query_count": 5,
+          "exact_current_corpus_size": null,
+          "planned_pair_scores_expression": "5*N_source_retained",
+          "historical_docstring_N_not_verified": 33540,
+          "conditional_if_docstring_N": 167700,
+          "native_topk_per_query": 20,
+          "reference_rule": "No source aggregate retrieval metric is supplied. Archive complete scores/ranks and top20 for each query. A new quantitative relevance rule would need separate source-grounded preregistration.",
+          "native_input_limit_qualification": "Original learned ESM representation uses at most1022modeled residues. All complete modeled source sequences must be retained; any full-sequence Qwen likelihood condition versus native ESM crop is disclosed prospectively.",
+          "failure_policy": "Before inference, freeze complete corpus order, score serialization, tie policy, failure handling and all-planned denominator. Do not select queries/cases from outcomes.",
+          "wall_clock": "Unmeasured; pairs/rate only after a synthetic throughput check. Five queries and stale counts alone do not justify a runtime promise."
+        },
+        "native_pipeline_coverage": "Rankings/top20 and selected top4GO-annotation evidence do not complete the paper downstream docking/structural case-study pipeline. No official aggregate metric or docking score is invented."
+      },
+      "publisher_source": {
+        "source_code_repository": "https://github.com/DeepGraphLearning/ProtST/tree/db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      },
+      "primary_sources": [
+        "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/script/run_t2p_retrieval.py",
+        "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/config/t2p_retrieval/go_mf.yaml",
+        "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
+      ],
+      "native_split_contract": "Full loader-retained GeneOntology train+validation+95%-filtered test search union; exact current retained IDs/order not reconstructed. Five fixed source queries."
+    },
+    {
+      "prediction_task_retained": true,
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "native_dispatch_ready": false,
+      "no_new_training_required_for_released_pretrained_model": true,
+      "task_id": "P36",
+      "task": "BioT5+ description-guided protein design",
+      "status": "public_full_test_available_input_review_and_qualified_source_ROUGE_freeze_pending",
+      "reporting_state": "native_protocol_setup_pending",
+      "required_native_information": "Released Mol-Instructions design instruction+input, preserving its exact stored encoding; native protein-token vocabulary and tokenizer-pred decode; targets scorer-only. Full sequence text adaptation must be separately frozen rather than silently inherit 512/256 native token caps.",
+      "native_metric": "Paper: selected qualitative cases with normalized Smith-Waterman similarity (parameters unrecovered). Released design command: rougeL through molinst_pro_understand, with decoded target/input pairs as references; distinct protocol-qualified source behavior.",
+      "reference_answer_source": "Released design sequence targets; paper selected examples do not establish a full-test headline benchmark.",
+      "artifact_availability": {
+        "path": "sources/remaining_design_source_audit_2026-10-15/biot5_dataset_hf_metadata.json",
+        "sha256": "ec19981cd8e2f9f3f1a4772cda340184e3a686389f3688ca4a10c78e8ff17098",
+        "revision": "9f70da9e8f0df32e7e62846f7ad78a829b00c0fd",
+        "artifact": "tasks_plus/task234_protein_design_molinst_pro_test.json",
+        "publisher_bytes": 14344274,
+        "publisher_lfs_sha256": "d1239080c09194a71b71374cc4a976ae48184981c14caafce55ec82b2281d880",
+        "local_raw_artifact_acquired_by_this_audit": true,
+        "case_count_and_case_eligibility_verified": false,
+        "raw_case_text_or_target_contents_exposed_to_model": false,
+        "case_count": 5876,
+        "case_count_and_case_id_uniqueness_verified": true,
+        "case_eligibility_verified": false,
+        "case_ids_unique": true,
+        "instance_license_metadata": [
+          "Unknown"
+        ],
+        "metadata_only_receipt": {
+          "path": "sources/remaining_design_source_audit_2026-10-15/P36_artifact_metadata_only_receipt.json",
+          "bytes": 1697,
+          "sha256": "30402c8831fcd57ec02cd16c550f5f8ce3787e4df8bc777d06ab223821d72fff"
+        },
+        "source_order_case_id_inventory": {
+          "path": "sources/remaining_design_source_audit_2026-10-15/P36_case_id_inventory.metadata_only.json",
+          "sha256": "067d59777710831a962934dbfb3638852dca663db10325c58f627ee7e11b5608"
+        },
+        "input_character_lengths": [
+          40,
+          1618
+        ],
+        "instruction_character_lengths": [
+          70,
+          112
+        ]
+      },
+      "source_contract": {
+        "prompt": "DataCollatorForMolinstNI uses Prompter.generate_prompt(Instance.instruction, Instance.input) with the Alpaca template. The reference output is not passed to generate_prompt; it is separately selected for labels.",
+        "raw_field_transformation": "The fine-tuning collator does not invent a task-specific sequence transformation. It uses instruction/input as stored. Actual design-field encodings cannot be verified without the unopened task artifact.",
+        "input_limit": "Released design shell overrides max_seq_len=512. Overlength token IDs are prefix-cropped to512, decoded with tokenizer_pred, and then tokenized again with truncation. This is a token cap, not a character or residue count.",
+        "target_and_generation_limit": "Released shell overrides max_target_len=256. Label tokenization truncates to256; predict passes max_length=256 to model.generate. This is not a guaranteed256-residue output. Source also sets model.max_new_tokens from a default empty-string field, but generate receives an explicit max_length and no max_new_tokens argument.",
+        "generation_defaults": {
+          "do_sample": false,
+          "num_beams": 1,
+          "temperature": 1.0,
+          "top_k": 50,
+          "top_p": 1.0,
+          "repetition_penalty": 1.0,
+          "seed": 2137
+        },
+        "protein_token_inventory": "Input tokenizer adds20 standard-amino-acid tokens of the form <p>{letter} as special tokens, plus <bop>/<eop> boundaries. Generic pretraining code forms boundary-wrapped per-residue-prefixed strings; this is not evidence of the unopened design artifact encoding.",
+        "prediction_tokenizer": "get_tokenizer_pred recreates added token IDs from32100 onward with special_tokens=False and asserts complete vocabulary ID identity. main.py passes this prediction tokenizer to predict.",
+        "decode": "Prediction, labels, and inputs are batch-decoded with skip_special_tokens=True and clean_up_tokenization_spaces=True, then stripped. Because added protein tokens are nonspecial in tokenizer_pred, this path does not automatically erase them. No additional protein-string cleanup occurs in molinst_pro_understand.",
+        "reference_pair": "predict constructs (decoded label, decoded full input) pairs. Both strings may have already undergone native token truncation.",
+        "selection": "The generic dataset builder uses all instances unless a configured nonnegative maximum applies; actual task count/order/lengths were not measured in this audit."
+      },
+      "evaluation_mismatch": {
+        "released_script_task": "protein_protein_design",
+        "released_script_test_task": "molinst_pro_understand",
+        "selected_native_metric": "biot5_plus/metrics/pro_understand_metrics/pro_understand_metrics.py",
+        "returned_metric": "rougeL",
+        "unused_target_only_variable": "references_new=[ref[0] for ref in references] is used for TSV ground-truth output but is not supplied to rouge.compute.",
+        "actual_rouge_references": "Original target/input pairs are passed to rouge.compute. With cached HF ROUGE multi-reference lists, score_multi chooses the greatest F-measure among those references separately for each ROUGE type.",
+        "unpinned_metric_dependency": "The released code calls evaluate.load(\"rouge\") without a revision; its historical resolved metric source/package versions are not pinned by this path.",
+        "synthetic_verification_file": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/synthetic_rouge_contract_result.json",
+        "synthetic_target_only_rougeL": [
+          0.0,
+          0.5
+        ],
+        "synthetic_pair_reference_rougeL": [
+          1.0,
+          1.0
+        ],
+        "synthetic_native_return": {
+          "rougeL": 1.0
+        },
+        "synthetic_limitations": [
+          "evaluate and datasets are absent in this environment; their serialization/schema conversion was inspected in source but not executed.",
+          "List-of-reference strings matches the native declared datasets.Sequence schema. Incoming raw tuples were not asserted to work without schema conversion.",
+          "This confirms behavior for the cached HF ROUGE revision, not the unknown evaluate.load(rouge) version used for published experiments.",
+          "Synthetic behavior is not a benchmark result and does not repair the native code or define a protein-design metric."
+        ]
+      },
+      "blockers": [
+        "The exact full public JSON is acquired and SHA-verified:5876unique source-order cases. Only metadata/schema/IDs/lengths were inspected; input eligibility remains unreviewed and targets were not exposed to the model. Instance License isUnknown in publisher metadata; repository MIT is not proof of instance-level terms.",
+        "A qualified Qwen condition can use the exact released paired-reference ROUGE-L scorer after prospective version/parser/input/output/failure-contract freezing. That source-code score is a valid qualified protocol, but it is not the paper normalized Smith-Waterman case-study metric.",
+        "Native ROUGE receives input as an alternate reference with the cached HF metric. Silently changing references to targets only would define a corrected variant rather than reproduce this code path.",
+        "The normalized Smith-Waterman scoring parameters, normalization implementation, sequence cleanup, failure policy and full evaluation scope are not recovered. No substitute implementation or headline paper score may be invented.",
+        "Historical evaluate.load(rouge) resolution is unpinned. The offline test establishes the cached revision behavior and native argument wiring, not exact historical runtime equivalence.",
+        "A general text-model baseline requires its own frozen input/output adaptation and reviewed case scope. It does not reproduce the specialized BioT5+ token vocabulary, checkpoint, tokenizer limits or trained design model."
+      ],
+      "prospective_feasibility": {
+        "current_seven_vllm": "Concrete feasible route: input-only review all5876source instruction/input pairs, keep outputs scorer-only, preserve source-order eligible ID scope, freeze a Qwen description-to-sequence format and cached paired-reference ROUGE implementation before calls, run existing4096recipe and score all declared slots without target-assisted repair. Do not replace exact released ROUGE wiring silently or call it normalized Smith-Waterman.",
+        "source_code_synthetic_checks": "Two nonbiological examples score target-only ROUGE-L [0.0,0.5] versus paired-reference [1.0,1.0]. Cached ROUGE behavior is verified; historical unpinned evaluate.load resolution and datasets serialization runtime are not.",
+        "next_step": "Perform independent permitted input-only case review without exposing sequence targets; resolve documented Unknown instance-license metadata and freeze exact source-code ROUGE adaptation, tokenizer/serialization, all-planned failures and output length. Paper normalized Smith-Waterman can remain unavailable without blocking this explicitly qualified released-code condition.",
+        "compute": {
+          "full_source_test_case_count": 5876,
+          "n1_generation_slots_before_holds": 5876,
+          "actual_reviewed_permitted_count": null,
+          "input_chars_max": 1618,
+          "instruction_chars_max": 112,
+          "native_T5_generation_max_length_tokens": 256,
+          "prospective_Qwen_recipe_max_completion_tokens": 4096,
+          "native_and_Qwen_tokenizations_differ": true,
+          "current_Qwen_input_token_count_or_wallclock": null,
+          "output_metric": "Exact cached source paired-reference ROUGE-L after frozen serialization; semantic function/binding remains unvalidated."
+        }
+      },
+      "component_review": {
+        "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/component_summary.json",
+        "bytes": 17658,
+        "sha256": "a28715456c111f411aac7ddeb70efd6d358b524259454da9dc7e4c01b776c8f7"
+      },
+      "publisher_source": {
+        "source_code_repository": "https://github.com/QizhiPei/BioT5/tree/cf65ae6dff63fdea8883dd17d46728a61bba386c"
+      },
+      "primary_sources": [
+        "https://arxiv.org/html/2402.17810v2",
+        "https://github.com/QizhiPei/BioT5/blob/cf65ae6dff63fdea8883dd17d46728a61bba386c/biot5_plus/evaluation_mol_instruction_protein.sh",
+        "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/tree/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus"
+      ],
+      "native_split_contract": "Exact released test JSON has5876unique ordered IDs; all input eligibility remains unreviewed. A permitted subset must freeze approved/held IDs before calls."
+    },
+    {
+      "prediction_task_retained": true,
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "native_dispatch_ready": false,
+      "no_new_training_required_for_released_pretrained_model": true,
+      "task_id": "P39",
+      "task": "NatureLM heme-binding case study",
+      "status": "qualitative_native_generation_selection_and_structure_evaluator_contract_unrecovered",
+      "reporting_state": "source_protocol_unresolved",
+      "required_native_information": "Two distinct native conditioning channels: heme-function text and heme SMILES. Preserve exact condition, complete generated sequence, source generation budget and downstream description/filter/complex-structure context.",
+      "native_metric": "Qualitative case study: generated annotation keyword screen, Protenix predicted protein-heme complexes, structural inspection and reference search. No recovered fixed heldout case-ID set, binding success denominator or independent measured-affinity headline evaluator.",
+      "reference_answer_source": "Selected generated examples and predicted complexes; author self-descriptions, keyword matches and predicted geometry are proxy evidence, not measured heme-binding ground truth.",
+      "artifact_availability": {
+        "pinned_publisher_tree_entries": 14,
+        "processed_heldout_or_candidate_manifest_found": false,
+        "candidate_sequences_or_structures_acquired": false,
+        "native_generator_weights_acquired": false,
+        "scope_of_absence": "Pinned Microsoft/SFM tree, its linked author metadata and prior notebook-metadata audit; not a claim that no private author assets exist."
+      },
+      "source_contract": {
+        "conditioning_channels": [
+          "text",
+          "heme SMILES"
+        ],
+        "pipeline": "Generate sequence; ask NatureLM for its own function description; match descriptions against a GPT-4o-generated HemeList; run Protenix on selected protein-heme complexes and inspect interactions.",
+        "generation_count_seed_sampling_limit": null,
+        "HemeList_exact_release": null,
+        "Protenix_revision_settings_and_success_criterion": null,
+        "selected_reference_and_BLAST_database_version": null,
+        "independent_experimental_validation_established": false
+      },
+      "blockers": [
+        "No fixed native candidate/input IDs, complete generated cohort, sampling counts/seeds/stopping/validity rules or selected-case manifest were recovered in the inspected publisher release.",
+        "Exact HemeList, keyword selection policy, Protenix version/settings, structural acceptance rule and native reference-search snapshot are unrecovered. The current case study has no recovered full-cohort quantitative success metric.",
+        "The seven Qwen endpoints can generate strings but do not implement the native description-selection/complex-prediction evidence pipeline. A proposed small cohort with a fixed independent evaluator would be a new qualified case study, not a reproduction or completed paper benchmark."
+      ],
+      "prospective_feasibility": {
+        "current_seven_vllm": "Conditioned sequence generation is technically expressible as text after approved benign input/protocol review, retaining the actual heme SMILES in its native condition. No generation is authorized by this report.",
+        "structural_runtime": "A frozen external complex predictor and complete case selection/evaluator protocol would be required; native weights/runtime were not acquired or timed. GPU count alone does not resolve missing sampling/evaluation contracts.",
+        "next_step": "Seek author cohort, condition/allocation/sampling manifest and HemeList/Protenix evaluation assets. Keep any prospective fixed local case study explicitly separate and never report a fabricated headline binding accuracy."
+      },
+      "publisher_source": {
+        "source_code_repository": "https://github.com/microsoft/SFM/tree/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM"
+      },
+      "primary_sources": [
+        "https://arxiv.org/html/2502.07527v3",
+        "https://github.com/microsoft/SFM/tree/bcb1351bc6490d4a98cae74e7eead30a028fae00/NatureLM"
+      ],
+      "native_split_contract": "No recovered native complete generation cohort or heldout test-ID manifest; published selected examples are not a test split."
+    },
+    {
+      "prediction_task_retained": true,
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "native_dispatch_ready": false,
+      "no_new_training_required_for_released_pretrained_model": true,
+      "task_id": "P40",
+      "task": "RAbD CDR-H3 redesign",
+      "status": "upstream_metadata_and_generic_source_contract_recovered_target_processed_test_contract_unresolved",
+      "reporting_state": "source_protocol_unresolved",
+      "required_native_information": "NatureLM sequence-only condition: target antigen sequence plus exact left/right antibody framework around masked CDR-H3. Proteo-R1 structural condition: native antigen/antibody complex, fixed framework and other CDRs, exact H3 mask/numbering and docking pose. Do not collapse these protocols.",
+      "native_metric": "NatureLM: positional CDR-H3 amino-acid recovery with full native-length denominator; macro aggregation and sampling invocation require target-specific verification. Proteo-R1: AAR plus lDDT/TM-score/RMSD/DockQ under structural generation; sequence-only AAR cannot complete this metric set.",
+      "reference_answer_source": "Native CDR residues scorer-only; native coordinates and fixed target/context geometry required for the appropriate structural protocol. Residue recovery is not binding or neutralization validation.",
+      "artifact_availability": {
+        "upstream_chain_only_rows": 60,
+        "unique_pdb_ids": 60,
+        "upstream_metadata": {
+          "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__summaries__rabd_summary.jsonl",
+          "bytes": 4865,
+          "sha256": "f1c43fd1cdca4e24b913ca701f3a5569d161179798842d59e5557a76323a0c6e"
+        },
+        "exact_target_processed_test_count": null,
+        "NatureLM_processed_manifest_found": false,
+        "ProteoR1_processed_manifest_found": false,
+        "raw_complexes_acquired": false
+      },
+      "source_contract": {
+        "NatureLM": "Paper states60 complexes and sequence-only antigen/framework conditioning; positional matches divided by native length, extra suffix ignored and missing native positions incorrect. Exact processed IDs/masks and invocation are not established by the upstream60 manifest.",
+        "ProteoR1": "Paper states60 complexes after IMGT renumbering, H3-only mask and all other context fixed. Released generic helpers/demo assets are not the paper RAbD holdout.",
+        "upstream_MEAN": {
+          "structural_context_required": true,
+          "default_components": "Heavy chain, light chain and antigen interface context (mode111).",
+          "sequence_and_structure": "Dataset tensors contain residue identities and N/CA/C/O coordinates with heavy-chain CDR labels. Antibody chains are variable-region spans under the source IMGT mapping; not arbitrary full mature-protein chains.",
+          "numbering": "Preparation requests IMGT/pre-numbered structures. AAComplex maps heavy/light CDR1 27-38, CDR2 56-65, CDR3 105-117, with insertions retained by residue-number mapping; exact resulting case boundaries require actual source structures and processing.",
+          "target_masking": "The selected model cdr_type determines a fixed labeled heavy-chain target span. init_mask replaces target sequence IDs and overwrites target coordinates with interpolation between its flanking residues; framework and non-target CDR context stay present. The checked-in wrapper defaults to CDR3.",
+          "target_gold_separation": "Model source saves true target sequence/coordinates for evaluation before masking. A future solver request must receive the masked representation, while native target identities/coordinates remain scorer-side.",
+          "antigen_context": "Dataset uses interface_only=True. AAComplex selects up to48 antigen residues globally by smallest minimum C-alpha distance to either antibody chain; these selected residues are included with residue identities and backbone coordinates. This is structure-derived native context, not an optional name-only antigen label.",
+          "context_evidence": [
+            {
+              "local_file": "mean__data__dataset.py",
+              "upstream_url": "https://github.com/THUNLP-MT/MEAN/blob/a510ceef282cc24c8f658c14c2bfca10a95c23c0/data/dataset.py#L153-L234"
+            },
+            {
+              "local_file": "mean__data__pdb_utils.py",
+              "upstream_url": "https://github.com/THUNLP-MT/MEAN/blob/a510ceef282cc24c8f658c14c2bfca10a95c23c0/data/pdb_utils.py#L411-L509"
+            },
+            {
+              "local_file": "mean__data__pdb_utils.py",
+              "upstream_url": "https://github.com/THUNLP-MT/MEAN/blob/a510ceef282cc24c8f658c14c2bfca10a95c23c0/data/pdb_utils.py#L511-L580"
+            }
+          ],
+          "mask_and_length_excerpt_file": "mean__model_input_contract_excerpts.json",
+          "selection_context_constraint": "Dropping the light chain, antigen interface or coordinates would define an adapted input condition and cannot be reported as faithful native reproduction."
+        },
+        "upstream_MEAN_AAR": {
+          "source_verified": true,
+          "evaluator": {
+            "local_file": "mean__generate.py",
+            "upstream_url": "https://github.com/THUNLP-MT/MEAN/blob/a510ceef282cc24c8f658c14c2bfca10a95c23c0/generate.py#L55-L83"
+          },
+          "unit": "One selected CDR of one antibody-antigen complex.",
+          "matching": "Case-sensitive positional equality through Python zip(native_CDR, generated_CDR); no sequence alignment or fuzzy matching.",
+          "denominator": "Full native CDR length, not generated length or zipped length.",
+          "length_handling": {
+            "short_prediction": "Unpaired native positions reduce AAR because denominator stays full native length.",
+            "long_prediction": "Extra generated suffix beyond native length is ignored by the AAR primitive.",
+            "length_assertion_in_aar_primitive": false,
+            "empty_native_reference": "No explicit empty-reference guard; division by zero would occur.",
+            "model_native_output": "The inspected MCAttModel and EfficientMCAttModel infer methods extract exactly the fixed target CDR index span, so native model output has native span length. This does not validate arbitrary text-output lengths.",
+            "full_evaluator_constraint": "The full eval_one also consumes generated 3D coordinates and computes RMSD/TM-score; it is not a standalone text-only AAR evaluator."
+          },
+          "aggregation": "Unweighted arithmetic mean of per-complex AAR values, extended across retained candidate slots if topk>1; not residue-pooled recovery.",
+          "aggregation_evidence": {
+            "local_file": "mean__generate.py",
+            "upstream_url": "https://github.com/THUNLP-MT/MEAN/blob/a510ceef282cc24c8f658c14c2bfca10a95c23c0/generate.py#L123-L147"
+          },
+          "selection": {
+            "source": "RAbD branch maintains topk smallest model-derived perplexities independently per complex; it does not select by reference AAR.",
+            "source_evidence": {
+              "local_file": "mean__generate.py",
+              "upstream_url": "https://github.com/THUNLP-MT/MEAN/blob/a510ceef282cc24c8f658c14c2bfca10a95c23c0/generate.py#L96-L113"
+            },
+            "parser_defaults": {
+              "rabd_sample": 10000,
+              "topk": 100
+            },
+            "checked_in_rabd_test_script": {
+              "rabd_sample": 1,
+              "topk_requested": 100,
+              "topk_after_min_clamp": 1,
+              "mode_default": "111",
+              "cdr_default": "3",
+              "evidence": {
+                "local_file": "mean__rabd_test.sh",
+                "upstream_url": "https://github.com/THUNLP-MT/MEAN/blob/a510ceef282cc24c8f658c14c2bfca10a95c23c0/rabd_test.sh#L1-L46"
+              }
+            },
+            "exact_paper_sample_budget_verified": false,
+            "important_qualification": "Checked-in wrapper overrides evaluator defaults. Repeating a source default or a paper summary without a pinned actual invocation/checkpoint does not establish the executed sample count. Current selected model infer methods default greedy=True; exact historical checkpoint model class and stochasticity remain unresolved."
+          },
+          "failure_and_missing_policy": "No explicit all-planned invalid/missing-output denominator policy in the inspected RAbD branch; incomplete generation or structural evaluation can raise. Future adaptations must freeze a separate complete accounting policy.",
+          "synthetic_validation_file": "synthetic_contract_validation.json",
+          "synthetic_nonbiological_string_tests_passed": 5,
+          "macro_vs_residue_pooling_distinction_verified": true
+        },
+        "upstream_is_target_native_contract": false
+      },
+      "blockers": [
+        "Pinned primary upstream metadata provides60 unique PDB/chain IDs but no sequences/masks/structures and does not prove final retained processed count, ordering or exact NatureLM/Proteo-R1 case identity.",
+        "Target-specific numbering, CDR-H3 boundaries, framework/antigen context construction, sampling/selection budgets and failure policy must be fixed before case preparation. Upstream current wrapper requests1 sample despite parser defaults10000/top100; historical paper invocation is unverified.",
+        "Raw target complexes have not undergone an independent permitted-case review. No sequence/coordinate acquisition or model requests were made. Existing held source restrictions remain active.",
+        "Faithful structural evaluation requires coordinates, fixed antigen/framework context and native external geometry/interface evaluators; dropping context for a text adapter cannot complete the structural protocol."
+      ],
+      "prospective_feasibility": {
+        "current_seven_vllm": "NatureLM-style sequence-only H3 infilling is a valid prospective Qwen adaptation after exact mask/case review; preserve the full native antigen/framework context. Do not claim exact target split identity from the upstream list.",
+        "native_structural_backend": "A separate released structure-conditioned model could be evaluated without new training under an independently frozen runtime and reviewed cases. Current Qwen vLLM has no native coordinate/hidden-state interface.",
+        "next_step": "Use chain-only metadata for source identity and target-scope review; recover author processed manifests/numbering/masks/invocation. Only then prepare permitted complete cases and a frozen scorer/denominator. Do not acquire or dispatch unreviewed antigen design material."
+      },
+      "component_review": {
+        "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/component_summary.json",
+        "bytes": 16107,
+        "sha256": "55438425487eee825ca9c900235474644dc55482fc94e46d6f20816767dfccb1"
+      },
+      "publisher_source": {
+        "source_code_repository": "https://github.com/THUNLP-MT/MEAN/tree/a510ceef282cc24c8f658c14c2bfca10a95c23c0"
+      },
+      "primary_sources": [
+        "https://arxiv.org/html/2502.07527v3",
+        "https://arxiv.org/html/2605.02937v1",
+        "https://github.com/THUNLP-MT/MEAN/blob/a510ceef282cc24c8f658c14c2bfca10a95c23c0/summaries/rabd_summary.jsonl"
+      ],
+      "native_split_contract": "Upstream60chain-only IDs are recovered, but final processed NatureLM/Proteo-R1 IDs/order/masks are not established."
+    },
+    {
+      "prediction_task_retained": true,
+      "execution_authorized": false,
+      "inference_performed": false,
+      "prepared_model_cases": 0,
+      "native_dispatch_ready": false,
+      "no_new_training_required_for_released_pretrained_model": true,
+      "task_id": "P41",
+      "task": "Proteo-R1 all-CDR SAbDab holdout",
+      "status": "exact_native_holdout_mask_and_full_structural_evaluator_unreleased_in_inspected_sources",
+      "reporting_state": "source_protocol_unresolved",
+      "required_native_information": "Native antigen sequence+3D structure, fixed antibody frameworks/docking pose and all six CDR sequence/structure masks, optional explicit antigen hotspots, chain/residue/token correspondence, MSA and frozen scaffold assets. Native target CDR identities/coordinates remain evaluation-only and must not leak through unmasked inputs.",
+      "native_metric": "Paper: per-CDR and H3 C-alpha RMSD; Rosetta InterfaceAnalyzer interface-improvement frequency; inner/outer clashes and backbone-dihedral JSD; source-conditioned inverse-folding IF-AAR plus native recovery diagnostics. Exact released full benchmark scoring/aggregation pipeline not recovered.",
+      "reference_answer_source": "Native complex geometry and sequence recovery; fixed external structure/energy/inverse-folding proxies. These are not experimental binding measurements or explanation scores.",
+      "artifact_availability": {
+        "publisher_tree_entries": 213,
+        "holdout_split_manifest_found": false,
+        "exact_release_cutoff": null,
+        "heldout_case_count": null,
+        "released_demo_count": 5,
+        "released_demo_ids": [
+          "8q7o_A__C",
+          "8r9y_H_L_A",
+          "8slb_H_L_A",
+          "8sxp_H_L_C",
+          "8tg9_H_L_A"
+        ],
+        "demos_are_verified_test_holdout": false,
+        "raw_demo_assets_acquired": false,
+        "understand_checkpoint": {
+          "id": "thinking-bio-lab/proteor1-understand",
+          "revision": "319b6e873cb795803eb822033c9c2c31e9304fa7",
+          "gated": false,
+          "weight_bytes": 8075140776,
+          "downloaded": false
+        },
+        "generate_checkpoint": {
+          "id": "thinking-bio-lab/proteor1-generate",
+          "revision": "e117977db0f3315db344a945827ad3e6f9758e7f",
+          "gated": false,
+          "weight_bytes": 1781952264,
+          "downloaded": false
+        },
+        "additional_weights_advertised_approx_bytes": 7000000000,
+        "CCD_cache_advertised_approx_bytes": 330000000
+      },
+      "source_contract": {
+        "split": "Paper describes a structure-release-date cutoff followed by50%-identity H3 MMseqs2 clustering and9:0.5:0.5 cluster split; exact cutoff, retained IDs/counts, clustering command and case manifest are unrecovered.",
+        "mask": "Current helper uses Chothia/abnumber zero-based CDR-to-full-sequence indices and masks all3CDRs per antibody chain. Paper RAbD subprotocol uses IMGT H3-only. These must not be silently equated.",
+        "native_context": "Paired heavy/light or nanobody chain mapping and antigen coordinates preserved. Demo canonical spec_mask YAML, processed MSA and GT scaffold internal NPZ are required by the documented structure-inpainting quality condition; five demos are not the native holdout.",
+        "native_model": "Released Qwen3-4B+Protenix understand expert emits CDR candidates and hidden states; released Boltz1 diffusion generate expert consumes hidden states and returns atomic coordinates. It is a valid learned multimodal representation task; no new head training is required to use released checkpoints.",
+        "runtime": "Python3.12, torch>=2.7<=2.9, transformers==4.57.1, pinned editable Protenix submodule d60af043d0604757e1f4613181462ba683c80c1e, cuequivariance0.6.1, ANARCI/HMMER and CCD caches. No install or forward was performed.",
+        "evaluation_release": "cdr_eval includes preparation/masking/prediction/remapping helpers, and generic validation code includes structural losses; no exact full paper split+postprocess+metric aggregation release was found in the inspected213-entry tree.",
+        "sample_budget": "Paper uses multiple candidates per complex averaged after Rosetta side-chain packing/local relaxation, but exact candidate count and full runtime/settings are unrecovered."
+      },
+      "blockers": [
+        "No exact released SAbDab holdout manifest/case count/release cutoff or full per-case chain/CDR masks was found in the pinned publisher tree. Five demonstrations do not establish the native test set.",
+        "Full antigen/framework/3D context, token correspondence, masked geometry, MSA/scaffold construction and prevention of target leakage need an audited native contract. Do not replace these with chain names or text-only sequences.",
+        "The exact benchmark postprocessing, candidate count, Rosetta/ABMPNN and structural metric aggregation/failure handling are unrecovered; generic lDDT/RMSD losses do not supply the full paper evaluator.",
+        "Current vLLM replicas serve a different Qwen checkpoint and expose text/vision completions, not the required specialist structure encoding, CDR hidden-state bridge or diffusion coordinates. Native pretrained execution would require a distinct frozen runtime and released assets, without training."
+      ],
+      "prospective_feasibility": {
+        "current_seven_vllm": "Plain sequence output may support a separately named recovery diagnostic only after permitted-case review; it cannot complete native all-CDR geometry/interface evaluation or remove mandatory structural context.",
+        "within_eight_gpu_ceiling": "Released pretrained experts and native runtime are available in principle; combined published weight-file inventory is9,857,093,040bytes (not a measured simultaneous loading requirement), plus advertised~7GB external weights and~330MB caches. No measured memory/time on an H200. Hardware does not resolve the missing source test identity or evaluator.",
+        "next_step": "Seek exact author holdout split, release cutoff, complete canonical masking/scaffold pipeline and benchmark evaluator/sample manifest. Review case goals before raw complex acquisition, then freeze a separate native model environment if authorized; keep present vLLM jobs and frozen protocols unchanged."
+      },
+      "publisher_source": {
+        "source_code_repository": "https://github.com/smiles724/Proteo-R1/tree/ffaa787bce5f30e4cb41e2de5d0b0daab0059243"
+      },
+      "primary_sources": [
+        "https://arxiv.org/html/2605.02937v1",
+        "https://github.com/smiles724/Proteo-R1/tree/ffaa787bce5f30e4cb41e2de5d0b0daab0059243",
+        "https://huggingface.co/thinking-bio-lab/proteor1-understand",
+        "https://huggingface.co/thinking-bio-lab/proteor1-generate"
+      ],
+      "native_split_contract": "Paper date/H3-cluster holdout, exact cutoff/retained IDs/count unrecovered; five released demos are not a verified holdout."
+    }
+  ],
+  "cross_task_caveats": [
+    "All five remain valid source tasks. An absent current adapter or specialist representation interface does not show unsuitable biological reasoning.",
+    "Prediction/retrieval/sequence-recovery/structural-proxy metrics measure their frozen contracts, not explanation or mechanism validation. Public pretraining exposure is unknown.",
+    "Selected case studies and a public candidate artifact do not automatically define a complete scored heldout benchmark. Full-case IDs, denominator, failure policy and native contexts must be fixed before inference.",
+    "Trained specialist models, native multimodal structural backends and prompted Qwen adapters have different training/input conditions; no matched-model or superiority claim is made.",
+    "Scope unreviewed does not mean every case is prohibited. Ordinary benign biology remains valid; no organism-name-only filters or held-content retries are introduced."
+  ],
+  "integrity_validation": {
+    "main_source_files_sha256_and_git_blob_verified": 25,
+    "main_source_checks": [
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/protst__README.md",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/protst__script__run_t2p_retrieval.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/protst__config__t2p_retrieval__go_mf.yaml",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/protst__protst__dataset.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/biot5__README.md",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__README.md",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__evaluation_mol_instruction_protein.sh",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__metrics__save_only_metrics__save_only_metrics.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/nature__NatureLM__README.md",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__README.md",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__data__demo__README.md",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cdr_eval__README.md",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cdr_eval____init__.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cli__design.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__pyproject.toml",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__.gitmodules",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/protst__protst__model.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__utils__train_utils.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__metrics__pro_understand_metrics__pro_understand_metrics.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__configs__task__ft_molinst.yaml",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cdr_eval__cdr_masking.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cdr_eval__data_preparation.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cdr_eval__chain_extractor.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__generate__loss__validation.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      },
+      {
+        "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__generate__inference__runner.py",
+        "sha256_verified": true,
+        "git_blob_sha1_verified": true
+      }
+    ],
+    "component_source_and_supporting_hashes_verified": true,
+    "P36_synthetic_ROUGE_examples": 2,
+    "P40_synthetic_AAR_edge_cases": 5,
+    "case_metadata_60_unique_PDBs": true,
+    "frozen_files_modified": false,
+    "P36_source_artifact_SHA256_and_5876_unique_ID_count_verified": true,
+    "P35_query_git_blob_SHA256_and_five_query_count_verified": true
+  },
+  "referenced_prior_aggregate_evidence": [
+    {
+      "path": "reports/DEEPFRI_NATIVE_SOURCE_AUDIT_2026-10-15.json",
+      "bytes": 32152,
+      "sha256": "ca3e14ae4d590cf884401f67991b1b97eca446dcb221ac2cc612c8fcc91d70cd"
+    },
+    {
+      "path": "sources/deepfri_contract_audit_2026-10-15/GeneOntology.zip.index.json",
+      "bytes": 2667,
+      "sha256": "fa23c5dc9fcf8901656246c614bb3212a896fe9712e6ca177fc3138ff7525fa5"
+    },
+    {
+      "path": "sources/deepfri_contract_audit_2026-10-15/protst_checkpoint_metadata_audit.json",
+      "bytes": 10596,
+      "sha256": "ac572d3234f6d1fb7d4a375691e018a7c9784ce7e44c6ad69da81e0d23c28e55"
+    },
+    {
+      "path": "sources/remaining_native_recovery/nature_current_tree.json",
+      "bytes": 3279,
+      "sha256": "c1246c9458c3e1684ae4d43f468583bd3868803bb765883eb895f01f24d29f3e"
+    },
+    {
+      "path": "sources/remaining_native_recovery/acquisition_manifest_stage3.json",
+      "bytes": 7872,
+      "sha256": "759165efcdc7d65f1786094f774ec64e4ffabe62adf675b1c1a8608e7d5113c5"
+    },
+    {
+      "path": "data/design_source_candidates/P36/task234_protein_design_molinst_pro_test.unreviewed.json",
+      "bytes": 14344274,
+      "sha256": "d1239080c09194a71b71374cc4a976ae48184981c14caafce55ec82b2281d880"
+    }
+  ],
+  "evidence_inventory": [
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/P36_artifact_metadata_only_receipt.json",
+      "bytes": 1697,
+      "sha256": "30402c8831fcd57ec02cd16c550f5f8ce3787e4df8bc777d06ab223821d72fff"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/P36_case_id_inventory.metadata_only.json",
+      "bytes": 258857,
+      "sha256": "067d59777710831a962934dbfb3638852dca663db10325c58f627ee7e11b5608"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5__README.md",
+      "bytes": 5007,
+      "sha256": "3da0a7738af49ab200b528e16513f23dec0cbeaab22fd6cec951c453f83166c7"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__README.md",
+      "bytes": 5146,
+      "sha256": "c7b70668ce7b4b2f7b487c7a8c27b4c27ae67ecb1244725f21a4736a08aa6a14"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__configs__task__ft_molinst.yaml",
+      "bytes": 805,
+      "sha256": "10d51a8a341143f7b8c5c83e2796e6ae9a2f9d330256812f71a3794d55787220"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__evaluation_mol_instruction_protein.sh",
+      "bytes": 1247,
+      "sha256": "d1fe841a19b2d21e3d9a82b6e3ce9160d8172a8a82f04b0fca5cad0efd035901"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__metrics__pro_understand_metrics__pro_understand_metrics.py",
+      "bytes": 2176,
+      "sha256": "6717c828e0a9bacdf761f1499672ab551938326fed723e1c805a23ebc9c6d2a9"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__metrics__save_only_metrics__save_only_metrics.py",
+      "bytes": 4455,
+      "sha256": "40db22bba06ed029cd9d0ea6fe9c6bf2ab316553f4cbc5b968faca65b96f4bdb"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5__biot5_plus__utils__train_utils.py",
+      "bytes": 19035,
+      "sha256": "37878719b9a5f266e9c3cf9f15c72c733f2c77cb0e07e79af6dff6dbcbba5f8c"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_dataset_hf_metadata.json",
+      "bytes": 116569,
+      "sha256": "ec19981cd8e2f9f3f1a4772cda340184e3a686389f3688ca4a10c78e8ff17098"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__configs__default.yaml",
+      "bytes": 1672,
+      "sha256": "81a6579297d23f495798b344bf8f3e2462ac11dd5029ef3352c4a8558a0cc201"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__configs__task__ft_molinst.yaml",
+      "bytes": 805,
+      "sha256": "10d51a8a341143f7b8c5c83e2796e6ae9a2f9d330256812f71a3794d55787220"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__evaluation_mol_instruction_protein.sh",
+      "bytes": 1247,
+      "sha256": "d1fe841a19b2d21e3d9a82b6e3ce9160d8172a8a82f04b0fca5cad0efd035901"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__main.py",
+      "bytes": 5172,
+      "sha256": "9d01aba5f71c4b926fc214b3b539287416fffdb81eace5eb20cef326d51d8a6f"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__metrics__pro_understand_metrics__pro_understand_metrics.py",
+      "bytes": 2176,
+      "sha256": "6717c828e0a9bacdf761f1499672ab551938326fed723e1c805a23ebc9c6d2a9"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__utils__copied_utils.py",
+      "bytes": 38560,
+      "sha256": "1c5a57d083dd92ccec80b29fbacaddac2f0a27f9cc47cf0ebd516f235f0e51f8"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__utils__gen_utils.py",
+      "bytes": 1572,
+      "sha256": "d00362d521d09c4ca4d7bcad68c365b0ed18639cb296363e941d4d6039e40dc2"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__utils__model_utils.py",
+      "bytes": 25457,
+      "sha256": "5037cb40c5a3821cd823a9c470f86ea465ed62019ecfb088ee70f0d628096092"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__utils__molinst_ni_dataset.py",
+      "bytes": 7804,
+      "sha256": "c772939d2b356c8968e7f492ae24f55420e9329397a093fbbf28853086b3a448"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__utils__prompter.py",
+      "bytes": 1753,
+      "sha256": "57fc9ba8c0e9d18cd5d285e9188181ff1f1267d14f31e6243fcb5ea1fc96981e"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__utils__templates__alpaca.json",
+      "bytes": 544,
+      "sha256": "853c698d1e733655a429232100e31a33beeab2a29d0b98ba63232c90e0f379de"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/biot5_plus__utils__train_utils.py",
+      "bytes": 19035,
+      "sha256": "37878719b9a5f266e9c3cf9f15c72c733f2c77cb0e07e79af6dff6dbcbba5f8c"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/build_component_summary.py",
+      "bytes": 16507,
+      "sha256": "a6e72d4311bc4a933d581d497e7c68d5cbca0e0a959fd6fd644ec0b52cbc9110"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/component_summary.json",
+      "bytes": 17658,
+      "sha256": "a28715456c111f411aac7ddeb70efd6d358b524259454da9dc7e4c01b776c8f7"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/component_summary.md",
+      "bytes": 4907,
+      "sha256": "044a0e151ca902869498169791a7a96323ec251ca232916757eb3eba0f96f8e8"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/hf_rouge_1bc20e7e9df922e5dfb597c31a4ea8467a89caff.py",
+      "bytes": 6140,
+      "sha256": "805b71b855be6dc270ce2366639a4e264c2a1fb93a2c8a50f9fb9ef5a2b9c21a"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/new_code_acquisition_manifest.json",
+      "bytes": 2374,
+      "sha256": "47e52b3cbe755c85defab438b45e7356d14d94a4305f8445de99fd786b8640b7"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/synthetic_native_metric_output.tsv",
+      "bytes": 91,
+      "sha256": "f44fc1c069ca5849e3efa34e977e9fad1cd9c9a94d07d267cadb4f17e3e1adb0"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/synthetic_rouge_contract_result.json",
+      "bytes": 1934,
+      "sha256": "891d9b44ab3e4d92956c2bea2c3f4c74d45c2902e8fa8dac0fdcfc21231df144"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_design_contract_review/verify_synthetic_rouge_contract.py",
+      "bytes": 4807,
+      "sha256": "65296c51bb9b7f71732620cf4705abc7199966c381e35240aa17826a718fdae3"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_ref.json",
+      "bytes": 365,
+      "sha256": "2711a921853dca03debc4bb25b94d48be45deadf45120ea7c9b26d089f704885"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_repo.json",
+      "bytes": 5783,
+      "sha256": "1bb0d9d3f1ecea634564646d02c9f3ebe364e43586a37127079eb38de3c47951"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/biot5_tree.json",
+      "bytes": 23610,
+      "sha256": "e57e01cc51c443bb1d648feeeee895ad456f88836f07004f247f9618b1e91cda"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/code_acquisition_manifest.json",
+      "bytes": 14332,
+      "sha256": "900b0fc03189f6eaa295b755ba6bccce3ae928ec3787e9b4b24ea5acad7f1469"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/dymean_ref.json",
+      "bytes": 369,
+      "sha256": "a13492b0cd2213d8399d49fbd84aa7926b40eec773926ff5fe5ff1ac23ea1d05"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/dymean_tree.json",
+      "bytes": 31327,
+      "sha256": "ef3b7f3dfb20e2d122dd9e4a2f7d6ef01765e87725e19b1a5d1d4d3e0662c38e"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/nature__NatureLM__README.md",
+      "bytes": 1511,
+      "sha256": "02f627fd44588c3736d1ca4419fd87ec05c762ea9c1265fae73914825194a1fc"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/nature_ref.json",
+      "bytes": 363,
+      "sha256": "3488587d302633b54a7b4c5217abdd26534e3f137ef0d1ba3d322bbbcc9bcf54"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/nature_repo.json",
+      "bytes": 6765,
+      "sha256": "8436f0a4b7e5335076ace0ca4a3ae695d190db00251621346df58447fbaf77dc"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/nature_tree.json",
+      "bytes": 4104,
+      "sha256": "1da13ef700dfd63450924e77b9bd89701a83c173f5c70311292c52450f2ec586"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__.gitmodules",
+      "bytes": 119,
+      "sha256": "923f9e5618853009a423cfdf18629742c3b992270fcbb580d89e73cca11b2f93"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__README.md",
+      "bytes": 15643,
+      "sha256": "b0eed1277a506af7540a3f989a9cd355b98bc0e3a3cc21f6c0fa6ef8fbe3df5b"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__data__demo__README.md",
+      "bytes": 970,
+      "sha256": "944a65cd6d775a674b4b4b71b4e3545ae0aedf9a5ff24dfa006b3013426a000b"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cdr_eval__README.md",
+      "bytes": 2413,
+      "sha256": "5312aebe749997107bf5f81d0e942f1053f82c495e369db8943aafc4c362bf50"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cdr_eval____init__.py",
+      "bytes": 3424,
+      "sha256": "f2916cb9fc3c6c29581d109895099c65ba30fca9d4dfe6dd9eb9a5091cd4bd5b"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cdr_eval__cdr_masking.py",
+      "bytes": 52229,
+      "sha256": "1d4d32f0866216c6a909fb160d014cf7a4f73bf003b69de1deb3eb86dc25b15b"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cdr_eval__chain_extractor.py",
+      "bytes": 23885,
+      "sha256": "7433ea3b9e1dc73e0d6c25d8abb3c8ff1541064b0ddd1c62603f00a11b81a3b1"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cdr_eval__data_preparation.py",
+      "bytes": 16724,
+      "sha256": "3d8f372ecffb9ff0d325336b3437dd3c29e54dbf93d91c68bd8b116c56f74950"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__cli__design.py",
+      "bytes": 1690,
+      "sha256": "8891a8dd06a81e62767c1e3e5d3630890b7fbb62ed296d6ee7e4642adfcafb5d"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__generate__inference__runner.py",
+      "bytes": 26647,
+      "sha256": "d630aebdc30005801f93b2fc13bfbaeb9060bbb36d361367b70bd7ec35e9aa4c"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__proteor1__generate__loss__validation.py",
+      "bytes": 33530,
+      "sha256": "6f126285f3e491a0eae9a0f6769e1cfcada5d6b6e3432937130cf65be8711f7a"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1__pyproject.toml",
+      "bytes": 2003,
+      "sha256": "ddf336bb579ceaaf41ff967237b70c66c682a8c93265c75237b61ab84bdd6cc5"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1_generate_hf_metadata.json",
+      "bytes": 1372,
+      "sha256": "ff165fc522bed153518b0804b319b397056e717a48ba96035cbec731184bd5b2"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1_ref.json",
+      "bytes": 375,
+      "sha256": "835f6d261d7caa2cb925c20dcf9c5e43ba71a96da45bde82eba526ef545707fa"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1_repo.json",
+      "bytes": 5887,
+      "sha256": "599814273fd6e900ff79aa9fca6be451ad34b8701be7390768881408ee1dee2f"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1_tree.json",
+      "bytes": 63698,
+      "sha256": "6ece1814140f7122019469130acb7879650687ecefd4ed62d2ba4671664b9262"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/proteor1_understand_hf_metadata.json",
+      "bytes": 6124,
+      "sha256": "6125e3e86c7a78af3c6c54b430c2cbcdc09f468f1d1e8b2ca8228b8c79028eb7"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/protst__README.md",
+      "bytes": 10674,
+      "sha256": "efacbdae2a99f57ea8f88536d2aa0fd0cabfd1f0d0b606c7b40938b0917248f3"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/protst__config__t2p_retrieval__go_mf.yaml",
+      "bytes": 625,
+      "sha256": "cdbdf2ccabd7e4075f26b3e727fe73daa56f8d4a79ac40f37e67e26d5898278b"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/protst__data__zero_shot_retrieval__t2p_prompt_go_mf.txt",
+      "bytes": 498,
+      "sha256": "39a4c730a73b63c01391ca575b1ef89725091974e423b74e8138af78cf41c81e"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/protst__protst__dataset.py",
+      "bytes": 14835,
+      "sha256": "36f348e8da65029623b5c22a7e80a805b9181ded9ef434d6235ddeed4259e7d9"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/protst__protst__model.py",
+      "bytes": 18010,
+      "sha256": "ab082f614096b9f6417010baf94b64d12b93fe9ada34cc3ca4b1c707baa2e0e0"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/protst__script__run_t2p_retrieval.py",
+      "bytes": 6087,
+      "sha256": "2e6a36c334c24709014a55962c2e5169d2d10f51c08aeaa03ff1bd377ba35f96"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/protst_ref.json",
+      "bytes": 385,
+      "sha256": "d25ba677a2b74ff0db09cd81e2fe04e15dea1113a159acc688c74a5fcf312418"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/protst_repo.json",
+      "bytes": 7471,
+      "sha256": "83e0f5c8c7fc63b3ba82bda8e3e7a14d3bc4070a9d3e70ab53322abee3a682f2"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/protst_tree.json",
+      "bytes": 20769,
+      "sha256": "3729e59fac57d1158b29a36675ebd335ee4eb25a7004c71e509f18e2be755207"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/publisher_metadata.json",
+      "bytes": 1536,
+      "sha256": "59fe52f3518861b945e3f88a27766babda1fbd7daaa03e474786606c1e0da58f"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/component_summary.json",
+      "bytes": 16107,
+      "sha256": "55438425487eee825ca9c900235474644dc55482fc94e46d6f20816767dfccb1"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__data__dataset.py",
+      "bytes": 11938,
+      "sha256": "53862bb931e83fa92a025a21d39f2a5df6f370e750da9e8b4f5da259de0cf73f"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__data__pdb_utils.py",
+      "bytes": 29130,
+      "sha256": "a3a1cc86b1ddbfd3913802e56cb61d8761669c5c8159cb21c35471d37ecaa4b0"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__data__split.py",
+      "bytes": 9261,
+      "sha256": "fe8c6c28de104c2b5e893502b5baaf7e1e29bb89e2c34e6303193e73d19b6e14"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__download_source_audit_metadata.json",
+      "bytes": 520,
+      "sha256": "73abb0b9179dfebabbd3fe484389614e220424678375d9aecae581e7379d1e1f"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__generate.py",
+      "bytes": 10329,
+      "sha256": "13b02116044ed2242476e32ca069fa8f975ea3bde264bd655e574064d429b911"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__model_input_contract_excerpts.json",
+      "bytes": 6227,
+      "sha256": "d32af000fca6bad13cd5ce809b280ed189f28ddf2efe22eb080fe3ff33b13a3e"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__preparation_contract_excerpts.json",
+      "bytes": 4580,
+      "sha256": "8628fb55ca3c34960d1f674965ed20b400880146252f85b7247cc71e4d512ad1"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__rabd_test.sh",
+      "bytes": 801,
+      "sha256": "229c3ed2838564848d0efa88575f541e108d858a4e7a5773c7d8c0540606a276"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__scripts__prepare_data_rabd.sh",
+      "bytes": 1522,
+      "sha256": "3fed78fa4f42b54f9fa926348a867c0cc3e6f354546d09c14e7ab3893a3383c5"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean__summaries__rabd_summary.jsonl",
+      "bytes": 4865,
+      "sha256": "f1c43fd1cdca4e24b913ca701f3a5569d161179798842d59e5557a76323a0c6e"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean_ref.json",
+      "bytes": 326,
+      "sha256": "017fb594a6d7319bd8003a2da83245bb9ce77faa8464052e02f3877130c10147"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean_repo.json",
+      "bytes": 6189,
+      "sha256": "443b7ae90c8aab729888d66ac3797fafe0c10b8b497a8f24e30c7e0e5e117935"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/mean_tree.json",
+      "bytes": 20526,
+      "sha256": "fc70ab61a4d0cbe2b06f60b988e4cb6bf543a1f0f270bea85618832593c84daa"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/source_acquisition_manifest.json",
+      "bytes": 4014,
+      "sha256": "529c135129d00971c0a6f4d4269c91f022e9199b98f317b03e2c5d2488816f65"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/rabd_upstream_review/synthetic_contract_validation.json",
+      "bytes": 1489,
+      "sha256": "c4920525a97c44f1c9b5b0b61bb649c274d78845f2ec4cda3926f6fd86284443"
+    },
+    {
+      "path": "sources/remaining_design_source_audit_2026-10-15/torchdrug__torchdrug__models__esm.py",
+      "bytes": 7454,
+      "sha256": "c27e73b93cb365160805968400b01e7bbd9636571d3d310dc41c8f1367e27fe5"
+    }
+  ]
+}

@@ -27,6 +27,10 @@
       "executor": "scripts/execute_local_genomics.py"
     },
     {
+      "config": "configs/local_pathvqa_seven_gpu_shard_005.json",
+      "executor": "scripts/execute_local_pathvqa_seven_gpu.py"
+    },
+    {
       "config": "configs/local_medical_v01.json",
       "executor": "scripts/execute_local_medical.py"
     },
@@ -43,48 +47,48 @@
       "executor": "scripts/execute_local_description_shard.py"
     },
     {
-      "config": "configs/local_extended_p03_shard_000.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_reaction_p16_shard_000.json",
+      "executor": "scripts/execute_local_reaction_shard.py"
     },
     {
-      "config": "configs/local_extended_p07_shard_001.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_reaction_p16_shard_004.json",
+      "executor": "scripts/execute_local_reaction_shard.py"
     },
     {
-      "config": "configs/local_extended_p07_shard_005.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_bioreason_p28_shard_005.json",
+      "executor": "scripts/execute_local_bioreason_shard.py"
     },
     {
-      "config": "configs/local_extended_p07_shard_009.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_posttrain_protein_p29_id_shard_005.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
     },
     {
-      "config": "configs/local_extended_p07_shard_013.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_posttrain_protein_p29_ood_shard_005.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
     },
     {
-      "config": "configs/local_extended_p07_shard_017.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_extended_seven_gpu_p07_shard_002.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
     },
     {
-      "config": "configs/local_extended_p07_shard_021.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_extended_seven_gpu_p07_shard_009.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
     },
     {
-      "config": "configs/local_extended_p07_shard_025.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_extended_seven_gpu_p07_shard_016.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
     },
     {
-      "config": "configs/local_extended_p08_shard_002.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_extended_seven_gpu_p07_shard_023.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
     },
     {
-      "config": "configs/local_extended_p08_shard_006.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_extended_seven_gpu_p08_shard_003.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
     },
     {
-      "config": "configs/local_extended_p08_shard_010.json",
-      "executor": "scripts/execute_local_extended_shard.py"
+      "config": "configs/local_extended_seven_gpu_p08_shard_010.json",
+      "executor": "scripts/execute_local_extended_seven_gpu.py"
     }
   ]
 }

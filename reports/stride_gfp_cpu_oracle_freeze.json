@@ -1,0 +1,31 @@
+{
+  "task_id": "P42",
+  "status": "CPU_runtime_and_offline_scorer_stable_pending_root_activation",
+  "benchmark_forward_count": 0,
+  "state_restoration_audit": "400trained_tensors_exact_FP16_to_FP32;4active_classifier_tensors;198enabled_unmerged_LoRA_routes",
+  "tests": {
+    "command": ".venv-oracles/bin/python -m unittest discover -s tests -p test_*stride_gfp*.py -v",
+    "passed": 28,
+    "benchmark_forwards": 0
+  },
+  "files_sha256": {
+    "scripts/stride_gfp_cpu_oracle.py": "45eb2888f4b358d1ee48d1ef3389dbfa7d6d6ed89ab7d49489fe7c9e48fdf59b",
+    "scripts/score_local_stride_gfp.py": "b36de0109f79da81e42eed624fa94b1c39c3366914f214bc398be2c2049bee55",
+    "tests/test_stride_gfp_cpu_oracle.py": "0e0f5c427877a52d155ffa1f80c737083cc48b97f8204550b70f1267a5a40fcf",
+    "configs/stride_gfp_oracle_requirements.txt": "4edbd9dfa1e2ffda35403590dcf2a41b0ddab5cf1ed29a97b09144441824284c",
+    "reports/stride_gfp_oracle_runtime.json": "07669ac79122e4badacf0fd501efdcf71fd68cc7e1b46916dcadecacb159a566",
+    "reports/stride_gfp_oracle_state_restoration.json": "da0fe49e9e2537f3f4af9822ee0c1afb6943cdf33e1c65a79f22ed00d9e6c4be",
+    "reports/stride_gfp_oracle_packages.lock.txt": "96e7a7b111c29dd6782ddb60a7047beeaa78c21c5750c7b6d7891e33a1ab3171",
+    "reports/stride_gfp_oracle_bootstrap.json": "ce5fc76149bcc4b7128061f2017daf3aab6846f24ee7039e0502f5a2f2f2387b",
+    "reports/stride_gfp_oracle_torch_install.json": "96459e7b8593cc3887b8536bc3848a69ec4ddd2f0545b075967c60783e0b64d3",
+    "reports/stride_gfp_oracle_dependencies_install.json": "8c3d01d69cd967f33855b109dae2e72014df8c0df2df24edb2b0e1e6eccf719a",
+    "reports/STRIDE_GFP_CPU_ORACLE.md": "1778e3ab090e0e03d7f7dca8a4e799709c84e40710664d76afdd2dac1076be47"
+  },
+  "runtime_file": "reports/stride_gfp_oracle_runtime.json",
+  "runtime_sha256": "07669ac79122e4badacf0fd501efdcf71fd68cc7e1b46916dcadecacb159a566",
+  "state_audit_file": "reports/stride_gfp_oracle_state_restoration.json",
+  "state_audit_sha256": "da0fe49e9e2537f3f4af9822ee0c1afb6943cdf33e1c65a79f22ed00d9e6c4be",
+  "native_novelty": null,
+  "qualified_success_uniqueness_available_after_activation": true,
+  "native_paper_replication": false
+}

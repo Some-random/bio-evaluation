@@ -1,0 +1,45 @@
+{
+  "scope": "Aggregate-only source/input/score-integrity qualification; no model results changed.",
+  "source_audit": {
+    "path": "reports/labbench_vision_postrun_integrity_audit.json",
+    "sha256": "d71b13c39d609e554ac77d6997df39c2841f48fbd35f2fbfa9b2893bd3a757dc"
+  },
+  "source_encoding_diagnostic": {
+    "path": "reports/labbench_vision_native_serialization_qualification.json",
+    "sha256": "9358e5ab87324d9a95f4f2ff840191d841c6c4d01b033c470ad04b4dcc6c5c76"
+  },
+  "audited_runs": [
+    {
+      "task_id": "B04",
+      "run_id": "qwen38_27b_b04_public_reviewed_2026-10-15",
+      "cases": 181,
+      "score_sha256": "509f8db69ec61f78e3d74442136c130eecf2c501851abb61e2aca907ec076cf8",
+      "source_choices_and_target_mapping_verified": true,
+      "actual_request_provenance_verified": true,
+      "no_extra_reference_fields_detected": true,
+      "publisher_images_verified": true
+    },
+    {
+      "task_id": "B05",
+      "run_id": "qwen38_27b_b05_public_reviewed_2026-10-15",
+      "cases": 244,
+      "score_sha256": "6ad92a6f73845b93d39111bbca3685ac35ad75cc4a0d2e80ac35304587ceb76e",
+      "source_choices_and_target_mapping_verified": true,
+      "actual_request_provenance_verified": true,
+      "no_extra_reference_fields_detected": true,
+      "publisher_images_verified": true
+    }
+  ],
+  "pretraining_exposure": "Unknown. This audit checks local execution and source mapping, not pretraining contamination.",
+  "B04_native_wrapper_encoding": {
+    "task_id": "B04",
+    "cases": 181,
+    "encoded_bytes_changed": 181,
+    "decoded_pixels_changed": 181,
+    "diagnostic_pillow_version": "9.0.1",
+    "local_original_publisher_bytes_preserved": true,
+    "historical_wrapper_encoding_equality_established": false,
+    "accuracy_effect": "unassessed",
+    "qualification": "Original publisher JPEG bytes were supplied. The pinned native author wrapper re-encodes JPEGs; diagnostic re-encoding changes pixels for181/181 images. Historical runtime equality and the accuracy effect are unknown; no causal explanation of the score gap follows."
+  }
+}

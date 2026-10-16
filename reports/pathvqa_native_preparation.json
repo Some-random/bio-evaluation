@@ -1,0 +1,198 @@
+{
+  "task_id": "V03",
+  "status": "prepared_full_pinned_publisher_mirror_test",
+  "inference_dispatched": false,
+  "variant": "SOURCE_QUALIFIED_PATHVQA_HF_TEST_IMAGE_ZERO_SHOT",
+  "cases": 6719,
+  "unique_images": 858,
+  "answer_groups": {
+    "OPEN": 3357,
+    "CLOSED": 3362
+  },
+  "source_revision": "1685832883334b5bb5beaf4e4b333fdeecaa4ad9",
+  "original_source_revision": "117e7f4ef88a0e65b0e7f37b98a73d6237a3ceab",
+  "original_test_git_blob_sha1": "2f85d6b12cea12c296c6be5f42ac9b9e131b23ea",
+  "source_identity": {
+    "original_test_question_count": 6761,
+    "original_unique_exact_triplet_count": 6719,
+    "mirror_test_question_count": 6719,
+    "removed_exact_triplet_duplicates": 42,
+    "full_normalized_deduplicated_question_answer_multiset_match": true,
+    "source_image_group_count": 991,
+    "source_image_groups_with_questions": 858,
+    "mirror_unique_image_bytes": 858,
+    "full_qa_group_fingerprint_multiset_match": true,
+    "source_image_group_candidate_counts": {
+      "1": 839,
+      "2": 16,
+      "3": 3
+    },
+    "original_per_image_byte_identity_verified": false,
+    "caveat": "Original native test has duplicate rows and unnormalized text. Mirror de-duplicates exact image/question/answer triplets, then lowercases, collapses spaces, removes space before question mark and strips question/answer strings. Source grouping cannot uniquely identify all original image IDs; original image bytes are unavailable directly. This is the full pinned mirror test, not byte-identical original-paper reproduction."
+  },
+  "sources": [
+    {
+      "path": "sources/pathvqa_native/test-00000-of-00003-e9adadb4799f44d3.parquet",
+      "sha256": "533175be08e87b9ccf2fc06e2f82e58bb2e9bf2299a4a138cf5311f1d26ac157",
+      "bytes": 41249416,
+      "publisher_lfs_digest_verified": true,
+      "url": "https://huggingface.co/datasets/flaviagiammarino/path-vqa/resolve/1685832883334b5bb5beaf4e4b333fdeecaa4ad9/data/test-00000-of-00003-e9adadb4799f44d3.parquet"
+    },
+    {
+      "path": "sources/pathvqa_native/test-00001-of-00003-7ea98873fc919813.parquet",
+      "sha256": "84bde926245c4b136de6ef48b197a0f3f177b3fbcb03b7f3cbfcfcb212f20c50",
+      "bytes": 45340847,
+      "publisher_lfs_digest_verified": true,
+      "url": "https://huggingface.co/datasets/flaviagiammarino/path-vqa/resolve/1685832883334b5bb5beaf4e4b333fdeecaa4ad9/data/test-00001-of-00003-7ea98873fc919813.parquet"
+    },
+    {
+      "path": "sources/pathvqa_native/test-00002-of-00003-1628308435019820.parquet",
+      "sha256": "ae676f41a7ddfc85be8503a731c719e1608da37ddc981de42a10dd2d55a8ee87",
+      "bytes": 69806564,
+      "publisher_lfs_digest_verified": true,
+      "url": "https://huggingface.co/datasets/flaviagiammarino/path-vqa/resolve/1685832883334b5bb5beaf4e4b333fdeecaa4ad9/data/test-00002-of-00003-1628308435019820.parquet"
+    }
+  ],
+  "native_scoring_source_revision": "b9a98a736d2ef05bcf5ff345be6403fb3a664eaf",
+  "native_scoring_files": [
+    {
+      "path": "sources/pathvqa_native/llava_v1_run_eval_pvqa.py",
+      "sha256": "1ac2c91878e0d0cda14946a28d8ba1468f48327c88a27701f43fea088353219b",
+      "publisher_git_blob_sha1": "63294303bb5f3397f6120757b98c6b1cffe2ffd7",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/run_eval_pvqa.py",
+      "publisher_digest_verified": true
+    },
+    {
+      "path": "sources/medical_vqa/llava_v1_evaluate_metrics.py",
+      "sha256": "cbcf8cae0fbe6f91a323d5b100291af969c2884e572103de62459f0c4daa5bc8",
+      "publisher_git_blob_sha1": "8286d22d896459798d98a15de02e2fb83d61b344",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/eval_metrics/evaluate_metrics.py",
+      "publisher_digest_verified": true
+    },
+    {
+      "path": "sources/medical_vqa/llava_v1_glossary.py",
+      "sha256": "59d5ac151e48c5868e6945c26520c4f2c50189bcf009ea3ab9a686e7a3f486f4",
+      "publisher_git_blob_sha1": "b8b8abeca9b814047ec7673373df17d77dd07df9",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/eval_metrics/glossary.py",
+      "publisher_digest_verified": true
+    },
+    {
+      "path": "sources/medical_vqa/llava_v1_utils.py",
+      "sha256": "221f83206502ff236e11d22494681db70165ab28e29cab2105ee844af4cb167d",
+      "publisher_git_blob_sha1": "60d8dda18f3ec12e08b67f77bb13aff776b8d1f0",
+      "url": "https://raw.githubusercontent.com/microsoft/LLaVA-Med/b9a98a736d2ef05bcf5ff345be6403fb3a664eaf/llava/eval/eval_metrics/utils.py",
+      "publisher_digest_verified": true
+    }
+  ],
+  "input_file": "data/pathvqa_native/V03/model_inputs.jsonl",
+  "label_file": "data/pathvqa_native/V03/labels.jsonl",
+  "image_manifest": "data/pathvqa_native/V03/image_manifest.json",
+  "model_facing_fields": [
+    "released_question_text",
+    "released_original_image_bytes"
+  ],
+  "input_modalities": [
+    "image",
+    "question_text"
+  ],
+  "scorer_only_fields": [
+    "target_answer",
+    "answer_type"
+  ],
+  "prompt_policy": "Exact pinned mirror question and original embedded image bytes only. No answer-group hint, caption, answer candidates, labels or system message. No source row removed, modified or selected by model outcomes.",
+  "metric_policy": {
+    "open_headline": "Pinned official LLaVA-Med normalize_word and calculate_f1score recall, macro per OPEN case; do not substitute generic multiset recall.",
+    "closed_headline": "Declared corrected source substring accuracy with every CLOSED case in denominator; native PathVQA-specific bug-compatible score separately reported with its defective denominator. Strict normalized exact Yes/No accuracy is a separate diagnostic.",
+    "native_cli_blockers": [
+      "run_eval_pvqa.py omits wrong opposite-label predictions from closed denominator",
+      "run_eval_pvqa.py calls calculate_appearance_with_normalization with2arguments but pinned helper requires3; no full native CLI success claim"
+    ],
+    "missing_output_policy": "Keep every frozen case in corrected group denominators; missing/empty outputs score0. Report failures and truncations. Native bug-compatible diagnostic retains source omission behavior and cannot be treated as unbiased accuracy.",
+    "no_combined_metric": true
+  },
+  "comparison_to_paper": "Full released6719-row deduplicated/normalized mirror test, with full questions and images; source native6761 questions differ by42 duplicate rows and text normalization. Model is a zero-shot Qwen vision baseline against task-trained source systems. Compare only metric/split-compatible results with this explicit caveat; no exact paper reproduction or contamination-free claim.",
+  "interpretation": {
+    "task_demands": {
+      "labels": [
+        "visual_evidence_interpretation",
+        "pathology_knowledge",
+        "question_answering"
+      ],
+      "status": "provisional analyst description; model internal computation unknown"
+    },
+    "actually_supplied": "Released question text and image bytes only",
+    "reference_answer_source": "Source pathology textbook/PEIR-derived curated question-answer annotations, mirror-normalized, scorer-only",
+    "good_score_establishes": "Reference answer recovery under this declared vision and lexical scoring protocol",
+    "bad_score_establishes": "Limited reference answer recovery; does not isolate reasoning or establish clinical utility",
+    "explanation_correctness": "Unassessed independently of answers; unsupported explanation is not automatically false"
+  },
+  "files": [
+    {
+      "path": "data/pathvqa_native/V03/image_manifest.json",
+      "sha256": "4fd14e94cfbc98334f87e8f1a45dfdeee916313007cf5d294498d34bde35da24",
+      "bytes": 298553
+    },
+    {
+      "path": "data/pathvqa_native/V03/input_provenance.jsonl",
+      "sha256": "7ccc744b19b277a7ee3604d9275c0e7f250cfce84e68b92d221e05b8d5b883fe",
+      "bytes": 3113176
+    },
+    {
+      "path": "data/pathvqa_native/V03/labels.jsonl",
+      "sha256": "692bfa892dc3e3a53d199d49184e024dae9ae220fe568686067232f8ef507182",
+      "bytes": 1885265
+    },
+    {
+      "path": "data/pathvqa_native/V03/model_inputs.jsonl",
+      "sha256": "d177b6dde001e1354ec8e5ba1a15a219ebb5afd3b62dccaa99ed2b51eedad007",
+      "bytes": 1629880935
+    },
+    {
+      "path": "data/pathvqa_native/V03/ordered_case_ids.json",
+      "sha256": "02c1a2e70c74e075b5aab0d3ac5ea24c84fa52dfd28fe31cc534a69557824a69",
+      "bytes": 154540
+    },
+    {
+      "path": "data/pathvqa_native/V03/source_identity.json",
+      "sha256": "8f6889e23ce5b27020e788439b7ad4a1ce523d63aacfb26a8902d4b0a3f6ca74",
+      "bytes": 989
+    }
+  ],
+  "source_chain": [
+    {
+      "path": "sources/pathvqa_native/original_baselines__method1__saved__lxmert__pvqa_test.json",
+      "sha256": "36e5fcb4b8b6b04a043921c97f5a2965c3afc81c912668b09d2833c407f7d0b3",
+      "bytes": 796066
+    },
+    {
+      "path": "sources/pathvqa_native/original_git_verified_tree.json",
+      "sha256": "c5e36d09159022172853c4d4a9f5ea0bfefcf62fec87c3c03cef918612085585",
+      "bytes": 21588
+    },
+    {
+      "path": "sources/pathvqa_native/hf_scripts__processing.py",
+      "sha256": "d0bb086b5f87f883652bfe7dff378b72ea9a72aeedcab5b8d5553fdea59fb7c6",
+      "bytes": 1363
+    },
+    {
+      "path": "sources/pathvqa_native/hf_README.md",
+      "sha256": "16eaf70c5aa4f0a03a92f8872d5c33d0707594c07837be69fabdf6f457bda055",
+      "bytes": 4290
+    },
+    {
+      "path": "sources/pathvqa_native/hf_data_tree.json",
+      "sha256": "ae179964c11bedf6710fd8b7241e866ec9b7dda558283da5ca358ec75776d670",
+      "bytes": 4344
+    },
+    {
+      "path": "sources/pathvqa_native/hf_metadata.json",
+      "sha256": "d0782d466e5037370a0b10e0ed3985bc91b75d6ad54dcf82826dc8820c5bd34e",
+      "bytes": 2877
+    },
+    {
+      "path": "sources/pathvqa_native/original_data__README.md",
+      "sha256": "0d657a31263e5dce8422c4028f14246be21f0bd4b52146e141c27a14ffdc48ad",
+      "bytes": 147
+    }
+  ]
+}

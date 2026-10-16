@@ -1,0 +1,49 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "original_server_unchanged": true,
+  "total_user_authorized_gpu_limit": 8,
+  "planned_project_gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "source_weights_shared_read_only": true,
+  "new_checkpoint_copies": 0,
+  "replicas": {
+    "0": {
+      "stage": "skipped_gpu_no_longer_idle",
+      "memory_used_mib": 2605
+    },
+    "1": {
+      "stage": "ready",
+      "port": 8031,
+      "pid": 911635,
+      "endpoint": "http://127.0.0.1:8031/v1",
+      "synthetic_check": "passed",
+      "benchmark_cases_dispatched": 0
+    },
+    "2": {
+      "stage": "ready",
+      "port": 8032,
+      "pid": 917680,
+      "endpoint": "http://127.0.0.1:8032/v1",
+      "synthetic_check": "passed",
+      "benchmark_cases_dispatched": 0
+    },
+    "3": {
+      "stage": "ready",
+      "port": 8033,
+      "pid": 922169,
+      "endpoint": "http://127.0.0.1:8033/v1",
+      "synthetic_check": "passed",
+      "benchmark_cases_dispatched": 0
+    }
+  },
+  "updated_at_utc": "2026-10-15T08:56:01.138179+00:00"
+}

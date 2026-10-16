@@ -1,0 +1,110 @@
+{
+  "run_id": "qwen38_27b_p42_gfp_qualified_two_regimes_2026-10-15",
+  "task_id": "P42",
+  "status": "disabled_pending_root_scope_and_CPU_oracle_runtime_freeze",
+  "execution_authorized": false,
+  "oracle_forward_authorized": false,
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "approved_task_ids": [
+    "P42"
+  ],
+  "variant": "QWEN_GFP_QUALIFIED_TWO_REGIMES_ENDPOINT_1_TO_3",
+  "regimes": [
+    "replace_only",
+    "full_atomic"
+  ],
+  "planned_cases": 200,
+  "endpoint": "http://127.0.0.1:8033/v1",
+  "gpu_ids": [
+    3
+  ],
+  "serving_config_file": "configs/local_model_gpu3.json",
+  "server_record_file": ".local/local_model_server_gpu3.json",
+  "concurrency": 4,
+  "generation": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": -1,
+    "min_p": 0.0,
+    "max_tokens": 1024,
+    "n": 1,
+    "presence_penalty": 0.0,
+    "frequency_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "chat_template_kwargs": {
+      "enable_thinking": true
+    }
+  },
+  "source_proposal_file": "configs/stride_gfp_qualified_p42.proposed.json",
+  "source_proposal_sha256": "7dfa4f2a5943f31a2061f490938736709eb65984f40354c5cbaa7e74b93ba644",
+  "source_sequence_sha256": "dd295bd4496d5e13da909a2c59492f00f923f7957a774feeaafaf8c5c235828c",
+  "input_file": "data/stride_gfp_qualified_p42/all_regimes.inputs.proposed.jsonl",
+  "review_file": "configs/local_stride_gfp_p42_review.candidate.json",
+  "runner": "scripts/run_local_stride_gfp.py",
+  "executor": "scripts/execute_local_stride_gfp.py",
+  "scorer": "scripts/score_local_stride_gfp.py",
+  "scorer_python": ".venv-oracles/bin/python",
+  "oracle_runtime_file": "reports/stride_gfp_oracle_runtime.json",
+  "oracle_runtime_sha256": null,
+  "oracle_state_audit_file": "reports/stride_gfp_oracle_state_restoration.json",
+  "oracle_state_audit_sha256": null,
+  "native_oracle_source_file": "sources/stride__scripts__eval__score_fluorescence.py",
+  "native_oracle_source_sha256": "ae06c6f200d81ad6b7f764921fba17379076d2e6413cae781cc3bbffd3ed9ad2",
+  "reporting_protocol_kind": "adapted",
+  "native_paper_replication": false,
+  "tool_access": [],
+  "model_facing_fields": [
+    "native_system_prompt",
+    "publisher_GFP_anchor",
+    "native_user_goal",
+    "declared_prospective_endpoint_regime"
+  ],
+  "metric_policy": {
+    "qualified_oracle_success": "number of eligible improved samples /100, preserving invalid/missing generation slots as failures",
+    "improved_sequence_uniqueness": "distinct improved AA strings / improved sample count; null if denominator0",
+    "native_novelty": null,
+    "native_novelty_status": "blocked_missing_exact_positive_SFT_Dplus_membership",
+    "missing_oracle_handling": "Any eligible candidate with missing/nonfinite score withholds primary success/uniqueness; never impute score0.",
+    "diagnostics": [
+      "format delivery",
+      "endpoint validity",
+      "length finish count",
+      "length-changing endpoints",
+      "duplicate count",
+      "oracle failures"
+    ],
+    "task_completion_claim": "Qualified success/uniqueness may complete; P42 full native metric set remains incomplete while novelty/protocol recovery is blocked."
+  },
+  "interpretation": {
+    "likely_demands_provisional": [
+      "learned sequence-property prediction",
+      "local candidate proposal",
+      "instruction-following under endpoint constraints"
+    ],
+    "information_supplied": "Publisher GFP anchor, native goal/system/user prompt and declared endpoint regime constraint; no oracle outputs, labels, D+ membership, tools or training.",
+    "reference_evidence": "Fixed trained SaProt regression-head predictions, not new laboratory measurements.",
+    "good_score": "Higher oracle-scored candidates within this declared endpoint budget and sampling protocol.",
+    "bad_score": "Limited eligible delivery or oracle improvement under this budget; does not isolate reasoning capability.",
+    "rationale_correctness": "Unassessed separately from outcome scores; unsupported mechanisms are not automatically false.",
+    "contamination": "Prior exposure to public GFP data is unknown."
+  },
+  "scoring_cohort_policy": "Every200 generation slot is sealed in generation_artifact_lock.json before source/candidate oracle inference. Root scorer must verify every lock hash and all frozen source/runtime/assets.",
+  "frozen_files_sha256": {
+    "configs/local_stride_gfp_p42_review.candidate.json": "206c2fe703cae3bc8f14d77402d23f61831528d05bac77378bb035ef01468828",
+    "configs/stride_gfp_qualified_p42.proposed.json": "7dfa4f2a5943f31a2061f490938736709eb65984f40354c5cbaa7e74b93ba644",
+    "data/proxy_generation_native/P42/native_reference_contract.json": "101e7c3f7daa2118a1ff38c29f81b170c50dbf89885a09f97654ba416b6da94d",
+    "data/stride_gfp_qualified_p42/all_regimes.inputs.proposed.jsonl": "e21510dbbad929d00c85d4a1cedf339cf9774319d1abfc012088bd404896b23c",
+    "data/stride_gfp_qualified_p42/full_atomic.inputs.proposed.jsonl": "b81eb377fa9a3d8950af34ec3dc4e5b5c73168023afb88c162c631066b18514b",
+    "data/stride_gfp_qualified_p42/replace_only.inputs.proposed.jsonl": "d9ceafea19174fc7b3263ecf3fea5bf5cc17dcadcb7a93d28db0540f3a50c406",
+    "reports/stride_gfp_qualified_prompt_validation.json": "c835de7155a6249841d1ab4a8fab3d7dcb7012f6f305b7339f3b33e70e316990",
+    "scripts/execute_local_stride_gfp.py": "99643d1ff56cf4c733f265151415ff656a3532a7dcb9875e49f77b8e4e091ace",
+    "scripts/prepare_stride_gfp_qualified_proposal.py": "e1d4994d601b13ef7ca14c79df27cbdb529879b99159a0262e2821331047ee5b",
+    "scripts/run_local_labbench_eight_gpu.py": "de0c69b2eea33d618a7674791d6ae448fd8c086a7ba081e948dafdfdcaed4493",
+    "scripts/run_local_stride_gfp.py": "d8613adaeaa1ef81435d0a1d758dec8d0ac58bbe45ba1bacf62effcb495d233e",
+    "scripts/stride_gfp_qualified_contract.py": "bccb1a295bed84534f1554dcb6d3b7f80a5e4ee017ee95f635be59cae765a547",
+    "sources/proxy_generation_native/saprot_adapter_tensor_inventory.json": "07bd9a5c098d5f6a1890d43e1cff0bb6477df954b2c320bc91114f4086d9e5d6",
+    "sources/proxy_generation_native/stride__scripts__eval__infer_protein_vllm.py": "9e6a632b5ad722924f0baf0a2f77740971e2dc0911b947bbf045ff85b922c588",
+    "sources/stride__scripts__eval__score_fluorescence.py": "ae06c6f200d81ad6b7f764921fba17379076d2e6413cae781cc3bbffd3ed9ad2"
+  }
+}

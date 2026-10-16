@@ -1,0 +1,78 @@
+{
+  "activated_at_utc": "2026-10-15T09:18:47.951046+00:00",
+  "plan_file": "reports/local_posttrain_protein_shard_plan.json",
+  "plan_sha256": "ba54d8bdafef53efd9d471eb2a777804ac6b0c20ddfe03e9e80ff1466347e26b",
+  "approval_sha256": "f1d7adbc41a643387426a9e71ecd841604aab4f9564d6b301e88af1497c9a90f",
+  "case_count": 14872,
+  "shard_count": 15,
+  "source_splits": {
+    "id": 6989,
+    "ood": 7883
+  },
+  "input_reference_dependence": "Native targets union predictor-derived terms also supplied in native context; no hidden direct gold/teacher file supplied, seed-only scores near0.99 are separate offline baseline.",
+  "queue_order_basis": "Entire fixed new task before many repeated extended shards; label/outcome-independent; no originalcase/model/prompt/metric changes.",
+  "input_preflight": "passed",
+  "jobs": [
+    {
+      "config": "configs/local_posttrain_protein_p29_id_shard_000.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_000.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_007.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_id_shard_001.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_001.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_id_shard_002.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_002.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_id_shard_003.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_003.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_id_shard_004.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_004.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_id_shard_005.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_005.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_id_shard_006.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    },
+    {
+      "config": "configs/local_posttrain_protein_p29_ood_shard_006.json",
+      "executor": "scripts/execute_local_posttrain_protein_shard.py"
+    }
+  ],
+  "openai_evaluation_api_calls": 0
+}

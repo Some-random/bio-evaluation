@@ -1,0 +1,194 @@
+{
+  "stage": "complete_public_evaluator_assets",
+  "inference_dispatched": false,
+  "assets": [
+    {
+      "task_id": "P34",
+      "landscape": "AMIE",
+      "path": "models/proxy_generation_native/pex_esm1b_heads/AMIE/decoder.pt",
+      "sha256": "b7980579aa7af36182a1a99fc1777318c8602a57b59b69063972d4c6064280ed",
+      "bytes": 4731655,
+      "publisher_archive_member": "landscape_params/esm1b_landscape/AMIE/decoder.pt",
+      "publisher_zip_crc32": 2570246941,
+      "whole_archive_sha256_verified": false
+    },
+    {
+      "task_id": "P34",
+      "landscape": "AMIE",
+      "path": "data/proxy_generation_native/P34/AMIE/starting_sequence.json",
+      "sha256": "0237ae59db63d72027cf30581d13518333f92688cf18566b645d92cdf4a2744a",
+      "bytes": 343,
+      "publisher_archive_member": "landscape_params/esm1b_landscape/AMIE/starting_sequence.json",
+      "publisher_zip_crc32": 1435979599,
+      "whole_archive_sha256_verified": false
+    },
+    {
+      "task_id": "P34",
+      "landscape": "E4B",
+      "path": "models/proxy_generation_native/pex_esm1b_heads/E4B/decoder.pt",
+      "sha256": "c15399f6d40c44c90733eec4f1c2b13c21e037edc29a13c0e53799af96561a6e",
+      "bytes": 4731655,
+      "publisher_archive_member": "landscape_params/esm1b_landscape/E4B/decoder.pt",
+      "publisher_zip_crc32": 1138290058,
+      "whole_archive_sha256_verified": false
+    },
+    {
+      "task_id": "P34",
+      "landscape": "E4B",
+      "path": "data/proxy_generation_native/P34/E4B/starting_sequence.json",
+      "sha256": "f918babae4ed0a698100e301fa78744d06773d911e05c6a20a9e64d45df4df6f",
+      "bytes": 104,
+      "publisher_archive_member": "landscape_params/esm1b_landscape/E4B/starting_sequence.json",
+      "publisher_zip_crc32": 2045402494,
+      "whole_archive_sha256_verified": false
+    },
+    {
+      "task_id": "P34",
+      "landscape": "LGK",
+      "path": "models/proxy_generation_native/pex_esm1b_heads/LGK/decoder.pt",
+      "sha256": "4857f8a6129eb3e9cf7243df46e5df736bfc813ffcea2ae5a80573a4a4bb96be",
+      "bytes": 4731655,
+      "publisher_archive_member": "landscape_params/esm1b_landscape/LGK/decoder.pt",
+      "publisher_zip_crc32": 2923159448,
+      "whole_archive_sha256_verified": false
+    },
+    {
+      "task_id": "P34",
+      "landscape": "LGK",
+      "path": "data/proxy_generation_native/P34/LGK/starting_sequence.json",
+      "sha256": "a037496ec85ad2312f851daa8de2916c39a209e923413bfdbad4e89bba32c90b",
+      "bytes": 441,
+      "publisher_archive_member": "landscape_params/esm1b_landscape/LGK/starting_sequence.json",
+      "publisher_zip_crc32": 825464024,
+      "whole_archive_sha256_verified": false
+    },
+    {
+      "task_id": "P34",
+      "landscape": "UBE2I",
+      "path": "models/proxy_generation_native/pex_esm1b_heads/UBE2I/decoder.pt",
+      "sha256": "11151739ec81371b150cd22bf946f46bf608d060336908abfbebe3c2d25a09f2",
+      "bytes": 4731655,
+      "publisher_archive_member": "landscape_params/esm1b_landscape/UBE2I/decoder.pt",
+      "publisher_zip_crc32": 2819847645,
+      "whole_archive_sha256_verified": false
+    },
+    {
+      "task_id": "P34",
+      "landscape": "UBE2I",
+      "path": "data/proxy_generation_native/P34/UBE2I/starting_sequence.json",
+      "sha256": "0555d312e627c32cf9eb2a9af93c98a313a5dc0d00558c99c48100fab3634306",
+      "bytes": 161,
+      "publisher_archive_member": "landscape_params/esm1b_landscape/UBE2I/starting_sequence.json",
+      "publisher_zip_crc32": 498582852,
+      "whole_archive_sha256_verified": false
+    },
+    {
+      "task_id": "P34",
+      "landscape": "avGFP",
+      "path": "models/proxy_generation_native/pex_esm1b_heads/avGFP/decoder.pt",
+      "sha256": "e70fd9f903d544ceb7a6bb2e1ab39cf99dbbcd98bf4135075130b06f39a132c1",
+      "bytes": 4731655,
+      "publisher_archive_member": "landscape_params/esm1b_landscape/avGFP/decoder.pt",
+      "publisher_zip_crc32": 3462055592,
+      "whole_archive_sha256_verified": false
+    },
+    {
+      "task_id": "P34",
+      "landscape": "avGFP",
+      "path": "data/proxy_generation_native/P34/avGFP/starting_sequence.json",
+      "sha256": "27b03a4ca450c1992c98b1529046912a17998d0d8f92a5cb39b617ab58fa0953",
+      "bytes": 239,
+      "publisher_archive_member": "landscape_params/esm1b_landscape/avGFP/starting_sequence.json",
+      "publisher_zip_crc32": 1025695003,
+      "whole_archive_sha256_verified": false
+    },
+    {
+      "repository": "SaProtHub/Model-Fluorescence-650M",
+      "revision": "8226f15a8ea237db4a972afa453041c1b2deb237",
+      "path": "adapter_config.json",
+      "target": "models/proxy_generation_native/saprot_fluorescence_adapter/adapter_config.json",
+      "bytes": 521,
+      "sha256": "39abd7a975b9d0610078f2b06103dee2f3761a8e28126c1fb9ebad1603ffb423",
+      "git_blob_sha1": "18993710585ec453efdfdf2a50f53e238b4a76fd",
+      "url": "https://huggingface.co/SaProtHub/Model-Fluorescence-650M/resolve/8226f15a8ea237db4a972afa453041c1b2deb237/adapter_config.json",
+      "publisher_digest_verified": true
+    },
+    {
+      "repository": "SaProtHub/Model-Fluorescence-650M",
+      "revision": "8226f15a8ea237db4a972afa453041c1b2deb237",
+      "path": "adapter_model.bin",
+      "target": "models/proxy_generation_native/saprot_fluorescence_adapter/adapter_model.bin",
+      "bytes": 15513663,
+      "sha256": "7696e185bae99f07f4624922321d042f14bb412178788c4d6549da2aec60ae5a",
+      "git_blob_sha1": "b5095e66c34c054f47bc194db2dae1584f9ab22a",
+      "url": "https://huggingface.co/SaProtHub/Model-Fluorescence-650M/resolve/8226f15a8ea237db4a972afa453041c1b2deb237/adapter_model.bin",
+      "publisher_digest_verified": true
+    },
+    {
+      "repository": "SaProtHub/Model-Fluorescence-650M",
+      "revision": "8226f15a8ea237db4a972afa453041c1b2deb237",
+      "path": "metadata.json",
+      "target": "models/proxy_generation_native/saprot_fluorescence_adapter/metadata.json",
+      "bytes": 88,
+      "sha256": "829f38928602ed15e9040a3f111fec1fffc82892c0a70c4b3b3b7607589f1e9f",
+      "git_blob_sha1": "f3d905b85a336e8f14f8716e5c549327319f705c",
+      "url": "https://huggingface.co/SaProtHub/Model-Fluorescence-650M/resolve/8226f15a8ea237db4a972afa453041c1b2deb237/metadata.json",
+      "publisher_digest_verified": true
+    },
+    {
+      "repository": "westlake-repl/SaProt_650M_AF2",
+      "revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+      "path": "config.json",
+      "target": "models/proxy_generation_native/saprot_base/config.json",
+      "bytes": 647,
+      "sha256": "927bf8961c93e0667cecb6f928aa7077e1a7f55c8483ae58173f155261f1c3b3",
+      "git_blob_sha1": "7c43c2eaa6ed3d35e206d1fbd2533ba69a7da0d3",
+      "url": "https://huggingface.co/westlake-repl/SaProt_650M_AF2/resolve/d9b9ad00ef61c0990e611b2b43f2231c7de24b38/config.json",
+      "publisher_digest_verified": true
+    },
+    {
+      "repository": "westlake-repl/SaProt_650M_AF2",
+      "revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+      "path": "pytorch_model.bin",
+      "target": "models/proxy_generation_native/saprot_base/pytorch_model.bin",
+      "bytes": 2606517773,
+      "sha256": "513c39088804b74309d961174d5fc7aeabfb9b79d2814cdc7e465d4fe4b9f216",
+      "git_blob_sha1": "4df4029c70cc8fa0b039a34c808a1c4dca1f4026",
+      "url": "https://huggingface.co/westlake-repl/SaProt_650M_AF2/resolve/d9b9ad00ef61c0990e611b2b43f2231c7de24b38/pytorch_model.bin",
+      "publisher_digest_verified": true
+    },
+    {
+      "repository": "westlake-repl/SaProt_650M_AF2",
+      "revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+      "path": "special_tokens_map.json",
+      "target": "models/proxy_generation_native/saprot_base/special_tokens_map.json",
+      "bytes": 125,
+      "sha256": "3aedcd4211c0d43aec4e607ff60a63255f3174ead795e997350f09a5f8cd9ee1",
+      "git_blob_sha1": "ba0f9b53dbbf27934f7555e5d31e37bdea9317f1",
+      "url": "https://huggingface.co/westlake-repl/SaProt_650M_AF2/resolve/d9b9ad00ef61c0990e611b2b43f2231c7de24b38/special_tokens_map.json",
+      "publisher_digest_verified": true
+    },
+    {
+      "repository": "westlake-repl/SaProt_650M_AF2",
+      "revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+      "path": "tokenizer_config.json",
+      "target": "models/proxy_generation_native/saprot_base/tokenizer_config.json",
+      "bytes": 40,
+      "sha256": "bfd8a81f4215e59174634eec71eea99aa1841d8692bdf5c60e9ecaa12904fde8",
+      "git_blob_sha1": "aad24fba9f1bad2d74ed79d414ddcd60e6b0f812",
+      "url": "https://huggingface.co/westlake-repl/SaProt_650M_AF2/resolve/d9b9ad00ef61c0990e611b2b43f2231c7de24b38/tokenizer_config.json",
+      "publisher_digest_verified": true
+    },
+    {
+      "repository": "westlake-repl/SaProt_650M_AF2",
+      "revision": "d9b9ad00ef61c0990e611b2b43f2231c7de24b38",
+      "path": "vocab.txt",
+      "target": "models/proxy_generation_native/saprot_base/vocab.txt",
+      "bytes": 1354,
+      "sha256": "d4289b3ff55d50b1aa33a3141ec344fc2a69cb3dca43aeefe9fccfee371ffd28",
+      "git_blob_sha1": "1e8f43a0d265641e3d16f0a6931f27aae233f77f",
+      "url": "https://huggingface.co/westlake-repl/SaProt_650M_AF2/resolve/d9b9ad00ef61c0990e611b2b43f2231c7de24b38/vocab.txt",
+      "publisher_digest_verified": true
+    }
+  ]
+}

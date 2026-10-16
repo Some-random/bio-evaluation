@@ -1,0 +1,33 @@
+{
+  "created_at_utc": "2026-10-15T09:24:51.364340+00:00",
+  "model_id": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "tokenizer_only_no_model_forward": true,
+  "proposal_sha256": "7dfa4f2a5943f31a2061f490938736709eb65984f40354c5cbaa7e74b93ba644",
+  "rows": [
+    {
+      "regime": "replace_only",
+      "case_count": 100,
+      "min_prompt_tokens": 2,
+      "max_prompt_tokens": 2,
+      "max_prompt_plus_output_tokens": 1026,
+      "publisher_context_bound": 4096,
+      "prompt_hashes_distinct": 1,
+      "seeds_distinct": 100,
+      "input_sha256": "d9ceafea19174fc7b3263ecf3fea5bf5cc17dcadcb7a93d28db0540f3a50c406"
+    },
+    {
+      "regime": "full_atomic",
+      "case_count": 100,
+      "min_prompt_tokens": 2,
+      "max_prompt_tokens": 2,
+      "max_prompt_plus_output_tokens": 1026,
+      "publisher_context_bound": 4096,
+      "prompt_hashes_distinct": 1,
+      "seeds_distinct": 100,
+      "input_sha256": "b81eb377fa9a3d8950af34ec3dc4e5b5c73168023afb88c162c631066b18514b"
+    }
+  ],
+  "all_200_cases_passed": true,
+  "execution_authorized": false
+}
