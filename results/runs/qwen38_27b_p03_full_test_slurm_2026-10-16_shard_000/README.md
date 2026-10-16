@@ -1,6 +1,6 @@
 # P03 evaluation artifacts
 
-299/1024 raw trajectories archived. Incremental snapshot; execution is ongoing.
+301/1024 raw trajectories archived. Incremental snapshot; execution is ongoing.
 
 [Case index](trajectory_index.json) · [Archive manifests](trajectory_batches) · [Frozen config](frozen_config.json)
 
