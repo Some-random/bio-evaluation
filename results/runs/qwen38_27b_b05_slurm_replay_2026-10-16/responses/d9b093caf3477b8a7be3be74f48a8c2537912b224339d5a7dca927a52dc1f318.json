@@ -1,0 +1,57 @@
+{
+  "task": "B05",
+  "case_id": "463925f0-37d5-4f9e-9efd-decae1d9bb9b",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "request_sha256": "248a4e188f7adcabe59b25af920f6fb8ddaed28d437b2cb0b3c53dea759e45bd",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-9514ae5d3901a66a",
+    "object": "chat.completion",
+    "created": 1792133240,
+    "model": "Qwen/Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\nLooking at the table, each insecticide class has a row label for its first statistic:\n\n- **Pyrethroid** → Eigenvalue\n- **Organochlorine** → Standard deviation\n- **Carbamate** → Eigenvalue\n- **Organophosphate** → Eigenvalue\n\nOnly the Organochlorine class lists \"Standard deviation\" instead of \"Eigenvalue,\" so it is the class without an eigenvalue listed.\n\n[ANSWER]D[/ANSWER]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": "The question asks which insecticide class does not have an eigenvalue listed in the table.\n\nLet me look at each class in the table:\n- Pyrethroid: has \"Eigenvalue\" row (1.035, 1.301)\n- Organochlorine: has \"Standard deviation\" row instead of \"Eigenvalue\" (1.036, 1.410)\n- Carbamate: has \"Eigenvalue\" row (0.960, 1.226)\n- Organophosphate: has \"Eigenvalue\" row (1.020, 1.311)\n\nSo the Organochlorine class lists \"Standard deviation\" rather than \"Eigenvalue\". Therefore the class that does not have an eigenvalue listed is Organochlorine.\n\nOption D is Organochlorine. Option C says both organochlorine and pyrethroid don't have eigenvalues, but pyrethroid does have an eigenvalue. So D is correct.\n\nLet me double check the table text. Pyrethroid row shows \"Eigenvalue\". Organochlorine row shows \"Standard deviation\". Yes.\n\nThus answer D.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.31.0-044a22dd",
+    "usage": {
+      "prompt_tokens": 1474,
+      "total_tokens": 1834,
+      "completion_tokens": 360,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 257
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "elapsed_seconds": 13.723,
+  "saved_at_utc": "2026-10-16T06:47:34.366190+00:00",
+  "status": "completed",
+  "text": "\n\nLooking at the table, each insecticide class has a row label for its first statistic:\n\n- **Pyrethroid** → Eigenvalue\n- **Organochlorine** → Standard deviation\n- **Carbamate** → Eigenvalue\n- **Organophosphate** → Eigenvalue\n\nOnly the Organochlorine class lists \"Standard deviation\" instead of \"Eigenvalue,\" so it is the class without an eigenvalue listed.\n\n[ANSWER]D[/ANSWER]",
+  "finish_reason": "stop"
+}
