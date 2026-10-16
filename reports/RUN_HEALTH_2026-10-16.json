@@ -1,0 +1,538 @@
+{
+  "requested_review_at_utc": "2026-10-16T18:52:00+00:00",
+  "observed_at_utc": "2026-10-16T18:54:11.129657+00:00",
+  "read_only_audit": true,
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "source": "Existing progress/native score/completion/scheduler metadata only; no rescoring or generation. Brief full-response audit stopped because metadata suffices.",
+  "task_progress": {
+    "P03": {
+      "planned": 2773,
+      "saved_responses": 2773,
+      "completed_generation_runs": 3
+    },
+    "P07": {
+      "planned": 27217,
+      "saved_responses": 6581,
+      "completed_generation_runs": 5
+    },
+    "P08": {
+      "planned": 12851,
+      "saved_responses": 0,
+      "completed_generation_runs": 0
+    },
+    "P28": {
+      "planned": 8159,
+      "saved_responses": 1213,
+      "completed_generation_runs": 0
+    },
+    "P29": {
+      "planned": 14872,
+      "saved_responses": 0,
+      "completed_generation_runs": 0
+    },
+    "P16": {
+      "planned": 5651,
+      "saved_responses": 0,
+      "completed_generation_runs": 0
+    },
+    "P12": {
+      "planned": 1919,
+      "saved_responses": 0,
+      "completed_generation_runs": 0
+    },
+    "P13": {
+      "planned": 3416,
+      "saved_responses": 0,
+      "completed_generation_runs": 0
+    },
+    "P14": {
+      "planned": 3416,
+      "saved_responses": 0,
+      "completed_generation_runs": 0
+    },
+    "P15": {
+      "planned": 3416,
+      "saved_responses": 0,
+      "completed_generation_runs": 0
+    }
+  },
+  "total_saved_responses": 10567,
+  "total_planned_cases": 83690,
+  "active_runs": [
+    {
+      "task_id": "P07",
+      "worker_id": "extended2",
+      "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_005",
+      "saved_responses": 877,
+      "planned": 1024,
+      "progress_updated_at_utc": "2026-10-16T18:53:17.210406+00:00",
+      "progress_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_005/progress.json"
+    },
+    {
+      "task_id": "P07",
+      "worker_id": "extended3",
+      "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_006",
+      "saved_responses": 121,
+      "planned": 1024,
+      "progress_updated_at_utc": "2026-10-16T18:53:27.443243+00:00",
+      "progress_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_006/progress.json"
+    },
+    {
+      "task_id": "P07",
+      "worker_id": "extended4",
+      "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_007",
+      "saved_responses": 113,
+      "planned": 1024,
+      "progress_updated_at_utc": "2026-10-16T18:53:56.473915+00:00",
+      "progress_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_007/progress.json"
+    },
+    {
+      "task_id": "P07",
+      "worker_id": "extended5",
+      "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_008",
+      "saved_responses": 117,
+      "planned": 1024,
+      "progress_updated_at_utc": "2026-10-16T18:53:31.054496+00:00",
+      "progress_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_008/progress.json"
+    },
+    {
+      "task_id": "P07",
+      "worker_id": "extended6",
+      "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_009",
+      "saved_responses": 123,
+      "planned": 1024,
+      "progress_updated_at_utc": "2026-10-16T18:54:08.766754+00:00",
+      "progress_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_009/progress.json"
+    },
+    {
+      "task_id": "P07",
+      "worker_id": "extended7",
+      "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_010",
+      "saved_responses": 110,
+      "planned": 1024,
+      "progress_updated_at_utc": "2026-10-16T18:54:06.584729+00:00",
+      "progress_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_010/progress.json"
+    },
+    {
+      "task_id": "P28",
+      "worker_id": "p28_0",
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_000",
+      "saved_responses": 483,
+      "planned": 1024,
+      "progress_updated_at_utc": "2026-10-16T18:53:34.637667+00:00",
+      "progress_path": ".local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_000/progress.json"
+    },
+    {
+      "task_id": "P28",
+      "worker_id": "p28_1",
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_001",
+      "saved_responses": 730,
+      "planned": 1024,
+      "progress_updated_at_utc": "2026-10-16T18:53:58.874163+00:00",
+      "progress_path": ".local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_001/progress.json"
+    }
+  ],
+  "scheduler_gpu_jobs": [
+    {
+      "job_id": "237724",
+      "name": "bio-eval-deepfri_p15",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237723",
+      "name": "bio-eval-deepfri_p14",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237722",
+      "name": "bio-eval-deepfri_p13",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237721",
+      "name": "bio-eval-deepfri_p12",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237718",
+      "name": "bio-eval-p16_1",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:b200:1"
+    },
+    {
+      "job_id": "237717",
+      "name": "bio-eval-p16_0",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:b200:1"
+    },
+    {
+      "job_id": "237694",
+      "name": "bio-eval-p29_7",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237693",
+      "name": "bio-eval-p29_6",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237692",
+      "name": "bio-eval-p29_5",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237691",
+      "name": "bio-eval-p29_4",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237690",
+      "name": "bio-eval-p29_3",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237689",
+      "name": "bio-eval-p29_2",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237688",
+      "name": "bio-eval-p29_1",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237687",
+      "name": "bio-eval-p29_0",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237685",
+      "name": "bio-eval-p28_7",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237684",
+      "name": "bio-eval-p28_6",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237683",
+      "name": "bio-eval-p28_5",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237682",
+      "name": "bio-eval-p28_4",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237681",
+      "name": "bio-eval-p28_3",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237680",
+      "name": "bio-eval-p28_2",
+      "state": "PENDING",
+      "node": "",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237676",
+      "name": "bio-eval-extended7",
+      "state": "RUNNING",
+      "node": "ampere6",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237675",
+      "name": "bio-eval-extended6",
+      "state": "RUNNING",
+      "node": "ampere8",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237674",
+      "name": "bio-eval-extended5",
+      "state": "RUNNING",
+      "node": "ampere9",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237673",
+      "name": "bio-eval-extended4",
+      "state": "RUNNING",
+      "node": "ampere5",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237671",
+      "name": "bio-eval-extended2",
+      "state": "RUNNING",
+      "node": "ampere7",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237672",
+      "name": "bio-eval-extended3",
+      "state": "RUNNING",
+      "node": "ampere7",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237677",
+      "name": "bio-eval-p28_0",
+      "state": "RUNNING",
+      "node": "ampere7",
+      "resource": "gres/gpu:a100:1"
+    },
+    {
+      "job_id": "237678",
+      "name": "bio-eval-p28_1",
+      "state": "RUNNING",
+      "node": "ampere6",
+      "resource": "gres/gpu:a100:1"
+    }
+  ],
+  "running_gpu_jobs": 8,
+  "p03_native_result": {
+    "scores_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/scores.json",
+    "completion_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/completion.json",
+    "accuracy": 0.2610890732059142,
+    "correct": 724,
+    "planned": 2773,
+    "parsed": 2722,
+    "invalid_outputs": 51,
+    "finish_reasons": {
+      "stop": 2726,
+      "length": 47
+    },
+    "finished_at_utc": "2026-10-16T13:47:50.762560+00:00",
+    "generation_exit_code": 0,
+    "scoring_exit_code": 0,
+    "full_test_union_validated": true
+  },
+  "p07_completed_shard_quality": {
+    "totals": {
+      "planned": 5120,
+      "parsed": 283,
+      "length_stopped": 4822
+    },
+    "parse_rate": 0.0552734375,
+    "length_stop_rate": 0.941796875,
+    "shards": [
+      {
+        "scores_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_000/scores.json",
+        "planned": 1024,
+        "parsed": 57,
+        "length_stopped": 967,
+        "native_spearman": null
+      },
+      {
+        "scores_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_001/scores.json",
+        "planned": 1024,
+        "parsed": 54,
+        "length_stopped": 968,
+        "native_spearman": null
+      },
+      {
+        "scores_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_002/scores.json",
+        "planned": 1024,
+        "parsed": 59,
+        "length_stopped": 961,
+        "native_spearman": null
+      },
+      {
+        "scores_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_003/scores.json",
+        "planned": 1024,
+        "parsed": 69,
+        "length_stopped": 949,
+        "native_spearman": null
+      },
+      {
+        "scores_path": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_004/scores.json",
+        "planned": 1024,
+        "parsed": 44,
+        "length_stopped": 977,
+        "native_spearman": null
+      }
+    ],
+    "interpretation": "All five finished shard-native Spearman scores are undefined because most outputs fail the required numeric format; no whole-task score yet. Keep original outputs and denominator."
+  },
+  "uploader": {
+    "stage": "retry_pending",
+    "safe_error_summary": "Main-branch non-fast-forward push conflict; model workers continue independently.",
+    "latest_attempt_at_utc": "2026-10-16T18:46:48.032241+00:00",
+    "last_success_at_utc": "2026-10-16T11:23:26.367254+00:00",
+    "last_success_commit": "ab4213ebe53fc20d917a2abd669859763a397df3",
+    "last_success_uploaded_trajectories": 4376,
+    "status_path": ".local/remaining_evaluations/supervisor_status.json",
+    "last_success_path": ".local/remaining_evaluations/upload_status.json"
+  },
+  "historical_report_regression": {
+    "previous_report_ref": "b200996:reports/RESULTS_AT_A_GLANCE.json",
+    "previous_report_sha256": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
+    "previous_generated_at_utc": "2026-10-16T04:25:25.541726+00:00",
+    "previous_completed_setting_ids": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B07",
+      "B08",
+      "N01",
+      "N02",
+      "N03",
+      "P01",
+      "P02",
+      "P10",
+      "P11",
+      "P23",
+      "P24",
+      "P25",
+      "P26",
+      "P42",
+      "P43",
+      "V01",
+      "V02",
+      "V03",
+      "V04",
+      "V05"
+    ],
+    "current_path": "reports/RESULTS_AT_A_GLANCE.json",
+    "current_sha256": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
+    "current_generated_at_utc": "2026-10-16T13:49:27.755824+00:00",
+    "current_completed_setting_ids": [
+      "B01",
+      "B03",
+      "B04",
+      "B05",
+      "P03"
+    ],
+    "missing_prior_source_score_paths": 28,
+    "prior_score_rows": 28,
+    "cause": "The native report generator reconstructs its entire output only from results/runs/*/scores.json. Historical Oct15 score paths are not restored into this working tree. Its13:49 refresh found four replays plus the new P03 aggregate and replaced the25-setting historical report with5settings without warning about absent historical sources. This is a reporting coverage regression, not evidence that past evaluations were undone.",
+    "evidence": [
+      "scripts/update_results_at_a_glance.py:115",
+      ".local/remaining_evaluations/report_update_status.json",
+      ".local/litqa2_replay/restoration_audit.json"
+    ],
+    "recommendation": "Preserve historical verified rows from the prior immutable report and add current results by run/protocol; do not infer missing historical rows are unrun or rerun scored calls to repair a reporting issue."
+  },
+  "frozen_plan_integrity": [
+    {
+      "path": ".local/remaining_evaluations/extended_fast_v2.json",
+      "sha256": "08e23f835df49659ebcd6f5da82e655c056b8a35d6a90cf7f6733eddf76e1bce",
+      "matches_frozen_registry": true
+    },
+    {
+      "path": ".local/remaining_evaluations/extended_bulk_v2.json",
+      "sha256": "4e0b26baec5d9a547abd1f05dfdbe9430391d2816817cbd4b6fedbcdfb5518e8",
+      "matches_frozen_registry": true
+    },
+    {
+      "path": ".local/remaining_evaluations/p28_pool_v2.json",
+      "sha256": "e662b329176090eefd168a4e901804575c50e0824da0477d6f005de1d3550913",
+      "matches_frozen_registry": true
+    },
+    {
+      "path": ".local/remaining_evaluations/p29_pool_v1.json",
+      "sha256": "57287cd2151ff1c77138fdba6e999a141658bb5fae95265bcbf0391c5fb19cb5",
+      "matches_frozen_registry": true
+    },
+    {
+      "path": ".local/remaining_evaluations/p16_pool_v1.json",
+      "sha256": "028d8156f98f034406b14291b133be4ed6a53e3f38f6ac8deb7a813bf216c4e0",
+      "matches_frozen_registry": true
+    },
+    {
+      "path": ".local/remaining_evaluations/deepfri_pool_v1.json",
+      "sha256": "1800cdf58e0504f3e67220041669d0c5c30edb636672cbb6a76f6627113626c8",
+      "matches_frozen_registry": true
+    }
+  ],
+  "gpu_log_check": {
+    "patterns": [
+      "Traceback",
+      "CUDA out of memory",
+      "OutOfMemoryError",
+      "RuntimeError:",
+      "DUE TO TIME LIMIT",
+      "CANCELLED"
+    ],
+    "matched": false,
+    "scope": ".local/remaining_evaluations/logs/slurm-2376*.log"
+  },
+  "limitations": [
+    "Saved response totals come from each native progress.json at its displayed timestamp; they are not completed benchmark metrics.",
+    "P07 quality rates summarize only five finished1024-case shards, not all current partial responses.",
+    "P08 and downstream zero-progress settings are still queued behind occupied lanes; zero saved here does not mean unavailable.",
+    "All requests and frozen model/generation/scorer configurations were left unchanged."
+  ],
+  "p36_reviewed_subset": {
+    "planned": 59,
+    "completed": 17,
+    "full_source_cases": 5876,
+    "full_benchmark_complete": false,
+    "metrics": {
+      "rougeL": 0.12347117664198978
+    },
+    "statuses": {
+      "error_or_unknown_completion_no_retry": 42,
+      "completed": 17
+    },
+    "finish_reasons": {
+      "length": 4,
+      "stop": 13
+    },
+    "valid_native_serializations": 0,
+    "missing_or_failed_slots": 42,
+    "metric_label": "qualified_released_code_paired_reference_rougeL",
+    "comparison_qualification": "Partial59-case zero-shot Qwen text baseline. Same released paired-reference ROUGE algorithm, prospectively pinned cached HF revision; full raw prompt/target serialization and added output-format system instruction differ from trained BioT5+ tokenizer,512/256 caps and greedy generation. Historical evaluate.load resolution unpinned. Not paper normalized Smith-Waterman, not design-function success, not full5876-case completion.",
+    "raw_response_records_saved": 59,
+    "http_200_responses": 59,
+    "reasoning_only_absent_final_responses": 42,
+    "absent_final_due_to_length_limit": 22,
+    "absent_final_early_stop": 20,
+    "elapsed_seconds": 11753.967,
+    "policy": "No retries, output repair, rescoring, or inference-setting changes."
+  }
+}

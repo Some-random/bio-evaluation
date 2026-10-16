@@ -11,4 +11,4 @@ umask 077
 local_base="${SLURM_TMPDIR:-/tmp}"
 runtime_dir="$(mktemp -d "$local_base/bio-eval-continuation-${SLURM_JOB_ID}-XXXXXX")"
 trap 'rm -rf -- "$runtime_dir"' EXIT
-python3 /dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/bootstrap_coordinator.py --config /dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator_config.json --config-sha256 1094f4685babd866402b0ff53c376504754d03ee887d4afc2d8997b78f8afe3d --runtime-dir "$runtime_dir"
+python3 /dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/bootstrap_coordinator.py --config /dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator_config.json --config-sha256 aec2a4cb47a540ba5c3ae968bb7109cb838097ee164f61813cbbc80d8b5db16e --runtime-dir "$runtime_dir"

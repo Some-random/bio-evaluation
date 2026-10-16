@@ -322,6 +322,9 @@ def overview(data):
                                 value = subset["metrics"]["rougeL"]
                                 assert type(value) in (int, float) and 0 <= value <= 1
                                 local = f"Qualified subset ROUGE-L: **{value:.4f}**. " + local
+                                if "valid_native_serializations" in subset:
+                                    local += (f"<br>{subset['completed']}/{subset['planned']} final answers; "
+                                        f"{subset['valid_native_serializations']} match the required sequence format.")
                         if result and result["completionScope"] == "diagnostic_only_primary_metrics_invalid":
                             local = "**Diagnostic only:** " + local + "<br>Full native primary metric undefined."
                         published = result["publishedText"] if result else group["literatureText"]
@@ -375,7 +378,12 @@ def overview(data):
                     all_notes += ["Published reference record: " + text(group["literatureText"]), ""]
                 all_notes += [source_links(group), ""]
         out += ["</details>", ""]
-    out += ["<details>", "<summary>Protocol notes and sources</summary>", ""] + all_notes + ["</details>", ""]
+    source_notes = []
+    if meta.get("historicalResultRows"):
+        source_notes = ["Earlier verified results are preserved from the dated "
+            "[score snapshot](VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json); "
+            "current matching conditions supersede those records. Each result retains its own source date and provenance.", ""]
+    out += ["<details>", "<summary>Protocol notes and sources</summary>", ""] + source_notes + all_notes + ["</details>", ""]
     out += [f"[Raw run artifacts and uploaded trajectories]({meta['githubUrl']}/tree/main/results/runs)", ""]
     return "\n".join(out)
 

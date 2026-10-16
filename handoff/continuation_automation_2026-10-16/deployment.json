@@ -1,6 +1,6 @@
 {
-  "snapshot_at_utc": "2026-10-16T08:55:25.260036+00:00",
-  "slurm_job_id": "237895",
+  "snapshot_at_utc": "2026-10-16T19:00:15.765622+00:00",
+  "slurm_job_id": "238679",
   "job_state": "RUNNING",
   "resources": {
     "account": "infolab",
@@ -23,16 +23,17 @@
   "P36_full_benchmark_complete": false,
   "scoring_policy": "One frozen CPU scoring attempt after the subset dispatch summary; interrupted or failed score attempts do not regenerate model outputs.",
   "source_sha256": {
-    "coordinator.py": "4dee429ca9762cb8c54e9557565ac9fa9ce44010f8a26d7b425b296ef92d462b",
-    "bootstrap_coordinator.py": "77727f1f372454849ae757cc3a91d9af616a7c93e1da19aa4e2c0a25f07e344d",
-    "prepare_coordinator.py": "86b9e09e7f914e438527486ce0c5865815011fa1cbf46c157bee3a099d5b5f84",
-    "test_coordinator.py": "536025b746a95cb5fb7e1624a505eabed17a38c70f100f7886e07c2b5931cc2d",
-    "upload_continuation.py": "dd4295d44a6eb0abe1e5443a28809a5ae2a7ff4c6ffb994fc9902512ea4b7643",
-    "test_upload_continuation.py": "0d65bf80accb8ad5cb828fa4b82ffa83e746dce6e166642b5526e66ea3efa351",
+    "README.md": "b6b1db60f08852da2edf8ce3541a8429bba64856eb9ebcd705f6cb06ed1cc46c",
     "UPLOAD_CONTINUATION_SCHEMA.md": "313ec94473f7cce7e07582fbab4146b1fa39a4e261ce6b89b8eee5c35491879a",
-    "coordinator_config.json": "1094f4685babd866402b0ff53c376504754d03ee887d4afc2d8997b78f8afe3d",
-    "coordinator.sbatch": "e25990cd33301a137ed750cb501609673a9495dee274d1f97d37e1bd0ee47d81",
-    "coordinator_preparation.json": "e6dd4d2ac24074e56598afe89d94d1d4ce2ccc93fca29b3f47debf7f2fb8c85f"
+    "bootstrap_coordinator.py": "77727f1f372454849ae757cc3a91d9af616a7c93e1da19aa4e2c0a25f07e344d",
+    "test_coordinator.py": "536025b746a95cb5fb7e1624a505eabed17a38c70f100f7886e07c2b5931cc2d",
+    "coordinator.py": "4dee429ca9762cb8c54e9557565ac9fa9ce44010f8a26d7b425b296ef92d462b",
+    "prepare_coordinator.py": "86b9e09e7f914e438527486ce0c5865815011fa1cbf46c157bee3a099d5b5f84",
+    "test_upload_continuation.py": "8f679b8edaef2f623ce71d7ad359b06d60750b4255110decb95b9b23c031125c",
+    "coordinator_config.json": "aec2a4cb47a540ba5c3ae968bb7109cb838097ee164f61813cbbc80d8b5db16e",
+    "upload_continuation.py": "60c5799727eeefac1183edf60fd28ee04490a9772bdefa64a554a098fabe2413",
+    "coordinator_preparation.json": "0c1a8c81a7b7cb5adbe0755b7181898da00d82dd69f674e52fe96df5e8d20994",
+    "coordinator.sbatch": "b4d551fe6479dc69474c4a6b95a5454fe986bd39dc46954a24be1bacfebb7770"
   },
   "overview_url": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_OVERVIEW.md",
   "root_status_files": [
@@ -41,8 +42,8 @@
     ".local/continuation_2026-10-16/upload_status.json"
   ],
   "submission_command": "sbatch --parsable --account=infolab /dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator.sbatch",
-  "previous_reporting_job_id": "237867",
+  "previous_reporting_job_id": "238673",
   "previous_reporting_job_state": "CANCELLED",
-  "replacement_reason": "Preserve last verified progress during transient publication failures; original GPU jobs and frozen native supervisor unchanged.",
+  "replacement_reason": "Retain verified current and historical score records across partial scans; avoid redundant public commits and prioritize original trajectory uploads.",
   "initial_report_commit": "8dc1a544d47187cafb9431c6b88160fcd69de69d"
 }

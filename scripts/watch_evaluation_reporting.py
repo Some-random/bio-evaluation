@@ -7,6 +7,7 @@ reads benchmark cases, submits work, or uses the trajectory uploader's checkout.
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import fcntl
 import hashlib
@@ -15,6 +16,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import re
 import sys
 import tempfile
 import time
@@ -44,6 +46,67 @@ def module(name, path):
 
 def stamp():
     return datetime.now(timezone.utc).isoformat()
+
+
+@contextmanager
+def publication_lock(root):
+    path = Path(root) / ".local/evaluation_publication.lock"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a") as handle:
+        fcntl.flock(handle, fcntl.LOCK_EX)
+        yield
+
+
+def original_publication_backlog(root, now=None):
+    path = Path(root) / ".local/remaining_evaluations/supervisor_status.json"
+    if not path.is_file():
+        return None
+    try:
+        value = json.loads(path.read_bytes())
+        updated = datetime.fromisoformat(value["updated_at_utc"].replace("Z", "+00:00"))
+        age = ((now or datetime.now(timezone.utc)) - updated).total_seconds()
+    except (KeyError, TypeError, ValueError, OSError):
+        return None
+    error = str(value.get("error", "")).lower()
+    if (value.get("stage") == "retry_pending" and 0 <= age <= 1800
+            and ("non-fast-forward" in error or "fetch first" in error)):
+        return {"stage": "retry_pending", "updated_at_utc": value["updated_at_utc"],
+                "reason": "Original trajectory publisher is catching up with main"}
+    return None
+
+
+def publication_fingerprint(snapshot):
+    """Ignore clock-only refreshes while retaining results, errors and layout."""
+    volatile = {"generatedAt", "updatedAt", "updated_at_utc", "scoreSnapshotAt", "runSnapshotAt", "snapshotAt"}
+    def clean(value):
+        if isinstance(value, list):
+            return [clean(item) for item in value]
+        if not isinstance(value, dict):
+            return value
+        result = {}
+        for key, item in value.items():
+            if key in volatile:
+                continue
+            if key == "sourceHashes" and isinstance(item, dict):
+                item = {name: checksum for name, checksum in item.items()
+                        if not name.startswith(".local/") and not name.endswith("/upload_status.json")
+                        and name != "reports/EVALUATION_PROGRESS.json"}
+            result[key] = clean(item)
+        return result
+    normalized = {}
+    for name, raw in snapshot.items():
+        if name.endswith(".json"):
+            try:
+                normalized[name] = clean(json.loads(raw))
+                continue
+            except (ValueError, UnicodeDecodeError):
+                pass
+        text = raw.decode(errors="replace")
+        if name.endswith(".md"):
+            text = re.sub(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?(?:Z|[+-]\d\d:\d\d)", "<snapshot-time>", text)
+            text = re.sub(r"\d{4}-\d\d-\d\d \d\d:\d\d(?:[:]\d\d)? UTC", "<snapshot-time>", text)
+        normalized[name] = text
+    return sha(json.dumps(normalized, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode())
 
 
 def sha(raw):
@@ -186,9 +249,20 @@ class Publisher:
     def publish_once(self):
         self.refresh_and_check()
         snapshot = self.read_snapshot()
+        with publication_lock(self.root):
+            backlog = original_publication_backlog(self.root)
+            if backlog:
+                self.save(stage="yielding_to_trajectory_publication", pushed=False, changedPaths=[],
+                          deferredForOriginalSupervisor=backlog, error=None)
+                return self.receipt
+            return self.publish_snapshot(snapshot)
+
+    def publish_snapshot(self, snapshot):
         privacy = self.privacy()
         self.initialize()
         remote = self.remote_blobs()
+        remote_snapshot = {name: (self.checkout / name).read_bytes() for name in self.paths
+                           if (self.checkout / name).is_file()}
         if self.baseline is None:
             # Initial ownership of exactly these generated artifacts is an
             # explicit setup decision; future upstream edits are guarded.
@@ -205,6 +279,13 @@ class Publisher:
                 raise ReportingError("Selected report failed the credential scan: " + name) from error
             desired[name] = self.git("hash-object", str(destination)).stdout.strip()
         self.guard_ownership(remote, desired)
+        if publication_fingerprint(snapshot) == publication_fingerprint(remote_snapshot):
+            self.baseline = remote.copy()
+            self.save(stage="watching", pushed=False, changedPaths=[],
+                      metadataOnlyRefreshSkipped=True, deferredForOriginalSupervisor=None,
+                      sourceHashes={name: sha(raw) for name, raw in remote_snapshot.items()},
+                      observedSourceHashes={name: sha(raw) for name, raw in snapshot.items()}, error=None)
+            return self.receipt
         self.git("add", "--sparse", "-f", "--", *self.paths)
         staged = self.git("diff", "--cached", "--name-only").stdout.splitlines()
         if any(name not in self.paths for name in staged):
@@ -230,6 +311,7 @@ class Publisher:
         self.baseline = desired
         progress = json.loads(snapshot["reports/EVALUATION_PROGRESS.json"])
         self.save(stage="watching", commitSha=commit, pushed=pushed, changedPaths=staged,
+            metadataOnlyRefreshSkipped=False, deferredForOriginalSupervisor=None,
             sourceHashes={name: sha(raw) for name, raw in snapshot.items()}, privacy=privacy,
             scoreSnapshotAt=progress.get("scoreSnapshotAt"), runSnapshotAt=progress.get("runSnapshotAt"),
             heartbeat=progress.get("heartbeat"), totals=progress.get("totals"),

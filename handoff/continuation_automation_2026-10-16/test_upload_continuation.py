@@ -121,6 +121,49 @@ class UploadTests(unittest.TestCase):
             with self.assertRaises(u.ValidationError):
                 github.private()
 
+    def test_public_pointer_timestamp_is_stable_until_content_changes(self):
+        payload = {"task_id": "P36", "uploaded_trajectories": 59, "scoring_success": True}
+        previous = {**payload, "updated_at_utc": "2026-10-16T12:00:00+00:00", "commit_sha": "a" * 40}
+        result = u.stable_publication_pointer(payload, previous)
+        self.assertEqual(result["updated_at_utc"], previous["updated_at_utc"])
+        changed = u.stable_publication_pointer({**payload, "scoring_success": False}, previous)
+        self.assertNotEqual(changed["updated_at_utc"], previous["updated_at_utc"])
+
+    def fake_push_client(self, staged="", ahead="0"):
+        github = u.GitHub.__new__(u.GitHub)
+        github.root, github.checkout = self.root, self.root / "checkout"
+        calls = []
+        def git(*args, **kwargs):
+            calls.append(args)
+            output = staged if args[0] == "diff" else ahead if args[0] == "rev-list" else "a" * 40
+            return SimpleNamespace(stdout=output, returncode=0)
+        github.git = git
+        github.private = lambda: {"private": True, "push_permission": True}
+        return github, calls
+
+    def test_unchanged_publication_does_not_push_or_commit(self):
+        github, calls = self.fake_push_client()
+        self.assertEqual(github.push(), "a" * 40)
+        self.assertFalse(github.published_this_cycle)
+        self.assertFalse(any(row[0] in {"push", "commit", "fetch"} for row in calls))
+
+    def test_unpushed_commit_is_retried_without_new_staged_files(self):
+        github, calls = self.fake_push_client(ahead="1")
+        github.push()
+        self.assertTrue(github.published_this_cycle)
+        self.assertTrue(any(row[0] == "push" for row in calls))
+
+    def test_recent_original_backlog_defers_our_mutations(self):
+        original = self.root / ".local/remaining_evaluations/supervisor_status.json"
+        u.write(original, {"stage": "retry_pending", "updated_at_utc": u.stamp(),
+                           "error": "Git push rejected (non-fast-forward)"})
+        preserved = original.read_bytes()
+        github, calls = self.fake_push_client(staged=u.RUN_POINTER.as_posix() + "/upload_status.json")
+        with self.assertRaises(u.PublicationDeferred):
+            github.push()
+        self.assertFalse(any(row[0] in {"push", "commit", "fetch"} for row in calls))
+        self.assertEqual(original.read_bytes(), preserved)
+
     def test_saved_scores_need_matching_output_lock(self):
         state = {"scoring_artifacts_present": True}
         u.write(self.run / "run_manifest.json", {"synthetic": "manifest"})
@@ -136,8 +179,36 @@ class UploadTests(unittest.TestCase):
             "contract_sha256": u.digest(locked)})
         u.write(self.run / "per_case_scores.json", [{"case_id": row["case_id"]} for row in self.cases])
         self.assertTrue(u.scoring_success(self.condition, state))
+        u.write(self.run / "completion.json", {"scorer_exit_code": 1})
+        self.assertFalse(u.scoring_success(self.condition, state))
+        u.write(self.run / "completion.json", {"scorer_exit_code": 0, "status": "scoring_failed_no_retry"})
+        self.assertFalse(u.scoring_success(self.condition, state))
+        (self.run / "completion.json").unlink()
         (self.run / "run_manifest.json").write_text("late manifest")
         self.assertFalse(u.scoring_success(self.condition, state))
+
+    def test_coordinator_declared_score_hash_is_required_to_match(self):
+        u.write(self.run / "run_manifest.json", {"synthetic": "manifest"})
+        locked = {"run_manifest.json": u.sha((self.run / "run_manifest.json").read_bytes())}
+        locked.update({kind + "/" + name: None for name in self.condition["expected"]
+            for kind in ("requests", "responses")})
+        u.write(self.run / "scoring_output_lock.json", {"files_sha256": locked,
+            "contract_sha256": u.digest(locked)})
+        u.write(self.run / "per_case_scores.json", [{"case_id": row["case_id"]} for row in self.cases])
+        u.write(self.run / "scores.json", {"task_id": "P36", "planned": 59,
+            "full_source_cases": 5876, "protocol_variant": u.VARIANT,
+            "model_revision": u.REVISION, "full_benchmark_complete": False,
+            "metrics": {"rougeL": 0.2}, "scoring_output_lock_sha256": u.digest(locked)})
+        raw = (self.run / "scores.json").read_bytes()
+        u.write(self.run / "completion.json", {"scorer_exit_code": 0,
+            "metadata": {"scores_sha256": u.sha(raw)}})
+        state = {"scoring_artifacts_present": True}
+        self.assertTrue(u.scoring_success(self.condition, state))
+        # Even a JSON-equivalent byte change must fail the coordinator hash.
+        (self.run / "scores.json").write_bytes(raw + b" ")
+        self.assertFalse(u.scoring_success(self.condition, state))
+        (self.run / "scores.json").write_bytes(raw)
+        self.assertTrue(u.scoring_success(self.condition, state))
 
     def test_whole_offline_cycle_excludes_full_source_and_preserves_error_pair(self):
         self.trajectory(0, "error_or_unknown_completion_no_retry")
@@ -171,6 +242,32 @@ class UploadTests(unittest.TestCase):
             with tarfile.open(archive) as handle:
                 self.assertFalse(any("full_5876" in name or "input_review_index" in name for name in handle.getnames()))
         self.assertEqual(len(u.read(github.checkout / u.RUN_POINTER / "trajectory_index.json")), 1)
+        # A terminal scoring snapshot copies diagnostic fields verbatim too.
+        u.write(self.run / "run_manifest.json", {"configuration": self.config,
+            "configuration_sha256": self.condition["config_sha256"],
+            "case_contract_sha256": self.config["case_contract_sha256"]})
+        u.write(self.run / "dispatch_summary.json", {"planned": 59})
+        locked = {"run_manifest.json": u.sha((self.run / "run_manifest.json").read_bytes())}
+        for filename in self.condition["expected"]:
+            for kind in ("requests", "responses"):
+                path = self.run / kind / filename
+                locked[kind + "/" + filename] = u.sha(path.read_bytes()) if path.is_file() else None
+        lock = {"files_sha256": locked, "contract_sha256": u.digest(locked)}
+        u.write(self.run / "scoring_output_lock.json", lock)
+        u.write(self.run / "per_case_scores.json", [{"case_id": case["case_id"]} for case in self.cases])
+        (self.run / "native_metric_output.tsv").write_text("synthetic scorer fixture\n")
+        diagnostics = {"valid_native_serializations": 0, "completed": 0, "missing_or_failed_slots": 59,
+            "finish_reasons": {"synthetic": 0}, "statuses": {"synthetic_error": 59}}
+        scores = {"task_id": "P36", "planned": 59, "full_source_cases": 5876,
+            "protocol_variant": u.VARIANT, "model_revision": u.REVISION,
+            "full_benchmark_complete": False, "metrics": {"rougeL": 0.125},
+            "scoring_output_lock_sha256": lock["contract_sha256"], **diagnostics}
+        u.write(self.run / "scores.json", scores)
+        with patch.object(u, "SOURCE_SHA", u.sha(source.read_bytes())):
+            terminal = u.upload_cycle(self.root, self.run, self.path, github)
+        self.assertTrue(terminal["scoring_success"])
+        for field, value in diagnostics.items():
+            self.assertEqual(terminal[field], value)
 
 
 if __name__ == "__main__":

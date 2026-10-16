@@ -6,6 +6,7 @@ importing this module reads no credentials and makes no network requests.
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import fcntl
 import gzip
@@ -41,8 +42,47 @@ class ValidationError(RuntimeError):
     pass
 
 
+class PublicationDeferred(ValidationError):
+    pass
+
+
 def stamp():
     return datetime.now(timezone.utc).isoformat()
+
+
+@contextmanager
+def publication_lock(root):
+    """Coordinate only the new publishers; the original uploader is untouched."""
+    path = Path(root) / ".local/evaluation_publication.lock"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a") as handle:
+        fcntl.flock(handle, fcntl.LOCK_EX)
+        yield
+
+
+def original_publication_backlog(root, now=None):
+    path = Path(root) / ".local/remaining_evaluations/supervisor_status.json"
+    if not path.is_file():
+        return None
+    try:
+        value = json.loads(path.read_bytes())
+        updated = datetime.fromisoformat(value["updated_at_utc"].replace("Z", "+00:00"))
+        age = ((now or datetime.now(timezone.utc)) - updated).total_seconds()
+    except (KeyError, TypeError, ValueError, OSError):
+        return None
+    error = str(value.get("error", "")).lower()
+    if (value.get("stage") == "retry_pending" and 0 <= age <= 1800
+            and ("non-fast-forward" in error or "fetch first" in error)):
+        return {"stage": "retry_pending", "updated_at_utc": value["updated_at_utc"],
+                "reason": "Original trajectory publisher is catching up with main"}
+    return None
+
+
+def stable_publication_pointer(value, previous):
+    previous_value = {key: item for key, item in previous.items()
+                      if key not in {"updated_at_utc", "commit_sha"}}
+    updated = previous.get("updated_at_utc") if previous_value == value else None
+    return {**value, "updated_at_utc": updated or stamp()}
 
 
 def canonical(value):
@@ -147,11 +187,19 @@ def scoring_success(condition, state):
     if not state["scoring_artifacts_present"]:
         return False
     folder = condition["run_dir"]
+    scores_raw = (folder / "scores.json").read_bytes()
     if (folder / "completion.json").is_file():
         completion = read(folder / "completion.json")
-        if completion.get("scoring_exit_code", 0) != 0:
+        if completion.get("status") in {"scoring_failed_no_retry", "failed_no_retry", "interrupted_no_retry", "scoring_failed"}:
             return False
-    scores = read(folder / "scores.json")
+        if any(completion.get(key) is not None and completion[key] != 0
+               for key in ("scoring_exit_code", "scorer_exit_code")):
+            return False
+        metadata = completion.get("metadata")
+        if (isinstance(metadata, dict) and "scores_sha256" in metadata
+                and metadata["scores_sha256"] != sha(scores_raw)):
+            return False
+    scores = json.loads(scores_raw)
     if (scores.get("task_id") != "P36" or scores.get("planned") != 59
             or scores.get("full_source_cases") != 5876
             or scores.get("protocol_variant") != VARIANT
@@ -400,17 +448,25 @@ class GitHub:
         staged = self.git("diff", "--cached", "--name-only").stdout.splitlines()
         if any(not any(path.startswith(folder.as_posix() + "/") for folder in (RUN_POINTER, SOURCE_POINTER)) for path in staged):
             raise ValidationError("Staged path exceeds the authorized pointer scope")
-        if staged:
-            self.git("commit", "-m", "Back up reviewed partial P36 trajectories and source recovery")
-        # Retry an earlier committed-but-unpushed cycle even without new data.
-        for attempt in range(3):
-            self.private()
-            result = self.git("push", "origin", "HEAD:refs/heads/main", allow_failure=True)
-            if result.returncode == 0:
-                return self.git("rev-parse", "HEAD").stdout.strip()
-            self.git("fetch", "--filter=blob:none", "origin", "main")
-            self.git("rebase", "FETCH_HEAD")
-        raise ValidationError("Pointer push could not catch up with concurrent main updates")
+        ahead = int(self.git("rev-list", "--count", "refs/remotes/origin/main..HEAD").stdout.strip())
+        self.published_this_cycle = False
+        if not staged and not ahead:
+            return self.git("rev-parse", "HEAD").stdout.strip()
+        with publication_lock(self.root):
+            if original_publication_backlog(self.root):
+                raise PublicationDeferred("Yielding to the original trajectory publisher's recent non-fast-forward backlog")
+            if staged:
+                self.git("commit", "-m", "Back up reviewed partial P36 trajectories and source recovery")
+            # A failed previous push remains pending even if inputs are unchanged.
+            for attempt in range(3):
+                self.private()
+                result = self.git("push", "origin", "HEAD:refs/heads/main", allow_failure=True)
+                if result.returncode == 0:
+                    self.published_this_cycle = True
+                    return self.git("rev-parse", "HEAD").stdout.strip()
+                self.git("fetch", "--filter=blob:none", "origin", "main")
+                self.git("rebase", "FETCH_HEAD")
+            raise ValidationError("Pointer push could not catch up with concurrent main updates")
 
 
 def metadata_files(condition, state):
@@ -463,7 +519,8 @@ def upload_cycle(root, run_dir, config_path, github=None):
     score_fields = {}
     if state["scoring_success"]:
         scores = read(condition["run_dir"] / "scores.json")
-        score_fields = {key: scores[key] for key in ("metrics", "metric_label", "comparison_qualification") if key in scores}
+        score_fields = {key: scores[key] for key in ("metrics", "metric_label", "comparison_qualification",
+            "valid_native_serializations", "completed", "missing_or_failed_slots", "finish_reasons", "statuses") if key in scores}
     trajectories = collect_trajectories(condition, state["generation_terminal"])
     root_pointer_path = root / RUN_POINTER / "upload_status.json"
     previous_pointer = read(root_pointer_path) if root_pointer_path.is_file() else {}
@@ -474,10 +531,14 @@ def upload_cycle(root, run_dir, config_path, github=None):
         "status": "upload_cycle_in_progress", **state, "full_source_cases": 5876,
         "full_benchmark_complete": False, "protocol_variant": VARIANT,
         "configuration_sha256": condition["config_sha256"], "updated_at_utc": stamp()}
-    for key in ("metrics", "metric_label", "comparison_qualification"):
+    for key in ("metrics", "metric_label", "comparison_qualification", "valid_native_serializations",
+                "completed", "missing_or_failed_slots", "finish_reasons", "statuses"):
         initial_pointer.pop(key, None)
     initial_pointer.update(score_fields)
-    write(root_pointer_path, initial_pointer)
+    # Keep the public root pointer stable during local polling. Polling itself
+    # is recorded only in .local/upload_status.json; it is not benchmark news.
+    if not previous_pointer:
+        write(root_pointer_path, initial_pointer)
     lock = {"configuration_sha256": condition["config_sha256"], "run_directory": str(condition["run_dir"]),
             "reviewed_case_ids": condition["review"]["approved_case_ids"], "source_bundle_sha256": SOURCE_SHA}
     write(here / "upload_condition.json", lock, immutable=True)
@@ -547,10 +608,12 @@ def upload_cycle(root, run_dir, config_path, github=None):
         "latest_metadata_asset": metadata["asset_url"]}
     snapshot.update(score_fields)
     write(destination / "upload_snapshot.json", snapshot)
-    pointer = {**snapshot, "planned": 59, "uploaded_trajectories": saved_pairs,
+    pointer_value = {**snapshot, "planned": 59, "uploaded_trajectories": saved_pairs,
         "saved_completed_pairs": sum(row["complete_pair"] for row in trajectories),
-        "status": ("terminal_snapshot_uploaded" if state["scoring_terminal"] else "incremental_snapshot_uploaded"),
-        "updated_at_utc": stamp()}
+        "status": ("terminal_snapshot_uploaded" if state["scoring_terminal"] else "incremental_snapshot_uploaded")}
+    pointer_path = destination / "upload_status.json"
+    previous_published = read(pointer_path) if pointer_path.is_file() else {}
+    pointer = stable_publication_pointer(pointer_value, previous_published)
     write(destination / "upload_status.json", pointer)
     (destination / "README.md").write_text("# P36 — reviewed 59-case Qwen baseline\n\n"
         f"{saved_pairs}/59 saved request/response pairs archived: {completed} completed, {errors} error responses. "
@@ -569,6 +632,8 @@ def upload_cycle(root, run_dir, config_path, github=None):
     commit = github.push()
     status = {**snapshot, "stage": "terminal_snapshot_uploaded" if state["scoring_artifacts_present"] else "watching",
               "updated_at_utc": stamp(), "commit_sha": commit,
+              "last_published_at_utc": pointer["updated_at_utc"],
+              "published_this_cycle": getattr(github, "published_this_cycle", False),
               "github_url": "https://github.com/" + REPOSITORY + "/tree/main/" + RUN_POINTER.as_posix()}
     write(here / "upload_status.json", status)
     write(root_pointer_path, {**pointer, "commit_sha": commit})
@@ -601,7 +666,7 @@ def main(argv=None):
                     ("stage", "uploaded_completed_pairs", "uploaded_terminal_failure_or_ambiguous_records", "commit_sha")}), flush=True)
             except Exception as error:
                 previous = read(here / "upload_status.json") if (here / "upload_status.json").is_file() else {}
-                status = {**previous, "stage": "retrying", "updated_at_utc": stamp(),
+                status = {**previous, "stage": "publication_deferred" if isinstance(error, PublicationDeferred) else "retrying", "updated_at_utc": stamp(),
                     "error_type": type(error).__name__, "http_status": getattr(error, "code", None)}
                 if isinstance(error, ValidationError):
                     status["validation_error"] = str(error)

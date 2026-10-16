@@ -3,13 +3,14 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import os
 from pathlib import Path
 import subprocess
 import tempfile
 import unittest
 
 
-SCRIPT = Path(__file__).resolve().parents[1] / "scripts/watch_evaluation_reporting.py"
+SCRIPT = Path(os.environ.get("WATCHER_UNDER_TEST", Path(__file__).resolve().parents[1] / "scripts/watch_evaluation_reporting.py"))
 spec = importlib.util.spec_from_file_location("reporting_watch", SCRIPT)
 watch = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(watch)
@@ -126,6 +127,38 @@ class WatchTests(unittest.TestCase):
         self.assertEqual(self.remote_head(), first)
         self.assertEqual(set(second["baselineBlobs"]), set(watch.OWNED))
         self.assertFalse(any("--force" in call for call in self.helper.calls if call[0] == "push"))
+
+    def test_timestamp_and_retry_hash_changes_do_not_create_commits(self):
+        self.progress.update(metadataNotice={"stage": "retry_pending", "updatedAt": "2026-10-16T12:00:00+00:00"},
+            sourceHashes={".local/remaining_evaluations/supervisor_status.json": "old"})
+        (self.root / watch.OWNED[0]).write_text(json.dumps(self.progress))
+        self.publisher().cycle()
+        head = self.remote_head()
+        self.progress["metadataNotice"]["updatedAt"] = "2026-10-16T13:00:00+00:00"
+        self.progress["sourceHashes"][".local/remaining_evaluations/supervisor_status.json"] = "new"
+        (self.root / watch.OWNED[0]).write_text(json.dumps(self.progress))
+        receipt = self.publisher().cycle()
+        self.assertFalse(receipt["pushed"])
+        self.assertTrue(receipt["metadataOnlyRefreshSkipped"])
+        self.assertEqual(self.remote_head(), head)
+        self.progress["totals"]["uploaded"] += 1
+        (self.root / watch.OWNED[0]).write_text(json.dumps(self.progress))
+        self.assertTrue(self.publisher().cycle()["pushed"])
+        self.assertNotEqual(self.remote_head(), head)
+
+    def test_recent_original_backlog_yields_without_git_operations(self):
+        status = self.root / ".local/remaining_evaluations/supervisor_status.json"
+        status.parent.mkdir(parents=True)
+        status.write_text(json.dumps({"stage": "retry_pending", "updated_at_utc": watch.stamp(),
+                                      "error": "Git push rejected: non-fast-forward"}))
+        preserved = status.read_bytes()
+        head = self.remote_head()
+        receipt = self.publisher().cycle()
+        self.assertEqual(receipt["stage"], "yielding_to_trajectory_publication")
+        self.assertFalse(receipt["pushed"])
+        self.assertEqual(self.helper.calls, [])
+        self.assertEqual(self.remote_head(), head)
+        self.assertEqual(status.read_bytes(), preserved)
 
     def test_external_owned_edit_rejected_without_overwriting_it(self):
         self.publisher().cycle()

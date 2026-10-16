@@ -20,6 +20,8 @@ import tempfile
 
 CATALOG = "reports/TASK_HIERARCHY_DATA.json"
 SCORES = "reports/RESULTS_AT_A_GLANCE.json"
+VERIFIED_SCORES = "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json"
+VERIFIED_SCORES_SHA256 = "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451"
 SUPERVISOR = ".local/remaining_evaluations/supervisor_status.json"
 UPLOAD = ".local/remaining_evaluations/upload_status.json"
 PROGRESS = "reports/EVALUATION_PROGRESS.json"
@@ -67,6 +69,134 @@ def heartbeat(status, now):
 
 def count(value):
     return value if type(value) is int and value >= 0 else None
+
+
+def score_key(row):
+    """A source-defined evaluation condition, independent of its run directory."""
+    return tuple(row.get(name) for name in ("task_id", "protocol_variant", "dataset", "native_split"))
+
+
+def row_digest(row):
+    return digest(json.dumps(row, ensure_ascii=False, sort_keys=True,
+        separators=(",", ":"), allow_nan=False).encode())
+
+
+def merge_score_snapshots(root, current, current_sha, prior_catalog=None):
+    """Retain verified history when old run directories are not mounted.
+
+    This combines report metadata, never scores or case data. Current rows win
+    for the same condition, including diagnostic-only replacements. Completion
+    claims survive only while their supporting conditions retain valid rows.
+    """
+    baseline_path = root / VERIFIED_SCORES
+    previous = (prior_catalog or {}).get("meta", {})
+    history_required = ((count(previous.get("historicalResultRows")) or 0) > 0
+        or any(isinstance(source, dict) and source.get("path") == VERIFIED_SCORES
+            for source in previous.get("scoreSnapshotSources", [])))
+    if history_required and not baseline_path.is_file():
+        raise ValueError("Previously retained historical score snapshot is missing; existing reporting outputs preserved")
+    snapshots = []
+    if baseline_path.is_file():
+        raw = baseline_path.read_bytes()
+        if digest(raw) != VERIFIED_SCORES_SHA256:
+            raise ValueError("Verified historical score snapshot hash mismatch")
+        snapshots.append((json.loads(raw), VERIFIED_SCORES, digest(raw), True))
+    retained, provenance, sources, claims = {}, {}, [], {}
+
+    def add_snapshot(report, path, sha, historical):
+        source = {"path": path, "sha256": sha,
+            "snapshotAt": report.get("generated_at_utc"), "historical": historical,
+            "note": "Retained verified report metadata; not a fresh rerun." if historical
+                    else "Current score-report metadata; report refresh does not rerun evaluation."}
+        sources.append(source)
+        for category in ("completed_rows", "diagnostic_only_finished_runs"):
+            # Diagnostics deliberately follow completed rows, so an invalid
+            # current condition cannot resurrect a historical valid score.
+            for row in report.get(category, []):
+                key = score_key(row)
+                retained[key] = (copy.deepcopy(row), category)
+                provenance[key] = {**source, "rowCategory": category,
+                    "sourceScores": row.get("source_scores"),
+                    "sourceScoresSha256": row.get("scores_sha256")}
+        for task_id in report.get("completed_whole_declared_setting_ids", []):
+            if task_id == "P43" and report.get("P43", {}).get("whole_setting_complete") is not True:
+                continue
+            supporting = [list(score_key(row)) for row in report.get("completed_rows", [])
+                if row.get("task_id") == task_id
+                and row.get("completion_scope") != "diagnostic_only_primary_metrics_invalid"]
+            if supporting:
+                claim = {"taskId": task_id, "supportingConditions": supporting,
+                    "source": copy.deepcopy(source)}
+                if task_id == "P43":
+                    claim["aggregateMetadata"] = copy.deepcopy(report.get("P43", {}))
+                claims[row_digest([task_id, supporting])] = claim
+
+    for snapshot in snapshots:
+        add_snapshot(*snapshot)
+
+    # Canonical raw rows retain newly verified conditions (such as P03) after
+    # their mounted run directory disappears. A rendered metric string alone
+    # is never accepted as a recoverable source row.
+    prior_keys = set()
+    for group in (prior_catalog or {}).get("groups", []):
+        for result in group.get("results", []):
+            if "verifiedSourceRow" not in result:
+                continue
+            row = result["verifiedSourceRow"]
+            source = result.get("scoreProvenance", {})
+            category = source.get("rowCategory")
+            if (result.get("verifiedSourceRowSha256") != row_digest(row)
+                    or row.get("task_id") != result.get("taskId")
+                    or category not in {"completed_rows", "diagnostic_only_finished_runs"}
+                    or not source.get("path") or not source.get("sha256")):
+                raise ValueError("Prior verified score row or provenance is invalid")
+            key = score_key(row)
+            prior_keys.add(key)
+            if (source.get("path") == VERIFIED_SCORES
+                    and source.get("sha256") == VERIFIED_SCORES_SHA256
+                    and key in retained and row_digest(retained[key][0]) == row_digest(row)):
+                continue
+            retained[key] = (copy.deepcopy(row), category)
+            provenance[key] = {**copy.deepcopy(source), "retainedFromCatalog": True,
+                "note": "Retained from the prior verified catalog with its original source hash/date; not a fresh rerun."}
+    for claim in previous.get("verifiedCompletionClaims", []):
+        keys = claim.get("supportingConditions", [])
+        if (not claim.get("taskId") or not isinstance(keys, list)
+                or any(not isinstance(key, list) or len(key) != 4 or key[0] != claim["taskId"] for key in keys)
+                or not claim.get("source", {}).get("sha256")):
+            raise ValueError("Prior verified completion claim is invalid")
+        supporting = {tuple(key) for key in keys}
+        if supporting and supporting <= prior_keys:
+            claims[row_digest([claim["taskId"], claim["supportingConditions"]])] = copy.deepcopy(claim)
+    # Current valid or diagnostic evidence has final precedence over both
+    # dated baseline rows and verified rows carried by the previous catalog.
+    add_snapshot(current, SCORES, current_sha, False)
+    valid_keys = {key for key, (row, category) in retained.items()
+        if category == "completed_rows"
+        and row.get("completion_scope") != "diagnostic_only_primary_metrics_invalid"}
+    valid_claims = [claim for claim in claims.values()
+        if {tuple(key) for key in claim["supportingConditions"]} <= valid_keys]
+    completed = {claim["taskId"] for claim in valid_claims}
+    merged = copy.deepcopy(current)
+    for category in ("completed_rows", "diagnostic_only_finished_runs"):
+        merged[category] = [row for row, kind in retained.values() if kind == category]
+    merged["completed_whole_declared_setting_ids"] = sorted(completed)
+    merged["_verified_completion_claims"] = valid_claims
+    # P43's three component rows do not independently prove aggregate coverage.
+    # Keep the source's verified aggregate record, qualified by its own date,
+    # when all supporting component conditions still have valid retained rows.
+    for claim in valid_claims:
+        if claim["taskId"] == "P43" and claim.get("aggregateMetadata", {}).get("whole_setting_complete") is True:
+            merged["P43"] = copy.deepcopy(claim["aggregateMetadata"])
+    if "P43" not in completed and "P43" in merged:
+        merged["P43"]["whole_setting_complete"] = False
+    for source in provenance.values():
+        if source.get("retainedFromCatalog"):
+            summary = {key: source[key] for key in ("path", "sha256", "snapshotAt", "historical", "note")}
+            summary["retainedFromCatalog"] = True
+            if not any(item["path"] == summary["path"] and item["sha256"] == summary["sha256"] for item in sources):
+                sources.append(summary)
+    return merged, provenance, sources
 
 
 def run_bearing(value):
@@ -178,12 +308,12 @@ def build_progress(status, report, source_hashes, now):
         "countNote": "Progress counts exclude aggregate runs. Uploaded counts reflect archived trajectories at the uploader heartbeat; saved is unknown unless explicitly reported. Counts do not establish benchmark completion."}
 
 
-def result_record(row, report, display, github):
+def result_record(row, report, display, github, provenance=None):
     reference = row.get("selected_published_reference") or {}
     incomplete = (display.incomplete_evaluation(row, report)
                   or row.get("completion_scope") == "diagnostic_only_primary_metrics_invalid")
     source = row.get("source_scores")
-    return {"taskId": row["task_id"],
+    result = {"taskId": row["task_id"],
         "title": row["task_name"] + (" · " + row["dataset"] if row.get("dataset") else ""),
         "metricText": display.local_display(row),
         "publishedText": re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", display.published_display(row)),
@@ -195,6 +325,12 @@ def result_record(row, report, display, github):
         "finishedAt": row.get("finished_at_utc"), "completionScope": row["completion_scope"],
         "caseScope": row["case_scope"],
         "publishedReferences": copy.deepcopy(row.get("all_published_references", []))}
+    if provenance is not None:
+        result["scoreProvenance"] = copy.deepcopy(provenance)
+        result["scoreSnapshotAt"] = provenance["snapshotAt"]
+        result["verifiedSourceRow"] = copy.deepcopy(row)
+        result["verifiedSourceRowSha256"] = row_digest(row)
+    return result
 
 
 def build_outputs(root, now=None):
@@ -203,9 +339,15 @@ def build_outputs(root, now=None):
     catalog_raw = (root / CATALOG).read_bytes()
     score_raw = (root / SCORES).read_bytes()
     catalog = json.loads(catalog_raw)
-    report = json.loads(score_raw)
+    report, score_provenance, score_sources = merge_score_snapshots(root, json.loads(score_raw), digest(score_raw), catalog)
     supervisor, run_hashes, provenance, metadata_errors, newer_failure = select_run_snapshot(root)
-    progress = build_progress(supervisor, report, {SCORES: digest(score_raw), **run_hashes}, now)
+    score_hashes = {source["path"]: source["sha256"] for source in score_sources}
+    # Several retained generations can share the native report path. Its main
+    # source hash always describes the current file; older hashes remain in
+    # each row's provenance and the separate scoreSnapshotSources records.
+    score_hashes[SCORES] = digest(score_raw)
+    progress = build_progress(supervisor, report, {**score_hashes, **run_hashes}, now)
+    progress["scoreSnapshotSources"] = score_sources
     progress["runSnapshotSource"] = provenance
     progress["metadataErrors"] = metadata_errors
     if newer_failure:
@@ -223,7 +365,8 @@ def build_outputs(root, now=None):
     github = catalog["meta"].get("githubUrl", "https://github.com/Some-random/bio-evaluation").rstrip("/")
     by_task = {}
     for row in rows:
-        by_task.setdefault(row["task_id"], []).append(result_record(row, report, display, github))
+        by_task.setdefault(row["task_id"], []).append(result_record(row, report, display, github,
+            score_provenance[score_key(row)]))
     # Native report generation owns primary-metric validation. Do not reinterpret
     # optional undefined diagnostics as invalid primary scores (e.g. P42 novelty
     # when no successful improved sequences exist). Diagnostic-only rows never
@@ -300,10 +443,17 @@ def build_outputs(root, now=None):
         uploadedResponses=progress["totals"]["uploaded"], heartbeat=progress["heartbeat"],
         runSnapshotSource=progress["runSnapshotSource"], metadataErrors=progress["metadataErrors"],
         metadataNotice=progress.get("metadataNotice"),
+        scoreSnapshotSources=score_sources,
+        verifiedCompletionClaims=copy.deepcopy(report["_verified_completion_claims"]),
+        historicalResultRows=sum(score_provenance[score_key(row)]["historical"] for row in rows),
+        priorVerifiedResultRows=sum(score_provenance[score_key(row)].get("retainedFromCatalog", False)
+            and not score_provenance[score_key(row)]["historical"] for row in rows),
+        currentResultRows=sum(not score_provenance[score_key(row)]["historical"]
+            and not score_provenance[score_key(row)].get("retainedFromCatalog", False) for row in rows),
         taskStatusCounts={state: sum(task_status(task_id) == state for task_id in mapped)
             for state in ["Results available", "Partial", "Running / queued", "Source-blocked", "Deferred / held", "Status unverified"]})
     progress_raw = encoded(progress)
-    meta.setdefault("sourceHashes", {}).update({SCORES: digest(score_raw), PROGRESS: digest(progress_raw), **run_hashes})
+    meta.setdefault("sourceHashes", {}).update({**score_hashes, PROGRESS: digest(progress_raw), **run_hashes})
     return {PROGRESS: progress_raw, CATALOG: encoded(catalog)}
 
 

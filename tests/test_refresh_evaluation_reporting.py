@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
 
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts/refresh_evaluation_reporting.py"
@@ -97,6 +98,194 @@ class RefreshTests(unittest.TestCase):
 
     def group(self, catalog, task_id):
         return next(group for group in catalog["groups"] if task_id in group["taskIds"])
+
+    def historical(self, rows, completed=None, **extra):
+        report = {"generated_at_utc": (NOW - timedelta(hours=4)).isoformat(),
+            "completed_rows": rows, "diagnostic_only_finished_runs": [],
+            "completed_whole_declared_setting_ids": completed or sorted({row["task_id"] for row in rows}),
+            **extra}
+        self.write(refresh.VERIFIED_SCORES, report)
+        patch = mock.patch.object(refresh, "VERIFIED_SCORES_SHA256",
+            refresh.digest((self.root / refresh.VERIFIED_SCORES).read_bytes()))
+        patch.start()
+        self.addCleanup(patch.stop)
+        return report
+
+    def test_historical_conditions_retained_current_same_condition_overrides(self):
+        other_condition = score("P01", 0.2)
+        other_condition["protocol_variant"] = "OTHER_OLD_CONDITION"
+        old_p19 = score("P19", 0.3141592653589793)
+        old_p19["native_split"] = "old_native_split"
+        baseline = self.historical([score("P01", 0.1), other_condition, old_p19])
+        catalog, progress = self.build()
+        p01 = self.group(catalog, "P01")["results"]
+        self.assertEqual(len(p01), 2)
+        self.assertEqual({row["protocol"]: row["metrics"] for row in p01}, {
+            "UNCHANGED_PROTOCOL": {"spearman": 0.5}, "OTHER_OLD_CONDITION": {"spearman": 0.2}})
+        retained = self.group(catalog, "P19")["results"][0]
+        self.assertEqual(retained["metrics"], old_p19["metrics"])
+        self.assertEqual(retained["counts"], old_p19["counts"])
+        self.assertEqual(retained["caveats"], old_p19["caveats"])
+        self.assertEqual(retained["publishedReferences"], old_p19["all_published_references"])
+        self.assertEqual(retained["scoreSnapshotAt"], baseline["generated_at_utc"])
+        self.assertTrue(retained["scoreProvenance"]["historical"])
+        current = next(row for row in p01 if row["protocol"] == "UNCHANGED_PROTOCOL")
+        self.assertFalse(current["scoreProvenance"]["historical"])
+        self.assertEqual(current["scoreSnapshotAt"], self.report["generated_at_utc"])
+        self.assertEqual(catalog["meta"]["completedSettings"], 2)
+        self.assertEqual(catalog["meta"]["localResultRows"], 4)
+        self.assertEqual(catalog["meta"]["historicalResultRows"], 2)
+        self.assertEqual(catalog["meta"]["currentResultRows"], 2)
+        self.assertEqual(progress["scoreSnapshotAt"], self.report["generated_at_utc"])
+        self.assertEqual(progress["sourceHashes"][refresh.VERIFIED_SCORES],
+            refresh.digest((self.root / refresh.VERIFIED_SCORES).read_bytes()))
+        # Neither the immutable baseline nor the current native score report is rewritten.
+        self.assertEqual(json.loads((self.root / refresh.VERIFIED_SCORES).read_bytes()), baseline)
+        self.assertEqual(json.loads((self.root / refresh.SCORES).read_bytes()), self.report)
+        refresh.refresh(self.root, now=NOW)
+        self.assertEqual(refresh.refresh(self.root, now=NOW), [])
+
+    def test_current_invalid_condition_supersedes_historical_valid_score(self):
+        self.historical([score("P01", 0.9)])
+        self.report["completed_rows"] = []
+        self.report["diagnostic_only_finished_runs"].append(
+            score("P01", None, "diagnostic_only_primary_metrics_invalid"))
+        # Deliberately keep an inconsistent native completion-ID list: the
+        # retained diagnostic must still prevent promotion or score resurrection.
+        self.write_inputs()
+        catalog, _ = self.build()
+        rows = self.group(catalog, "P01")["results"]
+        self.assertEqual(len(rows), 1)
+        self.assertIsNone(rows[0]["metrics"]["spearman"])
+        self.assertFalse(rows[0]["scoreProvenance"]["historical"])
+        self.assertTrue(rows[0]["incomplete"])
+        self.assertEqual(self.group(catalog, "P01")["status"], "Partial")
+        self.assertEqual(catalog["meta"]["completedSettings"], 0)
+
+    def test_dataset_and_native_split_are_separate_historical_conditions(self):
+        rows = []
+        for dataset, split, metric in [("a", "id", 0.1), ("a", "ood", 0.2), ("b", "id", 0.3)]:
+            row = score("P19", metric)
+            row.update(dataset=dataset, native_split=split)
+            rows.append(row)
+        self.historical(rows)
+        merged, provenance, _ = refresh.merge_score_snapshots(self.root, self.report, "current-hash")
+        retained = [row for row in merged["completed_rows"] if row["task_id"] == "P19"]
+        self.assertEqual(retained, rows)
+        self.assertEqual(len({refresh.score_key(row) for row in retained}), 3)
+        self.assertTrue(all(provenance[refresh.score_key(row)]["historical"] for row in retained))
+
+    def test_historical_three_dataset_aggregate_completion_preserved_then_downgraded(self):
+        rows = []
+        for dataset in ["human", "biosnap", "bindingdb"]:
+            row = score("P43")
+            row.update(dataset=dataset, completion_scope="dataset_component")
+            rows.append(row)
+        p43 = {"whole_setting_complete": True, "completed_components": ["bindingdb", "biosnap", "human"],
+            "validated_aggregate_containers": [{"run_id": "verified-three-dataset-aggregate",
+                "metrics": {"human": {"auroc": 0.5}, "biosnap": {"auroc": 0.6}, "bindingdb": {"auroc": 0.7}}}]}
+        self.historical(rows, P43=p43)
+        merged, _, _ = refresh.merge_score_snapshots(self.root, self.report, "current-hash")
+        self.assertIn("P43", merged["completed_whole_declared_setting_ids"])
+        self.assertEqual(merged["P43"], p43)
+        invalid = dict(rows[0], completion_scope="diagnostic_only_primary_metrics_invalid", metrics={"spearman": None})
+        self.report["diagnostic_only_finished_runs"].append(invalid)
+        merged, _, _ = refresh.merge_score_snapshots(self.root, self.report, "current-hash")
+        self.assertNotIn("P43", merged["completed_whole_declared_setting_ids"])
+
+    def test_historical_hash_mismatch_fails_without_writes(self):
+        self.historical([score("P19")])
+        path = self.root / refresh.VERIFIED_SCORES
+        path.write_bytes(path.read_bytes() + b" ")
+        before = (self.root / refresh.CATALOG).read_bytes()
+        with self.assertRaisesRegex(ValueError, "historical score snapshot hash mismatch"):
+            refresh.refresh(self.root, now=NOW)
+        self.assertEqual((self.root / refresh.CATALOG).read_bytes(), before)
+        self.assertFalse((self.root / refresh.PROGRESS).exists())
+
+    def test_missing_previously_retained_history_preserves_outputs(self):
+        self.historical([score("P19")])
+        refresh.refresh(self.root, now=NOW)
+        (self.root / refresh.VERIFIED_SCORES).unlink()
+        paths = [self.root / refresh.CATALOG, self.root / refresh.PROGRESS]
+        for marker in ["historical_rows", "source_path"]:
+            with self.subTest(marker=marker):
+                catalog = json.loads(paths[0].read_bytes())
+                if marker == "historical_rows":
+                    catalog["meta"]["historicalResultRows"] = 1
+                    catalog["meta"].pop("scoreSnapshotSources", None)
+                else:
+                    catalog["meta"]["historicalResultRows"] = 0
+                    catalog["meta"]["scoreSnapshotSources"] = [{"path": refresh.VERIFIED_SCORES, "historical": True}]
+                self.write(refresh.CATALOG, catalog)
+                before = [(path.read_bytes(), path.stat().st_mtime_ns) for path in paths]
+                with self.assertRaisesRegex(ValueError, "historical score snapshot is missing"):
+                    refresh.refresh(self.root, now=NOW)
+                self.assertEqual([(path.read_bytes(), path.stat().st_mtime_ns) for path in paths], before)
+
+    def seed_new_verified_condition(self):
+        row = score("P03", 0.123456789, planned=4)
+        self.report["completed_rows"].append(row)
+        self.report["completed_whole_declared_setting_ids"].append("P03")
+        self.report["generated_at_utc"] = NOW.isoformat()
+        self.write_inputs()
+        source_hash = refresh.digest((self.root / refresh.SCORES).read_bytes())
+        refresh.refresh(self.root, now=NOW)
+        self.report["completed_rows"].remove(row)
+        self.report["completed_whole_declared_setting_ids"].remove("P03")
+        self.report["generated_at_utc"] = (NOW + timedelta(seconds=30)).isoformat()
+        self.write(refresh.SCORES, self.report)
+        return row, source_hash
+
+    def test_new_verified_condition_survives_later_native_report_omission(self):
+        row, source_hash = self.seed_new_verified_condition()
+        catalog, progress = self.build(NOW + timedelta(seconds=30))
+        retained = self.group(catalog, "P03")["results"][0]
+        self.assertEqual(retained["verifiedSourceRow"], row)
+        self.assertEqual(retained["verifiedSourceRowSha256"], refresh.row_digest(row))
+        self.assertEqual(retained["metrics"], row["metrics"])
+        self.assertEqual(retained["scoreSnapshotAt"], NOW.isoformat())
+        self.assertEqual(retained["scoreProvenance"]["sha256"], source_hash)
+        self.assertTrue(retained["scoreProvenance"]["retainedFromCatalog"])
+        self.assertEqual(catalog["meta"]["completedSettings"], 2)
+        self.assertEqual(catalog["meta"]["priorVerifiedResultRows"], 1)
+        self.assertEqual(catalog["meta"]["historicalResultRows"], 0)
+        self.assertEqual(progress["sourceHashes"][refresh.SCORES],
+            refresh.digest((self.root / refresh.SCORES).read_bytes()))
+        # A second omission refresh must preserve the same evidence as well,
+        # including in a fresh workspace without the optional fixed baseline.
+        refresh.refresh(self.root, now=NOW + timedelta(seconds=30))
+        later, _ = self.build(NOW + timedelta(seconds=60))
+        self.assertEqual(self.group(later, "P03")["results"][0]["verifiedSourceRow"], row)
+        self.assertEqual(later["meta"]["completedSettings"], 2)
+
+    def test_explicit_current_diagnostic_overrides_carried_valid_condition(self):
+        self.seed_new_verified_condition()
+        invalid = score("P03", None, "diagnostic_only_primary_metrics_invalid", planned=4)
+        self.report["diagnostic_only_finished_runs"].append(invalid)
+        self.write(refresh.SCORES, self.report)
+        catalog, _ = self.build(NOW + timedelta(seconds=30))
+        result = self.group(catalog, "P03")["results"][0]
+        self.assertEqual(result["verifiedSourceRow"], invalid)
+        self.assertIsNone(result["metrics"]["spearman"])
+        self.assertNotIn("retainedFromCatalog", result["scoreProvenance"])
+        self.assertEqual(catalog["meta"]["completedSettings"], 1)
+        refresh.refresh(self.root, now=NOW + timedelta(seconds=30))
+        self.report["diagnostic_only_finished_runs"].remove(invalid)
+        self.write(refresh.SCORES, self.report)
+        later, _ = self.build(NOW + timedelta(seconds=60))
+        self.assertEqual(self.group(later, "P03")["results"][0]["verifiedSourceRow"], invalid)
+        self.assertEqual(later["meta"]["completedSettings"], 1)
+
+    def test_changed_carried_source_row_is_rejected_before_writes(self):
+        self.seed_new_verified_condition()
+        catalog = json.loads((self.root / refresh.CATALOG).read_bytes())
+        self.group(catalog, "P03")["results"][0]["verifiedSourceRow"]["metrics"]["spearman"] = 999
+        self.write(refresh.CATALOG, catalog)
+        before = (self.root / refresh.CATALOG).read_bytes()
+        with self.assertRaisesRegex(ValueError, "Prior verified score row"):
+            refresh.refresh(self.root, now=NOW)
+        self.assertEqual((self.root / refresh.CATALOG).read_bytes(), before)
 
     def test_aggregate_excluded_full_test_included_and_upload_not_saved(self):
         catalog, progress = self.build()
