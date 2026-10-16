@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-10-16T21:05:53.969088+00:00",
+    "generatedAt": "2026-10-16T21:10:25.292260+00:00",
     "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-    "runSnapshotAt": "2026-10-16T21:05:53.969088+00:00",
+    "runSnapshotAt": "2026-10-16T21:10:25.292260+00:00",
     "model": {
       "name": "Qwen/Qwen3.8-27B",
       "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
@@ -36,16 +36,16 @@
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv": "c813f6702a0af51e272e344bfbc02d913541103d3f4acf849e4547ac78c3764c",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/AGENT_TASK_MAPPING.csv": "3f17b92ccf2c19e8475b0eba88c396363dad1a5d1e6ae8644dffb9161fbb70ec",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx": "3bbe6cee62c15266814fa082825a9f6349c32d34e976855eda604bef68336f6f",
-      "reports/EVALUATION_PROGRESS.json": "fc2effa6a74168a36cb6bf0f182bd508831f1c12036503cac8b03b8f9e665fff",
-      ".local/remaining_evaluations/supervisor_status.json": "9603c2481f9087c13e32d51d1cbdcbf044b88174967462bb76e4fe2e0227b373",
-      ".local/remaining_evaluations/upload_status.json": "20b0816d6e6970ac94a84b877c182c4a4270444f531eca79259026a35d81aefb",
+      "reports/EVALUATION_PROGRESS.json": "92e6c57a1a3313c238dd09726c139fca7841b5792d0bc14913241e7386687892",
+      ".local/remaining_evaluations/supervisor_status.json": "4f726b5544a38d3cfb5634a34d90d9aa5b9b29bc196ad155572b45cd46115993",
+      ".local/remaining_evaluations/upload_status.json": "e378c259839d3671bc29e933c00dcd1a4a6c56d4f591e3f1d2e3ccdfb816ce07",
       "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451"
     },
     "localResultRows": 29,
-    "uploadedResponses": 12268,
+    "uploadedResponses": 12319,
     "heartbeat": {
       "status": "fresh",
-      "updatedAt": "2026-10-16T21:05:53.969088+00:00",
+      "updatedAt": "2026-10-16T21:10:25.292260+00:00",
       "staleAfterSeconds": 300
     },
     "taskStatusCounts": {
@@ -58,7 +58,7 @@
     },
     "runSnapshotSource": {
       "path": ".local/remaining_evaluations/upload_status.json",
-      "snapshotAt": "2026-10-16T21:05:53.969088+00:00",
+      "snapshotAt": "2026-10-16T21:10:25.292260+00:00",
       "fallback": true,
       "selection": "most_recent_valid_run_snapshot"
     },
@@ -71,7 +71,7 @@
     "metadataNotice": {
       "source": ".local/remaining_evaluations/supervisor_status.json",
       "stage": "retry_pending",
-      "updatedAt": "2026-10-16T21:05:57.385760+00:00",
+      "updatedAt": "2026-10-16T21:11:02.083100+00:00",
       "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
     },
     "scoreSnapshotSources": [
@@ -9101,7 +9101,7 @@
       "completed": null,
       "lengthStopped": null,
       "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
-      "uploaded": 7880,
+      "uploaded": 7922,
       "saved": null,
       "progressSource": "uploaded_trajectories"
     },
@@ -9185,7 +9185,7 @@
       "completed": null,
       "lengthStopped": null,
       "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
-      "uploaded": 1615,
+      "uploaded": 1624,
       "saved": null,
       "progressSource": "uploaded_trajectories"
     },
