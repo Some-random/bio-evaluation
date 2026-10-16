@@ -1,0 +1,30 @@
+{
+  "run_id": "qwen38_27b_litqa2_replay_2026-10-16",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "planned": 197,
+  "completed": 197,
+  "parsed": 197,
+  "invalid_outputs": 0,
+  "statuses": {
+    "completed": 197
+  },
+  "finish_reasons": {
+    "stop": 197
+  },
+  "case_scope": "reviewed_public_subset",
+  "metrics": {
+    "accuracy": 0.39086294416243655,
+    "precision": 0.4095744680851064,
+    "coverage": 0.9543147208121827,
+    "n_total": 197,
+    "n_correct": 77,
+    "n_sure": 188
+  },
+  "held_before_inference": 2,
+  "total_public_LitQA2": 199,
+  "explanation_support_score": null,
+  "comparison_to_paper": "Native public questions, COT prompt, shuffle algorithm and deterministic parser/metrics. Two cases held; one seeded Qwen run, not the original three-run mean or full private/public set. No model-based answer-extraction fallback.",
+  "contamination": "No reference labels sent; frozen before generation; no tools, retrieval, fine-tuning or test-guided changes. Pretraining exposure unknown."
+}

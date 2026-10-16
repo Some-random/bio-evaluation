@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "b331480e-dfc7-4e92-931a-c71f491c4795",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "e266aeb0f36ad93d01bca83505721252fdeb60741fefa1ad7a8915adffe6a371",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which three residues with evolutionary divergence in the G domains of RAS isoforms also impose selectivity constraints of pan-KRAS non-covalent inhibition?\n\nOptions:\n(A) 12, 13, 61\n(B) Insufficient information to answer the question\n(C) 85, 121, 122\n(D) 12, 13, 141\n(E) 95, 121, 122\n(F) 32, 35, 38\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

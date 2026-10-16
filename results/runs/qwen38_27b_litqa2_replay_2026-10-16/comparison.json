@@ -1,0 +1,32 @@
+{
+  "baseline_run": "qwen38_27b_litqa2_public_reviewed_2026-10-15",
+  "replay_run": "qwen38_27b_litqa2_replay_2026-10-16",
+  "same_request_payloads": true,
+  "baseline_metrics": {
+    "accuracy": 0.39086294416243655,
+    "precision": 0.4095744680851064,
+    "coverage": 0.9543147208121827,
+    "n_total": 197,
+    "n_correct": 77,
+    "n_sure": 188
+  },
+  "replay_metrics": {
+    "accuracy": 0.39086294416243655,
+    "precision": 0.4095744680851064,
+    "coverage": 0.9543147208121827,
+    "n_total": 197,
+    "n_correct": 77,
+    "n_sure": 188
+  },
+  "baseline_cases": 197,
+  "replay_cases": 197,
+  "identical_case_set": true,
+  "same_parsed_answer": 135,
+  "correctness_transitions": {
+    "(True, False)": 18,
+    "(False, False)": 102,
+    "(True, True)": 59,
+    "(False, True)": 18
+  },
+  "qualification": "Same frozen requests and seed; hardware/runtime differences can change sampled outputs. This compares answer outcomes, not explanation validity."
+}

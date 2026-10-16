@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "8d12cb90-73c6-4cc1-9f83-0fa9fd822e92",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "81db180bf4536d9e3e3babeead7a2c1847c8a3a8bf76eed15da83cc3d903677d",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which two transcription factors were used to identify the T4/T5 neuron subtypes in the optic lobe that split into T4/T5a-b and T4/T5c-d subtypes in the Fly Cell Atlas?\n\nOptions:\n(A) dimm, Pdf\n(B) Insufficient information to answer the question\n(C) omb, dac\n(D) acj6, SoxN\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}
