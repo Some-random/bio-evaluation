@@ -8,15 +8,19 @@ from __future__ import annotations
 
 import argparse
 import csv
+from datetime import datetime
 import hashlib
+import html
 import io
 import json
 from pathlib import Path
 import re
+from zoneinfo import ZoneInfo
 
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "reports"
+PACIFIC = ZoneInfo("America/Los_Angeles")
 
 
 def text(value):
@@ -70,21 +74,111 @@ def validate(data):
 def snapshot_note(data):
     meta = data["meta"]
     return (
-        f"Stored scores: **{meta['scoreSnapshotAt']}**. Running-work snapshot: "
-        f"**{meta['runSnapshotAt']}**. These are timestamped reports, not a live feed."
+        f"Stored scores: **{pacific_time(meta['scoreSnapshotAt'])}**. Running-work snapshot: "
+        f"**{pacific_time(meta['runSnapshotAt'])}**. Display times use Pacific time."
     )
+
+
+def pacific_time(value):
+    if not value:
+        return "unavailable"
+    moment = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    if moment.tzinfo is None:
+        raise ValueError("A displayed timestamp must include its source timezone")
+    return moment.astimezone(PACIFIC).strftime("%Y-%m-%d %H:%M %Z")
+
+
+def scientific_requirements(group, protocol):
+    task_id = protocol["taskId"] if protocol else None
+    inputs = {
+        "B01": "Text question and choices", "B02": "Database question and choices",
+        "B03": "Question with the source paper's title and DOI",
+        "B04": "Scientific figure image and question", "B05": "Scientific table image and question",
+        "B06": "Protocol text and question", "B07": "Biological sequence and requested operation",
+        "B08": "Cloning scenario and sequence constraints",
+        "V01": "Radiology image and question", "V02": "Medical image and English question",
+        "V03": "Pathology image and question", "V04": "Medical image and question",
+        "P19": "Protein sequence and objective; propose single mutations",
+        "P20": "Protein variants and objective; rank without measured outcomes",
+        "P21": "Measured anchor mutation plus candidate combinations",
+        "P22": "Measured single mutations plus candidate combinations",
+        "P31": "Protein sequence, desired effect and mutation position",
+        "P32": "Protein sequence and desired effect; propose mutation positions and residues",
+        "P35": "Functional description and a searchable protein representation corpus",
+        "P36": "Functional description → amino-acid sequence",
+        "P37": "Generated protein sequences; OmegaFold structural-confidence evaluation",
+        "P38": "Property-conditioned sequences and independent property predictors",
+        "P39": "Heme-related description; candidate sequences and complex screening",
+        "P42": "GFP sequence edits; fixed fluorescence predictor for evaluation",
+        "P44": "Protein-function claim and supporting evidence",
+        "V07": "Scientific document pages, figures and extraction targets",
+    }
+    structural = {
+        "main-38": "Backbone coordinates → amino-acid sequence; coordinate-conditioned design",
+        "main-39": "Backbone coordinates → sequence; AlphaFold2 refolding evaluation",
+        "main-40": "Length/constraints → 3D backbone; ProteinMPNN and ESMFold evaluation",
+        "main-41": "Generated sequences; AlphaFold2 structural-confidence evaluation",
+        "main-42": "Sequence and 3D coordinates; folding and structural comparison",
+        "main-43": "Motif coordinates → scaffold; ProteinMPNN, ESMFold and structural comparison",
+        "main-44": "Motif coordinates → scaffold; native structural evaluator",
+        "main-50": "Protein sequence → 3D coordinates; folding model and structural comparison",
+    }
+    return inputs.get(task_id) or structural.get(group["id"]) or text(group.get("inputInterface")) or "See the source-defined input and metric below"
+
+
+def quoted_record(value):
+    return ["> " + html.escape(line, quote=False) if line else ">"
+        for line in value.strip().splitlines()]
+
+
+def advisor_examples():
+    good = json.loads((REPORTS / "ADVISOR_GOOD_EXAMPLES.json").read_text())
+    out = ["## Worked examples", "",
+        "The first two examples are saved Qwen answers that match their reference labels. "
+        "The reasoning text is copied from the model's saved output; a correct answer does not independently validate every step.", ""]
+    titles = {"B04": "Reading a biological figure", "B05": "Comparing values in a scientific table"}
+    for example in good["examples"]:
+        score = example["local_score_record"]
+        assert score["correct"] and score["answer"] == example["native_gold"]["target_choice"]
+        prompt = example["question_and_options_exact"]
+        question = prompt.split("Question: ", 1)[1].split("\n\nOptions:", 1)[0].strip()
+        out += [f"### Correct example: {titles[example['task_id']]}", "", question, ""]
+        for source_image in example["images"]:
+            path = source_image["report_asset_path"]
+            assert not Path(path).is_absolute() and ".." not in Path(path).parts
+            out += [f'<img src="{html.escape(path, quote=True)}" alt="{titles[example["task_id"]]}" width="600">', ""]
+        out += ["**Saved model reasoning, verbatim:**", ""] + quoted_record(example["model_reasoning_text_exact"]) + ["",
+            "**Saved final answer, verbatim:**", ""] + quoted_record(example["assistant_final_text_exact"]) + [""]
+        result = example["dataset_result"]
+        out += [f"Reference choice: **{score['answer']}** — correct. "
+            f"Dataset accuracy: **{100 * result['accuracy']:.1f}%** ({result['correct']}/{result['total']}).", ""]
+    out += ["[Exact example records and source hashes](ADVISOR_GOOD_EXAMPLES.json)", "",
+        "## Challenges requiring external computation", "",
+        "These illustrate why some evaluations need more than a text or image answer. "
+        "They are source-defined task requirements, not measured Qwen failures. "
+        "The required structures and scores must be computed; AlphaFold is one relevant model, not the only possible implementation.", ""]
+    tool_cases = json.loads((REPORTS / "TOOL_REQUIRED_CASES.json").read_text())
+    for example in tool_cases["cases"]:
+        dataset = re.sub(r" \(catalog main-\d+\)", "", example["dataset"])
+        out += [f"### {example['title']}", "", f"**Dataset:** {dataset}", "",
+            f"**Input:** {example['input']}", ""]
+        if example.get("input_sequence"):
+            sequence = example["input_sequence"]
+            assert len(sequence) == example["input_sequence_length"]
+            out += ["```text", sequence, "```", ""]
+        out += [f"**Required answer:** {example['required_output']}", "",
+            f"**Why a prose answer is insufficient:** {example['why_text_answer_is_insufficient']}", "",
+            f"**Tool route:** {example['tool_route']}", "",
+            f"[Native task and evaluation source]({example['source_url']})", ""]
+        if example.get("case_source_url"):
+            out += [f"[Released example input]({example['case_source_url']})", ""]
+    out += ["[Actual external-model computations and results reported in the papers](PUBLISHED_TOOL_USE_EXAMPLES.md)", ""]
+    return out
 
 
 def overview(data):
     meta = data["meta"]
     feasibility = json.loads((REPORTS / "QWEN_TASK_FEASIBILITY.json").read_text())
-    subset_runs = {}
-    subset_path = ROOT / "results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016/upload_status.json"
-    if subset_path.is_file():
-        subset = json.loads(subset_path.read_text())
-        assert subset["task_id"] == "P36" and subset["planned"] == 59
-        assert subset["full_source_cases"] == 5876 and subset["full_benchmark_complete"] is False
-        subset_runs["P36"] = subset
     assessment_rank = {
         "Runnable now": 0, "Needs data or protocol": 1, "Needs scoring protocol": 1,
         "Needs additional models/tools": 2, "On hold": 3,
@@ -149,35 +243,6 @@ def overview(data):
         "P39": "Heme binding is a predicted candidate property, not demonstrated binding.",
         "P42": "Scored by a fluorescence predictor; not a wet-lab result.",
     }
-    statuses = {
-        "Results available": "Finished", "Partial": "Partial", "Running / queued": "Running or queued",
-        "Source-blocked": "Blocked", "Deferred / held": "On hold",
-        "Status unverified": "Run status unconfirmed",
-    }
-    progress_by_task = {run["taskId"]: run for run in data["runs"]}
-
-    def display_status(group, protocol):
-        subset = subset_runs.get(protocol["taskId"]) if protocol else None
-        if subset:
-            state = "Partial subset scored" if subset.get("scoring_success") is True else (
-                "Partial subset responses saved" if subset.get("generation_terminal") else "Running partial subset")
-            return state + f" · {100 * subset['uploaded_trajectories'] / subset['planned']:.1f}% trajectories uploaded"
-        value = protocol["status"] if protocol else group["status"]
-        if value == "Status unverified" and group["scope"] == "Catalog only":
-            return "Listed for consideration"
-        state = statuses[value]
-        progress = progress_by_task.get(protocol["taskId"]) if protocol else None
-        if value == "Running / queued" and progress and progress.get("planned"):
-            uploaded = progress.get("uploaded")
-            if uploaded is not None:
-                state += f" · {100 * uploaded / progress['planned']:.1f}% trajectories uploaded"
-        return state
-
-    def snapshot(value):
-        if not value:
-            return "unavailable"
-        return value[:10] + " " + value[11:16] + " UTC"
-
     def main_ids(*values):
         return [f"main-{value:02d}" for value in values]
 
@@ -240,21 +305,32 @@ def overview(data):
 
     out = [
         "# Biological evaluation overview", "",
-        "Model: **Qwen3.8-27B**.", "",
-        f"Scores: **{snapshot(meta['scoreSnapshotAt'])}** · Run status: **{snapshot(meta['runSnapshotAt'])}**.", "",
-        f"**{meta['completedSettings']} of {meta['registrySettings']} evaluation settings have finished runs.** "
-        "An asterisk (*) marks incomplete coverage or scoring.", "",
-        f"**{feasibility['summary']['runnable_now']} of {meta['registrySettings']} settings are runnable with the current setup.** "
-        "Text and vision inputs are supported. Runnable means the required inputs, execution path and scorer are available; "
-        "it includes explicitly marked reviewed subsets and does not guarantee correct or valid predictions.", "",
-        "Finished, Partial and Running describe saved run status; Ready describes executability. "
-        "**Run status unconfirmed** means no verified completion record. Missing requirements are listed per row. "
-        "Published scores are separate reference results; full protocol notes are at the end.", "",
-        "Expand a category to see its tasks and datasets.", "",
+        "General-purpose baseline: **Qwen3.8-27B**, with text and image inputs.", "",
+        "This catalog spans biological prediction, scientific evidence, protein design and three-dimensional structure. "
+        "The map below shows the task families without opening the detailed catalog.", "",
+        "## Task map", "",
+        "| Category | Task families | Typical information and answer |", "|---|---|---|",
     ]
-    heartbeat = meta.get("heartbeat", {})
-    if heartbeat.get("status") in {"stale", "missing", "invalid"}:
-        out[6:6] = ["**The run-status heartbeat is " + heartbeat["status"] + "; current activity is unconfirmed.**", ""]
+    typical = [
+        "Protein sequences → properties, locations and interactions",
+        "Protein sequences → functions, annotations and descriptions",
+        "Sequences, variants and assay context → effects, rankings and proposals",
+        "Questions with literature, figures, tables or sequences → evidence-based answers",
+        "Descriptions, motifs or target geometry → protein sequences and structures",
+        "Sequences or atomic coordinates → structures, ensembles and structural scores",
+        "Biomedical images and documents → answers or extracted evidence",
+        "DNA, RNA, expression and molecular inputs → biological endpoints",
+    ]
+    for (category, families), interface in zip(megatasks, typical):
+        out.append("| " + " | ".join(cell(value) for value in [category,
+            "; ".join(family for family, _ in families), interface]) + " |")
+    out += [""] + advisor_examples()
+    out += ["## Dataset catalog", "",
+        "Each row is one dataset or source-defined evaluation condition. Expand a category for detail. "
+        "The input/computation column describes the scientific requirement, including external models where needed.", "",
+        "Qwen results and published reference results use the stated protocols and are not automatically matched comparisons. "
+        "**—** means no verified Qwen result is displayed; **\\*** marks limited coverage or scoring. "
+        "Source qualifications are collected at the end.", ""]
     all_notes = []
     for category, families in megatasks:
         out += ["<details>", f"<summary><h2>{category}</h2></summary>", ""]
@@ -262,21 +338,7 @@ def overview(data):
         for family, group_ids in sorted(families,
                 key=lambda item: min(group_rank(group_by_id[group_id]) for group_id in item[1])):
             entries = [group_by_id[group_id] for group_id in group_ids]
-            family_results = [result for group in entries for result in group["results"]]
-            incomplete_results = [result for result in family_results if result["incomplete"]
-                or result["completionScope"] == "diagnostic_only_primary_metrics_invalid"]
-            running = any(protocol["status"] == "Running / queued" or
-                (protocol["taskId"] in subset_runs and not subset_runs[protocol["taskId"]].get("generation_terminal"))
-                for group in entries for protocol in group["protocols"])
-            dataset_count = f"{len(entries)} dataset group" + ("s" if len(entries) != 1 else "")
-            cue = ""
-            if family_results:
-                cue = " · partial results*" if len(incomplete_results) == len(family_results) else " · results available"
-                if incomplete_results and len(incomplete_results) < len(family_results):
-                    cue += " · partial results*"
-            if running:
-                cue += " · running or queued"
-            out += [f"#### {family}", "", dataset_count + cue, ""]
+            out += [f"#### {family}", ""]
             table_rows = []
             for group in entries:
                 for protocol in group["protocols"] or [None]:
@@ -289,19 +351,11 @@ def overview(data):
                         elif not protocol and group["dataset"].startswith("Proteo-R1 internal"):
                             name = "Structure-derived questions and output-format checks"
                         task_key = name
-                        state = display_status(group, protocol)
-                        if (protocol and state != "Finished") or (result and result["incomplete"]):
+                        if result and (result["incomplete"] or
+                                result["completionScope"] == "diagnostic_only_primary_metrics_invalid"):
                             name += "*"
-                            state += "*"
                         reviewed = assessment(group, protocol)
-                        if reviewed["label"] == "Runnable now":
-                            state += " · Ready"
-                            if task_id in ("P06", "P42"):
-                                state += "<br>" + reviewed["shortReason"]
-                        else:
-                            existing = state + "<br>" if state.rstrip("*") in ("Finished", "Partial", "Running or queued") else ""
-                            marker = "*" if state.endswith("*") and not existing else ""
-                            state = existing + reviewed["label"] + marker + "<br>" + reviewed["shortReason"]
+                        requirement = scientific_requirements(group, protocol)
                         caveat = caveats.get(task_id)
                         if group["dataset"].startswith("Prompteina"):
                             caveat = "Single published target campaign."
@@ -315,16 +369,6 @@ def overview(data):
                         if result and len(rows) > 1:
                             dataset += "<br>" + result["title"]
                         local = result["metricText"] if result else "—"
-                        if task_id in subset_runs and not result:
-                            local = "[59-case reviewed subset](" + meta["githubUrl"] + "/tree/main/results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016). Full benchmark incomplete."
-                            subset = subset_runs[task_id]
-                            if subset.get("scoring_success") is True:
-                                value = subset["metrics"]["rougeL"]
-                                assert type(value) in (int, float) and 0 <= value <= 1
-                                local = f"Qualified subset ROUGE-L: **{value:.4f}**. " + local
-                                if "valid_native_serializations" in subset:
-                                    local += (f"<br>{subset['completed']}/{subset['planned']} final answers; "
-                                        f"{subset['valid_native_serializations']} match the required sequence format.")
                         if result and result["completionScope"] == "diagnostic_only_primary_metrics_invalid":
                             local = "**Diagnostic only:** " + local + "<br>Full native primary metric undefined."
                         published = result["publishedText"] if result else group["literatureText"]
@@ -333,16 +377,16 @@ def overview(data):
                         elif group["sourceUrl"]:
                             published += f" · [source]({group['sourceUrl']})"
                         table_rows.append({"key": task_key, "task": name, "dataset": dataset,
-                            "state": state, "local": local, "published": published, "caveat": caveat,
+                            "requirement": requirement, "local": local, "published": published, "caveat": caveat,
                             "rank": assessment_rank[reviewed["label"]]})
             task_order = list(dict.fromkeys(row["key"] for row in table_rows))
             task_order.sort(key=lambda task_key: min(row["rank"] for row in table_rows if row["key"] == task_key))
             table_rows = [row for task_key in task_order for row in sorted(
                 [row for row in table_rows if row["key"] == task_key], key=lambda row: row["rank"])]
-            out += ["| Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |", "|---|---|---|---|---|"]
+            out += ["| Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |", "|---|---|---|---|---|"]
             previous_task = None
             for row in table_rows:
-                values = [row["dataset"], row["state"], row["local"], row["published"]]
+                values = [row["dataset"], row["requirement"], row["local"], row["published"]]
                 values.insert(0, "" if row["key"] == previous_task else row["task"])
                 out.append("| " + " | ".join(cell(value) for value in values) + " |")
                 previous_task = row["key"]
@@ -357,34 +401,18 @@ def overview(data):
                     all_notes += ["Published source size/units: " + text(group["sourceSize"]), ""]
                 for protocol in group["protocols"]:
                     all_notes += [f"**{names.get(protocol['taskId'], group['task'])}:** "
-                        f"{text(protocol.get('nativeMetric'))}. {text(protocol.get('nativeSplit'))}", ""]
+                        f"{text(protocol.get('scientificQuestion'))} "
+                        f"Metric: {text(protocol.get('nativeMetric'))}. {text(protocol.get('nativeSplit'))}", ""]
                     if protocol.get("limitation"):
                         all_notes += [text(protocol["limitation"]), ""]
-                    if protocol.get("blocker"):
-                        all_notes += [text(protocol["blocker"]), ""]
-                for protocol in group["protocols"] or [None]:
-                    reviewed = assessment(group, protocol)
-                    title = names.get(protocol["taskId"], group["task"]) if protocol else group["task"]
-                    all_notes += [f"**{title} — {reviewed['label']}:** {text(reviewed['reason'])}", ""]
-                    if reviewed.get("modelCompatibility"):
-                        compatibility = reviewed["modelCompatibility"]
-                        all_notes += ["Model compatibility: " + (text(compatibility) if isinstance(compatibility, str)
-                            else json.dumps(compatibility, ensure_ascii=False)), ""]
-                    if reviewed.get("evidence"):
-                        all_notes += ["Evidence:", "", "```json", json.dumps(reviewed["evidence"], ensure_ascii=False, indent=2), "```", ""]
                 for result in group["results"]:
-                    all_notes += [f"##### {result['title']}", ""] + result_details(result)[3:-2]
-                if not group["results"]:
-                    all_notes += ["Published reference record: " + text(group["literatureText"]), ""]
+                    if result.get("comparison"):
+                        all_notes += [f"**Comparison qualification:** {text(result['comparison'])}", ""]
                 all_notes += [source_links(group), ""]
         out += ["</details>", ""]
-    source_notes = []
-    if meta.get("historicalResultRows"):
-        source_notes = ["Earlier verified results are preserved from the dated "
-            "[score snapshot](VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json); "
-            "current matching conditions supersede those records. Each result retains its own source date and provenance.", ""]
-    out += ["<details>", "<summary>Protocol notes and sources</summary>", ""] + source_notes + all_notes + ["</details>", ""]
-    out += [f"[Raw run artifacts and uploaded trajectories]({meta['githubUrl']}/tree/main/results/runs)", ""]
+    out += ["<details>", "<summary>Dataset definitions, scientific qualifications and sources</summary>", ""] + all_notes + ["</details>", ""]
+    out += [f"Result references updated: **{pacific_time(meta['scoreSnapshotAt'])}**. "
+        "Display times use Pacific time (PST/PDT).", ""]
     return "\n".join(out)
 
 

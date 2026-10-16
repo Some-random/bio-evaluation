@@ -2,7 +2,7 @@
 
 ## [All tasks and results](reports/EVALUATION_OVERVIEW.md)
 
-**Model: Qwen3.8-27B.** Expand a category to see its tasks and datasets. Evaluations ready for the current setup appear first; each blocked row says what is missing.
+**Model: Qwen3.8-27B.** The overview starts with the task categories and worked examples, including saved model reasoning and challenges that require structural tools. Dataset details remain in collapsible categories.
 
 - [Saved examples: protein sequences, figures and tables](reports/EXAMPLES_SEQUENCE_VISION_TOOLS.md)
 - [External models actually used in the papers](reports/PUBLISHED_TOOL_USE_EXAMPLES.md)

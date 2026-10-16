@@ -8,6 +8,7 @@ import json
 import math
 from pathlib import Path
 import tempfile
+from zoneinfo import ZoneInfo
 
 COMPARISONS = "reports/PUBLISHED_BENCHMARK_COMPARISONS_2026-10-15.json"
 P43_COUNTS = {"human": 1200, "biosnap": 5493, "bindingdb": 9840}
@@ -272,7 +273,11 @@ def render_markdown(report):
     limits = sorted({row["generation"]["max_tokens"] for row in rows if isinstance(row.get("generation"), dict)
                      and number(row["generation"].get("max_tokens")) and row["generation"]["max_tokens"] != 1})
     limit_text = "/".join(f"{value:,}" for value in limits) if limits else "unrecorded"
-    lines = ["# Results at a glance", "", f"Snapshot: {report['generated_at_utc']}. Fixed local Qwen3.8-27B baseline; "
+    moment = datetime.fromisoformat(report["generated_at_utc"].replace("Z", "+00:00"))
+    if moment.tzinfo is None:
+        raise ValueError("The score timestamp must include its source timezone")
+    display_time = moment.astimezone(ZoneInfo("America/Los_Angeles")).strftime("%Y-%m-%d %H:%M %Z")
+    lines = ["# Results at a glance", "", f"Snapshot: {display_time}. Fixed local Qwen3.8-27B baseline; "
         f"{len(report['completed_whole_declared_setting_ids'])} of {report['catalog_settings']} settings have completed evaluations of their declared scope. "
         "This does not mean full paper replication. Finished shards and incomplete runs are excluded below.", "",
         "These are contextual comparisons: the local baseline is zero-shot; BioT5+/medical systems use task training. LAB references below use the public-set GPT-5.2 column; prompt/decoding/repeat differences remain. "

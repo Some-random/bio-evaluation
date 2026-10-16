@@ -1,0 +1,160 @@
+{
+  "created_at_utc": "2026-10-16T20:02:01.055835+00:00",
+  "source": "Saved Qwen/Qwen3.8-27B request and response records, native gold choices, and byte-identical image assets.",
+  "scope_notes": [
+    "Two selected correct examples, not a representative sample or proof of performance on all biological tasks.",
+    "Assistant final text and reasoning text are reproduced exactly from saved response fields. No trace was reconstructed or invented.",
+    "Reasoning is an unverified model-generated rationale, not proof that the explanation is correct or caused the correct answer.",
+    "Image values and final choices were checked against the actual saved image and native gold label. No biological mechanism validation is claimed."
+  ],
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": null,
+  "display_labels": {
+    "assistant_final_text_exact": "Saved final response (verbatim)",
+    "model_reasoning_text_exact": "Saved model reasoning (verbatim; unverified rationale)"
+  },
+  "examples": [
+    {
+      "task_id": "B04",
+      "case_id": "ae3a0d60-8c22-4402-8ab2-43a6e87cde18",
+      "question_and_options_exact": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: In panel e, which of the following sheath lengths do cortex oligodendrocytes produce at the highest frequency? \n\nOptions:\n(A) Insufficient information to answer the question\n(B) 10\n(C) 30\n(D) 20\n(E) 5\n(F) 15\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing.",
+      "native_gold": {
+        "task": "B04",
+        "case_id": "ae3a0d60-8c22-4402-8ab2-43a6e87cde18",
+        "subtask": "figqa-v1-public",
+        "target_choice": "D",
+        "unsure_choice": "A",
+        "choice_count": 6
+      },
+      "local_score_record": {
+        "task": "B04",
+        "case_id": "ae3a0d60-8c22-4402-8ab2-43a6e87cde18",
+        "subtask": "figqa-v1-public",
+        "answer": "D",
+        "correct": true,
+        "sure": true,
+        "parsed": true,
+        "finish_reason": "stop"
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": null,
+      "assistant_final_text_exact": "\n\nLooking at panel **e** (Cerebellar slice culture), the teal bars represent cortex oligodendrocytes. The tallest cortex bar occurs at the 20 µm bin (≈20% frequency), with neighboring bins (10–15 µm and 30 µm) being lower. This is consistent with the fitted peak in panel f at a log length of ~1.2–1.3 (≈15–20 µm).\n\nTherefore, the sheath length produced at the highest frequency by cortex oligodendrocytes is **20 µm**.\n\n[ANSWER]D[/ANSWER]",
+      "assistant_final_source_field": "response.choices[0].message.content",
+      "model_reasoning_text_exact": "The question asks about panel e, which is the \"Cerebellar slice culture\" histogram. I need to look at the cortex (blue/teal) bars and find which length bin has the highest frequency.\n\nLooking at panel e, the x-axis has bins: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, >120. The cortex (teal) bars: at 10 it's around 3, at 20 it's around 14, then there's a tall bar around 20-25 reaching ~20, then ~15, ~12.5, ~8, etc.\n\nLet me look more carefully. The bars in panel e for cortex: first bar (10) ~3, second bar (~15-20?) ~14, third bar (20) ~20 (the tallest), fourth ~15, fifth ~12.5, etc.\n\nThe x-axis labels are 10, 20, 30, 40... but the bars appear between labels. Let's think about bin positions. Typically the labels are at the bin centers or bin edges. In panel A, the tallest cortex bar is at the position between 10 and 20? Actually in panel A, the first bar is small (~4) before the 10 label, then a tall bar ~29 at around 10-15, then ~23 at 15-20, then ~17 at 20-25... Hmm.\n\nLet's look at the labels alignment. In panel e, the labels 10, 20, 30... The tallest teal bar appears to be aligned near the 20 label. Let's look: there's a bar at ~3 (before 10), bar at ~14 (at 10-15?), bar at ~20 (at 20), bar at ~15 (at 20-25?), bar at ~12.5 (at 30)...\n\nThis is getting too detailed. The options are 5, 10, 15, 20, 30. The peak of the cortex distribution in panel e is around 20 μm. Looking at the figure, the tallest teal bar is at the bin corresponding to 20. So answer D (20).\n\nLet me cross check with panel f (log length fit) for cerebellar slice cortex: peak around log length 1.2-1.3, which is 10^1.25 ≈ 17-20 μm. Yes consistent with ~20.\n\nThus the highest frequency sheath length for cortex oligodendrocytes in panel e is 20 μm.\n\nSo answer D.\n\nI'll provide reasoning and final.\n",
+      "model_reasoning_source_field": "response.choices[0].message.reasoning",
+      "rationale_label": "Unverified model-generated rationale from the saved Qwen run; not evidence that the reasoning is valid or caused the correct answer.",
+      "request": {
+        "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/requests/064914b3964646c1cdafeb942c89fca7d3f28a2978f4943a7fd5cac37fe780f0.json",
+        "sha256": "3b0ba7015ede9813835f32a78940cbf8cf0aa891cf96395051f1fe7b2bf840f2"
+      },
+      "response": {
+        "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/responses/064914b3964646c1cdafeb942c89fca7d3f28a2978f4943a7fd5cac37fe780f0.json",
+        "sha256": "7d1f8bacd78abfe6307534f92e6d943f95acaee2d9ca050e9eaab27019fa2bd5"
+      },
+      "native_gold_source": {
+        "path": ".local/parallel_labbench/runs/B04/data/labbench_native_complete/scorer_references.jsonl",
+        "sha256": "c7129db0155bd8513abb43b53c2c53bfd4051df7ea01f25708f289cbb78c7702",
+        "field": "target_choice"
+      },
+      "score_source": {
+        "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/per_case_scores.json",
+        "sha256": "9f341c6d4f4ec75e27412d0cebcfa67a5c6e8bc40c0e16e923ac09fb66241fcc"
+      },
+      "images": [
+        {
+          "sha256": "210de746b01e82103e1a2a95ade2221a1984278cb26b10cc3c0b9e91dc289b84",
+          "bytes": 841850,
+          "mime_type": "image/jpeg",
+          "official_image_url": "https://raw.githubusercontent.com/Future-House/LAB-Bench/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/FigQA/figs/088.jpg",
+          "official_github_image_url": "https://github.com/Future-House/LAB-Bench/blob/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/FigQA/figs/088.jpg",
+          "bytes_equal_saved_request": true,
+          "path": "reports/example_assets/b04-ae3a0d60-8c22-4402-8ab2-43a6e87cde18.jpg",
+          "report_asset_path": "example_assets/b04-ae3a0d60-8c22-4402-8ab2-43a6e87cde18.jpg"
+        }
+      ],
+      "verification": {
+        "answer": "D — 20 µm",
+        "image_check": "Panel E: the cortex (teal) histogram has its tallest bar at 20 µm. The final choice agrees with the native gold label.",
+        "rationale_note": "Final visual explanation agrees with the figure at the level checked. The saved reasoning contains tentative bin-reading steps; do not treat those as independently verified."
+      },
+      "dataset_result": {
+        "correct": 131,
+        "total": 181,
+        "accuracy": 0.7237569060773481
+      },
+      "source_run_path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16",
+      "source_scope_note": "Selected correct saved case from the completed native public image-based evaluation; no new inference or rescoring."
+    },
+    {
+      "task_id": "B05",
+      "case_id": "5d3f8067-fe32-4abb-9646-276150413965",
+      "question_and_options_exact": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which model shows the lowest MSE when chi1 = 300?\n\nOptions:\n(A) OPLS4a\n(B) OPLS3e\n(C) Both OPLS4a and OPLS3e have the same lowest value for MSE when chi1 = 300\n(D) Insufficient information to answer the question\n(E) OPLS4\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing.",
+      "native_gold": {
+        "task": "B05",
+        "case_id": "5d3f8067-fe32-4abb-9646-276150413965",
+        "subtask": "tableqa-v1-public",
+        "target_choice": "E",
+        "unsure_choice": "D",
+        "choice_count": 5
+      },
+      "local_score_record": {
+        "task": "B05",
+        "case_id": "5d3f8067-fe32-4abb-9646-276150413965",
+        "subtask": "tableqa-v1-public",
+        "answer": "E",
+        "correct": true,
+        "sure": true,
+        "parsed": true,
+        "finish_reason": "stop"
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": null,
+      "assistant_final_text_exact": "\n\nLooking at the \"MSE (chi1 = 300)\" column:\n- OPLS3e: +0.5 ± 0.2\n- OPLS4a: +0.5 ± 0.2\n- OPLS4: +0.2 ± 0.2\n\nThe lowest value is +0.2, corresponding to OPLS4.\n\n[ANSWER]E[/ANSWER]",
+      "assistant_final_source_field": "response.choices[0].message.content",
+      "model_reasoning_text_exact": "The question asks which model shows the lowest MSE when chi1 = 300. Let me look at the table column \"MSE (chi1 = 300)\".\n\nValues:\n- OPLS3e: +0.5 ± 0.2\n- OPLS4a (OPLS4 with superscript a): +0.5 ± 0.2\n- OPLS4: +0.2 ± 0.2\n\nThe lowest value is +0.2 for OPLS4. The options are (A) OPLS4a, (B) OPLS3e, (C) both OPLS4a and OPLS3e same lowest, (D) insufficient, (E) OPLS4.\n\nThe lowest is OPLS4 at +0.2. So answer E.\n\nLet me double check: OPLS3e = 0.5, OPLS4a = 0.5, OPLS4 = 0.2. Lowest is 0.2 = OPLS4. So E.\n\nThus answer is E.\n",
+      "model_reasoning_source_field": "response.choices[0].message.reasoning",
+      "rationale_label": "Unverified model-generated rationale from the saved Qwen run; not evidence that the reasoning is valid or caused the correct answer.",
+      "request": {
+        "path": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/requests/03347599650da332c163393327a395437cfe58c2b6f1bda16bdca9bce0011cc6.json",
+        "sha256": "e79a47d6b40c14ad7a9060583510de77eba25e20d313ae44b46d48d089e2c284"
+      },
+      "response": {
+        "path": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/responses/03347599650da332c163393327a395437cfe58c2b6f1bda16bdca9bce0011cc6.json",
+        "sha256": "ffdca69a7e4879bd700d069dc80859d9c2eb8fcd259f8ad78b01da45a5aa4978"
+      },
+      "native_gold_source": {
+        "path": ".local/parallel_labbench/runs/B05/data/labbench_native_complete/scorer_references.jsonl",
+        "sha256": "c7129db0155bd8513abb43b53c2c53bfd4051df7ea01f25708f289cbb78c7702",
+        "field": "target_choice"
+      },
+      "score_source": {
+        "path": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/per_case_scores.json",
+        "sha256": "f8156ecf03b605aecd6dc484095b85994c378a0eac33d5e81f8b858f302bbd6d"
+      },
+      "images": [
+        {
+          "sha256": "af89673b38bb3b84331a63111f23e56b09552d902c685bd78f13992d91977bb4",
+          "bytes": 164554,
+          "mime_type": "image/png",
+          "official_image_url": "https://raw.githubusercontent.com/Future-House/LAB-Bench/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/TableQA/tables/153.png",
+          "official_github_image_url": "https://github.com/Future-House/LAB-Bench/blob/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/TableQA/tables/153.png",
+          "bytes_equal_saved_request": true,
+          "path": "reports/example_assets/b05-5d3f8067-fe32-4abb-9646-276150413965.png",
+          "report_asset_path": "example_assets/b05-5d3f8067-fe32-4abb-9646-276150413965.png"
+        }
+      ],
+      "verification": {
+        "answer": "E — OPLS4",
+        "image_check": "MSE (chi1 = 300): OPLS3e +0.5 ± 0.2; OPLS4a +0.5 ± 0.2; OPLS4 +0.2 ± 0.2. OPLS4 is lowest, matching the native gold label.",
+        "rationale_note": "The final comparison and all three quoted table values agree with the supplied image."
+      },
+      "dataset_result": {
+        "correct": 215,
+        "total": 244,
+        "accuracy": 0.8811475409836066
+      },
+      "source_run_path": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16",
+      "source_scope_note": "Selected correct saved case from the completed native public image-based evaluation; no new inference or rescoring."
+    }
+  ]
+}

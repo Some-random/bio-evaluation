@@ -162,6 +162,15 @@ class WatchTests(unittest.TestCase):
         self.assertTrue(self.publisher().cycle()["pushed"])
         self.assertNotEqual(self.remote_head(), head)
 
+    def test_pacific_display_clock_changes_do_not_hide_result_changes(self):
+        first = {"report.md": b"Scores: 2026-10-16 06:49 PDT. Accuracy: 0.4\n"}
+        later = {"report.md": b"Scores: 2026-10-16 07:49 PDT. Accuracy: 0.4\n"}
+        winter = {"report.md": b"Scores: 2026-12-16 07:49 PST. Accuracy: 0.4\n"}
+        changed = {"report.md": b"Scores: 2026-10-16 07:49 PDT. Accuracy: 0.5\n"}
+        self.assertEqual(watch.publication_fingerprint(first), watch.publication_fingerprint(later))
+        self.assertEqual(watch.publication_fingerprint(first), watch.publication_fingerprint(winter))
+        self.assertNotEqual(watch.publication_fingerprint(first), watch.publication_fingerprint(changed))
+
     def test_recent_original_backlog_yields_without_git_operations(self):
         status = self.root / ".local/remaining_evaluations/supervisor_status.json"
         status.parent.mkdir(parents=True)

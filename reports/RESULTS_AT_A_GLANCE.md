@@ -1,6 +1,6 @@
 # Results at a glance
 
-Snapshot: 2026-10-16T04:25:25.541726+00:00. Fixed local Qwen3.8-27B baseline; 25 of 64 settings have completed evaluations of their declared scope. This does not mean full paper replication. Finished shards and incomplete runs are excluded below.
+Snapshot: 2026-10-15 21:25 PDT. Fixed local Qwen3.8-27B baseline; 25 of 64 settings have completed evaluations of their declared scope. This does not mean full paper replication. Finished shards and incomplete runs are excluded below.
 
 These are contextual comparisons: the local baseline is zero-shot; BioT5+/medical systems use task training. LAB references below use the public-set GPT-5.2 column; prompt/decoding/repeat differences remain. B01 covers 197/199 public cases with two held before inference. No superiority or significance claim follows. Generated-answer output caps in this snapshot: 1,024/4,096 tokens; P43 instead uses a prespecified one-token conditional likelihood score. Paper ± values preserve reported dispersion; its definition and repeat counts are not always established.
 

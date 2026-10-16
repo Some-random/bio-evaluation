@@ -104,7 +104,7 @@ def publication_fingerprint(snapshot):
         text = raw.decode(errors="replace")
         if name.endswith(".md"):
             text = re.sub(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?(?:Z|[+-]\d\d:\d\d)", "<snapshot-time>", text)
-            text = re.sub(r"\d{4}-\d\d-\d\d \d\d:\d\d(?:[:]\d\d)? UTC", "<snapshot-time>", text)
+            text = re.sub(r"\d{4}-\d\d-\d\d \d\d:\d\d(?:[:]\d\d)? (?:UTC|PST|PDT)", "<snapshot-time>", text)
         normalized[name] = text
     return sha(json.dumps(normalized, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode())
 

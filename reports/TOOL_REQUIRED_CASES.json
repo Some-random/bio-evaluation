@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "verified_on_utc": "2026-10-16",
+  "qualification": "The native tasks require structural outputs and computation. A particular brand of external tool is not logically mandatory: a capable model could produce coordinates itself. For the current Qwen chat baseline, using a suitable structure/design tool is the practical route; no matched tool-ablation or measured Qwen failure is claimed.",
+  "cases": [
+    {
+      "title": "Predict a protein's three-dimensional structure from its sequence",
+      "dataset": "ProteinBench single-state folding — CAMEO2022 (catalog main-50)",
+      "input": "A released CAMEO2022 example is 7VRF chain A, the Drosophila Oxpecker chromodomain. The source row contains the 71-residue seqres sequence below and a 61-residue resolved seq field. Exact ProteinBench preprocessing of this row has not been independently reconstructed.",
+      "input_sequence": "NVKEKSSEYIVEKFLGKRYLRGRPQYLTKWEGYPIEQCTWEPLENLGKCMTLIADYEAELFQQSREKKNDQ",
+      "input_sequence_field": "seqres",
+      "input_sequence_length": 71,
+      "required_output": "A predicted three-dimensional protein structure: numerical atomic/backbone coordinates that can be compared with the experimental reference using native structural metrics such as TM-score and RMSD.",
+      "why_text_answer_is_insufficient": "Naming the fold or describing the protein does not supply the required coordinates. A language model can serialize coordinates in principle, but reliable folding and structural comparison require capabilities not validated in our Qwen chat baseline.",
+      "tool_route": "Pass the permitted sequence and prescribed sequence-alignment/template inputs to a folding model, then return its coordinate file and run structural comparison. AlphaFold2, OpenFold and ESMFold are evaluated folding models in ProteinBench; the selected model and access protocol must be recorded.",
+      "tool_role": "Structure predictor is the solver or solver backend; the structural comparator is a separate evaluator.",
+      "source_url": "https://arxiv.org/html/2409.06744v2#S2.SS2.SSS1",
+      "case_source_url": "https://github.com/bjing2016/EigenFold/blob/master/splits/cameo2022.csv",
+      "structure_source_url": "https://www.rcsb.org/structure/7VRF",
+      "source_locations": ["ProteinBench sections 2.2.1 and 3.2.1", "EigenFold splits/cameo2022.csv, row name 7vrf.A.pdb"],
+      "case_id_if_verified": "7vrf.A.pdb",
+      "case_verification_scope": "Verified in the released CAMEO2022 source cohort; not a locally dispatched Qwen case, and no exact ProteinBench retained-row preprocessing is claimed.",
+      "evidence_scope": "native task requirement; not a measured Qwen failure"
+    },
+    {
+      "title": "Build a scaffold around a specified three-dimensional motif",
+      "dataset": "MotifBench functional-motif scaffolding (catalog main-43)",
+      "input": "Official case 01_1LDB supplies the atomic coordinates of chain A residues 186–206 from lactate dehydrogenase 1LDB and specifies a 125-residue scaffold. Its released motif PDB contains the input geometry; the sequence identity of this motif is fixed.",
+      "required_output": "For native benchmark submission, 100 designed scaffold PDB files of the specified length, each retaining the motif geometry, plus scaffold_info.csv describing the motif placement. Evaluation assigns sequences, refolds them and compares structures.",
+      "why_text_answer_is_insufficient": "A proposed amino-acid string or explanation lacks the scaffold coordinates and motif placement that the benchmark accepts. The new geometry must also survive computed refolding checks; merely asserting that the design folds cannot supply those results.",
+      "tool_route": "Use a motif-conditioned structure generator to produce scaffold coordinates. The official evaluation then uses ProteinMPNN for sequence assignment, ESMFold for refolding, and geometric comparison; Foldseek supports clustering and novelty evaluation. AlphaFold is not the prescribed refolding tool here.",
+      "tool_role": "The structure generator supplies the required answer; ProteinMPNN, ESMFold and structural comparison are the native validation pipeline.",
+      "source_url": "https://github.com/blt2114/MotifBench#evaluation",
+      "case_source_url": "https://github.com/blt2114/MotifBench/blob/main/test_cases.csv",
+      "input_geometry_url": "https://github.com/blt2114/MotifBench/blob/main/motif_pdbs/01_1LDB.pdb",
+      "structure_source_url": "https://www.rcsb.org/structure/1LDB",
+      "source_locations": ["MotifBench test_cases.csv, first case", "motif_pdbs/01_1LDB.pdb", "README: Prepare backbone directory structure and metadata; Acknowledgement"],
+      "case_id_if_verified": "01_1LDB",
+      "case_verification_scope": "Verified official motif input and output contract; not a locally dispatched Qwen case.",
+      "evidence_scope": "native task requirement; not a measured Qwen failure"
+    }
+  ]
+}
