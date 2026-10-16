@@ -2,7 +2,7 @@
 
 ## [All tasks and results](reports/EVALUATION_OVERVIEW.md)
 
-**Model: Qwen3.8-27B.** Expand a category to see its tasks, datasets, status, local scores and published comparisons.
+**Model: Qwen3.8-27B.** Expand a category to see its tasks and datasets. Evaluations ready for the current setup appear first; each blocked row says what is missing.
 
 <details>
 <summary>Source data and technical records</summary>

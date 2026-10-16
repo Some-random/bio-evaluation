@@ -1,0 +1,1480 @@
+{
+  "model": "Qwen3.8-27B",
+  "reviewed_at_utc": "2026-10-16T08:25:35.929334+00:00",
+  "scope": "Feasibility of the existing Qwen baseline and currently prepared evaluators; runnable does not mean accurate or a full reproduction of a paper.",
+  "vision_supported": true,
+  "vision_evidence": [
+    "reports/local_model_capability_smoke.json",
+    "reports/RESULTS_AT_A_GLANCE.json"
+  ],
+  "summary": {
+    "original_settings": 64,
+    "runnable_now": 36,
+    "needs_data_or_protocol": 15,
+    "needs_additional_models_tools": 8,
+    "needs_scoring_protocol": 3,
+    "on_hold": 2,
+    "additional_groups": 38,
+    "additional_group_counts": {
+      "Needs scoring protocol": 3,
+      "Needs additional models/tools": 23,
+      "Needs data or protocol": 12
+    }
+  },
+  "definitions": {
+    "Runnable now": "Documented frozen execution and scorer exist, including already installed fixed specialist evaluators where used. Does not authorize rerunning or guarantee valid/nonzero outcomes.",
+    "compatible": "Qwen can accept the documented text/image input and express the required output in an existing or prospectively qualified adaptation. Missing data/evaluators can still block readiness; no claim of exact specialist training/architecture replication.",
+    "needs specialist pipeline": "The native task requires trained latent representations, non-chat modality/coordinate components or task-specific learned heads beyond current Qwen text/vision serving.",
+    "unresolved": "The required Qwen API/output interface itself has not yet been sufficiently validated.",
+    "usesExternalEvaluator": "Requires an additional learned/specialist evaluator or human/LLM judging beyond deterministic metric code. True does not mean that evaluator is missing; P42 has its frozen evaluator prepared."
+  },
+  "important_limits": [
+    "Readiness refers to executable inputs and scoring, not whether Qwen produces correct predictions.",
+    "Vision is supported; image input alone is not a blocker.",
+    "Some existing evaluations use prepared external scorers, including the fixed SaProt fluorescence oracle for GFP.",
+    "Protein folding, coordinate generation, docking, simulations and measured binding assays are not supplied by ordinary Qwen text/vision inference.",
+    "Catalog-only sequence/QA datasets still require exact datasets, splits and scoring protocols before running."
+  ],
+  "task_assessments": {
+    "P01": {
+      "id": "P01",
+      "task": "Solubility — PEER",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "P02": {
+      "id": "P02",
+      "task": "Binary localization — DeepLoc/PEER",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "P03": {
+      "id": "P03",
+      "task": "Subcellular localization — DeepLoc",
+      "label": "Runnable now",
+      "shortReason": "Frozen inputs and scorer prepared; already running or queued.",
+      "reason": "Complete task inputs, a named frozen Qwen protocol and native/qualified scorer are prepared in the sealed current execution plan. Already running or queued; output validity and eventual score are not guaranteed.",
+      "evidence": [
+        "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json",
+        ".local/remaining_evaluations/supervisor_plan.json",
+        ".local/remaining_evaluations/launch_summary.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "running_or_queued"
+    },
+    "P04": {
+      "id": "P04",
+      "task": "Beta-lactamase activity — PEER",
+      "label": "Needs data or protocol",
+      "shortReason": "Beta-lactamase assay scope and complete native test inputs are not cleared.",
+      "reason": "A numeric Qwen sequence-prediction baseline is interface-compatible, but the exact beta-lactamase assay/case eligibility and complete frozen inputs are not prepared. Existing flagged resistance-related restrictions remain; this finding does not authorize those cases.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json",
+        ".local/remaining_evaluations/catalog_plan.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P05": {
+      "id": "P05",
+      "task": "AAV variant fitness — FLIP",
+      "label": "Needs data or protocol",
+      "shortReason": "FLIP AAV test archive and assay-specific input review remain unfinished.",
+      "reason": "Qwen can accept the sequence and return a numeric assay score. The pinned FLIP two_vs_many source acquisition and capsid-fitness case/assay review are unfinished; no inference-ready approved input set is documented.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json",
+        ".local/remaining_evaluations/catalog_plan.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P06": {
+      "id": "P06",
+      "task": "Thermostability — FLIP/Meltome",
+      "label": "Runnable now",
+      "shortReason": "Existing sequence regression runner and native Spearman scorer are available.",
+      "reason": "The 1,366-case Qwen run and native Spearman scorer already exist. Its full-test Spearman is undefined because 12 outputs did not parse; this is an observed output-quality failure, not proof of a missing protocol or incompatible model. Keep the undefined primary metric and parsed-only diagnostic distinct; no rescoring or retry is authorized here.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json",
+        "configs/local_catalog_p06.json",
+        "scripts/score_local_catalog_tasks.py"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "executed_primary_metric_undefined"
+    },
+    "P07": {
+      "id": "P07",
+      "task": "GFP fluorescence — TAPE",
+      "label": "Runnable now",
+      "shortReason": "Frozen inputs and scorer prepared; already running or queued.",
+      "reason": "Complete task inputs, a named frozen Qwen protocol and native/qualified scorer are prepared in the sealed current execution plan. Already running or queued; output validity and eventual score are not guaranteed.",
+      "evidence": [
+        "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json",
+        ".local/remaining_evaluations/supervisor_plan.json",
+        ".local/remaining_evaluations/launch_summary.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "running_or_queued"
+    },
+    "P08": {
+      "id": "P08",
+      "task": "Protein stability regression — TAPE",
+      "label": "Runnable now",
+      "shortReason": "Frozen inputs and scorer prepared; already running or queued.",
+      "reason": "Complete task inputs, a named frozen Qwen protocol and native/qualified scorer are prepared in the sealed current execution plan. Already running or queued; output validity and eventual score are not guaranteed.",
+      "evidence": [
+        "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json",
+        ".local/remaining_evaluations/supervisor_plan.json",
+        ".local/remaining_evaluations/launch_summary.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "running_or_queued"
+    },
+    "P09": {
+      "id": "P09",
+      "task": "Stability classification — NatureLM/PEER",
+      "label": "Needs data or protocol",
+      "shortReason": "NatureLM binary stability labels and conversion rule are unrecovered.",
+      "reason": "The required binary output is compatible with Qwen, but the source processed case manifest, stability threshold and label-conversion rule are missing. Continuous TAPE stability is a different endpoint and cannot substitute.",
+      "evidence": [
+        "reports/remaining_native_source_recovery_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P10": {
+      "id": "P10",
+      "task": "Human protein–protein interaction — PEER",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "P11": {
+      "id": "P11",
+      "task": "Yeast protein–protein interaction — PEER",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "P12": {
+      "id": "P12",
+      "task": "Enzyme Commission labels — DeepFRI split",
+      "label": "Runnable now",
+      "shortReason": "Frozen inputs and scorer prepared; already running or queued.",
+      "reason": "Complete task inputs, a named frozen Qwen protocol and native/qualified scorer are prepared in the sealed current execution plan. Already running or queued; output validity and eventual score are not guaranteed.",
+      "evidence": [
+        "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json",
+        ".local/remaining_evaluations/supervisor_plan.json",
+        ".local/remaining_evaluations/launch_summary.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "running_or_queued"
+    },
+    "P13": {
+      "id": "P13",
+      "task": "GO biological process — DeepFRI split",
+      "label": "Runnable now",
+      "shortReason": "Frozen inputs and scorer prepared; already running or queued.",
+      "reason": "Complete task inputs, a named frozen Qwen protocol and native/qualified scorer are prepared in the sealed current execution plan. Already running or queued; output validity and eventual score are not guaranteed.",
+      "evidence": [
+        "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json",
+        ".local/remaining_evaluations/supervisor_plan.json",
+        ".local/remaining_evaluations/launch_summary.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "running_or_queued"
+    },
+    "P14": {
+      "id": "P14",
+      "task": "GO molecular function — DeepFRI split",
+      "label": "Runnable now",
+      "shortReason": "Frozen inputs and scorer prepared; already running or queued.",
+      "reason": "Complete task inputs, a named frozen Qwen protocol and native/qualified scorer are prepared in the sealed current execution plan. Already running or queued; output validity and eventual score are not guaranteed.",
+      "evidence": [
+        "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json",
+        ".local/remaining_evaluations/supervisor_plan.json",
+        ".local/remaining_evaluations/launch_summary.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "running_or_queued"
+    },
+    "P15": {
+      "id": "P15",
+      "task": "GO cellular component — DeepFRI split",
+      "label": "Runnable now",
+      "shortReason": "Frozen inputs and scorer prepared; already running or queued.",
+      "reason": "Complete task inputs, a named frozen Qwen protocol and native/qualified scorer are prepared in the sealed current execution plan. Already running or queued; output validity and eventual score are not guaranteed.",
+      "evidence": [
+        "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json",
+        ".local/remaining_evaluations/supervisor_plan.json",
+        ".local/remaining_evaluations/launch_summary.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "running_or_queued"
+    },
+    "P16": {
+      "id": "P16",
+      "task": "Reaction class — zero-/few-shot",
+      "label": "Runnable now",
+      "shortReason": "Frozen inputs and scorer prepared; already running or queued.",
+      "reason": "Complete task inputs, a named frozen Qwen protocol and native/qualified scorer are prepared in the sealed current execution plan. Already running or queued; output validity and eventual score are not guaranteed.",
+      "evidence": [
+        "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json",
+        ".local/remaining_evaluations/supervisor_plan.json",
+        ".local/remaining_evaluations/launch_summary.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "running_or_queued"
+    },
+    "P17": {
+      "id": "P17",
+      "task": "ProteinGym DMS substitution benchmark",
+      "label": "Needs data or protocol",
+      "shortReason": "Pinned ProteinGym assay set and permitted-case review are not prepared.",
+      "reason": "A qualified sequence-to-fitness/ranking adaptation is possible, but the exact ProteinGym release and permitted assay subset are not frozen. Existing pathogen-fitness restrictions remain; no all-assay execution authorization is inferred.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json",
+        ".local/remaining_evaluations/catalog_plan.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P18": {
+      "id": "P18",
+      "task": "PG-LLM / ProteinGym-LLM ranking",
+      "label": "On hold",
+      "shortReason": "Existing PG-LLM scope remains held after prior flagged-case rejections.",
+      "reason": "The native text ranking interface is documented, but this existing scope includes prior flagged pathogen-fitness cases and has no cleared replacement scope. Preserve the explicit hold; model compatibility does not authorize retries or transfer.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json",
+        ".local/remaining_evaluations/catalog_plan.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P19": {
+      "id": "P19",
+      "task": "PFArena T1: single-mutant generation",
+      "label": "Needs data or protocol",
+      "shortReason": "PFArena exact assay/candidate bundle requires authorized access and case review.",
+      "reason": "The task has a text sequence/proposal/ranking interface, but the official dataset is gated and no authorized complete frozen bundle has been acquired. Native assay/candidate IDs, input review, budgets and failure rules must be fixed before execution.",
+      "evidence": [
+        "reports/remaining_native_source_recovery_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P20": {
+      "id": "P20",
+      "task": "PFArena T2: measurement-free multi-mutant ranking",
+      "label": "Needs data or protocol",
+      "shortReason": "PFArena exact assay/candidate bundle requires authorized access and case review.",
+      "reason": "The task has a text sequence/proposal/ranking interface, but the official dataset is gated and no authorized complete frozen bundle has been acquired. Native assay/candidate IDs, input review, budgets and failure rules must be fixed before execution.",
+      "evidence": [
+        "reports/remaining_native_source_recovery_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P21": {
+      "id": "P21",
+      "task": "PFArena T3: anchor-informed ranking",
+      "label": "Needs data or protocol",
+      "shortReason": "PFArena exact assay/candidate bundle requires authorized access and case review.",
+      "reason": "The task has a text sequence/proposal/ranking interface, but the official dataset is gated and no authorized complete frozen bundle has been acquired. Native assay/candidate IDs, input review, budgets and failure rules must be fixed before execution.",
+      "evidence": [
+        "reports/remaining_native_source_recovery_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P22": {
+      "id": "P22",
+      "task": "PFArena T4: single-mutant-informed ranking",
+      "label": "Needs data or protocol",
+      "shortReason": "PFArena exact assay/candidate bundle requires authorized access and case review.",
+      "reason": "The task has a text sequence/proposal/ranking interface, but the official dataset is gated and no authorized complete frozen bundle has been acquired. Native assay/candidate IDs, input review, budgets and failure rules must be fixed before execution.",
+      "evidence": [
+        "reports/remaining_native_source_recovery_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P23": {
+      "id": "P23",
+      "task": "Mol-Instructions: Protein function generation",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "P24": {
+      "id": "P24",
+      "task": "Mol-Instructions: Catalytic activity generation",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "P25": {
+      "id": "P25",
+      "task": "Mol-Instructions: Domain and motif generation",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "P26": {
+      "id": "P26",
+      "task": "Mol-Instructions: Functional description generation",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "P27": {
+      "id": "P27",
+      "task": "NatureLM protein description",
+      "label": "Needs data or protocol",
+      "shortReason": "NatureLM temporal test IDs, annotation cutoff and reference preprocessing are missing.",
+      "reason": "Protein-to-description generation is compatible with Qwen. The exact temporal test case IDs, annotation snapshot/cutoff and executable ROUGE reference preprocessing remain unrecovered, so another protein-description dataset would be a different protocol.",
+      "evidence": [
+        "reports/remaining_native_source_recovery_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P28": {
+      "id": "P28",
+      "task": "BioReason-Pro temporal GO test",
+      "label": "Runnable now",
+      "shortReason": "Frozen inputs and scorer prepared; already running or queued.",
+      "reason": "Complete task inputs, a named frozen Qwen protocol and native/qualified scorer are prepared in the sealed current execution plan. Already running or queued; output validity and eventual score are not guaranteed.",
+      "evidence": [
+        "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json",
+        ".local/remaining_evaluations/supervisor_plan.json",
+        ".local/remaining_evaluations/launch_summary.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "running_or_queued"
+    },
+    "P29": {
+      "id": "P29",
+      "task": "Bio-posttrain species-held-out GO test",
+      "label": "Runnable now",
+      "shortReason": "Frozen inputs and scorer prepared; already running or queued.",
+      "reason": "Complete task inputs, a named frozen Qwen protocol and native/qualified scorer are prepared in the sealed current execution plan. Already running or queued; output validity and eventual score are not guaranteed. The preserved native target includes supplied GO-predictor terms; future scores do not isolate novel function inference.",
+      "evidence": [
+        "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json",
+        ".local/remaining_evaluations/supervisor_plan.json",
+        ".local/remaining_evaluations/launch_summary.json",
+        "reports/posttrain_native_gap_audit.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "running_or_queued"
+    },
+    "P30": {
+      "id": "P30",
+      "task": "MutaDescribe mutation explanation",
+      "label": "Needs data or protocol",
+      "shortReason": "MutaDescribe input eligibility and native prompt/scoring review remain incomplete.",
+      "reason": "The draft text adapter demonstrates a compatible sequence/description or mutation-output interface, but source review stopped before case eligibility and native prompt/scoring normalization were completed. The record holds unreviewed/flagged material; it does not prohibit the entire scientific task. Do not retry or transfer flagged content.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json",
+        "reports/mutadescribe_source_review_hold.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P31": {
+      "id": "P31",
+      "task": "MutaDescribe mutation engineering — position supplied",
+      "label": "Needs data or protocol",
+      "shortReason": "MutaDescribe input eligibility and native prompt/scoring review remain incomplete.",
+      "reason": "The draft text adapter demonstrates a compatible sequence/description or mutation-output interface, but source review stopped before case eligibility and native prompt/scoring normalization were completed. The record holds unreviewed/flagged material; it does not prohibit the entire scientific task. Do not retry or transfer flagged content.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json",
+        "reports/mutadescribe_source_review_hold.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P32": {
+      "id": "P32",
+      "task": "MutaDescribe mutation engineering — position unknown",
+      "label": "Needs data or protocol",
+      "shortReason": "MutaDescribe input eligibility and native prompt/scoring review remain incomplete.",
+      "reason": "The draft text adapter demonstrates a compatible sequence/description or mutation-output interface, but source review stopped before case eligibility and native prompt/scoring normalization were completed. The record holds unreviewed/flagged material; it does not prohibit the entire scientific task. Do not retry or transfer flagged content.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json",
+        "reports/mutadescribe_source_review_hold.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P33": {
+      "id": "P33",
+      "task": "MutaPLM low-N fitness regression",
+      "label": "Needs additional models/tools",
+      "shortReason": "Native low-data protocol requires a task-trained regression head, outside current baseline scope.",
+      "reason": "The native five-seed low-data experiment fits a regression head using 192 training and 48 validation examples. Current frozen Qwen inference does not implement that trained-head protocol, and new training is outside the authorized baseline scope. A prompted numeric baseline would be a separate qualified experiment.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "needs specialist pipeline",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P34": {
+      "id": "P34",
+      "task": "MutaPLM iterative sequence optimization",
+      "label": "Needs scoring protocol",
+      "shortReason": "Full-grid Qwen likelihood adapter and fixed fitness-oracle contract are not activated.",
+      "reason": "A qualified Qwen likelihood replacement is mathematically possible, so this task is not excluded for lacking a learned Qwen head. However, full-prefix likelihood runtime, native 33-class support, source-vs-paper search math, starting assets and the fixed ESM1b fitness-oracle runtime are not fully resolved/frozen. Five permitted landscapes and a held sixth remain distinct.",
+      "evidence": [
+        "reports/p34_five_landscape_feasibility_2026-10-15.json",
+        "reports/p34_qwen_likelihood_tokenizer_feasibility.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "unresolved",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P35": {
+      "id": "P35",
+      "task": "ProtST text-to-protein retrieval",
+      "label": "Needs additional models/tools",
+      "shortReason": "Native retrieval needs the full search corpus and trained ProtST representation runtime.",
+      "reason": "The native protocol ranks a complete protein corpus with a trained joint sequence/text representation, not ordinary Qwen chat completions. Train/validation corpus assets and the 8.53GB learned checkpoint/runtime are unprepared, and the five qualitative queries do not define an aggregate relevance metric. A new Qwen ranking adaptation would need its own frozen protocol.",
+      "evidence": [
+        "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "needs specialist pipeline",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P36": {
+      "id": "P36",
+      "task": "BioT5+ description-guided protein design",
+      "label": "Needs data or protocol",
+      "shortReason": "Public design cases exist; eligibility and paired-reference ROUGE protocol are not frozen.",
+      "reason": "All 5,876 public cases were acquired, but input eligibility and the Qwen generation/failure contract are not reviewed/frozen. The released scorer uses both input and target as ROUGE references; paper normalized Smith-Waterman details remain unresolved. A qualified released-code ROUGE condition is feasible after review, without pretending to reproduce the specialist model.",
+      "evidence": [
+        "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P37": {
+      "id": "P37",
+      "task": "NatureLM unconditional generation",
+      "label": "Needs additional models/tools",
+      "shortReason": "OmegaFold evaluator, clustering settings and native generation/reference cohort remain unprepared.",
+      "reason": "Qwen can generate protein sequence strings; the task is not blocked by text-interface suitability. Completing the recorded evaluation requires the frozen OmegaFold checkpoint/settings, clustering implementation, native sample/validity rules and UR50 reference cohort. Predicted structure confidence is not measured protein function.",
+      "evidence": [
+        "reports/naturelm_generation_feasibility_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P38": {
+      "id": "P38",
+      "task": "NatureLM stability/solubility-conditioned generation",
+      "label": "Needs additional models/tools",
+      "shortReason": "Exact trained stability/solubility classifiers and native reference/sampling rules are missing.",
+      "reason": "Conditioned sequence generation is compatible with Qwen, but the original trained SFM-Protein binary property heads, probability orientation, source sampling/failure rules and UR50 reference IDs are unrecovered. Generic sequence heuristics or newly trained substitute heads would not complete this evaluation.",
+      "evidence": [
+        "reports/naturelm_generation_feasibility_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P39": {
+      "id": "P39",
+      "task": "NatureLM heme-binding case study",
+      "label": "Needs additional models/tools",
+      "shortReason": "Protenix complex evaluation and native heme-candidate selection protocol are unrecovered.",
+      "reason": "Qwen can propose sequence strings from the condition, but the native HemeList, candidate/selection manifest and Protenix structure/complex evaluator are not prepared. No fixed full-cohort success denominator is recovered; predicted complexes do not establish measured heme binding.",
+      "evidence": [
+        "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P40": {
+      "id": "P40",
+      "task": "RAbD CDR-H3 redesign",
+      "label": "Needs additional models/tools",
+      "shortReason": "Processed RAbD contexts and the coordinate/geometry evaluation pipeline are missing.",
+      "reason": "The full sequence/structure redesign protocol requires exact antibody masks, antigen/framework coordinates, processed retained cases and geometry/interface evaluation. Current Qwen text/vision serving does not provide that specialist structure-generation/evaluation pipeline. Dropping 3D context for a sequence-only prompt would change the task.",
+      "evidence": [
+        "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "needs specialist pipeline",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P41": {
+      "id": "P41",
+      "task": "Proteo-R1 all-CDR SAbDab holdout",
+      "label": "Needs additional models/tools",
+      "shortReason": "All-CDR holdout, specialist structure runtime and complete structural scorer are unreleased or unprepared.",
+      "reason": "The exact all-CDR SAbDab holdout/masks and full antigen/framework geometry are missing. Native evaluation also uses specialist structure encoding, CDR hidden-state/diffusion machinery and Rosetta/ABMPNN processing; current Qwen text/vision serving is not that pipeline. Five demonstrations cannot replace the test set.",
+      "evidence": [
+        "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "needs specialist pipeline",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "P42": {
+      "id": "P42",
+      "task": "STRIDE GFP generated-candidate evaluation",
+      "label": "Runnable now",
+      "shortReason": "Qualified GFP generation and frozen trained SaProt CPU evaluator are prepared.",
+      "reason": "The existing 200-candidate, two-regime evaluation has a frozen trained SaProt fluorescence CPU evaluator with restored checkpoint tensors and authorized oracle configuration. All 200 outputs were invalid, yielding zero qualified successes and undefined novelty/uniqueness; these are partial observed outcomes, not absence of an oracle. The native novelty reference remains unavailable, and the condition is not full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json",
+        "configs/local_stride_gfp_p42.json",
+        "reports/stride_gfp_cpu_oracle_freeze.json",
+        "reports/stride_gfp_oracle_state_restoration.json",
+        "reports/local_stride_gfp_p42_dispatch.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "completed_qualified_run_partial_metrics"
+    },
+    "P43": {
+      "id": "P43",
+      "task": "Drug–target interaction — BioSNAP/Human/BindingDB",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "P44": {
+      "id": "P44",
+      "task": "BioReason-Pro explanation assessment",
+      "label": "Needs scoring protocol",
+      "shortReason": "Exact explanation subset, expert/LLM-judge rubric and judging setup are not fixed.",
+      "reason": "Qwen can produce textual functional explanations, but the native assessment requires a defined scored subset and expert/LLM-judge rubric/runtime. These are unresolved, and the existing external provider hold remains. Correct GO labels alone do not validate explanation statements.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "B01": {
+      "id": "B01",
+      "task": "LAB-Bench / LitQA2",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication. The reviewed public cohort is 197 cases, not all 199 released public questions or the full paper test.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "B02": {
+      "id": "B02",
+      "task": "LAB-Bench / DbQA",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "B03": {
+      "id": "B03",
+      "task": "LAB-Bench / SuppQA",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "B04": {
+      "id": "B04",
+      "task": "LAB-Bench / FigQA",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "B05": {
+      "id": "B05",
+      "task": "LAB-Bench / TableQA",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "B06": {
+      "id": "B06",
+      "task": "LAB-Bench / ProtocolQA",
+      "label": "On hold",
+      "shortReason": "ProtocolQA remains under the explicit input-review hold.",
+      "reason": "The text question-answering interface is compatible with Qwen, but the current ProtocolQA inputs triggered the recorded biological-risk hold. Preserve that hold; availability of the model and data does not authorize this scope.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json",
+        ".local/remaining_evaluations/catalog_plan.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "B07": {
+      "id": "B07",
+      "task": "LAB-Bench / SeqQA",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "B08": {
+      "id": "B08",
+      "task": "LAB-Bench / Cloning scenarios",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "V01": {
+      "id": "V01",
+      "task": "VQA-RAD",
+      "label": "Runnable now",
+      "shortReason": "Completed image-grounded Qwen evaluation confirms vision execution and scoring support.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication. Actual image-grounded runs and the synthetic vision smoke test verify vision support; this is not an assumed text-only model.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "V02": {
+      "id": "V02",
+      "task": "SLAKE — English",
+      "label": "Runnable now",
+      "shortReason": "Completed image-grounded Qwen evaluation confirms vision execution and scoring support.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication. Actual image-grounded runs and the synthetic vision smoke test verify vision support; this is not an assumed text-only model.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "V03": {
+      "id": "V03",
+      "task": "PathVQA",
+      "label": "Runnable now",
+      "shortReason": "Completed image-grounded Qwen evaluation confirms vision execution and scoring support.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication. Actual image-grounded runs and the synthetic vision smoke test verify vision support; this is not an assumed text-only model.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "V04": {
+      "id": "V04",
+      "task": "ImageCLEF-VQA 2019",
+      "label": "Runnable now",
+      "shortReason": "Completed image-grounded Qwen evaluation confirms vision execution and scoring support.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication. Actual image-grounded runs and the synthetic vision smoke test verify vision support; this is not an assumed text-only model.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "V05": {
+      "id": "V05",
+      "task": "PMC-VQA held-out evaluation",
+      "label": "Runnable now",
+      "shortReason": "Completed image-grounded Qwen evaluation confirms vision execution and scoring support.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication. Actual image-grounded runs and the synthetic vision smoke test verify vision support; this is not an assumed text-only model.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "V06": {
+      "id": "V06",
+      "task": "LLaVA-Med visual conversation",
+      "label": "Needs scoring protocol",
+      "shortReason": "Original images and GPT-assisted relative-judging protocol are not prepared.",
+      "reason": "Qwen vision is supported, so images are not the blocker. The native visual-conversation assessment still needs the original qa50 image assets, reference-answer mapping and GPT-assisted relative-judging contract; the external-provider hold is unchanged.",
+      "evidence": [
+        "reports/catalog_execution_review_2026-10-15.json",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "V07": {
+      "id": "V07",
+      "task": "Ryze extraction component tests",
+      "label": "Needs data or protocol",
+      "shortReason": "Exact Ryze component slices, page/media mapping and extraction scoring recipe are unrecovered.",
+      "reason": "Qwen can process images and answer questions, but the exact ArXivQA/SlideVQA/ChartQA component IDs, full page context, extraction configuration and downstream answer/scorer recipe are missing. Synthetic placeholder data in the published runner are not the benchmark.",
+      "evidence": [
+        "reports/remaining_native_source_recovery_2026-10-15.json",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "N01": {
+      "id": "N01",
+      "task": "BioReason KEGG pathway/disease test",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "N02": {
+      "id": "N02",
+      "task": "BioReason VEP-Coding",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "N03": {
+      "id": "N03",
+      "task": "BioReason VEP-Non-SNV",
+      "label": "Runnable now",
+      "shortReason": "Existing Qwen run demonstrates an executable frozen evaluation setup.",
+      "reason": "An existing completed declared Qwen run demonstrates that the input interface, execution harness and scorer can be used in this environment. This is readiness of the documented qualified baseline, not a claim of strong performance or full paper replication.",
+      "evidence": [
+        "reports/RESULTS_AT_A_GLANCE.json"
+      ],
+      "confidence": "high",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "completed_declared_run"
+    },
+    "N04": {
+      "id": "N04",
+      "task": "Bio-posttrain KEGG network holdout",
+      "label": "Needs data or protocol",
+      "shortReason": "Exact network-held-out CSVs and network assignments are inaccessible.",
+      "reason": "A qualified DNA-text Qwen adaptation is plausible from the documented native inputs, but the author link yields a sign-in page rather than the required network-held-out train/ID/OOD CSVs. N01 or a guessed random/network split cannot substitute for this test.",
+      "evidence": [
+        "reports/posttrain_native_gap_audit.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "compatible",
+      "usesExternalEvaluator": false,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    },
+    "N05": {
+      "id": "N05",
+      "task": "Bio-posttrain MEDEA target selection",
+      "label": "Needs additional models/tools",
+      "shortReason": "TranscriptFormer/projector inputs and exact MEDEA adaptation/split alignment are missing.",
+      "reason": "The native input includes aligned disease/normal TranscriptFormer vectors for all five candidate genes and a trained projection, not a gene-name-only text prompt. Exact adapted test IDs, vector alignment, native preprocessing/scorer and projection assets are not released in the inspected code.",
+      "evidence": [
+        "reports/posttrain_native_gap_audit.json"
+      ],
+      "confidence": "medium",
+      "modelCompatibility": "needs specialist pipeline",
+      "usesExternalEvaluator": true,
+      "executionEvidence": "not_ready_in_current_frozen_setup"
+    }
+  },
+  "group_assessments": {
+    "main-09": {
+      "groupId": "main-09",
+      "label": "Needs scoring protocol",
+      "reason": "Qwen can read the antibody sequences, but this collection has assay-specific directions, units and zero-/few-shot protocols, with 15 reference datasets excluded. A pinned assay subset, split and Qwen sequence-scoring contract are needed; a prompted baseline would not reproduce fitted antibody models.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "medium",
+      "shortReason": "Pin assay-specific splits, units and Qwen ranking scores; fitted antibody models are separate.",
+      "modelCompatibility": "compatible"
+    },
+    "main-10": {
+      "groupId": "main-10",
+      "label": "Needs additional models/tools",
+      "reason": "The native input is unbound 3D structures and the output is residue-pair contact probabilities. No validated geometry-input/contact-scoring adapter is present; running the native structural baseline needs additional structural software/models. A sequence-only prompt would change the task.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs a geometry-input adapter and residue-contact probabilities from 3D structures.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-11": {
+      "groupId": "main-11",
+      "label": "Needs data or protocol",
+      "reason": "Sequence input and solubility labels/scores fit a Qwen zero-shot adaptation. The four PFMBench processed datasets, splits and AUROC/regression contracts are not prepared; the reported ESM2-Adapter training regime would not be reproduced.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs four PFMBench splits and separate solubility classification/regression scoring.",
+      "modelCompatibility": "compatible"
+    },
+    "main-12": {
+      "groupId": "main-12",
+      "label": "Needs data or protocol",
+      "reason": "Sequence-to-label prediction is compatible with a Qwen adaptation. Exact PFMBench splits, localization/sorting label vocabularies and binary versus multilabel score formats must be prepared; the existing PEER/DeepLoc runs do not supply these distinct protocols.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs PFMBench splits, label vocabularies and binary/multilabel scoring.",
+      "modelCompatibility": "compatible"
+    },
+    "main-13": {
+      "groupId": "main-13",
+      "label": "Needs data or protocol",
+      "reason": "A sequence/partner-context Qwen adaptation is possible. Exact PFMBench paired inputs, metal classes and continuous scoring for PPI AUROC/affinity Spearman must be prepared; these are not the existing PEER interaction splits or a matched trained ESM2-Adapter.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs paired inputs, metal classes and continuous interaction scores.",
+      "modelCompatibility": "compatible"
+    },
+    "main-14": {
+      "groupId": "main-14",
+      "label": "Needs data or protocol",
+      "reason": "Most endpoints can accept a sequence-to-label/numeric Qwen adaptation. The seven native splits, required context and separate regression/classification scores are not prepared; assay-level scope review is still required for resistance-related endpoints, and no supervised ESM2-Adapter reproduction is implied.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs seven processed splits and assay-specific protocols; resistance endpoints need scope review.",
+      "modelCompatibility": "compatible"
+    },
+    "main-21": {
+      "groupId": "main-21",
+      "label": "Needs data or protocol",
+      "reason": "Qwen can generate EC/GO labels as a zero-shot adaptation. The PFMBench-specific splits, vocabularies and F1 computation must be prepared; the active DeepFRI-based tasks use different source protocols and cannot stand in for these datasets.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs PFMBench splits, GO/EC vocabularies and native F1 scoring.",
+      "modelCompatibility": "compatible"
+    },
+    "main-28": {
+      "groupId": "main-28",
+      "label": "Needs scoring protocol",
+      "reason": "Qwen can accept the sequences, but a fixed mutation/sequence likelihood or numeric ranking contract must be defined and the assay snapshot pinned. Existing leaderboard methods use different sequence/structure scoring models; the sequence-only Qwen adaptation would not reproduce their structural inputs or training.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "medium",
+      "shortReason": "Pin the assay snapshot and Qwen ranking protocol; structural reference methods are separate.",
+      "modelCompatibility": "compatible"
+    },
+    "main-29": {
+      "groupId": "main-29",
+      "label": "Needs additional models/tools",
+      "reason": "The native classification uses wild-type/mutant 3D complex context. A validated geometry-input adapter or structural prediction model is missing; a sequence-only Qwen adaptation would omit native information and need a separately defined protocol.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs wild-type/mutant geometry input and a validated structural prediction adapter.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-30": {
+      "groupId": "main-30",
+      "label": "Needs data or protocol",
+      "reason": "A sequence-to-numeric Qwen adaptation is possible, but the eight exact PFMBench processed splits and assay-specific scope reviews are not prepared. Similar TAPE/FLIP tasks elsewhere are not interchangeable with every PFMBench endpoint or its supervised reference.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs exact PFMBench splits and assay-specific scope review.",
+      "modelCompatibility": "compatible"
+    },
+    "main-31": {
+      "groupId": "main-31",
+      "label": "Needs data or protocol",
+      "reason": "The paired peptide/MHC or TCR/pMHC sequences can be supplied to Qwen. Exact PFMBench partner inputs, splits, scope review and continuous AUROC scoring must be prepared; the affinity-named tasks here are classification, not KD regression.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs paired sequences, native splits and continuous classification scores.",
+      "modelCompatibility": "compatible"
+    },
+    "main-32": {
+      "groupId": "main-32",
+      "label": "Needs scoring protocol",
+      "reason": "Qwen offers token likelihoods, but ESM2 masked amino-acid scoring is not the same as autoregressive Qwen token scoring. Pin the ProteinGym release/assays and a Qwen mutation-score normalization contract before running a disclosed adaptation; the native ESM2 score requires that model.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "medium",
+      "shortReason": "Needs a Qwen mutation-likelihood protocol; ESM2 masked scoring is not equivalent.",
+      "modelCompatibility": "compatible"
+    },
+    "main-34": {
+      "groupId": "main-34",
+      "label": "Needs data or protocol",
+      "reason": "Text questions with six choices fit the current Qwen interface. The 944-question release, held-out manifest, exact prompt and answer normalization are not prepared; this can be a zero-shot baseline without reproducing the paper's supervised fine-tuning.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs the released questions, held-out manifest and frozen answer parser.",
+      "modelCompatibility": "compatible"
+    },
+    "main-35": {
+      "groupId": "main-35",
+      "label": "Needs data or protocol",
+      "reason": "Question plus abstract is compatible with Qwen. Pin the expert-labeled test split and answer normalization, and exclude the conclusion/long answer from the prompt; the source payload and frozen execution protocol are not prepared.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs the official test split; exclude conclusions from question/abstract inputs.",
+      "modelCompatibility": "compatible"
+    },
+    "main-38": {
+      "groupId": "main-38",
+      "label": "Needs additional models/tools",
+      "reason": "Native inverse folding conditions on backbone coordinates. The current baseline has no validated coordinate-conditioned sequence adapter; reproducing the native protocol needs inverse-folding/structure tools and retained structure manifests. A sequence-only prompt would omit the conditioning information.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs a coordinate-conditioned inverse-folding adapter and retained structure manifests.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-39": {
+      "groupId": "main-39",
+      "label": "Needs additional models/tools",
+      "reason": "Native recovery conditions on CASP15/CAMEO/synthetic backbone coordinates, with structure-based consistency checks. No validated coordinate adapter or associated evaluators are prepared; native execution needs inverse-folding/refolding tools and exact retained manifests.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs coordinate-conditioned inverse folding and structure-consistency evaluators.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-40": {
+      "groupId": "main-40",
+      "label": "Needs additional models/tools",
+      "reason": "The required output is a 3D backbone at a fixed length, followed by inverse-folding/refolding consistency evaluation. The current Qwen baseline has no validated coordinate-generation adapter or structural evaluators; generated amino-acid text would be a different task.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs backbone coordinate generation, inverse folding and refolding checks.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-41": {
+      "groupId": "main-41",
+      "label": "Needs additional models/tools",
+      "reason": "Qwen can propose amino-acid sequences as an adaptation, but the native reported metrics require a fixed folding evaluator such as AF2. That evaluator, length-specific generation contract and full scoring pipeline are not prepared; text generation alone does not complete this benchmark.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Qwen can propose sequences; native scoring still needs a fixed folding evaluator.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-42": {
+      "groupId": "main-42",
+      "label": "Needs additional models/tools",
+      "reason": "The task jointly emits sequence and coordinates and scores structural self-consistency. Current Qwen has no validated joint structure-output adapter and the specialized structural evaluators are not prepared; plain sequence generation would not match the protocol.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs joint sequence/coordinate generation and structural consistency evaluators.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-43": {
+      "groupId": "main-43",
+      "label": "Needs additional models/tools",
+      "reason": "Native conditioning includes motif coordinates and geometric constraints, then scaffold generation, sequence design and structural verification. No validated geometry adapter or MotifBench design/refolding pipeline is prepared for Qwen; text-only proposals would change the protocol.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs motif-coordinate conditioning, scaffold generation and structural verification.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-44": {
+      "groupId": "main-44",
+      "label": "Needs additional models/tools",
+      "reason": "The legacy panel requires motif-conditioned 3D scaffolds and a fixed structural evaluation pipeline. No validated Qwen geometry adapter or corresponding design/refolding tools are prepared; its legacy manifest must remain separate from MotifBench.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs the legacy motif manifest and a geometry-conditioned design/refolding pipeline.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-45": {
+      "groupId": "main-45",
+      "label": "Needs additional models/tools",
+      "reason": "Native H3 redesign uses complex geometry and masked-loop context and scores both sequence recovery and coordinates. A validated geometry-conditioned design adapter plus structural reconstruction/evaluation are missing; sequence-only CDR text would be a disclosed reduced-input adaptation, not the 55-complex native protocol.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs complex-geometry conditioning, loop reconstruction and structural scoring.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-46": {
+      "groupId": "main-46",
+      "label": "Needs additional models/tools",
+      "reason": "The native output includes CDR sequence and structure conditioned on antigen/framework/epitope context. Current Qwen lacks a validated geometry adapter and the required reconstruction/docking/contact evaluators; matching the paper's retrained design systems is outside a Qwen-only zero-shot baseline.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs geometry-conditioned CDR design and docking/contact evaluation.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-47": {
+      "groupId": "main-47",
+      "label": "Needs additional models/tools",
+      "reason": "The native time-budgeted pipeline combines target geometry, binder generation, inverse folding and structural filtering. Additional design/refolding/scoring tools are required; Qwen sequence proposals alone cannot yield the published passing-backbone counts.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs target-geometry design, inverse folding and structural filtering under the native time budget.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-48": {
+      "groupId": "main-48",
+      "label": "Needs additional models/tools",
+      "reason": "Native predictions use masked 3D local atomic environments. No validated atomic-coordinate adapter is prepared for Qwen; a geometry-capable model or separately specified coordinate adapter is required to preserve the task rather than replace it with sequence-context guessing.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs a validated adapter for masked 3D atomic environments.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-49": {
+      "groupId": "main-49",
+      "label": "Needs additional models/tools",
+      "reason": "The task ranks coordinate decoys by structural quality. A validated geometry-to-quality adapter or structural scoring model is missing, along with the exact decoy manifest; language-only descriptions would omit the native inputs.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs structural-quality scoring from decoy coordinates and the exact manifest.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-50": {
+      "groupId": "main-50",
+      "label": "Needs additional models/tools",
+      "reason": "Native folding requires protein coordinates and structural comparison to references. Current Qwen has no validated structure-generation adapter; a folding model/tool and the exact MSA/template access protocol would be needed, making this more than Qwen-only text inference.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs a folding model and the native MSA/template-access protocol.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-51": {
+      "groupId": "main-51",
+      "label": "Needs additional models/tools",
+      "reason": "The native target is a sampled 3D conformational ensemble, not a text label. A conformational generator and structural ensemble evaluation tools are needed; current Qwen has no validated coordinate/ensemble output protocol.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs 3D conformational ensemble generation and structural evaluation.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-52": {
+      "groupId": "main-52",
+      "label": "Needs additional models/tools",
+      "reason": "Native ATLAS evaluation compares distributions of generated coordinates to MD trajectories. Current Qwen has no validated ensemble generator and the alignment/projection/distributional scoring pipeline is not prepared; sequence text alone cannot supply these metrics.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs ensemble coordinates, MD references and distributional scoring tools.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-53": {
+      "groupId": "main-53",
+      "label": "Needs additional models/tools",
+      "reason": "The benchmark needs structural ensembles and specialized state/dynamics/free-energy evaluation. Current Qwen has no validated conformational sampler; a suitable structural model and version-pinned BioEmu benchmark tooling are needed to run the native panels.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs a conformational sampler and version-pinned state/dynamics/free-energy evaluation.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-54": {
+      "groupId": "main-54",
+      "label": "Needs data or protocol",
+      "reason": "Sequence input allows a disclosed Qwen adaptation, but the exact processed splits and output schemas are not prepared. Fold class, per-residue secondary structure and ranked contact pairs require separate scoring contracts; a dense contact map may exceed the frozen output budget and must be checked before declaring that endpoint runnable.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "medium",
+      "shortReason": "Needs output schemas and native splits; contact-map size must fit the frozen output budget.",
+      "modelCompatibility": "compatible"
+    },
+    "main-63": {
+      "groupId": "main-63",
+      "label": "Needs additional models/tools",
+      "reason": "The native input is protein-ligand atomic coordinates and the target is transformed assay affinity. No validated geometry adapter or structural affinity model is prepared; sequence/SMILES prompting would omit native information and require a separate adaptation.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs protein-ligand geometry input and a validated affinity-scoring adapter.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-64": {
+      "groupId": "main-64",
+      "label": "Needs additional models/tools",
+      "reason": "Native efficacy classification uses receptor/ligand conformations. Current Qwen has no validated molecular-geometry adapter; a structural model/tool or a separately validated representation is needed before preserving this native task.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs receptor/ligand conformation input and structural efficacy prediction.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-65": {
+      "groupId": "main-65",
+      "label": "Needs additional models/tools",
+      "reason": "Native ranking operates on RNA decoy coordinates. A validated coordinate-to-quality adapter or RNA structural scoring model is missing; Qwen language answers alone do not implement the native geometry-based ranking protocol.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs RNA-decoy coordinate input and structural-quality scoring.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-66": {
+      "groupId": "main-66",
+      "label": "Needs additional models/tools",
+      "reason": "Native QM9 property prediction uses molecular atom coordinates with property-specific units. No validated atomic-geometry adapter or molecular property model is prepared; converting to a different text representation would be a newly defined adaptation.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Needs atomic-geometry input and property-specific molecular regression.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "main-67": {
+      "groupId": "main-67",
+      "label": "Needs data or protocol",
+      "reason": "Protein/ligand inputs can support a disclosed Qwen numeric adaptation once the exact PFMBench representation is recovered. PDBbind/BindingDB splits, partner encodings, target transformations and Spearman contracts are not prepared; the existing DrugBAN classification protocol is distinct.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "medium",
+      "shortReason": "Needs native partner encodings, processed splits and affinity target transformations.",
+      "modelCompatibility": "compatible"
+    },
+    "diagnostic-07": {
+      "groupId": "diagnostic-07",
+      "label": "Needs additional models/tools",
+      "reason": "Qwen can generate sequences from text, but this campaign's binder/KD endpoints require structural selection plus prospective expression and binding assays. Text output cannot reproduce its measured success rate; a new computational-only adaptation would need a separate scoring protocol.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "high",
+      "shortReason": "Native binder/KD results require structural selection plus expression and binding assays.",
+      "modelCompatibility": "needs specialist pipeline"
+    },
+    "diagnostic-08": {
+      "groupId": "diagnostic-08",
+      "label": "Needs data or protocol",
+      "reason": "The independent held-out question manifest, allowed structural representation and per-task answer/scoring schemas are unresolved. Some schema/text questions may fit Qwen, while geometry questions need an adapter; do not declare the combined diagnostic runnable or treat training-instance counts as test evidence.",
+      "evidence": [
+        "reports/TASK_HIERARCHY_DATA.json",
+        "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx",
+        "reports/local_model_capability_smoke.json"
+      ],
+      "confidence": "medium",
+      "shortReason": "Needs an independent held-out manifest, allowed inputs and per-task scoring schemas.",
+      "modelCompatibility": "unresolved"
+    }
+  },
+  "source_snapshot_sha256": "396ed0622a39c1dee2aa6e1da32b6b6da72f4b09fb290247b42426a9ef7166de",
+  "source_review_sha256": {
+    "registered.json": "e9db22a0a1a9166dae191dd662f3984bfbe9ac0497aafcc0e075aed5752c38e2",
+    "catalog.json": "173eb4f289cc6d0a776a1833bc4f4953abf3197949684ac7295ce388ccd1c6bd"
+  }
+}

@@ -72,6 +72,35 @@ def snapshot_note(data):
 
 def overview(data):
     meta = data["meta"]
+    feasibility = json.loads((REPORTS / "QWEN_TASK_FEASIBILITY.json").read_text())
+    assessment_rank = {
+        "Runnable now": 0, "Needs data or protocol": 1, "Needs scoring protocol": 1,
+        "Needs additional models/tools": 2, "On hold": 3,
+    }
+
+    def assessment(group, protocol=None):
+        if protocol:
+            value = feasibility["task_assessments"][protocol["taskId"]]
+        else:
+            value = feasibility["group_assessments"][group["id"]]
+        assert value["label"] in assessment_rank
+        assert value.get("shortReason") and value.get("reason")
+        return value
+
+    for group in data["groups"]:
+        for protocol in group["protocols"] or [None]:
+            assessment(group, protocol)
+    task_ids = {protocol["taskId"] for group in data["groups"] for protocol in group["protocols"]}
+    extra_ids = {group["id"] for group in data["groups"] if not group["protocols"]}
+    assert len(task_ids) == 64 and task_ids == set(feasibility["task_assessments"])
+    assert len(extra_ids) == 38 and extra_ids == set(feasibility["group_assessments"])
+    assert feasibility["summary"]["runnable_now"] == sum(
+        item["label"] == "Runnable now" for item in feasibility["task_assessments"].values())
+
+    def group_rank(group):
+        return min(assessment_rank[assessment(group, protocol)["label"]]
+            for protocol in group["protocols"] or [None])
+
     names = {
         "P02": "Binary protein localization", "P03": "Ten-compartment protein localization",
         "P05": "AAV variant fitness prediction", "P06": "Protein thermostability prediction",
@@ -189,17 +218,20 @@ def overview(data):
         f"Scores: **{snapshot(meta['scoreSnapshotAt'])}** · Run status: **{snapshot(meta['runSnapshotAt'])}**.", "",
         f"**{meta['completedSettings']} of {meta['registrySettings']} evaluation settings have finished runs.** "
         "An asterisk (*) marks incomplete coverage or scoring.", "",
-        "**Listed for consideration** means additional datasets outside the original 64-setting list. "
-        "**Run status unconfirmed** means no verified completion record. Published scores are reference results; "
-        "full protocol notes are expandable below.", "",
+        f"**{feasibility['summary']['runnable_now']} of {meta['registrySettings']} settings are runnable with the current setup.** "
+        "Text and vision inputs are supported. Runnable means the required inputs, execution path and scorer are available; "
+        "it does not guarantee correct or valid predictions.", "",
+        "Finished, Partial and Running describe saved run status; Ready describes executability. "
+        "**Run status unconfirmed** means no verified completion record. Missing requirements are listed per row. "
+        "Published scores are separate reference results; full protocol notes are at the end.", "",
         "Expand a category to see its tasks and datasets.", "",
     ]
     all_notes = []
     for category, families in megatasks:
-        count_label = f"{len(families)} task group" + ("s" if len(families) != 1 else "")
-        out += ["<details>", f"<summary><strong>{category}</strong> · {count_label}</summary>", ""]
+        out += ["<details>", f"<summary><h2>{category}</h2></summary>", ""]
         all_notes += [f"## {category}", ""]
-        for family, group_ids in families:
+        for family, group_ids in sorted(families,
+                key=lambda item: min(group_rank(group_by_id[group_id]) for group_id in item[1])):
             entries = [group_by_id[group_id] for group_id in group_ids]
             family_results = [result for group in entries for result in group["results"]]
             incomplete_results = [result for result in family_results if result["incomplete"]
@@ -213,7 +245,7 @@ def overview(data):
                     cue += " · partial results*"
             if running:
                 cue += " · running or queued"
-            out += [f"### {family}", "", dataset_count + cue, ""]
+            out += [f"#### {family}", "", dataset_count + cue, ""]
             table_rows = []
             for group in entries:
                 for protocol in group["protocols"] or [None]:
@@ -230,6 +262,15 @@ def overview(data):
                         if (protocol and state != "Finished") or (result and result["incomplete"]):
                             name += "*"
                             state += "*"
+                        reviewed = assessment(group, protocol)
+                        if reviewed["label"] == "Runnable now":
+                            state += " · Ready"
+                            if task_id in ("P06", "P42"):
+                                state += "<br>" + reviewed["shortReason"]
+                        else:
+                            existing = state + "<br>" if state.rstrip("*") in ("Finished", "Partial", "Running or queued") else ""
+                            marker = "*" if state.endswith("*") and not existing else ""
+                            state = existing + reviewed["label"] + marker + "<br>" + reviewed["shortReason"]
                         caveat = caveats.get(task_id)
                         if group["dataset"].startswith("Prompteina"):
                             caveat = "Single published target campaign."
@@ -251,25 +292,21 @@ def overview(data):
                         elif group["sourceUrl"]:
                             published += f" · [source]({group['sourceUrl']})"
                         table_rows.append({"key": task_key, "task": name, "dataset": dataset,
-                            "state": state, "local": local, "published": published, "caveat": caveat})
+                            "state": state, "local": local, "published": published, "caveat": caveat,
+                            "rank": assessment_rank[reviewed["label"]]})
             task_order = list(dict.fromkeys(row["key"] for row in table_rows))
-            table_rows = [row for task_key in task_order for row in table_rows if row["key"] == task_key]
-            single_task = len(task_order) == 1
-            if single_task:
-                for caveat in dict.fromkeys(row["caveat"] for row in table_rows if row["caveat"]):
-                    out += [caveat, ""]
-                out += ["| Dataset/protocol | Status | Qwen result | Published reference |", "|---|---|---|---|"]
-            else:
-                out += ["| Task | Dataset/protocol | Status | Qwen result | Published reference |", "|---|---|---|---|---|"]
+            task_order.sort(key=lambda task_key: min(row["rank"] for row in table_rows if row["key"] == task_key))
+            table_rows = [row for task_key in task_order for row in sorted(
+                [row for row in table_rows if row["key"] == task_key], key=lambda row: row["rank"])]
+            out += ["| Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |", "|---|---|---|---|---|"]
             previous_task = None
             for row in table_rows:
                 values = [row["dataset"], row["state"], row["local"], row["published"]]
-                if not single_task:
-                    values.insert(0, "" if row["key"] == previous_task else row["task"])
+                values.insert(0, "" if row["key"] == previous_task else row["task"])
                 out.append("| " + " | ".join(cell(value) for value in values) + " |")
                 previous_task = row["key"]
             out.append("")
-            all_notes += [f"### {family}", ""]
+            all_notes += [f"#### {family}", ""]
             for group in entries:
                 all_notes += [f"#### {group['dataset']}", ""]
                 for note in group["notes"]:
@@ -284,6 +321,16 @@ def overview(data):
                         all_notes += [text(protocol["limitation"]), ""]
                     if protocol.get("blocker"):
                         all_notes += [text(protocol["blocker"]), ""]
+                for protocol in group["protocols"] or [None]:
+                    reviewed = assessment(group, protocol)
+                    title = names.get(protocol["taskId"], group["task"]) if protocol else group["task"]
+                    all_notes += [f"**{title} — {reviewed['label']}:** {text(reviewed['reason'])}", ""]
+                    if reviewed.get("modelCompatibility"):
+                        compatibility = reviewed["modelCompatibility"]
+                        all_notes += ["Model compatibility: " + (text(compatibility) if isinstance(compatibility, str)
+                            else json.dumps(compatibility, ensure_ascii=False)), ""]
+                    if reviewed.get("evidence"):
+                        all_notes += ["Evidence:", "", "```json", json.dumps(reviewed["evidence"], ensure_ascii=False, indent=2), "```", ""]
                 for result in group["results"]:
                     all_notes += [f"##### {result['title']}", ""] + result_details(result)[3:-2]
                 if not group["results"]:
