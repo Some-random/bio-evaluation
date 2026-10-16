@@ -1,0 +1,57 @@
+{
+  "task": "B05",
+  "case_id": "c5005be9-11d3-4387-80ce-298830ced5ae",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "request_sha256": "2c77925e584d9242adda5199327c6f637f7f066c52fc052e510343f5d90195d1",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-8a0b2c4cb3ced416",
+    "object": "chat.completion",
+    "created": 1792133168,
+    "model": "Qwen/Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\nLooking at the PDI values for the 49:49:2 composition:\n- DOTAP: 0.17\n- DDA: 0.13\n- DC-Chol: 0.16\n- DMTAP: 0.16\n\nThe lowest value is 0.13, corresponding to DDA.\n\n[ANSWER]D[/ANSWER]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": "I need to look at the table for composition 49:49:2 and find the PDI values for each formulation.\n\nLooking at the table:\n- DOTAP at 49:49:2: PDI = 0.17 ± 0.05\n- DDA at 49:49:2: PDI = 0.13 ± 0.02\n- DC-Chol at 49:49:2: PDI = 0.16 ± 0.04\n- DMTAP at 49:49:2: PDI = 0.16 ± 0.02\n- DSTAP at 49:49:2: PDI = 0.89 ± 0.13\n- DOBAQ at 49:49:2: PDI = 0.22 ± 0.04\n\nThe lowest PDI among the options (DOTAP, DC-Chol, DDA, DMTAP) is DDA at 0.13.\n\nSo the answer is D (DDA).\n\nLet me double check: 0.13 (DDA) < 0.16 (DC-Chol, DMTAP) < 0.17 (DOTAP) < 0.22 (DOBAQ). Yes, DDA is lowest.\n\nAnswer: D.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.31.0-044a22dd",
+    "usage": {
+      "prompt_tokens": 6809,
+      "total_tokens": 7209,
+      "completion_tokens": 400,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 311
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "elapsed_seconds": 19.003,
+  "saved_at_utc": "2026-10-16T06:46:27.670989+00:00",
+  "status": "completed",
+  "text": "\n\nLooking at the PDI values for the 49:49:2 composition:\n- DOTAP: 0.17\n- DDA: 0.13\n- DC-Chol: 0.16\n- DMTAP: 0.16\n\nThe lowest value is 0.13, corresponding to DDA.\n\n[ANSWER]D[/ANSWER]",
+  "finish_reason": "stop"
+}

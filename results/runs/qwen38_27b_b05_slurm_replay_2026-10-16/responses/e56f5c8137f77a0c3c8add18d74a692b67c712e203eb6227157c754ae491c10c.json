@@ -1,0 +1,57 @@
+{
+  "task": "B05",
+  "case_id": "d38551bd-8740-4803-8fc7-27f6e5785acd",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "request_sha256": "9d063b6d0c2dc8c85812776674807057d5033985fd906aaa0719b2be2707b6a5",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-b642edfbbe36da6c",
+    "object": "chat.completion",
+    "created": 1792133128,
+    "model": "Qwen/Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\nComputing the differences at p = 0.01:\n- Beijing: 21.8% − 15.8% = 6.0%\n- Cambridge: 23.8% − 17.6% = 6.2%\n- Oulu: 15.5% − 12.5% = 3.0%\n\nThe largest difference is for Cambridge (6.2%).\n\n[ANSWER]E[/ANSWER]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": "I need to compute the difference between stationary and non-stationary FWE at p = 0.01 for each dataset.\n\nBeijing p=0.01: 21.8% - 15.8% = 6.0%\nCambridge p=0.01: 23.8% - 17.6% = 6.2%\nOulu p=0.01: 15.5% - 12.5% = 3.0%\n\nSo Cambridge has the greatest difference (6.2%), slightly more than Beijing (6.0%).\n\nLet me double check: 23.8 - 17.6 = 6.2. 21.8 - 15.8 = 6.0. Yes, Cambridge is larger.\n\nThus answer is E (Cambridge).\n\nThe option D says both Cambridge and Oulu same highest - not correct.\n\nSo answer E.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.31.0-044a22dd",
+    "usage": {
+      "prompt_tokens": 5120,
+      "total_tokens": 5440,
+      "completion_tokens": 320,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 212
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "elapsed_seconds": 19.608,
+  "saved_at_utc": "2026-10-16T06:45:47.629916+00:00",
+  "status": "completed",
+  "text": "\n\nComputing the differences at p = 0.01:\n- Beijing: 21.8% − 15.8% = 6.0%\n- Cambridge: 23.8% − 17.6% = 6.2%\n- Oulu: 15.5% − 12.5% = 3.0%\n\nThe largest difference is for Cambridge (6.2%).\n\n[ANSWER]E[/ANSWER]",
+  "finish_reason": "stop"
+}

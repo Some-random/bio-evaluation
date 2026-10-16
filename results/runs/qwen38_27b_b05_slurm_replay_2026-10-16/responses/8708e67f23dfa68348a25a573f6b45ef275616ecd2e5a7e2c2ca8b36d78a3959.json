@@ -1,0 +1,57 @@
+{
+  "task": "B05",
+  "case_id": "a33bfe93-6893-45f8-9e5c-a782e0fd8a79",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "request_sha256": "45dc3f441ab590871fe26e051da343c5c2bf932a189aa7a273f9680c5ae87605",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-88111e52a09932c4",
+    "object": "chat.completion",
+    "created": 1792133130,
+    "model": "Qwen/Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\nLooking at the \"Mean (SE)\" column for the area under the curve:\n- 0.15 mg: 4.2\n- 0.50 mg: 0.0\n- 1.50 mg: 34.9\n- 3.00 mg: 77.6\n\nThe highest average (mean) AUC is 77.6, which corresponds to the 3.00 mg dose.\n\n[ANSWER]A[/ANSWER]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": "The question asks which dose demonstrated the highest average (mean) area under the curve. Looking at the table, the \"Mean (SE)\" column under \"Area under the curve\" gives:\n\n- 0.15 mg: 4.2\n- 0.50 mg: 0.0\n- 1.50 mg: 34.9\n- 3.00 mg: 77.6\n\nThe highest mean is 77.6, corresponding to 3.00 mg. Among the options, (A) is 3.00 mg.\n\nSo the answer is A.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.31.0-044a22dd",
+    "usage": {
+      "prompt_tokens": 2690,
+      "total_tokens": 2936,
+      "completion_tokens": 246,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 135
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "elapsed_seconds": 10.024,
+  "saved_at_utc": "2026-10-16T06:45:40.454742+00:00",
+  "status": "completed",
+  "text": "\n\nLooking at the \"Mean (SE)\" column for the area under the curve:\n- 0.15 mg: 4.2\n- 0.50 mg: 0.0\n- 1.50 mg: 34.9\n- 3.00 mg: 77.6\n\nThe highest average (mean) AUC is 77.6, which corresponds to the 3.00 mg dose.\n\n[ANSWER]A[/ANSWER]",
+  "finish_reason": "stop"
+}
