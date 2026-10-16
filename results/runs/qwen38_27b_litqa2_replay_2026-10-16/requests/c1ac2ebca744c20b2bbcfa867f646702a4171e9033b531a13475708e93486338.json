@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "bace5737-ba26-422a-8706-0fb1e92b689f",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "8f3316562007468314e5ca63ec4f86aafbd5fc299d96c8ccfa6c997aa3834577",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which cell type(s) shows most signgicant maturation with transplantation and increasing organoid age?\n\nOptions:\n(A) Insufficient information to answer the question\n(B) astrocytes\n(C) microglia\n(D) upper-layer excitatory neurons\n(E) lower-layer excitatory neurons\n(F) interneurons\n(G) upper-layer excitatory neurons and lower-layer excitatory neurons\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

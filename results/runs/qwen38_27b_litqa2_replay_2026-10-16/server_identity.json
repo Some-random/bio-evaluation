@@ -1,0 +1,43 @@
+{
+  "pid": 3268490,
+  "proc_start_ticks": "900044044",
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "command": [
+    "/tmp/bio-litqa2-237474-bA2QVm/python/bin/python3.12",
+    "-m",
+    "vllm.entrypoints.cli.main",
+    "serve",
+    "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+    "--served-model-name",
+    "Qwen/Qwen3.8-27B",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8026",
+    "--dtype",
+    "bfloat16",
+    "--tensor-parallel-size",
+    "1",
+    "--gpu-memory-utilization",
+    "0.90",
+    "--max-model-len",
+    "16384",
+    "--max-num-seqs",
+    "4",
+    "--reasoning-parser",
+    "qwen3",
+    "--enable-prefix-caching",
+    "--limit-mm-per-prompt",
+    "{\"image\":0,\"video\":0}"
+  ],
+  "checkpoint": "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+  "observed_gpu_processes": [
+    {
+      "pid": 3269176,
+      "gpu_uuid": "GPU-e6b3b8db-3900-752a-e0b1-06e4153957b7",
+      "used_memory": "70962 MiB"
+    }
+  ],
+  "observed_gpu_count": 1
+}

@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "82de3e92-abe2-46ac-ad17-23417b9c4da7",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "b6e43c76f197e7d48d2bb53fdfe55463d319eabf22dfa3af4bdf45c33d25ca3a",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Grafting ECL3 region from adenosine A3 receptor A3AR onto A2AAR does what to the efficacy of binding to the A3AR antagonist CF101 ?\n\nOptions:\n(A) decreases\n(B) greatly decreases\n(C) no change\n(D) Insufficient information to answer the question\n(E) increases\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

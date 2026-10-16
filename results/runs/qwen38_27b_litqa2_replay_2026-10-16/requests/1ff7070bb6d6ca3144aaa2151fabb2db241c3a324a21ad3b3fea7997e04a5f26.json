@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "28ebecdf-949e-4d20-aca9-5989b7a9d6e9",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "8ddcf6c883267cd1c67a5faaf8ae6c949e9f80c0768b0e4fdda696c09e60d8d0",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: In Arabidopsis, which of the following 20 S proteasome subunits has CWC15 not been shown to interact with in its role promoting degradation of the protein Serrate?\n\nOptions:\n(A) PBE1\n(B) PAB1\n(C) PBA1\n(D) PAG1\n(E) Insufficient information to answer the question\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

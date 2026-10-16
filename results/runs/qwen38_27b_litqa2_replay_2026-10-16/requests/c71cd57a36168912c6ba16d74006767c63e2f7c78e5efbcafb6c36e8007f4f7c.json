@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "4bb69c9d-2485-42d2-b8aa-aa647b407ca4",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "7ed25de90188247d8cda578d7ec4c7968ace1f4ad65359796dc5dd88c3277854",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: What effect does expression of the ATPase-deficient E251Q mutant of the Spindle E protein in silkworm cells have on the levels of the mature piwiRNAs piR1712 and piR2986?\n\nOptions:\n(A) Decrease\n(B) Increase\n(C) Insufficient information to answer the question\n(D) no effect\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

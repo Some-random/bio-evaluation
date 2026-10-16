@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "6f8a51e2-f7ad-4033-b43d-370348e4809f",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "3a1cff0f56a34ade40312761f5f0d86d7a27312730fa77d0e0a336dca1f1cd54",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: When the macrocycle MC1 binds to its target PSMD2, what key residue interaction is formed?\n\nOptions:\n(A) L33 of MC1 and V743 of PSMD2\n(B) D18 residue of MC1 and E878 residue of PSMD2\n(C) Y15 of MC1 and Y876 of PSMD2\n(D) R8 residue of MC1 and E878 residue of PSMD2\n(E) S11 of MC1 and S800 of PSMD2\n(F) R12 of MC1 and D874 of PSMD2\n(G) Insufficient information to answer the question\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "2c262f91-52b6-421d-8341-8748f923459e",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "5e3d603453dd518985fcac3d3a35353803db9c9d71a7900e63ae349ebe729f92",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: When a large excess of membrane protein substrate (Vamp2) is added to the wild-type Get3/4/5 chaperone complex, the complex dissociates. Which component does the substrate not bind to?\n\nOptions:\n(A) Get3\n(B) Insufficient information to answer the question\n(C) Get5\n(D) Get4/5 complex\n(E) Get4\n(F) Get3/4 complex\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

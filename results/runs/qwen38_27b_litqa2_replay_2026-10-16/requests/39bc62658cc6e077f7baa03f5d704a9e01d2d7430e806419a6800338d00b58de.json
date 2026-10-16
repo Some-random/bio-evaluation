@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "f0b6cea0-e005-47bc-be0d-9a10b219cae6",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "8a243d2f6f8fa4d48238e02f9f0d8d7e75ec78f561115bc369455f705e23c175",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: What is the optimal GDP-binding temperature for the EF-1A protein from Asgard class Wukongarchaeia in degrees celsius?\n\nOptions:\n(A) 40.0\n(B) 57.2\n(C) Insufficient information to answer the question\n(D) 30.3\n(E) 63.2\n(F) 49.5\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

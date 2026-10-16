@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "37a4d007-793e-4a89-922a-c1b05f4f82c1",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "dee2bce6a8ba759eef158970e98617e3b0b61167f4e23c421839a9046fdf1800",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: How many Gly-X-Y repeats are in the collagenous domain of the diponectin paralog encoded by C1QTNF1 in mice?\n\nOptions:\n(A) Insufficient information to answer the question\n(B) 34\n(C) 14\n(D) 4\n(E) 24\n(F) 15\n(G) 2\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

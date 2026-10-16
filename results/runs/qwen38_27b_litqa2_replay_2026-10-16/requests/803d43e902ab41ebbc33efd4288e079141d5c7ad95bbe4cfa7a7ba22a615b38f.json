@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "39c985ce-70e8-48e4-bd76-744cd07cb56a",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "9e4b6866f1e90383c4efd5ed5c808105f294706e0c3180483605d2c6b3c7ac32",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Based on whole genome bisulfite sequencing data (WGBS) from publicly available datasets (the ROADMAP epigenome project and the ENCODE data portal), what is the relationship between DNA methylation patterns between introns and exons (after excluding consideration of the first intron and first exon)?\n\nOptions:\n(A) Insufficient information to answer the question\n(B) Exons have more DNA methylation\n(C) Introns have more DNA methylation\n(D) Neither introns nor exons can be methylated\n(E) There are no significant differences\n(F) only areas very close to the transcription start site\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

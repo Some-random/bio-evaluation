@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "26691c84-514b-4712-a43e-09705d681e45",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "e7a6f288995429a2daf18486bbbd67bc54b3bcf06c4647a959813167342dcd07",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Inactivation of genes involved in which of the following complexes or pathways does NOT result in resistance to colchicine in HAP1 cells?\n\nOptions:\n(A) Fanconi Anemia complex\n(B) TP53 signalling\n(C) Insufficient information to answer the question\n(D) SAGA H3 acetylation\n(E) SIN3 histone deacetylation\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

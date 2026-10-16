@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "cb710074-73a8-4407-b0c7-7dc868f1bc76",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "359115f61c0e16810411c04988668f0b3507574dd5bcf393b083d65e8cfd5a9c",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Approximately what percentage of adr-1(-), adr-2(-), and adr-1(-);adr-2(-) mutant C. elegans will die after exposure to 36ºC for 6 hours, where survival is assessed after 14h of recovery at 20ºC?\n\nOptions:\n(A) 80%\n(B) 70%\n(C) 50%\n(D) 20%\n(E) 30%\n(F) Insufficient information to answer the question\n(G) 60%\n(H) 10%\n(I) 40%\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

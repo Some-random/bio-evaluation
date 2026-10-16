@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "230dec20-cd02-4613-a7b1-e28058ed46fe",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "ddcfdbea46dcfa8be8246508c6762b42311bd29791c2f8060271ca7d218b56f7",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: What is the effect on firing rate of parvalbumin-expressing interneurons in the barrel cortex of adult mice when the SMAD1 is deleted?\n\nOptions:\n(A) Moderately decreased\n(B) Moderately increased\n(C) No discernable change\n(D) Greatly increased\n(E) Insufficient information to answer the question\n(F) Greatly reduced\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

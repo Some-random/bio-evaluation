@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "78a2c1d2-f035-4c7d-a7ee-40dfd95ca88a",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "e473e740679f17a69a4b09e8a6bfcd89b7c0be6d5983e3bfa7b7b9c08a4b4613",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: There are putative ETS transcription factor binding sites in the FoxF enhancer. What range of affinity do they have when compared to the 8-mer with the highest affinity for ETS?\n\nOptions:\n(A) 0.1-0.3\n(B) Insufficient information to answer the question\n(C) 0.34-0.52\n(D) 0.09-0.24\n(E) 0.1-0.4\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

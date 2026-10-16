@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "7d71dffb-b591-4b88-b0c6-e125a1b083b4",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "52259659baaf0b72c0592ff41b2d520d07c1113f33e9b82881e2e73b36fa8e90",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which bacterial cell wall component has been shown to facilitate lung metastasis in breast cancer models via the prostaglandin E2-EP2 pathway?\n\nOptions:\n(A) lipoprotein\n(B) teichoic acid\n(C) lipopolysaccharide\n(D) peptidoglycan\n(E) Insufficient information to answer the question\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

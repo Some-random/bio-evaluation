@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "85c67ef3-322c-42b4-b745-c05e07e7b8ac",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "3289d89bf3d2eab4d89e0b0a0786666bda16997cbfe05b234e20977501b5811e",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: In human fibroblasts, how long should ERK activation be maintained such that senescence commitment is triggered even if ERK signaling is brought back to baseline levels at the end of the activation period?\n\nOptions:\n(A) Insufficient information to answer the question\n(B) 1-2 days\n(C) 3-4 days\n(D) 7-8 days\n(E) 5-6 days\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

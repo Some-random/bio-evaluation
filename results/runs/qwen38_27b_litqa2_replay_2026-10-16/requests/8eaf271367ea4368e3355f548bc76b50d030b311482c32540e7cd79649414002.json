@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "4f050bf3-27cd-4a14-8422-45df5e2bb079",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "a3d7412d50ee5482f02225fa04604c1fbf0b80a0eec134b342cb7987b0920147",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: What geographical-based Iranian cannabis populations have the greatest genetic differentiation parameter (FST)?\n\nOptions:\n(A) South to northeast\n(B) Insufficient information to answer the question\n(C) Northeast to west: northwest\n(D) East and southeast\n(E) East and southeast: northeast\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

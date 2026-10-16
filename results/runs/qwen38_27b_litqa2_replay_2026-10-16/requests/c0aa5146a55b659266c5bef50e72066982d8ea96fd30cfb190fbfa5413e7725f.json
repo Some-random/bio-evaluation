@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "9a0b82cb-6a99-4e50-83fc-3ef2ebd277cc",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "a9b67ed6753c2bbb3b095eea836be581c415b9ee846029a8eaae8c98a5ec6e6d",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: When using protein language models to predict the effect of mutations in fitness of adeno-associated virus 2, does fine-tuning give a larger gain for the ESM2, T5, or Ankh models?\n\nOptions:\n(A) The gain is similar for all models\n(B) There is no gain for any model\n(C) Ankh\n(D) T5\n(E) Insufficient information to answer the question\n(F) ESM2\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

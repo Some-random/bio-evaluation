@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "5e20e26d-6192-4563-abb3-a4857e3dbc7c",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "37d02d065fb7b5304464ab4c154d857ea80fad020f5c93217f99a7743faa8202",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: How much tighter, in kcal/mol, do the transcription factors Pho4 and Max bind to their DNA motifs when the motifs are surrounded by short tandem repeats?\n\nOptions:\n(A) 0.23-0.9\n(B) 0.8-1\n(C) Insufficient information to answer the question\n(D) 0.1-0.15\n(E) 1.1-1.2\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

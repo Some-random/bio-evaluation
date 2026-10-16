@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "ea4ce240-2864-4ee5-9ffc-2dbda0f8f550",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "e8931d29487ac1cd7645e0b6eda80c6da8ac0af730d3541f99e8e44a7af2f5a4",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: When HeLa cells that express galectin-3-GFP are infected with a T6SS-5-negative strain of B. thailandensis (B. thailandensis hcp-5 deletion), how many galectin-3 accumulation events can be expected for every 1000 bacteria on average?\n\nOptions:\n(A) 48\n(B) Insufficient information to answer the question\n(C) 7\n(D) 213\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

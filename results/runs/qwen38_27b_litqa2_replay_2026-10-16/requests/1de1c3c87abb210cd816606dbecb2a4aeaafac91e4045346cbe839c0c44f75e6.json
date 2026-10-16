@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "4d4cb121-9525-499a-9475-9b212465c72d",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "9915cbb76dbb597a91ea0b0a956b539e50c835b8a1355de9bb1a9c7252ef6347",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: In the Ingraham 2022 protein design paper, how did they force the protein complexes to be symmetric with respect to a specific space group?\n\nOptions:\n(A) conditioning diffusion model with VAE\n(B) Classifier-Free Diffusion Guidance\n(C) Rosetta's symmetric docking protocol\n(D) Insufficient information to answer the question\n(E) symmetric sampling of the SDE/ODE (analytical conditioning)\n(F) Bayesian inference with random GNNs\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

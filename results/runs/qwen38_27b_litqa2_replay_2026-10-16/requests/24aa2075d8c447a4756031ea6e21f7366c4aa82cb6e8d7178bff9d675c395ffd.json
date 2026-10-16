@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "322454df-45a8-41b3-9b0a-4e808144023c",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "ae5afa409505391a161fd042c22557ef91f650635ae9a97fb5e5658a23c4044e",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Out of all candidate proteasome substrates tested for degradation by the 20S proteasome, approximately what number of substrates undergo cleavage at both the N and C termini as opposed to just one or the other?\n\nOptions:\n(A) 70\n(B) 240\n(C) 327\n(D) Insufficient information to answer the question\n(E) 87\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

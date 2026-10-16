@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "3c9f23e2-fdd0-431b-aca7-4f9556c78f1f",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "bddd6b3ae037230587f086af3aa6c7f5f207e70754eeeee1b05d2a33aef9b004",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Relative abundance of which molecule(s) in reactive astrocytes is associated with the decline of NAD+ levels following TNFα treatment?\n\nOptions:\n(A) NADH\n(B) CD38 + 78c\n(C) CD38\n(D) GFAP\n(E) Insufficient information to answer the question\n(F) 78c\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

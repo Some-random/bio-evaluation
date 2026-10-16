@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "100b570f-1c4f-4214-8402-f1b15f9989b4",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "b931882eb1bcf4a1f9729ceaa57510a31b8783f6de40f982d3a390b61a75ae9d",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: In mice with a homozygous knock-in MIRAS allele of mitochondrial DNA polymerase gamma, what decrease in rotarod performance is observed at 12 months of age?\n\nOptions:\n(A) Insufficient information to answer the question\n(B) 25%\n(C) 10%\n(D) 15%\n(E) 20%\n(F) 40%\n(G) 30%\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}
