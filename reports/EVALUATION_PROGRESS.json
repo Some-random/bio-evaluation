@@ -1,20 +1,21 @@
 {
-  "generatedAt": "2026-10-16T13:49:27.755824+00:00",
+  "generatedAt": "2026-10-16T19:03:57.707504+00:00",
   "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-  "runSnapshotAt": "2026-10-16T11:23:26.367254+00:00",
+  "runSnapshotAt": "2026-10-16T19:03:57.707504+00:00",
   "heartbeat": {
-    "status": "stale",
-    "updatedAt": "2026-10-16T11:23:26.367254+00:00",
+    "status": "fresh",
+    "updatedAt": "2026-10-16T19:03:57.707504+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
+    "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
     "reports/RESULTS_AT_A_GLANCE.json": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
-    ".local/remaining_evaluations/supervisor_status.json": "cec4c8acd65c99ec0594a85b5d30dc808785ccf0c7674d1c213b969c164ae8e2",
-    ".local/remaining_evaluations/upload_status.json": "5dcdec6a43a20baa3768498548df3183e021dbba44159eee3b6323b337a1dfdf"
+    ".local/remaining_evaluations/supervisor_status.json": "275daae19d3a859c4a56f262b901d80b1f4c06349fddb220090f521b3170ad2f",
+    ".local/remaining_evaluations/upload_status.json": "426adb9f0417b26c7f7210426d23b0fd89a9a6aa27bfa36024b18eb102f58503"
   },
   "uploader": {
-    "stage": "retry_pending",
-    "commitSha": "ab4213ebe53fc20d917a2abd669859763a397df3",
+    "stage": "watching",
+    "commitSha": "a7179722a48e4a06cbd40f4e4775463e6fc97d81",
     "repositoryPrivateVerified": true
   },
   "scheduler": {
@@ -121,16 +122,6 @@
         "node_or_reason": "(Dependency)"
       },
       {
-        "job_id": "237677",
-        "state": "PENDING",
-        "node_or_reason": "(Dependency)"
-      },
-      {
-        "job_id": "237663",
-        "state": "RUNNING",
-        "node_or_reason": "ampere7"
-      },
-      {
         "job_id": "237676",
         "state": "RUNNING",
         "node_or_reason": "ampere6"
@@ -161,9 +152,18 @@
         "node_or_reason": "ampere7"
       },
       {
+        "job_id": "237677",
+        "state": "RUNNING",
+        "node_or_reason": "ampere7"
+      },
+      {
         "job_id": "237678",
         "state": "RUNNING",
         "node_or_reason": "ampere6"
+      },
+      {
+        "job_id": "237663",
+        "state": "not_in_active_queue"
       },
       {
         "job_id": "237664",
@@ -176,7 +176,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 4376,
+    "uploaded": 10600,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -185,12 +185,12 @@
     {
       "taskId": "P03",
       "planned": 2773,
-      "uploaded": 2243,
+      "uploaded": 2773,
       "saved": null,
       "generationRuns": 3,
-      "terminalRuns": 2,
-      "allTerminal": false,
-      "nativeMetricsValid": null,
+      "terminalRuns": 3,
+      "allTerminal": true,
+      "nativeMetricsValid": true,
       "progressSource": "uploaded_trajectories",
       "runIds": [
         "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_000",
@@ -201,10 +201,10 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 2121,
+      "uploaded": 6605,
       "saved": null,
       "generationRuns": 27,
-      "terminalRuns": 0,
+      "terminalRuns": 5,
       "allTerminal": false,
       "nativeMetricsValid": null,
       "progressSource": "uploaded_trajectories",
@@ -342,7 +342,7 @@
     {
       "taskId": "P28",
       "planned": 8159,
-      "uploaded": 12,
+      "uploaded": 1222,
       "saved": null,
       "generationRuns": 8,
       "terminalRuns": 0,
@@ -390,22 +390,27 @@
     }
   ],
   "countNote": "Progress counts exclude aggregate runs. Uploaded counts reflect archived trajectories at the uploader heartbeat; saved is unknown unless explicitly reported. Counts do not establish benchmark completion.",
-  "runSnapshotSource": {
-    "path": ".local/remaining_evaluations/upload_status.json",
-    "snapshotAt": "2026-10-16T11:23:26.367254+00:00",
-    "fallback": true,
-    "selection": "most_recent_valid_run_snapshot"
-  },
-  "metadataErrors": [
+  "scoreSnapshotSources": [
     {
-      "source": ".local/remaining_evaluations/supervisor_status.json",
-      "reason": "no_valid_run_snapshot"
+      "path": "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json",
+      "sha256": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
+      "snapshotAt": "2026-10-16T04:25:25.541726+00:00",
+      "historical": true,
+      "note": "Retained verified report metadata; not a fresh rerun."
+    },
+    {
+      "path": "reports/RESULTS_AT_A_GLANCE.json",
+      "sha256": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
+      "snapshotAt": "2026-10-16T13:49:27.755824+00:00",
+      "historical": false,
+      "note": "Current score-report metadata; report refresh does not rerun evaluation."
     }
   ],
-  "metadataNotice": {
-    "source": ".local/remaining_evaluations/supervisor_status.json",
-    "stage": "retry_pending",
-    "updatedAt": "2026-10-16T18:46:48.032241+00:00",
-    "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
-  }
+  "runSnapshotSource": {
+    "path": ".local/remaining_evaluations/supervisor_status.json",
+    "snapshotAt": "2026-10-16T19:03:57.707504+00:00",
+    "fallback": false,
+    "selection": "most_recent_valid_run_snapshot"
+  },
+  "metadataErrors": []
 }

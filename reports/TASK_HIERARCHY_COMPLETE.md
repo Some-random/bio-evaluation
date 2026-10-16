@@ -4,21 +4,21 @@
 
 All **67 main dataset/protocol groups** and **9 case/diagnostic groups** are retained. Hierarchy: **capability → scientific task → dataset/protocol → scope and execution**. Registry identifiers appear in the crosswalk and provenance JSON rather than human task names.
 
-Stored scores: **2026-10-16T13:49:27.755824+00:00**. Running-work snapshot: **2026-10-16T11:23:26.367254+00:00**. These are timestamped reports, not a live feed.
+Stored scores: **2026-10-16T13:49:27.755824+00:00**. Running-work snapshot: **2026-10-16T19:03:57.707504+00:00**. These are timestamped reports, not a live feed.
 
 **\*** marks an incomplete group or setting. Registered scope and current execution status are separate; catalog presence does not imply authorization. Mixed groups show each registered protocol separately. Status unverified is not a claim that a task was never run.
 
 ## Protein properties, interactions and developability
 
-### Protein solubility*
+### Protein solubility
 
 **Dataset/protocol:** DeepSol solubility — PEER split
 
-**Scope:** Registered · **Execution:** Status unverified
+**Scope:** Registered · **Execution:** Results available
 
 | Registered scientific setting | Execution status |
 |---|---|
-| Solubility — PEER* | Status unverified |
+| Solubility — PEER | Results available |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -49,16 +49,16 @@ Qualification: Not binding affinity, thermostability, or a guarantee of solubili
 
 </details>
 
-### Subcellular localization*
+### Subcellular localization
 
 **Dataset/protocol:** DeepLoc — binary and 10-compartment localization
 
-**Scope:** Registered · **Execution:** Running / queued
+**Scope:** Registered · **Execution:** Results available
 
 | Registered scientific setting | Execution status |
 |---|---|
-| Binary localization — DeepLoc/PEER* | Status unverified |
-| Subcellular localization — DeepLoc* | Running / queued |
+| Binary localization — DeepLoc/PEER | Results available |
+| Subcellular localization — DeepLoc | Results available |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -222,12 +222,12 @@ Qualification: The numerical endpoint is assay-specific; these tasks do not esta
 
 **Dataset/protocol:** FLIP — AAV and Meltome
 
-**Scope:** Registered · **Execution:** Status unverified
+**Scope:** Registered · **Execution:** Partial
 
 | Registered scientific setting | Execution status |
 |---|---|
 | AAV variant fitness — FLIP* | Status unverified |
-| Thermostability — FLIP/Meltome* | Status unverified |
+| Thermostability — FLIP/Meltome* | Partial |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -268,16 +268,16 @@ Qualification: The numerical endpoint is assay-specific; these tasks do not esta
 
 </details>
 
-### Protein–protein interaction*
+### Protein–protein interaction
 
 **Dataset/protocol:** Human/Pan and yeast/Guo PPI — PEER
 
-**Scope:** Registered · **Execution:** Status unverified
+**Scope:** Registered · **Execution:** Results available
 
 | Registered scientific setting | Execution status |
 |---|---|
-| Human protein–protein interaction — PEER* | Status unverified |
-| Yeast protein–protein interaction — PEER* | Status unverified |
+| Human protein–protein interaction — PEER | Results available |
+| Yeast protein–protein interaction — PEER | Results available |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -593,18 +593,18 @@ Qualification: Not a free-form rationale score. GO label incompleteness and onto
 
 </details>
 
-### Protein description generation*
+### Protein description generation
 
 **Dataset/protocol:** Mol-Instructions — four protein-description subsets
 
-**Scope:** Registered · **Execution:** Status unverified
+**Scope:** Registered · **Execution:** Results available
 
 | Registered scientific setting | Execution status |
 |---|---|
-| Mol-Instructions: Protein function generation* | Status unverified |
-| Mol-Instructions: Catalytic activity generation* | Status unverified |
-| Mol-Instructions: Domain and motif generation* | Status unverified |
-| Mol-Instructions: Functional description generation* | Status unverified |
+| Mol-Instructions: Protein function generation | Results available |
+| Mol-Instructions: Catalytic activity generation | Results available |
+| Mol-Instructions: Domain and motif generation | Results available |
+| Mol-Instructions: Functional description generation | Results available |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -1294,13 +1294,13 @@ Catalog coverage only; inclusion does not authorize an experiment or establish e
 | Registered scientific setting | Execution status |
 |---|---|
 | LAB-Bench / LitQA2* | Partial |
-| LAB-Bench / DbQA* | Status unverified |
+| LAB-Bench / DbQA | Results available |
 | LAB-Bench / SuppQA | Results available |
 | LAB-Bench / FigQA | Results available |
 | LAB-Bench / TableQA | Results available |
 | LAB-Bench / ProtocolQA* | Deferred / held |
-| LAB-Bench / SeqQA* | Status unverified |
-| LAB-Bench / Cloning scenarios* | Status unverified |
+| LAB-Bench / SeqQA | Results available |
+| LAB-Bench / Cloning scenarios | Results available |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -1998,18 +1998,18 @@ Catalog coverage only; inclusion does not authorize an experiment or establish e
 
 ## Biomedical visual evidence
 
-### Biomedical visual question answering*
+### Biomedical visual question answering
 
 **Dataset/protocol:** Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019
 
-**Scope:** Registered · **Execution:** Status unverified
+**Scope:** Registered · **Execution:** Results available
 
 | Registered scientific setting | Execution status |
 |---|---|
-| VQA-RAD* | Status unverified |
-| SLAKE — English* | Status unverified |
-| PathVQA* | Status unverified |
-| ImageCLEF-VQA 2019* | Status unverified |
+| VQA-RAD | Results available |
+| SLAKE — English | Results available |
+| PathVQA | Results available |
+| ImageCLEF-VQA 2019 | Results available |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -2070,15 +2070,15 @@ Qualification: Medical-image performance does not show use of protein sequence/s
 
 </details>
 
-### Scientific figure question answering*
+### Scientific figure question answering
 
 **Dataset/protocol:** PMC-VQA figure question answering
 
-**Scope:** Registered · **Execution:** Status unverified
+**Scope:** Registered · **Execution:** Results available
 
 | Registered scientific setting | Execution status |
 |---|---|
-| PMC-VQA held-out evaluation* | Status unverified |
+| PMC-VQA held-out evaluation | Results available |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -2150,15 +2150,15 @@ Qualification: Teacher reference has textual context that the image may not reve
 
 ## Other biological modalities and molecular interactions
 
-### Drug–target interaction*
+### Drug–target interaction
 
 **Dataset/protocol:** Drug–target interaction: BioSNAP / Human / BindingDB
 
-**Scope:** Registered · **Execution:** Status unverified
+**Scope:** Registered · **Execution:** Results available
 
 | Registered scientific setting | Execution status |
 |---|---|
-| Drug–target interaction — BioSNAP/Human/BindingDB* | Status unverified |
+| Drug–target interaction — BioSNAP/Human/BindingDB | Results available |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -2189,15 +2189,15 @@ Qualification: Secondary to the protein focus. Not protein–protein recognition
 
 </details>
 
-### Pathway and disease prediction*
+### Pathway and disease prediction
 
 **Dataset/protocol:** BioReason KEGG pathway/disease
 
-**Scope:** Registered · **Execution:** Status unverified
+**Scope:** Registered · **Execution:** Results available
 
 | Registered scientific setting | Execution status |
 |---|---|
-| BioReason KEGG pathway/disease test* | Status unverified |
+| BioReason KEGG pathway/disease test | Results available |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -2228,16 +2228,16 @@ Qualification: Correct final disease labels do not verify every generated mechan
 
 </details>
 
-### Variant-effect prediction*
+### Variant-effect prediction
 
 **Dataset/protocol:** BioReason VEP coding and non-SNV
 
-**Scope:** Registered · **Execution:** Status unverified
+**Scope:** Registered · **Execution:** Results available
 
 | Registered scientific setting | Execution status |
 |---|---|
-| BioReason VEP-Coding* | Status unverified |
-| BioReason VEP-Non-SNV* | Status unverified |
+| BioReason VEP-Coding | Results available |
+| BioReason VEP-Non-SNV | Results available |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
@@ -2710,11 +2710,11 @@ Qualification: Self-description is not independent validation; predicted complex
 
 **Dataset/protocol:** STRIDE GFP sequence optimization
 
-**Scope:** Registered · **Execution:** Status unverified
+**Scope:** Registered · **Execution:** Partial
 
 | Registered scientific setting | Execution status |
 |---|---|
-| STRIDE GFP generated-candidate evaluation* | Status unverified |
+| STRIDE GFP generated-candidate evaluation* | Partial |
 
 <details>
 <summary>Scope, source protocols and published evidence</summary>
