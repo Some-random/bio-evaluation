@@ -1,0 +1,43 @@
+{
+  "created_at_utc": "2026-10-16T08:45:53.096748+00:00",
+  "status": "ready",
+  "purpose": "CPU-only P36 paired-reference ROUGE scorer; no benchmark cases/model weights/credentials",
+  "archive_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/p36_preparation/portable_runtime/p36-scoring-py310.tar.gz",
+  "archive_bytes": 46591070,
+  "archive_sha256": "eba7fadd3552de7fa1849022a39df175a21498668b8ea9a971950121a9c3adf8",
+  "portable_python": "python/bin/python3.10",
+  "launcher": "score_python.sh",
+  "launcher_sha256": "7cf5b54340c9fa2e6247e8fe1e0afda4a091138c2aa30c0f23aaf0cbb8866959",
+  "runtime_manifest_sha256": "cfa38ffbc0cc51dd3881937889eff8723387415271038edd5d7e488e506290eb",
+  "source_base_archive": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/scoring_runtime/scoring-runtime-py310.tar.gz",
+  "source_base_archive_sha256": "f7de6fa792551aadac025004b02227d074b50af0dfcd52c1ea50eeaa7c7c1742",
+  "source_base_reuse": "Only Python interpreter and standard library; previous P28/P29 site-packages excluded",
+  "python": "3.10.22 (main, Oct  9 2026, 15:21:30) [Clang 22.1.3 ]",
+  "packages": {
+    "rouge-score": "0.1.2",
+    "numpy": "1.26.4",
+    "nltk": "3.9.1",
+    "absl-py": "2.1.0",
+    "six": "1.17.0",
+    "click": "8.5.0",
+    "cloudpickle": "3.1.2",
+    "joblib": "1.6.0",
+    "regex": "2026.9.29",
+    "tqdm": "4.70.1"
+  },
+  "all_frozen_dependency_versions_preserved": true,
+  "all_archived_file_hashes_verified": 2597,
+  "relocation_verified": true,
+  "synthetic_tests_passed": 6,
+  "relocation_log_sha256": "c65a2ec3ed9140f313415fe8d039315995ced998443b3af902bac6cd88c5480c",
+  "extract": "tar -xzf <archive_path> -C <local_scorer_dir>",
+  "invoke": "<local_scorer_dir>/score_python.sh <P36_PREP_BASE>/score_p36.py --run-dir <ABSOLUTE_RUN_DIR>",
+  "environment": "Launcher removes PYTHONHOME/PYTHONPATH/VIRTUAL_ENV; no user site; math threads1",
+  "scored_output_files": [
+    "scores.json",
+    "per_case_scores.json",
+    "native_metric_output.tsv",
+    "scoring_output_lock.json"
+  ],
+  "native_tsv_contains_scorer_targets_keep_out_of_git": true
+}

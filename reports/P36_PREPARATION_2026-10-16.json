@@ -1,0 +1,126 @@
+{
+  "created_at_utc": "2026-10-16T08:40:57.430174+00:00",
+  "task_id": "P36",
+  "task": "Description-guided protein generation",
+  "status": "partial_input_reviewed_source_code_condition_prepared_no_inference",
+  "prepared_scope": {
+    "full_source_cases": 5876,
+    "manual_reviewed_first_source_order_cases": 64,
+    "eligible_prepared": 59,
+    "held_in_first64": 5,
+    "unreviewed_outside_prefix_held": 5812,
+    "all_held": 5817,
+    "full_benchmark_complete": false
+  },
+  "eligibility_basis": "Individual instruction/input-only manual review with one benign reason per prepared ID; no model outputs or target sequences used. Entire-source keyword screening is metadata only and never approves a case.",
+  "dataset": {
+    "repository": "QizhiPei/BioT5_finetune_dataset",
+    "revision": "9f70da9e8f0df32e7e62846f7ad78a829b00c0fd",
+    "file": "tasks_plus/task234_protein_design_molinst_pro_test.json",
+    "bytes": 14344274,
+    "sha256": "d1239080c09194a71b71374cc4a976ae48184981c14caafce55ec82b2281d880",
+    "public_instance_license_metadata": [
+      "Unknown"
+    ],
+    "license_note": "Repository MIT and public release do not resolve instance-level terms; retained as provenance qualification, not rewritten."
+  },
+  "prospective_model": {
+    "name": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "precision": "Original publisher BF16; no quantization",
+    "generation": {
+      "max_tokens": 4096,
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 20,
+      "seed": 42,
+      "n": 1,
+      "chat_template_kwargs": {
+        "enable_thinking": true,
+        "reasoning_effort": "medium"
+      }
+    },
+    "concurrency": 1
+  },
+  "configuration_sha256": "ececdb67c28faaf8f4c6a7bab90451053e70d7ed0ec20c5ff0ab619710bec34f",
+  "input_prompt_characters": {
+    "minimum": 383,
+    "maximum": 1625
+  },
+  "reference_protection": "Only instruction/input in native user prompt; one fixed system format instruction. Source sequences reside only in source acquisition/scorer files, never requests. No sequence contents printed during preparation.",
+  "source_contract": {
+    "code_revision": "cf65ae6dff63fdea8883dd17d46728a61bba386c",
+    "native_task": "protein_protein_design",
+    "native_dispatch": "evaluation_mol_instruction_protein.sh sets test_task=molinst_pro_understand and data.max_seq_len=512/data.max_target_len=256",
+    "source_prompt": "DataCollatorForMolinstNI -> Prompter.generate_prompt(instance instruction, instance input); output is only label, not prompt",
+    "native_decoding": "train_utils.predict decodes outputs/labels/inputs using tokenizer_pred, skip_special_tokens=True and cleanup_tokenization_spaces=True, then strip. Protein-added tokens recreated nonspecial in tokenizer_pred. Decoded (target,input) pairs enter molinst_pro_understand; no protein-string cleanup there.",
+    "metric_wiring": "Pro_understand._compute computes references_new for TSV but passes original target/input pairs to rouge.compute; returns rougeL.",
+    "primary_source_urls": [
+      "https://github.com/QizhiPei/BioT5/blob/cf65ae6dff63fdea8883dd17d46728a61bba386c/biot5_plus/evaluation_mol_instruction_protein.sh",
+      "https://github.com/QizhiPei/BioT5/blob/cf65ae6dff63fdea8883dd17d46728a61bba386c/biot5_plus/utils/copied_utils.py#L846",
+      "https://github.com/QizhiPei/BioT5/blob/cf65ae6dff63fdea8883dd17d46728a61bba386c/biot5_plus/utils/train_utils.py#L148",
+      "https://github.com/QizhiPei/BioT5/blob/cf65ae6dff63fdea8883dd17d46728a61bba386c/biot5_plus/metrics/pro_understand_metrics/pro_understand_metrics.py"
+    ]
+  },
+  "metric_contract": {
+    "native_wrapper": "sources/biot5_plus__metrics__pro_understand_metrics__pro_understand_metrics.py",
+    "native_wrapper_method": "Pro_understand._compute; exact source AST method, no change to reference-pair wiring",
+    "reference_policy": "[full original serialized target, full original Alpaca user prompt] per case; input remains an alternate reference",
+    "hf_metric_revision": "1bc20e7e9df922e5dfb597c31a4ea8467a89caff",
+    "hf_method": "Rouge._compute executed verbatim with rouge-score0.1.2; replace only unpinned network evaluate.load resolution",
+    "tokenizer": "Default ASCII-alphanumeric lowercasing tokenizer, use_stemmer=False; this is lexical, not residue-alignment scoring",
+    "primary_metric": "rougeL",
+    "aggregation": "HF/Google BootstrapAggregator defaults,1000 resamples; median(mid).fmeasure; fixed numpy seed42",
+    "multi_reference_behavior": "Per ROUGE type, source score_multi chooses greatest F-measure among target and input references",
+    "output_processing": "Raw returned final content; no parsing, whitespace cleanup, target-assisted repair, regeneration or favorable metric choice",
+    "missing_slot_policy": "Empty prediction for all missing/failed planned subset slots; full59-slot denominator retained",
+    "invalid_truncation_policy": "Retain and score raw malformed or length-stopped content; separate serialization diagnostics",
+    "biological_function_validation": false
+  },
+  "comparison_qualification": "Partial59-case zero-shot Qwen text baseline. Same released paired-reference ROUGE algorithm, prospectively pinned cached HF revision; full raw prompt/target serialization and added output-format system instruction differ from trained BioT5+ tokenizer,512/256 caps and greedy generation. Historical evaluate.load resolution unpinned. Not paper normalized Smith-Waterman, not design-function success, not full5876-case completion.",
+  "synthetic_probes": {
+    "source_paired_reference_rougeL": 1.0,
+    "same_prediction_gold_only_equivalent_rougeL": 0.0,
+    "no_matching_residues_but_shared_serialization_rougeL": 0.6666666666666666,
+    "are_benchmark_results": false
+  },
+  "validation": {
+    "synthetic_tests": 6,
+    "passed": 6,
+    "source_file_hashes_verified": 15,
+    "frozen_input_case_contract_verified": true,
+    "exact_ordered_review_ids_verified": true,
+    "no_inference_performed_by_preparation": true,
+    "execution_approval_template": false
+  },
+  "paper_metric": {
+    "normalized_smith_waterman": null,
+    "source": "https://arxiv.org/html/2402.17810v2#S4.SS2.SSS4",
+    "details": "Paper reports selected examples, normalized Smith-Waterman and a manual terminal-repeat truncation practice. Exact substitution/gap parameters, normalization, full cohort and failure handling remain unrecovered; no replacement default or manual cleanup invented."
+  },
+  "scoring_limits": [
+    "Lexical overlap of serialized sequence tokens is not residue alignment or measured protein function.",
+    "Input remains an alternate reference by source code; an input echo can achieve perfect source ROUGE.",
+    "Shared <p>/boundary formatting produces nonzero ROUGE even when toy sequences share no residue.",
+    "This is a59-case input-reviewed subset, not the full5876-case benchmark.",
+    "Qwen format instruction/full-text inputs/full targets/sampling differ from native trained BioT5+ tokenizer,512/256 token caps and greedy condition.",
+    "Historical evaluate.load metric resolution is unpinned; this prospective condition pins cached source code and dependencies.",
+    "No biological function, mechanism, contamination-free performance or explanation validity follows from ROUGE."
+  ],
+  "next_action": "Root review and separate exact-config/loopback-endpoint/run-directory execution approval. Existing GPU reservation may serve serial requests without adding GPUs. Preparation does not authorize dispatch.",
+  "files": {
+    "proposed_config.json": "ececdb67c28faaf8f4c6a7bab90451053e70d7ed0ec20c5ff0ab619710bec34f",
+    "proposed_authorization.json": "967befd2795da559d3c14cf2bc3a367119280adb7c88b66b580c95eea79cf7e8",
+    "input_review.json": "199fb9a058b2c7b778ca29bddbf1778ea2a4cc47a3e60d9351110942e93d0eeb",
+    "source_manifest.json": "daa3db31f8b4b64e082f166951657e199ae6c673797431b3794e4007425e8c24",
+    "requirements.lock.txt": "75f8393520ea54300d4a0230f5fb5baeb2991d8e61faea65ffd0a7e4267015aa",
+    "runtime_package_versions.json": "27d65c5776062df50bb63957303b422efaeb1444a6d5eab8a122acb93e0319dc",
+    "data/model_inputs.jsonl": "7c642c08fd2dde4385c36fcb52e40f6a0c209997c50f62c0739cb5d7a0864954",
+    "data/scorer_references.jsonl": "6933d7d7f2dcf0bc39761f75ac7719a8c9e002e4e63b7dead74611f748e7ac93",
+    "p36_contract.py": "f58938d843711659eb5f718c97b66918e867f79514c2d31ec90bf53f03f7d269",
+    "prepare_p36.py": "a47be887f85927405ae11f56972ae1ad94206ed0548da8120fc1bd8ed6fff6b6",
+    "run_p36.py": "5560411d45d236a88111564fea707cb869c080507a6262971399c6311e28e035",
+    "score_p36.py": "bf1f364db8612d351d0c50962a0ebc3d2f23be883209f22467c8c96f4844e65f",
+    "test_p36.py": "79bfe9d8c365879c6ff595c707f2c6a97bd18c47d1024519e4fee6d9ba3100fa"
+  }
+}

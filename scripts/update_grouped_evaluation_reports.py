@@ -78,6 +78,13 @@ def snapshot_note(data):
 def overview(data):
     meta = data["meta"]
     feasibility = json.loads((REPORTS / "QWEN_TASK_FEASIBILITY.json").read_text())
+    subset_runs = {}
+    subset_path = ROOT / "results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016/upload_status.json"
+    if subset_path.is_file():
+        subset = json.loads(subset_path.read_text())
+        assert subset["task_id"] == "P36" and subset["planned"] == 59
+        assert subset["full_source_cases"] == 5876 and subset["full_benchmark_complete"] is False
+        subset_runs["P36"] = subset
     assessment_rank = {
         "Runnable now": 0, "Needs data or protocol": 1, "Needs scoring protocol": 1,
         "Needs additional models/tools": 2, "On hold": 3,
@@ -136,7 +143,7 @@ def overview(data):
     }
     caveats = {
         "P34": "Predictor-scored optimization; not measured laboratory success.",
-        "P36": "Qualitative designs; no measured design-success rate.",
+        "P36": "Lexical sequence overlap; biological function untested.",
         "P37": "Structure quality is predicted; function is not experimentally established.",
         "P38": "Stability and solubility are predicted, not measured.",
         "P39": "Heme binding is a predicted candidate property, not demonstrated binding.",
@@ -150,6 +157,11 @@ def overview(data):
     progress_by_task = {run["taskId"]: run for run in data["runs"]}
 
     def display_status(group, protocol):
+        subset = subset_runs.get(protocol["taskId"]) if protocol else None
+        if subset:
+            state = "Partial subset scored" if subset.get("scoring_success") is True else (
+                "Partial subset responses saved" if subset.get("generation_terminal") else "Running partial subset")
+            return state + f" · {100 * subset['uploaded_trajectories'] / subset['planned']:.1f}% trajectories uploaded"
         value = protocol["status"] if protocol else group["status"]
         if value == "Status unverified" and group["scope"] == "Catalog only":
             return "Listed for consideration"
@@ -162,6 +174,8 @@ def overview(data):
         return state
 
     def snapshot(value):
+        if not value:
+            return "unavailable"
         return value[:10] + " " + value[11:16] + " UTC"
 
     def main_ids(*values):
@@ -232,7 +246,7 @@ def overview(data):
         "An asterisk (*) marks incomplete coverage or scoring.", "",
         f"**{feasibility['summary']['runnable_now']} of {meta['registrySettings']} settings are runnable with the current setup.** "
         "Text and vision inputs are supported. Runnable means the required inputs, execution path and scorer are available; "
-        "it does not guarantee correct or valid predictions.", "",
+        "it includes explicitly marked reviewed subsets and does not guarantee correct or valid predictions.", "",
         "Finished, Partial and Running describe saved run status; Ready describes executability. "
         "**Run status unconfirmed** means no verified completion record. Missing requirements are listed per row. "
         "Published scores are separate reference results; full protocol notes are at the end.", "",
@@ -251,7 +265,9 @@ def overview(data):
             family_results = [result for group in entries for result in group["results"]]
             incomplete_results = [result for result in family_results if result["incomplete"]
                 or result["completionScope"] == "diagnostic_only_primary_metrics_invalid"]
-            running = any(protocol["status"] == "Running / queued" for group in entries for protocol in group["protocols"])
+            running = any(protocol["status"] == "Running / queued" or
+                (protocol["taskId"] in subset_runs and not subset_runs[protocol["taskId"]].get("generation_terminal"))
+                for group in entries for protocol in group["protocols"])
             dataset_count = f"{len(entries)} dataset group" + ("s" if len(entries) != 1 else "")
             cue = ""
             if family_results:
@@ -299,6 +315,8 @@ def overview(data):
                         if result and len(rows) > 1:
                             dataset += "<br>" + result["title"]
                         local = result["metricText"] if result else "—"
+                        if task_id in subset_runs and not result:
+                            local = "[59-case reviewed subset](" + meta["githubUrl"] + "/tree/main/results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016). Full benchmark incomplete."
                         if result and result["completionScope"] == "diagnostic_only_primary_metrics_invalid":
                             local = "**Diagnostic only:** " + local + "<br>Full native primary metric undefined."
                         published = result["publishedText"] if result else group["literatureText"]

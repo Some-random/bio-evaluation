@@ -1,6 +1,6 @@
 {
   "model": "Qwen3.8-27B",
-  "reviewed_at_utc": "2026-10-16T08:25:35.929334+00:00",
+  "reviewed_at_utc": "2026-10-16T08:45:00+00:00",
   "scope": "Feasibility of the existing Qwen baseline and currently prepared evaluators; runnable does not mean accurate or a full reproduction of a paper.",
   "vision_supported": true,
   "vision_evidence": [
@@ -9,8 +9,8 @@
   ],
   "summary": {
     "original_settings": 64,
-    "runnable_now": 36,
-    "needs_data_or_protocol": 15,
+    "runnable_now": 37,
+    "needs_data_or_protocol": 14,
     "needs_additional_models_tools": 8,
     "needs_scoring_protocol": 3,
     "on_hold": 2,
@@ -562,16 +562,18 @@
     "P36": {
       "id": "P36",
       "task": "BioT5+ description-guided protein design",
-      "label": "Needs data or protocol",
-      "shortReason": "Public design cases exist; eligibility and paired-reference ROUGE protocol are not frozen.",
-      "reason": "All 5,876 public cases were acquired, but input eligibility and the Qwen generation/failure contract are not reviewed/frozen. The released scorer uses both input and target as ROUGE references; paper normalized Smith-Waterman details remain unresolved. A qualified released-code ROUGE condition is feasible after review, without pretending to reproduce the specialist model.",
+      "label": "Runnable now",
+      "shortReason": "59 reviewed cases running; remaining 5,817 held. Qualified paired-reference ROUGE adaptation.",
+      "reason": "A prospectively frozen 59-case benign subset from the first 64 source-order cases is running with the pinned Qwen model and unchanged 4,096-token baseline. Five reviewed cases and 5,812 unreviewed cases remain held. The released paired-reference ROUGE algorithm is hash-pinned and tested; full original prompts/targets and an explicit output-format instruction form a qualified Qwen adaptation. Native T5 tokenizer/truncation and paper normalized Smith-Waterman are not reproduced; no biological-function success or full 5,876-case completion is claimed.",
       "evidence": [
-        "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
+        "reports/P36_PREPARATION_2026-10-16.json",
+        "handoff/p36_reviewed_subset_2026-10-16/proposed_config.json",
+        "results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016/upload_status.json"
       ],
-      "confidence": "medium",
+      "confidence": "high",
       "modelCompatibility": "compatible",
       "usesExternalEvaluator": false,
-      "executionEvidence": "not_ready_in_current_frozen_setup"
+      "executionEvidence": "frozen_reviewed59_partial_subset_running"
     },
     "P37": {
       "id": "P37",
