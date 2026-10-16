@@ -1,6 +1,6 @@
 # B04 replay trajectories
 
-156/181 finalized pairs uploaded. Incremental snapshot; run incomplete.
+161/181 finalized pairs uploaded. Incremental snapshot; run incomplete.
 
 [Raw responses](responses) · [Case index](trajectory_index.json) · [Request batch manifests](request_batches)
 

@@ -1,0 +1,57 @@
+{
+  "task": "B05",
+  "case_id": "baa1a06a-890f-459d-93ff-f15a28e3eda6",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "request_sha256": "3a18526846673cad0f2e3098cd4845d7ad9df07a2b01a2e4944a363f83b52888",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-b13746010e30a525",
+    "object": "chat.completion",
+    "created": 1792133760,
+    "model": "Qwen/Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\nLooking at the table's \"Is Drug Self-Administered or Experimenter-Administered?\" column:\n- **SA** → Self-administered\n- **CPP** → Experimenter-administered\n- **Psychomotor sensitization** → Experimenter-administered\n\nTherefore, both CPP and psychomotor sensitization are experimenter-administered.\n\n[ANSWER]E[/ANSWER]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": "The question asks which study type is experimenter-administered. Looking at the table:\n- SA: Self-administered\n- CPP: Experimenter-administered\n- Psychomotor sensitization: Experimenter-administered\n\nSo both CPP and psychomotor sensitization are experimenter-administered. That matches option E.\n\nLet me verify the options:\n(A) psychomotor sensitization only - incomplete\n(B) SA only - wrong, SA is self\n(C) Both SA and psychomotor sensitization - wrong\n(D) Insufficient - no\n(E) Both CPP and psychomotor sensitization - correct\n(F) CPP only - incomplete\n\nThus E is correct.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.31.0-044a22dd",
+    "usage": {
+      "prompt_tokens": 6985,
+      "total_tokens": 7222,
+      "completion_tokens": 237,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 145
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "elapsed_seconds": 11.984,
+  "saved_at_utc": "2026-10-16T06:56:12.474896+00:00",
+  "status": "completed",
+  "text": "\n\nLooking at the table's \"Is Drug Self-Administered or Experimenter-Administered?\" column:\n- **SA** → Self-administered\n- **CPP** → Experimenter-administered\n- **Psychomotor sensitization** → Experimenter-administered\n\nTherefore, both CPP and psychomotor sensitization are experimenter-administered.\n\n[ANSWER]E[/ANSWER]",
+  "finish_reason": "stop"
+}
