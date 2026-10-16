@@ -1,0 +1,49 @@
+{
+  "created_at_utc": "2026-10-16T11:58:32.163801+00:00",
+  "task_id": "P36",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "protocol_variant": "QWEN_FULLTEXT_BIOT5_DESIGN_PAIRED_SOURCE_ROUGE_PARTIAL",
+  "planned": 59,
+  "completed": 17,
+  "full_source_cases": 5876,
+  "case_scope": "PARTIAL_input_reviewed_first64_subset",
+  "full_benchmark_complete": false,
+  "all_declared_subset_outputs_saved": false,
+  "metrics": {
+    "rougeL": 0.12347117664198978
+  },
+  "metric_label": "qualified_released_code_paired_reference_rougeL",
+  "statuses": {
+    "error_or_unknown_completion_no_retry": 42,
+    "completed": 17
+  },
+  "finish_reasons": {
+    "length": 4,
+    "stop": 13
+  },
+  "valid_native_serializations": 0,
+  "missing_or_failed_slots": 42,
+  "missing_slot_policy": "Empty prediction in every missing/failed slot; all 59 planned subset slots remain in metric denominator.",
+  "invalid_or_truncated_output_policy": "Raw final content retained and scored without repair, even if malformed or length-stopped; format validity is diagnostic only.",
+  "metric_contract": {
+    "native_wrapper": "sources/biot5_plus__metrics__pro_understand_metrics__pro_understand_metrics.py",
+    "native_wrapper_method": "Pro_understand._compute; exact source AST method, no change to reference-pair wiring",
+    "reference_policy": "[full original serialized target, full original Alpaca user prompt] per case; input remains an alternate reference",
+    "hf_metric_revision": "1bc20e7e9df922e5dfb597c31a4ea8467a89caff",
+    "hf_method": "Rouge._compute executed verbatim with rouge-score0.1.2; replace only unpinned network evaluate.load resolution",
+    "tokenizer": "Default ASCII-alphanumeric lowercasing tokenizer, use_stemmer=False; this is lexical, not residue-alignment scoring",
+    "primary_metric": "rougeL",
+    "aggregation": "HF/Google BootstrapAggregator defaults,1000 resamples; median(mid).fmeasure; fixed numpy seed42",
+    "multi_reference_behavior": "Per ROUGE type, source score_multi chooses greatest F-measure among target and input references",
+    "output_processing": "Raw returned final content; no parsing, whitespace cleanup, target-assisted repair, regeneration or favorable metric choice",
+    "missing_slot_policy": "Empty prediction for all missing/failed planned subset slots; full59-slot denominator retained",
+    "invalid_truncation_policy": "Retain and score raw malformed or length-stopped content; separate serialization diagnostics",
+    "biological_function_validation": false
+  },
+  "comparison_qualification": "Partial59-case zero-shot Qwen text baseline. Same released paired-reference ROUGE algorithm, prospectively pinned cached HF revision; full raw prompt/target serialization and added output-format system instruction differ from trained BioT5+ tokenizer,512/256 caps and greedy generation. Historical evaluate.load resolution unpinned. Not paper normalized Smith-Waterman, not design-function success, not full5876-case completion.",
+  "paper_normalized_smith_waterman": null,
+  "biological_function_validated": false,
+  "explanation_support_score": null,
+  "scoring_output_lock_sha256": "e8b70eca1f5c8181cb40f1f3a646059dd1826bfa8315d44dce8ca2b9e915d6b9"
+}

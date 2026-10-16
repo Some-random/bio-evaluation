@@ -1,9 +1,9 @@
 {
-  "name": "p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-aabbacb7c7d932fec07b1c5b.tar.gz",
-  "asset_id": 646731653,
-  "asset_url": "https://github.com/Some-random/bio-evaluation/releases/download/continuation-2026-10-16-reviewed-p36-and-source-preparation/p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-aabbacb7c7d932fec07b1c5b.tar.gz",
-  "archive_sha256": "f2cc799e8fd281c7cc36c5469963462ab471f90d6446e56e8677d9c37b9200cb",
-  "archive_bytes": 916548,
+  "name": "p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-e68bc40942c2bc64c4045413.tar.gz",
+  "asset_id": 647197797,
+  "asset_url": "https://github.com/Some-random/bio-evaluation/releases/download/continuation-2026-10-16-reviewed-p36-and-source-preparation/p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-e68bc40942c2bc64c4045413.tar.gz",
+  "archive_sha256": "e88fbe84a224bcaa9edd96a3bb29de78cecbbf10cf6a28e0232e2e0264a3e432",
+  "archive_bytes": 967178,
   "manifest": {
     "schema_version": 1,
     "kind": "metadata",
@@ -13,6 +13,16 @@
     "planned_reviewed_subset": 59,
     "configuration_sha256": "ececdb67c28faaf8f4c6a7bab90451053e70d7ed0ec20c5ff0ab619710bec34f",
     "files": [
+      {
+        "path": "completion.json",
+        "bytes": 831,
+        "sha256": "6020d6864eaa715d5d15fb986bf20e608facc8951c9146cd7bce0fbe8f4c8b17"
+      },
+      {
+        "path": "dispatch_summary.json",
+        "bytes": 143,
+        "sha256": "07b12b30752b1111725da15d9c15f6046030838cee2d68e4c4814f046788fcdb"
+      },
       {
         "path": "execution_authorization.json",
         "bytes": 957,
@@ -129,6 +139,16 @@
         "sha256": "199fb9a058b2c7b778ca29bddbf1778ea2a4cc47a3e60d9351110942e93d0eeb"
       },
       {
+        "path": "native_metric_output.tsv",
+        "bytes": 166016,
+        "sha256": "c6fab3c97b41dc61734f8bb95ddb2c7421fe4d02bb7d1c1abb59146fb97d8db9"
+      },
+      {
+        "path": "per_case_scores.json",
+        "bytes": 33811,
+        "sha256": "03c7f2581bdf01f0beda303afa181f7f2efb73c076da19043b5216cbfc24fb96"
+      },
+      {
         "path": "preparation/PREPARATION_AUDIT_2026-10-16.json",
         "bytes": 8779,
         "sha256": "5bf169548d55f651b585584eb46bdd12d62202eb279cb6011bb9ef35c4ce3790"
@@ -152,6 +172,16 @@
         "path": "run_manifest.json",
         "bytes": 6495,
         "sha256": "80d98e706658e01396c855f65c91c852261fe22aff756e4d80c76fbb1517b3ed"
+      },
+      {
+        "path": "scores.json",
+        "bytes": 3244,
+        "sha256": "aa85ba27ac77c7df8251a2701a71a6b2f6b8e8713743838d3b02320334248aec"
+      },
+      {
+        "path": "scoring_output_lock.json",
+        "bytes": 18561,
+        "sha256": "af429e239f824df8e7a9240392fad50e15c1f43178be3a9adc2d2475577043ec"
       }
     ],
     "cases": []

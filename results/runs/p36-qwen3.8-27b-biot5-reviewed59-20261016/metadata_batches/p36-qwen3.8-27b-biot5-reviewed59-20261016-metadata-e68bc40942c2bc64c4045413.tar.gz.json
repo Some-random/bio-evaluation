@@ -1,0 +1,189 @@
+{
+  "name": "p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-e68bc40942c2bc64c4045413.tar.gz",
+  "asset_id": 647197797,
+  "asset_url": "https://github.com/Some-random/bio-evaluation/releases/download/continuation-2026-10-16-reviewed-p36-and-source-preparation/p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-e68bc40942c2bc64c4045413.tar.gz",
+  "archive_sha256": "e88fbe84a224bcaa9edd96a3bb29de78cecbbf10cf6a28e0232e2e0264a3e432",
+  "archive_bytes": 967178,
+  "manifest": {
+    "schema_version": 1,
+    "kind": "metadata",
+    "task_id": "P36",
+    "variant": "QWEN_FULLTEXT_BIOT5_DESIGN_PAIRED_SOURCE_ROUGE_PARTIAL",
+    "full_benchmark_complete": false,
+    "planned_reviewed_subset": 59,
+    "configuration_sha256": "ececdb67c28faaf8f4c6a7bab90451053e70d7ed0ec20c5ff0ab619710bec34f",
+    "files": [
+      {
+        "path": "completion.json",
+        "bytes": 831,
+        "sha256": "6020d6864eaa715d5d15fb986bf20e608facc8951c9146cd7bce0fbe8f4c8b17"
+      },
+      {
+        "path": "dispatch_summary.json",
+        "bytes": 143,
+        "sha256": "07b12b30752b1111725da15d9c15f6046030838cee2d68e4c4814f046788fcdb"
+      },
+      {
+        "path": "execution_authorization.json",
+        "bytes": 957,
+        "sha256": "549d7888dc936ebc6ab49a8fe1316edca7d84e8ba2f320ec8174a41f61b0fe2a"
+      },
+      {
+        "path": "frozen_config.json",
+        "bytes": 6007,
+        "sha256": "ececdb67c28faaf8f4c6a7bab90451053e70d7ed0ec20c5ff0ab619710bec34f"
+      },
+      {
+        "path": "frozen_dependencies_manifest.json",
+        "bytes": 2675,
+        "sha256": "bb8b42496c89a1fcc7ef87fc8a524f793913b358f0151a6f57703ff57eaeec1c"
+      },
+      {
+        "path": "frozen_files/input_review.json",
+        "bytes": 3353948,
+        "sha256": "199fb9a058b2c7b778ca29bddbf1778ea2a4cc47a3e60d9351110942e93d0eeb"
+      },
+      {
+        "path": "frozen_files/p36_contract.py",
+        "bytes": 6095,
+        "sha256": "f58938d843711659eb5f718c97b66918e867f79514c2d31ec90bf53f03f7d269"
+      },
+      {
+        "path": "frozen_files/prepare_p36.py",
+        "bytes": 13502,
+        "sha256": "a47be887f85927405ae11f56972ae1ad94206ed0548da8120fc1bd8ed6fff6b6"
+      },
+      {
+        "path": "frozen_files/run_p36.py",
+        "bytes": 5642,
+        "sha256": "5560411d45d236a88111564fea707cb869c080507a6262971399c6311e28e035"
+      },
+      {
+        "path": "frozen_files/score_p36.py",
+        "bytes": 5927,
+        "sha256": "bf1f364db8612d351d0c50962a0ebc3d2f23be883209f22467c8c96f4844e65f"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__configs__default.yaml",
+        "bytes": 1672,
+        "sha256": "81a6579297d23f495798b344bf8f3e2462ac11dd5029ef3352c4a8558a0cc201"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__configs__task__ft_molinst.yaml",
+        "bytes": 805,
+        "sha256": "10d51a8a341143f7b8c5c83e2796e6ae9a2f9d330256812f71a3794d55787220"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__evaluation_mol_instruction_protein.sh",
+        "bytes": 1247,
+        "sha256": "d1fe841a19b2d21e3d9a82b6e3ce9160d8172a8a82f04b0fca5cad0efd035901"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__metrics__pro_understand_metrics__pro_understand_metrics.py",
+        "bytes": 2176,
+        "sha256": "6717c828e0a9bacdf761f1499672ab551938326fed723e1c805a23ebc9c6d2a9"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__utils__copied_utils.py",
+        "bytes": 38560,
+        "sha256": "1c5a57d083dd92ccec80b29fbacaddac2f0a27f9cc47cf0ebd516f235f0e51f8"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__utils__gen_utils.py",
+        "bytes": 1572,
+        "sha256": "d00362d521d09c4ca4d7bcad68c365b0ed18639cb296363e941d4d6039e40dc2"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__utils__model_utils.py",
+        "bytes": 25457,
+        "sha256": "5037cb40c5a3821cd823a9c470f86ea465ed62019ecfb088ee70f0d628096092"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__utils__molinst_ni_dataset.py",
+        "bytes": 7804,
+        "sha256": "c772939d2b356c8968e7f492ae24f55420e9329397a093fbbf28853086b3a448"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__utils__prompter.py",
+        "bytes": 1753,
+        "sha256": "57fc9ba8c0e9d18cd5d285e9188181ff1f1267d14f31e6243fcb5ea1fc96981e"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__utils__templates__alpaca.json",
+        "bytes": 544,
+        "sha256": "853c698d1e733655a429232100e31a33beeab2a29d0b98ba63232c90e0f379de"
+      },
+      {
+        "path": "frozen_files/sources/biot5_plus__utils__train_utils.py",
+        "bytes": 19035,
+        "sha256": "37878719b9a5f266e9c3cf9f15c72c733f2c77cb0e07e79af6dff6dbcbba5f8c"
+      },
+      {
+        "path": "frozen_files/sources/biot5_test_tasks.txt",
+        "bytes": 39,
+        "sha256": "9be523fe1dd876198363efa3b27b922c9c93375958cd01089ed7a6e06283ee2a"
+      },
+      {
+        "path": "frozen_files/sources/hf_rouge_pinned.py",
+        "bytes": 6140,
+        "sha256": "805b71b855be6dc270ce2366639a4e264c2a1fb93a2c8a50f9fb9ef5a2b9c21a"
+      },
+      {
+        "path": "frozen_files/test_p36.py",
+        "bytes": 6735,
+        "sha256": "79bfe9d8c365879c6ff595c707f2c6a97bd18c47d1024519e4fee6d9ba3100fa"
+      },
+      {
+        "path": "input_review.json",
+        "bytes": 3353948,
+        "sha256": "199fb9a058b2c7b778ca29bddbf1778ea2a4cc47a3e60d9351110942e93d0eeb"
+      },
+      {
+        "path": "native_metric_output.tsv",
+        "bytes": 166016,
+        "sha256": "c6fab3c97b41dc61734f8bb95ddb2c7421fe4d02bb7d1c1abb59146fb97d8db9"
+      },
+      {
+        "path": "per_case_scores.json",
+        "bytes": 33811,
+        "sha256": "03c7f2581bdf01f0beda303afa181f7f2efb73c076da19043b5216cbfc24fb96"
+      },
+      {
+        "path": "preparation/PREPARATION_AUDIT_2026-10-16.json",
+        "bytes": 8779,
+        "sha256": "5bf169548d55f651b585584eb46bdd12d62202eb279cb6011bb9ef35c4ce3790"
+      },
+      {
+        "path": "preparation/requirements.lock.txt",
+        "bytes": 148,
+        "sha256": "75f8393520ea54300d4a0230f5fb5baeb2991d8e61faea65ffd0a7e4267015aa"
+      },
+      {
+        "path": "preparation/runtime_package_versions.json",
+        "bytes": 589,
+        "sha256": "27d65c5776062df50bb63957303b422efaeb1444a6d5eab8a122acb93e0319dc"
+      },
+      {
+        "path": "preparation/source_manifest.json",
+        "bytes": 4702,
+        "sha256": "daa3db31f8b4b64e082f166951657e199ae6c673797431b3794e4007425e8c24"
+      },
+      {
+        "path": "run_manifest.json",
+        "bytes": 6495,
+        "sha256": "80d98e706658e01396c855f65c91c852261fe22aff756e4d80c76fbb1517b3ed"
+      },
+      {
+        "path": "scores.json",
+        "bytes": 3244,
+        "sha256": "aa85ba27ac77c7df8251a2701a71a6b2f6b8e8713743838d3b02320334248aec"
+      },
+      {
+        "path": "scoring_output_lock.json",
+        "bytes": 18561,
+        "sha256": "af429e239f824df8e7a9240392fad50e15c1f43178be3a9adc2d2475577043ec"
+      }
+    ],
+    "cases": []
+  }
+}

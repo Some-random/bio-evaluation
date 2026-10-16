@@ -1,0 +1,22 @@
+{
+  "run_id": "p36-qwen3.8-27b-biot5-reviewed59-20261016",
+  "task_id": "P36",
+  "finished_at_utc": "2026-10-16T11:58:35.573859+00:00",
+  "status": "scored_partial_subset",
+  "scorer_exit_code": 0,
+  "existing_scores_reused": false,
+  "full_benchmark_complete": false,
+  "planned": 59,
+  "metadata": {
+    "task_id": "P36",
+    "planned": 59,
+    "completed": 17,
+    "case_scope": "PARTIAL_input_reviewed_first64_subset",
+    "full_benchmark_complete": false,
+    "all_declared_subset_outputs_saved": false,
+    "missing_or_failed_slots": 42,
+    "metric_label": "qualified_released_code_paired_reference_rougeL",
+    "scores_sha256": "aa85ba27ac77c7df8251a2701a71a6b2f6b8e8713743838d3b02320334248aec"
+  },
+  "policy": "One frozen offline score attempt; no generation, retry, output repair, or full-benchmark completion claim."
+}

@@ -8,15 +8,20 @@
   "uploaded_error_response_pairs": 42,
   "uploaded_ambiguous_request_records": 0,
   "uploaded_terminal_failure_or_ambiguous_records": 42,
-  "generation_terminal": false,
-  "scoring_terminal": false,
-  "scoring_artifacts_present": false,
-  "scoring_success": false,
+  "generation_terminal": true,
+  "scoring_terminal": true,
+  "scoring_artifacts_present": true,
+  "scoring_success": true,
   "configuration_sha256": "ececdb67c28faaf8f4c6a7bab90451053e70d7ed0ec20c5ff0ab619710bec34f",
   "full_benchmark_complete": false,
   "biological_function_validated": false,
-  "subset_scoring_artifacts_archived": false,
+  "subset_scoring_artifacts_archived": true,
   "metric": "Qualified released-code paired-reference ROUGE; not paper normalized Smith-Waterman",
   "repository_private_verified": true,
-  "latest_metadata_asset": "https://github.com/Some-random/bio-evaluation/releases/download/continuation-2026-10-16-reviewed-p36-and-source-preparation/p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-aabbacb7c7d932fec07b1c5b.tar.gz"
+  "latest_metadata_asset": "https://github.com/Some-random/bio-evaluation/releases/download/continuation-2026-10-16-reviewed-p36-and-source-preparation/p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-e68bc40942c2bc64c4045413.tar.gz",
+  "metrics": {
+    "rougeL": 0.12347117664198978
+  },
+  "metric_label": "qualified_released_code_paired_reference_rougeL",
+  "comparison_qualification": "Partial59-case zero-shot Qwen text baseline. Same released paired-reference ROUGE algorithm, prospectively pinned cached HF revision; full raw prompt/target serialization and added output-format system instruction differ from trained BioT5+ tokenizer,512/256 caps and greedy generation. Historical evaluate.load resolution unpinned. Not paper normalized Smith-Waterman, not design-function success, not full5876-case completion."
 }
