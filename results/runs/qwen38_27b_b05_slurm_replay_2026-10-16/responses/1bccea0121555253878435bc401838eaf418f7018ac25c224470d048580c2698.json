@@ -1,0 +1,57 @@
+{
+  "task": "B05",
+  "case_id": "8a89e31e-0f5f-4066-bfc7-3e57b06cff95",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "request_sha256": "3a4fd2aebfdc36aedcd89d125f55b675196c6a39307f7774c3e4409a89d3139c",
+  "http_status": 200,
+  "response": {
+    "id": "chatcmpl-b6a6ae552e555e9d",
+    "object": "chat.completion",
+    "created": 1792132616,
+    "model": "Qwen/Qwen3.8-27B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\nLooking at the table, the row for \"General info for emergency INDs during normal business hours (8:00 AM to 4:30 PM EST)\" lists the phone numbers as 301-796-3400 or 855-543-3784, which matches option C.\n\n[ANSWER]C[/ANSWER]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": "The question asks for the phone number for general info for emergency during normal business hours. Looking at the table, the row \"General info for emergency INDs during normal business hours (8:00 AM to 4:30 PM EST)\" lists Phone: 301-796-3400 or 855-543-3784. That matches option C.\n\nLet me verify other options: B is after hours numbers, D is the CDER Emergency Coordinator phone, E is the fax. So C is correct.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.31.0-044a22dd",
+    "usage": {
+      "prompt_tokens": 6305,
+      "total_tokens": 6509,
+      "completion_tokens": 204,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 119
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "elapsed_seconds": 18.955,
+  "saved_at_utc": "2026-10-16T06:37:15.660980+00:00",
+  "status": "completed",
+  "text": "\n\nLooking at the table, the row for \"General info for emergency INDs during normal business hours (8:00 AM to 4:30 PM EST)\" lists the phone numbers as 301-796-3400 or 855-543-3784, which matches option C.\n\n[ANSWER]C[/ANSWER]",
+  "finish_reason": "stop"
+}
