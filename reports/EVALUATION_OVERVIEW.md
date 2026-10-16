@@ -30,7 +30,7 @@ Microglia are the brain’s immune cells. IFNAR1 receives type-I interferon sign
 
 **Answer choices:** (A) increased synaptophysin+ density; (B) increased loss; (C) no effect; (D) attenuation of loss; (E) Insufficient information to answer the question.
 
-**Qwen's answer:** Reduced loss of post-synaptic terminals.
+**Qwen's answer:** (D)
 
 **Saved model reasoning (verbatim, 281 words):**
 
