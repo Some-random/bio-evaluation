@@ -36,14 +36,14 @@
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv": "c813f6702a0af51e272e344bfbc02d913541103d3f4acf849e4547ac78c3764c",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/AGENT_TASK_MAPPING.csv": "3f17b92ccf2c19e8475b0eba88c396363dad1a5d1e6ae8644dffb9161fbb70ec",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx": "3bbe6cee62c15266814fa082825a9f6349c32d34e976855eda604bef68336f6f",
-      "reports/EVALUATION_PROGRESS.json": "c5c2e2a46889213b0adcff4e3de97d3dcf9f05c4715280de05810daed5d6ec63",
-      ".local/remaining_evaluations/supervisor_status.json": "9b9dfc6773c33cfa6da1a4e9540fa9108d18678f6fe95dd5310068beaa5c1bea",
+      "reports/EVALUATION_PROGRESS.json": "2c08736e913bdb4c417ec663fd5f6802679a3fb83fe95c2a8370cf6a6d7d9017",
+      ".local/remaining_evaluations/supervisor_status.json": "030f497cbe801abb3596cee97adb52e600c5f02fa23f5a931b4f21b4c5fd3d54",
       ".local/remaining_evaluations/upload_status.json": "5dcdec6a43a20baa3768498548df3183e021dbba44159eee3b6323b337a1dfdf"
     },
     "localResultRows": 28,
     "uploadedResponses": 4376,
     "heartbeat": {
-      "status": "fresh",
+      "status": "stale",
       "updatedAt": "2026-10-16T11:23:26.367254+00:00",
       "staleAfterSeconds": 300
     },
@@ -70,7 +70,7 @@
     "metadataNotice": {
       "source": ".local/remaining_evaluations/supervisor_status.json",
       "stage": "retry_pending",
-      "updatedAt": "2026-10-16T11:25:37.979740+00:00",
+      "updatedAt": "2026-10-16T11:33:20.612725+00:00",
       "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
     }
   },

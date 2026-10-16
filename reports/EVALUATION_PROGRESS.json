@@ -3,13 +3,13 @@
   "scoreSnapshotAt": "2026-10-16T04:25:25.541726+00:00",
   "runSnapshotAt": "2026-10-16T11:23:26.367254+00:00",
   "heartbeat": {
-    "status": "fresh",
+    "status": "stale",
     "updatedAt": "2026-10-16T11:23:26.367254+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/RESULTS_AT_A_GLANCE.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
-    ".local/remaining_evaluations/supervisor_status.json": "9b9dfc6773c33cfa6da1a4e9540fa9108d18678f6fe95dd5310068beaa5c1bea",
+    ".local/remaining_evaluations/supervisor_status.json": "030f497cbe801abb3596cee97adb52e600c5f02fa23f5a931b4f21b4c5fd3d54",
     ".local/remaining_evaluations/upload_status.json": "5dcdec6a43a20baa3768498548df3183e021dbba44159eee3b6323b337a1dfdf"
   },
   "uploader": {
@@ -405,7 +405,7 @@
   "metadataNotice": {
     "source": ".local/remaining_evaluations/supervisor_status.json",
     "stage": "retry_pending",
-    "updatedAt": "2026-10-16T11:25:37.979740+00:00",
+    "updatedAt": "2026-10-16T11:33:20.612725+00:00",
     "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
   }
 }
