@@ -2,11 +2,11 @@
 
 Model: **Qwen3.8-27B**.
 
-Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 11:23 UTC**.
+Scores: **2026-10-16 13:49 UTC** · Run status: **2026-10-16 11:23 UTC**.
 
 **The run-status heartbeat is stale; current activity is unconfirmed.**
 
-**25 of 64 evaluation settings have finished runs.** An asterisk (*) marks incomplete coverage or scoring.
+**5 of 64 evaluation settings have finished runs.** An asterisk (*) marks incomplete coverage or scoring.
 
 **37 of 64 settings are runnable with the current setup.** Text and vision inputs are supported. Runnable means the required inputs, execution path and scorer are available; it includes explicitly marked reviewed subsets and does not guarantee correct or valid predictions.
 
@@ -19,11 +19,11 @@ Expand a category to see its tasks and datasets.
 
 #### Protein solubility
 
-2 dataset groups · results available
+2 dataset groups
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Protein solubility | DeepSol solubility — PEER split | Finished · Ready | accuracy 24.2% | BioT5+: accuracy 74.37% ± 0.19 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
+| Protein solubility* | DeepSol solubility — PEER split | Run status unconfirmed* · Ready | — | Accuracy: BioT5+ 74.37 ± 0.19%; BioT5 74.65 ± 0.49%. · [source](https://arxiv.org/html/2206.02096v2) |
 |  | PFMBench solubility panel | Needs data or protocol<br>Needs four PFMBench splits and separate solubility classification/regression scoring. | — | ESM2-Adapter, Table 1 means: DeepSol AUROC 0.8467; DeepSoluE AUROC 0.7699; ProtSolM AUROC 0.8572; eSOL Spearman 0.2761 · [source](https://arxiv.org/html/2506.14796v1) |
 
 #### Protein localization
@@ -32,19 +32,19 @@ Expand a category to see its tasks and datasets.
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Binary protein localization | DeepLoc — binary and 10-compartment localization<br>Binary localization — DeepLoc/PEER | Finished · Ready | accuracy 27.4% | BioT5+: accuracy 90.41% ± 0.07 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
-| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued · 80.9% trajectories uploaded* · Ready | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
+| Binary protein localization* | DeepLoc — binary and 10-compartment localization<br>Binary localization — DeepLoc/PEER | Run status unconfirmed* · Ready | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
+| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued · 80.9% trajectories uploaded* · Ready | accuracy 26.1% | ProtST-ESM-1b: fixed encoder.accuracy 82.0%; full model tuning.accuracy 78.73%; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Localization and sorting signals | PFMBench localization and sorting-signal panel | Needs data or protocol<br>Needs PFMBench splits, label vocabularies and binary/multilabel scoring. | — | ESM2-Adapter, Table 1 means: DeepLocMulti Accuracy 0.7666; DeepLoc2Multi F1 0.7505; DeepLocBinary AUROC 0.9338; SortingSignal F1 0.8598 · [source](https://arxiv.org/html/2506.14796v1) |
 
 #### Protein activity, stability and production
 
-6 dataset groups · partial results* · running or queued
+6 dataset groups · running or queued
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
 | Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued · 7.8% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein stability* | TAPE / Rocklin stability | Running or queued · 0.0% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.738; ESM-2 0.718. · [source](https://arxiv.org/html/2206.02096v2) |
-| Protein thermostability prediction* | FLIP — AAV and Meltome<br>Thermostability — FLIP/Meltome | Partial* · Ready<br>Existing sequence regression runner and native Spearman scorer are available. | **Diagnostic only:** spearman undefined; spearman_parsed_only 0.0254<br>Full native primary metric undefined. | ProtST-ESM-1b: fixed encoder.spearman 0.68; full model tuning.spearman 0.681; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Protein thermostability prediction* | FLIP — AAV and Meltome<br>Thermostability — FLIP/Meltome | Run status unconfirmed* · Ready<br>Existing sequence regression runner and native Spearman scorer are available. | — | Spearman, ProtST-ESM-2 vs ESM-2: AAV 0.825 vs 0.817; Meltome 0.682 vs 0.672. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Enzyme activity* | Envision β-lactamase — PEER split | Needs data or protocol*<br>Beta-lactamase assay scope and complete native test inputs are not cleared. | — | Spearman: ProtST-ESM-2 0.879; ESM-2 0.867. · [source](https://arxiv.org/html/2206.02096v2) |
 | AAV variant fitness prediction* | FLIP — AAV and Meltome<br>AAV variant fitness — FLIP | Needs data or protocol*<br>FLIP AAV test archive and assay-specific input review remain unfinished. | — | Spearman, ProtST-ESM-2 vs ESM-2: AAV 0.825 vs 0.817; Meltome 0.682 vs 0.672. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Protein stability classification* | NatureLM/PEER binarized stability — paper-specific protocol | Needs data or protocol*<br>NatureLM binary stability labels and conversion rule are unrecovered. | — | NatureLM-8x7B: 72.3% accuracy; SFM-Protein-650M: 58.3%, in NatureLM's stability-classification setup. · [source](https://arxiv.org/html/2502.07527v3) |
@@ -52,12 +52,12 @@ Expand a category to see its tasks and datasets.
 
 #### Protein interactions and interfaces
 
-3 dataset groups · results available
+3 dataset groups
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Human protein–protein interaction prediction | Human/Pan and yeast/Guo PPI — PEER<br>Human protein–protein interaction — PEER | Finished · Ready | accuracy 50.2% | BioT5+ (supervised): accuracy 85.09% ± 0.4 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
-| Yeast protein–protein interaction prediction | Human/Pan and yeast/Guo PPI — PEER<br>Yeast protein–protein interaction — PEER | Finished · Ready | accuracy 45.2% | BioT5+ (supervised): accuracy 66.16% ± 0.43 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
+| Human protein–protein interaction prediction* | Human/Pan and yeast/Guo PPI — PEER<br>Human protein–protein interaction — PEER | Run status unconfirmed* · Ready | — | Accuracy, BioT5+ vs BioT5: human 85.09% vs 86.22%; yeast 66.16% vs 64.89%. · [source](https://arxiv.org/html/2206.02096v2) |
+| Yeast protein–protein interaction prediction* | Human/Pan and yeast/Guo PPI — PEER<br>Yeast protein–protein interaction — PEER | Run status unconfirmed* · Ready | — | Accuracy, BioT5+ vs BioT5: human 85.09% vs 86.22%; yeast 66.16% vs 64.89%. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein and metal interactions | PFMBench protein and metal-interaction panel | Needs data or protocol<br>Needs paired inputs, metal classes and continuous interaction scores. | — | ESM2-Adapter, Table 1 means: Human_PPI AUROC 0.4828; Yeast_PPI AUROC 0.5343; PPI_Affinity Spearman -0.0047; MetalIonBinding Accuracy 0.7066 · [source](https://arxiv.org/html/2506.14796v1) |
 | Protein interface contacts | ATOM3D interface contacts (PIP) | Needs additional models/tools<br>Needs a geometry-input adapter and residue-contact probabilities from 3D structures. | — | AUROC: 3D-CNN 0.844; GNN 0.669; non-3D baseline 0.841. · [source](https://arxiv.org/html/2012.04035v3) |
 
@@ -90,14 +90,14 @@ Expand a category to see its tasks and datasets.
 
 #### Protein function descriptions
 
-2 dataset groups · results available
+2 dataset groups
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Protein function description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Protein function generation | Finished · Ready | rouge1 0.0631; rouge2 0.0139; rougeL 0.0431; rougeLsum 0.0542 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
-| Catalytic activity description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Catalytic activity generation | Finished · Ready | rouge1 0.0541; rouge2 0.0140; rougeL 0.0396; rougeLsum 0.0473 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
-| Protein domain and motif description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Domain and motif generation | Finished · Ready | rouge1 0.0354; rouge2 0.0047; rougeL 0.0259; rougeLsum 0.0306 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
-| Protein functional description generation | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Functional description generation | Finished · Ready | rouge1 0.0800; rouge2 0.0123; rougeL 0.0494; rougeLsum 0.0649 | Verified numerical comparator unavailable · [source](https://arxiv.org/html/2306.08018v4) |
+| Protein function description generation* | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Protein function generation | Run status unconfirmed* · Ready | — | Official Mol-Instructions LLaMA model ROUGE-L: function 0.43; general description 0.44; catalytic activity 0.52; domain/motif 0.46. · [source](https://arxiv.org/html/2306.08018v4) |
+| Catalytic activity description generation* | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Catalytic activity generation | Run status unconfirmed* · Ready | — | Official Mol-Instructions LLaMA model ROUGE-L: function 0.43; general description 0.44; catalytic activity 0.52; domain/motif 0.46. · [source](https://arxiv.org/html/2306.08018v4) |
+| Protein domain and motif description generation* | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Domain and motif generation | Run status unconfirmed* · Ready | — | Official Mol-Instructions LLaMA model ROUGE-L: function 0.43; general description 0.44; catalytic activity 0.52; domain/motif 0.46. · [source](https://arxiv.org/html/2306.08018v4) |
+| Protein functional description generation* | Mol-Instructions — four protein-description subsets<br>Mol-Instructions: Functional description generation | Run status unconfirmed* · Ready | — | Official Mol-Instructions LLaMA model ROUGE-L: function 0.43; general description 0.44; catalytic activity 0.52; domain/motif 0.46. · [source](https://arxiv.org/html/2306.08018v4) |
 | Protein description generation* | NatureLM's NCBI protein-description holdout | Needs data or protocol*<br>Publisher unchanged; exact temporal test IDs, sequence/reference snapshots, cutoff and ROUGE-L preprocessing remain missing. | — | ROUGE-L: NatureLM-8x7B 0.585; fine-tuned Llama-3-8B 0.324; GPT-4o 0.091. · [source](https://arxiv.org/html/2502.07527v3) |
 
 #### Biochemical reaction classification
@@ -185,12 +185,12 @@ Expand a category to see its tasks and datasets.
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
 | Literature evidence question answering* | LAB-Bench — research tasks<br>LAB-Bench / LitQA2 | Partial* · Ready | accuracy 39.1%; precision 41.0%; coverage 95.4% | GPT-5.2: accuracy 45.7%; n=199; Table 1 · [source](https://arxiv.org/html/2606.00902v1) |
-| Biological database question answering | LAB-Bench — research tasks<br>LAB-Bench / DbQA | Finished · Ready | accuracy 31.3%; precision 31.8%; coverage 98.5% | GPT-5.2: accuracy 41.7%; n=520; Table 1 · [source](https://arxiv.org/html/2606.00902v1) |
-| Supplementary-material question answering | LAB-Bench — research tasks<br>LAB-Bench / SuppQA | Finished · Ready | accuracy 34.1%; precision 35.9%; coverage 95.1% | GPT-5.2: accuracy 48.8%; n=82; Table 1 · [source](https://arxiv.org/html/2606.00902v1) |
-| Research figure question answering | LAB-Bench — research tasks<br>LAB-Bench / FigQA | Finished · Ready | accuracy 75.7%; precision 77.0%; coverage 98.3% | GPT-5.2: accuracy 36.5%; n=181; Table 1 · [source](https://arxiv.org/html/2606.00902v1) |
-| Research table question answering | LAB-Bench — research tasks<br>LAB-Bench / TableQA | Finished · Ready | accuracy 88.5%; precision 90.0%; coverage 98.4% | GPT-5.2: accuracy 36.9%; n=244; Table 1 · [source](https://arxiv.org/html/2606.00902v1) |
-| Biological sequence question answering | LAB-Bench — research tasks<br>LAB-Bench / SeqQA | Finished · Ready | accuracy 12.7%; precision 12.8%; coverage 99.2% | GPT-5.2: accuracy 47.0%; n=600; Table 1 · [source](https://arxiv.org/html/2606.00902v1) |
-| Molecular cloning question answering | LAB-Bench — research tasks<br>LAB-Bench / Cloning scenarios | Finished · Ready | accuracy 0.0%; precision 0.0%; coverage 100.0% | GPT-5.2: accuracy 36.4%; n=33; Table 1 · [source](https://arxiv.org/html/2606.00902v1) |
+| Biological database question answering* | LAB-Bench — research tasks<br>LAB-Bench / DbQA | Run status unconfirmed* · Ready | — | Historical 2024 GPT-4o accuracy: LitQA2 27%; SuppQA 13%; FigQA 29%; TableQA 71%; ProtocolQA 53%; Cloning 28%. DbQA variant-from-sequence 42%; SeqQA GC% 29%, ORF-sequence 50% (SUBTASK values only). · [source](https://arxiv.org/html/2407.10362v1) |
+| Supplementary-material question answering | LAB-Bench — research tasks<br>LAB-Bench / SuppQA | Finished · Ready | accuracy 37.8%; precision 39.2%; coverage 96.3% | GPT-5.2: accuracy 48.8%; n=82; Table 1 · [source](https://arxiv.org/html/2606.00902v1) |
+| Research figure question answering | LAB-Bench — research tasks<br>LAB-Bench / FigQA | Finished · Ready | accuracy 72.4%; precision 72.8%; coverage 99.4% | GPT-5.2: accuracy 36.5%; n=181; Table 1 · [source](https://arxiv.org/html/2606.00902v1) |
+| Research table question answering | LAB-Bench — research tasks<br>LAB-Bench / TableQA | Finished · Ready | accuracy 88.1%; precision 90.0%; coverage 98.0% | GPT-5.2: accuracy 36.9%; n=244; Table 1 · [source](https://arxiv.org/html/2606.00902v1) |
+| Biological sequence question answering* | LAB-Bench — research tasks<br>LAB-Bench / SeqQA | Run status unconfirmed* · Ready | — | Historical 2024 GPT-4o accuracy: LitQA2 27%; SuppQA 13%; FigQA 29%; TableQA 71%; ProtocolQA 53%; Cloning 28%. DbQA variant-from-sequence 42%; SeqQA GC% 29%, ORF-sequence 50% (SUBTASK values only). · [source](https://arxiv.org/html/2407.10362v1) |
+| Molecular cloning question answering* | LAB-Bench — research tasks<br>LAB-Bench / Cloning scenarios | Run status unconfirmed* · Ready | — | Historical 2024 GPT-4o accuracy: LitQA2 27%; SuppQA 13%; FigQA 29%; TableQA 71%; ProtocolQA 53%; Cloning 28%. DbQA variant-from-sequence 42%; SeqQA GC% 29%, ORF-sequence 50% (SUBTASK values only). · [source](https://arxiv.org/html/2407.10362v1) |
 | Protein understanding | ProteinLMBench protein-understanding questions | Needs data or protocol<br>Needs the released questions, held-out manifest and frozen answer parser. | — | InternLM2-7B after SFT: 58.26% accuracy; SSL+SFT: 62.18%. · [source](https://arxiv.org/html/2406.05540v1) |
 | Research-abstract question answering | PubMedQA research-abstract questions | Needs data or protocol<br>Needs the official test split; exclude conclusions from question/abstract inputs. | — | Original BioBERT multi-phase training: 68.1% accuracy; reported human baseline 78.0%. Historical results. · [source](https://arxiv.org/abs/1909.06146) |
 | Experimental protocol question answering* | LAB-Bench — research tasks<br>LAB-Bench / ProtocolQA | On hold*<br>ProtocolQA remains under the explicit input-review hold. | — | Historical 2024 GPT-4o accuracy: LitQA2 27%; SuppQA 13%; FigQA 29%; TableQA 71%; ProtocolQA 53%; Cloning 28%. DbQA variant-from-sequence 42%; SeqQA GC% 29%, ORF-sequence 50% (SUBTASK values only). · [source](https://arxiv.org/html/2407.10362v1) |
@@ -216,11 +216,11 @@ Expand a category to see its tasks and datasets.
 
 #### GFP sequence optimization
 
-1 dataset group · partial results*
+1 dataset group
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| GFP sequence optimization against a fluorescence predictor*<br>Scored by a fluorescence predictor; not a wet-lab result. | STRIDE GFP sequence optimization | Partial* · Ready<br>Qualified GFP generation and frozen trained SaProt CPU evaluator are prepared. | replace_only.qualified_oracle_success 0.0000; replace_only.improved_sequence_uniqueness undefined; replace_only.native_novelty undefined; full_atomic.qualified_oracle_success 0.0000; full_atomic.improved_sequence_uniqueness undefined; full_atomic.native_novelty undefined | STRIDE: success count 61; attempt count 100; unique improved count 59; n=100; Table 4 · [source](https://arxiv.org/html/2603.03573v1) |
+| GFP sequence optimization against a fluorescence predictor*<br>Scored by a fluorescence predictor; not a wet-lab result. | STRIDE GFP sequence optimization | Run status unconfirmed* · Ready<br>Qualified GFP generation and frozen trained SaProt CPU evaluator are prepared. | — | Fixed fluorescence-oracle successes: full edit setting 89/100 for STRIDE vs 42/100 SFT; replace-only 61/100 vs 55/100 SFT. · [source](https://arxiv.org/html/2603.03573v1) |
 
 #### Antibody design
 
@@ -315,22 +315,22 @@ Expand a category to see its tasks and datasets.
 
 #### Biomedical visual question answering
 
-1 dataset group · results available
+1 dataset group
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Radiology image question answering | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>VQA-RAD | Finished · Ready | open_token_recall 59.5%; closed_accuracy 86.8% | LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0: open token recall 28.23%; closed accuracy 61.4%; n=451; Table 4(b), PDF p.9 · [source](https://arxiv.org/pdf/2306.00890) |
-| Medical image question answering in English | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>SLAKE — English | Finished · Ready | open_token_recall 51.0%; closed_accuracy 84.6% | LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0: open token recall 39.17%; closed accuracy 52.16%; n=1061; Table 4(b), PDF p.9 · [source](https://arxiv.org/pdf/2306.00890) |
-| Pathology image question answering | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>PathVQA | Finished · Ready | open_token_recall 26.4%; closed_accuracy_corrected 0.8587 | LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0: open token recall 12.3%; closed accuracy 54.05%; n=6761; Table 4(b), PDF p.9 · [source](https://arxiv.org/pdf/2306.00890) |
-| Medical image question answering | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>ImageCLEF-VQA 2019 | Finished · Ready | strict_accuracy 0.0% | MedVInT-TE: overall accuracy 70.5%; Table 2 · [source](https://arxiv.org/html/2305.10415v6) |
+| Radiology image question answering* | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>VQA-RAD | Run status unconfirmed* · Ready | — | MedVInT-TD: 73.7% open-answer and 86.8% closed-answer accuracy on VQA-RAD after task-specific fine-tuning. MedVInT-TE: 88.2% open-answer and 87.7% closed-answer accuracy on SLAKE after task-specific fine-tuning. LLaVA-Med initialized from Vicuna: PathVQA 38.87 open-answer token recall and 91.65% closed-answer accuracy, after task-specific fine-tuning. MedVInT-TE: 70.5% overall accuracy on VQA-Med 2019 after task-specific fine-tuning. · [source](https://arxiv.org/abs/2306.00890) |
+| Medical image question answering in English* | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>SLAKE — English | Run status unconfirmed* · Ready | — | MedVInT-TD: 73.7% open-answer and 86.8% closed-answer accuracy on VQA-RAD after task-specific fine-tuning. MedVInT-TE: 88.2% open-answer and 87.7% closed-answer accuracy on SLAKE after task-specific fine-tuning. LLaVA-Med initialized from Vicuna: PathVQA 38.87 open-answer token recall and 91.65% closed-answer accuracy, after task-specific fine-tuning. MedVInT-TE: 70.5% overall accuracy on VQA-Med 2019 after task-specific fine-tuning. · [source](https://arxiv.org/abs/2306.00890) |
+| Pathology image question answering* | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>PathVQA | Run status unconfirmed* · Ready | — | MedVInT-TD: 73.7% open-answer and 86.8% closed-answer accuracy on VQA-RAD after task-specific fine-tuning. MedVInT-TE: 88.2% open-answer and 87.7% closed-answer accuracy on SLAKE after task-specific fine-tuning. LLaVA-Med initialized from Vicuna: PathVQA 38.87 open-answer token recall and 91.65% closed-answer accuracy, after task-specific fine-tuning. MedVInT-TE: 70.5% overall accuracy on VQA-Med 2019 after task-specific fine-tuning. · [source](https://arxiv.org/abs/2306.00890) |
+| Medical image question answering* | Biomedical VQA: VQA-RAD / SLAKE-English / PathVQA / VQA-Med 2019<br>ImageCLEF-VQA 2019 | Run status unconfirmed* · Ready | — | MedVInT-TD: 73.7% open-answer and 86.8% closed-answer accuracy on VQA-RAD after task-specific fine-tuning. MedVInT-TE: 88.2% open-answer and 87.7% closed-answer accuracy on SLAKE after task-specific fine-tuning. LLaVA-Med initialized from Vicuna: PathVQA 38.87 open-answer token recall and 91.65% closed-answer accuracy, after task-specific fine-tuning. MedVInT-TE: 70.5% overall accuracy on VQA-Med 2019 after task-specific fine-tuning. · [source](https://arxiv.org/abs/2306.00890) |
 
 #### Scientific figures, documents and visual conversations
 
-3 dataset groups · results available
+3 dataset groups
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Scientific figure question answering | PMC-VQA figure question answering | Finished · Ready | native_td_final_character_accuracy 0.0200; adapted_full_text_closest_choice_accuracy 0.4975; adapted_full_text_released_label_accuracy 0.4975; strict_final_label_accuracy 0.0070 | MedVInT-TD / PMC-LLaMA / PMC-CLIP: choice accuracy 40.3%; blank accuracy 33.6%; blank bleu1 21.5%; n=2000; Table 3 · [source](https://arxiv.org/html/2305.10415v6) |
+| Scientific figure question answering* | PMC-VQA figure question answering | Run status unconfirmed* · Ready | — | The paper reports initial and manually cleaned PMC-VQA tests. A numeric result tied to an exact model and that exact split is not transcribed here. · [source](https://arxiv.org/html/2305.10415v6) |
 | Biomedical visual conversations* | LLaVA-Med biomedical visual conversations | Needs scoring protocol*<br>193 questions mapped and 19/50 images recovered; remaining images and native GPT-4 judging are blocked. | — | GPT-assisted relative answer-quality comparisons are reported. A verified single aggregate for the specified qa50 setting is not transcribed here. · [source](https://arxiv.org/abs/2306.00890) |
 | Scientific document and figure extraction* | Ryze document-extraction component tests | Needs data or protocol*<br>Publisher unchanged; exact component IDs, original media/page mapping and Table 3 pipeline/scoring contract remain missing. | — | Ryze extraction-component accuracy: ArXivQA 73.12%, SlideVQA 66.48%, ChartQA 75.8%. · [source](https://arxiv.org/html/2606.00902v1) |
 
@@ -341,34 +341,32 @@ Expand a category to see its tasks and datasets.
 
 #### Molecular interactions and binding affinity
 
-4 dataset groups · results available
+4 dataset groups
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Drug–target interaction | Drug–target interaction: BioSNAP / Human / BindingDB<br>Drug–target interaction — BioSNAP/Human/BindingDB · bindingdb | Finished · Ready | AUROC 0.5036; AP 0.4103 | BioT5+ (supervised): AUROC 0.964 ± 0.001; Table 8 · [source](https://arxiv.org/html/2402.17810v2) |
-|  | Drug–target interaction: BioSNAP / Human / BindingDB<br>Drug–target interaction — BioSNAP/Human/BindingDB · biosnap | Finished · Ready | AUROC 0.5336; AP 0.5217 | BioT5+ (supervised): AUROC 0.939 ± 0.001; Table 8 · [source](https://arxiv.org/html/2402.17810v2) |
-|  | Drug–target interaction: BioSNAP / Human / BindingDB<br>Drug–target interaction — BioSNAP/Human/BindingDB · human | Finished · Ready | AUROC 0.4747; AP 0.4194 | BioT5+ (supervised): AUROC 0.987 ± 0.001; Table 8 · [source](https://arxiv.org/html/2402.17810v2) |
+| Drug–target interaction* | Drug–target interaction: BioSNAP / Human / BindingDB | Run status unconfirmed* · Ready | — | BioT5+ AUROC: BioSNAP 0.939 ± 0.001; Human 0.987 ± 0.001; BindingDB 0.964 ± 0.001. · [source](https://arxiv.org/html/2402.17810v2) |
 | Protein–ligand binding affinity | PFMBench PDBbind / BindingDB affinity panel | Needs data or protocol<br>Needs native partner encodings, processed splits and affinity target transformations. | — | ESM2-Adapter, Table 1 means: PDBBind Spearman 0.1677; BindingDB Spearman 0.1922 · [source](https://arxiv.org/html/2506.14796v1) |
 |  | ATOM3D protein–ligand affinity (LBA) | Needs additional models/tools<br>Needs protein-ligand geometry input and a validated affinity-scoring adapter. | — | 3D-CNN: RMSE 1.416, Spearman 0.553; GNN: RMSE 1.570, Spearman 0.628. · [source](https://arxiv.org/html/2012.04035v3) |
 | Ligand efficacy | ATOM3D ligand efficacy (LEP) | Needs additional models/tools<br>Needs receptor/ligand conformation input and structural efficacy prediction. | — | AUROC: GNN 0.740; 3D-CNN 0.589. · [source](https://arxiv.org/html/2012.04035v3) |
 
 #### Pathway and disease prediction
 
-2 dataset groups · results available
+2 dataset groups
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Pathway and disease prediction | BioReason KEGG pathway/disease | Finished · Ready | accuracy 0.0%; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.supplemental_macro_f1_fixed_global_vocabulary 0.0000; STRICT_FINAL_LABEL.supplemental_macro_precision_fixed_global_vocabulary 0.0000; STRICT_FINAL_LABEL.supplemental_macro_recall_fixed_global_vocabulary 0.0000 | Qwen3-4B: accuracy 90.0%; macro f1 79.66%; macro precision 88.24%; n=290; Table 1 · [source](https://arxiv.org/html/2505.23579v2) |
+| Pathway and disease prediction* | BioReason KEGG pathway/disease | Run status unconfirmed* · Ready | — | Evo2 + Qwen3-4B + GRPO: 98.28% accuracy, 93.05 macro-F1; Qwen3-4B-only: 90.00% accuracy, 79.66 macro-F1. · [source](https://arxiv.org/html/2505.23579v2) |
 | Network-held-out pathway prediction* | Bio-posttrain KEGG unseen-network holdout | Needs data or protocol*<br>Exact network-held-out CSVs and network assignments are inaccessible. | — | Qwen3-4B DNA OOD accuracy: SFT 0.753; SFT+RL 0.917; biology-CPT+SFT+RL 0.970. · [source](https://arxiv.org/html/2606.16517v1) |
 
 #### Variant-effect prediction
 
-1 dataset group · results available
+1 dataset group
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Coding-variant effect prediction | BioReason VEP coding and non-SNV<br>BioReason VEP-Coding | Finished · Ready | accuracy 49.1%; f1 0.5213; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.f1 0.0000 | Qwen3-4B: accuracy 48.99%; f1 39.58%; Table 2 · [source](https://arxiv.org/html/2505.23579v2) |
-| Non-SNV variant effect prediction | BioReason VEP coding and non-SNV<br>BioReason VEP-Non-SNV | Finished · Ready | accuracy 89.0%; f1 0.9053; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.f1 0.0000 | Qwen3-4B: accuracy 61.86%; f1 67.6%; n=873; Table 2 · [source](https://arxiv.org/html/2505.23579v2) |
+| Coding-variant effect prediction* | BioReason VEP coding and non-SNV<br>BioReason VEP-Coding | Run status unconfirmed* · Ready | — | Evo2 + Qwen3-4B: 80.21% accuracy, 80.00 F1; Evo2-only: 70.07% accuracy, 49.19 F1. Evo2 + Qwen3-4B: 83.85% accuracy, 85.02 F1; Evo2-only: 76.17% accuracy, 66.51 F1. · [source](https://arxiv.org/html/2505.23579v2) |
+| Non-SNV variant effect prediction* | BioReason VEP coding and non-SNV<br>BioReason VEP-Non-SNV | Run status unconfirmed* · Ready | — | Evo2 + Qwen3-4B: 80.21% accuracy, 80.00 F1; Evo2-only: 70.07% accuracy, 49.19 F1. Evo2 + Qwen3-4B: 83.85% accuracy, 85.02 F1; Evo2-only: 76.17% accuracy, 66.51 F1. · [source](https://arxiv.org/html/2505.23579v2) |
 
 #### Expression-conditioned gene selection
 
@@ -425,80 +423,7 @@ Evidence:
 ]
 ```
 
-##### Solubility — PEER
-
-**Native/local protocol:** `QWEN_FULL_SEQUENCE_TEXT_BIOT5_TEST`
-
-**Coverage:** full_frozen_reviewed_case_set; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 1999,
-  "completed": 1999,
-  "parsed": 930,
-  "invalid_outputs": 1069,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "accuracy": 0.24212106053026514,
-  "correct": 484,
-  "planned": 1999,
-  "parsed": 930,
-  "missing": 0,
-  "invalid": 1069,
-  "all_case_rule": "Missing or invalid model answers count as incorrect; report transport failures separately."
-}
-```
-
-**Comparison qualification:** Native source outcome, data split and metric when separately verified; prompted zero-shot full-sequence Qwen baseline, not matched specialist training. No native BioT5 special-token architecture or fitted regression/classification head reproduced.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "BioT5+",
-    "metrics": {
-      "accuracy_percent": 74.37
-    },
-    "source_id": "BIOT5",
-    "source_url": "https://arxiv.org/html/2402.17810v2",
-    "source_locator": "Table 6",
-    "protocol": "supervised multitask instruction tuning on official PEER splits",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": {
-      "accuracy_percent": 0.19
-    },
-    "uncertainty_note": "Table prints mean ± dispersion; number of runs/dispersion definition not independently re-established here."
-  },
-  {
-    "model": "NatureLM",
-    "metrics": {
-      "1B_accuracy": 0.684,
-      "8B_accuracy": 0.714,
-      "8x7B_accuracy": 0.698
-    },
-    "source_id": "NATURE",
-    "source_url": "https://arxiv.org/html/2502.07527v3",
-    "source_locator": "Table 20, Section 7.2",
-    "protocol": "task-trained scientific model; adopted PEER splits",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p01_original_test_2026-10-15/scores.json)
+Published reference record: Accuracy: BioT5+ 74.37 ± 0.19%; BioT5 74.65 ± 0.49%.
 
 [Source 1](https://arxiv.org/html/2206.02096v2), [Source 2](https://arxiv.org/html/2402.17810v2), [Source 3](https://github.com/DeepGraphLearning/PEER_Benchmark)
 
@@ -570,20 +495,20 @@ Evidence:
 ]
 ```
 
-##### Binary localization — DeepLoc/PEER
+##### Subcellular localization — DeepLoc
 
-**Native/local protocol:** `QWEN_FULL_SEQUENCE_TEXT_BIOT5_TEST`
+**Native/local protocol:** `QWEN_ZERO_SHOT_FULL_SEQUENCE_DEEPLOC_NATIVE_LABELS`
 
-**Coverage:** full_frozen_reviewed_case_set; completed_declared_run.
+**Coverage:** full_frozen_reviewed_released_test; completed_declared_run.
 
 **Saved count record:**
 
 ```json
 {
-  "planned": 1749,
-  "completed": 1749,
-  "parsed": 1496,
-  "invalid_outputs": 253,
+  "planned": 2773,
+  "completed": 2773,
+  "parsed": 2722,
+  "invalid_outputs": 51,
   "missing_or_failed_outputs": 0,
   "held_before_inference": 0
 }
@@ -593,46 +518,30 @@ Evidence:
 
 ```json
 {
-  "accuracy": 0.27387078330474557,
-  "correct": 479,
-  "planned": 1749,
-  "parsed": 1496,
+  "planned": 2773,
+  "parsed": 2722,
   "missing": 0,
-  "invalid": 253,
-  "all_case_rule": "Missing or invalid model answers count as incorrect; report transport failures separately."
+  "invalid": 51,
+  "accuracy": 0.2610890732059142,
+  "correct": 724,
+  "all_case_rule": "Invalid/missing classes count incorrect; all planned rows stay in denominator."
 }
 ```
 
-**Comparison qualification:** Native source outcome, data split and metric when separately verified; prompted zero-shot full-sequence Qwen baseline, not matched specialist training. No native BioT5 special-token architecture or fitted regression/classification head reproduced.
+**Comparison qualification:** Original released public test data and native outcome/metric; zero-shot Qwen prompt/representation/training regime differs from native-trained TAPE/ProtST heads.
 
 **All stored published-reference records — separate from the local run:**
 
 ```json
 [
   {
-    "model": "BioT5+",
-    "metrics": {
-      "accuracy_percent": 90.41
-    },
-    "source_id": "BIOT5",
-    "source_url": "https://arxiv.org/html/2402.17810v2",
-    "source_locator": "Table 6",
-    "protocol": "supervised multitask instruction tuning on official PEER splits",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": {
-      "accuracy_percent": 0.07
-    },
-    "uncertainty_note": "Table prints mean ± dispersion; number of runs/dispersion definition not independently re-established here."
-  },
-  {
     "model": "ProtST-ESM-1b",
     "metrics": {
       "fixed_encoder": {
-        "accuracy_percent": 92.87
+        "accuracy_percent": 82.0
       },
       "full_model_tuning": {
-        "accuracy_percent": 92.35
+        "accuracy_percent": 78.73
       }
     },
     "source_id": "PROTST",
@@ -642,11 +551,24 @@ Evidence:
     "value_status": "published_rounded_as_printed",
     "run_count": null,
     "reported_std": null
+  },
+  {
+    "model": "ProtST-ESM-1b",
+    "metrics": {
+      "zero_shot_accuracy_percent": 43.49
+    },
+    "source_id": "PROTST",
+    "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+    "source_locator": "Table 11, printed p.15",
+    "protocol": "zero-shot embedding similarity to label names in published pretraining template",
+    "value_status": "published_rounded_as_printed",
+    "run_count": null,
+    "reported_std": null
   }
 ]
 ```
 
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p02_original_test_2026-10-15/scores.json)
+[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/scores.json)
 
 [Source 1](https://arxiv.org/html/2206.02096v2), [Source 2](https://arxiv.org/html/2402.17810v2), [Source 3](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf), [Source 4](https://github.com/DeepGraphLearning/PEER_Benchmark), [Source 5](https://github.com/DeepGraphLearning/ProtST)
 
@@ -800,70 +722,7 @@ Evidence:
 ]
 ```
 
-##### Thermostability — FLIP/Meltome
-
-**Native/local protocol:** `QWEN_ZERO_SHOT_FULL_SEQUENCE_FLIP_HUMAN_CELL`
-
-**Coverage:** full_frozen_reviewed_case_set; diagnostic_only_primary_metrics_invalid.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 1366,
-  "completed": 1366,
-  "parsed": 1354,
-  "invalid_outputs": 12,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "spearman": null,
-  "spearman_parsed_only": 0.025374030047975442,
-  "planned": 1366,
-  "parsed": 1354,
-  "missing": 0,
-  "invalid": 12,
-  "undefined_constant_or_insufficient": false,
-  "all_case_rule": "No invented numeric replacement. Full-test Spearman requires all outputs to parse; otherwise parsed-only correlation is explicitly incomplete."
-}
-```
-
-**Comparison qualification:** Native source outcome, data split and metric when separately verified; prompted zero-shot full-sequence Qwen baseline, not matched specialist training. No native BioT5 special-token architecture or fitted regression/classification head reproduced.
-
-All planned requests finished, but the full-test primary metric is undefined. Parsed-only diagnostics do not complete the benchmark and cannot replace its native metric.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "ProtST-ESM-1b",
-    "metrics": {
-      "fixed_encoder": {
-        "spearman": 0.68
-      },
-      "full_model_tuning": {
-        "spearman": 0.681
-      }
-    },
-    "source_id": "PROTST",
-    "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
-    "source_locator": "Table 2, printed p.6",
-    "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p06_original_test_2026-10-15/scores.json)
+Published reference record: Spearman, ProtST-ESM-2 vs ESM-2: AAV 0.825 vs 0.817; Meltome 0.682 vs 0.672.
 
 [Source 1](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf), [Source 2](https://github.com/J-SNACKKB/FLIP), [Source 3](https://github.com/J-SNACKKB/FLIP)
 
@@ -957,159 +816,7 @@ Evidence:
 ]
 ```
 
-##### Human protein–protein interaction — PEER
-
-**Native/local protocol:** `QWEN_FULL_SEQUENCE_TEXT_BIOT5_TEST`
-
-**Coverage:** full_frozen_reviewed_case_set; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 237,
-  "completed": 237,
-  "parsed": 229,
-  "invalid_outputs": 8,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "accuracy": 0.5021097046413502,
-  "correct": 119,
-  "planned": 237,
-  "parsed": 229,
-  "missing": 0,
-  "invalid": 8,
-  "all_case_rule": "Missing or invalid model answers count as incorrect; report transport failures separately."
-}
-```
-
-**Comparison qualification:** Native source outcome, data split and metric when separately verified; prompted zero-shot full-sequence Qwen baseline, not matched specialist training. No native BioT5 special-token architecture or fitted regression/classification head reproduced.
-
-Full source test, all invalid answers retained as failures; zero-shot full sequences versus supervised BioT5+.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "BioT5+",
-    "metrics": {
-      "accuracy_percent": 85.09
-    },
-    "source_id": "BIOT5",
-    "source_url": "https://arxiv.org/html/2402.17810v2",
-    "source_locator": "Table 6",
-    "protocol": "supervised multitask instruction tuning on official PEER splits",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": {
-      "accuracy_percent": 0.4
-    },
-    "uncertainty_note": "Table prints mean ± dispersion; number of runs/dispersion definition not independently re-established here."
-  },
-  {
-    "model": "NatureLM",
-    "metrics": {
-      "1B_accuracy": 0.781,
-      "8B_accuracy": 0.848,
-      "8x7B_accuracy": 0.776
-    },
-    "source_id": "NATURE",
-    "source_url": "https://arxiv.org/html/2502.07527v3",
-    "source_locator": "Table 20, Section 7.2",
-    "protocol": "task-trained scientific model; adopted PEER splits",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p10_original_test_2026-10-15/scores.json)
-
-##### Yeast protein–protein interaction — PEER
-
-**Native/local protocol:** `QWEN_FULL_SEQUENCE_TEXT_BIOT5_TEST`
-
-**Coverage:** full_frozen_reviewed_case_set; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 394,
-  "completed": 394,
-  "parsed": 365,
-  "invalid_outputs": 29,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "accuracy": 0.4517766497461929,
-  "correct": 178,
-  "planned": 394,
-  "parsed": 365,
-  "missing": 0,
-  "invalid": 29,
-  "all_case_rule": "Missing or invalid model answers count as incorrect; report transport failures separately."
-}
-```
-
-**Comparison qualification:** Native source outcome, data split and metric when separately verified; prompted zero-shot full-sequence Qwen baseline, not matched specialist training. No native BioT5 special-token architecture or fitted regression/classification head reproduced.
-
-Full source test, all invalid answers retained as failures; zero-shot full sequences versus supervised BioT5+.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "BioT5+",
-    "metrics": {
-      "accuracy_percent": 66.16
-    },
-    "source_id": "BIOT5",
-    "source_url": "https://arxiv.org/html/2402.17810v2",
-    "source_locator": "Table 6",
-    "protocol": "supervised multitask instruction tuning on official PEER splits",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": {
-      "accuracy_percent": 0.43
-    },
-    "uncertainty_note": "Table prints mean ± dispersion; number of runs/dispersion definition not independently re-established here."
-  },
-  {
-    "model": "NatureLM",
-    "metrics": {
-      "1B_accuracy": 0.561,
-      "8B_accuracy": 0.604,
-      "8x7B_accuracy": 0.586
-    },
-    "source_id": "NATURE",
-    "source_url": "https://arxiv.org/html/2502.07527v3",
-    "source_locator": "Table 20, Section 7.2",
-    "protocol": "task-trained scientific model; adopted PEER splits",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p11_original_test_2026-10-15/scores.json)
+Published reference record: Accuracy, BioT5+ vs BioT5: human 85.09% vs 86.22%; yeast 66.16% vs 64.89%.
 
 [Source 1](https://arxiv.org/html/2206.02096v2), [Source 2](https://arxiv.org/html/2402.17810v2), [Source 3](https://github.com/DeepGraphLearning/PEER_Benchmark)
 
@@ -1428,165 +1135,7 @@ Evidence:
 ]
 ```
 
-##### Mol-Instructions: Protein function generation
-
-**Native/local protocol:** `QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE`
-
-**Coverage:** full_frozen_reviewed_BioT5_export_test; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 3494,
-  "completed": 3494,
-  "parsed": 3494,
-  "invalid_outputs": 0,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "rouge1": 0.06310683515639813,
-  "rouge2": 0.013863408860249667,
-  "rougeL": 0.043147832149630236,
-  "rougeLsum": 0.05416016139070249
-}
-```
-
-**Comparison qualification:** Native Mol-Instructions gold-only ROUGE scorer algorithm on pinned BioT5+ task-defined test exports; full-sequence zero-shot Qwen is an explicit architecture/context/training adaptation. Pinned BioT5+ scorer passes [gold,decoded_input] pairs despite computing gold-only references_new: exact BioT5+ paper metric equivalence unresolved.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p23_description_full_parallel_2026-10-15/scores.json)
-
-##### Mol-Instructions: Catalytic activity generation
-
-**Native/local protocol:** `QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE`
-
-**Coverage:** full_frozen_reviewed_BioT5_export_test; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 1601,
-  "completed": 1601,
-  "parsed": 1601,
-  "invalid_outputs": 0,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "rouge1": 0.05409324446271062,
-  "rouge2": 0.013950959938535082,
-  "rougeL": 0.03964896400553061,
-  "rougeLsum": 0.047278128885466786
-}
-```
-
-**Comparison qualification:** Native Mol-Instructions gold-only ROUGE scorer algorithm on pinned BioT5+ task-defined test exports; full-sequence zero-shot Qwen is an explicit architecture/context/training adaptation. Pinned BioT5+ scorer passes [gold,decoded_input] pairs despite computing gold-only references_new: exact BioT5+ paper metric equivalence unresolved.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p24_description_full_parallel_2026-10-15/scores.json)
-
-##### Mol-Instructions: Domain and motif generation
-
-**Native/local protocol:** `QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE`
-
-**Coverage:** full_frozen_reviewed_BioT5_export_test; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 1400,
-  "completed": 1400,
-  "parsed": 1400,
-  "invalid_outputs": 0,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "rouge1": 0.035429920594239744,
-  "rouge2": 0.004749318294493327,
-  "rougeL": 0.025868349270155935,
-  "rougeLsum": 0.030632014797656003
-}
-```
-
-**Comparison qualification:** Native Mol-Instructions gold-only ROUGE scorer algorithm on pinned BioT5+ task-defined test exports; full-sequence zero-shot Qwen is an explicit architecture/context/training adaptation. Pinned BioT5+ scorer passes [gold,decoded_input] pairs despite computing gold-only references_new: exact BioT5+ paper metric equivalence unresolved.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p25_description_full_parallel_2026-10-15/scores.json)
-
-##### Mol-Instructions: Functional description generation
-
-**Native/local protocol:** `QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE`
-
-**Coverage:** full_frozen_reviewed_BioT5_export_test; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 2633,
-  "completed": 2633,
-  "parsed": 2633,
-  "invalid_outputs": 0,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "rouge1": 0.08002505455026915,
-  "rouge2": 0.01232325567816589,
-  "rougeL": 0.04942258724738958,
-  "rougeLsum": 0.06493613220229738
-}
-```
-
-**Comparison qualification:** Native Mol-Instructions gold-only ROUGE scorer algorithm on pinned BioT5+ task-defined test exports; full-sequence zero-shot Qwen is an explicit architecture/context/training adaptation. Pinned BioT5+ scorer passes [gold,decoded_input] pairs despite computing gold-only references_new: exact BioT5+ paper metric equivalence unresolved.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p26_description_full_parallel_2026-10-15/scores.json)
+Published reference record: Official Mol-Instructions LLaMA model ROUGE-L: function 0.43; general description 0.44; catalytic activity 0.52; domain/motif 0.46.
 
 [Source 1](https://arxiv.org/html/2306.08018v4), [Source 2](https://raw.githubusercontent.com/zjunlp/Mol-Instructions/main/README.md), [Source 3](https://arxiv.org/html/2402.17810v2), [Source 4](https://github.com/zjunlp/Mol-Instructions)
 
@@ -2313,70 +1862,7 @@ Public release 197/199; one seeded run, no tools; published decoder/repeats diff
 ]
 ```
 
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_litqa2_public_reviewed_2026-10-15/scores.json)
-
-##### LAB-Bench / DbQA
-
-**Native/local protocol:** `NATIVE_PUBLIC_COT_LOCAL_REVIEWED`
-
-**Coverage:** reviewed_public_subset; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 520,
-  "completed": 520,
-  "parsed": 427,
-  "invalid_outputs": 93,
-  "missing_or_failed_outputs": null,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "accuracy": 0.31346153846153846,
-  "precision": 0.318359375,
-  "coverage": 0.9846153846153847,
-  "n_total": 520,
-  "n_correct": 163,
-  "n_sure": 512
-}
-```
-
-**Comparison qualification:** Native public prompts, choices, required context/images and metrics. Reviewed public release; one fixed-seed run, not the original full public/private three-run paper mean. Strict deterministic parser; no model extraction fallback.
-
-Public release 520/520; one seeded run, no tools; published decoder/repeats differ.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "Ryze public-set evaluation",
-    "metrics": {
-      "qwen3_vl_8b_accuracy_percent": 31.2,
-      "gpt5_2_accuracy_percent": 41.7,
-      "biovlm_8b_accuracy_percent": 48.9
-    },
-    "source_id": "RYZE",
-    "source_url": "https://arxiv.org/html/2606.00902v1",
-    "source_locator": "Table 1",
-    "protocol": "1,967 public cases total; sample-weighted overall aggregation",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 520,
-    "reported_decimal_places": 1,
-    "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_b02_public_reviewed_2026-10-15/scores.json)
+[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_litqa2_replay_2026-10-16/scores.json)
 
 ##### LAB-Bench / SuppQA
 
@@ -2401,12 +1887,12 @@ Public release 520/520; one seeded run, no tools; published decoder/repeats diff
 
 ```json
 {
-  "accuracy": 0.34146341463414637,
-  "precision": 0.358974358974359,
-  "coverage": 0.9512195121951219,
+  "accuracy": 0.3780487804878049,
+  "precision": 0.3924050632911392,
+  "coverage": 0.9634146341463414,
   "n_total": 82,
-  "n_correct": 28,
-  "n_sure": 78
+  "n_correct": 31,
+  "n_sure": 79
 }
 ```
 
@@ -2456,7 +1942,7 @@ Public release 82/82; one seeded run, no tools; published decoder/repeats differ
 ]
 ```
 
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_b03_public_reviewed_2026-10-15/scores.json)
+[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/scores.json)
 
 ##### LAB-Bench / FigQA
 
@@ -2481,22 +1967,18 @@ Public release 82/82; one seeded run, no tools; published decoder/repeats differ
 
 ```json
 {
-  "accuracy": 0.7569060773480663,
-  "precision": 0.7696629213483146,
-  "coverage": 0.9834254143646409,
+  "accuracy": 0.7237569060773481,
+  "precision": 0.7277777777777777,
+  "coverage": 0.994475138121547,
   "n_total": 181,
-  "n_correct": 137,
-  "n_sure": 178
+  "n_correct": 131,
+  "n_sure": 180
 }
 ```
 
 **Comparison qualification:** Native public prompts, choices, required context/images and metrics. Reviewed public release; one fixed-seed run, not the original full public/private three-run paper mean. Strict deterministic parser; no model extraction fallback.
 
 Public release 181/181; one seeded run, no tools; published decoder/repeats differ.
-
-Independent local source/mapping/request audit passed; public pretraining exposure remains unknown.
-
-Original publisher JPEGs preserved; author-wrapper re-encoding differs in pixels under the diagnostic runtime. Historical encoding and accuracy impact are unknown.
 
 **All stored published-reference records — separate from the local run:**
 
@@ -2540,7 +2022,7 @@ Original publisher JPEGs preserved; author-wrapper re-encoding differs in pixels
 ]
 ```
 
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_b04_public_reviewed_2026-10-15/scores.json)
+[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/scores.json)
 
 ##### LAB-Bench / TableQA
 
@@ -2554,8 +2036,8 @@ Original publisher JPEGs preserved; author-wrapper re-encoding differs in pixels
 {
   "planned": 244,
   "completed": 244,
-  "parsed": 238,
-  "invalid_outputs": 6,
+  "parsed": 236,
+  "invalid_outputs": 8,
   "missing_or_failed_outputs": null,
   "held_before_inference": 0
 }
@@ -2565,20 +2047,18 @@ Original publisher JPEGs preserved; author-wrapper re-encoding differs in pixels
 
 ```json
 {
-  "accuracy": 0.8852459016393442,
-  "precision": 0.9,
-  "coverage": 0.9836065573770492,
+  "accuracy": 0.8811475409836066,
+  "precision": 0.899581589958159,
+  "coverage": 0.9795081967213115,
   "n_total": 244,
-  "n_correct": 216,
-  "n_sure": 240
+  "n_correct": 215,
+  "n_sure": 239
 }
 ```
 
 **Comparison qualification:** Native public prompts, choices, required context/images and metrics. Reviewed public release; one fixed-seed run, not the original full public/private three-run paper mean. Strict deterministic parser; no model extraction fallback.
 
 Public release 244/244; one seeded run, no tools; published decoder/repeats differ.
-
-Independent local source/mapping/request audit passed; public pretraining exposure remains unknown.
 
 **All stored published-reference records — separate from the local run:**
 
@@ -2622,154 +2102,7 @@ Independent local source/mapping/request audit passed; public pretraining exposu
 ]
 ```
 
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_b05_public_reviewed_2026-10-15/scores.json)
-
-##### LAB-Bench / SeqQA
-
-**Native/local protocol:** `NATIVE_PUBLIC_COT_LOCAL_REVIEWED`
-
-**Coverage:** reviewed_public_subset; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 600,
-  "completed": 600,
-  "parsed": 86,
-  "invalid_outputs": 514,
-  "missing_or_failed_outputs": null,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "accuracy": 0.12666666666666668,
-  "precision": 0.12773109243697478,
-  "coverage": 0.9916666666666667,
-  "n_total": 600,
-  "n_correct": 76,
-  "n_sure": 595
-}
-```
-
-**Comparison qualification:** Native public prompts, choices, required context/images and metrics. Reviewed public release; one fixed-seed run, not the original full public/private three-run paper mean. Strict deterministic parser; no model extraction fallback.
-
-Public release 600/600; one seeded run, no tools; published decoder/repeats differ.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "Ryze public-set evaluation",
-    "metrics": {
-      "qwen3_vl_8b_accuracy_percent": 43.4,
-      "gpt5_2_accuracy_percent": 47.0,
-      "biovlm_8b_accuracy_percent": 42.8
-    },
-    "source_id": "RYZE",
-    "source_url": "https://arxiv.org/html/2606.00902v1",
-    "source_locator": "Table 1",
-    "protocol": "1,967 public cases total; sample-weighted overall aggregation",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 600,
-    "reported_decimal_places": 1,
-    "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_b07_public_reviewed_2026-10-15/scores.json)
-
-##### LAB-Bench / Cloning scenarios
-
-**Native/local protocol:** `NATIVE_PUBLIC_COT_LOCAL_REVIEWED`
-
-**Coverage:** reviewed_public_subset; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 33,
-  "completed": 33,
-  "parsed": 0,
-  "invalid_outputs": 33,
-  "missing_or_failed_outputs": null,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "accuracy": 0.0,
-  "precision": 0.0,
-  "coverage": 1.0,
-  "n_total": 33,
-  "n_correct": 0,
-  "n_sure": 33
-}
-```
-
-**Comparison qualification:** Native public prompts, choices, required context/images and metrics. Reviewed public release; one fixed-seed run, not the original full public/private three-run paper mean. Strict deterministic parser; no model extraction fallback.
-
-Public release 33/33; one seeded run, no tools; published decoder/repeats differ.
-
-All 33 outputs reached the 4096-token limit; zero parsed answers. The zero score does not establish wrong biological predictions.
-
-Native abstention-based coverage is not the parse rate.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "GPT-4o",
-    "metrics": {
-      "accuracy": 0.28,
-      "precision": 0.37,
-      "coverage": 0.77
-    },
-    "source_id": "LAB",
-    "source_url": "https://arxiv.org/html/2407.10362v1",
-    "source_locator": "Appendix Tables 2–4",
-    "protocol": "full public+private; no tools; native zero-shot CoT; abstention choice",
-    "value_status": "published_rounded_as_printed",
-    "run_count": 3,
-    "reported_std": null,
-    "test_case_count": 41,
-    "reported_decimal_places": 2
-  },
-  {
-    "model": "Ryze public-set evaluation",
-    "metrics": {
-      "qwen3_vl_8b_accuracy_percent": 24.2,
-      "gpt5_2_accuracy_percent": 36.4,
-      "biovlm_8b_accuracy_percent": 38.4
-    },
-    "source_id": "RYZE",
-    "source_url": "https://arxiv.org/html/2606.00902v1",
-    "source_locator": "Table 1",
-    "protocol": "1,967 public cases total; sample-weighted overall aggregation",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 33,
-    "reported_decimal_places": 1,
-    "scope_note": "BioVLM training/synthesis used benchmark-feedback loop; do not treat as a clean untouched-test model. Prompt, repeats and decoder details insufficiently pinned for exact replication."
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_b08_public_reviewed_2026-10-15/scores.json)
+[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/scores.json)
 
 [Source 1](https://arxiv.org/html/2407.10362v1), [Source 2](https://huggingface.co/datasets/futurehouse/lab-bench)
 
@@ -3011,86 +2344,7 @@ Evidence:
 ]
 ```
 
-##### STRIDE GFP generated-candidate evaluation
-
-**Native/local protocol:** `QWEN_GFP_QUALIFIED_TWO_REGIMES_ENDPOINT_1_TO_3`
-
-**Coverage:** qualified_full200_two_endpoint_regimes_native_novelty_withheld; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 200,
-  "completed": 200,
-  "parsed": 0,
-  "invalid_outputs": 200,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": null
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "replace_only": {
-    "qualified_oracle_success": 0.0,
-    "improved_sequence_uniqueness": null,
-    "native_novelty": null
-  },
-  "full_atomic": {
-    "qualified_oracle_success": 0.0,
-    "improved_sequence_uniqueness": null,
-    "native_novelty": null
-  }
-}
-```
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "STRIDE",
-    "metrics": {
-      "success_count": 61,
-      "attempt_count": 100,
-      "unique_improved_count": 59,
-      "novel_unique_improved_count": 53
-    },
-    "source_id": "STRIDE",
-    "source_url": "https://arxiv.org/html/2603.03573v1",
-    "source_locator": "Table 4",
-    "protocol": "replace_only; fixed avGFP source, 1–3 edit operations, fixed fluorescence predictor",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 100,
-    "source_inconsistency": null
-  },
-  {
-    "model": "STRIDE",
-    "metrics": {
-      "success_count": 89,
-      "attempt_count": 100,
-      "unique_improved_count": 78,
-      "novel_unique_improved_count": 76
-    },
-    "source_id": "STRIDE",
-    "source_url": "https://arxiv.org/html/2603.03573v1",
-    "source_locator": "Table 3",
-    "protocol": "add_delete_replace; fixed avGFP source, 1–3 edit operations, fixed fluorescence predictor",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 100,
-    "source_inconsistency": "Full-action Table3 prints Unique 78/79 although success=89/100 and narrative unique=78; preserve counts and flag denominator inconsistency."
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p42_gfp_qualified_two_regimes_2026-10-15/scores.json)
+Published reference record: Fixed fluorescence-oracle successes: full edit setting 89/100 for STRIDE vs 42/100 SFT; replace-only 61/100 vs 55/100 SFT.
 
 [Source 1](https://arxiv.org/html/2603.03573v1)
 
@@ -3628,274 +2882,7 @@ Evidence:
 ]
 ```
 
-##### VQA-RAD
-
-**Native/local protocol:** `NATIVE_TEST_QUESTION_IMAGE_LOCAL_ZERO_SHOT`
-
-**Coverage:** full_native_test; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 451,
-  "completed": 451,
-  "parsed": 451,
-  "invalid_outputs": 0,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "open_token_recall": 0.5954043565269501,
-  "closed_accuracy": 0.8676470588235294
-}
-```
-
-**Comparison qualification:** Original native test split/images/questions and pinned LLaVA-Medv1 normalization/scoring; Qwen is a declared zero-shot vision baseline with its own chat template/generation and no downstream tuning. Compare OPEN recall and CLOSED accuracy separately; full-test claim requires complete native inputs and outputs.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0",
-    "metrics": {
-      "open_token_recall_percent": 28.23,
-      "closed_accuracy_percent": 61.4
-    },
-    "source_id": "LLAVA",
-    "source_url": "https://arxiv.org/pdf/2306.00890",
-    "source_locator": "Table 4(b), PDF p.9",
-    "protocol": "zero-shot downstream transfer; original v1 release",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 451
-  },
-  {
-    "model": "LLaVA-Med 7B, BioMedCLIP, 60K-IM, downstream FT=9",
-    "metrics": {
-      "open_token_recall_percent": 64.75,
-      "closed_accuracy_percent": 83.09
-    },
-    "source_id": "LLAVA",
-    "source_url": "https://arxiv.org/pdf/2306.00890",
-    "source_locator": "Table 4(a,b), PDF p.9",
-    "protocol": "supervised downstream tuning; original v1 release",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 451
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_v01_native_test_2026-10-15/scores.json)
-
-##### SLAKE — English
-
-**Native/local protocol:** `NATIVE_TEST_QUESTION_IMAGE_LOCAL_ZERO_SHOT`
-
-**Coverage:** full_native_test; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 1061,
-  "completed": 1061,
-  "parsed": 1060,
-  "invalid_outputs": 1,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "open_token_recall": 0.5097973319647275,
-  "closed_accuracy": 0.8461538461538461
-}
-```
-
-**Comparison qualification:** Original native test split/images/questions and pinned LLaVA-Medv1 normalization/scoring; Qwen is a declared zero-shot vision baseline with its own chat template/generation and no downstream tuning. Compare OPEN recall and CLOSED accuracy separately; full-test claim requires complete native inputs and outputs.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0",
-    "metrics": {
-      "open_token_recall_percent": 39.17,
-      "closed_accuracy_percent": 52.16
-    },
-    "source_id": "LLAVA",
-    "source_url": "https://arxiv.org/pdf/2306.00890",
-    "source_locator": "Table 4(b), PDF p.9",
-    "protocol": "zero-shot downstream transfer; original v1 release",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 1061
-  },
-  {
-    "model": "LLaVA-Med 7B, BioMedCLIP, 60K-IM, downstream FT=9",
-    "metrics": {
-      "open_token_recall_percent": 87.11,
-      "closed_accuracy_percent": 86.78
-    },
-    "source_id": "LLAVA",
-    "source_url": "https://arxiv.org/pdf/2306.00890",
-    "source_locator": "Table 4(a,b), PDF p.9",
-    "protocol": "supervised downstream tuning; original v1 release",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 1061
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_v02_native_test_2026-10-15/scores.json)
-
-##### PathVQA
-
-**Native/local protocol:** `SOURCE_QUALIFIED_PATHVQA_HF_TEST_IMAGE_ZERO_SHOT`
-
-**Coverage:** full_publisher_mirror_test; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 6719,
-  "completed": 6719,
-  "parsed": 6718,
-  "invalid_outputs": 1,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "open_token_recall": 0.2637701340133019,
-  "closed_accuracy_corrected": 0.8587150505651397
-}
-```
-
-**Comparison qualification:** Full pinned6719-row mirror test (original6761 minus42 duplicate rows, plus documented text normalization), full released image bytes and question strings. Original per-image byte identity is not fully established. Qwen zero-shot vision/training/generation differs from task-trained papers. Compare only declared metric and split-compatible results; no exact paper replication claim.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "LLaVA-Med 7B, CLIP, 60K-IM, stage1=1/stage2=3/FT=0",
-    "metrics": {
-      "open_token_recall_percent": 12.3,
-      "closed_accuracy_percent": 54.05
-    },
-    "source_id": "LLAVA",
-    "source_url": "https://arxiv.org/pdf/2306.00890",
-    "source_locator": "Table 4(b), PDF p.9",
-    "protocol": "zero-shot downstream transfer; original v1 release",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 6761
-  },
-  {
-    "model": "LLaVA-Med 7B, BioMedCLIP, 60K-IM, downstream FT=9",
-    "metrics": {
-      "open_token_recall_percent": 39.6,
-      "closed_accuracy_percent": 91.09
-    },
-    "source_id": "LLAVA",
-    "source_url": "https://arxiv.org/pdf/2306.00890",
-    "source_locator": "Table 4(a,b), PDF p.9",
-    "protocol": "supervised downstream tuning; original v1 release",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 6761
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu/scores.json)
-
-##### ImageCLEF-VQA 2019
-
-**Native/local protocol:** `NATIVE_IMAGECLEF2019_QUESTION_IMAGE_QUALIFIED_STRICT_ACCURACY`
-
-**Coverage:** original_complete_test500; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 500,
-  "completed": 500,
-  "parsed": 500,
-  "invalid_outputs": 0,
-  "missing_or_failed_outputs": null,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "strict_accuracy": 0.0
-}
-```
-
-**Comparison qualification:** Same original500 test IDs/images/questions; zero-shot Qwen and explicit fixed scorer reconstruction, not target-fine-tuned MedVInT or a claim of byte-identical challenge scoring. Historical strict-accuracy executable not recovered; normalization/reference syntax reconstructed prospectively from organizers. Native2019BLEU withheld rather than substitute another year or arbitrary metric. No claim of matched target fine-tuning or closed/open metric equivalence.
-
-Strict whole-final matching; qualified reconstructed scorer versus target-fine-tuned paper model. Zero exact match does not establish wrong clinical predictions or no visual ability.
-
-Prediction-only audit: 500 multiline finals, 15–263 words (median 70); verbose answer format is material.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "MedVInT-TE",
-    "metrics": {
-      "overall_accuracy_percent": 70.5
-    },
-    "source_id": "PMC",
-    "source_url": "https://arxiv.org/html/2305.10415v6",
-    "source_locator": "Table 2",
-    "protocol": "fine-tuned on target ImageCLEF-VQA2019; free-text answering",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "reported_interval": {
-      "overall_accuracy_percent": [
-        62.8,
-        78.2
-      ]
-    },
-    "uncertainty_note": "Parenthesized range preserved; interval coverage and sampling procedure not independently re-established here."
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_v04_original_test500_2026-10-15/scores.json)
+Published reference record: MedVInT-TD: 73.7% open-answer and 86.8% closed-answer accuracy on VQA-RAD after task-specific fine-tuning. MedVInT-TE: 88.2% open-answer and 87.7% closed-answer accuracy on SLAKE after task-specific fine-tuning. LLaVA-Med initialized from Vicuna: PathVQA 38.87 open-answer token recall and 91.65% closed-answer accuracy, after task-specific fine-tuning. MedVInT-TE: 70.5% overall accuracy on VQA-Med 2019 after task-specific fine-tuning.
 
 [Source 1](https://arxiv.org/abs/2306.00890), [Source 2](https://arxiv.org/html/2305.10415v6), [Source 3](https://arxiv.org/abs/2306.00890), [Source 4](https://arxiv.org/html/2305.10415v6), [Source 5](https://github.com/microsoft/LLaVA-Med), [Source 6](https://github.com/xiaoman-zhang/PMC-VQA)
 
@@ -3924,77 +2911,7 @@ Evidence:
 ]
 ```
 
-##### PMC-VQA held-out evaluation
-
-**Native/local protocol:** `NATIVE_PMCVQA_CLEAN2000_TD_PROMPT_QWEN_ZERO_SHOT`
-
-**Coverage:** full_native_clean2000; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 2000,
-  "completed": 2000,
-  "parsed": 1990,
-  "invalid_outputs": 10,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": null
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "native_td_final_character_accuracy": 0.02,
-  "adapted_full_text_closest_choice_accuracy": 0.4975,
-  "adapted_full_text_released_label_accuracy": 0.4975,
-  "strict_final_label_accuracy": 0.007
-}
-```
-
-**Comparison qualification:** Fixed local zero-shot Qwen vision baseline on complete native clean2000 set and source TD question/choice strings. Qwen chat, image preprocessing, free generation and training differ from MedVInT. Match metric/output extraction and clean split before comparing; full-text metric is adapted, TE systems are not exact reproductions. Public pretraining exposure unknown.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "MedVInT-TD / PMC-LLaMA / PMC-CLIP",
-    "metrics": {
-      "choice_accuracy_percent": 40.3,
-      "blank_accuracy_percent": 33.6,
-      "blank_bleu1_percent": 21.5
-    },
-    "source_id": "PMC",
-    "source_url": "https://arxiv.org/html/2305.10415v6",
-    "source_locator": "Table 3",
-    "protocol": "clean PMC-VQA-test (2,000), trained on PMC-VQA",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 2000,
-    "reported_interval": {
-      "choice_accuracy_percent": [
-        37.2,
-        43.8
-      ],
-      "blank_accuracy_percent": [
-        29.9,
-        36.5
-      ],
-      "blank_bleu1_percent": [
-        19.4,
-        24.0
-      ]
-    },
-    "uncertainty_note": "Parenthesized intervals preserved; coverage definition not independently re-established."
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_v05_pmcvqa_clean2000_td_2026-10-15/scores.json)
+Published reference record: The paper reports initial and manually cleaned PMC-VQA tests. A numeric result tied to an exact model and that exact split is not transcribed here.
 
 [Source 1](https://arxiv.org/html/2305.10415v6), [Source 2](https://github.com/xiaoman-zhang/PMC-VQA)
 
@@ -4082,185 +2999,7 @@ Evidence:
 ]
 ```
 
-##### Drug–target interaction — BioSNAP/Human/BindingDB · bindingdb
-
-**Native/local protocol:** `QWEN_DTI_FIRST_TOKEN_CONDITIONAL_YES_NO_LIKELIHOOD`
-
-**Coverage:** full_frozen_reviewed_dataset; dataset_component.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 9840,
-  "completed": 9840,
-  "parsed": 9840,
-  "invalid_outputs": 0,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "auroc": 0.5035692021569061,
-  "auprc": 0.41031521273083055
-}
-```
-
-**Comparison qualification:** Original released dataset and standard AUROC/AP; fixed first-token Qwen likelihood adapter differs from trained DrugBAN/BioT5 architectures and BioT5 raw-score ratio. No test threshold fitting or exact paper reproduction claim.
-
-AUROC/AP are separate dataset fractions, not pooled. One-token conditional Yes/No likelihood; length finish is expected here.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "BioT5+",
-    "metrics": {
-      "biosnap_auroc": 0.939,
-      "human_auroc": 0.987,
-      "bindingdb_auroc": 0.964
-    },
-    "source_id": "BIOT5",
-    "source_url": "https://arxiv.org/html/2402.17810v2",
-    "source_locator": "Table 8",
-    "protocol": "supervised DTI; source-specific paired drug SELFIES and protein sequences",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": {
-      "biosnap_auroc": 0.001,
-      "human_auroc": 0.001,
-      "bindingdb_auroc": 0.001
-    }
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_dti_bindingdb_likelihood_2026-10-15/scores.json)
-
-##### Drug–target interaction — BioSNAP/Human/BindingDB · biosnap
-
-**Native/local protocol:** `QWEN_DTI_FIRST_TOKEN_CONDITIONAL_YES_NO_LIKELIHOOD`
-
-**Coverage:** full_frozen_reviewed_dataset; dataset_component.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 5493,
-  "completed": 5493,
-  "parsed": 5493,
-  "invalid_outputs": 0,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "auroc": 0.5335627434292335,
-  "auprc": 0.5216604334511094
-}
-```
-
-**Comparison qualification:** Original released dataset and standard AUROC/AP; fixed first-token Qwen likelihood adapter differs from trained DrugBAN/BioT5 architectures and BioT5 raw-score ratio. No test threshold fitting or exact paper reproduction claim.
-
-AUROC/AP are separate dataset fractions, not pooled. One-token conditional Yes/No likelihood; length finish is expected here.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "BioT5+",
-    "metrics": {
-      "biosnap_auroc": 0.939,
-      "human_auroc": 0.987,
-      "bindingdb_auroc": 0.964
-    },
-    "source_id": "BIOT5",
-    "source_url": "https://arxiv.org/html/2402.17810v2",
-    "source_locator": "Table 8",
-    "protocol": "supervised DTI; source-specific paired drug SELFIES and protein sequences",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": {
-      "biosnap_auroc": 0.001,
-      "human_auroc": 0.001,
-      "bindingdb_auroc": 0.001
-    }
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_dti_biosnap_likelihood_2026-10-15/scores.json)
-
-##### Drug–target interaction — BioSNAP/Human/BindingDB · human
-
-**Native/local protocol:** `QWEN_DTI_FIRST_TOKEN_CONDITIONAL_YES_NO_LIKELIHOOD`
-
-**Coverage:** full_frozen_reviewed_dataset; dataset_component.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 1200,
-  "completed": 1200,
-  "parsed": 1200,
-  "invalid_outputs": 0,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "auroc": 0.4747193063297968,
-  "auprc": 0.4194264625175069
-}
-```
-
-**Comparison qualification:** Original released dataset and standard AUROC/AP; fixed first-token Qwen likelihood adapter differs from trained DrugBAN/BioT5 architectures and BioT5 raw-score ratio. No test threshold fitting or exact paper reproduction claim.
-
-AUROC/AP are separate dataset fractions, not pooled. One-token conditional Yes/No likelihood; length finish is expected here.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "BioT5+",
-    "metrics": {
-      "biosnap_auroc": 0.939,
-      "human_auroc": 0.987,
-      "bindingdb_auroc": 0.964
-    },
-    "source_id": "BIOT5",
-    "source_url": "https://arxiv.org/html/2402.17810v2",
-    "source_locator": "Table 8",
-    "protocol": "supervised DTI; source-specific paired drug SELFIES and protein sequences",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": {
-      "biosnap_auroc": 0.001,
-      "human_auroc": 0.001,
-      "bindingdb_auroc": 0.001
-    }
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_dti_human_likelihood_2026-10-15/scores.json)
+Published reference record: BioT5+ AUROC: BioSNAP 0.939 ± 0.001; Human 0.987 ± 0.001; BindingDB 0.964 ± 0.001.
 
 [Source 1](https://arxiv.org/html/2402.17810v2), [Source 2](https://github.com/QizhiPei/BioT5)
 
@@ -4360,83 +3099,7 @@ Evidence:
 ]
 ```
 
-##### BioReason KEGG pathway/disease test
-
-**Native/local protocol:** `NATIVE_LLM_INTERFACE_FULL_RELEASE_WINDOWS_PREPARED`
-
-**Coverage:** official_released_test_then_val_290; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 290,
-  "completed": 290,
-  "parsed": 0,
-  "invalid_outputs": 290,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "accuracy": 0.0,
-  "STRICT_FINAL_LABEL": {
-    "accuracy": 0.0,
-    "supplemental_macro_f1_fixed_global_vocabulary": 0.0,
-    "supplemental_macro_precision_fixed_global_vocabulary": 0.0,
-    "supplemental_macro_recall_fixed_global_vocabulary": 0.0
-  }
-}
-```
-
-**Comparison qualification:** Source outcome predicates retained with explicit decoded-continuation qualification. Full released DNA windows, zero-shot prompted local Qwen, source SFT/encoder systems and author decoder settings differ. N01 macro metrics are supplemental strict-label diagnostics, not verified native paper reproduction.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "Qwen3-4B",
-    "metrics": {
-      "accuracy_percent": 90.0,
-      "macro_f1_percent": 79.66,
-      "macro_precision_percent": 88.24,
-      "macro_recall_percent": 75.08
-    },
-    "source_id": "BIOREASON",
-    "source_url": "https://arxiv.org/html/2505.23579v2",
-    "source_locator": "Table 1",
-    "protocol": "LLM-only task baseline, 290 KEGG test examples",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 290
-  },
-  {
-    "model": "Evo2 + Qwen3-4B + GRPO",
-    "metrics": {
-      "accuracy_percent": 98.28,
-      "macro_f1_percent": 93.05,
-      "macro_precision_percent": 94.12,
-      "macro_recall_percent": 92.48
-    },
-    "source_id": "BIOREASON",
-    "source_url": "https://arxiv.org/html/2505.23579v2",
-    "source_locator": "Table 1",
-    "protocol": "trained DNA-LLM hybrid, 290 KEGG test examples",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 290
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_n01_full_windows_2026-10-15/scores.json)
+Published reference record: Evo2 + Qwen3-4B + GRPO: 98.28% accuracy, 93.05 macro-F1; Qwen3-4B-only: 90.00% accuracy, 79.66 macro-F1.
 
 [Source 1](https://arxiv.org/html/2505.23579v2), [Source 2](https://huggingface.co/datasets/wanglab/kegg)
 
@@ -4508,155 +3171,7 @@ Evidence:
 ]
 ```
 
-##### BioReason VEP-Coding
-
-**Native/local protocol:** `NATIVE_LLM_INTERFACE_FULL_RELEASE_WINDOWS_PREPARED`
-
-**Coverage:** official_released_test; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 1233,
-  "completed": 1233,
-  "parsed": 0,
-  "invalid_outputs": 1233,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "accuracy": 0.4906731549067315,
-  "f1": 0.5213414634146342,
-  "STRICT_FINAL_LABEL": {
-    "accuracy": 0.0,
-    "f1": 0.0
-  }
-}
-```
-
-**Comparison qualification:** Source outcome predicates retained with explicit decoded-continuation qualification. Full released DNA windows, zero-shot prompted local Qwen, source SFT/encoder systems and author decoder settings differ. N01 macro metrics are supplemental strict-label diagnostics, not verified native paper reproduction.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "Qwen3-4B",
-    "metrics": {
-      "accuracy_percent": 48.99,
-      "f1_percent": 39.58
-    },
-    "source_id": "BIOREASON",
-    "source_url": "https://arxiv.org/html/2505.23579v2",
-    "source_locator": "Table 2",
-    "protocol": "native variant-effect binary test; deterministic T=0",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": null,
-    "test_size_note": "Paper rounds VEP-Coding test size to 1.23K; exact count not inferred."
-  },
-  {
-    "model": "Evo2 + Qwen3-4B",
-    "metrics": {
-      "accuracy_percent": 80.21,
-      "f1_percent": 80.0
-    },
-    "source_id": "BIOREASON",
-    "source_url": "https://arxiv.org/html/2505.23579v2",
-    "source_locator": "Table 2",
-    "protocol": "native variant-effect binary test; deterministic T=0",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": null,
-    "test_size_note": "Paper rounds VEP-Coding test size to 1.23K; exact count not inferred."
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_n02_full_windows_2026-10-15/scores.json)
-
-##### BioReason VEP-Non-SNV
-
-**Native/local protocol:** `NATIVE_LLM_INTERFACE_FULL_RELEASE_WINDOWS_PREPARED`
-
-**Coverage:** official_released_test; completed_declared_run.
-
-**Saved count record:**
-
-```json
-{
-  "planned": 873,
-  "completed": 873,
-  "parsed": 0,
-  "invalid_outputs": 873,
-  "missing_or_failed_outputs": 0,
-  "held_before_inference": 0
-}
-```
-
-**Complete stored metrics, including alternate/diagnostic values:**
-
-```json
-{
-  "accuracy": 0.8900343642611683,
-  "f1": 0.9053254437869822,
-  "STRICT_FINAL_LABEL": {
-    "accuracy": 0.0,
-    "f1": 0.0
-  }
-}
-```
-
-**Comparison qualification:** Source outcome predicates retained with explicit decoded-continuation qualification. Full released DNA windows, zero-shot prompted local Qwen, source SFT/encoder systems and author decoder settings differ. N01 macro metrics are supplemental strict-label diagnostics, not verified native paper reproduction.
-
-**All stored published-reference records — separate from the local run:**
-
-```json
-[
-  {
-    "model": "Qwen3-4B",
-    "metrics": {
-      "accuracy_percent": 61.86,
-      "f1_percent": 67.6
-    },
-    "source_id": "BIOREASON",
-    "source_url": "https://arxiv.org/html/2505.23579v2",
-    "source_locator": "Table 2",
-    "protocol": "native variant-effect binary test; deterministic T=0",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 873,
-    "test_size_note": null
-  },
-  {
-    "model": "Evo2 + Qwen3-4B",
-    "metrics": {
-      "accuracy_percent": 83.85,
-      "f1_percent": 85.02
-    },
-    "source_id": "BIOREASON",
-    "source_url": "https://arxiv.org/html/2505.23579v2",
-    "source_locator": "Table 2",
-    "protocol": "native variant-effect binary test; deterministic T=0",
-    "value_status": "published_rounded_as_printed",
-    "run_count": null,
-    "reported_std": null,
-    "test_case_count": 873,
-    "test_size_note": null
-  }
-]
-```
-
-[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_n03_full_windows_2026-10-15/scores.json)
+Published reference record: Evo2 + Qwen3-4B: 80.21% accuracy, 80.00 F1; Evo2-only: 70.07% accuracy, 49.19 F1. Evo2 + Qwen3-4B: 83.85% accuracy, 85.02 F1; Evo2-only: 76.17% accuracy, 66.51 F1.
 
 [Source 1](https://arxiv.org/html/2505.23579v2), [Source 2](https://github.com/bowang-lab/BioReason)
 
