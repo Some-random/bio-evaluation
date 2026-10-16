@@ -1,0 +1,43 @@
+{
+  "run_id": "qwen38_27b_b05_slurm_replay_2026-10-16",
+  "task_id": "B05",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "planned": 244,
+  "completed": 244,
+  "parsed": 236,
+  "invalid_outputs": 8,
+  "statuses": {
+    "completed": 244
+  },
+  "finish_reasons": {
+    "stop": 236,
+    "length": 8
+  },
+  "case_scope": "reviewed_public_subset",
+  "held_before_inference": 0,
+  "metrics": {
+    "accuracy": 0.8811475409836066,
+    "precision": 0.899581589958159,
+    "coverage": 0.9795081967213115,
+    "n_total": 244,
+    "n_correct": 215,
+    "n_sure": 239
+  },
+  "explanation_support_score": null,
+  "comparison_to_paper": "Native public prompts, choices, required context/images and metrics. Reviewed public release; one fixed-seed run, not the original full public/private three-run paper mean. Strict deterministic parser; no model extraction fallback.",
+  "pretraining_exposure": "unknown",
+  "request_response_hash_audit": "passed",
+  "predictions_locked_before_reference_read": true,
+  "metrics_by_subtask": {
+    "tableqa-v1-public": {
+      "accuracy": 0.8811475409836066,
+      "precision": 0.899581589958159,
+      "coverage": 0.9795081967213115,
+      "n_total": 244,
+      "n_correct": 215,
+      "n_sure": 239
+    }
+  }
+}
