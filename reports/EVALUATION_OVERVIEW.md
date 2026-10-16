@@ -62,14 +62,13 @@ Microglia are the brain’s immune cells. IFNAR1 receives type-I interferon sign
 >
 > So the answer should be (D) attenuation of loss.
 
-**Checks on the saved reasoning:**
-
-- Citation correction: the saved answer names Dera et al., 2020, and the saved reasoning additionally names Nature Neuroscience. The verified source is [Roy et al. (2022), Immunity](https://pmc.ncbi.nlm.nih.gov/articles/PMC9109419/), DOI 10.1016/j.immuni.2022.03.018.
-- Cell-type distinction: microglia-specific Ifnar1 deletion attenuated loss of post-synaptic terminals through reduced selective engulfment. Neural-cell Ifnar1 deletion restored pre-synaptic terminals and decreased plaque accumulation. The source reports these as distinct results.
+**Reference study:** [Roy et al., 2022, Immunity](https://pmc.ncbi.nlm.nih.gov/articles/PMC9109419/).
 
 The answer matches the reference label. Dataset accuracy: **39.1%** (77/197).
 
-### Tool-use challenge: does one change make a protein less stable?
+### Bad result (illustrative): a protein-stability answer without the required computation
+
+The failure illustrated here is reporting an unsupported stability number without carrying out the structural sampling and energy calculations in this BioEmu evaluation protocol.
 
 **Category:** [Protein shapes and motion](#protein-shapes-and-motion) → Protein shape changes, motion and stability.
 
@@ -79,7 +78,7 @@ The answer matches the reference label. Dataset accuracy: **39.1%** (77/197).
 
 AFSSE**Q**LARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRA
 
-**Reference answer (experiment):** Yes—less stable, with a change of about **+0.91 kcal/mol** in folding free energy.
+**Expected answer (experimental reference):** Yes—less stable, with a change of about **+0.91 kcal/mol** in folding free energy.
 
 **What is BioEmu?** BioEmu is an AI model that takes a protein sequence and generates many possible three-dimensional shapes. It approximates the mixture of shapes a protein adopts, which would otherwise be expensive to explore with molecular simulations. These samples can be used to estimate how often the protein stays folded.
 

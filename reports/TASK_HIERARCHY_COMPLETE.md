@@ -4,7 +4,7 @@
 
 All **67 main dataset/protocol groups** and **9 case/diagnostic groups** are retained. Hierarchy: **capability → scientific task → dataset/protocol → scope and execution**. Registry identifiers appear in the crosswalk and provenance JSON rather than human task names.
 
-Stored scores: **2026-10-16 06:49 PDT**. Running-work snapshot: **2026-10-16 13:50 PDT**. Display times use Pacific time.
+Stored scores: **2026-10-16 06:49 PDT**. Running-work snapshot: **2026-10-16 13:54 PDT**. Display times use Pacific time.
 
 **\*** marks an incomplete group or setting. Registered scope and current execution status are separate; catalog presence does not imply authorization. Mixed groups show each registered protocol separately. Status unverified is not a claim that a task was never run.
 

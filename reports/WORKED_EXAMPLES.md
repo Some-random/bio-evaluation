@@ -2,7 +2,7 @@
 
 [Back to the task map](EVALUATION_OVERVIEW.md)
 
-The overview keeps one correct answer and one tool-use challenge. This document retains the full examples and saved reasoning. Correct answers do not independently validate every step of a model's explanation. Tool workflows below are source-backed examples, not measured Qwen failures.
+The overview pairs a correct saved answer with an illustrative failure that requires external computation. This document retains additional examples, full saved reasoning and source records.
 
 ## Correct answers from saved Qwen runs
 
@@ -76,10 +76,7 @@ The overview keeps one correct answer and one tool-use challenge. This document 
 
 Reference choice: **D** — correct. Dataset accuracy: **39.1%** (77/197).
 
-**Source check:**
-
-- Citation correction: the saved answer names Dera et al., 2020, and the saved reasoning additionally names Nature Neuroscience. The verified source is [Roy et al. (2022), Immunity](https://pmc.ncbi.nlm.nih.gov/articles/PMC9109419/), DOI 10.1016/j.immuni.2022.03.018.
-- Cell-type distinction: microglia-specific Ifnar1 deletion attenuated loss of post-synaptic terminals through reduced selective engulfment. Neural-cell Ifnar1 deletion restored pre-synaptic terminals and decreased plaque accumulation. The source reports these as distinct results.
+**Reference study:** [Roy et al., 2022, Immunity](https://pmc.ncbi.nlm.nih.gov/articles/PMC9109419/).
 
 ### In panel e, which of the following sheath lengths do cortex oligodendrocytes produce at the highest frequency?
 
@@ -368,6 +365,8 @@ Reference choice: **D** — correct. Dataset accuracy: **72.4%** (131/181).
 > [ANSWER]D[/ANSWER]
 
 Reference choice: **D** — correct. Dataset accuracy: **39.1%** (77/197).
+
+**Reference study:** [Multimodal cell atlas of the ageing human skeletal muscle](https://www.nature.com/articles/s41586-024-07348-6).
 
 [Exact example records and source hashes](ADVISOR_GOOD_EXAMPLES.json)
 
