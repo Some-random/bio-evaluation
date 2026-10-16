@@ -2,7 +2,7 @@
   "created_at_utc": "2026-10-16T20:02:01.055835+00:00",
   "source": "Saved Qwen/Qwen3.8-27B request and response records, native gold choices, and byte-identical image assets.",
   "scope_notes": [
-    "Five selected correct examples, not a representative sample or proof of performance on all biological tasks.",
+    "Six selected correct examples, not a representative sample or proof of performance on all biological tasks.",
     "Assistant final text and reasoning text are reproduced exactly from saved response fields. No trace was reconstructed or invented.",
     "Reasoning is an unverified model-generated rationale, not proof that the explanation is correct or caused the correct answer.",
     "Image values and final choices were checked against the actual saved image and native gold label. No biological mechanism validation is claimed."
@@ -307,7 +307,7 @@
     {
       "task_id": "B01",
       "case_id": "e6b0f9e5-e976-47dc-b839-0b2fca967e9e",
-      "main_example": true,
+      "main_example": false,
       "dataset_name": "LAB-Bench LitQA2",
       "dataset_url": "https://huggingface.co/datasets/futurehouse/lab-bench/tree/5c77cec648430f30611808808861eb86f81d5eaa",
       "main_title": "Explain what genes do where muscle attaches to tendon",
@@ -388,6 +388,109 @@
           "title": "Distinct myofibre domains of the human myotendinous junction revealed by single nucleus RNA-seq",
           "locator": "Abstract, opening sentence",
           "support_note": "Describes the myotendinous junction as a specialized myofibre domain maintaining cell–matrix contact with the tendon under mechanical stress and strain."
+        }
+      },
+      "dataset_result": {
+        "correct": 77,
+        "total": 197,
+        "accuracy": 0.39086294416243655
+      },
+      "source_run_path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16",
+      "source_scope_note": "Selected correct saved case from the completed text-only LitQA2 run: 77/197 correct (39.1%), all 197 parsed with stop finish reasons. The reviewed subset is 197 of 199 public cases; this individual example is not representative of overall success. No new inference or rescoring.",
+      "source_protocol": {
+        "input_modality": "text_only",
+        "tools_used": false,
+        "config_path": "configs/local_labbench_litqa2.json",
+        "config_sha256": "cddc1a15491ae841508c0bfe27ffe668b11064821dcfdd1a9c5821805cc09718",
+        "model_revision_source": "response.model_revision when present, otherwise frozen run configuration",
+        "dataset_revision": "5c77cec648430f30611808808861eb86f81d5eaa",
+        "source_code_revision": "998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838"
+      }
+    },
+    {
+      "task_id": "B01",
+      "case_id": "b1d5a5f5-6e89-4dfb-b60d-5a9824b015f3",
+      "main_example": true,
+      "dataset_name": "LAB-Bench LitQA2",
+      "dataset_url": "https://huggingface.co/datasets/futurehouse/lab-bench/tree/5c77cec648430f30611808808861eb86f81d5eaa",
+      "main_title": "Predict how an immune-receptor deletion affects neuronal connections",
+      "plain_question": "In 5XFAD mice, an Alzheimer’s disease model, what happens to post-synaptic terminals when Ifnar1 is deleted specifically in microglia?",
+      "plain_context": "Microglia are the brain’s immune cells. IFNAR1 receives type-I interferon signals; post-synaptic terminals are the receiving ends of connections between neurons.",
+      "main_answer": "Reduced loss of post-synaptic terminals.",
+      "main_explanation_excerpt": "This indicates that IFN signaling through microglia is a driver of synapse loss in this model, and removing this receptor in microglia protects against that loss.",
+      "main_choices": [
+        "(A) increased synaptophysin+ density",
+        "(B) increased loss",
+        "(C) no effect",
+        "(D) attenuation of loss",
+        "(E) Insufficient information to answer the question"
+      ],
+      "question_and_options_exact": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: In 5XFAD mice, what effect does microglia-specific Ifnar1 deletion have on post-synaptic terminals?\n\nOptions:\n(A) increased synaptophysin+ density\n(B) increased loss\n(C) no effect\n(D) attenuation of loss\n(E) Insufficient information to answer the question\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing.",
+      "native_gold": {
+        "task": "B01",
+        "case_id": "b1d5a5f5-6e89-4dfb-b60d-5a9824b015f3",
+        "subtask": "litqa-v2-public",
+        "target_choice": "D",
+        "unsure_choice": "E",
+        "choice_count": 5
+      },
+      "local_score_record": {
+        "task": "B01",
+        "case_id": "b1d5a5f5-6e89-4dfb-b60d-5a9824b015f3",
+        "subtask": "litqa-v2-public",
+        "answer": "D",
+        "correct": true,
+        "sure": true,
+        "parsed": true,
+        "finish_reason": "stop"
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "assistant_final_text_exact": "\n\nLooking at this question, I need to consider what is known about the role of type I interferon signaling in microglia in the 5XFAD Alzheimer's disease mouse model.\n\nIn 5XFAD mice, there is progressive synaptic pathology, including loss of both pre-synaptic (synaptophysin+) and post-synaptic (PSD95+) terminals. Research has demonstrated that type I interferon (IFN) signaling in microglia contributes to this synapse loss.\n\nStudies (notably Dera et al., 2020) showed that in 5XFAD mice, microglia-specific deletion of Ifnar1 (the type I interferon receptor) **attenuates** the progressive loss of synapses, including post-synaptic terminals. This indicates that IFN signaling through microglia is a driver of synapse loss in this model, and removing this receptor in microglia protects against that loss.\n\nThe correct answer is (D) attenuation of loss.\n\n[ANSWER]D[/ANSWER]",
+      "assistant_final_source_field": "response.choices[0].message.content",
+      "model_reasoning_text_exact": "The question asks about the effect of microglia-specific Ifnar1 deletion on post-synaptic terminals in 5XFAD mice.\n\n5XFAD mice are a well-known transgenic mouse model of Alzheimer's disease that carry five mutations associated with familial Alzheimer's disease.\n\nIfnar1 encodes the interferon-alpha/beta receptor. In the context of neuroinflammation and Alzheimer's disease, type I interferon signaling plays a role in the inflammatory response.\n\nMicroglia are the resident immune cells of the brain, and their activation in Alzheimer's disease can contribute to synaptic loss.\n\nIn research on 5XFAD mice, studies have examined the role of interferon signaling in microglia and its effect on synaptopathy. The key study I'm thinking of is one that showed that in 5XFAD mice, there is a loss of synapses (both pre- and post-synaptic), and that this is mediated by interferon signaling in microglia.\n\nSpecifically, research has shown that:\n- In 5XFAD mice, there is progressive synaptic loss\n- Microglia contribute to this synaptic loss through interferon signaling\n- Ifnar1 (type I interferon receptor) deletion in microglia attenuates the synaptic loss\n\nLooking at the options:\n(A) increased synaptophysin+ density - synaptophysin is a pre-synaptic marker\n(B) increased loss - this would mean the deletion worsens the problem\n(C) no effect\n(D) attenuation of loss - this would mean the deletion reduces/prevents the synaptic loss\n(E) Insufficient information\n\nThe study by Dera et al. (2020) in Nature Neuroscience showed that type I interferon signaling in microglia drives synapse loss in Alzheimer's disease models. They found that microglia-specific Ifnar1 deletion attenuated the loss of synapses in 5XFAD mice.\n\nFor post-synaptic terminals specifically (marked by PSD95), the Ifnar1 deletion in microglia would attenuate the loss.\n\nSo the answer should be (D) attenuation of loss.\n",
+      "model_reasoning_source_field": "response.choices[0].message.reasoning",
+      "rationale_label": "Saved model-generated rationale. The central post-synaptic result has independent source support; the citation error is corrected in the companion notes. Correctness does not prove that the rationale caused the answer.",
+      "companion_notes": [
+        "Citation correction: the saved answer names Dera et al., 2020, and the saved reasoning additionally names Nature Neuroscience. The verified source is [Roy et al. (2022), Immunity](https://pmc.ncbi.nlm.nih.gov/articles/PMC9109419/), DOI 10.1016/j.immuni.2022.03.018.",
+        "Cell-type distinction: microglia-specific Ifnar1 deletion attenuated loss of post-synaptic terminals through reduced selective engulfment. Neural-cell Ifnar1 deletion restored pre-synaptic terminals and decreased plaque accumulation. The source reports these as distinct results."
+      ],
+      "request": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/requests/1f0e04503a98c344e48701e19ab21856d337717e8e103d480c8ccb2a22e6a106.json",
+        "sha256": "ddbcf89f3bf4c34f24522e508caae39e4ceabfcc2fd0df5d2536ae633964a90a"
+      },
+      "response": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/responses/1f0e04503a98c344e48701e19ab21856d337717e8e103d480c8ccb2a22e6a106.json",
+        "sha256": "a55e07110808023b382d06abec442b544f1846221edbca8a546207b1f100f148"
+      },
+      "native_gold_source": {
+        "path": ".local/litqa2_replay/baseline/results/runs/qwen38_27b_litqa2_public_reviewed_2026-10-15/frozen_files/data/labbench/scorer_references.jsonl",
+        "sha256": "2236079f908f00e7d413ff0f73de3bb3644148edf3b7f3a40c1f697cda4c7346",
+        "field": "target_choice"
+      },
+      "score_source": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/per_case_scores.json",
+        "sha256": "9aec9deab0775fac041ae6b7c01ac74380fe79a87511d1287d906aca607b0e61"
+      },
+      "images": [],
+      "verification": {
+        "answer": "D — attenuation of loss",
+        "input_check": "Exactly one text-only user message containing the biology question and five answer choices. No image, figure, table, reference passage, source paper or tool result was provided.",
+        "rationale_note": "The central receptor-to-microglia-to-post-synaptic-loss explanation agrees with the source study. Generated citation details are wrong, and the source distinguishes microglial post-synaptic effects from neural-cell pre-synaptic effects; both qualifications are displayed in companion_notes.",
+        "source_study_validation": {
+          "title": "Concerted type I interferon signaling in microglia and neural cells promotes memory impairment associated with amyloid β plaques",
+          "authors_year_journal": "Roy et al., 2022, Immunity",
+          "doi": "10.1016/j.immuni.2022.03.018",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9109419/",
+          "locator": "Summary and Results: cell-type-specific Ifnar1 deletion; selective post-synaptic engulfment by microglia.",
+          "supporting_excerpt_exact": "Microglia-specific Ifnar1 deletion attenuated the loss of post-synaptic terminals by selective engulfment",
+          "excerpt_sha256": "1c920ac6d269d42e59bc7d9b0172467d83282a00bdc39e1c400f54877fe16608",
+          "validation_recorded_at_utc": "2026-10-16T20:40:14.389136+00:00",
+          "source_supplied_to_model": false,
+          "validation_scope": "Confirms the cell-type-specific post-synaptic result. Corrects the generated attribution and separates the neural-cell pre-synaptic result; does not endorse every detail of the generated rationale.",
+          "source_html_sha256": "d60df294dd9fb023438e775ee3cc545cf8882ed1d9b5f7ee8b5866a2a0dce1b8",
+          "source_html_bytes": 328413,
+          "source_hash_scope": "SHA256 of the raw HTML response independently fetched from the official PMC study URL during this review; not an immutable publisher release hash. Remote HTML can change."
         }
       },
       "dataset_result": {

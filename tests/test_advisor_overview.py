@@ -30,6 +30,7 @@ class AdvisorOverviewTests(unittest.TestCase):
             "model_reasoning_text_exact": "Synthetic reasoning.\n\nOne is smaller than two.",
             "assistant_final_text_exact": "[ANSWER]A[/ANSWER]",
             "main_answer": "The synthetic answer is one.",
+            "companion_notes": ["Synthetic source correction."],
             "dataset_result": {"accuracy": 1.0, "correct": 1, "total": 1}},
             {"task_id": "B05", "case_id": "synthetic-extra",
              "question_and_options_exact": "Question: Another synthetic question?\n\nOptions:\n(A) Yes",
@@ -80,6 +81,8 @@ class AdvisorOverviewTests(unittest.TestCase):
         self.assertIn('id="protein-shapes-and-motion"', output)
         self.assertNotIn("This illustrates a published tool workflow", before_details)
         self.assertNotIn("not a measured Qwen failure", before_details)
+        self.assertNotIn("Synthetic benchmark provenance", before_details)
+        self.assertNotIn("Synthetic source correction.", before_details)
         self.assertIn("WORKED_EXAMPLES.md", before_details)
         self.assertNotIn("Additional final answer.", before_details)
         self.assertNotIn("Numerical 3D coordinates", before_details)
@@ -105,6 +108,7 @@ class AdvisorOverviewTests(unittest.TestCase):
                      "Additional final answer.", "Numerical 3D coordinates", "A single stability number"]:
             self.assertIn(text, output)
         self.assertIn("not measured Qwen failures", output)
+        self.assertIn("Synthetic source correction.", output)
 
     def test_every_dataset_is_preserved_without_run_bookkeeping(self):
         output = self.overview()

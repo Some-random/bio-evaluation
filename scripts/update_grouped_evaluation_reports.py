@@ -206,7 +206,6 @@ def advisor_examples():
         f"→ {example['catalog_family']}.", "",
         f"**Evaluation dataset:** [BioEmu folding-free-energy benchmark]({example['source_url']}) "
         "— protein stability.", "",
-        example["benchmark_context"], "",
         "**Question:** Given the protein below, replace amino acid 6 from **Q** to **C**. "
         "Does it become less stable, and by how much?", "",
         highlight_amino_acid(original["sequence"], 6), "",
@@ -248,6 +247,8 @@ def worked_examples():
         result = example["dataset_result"]
         out += [f"Reference choice: **{score['answer']}** — correct. "
             f"Dataset accuracy: **{100 * result['accuracy']:.1f}%** ({result['correct']}/{result['total']}).", ""]
+        if example.get("companion_notes"):
+            out += ["**Source check:**", ""] + [f"- {note}" for note in example["companion_notes"]] + [""]
     out += ["[Exact example records and source hashes](ADVISOR_GOOD_EXAMPLES.json)", "",
         "[Additional protein-sequence examples and their limitations](EXAMPLES_SEQUENCE_VISION_TOOLS.md)", "",
         "## Simple answer, substantial computation", ""]
