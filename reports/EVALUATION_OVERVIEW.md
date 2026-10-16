@@ -119,6 +119,8 @@ NVKEKSSEYIVEKFLGKRYLRGRPQYLTKWEGYPIEQCTWEPLENLGKCMTLIADYEAELFQQSREKKNDQ
 
 [Native task and evaluation source](https://arxiv.org/html/2409.06744v2#S2.SS2.SSS1)
 
+[Released example input](https://github.com/bjing2016/EigenFold/blob/master/splits/cameo2022.csv)
+
 ### Build a scaffold around a specified three-dimensional motif
 
 **Dataset:** MotifBench functional-motif scaffolding
@@ -132,6 +134,8 @@ NVKEKSSEYIVEKFLGKRYLRGRPQYLTKWEGYPIEQCTWEPLENLGKCMTLIADYEAELFQQSREKKNDQ
 **Tool route:** Use a motif-conditioned structure generator to produce scaffold coordinates. The official evaluation then uses ProteinMPNN for sequence assignment, ESMFold for refolding, and geometric comparison; Foldseek supports clustering and novelty evaluation. AlphaFold is not the prescribed refolding tool here.
 
 [Native task and evaluation source](https://github.com/blt2114/MotifBench#evaluation)
+
+[Released example input](https://github.com/blt2114/MotifBench/blob/main/test_cases.csv)
 
 [Actual external-model computations and results reported in the papers](PUBLISHED_TOOL_USE_EXAMPLES.md)
 
