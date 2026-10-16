@@ -2,7 +2,7 @@
 
 Model: **Qwen3.8-27B**.
 
-Scores: **2026-10-16 13:49 UTC** · Run status: **2026-10-16 19:35 UTC**.
+Scores: **2026-10-16 13:49 UTC** · Run status: **2026-10-16 19:40 UTC**.
 
 **26 of 64 evaluation settings have finished runs.** An asterisk (*) marks incomplete coverage or scoring.
 
@@ -40,7 +40,7 @@ Expand a category to see its tasks and datasets.
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued · 25.7% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
+| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued · 25.9% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein stability* | TAPE / Rocklin stability | Running or queued · 0.0% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.738; ESM-2 0.718. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein thermostability prediction* | FLIP — AAV and Meltome<br>Thermostability — FLIP/Meltome | Partial* · Ready<br>Existing sequence regression runner and native Spearman scorer are available. | **Diagnostic only:** spearman undefined; spearman_parsed_only 0.0254<br>Full native primary metric undefined. | ProtST-ESM-1b: fixed encoder.spearman 0.68; full model tuning.spearman 0.681; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Enzyme activity* | Envision β-lactamase — PEER split | Needs data or protocol*<br>Beta-lactamase assay scope and complete native test inputs are not cleared. | — | Spearman: ProtST-ESM-2 0.879; ESM-2 0.867. · [source](https://arxiv.org/html/2206.02096v2) |
@@ -82,7 +82,7 @@ Expand a category to see its tasks and datasets.
 | Gene Ontology: biological process* | DeepFRI-derived EC and GO test splits<br>GO biological process — DeepFRI split | Running or queued · 0.0% trajectories uploaded* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Gene Ontology: molecular function* | DeepFRI-derived EC and GO test splits<br>GO molecular function — DeepFRI split | Running or queued · 0.0% trajectories uploaded* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Gene Ontology: cellular component* | DeepFRI-derived EC and GO test splits<br>GO cellular component — DeepFRI split | Running or queued · 0.0% trajectories uploaded* · Ready | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Temporal Gene Ontology annotation* | BioReason-Pro temporal GO test | Running or queued · 16.5% trajectories uploaded* · Ready | — | Official repository headline: BioReason-Pro 73.6% Fmax. · [source](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data) |
+| Temporal Gene Ontology annotation* | BioReason-Pro temporal GO test | Running or queued · 16.7% trajectories uploaded* · Ready | — | Official repository headline: BioReason-Pro 73.6% Fmax. · [source](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data) |
 | Species-held-out Gene Ontology annotation* | Bio-posttrain species-held-out protein GO | Running or queued · 0.0% trajectories uploaded* · Ready | — | Species-held-out GO evaluation is described; a verified numeric result for the exact protein split is not transcribed here. · [source](https://arxiv.org/html/2606.16517v1) |
 | Enzyme and Gene Ontology annotation | PFMBench GO/EC annotation panel | Needs data or protocol<br>Needs PFMBench splits, GO/EC vocabularies and native F1 scoring. | — | ESM2-Adapter, Table 1 means: GO-CC F1 0.6130; GO-MF F1 0.6488; GO-BP F1 0.5412; EC F1 0.7379 · [source](https://arxiv.org/html/2506.14796v1) |
 
