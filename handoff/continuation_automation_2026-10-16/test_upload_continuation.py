@@ -114,12 +114,19 @@ class UploadTests(unittest.TestCase):
         with self.assertRaises(u.ValidationError):
             u.verify_existing_index(index, changed)
 
-    def test_nonprivate_and_no_permission_rejected_without_network(self):
+    def test_unauthorized_and_no_permission_rejected_without_network(self):
         github = u.GitHub.__new__(u.GitHub)
-        for value in ({"private": False, "push_permission": True}, {"private": True, "push_permission": False}):
-            github.helpers = SimpleNamespace(confirm_private=lambda: value)
+        for value in ({"private": False, "push_permission": True, "publication_authorized": False},
+                      {"private": False, "push_permission": False, "publication_authorized": True}):
+            github.helpers = SimpleNamespace(confirm_destination=lambda: value)
             with self.assertRaises(u.ValidationError):
                 github.private()
+
+    def test_authorized_public_visibility_is_reported_truthfully(self):
+        github = u.GitHub.__new__(u.GitHub)
+        metadata = {"private": False, "visibility": "public", "push_permission": True, "publication_authorized": True}
+        github.helpers = SimpleNamespace(confirm_destination=lambda: metadata)
+        self.assertEqual(github.private(), metadata)
 
     def test_public_pointer_timestamp_is_stable_until_content_changes(self):
         payload = {"task_id": "P36", "uploaded_trajectories": 59, "scoring_success": True}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish six generated evaluation reports from an isolated private checkout.
+"""Publish generated reports to the explicitly authorized repository visibility.
 
 This watcher refreshes metadata and presentation only. It never scores runs,
 reads benchmark cases, submits work, or uses the trajectory uploader's checkout.
@@ -158,11 +158,11 @@ class Publisher:
 
     def privacy(self):
         try:
-            privacy = self.helper.confirm_private()
+            privacy = self.helper.confirm_destination()
         except Exception as error:
-            raise ReportingError("Private repository and push permission could not be verified") from error
-        if privacy.get("private") is not True or privacy.get("push_permission") is not True:
-            raise ReportingError("Private repository and push permission were not verified")
+            raise ReportingError("Authorized repository visibility and push permission could not be verified") from error
+        if privacy.get("publication_authorized") is not True or privacy.get("push_permission") is not True:
+            raise ReportingError("Authorized repository and push permission were not verified")
         return privacy
 
     def save(self, **values):
@@ -284,7 +284,8 @@ class Publisher:
             self.save(stage="watching", pushed=False, changedPaths=[],
                       metadataOnlyRefreshSkipped=True, deferredForOriginalSupervisor=None,
                       sourceHashes={name: sha(raw) for name, raw in remote_snapshot.items()},
-                      observedSourceHashes={name: sha(raw) for name, raw in snapshot.items()}, error=None)
+                      observedSourceHashes={name: sha(raw) for name, raw in snapshot.items()},
+                      privacy=privacy, error=None)
             return self.receipt
         self.git("add", "--sparse", "-f", "--", *self.paths)
         staged = self.git("diff", "--cached", "--name-only").stdout.splitlines()

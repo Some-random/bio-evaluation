@@ -4,6 +4,9 @@
 
 **Model: Qwen3.8-27B.** Expand a category to see its tasks and datasets. Evaluations ready for the current setup appear first; each blocked row says what is missing.
 
+- [Saved examples: protein sequences, figures and tables](reports/EXAMPLES_SEQUENCE_VISION_TOOLS.md)
+- [External models actually used in the papers](reports/PUBLISHED_TOOL_USE_EXAMPLES.md)
+
 <details>
 <summary>Source data and technical records</summary>
 
@@ -19,6 +22,6 @@
 - [Backup and restore instructions](reports/BACKUP_SETUP.md)
 - [Shared biological model literature catalog](https://github.com/Some-random/paper-extraction-lab/blob/main/reports/bio_foundation_review_2026-10-15/README.md)
 
-Model weights and credentials stay local. This private repository contains scorer reference answers; keep it outside benchmark solver tools and training or retrieval corpora. Existing execution restrictions are recorded in `AGENTS.md`.
+Model weights and credentials stay local. This public repository contains scorer reference answers; keep it outside benchmark solver tools and training or retrieval corpora. Existing execution restrictions are recorded in `AGENTS.md`.
 
 </details>

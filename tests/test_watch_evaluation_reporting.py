@@ -1,4 +1,4 @@
-"""Exercise private report publication against local bare repositories only."""
+"""Exercise authorized report publication against local bare repositories only."""
 from __future__ import annotations
 
 import importlib.util
@@ -25,14 +25,17 @@ class Helper:
     def __init__(self, url):
         self.URL = str(url)
         self.private = True
+        self.authorized = True
+        self.push_permission = True
         self.calls = []
         self.privacy_checks = 0
         self.before_push = None
         self.before_add = None
 
-    def confirm_private(self):
+    def confirm_destination(self):
         self.privacy_checks += 1
-        return {"private": self.private, "push_permission": True}
+        return {"private": self.private, "visibility": "private" if self.private else "public",
+            "publication_authorized": self.authorized, "push_permission": self.push_permission}
 
     def git(self, *args, cwd, allow_failure=False):
         self.calls.append(args)
@@ -128,6 +131,19 @@ class WatchTests(unittest.TestCase):
         self.assertEqual(set(second["baselineBlobs"]), set(watch.OWNED))
         self.assertFalse(any("--force" in call for call in self.helper.calls if call[0] == "push"))
 
+    def test_explicitly_authorized_public_destination_preserves_real_visibility(self):
+        self.helper.private = False
+        receipt = self.publisher().cycle()
+        self.assertTrue(receipt["pushed"])
+        self.assertFalse(receipt["privacy"]["private"])
+        self.assertEqual(receipt["privacy"]["visibility"], "public")
+        self.assertTrue(receipt["privacy"]["publication_authorized"])
+        self.helper.private = True
+        unchanged = self.publisher().cycle()
+        self.assertFalse(unchanged["pushed"])
+        self.assertTrue(unchanged["privacy"]["private"])
+        self.assertEqual(unchanged["privacy"]["visibility"], "private")
+
     def test_timestamp_and_retry_hash_changes_do_not_create_commits(self):
         self.progress.update(metadataNotice={"stage": "retry_pending", "updatedAt": "2026-10-16T12:00:00+00:00"},
             sourceHashes={".local/remaining_evaluations/supervisor_status.json": "old"})
@@ -199,7 +215,7 @@ class WatchTests(unittest.TestCase):
             self.publisher(runner=fail_check).cycle()
         self.assertEqual(self.remote_head(), original)
         self.assertFalse(any(call[0] == "push" for call in self.helper.calls))
-        self.helper.private = False
+        self.helper.authorized = False
         with self.assertRaisesRegex(watch.ReportingError, "not verified"):
             self.publisher().cycle()
         self.assertEqual(self.remote_head(), original)

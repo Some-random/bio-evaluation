@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-10-16T18:59:25.942194+00:00",
+  "created_at_utc": "2026-10-16T19:25:24.429118+00:00",
   "root": "/dfs/scratch0/dongweij/bio-evaluation",
   "state_dir": "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16",
   "run_dir": "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016",
@@ -18,14 +18,16 @@
   "files_sha256": {
     "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator.py": "4dee429ca9762cb8c54e9557565ac9fa9ce44010f8a26d7b425b296ef92d462b",
     "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/bootstrap_coordinator.py": "77727f1f372454849ae757cc3a91d9af616a7c93e1da19aa4e2c0a25f07e344d",
-    "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/prepare_coordinator.py": "86b9e09e7f914e438527486ce0c5865815011fa1cbf46c157bee3a099d5b5f84",
-    "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/upload_continuation.py": "60c5799727eeefac1183edf60fd28ee04490a9772bdefa64a554a098fabe2413",
-    "/dfs/scratch0/dongweij/bio-evaluation/scripts/watch_evaluation_reporting.py": "8d4a6b43c3b35c35a4bebaf348f8995b6f56329d65ab7df7d65d285abb5b3b5e",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/prepare_coordinator.py": "07b5e4e66c6aff630a9a2b2e5096e08978237459066477bfa5ebd0359011ed45",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/upload_continuation.py": "bcad77ddf80ca5bf987c56fcfe07c75d33557bbfe82480967eb2b6b58d1cb6b4",
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/watch_evaluation_reporting.py": "8bf7a37d4237be3d27c0e2aad622741b1b079b3444ae404f019dee02b29299b4",
     "/dfs/scratch0/dongweij/bio-evaluation/scripts/refresh_evaluation_reporting.py": "52c85a5ec63082b1dd5155ae4e27123dd9f28de4998f60a22e1f3f46584b4bc9",
     "/dfs/scratch0/dongweij/bio-evaluation/scripts/update_grouped_evaluation_reports.py": "bcb98d61db6c1c249f805bb8b3bfea4a4f1f1df39c61d2d251a905c350502c63",
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/publication_destination.py": "7af9309f3b860b69301abae590a6c9ac4f03c1d81a6b3269b86fc077b6a10f4a",
+    "/dfs/scratch0/dongweij/bio-evaluation/configs/publication_destination.json": "7e3e1cac0321a64aa9bd53daf0e47891f7ca0ce04d3df9c3764d99129f1680d0",
     "/dfs/scratch0/dongweij/bio-evaluation/scripts/update_results_at_a_glance.py": "2b6f37afcfdaaa940056c595f8435412cb96b30611363abaa9011077b3f4bbb4",
     "/dfs/scratch0/dongweij/bio-evaluation/scripts/daily_backup.py": "528735e220dd6a2b5ab3d5b6b51ec7143b5ffa891fdfcfc211d2a8099ce7093d",
-    "/dfs/scratch0/dongweij/bio-evaluation/.local/litqa2_replay/incremental_upload.py": "0cb56664099f9a33627b3493ff24feae69c8736cd5435d8ab47e6b4a5821bf8f",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/litqa2_replay/incremental_upload.py": "194f143fa81d2409c3f72403c5664f7f9c64b9ca3cc46af9603de0d044cf0160",
     "/dfs/scratch0/dongweij/bio-evaluation/.local/litqa2_replay/github_credential_helper.py": "45a94c6e738c987277f252bb5177e0d1b7b35ce8ea17d438b358f802442192cb",
     "/dfs/scratch0/dongweij/bio-evaluation/.local/litqa2_replay/parallel_upload.py": "afcd36eaf7abb8d26ace19c2baa5ade470998bfa98ecc95626ae76e756bc38cd",
     "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/cpu_supervisor_final_v2_bootstrap.json": "43838660ade81003661747e67ddc9b6b8f940aad96fc4eab9195bacae6ea248a",
@@ -79,6 +81,6 @@
     "Never launch or retry generation",
     "Never modify existing supervisor/worker plans or runtimes",
     "One frozen P36 offline score attempt; failures and interruptions are not retried",
-    "Private reporting and trajectory publishing only through the two isolated children"
+    "Reporting and trajectory publishing only through the two isolated children to the explicitly authorized repository visibility"
   ]
 }

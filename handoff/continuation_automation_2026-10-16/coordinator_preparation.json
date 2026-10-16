@@ -1,10 +1,10 @@
 {
   "config": "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator_config.json",
-  "config_sha256": "aec2a4cb47a540ba5c3ae968bb7109cb838097ee164f61813cbbc80d8b5db16e",
+  "config_sha256": "fb648218ddbb5d0dd70c3c316c0526b94702ebd3258a7f5db4091527a6041424",
   "sbatch": "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator.sbatch",
-  "sbatch_sha256": "b4d551fe6479dc69474c4a6b95a5454fe986bd39dc46954a24be1bacfebb7770",
+  "sbatch_sha256": "8d65294d1ce89de0dcd071bd2cb66fd46bea79977bbe536cb0dd24bbe8ab6eb1",
   "submission_command": "sbatch --parsable /dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator.sbatch",
-  "submitted": false,
+  "submitted": true,
   "resources": {
     "partition": "il-cpu",
     "qos": "il-cpu",
@@ -12,5 +12,7 @@
     "memory_gb": 4,
     "wall_time": "14-00:00:00",
     "gpus": 0
-  }
+  },
+  "slurm_job_id": "238702",
+  "verified_at_utc": "2026-10-16T19:25:56.541364+00:00"
 }

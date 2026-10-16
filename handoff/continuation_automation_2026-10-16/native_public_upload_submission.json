@@ -1,0 +1,47 @@
+{
+  "started_at_utc": "2026-10-16T19:24:45.629892+00:00",
+  "launcher_pid": 21872,
+  "argv": [
+    "srun",
+    "--jobid=237730",
+    "--overlap",
+    "--nodes=1",
+    "--ntasks=1",
+    "--cpus-per-task=1",
+    "--cpu-bind=none",
+    "--gres=none",
+    "--nodelist=madmax2",
+    "/tmp/bio-cpu-supervisor-237730-6G6tNR/python/bin/python3.10",
+    "-u",
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/publish_native_evaluation_trajectories.py",
+    "--root",
+    "/dfs/scratch0/dongweij/bio-evaluation",
+    "--interval",
+    "60"
+  ],
+  "slurm_job_id": "237730",
+  "node": "madmax2",
+  "additional_gpus": 0,
+  "original_supervisor_stopped": false,
+  "original_runtime_preserved": "/tmp/bio-cpu-supervisor-237730-6G6tNR/python/bin/python3.10",
+  "no_generation_or_scoring": true,
+  "log": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/logs/public-upload-only.log",
+  "source_sha256": {
+    "scripts/publish_native_evaluation_trajectories.py": "1ad7b6f6fce361b22378dcb49cb6fba3bfc00721cf55d33cae4730cb46156bd4",
+    "scripts/publication_destination.py": "7af9309f3b860b69301abae590a6c9ac4f03c1d81a6b3269b86fc077b6a10f4a",
+    "configs/publication_destination.json": "7e3e1cac0321a64aa9bd53daf0e47891f7ca0ce04d3df9c3764d99129f1680d0",
+    ".local/litqa2_replay/incremental_upload.py": "194f143fa81d2409c3f72403c5664f7f9c64b9ca3cc46af9603de0d044cf0160",
+    ".local/remaining_evaluations/pool_supervisor_final_v2.py": "a242714f8aecd8ab254b02e21639f5e3c014e22176d00000632a271d6160242b"
+  },
+  "verified_at_utc": "2026-10-16T19:25:56.541364+00:00",
+  "worker_pid": 1039712,
+  "verified_checkpoint": {
+    "stage": "watching",
+    "updated_at_utc": "2026-10-16T19:25:24.705826+00:00",
+    "commit_sha": "574d7420bae49456bb83981d01264c0e6fefafc2",
+    "repository_visibility": "public",
+    "repository_private_verified": false,
+    "publication_authorized": true
+  },
+  "uploaded_trajectories": 13740
+}

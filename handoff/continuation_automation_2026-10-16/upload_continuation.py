@@ -337,9 +337,9 @@ class GitHub:
         self.record, self.assets = None, {}
 
     def private(self):
-        result = self.helpers.confirm_private()
-        if result.get("private") is not True or result.get("push_permission") is not True:
-            raise ValidationError("Private repository and push permission must be verified")
+        result = self.helpers.confirm_destination()
+        if result.get("publication_authorized") is not True or result.get("push_permission") is not True:
+            raise ValidationError("Authorized repository and push permission must be verified")
         return result
 
     def git(self, *args, **kwargs):
@@ -357,7 +357,7 @@ class GitHub:
         parsed = urllib.parse.urlparse(url)
         if (parsed.scheme != "https" or parsed.netloc not in {"api.github.com", "uploads.github.com"}
                 or not parsed.path.startswith("/repos/" + REPOSITORY + "/")):
-            raise ValidationError("GitHub API destination exceeds the private repository")
+            raise ValidationError("GitHub API destination exceeds the authorized repository")
         if method != "GET":
             self.private()
         data = canonical(value) if value is not None else None
@@ -589,7 +589,7 @@ def upload_cycle(root, run_dir, config_path, github=None):
         "contains_credentials": False, "contains_browser_challenge_pages": False}, immutable=True)
     source_destination.mkdir(parents=True, exist_ok=True)
     (source_destination / "README.md").write_text("# Public-source recovery snapshot\n\n"
-        "[Download the private source bundle](" + source_asset["asset_url"] + ") · [SHA-256 manifest](manifest.json)\n\n"
+        "[Download the source bundle](" + source_asset["asset_url"] + ") · [SHA-256 manifest](manifest.json)\n\n"
         "QA50: 193 official questions; 19/50 original images recovered (73 questions). Native GPT-4 judging remains held. "
         "Ryze component manifests and NatureLM temporal test remain unavailable. No inference was performed for source recovery.\n")
     completed = sum(row["complete_pair"] for row in index)
@@ -605,6 +605,8 @@ def upload_cycle(root, run_dir, config_path, github=None):
         "subset_scoring_artifacts_archived": state["scoring_artifacts_present"],
         "metric": "Qualified released-code paired-reference ROUGE; not paper normalized Smith-Waterman",
         "repository_private_verified": privacy["private"],
+        "repository_visibility": privacy.get("visibility"),
+        "publication_authorized": privacy.get("publication_authorized"),
         "latest_metadata_asset": metadata["asset_url"]}
     snapshot.update(score_fields)
     write(destination / "upload_snapshot.json", snapshot)

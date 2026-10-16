@@ -37,6 +37,7 @@ def prepare(root, scorer_archive, scorer_receipt, run_dir):
     names = [state / "coordinator.py", state / "bootstrap_coordinator.py", state / "prepare_coordinator.py",
         state / "upload_continuation.py", root / "scripts/watch_evaluation_reporting.py",
         root / "scripts/refresh_evaluation_reporting.py", root / "scripts/update_grouped_evaluation_reports.py",
+        root / "scripts/publication_destination.py", root / "configs/publication_destination.json",
         root / "scripts/update_results_at_a_glance.py", root / "scripts/daily_backup.py",
         root / ".local/litqa2_replay/incremental_upload.py", root / ".local/litqa2_replay/github_credential_helper.py",
         root / ".local/litqa2_replay/parallel_upload.py", existing_path, scorer_receipt,
@@ -58,7 +59,7 @@ def prepare(root, scorer_archive, scorer_receipt, run_dir):
         "resources": {"partition": "il-cpu", "qos": "il-cpu", "cpus": 2, "memory_gb": 4,
             "wall_time": "14-00:00:00", "gpus": 0},
         "restrictions": ["Never launch or retry generation", "Never modify existing supervisor/worker plans or runtimes",
-            "One frozen P36 offline score attempt; failures and interruptions are not retried", "Private reporting and trajectory publishing only through the two isolated children"]}
+            "One frozen P36 offline score attempt; failures and interruptions are not retried", "Reporting and trajectory publishing only through the two isolated children to the explicitly authorized repository visibility"]}
     config_path = state / "coordinator_config.json"
     save(config_path, config)
     (state / "logs").mkdir(exist_ok=True)

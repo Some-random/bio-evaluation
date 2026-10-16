@@ -1,4 +1,13 @@
-# Private repository snapshot
+# Repository publication and snapshots
+
+On 16 October 2026 UTC the user explicitly authorized public publication after
+the repository became public. The current destination policy is
+[`configs/publication_destination.json`](../configs/publication_destination.json).
+Incremental report and trajectory publishers verify the exact repository,
+public visibility and push permission. The earlier private snapshot described
+below, including `configs/backup.json`, is historical. The daily schedule stays
+disabled; the existing evaluation publishers handle incremental updates.
+Model weights, credentials and unrelated Affibody work remain excluded.
 
 On 15 October 2026 UTC the user requested creating a private repository and uploading this evaluation workspace. Repository: [Some-random/bio-evaluation](https://github.com/Some-random/bio-evaluation). GitHub privacy and push permission were verified before data transfer. This is a one-time upload; the previously canceled daily schedule remains disabled.
 
