@@ -23,7 +23,7 @@ class AdvisorOverviewTests(unittest.TestCase):
         self.original = copy.deepcopy(self.data)
         (self.reports / "QWEN_TASK_FEASIBILITY.json").write_bytes(
             (ROOT / "reports/QWEN_TASK_FEASIBILITY.json").read_bytes())
-        good = {"examples": [{"task_id": "B04", "case_id": "synthetic-main", "main_example": True,
+        good = {"examples": [{"task_id": "B01", "case_id": "synthetic-main", "main_example": True,
             "question_and_options_exact": "Question: Which synthetic value is smaller?\n\nOptions:\n(A) 1\n(B) 2",
             "local_score_record": {"correct": True, "answer": "A"},
             "native_gold": {"target_choice": "A"}, "images": [],
@@ -46,6 +46,8 @@ class AdvisorOverviewTests(unittest.TestCase):
                  "wild_type": {"case_id": "synthetic-wt", "sequence": "AAAAAQ", "length": 6}},
              "plain_question": "Is the synthetic variant more stable?", "plain_answer": "Synthetic reference value.",
              "experimental_reference": {"mutant_ddg_exp": 0.5},
+             "catalog_category": "Protein shapes and motion", "catalog_family": "Protein shape changes, motion and stability",
+             "benchmark_context": "Synthetic benchmark provenance", "benchmark_context_source": "https://example.invalid/provenance",
              "result_scope": "Synthetic fixture, not a measurement.",
              "required_output": "A single stability number", "why_text_answer_is_insufficient": "The number needs computation.",
              "tool_route": "Embeddings, sampling and calculation", "source_url": "https://example.invalid/reference",
@@ -71,8 +73,11 @@ class AdvisorOverviewTests(unittest.TestCase):
         self.assertIn("AAAAA**Q**", before_details)
         self.assertIn("What is BioEmu?", before_details)
         self.assertIn("Evaluation dataset:", before_details)
-        self.assertIn("LAB-Bench FigQA", before_details)
+        self.assertIn("LAB-Bench LitQA2", before_details)
+        self.assertNotIn("<img", before_details)
         self.assertIn("BioEmu folding-free-energy benchmark", before_details)
+        self.assertIn("[Protein shapes and motion](#protein-shapes-and-motion)", before_details)
+        self.assertIn('id="protein-shapes-and-motion"', output)
         self.assertNotIn("This illustrates a published tool workflow", before_details)
         self.assertNotIn("not a measured Qwen failure", before_details)
         self.assertIn("WORKED_EXAMPLES.md", before_details)

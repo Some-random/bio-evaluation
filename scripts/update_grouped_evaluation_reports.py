@@ -160,7 +160,7 @@ def example_images(example, title):
 
 
 def example_dataset(example):
-    default = {"B04": "LAB-Bench FigQA", "B05": "LAB-Bench TableQA"}
+    default = {"B01": "LAB-Bench LitQA2", "B04": "LAB-Bench FigQA", "B05": "LAB-Bench TableQA"}
     name = example.get("dataset_name") or default[example["task_id"]]
     url = example.get("dataset_url") or "https://github.com/Future-House/LAB-Bench"
     return f"[{name}]({url})"
@@ -188,10 +188,12 @@ def advisor_examples():
         f"**Question:** {example.get('plain_question', example_question(example))}", ""]
     if example.get("plain_context"):
         out += [example["plain_context"], ""]
+    if example.get("main_choices"):
+        out += ["**Answer choices:** " + "; ".join(example["main_choices"]) + ".", ""]
     out += example_images(example, title)
     out += [f"**Qwen's answer:** {example['main_answer']}", "",
         "**Saved explanation (excerpt):**", ""] + quoted_record(
-            example["assistant_final_text_exact"].split("[ANSWER]", 1)[0]) + [""]
+            example.get("main_explanation_excerpt") or example["assistant_final_text_exact"].split("[ANSWER]", 1)[0]) + [""]
     result = example["dataset_result"]
     out += [f"The answer matches the reference label. Dataset accuracy: "
         f"**{100 * result['accuracy']:.1f}%** ({result['correct']}/{result['total']}).", ""]
@@ -200,8 +202,11 @@ def advisor_examples():
     original = example["input_sequences"]["wild_type"]
     assert len(original["sequence"]) == original["length"]
     out += ["### Tool-use challenge: does one change make a protein less stable?", "",
+        f"**Category:** [{example['catalog_category']}](#{anchor(example['catalog_category'])}) "
+        f"→ {example['catalog_family']}.", "",
         f"**Evaluation dataset:** [BioEmu folding-free-energy benchmark]({example['source_url']}) "
         "— protein stability.", "",
+        example["benchmark_context"], "",
         "**Question:** Given the protein below, replace amino acid 6 from **Q** to **C**. "
         "Does it become less stable, and by how much?", "",
         highlight_amino_acid(original["sequence"], 6), "",
@@ -227,7 +232,8 @@ def worked_examples():
         "Correct answers do not independently validate every step of a model's explanation. "
         "Tool workflows below are source-backed examples, not measured Qwen failures.", "",
         "## Correct answers from saved Qwen runs", ""]
-    titles = {"B04": "Reading a biological figure", "B05": "Comparing values in a scientific table"}
+    titles = {"B01": "Biological knowledge and literature question answering",
+        "B04": "Reading a biological figure", "B05": "Comparing values in a scientific table"}
     for example in sorted(good, key=lambda item: not item.get("main_example", False)):
         score = example["local_score_record"]
         assert score["correct"] and score["answer"] == example["native_gold"]["target_choice"]
@@ -250,7 +256,9 @@ def worked_examples():
         out += [f"### {example['title']}", "", f"**Dataset:** {dataset}", "",
             f"**Input:** {example['input']}", ""]
         if example.get("plain_question"):
-            out += ["**What is BioEmu?** " + bioemu_description(), "",
+            out += [f"**Category:** {example['catalog_category']} → {example['catalog_family']}.", "",
+                f"{example['benchmark_context']} [Dataset provenance]({example['benchmark_context_source']})", "",
+                "**What is BioEmu?** " + bioemu_description(), "",
                 f"**Plain-language question:** {example['plain_question']}", "",
                 f"**Reference answer:** {example['plain_answer']}", "",
                 f"**Evidence scope:** {example['result_scope']}", ""]
@@ -452,7 +460,7 @@ def overview(data):
         "Source qualifications are collected at the end.", ""]
     all_notes = []
     for category, families in megatasks:
-        out += ["<details>", f"<summary><h2>{category}</h2></summary>", ""]
+        out += [f'<a id="{anchor(category)}"></a>', "", "<details>", f"<summary><h2>{category}</h2></summary>", ""]
         all_notes += [f"## {category}", ""]
         for family, group_ids in sorted(families,
                 key=lambda item: min(group_rank(group_by_id[group_id]) for group_id in item[1])):

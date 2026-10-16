@@ -2,7 +2,7 @@
   "created_at_utc": "2026-10-16T20:02:01.055835+00:00",
   "source": "Saved Qwen/Qwen3.8-27B request and response records, native gold choices, and byte-identical image assets.",
   "scope_notes": [
-    "Four selected correct examples, not a representative sample or proof of performance on all biological tasks.",
+    "Five selected correct examples, not a representative sample or proof of performance on all biological tasks.",
     "Assistant final text and reasoning text are reproduced exactly from saved response fields. No trace was reconstructed or invented.",
     "Reasoning is an unverified model-generated rationale, not proof that the explanation is correct or caused the correct answer.",
     "Image values and final choices were checked against the actual saved image and native gold label. No biological mechanism validation is claimed."
@@ -231,7 +231,7 @@
     {
       "task_id": "B04",
       "case_id": "5e7f5ee7-9469-405a-910d-aecd090ca206",
-      "main_example": true,
+      "main_example": false,
       "dataset_name": "LAB-Bench FigQA",
       "dataset_url": "https://github.com/Future-House/LAB-Bench/tree/998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838/FigQA",
       "main_title": "Trace a biological pathway from brain injury to disease",
@@ -303,6 +303,109 @@
       },
       "source_run_path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16",
       "source_scope_note": "Selected correct saved case from the completed native public image-based evaluation; no new inference or rescoring."
+    },
+    {
+      "task_id": "B01",
+      "case_id": "e6b0f9e5-e976-47dc-b839-0b2fca967e9e",
+      "main_example": true,
+      "dataset_name": "LAB-Bench LitQA2",
+      "dataset_url": "https://huggingface.co/datasets/futurehouse/lab-bench/tree/5c77cec648430f30611808808861eb86f81d5eaa",
+      "main_title": "Explain what genes do where muscle attaches to tendon",
+      "plain_question": "At the point where a muscle fibre attaches to a tendon, which biological function is enriched among the active genes?",
+      "main_answer": "Cell–matrix interactions: attaching the muscle cell to the surrounding structural material so it can transmit force.",
+      "plain_context": "The original question calls this the myotendinous junction. Qwen received only the biology question and answer choices.",
+      "main_explanation_excerpt": "The biological function of the myotendinous junction is to transmit force from the contracting muscle to the extracellular matrix/tendon, making cell-matrix interaction genes the expected enrichment.",
+      "main_choices": [
+        "(A) synaptic transmission",
+        "(B) signal transduction",
+        "(C) Insufficient information to answer the question",
+        "(D) cell–matrix interactions",
+        "(E) protein synthesis"
+      ],
+      "question_and_options_exact": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Based on single-nuclei RNA sequencing data, myotendinous junction myonuclei are enriched for genes involved in which of the following functions?\n\nOptions:\n(A) synaptic transmission\n(B) signal transduction\n(C) Insufficient information to answer the question\n(D) cell–matrix interactions\n(E) protein synthesis\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing.",
+      "native_gold": {
+        "task": "B01",
+        "case_id": "e6b0f9e5-e976-47dc-b839-0b2fca967e9e",
+        "subtask": "litqa-v2-public",
+        "target_choice": "D",
+        "unsure_choice": "C",
+        "choice_count": 5
+      },
+      "local_score_record": {
+        "task": "B01",
+        "case_id": "e6b0f9e5-e976-47dc-b839-0b2fca967e9e",
+        "subtask": "litqa-v2-public",
+        "answer": "D",
+        "correct": true,
+        "sure": true,
+        "parsed": true,
+        "finish_reason": "stop"
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "assistant_final_text_exact": "\n\nLooking at this question, I need to consider the biology of myotendinous junctions and what single-nuclei RNA sequencing has revealed about the myonuclei located at these specialized sites.\n\nMyotendinous junctions are the specialized regions where muscle fibers connect to tendons. At these junctions, the actin filaments of the sarcomere anchor to the extracellular matrix (ECM) components (collagen, laminin, fibronectin) that form the tendon.\n\nKey reasoning:\n- **Synaptic transmission (A):** This would be relevant to neuromuscular junctions, not myotendinous junctions.\n- **Signal transduction (B):** A general cellular process, not specific to the myotendinous junction.\n- **Cell-matrix interactions (D):** The myotendinous junction is fundamentally a site where the muscle cell interfaces with the extracellular matrix. This region requires specialized integrins, dystrophin-glycoprotein complex components, and other adhesion/matrix proteins. Single-nuclei RNA sequencing studies have shown that myonuclei at myotendinous junctions are enriched for genes encoding proteins involved in cell-matrix interactions and ECM organization.\n- **Protein synthesis (E):** A general cellular function, not specifically enriched at this junction.\n\nThe biological function of the myotendinous junction is to transmit force from the contracting muscle to the extracellular matrix/tendon, making cell-matrix interaction genes the expected enrichment.\n\n[ANSWER]D[/ANSWER]",
+      "assistant_final_source_field": "response.choices[0].message.content",
+      "model_reasoning_text_exact": "The question asks about myotendinous junction myonuclei and what genes they are enriched for based on single-nuclei RNA sequencing data.\n\nMyotendinous junctions are the points where muscle fibers (myofibrils) connect to tendons. These are specialized regions of the muscle cell where the actin filaments of the sarcomere connect to the extracellular matrix components that form the tendon.\n\nLet me think about what would be enriched in myotendinous junction myonuclei:\n\n- Myotendinous junctions are where muscle cells interface with the extracellular matrix (ECM). This involves integrins, laminins, and other cell-matrix adhesion molecules.\n- Genes involved in cell-matrix interactions would be expected to be enriched in these myonuclei because the junction requires specialized proteins for connecting the muscle to the tendon/matrix.\n- Synaptic transmission would be more relevant to neuromuscular junctions, not myotendinous junctions.\n- Signal transduction is a general function and wouldn't be specifically enriched.\n- Protein synthesis is a general cellular function.\n\nBased on research using single-nuclei RNA sequencing of skeletal muscle, myotendinous junction myonuclei have been shown to be enriched for genes involved in cell-matrix interactions. This makes biological sense because the myotendinous junction is specifically where the muscle cell's contractile apparatus connects to the extracellular matrix of the tendon.\n\nStudies have shown that myonuclei at the myotendinous junction express higher levels of genes related to extracellular matrix organization and cell-matrix adhesion, including integrins and other matrix-related proteins.\n\nThe answer should be (D) cell–matrix interactions.\n",
+      "model_reasoning_source_field": "response.choices[0].message.reasoning",
+      "rationale_label": "Saved model-generated rationale. The central anatomy and gene-enrichment explanation has independent source support; correctness does not prove that the rationale caused the answer.",
+      "request": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/requests/e9aafc33c850efbc807af98561260c3fd5633389474720b802f2976182c3c080.json",
+        "sha256": "1e546c5be91a073ba88bf9a4a57a49875d333202559e75c50ad215d057428f51"
+      },
+      "response": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/responses/e9aafc33c850efbc807af98561260c3fd5633389474720b802f2976182c3c080.json",
+        "sha256": "92f8bc27b5d5b542154442b116f768e2bdcd26fe895a7c97a691db5eb3db323d"
+      },
+      "native_gold_source": {
+        "path": ".local/litqa2_replay/baseline/results/runs/qwen38_27b_litqa2_public_reviewed_2026-10-15/frozen_files/data/labbench/scorer_references.jsonl",
+        "sha256": "2236079f908f00e7d413ff0f73de3bb3644148edf3b7f3a40c1f697cda4c7346",
+        "field": "target_choice"
+      },
+      "score_source": {
+        "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/per_case_scores.json",
+        "sha256": "9aec9deab0775fac041ae6b7c01ac74380fe79a87511d1287d906aca607b0e61"
+      },
+      "images": [],
+      "verification": {
+        "answer": "D — cell–matrix interactions",
+        "input_check": "Exactly one text-only user message containing the biology question and five answer choices. No image, figure, table, reference passage, source paper or tool result was provided.",
+        "rationale_note": "The explanation connects the muscle–tendon junction to force transmission and cell–matrix adhesion, and distinguishes this from synaptic transmission at the neuromuscular junction. The cited study independently supports the central enrichment claim; individual named protein details in the full generated response were not exhaustively validated.",
+        "source_study_validation": {
+          "title": "Multimodal cell atlas of the ageing human skeletal muscle",
+          "url": "https://www.nature.com/articles/s41586-024-07348-6",
+          "locator": "Results: myofibre subclustering, paragraph beginning Further snRNA-seq subclustering; Figure 2c and Extended Data Figure 5a,b.",
+          "supporting_excerpt_exact": "Myotendinous junction myonuclei exhibited enrichment in genes associated with cell–matrix interactions",
+          "excerpt_sha256": "5b735279de05277bbbed1be582c3e0fbbf1871e06d8fe710673ef504239580b3",
+          "source_html_sha256": "1e6bb8ba2ab16f45171ac6ec1fae58a145e123fffecb4de01814856d9de07289",
+          "source_html_bytes": 751353,
+          "source_hash_scope": "SHA256 of the raw HTML response independently fetched from the official study URL during this review; not an immutable publisher release hash. Remote HTML can change.",
+          "validation_recorded_at_utc": "2026-10-16T20:35:31.004848+00:00",
+          "source_supplied_to_model": false,
+          "validation_scope": "Confirms cell–matrix gene enrichment at the muscle–tendon junction and contrasts it with synaptic-transmission gene enrichment at the neuromuscular junction; does not score every sentence of the generated rationale."
+        },
+        "anatomy_support": {
+          "url": "https://www.biorxiv.org/content/10.1101/2022.12.16.519020v1",
+          "title": "Distinct myofibre domains of the human myotendinous junction revealed by single nucleus RNA-seq",
+          "locator": "Abstract, opening sentence",
+          "support_note": "Describes the myotendinous junction as a specialized myofibre domain maintaining cell–matrix contact with the tendon under mechanical stress and strain."
+        }
+      },
+      "dataset_result": {
+        "correct": 77,
+        "total": 197,
+        "accuracy": 0.39086294416243655
+      },
+      "source_run_path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16",
+      "source_scope_note": "Selected correct saved case from the completed text-only LitQA2 run: 77/197 correct (39.1%), all 197 parsed with stop finish reasons. The reviewed subset is 197 of 199 public cases; this individual example is not representative of overall success. No new inference or rescoring.",
+      "source_protocol": {
+        "input_modality": "text_only",
+        "tools_used": false,
+        "config_path": "configs/local_labbench_litqa2.json",
+        "config_sha256": "cddc1a15491ae841508c0bfe27ffe668b11064821dcfdd1a9c5821805cc09718",
+        "model_revision_source": "response.model_revision when present, otherwise frozen run configuration",
+        "dataset_revision": "5c77cec648430f30611808808861eb86f81d5eaa",
+        "source_code_revision": "998a8e0a40cf116c80e1b0e7a805ebb5fb9fa838"
+      }
     }
   ]
 }
