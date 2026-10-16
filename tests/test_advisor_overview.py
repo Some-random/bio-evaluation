@@ -70,7 +70,8 @@ class AdvisorOverviewTests(unittest.TestCase):
         before_details = output.split("<details>", 1)[0]
         self.assertIn("## Task map", before_details)
         self.assertIn("## Worked examples", before_details)
-        self.assertIn("The synthetic answer is one.", before_details)
+        self.assertIn("**Qwen's answer:** (A)", before_details)
+        self.assertNotIn("The synthetic answer is one.", before_details)
         self.assertIn("+0.50 kcal/mol", before_details)
         self.assertIn("AAAAA**Q**", before_details)
         self.assertIn("What is BioEmu?", before_details)

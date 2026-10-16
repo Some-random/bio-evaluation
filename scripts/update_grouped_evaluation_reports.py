@@ -200,7 +200,7 @@ def advisor_examples():
         out += ["**Answer choices:** " + "; ".join(example["main_choices"]) + ".", ""]
     out += example_images(example, title)
     reasoning = example["model_reasoning_text_exact"]
-    out += [f"**Qwen's answer:** {example['main_answer']}", "",
+    out += [f"**Qwen's answer:** ({example['local_score_record']['answer']})", "",
         f"**Saved model reasoning (verbatim, {len(reasoning.split())} words):**", ""] + quoted_record(reasoning) + [""]
     out += reference_study(example)
     result = example["dataset_result"]
