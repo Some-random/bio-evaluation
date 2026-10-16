@@ -32,9 +32,40 @@ Microglia are the brain’s immune cells. IFNAR1 receives type-I interferon sign
 
 **Qwen's answer:** Reduced loss of post-synaptic terminals.
 
-**Saved explanation (excerpt):**
+**Saved model reasoning (verbatim, 281 words):**
 
-> This indicates that IFN signaling through microglia is a driver of synapse loss in this model, and removing this receptor in microglia protects against that loss.
+> The question asks about the effect of microglia-specific Ifnar1 deletion on post-synaptic terminals in 5XFAD mice.
+>
+> 5XFAD mice are a well-known transgenic mouse model of Alzheimer's disease that carry five mutations associated with familial Alzheimer's disease.
+>
+> Ifnar1 encodes the interferon-alpha/beta receptor. In the context of neuroinflammation and Alzheimer's disease, type I interferon signaling plays a role in the inflammatory response.
+>
+> Microglia are the resident immune cells of the brain, and their activation in Alzheimer's disease can contribute to synaptic loss.
+>
+> In research on 5XFAD mice, studies have examined the role of interferon signaling in microglia and its effect on synaptopathy. The key study I'm thinking of is one that showed that in 5XFAD mice, there is a loss of synapses (both pre- and post-synaptic), and that this is mediated by interferon signaling in microglia.
+>
+> Specifically, research has shown that:
+> - In 5XFAD mice, there is progressive synaptic loss
+> - Microglia contribute to this synaptic loss through interferon signaling
+> - Ifnar1 (type I interferon receptor) deletion in microglia attenuates the synaptic loss
+>
+> Looking at the options:
+> (A) increased synaptophysin+ density - synaptophysin is a pre-synaptic marker
+> (B) increased loss - this would mean the deletion worsens the problem
+> (C) no effect
+> (D) attenuation of loss - this would mean the deletion reduces/prevents the synaptic loss
+> (E) Insufficient information
+>
+> The study by Dera et al. (2020) in Nature Neuroscience showed that type I interferon signaling in microglia drives synapse loss in Alzheimer's disease models. They found that microglia-specific Ifnar1 deletion attenuated the loss of synapses in 5XFAD mice.
+>
+> For post-synaptic terminals specifically (marked by PSD95), the Ifnar1 deletion in microglia would attenuate the loss.
+>
+> So the answer should be (D) attenuation of loss.
+
+**Checks on the saved reasoning:**
+
+- Citation correction: the saved answer names Dera et al., 2020, and the saved reasoning additionally names Nature Neuroscience. The verified source is [Roy et al. (2022), Immunity](https://pmc.ncbi.nlm.nih.gov/articles/PMC9109419/), DOI 10.1016/j.immuni.2022.03.018.
+- Cell-type distinction: microglia-specific Ifnar1 deletion attenuated loss of post-synaptic terminals through reduced selective engulfment. Neural-cell Ifnar1 deletion restored pre-synaptic terminals and decreased plaque accumulation. The source reports these as distinct results.
 
 The answer matches the reference label. Dataset accuracy: **39.1%** (77/197).
 
