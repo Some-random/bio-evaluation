@@ -1,0 +1,34 @@
+{
+  "task_id": "P28",
+  "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_001",
+  "case_scope": "task_shard_only",
+  "planned": 1024,
+  "completed": 1024,
+  "parsed": 953,
+  "requests_saved": 1024,
+  "responses_saved": 1024,
+  "invalid_outputs": 71,
+  "missing_or_failed_outputs": 0,
+  "statuses": {
+    "completed": 1024
+  },
+  "finish_reasons": {
+    "length": 1001,
+    "stop": 23
+  },
+  "metrics": {},
+  "native_metric_scoring": "deferred_global_only_no_shard_CAFA",
+  "scoring_output_lock_sha256": "547e43d94f6c59733fcc43d45538c897303673e46bb34658c05f4a02094b51c4",
+  "labels_read": false,
+  "shard_index": 1,
+  "shard_count": 8,
+  "shard_size": 1024,
+  "full_test_case_count": 8159,
+  "source_start_index": 1024,
+  "source_stop_index": 2048,
+  "aggregate_config_file": "configs/local_bioreason_p28_aggregate.json",
+  "full_input_file": "data/catalog_bioreason_pro/P28/model_inputs.jsonl",
+  "full_input_sha256": "c0406c4f1906606d0e089a0ff2863bbeafa9e3a944747b97c2eff7313224834a",
+  "full_review_file": "configs/local_bioreason_p28_review.json",
+  "full_review_sha256": "cea92c2d8cf0d6399fcefce9b76e8655a848eb9aa08c8664ecd2a52a78dd2903"
+}
