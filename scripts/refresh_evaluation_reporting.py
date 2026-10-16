@@ -21,6 +21,7 @@ import tempfile
 CATALOG = "reports/TASK_HIERARCHY_DATA.json"
 SCORES = "reports/RESULTS_AT_A_GLANCE.json"
 SUPERVISOR = ".local/remaining_evaluations/supervisor_status.json"
+UPLOAD = ".local/remaining_evaluations/upload_status.json"
 PROGRESS = "reports/EVALUATION_PROGRESS.json"
 HEARTBEAT_LIMIT = 300
 HELD = {"B06", "P18"}
@@ -66,6 +67,52 @@ def heartbeat(status, now):
 
 def count(value):
     return value if type(value) is int and value >= 0 else None
+
+
+def run_bearing(value):
+    """Transient retry receipts are not execution-registry snapshots."""
+    if not isinstance(value, dict):
+        return False
+    runs = value.get("runs")
+    rows = list(runs.values()) if isinstance(runs, dict) else runs if isinstance(runs, list) else []
+    return (bool(rows) and all(isinstance(row, dict) and isinstance(row.get("task_id"), str)
+        and count(row.get("planned")) is not None for row in rows)
+        and any(row.get("kind") != "aggregate" for row in rows))
+
+
+def select_run_snapshot(root):
+    records, hashes, errors = [], {}, []
+    for name in [SUPERVISOR, UPLOAD]:
+        path = root / name
+        raw = path.read_bytes() if path.is_file() else None
+        hashes[name] = digest(raw) if raw is not None else None
+        try:
+            value = json.loads(raw) if raw is not None else None
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            value = None
+        valid = run_bearing(value)
+        if not valid:
+            errors.append({"source": name, "reason": "missing_metadata" if raw is None else "no_valid_run_snapshot"})
+        records.append({"path": name, "value": value, "valid": valid})
+    candidates = [record for record in records if record["valid"]]
+    if not candidates:
+        # Fail before either output is written. Existing catalog/progress remain
+        # available with their original dates instead of becoming an empty plan.
+        raise ValueError("No valid run-bearing supervisor or upload snapshot; existing reporting outputs preserved")
+    oldest = datetime.min.replace(tzinfo=timezone.utc)
+    selected = max(candidates, key=lambda record: timestamp(record["value"].get("updated_at_utc")) or oldest)
+    status = copy.deepcopy(selected["value"])
+    provenance = {"path": selected["path"], "snapshotAt": status.get("updated_at_utc"),
+        "fallback": selected["path"] != SUPERVISOR, "selection": "most_recent_valid_run_snapshot"}
+    newer_failure = None
+    for record in records:
+        value = record["value"]
+        if (not record["valid"] and isinstance(value, dict) and value.get("stage") == "retry_pending"
+                and (timestamp(value.get("updated_at_utc")) or oldest) >= (timestamp(status.get("updated_at_utc")) or oldest)):
+            newer_failure = {"source": record["path"], "stage": "retry_pending",
+                "updatedAt": value.get("updated_at_utc"),
+                "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."}
+    return status, hashes, provenance, errors, newer_failure
 
 
 def build_progress(status, report, source_hashes, now):
@@ -157,19 +204,13 @@ def build_outputs(root, now=None):
     score_raw = (root / SCORES).read_bytes()
     catalog = json.loads(catalog_raw)
     report = json.loads(score_raw)
-    supervisor_path = root / SUPERVISOR
-    supervisor_raw = supervisor_path.read_bytes() if supervisor_path.is_file() else None
-    supervisor_error = None
-    try:
-        supervisor = json.loads(supervisor_raw) if supervisor_raw is not None else {}
-    except (json.JSONDecodeError, UnicodeDecodeError):
-        supervisor = {}
-        supervisor_error = "invalid supervisor metadata"
-    progress = build_progress(supervisor, report, {
-        SCORES: digest(score_raw), SUPERVISOR: digest(supervisor_raw) if supervisor_raw is not None else None}, now)
-    if supervisor_error:
-        progress["heartbeat"]["status"] = "invalid"
-        progress["metadataError"] = supervisor_error
+    supervisor, run_hashes, provenance, metadata_errors, newer_failure = select_run_snapshot(root)
+    progress = build_progress(supervisor, report, {SCORES: digest(score_raw), **run_hashes}, now)
+    progress["runSnapshotSource"] = provenance
+    progress["metadataErrors"] = metadata_errors
+    if newer_failure:
+        progress["uploader"]["stage"] = "retry_pending"
+        progress["metadataNotice"] = newer_failure
     display = formatter()
     rows = report.get("completed_rows", []) + report.get("diagnostic_only_finished_runs", [])
     mapped = [task_id for group in catalog["groups"] for task_id in group["taskIds"]]
@@ -257,10 +298,12 @@ def build_outputs(root, now=None):
         activeWorkers=progress["scheduler"]["activeWorkers"], scheduledSettings=len(active),
         plannedCases=progress["totals"]["planned"], savedResponses=progress["totals"]["saved"],
         uploadedResponses=progress["totals"]["uploaded"], heartbeat=progress["heartbeat"],
+        runSnapshotSource=progress["runSnapshotSource"], metadataErrors=progress["metadataErrors"],
+        metadataNotice=progress.get("metadataNotice"),
         taskStatusCounts={state: sum(task_status(task_id) == state for task_id in mapped)
             for state in ["Results available", "Partial", "Running / queued", "Source-blocked", "Deferred / held", "Status unverified"]})
     progress_raw = encoded(progress)
-    meta.setdefault("sourceHashes", {}).update({SCORES: digest(score_raw), PROGRESS: digest(progress_raw)})
+    meta.setdefault("sourceHashes", {}).update({SCORES: digest(score_raw), PROGRESS: digest(progress_raw), **run_hashes})
     return {PROGRESS: progress_raw, CATALOG: encoded(catalog)}
 
 

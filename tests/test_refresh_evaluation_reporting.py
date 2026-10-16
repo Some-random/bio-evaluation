@@ -169,17 +169,67 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(self.group(catalog, "P01")["results"][0]["metrics"], {
             "qualified_oracle_success": 0.0, "optional_novelty": None})
 
-    def test_missing_stale_and_malformed_heartbeat_are_explicit(self):
+    def test_missing_and_stale_heartbeat_are_explicit(self):
         _, progress = self.build(NOW + timedelta(seconds=301))
         self.assertEqual(progress["heartbeat"]["status"], "stale")
-        (self.root / refresh.SUPERVISOR).unlink()
-        catalog, progress = self.build()
+        del self.status["updated_at_utc"]
+        self.write_inputs()
+        _, progress = self.build()
         self.assertEqual(progress["heartbeat"]["status"], "missing")
-        self.assertIsNone(progress["scheduler"]["activeWorkers"])
-        self.assertEqual(self.group(catalog, "P03")["status"], "Status unverified")
+
+    def test_retry_receipt_uses_last_successful_upload_snapshot_and_original_time(self):
+        original_time = (NOW - timedelta(minutes=2)).isoformat()
+        self.status["updated_at_utc"] = original_time
+        self.write(refresh.UPLOAD, self.status)
+        retry = {"stage": "retry_pending", "updated_at_utc": NOW.isoformat(),
+            "error": "Do not publish raw credential or subprocess details SECRET_SENTINEL"}
+        self.write(refresh.SUPERVISOR, retry)
+        catalog, progress = self.build()
+        self.assertEqual(progress["totals"]["planned"], 5)
+        self.assertEqual(progress["totals"]["uploaded"], 3)
+        self.assertEqual(progress["scheduler"]["activeWorkers"], 1)
+        self.assertEqual(progress["heartbeat"], {"status": "fresh", "updatedAt": original_time,
+            "staleAfterSeconds": refresh.HEARTBEAT_LIMIT})
+        self.assertEqual(progress["runSnapshotAt"], original_time)
+        self.assertEqual(progress["runSnapshotSource"]["path"], refresh.UPLOAD)
+        self.assertTrue(progress["runSnapshotSource"]["fallback"])
+        self.assertEqual(progress["uploader"]["stage"], "retry_pending")
+        self.assertEqual(progress["metadataNotice"]["updatedAt"], NOW.isoformat())
+        self.assertNotIn("SECRET_SENTINEL", json.dumps(progress))
+        self.assertNotIn("SECRET_SENTINEL", json.dumps(catalog))
+        self.assertEqual(progress["sourceHashes"][refresh.UPLOAD], refresh.digest((self.root / refresh.UPLOAD).read_bytes()))
+        _, later = self.build(NOW + timedelta(seconds=181))
+        self.assertEqual(later["heartbeat"]["status"], "stale")
+        self.assertEqual(later["heartbeat"]["updatedAt"], original_time)
+
+    def test_newest_valid_run_snapshot_wins_and_bad_supervisor_falls_back(self):
+        self.status["updated_at_utc"] = (NOW - timedelta(minutes=1)).isoformat()
+        self.write(refresh.UPLOAD, self.status)
+        self.status["updated_at_utc"] = (NOW - timedelta(minutes=10)).isoformat()
+        self.write(refresh.SUPERVISOR, self.status)
+        _, progress = self.build()
+        self.assertEqual(progress["runSnapshotSource"]["path"], refresh.UPLOAD)
         (self.root / refresh.SUPERVISOR).write_text('{broken')
         _, progress = self.build()
-        self.assertEqual(progress["heartbeat"]["status"], "invalid")
+        self.assertEqual(progress["totals"]["planned"], 5)
+        self.assertEqual(progress["runSnapshotSource"]["path"], refresh.UPLOAD)
+        self.assertEqual(progress["metadataErrors"], [{"source": refresh.SUPERVISOR, "reason": "no_valid_run_snapshot"}])
+
+    def test_both_invalid_or_missing_sources_preserve_existing_outputs(self):
+        refresh.refresh(self.root, now=NOW)
+        paths = [self.root / refresh.CATALOG, self.root / refresh.PROGRESS]
+        before = [(path.read_bytes(), path.stat().st_mtime_ns) for path in paths]
+        self.write(refresh.SUPERVISOR, {"stage": "retry_pending", "updated_at_utc": NOW.isoformat()})
+        (self.root / refresh.UPLOAD).parent.mkdir(parents=True, exist_ok=True)
+        (self.root / refresh.UPLOAD).write_text('{broken')
+        with self.assertRaisesRegex(ValueError, "No valid run-bearing"):
+            refresh.refresh(self.root, now=NOW)
+        self.assertEqual([(path.read_bytes(), path.stat().st_mtime_ns) for path in paths], before)
+        (self.root / refresh.SUPERVISOR).unlink()
+        (self.root / refresh.UPLOAD).unlink()
+        with self.assertRaisesRegex(ValueError, "No valid run-bearing"):
+            refresh.refresh(self.root, now=NOW)
+        self.assertEqual([(path.read_bytes(), path.stat().st_mtime_ns) for path in paths], before)
 
     def test_idempotent_clock_changes_and_check_writes_nothing(self):
         original = (self.root / refresh.CATALOG).read_bytes()
