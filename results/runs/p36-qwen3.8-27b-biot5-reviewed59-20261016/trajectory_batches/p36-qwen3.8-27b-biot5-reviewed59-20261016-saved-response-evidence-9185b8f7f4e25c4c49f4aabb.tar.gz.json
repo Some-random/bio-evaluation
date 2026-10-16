@@ -1,0 +1,39 @@
+{
+  "name": "p36-qwen3.8-27b-biot5-reviewed59-20261016-saved-response-evidence-9185b8f7f4e25c4c49f4aabb.tar.gz",
+  "asset_id": 647172927,
+  "asset_url": "https://github.com/Some-random/bio-evaluation/releases/download/continuation-2026-10-16-reviewed-p36-and-source-preparation/p36-qwen3.8-27b-biot5-reviewed59-20261016-saved-response-evidence-9185b8f7f4e25c4c49f4aabb.tar.gz",
+  "archive_sha256": "8c6c67c22b33b7a8cb0636c9ae90eae0d668fd05c5a00db0befa1acbb1cf4407",
+  "archive_bytes": 4711,
+  "manifest": {
+    "schema_version": 1,
+    "kind": "saved-response-evidence",
+    "task_id": "P36",
+    "variant": "QWEN_FULLTEXT_BIOT5_DESIGN_PAIRED_SOURCE_ROUGE_PARTIAL",
+    "full_benchmark_complete": false,
+    "planned_reviewed_subset": 59,
+    "configuration_sha256": "ececdb67c28faaf8f4c6a7bab90451053e70d7ed0ec20c5ff0ab619710bec34f",
+    "files": [
+      {
+        "path": "requests/b8fb19b0a89d3159542f8a8a2eec299fc16e8b456938b532cbb870e815a153ba.json",
+        "bytes": 2316,
+        "sha256": "f8e6c08389325845734979dcd577aed5e86d2ade7d099b1a9e0d534272d93a48"
+      },
+      {
+        "path": "responses/b8fb19b0a89d3159542f8a8a2eec299fc16e8b456938b532cbb870e815a153ba.json",
+        "bytes": 11242,
+        "sha256": "02b6dd317433825a7057cbc03aa03529884052679aaecc40bdbb3c7c5e7f3d34"
+      }
+    ],
+    "cases": [
+      {
+        "filename": "b8fb19b0a89d3159542f8a8a2eec299fc16e8b456938b532cbb870e815a153ba.json",
+        "case_id": "P36:234-fd4ca40f53cf4171ac0c28bcaf10535a",
+        "status": "error_or_unknown_completion_no_retry",
+        "complete_pair": false,
+        "payload_sha256": "33679d3d87a24626d6a3c7d685b367843171cb249fcb44b23ac67bd6a214fa60",
+        "request_sha256": "f8e6c08389325845734979dcd577aed5e86d2ade7d099b1a9e0d534272d93a48",
+        "response_sha256": "02b6dd317433825a7057cbc03aa03529884052679aaecc40bdbb3c7c5e7f3d34"
+      }
+    ]
+  }
+}
