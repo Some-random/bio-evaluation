@@ -1,6 +1,6 @@
 # P28 evaluation artifacts
 
-198/1024 raw trajectories archived. Incremental snapshot; execution is ongoing.
+208/1024 raw trajectories archived. Incremental snapshot; execution is ongoing.
 
 [Case index](trajectory_index.json) · [Archive manifests](trajectory_batches) · [Frozen config](frozen_config.json)
 
