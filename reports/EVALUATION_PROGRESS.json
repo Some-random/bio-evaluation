@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-16T21:55:42.963503+00:00",
+  "generatedAt": "2026-10-16T22:00:25.432514+00:00",
   "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-  "runSnapshotAt": "2026-10-16T21:55:42.963503+00:00",
+  "runSnapshotAt": "2026-10-16T22:00:25.432514+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-16T21:55:42.963503+00:00",
+    "updatedAt": "2026-10-16T22:00:25.432514+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
     "reports/RESULTS_AT_A_GLANCE.json": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
-    ".local/remaining_evaluations/supervisor_status.json": "dd72b2d99debb424c4937bb415dd57528c2055e11dd2a2c85f2ae949a8e087df",
-    ".local/remaining_evaluations/upload_status.json": "18ceb508f39aac9ec2376bf8e883273cbdff7a70bb8dc2278979562ad8d75d37"
+    ".local/remaining_evaluations/supervisor_status.json": "47d3b1a5acd893f08b504924d92d7ad922e7a220ecefaa4feaed83b7aaf526f1",
+    ".local/remaining_evaluations/upload_status.json": "51d1f358ab6cd6274974abeb768c6a3f2029f7a1c1df2110f1e2fd7b41a87f5a"
   },
   "uploader": {
     "stage": "watching",
-    "commitSha": "307c466708cb03fa0f0449f71e16d4c4f6477ab6",
+    "commitSha": "3a0033c6d0ccd8e8e363c4ef71dc05c2ce0800a6",
     "repositoryPrivateVerified": false
   },
   "scheduler": {
@@ -78,11 +78,6 @@
       },
       {
         "job_id": "237689",
-        "state": "PENDING",
-        "node_or_reason": "(Dependency)"
-      },
-      {
-        "job_id": "237688",
         "state": "PENDING",
         "node_or_reason": "(Dependency)"
       },
@@ -152,14 +147,14 @@
         "node_or_reason": "ampere7"
       },
       {
+        "job_id": "237688",
+        "state": "RUNNING",
+        "node_or_reason": "ampere6"
+      },
+      {
         "job_id": "237677",
         "state": "RUNNING",
         "node_or_reason": "ampere7"
-      },
-      {
-        "job_id": "237678",
-        "state": "RUNNING",
-        "node_or_reason": "ampere6"
       },
       {
         "job_id": "237663",
@@ -167,6 +162,10 @@
       },
       {
         "job_id": "237664",
+        "state": "not_in_active_queue"
+      },
+      {
+        "job_id": "237678",
         "state": "not_in_active_queue"
       }
     ]
@@ -176,7 +175,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 12882,
+    "uploaded": 12943,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -201,7 +200,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 8369,
+      "uploaded": 8417,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 6,
@@ -342,10 +341,10 @@
     {
       "taskId": "P28",
       "planned": 8159,
-      "uploaded": 1740,
+      "uploaded": 1753,
       "saved": null,
       "generationRuns": 8,
-      "terminalRuns": 0,
+      "terminalRuns": 1,
       "allTerminal": false,
       "nativeMetricsValid": null,
       "progressSource": "uploaded_trajectories",
@@ -408,7 +407,7 @@
   ],
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/upload_status.json",
-    "snapshotAt": "2026-10-16T21:55:42.963503+00:00",
+    "snapshotAt": "2026-10-16T22:00:25.432514+00:00",
     "fallback": true,
     "selection": "most_recent_valid_run_snapshot"
   },
