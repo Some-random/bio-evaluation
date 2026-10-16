@@ -72,46 +72,127 @@ def snapshot_note(data):
 
 def overview(data):
     meta = data["meta"]
+    names = {
+        "P02": "Binary protein localization", "P03": "Ten-compartment protein localization",
+        "P05": "AAV variant fitness prediction", "P06": "Protein thermostability prediction",
+        "P10": "Human protein–protein interaction prediction", "P11": "Yeast protein–protein interaction prediction",
+        "P12": "Enzyme Commission annotation", "P13": "Gene Ontology: biological process",
+        "P14": "Gene Ontology: molecular function", "P15": "Gene Ontology: cellular component",
+        "P19": "Single-mutant generation", "P20": "Multi-mutant ranking without measurements",
+        "P21": "Mutation ranking with anchor measurements", "P22": "Mutation ranking with single-mutant measurements",
+        "P23": "Protein function description generation", "P24": "Catalytic activity description generation",
+        "P25": "Protein domain and motif description generation", "P26": "Protein functional description generation",
+        "P31": "Mutation engineering with a supplied position", "P32": "Mutation engineering with an unknown position",
+        "B01": "Literature evidence question answering", "B02": "Biological database question answering",
+        "B03": "Supplementary-material question answering", "B04": "Research figure question answering",
+        "B05": "Research table question answering", "B06": "Experimental protocol question answering",
+        "B07": "Biological sequence question answering", "B08": "Molecular cloning question answering",
+        "V01": "Radiology image question answering", "V02": "Medical image question answering in English",
+        "V03": "Pathology image question answering", "V04": "Medical image question answering",
+        "N02": "Coding-variant effect prediction", "N03": "Non-SNV variant effect prediction",
+        "P35": "Protein retrieval from functional descriptions",
+        "P44": "Evidence support for protein-function explanations",
+        "P34": "Protein-sequence optimization against fitness predictors",
+        "P36": "Text-conditioned protein-sequence design",
+        "P37": "Unconditional protein generation",
+        "P38": "Protein generation for predicted stability and solubility",
+        "P39": "Heme-binding protein candidate generation",
+        "P42": "GFP sequence optimization against a fluorescence predictor",
+        "V07": "Scientific document and figure extraction",
+    }
+    caveats = {
+        "P34": "Predictor-scored optimization; not measured laboratory success.",
+        "P36": "Qualitative designs; no measured design-success rate.",
+        "P37": "Structure quality is predicted; function is not experimentally established.",
+        "P38": "Stability and solubility are predicted, not measured.",
+        "P39": "Heme binding is a predicted candidate property, not demonstrated binding.",
+        "P42": "Scored by a fluorescence predictor; not a wet-lab result.",
+    }
+    statuses = {
+        "Results available": "Finished", "Partial": "Partial", "Running / queued": "Running or queued",
+        "Source-blocked": "Blocked", "Deferred / held": "On hold",
+        "Status unverified": "Run status unconfirmed",
+    }
+
+    def display_status(group, protocol):
+        value = protocol["status"] if protocol else group["status"]
+        if value == "Status unverified" and group["scope"] == "Catalog only":
+            return "Listed for consideration"
+        return statuses[value]
+
+    def snapshot(value):
+        return value[:10] + " " + value[11:16] + " UTC"
+
     out = [
         "# Biological evaluation overview", "",
-        f"**{meta['completedSettings']}/{meta['registrySettings']} registered settings have completed declared local runs.** "
-        f"The full inventory contains **{meta['masterGroups']} main dataset/protocol groups** and "
-        f"**{meta['diagnosticGroups']} separate case-study/diagnostic groups**. "
-        "These are different counting units; completing a declared local run does not establish full paper replication.", "",
-        snapshot_note(data), "",
-        f"Model: **{meta['model']['name']}**, {meta['model']['precision']}, served with **{meta['model']['engine']}**. "
-        f"The execution snapshot records **{meta['activeWorkers']} GPU workers** covering **{meta['scheduledSettings']} settings**, "
-        f"with **{meta['plannedCases']:,} planned task-cases** and **{meta['savedResponses']:,} saved responses**. "
-        "Saved responses are not completed benchmark metrics, and task-cases are not independent biological observations.", "",
-        "- [Complete hierarchy and execution status](TASK_HIERARCHY_COMPLETE.md)",
-        "- [Grouped local results and published comparisons](RESULTS_GROUPED.md)",
-        "- [Task coverage crosswalk — all 64 registered settings](TASK_COVERAGE_MAP.csv)",
-        "- [Machine-readable hierarchy and source hashes](TASK_HIERARCHY_DATA.json)",
-        "- [Stored result report](RESULTS_AT_A_GLANCE.md) · [Execution snapshot](CURRENT_EXECUTION_STATUS_2026-10-16.json)",
-        f"- [Uploaded trajectories]({meta['githubUrl']}/tree/main/results/runs) · [Reporting package instructions]({meta['packageUrl']})", "",
-        "## Browse by scientific capability", "",
-        "| Capability | Main dataset/protocol groups | Inventory | Results |",
-        "|---|---:|---|---|",
+        "Model: **Qwen3.8-27B**.", "",
+        f"Scores: **{snapshot(meta['scoreSnapshotAt'])}** · Run status: **{snapshot(meta['runSnapshotAt'])}**.", "",
+        f"**{meta['completedSettings']} of {meta['registrySettings']} evaluation settings have finished runs.** "
+        "An asterisk (*) marks incomplete coverage or scoring.", "",
+        "**Listed for consideration** means additional datasets outside the original 64-setting list. "
+        "**Run status unconfirmed** means no verified completion record. Published scores are reference results; "
+        "full protocol notes are expandable below.", "",
     ]
-    for category in data["categories"]:
-        slug = anchor(category["name"])
-        out.append(f"| {cell(category['name'])} | {category['count']} | [Browse](TASK_HIERARCHY_COMPLETE.md#{slug}) | [Browse](RESULTS_GROUPED.md#{slug}) |")
-    out += [
-        "", "[Case studies and diagnostics](TASK_HIERARCHY_COMPLETE.md#case-studies-and-diagnostics) remain separate. "
-        "**Protein design** is the parent category for antibody design, inverse folding, binder design, generation and motif scaffolding.", "",
-        "## How to read the status", "",
-        "Scope and execution are separate fields. **Registered** identifies the original registered settings; "
-        f"**Catalog only** includes {meta['catalogOnlyMainGroups']} additional main groups and does not authorize new experiments. "
-        "A missing result stays **Status unverified** unless stronger evidence establishes a blocker or hold.", "",
-        "An **asterisk (*)** marks an incomplete group or result. Case counts, parsing failures, native metrics, "
-        "alternate metrics and protocol qualifications appear in expandable details. An undefined metric stays undefined; "
-        "it is not zero. Published references remain separate from local outcomes and use their own training and evaluation protocols.", "",
-        "The current snapshot flags frequent output-length stops on the fluorescence run. "
-        "Its original 4,096-token cap and all stopped/invalid outputs are preserved. "
-        "Outcome scores do not validate explanations, and public pretraining exposure is unknown.", "",
-        "Regenerate these pages with `python3 scripts/update_grouped_evaluation_reports.py`. "
-        "This renders the reviewed JSON snapshot only; it does not launch or rescore an evaluation.", "",
-    ]
+    for category in categories(data):
+        entries = [group for group in data["groups"] if group["category"] == category]
+        out += [f"## {category}", "", "| Task | Dataset/protocol | Status | Qwen result | Published reference |",
+            "|---|---|---|---|---|"]
+        for group in entries:
+            for protocol in group["protocols"] or [None]:
+                task_id = protocol["taskId"] if protocol else None
+                rows = [row for row in group["results"] if row["taskId"] == task_id] if protocol else []
+                for result in rows or [None]:
+                    name = names.get(task_id, group["task"])
+                    if not protocol and group["dataset"].startswith("Prompteina"):
+                        name = "GM2A-targeted binder design"
+                    elif not protocol and group["dataset"].startswith("Proteo-R1 internal"):
+                        name = "Structure-derived questions and output-format checks"
+                    state = display_status(group, protocol)
+                    if (protocol and state != "Finished") or (result and result["incomplete"]):
+                        name += "*"
+                    caveat = caveats.get(task_id)
+                    if group["dataset"].startswith("Prompteina"):
+                        caveat = "Single published target campaign."
+                    elif group["dataset"].startswith("Proteo-R1 internal"):
+                        caveat = "Independent held-out questions remain unresolved."
+                    if caveat:
+                        name += "<br>" + caveat
+                    dataset = group["dataset"]
+                    if protocol and len(group["protocols"]) > 1:
+                        dataset += "<br>" + protocol["title"]
+                    if result and len(rows) > 1:
+                        dataset += "<br>" + result["title"]
+                    local = result["metricText"] if result else "—"
+                    if result and result["completionScope"] == "diagnostic_only_primary_metrics_invalid":
+                        local = "**Diagnostic only:** " + local + "<br>Full native primary metric undefined."
+                    published = result["publishedText"] if result else group["literatureText"]
+                    if result and result["publishedUrl"]:
+                        published += f" · [source]({result['publishedUrl']})"
+                    elif group["sourceUrl"]:
+                        published += f" · [source]({group['sourceUrl']})"
+                    out.append("| " + " | ".join(cell(value) for value in [name, dataset, state, local, published]) + " |")
+        out += ["", "<details>", "<summary>Protocols, qualifications and complete source records</summary>", ""]
+        for group in entries:
+            out += [f"**{group['dataset']}**", ""]
+            for note in group["notes"]:
+                if not note.startswith(("Catalog coverage only;", "Case study or diagnostic; kept separate")):
+                    out += [text(note), ""]
+            if group.get("sourceSize"):
+                out += ["Published source size/units: " + text(group["sourceSize"]), ""]
+            for protocol in group["protocols"]:
+                out += [f"**{names.get(protocol['taskId'], group['task'])}:** "
+                    f"{text(protocol.get('nativeMetric'))}. {text(protocol.get('nativeSplit'))}", ""]
+                if protocol.get("limitation"):
+                    out += [text(protocol["limitation"]), ""]
+                if protocol.get("blocker"):
+                    out += [text(protocol["blocker"]), ""]
+            for result in group["results"]:
+                out += result_details(result)
+            if not group["results"]:
+                out += ["Published reference record: " + text(group["literatureText"]), ""]
+            out += [source_links(group), ""]
+        out += ["</details>", ""]
+    out += [f"[Raw run artifacts and uploaded trajectories]({meta['githubUrl']}/tree/main/results/runs)", ""]
     return "\n".join(out)
 
 
