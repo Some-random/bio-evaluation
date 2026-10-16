@@ -249,33 +249,51 @@ def published_display(row):
 def cell(value): return str(value).replace("|", "\\|").replace("\n", " ")
 
 
+def incomplete_evaluation(row, report):
+    """Mark missing coverage/scoring, independently of prediction validity."""
+    counts = row["counts"]
+    planned, completed = counts.get("planned"), counts.get("completed")
+    if not number(planned) or not number(completed) or completed < planned:
+        return True
+    if any(number(counts.get(key)) and counts[key] > 0
+           for key in ("held_before_inference", "missing_or_failed_outputs")):
+        return True
+    if row["task_id"] not in report["completed_whole_declared_setting_ids"]:
+        return True
+    source_coverage = row.get("full_test_id_union_validation") or {}
+    expected_count = source_coverage.get("expected_test_case_count")
+    if number(expected_count) and completed < expected_count:
+        return True
+    return any(value is None for _, value in flatten(row["metrics"]))
+
+
 def render_markdown(report):
     rows = report["completed_rows"]
     limits = sorted({row["generation"]["max_tokens"] for row in rows if isinstance(row.get("generation"), dict)
                      and number(row["generation"].get("max_tokens")) and row["generation"]["max_tokens"] != 1})
     limit_text = "/".join(f"{value:,}" for value in limits) if limits else "unrecorded"
     lines = ["# Results at a glance", "", f"Snapshot: {report['generated_at_utc']}. Fixed local Qwen3.8-27B baseline; "
-        f"{len(report['completed_whole_declared_setting_ids'])} settings have completed evaluations of their declared scope. "
+        f"{len(report['completed_whole_declared_setting_ids'])} of {report['catalog_settings']} settings have completed evaluations of their declared scope. "
         "This does not mean full paper replication. Finished shards and incomplete runs are excluded below.", "",
         "These are contextual comparisons: the local baseline is zero-shot; BioT5+/medical systems use task training. LAB references below use the public-set GPT-5.2 column; prompt/decoding/repeat differences remain. "
         f"B01 covers 197/199 public cases with two held before inference. No superiority or significance claim follows. Generated-answer output caps in this snapshot: {limit_text} tokens; P43 instead uses a prespecified one-token conditional likelihood score. Paper ± values preserve reported dispersion; its definition and repeat counts are not always established.", "",
-        "| Setting | Local score | Cases: completed/planned; parsed | Published reference | Qualification |", "|---|---|---|---|---|"]
+        "| Setting | Local score | Published reference | Qualification |", "|---|---|---|---|"]
     for row in rows:
         suffix = " / " + (row.get("dataset") or row.get("native_split") or "") if row.get("dataset") or row.get("native_split") else ""
-        counts = row["counts"]; label = row["task_id"] + suffix + " " + row["task_name"].replace("LAB-Bench / ", "")
+        label = row["task_id"] + suffix + " " + row["task_name"].replace("LAB-Bench / ", "")
+        if incomplete_evaluation(row, report): label += "*"
         caveats = " ".join(row["caveats"])
         if row["completion_scope"] in {"dataset_component", "native_split_component"}: caveats = "Completed component. " + caveats
         if not caveats: caveats = "Declared local variant; input, training and scoring qualifications in linked result and JSON."
-        count_text = f"{counts['completed']}/{counts['planned']}; {counts['parsed'] if counts['parsed'] is not None else 'unknown'} parsed"
-        lines.append("| " + " | ".join(map(cell, [f"[{label}](../{row['source_scores']})", local_display(row), count_text, published_display(row), caveats])) + " |")
+        lines.append("| " + " | ".join(map(cell, [f"[{label}](../{row['source_scores']})", local_display(row), published_display(row), caveats])) + " |")
+    if any(incomplete_evaluation(row, report) for row in rows) or report.get("diagnostic_only_finished_runs"):
+        lines += ["", "\\* Incomplete benchmark coverage or scoring. Case counts and parsing details remain in the [structured report](RESULTS_AT_A_GLANCE.json)."]
     if not rows: lines += ["", "No verified terminal whole-run or dataset-component score is available yet."]
     diagnostics = report.get("diagnostic_only_finished_runs", [])
     if diagnostics:
         lines += ["", "Finished executions with undefined full-test metrics, excluded from benchmark completion counts:", ""]
         for row in diagnostics:
-            counts = row["counts"]
-            lines.append(f"- [{row['task_id']} {row['task_name']}](../{row['source_scores']}): "
-                         f"{counts['completed']}/{counts['planned']} requests completed, {counts['parsed']} parsed; "
+            lines.append(f"- [{row['task_id']} {row['task_name']}*](../{row['source_scores']}): "
                          f"{local_display(row)}. Parsed-only values are incomplete diagnostics and do not replace the native full-test score.")
     p43 = report["P43"]
     if p43["completed_components"]:

@@ -1,0 +1,17 @@
+﻿Item,What is known / unresolved,Required handling
+Legacy results,All original reported scores are retained as prior-review claims. This expansion does not freshly verify every old paper/model name.,Re-audit the exact source before reproducing a comparison.
+PFMBench table count,The text advertises 38 tasks; visible Table 1 has 38 supervised entries plus 1 zero-shot entry. We retained 39 listed entries and flagged the discrepancy.,Pin implementation task manifests; do not silently force a count.
+PFMBench splits,The paper's resplit sizes differ from the original PEER/TAPE/FLIP sizes. Its stability narrative also discusses a changed split.,Use the exact PFMBench loader; do not import older counts.
+PFMBench abbreviations,Antib. Res. is retained as the source table label; do not expand it to antibody resistance from the abbreviation alone.,Inspect the underlying source definition when selecting this task.
+AbBiBench snapshots,"Paper reports 155,853 variants and 9 antigens; §3.1 lists 11 datasets. Current repository score table has 16 assay columns.",Version-pin size and leaderboard separately; no false shared denominator.
+RAbD preprocessing,60 complexes in the legacy design setting; ProteinBench retains 55.,Separate named protocol rows; do not sum as independent data.
+BioEmu versions,Benchmark/model revisions can change evaluation results.,Use model card and evaluator revision together.
+FLAb sizes,"241 datasets and >3M points describe the collection, not one test partition. 15 reference sets are excluded from automated scoring.",Use per-assay metadata and original metric directions.
+PG-LLM restrictions,"The existing handoff keeps this native-only and forbids benchmark-specific training, tuning, retrieval augmentation or model selection.",Do not interpret new catalog breadth as relaxed permission.
+PFArena release,Old source text and paper scores are available; exact usable bundle was not established in the handoff.,Verify official bundle and its rules before running.
+Paper-specific description tests,NatureLM's frozen NCBI test and several adapted BioReason-Pro splits have unresolved manifests/counts.,Do not substitute arbitrary new database rows and call it reproduction.
+Internal diagnostics,Proteo-R1 structure-question test separation and independent size remain unresolved.,Appendix only; do not present as a public standardized benchmark.
+Overlapping evidence,"Suites reuse TAPE, GO, ProteinGym, SAbDab and other data under different protocols.",No total number of independent biological observations is reported.
+Expensive design evaluations,"Generated proteins usually need inverse folding, refolding, interface scoring or simulation.",Not a drop-in text-only API evaluation; cost and verifier must be explicit.
+Downloaded content,Only catalog files are packaged. Remote benchmark/model payloads have not been downloaded for this deliverable.,"Download later through official links, respecting access and licensing."
+Old uploads,"The latest grouped workbook, original catalog and both agent ZIPs were available. Some older uploads may be expired.",Re-upload only a specific unavailable source needed later; no old file was required to block this master.

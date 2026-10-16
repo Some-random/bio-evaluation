@@ -1,0 +1,26 @@
+﻿Term,Meaning
+Purpose,"A master inventory to trim, not a recommendation to run everything. Categories organize actual datasets/protocols; rows may share source records."
+Four presentation columns,Task / actual dataset; Task evaluation targets (including sizes); Example Questions; Reported results.
+Reported results,"Published paper/repository values, never our runs. Selected models and settings are identified; no cross-metric category average is invented."
+Carried forward,Copied from the source-linked 14 October workbook or original catalog. Not independently re-audited in this expansion.
+Primary source checked,"Newly inspected paper or official repository. This verifies reported content, not downloaded payloads or reproduced performance."
+Unresolved,"The exact count, retained split, scorer, or result is not established here. This does not mean zero performance or an invalid scientific task."
+Size units,"Test proteins, variants, complexes, questions, assays, generated candidates and corpus totals are distinct. Do not add unlike units."
+Candidate budget,100 generated samples for one target is not 100 independent test targets. The verifier and compute budget are part of the setting.
+Version-specific,The same dataset name can have different retained sets: RAbD 60 versus ProteinBench 55; PFMBench resplits differ from PEER/TAPE.
+Measured evidence,Reference outcomes come from existing laboratory measurements. New generated candidates still require their own validation.
+Annotation evidence,Reference labels are curated or inferred annotations. Unannotated does not necessarily mean the biological activity is absent.
+Structure-derived evidence,Targets are calculated from coordinates or reference structures. Legitimate when splits/scorers are defined; not equivalent to measured function.
+Model/simulation proxy,"Scores come from learned predictors, MD, docking or structural self-consistency. Identify the evaluator; do not report as a new experiment."
+Judged text,"Text overlap, model judgments and expert preferences measure different aspects of an explanation. Outcome correctness does not verify every mechanism."
+Text compatibility,"Raw sequence-as-text can form a baseline, but that is not equivalent to an encoder-plus-head protocol or proof the task is purely reasoning."
+Required modalities,"Keep required images, coordinates, expression features, assay objectives and candidate context. Text transcription defines a new variant."
+Without auxiliary text,"Remove only optional explanations. Retain the question, sequences, objective and every task-defining field."
+With auxiliary text,Only protocol-permitted context. Keep the source and timing explicit; no held-out outcomes or gold explanation leakage.
+Training regime,"A supervised specialist, a prompted API model and a tool-enabled agent do not have identical information or adaptation budgets."
+Examples,"All example questions here are illustrative paraphrases of task definitions, not recovered benchmark examples or new labeled data."
+Selection column,Undecided / Keep / Defer / Drop is for your planning. Editing it does not itself start agent work or remove underlying records.
+Agent continuity,All 64 original IDs are mapped in a separate sheet. Original 14-setting initial scope and benchmark restrictions remain unchanged.
+Proteo-R1 treatment,RAbD/SAbDab are ordinary design protocols. The PDB structural questions remain an internal-diagnostics appendix until the held-out set is clarified.
+What is bundled,"Catalog, source URLs, metadata, legends, prior ID mapping, and agent-update instructions. No raw benchmark payloads, weights, executable harness, or model predictions."
+Coverage,"Broad coverage of the discussed biological/protein domains, with adjacent modalities retained. It is not a claim to enumerate every benchmark in biology."

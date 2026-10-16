@@ -1,0 +1,92 @@
+{
+  "source_archive": "Bio_Evaluation_Agent_Package_2026-10-16.zip",
+  "source_archive_sha256": "3425f62c408698197e161a581dae6da30b9240b706f7b7b21a22874a167bd38f",
+  "verified_at_utc": "2026-10-16T07:35:00.427531+00:00",
+  "files": [
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/AGENT_TASK_MAPPING.csv",
+      "bytes": 20656,
+      "sha256": "3f17b92ccf2c19e8475b0eba88c396363dad1a5d1e6ae8644dffb9161fbb70ec",
+      "listed_checksum_verified": true
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx",
+      "bytes": 110844,
+      "sha256": "3bbe6cee62c15266814fa082825a9f6349c32d34e976855eda604bef68336f6f",
+      "listed_checksum_verified": true
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+      "bytes": 37356,
+      "sha256": "c813f6702a0af51e272e344bfbc02d913541103d3f4acf849e4547ac78c3764c",
+      "listed_checksum_verified": true
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/LEGEND.csv",
+      "bytes": 3861,
+      "sha256": "f5b2ed0470d55f4917036d1a3d4a2dd8f9e7a7b9dfc28b79407042e336fc6caa",
+      "listed_checksum_verified": true
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/LIMITS.csv",
+      "bytes": 3212,
+      "sha256": "163ed073b71d5880167362a27cfe494e21f37fe32de46d4ba5513d906aa10d2b",
+      "listed_checksum_verified": true
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/MANIFEST.json",
+      "bytes": 7560,
+      "sha256": "6894e429f11264b4ddc2b47bb154ca422b8cb98d3ff4c71af1cfc8fa96a1d5c4",
+      "listed_checksum_verified": true
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/RESULTS_AT_A_GLANCE.md",
+      "bytes": 14539,
+      "sha256": "74ef5682bc007425dc903f6bf46322a8708a8dfef77f3c118487f4a0dd9bb117",
+      "listed_checksum_verified": true
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/SHA256SUMS.txt",
+      "bytes": 988,
+      "sha256": "b035328c148d6e352afc31e91b9b383baef66f66d32a3bef5e3d4226a813e9e2",
+      "listed_checksum_verified": false
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/START_HERE.md",
+      "bytes": 3819,
+      "sha256": "162937a5311a9c530b6a92a976b62d5d5a3197ba2597e795c152801c5edb3f8e",
+      "listed_checksum_verified": true
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/TASK_HIERARCHY_AGENT_BRIEF.md",
+      "bytes": 8148,
+      "sha256": "a2ab562e55e82b225a120469af9f171eaff369ceec5d636328d89b9172a476cf",
+      "listed_checksum_verified": true
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/snapshot_view/Evaluation_Task_Hierarchy.xlsx",
+      "bytes": 14627,
+      "sha256": "67a7b01d3f555ba2c7c102a93da5e23d39553a3021750d90e3a063d6242afd17",
+      "listed_checksum_verified": true
+    },
+    {
+      "path": "handoff/Bio_Evaluation_Agent_Package_2026-10-16/snapshot_view/TASK_HIERARCHY.md",
+      "bytes": 3209,
+      "sha256": "e8de08b4ccd7e77a44864bb1c24b473b91ea2185ef9c5d968101fea8df2c7275",
+      "listed_checksum_verified": true
+    }
+  ],
+  "listed_checksums_verified": 11,
+  "scope": "Reporting and coverage only; no scoring, experiments, or run-plan changes.",
+  "intended_outputs": [
+    "reports/TASK_HIERARCHY_COMPLETE.md",
+    "reports/RESULTS_GROUPED.md",
+    "reports/TASK_COVERAGE_MAP.csv"
+  ],
+  "master_main_dataset_protocol_groups": 67,
+  "master_categories": 9,
+  "original_registry_ids": 64,
+  "additional_catalog_only_main_groups": 36,
+  "diagnostic_groups": 9,
+  "interpretation": "Catalog membership is distinct from execution authorization; literature scores are distinct from local results."
+}

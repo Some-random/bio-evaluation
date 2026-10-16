@@ -74,6 +74,7 @@ class ReportTests(unittest.TestCase):
         self.assertNotIn("P43", value["completed_whole_declared_setting_ids"])
         self.assertEqual(len(value["completed_rows"]), 3)
         self.assertIn("whole setting remains incomplete", report.render_markdown(value))
+        self.assertIn("[P43 / human Synthetic DTI*]", report.render_markdown(value))
         union = {"complete": True, "union_matches_full_test_ids": True, "expected_test_case_count": 16533,
                  "unique_observed_case_count": 16533, "missing_case_count": 0, "extra_case_count": 0}
         self.emit("all_datasets", task="P43", planned=16533, metrics=component_metrics,
@@ -83,6 +84,28 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(len(value["completed_rows"]), 3)
         self.assertEqual({r["dataset"]: r["metrics"] for r in value["completed_rows"]}, component_metrics)
         self.assertEqual(value["completed_whole_declared_setting_ids"], ["P43"])
+        self.assertIn("[P43 / human Synthetic DTI]", report.render_markdown(value))
+
+    def test_compact_table_marks_missing_coverage_not_invalid_predictions(self):
+        registry = json.loads((self.root / report.COMPARISONS).read_text())
+        registry["tasks"][0]["published_baselines"][0]["test_case_count"] = 3
+        self.write(report.COMPARISONS, registry)
+        self.emit("full_with_invalid_answers", planned=3,
+                  score_extra={"parsed": 0, "invalid_outputs": 3})
+        self.emit("subset", planned=2, score_extra={"full_test_id_union_validation": {"expected_test_case_count": 3}})
+        self.emit("held", planned=3, score_extra={"held_before_inference": 1})
+        self.emit("complete_deduplicated_source", planned=2)
+        value = self.build()
+        text = report.render_markdown(value)
+        self.assertIn("| Setting | Local score | Published reference | Qualification |", text)
+        self.assertNotIn("Cases: completed/planned; parsed", text)
+        self.assertIn("[P10 Synthetic PPI](../results/runs/full_with_invalid_answers/scores.json)", text)
+        self.assertIn("[P10 Synthetic PPI*](../results/runs/subset/scores.json)", text)
+        self.assertIn("[P10 Synthetic PPI*](../results/runs/held/scores.json)", text)
+        self.assertIn("[P10 Synthetic PPI](../results/runs/complete_deduplicated_source/scores.json)", text)
+        self.assertIn("Incomplete benchmark coverage or scoring", text)
+        full = next(row for row in value["completed_rows"] if row["run_id"] == "full_with_invalid_answers")
+        self.assertEqual(full["counts"]["parsed"], 0)
 
     def test_null_stays_undefined_and_real_zero_remains_zero(self):
         self.emit("undefined", metrics={"accuracy": None})

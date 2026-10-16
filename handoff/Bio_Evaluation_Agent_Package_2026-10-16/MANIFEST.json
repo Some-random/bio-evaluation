@@ -1,0 +1,285 @@
+{
+  "package_name": "Bio_Evaluation_Agent_Package",
+  "prepared_date": "2026-10-16",
+  "purpose": "One consolidated package for task hierarchy and coverage reporting",
+  "design_category": "Protein design",
+  "antibody_design_retained_as_subtask": true,
+  "original_input_files": [
+    {
+      "name": "Biological_Evaluation_Master.xlsx",
+      "sha256": "2b554dcf74d32fb88d998e563ccb2b54a81aa35255b80b3226eee410efa86ef4"
+    },
+    {
+      "name": "Evaluation_Task_Hierarchy.xlsx",
+      "sha256": "21d9e2bcffa9c96e32e18321d96368b62812249ddd9ae478661cb78b101af192"
+    },
+    {
+      "name": "TASK_HIERARCHY_AGENT_BRIEF.md",
+      "sha256": "9eb7c1bab6693a15242ffc6ecd839a4e381efbff7759ae22bf117cf96343f8ca"
+    },
+    {
+      "name": "TASK_HIERARCHY.md",
+      "sha256": "f200963c048c192b8516d0483c1257f07c8813a0b52269c845832e30076ed865"
+    },
+    {
+      "name": "RESULTS_AT_A_GLANCE.md",
+      "sha256": "74ef5682bc007425dc903f6bf46322a8708a8dfef77f3c118487f4a0dd9bb117"
+    }
+  ],
+  "source_report_copied_byte_for_byte": true,
+  "workbook_cells_renamed": [
+    {
+      "workbook": "master",
+      "sheet": "Start here",
+      "cell": "A10",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "By category",
+      "cell": "A50",
+      "before": "6. Protein and antibody design",
+      "after": "6. Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A40",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A41",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A42",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A43",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A44",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A45",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A46",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A47",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A48",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A49",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A50",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Filter and trim",
+      "cell": "A51",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A40",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A41",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A42",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A43",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A44",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A45",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A46",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A47",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A48",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A49",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A50",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Protocol details",
+      "cell": "A51",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Agent mapping",
+      "cell": "C40",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Agent mapping",
+      "cell": "C41",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Agent mapping",
+      "cell": "C42",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Agent mapping",
+      "cell": "C43",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Agent mapping",
+      "cell": "C44",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Agent mapping",
+      "cell": "C45",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "master",
+      "sheet": "Agent mapping",
+      "cell": "C46",
+      "before": "Protein and antibody design",
+      "after": "Protein design"
+    },
+    {
+      "workbook": "snapshot",
+      "sheet": "Task hierarchy",
+      "cell": "A30",
+      "before": "7. Protein sequence design",
+      "after": "7. Protein design"
+    },
+    {
+      "workbook": "snapshot",
+      "sheet": "Grouped results",
+      "cell": "A32",
+      "before": "7. Protein sequence design",
+      "after": "7. Protein design"
+    }
+  ],
+  "nonlabel_values_and_formulas_preserved": true,
+  "workbook_formula_scan": "No error-cell matches",
+  "visual_check": "Updated master summary inspected; existing layout retained",
+  "benchmark_payloads_included": false,
+  "raw_run_artifacts_included": false,
+  "older_execution_registry_included": false,
+  "new_model_runs": 0,
+  "new_scope_authorization": false
+}
