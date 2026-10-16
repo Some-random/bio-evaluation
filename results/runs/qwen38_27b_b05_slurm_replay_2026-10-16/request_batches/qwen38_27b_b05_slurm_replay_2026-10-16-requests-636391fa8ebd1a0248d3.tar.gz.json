@@ -1,0 +1,101 @@
+{
+  "run_id": "qwen38_27b_b05_slurm_replay_2026-10-16",
+  "asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b05_slurm_replay_2026-10-16-requests-636391fa8ebd1a0248d3.tar.gz",
+  "asset_id": 646399411,
+  "archive_sha256": "2d8c12eb1af602fd22718747c1bd47af8ec4b8929a8c1b894de369860099d033",
+  "archive_bytes": 3775645,
+  "cases": [
+    {
+      "case_id": "ec088ca9-34fb-4849-bb71-74f3957fefa5",
+      "filename": "1632ce8579e8076a900cef82eebae7f841fe0b8eb0eae3ecfbacd20141b86e77.json",
+      "request_member": "requests/1632ce8579e8076a900cef82eebae7f841fe0b8eb0eae3ecfbacd20141b86e77.json",
+      "request_sha256": "68f49ffe4039e6f2e84c831fc03c789cfa176f33698f611254fded31b14e279a",
+      "payload_sha256": "5fcd6d706a8357dc01aa2738a7afcf47070ad28ebb4f98144217f53e62495744",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b05_slurm_replay_2026-10-16-requests-636391fa8ebd1a0248d3.tar.gz",
+      "request_archive_sha256": "2d8c12eb1af602fd22718747c1bd47af8ec4b8929a8c1b894de369860099d033",
+      "response": "responses/1632ce8579e8076a900cef82eebae7f841fe0b8eb0eae3ecfbacd20141b86e77.json",
+      "response_sha256": "f43c790751fbb66f3dda81219b329541c87ca83729f80ef7c6f9a15441596ef6"
+    },
+    {
+      "case_id": "8c7c5f4e-72b3-4259-87dd-e045b2a93110",
+      "filename": "3ff27750b633577beaa0e06527ac4f6020b187b3a4e5c6d3e07cb370d9841a0a.json",
+      "request_member": "requests/3ff27750b633577beaa0e06527ac4f6020b187b3a4e5c6d3e07cb370d9841a0a.json",
+      "request_sha256": "c7fe0fbdf99093f678daa187b9c564a45d6a605a436c5b1e42af0f570d081b2f",
+      "payload_sha256": "df1fb8181af001fc6cb2c47f1858a1d59c95439293335bd784547c7a36ac3bf5",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b05_slurm_replay_2026-10-16-requests-636391fa8ebd1a0248d3.tar.gz",
+      "request_archive_sha256": "2d8c12eb1af602fd22718747c1bd47af8ec4b8929a8c1b894de369860099d033",
+      "response": "responses/3ff27750b633577beaa0e06527ac4f6020b187b3a4e5c6d3e07cb370d9841a0a.json",
+      "response_sha256": "b0245a1e1af2939aa37a430d7080a9f05b273a7d65c84af4b813a8e3e7ec8c56"
+    },
+    {
+      "case_id": "d7a41206-f101-4343-9223-86f62ae86833",
+      "filename": "40c8909c6119758f7145a577f099f3ce74fe96c93cba8595b07862923af795d6.json",
+      "request_member": "requests/40c8909c6119758f7145a577f099f3ce74fe96c93cba8595b07862923af795d6.json",
+      "request_sha256": "a752360a24da18e88cda31a3e331504c96bbc3fee2b473ec421ecd7e71086897",
+      "payload_sha256": "22ef3d94aeadd2d109408eb8d0204f8e99d4c858c26e080f5ff81304bf6bbd2b",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b05_slurm_replay_2026-10-16-requests-636391fa8ebd1a0248d3.tar.gz",
+      "request_archive_sha256": "2d8c12eb1af602fd22718747c1bd47af8ec4b8929a8c1b894de369860099d033",
+      "response": "responses/40c8909c6119758f7145a577f099f3ce74fe96c93cba8595b07862923af795d6.json",
+      "response_sha256": "a152167ea91d18082a687fb15fb08011fd7541c20005e707750ff2dc11b54d86"
+    },
+    {
+      "case_id": "cd15a5cc-5904-45be-aa52-bfa7b1a84773",
+      "filename": "53997b8b499878a41fa83660651fe0521d8c475458ad2aeb2cd4c1022381d613.json",
+      "request_member": "requests/53997b8b499878a41fa83660651fe0521d8c475458ad2aeb2cd4c1022381d613.json",
+      "request_sha256": "0daf0b2ad6fd129beaf2f309b4768fecfe421e482146bb0073b4e12731817634",
+      "payload_sha256": "49b8bd0a86317b054bb802488fea6dafba537a5a163a212ba775866403a81e88",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b05_slurm_replay_2026-10-16-requests-636391fa8ebd1a0248d3.tar.gz",
+      "request_archive_sha256": "2d8c12eb1af602fd22718747c1bd47af8ec4b8929a8c1b894de369860099d033",
+      "response": "responses/53997b8b499878a41fa83660651fe0521d8c475458ad2aeb2cd4c1022381d613.json",
+      "response_sha256": "ce35634602216cf01f8fba0dc5630c2a48b9d755dcf4f6901ec5386e708d406a"
+    },
+    {
+      "case_id": "ed8da5e6-7866-4526-925e-f4d2a757edb5",
+      "filename": "6d7e7ebabdefd265b54fb38454673cb582f93aa309e0a554be844f2455a7a595.json",
+      "request_member": "requests/6d7e7ebabdefd265b54fb38454673cb582f93aa309e0a554be844f2455a7a595.json",
+      "request_sha256": "317ba496f04d0990e1ea1b86055c45e83ff42847984af5661ba28038ccbba1e0",
+      "payload_sha256": "e8247ad1c45875d971c6696476793c0286026e589a6fe34a5f9d5f0404633f8d",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b05_slurm_replay_2026-10-16-requests-636391fa8ebd1a0248d3.tar.gz",
+      "request_archive_sha256": "2d8c12eb1af602fd22718747c1bd47af8ec4b8929a8c1b894de369860099d033",
+      "response": "responses/6d7e7ebabdefd265b54fb38454673cb582f93aa309e0a554be844f2455a7a595.json",
+      "response_sha256": "f0e8d323599b6579de99c63972aa33120c4ecab6f181278d9dbf6eb5a920dae5"
+    },
+    {
+      "case_id": "36e2555f-4b71-4214-9f42-0270cb368685",
+      "filename": "7b700b00934454660baf32d8b0665136661afbdfb35b0594847e1c89de3e4d03.json",
+      "request_member": "requests/7b700b00934454660baf32d8b0665136661afbdfb35b0594847e1c89de3e4d03.json",
+      "request_sha256": "babb9986942bb604578a55b01fde78e337bd1193b0792d6d602b685bb6cc86a9",
+      "payload_sha256": "f436c4366a8353ae3cfce90914b604de8a8d8559cf976832746880fbd8d1141d",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b05_slurm_replay_2026-10-16-requests-636391fa8ebd1a0248d3.tar.gz",
+      "request_archive_sha256": "2d8c12eb1af602fd22718747c1bd47af8ec4b8929a8c1b894de369860099d033",
+      "response": "responses/7b700b00934454660baf32d8b0665136661afbdfb35b0594847e1c89de3e4d03.json",
+      "response_sha256": "4a78d621b2b7ced8732d82c6b2ff217779ee0d0f48da39aca71ed7f28d5c55fb"
+    },
+    {
+      "case_id": "763d24e2-f4bc-49a4-b0ee-d3f10cced93c",
+      "filename": "db4582daa1dac3aa78b4e41ddb604a8b6f750fb9ce87ecb6288a1fe0d99b7c4f.json",
+      "request_member": "requests/db4582daa1dac3aa78b4e41ddb604a8b6f750fb9ce87ecb6288a1fe0d99b7c4f.json",
+      "request_sha256": "b729cbcde1a16d6849dbd0924bcc5f0b510469705422865124173532deaa6957",
+      "payload_sha256": "8481770dc80b241fc183f42c72915ae81990539f61b06498e37c7e1a7ca4c49a",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b05_slurm_replay_2026-10-16-requests-636391fa8ebd1a0248d3.tar.gz",
+      "request_archive_sha256": "2d8c12eb1af602fd22718747c1bd47af8ec4b8929a8c1b894de369860099d033",
+      "response": "responses/db4582daa1dac3aa78b4e41ddb604a8b6f750fb9ce87ecb6288a1fe0d99b7c4f.json",
+      "response_sha256": "73860ac9f7f351994c31235d9e0ffed52e43658d5b61f92ec2ce8da50765fa5d"
+    },
+    {
+      "case_id": "88ec1ac7-e790-46cb-8da0-d6539ac40682",
+      "filename": "e011e09ac693d4cfcc194582e5c654784547b8ffd41ae18984c810b153953d44.json",
+      "request_member": "requests/e011e09ac693d4cfcc194582e5c654784547b8ffd41ae18984c810b153953d44.json",
+      "request_sha256": "47f9f5b0bbe958de086b3cd4e6373dfeb56cdf992a0943879c8e606e2d285468",
+      "payload_sha256": "8c11c8fa56e18d836a7e09c1c1d5a05760e8b61b8adb109cdf275722602537de",
+      "request_asset": "https://github.com/Some-random/bio-evaluation/releases/download/parallel-labbench-replay-2026-10-16-trajectories/qwen38_27b_b05_slurm_replay_2026-10-16-requests-636391fa8ebd1a0248d3.tar.gz",
+      "request_archive_sha256": "2d8c12eb1af602fd22718747c1bd47af8ec4b8929a8c1b894de369860099d033",
+      "response": "responses/e011e09ac693d4cfcc194582e5c654784547b8ffd41ae18984c810b153953d44.json",
+      "response_sha256": "d6afe0ef26a9cb50ed4a335d37efebc595e1734aa9d743d7ef59649590c6bf28"
+    }
+  ],
+  "raw_request_json_preserved": true,
+  "image_data_preserved": true,
+  "server_digest": "sha256:2d8c12eb1af602fd22718747c1bd47af8ec4b8929a8c1b894de369860099d033",
+  "created_at_utc": "2026-10-16T06:34:24.399096+00:00"
+}
