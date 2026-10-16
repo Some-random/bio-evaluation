@@ -37,6 +37,7 @@ def prepare(root, scorer_archive, scorer_receipt, run_dir):
     names = [state / "coordinator.py", state / "bootstrap_coordinator.py", state / "prepare_coordinator.py",
         state / "upload_continuation.py", root / "scripts/watch_evaluation_reporting.py",
         root / "scripts/refresh_evaluation_reporting.py", root / "scripts/update_grouped_evaluation_reports.py",
+        root / "reports/ADVISOR_GOOD_EXAMPLES.json", root / "reports/TOOL_REQUIRED_CASES.json",
         root / "scripts/publication_destination.py", root / "configs/publication_destination.json",
         root / "scripts/update_results_at_a_glance.py", root / "scripts/daily_backup.py",
         root / ".local/litqa2_replay/incremental_upload.py", root / ".local/litqa2_replay/github_credential_helper.py",
