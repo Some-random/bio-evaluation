@@ -2,11 +2,11 @@
 
 Model: **Qwen3.8-27B**.
 
-Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 08:41 UTC**.
+Scores: **2026-10-16 04:25 UTC** · Run status: **2026-10-16 08:48 UTC**.
 
 **25 of 64 evaluation settings have finished runs.** An asterisk (*) marks incomplete coverage or scoring.
 
-**36 of 64 settings are runnable with the current setup.** Text and vision inputs are supported. Runnable means the required inputs, execution path and scorer are available; it does not guarantee correct or valid predictions.
+**37 of 64 settings are runnable with the current setup.** Text and vision inputs are supported. Runnable means the required inputs, execution path and scorer are available; it includes explicitly marked reviewed subsets and does not guarantee correct or valid predictions.
 
 Finished, Partial and Running describe saved run status; Ready describes executability. **Run status unconfirmed** means no verified completion record. Missing requirements are listed per row. Published scores are separate reference results; full protocol notes are at the end.
 
@@ -31,7 +31,7 @@ Expand a category to see its tasks and datasets.
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
 | Binary protein localization | DeepLoc — binary and 10-compartment localization<br>Binary localization — DeepLoc/PEER | Finished · Ready | accuracy 27.4% | BioT5+: accuracy 90.41% ± 0.07 percentage points; Table 6 · [source](https://arxiv.org/html/2402.17810v2) |
-| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued · 34.1% trajectories uploaded* · Ready | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
+| Ten-compartment protein localization* | DeepLoc — binary and 10-compartment localization<br>Subcellular localization — DeepLoc | Running or queued · 37.0% trajectories uploaded* · Ready | — | Binary accuracy: BioT5+ 90.41%; BioT5 91.69%. 10-class accuracy: ProtST-ESM-2 83.39%; ESM-2 80.84%. · [source](https://arxiv.org/html/2206.02096v2) |
 | Localization and sorting signals | PFMBench localization and sorting-signal panel | Needs data or protocol<br>Needs PFMBench splits, label vocabularies and binary/multilabel scoring. | — | ESM2-Adapter, Table 1 means: DeepLocMulti Accuracy 0.7666; DeepLoc2Multi F1 0.7505; DeepLocBinary AUROC 0.9338; SortingSignal F1 0.8598 · [source](https://arxiv.org/html/2506.14796v1) |
 
 #### Protein activity, stability and production
@@ -40,7 +40,7 @@ Expand a category to see its tasks and datasets.
 
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
-| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued · 2.4% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
+| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Running or queued · 2.6% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein stability* | TAPE / Rocklin stability | Running or queued · 0.0% trajectories uploaded* · Ready | — | Spearman: ProtST-ESM-2 0.738; ESM-2 0.718. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein thermostability prediction* | FLIP — AAV and Meltome<br>Thermostability — FLIP/Meltome | Partial* · Ready<br>Existing sequence regression runner and native Spearman scorer are available. | **Diagnostic only:** spearman undefined; spearman_parsed_only 0.0254<br>Full native primary metric undefined. | ProtST-ESM-1b: fixed encoder.spearman 0.68; full model tuning.spearman 0.681; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Enzyme activity* | Envision β-lactamase — PEER split | Needs data or protocol*<br>Beta-lactamase assay scope and complete native test inputs are not cleared. | — | Spearman: ProtST-ESM-2 0.879; ESM-2 0.867. · [source](https://arxiv.org/html/2206.02096v2) |
@@ -198,6 +198,20 @@ Expand a category to see its tasks and datasets.
 <details>
 <summary><h2>Protein design</h2></summary>
 
+#### Protein sequence and structure generation
+
+5 dataset groups · running or queued
+
+| Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
+|---|---|---|---|---|
+| Text-conditioned protein-sequence design*<br>Lexical sequence overlap; biological function untested. | BioT5+ description-guided protein generation | Running partial subset · 0.0% trajectories uploaded* · Ready | [59-case reviewed subset](https://github.com/Some-random/bio-evaluation/tree/main/results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016). Full benchmark incomplete. | Description-guided protein designs are presented as qualitative cases rather than a fixed, experimentally validated design-success rate. · [source](https://arxiv.org/html/2402.17810v2) |
+| Unconditional protein backbone generation | ProteinBench unconditional backbone generation | Needs additional models/tools<br>Needs backbone coordinate generation, inverse folding and refolding checks. | — | At length 100: RFdiffusion scTM 0.98 ± 0.12 and scRMSD 0.48 ± 0.56 Å; FrameFlow 0.94 ± 0.08 and 0.70 ± 0.70 Å. · [source](https://arxiv.org/html/2409.06744v2) |
+| Unconditional protein sequence generation | ProteinBench unconditional sequence generation | Needs additional models/tools<br>Qwen can propose sequences; native scoring still needs a fixed folding evaluator. | — | At length 100, predicted AF2 pLDDT: DPLM-650M 85.38 ± 14.20; ProGen2-700M 64.00 ± 21.26. · [source](https://arxiv.org/html/2409.06744v2) |
+| Joint sequence and structure generation | ProteinBench joint sequence–structure generation | Needs additional models/tools<br>Needs joint sequence/coordinate generation and structural consistency evaluators. | — | Multiflow at length 100: scTM 0.96 ± 0.04; scRMSD 1.10 ± 0.71 Å. At length 200: scTM 0.95; scRMSD 1.61 Å. · [source](https://arxiv.org/html/2409.06744v2) |
+| Unconditional protein generation*<br>Structure quality is predicted; function is not experimentally established. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM unconditional generation | Needs additional models/tools*<br>OmegaFold evaluator, clustering settings and native generation/reference cohort remain unprepared. | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
+| Protein generation for predicted stability and solubility*<br>Stability and solubility are predicted, not measured. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM stability/solubility-conditioned generation | Needs additional models/tools*<br>Exact trained stability/solubility classifiers and native reference/sampling rules are missing. | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
+| Heme-binding protein candidate generation*<br>Heme binding is a predicted candidate property, not demonstrated binding. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM heme-binding case study | Needs additional models/tools*<br>Protenix complex evaluation and native heme-candidate selection protocol are unrecovered. | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
+
 #### GFP sequence optimization
 
 1 dataset group · partial results*
@@ -205,20 +219,6 @@ Expand a category to see its tasks and datasets.
 | Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
 |---|---|---|---|---|
 | GFP sequence optimization against a fluorescence predictor*<br>Scored by a fluorescence predictor; not a wet-lab result. | STRIDE GFP sequence optimization | Partial* · Ready<br>Qualified GFP generation and frozen trained SaProt CPU evaluator are prepared. | replace_only.qualified_oracle_success 0.0000; replace_only.improved_sequence_uniqueness undefined; replace_only.native_novelty undefined; full_atomic.qualified_oracle_success 0.0000; full_atomic.improved_sequence_uniqueness undefined; full_atomic.native_novelty undefined | STRIDE: success count 61; attempt count 100; unique improved count 59; n=100; Table 4 · [source](https://arxiv.org/html/2603.03573v1) |
-
-#### Protein sequence and structure generation
-
-5 dataset groups
-
-| Task | Dataset/protocol | Status / what's missing | Qwen result | Published reference |
-|---|---|---|---|---|
-| Text-conditioned protein-sequence design*<br>Qualitative designs; no measured design-success rate. | BioT5+ description-guided protein generation | Needs data or protocol*<br>Public design cases exist; eligibility and paired-reference ROUGE protocol are not frozen. | — | Description-guided protein designs are presented as qualitative cases rather than a fixed, experimentally validated design-success rate. · [source](https://arxiv.org/html/2402.17810v2) |
-| Unconditional protein backbone generation | ProteinBench unconditional backbone generation | Needs additional models/tools<br>Needs backbone coordinate generation, inverse folding and refolding checks. | — | At length 100: RFdiffusion scTM 0.98 ± 0.12 and scRMSD 0.48 ± 0.56 Å; FrameFlow 0.94 ± 0.08 and 0.70 ± 0.70 Å. · [source](https://arxiv.org/html/2409.06744v2) |
-| Unconditional protein sequence generation | ProteinBench unconditional sequence generation | Needs additional models/tools<br>Qwen can propose sequences; native scoring still needs a fixed folding evaluator. | — | At length 100, predicted AF2 pLDDT: DPLM-650M 85.38 ± 14.20; ProGen2-700M 64.00 ± 21.26. · [source](https://arxiv.org/html/2409.06744v2) |
-| Joint sequence and structure generation | ProteinBench joint sequence–structure generation | Needs additional models/tools<br>Needs joint sequence/coordinate generation and structural consistency evaluators. | — | Multiflow at length 100: scTM 0.96 ± 0.04; scRMSD 1.10 ± 0.71 Å. At length 200: scTM 0.95; scRMSD 1.61 Å. · [source](https://arxiv.org/html/2409.06744v2) |
-| Unconditional protein generation*<br>Structure quality is predicted; function is not experimentally established. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM unconditional generation | Needs additional models/tools*<br>OmegaFold evaluator, clustering settings and native generation/reference cohort remain unprepared. | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
-| Protein generation for predicted stability and solubility*<br>Stability and solubility are predicted, not measured. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM stability/solubility-conditioned generation | Needs additional models/tools*<br>Exact trained stability/solubility classifiers and native reference/sampling rules are missing. | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
-| Heme-binding protein candidate generation*<br>Heme binding is a predicted candidate property, not demonstrated binding. | NatureLM generated proteins: unconditional / property-conditioned / heme<br>NatureLM heme-binding case study | Needs additional models/tools*<br>Protenix complex evaluation and native heme-candidate selection protocol are unrecovered. | — | Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding. · [source](https://arxiv.org/html/2502.07527v3) |
 
 #### Antibody design
 
@@ -2821,6 +2821,166 @@ Published reference record: Original BioBERT multi-phase training: 68.1% accurac
 
 ## Protein design
 
+#### Protein sequence and structure generation
+
+#### ProteinBench unconditional backbone generation
+
+Reported values retained on the paper's scale; structural plausibility does not establish function.
+
+Published source size/units: Length-stratified generation at 100/200/300/400/500 aa; 100 single-chain reference structures. Exact generated count must follow the release.
+
+**Unconditional protein backbone generation — Needs additional models/tools:** The required output is a 3D backbone at a fixed length, followed by inverse-folding/refolding consistency evaluation. The current Qwen baseline has no validated coordinate-generation adapter or structural evaluators; generated amino-acid text would be a different task.
+
+Model compatibility: needs specialist pipeline
+
+Evidence:
+
+```json
+[
+  "reports/TASK_HIERARCHY_DATA.json",
+  "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+  "reports/local_model_capability_smoke.json"
+]
+```
+
+Published reference record: At length 100: RFdiffusion scTM 0.98 ± 0.12 and scRMSD 0.48 ± 0.56 Å; FrameFlow 0.94 ± 0.08 and 0.70 ± 0.70 Å.
+
+[Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
+
+#### ProteinBench unconditional sequence generation
+
+pLDDT is confidence, not experimentally measured protein stability or function.
+
+Published source size/units: 50 sequences per model at each length 100, 200, 300 and 500.
+
+**Unconditional protein sequence generation — Needs additional models/tools:** Qwen can propose amino-acid sequences as an adaptation, but the native reported metrics require a fixed folding evaluator such as AF2. That evaluator, length-specific generation contract and full scoring pipeline are not prepared; text generation alone does not complete this benchmark.
+
+Model compatibility: needs specialist pipeline
+
+Evidence:
+
+```json
+[
+  "reports/TASK_HIERARCHY_DATA.json",
+  "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+  "reports/local_model_capability_smoke.json"
+]
+```
+
+Published reference record: At length 100, predicted AF2 pLDDT: DPLM-650M 85.38 ± 14.20; ProGen2-700M 64.00 ± 21.26.
+
+[Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
+
+#### ProteinBench joint sequence–structure generation
+
+These are selected length-specific results, not one design success rate.
+
+Published source size/units: Length-stratified generated samples; exact per-setting candidate count not recovered.
+
+**Joint sequence and structure generation — Needs additional models/tools:** The task jointly emits sequence and coordinates and scores structural self-consistency. Current Qwen has no validated joint structure-output adapter and the specialized structural evaluators are not prepared; plain sequence generation would not match the protocol.
+
+Model compatibility: needs specialist pipeline
+
+Evidence:
+
+```json
+[
+  "reports/TASK_HIERARCHY_DATA.json",
+  "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
+  "reports/local_model_capability_smoke.json"
+]
+```
+
+Published reference record: Multiflow at length 100: scTM 0.96 ± 0.04; scRMSD 1.10 ± 0.71 Å. At length 200: scTM 0.95; scRMSD 1.61 Å.
+
+[Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
+
+#### BioT5+ description-guided protein generation
+
+Qualitative design case A plausible or similar sequence is not a measured successful design.
+
+Published source size/units: Can the model propose a sequence matching a description? The paper does not define a generally established benchmark for this task.
+
+**Text-conditioned protein-sequence design:** Qualitative cases and sequence/reference comparisons. The paper does not define a generally established benchmark for this task.
+
+A plausible or similar sequence is not a measured successful design.
+
+**Text-conditioned protein-sequence design — Runnable now:** A prospectively frozen 59-case benign subset from the first 64 source-order cases is running with the pinned Qwen model and unchanged 4,096-token baseline. Five reviewed cases and 5,812 unreviewed cases remain held. The released paired-reference ROUGE algorithm is hash-pinned and tested; full original prompts/targets and an explicit output-format instruction form a qualified Qwen adaptation. Native T5 tokenizer/truncation and paper normalized Smith-Waterman are not reproduced; no biological-function success or full 5,876-case completion is claimed.
+
+Model compatibility: compatible
+
+Evidence:
+
+```json
+[
+  "reports/P36_PREPARATION_2026-10-16.json",
+  "handoff/p36_reviewed_subset_2026-10-16/proposed_config.json",
+  "results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016/upload_status.json"
+]
+```
+
+Published reference record: Description-guided protein designs are presented as qualitative cases rather than a fixed, experimentally validated design-success rate.
+
+[Source 1](https://arxiv.org/html/2402.17810v2)
+
+#### NatureLM generated proteins: unconditional / property-conditioned / heme
+
+Predictor-scored or qualitative design Diversity and predicted structure confidence do not establish function. | Predictor agreement, not experimentally measured stability/solubility of each generated sequence. | Self-description is not independent validation; predicted complexes are not measured binding.
+
+Published source size/units: Does the model generate varied, structurally plausible protein sequences? / Do sequences requested to have a property score well under the evaluator? / Can conditioning suggest proteins plausibly associated with heme? Generated samples compared with natural sequences; not a labeled holdout prediction set. | Paper uses a natural UR50 reference subset of 1,000 sequences in the conditioned comparison. | Selected candidates; no standard released labeled test-set size.
+
+**Unconditional protein generation:** Length distribution; clustering-based diversity; pLDDT. Generated samples compared with natural sequences; not a labeled holdout prediction set.
+
+Diversity and predicted structure confidence do not establish function.
+
+**Protein generation for predicted stability and solubility:** Predicted property scores; diversity. Paper uses a natural UR50 reference subset of 1,000 sequences in the conditioned comparison.
+
+Predictor agreement, not experimentally measured stability/solubility of each generated sequence.
+
+**Heme-binding protein candidate generation:** Qualitative description/complex screening. Selected candidates; no standard released labeled test-set size.
+
+Self-description is not independent validation; predicted complexes are not measured binding.
+
+**Unconditional protein generation — Needs additional models/tools:** Qwen can generate protein sequence strings; the task is not blocked by text-interface suitability. Completing the recorded evaluation requires the frozen OmegaFold checkpoint/settings, clustering implementation, native sample/validity rules and UR50 reference cohort. Predicted structure confidence is not measured protein function.
+
+Model compatibility: compatible
+
+Evidence:
+
+```json
+[
+  "reports/naturelm_generation_feasibility_2026-10-15.json"
+]
+```
+
+**Protein generation for predicted stability and solubility — Needs additional models/tools:** Conditioned sequence generation is compatible with Qwen, but the original trained SFM-Protein binary property heads, probability orientation, source sampling/failure rules and UR50 reference IDs are unrecovered. Generic sequence heuristics or newly trained substitute heads would not complete this evaluation.
+
+Model compatibility: compatible
+
+Evidence:
+
+```json
+[
+  "reports/naturelm_generation_feasibility_2026-10-15.json"
+]
+```
+
+**Heme-binding protein candidate generation — Needs additional models/tools:** Qwen can propose sequence strings from the condition, but the native HemeList, candidate/selection manifest and Protenix structure/complex evaluator are not prepared. No fixed full-cohort success denominator is recovered; predicted complexes do not establish measured heme binding.
+
+Model compatibility: compatible
+
+Evidence:
+
+```json
+[
+  "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
+]
+```
+
+Published reference record: Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding.
+
+[Source 1](https://arxiv.org/html/2502.07527v3)
+
 #### GFP sequence optimization
 
 #### STRIDE GFP sequence optimization
@@ -2931,164 +3091,6 @@ Evidence:
 [Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p42_gfp_qualified_two_regimes_2026-10-15/scores.json)
 
 [Source 1](https://arxiv.org/html/2603.03573v1)
-
-#### Protein sequence and structure generation
-
-#### ProteinBench unconditional backbone generation
-
-Reported values retained on the paper's scale; structural plausibility does not establish function.
-
-Published source size/units: Length-stratified generation at 100/200/300/400/500 aa; 100 single-chain reference structures. Exact generated count must follow the release.
-
-**Unconditional protein backbone generation — Needs additional models/tools:** The required output is a 3D backbone at a fixed length, followed by inverse-folding/refolding consistency evaluation. The current Qwen baseline has no validated coordinate-generation adapter or structural evaluators; generated amino-acid text would be a different task.
-
-Model compatibility: needs specialist pipeline
-
-Evidence:
-
-```json
-[
-  "reports/TASK_HIERARCHY_DATA.json",
-  "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
-  "reports/local_model_capability_smoke.json"
-]
-```
-
-Published reference record: At length 100: RFdiffusion scTM 0.98 ± 0.12 and scRMSD 0.48 ± 0.56 Å; FrameFlow 0.94 ± 0.08 and 0.70 ± 0.70 Å.
-
-[Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
-
-#### ProteinBench unconditional sequence generation
-
-pLDDT is confidence, not experimentally measured protein stability or function.
-
-Published source size/units: 50 sequences per model at each length 100, 200, 300 and 500.
-
-**Unconditional protein sequence generation — Needs additional models/tools:** Qwen can propose amino-acid sequences as an adaptation, but the native reported metrics require a fixed folding evaluator such as AF2. That evaluator, length-specific generation contract and full scoring pipeline are not prepared; text generation alone does not complete this benchmark.
-
-Model compatibility: needs specialist pipeline
-
-Evidence:
-
-```json
-[
-  "reports/TASK_HIERARCHY_DATA.json",
-  "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
-  "reports/local_model_capability_smoke.json"
-]
-```
-
-Published reference record: At length 100, predicted AF2 pLDDT: DPLM-650M 85.38 ± 14.20; ProGen2-700M 64.00 ± 21.26.
-
-[Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
-
-#### ProteinBench joint sequence–structure generation
-
-These are selected length-specific results, not one design success rate.
-
-Published source size/units: Length-stratified generated samples; exact per-setting candidate count not recovered.
-
-**Joint sequence and structure generation — Needs additional models/tools:** The task jointly emits sequence and coordinates and scores structural self-consistency. Current Qwen has no validated joint structure-output adapter and the specialized structural evaluators are not prepared; plain sequence generation would not match the protocol.
-
-Model compatibility: needs specialist pipeline
-
-Evidence:
-
-```json
-[
-  "reports/TASK_HIERARCHY_DATA.json",
-  "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv",
-  "reports/local_model_capability_smoke.json"
-]
-```
-
-Published reference record: Multiflow at length 100: scTM 0.96 ± 0.04; scRMSD 1.10 ± 0.71 Å. At length 200: scTM 0.95; scRMSD 1.61 Å.
-
-[Source 1](https://arxiv.org/html/2409.06744v2), [Source 2](https://proteinbench.github.io/)
-
-#### BioT5+ description-guided protein generation
-
-Qualitative design case A plausible or similar sequence is not a measured successful design.
-
-Published source size/units: Can the model propose a sequence matching a description? The paper does not define a generally established benchmark for this task.
-
-**Text-conditioned protein-sequence design:** Qualitative cases and sequence/reference comparisons. The paper does not define a generally established benchmark for this task.
-
-A plausible or similar sequence is not a measured successful design.
-
-**Text-conditioned protein-sequence design — Needs data or protocol:** All 5,876 public cases were acquired, but input eligibility and the Qwen generation/failure contract are not reviewed/frozen. The released scorer uses both input and target as ROUGE references; paper normalized Smith-Waterman details remain unresolved. A qualified released-code ROUGE condition is feasible after review, without pretending to reproduce the specialist model.
-
-Model compatibility: compatible
-
-Evidence:
-
-```json
-[
-  "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
-]
-```
-
-Published reference record: Description-guided protein designs are presented as qualitative cases rather than a fixed, experimentally validated design-success rate.
-
-[Source 1](https://arxiv.org/html/2402.17810v2)
-
-#### NatureLM generated proteins: unconditional / property-conditioned / heme
-
-Predictor-scored or qualitative design Diversity and predicted structure confidence do not establish function. | Predictor agreement, not experimentally measured stability/solubility of each generated sequence. | Self-description is not independent validation; predicted complexes are not measured binding.
-
-Published source size/units: Does the model generate varied, structurally plausible protein sequences? / Do sequences requested to have a property score well under the evaluator? / Can conditioning suggest proteins plausibly associated with heme? Generated samples compared with natural sequences; not a labeled holdout prediction set. | Paper uses a natural UR50 reference subset of 1,000 sequences in the conditioned comparison. | Selected candidates; no standard released labeled test-set size.
-
-**Unconditional protein generation:** Length distribution; clustering-based diversity; pLDDT. Generated samples compared with natural sequences; not a labeled holdout prediction set.
-
-Diversity and predicted structure confidence do not establish function.
-
-**Protein generation for predicted stability and solubility:** Predicted property scores; diversity. Paper uses a natural UR50 reference subset of 1,000 sequences in the conditioned comparison.
-
-Predictor agreement, not experimentally measured stability/solubility of each generated sequence.
-
-**Heme-binding protein candidate generation:** Qualitative description/complex screening. Selected candidates; no standard released labeled test-set size.
-
-Self-description is not independent validation; predicted complexes are not measured binding.
-
-**Unconditional protein generation — Needs additional models/tools:** Qwen can generate protein sequence strings; the task is not blocked by text-interface suitability. Completing the recorded evaluation requires the frozen OmegaFold checkpoint/settings, clustering implementation, native sample/validity rules and UR50 reference cohort. Predicted structure confidence is not measured protein function.
-
-Model compatibility: compatible
-
-Evidence:
-
-```json
-[
-  "reports/naturelm_generation_feasibility_2026-10-15.json"
-]
-```
-
-**Protein generation for predicted stability and solubility — Needs additional models/tools:** Conditioned sequence generation is compatible with Qwen, but the original trained SFM-Protein binary property heads, probability orientation, source sampling/failure rules and UR50 reference IDs are unrecovered. Generic sequence heuristics or newly trained substitute heads would not complete this evaluation.
-
-Model compatibility: compatible
-
-Evidence:
-
-```json
-[
-  "reports/naturelm_generation_feasibility_2026-10-15.json"
-]
-```
-
-**Heme-binding protein candidate generation — Needs additional models/tools:** Qwen can propose sequence strings from the condition, but the native HemeList, candidate/selection manifest and Protenix structure/complex evaluator are not prepared. No fixed full-cohort success denominator is recovered; predicted complexes do not establish measured heme binding.
-
-Model compatibility: compatible
-
-Evidence:
-
-```json
-[
-  "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
-]
-```
-
-Published reference record: Reported outputs are diversity/length distributions and predicted structural confidence. No experimentally measured function-success fraction is supplied by this evaluation. The reported comparison uses learned stability/solubility scores and diversity. No measured stability/solubility success rate is transcribed. Selected heme-binding candidates are screened with descriptions and predicted complexes; this is not experimentally demonstrated heme binding.
-
-[Source 1](https://arxiv.org/html/2502.07527v3)
 
 #### Antibody design
 
