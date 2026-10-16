@@ -177,6 +177,14 @@ def bioemu_description():
         "with molecular simulations. These samples can be used to estimate how often the protein stays folded.")
 
 
+def reference_study(example):
+    study = example.get("verification", {}).get("source_study_validation")
+    if not study:
+        return []
+    title = study.get("authors_year_journal") or study["title"]
+    return [f"**Reference study:** [{title}]({study['url']}).", ""]
+
+
 def advisor_examples():
     good, tool_cases = example_records()
     example = main_example(good)
@@ -194,8 +202,7 @@ def advisor_examples():
     reasoning = example["model_reasoning_text_exact"]
     out += [f"**Qwen's answer:** {example['main_answer']}", "",
         f"**Saved model reasoning (verbatim, {len(reasoning.split())} words):**", ""] + quoted_record(reasoning) + [""]
-    if example.get("companion_notes"):
-        out += ["**Checks on the saved reasoning:**", ""] + [f"- {note}" for note in example["companion_notes"]] + [""]
+    out += reference_study(example)
     result = example["dataset_result"]
     out += [f"The answer matches the reference label. Dataset accuracy: "
         f"**{100 * result['accuracy']:.1f}%** ({result['correct']}/{result['total']}).", ""]
@@ -203,7 +210,9 @@ def advisor_examples():
     example = main_example(tool_cases)
     original = example["input_sequences"]["wild_type"]
     assert len(original["sequence"]) == original["length"]
-    out += ["### Tool-use challenge: does one change make a protein less stable?", "",
+    out += ["### Bad result (illustrative): a protein-stability answer without the required computation", "",
+        "The failure illustrated here is reporting an unsupported stability number without carrying out "
+        "the structural sampling and energy calculations in this BioEmu evaluation protocol.", "",
         f"**Category:** [{example['catalog_category']}](#{anchor(example['catalog_category'])}) "
         f"→ {example['catalog_family']}.", "",
         f"**Evaluation dataset:** [BioEmu folding-free-energy benchmark]({example['source_url']}) "
@@ -211,7 +220,7 @@ def advisor_examples():
         "**Question:** Given the protein below, replace amino acid 6 from **Q** to **C**. "
         "Does it become less stable, and by how much?", "",
         highlight_amino_acid(original["sequence"], 6), "",
-        "**Reference answer (experiment):** Yes—less stable, with a change of about "
+        "**Expected answer (experimental reference):** Yes—less stable, with a change of about "
         f"**{example['experimental_reference']['mutant_ddg_exp']:+.2f} kcal/mol** in folding free energy.", "",
         "**What is BioEmu?** " + bioemu_description(), "",
         "**How the published BioEmu workflow gets to a one-number answer:**", "",
@@ -229,9 +238,8 @@ def worked_examples():
     good, tool_cases = example_records()
     out = ["# Worked examples and tool workflows", "",
         "[Back to the task map](EVALUATION_OVERVIEW.md)", "",
-        "The overview keeps one correct answer and one tool-use challenge. This document retains the full examples and saved reasoning. "
-        "Correct answers do not independently validate every step of a model's explanation. "
-        "Tool workflows below are source-backed examples, not measured Qwen failures.", "",
+        "The overview pairs a correct saved answer with an illustrative failure that requires external computation. "
+        "This document retains additional examples, full saved reasoning and source records.", "",
         "## Correct answers from saved Qwen runs", ""]
     titles = {"B01": "Biological knowledge and literature question answering",
         "B04": "Reading a biological figure", "B05": "Comparing values in a scientific table"}
@@ -249,8 +257,7 @@ def worked_examples():
         result = example["dataset_result"]
         out += [f"Reference choice: **{score['answer']}** — correct. "
             f"Dataset accuracy: **{100 * result['accuracy']:.1f}%** ({result['correct']}/{result['total']}).", ""]
-        if example.get("companion_notes"):
-            out += ["**Source check:**", ""] + [f"- {note}" for note in example["companion_notes"]] + [""]
+        out += reference_study(example)
     out += ["[Exact example records and source hashes](ADVISOR_GOOD_EXAMPLES.json)", "",
         "[Additional protein-sequence examples and their limitations](EXAMPLES_SEQUENCE_VISION_TOOLS.md)", "",
         "## Simple answer, substantial computation", ""]

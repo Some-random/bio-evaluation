@@ -30,6 +30,7 @@ class AdvisorOverviewTests(unittest.TestCase):
             "model_reasoning_text_exact": "Synthetic reasoning.\n\nOne is smaller than two.",
             "assistant_final_text_exact": "[ANSWER]A[/ANSWER]",
             "main_answer": "The synthetic answer is one.",
+            "verification": {"source_study_validation": {"title": "Synthetic study", "url": "https://example.invalid/study"}},
             "companion_notes": ["Synthetic source correction."],
             "dataset_result": {"accuracy": 1.0, "correct": 1, "total": 1}},
             {"task_id": "B05", "case_id": "synthetic-extra",
@@ -82,7 +83,7 @@ class AdvisorOverviewTests(unittest.TestCase):
         self.assertNotIn("This illustrates a published tool workflow", before_details)
         self.assertNotIn("not a measured Qwen failure", before_details)
         self.assertNotIn("Synthetic benchmark provenance", before_details)
-        self.assertIn("Synthetic source correction.", before_details)
+        self.assertNotIn("Synthetic source correction.", before_details)
         self.assertIn("WORKED_EXAMPLES.md", before_details)
         self.assertNotIn("Additional final answer.", before_details)
         self.assertNotIn("Numerical 3D coordinates", before_details)
@@ -91,7 +92,10 @@ class AdvisorOverviewTests(unittest.TestCase):
         self.assertIn("Saved model reasoning (verbatim,", before_details)
         self.assertNotIn("Saved explanation (excerpt)", before_details)
         self.assertEqual(before_details.count("### Good result:"), 1)
-        self.assertEqual(before_details.count("### Tool-use challenge:"), 1)
+        self.assertEqual(before_details.count("### Bad result (illustrative):"), 1)
+        self.assertIn("Expected answer (experimental reference)", before_details)
+        self.assertNotIn("Checks on the saved reasoning", before_details)
+        self.assertIn("[Synthetic study](https://example.invalid/study)", before_details)
         self.assertEqual(output.count("<summary><h2>"), 8)
         self.assertEqual(output.count("<details>"), 9)
 
@@ -110,8 +114,9 @@ class AdvisorOverviewTests(unittest.TestCase):
         for text in ["Synthetic reasoning.", "One is smaller than two.", "Additional full reasoning.",
                      "Additional final answer.", "Numerical 3D coordinates", "A single stability number"]:
             self.assertIn(text, output)
-        self.assertIn("not measured Qwen failures", output)
-        self.assertIn("Synthetic source correction.", output)
+        self.assertIn("illustrative failure", output)
+        self.assertNotIn("Synthetic source correction.", output)
+        self.assertNotIn("**Source check:**", output)
 
     def test_every_dataset_is_preserved_without_run_bookkeeping(self):
         output = self.overview()
