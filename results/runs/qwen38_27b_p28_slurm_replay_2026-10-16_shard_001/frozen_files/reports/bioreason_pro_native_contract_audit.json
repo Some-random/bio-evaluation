@@ -1,0 +1,72 @@
+{
+  "task_id": "P28",
+  "all8630_source_inputs_and_references_reconciled": true,
+  "source_order_exact": true,
+  "native_eligible_cases": 8159,
+  "native_excluded_cases": 471,
+  "excluded_cases_never_scheduled": true,
+  "every_complete_sequence_and_native_allowed_context_retained": true,
+  "no_gold_aspect_or_summary_selectors": true,
+  "source_annotation_counts_before_native_propagation": {
+    "released": {
+      "BP": {
+        "proteins_with_source_annotations": 5819,
+        "source_annotation_occurrences": 169459,
+        "source_annotation_occurrences_unknown_to_native_ontology": 0
+      },
+      "MF": {
+        "proteins_with_source_annotations": 2080,
+        "source_annotation_occurrences": 19773,
+        "source_annotation_occurrences_unknown_to_native_ontology": 0
+      },
+      "CC": {
+        "proteins_with_source_annotations": 3440,
+        "source_annotation_occurrences": 41592,
+        "source_annotation_occurrences_unknown_to_native_ontology": 0
+      }
+    },
+    "native_eligible": {
+      "BP": {
+        "proteins_with_source_annotations": 5623,
+        "source_annotation_occurrences": 164984,
+        "source_annotation_occurrences_unknown_to_native_ontology": 0
+      },
+      "MF": {
+        "proteins_with_source_annotations": 1878,
+        "source_annotation_occurrences": 17899,
+        "source_annotation_occurrences_unknown_to_native_ontology": 0
+      },
+      "CC": {
+        "proteins_with_source_annotations": 3293,
+        "source_annotation_occurrences": 40014,
+        "source_annotation_occurrences_unknown_to_native_ontology": 0
+      }
+    }
+  },
+  "native_ontology": {
+    "release": "2023-01-01",
+    "sha256": "0c0062efbb1b199a6a54e62c0c48ff0038d39173aecc7edfab66a20090d5ec2d",
+    "active_terms_by_namespace": {
+      "biological_process": 27942,
+      "molecular_function": 11263,
+      "cellular_component": 4043
+    },
+    "alternate_ids": 3491
+  },
+  "native_IA": {
+    "sha256": "9612326576384847c02ab08a5e9ea0558766a6ce3ec076a1664f975344cf498f",
+    "entries": 43248,
+    "finite_positive_weights": 30267,
+    "weights_recomputed_from_test": false
+  },
+  "largest_eligible_input_by_utf8_bytes": {
+    "case_id": "P28:A0A804HIC2",
+    "bytes": 18487
+  },
+  "all_case_conservative_input_plus_output_token_bound": 23607,
+  "model_context_limit": 262144,
+  "frozen_output_tokens": 4096,
+  "fits_bytelevel_Qwen_BPE_bound": true,
+  "inference_dispatched": 0,
+  "execution_authorized": false
+}
