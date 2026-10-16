@@ -317,6 +317,11 @@ def overview(data):
                         local = result["metricText"] if result else "—"
                         if task_id in subset_runs and not result:
                             local = "[59-case reviewed subset](" + meta["githubUrl"] + "/tree/main/results/runs/p36-qwen3.8-27b-biot5-reviewed59-20261016). Full benchmark incomplete."
+                            subset = subset_runs[task_id]
+                            if subset.get("scoring_success") is True:
+                                value = subset["metrics"]["rougeL"]
+                                assert type(value) in (int, float) and 0 <= value <= 1
+                                local = f"Qualified subset ROUGE-L: **{value:.4f}**. " + local
                         if result and result["completionScope"] == "diagnostic_only_primary_metrics_invalid":
                             local = "**Diagnostic only:** " + local + "<br>Full native primary metric undefined."
                         published = result["publishedText"] if result else group["literatureText"]

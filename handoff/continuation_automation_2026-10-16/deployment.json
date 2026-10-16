@@ -1,0 +1,44 @@
+{
+  "snapshot_at_utc": "2026-10-16T08:51:07.926740+00:00",
+  "slurm_job_id": "237867",
+  "job_state": "RUNNING",
+  "resources": {
+    "account": "infolab",
+    "partition": "il-cpu",
+    "qos": "il-cpu",
+    "cpus": 2,
+    "memory_gb": 4,
+    "gpus": 0,
+    "wall_time": "14-00:00:00"
+  },
+  "report_interval_seconds": 300,
+  "trajectory_upload_interval_seconds": 60,
+  "first_verified_report_commit": "8dc1a544d47187cafb9431c6b88160fcd69de69d",
+  "first_verified_subset_upload_commit": "65f506fdcf4581e3ceb139838a5889d3f7378a77",
+  "original_gpu_workers": 8,
+  "existing_native_supervisor_job": "237730",
+  "existing_planned_cases": 83690,
+  "supplemental_reviewed_P36_cases": 59,
+  "P36_full_source_cases": 5876,
+  "P36_full_benchmark_complete": false,
+  "scoring_policy": "One frozen CPU scoring attempt after the subset dispatch summary; interrupted or failed score attempts do not regenerate model outputs.",
+  "source_sha256": {
+    "coordinator.py": "4dee429ca9762cb8c54e9557565ac9fa9ce44010f8a26d7b425b296ef92d462b",
+    "bootstrap_coordinator.py": "77727f1f372454849ae757cc3a91d9af616a7c93e1da19aa4e2c0a25f07e344d",
+    "prepare_coordinator.py": "86b9e09e7f914e438527486ce0c5865815011fa1cbf46c157bee3a099d5b5f84",
+    "test_coordinator.py": "536025b746a95cb5fb7e1624a505eabed17a38c70f100f7886e07c2b5931cc2d",
+    "upload_continuation.py": "dd4295d44a6eb0abe1e5443a28809a5ae2a7ff4c6ffb994fc9902512ea4b7643",
+    "test_upload_continuation.py": "0d65bf80accb8ad5cb828fa4b82ffa83e746dce6e166642b5526e66ea3efa351",
+    "UPLOAD_CONTINUATION_SCHEMA.md": "313ec94473f7cce7e07582fbab4146b1fa39a4e261ce6b89b8eee5c35491879a",
+    "coordinator_config.json": "86929c4c79afacfc1072c30b3e54761b16b638593dad63ece9ddc3851b78465c",
+    "coordinator.sbatch": "ccdb19a4bbf6d7601a9c3d37e165ca6d7930064a05d936c3107ab0791e82d866",
+    "coordinator_preparation.json": "27b7cc3d3e15cc33fc9d489a2a6eb2a0f962ba6cad9abf073626036c348a5a05"
+  },
+  "overview_url": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_OVERVIEW.md",
+  "root_status_files": [
+    ".local/continuation_2026-10-16/coordinator_status.json",
+    ".local/reporting_updater/status.json",
+    ".local/continuation_2026-10-16/upload_status.json"
+  ],
+  "submission_command": "sbatch --parsable --account=infolab /dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator.sbatch"
+}

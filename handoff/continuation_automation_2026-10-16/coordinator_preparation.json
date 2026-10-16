@@ -1,0 +1,16 @@
+{
+  "config": "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator_config.json",
+  "config_sha256": "86929c4c79afacfc1072c30b3e54761b16b638593dad63ece9ddc3851b78465c",
+  "sbatch": "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator.sbatch",
+  "sbatch_sha256": "ccdb19a4bbf6d7601a9c3d37e165ca6d7930064a05d936c3107ab0791e82d866",
+  "submission_command": "sbatch --parsable /dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator.sbatch",
+  "submitted": false,
+  "resources": {
+    "partition": "il-cpu",
+    "qos": "il-cpu",
+    "cpus": 2,
+    "memory_gb": 4,
+    "wall_time": "14-00:00:00",
+    "gpus": 0
+  }
+}
