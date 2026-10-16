@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "0d5cf8a7-a240-4a8f-be4e-c16712f90d79",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "5722b68bef80dc8079b0dacc1d31001fa8bda6df63b22cb6ea533f10e789db1e",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which one of the following residues in the intrinsically disordered region of RNA binding protein Unkempt silences it's transcriptional activity when mutated to alanine?\n\nOptions:\n(A) L353\n(B) L522\n(C) L625\n(D) Insufficient information to answer the question\n(E) L622\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

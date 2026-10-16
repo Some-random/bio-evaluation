@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "40400348-eabb-4b25-90d1-e33589d3e5a4",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "199b5cc9888dce6f624922a1f4dd2e965a13c2c83fa66fe927d119ae4ebb8aa6",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which over-the-counter antihistamine has been found to be as effective as anti-VISTA antibodies in prolonging survival of mice and inhibiting lung metastasis when combined with ICB therapy?\n\nOptions:\n(A) Cyproheptadine\n(B) Fexofenadine\n(C) Doxylamine\n(D) Insufficient information to answer the question\n(E) Levocabastine\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task": "B01",
+  "case_id": "c7b36a1c-ea80-4ae5-b2f1-3932cb16c3cf",
+  "variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+  "split": "public_evaluation_release_train_named_partition",
+  "request_sha256": "2433e193aa0f04e68e1a7789fca343f5b9686cbde9158f62c1e43791f6bd0c96",
+  "payload": {
+    "model": "Qwen/Qwen3.8-27B",
+    "messages": [
+      {
+        "role": "user",
+        "content": "The following is a multiple choice question about biology.\nPlease answer by responding with the letter of the correct answer.\nThink step by step.\n\nQuestion: Which poly(A) oligo(s) demonstrates highest resistance to RNA degredation?\n\nOptions:\n(A) modified linear poly(A)\n(B) modified branch poly(A)\n(C) Insufficient information to answer the question\n(D) modified linear poly(A) and modified branch poly(A)\n(E) unmodified branch poly(A)\n(F) unmodified linear poly(A)\n(G) unmodified branch poly(A) and modified branch poly(A)\n\nYou MUST include the letter of the correct answer within the following tags: [ANSWER] and [/ANSWER].\nFor example, '[ANSWER]<answer>[/ANSWER]', where <answer> is the correct letter.\nAlways answer in exactly this format of a single letter between the two tags, even if you are unsure.\nWe require this because we use automatic parsing."
+      }
+    ],
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "supplied_fields": [
+    "question",
+    "shuffled_choices",
+    "native_COT_instructions"
+  ]
+}
