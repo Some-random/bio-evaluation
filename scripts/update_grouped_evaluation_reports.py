@@ -191,9 +191,11 @@ def advisor_examples():
     if example.get("main_choices"):
         out += ["**Answer choices:** " + "; ".join(example["main_choices"]) + ".", ""]
     out += example_images(example, title)
+    reasoning = example["model_reasoning_text_exact"]
     out += [f"**Qwen's answer:** {example['main_answer']}", "",
-        "**Saved explanation (excerpt):**", ""] + quoted_record(
-            example.get("main_explanation_excerpt") or example["assistant_final_text_exact"].split("[ANSWER]", 1)[0]) + [""]
+        f"**Saved model reasoning (verbatim, {len(reasoning.split())} words):**", ""] + quoted_record(reasoning) + [""]
+    if example.get("companion_notes"):
+        out += ["**Checks on the saved reasoning:**", ""] + [f"- {note}" for note in example["companion_notes"]] + [""]
     result = example["dataset_result"]
     out += [f"The answer matches the reference label. Dataset accuracy: "
         f"**{100 * result['accuracy']:.1f}%** ({result['correct']}/{result['total']}).", ""]
