@@ -1,0 +1,215 @@
+{
+  "date_utc": "2026-10-15",
+  "scope": [
+    "P29",
+    "N04",
+    "N05"
+  ],
+  "inference_dispatched": 0,
+  "training_performed": false,
+  "authors_contacted": false,
+  "source_code_repository": "https://github.com/mims-harvard/bio-posttrain",
+  "source_code_revision": "03c872d3a1f38993f98786f774beb738df55a7be",
+  "paper_source": "https://arxiv.org/html/2606.16517v1",
+  "P29": {
+    "status": "all_native_id_ood_inputs_and_qualified_released_RL_metric_prepared_disabled_proposal",
+    "preparation_report": "reports/catalog_posttrain_protein_preparation.json",
+    "preparation_report_sha256": "52614e1a550cb4a6463706b741bf7274801b1c640148ebbbb29af9072af049fa",
+    "source_splits": {
+      "id": {
+        "cases": 6989,
+        "source_file": "sources/posttrain_gap_audit_2026-10-15/protein__id-test.csv",
+        "source_sha256": "22ac86ba5007958cca20c67b578ecc30d5a0b1ff8acc90b5a7337888a93229b9",
+        "ordered_case_ids_sha256": "808bbb55f1a5ca1804d3fb9ec6027667a46cb93be3af55918735257b39420c33",
+        "seed_predictor_overlap": {
+          "supplied_predictor_term_count": 377940,
+          "native_target_direct_overlap_term_count": 277666,
+          "curated_target_direct_overlap_term_count": 261920,
+          "cases_with_supplied_predictor_native_target_overlap": 6989,
+          "cases_with_supplied_predictor_curated_target_overlap": 6989,
+          "seed_context_only_native_augmented_mean_propagated_F1": 0.984209534688662,
+          "seed_context_only_curated_mean_propagated_F1_diagnostic": 0.701276806029772,
+          "interpretation": "Offline input/reference dependence audit using exactly GO IDs already supplied in go_pred. This is not a Qwen inference result or context ablation. Native target augmentation can reward recovery/copying of supplied predictions; curated annotations also overlap input predictions, whose historical training/data independence is unknown."
+        }
+      },
+      "ood": {
+        "cases": 7883,
+        "source_file": "sources/posttrain_gap_audit_2026-10-15/protein__ood-test.csv",
+        "source_sha256": "33eea7afc2e7656907aa4820926e5e8c8cd32c799bfae24b121a18d9f8b5d2d4",
+        "ordered_case_ids_sha256": "21900cbd8d9a35ee8b1538bf4364831d05c6416439315e47c763da7a68ee5bce",
+        "seed_predictor_overlap": {
+          "supplied_predictor_term_count": 346341,
+          "native_target_direct_overlap_term_count": 215873,
+          "curated_target_direct_overlap_term_count": 199774,
+          "cases_with_supplied_predictor_native_target_overlap": 7883,
+          "cases_with_supplied_predictor_curated_target_overlap": 7883,
+          "seed_context_only_native_augmented_mean_propagated_F1": 0.9893526589684023,
+          "seed_context_only_curated_mean_propagated_F1_diagnostic": 0.6316645517939904,
+          "interpretation": "Offline input/reference dependence audit using exactly GO IDs already supplied in go_pred. This is not a Qwen inference result or context ablation. Native target augmentation can reward recovery/copying of supplied predictions; curated annotations also overlap input predictions, whose historical training/data independence is unknown."
+        }
+      }
+    },
+    "ood_organism_counts": {
+      "Schizosaccharomyces pombe (strain 972 / ATCC 24843) (Fission yeast)": 4084,
+      "Trypanosoma brucei brucei (strain 927/4 GUTat10.1)": 3799
+    },
+    "id_ood_protein_id_overlap": 0,
+    "train_csv": {
+      "drive_id": "1Dnqi8stF1dLI1QjO8zWy4yYEBiRlgcew",
+      "folder_advertised_bytes": 1162626643,
+      "downloaded": false,
+      "needed_for_zero_shot_test_inference": false,
+      "caveat": "Native SFT loader requires train.csv; this zero-shot adaptation does not load/train on it. Species holdout provenance relies on exact author-labeled files, not independent reconstruction against train."
+    },
+    "reference_input_dependence": "Author resolve_gold_terms_from_row unions curated leaf/ancestor fields AND go_pred_leaf while go_pred is supplied as context. Native reference and input are dependent: the metric can reward recovery/copying of supplied predictions and does not isolate novel function inference. Preserve that augmented target as primary; curated-only reference union is a separate fixed diagnostic, also with predictor overlap and unknown historical independence. Never select the more favorable metric or remove native context.",
+    "source_disagreements": [
+      "Published paper describes protein ESM3/projector-conditioned SFT and RL; released train_protein_grpo.py instead loads standalone AutoModelForCausalLM and full text sequence/context without an ESM3 encoder.",
+      "Released SFT evaluator chooses hf_reasoning loader; these CSVs lack explicit user/system columns, so that path uses generic default instructions and omits metadata. This prospective baseline follows the separate released RL prompt, not that SFT path.",
+      "Paper describes PPI and includes a name-header example; released RL eval explicitly disables PPI, and optional singular protein_name is absent. Plural protein_names is scorer-only and never substituted.",
+      "Released RL evaluator default512newtokens/T0.7 differs from fixed4096-token Qwen recipe. No outcome-guided change, no checkpoint selection or training is performed.",
+      "Original RL tokenizer decodes continuation with skip_special_tokens=True; Qwen3.8 API exposes generated reasoning/final channels. Only generated channels are reconstructed for native extraction, with no prompt context; tokenizer-level byte identity is not claimed.",
+      "Source prompt is preserved verbatim inside a single user message, using pinned Qwen3.8 chat template rather than author's raw tokenizer call. Complete sequences retained, no native SFT2000-residue truncation."
+    ],
+    "published_comparator": {
+      "source": "https://arxiv.org/html/2606.16517v1#Sx4.SS3",
+      "locator": "AppendixD.3/Table9",
+      "model_as_described_in_paper": "Qwen3-4B-Thinking GRPO beta1e-3 oneepoch4Kexamples",
+      "ID_F1": 0.935,
+      "OOD_F1": 0.956,
+      "value_status": "rounded_as_published",
+      "standard_deviation": null,
+      "exact_archived_per_case_predictions_available": false,
+      "qualification": "Paper input/model and metric-caption discrepancies versus released RL evaluator; target augmentation and supplied predictor dependence are material. Zero-shot27B/different generation is a declared system adaptation, not training replication."
+    },
+    "interpretation": {
+      "task_demands": {
+        "labels": [
+          "learned biological prediction",
+          "sequence representation",
+          "permitted predictor-context integration",
+          "ontology mapping"
+        ],
+        "classification_is_provisional": true
+      },
+      "actually_supplied": "Complete sequence, organism, full native InterPro and GO-GPT predicted context, exact released RL prompt/summary-tag instruction. No names, curated GO, teacher trace, expression, structures or PPI.",
+      "reference_answer_source": "Primary native union of curated GO plus predictor go_pred_leaf, dependent on supplied go_pred context; curated-only diagnostic has predictor overlap too, with historical independence unverified. Both references scorer-only.",
+      "good_score_establishes": "Agreement with the frozen augmented target, potentially by recovering/copying supplied predictor GO terms; not isolated novel function inference. Curated-only diagnostic separately measures recorded annotation recovery with declared input overlap.",
+      "bad_score_establishes": "Limited recovery under the chosen full-sequence/context interface; does not isolate reasoning, rule out unannotated functions, or dismiss learned specialist representations.",
+      "explanation_correctness": "Unassessed independently. Correct GO predictions do not validate rationales; missing support does not automatically mean false."
+    }
+  },
+  "N04": {
+    "status": "blocked_exact_network_split_release_not_publicly_accessible_via_author_link",
+    "required_artifacts": [
+      "genomics/train_network_split.csv",
+      "genomics/id_test_network_split.csv",
+      "genomics/ood_test_network_split.csv"
+    ],
+    "author_release_link": "https://drive.google.com/drive/folders/1lz00_m0mASxLggnPtBCtxJQ3hvMeS5XP",
+    "unauthenticated_observation": {
+      "url": "https://drive.google.com/drive/folders/1lz00_m0mASxLggnPtBCtxJQ3hvMeS5XP",
+      "final_url": "https://accounts.google.com/v3/signin/identifier?continue=https://drive.google.com/drive/folders/1lz00_m0mASxLggnPtBCtxJQ3hvMeS5XP&followup=https://drive.google.com/drive/folders/1lz00_m0mASxLggnPtBCtxJQ3hvMeS5XP&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-350792247:1792054343131565",
+      "http_status": 200,
+      "bytes": 920790,
+      "sha256": "f6dc88342cc1d03240b2ecbfc6584134b1f01d0cbe8a50e6352318a0820e3b76",
+      "checked_utc": "2026-10-15T08:53:22Z"
+    },
+    "required_input_contract": "Original complete paired reference/variant DNA windows and original question retaining pathway network/gene context. Native trained Evo2/projector interface differs from any raw-textQwen adaptation; learned representations may be essential.",
+    "metric_contract": "train_dna_qwen.py on_test_epoch_end: normalized longest-first source label matching on answer segment with full-generation fallback, answer firstsemicolonitem, exact normalized selectedlabel equality. Native label vocabulary is collected across source split answers; this is scorer-only, not candidate prompt context.",
+    "source_locator": "BioReason/train_dna_qwen.py:214-248,500-519,874-898; BioReason/submit_id_ood_eval.sh",
+    "split_fallback_hazard": "_load_kegg_dataset silently falls back to original wanglab/kegg when any required localCSV is missing; this would not reproduce networkholdout. No fallback executed.",
+    "missing": [
+      "Exact adapted held-out IDs/order/counts and network assignments",
+      "Accessible release of native CSVs or exact original construction manifest"
+    ],
+    "no_substitution": "OriginalN01random290caseprotocol is not N04. No guessed network repartition, surrogate score or inferred IDs.",
+    "execution_authorized": false
+  },
+  "N05": {
+    "status": "blocked_exact_posttrain_hepatoblastoma_adaptation_and_embedding_alignment_not_released_in_pinned_code",
+    "task_identity": "Bio-posttrain fixed-input MEDEA target selection, not Cell2Sentence cell annotation; c2s_original is a vendored reference library.",
+    "required_inputs": "Disease/cell context, exact five candidate genes and original question, aligned TranscriptFormer vectors for all five candidates in normal/disease states, original fixed candidate order. No gene-list-only substitute.",
+    "paper_locators": [
+      "§3.1DrugTargetIdentification",
+      "AppendixA.2/A.4",
+      "B.1RNA/B.3RNA/B.4RNA",
+      "D.6distinctcelltypeablation",
+      "ElicenseTable13"
+    ],
+    "author_code_tree_audit": {
+      "files": 241,
+      "adapted_RNA_training_evaluation_split_artifact_paths": [],
+      "download_script_releases_only": [
+        "protein",
+        "genomics"
+      ],
+      "cell2sentence_tutorials_do_not_define_posttrain_hepatoblastoma_test": true
+    },
+    "upstream_artifacts_verified": {
+      "repository": "https://github.com/mims-harvard/Medea",
+      "commit": "49a7abbfddd7c713add0f7b8ba77bc94a9af2c15",
+      "HF_dataset": "mims-harvard/MedeaDB",
+      "HF_revision": "b94d02500b0c887912001e0acda96da54d7d83dc",
+      "license": "CC-BY-NC-SA4.0MedeaDB;Apache2.0MedeaCode",
+      "hepatoblastoma_source_and_query_CSVs": {
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "rows_each": 60,
+        "total_query_rows": 180,
+        "columns": [
+          "candidate_genes",
+          "disease",
+          "celltype",
+          "y",
+          "user_question",
+          "full_query"
+        ],
+        "not_asserted_to_equal_adapted_posttrain_test": true
+      },
+      "TranscriptFormer_manifest": {
+        "embedding_dimension": 2048,
+        "gene_rows": 16794,
+        "hepatoblastoma_groups": 15,
+        "metadata_acquired": true,
+        "large_embedding_matrices_not_downloaded": true,
+        "reason": "Exact adapted case/vector alignment and transformation contract absent; avoid substituting upstreamtask or downloading unneeded large tensors."
+      }
+    },
+    "missing": [
+      "Exact posttrain disease-held-out testID/order/count manifest and ID/train membership",
+      "Adapter linking original questions/candidate ordering to disease-normal projected RNA tensor pairs",
+      "Native RNA input/preprocessing/evaluation implementation and exact symbol-normalization code, including missing-state/vector policy",
+      "Exact released trained projection/checkpoint if nativeembedding-conditioned model replication is intended"
+    ],
+    "native_metric_from_paper": "Greedy generated final target normalized for case/whitespace/punctuation/common gene symbol formatting then exactmatch; source exact normalizer unrecovered, so no invented replacement.",
+    "no_substitution": "UpstreamMEDEAagentic full_query and its180hepatoblastoma queries are not silently substituted for fixed-input posttrainbenchmark; native learned TranscriptFormer/projector may matter. No contextablation.",
+    "execution_authorized": false
+  },
+  "primary_source_artifact_hashes": {
+    "sources/posttrain_gap_audit_2026-10-15/protein_drive_folder.html": "91cc026cffaa405405c99e5a7b34b76fa83e359709a559424321f2fd622b32c9",
+    "sources/posttrain_gap_audit_2026-10-15/protein_drive_folder_response.json": "d4d0d0e0bc8593d845b6d602926b681b0e62e026b35031211c10fddd063c2301",
+    "sources/posttrain_gap_audit_2026-10-15/genomics_drive_folder.html": "f6dc88342cc1d03240b2ecbfc6584134b1f01d0cbe8a50e6352318a0820e3b76",
+    "sources/posttrain_gap_audit_2026-10-15/genomics_drive_folder_response.json": "42b084cb3f06b1571292efdf33850574aa86f12d31ea9d3542c5aa9d7691e783",
+    "sources/posttrain_gap_audit_2026-10-15/author_source_manifest.json": "6069c60dbf0735408cdf6bdc4a7088f03213dbd9df503cef04abf76ef42516be",
+    "sources/posttrain_gap_audit_2026-10-15/additional_author_source_manifest.json": "6c05e091b43ea2315d880d3c516541c0bfee834dc7018151107d32f93665560e",
+    "sources/posttrain_gap_audit_2026-10-15/id-test_protein_ids.json": "01d157f135585853172a8c96dfc41f5acf2b54c2c884f1f14da5577a41a3e8e1",
+    "sources/posttrain_gap_audit_2026-10-15/ood-test_protein_ids.json": "9444a63b28ea2a9f8fdfcbf6e77c9503502ad35d7b7296f53454651a5085c60e",
+    "sources/posttrain_gap_audit_2026-10-15/protein_split_metadata.json": "368bdba4daed7ccdaf8475d788b3f06f61a558cf727eca964e30877d262991e2",
+    "sources/posttrain_gap_audit_2026-10-15/rl_author_source_manifest.json": "efc683542f81e497c410ec3e1c909519d2c8dc467895cddcf0d9fc1800f10525",
+    "sources/posttrain_gap_audit_2026-10-15/medea_github_tree.json": "ba68efb2260a1c94e714fdc0546604677cea54ea5ab89abf5540da87e9cfce76",
+    "sources/posttrain_gap_audit_2026-10-15/medeadb_hf_metadata.json": "abd713ab555fb8087fd1a4ef3bbff2f42b1f38919c41f730be11d6481438150b",
+    "sources/posttrain_gap_audit_2026-10-15/posttrain_issue1.json": "6aff0fd11aaf02395e550a62ed119ea9a410d2de655603c4fc450c8147c113d2",
+    "sources/posttrain_gap_audit_2026-10-15/posttrain_issue1_comments.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "sources/posttrain_gap_audit_2026-10-15/medeadb__transcriptformer_embedding__embedding_store__hepatoblastoma__metadata.json.gz": "76c3ddfb1793b15927522d0a5dc7ed7053477a00a2b9910efd14bba5739cf21f",
+    "sources/posttrain_gap_audit_2026-10-15/medea_upstream_source_manifest.json": "cd8455cd5b130d7eeb16839a959f32a1c8e54cd4627c1834058f4f02092b9cd2"
+  },
+  "preserved_frozen_tasks": [
+    "P28",
+    "P16",
+    "other existing runners/preparers/scorers/configs"
+  ],
+  "new_authorizations_or_queues_modified": false
+}
