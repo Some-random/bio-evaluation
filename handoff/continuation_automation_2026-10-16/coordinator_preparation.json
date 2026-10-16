@@ -1,8 +1,8 @@
 {
   "config": "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator_config.json",
-  "config_sha256": "397cbe4d23b73236c13223bbb18d0ec4eabc83f4ca2abd738756a94b37a06cab",
+  "config_sha256": "fdd067d1c4f3a5cdad46d6a2ba9fada1e73966b3a4c172556217eae7ce8ddc39",
   "sbatch": "/dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator.sbatch",
-  "sbatch_sha256": "66d24476be40b717c8fca645aa93cb421b8828b350667aa03defb9088ed0148b",
+  "sbatch_sha256": "800e0b25a38bd609d08182aa9d6d5fa156e215e7880e13a9658b22fd4036cf4a",
   "submission_command": "sbatch --parsable --account=infolab /dfs/scratch0/dongweij/bio-evaluation/.local/continuation_2026-10-16/coordinator.sbatch",
   "submitted": true,
   "resources": {
@@ -13,9 +13,9 @@
     "wall_time": "14-00:00:00",
     "gpus": 0
   },
-  "slurm_job_id": "238766",
-  "submitted_at_utc": "2026-10-16T20:18:41.855811+00:00",
-  "previous_reporting_job_id": "238749",
+  "slurm_job_id": "238776",
+  "submitted_at_utc": "2026-10-16T20:28:55.139002+00:00",
+  "previous_reporting_job_id": "238766",
   "previous_reporting_job_state": "CANCELLED",
-  "supporting_files_commit": "1b50e46e92b893b55ea95e27bbed1fa8cff511fb"
+  "supporting_files_commit": "34d9742fafff789744e6e7f11b2d107ef46a31ad"
 }
