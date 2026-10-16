@@ -23,5 +23,16 @@
     "rougeL": 0.12347117664198978
   },
   "metric_label": "qualified_released_code_paired_reference_rougeL",
-  "comparison_qualification": "Partial59-case zero-shot Qwen text baseline. Same released paired-reference ROUGE algorithm, prospectively pinned cached HF revision; full raw prompt/target serialization and added output-format system instruction differ from trained BioT5+ tokenizer,512/256 caps and greedy generation. Historical evaluate.load resolution unpinned. Not paper normalized Smith-Waterman, not design-function success, not full5876-case completion."
+  "comparison_qualification": "Partial59-case zero-shot Qwen text baseline. Same released paired-reference ROUGE algorithm, prospectively pinned cached HF revision; full raw prompt/target serialization and added output-format system instruction differ from trained BioT5+ tokenizer,512/256 caps and greedy generation. Historical evaluate.load resolution unpinned. Not paper normalized Smith-Waterman, not design-function success, not full5876-case completion.",
+  "valid_native_serializations": 0,
+  "completed": 17,
+  "missing_or_failed_slots": 42,
+  "finish_reasons": {
+    "length": 4,
+    "stop": 13
+  },
+  "statuses": {
+    "error_or_unknown_completion_no_retry": 42,
+    "completed": 17
+  }
 }
