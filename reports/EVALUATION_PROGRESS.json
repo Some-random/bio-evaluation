@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-17T14:03:28.901740+00:00",
+  "generatedAt": "2026-10-17T14:08:24.453883+00:00",
   "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-  "runSnapshotAt": "2026-10-17T14:03:28.901740+00:00",
+  "runSnapshotAt": "2026-10-17T14:08:24.453883+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-17T14:03:28.901740+00:00",
+    "updatedAt": "2026-10-17T14:08:24.453883+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
     "reports/RESULTS_AT_A_GLANCE.json": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
-    ".local/remaining_evaluations/supervisor_status.json": "6ba3b26d71323c7ab3e767aa0dba86c82f2018dfdde93d4420c78e005c60c1ed",
-    ".local/remaining_evaluations/upload_status.json": "756cf002f4c0ef8ca7ff4c3ff0b0ead08962aba4d1318fb94ad5a8ce0e1b27b3"
+    ".local/remaining_evaluations/supervisor_status.json": "416c61fbb98212edf33643c07b154ec6ac587f079f86aaed5c44d9023a538fb4",
+    ".local/remaining_evaluations/upload_status.json": "1dc305eaf09ff8c443335101dd158e3f4a078daef8f853611d61ea3775b91bb7"
   },
   "uploader": {
     "stage": "watching",
-    "commitSha": "1a7f0492082ab46e7d8f9867173aae242c5402c2",
+    "commitSha": "c98b5460d63c21ac790dfe99676808b3840150c8",
     "repositoryPrivateVerified": false
   },
   "scheduler": {
@@ -174,7 +174,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 25160,
+    "uploaded": 25224,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -199,7 +199,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 17971,
+      "uploaded": 18019,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 12,
@@ -361,7 +361,7 @@
     {
       "taskId": "P29",
       "planned": 14872,
-      "uploaded": 2368,
+      "uploaded": 2384,
       "saved": null,
       "generationRuns": 15,
       "terminalRuns": 1,
@@ -406,7 +406,7 @@
   ],
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/upload_status.json",
-    "snapshotAt": "2026-10-17T14:03:28.901740+00:00",
+    "snapshotAt": "2026-10-17T14:08:24.453883+00:00",
     "fallback": true,
     "selection": "most_recent_valid_run_snapshot"
   },
