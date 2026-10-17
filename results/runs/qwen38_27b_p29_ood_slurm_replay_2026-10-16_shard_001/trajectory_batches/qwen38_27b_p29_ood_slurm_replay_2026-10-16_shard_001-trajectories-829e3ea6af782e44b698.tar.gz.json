@@ -1,0 +1,59 @@
+{
+  "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_001",
+  "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part010/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_001-trajectories-829e3ea6af782e44b698.tar.gz",
+  "asset_id": 651426651,
+  "archive_sha256": "c22783723e8405e823fa2070a9dbfde73fe461d20707d07c2dfb3159b6a23688",
+  "archive_bytes": 20196,
+  "server_digest": "sha256:c22783723e8405e823fa2070a9dbfde73fe461d20707d07c2dfb3159b6a23688",
+  "raw_request_response_json_preserved": true,
+  "cases": [
+    {
+      "filename": "36a617352c3976b24520f3858986b25421ccce44372fdf635a424a7d913b1ff4.json",
+      "case_id": "P29:ood:Q389B6",
+      "request_sha256": "5b15f11f02e1553e84c611a582b744abbfc9690ac6d21c6044b07ba43161d648",
+      "response_sha256": "2c350d62b74999d50f176d22f72dcfea5e3c656d6127b2dfbc8e081390e4319c",
+      "payload_sha256": "ae55fba6ca90cd8b8654399045d63f58fd573f4e23dc7a35704da5e8e2573db4",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part010/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_001-trajectories-829e3ea6af782e44b698.tar.gz",
+      "archive_sha256": "c22783723e8405e823fa2070a9dbfde73fe461d20707d07c2dfb3159b6a23688",
+      "request_member": "requests/36a617352c3976b24520f3858986b25421ccce44372fdf635a424a7d913b1ff4.json",
+      "response_member": "responses/36a617352c3976b24520f3858986b25421ccce44372fdf635a424a7d913b1ff4.json"
+    },
+    {
+      "filename": "5dc00e600d7502e1284b98eeb57f484e1931c73829d3971db1236ed1232cbe27.json",
+      "case_id": "P29:ood:Q388I6",
+      "request_sha256": "79e0c0336f01818aa6d0c3cca108be10334ab22ecc60c73a7cbd32d698c0dd6f",
+      "response_sha256": "b811538c4f2de6cdc01d9b701a484c471cc57b5dbc412e9352d18844de64b816",
+      "payload_sha256": "7a05dfd44335e003fa4d8d3e02b9ea881082451f5324a2bbe70179807e349515",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part010/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_001-trajectories-829e3ea6af782e44b698.tar.gz",
+      "archive_sha256": "c22783723e8405e823fa2070a9dbfde73fe461d20707d07c2dfb3159b6a23688",
+      "request_member": "requests/5dc00e600d7502e1284b98eeb57f484e1931c73829d3971db1236ed1232cbe27.json",
+      "response_member": "responses/5dc00e600d7502e1284b98eeb57f484e1931c73829d3971db1236ed1232cbe27.json"
+    },
+    {
+      "filename": "7bc2c4056e732887017acf50b172d420b03d79a524d0d194f91bb55228e3ccd5.json",
+      "case_id": "P29:ood:Q9USJ9",
+      "request_sha256": "8a69a966e823671fd77f45a19e50a034e8deb81338fbb393524444aa17edfd9b",
+      "response_sha256": "9c0e7d221e4abc30ffe286c9d0a5c38de0a218ed8f8c9e1157d9273dbdd43e1a",
+      "payload_sha256": "b2899a22ffd717c49fe301292896236f820f8a89ce53962b062bab91be6368d5",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part010/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_001-trajectories-829e3ea6af782e44b698.tar.gz",
+      "archive_sha256": "c22783723e8405e823fa2070a9dbfde73fe461d20707d07c2dfb3159b6a23688",
+      "request_member": "requests/7bc2c4056e732887017acf50b172d420b03d79a524d0d194f91bb55228e3ccd5.json",
+      "response_member": "responses/7bc2c4056e732887017acf50b172d420b03d79a524d0d194f91bb55228e3ccd5.json"
+    },
+    {
+      "filename": "d0843c4e5ded212d916b5ac598ccefd4e01b357394f95389ab4ec5ea2193a0da.json",
+      "case_id": "P29:ood:O94502",
+      "request_sha256": "e96ef72173526b6c56f8a7cd17d0c2c8fb91c429a9ea1d0d44ff4900cb5ef0cf",
+      "response_sha256": "4ba392ef7f39da4e0f3055a9455f0987cef3898d0b3b598247cc4fbe7098a158",
+      "payload_sha256": "43599239d317ecf1e887970baf3a9843d006d2373d541eeb066cf607e3cf2320",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part010/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_001-trajectories-829e3ea6af782e44b698.tar.gz",
+      "archive_sha256": "c22783723e8405e823fa2070a9dbfde73fe461d20707d07c2dfb3159b6a23688",
+      "request_member": "requests/d0843c4e5ded212d916b5ac598ccefd4e01b357394f95389ab4ec5ea2193a0da.json",
+      "response_member": "responses/d0843c4e5ded212d916b5ac598ccefd4e01b357394f95389ab4ec5ea2193a0da.json"
+    }
+  ]
+}
