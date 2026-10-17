@@ -1,0 +1,29 @@
+{
+  "generation_exit_code": 0,
+  "scoring_exit_code": 0,
+  "raw_audit_exit_code": 0,
+  "native_metric_scoring": "deferred_global_only_no_shard_CAFA",
+  "finished_at_utc": "2026-10-17T02:52:32.317506+00:00",
+  "configuration_sha256": "e161ce5605af8ab49513f2dd43f3351ce34beabe132915db093eeab55f2264b7",
+  "case_scope": "task_shard_only",
+  "execution_approval": {
+    "approval_file": "configs/local_bioreason_execution_approval.json",
+    "approval_sha256": "ae868b9fdcbb8e548a67d034ec3905f2772f644b4fcd279a09a765c528511673",
+    "plan_sha256": "24c1cd8cc7a8902371745350eb6076d2af6f2cedf02380295aa3cfeca6987156"
+  },
+  "retry_or_resampling": false,
+  "shard_index": 0,
+  "shard_count": 8,
+  "shard_size": 1024,
+  "full_test_case_count": 8159,
+  "source_start_index": 0,
+  "source_stop_index": 1024,
+  "aggregate_config_file": "configs/local_bioreason_p28_aggregate.json",
+  "full_input_file": "data/catalog_bioreason_pro/P28/model_inputs.jsonl",
+  "full_input_sha256": "c0406c4f1906606d0e089a0ff2863bbeafa9e3a944747b97c2eff7313224834a",
+  "full_review_file": "configs/local_bioreason_p28_review.json",
+  "full_review_sha256": "cea92c2d8cf0d6399fcefce9b76e8655a848eb9aa08c8664ecd2a52a78dd2903",
+  "run_manifest_sha256": "2c932df3a818f7bb7149e801353f4f3f40a46f227537c011049d6dfae587bae4",
+  "scores_sha256": "2756e4d0f2328f6def4b9ba76cd57e1c9de6610ff69b061d38ce9de2fd98f798",
+  "scoring_output_lock_sha256": "046735d5a50a21ced955dab9a3df7959b67143effdcd6523c37b777582730184"
+}

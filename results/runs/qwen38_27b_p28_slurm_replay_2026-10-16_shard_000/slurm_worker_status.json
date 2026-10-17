@@ -1,8 +1,14 @@
 {
   "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_000",
   "task_id": "P28",
-  "stage": "executing",
+  "stage": "completed",
   "slurm_job_id": "237677",
   "worker_id": "p28_0",
-  "command_results": []
+  "command_results": [
+    {
+      "label": "execute",
+      "exit_code": 0
+    }
+  ],
+  "completion_sha256": "65058e294b4626191716e06fa8c2372786becb71be8a4be86e242a884327f669"
 }
