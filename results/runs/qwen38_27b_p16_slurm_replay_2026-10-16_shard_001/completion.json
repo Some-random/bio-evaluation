@@ -1,0 +1,27 @@
+{
+  "generation_exit_code": 0,
+  "scoring_exit_code": 0,
+  "finished_at_utc": "2026-10-17T22:55:54.037204+00:00",
+  "config_file": "configs/local_reaction_p16_shard_001.json",
+  "configuration_sha256": "654a274f78d15dba7177087656b8297ce51ac983330db89dba59dd93d7998c38",
+  "case_scope": "task_shard_only",
+  "retry_or_resampling": false,
+  "execution_approval": {
+    "approval_file": "configs/local_reaction_execution_approval.json",
+    "approval_sha256": "7786c3f8b379f5d3d44cbf70f7a9eaa8c1fe6219307598f8bf1875bd859111e3",
+    "plan_sha256": "ba750ed370e757d18f6a8f58962330a16ce82fa8e6c2012b5861e4958c7a1454"
+  },
+  "shard_index": 1,
+  "shard_count": 6,
+  "shard_size": 1024,
+  "full_test_case_count": 5651,
+  "source_start_index": 1024,
+  "source_stop_index": 2048,
+  "aggregate_config_file": "configs/local_reaction_p16_aggregate.json",
+  "full_input_file": "data/local_reaction_shards/P16/full/model_inputs.jsonl",
+  "full_input_sha256": "79b81ab1995c82c7ff38ad3efb7b35467c7e98f69bc94d7ad0fa6fcaa1b40811",
+  "full_review_file": "configs/local_reaction_p16_review.json",
+  "full_review_sha256": "a5e2b77bdcf3524a170d612e315cac728c5c2c0ac288b8d54fe6085706f2f951",
+  "run_manifest_sha256": "fdc7a5acb8112d3202afc26295f344412e2e73ed104844a3299011471a3d31f6",
+  "scores_sha256": "64cc77661cde39bc06fdd7a1a2e4d9255fffeb1a94be8d408810bec4bf3def62"
+}
