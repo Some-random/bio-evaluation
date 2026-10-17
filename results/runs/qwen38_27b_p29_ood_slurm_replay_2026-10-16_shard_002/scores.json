@@ -1,0 +1,35 @@
+{
+  "task_id": "P29",
+  "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_002",
+  "case_scope": "task_shard_only",
+  "planned": 1024,
+  "completed": 1024,
+  "parsed": 987,
+  "requests_saved": 1024,
+  "responses_saved": 1024,
+  "invalid_outputs": 37,
+  "missing_or_failed_outputs": 0,
+  "statuses": {
+    "completed": 1024
+  },
+  "finish_reasons": {
+    "length": 1024
+  },
+  "metrics": {},
+  "native_metric_scoring": "deferred_global_only_no_shard_label_metrics",
+  "scoring_output_lock_sha256": "c72db9f92e65ce6e7f4850b8bec5818f184be82171bc1dfaf7fcb2eea2ef09e7",
+  "labels_read": false,
+  "native_split": "ood",
+  "global_shard_index": 9,
+  "shard_index": 2,
+  "shard_count": 8,
+  "shard_size": 1024,
+  "full_test_case_count": 7883,
+  "source_start_index": 2048,
+  "source_stop_index": 3072,
+  "aggregate_config_file": "configs/local_posttrain_protein_p29_ood_aggregate.json",
+  "full_input_file": "data/catalog_posttrain_protein/P29/ood/model_inputs.jsonl",
+  "full_input_sha256": "8c6bf65fd4e3763dfa182e6073178f6e1d4698d9b232232a11acbc50751c426e",
+  "full_review_file": "configs/local_posttrain_protein_p29_ood_review.json",
+  "full_review_sha256": "88aabc8549e2fdcffecd2cc0c6e1a0cb3bbdd1ebacca2a47c93d33d4b54b6eb4"
+}
