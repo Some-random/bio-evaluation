@@ -1,0 +1,157 @@
+{
+  "configuration": {
+    "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_014",
+    "frozen_at_utc": "2026-10-16T07:08:38.984477+00:00",
+    "model": "Qwen/Qwen3.8-27B",
+    "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+    "endpoint": "http://127.0.0.1:8031/v1",
+    "approved_task_ids": [
+      "P07"
+    ],
+    "variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_FLUORESCENCE_PYTORCH",
+    "input_file": "data/local_catalog_extended_shards/P07/shard_014/model_inputs.jsonl",
+    "review_file": "configs/local_extended_p07_shard_014_review.json",
+    "concurrency": 4,
+    "generation": {
+      "max_tokens": 4096,
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 20,
+      "seed": 42,
+      "n": 1,
+      "chat_template_kwargs": {
+        "enable_thinking": true,
+        "reasoning_effort": "medium"
+      }
+    },
+    "generation_choice_basis": "Publisher sampling defaults; one fixed seed, medium thinking and 4096 total output tokens fixed before Qwen benchmark outputs; no search or test-driven changes.",
+    "source_dataset_revision": "20c9d114234a5136c4087920480e7fa2d586a653061f0cd141f626a984ede8bd",
+    "prompt_policy": "Exact frozen prepared user prompt, full original sequence and fixed native outcome objective; native ten-class ontology additionally retained for P03. No prompt alteration across shards.",
+    "metric_policy": "Stable native scorer: all-case localization accuracy or one GLOBAL full-test Spearman. Missing/invalid outputs remain explicit; no shard-correlation averaging or prediction replacement.",
+    "scorer_reference_sha256": "6646734617ba389e58607a5b3d8e7c03340f8915b6330bdc9f082352ab34d8a3",
+    "frozen_files_sha256": {
+      "scripts/run_local_labbench_multimodal.py": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+      "scripts/score_local_catalog_extended.py": "71701e33509f5f7b1ad041ce66ad1a28193ae8675e13eb37a22ed7c1fd38d3d0",
+      "scripts/prepare_catalog_extended.py": "4682e082253d346be856e885c4d8e18f0fb57ddada13d2dab1938161709b250f",
+      "scripts/prepare_local_extended_shards.py": "feda5839f7ed08205f9de3a26f1e5ecc70e39e9b193d8b934a36fbe4c19239f8",
+      "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a",
+      "scripts/aggregate_local_extended_shards.py": "c253971d933f6e59d20049c24cae40ba433e3673e2e76af2188eec1a12bc9843",
+      "configs/local_labbench_b07.json": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680",
+      "data/catalog_extended/P07/model_inputs.jsonl": "d0a9983ffe8d08fd5bb681e1e09defd26e2915947cc4e1a399d5f230d60fd7a4",
+      "data/local_catalog_extended_shards/P07/full/model_inputs.jsonl": "e679c0fd48ad30d7f833aaa5282e79f9456d4bac14c73437822114de42fb5fc2",
+      "configs/local_extended_p07_review.json": "a15996a5764bfe5f33f84bcec2149624c6fa1ff501d8ca3155667151b3f286fa",
+      "data/catalog_extended/P07/preparation.json": "bb6d615b218d133927e359faa1264026ba3f26c01016fd958bfcf5d0dc304c38",
+      "data/local_catalog_extended_shards/P07/shard_014/model_inputs.jsonl": "c43bcda9642f6ea92b433799d7529d13404e3b15967363bb7f800501815de83e",
+      "configs/local_extended_p07_shard_014_review.json": "c79d04c28ec7081c1a37950858b0250f56d88d74173e1ae2bc17828723f173b2"
+    },
+    "tool_access": [],
+    "paper_comparison": "Complete pinned released test and native metric; zero-shot prompted Qwen differs from trained specialist baselines. P08 PyTorch release12851 differs from original2019 paper12839.",
+    "pretraining_contamination": "Unknown; local inference and shuffled choices cannot establish contamination-free performance.",
+    "runner": "scripts/run_local_labbench_multimodal.py",
+    "scorer_reference_file": "data/catalog_extended/P07/scorer_references.jsonl",
+    "model_facing_fields": [
+      "objective",
+      "sequence"
+    ],
+    "source_release_url": "https://s3.amazonaws.com/songlabdata/proteindata/data_pytorch/fluorescence.tar.gz",
+    "input_modalities": [
+      "amino_acid_sequence",
+      "task_instruction"
+    ],
+    "full_test_case_count": 27217,
+    "shard_count": 27,
+    "shard_size": 1024,
+    "aggregate_only": false,
+    "generator_execution_allowed": true,
+    "case_scope": "task_shard_only",
+    "gpu_ids": [
+      0
+    ],
+    "serving_config_file": "configs/local_model_lane5.json",
+    "server_record_file": ".local/local_model_server_lane5.json",
+    "shard_index": 14,
+    "source_start_index": 14336,
+    "source_stop_index": 15360,
+    "aggregate_config_file": "configs/local_extended_p07_aggregate.json",
+    "full_input_file": "data/local_catalog_extended_shards/P07/full/model_inputs.jsonl",
+    "full_input_sha256": "e679c0fd48ad30d7f833aaa5282e79f9456d4bac14c73437822114de42fb5fc2",
+    "full_review_file": "configs/local_extended_p07_review.json",
+    "full_review_sha256": "a15996a5764bfe5f33f84bcec2149624c6fa1ff501d8ca3155667151b3f286fa",
+    "assignment_index": 141,
+    "routing_adaptation": "Exact prior case/prompt/generation bytes; Slurm logical device0, eight independent fixed ports; runtime torch2.13.0+cu130/vLLM0.31.0."
+  },
+  "configuration_sha256": "1c47ff40aefb379ef9a767d6d0bf1e068c88e39876de8f16c9742bd49b4a3fae",
+  "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+  "case_contract_sha256": "4f1669ada5fdb233ff923b694fe03e6815abf9bc4b06e67f3d770ed2a1c4d0f8",
+  "planned_cases": 1024,
+  "model_selection_on_test": false,
+  "solver_tools": [],
+  "answer_keys_available_to_solver": false,
+  "serving_configuration": {
+    "host": "127.0.0.1",
+    "port": 8031,
+    "gpu_ids": [
+      0
+    ],
+    "model": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "tensor_parallel_size": 1,
+    "model_directory": "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+    "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+    "max_num_seqs": 4
+  },
+  "server": {
+    "pid": 970483,
+    "proc_start_ticks": "609890880",
+    "model": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "gpu_ids": [
+      0
+    ],
+    "host": "127.0.0.1",
+    "port": 8031,
+    "endpoint": "http://127.0.0.1:8031/v1",
+    "slurm_job_id": "237674",
+    "slurm_job_gpus": "5",
+    "cuda_visible_devices": "0",
+    "hostname": "ampere9.stanford.edu",
+    "observed_gpu_processes": [
+      {
+        "pid": 970787,
+        "gpu_uuid": "GPU-c96e9f68-dfc9-054b-945d-45f1c9646026",
+        "used_memory": "71546 MiB"
+      }
+    ],
+    "command": [
+      "/tmp/bio-remaining-237674-0cd63a/python/bin/python3.12",
+      "-m",
+      "vllm.entrypoints.cli.main",
+      "serve",
+      "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+      "--served-model-name",
+      "Qwen/Qwen3.8-27B",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8031",
+      "--dtype",
+      "bfloat16",
+      "--tensor-parallel-size",
+      "1",
+      "--gpu-memory-utilization",
+      "0.90",
+      "--max-model-len",
+      "32768",
+      "--max-num-seqs",
+      "4",
+      "--reasoning-parser",
+      "qwen3",
+      "--enable-prefix-caching",
+      "--limit-mm-per-prompt",
+      "{\"image\": 1, \"video\": 0}"
+    ],
+    "max_model_len": 32768,
+    "pool_worker_id": "extended5"
+  }
+}
