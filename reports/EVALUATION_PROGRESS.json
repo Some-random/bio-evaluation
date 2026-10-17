@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-17T21:19:30.648038+00:00",
+  "generatedAt": "2026-10-17T21:24:45.958729+00:00",
   "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-  "runSnapshotAt": "2026-10-17T21:19:30.648038+00:00",
+  "runSnapshotAt": "2026-10-17T21:24:45.958729+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-17T21:19:30.648038+00:00",
+    "updatedAt": "2026-10-17T21:24:45.958729+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
     "reports/RESULTS_AT_A_GLANCE.json": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
-    ".local/remaining_evaluations/supervisor_status.json": "2495fd23c975af164bffbfab5888ba03c4ac9d020052c8b19983cf4280e21a1e",
-    ".local/remaining_evaluations/upload_status.json": "419909be88f1eeb4ff227b57378a9c1f75a1cc69e54a381ae047dadbba26a606"
+    ".local/remaining_evaluations/supervisor_status.json": "305d440205c577c16fcbdbc7e61211c6631ca407f8eda203cc1b5d8933de3e9f",
+    ".local/remaining_evaluations/upload_status.json": "b8955ad87ddfc5e7731b81f3d5bbe09d1626dd1d4b7b9c85b9ee86fa34b742dd"
   },
   "uploader": {
     "stage": "retry_pending",
-    "commitSha": "fa7e51ed89bb7353174b36b628a72b41a32f0cc7",
+    "commitSha": "b0de5abd4fcc10fe51a623768c8491719ddb5194",
     "repositoryPrivateVerified": false
   },
   "scheduler": {
@@ -173,7 +173,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 31169,
+    "uploaded": 31257,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -198,7 +198,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 22301,
+      "uploaded": 22352,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 18,
@@ -320,7 +320,7 @@
     {
       "taskId": "P16",
       "planned": 5651,
-      "uploaded": 531,
+      "uploaded": 559,
       "saved": null,
       "generationRuns": 6,
       "terminalRuns": 0,
@@ -360,7 +360,7 @@
     {
       "taskId": "P29",
       "planned": 14872,
-      "uploaded": 3516,
+      "uploaded": 3525,
       "saved": null,
       "generationRuns": 15,
       "terminalRuns": 3,
@@ -405,7 +405,7 @@
   ],
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/upload_status.json",
-    "snapshotAt": "2026-10-17T21:19:30.648038+00:00",
+    "snapshotAt": "2026-10-17T21:24:45.958729+00:00",
     "fallback": true,
     "selection": "most_recent_valid_run_snapshot"
   },
@@ -418,7 +418,7 @@
   "metadataNotice": {
     "source": ".local/remaining_evaluations/supervisor_status.json",
     "stage": "retry_pending",
-    "updatedAt": "2026-10-17T21:20:00.599465+00:00",
+    "updatedAt": "2026-10-17T21:25:04.932500+00:00",
     "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
   }
 }
