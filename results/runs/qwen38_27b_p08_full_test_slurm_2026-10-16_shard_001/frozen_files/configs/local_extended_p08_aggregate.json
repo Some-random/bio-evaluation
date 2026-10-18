@@ -1,0 +1,219 @@
+{
+  "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16",
+  "frozen_at_utc": "2026-10-16T07:08:38.984477+00:00",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "endpoint": "aggregate-only://offline",
+  "approved_task_ids": [
+    "P08"
+  ],
+  "variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH",
+  "input_file": "data/local_catalog_extended_shards/P08/full/model_inputs.jsonl",
+  "review_file": "configs/local_extended_p08_review.json",
+  "concurrency": 4,
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "generation_choice_basis": "Publisher sampling defaults; one fixed seed, medium thinking and 4096 total output tokens fixed before Qwen benchmark outputs; no search or test-driven changes.",
+  "source_dataset_revision": "0580bc854e13701431dbbaf942756b8611598e3422599104bc7b0a151b6ec38f",
+  "prompt_policy": "Exact frozen prepared user prompt, full original sequence and fixed native outcome objective; native ten-class ontology additionally retained for P03. No prompt alteration across shards.",
+  "metric_policy": "Stable native scorer: all-case localization accuracy or one GLOBAL full-test Spearman. Missing/invalid outputs remain explicit; no shard-correlation averaging or prediction replacement.",
+  "scorer_reference_sha256": "bb6bc3a78b14ad195ebb2df56f968963d08006834130e1755152aa2824853427",
+  "frozen_files_sha256": {
+    "scripts/run_local_labbench_multimodal.py": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+    "scripts/score_local_catalog_extended.py": "71701e33509f5f7b1ad041ce66ad1a28193ae8675e13eb37a22ed7c1fd38d3d0",
+    "scripts/prepare_catalog_extended.py": "4682e082253d346be856e885c4d8e18f0fb57ddada13d2dab1938161709b250f",
+    "scripts/prepare_local_extended_shards.py": "feda5839f7ed08205f9de3a26f1e5ecc70e39e9b193d8b934a36fbe4c19239f8",
+    "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a",
+    "scripts/aggregate_local_extended_shards.py": "c253971d933f6e59d20049c24cae40ba433e3673e2e76af2188eec1a12bc9843",
+    "configs/local_labbench_b07.json": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680",
+    "data/catalog_extended/P08/model_inputs.jsonl": "068d4d951f3e6e220514cabdcef151afcf82108d635ddbe82a0ce9b18ceb0f4d",
+    "data/local_catalog_extended_shards/P08/full/model_inputs.jsonl": "02f1b4d3597bf75ac2894795bb985da78cf4d336576e17632790fdc491812387",
+    "configs/local_extended_p08_review.json": "5bfa787092fe43eb47b43103c7b966a9e4ebce56793b47557861d3b3477a7b43",
+    "data/catalog_extended/P08/preparation.json": "ff907f600144e9e9f98ba7f893bed94b6cf504e9ae1e16420eb147b0f034aa22"
+  },
+  "tool_access": [],
+  "paper_comparison": "Complete pinned released test and native metric; zero-shot prompted Qwen differs from trained specialist baselines. P08 PyTorch release12851 differs from original2019 paper12839.",
+  "pretraining_contamination": "Unknown; local inference and shuffled choices cannot establish contamination-free performance.",
+  "runner": "scripts/run_local_labbench_multimodal.py",
+  "scorer_reference_file": "data/catalog_extended/P08/scorer_references.jsonl",
+  "model_facing_fields": [
+    "objective",
+    "sequence"
+  ],
+  "source_release_url": "https://s3.amazonaws.com/songlabdata/proteindata/data_pytorch/stability.tar.gz",
+  "input_modalities": [
+    "amino_acid_sequence",
+    "task_instruction"
+  ],
+  "full_test_case_count": 12851,
+  "shard_count": 13,
+  "shard_size": 1024,
+  "aggregate_only": true,
+  "generator_execution_allowed": false,
+  "case_scope": "aggregate_only_full_test",
+  "shard_configs": [
+    {
+      "config_file": "configs/local_extended_p08_shard_000.json",
+      "config_sha256": "ccbef7b285af0d2bb79bf40eb698139f1c799effb6cebcd6442ec41805b77cf5",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_000",
+      "shard_index": 0,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8032/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_001.json",
+      "config_sha256": "c7595730c2005561d9a89ac52d5f828f2e75065c1195ed7a121641bc745fc2be",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_001",
+      "shard_index": 1,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8033/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_002.json",
+      "config_sha256": "f27fa171b87f1ea456c0840b313c873bf0325c5f6eb1ee722d25fe07869b95e8",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002",
+      "shard_index": 2,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8028/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_003.json",
+      "config_sha256": "6ac3e05a6552bc6c82c5ff35a249e363ee8efd60cdaf4064801dfe467b947605",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003",
+      "shard_index": 3,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8029/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_004.json",
+      "config_sha256": "3b964fa76d726c8e325fa44307310df94a9358d6c9d81f9dbe7bbd806e4cefc8",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004",
+      "shard_index": 4,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8030/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_005.json",
+      "config_sha256": "f5621a9d91a791845778df12e5a1329c0b1336178d82e771756f2d42e3f24d8f",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
+      "shard_index": 5,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8031/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_006.json",
+      "config_sha256": "e1b052180a568c8f9382f1405c87617d95640bbd24065ff694aaba471b3fffdc",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006",
+      "shard_index": 6,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8032/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_007.json",
+      "config_sha256": "9bdd6442fcb39757b7d135fa735a1f482dc70b033dedcf14cd9ae5963e00ded4",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+      "shard_index": 7,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8033/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_008.json",
+      "config_sha256": "664b352e0a7342d5301106c7060ef5d6f2b615d605172162764c085c22da2da0",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
+      "shard_index": 8,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8028/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_009.json",
+      "config_sha256": "8b186ebf920d5a1db185e8d8fde89f019b945334f1cf155fde4bac3d329c2366",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009",
+      "shard_index": 9,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8029/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_010.json",
+      "config_sha256": "e118e8ab582b7d6e9551b1ec80e3145c6ae16eeca5dde53700f62ef09968e665",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010",
+      "shard_index": 10,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8030/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_011.json",
+      "config_sha256": "70892a046ee7957f58f0067a238811c4898099bdbaae1a1ff47796fd1bc63ffc",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
+      "shard_index": 11,
+      "cases": 1024,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8031/v1"
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_012.json",
+      "config_sha256": "a1dd397308d31c1e708a37797f3b1be1d05fe5bbf687f62e263048d3274b4e46",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012",
+      "shard_index": 12,
+      "cases": 563,
+      "gpu_ids": [
+        0
+      ],
+      "endpoint": "http://127.0.0.1:8032/v1"
+    }
+  ],
+  "full_test_id_union_validation": {
+    "complete": true,
+    "union_matches_full_test_ids": true,
+    "expected_test_case_count": 12851,
+    "unique_observed_case_count": 12851,
+    "missing_case_count": 0,
+    "extra_case_count": 0
+  },
+  "routing_adaptation": "Exact prior case/prompt/generation bytes; Slurm logical device0, eight independent fixed ports; runtime torch2.13.0+cu130/vLLM0.31.0."
+}
