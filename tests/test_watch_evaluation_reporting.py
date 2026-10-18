@@ -275,6 +275,9 @@ class WatchTests(unittest.TestCase):
         receipt = self.publisher(include_score_reports=True).cycle()
         self.assertTrue(receipt["pushed"])
         self.assertEqual(set(receipt["ownedPaths"]), set(watch.OWNED + watch.SCORE_PAIR))
+        commands = [Path(command[1]).name for command in self.commands]
+        self.assertEqual(commands[0], "refresh_aggregate_score_metadata.py")
+        self.assertLess(commands.index("refresh_aggregate_score_metadata.py"), commands.index("refresh_evaluation_reporting.py"))
 
 
 if __name__ == "__main__":

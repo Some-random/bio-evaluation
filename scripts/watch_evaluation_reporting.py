@@ -179,6 +179,9 @@ class Publisher:
             raise ReportingError("Generated report command/check failed: " + Path(argv[1]).name)
 
     def refresh_and_check(self):
+        if SCORE_PAIR[0] in self.paths:
+            self.runner([sys.executable, str(self.root / "scripts/refresh_aggregate_score_metadata.py"),
+                         "--root", str(self.root)])
         refresh = [sys.executable, str(self.root / "scripts/refresh_evaluation_reporting.py"), "--root", str(self.root)]
         render = [sys.executable, str(self.root / "scripts/update_grouped_evaluation_reports.py")]
         self.runner(refresh)

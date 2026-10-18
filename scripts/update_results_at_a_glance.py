@@ -171,6 +171,19 @@ def build_report(root: Path, generated_at=None):
             caveats.append("Strict whole-final matching; qualified reconstructed scorer versus target-fine-tuned paper model. Zero exact match does not establish wrong clinical predictions or no visual ability.")
             if qualification.get("run_id") == run_id and qualification.get("score_sha256") == provenance[score_name]:
                 caveats.append("Prediction-only audit: 500 multiline finals, 15–263 words (median 70); verbose answer format is material.")
+        generation = {**(config.get("generation") or {}), **(score.get("generation") or {})}
+        budget_condition = score.get("generation_budget_condition", manifest.get("generation_budget_condition"))
+        budget_counts = generation.get("output_budget_counts", {})
+        if budget_condition == "MIXED_BUDGET_4K16K_CONTINUATION":
+            generation["max_tokens"] = None
+            caveats.append("Mixed 4K/16K continuation: "
+                f"{budget_counts.get('4096', 'unrecorded')} original cases retain 4,096-token caps; "
+                f"{budget_counts.get('16384', 'unrecorded')} previously undispatched cases use 16,384-token caps. "
+                "Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation.")
+        elif budget_condition == "RETAINED_4K_COMPLETE_UNDER_BUDGET_REVISION":
+            caveats.append("All cases completed under the original 4,096-token output budget; no 16K regeneration.")
+        elif budget_condition == "PROSPECTIVE_16K_FULL_TASK":
+            caveats.append("All original cases were previously undispatched and use the prospective 16,384-token output budget.")
         reference = select_reference(task_id, dataset, source)
         row = {"task_id": task_id, "task_name": source.get("task", task_id), "run_id": run_id,
             "dataset": dataset, "native_split": score.get("native_split"), "completion_scope": kind,
@@ -178,7 +191,9 @@ def build_report(root: Path, generated_at=None):
             "model_revision": score.get("model_revision", config.get("model_revision")),
             "checkpoint_precision": config.get("checkpoint_precision"), "protocol_variant": score.get("protocol_variant", config.get("variant")),
             "local_training_regime": "Fixed zero-shot baseline; no benchmark task training or test-guided prompt/model selection",
-            "generation": config.get("generation"), "finished_at_utc": done.get("finished_at_utc"),
+            "generation": generation or None, "generation_budget_condition": budget_condition,
+            "native_protocol_variant": score.get("native_protocol_variant"),
+            "finished_at_utc": done.get("finished_at_utc"),
             "counts": {key: score.get(key) for key in ["planned", "completed", "parsed", "invalid_outputs", "missing_or_failed_outputs", "held_before_inference"]},
             "finish_reasons": score.get("finish_reasons", {}), "metrics": score.get("metrics", {}),
             "metric_units": score.get("metric_units", "Accuracy/precision/coverage fractions; AUROC/AP fractions; other metrics preserve source-native units"),
@@ -288,12 +303,27 @@ def incomplete_evaluation(row, report):
 def render_markdown(report):
     scope = report.get("main_report_scope", {})
     excluded = set(scope.get("excluded_task_ids", []))
-    rows = [row for row in report["completed_rows"] if row["task_id"] not in excluded]
-    diagnostics = [row for row in report.get("diagnostic_only_finished_runs", []) if row["task_id"] not in excluded]
+    def latest_conditions(values):
+        if not report.get("metadata_history_retention"):
+            return values
+        selected = {}
+        for row in values:
+            key = (tuple(row.get(name) for name in ("task_id", "protocol_variant", "dataset", "native_split", "case_scope")),
+                row["counts"].get("planned"), row["counts"].get("held_before_inference"),
+                (row.get("full_test_id_union_validation") or {}).get("expected_test_case_count"))
+            previous = selected.get(key)
+            order = (row.get("finished_at_utc") or "", row["run_id"])
+            if previous is None or order > (previous.get("finished_at_utc") or "", previous["run_id"]):
+                selected[key] = row
+        return sorted(selected.values(), key=lambda row: (row["task_id"], row.get("dataset") or row.get("native_split") or "", row["run_id"]))
+    rows = latest_conditions([row for row in report["completed_rows"] if row["task_id"] not in excluded])
+    diagnostics = latest_conditions([row for row in report.get("diagnostic_only_finished_runs", []) if row["task_id"] not in excluded])
     completed_ids = [task_id for task_id in report["completed_whole_declared_setting_ids"] if task_id not in excluded]
     main_count = report.get("main_catalog_settings", report["catalog_settings"])
     limits = sorted({row["generation"]["max_tokens"] for row in rows if isinstance(row.get("generation"), dict)
-                     and number(row["generation"].get("max_tokens")) and row["generation"]["max_tokens"] != 1})
+                     and number(row["generation"].get("max_tokens")) and row["generation"]["max_tokens"] != 1}
+        | {int(cap) for row in rows for cap, count in (row.get("generation") or {}).get("output_budget_counts", {}).items()
+           if str(cap).isdigit() and int(cap) > 1 and type(count) is int and count > 0})
     limit_text = "/".join(f"{value:,}" for value in limits) if limits else "unrecorded"
     moment = datetime.fromisoformat(report["generated_at_utc"].replace("Z", "+00:00"))
     if moment.tzinfo is None:
