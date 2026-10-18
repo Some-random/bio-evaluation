@@ -2,7 +2,9 @@
 
 General-purpose baseline: **Qwen3.8-27B**, with text and image inputs.
 
-This catalog spans biological prediction, scientific evidence, protein design and three-dimensional structure. The map below shows **34 task families in 8 categories** without opening the detailed catalog. The counts are task families, not datasets or individual test questions.
+This catalog spans biological prediction, scientific evidence, protein design and three-dimensional structure. The map below shows **31 task families in 8 categories** without opening the detailed catalog. The counts are task families, not datasets or individual test questions.
+
+BioReason, BioReason-Pro and Bio-posttrain settings are set aside from this main comparison. [Archived settings and original records](ARCHIVED_EVALUATIONS.md) remain available.
 
 ## Task map
 
@@ -15,8 +17,8 @@ This catalog spans biological prediction, scientific evidence, protein design an
 | Designing proteins | 6 | Antibody design; Finding a sequence for a desired shape; Protein sequence and structure generation; Building around a functional protein part; Designing proteins that bind a target; Making fluorescent proteins brighter | Propose a protein sequence or shape that meets specified requirements |
 | Protein shapes and motion | 5 | Local structure and residue prediction; Protein structure ranking; Protein folding; Protein shape changes, motion and stability; Structure-derived questions and output checks | What shape does this protein take? How does it move or stay folded? |
 | Understanding biomedical images | 2 | Biomedical visual question answering; Scientific figures, documents and visual conversations | Answer questions about medical images and scientific figures |
-| DNA, RNA and small molecules | 6 | Molecular interactions and binding affinity; Pathway and disease prediction; Variant-effect prediction; Choosing genes using expression data; RNA structure ranking; Small-molecule properties | Predict genetic effects, gene activity, molecular binding and chemical properties |
-| **Total** | **34** | | |
+| DNA, RNA and small molecules | 3 | Molecular interactions and binding affinity; RNA structure ranking; Small-molecule properties | Predict genetic effects, gene activity, molecular binding and chemical properties |
+| **Total** | **31** | | |
 
 ## Worked examples
 
@@ -161,8 +163,6 @@ Qwen results and published reference results use the stated protocols and are no
 | Gene Ontology: biological process | DeepFRI-derived EC and GO test splits<br>GO biological process — DeepFRI split | Protein sequence | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Gene Ontology: molecular function | DeepFRI-derived EC and GO test splits<br>GO molecular function — DeepFRI split | Protein sequence | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Gene Ontology: cellular component | DeepFRI-derived EC and GO test splits<br>GO cellular component — DeepFRI split | Protein sequence | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Temporal Gene Ontology annotation | BioReason-Pro temporal GO test | Protein representations and the context permitted by the released evaluator | — | Official repository headline: BioReason-Pro 73.6% Fmax. · [source](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data) |
-| Species-held-out Gene Ontology annotation | Bio-posttrain species-held-out protein GO | Protein inputs and permitted contextual annotations | — | Species-held-out GO evaluation is described; a verified numeric result for the exact protein split is not transcribed here. · [source](https://arxiv.org/html/2606.16517v1) |
 | Enzyme and Gene Ontology annotation | PFMBench GO/EC annotation panel | Protein sequences/features; partner/context inputs for interaction tasks | — | ESM2-Adapter, Table 1 means: GO-CC F1 0.6130; GO-MF F1 0.6488; GO-BP F1 0.5412; EC F1 0.7379 · [source](https://arxiv.org/html/2506.14796v1) |
 
 #### Protein function descriptions
@@ -395,26 +395,6 @@ Qwen results and published reference results use the stated protocols and are no
 |  | ATOM3D protein–ligand affinity (LBA) | Protein–ligand coordinates → assay-derived affinity | — | 3D-CNN: RMSE 1.416, Spearman 0.553; GNN: RMSE 1.570, Spearman 0.628. · [source](https://arxiv.org/html/2012.04035v3) |
 | Ligand efficacy | ATOM3D ligand efficacy (LEP) | Ligand/receptor conformations → efficacy class | — | AUROC: GNN 0.740; 3D-CNN 0.589. · [source](https://arxiv.org/html/2012.04035v3) |
 
-#### Pathway and disease prediction
-
-| Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
-|---|---|---|---|---|
-| Pathway and disease prediction | BioReason KEGG pathway/disease | Reference/variant DNA and pathway context | accuracy 0.0%; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.supplemental_macro_f1_fixed_global_vocabulary 0.0000; STRICT_FINAL_LABEL.supplemental_macro_precision_fixed_global_vocabulary 0.0000; STRICT_FINAL_LABEL.supplemental_macro_recall_fixed_global_vocabulary 0.0000 | Qwen3-4B: accuracy 90.0%; macro f1 79.66%; macro precision 88.24%; n=290; Table 1 · [source](https://arxiv.org/html/2505.23579v2) |
-| Network-held-out pathway prediction | Bio-posttrain KEGG unseen-network holdout | DNA representations and pathway context | — | Qwen3-4B DNA OOD accuracy: SFT 0.753; SFT+RL 0.917; biology-CPT+SFT+RL 0.970. · [source](https://arxiv.org/html/2606.16517v1) |
-
-#### Variant-effect prediction
-
-| Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
-|---|---|---|---|---|
-| Coding-variant effect prediction | BioReason VEP coding and non-SNV<br>BioReason VEP-Coding | Reference/variant DNA and prompt; Variant representation/context | accuracy 49.1%; f1 0.5213; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.f1 0.0000 | Qwen3-4B: accuracy 48.99%; f1 39.58%; Table 2 · [source](https://arxiv.org/html/2505.23579v2) |
-| Non-SNV variant effect prediction | BioReason VEP coding and non-SNV<br>BioReason VEP-Non-SNV | Reference/variant DNA and prompt; Variant representation/context | accuracy 89.0%; f1 0.9053; STRICT_FINAL_LABEL.accuracy 0.0%; STRICT_FINAL_LABEL.f1 0.0000 | Qwen3-4B: accuracy 61.86%; f1 67.6%; n=873; Table 2 · [source](https://arxiv.org/html/2505.23579v2) |
-
-#### Choosing genes using expression data
-
-| Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
-|---|---|---|---|---|
-| Expression-conditioned gene selection | Bio-posttrain MEDEA expression-conditioned gene selection | Candidate genes, expression representations, disease and cell context | — | The paper reports RNA target-selection ID/OOD experiments. An exact numeric result is not transcribed in this table. · [source](https://arxiv.org/html/2606.16517v1) |
-
 #### RNA structure ranking
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
@@ -641,32 +621,6 @@ Not a free-form rationale score. GO label incompleteness and ontology propagatio
 Not a free-form rationale score. GO label incompleteness and ontology propagation affect evaluation.
 
 [Source 1](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf), [Source 2](https://github.com/DeepGraphLearning/ProtST)
-
-#### BioReason-Pro temporal GO test
-
-Headline aggregation; exact BP/MF/CC definition must come from official evaluator. Not interchangeable with species-held-out evaluation.
-
-Published source size/units: Released test: 8,630 proteins.
-
-**Temporal Gene Ontology annotation:** Can the model recover newly available functional annotations? Metric: Fmax; information-accretion-weighted Fmax. Released test data: 8,630 proteins; preserve the specified temporal and annotation cutoffs.
-
-No observed label is not proof of no function. Separate predicted context from gold annotations.
-
-[Source 1](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data), [Source 2](https://raw.githubusercontent.com/bowang-lab/BioReason-Pro/main/README.md), [Source 3](https://huggingface.co/datasets/wanglab/bioreason-pro-test-data)
-
-#### Bio-posttrain species-held-out protein GO
-
-Do not substitute the original BioReason-Pro 8,630-protein split or its Fmax scorer without documenting the change.
-
-Author resolve_gold_terms_from_row unions curated leaf/ancestor fields AND go_pred_leaf while go_pred is supplied as context. Native reference and input are dependent: the metric can reward recovery/copying of supplied predictions and does not isolate novel function inference. Preserve that augmented target as primary; curated-only reference union is a separate fixed diagnostic, also with predictor overlap and unknown historical independence. Never select the more favorable metric or remove native context.
-
-Published source size/units: Two held-out species in the paper; exact species/counts not established in this review. Also discusses inherited temporal protocol.
-
-**Species-held-out Gene Ontology annotation:** Does protein-function prediction transfer to the held-out species? Metric: Propagated GO-F1. Two held-out species in the paper; exact species/counts not established in this review. Also discusses inherited temporal protocol.
-
-Do not substitute the original BioReason-Pro 8,630-protein split or its Fmax scorer without documenting the change.
-
-[Source 1](https://arxiv.org/html/2606.16517v1), [Source 2](https://github.com/mims-harvard/bio-posttrain)
 
 #### PFMBench GO/EC annotation panel
 
@@ -1355,70 +1309,6 @@ These are PFMBench-specific processed datasets/splits, not interchangeable with 
 Published source size/units: Test sizes: PDBBind: 1,836; BindingDB: 1,139
 
 [Source 1](https://arxiv.org/html/2506.14796v1), [Source 2](https://github.com/biomap-research/PFMBench)
-
-#### Pathway and disease prediction
-
-#### BioReason KEGG pathway/disease
-
-Correct final disease labels do not verify every generated mechanistic statement.
-
-Published source size/units: 290 test entries in main table; 1,449 overall entries across splits.
-
-**Pathway and disease prediction:** Which disease is associated with the supplied variant and pathway context? Metric: Accuracy; macro-F1/precision/recall. 290 test entries in main table; 1,449 overall entries across splits.
-
-Correct final disease labels do not verify every generated mechanistic statement.
-
-**Comparison qualification:** Source outcome predicates retained with explicit decoded-continuation qualification. Full released DNA windows, zero-shot prompted local Qwen, source SFT/encoder systems and author decoder settings differ. N01 macro metrics are supplemental strict-label diagnostics, not verified native paper reproduction.
-
-[Source 1](https://arxiv.org/html/2505.23579v2), [Source 2](https://huggingface.co/datasets/wanglab/kegg)
-
-#### Bio-posttrain KEGG unseen-network holdout
-
-Pin the adapted split and preprocessing.
-
-Published source size/units: Adapted KEGG split by pathway networks; not automatically BioReason's original 290-example test.
-
-**Network-held-out pathway prediction:** Does DNA/pathway reasoning generalize to unseen pathway networks? Metric: Accuracy. Adapted KEGG split by pathway networks; not automatically BioReason's original 290-example test.
-
-Pin the adapted split and preprocessing.
-
-[Source 1](https://arxiv.org/html/2606.16517v1), [Source 2](https://github.com/mims-harvard/bio-posttrain)
-
-#### Variant-effect prediction
-
-#### BioReason VEP coding and non-SNV
-
-Genomics task, not Affibody binding; annotation confidence and splitting matter. | Non-SNV classification should not be merged with single-amino-acid design accuracy.
-
-Published source size/units: Coding: approximately 1.23K reported test cases; non-SNV: 873. Distinct datasets.
-
-**Coding-variant effect prediction:** Is this coding variant labeled pathogenic or benign? Metric: Accuracy; F1. Main reported test approximately 1.23K; chromosome 8 held out.
-
-Genomics task, not Affibody binding; annotation confidence and splitting matter.
-
-**Non-SNV variant effect prediction:** Is this non-single-nucleotide variant labeled pathogenic or benign? Metric: Accuracy; F1. 873 test examples in the main report.
-
-Non-SNV classification should not be merged with single-amino-acid design accuracy.
-
-**Comparison qualification:** Source outcome predicates retained with explicit decoded-continuation qualification. Full released DNA windows, zero-shot prompted local Qwen, source SFT/encoder systems and author decoder settings differ. N01 macro metrics are supplemental strict-label diagnostics, not verified native paper reproduction.
-
-**Comparison qualification:** Source outcome predicates retained with explicit decoded-continuation qualification. Full released DNA windows, zero-shot prompted local Qwen, source SFT/encoder systems and author decoder settings differ. N01 macro metrics are supplemental strict-label diagnostics, not verified native paper reproduction.
-
-[Source 1](https://arxiv.org/html/2505.23579v2), [Source 2](https://github.com/bowang-lab/BioReason)
-
-#### Choosing genes using expression data
-
-#### Bio-posttrain MEDEA expression-conditioned gene selection
-
-Fixed-input target nomination is not the original full agent workflow or clinical validation.
-
-Published source size/units: Held-out disease: hepatoblastoma; additional cell-type analyses reported.
-
-**Expression-conditioned gene selection:** Which candidate gene is supported by the supplied disease/cell-expression context? Metric: Normalized gene-answer accuracy. Held-out disease: hepatoblastoma; additional cell-type analyses reported.
-
-Fixed-input target nomination is not the original full agent workflow or clinical validation.
-
-[Source 1](https://arxiv.org/html/2606.16517v1), [Source 2](https://github.com/mims-harvard/bio-posttrain)
 
 #### RNA structure ranking
 
