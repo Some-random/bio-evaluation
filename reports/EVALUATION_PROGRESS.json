@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-18T06:11:42.986246+00:00",
+  "generatedAt": "2026-10-18T06:12:58.250371+00:00",
   "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-  "runSnapshotAt": "2026-10-18T06:11:42.986246+00:00",
+  "runSnapshotAt": "2026-10-18T06:12:58.250371+00:00",
   "heartbeat": {
-    "status": "fresh",
-    "updatedAt": "2026-10-18T06:11:42.986246+00:00",
+    "status": "stale",
+    "updatedAt": "2026-10-18T06:12:58.250371+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
     "reports/RESULTS_AT_A_GLANCE.json": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
-    ".local/remaining_evaluations/supervisor_status.json": "f05b57ea43386e5659e500eda517803dea53fbe4c47c9f8aa84ab8270403aaff",
-    ".local/remaining_evaluations/upload_status.json": "33a3c8d46a247d19e15917ed3a5ad5ebce28004fea2adfe4bd01d102fa83fe67"
+    ".local/remaining_evaluations/supervisor_status.json": "4f11b1504c7cd098c2f7aa64dfec929136092cc2bb0f7b5b8f4ca6c216f8ec86",
+    ".local/remaining_evaluations/upload_status.json": "252027fb467dcf07fcd3f355d9cc0c8c6f8a22794fe17b6973f65a4c81c5a1f3"
   },
   "uploader": {
     "stage": "retry_pending",
@@ -396,7 +396,7 @@
   ],
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/upload_status.json",
-    "snapshotAt": "2026-10-18T06:11:42.986246+00:00",
+    "snapshotAt": "2026-10-18T06:12:58.250371+00:00",
     "fallback": true,
     "selection": "most_recent_valid_run_snapshot"
   },
@@ -409,7 +409,7 @@
   "metadataNotice": {
     "source": ".local/remaining_evaluations/supervisor_status.json",
     "stage": "retry_pending",
-    "updatedAt": "2026-10-18T06:11:53.347995+00:00",
+    "updatedAt": "2026-10-18T06:22:03.501144+00:00",
     "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
   }
 }
