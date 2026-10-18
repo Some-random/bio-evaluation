@@ -1,0 +1,1092 @@
+{
+  "artifact_archive": "benchmark_assets/vllm_concurrency_2026-10-17.tar.gz",
+  "baseline_comparison": {
+    "baseline_directory": "/dfs/scratch0/dongweij/bio-evaluation/.local/concurrency_benchmark_2026-10-17_v2",
+    "baseline_gpu_uuids": [
+      "GPU-45231a7f-7918-33b7-0ef7-05c1372dc3c4"
+    ],
+    "baseline_host": "ampere3.stanford.edu",
+    "baseline_run_status": "failed",
+    "cross_run": true,
+    "different_physical_gpu": true,
+    "limitation": "Original capacity-four baseline was imported from an earlier allocation whose overall run status is failed; only its completed valid baseline is included. The baseline ratio can include variation between physical GPUs or nodes and does not isolate a server-capacity effect. The capacity-32 concurrency comparisons use only the primary run.",
+    "primary_gpu_uuids": [
+      "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+    ],
+    "primary_host": "ampere5.stanford.edu"
+  },
+  "directory": "/dfs/scratch0/dongweij/bio-evaluation/.local/concurrency_benchmark_2026-10-17_v3",
+  "environment": {
+    "cuda_visible_devices": "0",
+    "gpu_inventory": "0, GPU-a9e4977f-3666-ba49-d780-55b4191e7f07, NVIDIA A100-SXM4-80GB, 81920 MiB\n",
+    "hostname": "ampere5.stanford.edu",
+    "packages": {
+      "cuda": "13.0",
+      "device": "NVIDIA A100-SXM4-80GB",
+      "torch": "2.13.0+cu130",
+      "visible_gpu_count": 1,
+      "vllm": "0.31.0"
+    },
+    "plan_sha256": "db7831193f90694f044736b1659b058fd7c7a258d20f271bb84a53cf0a06a3ba",
+    "slurm_job_id": "240388"
+  },
+  "findings": {
+    "capacity32_vs_capacity4_at_client4_quick_ratio": 1.0182330279312992,
+    "long_decode_full_batch_best_tested": "concurrency_benchmark_2026-10-17_v3/long_decode_full_batch_c32/repeat_01_concurrency_032",
+    "quick_fixed_total_work_best_tested": "concurrency_benchmark_2026-10-17_v3/capacity32_quick_sweep/repeat_01_concurrency_032"
+  },
+  "generated_at": "2026-10-17T22:04:33.633655-07:00",
+  "gpu_identities_by_server_capacity": {
+    "32": [
+      "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+    ]
+  },
+  "gpu_telemetry_all_run": {
+    "gpu_uuids": [
+      "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+    ],
+    "measurement": "Sampled telemetry log values; sampled maxima are not continuous-time peaks.",
+    "sampled_max_gpu_utilization_percent": 100.0,
+    "sampled_max_memory_used_mib": 72385.0,
+    "sampled_max_memory_utilization_percent": 92.0,
+    "sampled_max_power_watts": 417.4,
+    "sampled_max_temperature_celsius": 58.0,
+    "sampled_mean_gpu_utilization_percent": 76.70687022900763,
+    "sampled_mean_memory_used_mib": 67795.52824427481,
+    "sampled_mean_memory_utilization_percent": 68.10076335877862,
+    "sampled_mean_power_watts": 281.1998320610687,
+    "sampled_mean_temperature_celsius": 48.836641221374045,
+    "samples": 655,
+    "timestamp_time_zone_assumption": "nvidia-smi node-local timestamps interpreted as America/Los_Angeles",
+    "window_end": null,
+    "window_start": null
+  },
+  "limitations": [
+    "Single ascending concurrency sweep is preliminary; no robust optimum is established.",
+    "Quick sweep uses fixed total work. Long-decode checks use one full concurrent batch, so request count and total work increase with concurrency and are reported separately.",
+    "Custom standard-library client uses /v1/completions with deterministic token-ID synthetic prompts, recorded sampling settings, ignore_eos, and forced output lengths; this is not the official vllm bench serve command and does not assess answer quality.",
+    "Sampling parameters match production (temperature 1, top_p 0.95, top_k 20, seed 42). The synthetic /v1/completions workload still differs from production chat/thinking prompts and natural stopping, so identical evaluation throughput or the same best concurrency is not established.",
+    "No extrapolation to P16: its roughly 44k-token shared-prefix prompts and B200 hardware differ from this A100 workload.",
+    "GPU maxima come from sampled logs filtered to the observed server GPU UUID; missing telemetry is left unavailable. Node-local nvidia-smi timestamps are interpreted as Pacific time.",
+    "Original capacity-four baseline was imported from an earlier allocation whose overall run status is failed; only its completed valid baseline is included. The baseline ratio can include variation between physical GPUs or nodes and does not isolate a server-capacity effect. The capacity-32 concurrency comparisons use only the primary run."
+  ],
+  "measurement_type": "synthetic serving throughput, not biological benchmark scores",
+  "plan": {
+    "code_sha256": {
+      "benchmark_vllm_concurrency.py": "d08a6b2a1739c99ec07a66f0e619ce5f94fd2d9816142b6bcc72c34069bab58b",
+      "run_benchmark.py": "b67da59e51fb6cd124fd2351b994a299c27f63f583493463e00a8402f32573dc",
+      "runtime_common.py": "93611c2b597857222f6400bcf9151ce70ae7f8053c7871600bc49106e67370f4"
+    },
+    "generation": {
+      "seed": 42,
+      "temperature": 1.0,
+      "top_k": 20,
+      "top_p": 0.95
+    },
+    "gpu_limit": 8,
+    "max_model_len": 32768,
+    "model": "Qwen/Qwen3.8-27B",
+    "notes": [
+      "No scored evaluation records read by benchmark client.",
+      "Paired fixed-total-work sweep uses32 identical192-token prompts and512-token forced outputs.",
+      "Long-decode check uses one full concurrent batch per level,4096 forced output tokens per request; batchsize scales withconcurrency, so totalworkdiffers and should be reported separately.",
+      "Original productionmaxseq4baseline then dedicatedservermaxseq32capacity; checkpointBF16 TP1 32kcontext andvisionprofilepreserved.",
+      "Resetprefixcache betweenstages; identical perrequesttokenwork; no qualitymetricselection.",
+      "P16has45kprompt/sharedprefixandB200; thisA100measurementdoesnotvalidateP16optimizations."
+    ],
+    "port": 8049,
+    "prior_attempts": [
+      {
+        "directory": "/dfs/scratch0/dongweij/bio-evaluation/.local/concurrency_benchmark_2026-10-17",
+        "job_id": "240381",
+        "outcome": "failed before generation because reset_prefix_cache is a development endpoint; enabling only on this isolated loopback server"
+      },
+      {
+        "baseline_results_sha256": "e0cc0837c82ea7c97ae7f1681053500ff7d4962a08cac963e285aa9be7c58472",
+        "directory": "/dfs/scratch0/dongweij/bio-evaluation/.local/concurrency_benchmark_2026-10-17_v2",
+        "job_id": "240386",
+        "outcome": "originalcapacity4baselinecompletedall32requestswithzeroerrors; restartpreflightincorrectlytreatedTIME_WAITasoccupiedport; correctedwithSO_REUSEADDR and boundedwait"
+      }
+    ],
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "server_development_mode_for_cache_reset_only": true,
+    "steps": [
+      {
+        "concurrencies": "4,8,16,32",
+        "input_tokens": 192,
+        "name": "capacity32_quick_sweep",
+        "output_tokens": 512,
+        "requests": 32,
+        "server_capacity": 32
+      },
+      {
+        "concurrencies": "4",
+        "input_tokens": 192,
+        "name": "long_decode_full_batch_c4",
+        "output_tokens": 4096,
+        "requests": 4,
+        "server_capacity": 32
+      },
+      {
+        "concurrencies": "8",
+        "input_tokens": 192,
+        "name": "long_decode_full_batch_c8",
+        "output_tokens": 4096,
+        "requests": 8,
+        "server_capacity": 32
+      },
+      {
+        "concurrencies": "16",
+        "input_tokens": 192,
+        "name": "long_decode_full_batch_c16",
+        "output_tokens": 4096,
+        "requests": 16,
+        "server_capacity": 32
+      },
+      {
+        "concurrencies": "32",
+        "input_tokens": 192,
+        "name": "long_decode_full_batch_c32",
+        "output_tokens": 4096,
+        "requests": 32,
+        "server_capacity": 32
+      }
+    ],
+    "synthetic_only": true
+  },
+  "rows": [
+    {
+      "actual_completion_tokens": 16384,
+      "actual_prompt_tokens": 6144,
+      "client_concurrency": 4,
+      "completed_requests": 32,
+      "elapsed_seconds": 154.69912505336106,
+      "eligible_best_tested_candidate": true,
+      "failed_requests": 0,
+      "fixed_workload_mismatch_requests": 0,
+      "gpu_telemetry": {
+        "gpu_uuids": [
+          "GPU-45231a7f-7918-33b7-0ef7-05c1372dc3c4"
+        ],
+        "measurement": "Sampled telemetry log values; sampled maxima are not continuous-time peaks.",
+        "sampled_max_gpu_utilization_percent": 100.0,
+        "sampled_max_memory_used_mib": 71737.0,
+        "sampled_max_memory_utilization_percent": 92.0,
+        "sampled_max_power_watts": 404.54,
+        "sampled_max_temperature_celsius": 58.0,
+        "sampled_mean_gpu_utilization_percent": 96.35064935064935,
+        "sampled_mean_memory_used_mib": 71734.92207792208,
+        "sampled_mean_memory_utilization_percent": 87.49350649350649,
+        "sampled_mean_power_watts": 323.1887012987013,
+        "sampled_mean_temperature_celsius": 55.37662337662338,
+        "samples": 77,
+        "timestamp_time_zone_assumption": "nvidia-smi node-local timestamps interpreted as America/Los_Angeles",
+        "window_end": "2026-10-17T21:40:35.434910-07:00",
+        "window_start": "2026-10-17T21:38:01.905905-07:00"
+      },
+      "group": "quick_fixed_total_work",
+      "id": "concurrency_benchmark_2026-10-17_v2/production_capacity4_quick/repeat_01_concurrency_004",
+      "input_tokens_per_request": 192,
+      "latency_seconds": {
+        "max": 21.523168368265033,
+        "mean": 18.900982178456616,
+        "p50": 18.538558585569263,
+        "p95": 21.522142481058836
+      },
+      "original_row_id": "production_capacity4_quick/repeat_01_concurrency_004",
+      "output_tokens_per_request": 512,
+      "output_tokens_per_second": 105.90880843281171,
+      "planned_requests": 32,
+      "preemptions": {
+        "after": 0.0,
+        "before": 0.0,
+        "counter_reset_detected": false,
+        "delta": 0.0
+      },
+      "prefix_cache_controlled": true,
+      "prefix_cache_policy": "reset-between-levels",
+      "repeat": 1,
+      "requests_per_hour": 744.6713092932073,
+      "requests_per_second": 0.20685314147033537,
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "server_capacity": 4,
+      "source_role": "original_baseline",
+      "source_run": "concurrency_benchmark_2026-10-17_v2",
+      "stage": "repeat_01_concurrency_004",
+      "status": "complete",
+      "step": "production_capacity4_quick",
+      "successful_requests": 32
+    },
+    {
+      "actual_completion_tokens": 16384,
+      "actual_prompt_tokens": 6144,
+      "client_concurrency": 4,
+      "completed_requests": 32,
+      "elapsed_seconds": 151.92899936437607,
+      "eligible_best_tested_candidate": true,
+      "failed_requests": 0,
+      "fixed_workload_mismatch_requests": 0,
+      "gpu_telemetry": {
+        "gpu_uuids": [
+          "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+        ],
+        "measurement": "Sampled telemetry log values; sampled maxima are not continuous-time peaks.",
+        "sampled_max_gpu_utilization_percent": 100.0,
+        "sampled_max_memory_used_mib": 71667.0,
+        "sampled_max_memory_utilization_percent": 92.0,
+        "sampled_max_power_watts": 411.03,
+        "sampled_max_temperature_celsius": 56.0,
+        "sampled_mean_gpu_utilization_percent": 98.73333333333333,
+        "sampled_mean_memory_used_mib": 71667.0,
+        "sampled_mean_memory_utilization_percent": 90.12,
+        "sampled_mean_power_watts": 334.13533333333334,
+        "sampled_mean_temperature_celsius": 52.72,
+        "samples": 75,
+        "timestamp_time_zone_assumption": "nvidia-smi node-local timestamps interpreted as America/Los_Angeles",
+        "window_end": "2026-10-17T21:49:34.110961-07:00",
+        "window_start": "2026-10-17T21:47:03.900464-07:00"
+      },
+      "group": "quick_fixed_total_work",
+      "id": "concurrency_benchmark_2026-10-17_v3/capacity32_quick_sweep/repeat_01_concurrency_004",
+      "input_tokens_per_request": 192,
+      "latency_seconds": {
+        "max": 18.55261450819671,
+        "mean": 18.49261793162441,
+        "p50": 18.486709602177143,
+        "p95": 18.55168474232778
+      },
+      "original_row_id": "capacity32_quick_sweep/repeat_01_concurrency_004",
+      "output_tokens_per_request": 512,
+      "output_tokens_per_second": 107.83984669513778,
+      "planned_requests": 32,
+      "preemptions": {
+        "after": 0.0,
+        "before": 0.0,
+        "counter_reset_detected": false,
+        "delta": 0.0
+      },
+      "prefix_cache_controlled": true,
+      "prefix_cache_policy": "reset-between-levels",
+      "repeat": 1,
+      "requests_per_hour": 758.2489220751875,
+      "requests_per_second": 0.21062470057644098,
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "server_capacity": 32,
+      "source_role": "primary",
+      "source_run": "concurrency_benchmark_2026-10-17_v3",
+      "stage": "repeat_01_concurrency_004",
+      "status": "complete",
+      "step": "capacity32_quick_sweep",
+      "successful_requests": 32
+    },
+    {
+      "actual_completion_tokens": 16384,
+      "actual_prompt_tokens": 6144,
+      "client_concurrency": 8,
+      "completed_requests": 32,
+      "elapsed_seconds": 84.7641935851425,
+      "eligible_best_tested_candidate": true,
+      "failed_requests": 0,
+      "fixed_workload_mismatch_requests": 0,
+      "gpu_telemetry": {
+        "gpu_uuids": [
+          "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+        ],
+        "measurement": "Sampled telemetry log values; sampled maxima are not continuous-time peaks.",
+        "sampled_max_gpu_utilization_percent": 100.0,
+        "sampled_max_memory_used_mib": 71939.0,
+        "sampled_max_memory_utilization_percent": 91.0,
+        "sampled_max_power_watts": 394.64,
+        "sampled_max_temperature_celsius": 57.0,
+        "sampled_mean_gpu_utilization_percent": 96.11904761904762,
+        "sampled_mean_memory_used_mib": 71939.0,
+        "sampled_mean_memory_utilization_percent": 85.4047619047619,
+        "sampled_mean_power_watts": 339.17333333333335,
+        "sampled_mean_temperature_celsius": 54.142857142857146,
+        "samples": 42,
+        "timestamp_time_zone_assumption": "nvidia-smi node-local timestamps interpreted as America/Los_Angeles",
+        "window_end": "2026-10-17T21:51:00.838049-07:00",
+        "window_start": "2026-10-17T21:49:38.187671-07:00"
+      },
+      "group": "quick_fixed_total_work",
+      "id": "concurrency_benchmark_2026-10-17_v3/capacity32_quick_sweep/repeat_01_concurrency_008",
+      "input_tokens_per_request": 192,
+      "latency_seconds": {
+        "max": 21.483500972390175,
+        "mean": 19.83681636932306,
+        "p50": 19.33008738514036,
+        "p95": 21.483294545207173
+      },
+      "original_row_id": "capacity32_quick_sweep/repeat_01_concurrency_008",
+      "output_tokens_per_request": 512,
+      "output_tokens_per_second": 193.2891626408606,
+      "planned_requests": 32,
+      "preemptions": {
+        "after": 0.0,
+        "before": 0.0,
+        "counter_reset_detected": false,
+        "delta": 0.0
+      },
+      "prefix_cache_controlled": true,
+      "prefix_cache_policy": "reset-between-levels",
+      "repeat": 1,
+      "requests_per_hour": 1359.064424818551,
+      "requests_per_second": 0.3775178957829309,
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "server_capacity": 32,
+      "source_role": "primary",
+      "source_run": "concurrency_benchmark_2026-10-17_v3",
+      "stage": "repeat_01_concurrency_008",
+      "status": "complete",
+      "step": "capacity32_quick_sweep",
+      "successful_requests": 32
+    },
+    {
+      "actual_completion_tokens": 16384,
+      "actual_prompt_tokens": 6144,
+      "client_concurrency": 16,
+      "completed_requests": 32,
+      "elapsed_seconds": 47.97787878103554,
+      "eligible_best_tested_candidate": true,
+      "failed_requests": 0,
+      "fixed_workload_mismatch_requests": 0,
+      "gpu_telemetry": {
+        "gpu_uuids": [
+          "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+        ],
+        "measurement": "Sampled telemetry log values; sampled maxima are not continuous-time peaks.",
+        "sampled_max_gpu_utilization_percent": 100.0,
+        "sampled_max_memory_used_mib": 72255.0,
+        "sampled_max_memory_utilization_percent": 91.0,
+        "sampled_max_power_watts": 396.01,
+        "sampled_max_temperature_celsius": 58.0,
+        "sampled_mean_gpu_utilization_percent": 91.66666666666667,
+        "sampled_mean_memory_used_mib": 72255.0,
+        "sampled_mean_memory_utilization_percent": 78.45833333333333,
+        "sampled_mean_power_watts": 332.99666666666667,
+        "sampled_mean_temperature_celsius": 52.708333333333336,
+        "samples": 24,
+        "timestamp_time_zone_assumption": "nvidia-smi node-local timestamps interpreted as America/Los_Angeles",
+        "window_end": "2026-10-17T21:51:55.108212-07:00",
+        "window_start": "2026-10-17T21:51:07.888197-07:00"
+      },
+      "group": "quick_fixed_total_work",
+      "id": "concurrency_benchmark_2026-10-17_v3/capacity32_quick_sweep/repeat_01_concurrency_016",
+      "input_tokens_per_request": 192,
+      "latency_seconds": {
+        "max": 26.14371012710035,
+        "mean": 23.393521699879784,
+        "p50": 23.372132594697177,
+        "p95": 26.14276601616293
+      },
+      "original_row_id": "capacity32_quick_sweep/repeat_01_concurrency_016",
+      "output_tokens_per_request": 512,
+      "output_tokens_per_second": 341.4907123087773,
+      "planned_requests": 32,
+      "preemptions": {
+        "after": 0.0,
+        "before": 0.0,
+        "counter_reset_detected": false,
+        "delta": 0.0
+      },
+      "prefix_cache_controlled": true,
+      "prefix_cache_policy": "reset-between-levels",
+      "repeat": 1,
+      "requests_per_hour": 2401.10657092109,
+      "requests_per_second": 0.6669740474780806,
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "server_capacity": 32,
+      "source_role": "primary",
+      "source_run": "concurrency_benchmark_2026-10-17_v3",
+      "stage": "repeat_01_concurrency_016",
+      "status": "complete",
+      "step": "capacity32_quick_sweep",
+      "successful_requests": 32
+    },
+    {
+      "actual_completion_tokens": 16384,
+      "actual_prompt_tokens": 6144,
+      "client_concurrency": 32,
+      "completed_requests": 32,
+      "elapsed_seconds": 30.642103096470237,
+      "eligible_best_tested_candidate": true,
+      "failed_requests": 0,
+      "fixed_workload_mismatch_requests": 0,
+      "gpu_telemetry": {
+        "gpu_uuids": [
+          "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+        ],
+        "measurement": "Sampled telemetry log values; sampled maxima are not continuous-time peaks.",
+        "sampled_max_gpu_utilization_percent": 100.0,
+        "sampled_max_memory_used_mib": 72385.0,
+        "sampled_max_memory_utilization_percent": 87.0,
+        "sampled_max_power_watts": 414.97,
+        "sampled_max_temperature_celsius": 54.0,
+        "sampled_mean_gpu_utilization_percent": 92.85714285714286,
+        "sampled_mean_memory_used_mib": 72385.0,
+        "sampled_mean_memory_utilization_percent": 76.21428571428571,
+        "sampled_mean_power_watts": 329.2785714285714,
+        "sampled_mean_temperature_celsius": 52.5,
+        "samples": 14,
+        "timestamp_time_zone_assumption": "nvidia-smi node-local timestamps interpreted as America/Los_Angeles",
+        "window_end": "2026-10-17T21:52:26.921009-07:00",
+        "window_start": "2026-10-17T21:52:00.193763-07:00"
+      },
+      "group": "quick_fixed_total_work",
+      "id": "concurrency_benchmark_2026-10-17_v3/capacity32_quick_sweep/repeat_01_concurrency_032",
+      "input_tokens_per_request": 192,
+      "latency_seconds": {
+        "max": 26.715098971500993,
+        "mean": 26.648656080535147,
+        "p50": 26.649869014509022,
+        "p95": 26.68583898637444
+      },
+      "original_row_id": "capacity32_quick_sweep/repeat_01_concurrency_032",
+      "output_tokens_per_request": 512,
+      "output_tokens_per_second": 534.6891480789818,
+      "planned_requests": 32,
+      "preemptions": {
+        "after": 0.0,
+        "before": 0.0,
+        "counter_reset_detected": false,
+        "delta": 0.0
+      },
+      "prefix_cache_controlled": true,
+      "prefix_cache_policy": "reset-between-levels",
+      "repeat": 1,
+      "requests_per_hour": 3759.533072430341,
+      "requests_per_second": 1.0443147423417614,
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "server_capacity": 32,
+      "source_role": "primary",
+      "source_run": "concurrency_benchmark_2026-10-17_v3",
+      "stage": "repeat_01_concurrency_032",
+      "status": "complete",
+      "step": "capacity32_quick_sweep",
+      "successful_requests": 32
+    },
+    {
+      "actual_completion_tokens": 16384,
+      "actual_prompt_tokens": 768,
+      "client_concurrency": 4,
+      "completed_requests": 4,
+      "elapsed_seconds": 148.20622173510492,
+      "eligible_best_tested_candidate": true,
+      "failed_requests": 0,
+      "fixed_workload_mismatch_requests": 0,
+      "gpu_telemetry": {
+        "gpu_uuids": [
+          "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+        ],
+        "measurement": "Sampled telemetry log values; sampled maxima are not continuous-time peaks.",
+        "sampled_max_gpu_utilization_percent": 100.0,
+        "sampled_max_memory_used_mib": 72385.0,
+        "sampled_max_memory_utilization_percent": 92.0,
+        "sampled_max_power_watts": 382.71,
+        "sampled_max_temperature_celsius": 54.0,
+        "sampled_mean_gpu_utilization_percent": 98.83783783783784,
+        "sampled_mean_memory_used_mib": 72385.0,
+        "sampled_mean_memory_utilization_percent": 90.85135135135135,
+        "sampled_mean_power_watts": 337.075,
+        "sampled_mean_temperature_celsius": 53.391891891891895,
+        "samples": 74,
+        "timestamp_time_zone_assumption": "nvidia-smi node-local timestamps interpreted as America/Los_Angeles",
+        "window_end": "2026-10-17T21:55:04.461845-07:00",
+        "window_start": "2026-10-17T21:52:36.610460-07:00"
+      },
+      "group": "long_decode_full_batch",
+      "id": "concurrency_benchmark_2026-10-17_v3/long_decode_full_batch_c4/repeat_01_concurrency_004",
+      "input_tokens_per_request": 192,
+      "latency_seconds": {
+        "max": 147.849925018847,
+        "mean": 147.84122936194763,
+        "p50": 147.84955406468362,
+        "p95": 147.8498863514513
+      },
+      "original_row_id": "long_decode_full_batch_c4/repeat_01_concurrency_004",
+      "output_tokens_per_request": 4096,
+      "output_tokens_per_second": 110.54866528669625,
+      "planned_requests": 4,
+      "preemptions": {
+        "after": 0.0,
+        "before": 0.0,
+        "counter_reset_detected": false,
+        "delta": 0.0
+      },
+      "prefix_cache_controlled": true,
+      "prefix_cache_policy": "reset-between-levels",
+      "repeat": 1,
+      "requests_per_hour": 97.16191284963537,
+      "requests_per_second": 0.026989420236009826,
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "server_capacity": 32,
+      "source_role": "primary",
+      "source_run": "concurrency_benchmark_2026-10-17_v3",
+      "stage": "repeat_01_concurrency_004",
+      "status": "complete",
+      "step": "long_decode_full_batch_c4",
+      "successful_requests": 4
+    },
+    {
+      "actual_completion_tokens": 32768,
+      "actual_prompt_tokens": 1536,
+      "client_concurrency": 8,
+      "completed_requests": 8,
+      "elapsed_seconds": 157.29422671347857,
+      "eligible_best_tested_candidate": true,
+      "failed_requests": 0,
+      "fixed_workload_mismatch_requests": 0,
+      "gpu_telemetry": {
+        "gpu_uuids": [
+          "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+        ],
+        "measurement": "Sampled telemetry log values; sampled maxima are not continuous-time peaks.",
+        "sampled_max_gpu_utilization_percent": 100.0,
+        "sampled_max_memory_used_mib": 72385.0,
+        "sampled_max_memory_utilization_percent": 91.0,
+        "sampled_max_power_watts": 350.23,
+        "sampled_max_temperature_celsius": 55.0,
+        "sampled_mean_gpu_utilization_percent": 99.98717948717949,
+        "sampled_mean_memory_used_mib": 72385.0,
+        "sampled_mean_memory_utilization_percent": 90.26923076923077,
+        "sampled_mean_power_watts": 344.7308974358974,
+        "sampled_mean_temperature_celsius": 54.294871794871796,
+        "samples": 78,
+        "timestamp_time_zone_assumption": "nvidia-smi node-local timestamps interpreted as America/Los_Angeles",
+        "window_end": "2026-10-17T21:57:49.369394-07:00",
+        "window_start": "2026-10-17T21:55:14.391574-07:00"
+      },
+      "group": "long_decode_full_batch",
+      "id": "concurrency_benchmark_2026-10-17_v3/long_decode_full_batch_c8/repeat_01_concurrency_008",
+      "input_tokens_per_request": 192,
+      "latency_seconds": {
+        "max": 154.9752655196935,
+        "mean": 154.96587604703382,
+        "p50": 154.97451540548354,
+        "p95": 154.97518273293971
+      },
+      "original_row_id": "long_decode_full_batch_c8/repeat_01_concurrency_008",
+      "output_tokens_per_request": 4096,
+      "output_tokens_per_second": 208.3229669941351,
+      "planned_requests": 8,
+      "preemptions": {
+        "after": 0.0,
+        "before": 0.0,
+        "counter_reset_detected": false,
+        "delta": 0.0
+      },
+      "prefix_cache_controlled": true,
+      "prefix_cache_policy": "reset-between-levels",
+      "repeat": 1,
+      "requests_per_hour": 183.09635770968904,
+      "requests_per_second": 0.050860099363802515,
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "server_capacity": 32,
+      "source_role": "primary",
+      "source_run": "concurrency_benchmark_2026-10-17_v3",
+      "stage": "repeat_01_concurrency_008",
+      "status": "complete",
+      "step": "long_decode_full_batch_c8",
+      "successful_requests": 8
+    },
+    {
+      "actual_completion_tokens": 65536,
+      "actual_prompt_tokens": 3072,
+      "client_concurrency": 16,
+      "completed_requests": 16,
+      "elapsed_seconds": 170.2205572836101,
+      "eligible_best_tested_candidate": true,
+      "failed_requests": 0,
+      "fixed_workload_mismatch_requests": 0,
+      "gpu_telemetry": {
+        "gpu_uuids": [
+          "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+        ],
+        "measurement": "Sampled telemetry log values; sampled maxima are not continuous-time peaks.",
+        "sampled_max_gpu_utilization_percent": 100.0,
+        "sampled_max_memory_used_mib": 72385.0,
+        "sampled_max_memory_utilization_percent": 92.0,
+        "sampled_max_power_watts": 391.56,
+        "sampled_max_temperature_celsius": 56.0,
+        "sampled_mean_gpu_utilization_percent": 100.0,
+        "sampled_mean_memory_used_mib": 72385.0,
+        "sampled_mean_memory_utilization_percent": 90.27710843373494,
+        "sampled_mean_power_watts": 358.20710843373496,
+        "sampled_mean_temperature_celsius": 55.566265060240966,
+        "samples": 83,
+        "timestamp_time_zone_assumption": "nvidia-smi node-local timestamps interpreted as America/Los_Angeles",
+        "window_end": "2026-10-17T22:00:45.024607-07:00",
+        "window_start": "2026-10-17T21:57:58.462671-07:00"
+      },
+      "group": "long_decode_full_batch",
+      "id": "concurrency_benchmark_2026-10-17_v3/long_decode_full_batch_c16/repeat_01_concurrency_016",
+      "input_tokens_per_request": 192,
+      "latency_seconds": {
+        "max": 166.55648052692413,
+        "mean": 166.5319089711411,
+        "p50": 166.52467735297978,
+        "p95": 166.55631704907864
+      },
+      "original_row_id": "long_decode_full_batch_c16/repeat_01_concurrency_016",
+      "output_tokens_per_request": 4096,
+      "output_tokens_per_second": 385.00637670224694,
+      "planned_requests": 16,
+      "preemptions": {
+        "after": 0.0,
+        "before": 0.0,
+        "counter_reset_detected": false,
+        "delta": 0.0
+      },
+      "prefix_cache_controlled": true,
+      "prefix_cache_policy": "reset-between-levels",
+      "repeat": 1,
+      "requests_per_hour": 338.3845107734592,
+      "requests_per_second": 0.093995697437072,
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "server_capacity": 32,
+      "source_role": "primary",
+      "source_run": "concurrency_benchmark_2026-10-17_v3",
+      "stage": "repeat_01_concurrency_016",
+      "status": "complete",
+      "step": "long_decode_full_batch_c16",
+      "successful_requests": 16
+    },
+    {
+      "actual_completion_tokens": 131072,
+      "actual_prompt_tokens": 6144,
+      "client_concurrency": 32,
+      "completed_requests": 32,
+      "elapsed_seconds": 197.99880328029394,
+      "eligible_best_tested_candidate": true,
+      "failed_requests": 0,
+      "fixed_workload_mismatch_requests": 0,
+      "gpu_telemetry": {
+        "gpu_uuids": [
+          "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+        ],
+        "measurement": "Sampled telemetry log values; sampled maxima are not continuous-time peaks.",
+        "sampled_max_gpu_utilization_percent": 100.0,
+        "sampled_max_memory_used_mib": 72385.0,
+        "sampled_max_memory_utilization_percent": 89.0,
+        "sampled_max_power_watts": 389.3,
+        "sampled_max_temperature_celsius": 57.0,
+        "sampled_mean_gpu_utilization_percent": 99.98979591836735,
+        "sampled_mean_memory_used_mib": 72385.0,
+        "sampled_mean_memory_utilization_percent": 86.93877551020408,
+        "sampled_mean_power_watts": 348.6322448979592,
+        "sampled_mean_temperature_celsius": 54.724489795918366,
+        "samples": 98,
+        "timestamp_time_zone_assumption": "nvidia-smi node-local timestamps interpreted as America/Los_Angeles",
+        "window_end": "2026-10-17T22:04:17.146134-07:00",
+        "window_start": "2026-10-17T22:01:00.464673-07:00"
+      },
+      "group": "long_decode_full_batch",
+      "id": "concurrency_benchmark_2026-10-17_v3/long_decode_full_batch_c32/repeat_01_concurrency_032",
+      "input_tokens_per_request": 192,
+      "latency_seconds": {
+        "max": 196.6684487760067,
+        "mean": 196.60081292246468,
+        "p50": 196.60353388637304,
+        "p95": 196.63962352341042
+      },
+      "original_row_id": "long_decode_full_batch_c32/repeat_01_concurrency_032",
+      "output_tokens_per_request": 4096,
+      "output_tokens_per_second": 661.9837990356434,
+      "planned_requests": 32,
+      "preemptions": {
+        "after": 0.0,
+        "before": 0.0,
+        "counter_reset_detected": false,
+        "delta": 0.0
+      },
+      "prefix_cache_controlled": true,
+      "prefix_cache_policy": "reset-between-levels",
+      "repeat": 1,
+      "requests_per_hour": 581.821698371171,
+      "requests_per_second": 0.16161713843643638,
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "server_capacity": 32,
+      "source_role": "primary",
+      "source_run": "concurrency_benchmark_2026-10-17_v3",
+      "stage": "repeat_01_concurrency_032",
+      "status": "complete",
+      "step": "long_decode_full_batch_c32",
+      "successful_requests": 32
+    }
+  ],
+  "run_status": {
+    "active_step": "long_decode_full_batch_c32",
+    "completed_steps": [
+      {
+        "exit_code": 0,
+        "name": "capacity32_quick_sweep"
+      },
+      {
+        "exit_code": 0,
+        "name": "long_decode_full_batch_c4"
+      },
+      {
+        "exit_code": 0,
+        "name": "long_decode_full_batch_c8"
+      },
+      {
+        "exit_code": 0,
+        "name": "long_decode_full_batch_c16"
+      },
+      {
+        "exit_code": 0,
+        "name": "long_decode_full_batch_c32"
+      }
+    ],
+    "server_capacity": 32,
+    "slurm_job_id": "240388",
+    "stage": "completed",
+    "updated_at": "2026-10-17T22:04:18.722462-07:00"
+  },
+  "sampling": {
+    "settings": {
+      "seed": 42,
+      "temperature": 1.0,
+      "top_k": 20,
+      "top_p": 0.95
+    },
+    "source": "observed client config"
+  },
+  "server_configurations": {
+    "32": {
+      "command": [
+        "/tmp/bio-throughput-240388-qL64bb/python/bin/python3.12",
+        "-m",
+        "vllm.entrypoints.cli.main",
+        "serve",
+        "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+        "--served-model-name",
+        "Qwen/Qwen3.8-27B",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8049",
+        "--dtype",
+        "bfloat16",
+        "--tensor-parallel-size",
+        "1",
+        "--gpu-memory-utilization",
+        "0.90",
+        "--max-model-len",
+        "32768",
+        "--max-num-seqs",
+        "32",
+        "--reasoning-parser",
+        "qwen3",
+        "--enable-prefix-caching",
+        "--limit-mm-per-prompt",
+        "{\"image\": 1, \"video\": 0}"
+      ],
+      "pid": 4032015
+    }
+  },
+  "source_files": {
+    "capacity32_quick_sweep/config.json": "4bac53860f44931a4a936fc642a73cc4300396a24fb6dd8d93a54217ed27c26e",
+    "capacity32_quick_sweep/progress.json": "631e5fb9cfc79a3cf39512da3afa11a573190ddf018301fb9ed689e2049fdee6",
+    "capacity32_quick_sweep/repeat_01_concurrency_004/metrics_after.prom": "7c31658083eaf13d292de17adf50fd7dd5410c94b86f20e104e027bf3a5d839d",
+    "capacity32_quick_sweep/repeat_01_concurrency_004/metrics_before.prom": "605d0c2520f6a7e674ed7731dd5f5784774999a42d533750e3fbf72fe0dea2c0",
+    "capacity32_quick_sweep/repeat_01_concurrency_004/summary.json": "b4ab2f4bb9074d4f66280af002c233f589d88dbef42dccad1033b9413f2043cf",
+    "capacity32_quick_sweep/repeat_01_concurrency_008/metrics_after.prom": "e4db4b090fea52d26da71be560a2b4e53958ecb5a087485ec156167d90cc6d09",
+    "capacity32_quick_sweep/repeat_01_concurrency_008/metrics_before.prom": "ae679c445920c63b134a9f8169538b3f608a73aefd6c9bab83bceea111ec8698",
+    "capacity32_quick_sweep/repeat_01_concurrency_008/summary.json": "44f4b01a7a96a1bfc6db6be0defef631ec09acd3f7477686e2a608db0affdda8",
+    "capacity32_quick_sweep/repeat_01_concurrency_016/metrics_after.prom": "ed9a949c32eb20cbdcae7eb27e49d7fd013b8185ef0ca409ff8eae93fb1d5f01",
+    "capacity32_quick_sweep/repeat_01_concurrency_016/metrics_before.prom": "45e3478ddbbd9a3e79d3e6f49677e65dd48da5e6975d83236a68c99d65c6e712",
+    "capacity32_quick_sweep/repeat_01_concurrency_016/summary.json": "825a330155f4a36a20c7ad4991afd7e689d4be8ce66d30d5800a0021c785d1f2",
+    "capacity32_quick_sweep/repeat_01_concurrency_032/metrics_after.prom": "305bdf9135883c7a3430d32110de04a9f606163854dcfcf4fc60b60441ef6d32",
+    "capacity32_quick_sweep/repeat_01_concurrency_032/metrics_before.prom": "afbb82a74126475a5fd6b64d52f920007b617e78841ccc8656c7768a1f453719",
+    "capacity32_quick_sweep/repeat_01_concurrency_032/summary.json": "60e20662df08889d57e6b0f2e928996525d00ec64992bd91b814fc8e3b622946",
+    "capacity32_quick_sweep/results.json": "6cef98518df9c06a166f4a9d28cf8c0fa6d5408f96183ab0781f8f71fd9db25e",
+    "environment.json": "9396519e16183b54e6fed104a7056da524d2353ac88d15f61a81a2a88c04844b",
+    "gpu_telemetry.csv": "026240002b0dd5d1dbd07d01ad294182e781063c2175ae23ade6fc89f35f9536",
+    "long_decode_full_batch_c16/config.json": "f98ca040b2fddde162cc8c46de1e795e23f4bcb34d998103499429616a04f5c6",
+    "long_decode_full_batch_c16/progress.json": "7ac4387418de2839704b14a6a3ce9ef63f55dc30aec1818c4fee37d68a2ed710",
+    "long_decode_full_batch_c16/repeat_01_concurrency_016/metrics_after.prom": "770a84eddd84f9d76421a87f90d9674720c0d1f5f063ec14e2a7273c9fae9dd0",
+    "long_decode_full_batch_c16/repeat_01_concurrency_016/metrics_before.prom": "98ca7b51895c3180108f5624c4e22536a99a4e43a2cb6026afd6f82f148af431",
+    "long_decode_full_batch_c16/repeat_01_concurrency_016/summary.json": "df1ec62c8635d2207449affaeaf08433e900f0d045f1fe1411cef70c58d19a30",
+    "long_decode_full_batch_c16/results.json": "8812304967594c8ff0bfe462fd67996a2c5550c830b4a30f9939d413003192ac",
+    "long_decode_full_batch_c32/config.json": "7bd8f8ebfafde255e8b4cc16e17830f8475919642e8932ab4263fb4c77b23a36",
+    "long_decode_full_batch_c32/progress.json": "d96f2d0c8f585b40b256ba1c3211fcb6e00fd6cd32af303e8cf61e4c5932c503",
+    "long_decode_full_batch_c32/repeat_01_concurrency_032/metrics_after.prom": "74d5f2e5b8e65e2c973c73b809d368da39b9a34a1f3d31b9c67e35bdc94c809e",
+    "long_decode_full_batch_c32/repeat_01_concurrency_032/metrics_before.prom": "4459f7345ed8c83c26304e6040a400ba42ffb677c10ccd69b6cd63f3b067e117",
+    "long_decode_full_batch_c32/repeat_01_concurrency_032/summary.json": "677f500161a8d2ef4d2b03c9212de48fd15d91e1987e996ebd8de473eacfdd88",
+    "long_decode_full_batch_c32/results.json": "33e1788658199ca854b720c3e05b30cf61954d9514b72a9f27e2701e06bb0203",
+    "long_decode_full_batch_c4/config.json": "cfe7757431083630a6b324d1db4a64cda05fb7dd8559a9cb20bf816178e444bb",
+    "long_decode_full_batch_c4/progress.json": "6d3e1f37e000e90570b002cbfe67658ea5f35ba8221014fa74d38584feb20a7b",
+    "long_decode_full_batch_c4/repeat_01_concurrency_004/metrics_after.prom": "8d942ced9539f23d2301ca11e03e2a993057962c8b921f1295559a2d8b8d24d8",
+    "long_decode_full_batch_c4/repeat_01_concurrency_004/metrics_before.prom": "d10537d382cf209e7dddac5fd9c39eaa00060b5064447acbf6826570ab1a2add",
+    "long_decode_full_batch_c4/repeat_01_concurrency_004/summary.json": "2f87e43294b8aa1e6bda8b03e1d0f486c47fdf3cdd3dce08920fa18943b76fa4",
+    "long_decode_full_batch_c4/results.json": "6a79b036639ca12b5535ac4de1110f8c17fed61bf3c91aab5c32012c823bbdd9",
+    "long_decode_full_batch_c8/config.json": "9c20f5298f193aa7531bc8307f8d7874f788cdf74e80fe517dc2dc9458e3dbce",
+    "long_decode_full_batch_c8/progress.json": "05e597e5973a3a2e2280164b8967a47935def11f50d9ded98872fbaf8d23878f",
+    "long_decode_full_batch_c8/repeat_01_concurrency_008/metrics_after.prom": "99df9af7ca45243e983d120822bec51d1d8c04c1c5dba3d689e7fd7df6666f96",
+    "long_decode_full_batch_c8/repeat_01_concurrency_008/metrics_before.prom": "8b6c976cc451cd34eb4aa2c8a6f0dc000ed2ca5c3435d934c79926ca7e64930d",
+    "long_decode_full_batch_c8/repeat_01_concurrency_008/summary.json": "8f6014a29e372b36d4df0279c559d6e2257786f30386e0b87f1a3a7b2eadd38a",
+    "long_decode_full_batch_c8/results.json": "eac84ab567bb085e51df8a396b15a0383fa46fd8297e8b1ca1cfa64e471b5c5c",
+    "plan.json": "db7831193f90694f044736b1659b058fd7c7a258d20f271bb84a53cf0a06a3ba",
+    "server_capacity_32.json": "b8973f4d89c598864bd0ab55075464f8d1d9772aa024e54dda4a1a1b1ddcddd5",
+    "server_capacity_32_gpu.json": "b166eced6b8efe480fa98c02e230ada0fd50ac825c9d1803ecce87bcb80b481b",
+    "status.json": "a9826198f75e6b139eacc391705ebe6cbadf1dc94c4154290041df5422378ca7"
+  },
+  "source_runs": [
+    {
+      "directory": "/dfs/scratch0/dongweij/bio-evaluation/.local/concurrency_benchmark_2026-10-17_v3",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu_inventory": "0, GPU-a9e4977f-3666-ba49-d780-55b4191e7f07, NVIDIA A100-SXM4-80GB, 81920 MiB\n",
+        "hostname": "ampere5.stanford.edu",
+        "packages": {
+          "cuda": "13.0",
+          "device": "NVIDIA A100-SXM4-80GB",
+          "torch": "2.13.0+cu130",
+          "visible_gpu_count": 1,
+          "vllm": "0.31.0"
+        },
+        "plan_sha256": "db7831193f90694f044736b1659b058fd7c7a258d20f271bb84a53cf0a06a3ba",
+        "slurm_job_id": "240388"
+      },
+      "gpu_identities_by_server_capacity": {
+        "32": [
+          "GPU-a9e4977f-3666-ba49-d780-55b4191e7f07"
+        ]
+      },
+      "role": "primary",
+      "run_status": {
+        "active_step": "long_decode_full_batch_c32",
+        "completed_steps": [
+          {
+            "exit_code": 0,
+            "name": "capacity32_quick_sweep"
+          },
+          {
+            "exit_code": 0,
+            "name": "long_decode_full_batch_c4"
+          },
+          {
+            "exit_code": 0,
+            "name": "long_decode_full_batch_c8"
+          },
+          {
+            "exit_code": 0,
+            "name": "long_decode_full_batch_c16"
+          },
+          {
+            "exit_code": 0,
+            "name": "long_decode_full_batch_c32"
+          }
+        ],
+        "server_capacity": 32,
+        "slurm_job_id": "240388",
+        "stage": "completed",
+        "updated_at": "2026-10-17T22:04:18.722462-07:00"
+      },
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "selected_rows": [
+        "concurrency_benchmark_2026-10-17_v3/capacity32_quick_sweep/repeat_01_concurrency_004",
+        "concurrency_benchmark_2026-10-17_v3/capacity32_quick_sweep/repeat_01_concurrency_008",
+        "concurrency_benchmark_2026-10-17_v3/capacity32_quick_sweep/repeat_01_concurrency_016",
+        "concurrency_benchmark_2026-10-17_v3/capacity32_quick_sweep/repeat_01_concurrency_032",
+        "concurrency_benchmark_2026-10-17_v3/long_decode_full_batch_c4/repeat_01_concurrency_004",
+        "concurrency_benchmark_2026-10-17_v3/long_decode_full_batch_c8/repeat_01_concurrency_008",
+        "concurrency_benchmark_2026-10-17_v3/long_decode_full_batch_c16/repeat_01_concurrency_016",
+        "concurrency_benchmark_2026-10-17_v3/long_decode_full_batch_c32/repeat_01_concurrency_032"
+      ],
+      "source_files": {
+        "capacity32_quick_sweep/config.json": "4bac53860f44931a4a936fc642a73cc4300396a24fb6dd8d93a54217ed27c26e",
+        "capacity32_quick_sweep/progress.json": "631e5fb9cfc79a3cf39512da3afa11a573190ddf018301fb9ed689e2049fdee6",
+        "capacity32_quick_sweep/repeat_01_concurrency_004/metrics_after.prom": "7c31658083eaf13d292de17adf50fd7dd5410c94b86f20e104e027bf3a5d839d",
+        "capacity32_quick_sweep/repeat_01_concurrency_004/metrics_before.prom": "605d0c2520f6a7e674ed7731dd5f5784774999a42d533750e3fbf72fe0dea2c0",
+        "capacity32_quick_sweep/repeat_01_concurrency_004/summary.json": "b4ab2f4bb9074d4f66280af002c233f589d88dbef42dccad1033b9413f2043cf",
+        "capacity32_quick_sweep/repeat_01_concurrency_008/metrics_after.prom": "e4db4b090fea52d26da71be560a2b4e53958ecb5a087485ec156167d90cc6d09",
+        "capacity32_quick_sweep/repeat_01_concurrency_008/metrics_before.prom": "ae679c445920c63b134a9f8169538b3f608a73aefd6c9bab83bceea111ec8698",
+        "capacity32_quick_sweep/repeat_01_concurrency_008/summary.json": "44f4b01a7a96a1bfc6db6be0defef631ec09acd3f7477686e2a608db0affdda8",
+        "capacity32_quick_sweep/repeat_01_concurrency_016/metrics_after.prom": "ed9a949c32eb20cbdcae7eb27e49d7fd013b8185ef0ca409ff8eae93fb1d5f01",
+        "capacity32_quick_sweep/repeat_01_concurrency_016/metrics_before.prom": "45e3478ddbbd9a3e79d3e6f49677e65dd48da5e6975d83236a68c99d65c6e712",
+        "capacity32_quick_sweep/repeat_01_concurrency_016/summary.json": "825a330155f4a36a20c7ad4991afd7e689d4be8ce66d30d5800a0021c785d1f2",
+        "capacity32_quick_sweep/repeat_01_concurrency_032/metrics_after.prom": "305bdf9135883c7a3430d32110de04a9f606163854dcfcf4fc60b60441ef6d32",
+        "capacity32_quick_sweep/repeat_01_concurrency_032/metrics_before.prom": "afbb82a74126475a5fd6b64d52f920007b617e78841ccc8656c7768a1f453719",
+        "capacity32_quick_sweep/repeat_01_concurrency_032/summary.json": "60e20662df08889d57e6b0f2e928996525d00ec64992bd91b814fc8e3b622946",
+        "capacity32_quick_sweep/results.json": "6cef98518df9c06a166f4a9d28cf8c0fa6d5408f96183ab0781f8f71fd9db25e",
+        "environment.json": "9396519e16183b54e6fed104a7056da524d2353ac88d15f61a81a2a88c04844b",
+        "gpu_telemetry.csv": "026240002b0dd5d1dbd07d01ad294182e781063c2175ae23ade6fc89f35f9536",
+        "long_decode_full_batch_c16/config.json": "f98ca040b2fddde162cc8c46de1e795e23f4bcb34d998103499429616a04f5c6",
+        "long_decode_full_batch_c16/progress.json": "7ac4387418de2839704b14a6a3ce9ef63f55dc30aec1818c4fee37d68a2ed710",
+        "long_decode_full_batch_c16/repeat_01_concurrency_016/metrics_after.prom": "770a84eddd84f9d76421a87f90d9674720c0d1f5f063ec14e2a7273c9fae9dd0",
+        "long_decode_full_batch_c16/repeat_01_concurrency_016/metrics_before.prom": "98ca7b51895c3180108f5624c4e22536a99a4e43a2cb6026afd6f82f148af431",
+        "long_decode_full_batch_c16/repeat_01_concurrency_016/summary.json": "df1ec62c8635d2207449affaeaf08433e900f0d045f1fe1411cef70c58d19a30",
+        "long_decode_full_batch_c16/results.json": "8812304967594c8ff0bfe462fd67996a2c5550c830b4a30f9939d413003192ac",
+        "long_decode_full_batch_c32/config.json": "7bd8f8ebfafde255e8b4cc16e17830f8475919642e8932ab4263fb4c77b23a36",
+        "long_decode_full_batch_c32/progress.json": "d96f2d0c8f585b40b256ba1c3211fcb6e00fd6cd32af303e8cf61e4c5932c503",
+        "long_decode_full_batch_c32/repeat_01_concurrency_032/metrics_after.prom": "74d5f2e5b8e65e2c973c73b809d368da39b9a34a1f3d31b9c67e35bdc94c809e",
+        "long_decode_full_batch_c32/repeat_01_concurrency_032/metrics_before.prom": "4459f7345ed8c83c26304e6040a400ba42ffb677c10ccd69b6cd63f3b067e117",
+        "long_decode_full_batch_c32/repeat_01_concurrency_032/summary.json": "677f500161a8d2ef4d2b03c9212de48fd15d91e1987e996ebd8de473eacfdd88",
+        "long_decode_full_batch_c32/results.json": "33e1788658199ca854b720c3e05b30cf61954d9514b72a9f27e2701e06bb0203",
+        "long_decode_full_batch_c4/config.json": "cfe7757431083630a6b324d1db4a64cda05fb7dd8559a9cb20bf816178e444bb",
+        "long_decode_full_batch_c4/progress.json": "6d3e1f37e000e90570b002cbfe67658ea5f35ba8221014fa74d38584feb20a7b",
+        "long_decode_full_batch_c4/repeat_01_concurrency_004/metrics_after.prom": "8d942ced9539f23d2301ca11e03e2a993057962c8b921f1295559a2d8b8d24d8",
+        "long_decode_full_batch_c4/repeat_01_concurrency_004/metrics_before.prom": "d10537d382cf209e7dddac5fd9c39eaa00060b5064447acbf6826570ab1a2add",
+        "long_decode_full_batch_c4/repeat_01_concurrency_004/summary.json": "2f87e43294b8aa1e6bda8b03e1d0f486c47fdf3cdd3dce08920fa18943b76fa4",
+        "long_decode_full_batch_c4/results.json": "6a79b036639ca12b5535ac4de1110f8c17fed61bf3c91aab5c32012c823bbdd9",
+        "long_decode_full_batch_c8/config.json": "9c20f5298f193aa7531bc8307f8d7874f788cdf74e80fe517dc2dc9458e3dbce",
+        "long_decode_full_batch_c8/progress.json": "05e597e5973a3a2e2280164b8967a47935def11f50d9ded98872fbaf8d23878f",
+        "long_decode_full_batch_c8/repeat_01_concurrency_008/metrics_after.prom": "99df9af7ca45243e983d120822bec51d1d8c04c1c5dba3d689e7fd7df6666f96",
+        "long_decode_full_batch_c8/repeat_01_concurrency_008/metrics_before.prom": "8b6c976cc451cd34eb4aa2c8a6f0dc000ed2ca5c3435d934c79926ca7e64930d",
+        "long_decode_full_batch_c8/repeat_01_concurrency_008/summary.json": "8f6014a29e372b36d4df0279c559d6e2257786f30386e0b87f1a3a7b2eadd38a",
+        "long_decode_full_batch_c8/results.json": "eac84ab567bb085e51df8a396b15a0383fa46fd8297e8b1ca1cfa64e471b5c5c",
+        "plan.json": "db7831193f90694f044736b1659b058fd7c7a258d20f271bb84a53cf0a06a3ba",
+        "server_capacity_32.json": "b8973f4d89c598864bd0ab55075464f8d1d9772aa024e54dda4a1a1b1ddcddd5",
+        "server_capacity_32_gpu.json": "b166eced6b8efe480fa98c02e230ada0fd50ac825c9d1803ecce87bcb80b481b",
+        "status.json": "a9826198f75e6b139eacc391705ebe6cbadf1dc94c4154290041df5422378ca7"
+      }
+    },
+    {
+      "directory": "/dfs/scratch0/dongweij/bio-evaluation/.local/concurrency_benchmark_2026-10-17_v2",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu_inventory": "0, GPU-45231a7f-7918-33b7-0ef7-05c1372dc3c4, NVIDIA A100-SXM4-80GB, 81920 MiB\n",
+        "hostname": "ampere3.stanford.edu",
+        "packages": {
+          "cuda": "13.0",
+          "device": "NVIDIA A100-SXM4-80GB",
+          "torch": "2.13.0+cu130",
+          "visible_gpu_count": 1,
+          "vllm": "0.31.0"
+        },
+        "plan_sha256": "1dbd29649642b75ac0129d2b2af1d88673647d6f8ff2da47519fa48cfdb955f7",
+        "slurm_job_id": "240386"
+      },
+      "gpu_identities_by_server_capacity": {
+        "32": [],
+        "4": [
+          "GPU-45231a7f-7918-33b7-0ef7-05c1372dc3c4"
+        ]
+      },
+      "role": "original_baseline",
+      "run_status": {
+        "active_step": "production_capacity4_quick",
+        "completed_steps": [
+          {
+            "exit_code": 0,
+            "name": "production_capacity4_quick"
+          }
+        ],
+        "error": "OSError: [Errno 98] Address already in use",
+        "server_capacity": 4,
+        "slurm_job_id": "240386",
+        "stage": "failed",
+        "updated_at": "2026-10-17T21:40:38.540128-07:00"
+      },
+      "sampling": {
+        "settings": {
+          "seed": 42,
+          "temperature": 1.0,
+          "top_k": 20,
+          "top_p": 0.95
+        },
+        "source": "observed client config"
+      },
+      "selected_rows": [
+        "concurrency_benchmark_2026-10-17_v2/production_capacity4_quick/repeat_01_concurrency_004"
+      ],
+      "source_files": {
+        "environment.json": "9c7fe747d314acc32bb5167912ba62e4a1dbbc3272e5427e364c3144152b88e8",
+        "gpu_telemetry.csv": "c685b2acb02d3403ea0a9f1f2e6ee3583746940ed5a33f4ca9a211b130a93110",
+        "plan.json": "1dbd29649642b75ac0129d2b2af1d88673647d6f8ff2da47519fa48cfdb955f7",
+        "production_capacity4_quick/config.json": "cec3b4dabdef80623436f937cc87c0750c677e9e616298ca9daf1333b2f6680f",
+        "production_capacity4_quick/progress.json": "00c4a3f514c26e90138b0a800f4761a54cb8da2209df45e0796b8f007c04672a",
+        "production_capacity4_quick/repeat_01_concurrency_004/metrics_after.prom": "6ef1d79317111c94a495cc0f8f415cbdc80885273ad9f954e242aa6861ddcf0e",
+        "production_capacity4_quick/repeat_01_concurrency_004/metrics_before.prom": "3cc0481fe8c1c49160320f163be09b57fab6a8f2170b19f8802f9c53662ebd1b",
+        "production_capacity4_quick/repeat_01_concurrency_004/summary.json": "89f54a35a0b9cb0ccb1ea859b4c9b93ac997cbc8dd06d217494ab34ec14ff8f8",
+        "production_capacity4_quick/results.json": "e0cc0837c82ea7c97ae7f1681053500ff7d4962a08cac963e285aa9be7c58472",
+        "server_capacity_4.json": "830dbe376dc49c5a54ba76af58ebb4753e33fbf910b4bb20e446bb6cbcd7c743",
+        "server_capacity_4_gpu.json": "4039774f4300fda6ff606a709dceb944fb6924a53d5330c35b6c3ac31a674506",
+        "status.json": "2691b55227b51f10a06dd737419c6fb44a9d26038bd077aa1db307481236786c"
+      }
+    }
+  ],
+  "time_zone": "America/Los_Angeles"
+}

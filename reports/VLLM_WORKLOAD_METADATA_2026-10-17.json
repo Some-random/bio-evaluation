@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "recorded_at_pacific": "2026-10-17T21:21:29.029437-07:00",
+  "purpose": "Serving throughput workload selection using saved-response metadata only; not an evaluation result or protocol change.",
+  "sample_method": {
+    "max_saved_responses_per_task": 200,
+    "random_seed": 20261018,
+    "selection": "Uniform reservoir sampling of sorted run directories and sorted response filenames in the primary family/results/runs tree. Each task restarts the seed. Filenames enumerated once per task; only selected JSON files opened.",
+    "metadata_fields": [
+      "response.usage.prompt_tokens",
+      "response.usage.completion_tokens",
+      "response.system_fingerprint",
+      "elapsed_seconds",
+      "finish_reason",
+      "http_status"
+    ],
+    "content_exclusion": "No prompt, sequence, label, reasoning or final-answer content is included in this report or used to choose the synthetic text.",
+    "quantile_definition": "p50 is conventional median; p90 is nearest-rank ceil(0.9*n).",
+    "caveat": "Saved files accumulate during sampling. Samples describe already-saved responses, not all planned cases; per-request elapsed_seconds is not aggregate throughput."
+  },
+  "tasks": [
+    {
+      "task_id": "P07",
+      "source_root": ".local/remaining_evaluations/extended/results/runs",
+      "enumerated_saved_responses": 25642,
+      "sampled_saved_responses": 200,
+      "sample_relative_paths_sha256": "d8e0fb20a93ab681f1a382f642fe09c60b4a7b5c3da5db32b3f89e6edfe5bdb9",
+      "prompt_tokens": {
+        "n": 200,
+        "min": 182,
+        "p50": 186.0,
+        "p90": 188,
+        "max": 191,
+        "mean": 186.15
+      },
+      "completion_tokens": {
+        "n": 200,
+        "min": 1354,
+        "p50": 4096.0,
+        "p90": 4096,
+        "max": 4096,
+        "mean": 4006.235
+      },
+      "request_elapsed_seconds": {
+        "n": 200,
+        "min": 48.787,
+        "p50": 147.7215,
+        "p90": 147.851,
+        "max": 147.909,
+        "mean": 144.253
+      },
+      "finish_reasons": {
+        "length": 189,
+        "stop": 11
+      },
+      "length_finish_fraction": 0.945,
+      "system_fingerprints": {
+        "vllm-0.31.0-4bc91a51": 200
+      },
+      "http_statuses": {
+        "200": 200
+      },
+      "read_errors": []
+    },
+    {
+      "task_id": "P08",
+      "source_root": ".local/remaining_evaluations/extended/results/runs",
+      "enumerated_saved_responses": 2485,
+      "sampled_saved_responses": 200,
+      "sample_relative_paths_sha256": "151040735bef947a9d3b3a39b89d1fe962978628b8399a86476c6cc6428300a5",
+      "prompt_tokens": {
+        "n": 200,
+        "min": 80,
+        "p50": 85.0,
+        "p90": 86,
+        "max": 87,
+        "mean": 84.73
+      },
+      "completion_tokens": {
+        "n": 200,
+        "min": 773,
+        "p50": 1266.0,
+        "p90": 1906,
+        "max": 3196,
+        "mean": 1358.29
+      },
+      "request_elapsed_seconds": {
+        "n": 200,
+        "min": 27.719,
+        "p50": 45.3595,
+        "p90": 68.125,
+        "max": 114.339,
+        "mean": 48.685
+      },
+      "finish_reasons": {
+        "stop": 200
+      },
+      "length_finish_fraction": 0.0,
+      "system_fingerprints": {
+        "vllm-0.31.0-4bc91a51": 200
+      },
+      "http_statuses": {
+        "200": 200
+      },
+      "read_errors": []
+    },
+    {
+      "task_id": "P16",
+      "source_root": ".local/remaining_evaluations/p16/results/runs",
+      "enumerated_saved_responses": 2662,
+      "sampled_saved_responses": 200,
+      "sample_relative_paths_sha256": "5ec4e1b79944bf619a62f9a1541dec326cfa694521da89e58268ffad9376fec9",
+      "prompt_tokens": {
+        "n": 200,
+        "min": 44663,
+        "p50": 44764.0,
+        "p90": 44891,
+        "max": 45068,
+        "mean": 44780.965
+      },
+      "completion_tokens": {
+        "n": 200,
+        "min": 693,
+        "p50": 4096.0,
+        "p90": 4096,
+        "max": 4096,
+        "mean": 3740.54
+      },
+      "request_elapsed_seconds": {
+        "n": 200,
+        "min": 8.634,
+        "p50": 50.555,
+        "p90": 50.734,
+        "max": 61.414,
+        "mean": 46.267
+      },
+      "finish_reasons": {
+        "length": 159,
+        "stop": 41
+      },
+      "length_finish_fraction": 0.795,
+      "system_fingerprints": {
+        "vllm-0.31.0-5b6484dd": 200
+      },
+      "http_statuses": {
+        "200": 200
+      },
+      "read_errors": []
+    },
+    {
+      "task_id": "P28",
+      "source_root": ".local/remaining_evaluations/p28/results/runs",
+      "enumerated_saved_responses": 2048,
+      "sampled_saved_responses": 200,
+      "sample_relative_paths_sha256": "612531fad34aa349d3f097fba5477183e410e70fead43cef4a53ca232c8bf1d7",
+      "prompt_tokens": {
+        "n": 200,
+        "min": 531,
+        "p50": 1489.5,
+        "p90": 2837,
+        "max": 6427,
+        "mean": 1732.945
+      },
+      "completion_tokens": {
+        "n": 200,
+        "min": 3564,
+        "p50": 4096.0,
+        "p90": 4096,
+        "max": 4096,
+        "mean": 4090.805
+      },
+      "request_elapsed_seconds": {
+        "n": 200,
+        "min": 131.082,
+        "p50": 150.2215,
+        "p90": 251.218,
+        "max": 299.139,
+        "mean": 165.443
+      },
+      "finish_reasons": {
+        "length": 194,
+        "stop": 6
+      },
+      "length_finish_fraction": 0.97,
+      "system_fingerprints": {
+        "vllm-0.31.0-4bc91a51": 200
+      },
+      "http_statuses": {
+        "200": 200
+      },
+      "read_errors": []
+    },
+    {
+      "task_id": "P29",
+      "source_root": ".local/remaining_evaluations/p29/results/runs",
+      "enumerated_saved_responses": 4096,
+      "sampled_saved_responses": 200,
+      "sample_relative_paths_sha256": "394452486607ec5c92daf6f2f2582172f2db1284f7bf1842e20603d4ed3886d4",
+      "prompt_tokens": {
+        "n": 200,
+        "min": 750,
+        "p50": 1350.5,
+        "p90": 2231,
+        "max": 7154,
+        "mean": 1557.705
+      },
+      "completion_tokens": {
+        "n": 200,
+        "min": 4096,
+        "p50": 4096.0,
+        "p90": 4096,
+        "max": 4096,
+        "mean": 4096
+      },
+      "request_elapsed_seconds": {
+        "n": 200,
+        "min": 148.213,
+        "p50": 149.72250000000003,
+        "p90": 262.854,
+        "max": 299.019,
+        "mean": 169.887
+      },
+      "finish_reasons": {
+        "length": 200
+      },
+      "length_finish_fraction": 1.0,
+      "system_fingerprints": {
+        "vllm-0.31.0-044a22dd": 200
+      },
+      "http_statuses": {
+        "200": 200
+      },
+      "read_errors": []
+    }
+  ],
+  "serving_observations": [
+    {
+      "worker": "extended2-237671",
+      "execution_environment_source": ".local/remaining_evaluations/status/extended2-237671/execution_environment.json",
+      "server_identity_source": ".local/remaining_evaluations/status/extended2-237671/server_identity.json",
+      "server_log_source": ".local/remaining_evaluations/status/extended2-237671/server.log",
+      "environment": {
+        "visible_gpu_count": 1,
+        "device": "NVIDIA A100-SXM4-80GB",
+        "torch": "2.13.0+cu130",
+        "cuda": "13.0",
+        "vllm": "0.31.0"
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 32768,
+      "dtype": "bfloat16",
+      "tensor_parallel_size": 1,
+      "max_num_seqs": 4,
+      "gpu_memory_utilization": 0.9,
+      "prefix_caching_enabled": true,
+      "observed_gpu_used_memory_mib": [
+        71546
+      ],
+      "kv_cache_startup_log": [
+        "(EngineCore pid=3225286) INFO 10-16 00:19:10 [kv_cache_utils.py:2464] GPU KV cache size: 258,048 tokens, Maximum concurrency for 32,768 tokens per request: 7.88x"
+      ],
+      "recent_throughput_log": [
+        "(APIServer pid=3224639) INFO 10-17 21:21:05 [loggers.py:320] Engine 000: Avg prompt throughput: 17.1 tokens/s, Avg generation throughput: 110.1 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 4.5%, Prefix cache hit rate: 0.0%, MM cache hit rate: 0.0%",
+        "(APIServer pid=3224639) INFO 10-17 21:21:15 [loggers.py:320] Engine 000: Avg prompt throughput: 8.6 tokens/s, Avg generation throughput: 111.2 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 4.5%, Prefix cache hit rate: 0.0%, MM cache hit rate: 0.0%"
+      ]
+    },
+    {
+      "worker": "p16_1-237718",
+      "execution_environment_source": ".local/remaining_evaluations/status/p16_1-237718/execution_environment.json",
+      "server_identity_source": ".local/remaining_evaluations/status/p16_1-237718/server_identity.json",
+      "server_log_source": ".local/remaining_evaluations/status/p16_1-237718/server.log",
+      "environment": {
+        "visible_gpu_count": 1,
+        "device": "NVIDIA B200",
+        "torch": "2.13.0+cu130",
+        "cuda": "13.0",
+        "vllm": "0.31.0"
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 65536,
+      "dtype": "bfloat16",
+      "tensor_parallel_size": 1,
+      "max_num_seqs": 4,
+      "gpu_memory_utilization": 0.9,
+      "prefix_caching_enabled": true,
+      "observed_gpu_used_memory_mib": [
+        164008
+      ],
+      "kv_cache_startup_log": [
+        "(EngineCore pid=2775792) INFO 10-17 12:36:01 [kv_cache_utils.py:2464] GPU KV cache size: 1,613,641 tokens, Maximum concurrency for 65,536 tokens per request: 24.62x"
+      ],
+      "recent_throughput_log": [
+        "(APIServer pid=2775419) INFO 10-17 20:55:40 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 264.5 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 3.7%, Prefix cache hit rate: 98.8%, MM cache hit rate: 0.0%",
+        "(APIServer pid=2775419) INFO 10-17 20:55:50 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 170.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 3.0%, Prefix cache hit rate: 98.8%, MM cache hit rate: 0.0%"
+      ]
+    },
+    {
+      "worker": "p29_0-237687",
+      "execution_environment_source": ".local/remaining_evaluations/status/p29_0-237687/execution_environment.json",
+      "server_identity_source": ".local/remaining_evaluations/status/p29_0-237687/server_identity.json",
+      "server_log_source": ".local/remaining_evaluations/status/p29_0-237687/server.log",
+      "environment": {
+        "visible_gpu_count": 1,
+        "device": "NVIDIA A100-SXM4-80GB",
+        "torch": "2.13.0+cu130",
+        "cuda": "13.0",
+        "vllm": "0.31.0"
+      },
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 49152,
+      "dtype": "bfloat16",
+      "tensor_parallel_size": 1,
+      "max_num_seqs": 4,
+      "gpu_memory_utilization": 0.9,
+      "prefix_caching_enabled": true,
+      "observed_gpu_used_memory_mib": [
+        71546
+      ],
+      "kv_cache_startup_log": [
+        "(EngineCore pid=116349) INFO 10-16 19:57:14 [kv_cache_utils.py:2464] GPU KV cache size: 269,267 tokens, Maximum concurrency for 49,152 tokens per request: 5.48x"
+      ],
+      "recent_throughput_log": [
+        "(APIServer pid=115833) INFO 10-17 20:58:51 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 30.3 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%, MM cache hit rate: 0.0%",
+        "(APIServer pid=115833) INFO 10-17 20:59:01 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%, MM cache hit rate: 0.0%"
+      ]
+    }
+  ],
+  "recommended_synthetic_profiles": [
+    {
+      "name": "quick_sweep",
+      "input_tokens": 192,
+      "generated_tokens": 512,
+      "purpose": "Fast concurrency4,8,16,32 comparison; shorter than dominant real output and insufficient alone for rollout."
+    },
+    {
+      "name": "short_input_long_output",
+      "input_tokens": 192,
+      "generated_tokens": 4096,
+      "purpose": "Representative of P07 GFP sequence prediction; primary realistic throughput benchmark."
+    },
+    {
+      "name": "medium_input_long_output",
+      "input_tokens": 1536,
+      "generated_tokens": 4096,
+      "purpose": "Representative GO input size, useful winner validation."
+    }
+  ],
+  "benchmark_guidance": [
+    "Generate artificial non-biological text independent of evaluation files. Match token counts; do not send saved evaluation content to the benchmark solver.",
+    "Use fixed output-token generation with ignore_eos for synthetic throughput measurement and record this difference from evaluation generations.",
+    "Record effective concurrency, request count, prompt/completion counts, wall time, request and token throughput, latency, failures, KV cache use and preemption.",
+    "Keep model checkpoint, BF16 precision and one TP1 replica identical to production. Changing max_num_seqs for synthetic measurement does not modify evaluation prompts or response budgets.",
+    "P16 is a separate long-context B200 workload: about44.8k input tokens and strong shared-prefix caching. A unique random45k prompt on A100 would not model its observed cache behavior."
+  ],
+  "no_evaluation_runs_modified": true
+}
