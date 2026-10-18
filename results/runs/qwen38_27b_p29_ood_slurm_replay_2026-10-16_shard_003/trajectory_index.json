@@ -1,5 +1,17 @@
 [
   {
+    "archive_sha256": "e5c9e6fd0253d242fde609c6ca879206f7017e144ca671e61a0943470e3e7a1a",
+    "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part013/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003-trajectories-66ed5bd48c2f531c50a4.tar.gz",
+    "case_id": "P29:ood:Q9HDW7",
+    "filename": "01ca631135379218ceca3e2e5b0893849e2380e525edb493b37629f7987cb081.json",
+    "payload_sha256": "e5d4a601481639c9d702e4ab740dae0a1a53f1eb26be2937ef894a9036c03603",
+    "request_member": "requests/01ca631135379218ceca3e2e5b0893849e2380e525edb493b37629f7987cb081.json",
+    "request_sha256": "e8f22e677f9cd87909b6a9dad3d6c1ccb025056dab23f7a8d2d72279d4eda29a",
+    "response_member": "responses/01ca631135379218ceca3e2e5b0893849e2380e525edb493b37629f7987cb081.json",
+    "response_sha256": "7e1c75049deac9ff9b84849e5c38b075ca70c5de8e4230aeb049eaf445351028",
+    "status": "completed"
+  },
+  {
     "archive_sha256": "95843a519c39ebb848bcbadc56725bb9c22280c5c0062dcba822fc3f755223be",
     "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part013/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003-trajectories-e987e80055b1ccbe0244.tar.gz",
     "case_id": "P29:ood:O14279",
@@ -429,6 +441,18 @@
     "request_sha256": "1ad0f7b34744f81f0612ffae76fb4e7a0a4e090f398c38fedac16a46ad1c77a4",
     "response_member": "responses/dd860051ca64118c51aa52c6ccf654d3133f458d2239ff450e2a0288052b239d.json",
     "response_sha256": "168b57302dcbd1e59d49a069cbc223a63885a9947b96c13d10cf0e5808ab3075",
+    "status": "completed"
+  },
+  {
+    "archive_sha256": "e5c9e6fd0253d242fde609c6ca879206f7017e144ca671e61a0943470e3e7a1a",
+    "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part013/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003-trajectories-66ed5bd48c2f531c50a4.tar.gz",
+    "case_id": "P29:ood:O60150",
+    "filename": "df0aa4e75e53f9afec8778cdbe7608dab98a329f14298b038f481d5423705804.json",
+    "payload_sha256": "79bb82d755d86545fdc3ebd096dc181d4f2c47f83b98de57a0a6702ed4225a50",
+    "request_member": "requests/df0aa4e75e53f9afec8778cdbe7608dab98a329f14298b038f481d5423705804.json",
+    "request_sha256": "f0dafd68caa916304ef1617330769cd5fa829e8d9a9863276165e195ee7a7717",
+    "response_member": "responses/df0aa4e75e53f9afec8778cdbe7608dab98a329f14298b038f481d5423705804.json",
+    "response_sha256": "dc69fc05080f108ca34898fe3082c29aa2999994103403b051269c0ee6c90927",
     "status": "completed"
   },
   {
