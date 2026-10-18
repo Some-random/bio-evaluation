@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-18T05:22:35.949025+00:00",
+  "generatedAt": "2026-10-18T05:29:40.761008+00:00",
   "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-  "runSnapshotAt": "2026-10-18T05:22:35.949025+00:00",
+  "runSnapshotAt": "2026-10-18T05:29:40.761008+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-18T05:22:35.949025+00:00",
+    "updatedAt": "2026-10-18T05:29:40.761008+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
     "reports/RESULTS_AT_A_GLANCE.json": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
-    ".local/remaining_evaluations/supervisor_status.json": "1eeb3d716269ab19e0dc68401a6f0341efa9250b1a9ed531e19da1b04d3b9bd4",
-    ".local/remaining_evaluations/upload_status.json": "bae4604d3f7dfbe112c9d147c20320596da10dfd993d57627e211ee6b06c7a93"
+    ".local/remaining_evaluations/supervisor_status.json": "6b114c3d3af2810e2ecbde0b304118451c241ea40ba38d8bfd86b7946aec598d",
+    ".local/remaining_evaluations/upload_status.json": "e559bcfa935b6986532eb5df785d2aa397c8cce83bb2cfb2f914b6d5190396da"
   },
   "uploader": {
     "stage": "retry_pending",
-    "commitSha": "1d879707d5b6af30a173dbcdee99d9b7cb7f323d",
+    "commitSha": "14813af07d12b2c4415b0636a15a60f27690c1f3",
     "repositoryPrivateVerified": false
   },
   "scheduler": {
@@ -24,82 +24,82 @@
       {
         "job_id": "237724",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237723",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237722",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237721",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237694",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237693",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237692",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237691",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237690",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237689",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237685",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237684",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237683",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237682",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237681",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237680",
         "state": "PENDING",
-        "node_or_reason": "(Dependency)"
+        "node_or_reason": "(JobHeldUser)"
       },
       {
         "job_id": "237676",
@@ -171,7 +171,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 41093,
+    "uploaded": 41280,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -196,7 +196,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 25932,
+      "uploaded": 25973,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 24,
@@ -236,7 +236,7 @@
     {
       "taskId": "P08",
       "planned": 12851,
-      "uploaded": 3277,
+      "uploaded": 3381,
       "saved": null,
       "generationRuns": 13,
       "terminalRuns": 2,
@@ -318,7 +318,7 @@
     {
       "taskId": "P16",
       "planned": 5651,
-      "uploaded": 2967,
+      "uploaded": 3009,
       "saved": null,
       "generationRuns": 6,
       "terminalRuns": 3,
@@ -403,7 +403,7 @@
   ],
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/upload_status.json",
-    "snapshotAt": "2026-10-18T05:22:35.949025+00:00",
+    "snapshotAt": "2026-10-18T05:29:40.761008+00:00",
     "fallback": true,
     "selection": "most_recent_valid_run_snapshot"
   },
@@ -416,7 +416,7 @@
   "metadataNotice": {
     "source": ".local/remaining_evaluations/supervisor_status.json",
     "stage": "retry_pending",
-    "updatedAt": "2026-10-18T05:23:58.787664+00:00",
+    "updatedAt": "2026-10-18T05:30:06.206848+00:00",
     "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
   }
 }
