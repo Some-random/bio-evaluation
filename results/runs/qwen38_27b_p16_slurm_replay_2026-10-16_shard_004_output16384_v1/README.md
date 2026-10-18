@@ -1,6 +1,6 @@
 # P16 — 16,384-token continuation
 
-**MIXED_BUDGET_4K16K_CONTINUATION**. 319/615 new-cohort responses archived.
+**MIXED_BUDGET_4K16K_CONTINUATION**. 324/615 new-cohort responses archived.
 
 Only cases never dispatched at the clean pause enter this folder. [Original 4,096-token source](../qwen38_27b_p16_slurm_replay_2026-10-16_shard_004) and its raw outputs remain preserved. Full-task metrics require the original and new case union and must carry the mixed-budget label.
 
