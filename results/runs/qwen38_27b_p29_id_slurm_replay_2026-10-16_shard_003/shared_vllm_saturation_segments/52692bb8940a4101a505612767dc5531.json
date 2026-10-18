@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "segment_id": "52692bb8940a4101a505612767dc5531",
-  "stage": "running",
+  "stage": "paused",
   "started_at_utc": "2026-10-18T18:22:16.813306+00:00",
   "amendment_sha256": "376d4bff3cd52b1e21adb9c708b266aa41358990c68f7b6d32a91bf5e4b81383",
   "actual_runner_sha256": "8473aeee85c63bba6e1b390b9acf78477d8a81435d7e0504ce1b086515965256",
@@ -289,5 +289,11 @@
   "protocol_changes": [],
   "baseline_statuses": {
     "completed": 330
+  },
+  "closed_at_utc": "2026-10-18T19:33:01.089566+00:00",
+  "dispatched": 27,
+  "statuses": {
+    "completed": 357,
+    "undispatched": 667
   }
 }
