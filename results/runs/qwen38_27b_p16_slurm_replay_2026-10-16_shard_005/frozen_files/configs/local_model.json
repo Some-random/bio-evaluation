@@ -1,0 +1,17 @@
+{
+  "benchmark_inference_authorized": true,
+  "approved_task_ids": [
+    "P16"
+  ],
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "model_directory": "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+  "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+  "gpu_ids": [
+    0
+  ],
+  "tensor_parallel_size": 1,
+  "max_num_seqs": 4,
+  "host": "127.0.0.1",
+  "port": 8026
+}

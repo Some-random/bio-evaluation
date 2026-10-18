@@ -1,0 +1,132 @@
+{
+  "frozen_at_utc": "2026-10-16T07:14:26.162288+00:00",
+  "execution_authorized": false,
+  "input_review_complete": true,
+  "shard_size": 1024,
+  "partition_policy": "Fixed source-order1024-row slices, all5651 IDs exactly once; complete class context precedes varying sequence; no label/output selection.",
+  "replica_order": [
+    {
+      "gpu_ids": [
+        6
+      ],
+      "port": 8027
+    },
+    {
+      "gpu_ids": [
+        4
+      ],
+      "port": 8029
+    },
+    {
+      "gpu_ids": [
+        7
+      ],
+      "port": 8028
+    },
+    {
+      "gpu_ids": [
+        5
+      ],
+      "port": 8026
+    }
+  ],
+  "source_recipe_file": "configs/local_labbench_b07.json",
+  "source_recipe_sha256": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "generation": {
+    "max_tokens": 4096,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "seed": 42,
+    "n": 1,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "concurrency": 4,
+  "tasks": [
+    {
+      "task_id": "P16",
+      "aggregate_config_file": "configs/local_reaction_p16_aggregate.json",
+      "aggregate_config_sha256": "5d43ba2a1dff79c62c1b61bc06d11b667aba4e3646927268b91095c8cdc7cf3a",
+      "aggregate_run_id": "qwen38_27b_p16_slurm_replay_2026-10-16",
+      "full_test_case_count": 5651,
+      "shard_count": 6,
+      "shards": [
+        {
+          "config_file": "configs/local_reaction_p16_shard_000.json",
+          "config_sha256": "fac098bef4659a3dfa0b21498c24b49dd4adc1b69bc901af5f601cdb6eab9990",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
+          "shard_index": 0,
+          "cases": 1024,
+          "gpu_ids": [
+            0
+          ],
+          "endpoint": "http://127.0.0.1:8026/v1"
+        },
+        {
+          "config_file": "configs/local_reaction_p16_shard_001.json",
+          "config_sha256": "654a274f78d15dba7177087656b8297ce51ac983330db89dba59dd93d7998c38",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_001",
+          "shard_index": 1,
+          "cases": 1024,
+          "gpu_ids": [
+            0
+          ],
+          "endpoint": "http://127.0.0.1:8027/v1"
+        },
+        {
+          "config_file": "configs/local_reaction_p16_shard_002.json",
+          "config_sha256": "403fd7d5eae9e84720aa20902eaca888cf2797f8faf84179322c25f8be11c572",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_002",
+          "shard_index": 2,
+          "cases": 1024,
+          "gpu_ids": [
+            0
+          ],
+          "endpoint": "http://127.0.0.1:8026/v1"
+        },
+        {
+          "config_file": "configs/local_reaction_p16_shard_003.json",
+          "config_sha256": "fd07a14c1cbc1d1e153682b64ab680f0169e10e21a93c47db45efe4def9662de",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_003",
+          "shard_index": 3,
+          "cases": 1024,
+          "gpu_ids": [
+            0
+          ],
+          "endpoint": "http://127.0.0.1:8027/v1"
+        },
+        {
+          "config_file": "configs/local_reaction_p16_shard_004.json",
+          "config_sha256": "977a4f0e871a4355ec794e647e86539bfaf2c9bd84b9f1068fbc12c476ca9197",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004",
+          "shard_index": 4,
+          "cases": 1024,
+          "gpu_ids": [
+            0
+          ],
+          "endpoint": "http://127.0.0.1:8026/v1"
+        },
+        {
+          "config_file": "configs/local_reaction_p16_shard_005.json",
+          "config_sha256": "8e20262ddd15da22a40fbe5b2af12e4ecca9d541183afc95e94183154f82af16",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_005",
+          "shard_index": 5,
+          "cases": 531,
+          "gpu_ids": [
+            0
+          ],
+          "endpoint": "http://127.0.0.1:8027/v1"
+        }
+      ]
+    }
+  ],
+  "inference_dispatched": false,
+  "authorizations_or_queues_modified": false,
+  "global_metric_policy": "Score all original test predictions once globally with fixed384-class native accuracy; no averaging of shard metrics.",
+  "deployment_note": "Two independent B200 Slurm allocations, logicalGPU0 and65536context. Original5651caseinputs and4096output recipe unchanged."
+}
