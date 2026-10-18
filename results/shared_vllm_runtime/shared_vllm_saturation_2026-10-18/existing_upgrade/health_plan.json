@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "root": "/dfs/scratch0/dongweij/bio-evaluation",
+  "pool_directory": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/existing_upgrade",
+  "pool_plan_filename": "saturation_serving_plan.json",
+  "pool_plan_sha256": "2f9f6140530d0967b95bdd35d4f8c84a4db3dd2c021f35b8a3ea95de3a88d0eb",
+  "pool_status_filename": "serving_status.json",
+  "endpoints_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/existing_upgrade/saturation_endpoints.json",
+  "endpoints_sha256": "5fa3a19e7c740aee2f3b64c733239a8ec891cfadf24a817a395cd93828e67b59",
+  "amendment_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/amendment_existing_pool.json",
+  "amendment_sha256": "b7f966e3ede1fca67e8c66889a1e6dd0650beabaf2ad0fc0da92bb27c5130461",
+  "code_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/watch_shared_vllm_health.py": "c2783f3c87e2ccd1ed97ed004aaf53c0420e6cea37d84c78b4c0dfb12e02c19f"
+  },
+  "state_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/existing_upgrade/health_state.json",
+  "public_output_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/existing_upgrade/health_public.json",
+  "interval_seconds": 60,
+  "thresholds": {
+    "high_kv_fraction": 0.95,
+    "stall_seconds": 600,
+    "minimum_responses_for_format_warning": 20,
+    "high_truncation_fraction": 0.5
+  }
+}

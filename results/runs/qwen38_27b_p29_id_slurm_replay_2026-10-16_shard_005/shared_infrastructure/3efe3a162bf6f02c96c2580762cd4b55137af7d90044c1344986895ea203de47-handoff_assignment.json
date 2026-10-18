@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "kind": "shared_vllm_handoff_assignment",
+  "parent_amendment": {
+    "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_migration_2026-10-17/amendment_v2.json",
+    "sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7"
+  },
+  "drain_receipt": {
+    "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/drain_receipt.json",
+    "sha256": "eb2d2eee509c42997f44d09396fc3e81b25ac28498f4bcd5a5e4cdccc31d251d"
+  },
+  "closed_source_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_fast_v2.json": "08e23f835df49659ebcd6f5da82e655c056b8a35d6a90cf7f6733eddf76e1bce",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_bulk_v2.json": "4e0b26baec5d9a547abd1f05dfdbe9430391d2816817cbd4b6fedbcdfb5518e8",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_pool_v2.json": "e662b329176090eefd168a4e901804575c50e0824da0477d6f005de1d3550913",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_pool_v1.json": "57287cd2151ff1c77138fdba6e999a141658bb5fae95265bcbf0391c5fb19cb5",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16_pool_v1.json": "028d8156f98f034406b14291b133be4ed6a53e3f38f6ac8deb7a813bf216c4e0",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri_pool_v1.json": "1800cdf58e0504f3e67220041669d0c5c30edb636672cbb6a76f6627113626c8",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002_shared_continuation_v1/shared_vllm_generation_completion.json": "72a48931e2185877167e0640d7f789b185141b22d4ee2dc8b06802f66a745e6c",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002/context_check.json": "5d87ed942549cda19da6fd23e3dddad6132f336853b5f3b1a606163a28cf1ae0",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008/shared_vllm_generation_completion.json": "e1e60c13f01786735c4fb5cf4e7cd22a1cc0e1ef4059023296225148cfbfe70e",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/status/extended2-237671/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008/context_check.json": "a5c69bc794dda344e41c3c91f86c1ee73307537219f9ae55ea199f2bb324abb9",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024/shared_vllm_generation_completion.json": "15a75a9b6dfe8c67e4fba7583ff641426a57b17b709613dbde322559202a4ab9",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024/context_check.json": "23e578cbdea5e35db0305317ff6a96415b8b520de3d59c3a46b6daab555301c2",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003/shared_vllm_generation_completion.json": "d9dcd248739f9c0849a405427e1ddd985ff24b9e32c3a956a84648357187d9af",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/status/extended3-237672/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003/context_check.json": "fe9476e80f3e06a2c0196ad950baf95aa4b1357e5ed5fa91fce475f660bc1848",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009/shared_vllm_generation_completion.json": "f9ff75af63fe686e13d196d103fcbb5125810fe4af4d490ce1e5bd1762be2736",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/status/extended3-237672/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009/context_check.json": "7712e002a659c09a52e04da89b6cf2f67fdf76b34fea6c4d0f37c053662c6804",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025/shared_vllm_generation_completion.json": "cda33bbd5c8201aa559a8eee9dadc8ff03e6d17eba2c241474cea4e5f4fdc574",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025/context_check.json": "68fdd105b58530237d31bc8d76ba80e6741a3c80ee86b8cbe611276f003a856b",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004/shared_vllm_generation_completion.json": "3d33b34c39672f000315fb5800a835909f5d15375b72b9e0a28bf3ef80560e23",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/status/extended4-237673/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004/context_check.json": "64b8b4399768ee4ae0e49ace6206ff73bdb965e3f5678ae0982d5cfc6395a157",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010/shared_vllm_generation_completion.json": "1aeb65fd9191ed075685a487affcc28799e5ab70a39adf6003d0113d6c53d1e3",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/status/extended4-237673/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010/context_check.json": "f6ddd3a17fe848fae7474a599c1ed0e51e8940532d39bc8e4c62389ff03a0335",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026/shared_vllm_generation_completion.json": "eab53e574efbc40696b77542f992b6fe8da731555fde3c1d29ad52d5d689e5e0",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005/shared_vllm_generation_completion.json": "0372d4039d0b6bf92040a7e44cc7a61996747bc0f3eeb66e99f50dbda414ba9c",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/status/extended5-237674/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005/context_check.json": "741f61cce95a2ebd642c3ee9824e2a660c371b07acf908ffc7e4a487bf29a0cf",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011/shared_vllm_generation_completion.json": "acc59a299724ec28c987a2c29884d2b0c23f24b605eb2cb628d9ffc121ef90f4",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/status/extended5-237674/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011/context_check.json": "9f93b6b5830c4b81dbda0b5a998ff2e6d2e3554da3d4206981b7687d2a1824e3",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006_shared_continuation_v1/shared_vllm_generation_completion.json": "dfac37e339c49978c798b71f5d2d34ca9b2d26167bafcba1aaad5ca2885da46f",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006/context_check.json": "35d8787abd83d49578d0bc63744aebcd24edabfa4399eb71892a3e5d1f8cfb86",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012/shared_vllm_generation_completion.json": "69319c10eb1ba946318100a41254cc70348d76d2fd77dbe4250b44cd11f86714",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/status/extended6-237675/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012/context_check.json": "1978a3d9840c80eabe55fc69054cf6f03f494814626e4e8c7df1453a715cf26b",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007_shared_continuation_v1/shared_vllm_generation_completion.json": "9acdf5342713c55ba5ef32ca5e2eccb940bc7802038e12de79a6d2f4ad26a7dc",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007/context_check.json": "bcf2b69ebca3ff26ee1bf0c39771c4d44c4c7e638b7b81a3928102cf6de58132",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_002/shared_vllm_generation_completion.json": "ac8878bcb8ac56d3994ab96f091034f0339cdd7179f19802f7d6137e15a330ec",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_preflight/qwen38_27b_p28_slurm_replay_2026-10-16_shard_002/context_check.json": "eb1afe06155d553773a694ebffbdbe00b3763d4f976e0218518a1cb6b57ff8c8",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_003/shared_vllm_generation_completion.json": "db84ceff2c88b142ab27133f9dcd67430cf5fcee5ed4c11bf25bb1e77333c097",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_preflight/qwen38_27b_p28_slurm_replay_2026-10-16_shard_003/context_check.json": "a6c2d5ffeece38d89f462221ac4597d4404658ec8a3ad96ebc45b991efb15c2a",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_004/shared_vllm_generation_completion.json": "b7348e3f8b0b817f688bfbdbf17da2a4c7423c0e89ac32888fb64b739212dcab",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_preflight/qwen38_27b_p28_slurm_replay_2026-10-16_shard_004/context_check.json": "724fc881b3077468e83a6a87963ada6072db6bd279b5b8d8364bab7cde3ad7e9",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_005/shared_vllm_generation_completion.json": "8663e41a1ce23863eb91d70894ccab66df4f7497b86c3f80d9f38ca7733d3f8f",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_preflight/qwen38_27b_p28_slurm_replay_2026-10-16_shard_005/context_check.json": "30fa09703930b1fcccd6a5e7c793f5af016d955f75f9f9ca386bcc12b5b9d09d",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_006/shared_vllm_generation_completion.json": "19684e4923ffab5c8ae4af74e9fab33ba49dd306bbb09439ec664c5deccdd0a8",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_preflight/qwen38_27b_p28_slurm_replay_2026-10-16_shard_006/context_check.json": "774f43af011a79b15c0fefc7a16edfde4c4fb814c1e078a17297b002fd1e4d27",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_007/shared_vllm_generation_completion.json": "b0c360b6d2a866eeaf73df5f8aae63805abb759ebc82a41b4115c70b3420f38f",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_preflight/qwen38_27b_p28_slurm_replay_2026-10-16_shard_007/context_check.json": "352e3834f638902841f71250408e94293cd8ec15c6f05f9ab91c401d15940811",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002/shared_vllm_generation_completion.json": "072d9220b1bd5af98a8cf7836f2163932262dc9befbffcdd15eb3c25bc28a5b2",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002/context_check.json": "473cdcbb946ea629c91075614525c5497b344d68e4fee7b429d38594bf9a0edd",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003/shared_vllm_generation_completion.json": "988aa83fd6b55591d41168820ba0842dd8ce9a543a04f9084a210c6c43c0f9f4",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003/context_check.json": "5c627b40eccece49ba18df93f035ce5b81caac82d6a0ac19a91387af2e90a5d7",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003/shared_vllm_generation_completion.json": "ccc5bd5c44da83b8ff82cad7d7fe3989a840878ef2b16ff008e7ae3e24de46b7",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003/context_check.json": "85d0f95091bb6f33a1447ba7b2a2c80b62c59867b531b1a9580e6fb3e3079914",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_004/shared_vllm_generation_completion.json": "d3f8b98a4738fd9ed744e4fbcb05a8c86e54bd0bfe522ad13898a9a41845d3e5",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_004/context_check.json": "cdaad5dc7635d4476c61fe63f4642b2e191449f009ec560ff81bc59fe17d7b87",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004/shared_vllm_generation_completion.json": "f2d8e754209e685d8b7c26155410d42acd84921d85d4b290ad5bb19b4b93572f",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004/context_check.json": "1244510756da1f0a62e069d69a655deb628ea15a00bb5c5290776c9021b609ef",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005/shared_vllm_generation_completion.json": "6b2b3f93c6dcf18a03afacce75fe82bde714ce718e140ccc15d3cc0dd0730681",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005/context_check.json": "79aa5156d9c8a37deb525976a7664722f2042882f322f8cb7da6cd93b67d3f89",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005/shared_vllm_generation_completion.json": "46c08949c4db449dbd049833418b93c5e32666f74b30d98e434dd60c26e33c30",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005/context_check.json": "732ed41d9c1a2d4da7b9222329855b600cdcaaecac0cb074ac218c9646bf2b22",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006/shared_vllm_generation_completion.json": "1dfca6db1a56be693af566f23086ce1c1a63562099025862aa3267f9fd1b2e7a",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006/context_check.json": "f5a6f7490ddec1c23bcf766239a70eef9655bd6cbf7a046785f8dcab7c4db920",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006/shared_vllm_generation_completion.json": "af2016e7196a6b641e470abfad45e39b04caaf1bc9fbaa067dbac0ca430ed38a",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006/context_check.json": "7ad91e72e173aee05e905ed1fbd9e38411b8b77fbb7484ca0f675e2a0ef95864",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007/shared_vllm_generation_completion.json": "74af90f722baf5f6243d0b64f284e29c5a4906dad7feb7ee7f5d987aa4d49c60",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007/context_check.json": "267fd6c28fb40c24b9078626f0752fab8b8e32c41b946bdccc17ecf17da16a44",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000/shared_vllm_generation_completion.json": "2d76ac9620f01661a1ff15141c93a0b398aa23c968cad78dddd061e0ed6f9859",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_preflight/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000/context_check.json": "9a6bc19ef843730aa229aaa13bfd938d359c70f3d89ca273cd3dcf5f732839b8",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_000/shared_vllm_generation_completion.json": "bf01d7e6621637d81f6476d187775d751d87eb96cbf4f214fe7cd1cfc19eeb4f",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_000/context_check.json": "220cf5f82a217426b0a7746bee6e60d69c32e254136a514468018d9b925138a2",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_002/shared_vllm_generation_completion.json": "96d7d0c43aba7e9413ebca9a6eafa8ca9daa0ca2f9e163e1e91950d77055166a",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/status/p16_0-237717/qwen38_27b_p16_slurm_replay_2026-10-16_shard_002/context_check.json": "cd05b036684fd8477480f233ccb90779e60249f144d5338d32c2f861d0f2484f",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_004/shared_vllm_generation_completion.json": "56124f4f20b69a952afe249cfad116ad30cce4914a3d528545cee99e65285be8",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/status/p16_0-237717/qwen38_27b_p16_slurm_replay_2026-10-16_shard_004/context_check.json": "2528e5f5b9361f04e7797bf76122834a300460c1ef4f3fbf00e9acbbf40ebd10",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri/results/runs/qwen38_27b_p12_restored_replay_2026-10-16/shared_vllm_generation_completion.json": "1be830414c924b8a09c6c4100d806c4bde86da576305ad1b043b0a48835a00a5",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_migration_2026-10-17/context_checks/P12/context_check.json": "c73589c42053d58fcede5e3d94bf8e5212593757c0fc072dc118a07a2070d255",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri/results/runs/qwen38_27b_p13_restored_replay_2026-10-16/shared_vllm_generation_completion.json": "3cfe790c76e1690857ac4835a165a1814b1690226571464191f9bcda35a6a9fb",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_migration_2026-10-17/context_checks/P13/context_check.json": "df7ea6295de52a28b12d52a7dc4e9acee90e73b78a5a334f496aea54d1ba3d44",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri/results/runs/qwen38_27b_p14_restored_replay_2026-10-16/shared_vllm_generation_completion.json": "c61b5782bce4a19f05dca7228aaeb2ba33cdf8d28e94668e3a3fd7495f673ef2",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_migration_2026-10-17/context_checks/P14/context_check.json": "c77cd58a0c6da2e9a2d84d997855d8404ee8336212c85c3a0dc17272c362edc3",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri/results/runs/qwen38_27b_p15_restored_replay_2026-10-16/shared_vllm_generation_completion.json": "47da2685d056f57df5a60c32baba7e3ba0297354aaacae9edf18f462fcf9ea72",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_migration_2026-10-17/context_checks/P15/context_check.json": "538ca904d5e2138253ecbf7ae024a5dd02f3904df58e0c936a0c98b7b812de47"
+  },
+  "created_at_pacific": "2026-10-18T11:17:02.272583-07:00",
+  "project_gpu_count": 8,
+  "groups": [
+    {
+      "name": "existing_pool",
+      "run_ids": [
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012",
+        "qwen38_27b_p12_restored_replay_2026-10-16",
+        "qwen38_27b_p13_restored_replay_2026-10-16",
+        "qwen38_27b_p16_slurm_replay_2026-10-16_shard_002",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_002",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_003",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_006",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_007",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007"
+      ],
+      "runs": [
+        {
+          "run_id": "qwen38_27b_p13_restored_replay_2026-10-16",
+          "task_id": "P13",
+          "remaining_cases": 3087,
+          "input_only_cost_estimate": 22782280.951844264
+        },
+        {
+          "run_id": "qwen38_27b_p12_restored_replay_2026-10-16",
+          "task_id": "P12",
+          "remaining_cases": 1590,
+          "input_only_cost_estimate": 8254145.457529963
+        },
+        {
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_002",
+          "task_id": "P16",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 5950656.5751953125
+        },
+        {
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_006",
+          "task_id": "P28",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2965492.9724609377
+        },
+        {
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_002",
+          "task_id": "P28",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2962538.5250000004
+        },
+        {
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004",
+          "task_id": "P29",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2955304.4560546875
+        },
+        {
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_003",
+          "task_id": "P28",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2954405.509179687
+        },
+        {
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
+          "task_id": "P29",
+          "remaining_cases": 695,
+          "input_only_cost_estimate": 2947656.3295898438
+        },
+        {
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005",
+          "task_id": "P29",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2941878.74140625
+        },
+        {
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006",
+          "task_id": "P29",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2940895.2810546877
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004",
+          "task_id": "P08",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2848538.3167968746
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003",
+          "task_id": "P08",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2848438.283203125
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
+          "task_id": "P08",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2848313.1734375004
+        },
+        {
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_007",
+          "task_id": "P28",
+          "remaining_cases": 661,
+          "input_only_cost_estimate": 2826426.1283551967
+        },
+        {
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007",
+          "task_id": "P29",
+          "remaining_cases": 386,
+          "input_only_cost_estimate": 1636666.669090909
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006",
+          "task_id": "P08",
+          "remaining_cases": 284,
+          "input_only_cost_estimate": 1165597.0433593749
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012",
+          "task_id": "P08",
+          "remaining_cases": 233,
+          "input_only_cost_estimate": 956345.809946714
+        },
+        {
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024",
+          "task_id": "P07",
+          "remaining_cases": 163,
+          "input_only_cost_estimate": 670677.1576171875
+        }
+      ],
+      "remaining_cases": 14039
+    },
+    {
+      "name": "new_pool",
+      "run_ids": [
+        "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010",
+        "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
+        "qwen38_27b_p14_restored_replay_2026-10-16",
+        "qwen38_27b_p15_restored_replay_2026-10-16",
+        "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
+        "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_004",
+        "qwen38_27b_p28_slurm_replay_2026-10-16_shard_005",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005",
+        "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003",
+        "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_004"
+      ],
+      "runs": [
+        {
+          "run_id": "qwen38_27b_p14_restored_replay_2026-10-16",
+          "task_id": "P14",
+          "remaining_cases": 3087,
+          "input_only_cost_estimate": 15504369.75184426
+        },
+        {
+          "run_id": "qwen38_27b_p15_restored_replay_2026-10-16",
+          "task_id": "P15",
+          "remaining_cases": 3087,
+          "input_only_cost_estimate": 14285004.75184426
+        },
+        {
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004",
+          "task_id": "P16",
+          "remaining_cases": 695,
+          "input_only_cost_estimate": 5959603.349121095
+        },
+        {
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_005",
+          "task_id": "P28",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2969186.150390625
+        },
+        {
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_004",
+          "task_id": "P28",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2963191.7931640623
+        },
+        {
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002",
+          "task_id": "P29",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2955356.6416015625
+        },
+        {
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003",
+          "task_id": "P29",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2955089.13984375
+        },
+        {
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005",
+          "task_id": "P29",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2951109.551367188
+        },
+        {
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003",
+          "task_id": "P29",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2942763.3203125
+        },
+        {
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_004",
+          "task_id": "P29",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2941337.1638671877
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
+          "task_id": "P08",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2848710.3257812504
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
+          "task_id": "P08",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2848468.5101562496
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010",
+          "task_id": "P08",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2848388.944140625
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009",
+          "task_id": "P08",
+          "remaining_cases": 694,
+          "input_only_cost_estimate": 2848297.45
+        },
+        {
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
+          "task_id": "P29",
+          "remaining_cases": 515,
+          "input_only_cost_estimate": 2190341.989940828
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+          "task_id": "P08",
+          "remaining_cases": 373,
+          "input_only_cost_estimate": 1530845.2909179686
+        },
+        {
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
+          "task_id": "P16",
+          "remaining_cases": 123,
+          "input_only_cost_estimate": 1054302.3796875002
+        },
+        {
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025",
+          "task_id": "P07",
+          "remaining_cases": 188,
+          "input_only_cost_estimate": 773547.755859375
+        },
+        {
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002",
+          "task_id": "P08",
+          "remaining_cases": 80,
+          "input_only_cost_estimate": 328362.7109375
+        }
+      ],
+      "remaining_cases": 15782
+    }
+  ],
+  "scientific_protocol_changes": [],
+  "balance_estimate_is_not_a_measured_throughput_claim": true
+}

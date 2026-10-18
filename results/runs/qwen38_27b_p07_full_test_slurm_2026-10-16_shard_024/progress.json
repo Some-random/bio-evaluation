@@ -1,13 +1,14 @@
 {
   "run": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024",
-  "stage": "running",
+  "stage": "incomplete",
   "planned": 1024,
-  "finished": 857,
+  "finished": 1024,
   "statuses": {
-    "completed": 857
+    "completed": 861,
+    "not_dispatched_after_error": 163
   },
-  "requests_saved": 858,
-  "elapsed_seconds": 42085.201,
-  "updated_at_utc": "2026-10-18T17:54:28.909473+00:00",
+  "requests_saved": 861,
+  "elapsed_seconds": 42646.253,
+  "updated_at_utc": "2026-10-18T18:03:49.962312+00:00",
   "infrastructure_amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7"
 }

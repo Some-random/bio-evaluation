@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "endpoints_sha256": "5fa3a19e7c740aee2f3b64c733239a8ec891cfadf24a817a395cd93828e67b59",
+  "files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_benchmark_summary.json": "fa825ad65c17efd365b63296e54b6df457f4a1596e0c8794e47ef260974807f8",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/queue_policy.json": "90b89abe55d66569a08fe3b608db13e6c145e057c057ed6fd1b8ccc349cb0a50",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_0/results.json": "3b355d514fed0dd406bb7c10a6162ef1877e7e55d2fb867a049874d3484a89da",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_1/results.json": "377356995114aaa817e452f28dcaafcd5b74d44ef6b8f665aa309807ab1ed639",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_2/results.json": "acadf2f9c31a031e19f2d7e4e8a2e3c7b04337c0d980eb1c8fa7ed6753050ca2",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_3/results.json": "9054175ee259f7a0bf3a36dcb70c5387322f07e3098fc7acae44f6eefe9408c5",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_execution_environment.json": "5ecbd73ae7308f80b1c5245964cecee06fb49df514cde8a44d4e3be68e1d244f",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/existing_upgrade/saturation_execution_environment.json": "5ecbd73ae7308f80b1c5245964cecee06fb49df514cde8a44d4e3be68e1d244f"
+  },
+  "review": "All752 measured requests exactly honored fixed input/output lengths with no HTTP failures. Internal cache recomputation is included in throughput; queue64 selected.",
+  "same_hardware_and_runtime_verified": true
+}

@@ -3,7 +3,7 @@
   "segment_id": "10da4103b02c44428026240ddd00021c",
   "amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7",
   "started_at_utc": "2026-10-18T06:14:44.404953+00:00",
-  "stage": "running",
+  "stage": "terminal",
   "endpoints": [
     {
       "endpoint_id": "replica_0",
@@ -376,5 +376,11 @@
   ],
   "protocol_changes": [],
   "actual_runner_sha256": "58a753c4322f17e0fcec4a8fb41a5e6fb57af27bd7268bb4832fa25cc813699b",
-  "baseline_statuses": {}
+  "baseline_statuses": {},
+  "finished_at_utc": "2026-10-18T18:04:05.110012+00:00",
+  "dispatched": 330,
+  "statuses": {
+    "completed": 330,
+    "not_dispatched_after_error": 694
+  }
 }

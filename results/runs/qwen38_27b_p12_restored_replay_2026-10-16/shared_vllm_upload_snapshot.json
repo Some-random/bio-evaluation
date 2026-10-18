@@ -1,22 +1,28 @@
 {
-  "actual_serving": "shared_vllm",
+  "actual_serving": "shared_vllm_saturation",
   "execution_success": false,
+  "generation_paused": false,
   "generation_terminal": false,
   "github_url": "https://github.com/Some-random/bio-evaluation/tree/main/results/runs/qwen38_27b_p12_restored_replay_2026-10-16",
   "kind": "generation_source",
   "logical_run_id": "qwen38_27b_p12_restored_replay_2026-10-16",
   "native_metrics_valid": null,
+  "pause_marker_sha256": null,
   "planned": 1919,
-  "requests_saved": 327,
+  "publication_provenance_namespaces": [
+    "shared_vllm",
+    "shared_vllm_saturation"
+  ],
+  "requests_saved": 376,
   "response_status_counts": {
-    "completed": 326
+    "completed": 337
   },
-  "responses_saved": 326,
+  "responses_saved": 337,
   "run_id": "qwen38_27b_p12_restored_replay_2026-10-16",
   "scored_benchmark_completed": false,
   "scoring_pending": true,
   "task_id": "P12",
   "terminal": false,
-  "uploaded_saved_responses": 326,
-  "uploaded_trajectories": 326
+  "uploaded_saved_responses": 337,
+  "uploaded_trajectories": 337
 }

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "kind": "shared_vllm_reviewed_queue_policy",
+  "reviewed": true,
+  "scheduler_policy": "vllm_native_bounded_queue",
+  "queue_limit": 64,
+  "server_max_num_seqs": 128,
+  "benchmark_summary_sha256": "fa825ad65c17efd365b63296e54b6df457f4a1596e0c8794e47ef260974807f8",
+  "scientific_protocol_changes": [],
+  "rationale": "64 outstanding HTTP requests per GPU attained the measured short-input maximum (1026.2 output tokens/s vs651.2 at32 and973.6 at128). Medium and 4096-output sweeps were approximately flat at32 vs64 (232.2 vs230.8;605.8 vs588.5). Use a deep mixed-work queue without client fractional reservations or head-of-line drain; vLLM owns actual KV admission. Internal recomputation is retained and included in measured throughput. This is a serving choice from synthetic work, not model-quality tuning or a full-suite speedup claim."
+}

@@ -1,0 +1,52 @@
+{
+  "synthetic_only": true,
+  "biological_inputs_read": false,
+  "elapsed_seconds": 1154.669600725174,
+  "results": [
+    {
+      "endpoint_id": "saturation_0",
+      "profile": {
+        "input_tokens": 192,
+        "output_tokens": 1024,
+        "requests": 128,
+        "levels": "32,64,128"
+      },
+      "returncode": 0,
+      "results_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_0/results.json"
+    },
+    {
+      "endpoint_id": "saturation_1",
+      "profile": {
+        "input_tokens": 7000,
+        "output_tokens": 1024,
+        "requests": 64,
+        "levels": "16,32,64"
+      },
+      "returncode": 0,
+      "results_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_1/results.json"
+    },
+    {
+      "endpoint_id": "saturation_2",
+      "profile": {
+        "input_tokens": 45056,
+        "output_tokens": 1024,
+        "requests": 16,
+        "levels": "4,8,16"
+      },
+      "returncode": 0,
+      "results_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_2/results.json"
+    },
+    {
+      "endpoint_id": "saturation_3",
+      "profile": {
+        "input_tokens": 1536,
+        "output_tokens": 4096,
+        "requests": 64,
+        "levels": "32,64"
+      },
+      "returncode": 0,
+      "results_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_3/results.json"
+    }
+  ],
+  "success": true
+}

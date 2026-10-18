@@ -1,0 +1,32 @@
+{
+  "stage": "ready_for_reviewed_launcher",
+  "runtime_directory": "/tmp/bio-saturation-240418-31bmlxoq",
+  "job_id": "240418",
+  "hostname": "ampere3.stanford.edu",
+  "cpu_limit": 2,
+  "gpu_access_enabled": false,
+  "old_runtime_untouched": "/tmp/bio-shared-240418-2hqsuN",
+  "base_archive_sha256": "732def4d7a95da921b67dbfcc8bbf1e602218868b7ee40e3cc9990e059f92893",
+  "initial_free_bytes": 697631539200,
+  "started_at_utc": "2026-10-18T17:57:49Z",
+  "overlay_receipts": {
+    "base": "732def4d7a95da921b67dbfcc8bbf1e602218868b7ee40e3cc9990e059f92893",
+    "overlay": "e9f9c715bc3ce46a7d9d8b0d40a05372be14a978821df1f8facaf3039cca09a2"
+  },
+  "python": "/tmp/bio-saturation-240418-31bmlxoq/python/bin/python3.12",
+  "python_sha256": "eaaa308032c4aa063df5880c4c293cd458b4629d503fbc2c03ec163d71f7f790",
+  "packages": {
+    "vllm": "0.32.0",
+    "torch": "2.13.0",
+    "transformers": "5.17.0",
+    "triton": "3.7.1",
+    "flashinfer-python": "0.7.0.post1"
+  },
+  "common_sha256": "93611c2b597857222f6400bcf9151ce70ae7f8053c7871600bc49106e67370f4",
+  "pip_check_passed": true,
+  "pip_install_report_sha256": "a2f4452d40ae4305040a11a464196fdc4fa8353311af643eb7004ab9595023c7",
+  "no_gpu_processes_or_inference_started": true,
+  "cleanup_scope": "/tmp/bio-saturation-240418-31bmlxoq/cache",
+  "cache_downloads_disabled": true,
+  "finished_at_utc": "2026-10-18T18:00:36Z"
+}

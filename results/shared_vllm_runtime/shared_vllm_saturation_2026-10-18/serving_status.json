@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "hostname": "ampere5.stanford.edu",
+  "slurm_job_id": "240936",
+  "plan_sha256": "6f3b8316f5162d69838d0313292aa4027dba1e5b2d4866f99fce07f62764389f",
+  "runtime_directory": "/tmp/bio-saturation-240936-eedAaD",
+  "replicas": 4,
+  "endpoints": [
+    {
+      "endpoint_id": "saturation_0",
+      "endpoint": "http://127.0.0.1:8150/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_replica_0/server_identity.json",
+      "server_identity_sha256": "adda75db85bbc6862b8dac08c774e950a0bb804dfe981b1a258d1a300228f78e"
+    },
+    {
+      "endpoint_id": "saturation_1",
+      "endpoint": "http://127.0.0.1:8151/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_replica_1/server_identity.json",
+      "server_identity_sha256": "a49f31276bc6afded8ab9104a6ffc0fd5f0cebab8ecc7c17fe45c1ef0e18e316"
+    },
+    {
+      "endpoint_id": "saturation_2",
+      "endpoint": "http://127.0.0.1:8152/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_replica_2/server_identity.json",
+      "server_identity_sha256": "e76d7785c2b0aa7c44ddfc4fcd8627f15f37bcaf10ab91db7680a980799516a2"
+    },
+    {
+      "endpoint_id": "saturation_3",
+      "endpoint": "http://127.0.0.1:8153/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_replica_3/server_identity.json",
+      "server_identity_sha256": "fa210779888d71abf5db3a847d3c22e697ee657e5d6b9b9f73b9b2ebdac6d681"
+    }
+  ],
+  "stage": "evaluating",
+  "updated_at": "2026-10-18T18:21:46.059841+00:00",
+  "ready_replicas": 4,
+  "endpoints_sha256": "6a195a8d6efa386e9ce326cd7dd3f0c71e9608ea2e2ee0aebfde807a58b9ae2a",
+  "benchmark_gate_sha256": "cdf700a7d110e540d9fced35e8af49021260cdc23c52d1fb72a20b1cd6fac23e",
+  "dispatch_pid": 429810,
+  "dispatch_gate_sha256": "17aa399a85c0214683098dfc06d4a185f09831f2b748429530a726f92866be3a"
+}

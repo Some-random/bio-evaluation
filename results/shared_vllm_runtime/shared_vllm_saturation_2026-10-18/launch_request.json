@@ -1,0 +1,16 @@
+{
+  "files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/serve_saturation_pool.py": "07458c2d7829e522f4b8f95464184f7e212b5ba8cbc5060c7bf65305cbf9b465",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/saturation_serving_plan.json": "6f3b8316f5162d69838d0313292aa4027dba1e5b2d4866f99fce07f62764389f"
+  },
+  "command": [
+    "{python}",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/serve_saturation_pool.py",
+    "--directory",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18",
+    "--plan-sha256",
+    "6f3b8316f5162d69838d0313292aa4027dba1e5b2d4866f99fce07f62764389f",
+    "--runtime-dir",
+    "{runtime}"
+  ]
+}

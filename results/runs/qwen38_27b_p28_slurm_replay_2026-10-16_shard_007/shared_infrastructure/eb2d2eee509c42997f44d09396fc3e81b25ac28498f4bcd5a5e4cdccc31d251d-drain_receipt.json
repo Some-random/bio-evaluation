@@ -1,0 +1,391 @@
+{
+  "created_at_utc": "2026-10-18T18:05:38.676005+00:00",
+  "all_original_http_calls_finished": true,
+  "operator_requested_clean_pause": true,
+  "original_server_processes_retired_only_after_idle": true,
+  "original_producer_state": "Z",
+  "original_owner_state": "T",
+  "parent_amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7",
+  "runs": [
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002_shared_continuation_v1/shared_vllm_generation_completion.json",
+      "completion_sha256": "72a48931e2185877167e0640d7f789b185141b22d4ee2dc8b06802f66a745e6c",
+      "planned": 1024,
+      "statuses": {
+        "completed": 944,
+        "not_dispatched_after_error": 80
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008/shared_vllm_generation_completion.json",
+      "completion_sha256": "e1e60c13f01786735c4fb5cf4e7cd22a1cc0e1ef4059023296225148cfbfe70e",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024/shared_vllm_generation_completion.json",
+      "completion_sha256": "15a75a9b6dfe8c67e4fba7583ff641426a57b17b709613dbde322559202a4ab9",
+      "planned": 1024,
+      "statuses": {
+        "completed": 861,
+        "not_dispatched_after_error": 163
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003/shared_vllm_generation_completion.json",
+      "completion_sha256": "d9dcd248739f9c0849a405427e1ddd985ff24b9e32c3a956a84648357187d9af",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009/shared_vllm_generation_completion.json",
+      "completion_sha256": "f9ff75af63fe686e13d196d103fcbb5125810fe4af4d490ce1e5bd1762be2736",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025/shared_vllm_generation_completion.json",
+      "completion_sha256": "cda33bbd5c8201aa559a8eee9dadc8ff03e6d17eba2c241474cea4e5f4fdc574",
+      "planned": 1024,
+      "statuses": {
+        "completed": 836,
+        "not_dispatched_after_error": 188
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004/shared_vllm_generation_completion.json",
+      "completion_sha256": "3d33b34c39672f000315fb5800a835909f5d15375b72b9e0a28bf3ef80560e23",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010/shared_vllm_generation_completion.json",
+      "completion_sha256": "1aeb65fd9191ed075685a487affcc28799e5ab70a39adf6003d0113d6c53d1e3",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026/shared_vllm_generation_completion.json",
+      "completion_sha256": "eab53e574efbc40696b77542f992b6fe8da731555fde3c1d29ad52d5d689e5e0",
+      "planned": 593,
+      "statuses": {
+        "completed": 593
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005/shared_vllm_generation_completion.json",
+      "completion_sha256": "0372d4039d0b6bf92040a7e44cc7a61996747bc0f3eeb66e99f50dbda414ba9c",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011/shared_vllm_generation_completion.json",
+      "completion_sha256": "acc59a299724ec28c987a2c29884d2b0c23f24b605eb2cb628d9ffc121ef90f4",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006_shared_continuation_v1/shared_vllm_generation_completion.json",
+      "completion_sha256": "dfac37e339c49978c798b71f5d2d34ca9b2d26167bafcba1aaad5ca2885da46f",
+      "planned": 1024,
+      "statuses": {
+        "completed": 740,
+        "not_dispatched_after_error": 284
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012/shared_vllm_generation_completion.json",
+      "completion_sha256": "69319c10eb1ba946318100a41254cc70348d76d2fd77dbe4250b44cd11f86714",
+      "planned": 563,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 233
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007_shared_continuation_v1/shared_vllm_generation_completion.json",
+      "completion_sha256": "9acdf5342713c55ba5ef32ca5e2eccb940bc7802038e12de79a6d2f4ad26a7dc",
+      "planned": 1024,
+      "statuses": {
+        "completed": 651,
+        "not_dispatched_after_error": 373
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_002",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_002/shared_vllm_generation_completion.json",
+      "completion_sha256": "ac8878bcb8ac56d3994ab96f091034f0339cdd7179f19802f7d6137e15a330ec",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_003",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_003/shared_vllm_generation_completion.json",
+      "completion_sha256": "db84ceff2c88b142ab27133f9dcd67430cf5fcee5ed4c11bf25bb1e77333c097",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_004",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_004/shared_vllm_generation_completion.json",
+      "completion_sha256": "b7348e3f8b0b817f688bfbdbf17da2a4c7423c0e89ac32888fb64b739212dcab",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_005",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_005/shared_vllm_generation_completion.json",
+      "completion_sha256": "8663e41a1ce23863eb91d70894ccab66df4f7497b86c3f80d9f38ca7733d3f8f",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_006",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_006/shared_vllm_generation_completion.json",
+      "completion_sha256": "19684e4923ffab5c8ae4af74e9fab33ba49dd306bbb09439ec664c5deccdd0a8",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_007",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28/results/runs/qwen38_27b_p28_slurm_replay_2026-10-16_shard_007/shared_vllm_generation_completion.json",
+      "completion_sha256": "b0c360b6d2a866eeaf73df5f8aae63805abb759ebc82a41b4115c70b3420f38f",
+      "planned": 991,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 661
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002/shared_vllm_generation_completion.json",
+      "completion_sha256": "072d9220b1bd5af98a8cf7836f2163932262dc9befbffcdd15eb3c25bc28a5b2",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003/shared_vllm_generation_completion.json",
+      "completion_sha256": "988aa83fd6b55591d41168820ba0842dd8ce9a543a04f9084a210c6c43c0f9f4",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003/shared_vllm_generation_completion.json",
+      "completion_sha256": "ccc5bd5c44da83b8ff82cad7d7fe3989a840878ef2b16ff008e7ae3e24de46b7",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_004",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_004/shared_vllm_generation_completion.json",
+      "completion_sha256": "d3f8b98a4738fd9ed744e4fbcb05a8c86e54bd0bfe522ad13898a9a41845d3e5",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004/shared_vllm_generation_completion.json",
+      "completion_sha256": "f2d8e754209e685d8b7c26155410d42acd84921d85d4b290ad5bb19b4b93572f",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005/shared_vllm_generation_completion.json",
+      "completion_sha256": "6b2b3f93c6dcf18a03afacce75fe82bde714ce718e140ccc15d3cc0dd0730681",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005/shared_vllm_generation_completion.json",
+      "completion_sha256": "46c08949c4db449dbd049833418b93c5e32666f74b30d98e434dd60c26e33c30",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006/shared_vllm_generation_completion.json",
+      "completion_sha256": "1dfca6db1a56be693af566f23086ce1c1a63562099025862aa3267f9fd1b2e7a",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006/shared_vllm_generation_completion.json",
+      "completion_sha256": "af2016e7196a6b641e470abfad45e39b04caaf1bc9fbaa067dbac0ca430ed38a",
+      "planned": 845,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 515
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007/shared_vllm_generation_completion.json",
+      "completion_sha256": "74af90f722baf5f6243d0b64f284e29c5a4906dad7feb7ee7f5d987aa4d49c60",
+      "planned": 715,
+      "statuses": {
+        "completed": 329,
+        "not_dispatched_after_error": 386
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29/results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000/shared_vllm_generation_completion.json",
+      "completion_sha256": "2d76ac9620f01661a1ff15141c93a0b398aa23c968cad78dddd061e0ed6f9859",
+      "planned": 1024,
+      "statuses": {
+        "completed": 329,
+        "not_dispatched_after_error": 695
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_000/shared_vllm_generation_completion.json",
+      "completion_sha256": "bf01d7e6621637d81f6476d187775d751d87eb96cbf4f214fe7cd1cfc19eeb4f",
+      "planned": 1024,
+      "statuses": {
+        "completed": 901,
+        "not_dispatched_after_error": 123
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_002",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_002/shared_vllm_generation_completion.json",
+      "completion_sha256": "96d7d0c43aba7e9413ebca9a6eafa8ca9daa0ca2f9e163e1e91950d77055166a",
+      "planned": 1024,
+      "statuses": {
+        "completed": 330,
+        "not_dispatched_after_error": 694
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_004/shared_vllm_generation_completion.json",
+      "completion_sha256": "56124f4f20b69a952afe249cfad116ad30cce4914a3d528545cee99e65285be8",
+      "planned": 1024,
+      "statuses": {
+        "completed": 329,
+        "not_dispatched_after_error": 695
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p12_restored_replay_2026-10-16",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri/results/runs/qwen38_27b_p12_restored_replay_2026-10-16/shared_vllm_generation_completion.json",
+      "completion_sha256": "1be830414c924b8a09c6c4100d806c4bde86da576305ad1b043b0a48835a00a5",
+      "planned": 1919,
+      "statuses": {
+        "completed": 329,
+        "not_dispatched_after_error": 1590
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p13_restored_replay_2026-10-16",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri/results/runs/qwen38_27b_p13_restored_replay_2026-10-16/shared_vllm_generation_completion.json",
+      "completion_sha256": "3cfe790c76e1690857ac4835a165a1814b1690226571464191f9bcda35a6a9fb",
+      "planned": 3416,
+      "statuses": {
+        "completed": 329,
+        "not_dispatched_after_error": 3087
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p14_restored_replay_2026-10-16",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri/results/runs/qwen38_27b_p14_restored_replay_2026-10-16/shared_vllm_generation_completion.json",
+      "completion_sha256": "c61b5782bce4a19f05dca7228aaeb2ba33cdf8d28e94668e3a3fd7495f673ef2",
+      "planned": 3416,
+      "statuses": {
+        "completed": 329,
+        "not_dispatched_after_error": 3087
+      }
+    },
+    {
+      "run_id": "qwen38_27b_p15_restored_replay_2026-10-16",
+      "completion_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri/results/runs/qwen38_27b_p15_restored_replay_2026-10-16/shared_vllm_generation_completion.json",
+      "completion_sha256": "47da2685d056f57df5a60c32baba7e3ba0297354aaacae9edf18f462fcf9ea72",
+      "planned": 3416,
+      "statuses": {
+        "completed": 329,
+        "not_dispatched_after_error": 3087
+      }
+    }
+  ],
+  "saved_responses": 15749
+}

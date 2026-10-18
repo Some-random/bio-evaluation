@@ -1,0 +1,182 @@
+[
+  {
+    "browsable_copy": "shared_infrastructure/b7f966e3ede1fca67e8c66889a1e6dd0650beabaf2ad0fc0da92bb27c5130461-amendment_existing_pool.json",
+    "kind": "infrastructure_amendment",
+    "sha256": "b7f966e3ede1fca67e8c66889a1e6dd0650beabaf2ad0fc0da92bb27c5130461",
+    "source": ".local/shared_vllm_saturation_2026-10-18/amendment_existing_pool.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/8473aeee85c63bba6e1b390b9acf78477d8a81435d7e0504ce1b086515965256-shared_vllm_resume.py",
+    "kind": "adapter_code",
+    "sha256": "8473aeee85c63bba6e1b390b9acf78477d8a81435d7e0504ce1b086515965256",
+    "source": ".local/shared_vllm_saturation_2026-10-18/shared_vllm_resume.py"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/495b8a91f7cc0b8ad6de14bd06ad6c3812a3aa712e20277f9a69b579127ce447-run_shared_vllm_evaluations.py",
+    "kind": "adapter_code",
+    "sha256": "495b8a91f7cc0b8ad6de14bd06ad6c3812a3aa712e20277f9a69b579127ce447",
+    "source": ".local/shared_vllm_saturation_2026-10-18/run_shared_vllm_evaluations.py"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/340139bf587a92ecbaa97454a554a7b58276c3b021c639f37a5a2e288933bc69-native_queue_scheduler.py",
+    "kind": "adapter_code",
+    "sha256": "340139bf587a92ecbaa97454a554a7b58276c3b021c639f37a5a2e288933bc69",
+    "source": ".local/shared_vllm_saturation_2026-10-18/native_queue_scheduler.py"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/fa825ad65c17efd365b63296e54b6df457f4a1596e0c8794e47ef260974807f8-saturation_benchmark_summary.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "fa825ad65c17efd365b63296e54b6df457f4a1596e0c8794e47ef260974807f8",
+    "source": ".local/shared_vllm_saturation_2026-10-18/saturation_benchmark_summary.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/eb2d2eee509c42997f44d09396fc3e81b25ac28498f4bcd5a5e4cdccc31d251d-drain_receipt.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "eb2d2eee509c42997f44d09396fc3e81b25ac28498f4bcd5a5e4cdccc31d251d",
+    "source": ".local/shared_vllm_saturation_2026-10-18/drain_receipt.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/90b89abe55d66569a08fe3b608db13e6c145e057c057ed6fd1b8ccc349cb0a50-queue_policy.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "90b89abe55d66569a08fe3b608db13e6c145e057c057ed6fd1b8ccc349cb0a50",
+    "source": ".local/shared_vllm_saturation_2026-10-18/queue_policy.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/3efe3a162bf6f02c96c2580762cd4b55137af7d90044c1344986895ea203de47-handoff_assignment.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "3efe3a162bf6f02c96c2580762cd4b55137af7d90044c1344986895ea203de47",
+    "source": ".local/shared_vllm_saturation_2026-10-18/handoff_assignment.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/3b355d514fed0dd406bb7c10a6162ef1877e7e55d2fb867a049874d3484a89da-results.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "3b355d514fed0dd406bb7c10a6162ef1877e7e55d2fb867a049874d3484a89da",
+    "source": ".local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_0/results.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/377356995114aaa817e452f28dcaafcd5b74d44ef6b8f665aa309807ab1ed639-results.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "377356995114aaa817e452f28dcaafcd5b74d44ef6b8f665aa309807ab1ed639",
+    "source": ".local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_1/results.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/acadf2f9c31a031e19f2d7e4e8a2e3c7b04337c0d980eb1c8fa7ed6753050ca2-results.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "acadf2f9c31a031e19f2d7e4e8a2e3c7b04337c0d980eb1c8fa7ed6753050ca2",
+    "source": ".local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_2/results.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/9054175ee259f7a0bf3a36dcb70c5387322f07e3098fc7acae44f6eefe9408c5-results.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "9054175ee259f7a0bf3a36dcb70c5387322f07e3098fc7acae44f6eefe9408c5",
+    "source": ".local/shared_vllm_saturation_2026-10-18/saturation_benchmark_saturation_3/results.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/f9b6da00499968827d09ae77ca62cf13aed7e772ce32937abc4ac646d95e1f70-237671_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "f9b6da00499968827d09ae77ca62cf13aed7e772ce32937abc4ac646d95e1f70",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237671_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/b23d493474251298bb591e62aa825b8f9591a50dc0cb1ff2a42966c11907be86-237672_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "b23d493474251298bb591e62aa825b8f9591a50dc0cb1ff2a42966c11907be86",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237672_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/034377903b48fc819ab560167eca29a015bc65977a4eae9227b1f245bcdf92b0-237674_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "034377903b48fc819ab560167eca29a015bc65977a4eae9227b1f245bcdf92b0",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237674_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/600c12f925300736c2dee77f8b2677549f81633b9309e9f0a9ee87ca1acf64a5-237675_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "600c12f925300736c2dee77f8b2677549f81633b9309e9f0a9ee87ca1acf64a5",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237675_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/7a29fcad0ac392a38cda8b25cb367b62ccb9701b8378af5b2e4b92a6c1ba56c5-237676_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "7a29fcad0ac392a38cda8b25cb367b62ccb9701b8378af5b2e4b92a6c1ba56c5",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237676_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/9a432fc5e21b4a5a4804a58e8ee2c39347af7fcd18cfc5106ea14a0ba5dcd483-237717_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "9a432fc5e21b4a5a4804a58e8ee2c39347af7fcd18cfc5106ea14a0ba5dcd483",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237717_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/08e23f835df49659ebcd6f5da82e655c056b8a35d6a90cf7f6733eddf76e1bce-extended_fast_v2.json",
+    "kind": "source_plans",
+    "sha256": "08e23f835df49659ebcd6f5da82e655c056b8a35d6a90cf7f6733eddf76e1bce",
+    "source": ".local/remaining_evaluations/extended_fast_v2.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/4e0b26baec5d9a547abd1f05dfdbe9430391d2816817cbd4b6fedbcdfb5518e8-extended_bulk_v2.json",
+    "kind": "source_plans",
+    "sha256": "4e0b26baec5d9a547abd1f05dfdbe9430391d2816817cbd4b6fedbcdfb5518e8",
+    "source": ".local/remaining_evaluations/extended_bulk_v2.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/e662b329176090eefd168a4e901804575c50e0824da0477d6f005de1d3550913-p28_pool_v2.json",
+    "kind": "source_plans",
+    "sha256": "e662b329176090eefd168a4e901804575c50e0824da0477d6f005de1d3550913",
+    "source": ".local/remaining_evaluations/p28_pool_v2.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/57287cd2151ff1c77138fdba6e999a141658bb5fae95265bcbf0391c5fb19cb5-p29_pool_v1.json",
+    "kind": "source_plans",
+    "sha256": "57287cd2151ff1c77138fdba6e999a141658bb5fae95265bcbf0391c5fb19cb5",
+    "source": ".local/remaining_evaluations/p29_pool_v1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/028d8156f98f034406b14291b133be4ed6a53e3f38f6ac8deb7a813bf216c4e0-p16_pool_v1.json",
+    "kind": "source_plans",
+    "sha256": "028d8156f98f034406b14291b133be4ed6a53e3f38f6ac8deb7a813bf216c4e0",
+    "source": ".local/remaining_evaluations/p16_pool_v1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/1800cdf58e0504f3e67220041669d0c5c30edb636672cbb6a76f6627113626c8-deepfri_pool_v1.json",
+    "kind": "source_plans",
+    "sha256": "1800cdf58e0504f3e67220041669d0c5c30edb636672cbb6a76f6627113626c8",
+    "source": ".local/remaining_evaluations/deepfri_pool_v1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/352e3834f638902841f71250408e94293cd8ec15c6f05f9ab91c401d15940811-context_check.json",
+    "kind": "run_context_check",
+    "sha256": "352e3834f638902841f71250408e94293cd8ec15c6f05f9ab91c401d15940811",
+    "source": ".local/remaining_evaluations/p28_preflight/qwen38_27b_p28_slurm_replay_2026-10-16_shard_007/context_check.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/4f2a779d44c996c68ed9f35622f4c26db319541c43107366ff24814d928fdfcc-server_identity.json",
+    "kind": "actual_server",
+    "sha256": "4f2a779d44c996c68ed9f35622f4c26db319541c43107366ff24814d928fdfcc",
+    "source": ".local/shared_vllm_saturation_2026-10-18/existing_upgrade/saturation_replica_0/server_identity.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/d07f2e7743ad8060d75596a9b196132b340bc859fca69db963e90cc20cf7a17a-server_identity.json",
+    "kind": "actual_server",
+    "sha256": "d07f2e7743ad8060d75596a9b196132b340bc859fca69db963e90cc20cf7a17a",
+    "source": ".local/shared_vllm_saturation_2026-10-18/existing_upgrade/saturation_replica_1/server_identity.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/18a7af878454965261c26123f7d593efed1c22cedbcc478fac5236a5f2e1bc6a-server_identity.json",
+    "kind": "actual_server",
+    "sha256": "18a7af878454965261c26123f7d593efed1c22cedbcc478fac5236a5f2e1bc6a",
+    "source": ".local/shared_vllm_saturation_2026-10-18/existing_upgrade/saturation_replica_2/server_identity.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/1b9d4d0eb1ad2b2b8a6115bfb20da04a840ce9352cb78c070aa011d8ce249e5a-server_identity.json",
+    "kind": "actual_server",
+    "sha256": "1b9d4d0eb1ad2b2b8a6115bfb20da04a840ce9352cb78c070aa011d8ce249e5a",
+    "source": ".local/shared_vllm_saturation_2026-10-18/existing_upgrade/saturation_replica_3/server_identity.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7-amendment_v2.json",
+    "kind": "parent_infrastructure_amendment",
+    "sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7",
+    "source": ".local/shared_vllm_migration_2026-10-17/amendment_v2.json"
+  }
+]

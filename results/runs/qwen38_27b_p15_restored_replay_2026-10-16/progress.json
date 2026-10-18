@@ -1,13 +1,14 @@
 {
   "run": "qwen38_27b_p15_restored_replay_2026-10-16",
-  "stage": "running",
+  "stage": "incomplete",
   "planned": 3416,
-  "finished": 326,
+  "finished": 3416,
   "statuses": {
-    "completed": 326
+    "completed": 329,
+    "not_dispatched_after_error": 3087
   },
-  "requests_saved": 326,
-  "elapsed_seconds": 42065.307,
-  "updated_at_utc": "2026-10-18T17:54:35.801911+00:00",
+  "requests_saved": 329,
+  "elapsed_seconds": 42674.876,
+  "updated_at_utc": "2026-10-18T18:04:45.371457+00:00",
   "infrastructure_amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7"
 }

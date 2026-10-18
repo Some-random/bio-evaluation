@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "infrastructure_only": true,
+  "root": "/dfs/scratch0/dongweij/bio-evaluation",
+  "replicas": 4,
+  "existing_project_gpu_count": 4,
+  "project_gpu_ceiling": 8,
+  "first_port": 8150,
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "original BF16",
+  "expected_vllm_version": "0.32.0",
+  "max_model_len": 65536,
+  "max_num_seqs": 128,
+  "max_num_batched_tokens": 8192,
+  "gpu_memory_utilization": 0.95,
+  "runtime_common": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/runtime_common.py",
+  "code_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/serve_saturation_pool.py": "07458c2d7829e522f4b8f95464184f7e212b5ba8cbc5060c7bf65305cbf9b465",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/runtime_common.py": "93611c2b597857222f6400bcf9151ce70ae7f8053c7871600bc49106e67370f4"
+  },
+  "created_at": "2026-10-18T10:48:02.964103-07:00",
+  "drain_policy": "stop new admissions; wait for every HTTP call; prove engines idle; no local scored-call timeout",
+  "gates": {
+    "benchmark_file": "benchmarks_passed.json",
+    "benchmark_contract": {
+      "passed": true,
+      "endpoints_sha256": "SHA of saturation_endpoints.json",
+      "files_sha256": {
+        "absolute benchmark evidence path": "actual SHA256"
+      }
+    },
+    "dispatch_file": "saturation_dispatch.json",
+    "dispatch_contract": {
+      "files_sha256": {
+        "absolute dispatcher/amendment/dependency path": "actual SHA256"
+      },
+      "command": [
+        "{python}",
+        "absolute dispatcher path",
+        "..."
+      ]
+    }
+  }
+}

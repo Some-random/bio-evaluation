@@ -1,0 +1,26 @@
+[
+  {
+    "endpoint_id": "saturation_0",
+    "endpoint": "http://127.0.0.1:8250/v1",
+    "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/existing_upgrade/saturation_replica_0/server_identity.json",
+    "server_identity_sha256": "4f2a779d44c996c68ed9f35622f4c26db319541c43107366ff24814d928fdfcc"
+  },
+  {
+    "endpoint_id": "saturation_1",
+    "endpoint": "http://127.0.0.1:8251/v1",
+    "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/existing_upgrade/saturation_replica_1/server_identity.json",
+    "server_identity_sha256": "d07f2e7743ad8060d75596a9b196132b340bc859fca69db963e90cc20cf7a17a"
+  },
+  {
+    "endpoint_id": "saturation_2",
+    "endpoint": "http://127.0.0.1:8252/v1",
+    "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/existing_upgrade/saturation_replica_2/server_identity.json",
+    "server_identity_sha256": "18a7af878454965261c26123f7d593efed1c22cedbcc478fac5236a5f2e1bc6a"
+  },
+  {
+    "endpoint_id": "saturation_3",
+    "endpoint": "http://127.0.0.1:8253/v1",
+    "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/existing_upgrade/saturation_replica_3/server_identity.json",
+    "server_identity_sha256": "1b9d4d0eb1ad2b2b8a6115bfb20da04a840ce9352cb78c070aa011d8ce249e5a"
+  }
+]

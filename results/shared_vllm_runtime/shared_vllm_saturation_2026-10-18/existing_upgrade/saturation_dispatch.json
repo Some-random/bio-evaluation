@@ -1,0 +1,20 @@
+{
+  "files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/shared_vllm_resume.py": "8473aeee85c63bba6e1b390b9acf78477d8a81435d7e0504ce1b086515965256",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/run_shared_vllm_evaluations.py": "495b8a91f7cc0b8ad6de14bd06ad6c3812a3aa712e20277f9a69b579127ce447",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/native_queue_scheduler.py": "340139bf587a92ecbaa97454a554a7b58276c3b021c639f37a5a2e288933bc69",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/amendment_existing_pool.json": "b7f966e3ede1fca67e8c66889a1e6dd0650beabaf2ad0fc0da92bb27c5130461",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/queue_policy.json": "90b89abe55d66569a08fe3b608db13e6c145e057c057ed6fd1b8ccc349cb0a50"
+  },
+  "command": [
+    "{python}",
+    "-u",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/run_shared_vllm_evaluations.py",
+    "--root",
+    "/dfs/scratch0/dongweij/bio-evaluation",
+    "--amendment",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/amendment_existing_pool.json",
+    "--amendment-sha256",
+    "b7f966e3ede1fca67e8c66889a1e6dd0650beabaf2ad0fc0da92bb27c5130461"
+  ]
+}

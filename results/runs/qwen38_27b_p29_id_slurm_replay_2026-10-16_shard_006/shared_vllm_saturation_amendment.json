@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
+  "amendment_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/amendment_new_pool.json",
+  "amendment_sha256": "376d4bff3cd52b1e21adb9c708b266aa41358990c68f7b6d32a91bf5e4b81383",
+  "parent_amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7",
+  "parent_sidecar_sha256": "3ff603befa68b2371dea89df827c2ac3342bd352adc445307d541ac64cb31ff1",
+  "parent_checkpoint_sha256": "58bd8d8f9ccb73b603b0954ef046c00ca94759826743a56a657b384b5b3cd1bd",
+  "adapter_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/shared_vllm_resume.py": "8473aeee85c63bba6e1b390b9acf78477d8a81435d7e0504ce1b086515965256",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/run_shared_vllm_evaluations.py": "495b8a91f7cc0b8ad6de14bd06ad6c3812a3aa712e20277f9a69b579127ce447",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/native_queue_scheduler.py": "340139bf587a92ecbaa97454a554a7b58276c3b021c639f37a5a2e288933bc69"
+  },
+  "created_at_utc": "2026-10-18T18:22:31.807662+00:00"
+}

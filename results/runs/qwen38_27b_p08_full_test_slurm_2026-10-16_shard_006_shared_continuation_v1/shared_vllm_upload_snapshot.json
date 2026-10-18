@@ -1,22 +1,28 @@
 {
-  "actual_serving": "shared_vllm",
+  "actual_serving": "shared_vllm_saturation",
   "execution_success": false,
+  "generation_paused": false,
   "generation_terminal": false,
   "github_url": "https://github.com/Some-random/bio-evaluation/tree/main/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006_shared_continuation_v1",
   "kind": "generation_source",
   "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006",
   "native_metrics_valid": null,
+  "pause_marker_sha256": null,
   "planned": 1024,
-  "requests_saved": 738,
+  "publication_provenance_namespaces": [
+    "shared_vllm",
+    "shared_vllm_saturation"
+  ],
+  "requests_saved": 750,
   "response_status_counts": {
-    "completed": 738
+    "completed": 743
   },
-  "responses_saved": 738,
+  "responses_saved": 743,
   "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006_shared_continuation_v1",
   "scored_benchmark_completed": false,
   "scoring_pending": true,
   "task_id": "P08",
   "terminal": false,
-  "uploaded_saved_responses": 738,
-  "uploaded_trajectories": 738
+  "uploaded_saved_responses": 743,
+  "uploaded_trajectories": 743
 }

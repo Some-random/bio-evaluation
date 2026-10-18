@@ -1,13 +1,14 @@
 {
   "run": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
-  "stage": "running",
+  "stage": "incomplete",
   "planned": 1024,
-  "finished": 326,
+  "finished": 1024,
   "statuses": {
-    "completed": 326
+    "completed": 329,
+    "not_dispatched_after_error": 695
   },
-  "requests_saved": 327,
-  "elapsed_seconds": 42142.489,
-  "updated_at_utc": "2026-10-18T17:55:35.653362+00:00",
+  "requests_saved": 329,
+  "elapsed_seconds": 42674.921,
+  "updated_at_utc": "2026-10-18T18:04:28.085767+00:00",
   "infrastructure_amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7"
 }
