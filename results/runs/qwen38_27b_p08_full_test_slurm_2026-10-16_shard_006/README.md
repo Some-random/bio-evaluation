@@ -1,6 +1,6 @@
 # P08 evaluation artifacts
 
-346/1024 raw trajectories archived. Incremental snapshot; execution is ongoing.
+355/1024 raw trajectories archived. Incremental snapshot; execution is ongoing.
 
 [Case index](trajectory_index.json) · [Archive manifests](trajectory_batches) · [Frozen config](frozen_config.json)
 
