@@ -2,7 +2,7 @@
 
 [Overview](EVALUATION_OVERVIEW.md) · [Complete inventory](TASK_HIERARCHY_COMPLETE.md) · [Coverage crosswalk](TASK_COVERAGE_MAP.csv)
 
-Stored scores: **2026-10-16 06:49 PDT**. Running-work snapshot: **2026-10-17 18:01 PDT**. Display times use Pacific time.
+Stored scores: **2026-10-16 06:49 PDT**. Running-work snapshot: **2026-10-17 18:06 PDT**. Display times use Pacific time.
 
 Only existing stored local outcomes are shown. The category order matches the complete inventory. **\*** marks incomplete coverage or scoring; count records are in expandable details. Undefined values remain undefined. Published values are separate contextual comparisons, not matched replications, pooled scores or claims of superiority. All reference records and alternate metric values are retained in the details.
 
