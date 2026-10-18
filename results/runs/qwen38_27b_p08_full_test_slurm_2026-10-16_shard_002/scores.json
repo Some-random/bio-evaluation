@@ -1,0 +1,72 @@
+{
+  "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002",
+  "task_id": "P08",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH",
+  "planned": 1024,
+  "requests_saved": 618,
+  "completed": 614,
+  "parsed": 613,
+  "invalid_outputs": 1,
+  "missing_or_failed_outputs": 410,
+  "statuses": {
+    "completed": 614,
+    "interrupted_unknown_completion": 4,
+    "not_dispatched": 406
+  },
+  "finish_reasons": {
+    "stop": 614
+  },
+  "token_usage": {
+    "prompt_tokens": 52224,
+    "completion_tokens": 843408,
+    "total_tokens": 895632
+  },
+  "metrics": {
+    "planned": 1024,
+    "parsed": 613,
+    "missing": 410,
+    "invalid": 1,
+    "spearman": null,
+    "spearman_parsed_only": 0.033490166663441935,
+    "undefined_constant_or_insufficient": false,
+    "all_case_rule": "No invented prediction for failures. Full-test Spearman requires every output to parse; incomplete valid-only correlation is separately labeled."
+  },
+  "input_modalities": [
+    "amino_acid_sequence",
+    "text"
+  ],
+  "scoring_output_lock_sha256": "583dd301dd1f6ed3b0aa5103271493ca16e2d9ea12ecbd086a70b4a7713a74fa",
+  "case_scope": "task_shard_only",
+  "held_before_inference": 0,
+  "explanation_support_score": null,
+  "comparison_to_paper": "Original released public test data and native outcome/metric; zero-shot Qwen prompt/representation/training regime differs from native-trained TAPE/ProtST heads. PyTorch stability release12851 differs from original2019 paper12839 and is explicitly version-qualified.",
+  "interpretation": {
+    "likely_demands": {
+      "labels": [
+        "biological_outcome_prediction",
+        "sequence_representation"
+      ],
+      "status": "provisional analyst description; internal computation unknown"
+    },
+    "actually_supplied": "Archived complete-sequence user prompts and fixed objective; original class ontology supplied for P03. No measurement labels, parent/topology metadata, mutation counts, explanations, retrieval or tools.",
+    "reference_answer_source": "Pinned native DeepLoc curated localization classes or TAPE experimental GFP/folding-stability measurements; scorer-only reference file hashed before inference.",
+    "good_score_establishes": "Recovery of source outcomes on the declared released test under the fixed zero-shot protocol.",
+    "bad_score_establishes": "Limited outcome recovery for this input/regime; does not independently establish deficient general reasoning.",
+    "explanation_correctness": "Unassessed; correct prediction does not certify rationale and unsupported mechanism is not automatically false."
+  },
+  "contamination": "Reference labels excluded, inputs frozen, outputs hash-locked before scoring, no training or test-guided changes. Prior exposure to public source data unknown.",
+  "shard_index": 2,
+  "shard_count": 13,
+  "shard_size": 1024,
+  "full_test_case_count": 12851,
+  "source_start_index": 2048,
+  "source_stop_index": 3072,
+  "aggregate_config_file": "configs/local_extended_p08_aggregate.json",
+  "full_input_file": "data/local_catalog_extended_shards/P08/full/model_inputs.jsonl",
+  "full_input_sha256": "02f1b4d3597bf75ac2894795bb985da78cf4d336576e17632790fdc491812387",
+  "full_review_file": "configs/local_extended_p08_review.json",
+  "full_review_sha256": "5bfa787092fe43eb47b43103c7b966a9e4ebce56793b47557861d3b3477a7b43",
+  "shard_metric_interpretation": "Partial task only. Full-test accuracy/Spearman is computed separately from the complete union of raw predictions; shard correlations must never be averaged."
+}
