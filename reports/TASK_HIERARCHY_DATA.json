@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-10-18T00:36:47.099312+00:00",
+    "generatedAt": "2026-10-18T00:42:02.534323+00:00",
     "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-    "runSnapshotAt": "2026-10-18T00:36:47.099312+00:00",
+    "runSnapshotAt": "2026-10-18T00:42:02.534323+00:00",
     "model": {
       "name": "Qwen/Qwen3.8-27B",
       "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
@@ -36,16 +36,16 @@
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv": "c813f6702a0af51e272e344bfbc02d913541103d3f4acf849e4547ac78c3764c",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/AGENT_TASK_MAPPING.csv": "3f17b92ccf2c19e8475b0eba88c396363dad1a5d1e6ae8644dffb9161fbb70ec",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx": "3bbe6cee62c15266814fa082825a9f6349c32d34e976855eda604bef68336f6f",
-      "reports/EVALUATION_PROGRESS.json": "b4fc23d5b1b61d4542b167b419e145d24a785c4996d0b375cae7d2f04c45f068",
-      ".local/remaining_evaluations/supervisor_status.json": "47e0f7ece18c7906c17750dea523c4de406156a7a011ff24dbc965638e2cf1e9",
-      ".local/remaining_evaluations/upload_status.json": "4c25a680fde8e268e0a216b57fcac41e291c9bd0c502148340b420b40b9dc1e9",
+      "reports/EVALUATION_PROGRESS.json": "56c96aed4f98d19dd8f7ad79958bb88fb277706d8d1beb8f7aea906318d7466c",
+      ".local/remaining_evaluations/supervisor_status.json": "ef7e340bb5b59b16ef8b99a6ce3dc8c9dfcbedc1d5373e9420b2ab617ec859a3",
+      ".local/remaining_evaluations/upload_status.json": "ae9ac7788238be4a8887478bf0263c24ba0e9f4417fdf3c280395efcce355f1d",
       "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451"
     },
     "localResultRows": 29,
-    "uploadedResponses": 34443,
+    "uploadedResponses": 34542,
     "heartbeat": {
       "status": "fresh",
-      "updatedAt": "2026-10-18T00:36:47.099312+00:00",
+      "updatedAt": "2026-10-18T00:42:02.534323+00:00",
       "staleAfterSeconds": 300
     },
     "taskStatusCounts": {
@@ -58,7 +58,7 @@
     },
     "runSnapshotSource": {
       "path": ".local/remaining_evaluations/upload_status.json",
-      "snapshotAt": "2026-10-18T00:36:47.099312+00:00",
+      "snapshotAt": "2026-10-18T00:42:02.534323+00:00",
       "fallback": true,
       "selection": "most_recent_valid_run_snapshot"
     },
@@ -71,7 +71,7 @@
     "metadataNotice": {
       "source": ".local/remaining_evaluations/supervisor_status.json",
       "stage": "retry_pending",
-      "updatedAt": "2026-10-18T00:36:58.660681+00:00",
+      "updatedAt": "2026-10-18T00:42:03.045152+00:00",
       "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
     },
     "scoreSnapshotSources": [
@@ -9101,7 +9101,7 @@
       "completed": null,
       "lengthStopped": null,
       "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
-      "uploaded": 24238,
+      "uploaded": 24277,
       "saved": null,
       "progressSource": "uploaded_trajectories"
     },
@@ -9113,7 +9113,7 @@
       "completed": null,
       "lengthStopped": null,
       "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
-      "uploaded": 31,
+      "uploaded": 60,
       "saved": null,
       "progressSource": "uploaded_trajectories"
     },
@@ -9173,7 +9173,7 @@
       "completed": null,
       "lengthStopped": null,
       "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
-      "uploaded": 1541,
+      "uploaded": 1568,
       "saved": null,
       "progressSource": "uploaded_trajectories"
     },
@@ -9197,7 +9197,7 @@
       "completed": null,
       "lengthStopped": null,
       "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
-      "uploaded": 3812,
+      "uploaded": 3816,
       "saved": null,
       "progressSource": "uploaded_trajectories"
     }
