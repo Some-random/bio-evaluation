@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-10-18T02:01:02.950086+00:00",
+    "generatedAt": "2026-10-18T02:08:02.876787+00:00",
     "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-    "runSnapshotAt": "2026-10-18T02:01:02.950086+00:00",
+    "runSnapshotAt": "2026-10-18T02:08:02.876787+00:00",
     "model": {
       "name": "Qwen/Qwen3.8-27B",
       "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
@@ -36,16 +36,16 @@
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv": "c813f6702a0af51e272e344bfbc02d913541103d3f4acf849e4547ac78c3764c",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/AGENT_TASK_MAPPING.csv": "3f17b92ccf2c19e8475b0eba88c396363dad1a5d1e6ae8644dffb9161fbb70ec",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx": "3bbe6cee62c15266814fa082825a9f6349c32d34e976855eda604bef68336f6f",
-      "reports/EVALUATION_PROGRESS.json": "ba660a0ffdcd13beeb09cbee0b365f384bd9d61144fe33b9548a41ecc1628df0",
-      ".local/remaining_evaluations/supervisor_status.json": "56791838391928c886134cb4fb703676dc71d88261f03afa2afe7af145839a89",
-      ".local/remaining_evaluations/upload_status.json": "8c39a039e84a31a89133e7423ac5315b6cc6cf91221ffc5881fa83b5115b506d",
+      "reports/EVALUATION_PROGRESS.json": "6d5f3825939564111e56cf1e72c0cce6cf36dcd0c35d0f360b3baa8b28c7f9b1",
+      ".local/remaining_evaluations/supervisor_status.json": "d8bc9ee178be76f8a1acb1c0fea5fe2a3f1ef5e8f6e5237d6e2cc5533357f5e8",
+      ".local/remaining_evaluations/upload_status.json": "cf6620eb0dcb1bc0abbbb6afc076563ca00f6321dd7b3989e55dff33411bbd15",
       "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451"
     },
     "localResultRows": 29,
-    "uploadedResponses": 36342,
+    "uploadedResponses": 36500,
     "heartbeat": {
       "status": "fresh",
-      "updatedAt": "2026-10-18T02:01:02.950086+00:00",
+      "updatedAt": "2026-10-18T02:08:02.876787+00:00",
       "staleAfterSeconds": 300
     },
     "taskStatusCounts": {
@@ -58,7 +58,7 @@
     },
     "runSnapshotSource": {
       "path": ".local/remaining_evaluations/upload_status.json",
-      "snapshotAt": "2026-10-18T02:01:02.950086+00:00",
+      "snapshotAt": "2026-10-18T02:08:02.876787+00:00",
       "fallback": true,
       "selection": "most_recent_valid_run_snapshot"
     },
@@ -68,12 +68,7 @@
         "reason": "no_valid_run_snapshot"
       }
     ],
-    "metadataNotice": {
-      "source": ".local/remaining_evaluations/supervisor_status.json",
-      "stage": "retry_pending",
-      "updatedAt": "2026-10-18T02:01:21.771332+00:00",
-      "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
-    },
+    "metadataNotice": null,
     "scoreSnapshotSources": [
       {
         "path": "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json",
@@ -9101,7 +9096,7 @@
       "completed": null,
       "lengthStopped": null,
       "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
-      "uploaded": 24804,
+      "uploaded": 24851,
       "saved": null,
       "progressSource": "uploaded_trajectories"
     },
@@ -9113,7 +9108,7 @@
       "completed": null,
       "lengthStopped": null,
       "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
-      "uploaded": 836,
+      "uploaded": 902,
       "saved": null,
       "progressSource": "uploaded_trajectories"
     },
@@ -9173,7 +9168,7 @@
       "completed": null,
       "lengthStopped": null,
       "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
-      "uploaded": 1977,
+      "uploaded": 2010,
       "saved": null,
       "progressSource": "uploaded_trajectories"
     },
@@ -9197,7 +9192,7 @@
       "completed": null,
       "lengthStopped": null,
       "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/reports/EVALUATION_PROGRESS.json",
-      "uploaded": 3904,
+      "uploaded": 3916,
       "saved": null,
       "progressSource": "uploaded_trajectories"
     }
