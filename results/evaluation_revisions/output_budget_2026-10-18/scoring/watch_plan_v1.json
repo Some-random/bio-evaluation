@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+  "poll_seconds": 20,
+  "spec_files": [
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/p07_mixed_scoring_v1.json",
+      "sha256": "23d90245803b6d86c3537390ed9157e7793121473f6fdcf7b941af254176b687"
+    },
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/p08_mixed_scoring_v1.json",
+      "sha256": "4c6a0e981b5c8158f8553a94b43e3b288efef2592fbbb5e93ab07867c0528899"
+    },
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/p16_mixed_scoring_v1.json",
+      "sha256": "1c278e2557f654572b33dd915feed00a1fe72af6d999d7fabdd26a8a7f61fdd6"
+    },
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/p12_mixed_scoring_v1.json",
+      "sha256": "4e776341b0347098f6a6dabeb9d754bd4f83d91926d2edd0c8f65842f711f7ac"
+    },
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/p13_mixed_scoring_v1.json",
+      "sha256": "552cbe51254ad4380560610350c96df0c021cc9f0fd33a11aec6a2caa84cc879"
+    },
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/p14_mixed_scoring_v1.json",
+      "sha256": "27300ff7a5394a239daecead63993f727cd5e391b756abafba21fb5ec3c3c82a"
+    },
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/p15_mixed_scoring_v1.json",
+      "sha256": "402b4115fa57692f58ea6cc10964999bbfc107bc37c4ec5ad37fa5a2faae79af"
+    }
+  ],
+  "state_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/watcher_status_v1.json",
+  "code_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/mixed_budget_scoring.py": "2fa228b6518e8148e628604d56c180058e7df513efd86a161d88064260cd735f",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/watch_mixed_budget_scoring.py": "bfa4271ca17a44fc80f2ef0cd0d5a485f46b3068bf9f5fb6e0ed493bef690bc7",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/prepare_mixed_scoring.py": "5f58ae916bb1e334d2a153084bfff6828ae28ac66cc88925328fe22b6abe2a65",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/shared_vllm_scoring.py": "fa7675cb0997cf3171b61954f24c1f4124e231506b56d9be33c93d8de6506d18",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/shared_vllm_resume.py": "8473aeee85c63bba6e1b390b9acf78477d8a81435d7e0504ce1b086515965256",
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/shared_vllm_resume.py": "58a753c4322f17e0fcec4a8fb41a5e6fb57af27bd7268bb4832fa25cc813699b",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/run_budget_revision.py": "a0f7812390ebdf4b558ec6a9839d9791fc905eaa3a7b40e51ead54402074d5c4"
+  },
+  "native_cpu_job_id": 237730,
+  "python": "/tmp/bio-cpu-supervisor-237730-6G6tNR/python/bin/python3.10",
+  "scope": "Exact original full native unions; historical4k and prospective16k; seven separate derived result directories.",
+  "old_outputs_modified": false,
+  "old_scorer_attempts_retried": false
+}

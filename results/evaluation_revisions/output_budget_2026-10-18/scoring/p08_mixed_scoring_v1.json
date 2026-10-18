@@ -1,0 +1,176 @@
+{
+  "schema_version": 2,
+  "task_key": "extended_p08",
+  "task_id": "P08",
+  "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+  "full_config_file": "configs/local_extended_p08_aggregate.json",
+  "full_config_sha256": "8b1689abfe082de6f3c38f5bba216efe25efde2c97a731889cd2e68ec753510c",
+  "sources": [
+    {
+      "config_file": "configs/local_extended_p08_shard_000.json",
+      "config_sha256": "ccbef7b285af0d2bb79bf40eb698139f1c799effb6cebcd6442ec41805b77cf5",
+      "requires_saturation": false
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_001.json",
+      "config_sha256": "c7595730c2005561d9a89ac52d5f828f2e75065c1195ed7a121641bc745fc2be",
+      "requires_saturation": false
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_002.json",
+      "config_sha256": "f27fa171b87f1ea456c0840b313c873bf0325c5f6eb1ee722d25fe07869b95e8",
+      "generation_folder": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002_shared_continuation_v1",
+      "requires_saturation": true
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_003.json",
+      "config_sha256": "6ac3e05a6552bc6c82c5ff35a249e363ee8efd60cdaf4064801dfe467b947605",
+      "requires_saturation": true
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_004.json",
+      "config_sha256": "3b964fa76d726c8e325fa44307310df94a9358d6c9d81f9dbe7bbd806e4cefc8",
+      "requires_saturation": true
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_005.json",
+      "config_sha256": "f5621a9d91a791845778df12e5a1329c0b1336178d82e771756f2d42e3f24d8f",
+      "requires_saturation": true
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_006.json",
+      "config_sha256": "e1b052180a568c8f9382f1405c87617d95640bbd24065ff694aaba471b3fffdc",
+      "generation_folder": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006_shared_continuation_v1",
+      "requires_saturation": true
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_007.json",
+      "config_sha256": "9bdd6442fcb39757b7d135fa735a1f482dc70b033dedcf14cd9ae5963e00ded4",
+      "generation_folder": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007_shared_continuation_v1",
+      "requires_saturation": true
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_008.json",
+      "config_sha256": "664b352e0a7342d5301106c7060ef5d6f2b615d605172162764c085c22da2da0",
+      "requires_saturation": true
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_009.json",
+      "config_sha256": "8b186ebf920d5a1db185e8d8fde89f019b945334f1cf155fde4bac3d329c2366",
+      "requires_saturation": true
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_010.json",
+      "config_sha256": "e118e8ab582b7d6e9551b1ec80e3145c6ae16eeca5dde53700f62ef09968e665",
+      "requires_saturation": true
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_011.json",
+      "config_sha256": "70892a046ee7957f58f0067a238811c4898099bdbaae1a1ff47796fd1bc63ffc",
+      "requires_saturation": true
+    },
+    {
+      "config_file": "configs/local_extended_p08_shard_012.json",
+      "config_sha256": "a1dd397308d31c1e708a37797f3b1be1d05fe5bbf687f62e263048d3274b4e46",
+      "requires_saturation": true
+    }
+  ],
+  "scorer_file": "scripts/score_local_catalog_extended.py",
+  "scorer_sha256": "71701e33509f5f7b1ad041ce66ad1a28193ae8675e13eb37a22ed7c1fd38d3d0",
+  "python": "/tmp/bio-cpu-supervisor-237730-6G6tNR/python/bin/python3.10",
+  "legacy_aggregation_watch": {
+    "status_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/aggregation_status.json",
+    "names": [
+      "extended_p08"
+    ]
+  },
+  "original_native_scoring_and_case_scope_unchanged": true,
+  "execution_amendment_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_migration_2026-10-17/amendment_v2.json",
+  "execution_amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7",
+  "additional_execution_amendment_sha256": [
+    "b7f966e3ede1fca67e8c66889a1e6dd0650beabaf2ad0fc0da92bb27c5130461",
+    "376d4bff3cd52b1e21adb9c708b266aa41358990c68f7b6d32a91bf5e4b81383"
+  ],
+  "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+  "revision_plans": [
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/plan_existing_pool.json",
+      "sha256": "52f794c8d0dc0464f2e2283b8dcbf54eef77e4eaf3f3ca9ee4698c6102d87f35"
+    },
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/plan_new_pool.json",
+      "sha256": "e0a33a21455c585ed41f9ec89fbd7364e283ede6cd2f9eab85bd613bdc563055"
+    }
+  ],
+  "revision_runner_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/run_budget_revision.py",
+  "revision_runner_sha256": "a0f7812390ebdf4b558ec6a9839d9791fc905eaa3a7b40e51ead54402074d5c4",
+  "closed_4k_checkpoints": [
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008.json",
+      "sha256": "10659ec69831af5a2078d3a5bfa7667b8454a6323a5869294754fd5cc5b4ba98"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003.json",
+      "sha256": "45ff24051f252a9605a0e9dcb23d055135bc06108849933caa96c2531b1af064"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004.json",
+      "sha256": "3f16ee8728139a0cf297f45c3827a1c8e0ad87f440181fe8a8163382ba6fbc69"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006.json",
+      "sha256": "36e88311dcec5d9fb8eb4f117b466a030f2673bc3a9da54f47225d99e6204b97"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012.json",
+      "sha256": "98be735906e3c662d775b1033509ecd3a32a830122c88c31102d2208c1751287"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002.json",
+      "sha256": "90f2a42d56a98a82b22a8c7465cde35189b3cf8790bebcc6d101b3039c5e0912"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009.json",
+      "sha256": "1016f866ff8251d7545be9cdaae18e956d6f63da0ca445cfa0b9baf019cf4ee3"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010.json",
+      "sha256": "858f95b79b87240fb7843452609f20545170a3aea0937c1ece8f35e3e3a098ab"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005.json",
+      "sha256": "479fdb79071427fdc633c3f581cff8e0ecd0b099bf84ac6c5db94d6f02859c82"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011.json",
+      "sha256": "85c14cce653c230b30d81f1e2b0937103f927a27445f791cb8d60902f45c8fc5"
+    },
+    {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+      "task_id": "P08",
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/checkpoints/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007.json",
+      "sha256": "a3fa828c7ac61cfd6ffa6ba51c301c79f6e969e1141cffaa24959ddd9db4834f"
+    }
+  ],
+  "output_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1"
+}
