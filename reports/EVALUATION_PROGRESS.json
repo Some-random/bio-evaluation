@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-18T06:07:10.643539+00:00",
+  "generatedAt": "2026-10-18T06:11:42.986246+00:00",
   "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-  "runSnapshotAt": "2026-10-18T06:07:10.643539+00:00",
+  "runSnapshotAt": "2026-10-18T06:11:42.986246+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-18T06:07:10.643539+00:00",
+    "updatedAt": "2026-10-18T06:11:42.986246+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
     "reports/RESULTS_AT_A_GLANCE.json": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
-    ".local/remaining_evaluations/supervisor_status.json": "391fc2d0902c32be0122c414ce6f1bf3b0fe24ceebe00e19af481d8d94d9890f",
-    ".local/remaining_evaluations/upload_status.json": "49d065565020c76f3b3153db91890b616a427f8366d5eba69829a963ae080236"
+    ".local/remaining_evaluations/supervisor_status.json": "f05b57ea43386e5659e500eda517803dea53fbe4c47c9f8aa84ab8270403aaff",
+    ".local/remaining_evaluations/upload_status.json": "33a3c8d46a247d19e15917ed3a5ad5ebce28004fea2adfe4bd01d102fa83fe67"
   },
   "uploader": {
-    "stage": "watching",
+    "stage": "retry_pending",
     "commitSha": "aa55a1b4881a9c182adc84f9440c9a90f89c62b4",
     "repositoryPrivateVerified": false
   },
@@ -396,7 +396,7 @@
   ],
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/upload_status.json",
-    "snapshotAt": "2026-10-18T06:07:10.643539+00:00",
+    "snapshotAt": "2026-10-18T06:11:42.986246+00:00",
     "fallback": true,
     "selection": "most_recent_valid_run_snapshot"
   },
@@ -405,5 +405,11 @@
       "source": ".local/remaining_evaluations/supervisor_status.json",
       "reason": "no_valid_run_snapshot"
     }
-  ]
+  ],
+  "metadataNotice": {
+    "source": ".local/remaining_evaluations/supervisor_status.json",
+    "stage": "retry_pending",
+    "updatedAt": "2026-10-18T06:11:53.347995+00:00",
+    "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
+  }
 }
