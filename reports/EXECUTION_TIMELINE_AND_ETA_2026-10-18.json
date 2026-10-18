@@ -1,0 +1,1276 @@
+{
+  "schema_version": 1,
+  "as_of_pacific": "2026-10-18T11:54:08.224980-07:00",
+  "global_planned": 83690,
+  "global_saved_responses": 54669,
+  "global_remaining_cases": 29021,
+  "saved_responses_are_not_completed_metrics": true,
+  "current_counts_verified": true,
+  "transport_or_server_error_count": 0,
+  "combined_observations": [
+    {
+      "updated_at_pacific": "2026-10-18T11:27:03.444205-07:00",
+      "global_saved_responses": 53872,
+      "global_remaining_cases": 29818
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:28:03.596131-07:00",
+      "global_saved_responses": 53906,
+      "global_remaining_cases": 29784
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:29:03.745856-07:00",
+      "global_saved_responses": 53920,
+      "global_remaining_cases": 29770
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:30:03.887144-07:00",
+      "global_saved_responses": 53948,
+      "global_remaining_cases": 29742
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:31:04.026886-07:00",
+      "global_saved_responses": 53980,
+      "global_remaining_cases": 29710
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:32:04.209026-07:00",
+      "global_saved_responses": 53995,
+      "global_remaining_cases": 29695
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:33:04.654276-07:00",
+      "global_saved_responses": 54044,
+      "global_remaining_cases": 29646
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:34:04.800270-07:00",
+      "global_saved_responses": 54092,
+      "global_remaining_cases": 29598
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:35:04.941326-07:00",
+      "global_saved_responses": 54128,
+      "global_remaining_cases": 29562
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:36:05.100699-07:00",
+      "global_saved_responses": 54161,
+      "global_remaining_cases": 29529
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:37:05.338633-07:00",
+      "global_saved_responses": 54175,
+      "global_remaining_cases": 29515
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:38:05.513395-07:00",
+      "global_saved_responses": 54215,
+      "global_remaining_cases": 29475
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:39:05.677142-07:00",
+      "global_saved_responses": 54249,
+      "global_remaining_cases": 29441
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:40:05.873034-07:00",
+      "global_saved_responses": 54303,
+      "global_remaining_cases": 29387
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:41:06.341761-07:00",
+      "global_saved_responses": 54337,
+      "global_remaining_cases": 29353
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:42:06.497981-07:00",
+      "global_saved_responses": 54350,
+      "global_remaining_cases": 29340
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:43:06.641259-07:00",
+      "global_saved_responses": 54379,
+      "global_remaining_cases": 29311
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:44:06.794156-07:00",
+      "global_saved_responses": 54412,
+      "global_remaining_cases": 29278
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:45:06.953027-07:00",
+      "global_saved_responses": 54437,
+      "global_remaining_cases": 29253
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:46:07.085370-07:00",
+      "global_saved_responses": 54479,
+      "global_remaining_cases": 29211
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:47:07.242629-07:00",
+      "global_saved_responses": 54502,
+      "global_remaining_cases": 29188
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:48:07.397558-07:00",
+      "global_saved_responses": 54517,
+      "global_remaining_cases": 29173
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:49:07.539033-07:00",
+      "global_saved_responses": 54533,
+      "global_remaining_cases": 29157
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:50:07.669953-07:00",
+      "global_saved_responses": 54550,
+      "global_remaining_cases": 29140
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:51:07.804119-07:00",
+      "global_saved_responses": 54577,
+      "global_remaining_cases": 29113
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:52:07.958072-07:00",
+      "global_saved_responses": 54600,
+      "global_remaining_cases": 29090
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:53:08.098448-07:00",
+      "global_saved_responses": 54630,
+      "global_remaining_cases": 29060
+    },
+    {
+      "updated_at_pacific": "2026-10-18T11:54:08.224980-07:00",
+      "global_saved_responses": 54669,
+      "global_remaining_cases": 29021
+    }
+  ],
+  "pools": [
+    {
+      "name": "existing_pool",
+      "host": "ampere3",
+      "timestamp_pacific": "2026-10-18T11:53:44.628008-07:00",
+      "planned": 20916,
+      "saved": 7197,
+      "remaining": 13719,
+      "healthy_endpoints": 4,
+      "rates": [
+        {
+          "target_window_minutes": 5,
+          "start": {
+            "updated_at_pacific": "2026-10-18T11:48:35.911816-07:00",
+            "saved_responses": 7129,
+            "flag_types": [
+              "preemptions_increased",
+              "preemptions_increased",
+              "high_kv_usage",
+              "high_kv_usage",
+              "high_length_finish_fraction"
+            ]
+          },
+          "end": {
+            "updated_at_pacific": "2026-10-18T11:53:44.628008-07:00",
+            "saved_responses": 7197
+          },
+          "elapsed_seconds": 308.716192,
+          "new_responses": 68,
+          "responses_per_hour": 792.9613228709429,
+          "linear_remaining_hours": 17.300969926666667,
+          "linear_finish_pacific": "2026-10-19T05:11:48.119744-07:00"
+        },
+        {
+          "target_window_minutes": 10,
+          "start": {
+            "updated_at_pacific": "2026-10-18T11:43:27.965254-07:00",
+            "saved_responses": 7081,
+            "flag_types": [
+              "high_kv_usage",
+              "preemptions_increased",
+              "preemptions_increased",
+              "high_kv_usage",
+              "high_length_finish_fraction"
+            ]
+          },
+          "end": {
+            "updated_at_pacific": "2026-10-18T11:53:44.628008-07:00",
+            "saved_responses": 7197
+          },
+          "elapsed_seconds": 616.662754,
+          "new_responses": 116,
+          "responses_per_hour": 677.1934858903446,
+          "linear_remaining_hours": 20.258611882485628,
+          "linear_finish_pacific": "2026-10-19T08:09:15.630785-07:00"
+        },
+        {
+          "target_window_minutes": 15,
+          "start": {
+            "updated_at_pacific": "2026-10-18T11:38:22.342556-07:00",
+            "saved_responses": 7019,
+            "flag_types": [
+              "preemptions_increased",
+              "preemptions_increased",
+              "preemptions_increased",
+              "high_kv_usage",
+              "high_length_finish_fraction"
+            ]
+          },
+          "end": {
+            "updated_at_pacific": "2026-10-18T11:53:44.628008-07:00",
+            "saved_responses": 7197
+          },
+          "elapsed_seconds": 922.285452,
+          "new_responses": 178,
+          "responses_per_hour": 694.7957366240664,
+          "linear_remaining_hours": 19.74537159174157,
+          "linear_finish_pacific": "2026-10-19T07:38:27.965738-07:00"
+        },
+        {
+          "target_window_minutes": 20,
+          "start": {
+            "updated_at_pacific": "2026-10-18T11:33:17.190691-07:00",
+            "saved_responses": 6976,
+            "flag_types": [
+              "preemptions_increased",
+              "high_kv_usage",
+              "preemptions_increased",
+              "high_length_finish_fraction"
+            ]
+          },
+          "end": {
+            "updated_at_pacific": "2026-10-18T11:53:44.628008-07:00",
+            "saved_responses": 7197
+          },
+          "elapsed_seconds": 1227.437317,
+          "new_responses": 221,
+          "responses_per_hour": 648.1797391858179,
+          "linear_remaining_hours": 21.165425530320512,
+          "linear_finish_pacific": "2026-10-19T09:03:40.159917-07:00"
+        }
+      ],
+      "source_observations": [
+        {
+          "updated_at_pacific": "2026-10-18T11:26:07.551062-07:00",
+          "saved_responses": 6877,
+          "flag_types": [
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:27:09.255640-07:00",
+          "saved_responses": 6877,
+          "flag_types": [
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:28:10.937316-07:00",
+          "saved_responses": 6878,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:29:12.366456-07:00",
+          "saved_responses": 6897,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:30:13.673822-07:00",
+          "saved_responses": 6904,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:31:15.102339-07:00",
+          "saved_responses": 6916,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:32:16.277293-07:00",
+          "saved_responses": 6934,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:33:17.190691-07:00",
+          "saved_responses": 6976,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:34:18.164904-07:00",
+          "saved_responses": 6983,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:35:18.992703-07:00",
+          "saved_responses": 6997,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:36:19.837550-07:00",
+          "saved_responses": 7003,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:37:21.083680-07:00",
+          "saved_responses": 7010,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:38:22.342556-07:00",
+          "saved_responses": 7019,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:39:23.113271-07:00",
+          "saved_responses": 7044,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:40:24.025704-07:00",
+          "saved_responses": 7048,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:41:25.079935-07:00",
+          "saved_responses": 7051,
+          "flag_types": [
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:42:26.657840-07:00",
+          "saved_responses": 7069,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:43:27.965254-07:00",
+          "saved_responses": 7081,
+          "flag_types": [
+            "high_kv_usage",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:44:29.555582-07:00",
+          "saved_responses": 7091,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:45:31.010829-07:00",
+          "saved_responses": 7105,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:46:32.649704-07:00",
+          "saved_responses": 7118,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:47:34.244946-07:00",
+          "saved_responses": 7123,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:48:35.911816-07:00",
+          "saved_responses": 7129,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:49:37.697430-07:00",
+          "saved_responses": 7138,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:50:39.415880-07:00",
+          "saved_responses": 7152,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:51:41.119941-07:00",
+          "saved_responses": 7164,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:52:42.679580-07:00",
+          "saved_responses": 7185,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:53:44.628008-07:00",
+          "saved_responses": 7197,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "new_pool",
+      "host": "ampere5",
+      "timestamp_pacific": "2026-10-18T11:53:48.101551-07:00",
+      "planned": 24061,
+      "saved": 8759,
+      "remaining": 15302,
+      "healthy_endpoints": 4,
+      "rates": [
+        {
+          "target_window_minutes": 5,
+          "start": {
+            "updated_at_pacific": "2026-10-18T11:48:39.897398-07:00",
+            "saved_responses": 8691,
+            "flag_types": [
+              "high_kv_usage",
+              "high_kv_usage",
+              "preemptions_increased",
+              "high_kv_usage",
+              "high_length_finish_fraction"
+            ]
+          },
+          "end": {
+            "updated_at_pacific": "2026-10-18T11:53:48.101551-07:00",
+            "saved_responses": 8759
+          },
+          "elapsed_seconds": 308.204153,
+          "new_responses": 68,
+          "responses_per_hour": 794.2787195343211,
+          "linear_remaining_hours": 19.26527757028595,
+          "linear_finish_pacific": "2026-10-19T07:09:43.100804-07:00"
+        },
+        {
+          "target_window_minutes": 10,
+          "start": {
+            "updated_at_pacific": "2026-10-18T11:43:32.116602-07:00",
+            "saved_responses": 8618,
+            "flag_types": [
+              "preemptions_increased",
+              "high_kv_usage",
+              "preemptions_increased",
+              "high_kv_usage",
+              "preemptions_increased",
+              "high_kv_usage",
+              "high_length_finish_fraction"
+            ]
+          },
+          "end": {
+            "updated_at_pacific": "2026-10-18T11:53:48.101551-07:00",
+            "saved_responses": 8759
+          },
+          "elapsed_seconds": 615.984949,
+          "new_responses": 141,
+          "responses_per_hour": 824.0461083084028,
+          "linear_remaining_hours": 18.569349270287628,
+          "linear_finish_pacific": "2026-10-19T06:27:57.758924-07:00"
+        },
+        {
+          "target_window_minutes": 15,
+          "start": {
+            "updated_at_pacific": "2026-10-18T11:38:24.696616-07:00",
+            "saved_responses": 8517,
+            "flag_types": [
+              "preemptions_increased",
+              "preemptions_increased",
+              "high_kv_usage",
+              "preemptions_increased",
+              "high_kv_usage",
+              "preemptions_increased",
+              "high_kv_usage",
+              "high_length_finish_fraction"
+            ]
+          },
+          "end": {
+            "updated_at_pacific": "2026-10-18T11:53:48.101551-07:00",
+            "saved_responses": 8759
+          },
+          "elapsed_seconds": 923.404935,
+          "new_responses": 242,
+          "responses_per_hour": 943.4647433414464,
+          "linear_remaining_hours": 16.21894205161846,
+          "linear_finish_pacific": "2026-10-19T04:06:56.292937-07:00"
+        },
+        {
+          "target_window_minutes": 20,
+          "start": {
+            "updated_at_pacific": "2026-10-18T11:33:18.074602-07:00",
+            "saved_responses": 8403,
+            "flag_types": [
+              "preemptions_increased",
+              "high_kv_usage",
+              "preemptions_increased",
+              "high_kv_usage",
+              "high_length_finish_fraction"
+            ]
+          },
+          "end": {
+            "updated_at_pacific": "2026-10-18T11:53:48.101551-07:00",
+            "saved_responses": 8759
+          },
+          "elapsed_seconds": 1230.026949,
+          "new_responses": 356,
+          "responses_per_hour": 1041.9283911152745,
+          "linear_remaining_hours": 14.68623000436798,
+          "linear_finish_pacific": "2026-10-19T02:34:58.529567-07:00"
+        }
+      ],
+      "source_observations": [
+        {
+          "updated_at_pacific": "2026-10-18T11:26:07.644938-07:00",
+          "saved_responses": 8282,
+          "flag_types": [
+            "high_kv_usage",
+            "high_kv_usage",
+            "high_kv_usage",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:27:09.114101-07:00",
+          "saved_responses": 8316,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:28:10.872559-07:00",
+          "saved_responses": 8329,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:29:12.574197-07:00",
+          "saved_responses": 8338,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:30:13.884782-07:00",
+          "saved_responses": 8363,
+          "flag_types": [
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:31:15.532184-07:00",
+          "saved_responses": 8366,
+          "flag_types": [
+            "high_kv_usage",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:32:16.578062-07:00",
+          "saved_responses": 8397,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:33:18.074602-07:00",
+          "saved_responses": 8403,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:34:19.139219-07:00",
+          "saved_responses": 8432,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:35:20.536445-07:00",
+          "saved_responses": 8451,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:36:22.112562-07:00",
+          "saved_responses": 8459,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:37:23.365179-07:00",
+          "saved_responses": 8492,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:38:24.696616-07:00",
+          "saved_responses": 8517,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:39:25.838322-07:00",
+          "saved_responses": 8546,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:40:27.042310-07:00",
+          "saved_responses": 8576,
+          "flag_types": [
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:41:29.211644-07:00",
+          "saved_responses": 8586,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:42:30.735030-07:00",
+          "saved_responses": 8597,
+          "flag_types": [
+            "high_kv_usage",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:43:32.116602-07:00",
+          "saved_responses": 8618,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:44:33.814786-07:00",
+          "saved_responses": 8633,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:45:35.058572-07:00",
+          "saved_responses": 8661,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:46:36.517495-07:00",
+          "saved_responses": 8671,
+          "flag_types": [
+            "high_kv_usage",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:47:38.208080-07:00",
+          "saved_responses": 8681,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:48:39.897398-07:00",
+          "saved_responses": 8691,
+          "flag_types": [
+            "high_kv_usage",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:49:41.812409-07:00",
+          "saved_responses": 8699,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:50:43.322904-07:00",
+          "saved_responses": 8712,
+          "flag_types": [
+            "high_kv_usage",
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:51:44.995243-07:00",
+          "saved_responses": 8723,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:52:46.699336-07:00",
+          "saved_responses": 8732,
+          "flag_types": [
+            "preemptions_increased",
+            "high_kv_usage",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        },
+        {
+          "updated_at_pacific": "2026-10-18T11:53:48.101551-07:00",
+          "saved_responses": 8759,
+          "flag_types": [
+            "preemptions_increased",
+            "preemptions_increased",
+            "high_kv_usage",
+            "high_length_finish_fraction"
+          ]
+        }
+      ]
+    }
+  ],
+  "forecast": {
+    "generation_central_remaining_hours": 24,
+    "generation_planning_range_hours": [
+      20,
+      30
+    ],
+    "generation_central_finish_pacific": "2026-10-19T11:54:08.224980-07:00",
+    "generation_planning_finish_range_pacific": [
+      "2026-10-19T07:54:08.224980-07:00",
+      "2026-10-19T17:54:08.224980-07:00"
+    ],
+    "additional_scoring_and_publication_planning_allowance_hours": [
+      1,
+      3
+    ],
+    "additional_allowance_is_not_measured": true,
+    "range_is_not_statistical_confidence_interval": true,
+    "method": "Compute each fixed-disjoint pool remaining/rate; the latest pool controls. Compare 5/10/15/20-minute windows, then use a rounded planning estimate. No cross-host work migration is assumed."
+  },
+  "old_pool_reconstruction": {
+    "first_healthy_snapshot": {
+      "updated_at_pacific": "2026-10-17T23:25:53.127728-07:00",
+      "endpoints": [
+        {
+          "endpoint_id": "replica_0",
+          "healthy": true,
+          "metrics": {
+            "generation_tokens": 306647.0,
+            "kv_fraction": 0.5093833780160858,
+            "preemptions": 0.0,
+            "prompt_tokens": 877034.0,
+            "running": 6.0,
+            "waiting": 0.0
+          },
+          "preemption_delta": 0.0
+        },
+        {
+          "endpoint_id": "replica_1",
+          "healthy": true,
+          "metrics": {
+            "generation_tokens": 255378.0,
+            "kv_fraction": 0.353887399463807,
+            "preemptions": 0.0,
+            "prompt_tokens": 681183.0,
+            "running": 10.0,
+            "waiting": 0.0
+          },
+          "preemption_delta": 0.0
+        },
+        {
+          "endpoint_id": "replica_2",
+          "healthy": true,
+          "metrics": {
+            "generation_tokens": 349904.0,
+            "kv_fraction": 0.3351206434316354,
+            "preemptions": 0.0,
+            "prompt_tokens": 624817.0,
+            "running": 21.0,
+            "waiting": 0.0
+          },
+          "preemption_delta": 0.0
+        },
+        {
+          "endpoint_id": "replica_3",
+          "healthy": true,
+          "metrics": {
+            "generation_tokens": 243437.0,
+            "kv_fraction": 0.42895442359249325,
+            "preemptions": 0.0,
+            "prompt_tokens": 1534044.0,
+            "running": 17.0,
+            "waiting": 0.0
+          },
+          "preemption_delta": 0.0
+        }
+      ],
+      "saved_responses_unique_logical_sources": 3647,
+      "response_format": {
+        "empty_final_count": 83,
+        "length_finish_count": 109,
+        "new_responses_since_last_check": 30,
+        "shared_response_metadata_scanned": 187,
+        "transport_or_server_error_count": 0
+      },
+      "flags": [
+        {
+          "fraction": 0.5828877005347594,
+          "responses": 187,
+          "type": "high_length_finish_fraction"
+        }
+      ]
+    },
+    "last_healthy_snapshot": {
+      "updated_at_pacific": "2026-10-18T11:04:22.348201-07:00",
+      "endpoints": [
+        {
+          "endpoint_id": "replica_0",
+          "healthy": true,
+          "metrics": {
+            "generation_tokens": 9885880.0,
+            "kv_fraction": 0.0,
+            "preemptions": 0.0,
+            "prompt_tokens": 18813901.0,
+            "running": 0.0,
+            "waiting": 0.0
+          },
+          "preemption_delta": 0.0
+        },
+        {
+          "endpoint_id": "replica_1",
+          "healthy": true,
+          "metrics": {
+            "generation_tokens": 9498579.0,
+            "kv_fraction": 0.0,
+            "preemptions": 0.0,
+            "prompt_tokens": 19025303.0,
+            "running": 0.0,
+            "waiting": 0.0
+          },
+          "preemption_delta": 0.0
+        },
+        {
+          "endpoint_id": "replica_2",
+          "healthy": true,
+          "metrics": {
+            "generation_tokens": 10033150.0,
+            "kv_fraction": 0.0,
+            "preemptions": 0.0,
+            "prompt_tokens": 18245093.0,
+            "running": 0.0,
+            "waiting": 0.0
+          },
+          "preemption_delta": 0.0
+        },
+        {
+          "endpoint_id": "replica_3",
+          "healthy": true,
+          "metrics": {
+            "generation_tokens": 9639642.0,
+            "kv_fraction": 0.0,
+            "preemptions": 0.0,
+            "prompt_tokens": 19322449.0,
+            "running": 0.0,
+            "waiting": 0.0
+          },
+          "preemption_delta": 0.0
+        }
+      ],
+      "saved_responses_unique_logical_sources": 15749,
+      "response_format": {
+        "empty_final_count": 5486,
+        "length_finish_count": 7404,
+        "new_responses_since_last_check": 5,
+        "shared_response_metadata_scanned": 12289,
+        "transport_or_server_error_count": 0
+      },
+      "flags": [
+        {
+          "fraction": 0.6024900317356986,
+          "responses": 12289,
+          "type": "high_length_finish_fraction"
+        }
+      ]
+    },
+    "responses_per_hour": 1039.5612113107222,
+    "remaining_at_clean_pause": 29821,
+    "clean_pause_pacific": "2026-10-18T11:05:38.676005-07:00",
+    "linear_remaining_hours": 28.686141494641223,
+    "linear_finish_pacific": "2026-10-19T15:46:48.785386-07:00",
+    "is_reconstruction_not_recorded_historical_forecast": true
+  },
+  "native_cpu_scoring_stage_counts": {
+    "completed": 1,
+    "pending": 10
+  },
+  "by_task": {
+    "P07": {
+      "initial_selected_saved": 1697,
+      "last_observed_selected_saved": 1807,
+      "new_responses_since_clean_pause": 110,
+      "planned_selected_cases": 2048,
+      "remaining_selected_cases": 241,
+      "selected_runs": 2,
+      "terminal_generation_runs": 0
+    },
+    "P08": {
+      "initial_selected_saved": 4975,
+      "last_observed_selected_saved": 5104,
+      "new_responses_since_clean_pause": 129,
+      "planned_selected_cases": 10803,
+      "remaining_selected_cases": 5699,
+      "selected_runs": 11,
+      "terminal_generation_runs": 0
+    },
+    "P12": {
+      "initial_selected_saved": 329,
+      "last_observed_selected_saved": 376,
+      "new_responses_since_clean_pause": 47,
+      "planned_selected_cases": 1919,
+      "remaining_selected_cases": 1543,
+      "selected_runs": 1,
+      "terminal_generation_runs": 0
+    },
+    "P13": {
+      "initial_selected_saved": 329,
+      "last_observed_selected_saved": 374,
+      "new_responses_since_clean_pause": 45,
+      "planned_selected_cases": 3416,
+      "remaining_selected_cases": 3042,
+      "selected_runs": 1,
+      "terminal_generation_runs": 0
+    },
+    "P14": {
+      "initial_selected_saved": 329,
+      "last_observed_selected_saved": 399,
+      "new_responses_since_clean_pause": 70,
+      "planned_selected_cases": 3416,
+      "remaining_selected_cases": 3017,
+      "selected_runs": 1,
+      "terminal_generation_runs": 0
+    },
+    "P15": {
+      "initial_selected_saved": 329,
+      "last_observed_selected_saved": 400,
+      "new_responses_since_clean_pause": 71,
+      "planned_selected_cases": 3416,
+      "remaining_selected_cases": 3016,
+      "selected_runs": 1,
+      "terminal_generation_runs": 0
+    },
+    "P16": {
+      "initial_selected_saved": 1560,
+      "last_observed_selected_saved": 1666,
+      "new_responses_since_clean_pause": 106,
+      "planned_selected_cases": 3072,
+      "remaining_selected_cases": 1406,
+      "selected_runs": 3,
+      "terminal_generation_runs": 0
+    },
+    "P28": {
+      "initial_selected_saved": 1980,
+      "last_observed_selected_saved": 2090,
+      "new_responses_since_clean_pause": 110,
+      "planned_selected_cases": 6111,
+      "remaining_selected_cases": 4021,
+      "selected_runs": 6,
+      "terminal_generation_runs": 0
+    },
+    "P29": {
+      "initial_selected_saved": 3628,
+      "last_observed_selected_saved": 3740,
+      "new_responses_since_clean_pause": 112,
+      "planned_selected_cases": 10776,
+      "remaining_selected_cases": 7036,
+      "selected_runs": 11,
+      "terminal_generation_runs": 0
+    }
+  },
+  "source_snapshots": {
+    ".local/shared_vllm_saturation_2026-10-18/combined_health.json": {
+      "sha256_of_snapshot": "2f511b83b5fdede6699f598ffd46554029b521be0b220e4e21c313e50e27c0fc",
+      "bytes": 12413
+    },
+    ".local/shared_vllm_saturation_2026-10-18/combined_health_history.jsonl": {
+      "sha256_of_snapshot": "d3853c1fbbdb13d166bafe6be5b6414b60975a90739b872b62aa3860f3b0f656",
+      "bytes": 70336
+    },
+    ".local/shared_vllm_saturation_2026-10-18/existing_upgrade/health.log": {
+      "sha256_of_snapshot": "2baaa844ad10b37c392c5a1cf7f1461482913ea6115cdf05b359fa4a75f1b9c5",
+      "bytes": 5990
+    },
+    ".local/shared_vllm_saturation_2026-10-18/health.log": {
+      "sha256_of_snapshot": "684d5eff6509c70f4e04359063f6cdda06ab3eff7a8c89bea19a39182b81c336",
+      "bytes": 6297
+    },
+    ".local/shared_vllm_migration_2026-10-17/native_operations_history.jsonl": {
+      "sha256_of_snapshot": "d12bf8163d76a164fa89d63ae209598781f20535594d64d77d0e6f02fda4c077",
+      "bytes": 970823
+    },
+    ".local/shared_vllm_saturation_2026-10-18/scoring/watcher_status_v1.json": {
+      "sha256_of_snapshot": "091b7f9f8f4d5d35171de4d585a89d86dda3d2955eb62d6b6c495e28014d102f",
+      "bytes": 4004
+    }
+  },
+  "historical_full_suite_forecasts": "No defensible saved full-suite ETA found in reviewed primary reports/status metadata. No reconstruction is presented as a past forecast."
+}
