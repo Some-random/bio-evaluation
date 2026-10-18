@@ -1,0 +1,1265 @@
+{
+  "schema_version": 1,
+  "execution_authorized": true,
+  "workers": [
+    {
+      "worker_id": "extended2",
+      "port": 8028,
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "3-00:00:00",
+      "entries": [
+        {
+          "task_id": "P03",
+          "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_002",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p03_shard_002.json",
+          "config_sha256": "6d0a3a3fc9f1c24f8e43b9b71132b03ba5268815b6325e3c6a354ed0232d95f6",
+          "input_sha256": "fe63dbbb0554f33f3db6f8d534ae1aed12fbb272e20849bfeeb78a79406ea123",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 725,
+          "estimated_max_seconds": 21750,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p03_shard_002.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_005",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_005.json",
+          "config_sha256": "5945859a388041af7fef6904fc937a60af577526bc1a47ccd9e9c6dc8652c8d7",
+          "input_sha256": "092335435a229f10a8c7f93cc2200c72a7c50c9befbb39c81ed7d217c26bb762",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_005.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_011",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_011.json",
+          "config_sha256": "162a4e72440d50c5c6df94fbc83821cc1b9df2e3ebf903d155cb81ea0581bfcd",
+          "input_sha256": "e71e39c0a936a26099bd96eb02c2f52e74f0a45fd0a56194c2fb72ecba9223b5",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_011.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_017",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_017.json",
+          "config_sha256": "ff24ae20cac2921256577b3335d0565eb91ab1b70fa76c652513f3d490894eb9",
+          "input_sha256": "9bbcd6faca297e8d973ff1b75ca2bbd40bb00af927375cd0bb927bca039e53af",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_017.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_023",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_023.json",
+          "config_sha256": "23ecfbb155b2fe459145312163d9b6ad94e208e634c7b74541d57296f8fdcfc0",
+          "input_sha256": "516fb87809e3950442b1d407591a57d0e8cf2c3e763c7d8917f51a8fc5bd9dd8",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_023.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_002.json",
+          "config_sha256": "f27fa171b87f1ea456c0840b313c873bf0325c5f6eb1ee722d25fe07869b95e8",
+          "input_sha256": "c65cb8f8178b7fe78eaeef610a7506cd8c33103ff6067d44d35c8076ff8ef2f6",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_002.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_008.json",
+          "config_sha256": "664b352e0a7342d5301106c7060ef5d6f2b615d605172162764c085c22da2da0",
+          "input_sha256": "fdf4b09b94a4ab93827c64e0145ecacaa90e067d13c88dbd3149d6853a657204",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_008.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        }
+      ]
+    },
+    {
+      "worker_id": "extended3",
+      "port": 8029,
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "3-00:00:00",
+      "entries": [
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_000",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_000.json",
+          "config_sha256": "36a5538a9ece189aa634dc7826e7f8542f6f02fe1ed3041a4741eb020a45b7fe",
+          "input_sha256": "6792f69f867d694b085a3cf746751b429e409f666cb2266b8eef438fbb8f62bf",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_000.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_006",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_006.json",
+          "config_sha256": "eda79cc816e2e7c2ddb3fc8cf9bd668c88792be3dae821aeeb3f5ed840c4e5da",
+          "input_sha256": "f8ae82302c064e89c86ca33d9051808c40d9d8d8f060389b5426e69048e0b556",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_006.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_012",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_012.json",
+          "config_sha256": "5e38e61703cf9c9ceb33e266d6a6d74bdae0ad20105f74c4f02cee52d055431b",
+          "input_sha256": "cda133dd0493056f286f0967543160781b93ff641093ad006205714c0f156217",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_012.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_018",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_018.json",
+          "config_sha256": "ab71273d0c77e2b0b0abcb10e4a91ab3524e884b696deef28223d5b3801cb6e0",
+          "input_sha256": "41bf8bdbd54692cfe5762ce6e0fc5f0f8de34e0ce779ac0acc4678beb06818b3",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_018.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_024.json",
+          "config_sha256": "bfc85e553aa2f9d324e9b07167682708edcdb55c2b7620ab1bafea41b687802d",
+          "input_sha256": "1be02eb8684364c382c61097069dabafe01b6edc430fdc23cee9dfb736459944",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_024.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_003.json",
+          "config_sha256": "6ac3e05a6552bc6c82c5ff35a249e363ee8efd60cdaf4064801dfe467b947605",
+          "input_sha256": "c08d34663b4690090b26dddfd8ea08c8857fd8a32744737256c0767c68818072",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_003.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_009.json",
+          "config_sha256": "8b186ebf920d5a1db185e8d8fde89f019b945334f1cf155fde4bac3d329c2366",
+          "input_sha256": "1109b114e8ded0dfe5bdc1202ac2e872e1f7ebf4042df2383a3f26afabddae45",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_009.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        }
+      ]
+    },
+    {
+      "worker_id": "extended4",
+      "port": 8030,
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "3-00:00:00",
+      "entries": [
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_001",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_001.json",
+          "config_sha256": "b59220bdbfbaf08cac79d569bcd683d1700252da922fd45e21d7796b4d5183ae",
+          "input_sha256": "0608a1ebfdcb5fcf001f94d7a708c520d44f9c77cba6f1d7b11fb59398567417",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_001.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_007",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_007.json",
+          "config_sha256": "faa4a2bd87122c7a19decf25f0aacd1cfdd78f47ab4684954d97d512dba6fe3b",
+          "input_sha256": "a8525344bf41824e0cf5e9b709e27bcaae6808cb86b6634232aedb30d60b241a",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_007.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_013",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_013.json",
+          "config_sha256": "0801ee228f679e1cbaee356026ce93a222c59a2de8327cac7e159cf70aff3fcb",
+          "input_sha256": "84b3907faf86904397da5e87d348efe3b62828c91b2964561b706fcb39c2149a",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_013.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_019",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_019.json",
+          "config_sha256": "7f913f6c277563329e0d8d6d5b22cfa0d3d268b9b408ee7579f6608a70b689a0",
+          "input_sha256": "fb1102ebffd77b4d05455d16538158093ef634b4d03be7dea1f026dcdf32985a",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_019.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_025.json",
+          "config_sha256": "defb70ed912b6a543d81da5bb20680f09e8f8e825abc74eaaf55c5c413666dda",
+          "input_sha256": "b60caefdd3f328a91e2b276dbe2cb805b793ca6b85a7b0011e4b08c39cdd4a30",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_025.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_004.json",
+          "config_sha256": "3b964fa76d726c8e325fa44307310df94a9358d6c9d81f9dbe7bbd806e4cefc8",
+          "input_sha256": "a8f6026ecc96a14439fd7753c3ac4b73a102bbc223d55554ac0c2e8f6749f04b",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_004.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_010.json",
+          "config_sha256": "e118e8ab582b7d6e9551b1ec80e3145c6ae16eeca5dde53700f62ef09968e665",
+          "input_sha256": "a6a284afb7dab42557aa663f82b4e90b7e02bd820e5f88869577cd549b6725c8",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_010.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        }
+      ]
+    },
+    {
+      "worker_id": "extended5",
+      "port": 8031,
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "3-00:00:00",
+      "entries": [
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_002",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_002.json",
+          "config_sha256": "ea9873658f18416be9173687cd87ae4670ff4d8e574f2d64b537b9cc588ed16b",
+          "input_sha256": "dd86a2189bd9d0f2005a60fc3799ff752e69842655161ac919f9445bab9f2703",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_002.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_008",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_008.json",
+          "config_sha256": "5b33a91b18c4e03e795618370d17c714096b9e9a6731169cf2d85b4fff40cf7e",
+          "input_sha256": "4735e5df80616729f615c587d20db03fc4de688625598e4118b023f0a4c8629c",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_008.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_014",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_014.json",
+          "config_sha256": "1c47ff40aefb379ef9a767d6d0bf1e068c88e39876de8f16c9742bd49b4a3fae",
+          "input_sha256": "c43bcda9642f6ea92b433799d7529d13404e3b15967363bb7f800501815de83e",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_014.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_020",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_020.json",
+          "config_sha256": "0c92ccdaede5ae565bf2cf960556800ed94089ab35b3353c52a212cd316048a1",
+          "input_sha256": "eccd513c0df17182eb4f2de8d034472b3d47d144eee9e80f1f741138dc484a73",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_020.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_026.json",
+          "config_sha256": "afccc599bb3bb83c1438cda68f880a0709a3c055bf07c83125c976bc94fa5fb1",
+          "input_sha256": "a7d4df3c322182bfd793195f8732777af82b7d51c7a38fb03756a9a8d2346cf3",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 593,
+          "estimated_max_seconds": 17790,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_026.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_005.json",
+          "config_sha256": "f5621a9d91a791845778df12e5a1329c0b1336178d82e771756f2d42e3f24d8f",
+          "input_sha256": "aa714abb8931184d465b7f23ef651aa6c23954ec36740146ada52272201abfd3",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_005.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_011.json",
+          "config_sha256": "70892a046ee7957f58f0067a238811c4898099bdbaae1a1ff47796fd1bc63ffc",
+          "input_sha256": "f7ee0b44583585198d69e1fcd08ae4131868543ee5598abf36b1ab5f68e74f15",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_011.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        }
+      ]
+    },
+    {
+      "worker_id": "extended6",
+      "port": 8032,
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "3-00:00:00",
+      "entries": [
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_003",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_003.json",
+          "config_sha256": "65a7431b32b14fb3f0614704bee453a95394cedc36e0c3b4716d8365196628a4",
+          "input_sha256": "c5adf96671e0302877d43a2b5c8f73d10f2bd02d7faf65a497f75ba176c5504c",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_003.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_009",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_009.json",
+          "config_sha256": "aa97a07a7a6ee46b88295c971a22adef7ac807730fd4e7b7cabe34e1711c88b4",
+          "input_sha256": "455efee77280dd453ac64f3e0afac071a45f0b1de37bee51b2dd42118a147615",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_009.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_015",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_015.json",
+          "config_sha256": "8cd2d3018956c0dc98784c4d0e4dc10be2c033762cd491d6e2d1798f0b9d50b6",
+          "input_sha256": "f7c06548ab5243e123d874ca2ae422b878c69ff5d75c55d1e5d33d1feacb7f43",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_015.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_021",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_021.json",
+          "config_sha256": "933fedc6f0a24878614eaab7bc881741b70617b75b7e57688f508cd71ca265d8",
+          "input_sha256": "2bedf80c37d911983664b05ca1fda008ae061d4e9804a9481a5a2f7537f57137",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_021.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_000",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_000.json",
+          "config_sha256": "ccbef7b285af0d2bb79bf40eb698139f1c799effb6cebcd6442ec41805b77cf5",
+          "input_sha256": "ec13edb6bf81a9511ffc35aaf8388d463624e9d1e914ad2678107d339c53b330",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_000.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_006.json",
+          "config_sha256": "e1b052180a568c8f9382f1405c87617d95640bbd24065ff694aaba471b3fffdc",
+          "input_sha256": "18bea3937fd20901f7a9080c380425021920534af17c7f78b81603818af15cb6",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_006.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_012.json",
+          "config_sha256": "a1dd397308d31c1e708a37797f3b1be1d05fe5bbf687f62e263048d3274b4e46",
+          "input_sha256": "9d7e6d89624fcb64fda3bfcc9ff6e6dba70297abc73734ff2346cc6f9756ff8b",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 563,
+          "estimated_max_seconds": 16890,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_012.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        }
+      ]
+    },
+    {
+      "worker_id": "extended7",
+      "port": 8033,
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "3-00:00:00",
+      "entries": [
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_004",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_004.json",
+          "config_sha256": "e79cd2031053fed4af768ca8573dbde6a7ab974c19784d6e97e79a9099d40390",
+          "input_sha256": "f61af1b2c9ea08f1023cdcc717a9cf8956e6f2ef6e71d07e1aa6485d9711749a",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_004.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_010",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_010.json",
+          "config_sha256": "0cd7a7490d181cd10d8f88de37afc20ceb1d26fe4e30db424b16a0e65b8b9370",
+          "input_sha256": "38a3f92e9fb660bbb191d60e0b5c48c76750965445934bd4e02d0ed12f27c756",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_010.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_016",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_016.json",
+          "config_sha256": "ff96dd120aa0d845ba6dbdde2ca65972f678b42f4533b987c39b6f6eebdc111e",
+          "input_sha256": "abf44eba75774ef6d0c623392f3fe3ed9c4992def7850a032ae9be6728c750ea",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_016.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P07",
+          "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_022",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p07_shard_022.json",
+          "config_sha256": "f31200ee7adad629f6fd6854ba7403d534f66fcfe4dd3c5c9f92e44ffb75cb38",
+          "input_sha256": "7d06eb4ba78d24f1c83bf7202d21404256e95db94db2df0388c3b9eb3ae8869f",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p07_shard_022.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_001",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_001.json",
+          "config_sha256": "c7595730c2005561d9a89ac52d5f828f2e75065c1195ed7a121641bc745fc2be",
+          "input_sha256": "0103ae87a257bfa04338e969ad6543f5c986afb7ddeff3942c37cdcb74a14cf8",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_001.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        },
+        {
+          "task_id": "P08",
+          "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p08_shard_007.json",
+          "config_sha256": "9bdd6442fcb39757b7d135fa735a1f482dc70b033dedcf14cd9ae5963e00ded4",
+          "input_sha256": "d5b48b45387e882630a570e64899078951fb7ad5d156fc0b1a46db40b25bd38e",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p08_shard_007.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        }
+      ]
+    }
+  ],
+  "cpu_wheel_overlays": [
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/scipy_wheel/scipy-1.16.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "72d1717fd3b5e6ec747327ce9bda32d5463f472c9dce9f54499e81fbd50245a1"
+    }
+  ],
+  "created_at_utc": "2026-10-16T07:13:37.555560+00:00",
+  "runtime_artifacts": {
+    "runtime_archive.json": {
+      "sha256": "732def4d7a95da921b67dbfcc8bbf1e602218868b7ee40e3cc9990e059f92893",
+      "bytes": 8411525120,
+      "mtime_ns": 1792128556914575791
+    },
+    "cuda_overlay_archive.json": {
+      "sha256": "e9f9c715bc3ce46a7d9d8b0d40a05372be14a978821df1f8facaf3039cca09a2",
+      "bytes": 275179520,
+      "mtime_ns": 1792129194098355806
+    }
+  },
+  "infrastructure_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_bulk_v2.pool_worker.py": "369a08ae7d22f40b16675ee5532e2e1b339a59f69a0914b7538e6465e3fa284b",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_bulk_v2.runtime_common.py": "93611c2b597857222f6400bcf9151ce70ae7f8053c7871600bc49106e67370f4",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_bulk_v2.pool_worker.sbatch": "3adfb833717e6f94ce04eb2ac9dc803a13518dfb190d0af6567fb3fbf7791318"
+  },
+  "worker_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_bulk_v2.pool_worker.py",
+  "runtime_common_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_bulk_v2.runtime_common.py",
+  "sbatch_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_bulk_v2.pool_worker.sbatch"
+}

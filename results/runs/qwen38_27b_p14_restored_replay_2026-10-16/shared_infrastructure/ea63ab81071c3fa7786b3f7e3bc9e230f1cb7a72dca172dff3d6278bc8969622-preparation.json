@@ -1,0 +1,40 @@
+{
+  "task_id": "P14",
+  "status": "exact_frozen_full_fasta_inputs_restored",
+  "historical_preparation_sha256": "a787e01c59ebd839114c4330fd8505b1acb8f2d702e3af90a0f77fc3da701a68",
+  "full_model_inputs_vocabulary_references_and_input_provenance_match": true,
+  "files": [
+    {
+      "path": "data/catalog_deepfri_tasks/P14/class_vocabulary.json",
+      "bytes": 60972,
+      "sha256": "889a08bd972c17299c85e0a81d06de4114f3baeab2df8882737b81254766379f",
+      "expected_sha256": "889a08bd972c17299c85e0a81d06de4114f3baeab2df8882737b81254766379f",
+      "match": true
+    },
+    {
+      "path": "data/catalog_deepfri_tasks/P14/model_inputs.jsonl",
+      "bytes": 86301017,
+      "sha256": "9d276def7c1590e4f20acfac066fa84b911492a1b295a60b56f5b1666b2b6bc5",
+      "expected_sha256": "9d276def7c1590e4f20acfac066fa84b911492a1b295a60b56f5b1666b2b6bc5",
+      "match": true
+    },
+    {
+      "path": "data/catalog_deepfri_tasks/P14/input_provenance.jsonl",
+      "bytes": 2694109,
+      "sha256": "e8f2a00f6faeb94afde6dc548598008823e91379479b99435d6d8b795d7b533c",
+      "expected_sha256": "e8f2a00f6faeb94afde6dc548598008823e91379479b99435d6d8b795d7b533c",
+      "match": true
+    },
+    {
+      "path": "data/catalog_deepfri_tasks/P14/scorer_references.jsonl",
+      "bytes": 955553,
+      "sha256": "9ea2a7a6f19ea21b37ad46fdc12fd5fe8e330c5d3578cb35fe2aeed19b5a4b0e",
+      "expected_sha256": "9ea2a7a6f19ea21b37ad46fdc12fd5fe8e330c5d3578cb35fe2aeed19b5a4b0e",
+      "match": true
+    }
+  ],
+  "native_pdb_preparation": "Historical parser audit retained in source report; no PDB-derived input is substituted for the frozen complete FASTA protocol.",
+  "source_audit": "reports/DEEPFRI_NATIVE_SOURCE_AUDIT_2026-10-15.json",
+  "restoration_input_audit": "input_restoration.json",
+  "inference_performed_during_preparation": false
+}

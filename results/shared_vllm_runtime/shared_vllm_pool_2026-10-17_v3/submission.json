@@ -1,0 +1,58 @@
+{
+  "stage": "released_after_three_proven_drains",
+  "job_id": "240418",
+  "plan_sha256": "3fde69cfc346fba55b6cb47016155e597da7eb8fc6da4513f482714b14297b90",
+  "command": [
+    "sbatch",
+    "--hold",
+    "--parsable",
+    "--account=infolab",
+    "--partition=il",
+    "--qos=il",
+    "--nodes=1",
+    "--gres=gpu:a100:4",
+    "--cpus-per-task=32",
+    "--mem=320G",
+    "--time=2-00:00:00",
+    "--no-requeue",
+    "--signal=B:USR1@300",
+    "--job-name=bio-shared-vllm4",
+    "--chdir=/dfs/scratch0/dongweij/bio-evaluation",
+    "--output=/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/slurm-%j.log",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/pool.sbatch",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3",
+    "3fde69cfc346fba55b6cb47016155e597da7eb8fc6da4513f482714b14297b90"
+  ],
+  "stdout": "240418",
+  "stderr": "",
+  "submitted_at": "2026-10-17T22:28:39.241717-07:00",
+  "release_requires_project_gpu_total_at_most": 8,
+  "released_at": "2026-10-17T22:29:55.112317-07:00",
+  "remaining_legacy_gpu_workers": [
+    [
+      "237674",
+      "bio-eval-extended5",
+      "RUNNING",
+      "gres/gpu:a100:1"
+    ],
+    [
+      "237673",
+      "bio-eval-extended4",
+      "RUNNING",
+      "gres/gpu:a100:1"
+    ],
+    [
+      "237672",
+      "bio-eval-extended3",
+      "RUNNING",
+      "gres/gpu:a100:1"
+    ],
+    [
+      "237717",
+      "bio-eval-p16_0",
+      "RUNNING",
+      "gres/gpu:b200:1"
+    ]
+  ],
+  "maximum_project_gpus_if_started": 8
+}

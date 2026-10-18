@@ -1,0 +1,81 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "tokenizer_source": "local pinned checkpoint; no model weights loaded",
+  "token_count_source": "actual input_ids from tokenizer BatchEncoding; each element verified integer",
+  "chat_template_kwargs": {
+    "enable_thinking": true,
+    "reasoning_effort": "medium"
+  },
+  "no_inference": true,
+  "tasks": [
+    {
+      "task_id": "P12",
+      "case_count": 1919,
+      "input_file": "data/catalog_deepfri_tasks/P12/model_inputs.jsonl",
+      "input_sha256": "89bc64b7353b87f0aa6361f9ca8793e6d0cf76020f4c4230d8046a913827473b",
+      "proposed_config_sha256": "be03b599d818ffb3799fbfacb6a13eb9fe7e099be7fb161ffcad5856936aabb1",
+      "min_prompt_tokens": 10822,
+      "max_prompt_tokens": 11353,
+      "mean_prompt_tokens": 10952.864512767066,
+      "sum_prompt_tokens_no_prefix_cache_assumed": 21018547,
+      "output_token_limit_per_case": 4096,
+      "maximum_requested_output_tokens": 7860224,
+      "context_limit": 262144,
+      "max_prompt_plus_output_tokens": 15449,
+      "all_cases_fit": true
+    },
+    {
+      "task_id": "P13",
+      "case_count": 3416,
+      "input_file": "data/catalog_deepfri_tasks/P13/model_inputs.jsonl",
+      "input_sha256": "e48f5741b057ef4c7b6625c91b373121fb150a1965a026e72e08f071e22e3f97",
+      "proposed_config_sha256": "e82c0b8bded8329abf7e7a4c2cbd6d0c21d847b83dfd29bdac9c6e7614298890",
+      "min_prompt_tokens": 32686,
+      "max_prompt_tokens": 33203,
+      "mean_prompt_tokens": 32840.71574941452,
+      "sum_prompt_tokens_no_prefix_cache_assumed": 112183885,
+      "output_token_limit_per_case": 4096,
+      "maximum_requested_output_tokens": 13991936,
+      "context_limit": 262144,
+      "max_prompt_plus_output_tokens": 37299,
+      "all_cases_fit": true
+    },
+    {
+      "task_id": "P14",
+      "case_count": 3416,
+      "input_file": "data/catalog_deepfri_tasks/P14/model_inputs.jsonl",
+      "input_sha256": "9d276def7c1590e4f20acfac066fa84b911492a1b295a60b56f5b1666b2b6bc5",
+      "proposed_config_sha256": "630390aaaa27e1d19f7eff1c66feda7d1ccd8f257c7d7d07ea40152900bdc626",
+      "min_prompt_tokens": 9110,
+      "max_prompt_tokens": 9627,
+      "mean_prompt_tokens": 9264.71574941452,
+      "sum_prompt_tokens_no_prefix_cache_assumed": 31648269,
+      "output_token_limit_per_case": 4096,
+      "maximum_requested_output_tokens": 13991936,
+      "context_limit": 262144,
+      "max_prompt_plus_output_tokens": 13723,
+      "all_cases_fit": true
+    },
+    {
+      "task_id": "P15",
+      "case_count": 3416,
+      "input_file": "data/catalog_deepfri_tasks/P15/model_inputs.jsonl",
+      "input_sha256": "928dcd948598a51ac22819f667a38d04f42de2238c79b5bf27f1e45cfc3f6cb1",
+      "proposed_config_sha256": "ed5d7a2f14c32f6a8672c766fdf7ff02a62295f02c9a544e11962af0bc01593a",
+      "min_prompt_tokens": 5160,
+      "max_prompt_tokens": 5677,
+      "mean_prompt_tokens": 5314.71574941452,
+      "sum_prompt_tokens_no_prefix_cache_assumed": 18155069,
+      "output_token_limit_per_case": 4096,
+      "maximum_requested_output_tokens": 13991936,
+      "context_limit": 262144,
+      "max_prompt_plus_output_tokens": 9773,
+      "all_cases_fit": true
+    }
+  ],
+  "total_cases": 12167,
+  "total_input_tokens_no_prefix_cache_assumed": 183005770,
+  "total_maximum_requested_output_tokens": 49836032,
+  "caveat": "Token fit establishes input-context feasibility only; sparse output validity/quality/truncation rates are unknown before an authorized run. Full-set primary AP/Fmax remain null if any planned vector is invalid. No token-budget or outcome tuning performed."
+}

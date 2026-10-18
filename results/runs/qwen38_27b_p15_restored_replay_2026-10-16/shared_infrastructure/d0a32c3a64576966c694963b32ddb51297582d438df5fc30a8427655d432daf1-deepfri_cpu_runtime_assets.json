@@ -1,0 +1,37 @@
+{
+  "archive": {
+    "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/scoring_runtime/scoring-runtime-py310.tar.gz",
+    "sha256": "f7de6fa792551aadac025004b02227d074b50af0dfcd52c1ea50eeaa7c7c1742",
+    "bytes": 90624097
+  },
+  "wheels": [
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/scipy_wheel/scipy-1.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "4c0ff64b06b10e35215abce517252b375e580a6125fd5fdf6421b98efbefb2d2",
+      "bytes": 34422544
+    },
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri_wheels/scikit_learn-1.5.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "3a686885a4b3818d9e62904d91b57fa757fc2bed3e465c8b177be652f4dd37c8",
+      "bytes": 13347241
+    },
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri_wheels/joblib-1.4.2-py3-none-any.whl",
+      "sha256": "06d478d5674cbc267e7496a410ee875abd68e4340feff4490bcb7afb88060ae6",
+      "bytes": 301817
+    },
+    {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri_wheels/threadpoolctl-3.5.0-py3-none-any.whl",
+      "sha256": "56c1e26c150397e58c4926da8eeee87533b1e32bef131bd4bf6a2f45f3185467",
+      "bytes": 18414
+    }
+  ],
+  "expected_versions": {
+    "python": "3.10.22",
+    "numpy": "1.21.5",
+    "scipy": "1.10.1",
+    "sklearn": "1.5.2",
+    "joblib": "1.4.2",
+    "threadpoolctl": "3.5.0"
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "configs/local_bioreason_p28_review.json": {
+    "browsable_copy": "shared_infrastructure/cea92c2d8cf0d6399fcefce9b76e8655a848eb9aa08c8664ecd2a52a78dd2903-local_bioreason_p28_review.json",
+    "expected_sha256": "cea92c2d8cf0d6399fcefce9b76e8655a848eb9aa08c8664ecd2a52a78dd2903"
+  },
+  "configs/local_bioreason_p28_shard_007_review.json": {
+    "browsable_copy": "shared_infrastructure/1b43fddae57844a797833bb79309e224fc802073bbc9b977ad991d1bd2b6edde-local_bioreason_p28_shard_007_review.json",
+    "expected_sha256": "1b43fddae57844a797833bb79309e224fc802073bbc9b977ad991d1bd2b6edde"
+  },
+  "configs/local_labbench_b07.json": {
+    "browsable_copy": "shared_infrastructure/6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680-local_labbench_b07.json",
+    "expected_sha256": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680"
+  },
+  "data/catalog_bioreason_pro/P28/excluded_native_case_ids.json": {
+    "browsable_copy": "shared_infrastructure/29699d1796bd8d13c5b0068de83628341350402f089e6b7a8b12254b74743ae8-excluded_native_case_ids.json",
+    "expected_sha256": "29699d1796bd8d13c5b0068de83628341350402f089e6b7a8b12254b74743ae8"
+  },
+  "data/catalog_bioreason_pro/P28/input_provenance.json": {
+    "browsable_copy": "shared_infrastructure/a417a3661a55cb53aa02d8af1aff5aba083bfcbcfbb85a607c26eb80a9e5e8b1-input_provenance.json",
+    "expected_sha256": "a417a3661a55cb53aa02d8af1aff5aba083bfcbcfbb85a607c26eb80a9e5e8b1"
+  },
+  "data/catalog_bioreason_pro/P28/model_inputs.jsonl": {
+    "browsable_copy": null,
+    "expected_sha256": "c0406c4f1906606d0e089a0ff2863bbeafa9e3a944747b97c2eff7313224834a"
+  },
+  "data/catalog_bioreason_pro/P28/ordered_eligible_case_ids.json": {
+    "browsable_copy": "shared_infrastructure/c31598fe925b213c31ad33e716762d5a00404e812fe64a01aaa6cfbda8834337-ordered_eligible_case_ids.json",
+    "expected_sha256": "c31598fe925b213c31ad33e716762d5a00404e812fe64a01aaa6cfbda8834337"
+  },
+  "data/catalog_bioreason_pro/P28/ordered_released_case_ids.json": {
+    "browsable_copy": "shared_infrastructure/b6b324989121f79b9c30d225e7503a5e1fb793be43db6c25d321ac7bacb42132-ordered_released_case_ids.json",
+    "expected_sha256": "b6b324989121f79b9c30d225e7503a5e1fb793be43db6c25d321ac7bacb42132"
+  },
+  "data/catalog_bioreason_pro/P28/preparation.json": {
+    "browsable_copy": "shared_infrastructure/756fcd18885b7933ddae75b3d57b9df893a14d3a5fa01924048ec670635b0c5b-preparation.json",
+    "expected_sha256": "756fcd18885b7933ddae75b3d57b9df893a14d3a5fa01924048ec670635b0c5b"
+  },
+  "data/local_bioreason_shards/P28/shard_007/model_inputs.jsonl": {
+    "browsable_copy": null,
+    "expected_sha256": "a40c3d9d35db3fad52f08f83aefb882fe17057f7498c7bb34754c2e7cf2c8099"
+  },
+  "reports/BIOREASON_PRO_NATIVE_CONTRACT_AUDIT.md": {
+    "browsable_copy": "shared_infrastructure/eb724c7ee2ed48a4292e3564dba1f794f191efa5f07d385dd51110b5e9ad7946-BIOREASON_PRO_NATIVE_CONTRACT_AUDIT.md",
+    "expected_sha256": "eb724c7ee2ed48a4292e3564dba1f794f191efa5f07d385dd51110b5e9ad7946"
+  },
+  "reports/bioreason_pro_native_contract_audit.json": {
+    "browsable_copy": "shared_infrastructure/d499d1da7cae98724068e2cd2125155c48484b194173a0c181e69d9ce142bc67-bioreason_pro_native_contract_audit.json",
+    "expected_sha256": "d499d1da7cae98724068e2cd2125155c48484b194173a0c181e69d9ce142bc67"
+  },
+  "scripts/aggregate_local_bioreason_shards.py": {
+    "browsable_copy": "shared_infrastructure/99ad1c9e36b925d31f6f22b814dac8e7391a06d36b20b1d23001ff9046b26240-aggregate_local_bioreason_shards.py",
+    "expected_sha256": "99ad1c9e36b925d31f6f22b814dac8e7391a06d36b20b1d23001ff9046b26240"
+  },
+  "scripts/bioreason_pro_contract.py": {
+    "browsable_copy": "shared_infrastructure/889baf7a8b4d2ac11f0162a453e4ad05d5264783e620d66d56df80702fc257b5-bioreason_pro_contract.py",
+    "expected_sha256": "889baf7a8b4d2ac11f0162a453e4ad05d5264783e620d66d56df80702fc257b5"
+  },
+  "scripts/execute_local_bioreason_shard.py": {
+    "browsable_copy": "shared_infrastructure/177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb-execute_local_bioreason_shard.py",
+    "expected_sha256": "177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb"
+  },
+  "scripts/local_bioreason_shards.py": {
+    "browsable_copy": "shared_infrastructure/40dcbc6245f3f0dcc489ea398c115010c4b38e0e5b6be7bf573a1c06fd9b4858-local_bioreason_shards.py",
+    "expected_sha256": "40dcbc6245f3f0dcc489ea398c115010c4b38e0e5b6be7bf573a1c06fd9b4858"
+  },
+  "scripts/prepare_catalog_bioreason_pro.py": {
+    "browsable_copy": "shared_infrastructure/e5bb550d12497ed865a73bef4f8c8ab1da3f5c7dcd61919299724add4b90361d-prepare_catalog_bioreason_pro.py",
+    "expected_sha256": "e5bb550d12497ed865a73bef4f8c8ab1da3f5c7dcd61919299724add4b90361d"
+  },
+  "scripts/prepare_local_bioreason_shards.py": {
+    "browsable_copy": "shared_infrastructure/e572ccbd24e209fdabcc9ac27fc33ca9117c1aa12b411410ff7496222510926d-prepare_local_bioreason_shards.py",
+    "expected_sha256": "e572ccbd24e209fdabcc9ac27fc33ca9117c1aa12b411410ff7496222510926d"
+  },
+  "scripts/run_local_labbench_eight_gpu.py": {
+    "browsable_copy": "shared_infrastructure/038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4-run_local_labbench_eight_gpu.py",
+    "expected_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4"
+  },
+  "scripts/run_local_labbench_multimodal.py": {
+    "browsable_copy": "shared_infrastructure/ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d-run_local_labbench_multimodal.py",
+    "expected_sha256": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d"
+  },
+  "scripts/score_local_bioreason_pro.py": {
+    "browsable_copy": "shared_infrastructure/5d93fef9076b739733bee5a1554bec655ef384ec80e1d7511667e11f715504a7-score_local_bioreason_pro.py",
+    "expected_sha256": "5d93fef9076b739733bee5a1554bec655ef384ec80e1d7511667e11f715504a7"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__dataset__cafa5__collate.py": {
+    "browsable_copy": "shared_infrastructure/8f7aa70010c2d7c6da3c9ea2a03026c422b2e17e46b0f5975997215c3a633271-bioreason2__dataset__cafa5__collate.py",
+    "expected_sha256": "8f7aa70010c2d7c6da3c9ea2a03026c422b2e17e46b0f5975997215c3a633271"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__dataset__cafa5__format.py": {
+    "browsable_copy": "shared_infrastructure/b3bad7b37f6ad6fde0412068ecaea6245a86ae8712c20ca1eed1e78aed4cf670-bioreason2__dataset__cafa5__format.py",
+    "expected_sha256": "b3bad7b37f6ad6fde0412068ecaea6245a86ae8712c20ca1eed1e78aed4cf670"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__dataset__cafa5__generate.py": {
+    "browsable_copy": "shared_infrastructure/9dace790ed1f42d691d191cd024afbfaf9e9ca2b8e6ea8725e2b21f337cc7316-bioreason2__dataset__cafa5__generate.py",
+    "expected_sha256": "9dace790ed1f42d691d191cd024afbfaf9e9ca2b8e6ea8725e2b21f337cc7316"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__dataset__cafa5__load.py": {
+    "browsable_copy": "shared_infrastructure/ee3ccd77121c0e2d43eecff66e6e73538e130799462329b3de2b313d17eecc03-bioreason2__dataset__cafa5__load.py",
+    "expected_sha256": "ee3ccd77121c0e2d43eecff66e6e73538e130799462329b3de2b313d17eecc03"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__dataset__cafa5__processor.py": {
+    "browsable_copy": "shared_infrastructure/6a7900db2f118c6abbe9b390ddec80e0a28da8d1e4ca76fe3fefd5d89a4e4209-bioreason2__dataset__cafa5__processor.py",
+    "expected_sha256": "6a7900db2f118c6abbe9b390ddec80e0a28da8d1e4ca76fe3fefd5d89a4e4209"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__dataset__go-basic.obo": {
+    "browsable_copy": null,
+    "expected_sha256": "0c0062efbb1b199a6a54e62c0c48ff0038d39173aecc7edfab66a20090d5ec2d"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__dataset__prompts__cafa5.py": {
+    "browsable_copy": "shared_infrastructure/ce557a635ab20a900016bd62422d6fe911a090d89c017d629814d3d3143f8345-bioreason2__dataset__prompts__cafa5.py",
+    "expected_sha256": "ce557a635ab20a900016bd62422d6fe911a090d89c017d629814d3d3143f8345"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__dataset__utils.py": {
+    "browsable_copy": "shared_infrastructure/33df4f51bb866e5816333913bf6d294c5861d7251f1573d4dc2758ac30792d81-bioreason2__dataset__utils.py",
+    "expected_sha256": "33df4f51bb866e5816333913bf6d294c5861d7251f1573d4dc2758ac30792d81"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__models__go_graph_encoder.py": {
+    "browsable_copy": "shared_infrastructure/f9c6e26971693bcdfbcd805bfb773e55c910cd13cae3a770441e688079f651b1-bioreason2__models__go_graph_encoder.py",
+    "expected_sha256": "f9c6e26971693bcdfbcd805bfb773e55c910cd13cae3a770441e688079f651b1"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__models__pl__chat_template_pl.py": {
+    "browsable_copy": "shared_infrastructure/681e41add808e49e73587a4690d5c8b768d2856b4e4c2ff795626da8163d5194-bioreason2__models__pl__chat_template_pl.py",
+    "expected_sha256": "681e41add808e49e73587a4690d5c8b768d2856b4e4c2ff795626da8163d5194"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__models__pl__processing_pl.py": {
+    "browsable_copy": "shared_infrastructure/c7bf2f5e817d8a622f3a03e6b2f4cc4c45b4e868fa7e3ba605c8ee568a30cbc5-bioreason2__models__pl__processing_pl.py",
+    "expected_sha256": "c7bf2f5e817d8a622f3a03e6b2f4cc4c45b4e868fa7e3ba605c8ee568a30cbc5"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__models__protein_encoder.py": {
+    "browsable_copy": "shared_infrastructure/1a68147e65fec696c641168b4d42fe486498d65d321379d853ed0a1acab9b9ff-bioreason2__models__protein_encoder.py",
+    "expected_sha256": "1a68147e65fec696c641168b4d42fe486498d65d321379d853ed0a1acab9b9ff"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__models__protein_vllm.py": {
+    "browsable_copy": "shared_infrastructure/491442aacd8717548b217bed54cafd9c8e7e72b04b8ca5875fd6be113acec522-bioreason2__models__protein_vllm.py",
+    "expected_sha256": "491442aacd8717548b217bed54cafd9c8e7e72b04b8ca5875fd6be113acec522"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/bioreason2__models__special_tokens.py": {
+    "browsable_copy": "shared_infrastructure/033ece815c1f9d3cad98bc431f74d9e8212e0e78b2b7eaeacd1fbfd90f598267-bioreason2__models__special_tokens.py",
+    "expected_sha256": "033ece815c1f9d3cad98bc431f74d9e8212e0e78b2b7eaeacd1fbfd90f598267"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/cafaeval-1.3.0.tar.gz": {
+    "browsable_copy": null,
+    "expected_sha256": "abaaa1b225acfba8a188ac29c2b450f2b4b798631d20eeda018a1cd1eda9332b"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/cafaeval_1.3.0_src/cafaeval/__init__.py": {
+    "browsable_copy": "shared_infrastructure/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855-__init__.py",
+    "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/cafaeval_1.3.0_src/cafaeval/__main__.py": {
+    "browsable_copy": "shared_infrastructure/3404bba243b34361dd4ee6ae3dbe173558b9dc8e351bcef8926f5362a7ac9d7c-__main__.py",
+    "expected_sha256": "3404bba243b34361dd4ee6ae3dbe173558b9dc8e351bcef8926f5362a7ac9d7c"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/cafaeval_1.3.0_src/cafaeval/evaluation.py": {
+    "browsable_copy": "shared_infrastructure/91c0ca53476ab1868059b1b923d77bf0fd687f8c7cb70125ecc01c17669debef-evaluation.py",
+    "expected_sha256": "91c0ca53476ab1868059b1b923d77bf0fd687f8c7cb70125ecc01c17669debef"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/cafaeval_1.3.0_src/cafaeval/graph.py": {
+    "browsable_copy": "shared_infrastructure/d1b0db816fbbbe25c7d8e22c58a70167529c3be69123fb77df2909a021e055cf-graph.py",
+    "expected_sha256": "d1b0db816fbbbe25c7d8e22c58a70167529c3be69123fb77df2909a021e055cf"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/cafaeval_1.3.0_src/cafaeval/parser.py": {
+    "browsable_copy": "shared_infrastructure/72c1b810dfba5be0000361cffcde4d0f8ced416f87791d28deeaa37c9f4d0dbd-parser.py",
+    "expected_sha256": "72c1b810dfba5be0000361cffcde4d0f8ced416f87791d28deeaa37c9f4d0dbd"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/data__012-test-data_extraction.ipynb": {
+    "browsable_copy": null,
+    "expected_sha256": "b7da0568c24ecf0b2d1a5d89d4494beab3a2717ddbec1f14ccc3821273ba4fda"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/data__016-Cafa5ExtendedTestSet_Final.ipynb": {
+    "browsable_copy": null,
+    "expected_sha256": "1886abc06f7afaa88f7cba4bb390885d6fdeeafc134328b839567d5ad524832d"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/data__018-temporal-holdout-ext.ipynb": {
+    "browsable_copy": null,
+    "expected_sha256": "942c176040b93b59bf50954a1c11244ce6771c6cb359af2f27602bf461d55d4b"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/data__IA.txt": {
+    "browsable_copy": "shared_infrastructure/9612326576384847c02ab08a5e9ea0558766a6ce3ec076a1664f975344cf498f-data__IA.txt",
+    "expected_sha256": "9612326576384847c02ab08a5e9ea0558766a6ce3ec076a1664f975344cf498f"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/data__common_proteins.txt": {
+    "browsable_copy": "shared_infrastructure/17971869a3a292f35c41e6058f1556e65980e5cc481dfe8d4241e5f47874b056-data__common_proteins.txt",
+    "expected_sha256": "17971869a3a292f35c41e6058f1556e65980e5cc481dfe8d4241e5f47874b056"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/eval.py": {
+    "browsable_copy": "shared_infrastructure/accadae9a814ff52d0e5b49270faaa4e3c2abb46c699fe112e3e374efd327f80-eval.py",
+    "expected_sha256": "accadae9a814ff52d0e5b49270faaa4e3c2abb46c699fe112e3e374efd327f80"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/evals__cafa_evals.py": {
+    "browsable_copy": "shared_infrastructure/a5b85176b12a9a5c1f4076d3f021e1825d1b2701c3215d775b79317a0cfb9fc0-evals__cafa_evals.py",
+    "expected_sha256": "a5b85176b12a9a5c1f4076d3f021e1825d1b2701c3215d775b79317a0cfb9fc0"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/evals__run_cafa_eval.sh": {
+    "browsable_copy": "shared_infrastructure/00084a9e8339efc2350154979ce201263b169a8f5feb38d4a7d94db9b707f664-evals__run_cafa_eval.sh",
+    "expected_sha256": "00084a9e8339efc2350154979ce201263b169a8f5feb38d4a7d94db9b707f664"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/predict.py": {
+    "browsable_copy": "shared_infrastructure/d76af2b10f52d846b4ce63858d8b107b5b948dddc9d64ae4169e47c1edce1876-predict.py",
+    "expected_sha256": "d76af2b10f52d846b4ce63858d8b107b5b948dddc9d64ae4169e47c1edce1876"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/pyproject.toml": {
+    "browsable_copy": null,
+    "expected_sha256": "3bd4344c41cac016c1b79222e25cbc38498814765781be36a4b90a9cb75469a8"
+  },
+  "sources/bioreason_pro_contract_audit_2026-10-15/scripts__sh_eval.sh": {
+    "browsable_copy": "shared_infrastructure/730162a02a40e23808d7e2c4bb667e10b0eba4f1a2f0f81d76e85b4c982e2cd8-scripts__sh_eval.sh",
+    "expected_sha256": "730162a02a40e23808d7e2c4bb667e10b0eba4f1a2f0f81d76e85b4c982e2cd8"
+  }
+}

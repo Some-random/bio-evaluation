@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002",
+  "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+  "config_path": "configs/local_posttrain_protein_p29_id_shard_002.json",
+  "frozen_configuration_sha256": "a8d65407a5a5fa8cc2ddae06e66d6772107af03cc1dcf93bc27457ce483b83e9",
+  "frozen_runner": "scripts/run_local_labbench_eight_gpu.py",
+  "frozen_runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+  "case_contract_sha256": "499b438557d8f058671597040d9e911b9d83f780702c6a0c3d5ace3f5401c59b",
+  "amendment_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_migration_2026-10-17/amendment_v2.json",
+  "amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7",
+  "adapter_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/shared_vllm_resume.py": "58a753c4322f17e0fcec4a8fb41a5e6fb57af27bd7268bb4832fa25cc813699b",
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/run_shared_vllm_evaluations.py": "2b21738d3e70b8320b57a30cf187ae83843a1717136a1711b0d0fd4aff30a968",
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/prepare_shared_vllm_amendment.py": "ac856c600ca55c04337c013f7e0b39e0a140d155d35ba2cf8cb6e8bf27d6ec6a"
+  },
+  "baseline_files_sha256": {},
+  "original_run_manifest_sha256": null,
+  "created_at_utc": "2026-10-18T06:14:47.489430+00:00",
+  "policy": "Preserve all historical bytes; never redispatch saved requests, including errors, truncations and ambiguous calls."
+}

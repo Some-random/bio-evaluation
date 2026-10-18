@@ -1,0 +1,154 @@
+{
+  "configuration": {
+    "task_id": "P14",
+    "run_id": "qwen38_27b_p14_restored_replay_2026-10-16",
+    "proposal_status": "frozen_for_authorized_execution",
+    "enabled": true,
+    "created_at_utc": "2026-10-15T08:33:42.519494+00:00",
+    "approved_task_ids": [
+      "P14"
+    ],
+    "model": "Qwen/Qwen3.8-27B",
+    "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+    "gpu_ids": [
+      0
+    ],
+    "endpoint": "http://127.0.0.1:8030/v1",
+    "serving_config_file": "configs/local_model_lane4.json",
+    "server_record_file": ".local/local_model_server_lane4.json",
+    "variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE",
+    "reporting_protocol_kind": "adapted",
+    "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
+    "planned": 3416,
+    "class_count": 489,
+    "branch": "MF",
+    "input_file": "data/catalog_deepfri_tasks/P14/model_inputs.jsonl",
+    "review_file": "configs/local_deepfri_p14_review.json",
+    "class_vocabulary_file": "data/catalog_deepfri_tasks/P14/class_vocabulary.json",
+    "output_contract_file": "configs/local_deepfri_sparse_confidence_output_contract_proposed.json",
+    "concurrency": 4,
+    "generation": {
+      "max_tokens": 4096,
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 20,
+      "seed": 42,
+      "n": 1,
+      "chat_template_kwargs": {
+        "enable_thinking": true,
+        "reasoning_effort": "medium"
+      }
+    },
+    "candidate_runner": "scripts/run_local_labbench_eight_gpu.py",
+    "executor": "scripts/execute_local_deepfri_confidence_eight_gpu.py",
+    "scorer": "scripts/score_local_deepfri_confidence.py",
+    "activation_blockers": [],
+    "tool_access": [],
+    "input_modalities": [
+      "full_protein_sequence_text",
+      "global_class_ids_and_descriptions"
+    ],
+    "model_facing_fields": [
+      "full_protein_sequence",
+      "complete_fixed_global_class_vocabulary",
+      "prospective_sparse_numeric_confidence_output_instruction"
+    ],
+    "source_dataset_revision": "Zenodo 6622158 native selected members; hashes in source/provenance files",
+    "source_code_revision": "ProtST db53a76ed2430eb66dd9c8134ace99fd60980fb3; TorchDrug 6066fbd82360abb5f270cba1eca560af01b8cc90",
+    "paper_comparison": "Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation.",
+    "frozen_files_sha256": {
+      "data/catalog_deepfri_tasks/P14/model_inputs.jsonl": "9d276def7c1590e4f20acfac066fa84b911492a1b295a60b56f5b1666b2b6bc5",
+      "data/catalog_deepfri_tasks/P14/input_provenance.jsonl": "e8f2a00f6faeb94afde6dc548598008823e91379479b99435d6d8b795d7b533c",
+      "data/catalog_deepfri_tasks/P14/class_vocabulary.json": "889a08bd972c17299c85e0a81d06de4114f3baeab2df8882737b81254766379f",
+      "configs/local_deepfri_sparse_confidence_output_contract_proposed.json": "da11d72f3b921f5bf61f7f1613ed1756122cbfa12404c4084a28323f6bc2acf5",
+      "scripts/prepare_local_deepfri_proposals.py": "fbc2387a1c109257657540bde19f6c546ee9b8dc36f6f324886724601bbc50d6",
+      "scripts/run_local_labbench_multimodal.py": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d",
+      "scripts/execute_local_deepfri_confidence.py": "cc269d32be5cdaec7ecae0758e1374e975a11d9e1eae5b1b43ce0521d613874d",
+      "scripts/score_local_deepfri_confidence.py": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7",
+      "scripts/score_local_deepfri_tie_grouped.py": "a23067301546288a95a1554ca2a25d70ae87e3a220f1931ed208bf607332003d",
+      "scripts/score_local_genomics.py": "31b786c16b70e4914268c561244f1fd3ed5c4e049e7ae7a79da3ac973c2e5240",
+      "scripts/freeze_local_deepfri_proposals.py": "976b8a04b2dfa0551a8ecfebeda29938417b437ace1bc16e89a4db022904a8a2",
+      "configs/local_deepfri_scoring_runtime_proposed.json": "d6632a8ae06d3708be30a022feaa503d6ca804d442086f5ac5992ace79fa268b",
+      "reports/DEEPFRI_SPARSE_CONFIDENCE_TOKEN_BUDGET_2026-10-15.json": "95d50fc92eafec4a7cd4315f496802ca7fd761117f55d20fa5f193a3b0b6ceb8",
+      "data/catalog_deepfri_tasks/P14/scorer_references.jsonl": "9ea2a7a6f19ea21b37ad46fdc12fd5fe8e330c5d3578cb35fe2aeed19b5a4b0e",
+      "data/catalog_deepfri_tasks/P14/preparation.json": "ea63ab81071c3fa7786b3f7e3bc9e230f1cb7a72dca172dff3d6278bc8969622",
+      "sources/deepfri_contract_audit_2026-10-15/native_metric_contract.json": "03f9bd734b452fa6dfbe8955da1f958264f12e9a5f22aef9a0cf3fb5e5af7f86",
+      "sources/deepfri_contract_audit_2026-10-15/ontology_contract.json": "47a66f2dcf3cef151a85a7a6c4e7a30e88df83fe14a925775ba4cdf6f20c7f9a",
+      "sources/deepfri_contract_audit_2026-10-15/torchdrug__torchdrug__metrics__metric.py": "760f376d4125ab2cc9332c9e83b944d4464da51aea577d75266d9247aca81776",
+      "configs/local_deepfri_p14_review.json": "2ef8b0b1bb3c88a9ef0ae56efbb1058ef35dc094497c4f907dbd19fc47faae8c",
+      "scripts/run_local_labbench_eight_gpu.py": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+      "scripts/execute_local_deepfri_confidence_eight_gpu.py": "3bd2f2c4b4985ba021e10248863eba48dcd756c965e5511556528547a06e68ba",
+      ".venv/bin/python": "66ea332704b90710929ab9bed3957f172f6cbe16ff19cb6be3ee1662888514de",
+      "configs/deepfri_cpu_runtime_assets.json": "d0a32c3a64576966c694963b32ddb51297582d438df5fc30a8427655d432daf1",
+      "configs/deepfri_cpu_commands.json": "5d1d2955891c352595a48108507848171923b57b8142c558c6175c12af67e782",
+      "input_restoration.json": "4cb9e46a7e654ea9e4445726d472bb3e79bcb06d40cded021cf1c9e64da41406",
+      "reports/DEEPFRI_NATIVE_SOURCE_AUDIT_2026-10-15.json": "ca3e14ae4d590cf884401f67991b1b97eca446dcb221ac2cc612c8fcc91d70cd"
+    },
+    "runner": "scripts/run_local_labbench_eight_gpu.py",
+    "scorer_python": ".venv-vllm/bin/python",
+    "scorer_reference_file": "data/catalog_deepfri_tasks/P14/scorer_references.jsonl",
+    "scorer_reference_sha256": "9ea2a7a6f19ea21b37ad46fdc12fd5fe8e330c5d3578cb35fe2aeed19b5a4b0e",
+    "scoring_runtime_file": "configs/local_deepfri_scoring_runtime_proposed.json",
+    "scoring_protocol_sha256": "57ad4feaff6c5742a877eed2876547f8234e257cd7a9876552119d3ee6ba28da",
+    "scorer_sha256": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7",
+    "token_budget_audit_file": "reports/DEEPFRI_SPARSE_CONFIDENCE_TOKEN_BUDGET_2026-10-15.json",
+    "frozen_from_disabled_proposal": "configs/local_deepfri_p14_proposed.json",
+    "metric_policy": "Exact pinned TorchDrug auprc@micro and f1_max on model-supplied numeric sparse confidences; all planned vectors valid or full primary metrics null. TIE_GROUPED_AP_DIAGNOSTIC and OFFLINE_ALL_ZERO_REFERENCE remain distinct. No output repair, better-score selection or gold-derived ordering.",
+    "activated_at_utc": "2026-10-15T09:06:50.266164+00:00",
+    "frozen_from_disabled_sparse_confidence_proposal": "configs/local_deepfri_p14_sparse_confidence_proposed.json",
+    "original_run_id": "qwen38_27b_p14_sparse_confidence_test95_2026-10-15",
+    "restored_at_utc": "2026-10-16T07:17:01.149754+00:00",
+    "runtime_only_refreeze": {
+      "original": {
+        "python": "3.12.15",
+        "torch": "2.13.0+cu132",
+        "numpy": "2.3.5",
+        "tie_grouped_sklearn_runtime": {
+          "python": "3.10.12",
+          "sklearn": "1.5.2",
+          "numpy": "1.21.5"
+        },
+        "device": "cpu",
+        "dtype": "float32",
+        "num_threads": 1,
+        "num_interop_threads": 1
+      },
+      "current": {
+        "python": "3.12.15",
+        "torch": "2.13.0+cu130",
+        "numpy": "2.3.5",
+        "tie_grouped_sklearn_runtime": {
+          "python": "3.10.22",
+          "sklearn": "1.5.2",
+          "numpy": "1.21.5"
+        },
+        "device": "cpu",
+        "dtype": "float32",
+        "num_threads": 1,
+        "num_interop_threads": 1
+      },
+      "reason": "Available isolated local runtime; authorized prospective freeze before any restored replay output. Same native source functions, float32 CPU, thread counts and tied-rank rule; no score selection."
+    },
+    "deployment_adaptation": "One logical Slurm GPU0 with pinned loopback lane; executor scores using its active pinned Python; sklearn-only helper bootstraps hash-verified CPU archive and wheels on node-local disk.",
+    "historical_preparation_note": "The historical PDB parser audit is provenance only for this complete-FASTA adaptation. Restored model inputs, provenance, vocabulary and scorer references are byte-identical to frozen originals; fresh preparation metadata records that restoration."
+  },
+  "configuration_sha256": "660bbe0fa5dc464dc8212610b4a3e284086648d93fbbc448835475bcbab3d470",
+  "runner_sha256": "58a753c4322f17e0fcec4a8fb41a5e6fb57af27bd7268bb4832fa25cc813699b",
+  "frozen_runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+  "actual_runner_file": "/dfs/scratch0/dongweij/bio-evaluation/scripts/shared_vllm_resume.py",
+  "case_contract_sha256": "d7770e84a0f67f5fa6478ce7a6f058e12a2a29874c569a81fb6334d233467f27",
+  "planned_cases": 3416,
+  "model_selection_on_test": false,
+  "solver_tools": [],
+  "answer_keys_available_to_solver": false,
+  "infrastructure_amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7",
+  "serving_configuration": {
+    "mode": "versioned_shared_pool",
+    "actual_routing": "shared_vllm_segments"
+  },
+  "server": {
+    "mode": "versioned_shared_pool",
+    "actual_routing": "shared_vllm_segments"
+  }
+}

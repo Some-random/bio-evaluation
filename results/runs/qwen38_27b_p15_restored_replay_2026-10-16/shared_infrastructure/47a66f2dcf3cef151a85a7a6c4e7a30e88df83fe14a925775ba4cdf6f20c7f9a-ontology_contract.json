@@ -1,0 +1,27 @@
+{
+  "released_global_go_vocabulary": {
+    "MF": 489,
+    "BP": 1943,
+    "CC": 320
+  },
+  "class_ids_and_names_source": "Exact native Zenodo nrPDB-GO_annot.tsv header; ordered global vocabulary, never selected from test-positive labels",
+  "annotation_closure_source": {
+    "source_path": "sources/deepfri_contract_audit_2026-10-15/deepfri__preprocessing__create_nrPDB_GO_annot.py",
+    "file_sha256": "2316acc05393c8ec5ac68fba5c981d2b6cdd59a78402be159673497c1f35e010",
+    "function": "read_sifts",
+    "line": 109,
+    "function_source_sha256": "0663e2e96e65e336e2867af868f752901fe6bbc31b46049c38ddffa9f512466e"
+  },
+  "closure_definition": "obonet OBO graph child-to-parent reachability: networkx.descendants(go_graph, go_id), plus the term itself, excluding GO:0008150/GO:0003674/GO:0005575. Source does not explicitly filter edge relation types; all relations parsed into that graph are traversed. Global class filtering uses >49 and <=5000 annotated proteins before released splits.",
+  "root_terms_excluded": [
+    "GO:0008150",
+    "GO:0003674",
+    "GO:0005575"
+  ],
+  "runtime_score_propagation": "none in verified ProtST/TorchDrug evaluator",
+  "exact_author_obo_artifact_available": false,
+  "exact_blocker": "Pinned DeepFRI data_collection.sh downloads unversioned http://purl.obolibrary.org/obo/go/go-basic.obo. No OBO file, historical release identifier or checksum appears in pinned repository tree or native Zenodo archive member listings. Filename date 2019.06.18 alone does not identify the exact ontology bytes.",
+  "affects": "Regenerating historical annotation closure or adding ontology-based output score propagation; native supplied-target AP/Fmax does not need a newly reconstructed graph.",
+  "next_step": "Obtain author OBO/checksum or explicit release identity if annotation/graph reproduction is required. Do not substitute current GO or an inferred nearby archived release while claiming exact native equivalence.",
+  "current_go_substitution_performed": false
+}

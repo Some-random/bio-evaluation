@@ -1,0 +1,36 @@
+{
+  "slurm_job_id": "240418",
+  "hostname": "ampere3.stanford.edu",
+  "replicas": 4,
+  "plan_sha256": "3fde69cfc346fba55b6cb47016155e597da7eb8fc6da4513f482714b14297b90",
+  "stage": "evaluating",
+  "endpoints": [
+    {
+      "endpoint_id": "replica_0",
+      "endpoint": "http://127.0.0.1:8050/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/replica_0/server_identity.json",
+      "server_identity_sha256": "7216722fc96cf69a3826d06135fbb414fc59194e25916f528b4585c15e7d7291"
+    },
+    {
+      "endpoint_id": "replica_1",
+      "endpoint": "http://127.0.0.1:8051/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/replica_1/server_identity.json",
+      "server_identity_sha256": "06ec4ad84dcb6dbe7af20aa0f1d558288b6865cc60dffbadfd882ef95540ec50"
+    },
+    {
+      "endpoint_id": "replica_2",
+      "endpoint": "http://127.0.0.1:8052/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/replica_2/server_identity.json",
+      "server_identity_sha256": "33e361409c09d324efc7a1bcff8a57e23fdc821486d81bf96f3614a375950972"
+    },
+    {
+      "endpoint_id": "replica_3",
+      "endpoint": "http://127.0.0.1:8053/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/replica_3/server_identity.json",
+      "server_identity_sha256": "35354e2c9f39bcd4dc1f366be8e97deffab8292703887f592167818db3250cde"
+    }
+  ],
+  "updated_at": "2026-10-18T06:13:01.649271+00:00",
+  "ready_replicas": 4,
+  "benchmark_exit_codes": []
+}

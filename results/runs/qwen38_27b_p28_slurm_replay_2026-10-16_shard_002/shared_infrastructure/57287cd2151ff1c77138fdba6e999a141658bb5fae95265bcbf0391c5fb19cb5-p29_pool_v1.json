@@ -1,0 +1,642 @@
+{
+  "schema_version": 1,
+  "execution_authorized": true,
+  "workers": [
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p29_0",
+      "port": 8026,
+      "max_model_len": 49152,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "2-00:00:00",
+      "entries": [
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_id_shard_000.json",
+          "config_sha256": "ead93be95a2d01f7bdd3a0b40d734748d304f1a5ad9e7a636e4aa9cea9f8a06b",
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_000",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "4bc791b403a428a04c53712edb5169ba7996a917871b7d56eb7d4782a7ceab04",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 0,
+          "port": 8026,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_id_shard_000.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_ood_shard_001.json",
+          "config_sha256": "b52518a488f6bff78b21e8ae2ab434366b461bd0b650ba56c0e56cdb2d840357",
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_001",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "ad0f6fb12f431a36a296989f1a670850098023fca90ff563a7ce354d997ac4e3",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 0,
+          "port": 8026,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_ood_shard_001.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237677"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p29_1",
+      "port": 8027,
+      "max_model_len": 49152,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "2-00:00:00",
+      "entries": [
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_id_shard_001.json",
+          "config_sha256": "98753570ff1b304d880b384bd0a1640976a3685afaef050e0707204a5832f2d6",
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_001",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "f59e25c37ef61239da0167d54722ac663a3fa5a132e7deafff10f1c3b7dad411",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 1,
+          "port": 8027,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_id_shard_001.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_ood_shard_002.json",
+          "config_sha256": "bb1d6b32e16d4faddc8007922e1a06d1dfdb4ec42aaa500b39d6cbf4eea4a603",
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_002",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "d6365f29e3be1288e407e4d1c2eb3489ba6c77fbc009ae1d8670cf9cab3bfe76",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 1,
+          "port": 8027,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_ood_shard_002.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237678"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p29_2",
+      "port": 8028,
+      "max_model_len": 49152,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "2-00:00:00",
+      "entries": [
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_id_shard_002.json",
+          "config_sha256": "a8d65407a5a5fa8cc2ddae06e66d6772107af03cc1dcf93bc27457ce483b83e9",
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "80ce54af7e4a3c22b4267545306b94ddc4f74dd5701bb9ec3f083eee616036cc",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 2,
+          "port": 8028,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_id_shard_002.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_ood_shard_003.json",
+          "config_sha256": "582c2ad03a84a29f68f9bf9664e1f9a431442328f994af5c19aab3d93b147d8d",
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "3e566b8ed0df48cb48306a03fa53a44d59378fb7f0083d80cd8739a4acc82732",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 2,
+          "port": 8028,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_ood_shard_003.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237680"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p29_3",
+      "port": 8029,
+      "max_model_len": 49152,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "2-00:00:00",
+      "entries": [
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_id_shard_003.json",
+          "config_sha256": "46de8c4b0bd6d8851275d27621302a4bac33c4a61f2163fc1870987c31599a87",
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "e1c8953834d0ed40449b45226f49466d1a946aadb87e20ec0f95d756c440047b",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 3,
+          "port": 8029,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_id_shard_003.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_ood_shard_004.json",
+          "config_sha256": "c98e550d9f082805fa0a00f725dd7bece2aa8e83a41b614bf20c63ac640ba662",
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_004",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "ded56c09f583c4f8822ef0031f975bcf31fba7c0234aa534f1f99796a7de8be9",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 3,
+          "port": 8029,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_ood_shard_004.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237681"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p29_4",
+      "port": 8030,
+      "max_model_len": 49152,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "2-00:00:00",
+      "entries": [
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_id_shard_004.json",
+          "config_sha256": "1fd18ecdc105949a64946562065b9d06812105b83cf562b440df92c9d0e6fb27",
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "9a0c28a27ca91c8db91f82a58647581093bcf76dfa3c71c6e8f4a52eb1d06e84",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 4,
+          "port": 8030,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_id_shard_004.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_ood_shard_005.json",
+          "config_sha256": "b398b595509f8d54aaea8e11edd9846f46388917229650252768a32d2dcaa58d",
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "6727210eb61d5c79959b9e4d5fba643fcd7413c276250a85f175271656d9ecbe",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 4,
+          "port": 8030,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_ood_shard_005.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237682"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p29_5",
+      "port": 8031,
+      "max_model_len": 49152,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "2-00:00:00",
+      "entries": [
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_id_shard_005.json",
+          "config_sha256": "748eb2928c9be40fcaebc29b04fb8a4b578a1b6ca51ad1dd06fa775281f46c05",
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "42e9f82a42f8fde5a80ec434c1f7c8203886370e1d8844fd4133bcd3637cf910",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 5,
+          "port": 8031,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_id_shard_005.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_ood_shard_006.json",
+          "config_sha256": "f7073b643c8b6c4d58111e9fb216e20a8fb449be29d1a932960f29c6e3853f50",
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "322a48024b93cbce40fa7c4d43b5ec50094e022e52ca0861026c016cfe513b51",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 5,
+          "port": 8031,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_ood_shard_006.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237683"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p29_6",
+      "port": 8032,
+      "max_model_len": 49152,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "2-00:00:00",
+      "entries": [
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_id_shard_006.json",
+          "config_sha256": "fac3fd2e63a42935b0c08e8fae6f500e5f94b876267bed3f499cc4fbe8d31572",
+          "run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "648f07c4c0d4abaa61a98b7e71228fcf07caa8f1779a2b804434e9125f4a3f71",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 845,
+          "lane": 6,
+          "port": 8032,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_id_shard_006.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_ood_shard_007.json",
+          "config_sha256": "b2c9ba66b27feb9e1840d5a9e0cf1cd6b942cf6c6927ea10bcda484477b20f5b",
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "5b528d86141b360de8e3458a76dd534e8126b56690336bf735d113c0e0571135",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 715,
+          "lane": 6,
+          "port": 8032,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_ood_shard_007.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237684"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p29_7",
+      "port": 8033,
+      "max_model_len": 49152,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "2-00:00:00",
+      "entries": [
+        {
+          "task_id": "P29",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29",
+          "config_path": "configs/local_posttrain_protein_p29_ood_shard_000.json",
+          "config_sha256": "e6ac21a28c78cd5323607bdd138c6a3454991c45c7cef1658ad6f067a086fc27",
+          "run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "72b882f35f98cc27d765dc9efc31a1852bdcbf6332f552258055b34e9a0e0d19",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 7,
+          "port": 8033,
+          "max_model_len": 49152,
+          "estimated_max_seconds": 36000,
+          "command_files_sha256": {
+            "scripts/run_pinned_cpu.py": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f",
+            "scripts/execute_local_posttrain_protein_shard.py": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/run_pinned_cpu.py",
+                "scripts/execute_local_posttrain_protein_shard.py",
+                "--config",
+                "configs/local_posttrain_protein_p29_ood_shard_000.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237685"
+    }
+  ],
+  "created_at_utc": "2026-10-16T07:15:25.601851+00:00",
+  "runtime_artifacts": {
+    "runtime_archive.json": {
+      "sha256": "732def4d7a95da921b67dbfcc8bbf1e602218868b7ee40e3cc9990e059f92893",
+      "bytes": 8411525120,
+      "mtime_ns": 1792128556914575791
+    },
+    "cuda_overlay_archive.json": {
+      "sha256": "e9f9c715bc3ce46a7d9d8b0d40a05372be14a978821df1f8facaf3039cca09a2",
+      "bytes": 275179520,
+      "mtime_ns": 1792129194098355806
+    }
+  },
+  "infrastructure_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_pool_v1.pool_worker.py": "369a08ae7d22f40b16675ee5532e2e1b339a59f69a0914b7538e6465e3fa284b",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_pool_v1.runtime_common.py": "93611c2b597857222f6400bcf9151ce70ae7f8053c7871600bc49106e67370f4",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_pool_v1.pool_worker.sbatch": "3adfb833717e6f94ce04eb2ac9dc803a13518dfb190d0af6567fb3fbf7791318"
+  },
+  "worker_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_pool_v1.pool_worker.py",
+  "runtime_common_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_pool_v1.runtime_common.py",
+  "sbatch_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p29_pool_v1.pool_worker.sbatch"
+}

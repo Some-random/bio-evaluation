@@ -1,0 +1,51 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "dtype": "bfloat16",
+  "tensor_parallel_size": 1,
+  "max_model_len": 65536,
+  "max_num_seqs": 32,
+  "endpoint": "http://127.0.0.1:8051/v1",
+  "gpu_uuids": [
+    "GPU-ed2075e0-db0c-8026-cd41-a22c523ab1cf"
+  ],
+  "hostname": "ampere3.stanford.edu",
+  "pid": 1069304,
+  "proc_start_ticks": "917250026",
+  "slurm_job_id": "240418",
+  "observed_gpu_processes": [
+    {
+      "pid": 1070213,
+      "gpu_uuid": "GPU-ed2075e0-db0c-8026-cd41-a22c523ab1cf",
+      "used_memory": "71500 MiB"
+    }
+  ],
+  "command": [
+    "/tmp/bio-shared-240418-2hqsuN/python/bin/python3.12",
+    "-m",
+    "vllm.entrypoints.cli.main",
+    "serve",
+    "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+    "--served-model-name",
+    "Qwen/Qwen3.8-27B",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8051",
+    "--dtype",
+    "bfloat16",
+    "--tensor-parallel-size",
+    "1",
+    "--gpu-memory-utilization",
+    "0.90",
+    "--max-model-len",
+    "65536",
+    "--max-num-seqs",
+    "32",
+    "--reasoning-parser",
+    "qwen3",
+    "--enable-prefix-caching",
+    "--limit-mm-per-prompt",
+    "{\"image\": 1, \"video\": 0}"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  ".venv/bin/python": {
+    "browsable_copy": null,
+    "expected_sha256": "66ea332704b90710929ab9bed3957f172f6cbe16ff19cb6be3ee1662888514de"
+  },
+  "configs/deepfri_cpu_commands.json": {
+    "browsable_copy": "shared_infrastructure/5d1d2955891c352595a48108507848171923b57b8142c558c6175c12af67e782-deepfri_cpu_commands.json",
+    "expected_sha256": "5d1d2955891c352595a48108507848171923b57b8142c558c6175c12af67e782"
+  },
+  "configs/deepfri_cpu_runtime_assets.json": {
+    "browsable_copy": "shared_infrastructure/d0a32c3a64576966c694963b32ddb51297582d438df5fc30a8427655d432daf1-deepfri_cpu_runtime_assets.json",
+    "expected_sha256": "d0a32c3a64576966c694963b32ddb51297582d438df5fc30a8427655d432daf1"
+  },
+  "configs/local_deepfri_p13_review.json": {
+    "browsable_copy": "shared_infrastructure/2982777eba266914de3c2ebf35b4501e77861af59aa3c8f05bf3d2f4e9b40d64-local_deepfri_p13_review.json",
+    "expected_sha256": "2982777eba266914de3c2ebf35b4501e77861af59aa3c8f05bf3d2f4e9b40d64"
+  },
+  "configs/local_deepfri_scoring_runtime_proposed.json": {
+    "browsable_copy": "shared_infrastructure/d6632a8ae06d3708be30a022feaa503d6ca804d442086f5ac5992ace79fa268b-local_deepfri_scoring_runtime_proposed.json",
+    "expected_sha256": "d6632a8ae06d3708be30a022feaa503d6ca804d442086f5ac5992ace79fa268b"
+  },
+  "configs/local_deepfri_sparse_confidence_output_contract_proposed.json": {
+    "browsable_copy": "shared_infrastructure/da11d72f3b921f5bf61f7f1613ed1756122cbfa12404c4084a28323f6bc2acf5-local_deepfri_sparse_confidence_output_contract_proposed.json",
+    "expected_sha256": "da11d72f3b921f5bf61f7f1613ed1756122cbfa12404c4084a28323f6bc2acf5"
+  },
+  "data/catalog_deepfri_tasks/P13/class_vocabulary.json": {
+    "browsable_copy": "shared_infrastructure/9ca8839a9b674292a4585185c91a2bf2475d0ae3b6226c662d1a108ef5701e1b-class_vocabulary.json",
+    "expected_sha256": "9ca8839a9b674292a4585185c91a2bf2475d0ae3b6226c662d1a108ef5701e1b"
+  },
+  "data/catalog_deepfri_tasks/P13/input_provenance.jsonl": {
+    "browsable_copy": null,
+    "expected_sha256": "f37590aec1c1c33e3cfaa42bbca2b0fd2b17fe1ea35e0af6a4a26948b71cbde4"
+  },
+  "data/catalog_deepfri_tasks/P13/model_inputs.jsonl": {
+    "browsable_copy": null,
+    "expected_sha256": "e48f5741b057ef4c7b6625c91b373121fb150a1965a026e72e08f071e22e3f97"
+  },
+  "data/catalog_deepfri_tasks/P13/preparation.json": {
+    "browsable_copy": "shared_infrastructure/476358d89e4d3296fc16970dea99c4a64282ad55884d29526835c264dc589ace-preparation.json",
+    "expected_sha256": "476358d89e4d3296fc16970dea99c4a64282ad55884d29526835c264dc589ace"
+  },
+  "data/catalog_deepfri_tasks/P13/scorer_references.jsonl": {
+    "browsable_copy": null,
+    "expected_sha256": "9fa3ca3c827ff47e5cbf80c988e1154e4dd4164fa512ec2d873e4f7121e1b452"
+  },
+  "input_restoration.json": {
+    "browsable_copy": "shared_infrastructure/4cb9e46a7e654ea9e4445726d472bb3e79bcb06d40cded021cf1c9e64da41406-input_restoration.json",
+    "expected_sha256": "4cb9e46a7e654ea9e4445726d472bb3e79bcb06d40cded021cf1c9e64da41406"
+  },
+  "reports/DEEPFRI_NATIVE_SOURCE_AUDIT_2026-10-15.json": {
+    "browsable_copy": "shared_infrastructure/ca3e14ae4d590cf884401f67991b1b97eca446dcb221ac2cc612c8fcc91d70cd-DEEPFRI_NATIVE_SOURCE_AUDIT_2026-10-15.json",
+    "expected_sha256": "ca3e14ae4d590cf884401f67991b1b97eca446dcb221ac2cc612c8fcc91d70cd"
+  },
+  "reports/DEEPFRI_SPARSE_CONFIDENCE_TOKEN_BUDGET_2026-10-15.json": {
+    "browsable_copy": "shared_infrastructure/95d50fc92eafec4a7cd4315f496802ca7fd761117f55d20fa5f193a3b0b6ceb8-DEEPFRI_SPARSE_CONFIDENCE_TOKEN_BUDGET_2026-10-15.json",
+    "expected_sha256": "95d50fc92eafec4a7cd4315f496802ca7fd761117f55d20fa5f193a3b0b6ceb8"
+  },
+  "scripts/execute_local_deepfri_confidence.py": {
+    "browsable_copy": "shared_infrastructure/cc269d32be5cdaec7ecae0758e1374e975a11d9e1eae5b1b43ce0521d613874d-execute_local_deepfri_confidence.py",
+    "expected_sha256": "cc269d32be5cdaec7ecae0758e1374e975a11d9e1eae5b1b43ce0521d613874d"
+  },
+  "scripts/execute_local_deepfri_confidence_eight_gpu.py": {
+    "browsable_copy": "shared_infrastructure/3bd2f2c4b4985ba021e10248863eba48dcd756c965e5511556528547a06e68ba-execute_local_deepfri_confidence_eight_gpu.py",
+    "expected_sha256": "3bd2f2c4b4985ba021e10248863eba48dcd756c965e5511556528547a06e68ba"
+  },
+  "scripts/freeze_local_deepfri_proposals.py": {
+    "browsable_copy": "shared_infrastructure/976b8a04b2dfa0551a8ecfebeda29938417b437ace1bc16e89a4db022904a8a2-freeze_local_deepfri_proposals.py",
+    "expected_sha256": "976b8a04b2dfa0551a8ecfebeda29938417b437ace1bc16e89a4db022904a8a2"
+  },
+  "scripts/prepare_local_deepfri_proposals.py": {
+    "browsable_copy": "shared_infrastructure/fbc2387a1c109257657540bde19f6c546ee9b8dc36f6f324886724601bbc50d6-prepare_local_deepfri_proposals.py",
+    "expected_sha256": "fbc2387a1c109257657540bde19f6c546ee9b8dc36f6f324886724601bbc50d6"
+  },
+  "scripts/run_local_labbench_eight_gpu.py": {
+    "browsable_copy": "shared_infrastructure/038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4-run_local_labbench_eight_gpu.py",
+    "expected_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4"
+  },
+  "scripts/run_local_labbench_multimodal.py": {
+    "browsable_copy": "shared_infrastructure/ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d-run_local_labbench_multimodal.py",
+    "expected_sha256": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d"
+  },
+  "scripts/score_local_deepfri_confidence.py": {
+    "browsable_copy": "shared_infrastructure/b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7-score_local_deepfri_confidence.py",
+    "expected_sha256": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7"
+  },
+  "scripts/score_local_deepfri_tie_grouped.py": {
+    "browsable_copy": "shared_infrastructure/a23067301546288a95a1554ca2a25d70ae87e3a220f1931ed208bf607332003d-score_local_deepfri_tie_grouped.py",
+    "expected_sha256": "a23067301546288a95a1554ca2a25d70ae87e3a220f1931ed208bf607332003d"
+  },
+  "scripts/score_local_genomics.py": {
+    "browsable_copy": "shared_infrastructure/31b786c16b70e4914268c561244f1fd3ed5c4e049e7ae7a79da3ac973c2e5240-score_local_genomics.py",
+    "expected_sha256": "31b786c16b70e4914268c561244f1fd3ed5c4e049e7ae7a79da3ac973c2e5240"
+  },
+  "sources/deepfri_contract_audit_2026-10-15/native_metric_contract.json": {
+    "browsable_copy": "shared_infrastructure/03f9bd734b452fa6dfbe8955da1f958264f12e9a5f22aef9a0cf3fb5e5af7f86-native_metric_contract.json",
+    "expected_sha256": "03f9bd734b452fa6dfbe8955da1f958264f12e9a5f22aef9a0cf3fb5e5af7f86"
+  },
+  "sources/deepfri_contract_audit_2026-10-15/ontology_contract.json": {
+    "browsable_copy": "shared_infrastructure/47a66f2dcf3cef151a85a7a6c4e7a30e88df83fe14a925775ba4cdf6f20c7f9a-ontology_contract.json",
+    "expected_sha256": "47a66f2dcf3cef151a85a7a6c4e7a30e88df83fe14a925775ba4cdf6f20c7f9a"
+  },
+  "sources/deepfri_contract_audit_2026-10-15/torchdrug__torchdrug__metrics__metric.py": {
+    "browsable_copy": "shared_infrastructure/760f376d4125ab2cc9332c9e83b944d4464da51aea577d75266d9247aca81776-torchdrug__torchdrug__metrics__metric.py",
+    "expected_sha256": "760f376d4125ab2cc9332c9e83b944d4464da51aea577d75266d9247aca81776"
+  }
+}

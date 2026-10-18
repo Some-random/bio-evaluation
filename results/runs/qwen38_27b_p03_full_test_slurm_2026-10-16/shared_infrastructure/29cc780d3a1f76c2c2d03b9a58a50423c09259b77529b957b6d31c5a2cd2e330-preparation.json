@@ -1,0 +1,57 @@
+{
+  "task": "P03",
+  "dataset": "subcellular_localization",
+  "target_field": "localization",
+  "test_count": 2773,
+  "md5": "37cb6138b8d4603512530458b7c8a77d",
+  "sha256": "8c3cf116b7e82779a7cd6b280cf50d8d69d826ef88667ed3a29fda5751184a66",
+  "source_url": "https://miladeepgraphlearningproteindata.s3.us-east-2.amazonaws.com/peerdata/subcellular_localization.tar.gz",
+  "native_metric": "accuracy",
+  "variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_DEEPLOC_NATIVE_LABELS",
+  "objective": "Predict the subcellular location of this protein. Use the original DeepLoc/ProtST class IDs and descriptions below. Return only one integer class ID from 0 through 9.",
+  "target_definition": "Original ten-compartment DeepLoc curated localization class; integer mapping from pinned official ProtST subloc_language.tsv, independently of test labels.",
+  "units": "native integer class ID 0-9",
+  "source_loader": "sources/torchdrug__subcellular_localization.py",
+  "reference_type": "curated subcellular annotation",
+  "split_caveat": "Actual publisher-MD5-matched test LMDB has2773 rows; loader docstring2768 is stale. Pinned load_lmdbs/load_sequence performs no row filtering.",
+  "cases": 2773,
+  "original_test_rows_retained": true,
+  "full_sequence_lengths": {
+    "min": 40,
+    "max": 1000
+  },
+  "training_rows_read": 0,
+  "label_based_selection": false,
+  "inference_dispatched": 0,
+  "input_interface": "Complete amino-acid sequence and fixed objective; native class ontology additionally supplied for P03",
+  "likely_demands": {
+    "labels": [
+      "biological_outcome_prediction",
+      "sequence_representation"
+    ],
+    "status": "provisional description; no internal-computation inference"
+  },
+  "reference_evidence": "curated subcellular annotation",
+  "good_score_establishes": "Outcome agreement on this released test under the fixed zero-shot full-sequence protocol",
+  "bad_score_establishes": "Limited outcome recovery in this representation/regime; not an isolated measure of general reasoning",
+  "explanation_score": null,
+  "mechanism_reference": "not evaluated; correct prediction does not certify explanation",
+  "regime_comparison": "New prompted zero-shot Qwen baseline; native-trained TAPE/ProtST heads are a different training regime. Same released data/metric is not full historical-paper reproduction.",
+  "native_label_source": "sources/catalog_extended__protst__data__zero_shot_classification__subloc_language.tsv",
+  "protocol_evidence": [
+    "sources/torchdrug__subcellular_localization.py",
+    "sources/catalog_extended__torchdrug__data__dataset.py",
+    "sources/catalog_extended__protst__data__zero_shot_classification__subloc_language.tsv"
+  ],
+  "paper_definition_source": "https://github.com/DeepGraphLearning/ProtST/tree/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification",
+  "files": {
+    "model_inputs.jsonl": {
+      "bytes": 12733819,
+      "sha256": "5ff7c3439df036ba440246ab3d75889e45b8550ab12d8a9a62985028a82e98bd"
+    },
+    "scorer_references.jsonl": {
+      "bytes": 749263,
+      "sha256": "103ea79f4d7c62f43fe5d02bf864bea218712beae138980b83aa91287b8a33b4"
+    }
+  }
+}

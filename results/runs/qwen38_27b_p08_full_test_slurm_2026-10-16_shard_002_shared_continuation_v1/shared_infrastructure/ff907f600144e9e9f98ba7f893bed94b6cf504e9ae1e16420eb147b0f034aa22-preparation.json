@@ -1,0 +1,57 @@
+{
+  "task": "P08",
+  "dataset": "stability",
+  "target_field": "stability_score",
+  "test_count": 12851,
+  "md5": "aa1e06eb5a59e0ecdae581e9ea029675",
+  "sha256": "0580bc854e13701431dbbaf942756b8611598e3422599104bc7b0a151b6ec38f",
+  "source_url": "https://s3.amazonaws.com/songlabdata/proteindata/data_pytorch/stability.tar.gz",
+  "native_metric": "Spearman correlation",
+  "variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH",
+  "objective": "Predict the continuous protein-folding stability score of this sequence on the original TAPE/Rocklin experimental scale (the stability_score target), which measures resistance to unfolding under the source assay. Return only one finite numerical value.",
+  "target_definition": "Source TAPE stability_score[0], an experimental proxy for intrinsic folding stability under the source concentration-threshold assay. The released numerical scale is preserved without conversion.",
+  "units": "native TAPE stability_score scale; no conversion to melting temperature or energy",
+  "source_loader": "sources/torchdrug__stability.py",
+  "reference_type": "experimental protein folding-stability measurement",
+  "split_caveat": "Publisher-MD5-matched PyTorch/ProtST release has12851 test rows. Original2019 TAPE paper table lists12839; do not claim historical paper-split identity.",
+  "cases": 12851,
+  "original_test_rows_retained": true,
+  "full_sequence_lengths": {
+    "min": 43,
+    "max": 46
+  },
+  "training_rows_read": 0,
+  "label_based_selection": false,
+  "inference_dispatched": 0,
+  "input_interface": "Complete amino-acid sequence and fixed objective; native class ontology additionally supplied for P03",
+  "likely_demands": {
+    "labels": [
+      "biological_outcome_prediction",
+      "sequence_representation"
+    ],
+    "status": "provisional description; no internal-computation inference"
+  },
+  "reference_evidence": "experimental protein folding-stability measurement",
+  "good_score_establishes": "Outcome agreement on this released test under the fixed zero-shot full-sequence protocol",
+  "bad_score_establishes": "Limited outcome recovery in this representation/regime; not an isolated measure of general reasoning",
+  "explanation_score": null,
+  "mechanism_reference": "not evaluated; correct prediction does not certify explanation",
+  "regime_comparison": "New prompted zero-shot Qwen baseline; native-trained TAPE/ProtST heads are a different training regime. Same released data/metric is not full historical-paper reproduction.",
+  "native_label_source": null,
+  "protocol_evidence": [
+    "sources/torchdrug__stability.py",
+    "sources/catalog_extended__torchdrug__data__dataset.py",
+    "sources/catalog_extended__tape__datasets.py"
+  ],
+  "paper_definition_source": "https://arxiv.org/html/1906.08230#S4.SS2",
+  "files": {
+    "model_inputs.jsonl": {
+      "bytes": 12563883,
+      "sha256": "068d4d951f3e6e220514cabdcef151afcf82108d635ddbe82a0ce9b18ceb0f4d"
+    },
+    "scorer_references.jsonl": {
+      "bytes": 3362848,
+      "sha256": "bb6bc3a78b14ad195ebb2df56f968963d08006834130e1755152aa2824853427"
+    }
+  }
+}

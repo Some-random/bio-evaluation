@@ -1,0 +1,395 @@
+{
+  "schema_version": 1,
+  "execution_authorized": true,
+  "workers": [
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p28_0",
+      "port": 8026,
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "1-00:00:00",
+      "entries": [
+        {
+          "task_id": "P28",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28",
+          "config_path": "configs/local_bioreason_p28_shard_000.json",
+          "config_sha256": "e161ce5605af8ab49513f2dd43f3351ce34beabe132915db093eeab55f2264b7",
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_000",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "b7809a27d52d4f4a3dc9387e86939115d62791a691bc95449f438eab5b1fc7a5",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 0,
+          "port": 8026,
+          "max_model_len": 32768,
+          "estimated_max_seconds": 43200,
+          "command_files_sha256": {
+            "scripts/execute_local_bioreason_shard.py": "177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_bioreason_shard.py",
+                "--config",
+                "configs/local_bioreason_p28_shard_000.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237663"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p28_1",
+      "port": 8027,
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "1-00:00:00",
+      "entries": [
+        {
+          "task_id": "P28",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28",
+          "config_path": "configs/local_bioreason_p28_shard_001.json",
+          "config_sha256": "62bd36ee1bd7312e59883475c900469b3f65120b9c26bd7056dc76e1c888193b",
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_001",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "5801aa350be0f966d4e020b0db3c65c6c08ae13f1812ab78d65ac93790f07ced",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 1,
+          "port": 8027,
+          "max_model_len": 32768,
+          "estimated_max_seconds": 43200,
+          "command_files_sha256": {
+            "scripts/execute_local_bioreason_shard.py": "177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_bioreason_shard.py",
+                "--config",
+                "configs/local_bioreason_p28_shard_001.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237664"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p28_2",
+      "port": 8028,
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "1-00:00:00",
+      "entries": [
+        {
+          "task_id": "P28",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28",
+          "config_path": "configs/local_bioreason_p28_shard_002.json",
+          "config_sha256": "43253a66a0c3d971e65306c1e84557c35c00fe8038867ee566ebf37b1bec4907",
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_002",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "351b7e2812af8f38011406b05eeb3f98d0f0e0c123c3e21d0ff2fa62ccba603c",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 2,
+          "port": 8028,
+          "max_model_len": 32768,
+          "estimated_max_seconds": 43200,
+          "command_files_sha256": {
+            "scripts/execute_local_bioreason_shard.py": "177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_bioreason_shard.py",
+                "--config",
+                "configs/local_bioreason_p28_shard_002.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237671"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p28_3",
+      "port": 8029,
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "1-00:00:00",
+      "entries": [
+        {
+          "task_id": "P28",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28",
+          "config_path": "configs/local_bioreason_p28_shard_003.json",
+          "config_sha256": "e121da70714005d213ff5ef5f1575230c64e0f0ded7c1d5875edfc0243075313",
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_003",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "3c8633d4f897d50c4fa51c757c6b0bdac18cb945e98b46b0a1536cedd19af36c",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 3,
+          "port": 8029,
+          "max_model_len": 32768,
+          "estimated_max_seconds": 43200,
+          "command_files_sha256": {
+            "scripts/execute_local_bioreason_shard.py": "177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_bioreason_shard.py",
+                "--config",
+                "configs/local_bioreason_p28_shard_003.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237672"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p28_4",
+      "port": 8030,
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "1-00:00:00",
+      "entries": [
+        {
+          "task_id": "P28",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28",
+          "config_path": "configs/local_bioreason_p28_shard_004.json",
+          "config_sha256": "c9a464497c981ba3bcfcbd0fe82bb035e74c03050a2e64a793f17eaf0db7a4d6",
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_004",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "01d568bebedda48919f5533e752bab0be7e369e68a39e90a4c8ddd2806bc5e3f",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 4,
+          "port": 8030,
+          "max_model_len": 32768,
+          "estimated_max_seconds": 43200,
+          "command_files_sha256": {
+            "scripts/execute_local_bioreason_shard.py": "177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_bioreason_shard.py",
+                "--config",
+                "configs/local_bioreason_p28_shard_004.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237673"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p28_5",
+      "port": 8031,
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "1-00:00:00",
+      "entries": [
+        {
+          "task_id": "P28",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28",
+          "config_path": "configs/local_bioreason_p28_shard_005.json",
+          "config_sha256": "09615a4fb05e2d80554bbbd3cce47a61015ec4192db070f4b09f364d8fb39fa6",
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_005",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "0c7736d1246a7634f0b82fe73a39dbcb1ed319047efa0172b48d160537927630",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 5,
+          "port": 8031,
+          "max_model_len": 32768,
+          "estimated_max_seconds": 43200,
+          "command_files_sha256": {
+            "scripts/execute_local_bioreason_shard.py": "177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_bioreason_shard.py",
+                "--config",
+                "configs/local_bioreason_p28_shard_005.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237674"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p28_6",
+      "port": 8032,
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "1-00:00:00",
+      "entries": [
+        {
+          "task_id": "P28",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28",
+          "config_path": "configs/local_bioreason_p28_shard_006.json",
+          "config_sha256": "956dc05f3e3acf4da96c1156f7ce308c852cf91616bded3beb68942788cb3c88",
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_006",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "8424ff755f297a5bad2a72a73a1b0a981e9ab911bef507c5dc49a4c36d1e4eb1",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 6,
+          "port": 8032,
+          "max_model_len": 32768,
+          "estimated_max_seconds": 43200,
+          "command_files_sha256": {
+            "scripts/execute_local_bioreason_shard.py": "177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_bioreason_shard.py",
+                "--config",
+                "configs/local_bioreason_p28_shard_006.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237675"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p28_7",
+      "port": 8033,
+      "max_model_len": 32768,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "1-00:00:00",
+      "entries": [
+        {
+          "task_id": "P28",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28",
+          "config_path": "configs/local_bioreason_p28_shard_007.json",
+          "config_sha256": "6e301f4f878419e0840eafe75c26ecc05be077c5ea1385fec3c369ae45dc0924",
+          "run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_007",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "a40c3d9d35db3fad52f08f83aefb882fe17057f7498c7bb34754c2e7cf2c8099",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 991,
+          "lane": 7,
+          "port": 8033,
+          "max_model_len": 32768,
+          "estimated_max_seconds": 43200,
+          "command_files_sha256": {
+            "scripts/execute_local_bioreason_shard.py": "177d80ba7d8cd21087b5f2fceabb6b095362f80ab5b5af831fdcf7d6a30e0ceb"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_bioreason_shard.py",
+                "--config",
+                "configs/local_bioreason_p28_shard_007.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237676"
+    }
+  ],
+  "created_at_utc": "2026-10-16T07:14:19.085424+00:00",
+  "runtime_artifacts": {
+    "runtime_archive.json": {
+      "sha256": "732def4d7a95da921b67dbfcc8bbf1e602218868b7ee40e3cc9990e059f92893",
+      "bytes": 8411525120,
+      "mtime_ns": 1792128556914575791
+    },
+    "cuda_overlay_archive.json": {
+      "sha256": "e9f9c715bc3ce46a7d9d8b0d40a05372be14a978821df1f8facaf3039cca09a2",
+      "bytes": 275179520,
+      "mtime_ns": 1792129194098355806
+    }
+  },
+  "infrastructure_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_pool_v2.pool_worker.py": "369a08ae7d22f40b16675ee5532e2e1b339a59f69a0914b7538e6465e3fa284b",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_pool_v2.runtime_common.py": "93611c2b597857222f6400bcf9151ce70ae7f8053c7871600bc49106e67370f4",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_pool_v2.pool_worker.sbatch": "3adfb833717e6f94ce04eb2ac9dc803a13518dfb190d0af6567fb3fbf7791318"
+  },
+  "worker_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_pool_v2.pool_worker.py",
+  "runtime_common_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_pool_v2.runtime_common.py",
+  "sbatch_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p28_pool_v2.pool_worker.sbatch"
+}

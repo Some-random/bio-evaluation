@@ -1,0 +1,1301 @@
+{
+  "accounting_after_api_kill_before_client_kill": {
+    "captured_at": "2026-10-17T22:29:05.373508-07:00",
+    "exit_code": "0:0",
+    "job_id": "237676",
+    "state": "RUNNING"
+  },
+  "api_identity": {
+    "pid": 3370380,
+    "start_ticks": 900591657,
+    "state": "S",
+    "uid": 26129
+  },
+  "api_killed_at": "2026-10-17T22:29:05.351423-07:00",
+  "api_stopped_at": "2026-10-17T22:29:02.575445-07:00",
+  "buffered_completions_saved": 4,
+  "client_identity": {
+    "pid": 1231046,
+    "start_ticks": 916760176,
+    "state": "S",
+    "uid": 26129
+  },
+  "client_killed_at": "2026-10-17T22:29:05.453527-07:00",
+  "created_at": "2026-10-17T22:28:20.423265-07:00",
+  "drain_metrics": [
+    {
+      "captured_at": "2026-10-17T22:28:20.532032-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:21.496420-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:21.742284-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:21.987874-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:22.239903-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:22.486013-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:22.732007-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:22.976113-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:23.223141-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:23.471569-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:23.719393-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:23.967445-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:24.215179-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:24.462790-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:24.710062-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:24.957651-07:00",
+      "running": 4.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:25.205028-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:25.453122-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:25.700370-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:25.947714-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:26.195277-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:26.443556-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:26.692215-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:26.955399-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:27.191474-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:27.437483-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:27.683722-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:27.929790-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:28.175859-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:28.421537-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:28.668128-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:28.913964-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:29.159811-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:29.405537-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:29.651062-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:29.897485-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:30.143838-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:30.390083-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:30.636021-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:30.881694-07:00",
+      "running": 3.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:31.127721-07:00",
+      "running": 2.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:31.374390-07:00",
+      "running": 2.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:31.630699-07:00",
+      "running": 2.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:31.866823-07:00",
+      "running": 2.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:32.102196-07:00",
+      "running": 2.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:32.348797-07:00",
+      "running": 2.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:32.594708-07:00",
+      "running": 2.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:32.883472-07:00",
+      "running": 2.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:33.129419-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:33.375979-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:33.622045-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:33.868717-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:34.115147-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:34.337660-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:34.583422-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:34.829255-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:35.075072-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:35.321014-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:35.566996-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:35.813021-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:36.059066-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:36.315058-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:36.551278-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:36.786622-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:37.032509-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:37.278473-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:37.525286-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:37.771236-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:38.017222-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:38.262997-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:38.508715-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:38.754673-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:39.000478-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:39.246200-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:39.492430-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:39.738454-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:39.984275-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:40.230680-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:40.477323-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:40.723796-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:40.979501-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:41.215138-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:41.450397-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:41.696627-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:41.942722-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:42.189143-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:42.435411-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:42.681645-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:42.927974-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:43.174548-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:43.420816-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:43.667070-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:43.913593-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:44.159511-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:44.405649-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:44.652169-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:44.898507-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:45.144659-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:45.391020-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:45.646465-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:45.882363-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:46.117688-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:46.363841-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:46.609988-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:46.856227-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:47.103134-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:47.349461-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:47.595820-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:47.842167-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:48.088511-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:48.334820-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:48.581105-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:48.827408-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:49.073772-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:49.320058-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:49.566175-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:49.812270-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:50.059054-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:50.315118-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:50.550868-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:50.786152-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:51.032394-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:51.278805-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:51.525145-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:51.771554-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:52.018035-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:52.264508-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:52.510879-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:52.757037-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:53.003463-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:53.253776-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:53.500800-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:53.748060-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:53.994500-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:54.240612-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:54.486761-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:54.733020-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:54.994666-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:55.217429-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:55.452265-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:55.687613-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:55.933900-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:56.180002-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:56.426409-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:56.672731-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:56.919129-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:57.166487-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:57.412771-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:57.658979-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:57.905117-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:58.151254-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:58.397423-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:58.643511-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:58.889619-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:59.135974-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:59.382375-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:59.636780-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:28:59.871217-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:00.106208-07:00",
+      "running": 1.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:00.351959-07:00",
+      "running": 0.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:00.598376-07:00",
+      "running": 0.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:00.844330-07:00",
+      "running": 0.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:01.090000-07:00",
+      "running": 0.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:01.335664-07:00",
+      "running": 0.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:01.581439-07:00",
+      "running": 0.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:01.827170-07:00",
+      "running": 0.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:02.073114-07:00",
+      "running": 0.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:02.318978-07:00",
+      "running": 0.0,
+      "waiting": 0.0
+    },
+    {
+      "captured_at": "2026-10-17T22:29:02.564615-07:00",
+      "running": 0.0,
+      "waiting": 0.0
+    }
+  ],
+  "finalized_at": "2026-10-17T22:29:54.662096-07:00",
+  "initial_accounting": {
+    "captured_at": "2026-10-17T22:28:20.423174-07:00",
+    "exit_code": "0:0",
+    "job_id": "237676",
+    "state": "RUNNING"
+  },
+  "kind": "shared_vllm_negative_execution_drain",
+  "old_job_id": "237676",
+  "pending_unexecuted_requests": 4,
+  "pre_stop_outstanding_records": [
+    {
+      "filename": "14baa093727df2f5c135dbd09daf929e894be41c63eb964b844e2ce3b4a20f97.json",
+      "payload_sha256": "89fa5340f22e2abb6f6463cc9de27d2e8963b8f6891696ad767f9798b3e5870e",
+      "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+      "request_file_sha256": "c162a4d34959d9efe5b0743305d422a1dd7d66788347ce28d86f360a4d9b0111",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007"
+    },
+    {
+      "filename": "2bfdfd1f3c6d77737061eb0f775eafddb7f817f61092b3f73c24366ec99a049f.json",
+      "payload_sha256": "9f2c77ec10cef7f3e9831bf9a06f842f4159086c0a522404944f13fcb492f6a4",
+      "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+      "request_file_sha256": "4b05b61908e84a1e314fc46ce32c2b4a6798203216ebf23c88e38228a704c890",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007"
+    },
+    {
+      "filename": "a853c0195756ead0932755fbe00694b01231e660ef4c1fa987449105d852c24e.json",
+      "payload_sha256": "4052c93b57302929866a2aa7af7c87824c4937017c286126f1cffd47d1a5f061",
+      "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+      "request_file_sha256": "df5375749f2fee3e3d631f9fbe070e63d9f4b5b2148e3c5796f00f1a814f5f0a",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007"
+    },
+    {
+      "filename": "c9c8a19e57d617fe2cf0f856ae1a32d76704b536dca9a3007ef23558c5cf3628.json",
+      "payload_sha256": "c277030d5c20e48b197f8b12b88172a71cdf15f6166a2d51902c9cfbff2b8307",
+      "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+      "request_file_sha256": "5cf5da56a06db7b20de4e592df78131c9e945ab095c3c315ec75254c28ec2b3a",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007"
+    }
+  ],
+  "pre_stop_request_filenames": [
+    "0077d4e82a2fb48d8d6784a41369048f4a37dcd819fe3dd8eb9978952f65f524.json",
+    "00db77005c9c8f0b9c71712ef74e5ba51ae0ba2c5506b9dc1c9885d76390a524.json",
+    "010a2d03bd9fb4e08d0651bc10a258c9fa3140c504039189e8d220facf621313.json",
+    "0227ccdae710890f3762be224230ecc66b712c1331b3b1e107ddbd0be298e9b9.json",
+    "030a31b98efe0c6babb0f01aaacdb08e067e34ccb6d5b3a8b184c4857271c6e5.json",
+    "036cecf888337eb94dfa21c8ef85a92861393387da8e305fec637b058567370d.json",
+    "038e9f8ac699a037705b0623eeb409b664a8bce2dd90aa2d36ffcfd34cbaa9e1.json",
+    "047426cf993d099d09ba1f27a023ff05b31d5a48b817891683ff6844e1b8d864.json",
+    "0584bddc418ec31b08d225b13b01b5cfd2a5ab9c01c4491dfd611a1df860165f.json",
+    "068bfc3675a27a575dfdcade979bb81936d7b47d779bd14afeb840e0e8f0c8a3.json",
+    "076a548f685e9b15cd152b9107f9890ded9935477f7727c6d3082a7e11978628.json",
+    "080246594ce76e5feb4bb7747a0d0ae9cc6d4d37a74ae9607bafaf4f2c1ca8dc.json",
+    "081c5323eb3fab9ddfe79a0a37635b44af5dbc467c3afbdc6d0f7baf8e37f600.json",
+    "0839e15a94629e74fa175314a98a3866400eedb346a2049ab7fcf9c07aa5d580.json",
+    "09405196e8e4b233b269181249c9316e032901a646fd9c8091728aaa70e78dcf.json",
+    "098488978ec89bbe465ca3bc8eba7ab690212872c557290b0813cb4c034b5696.json",
+    "0b0760ba4ed03858cf1c9f7cb0ae2e6d737299c22f6e88f718f2609a960bd679.json",
+    "0c56b3ef41730803daf60a130c4fe413e40f721ad6b0cbfd65d25c49fb2a9e7d.json",
+    "0c63be9004878218ff642841de667fb672274b9fe910ee616ad0ba75259e57c3.json",
+    "0c86ce7ee5b51a21247aae3c183a461afb81d7e9aa4a4ca2c94676074d66fede.json",
+    "1003ed460f113e82f1b397626410ca9c59a4184f142e82c5fd36f14f07f381c5.json",
+    "1115b49c62d4a0b56dd59cf5aa3c020477afeb0c2c71cf7cb2ea31f406b12501.json",
+    "114e8a61664d0edb676c2021fc02dd481a807f45362fa8792e325d593eecc101.json",
+    "127cb88b5bec83c28398bbadfb0f896f14f256836b1993183d92cd29e12d7d24.json",
+    "13bce62174c1b77cc76b411edde584b6766c440fb5a6900fef1838ba5229825f.json",
+    "13bf76365b867ea27aa436e653da38d89a03dfc8082494b340381567a644c068.json",
+    "1474d07d09b76723b30f2acbaa7f3252e510b8ec14b9204948ddad2b4c78f081.json",
+    "14baa093727df2f5c135dbd09daf929e894be41c63eb964b844e2ce3b4a20f97.json",
+    "14bba584b383cea7283945dee2a03931311142a29345fbbde9b350b82024c634.json",
+    "1519d94f787227dea1126017cf39cd09aad70760368c607e8783ad1e465da679.json",
+    "156606ac28ea6ff5d58627737aeedad4c924a72d18ccbbe49056b549df9ae012.json",
+    "156c1d2cdbcddaf57da315ac730d41db58ad6ec4eaa4f89de892dad51ad56144.json",
+    "179498c0306000dbe4403eaea5ec53ef1ed714a184d9656bbae7e439c9a62840.json",
+    "18287af9aa1d20de4b7b1d2dfaf8f897607714c09a35180ab184e86dd3a68c3d.json",
+    "18c7090d568bfa8fe0fddd97b05b12fcc3f4ab00b12d359b20a6e0a0ea182281.json",
+    "1a27b2015c1363a3ee51acade0feee8d2b2343e27c44f60692ceed1a6a41db08.json",
+    "1c6a735e9936046879eb82904c3f7562320ccb1c9bc50f91deb073d4ba62ac51.json",
+    "1d3bae2b24d26c691617131099f2e8a6aa8e16b943f22f500b1025305bb0e0a0.json",
+    "1e2d5a88fbfe2db82d050fb691eeabd4b50e992952301b88006817847ec4e924.json",
+    "1e45dfc28612fa9d0b5117cd29bd1fcbc204b1acd1b486f4a6e6f864c6488f19.json",
+    "1ed7c7d158ba88c1ebbbd4c4ac5a4779ff62f128dbc7d43e76701a1a8c9f7d11.json",
+    "1ee15c7a368b2ec2b06e9d8b87a553b29c4cae46b96f37862f10b76ece217de2.json",
+    "1ef6508fc68aec0b542706e8dde1bb6cc5dcf2a341aa16cdc8e2316566e6ff14.json",
+    "204e8524cee3912ef1cc97b0ad9572fd0d1a6b8b02269d0b2f043dcc77ba1f9d.json",
+    "204fa1618c276526a38866add0e566478a341c3965afbd74fb4f526a359bbb94.json",
+    "21893d6c7430cdbd989120e8c25387f982e4c6145dc0b382bda4e908587fb570.json",
+    "22f4733ce40bb669db69c08a96308979581403361a80dc9ea5f4cce80aaf6cee.json",
+    "230f6accf90ca76165111648dfdceec16167cb22b9e2ada911b2864379039a8b.json",
+    "234ac356e7cd29ad29368fb858beb385593ea09f1d665917a38660160f8b08e0.json",
+    "2598db23b8f7f6cd636c5277d380218f15643c1dc520dbb39d27e9180a9a2dd1.json",
+    "266bc0b11206ebdf1510ece2204e6827788e62410d1e04668fa13ab1a1398a77.json",
+    "26bfb87fbbc5553fb3428e6c7606938dee807d9aadc4ef6f2ce2ad3cf3cbff02.json",
+    "272536b4e7161e118441dd2d9d6810d084d8f7c88017b3e4781be0b6bb7e4a61.json",
+    "27d0bae631ce2da9708870986cf9b2349c78e51457d12a876c6de3f054598310.json",
+    "28c8b4fef6e1568423e9c1b3508d1ad4f892bfacb00c47c4b9919d56436836fd.json",
+    "2925f76bf851a53cda8486457ea5259e9be249e8703febdb51210519eb7356e0.json",
+    "297b0c53dd65a47fbe8cecdb4931ff6edd2090dec7f9fd2b6083b03e150d7810.json",
+    "2a53b0f8d0bc8814c572fee20cb3a4e9b9b60fed1125190972bab5d8daa44c49.json",
+    "2ae6ea61e0c30035dada833450e674eecf02c01498edb09fd20693f317e56530.json",
+    "2bfdfd1f3c6d77737061eb0f775eafddb7f817f61092b3f73c24366ec99a049f.json",
+    "2dea9d0975d355ac88d1118c8cf7515188009997104194e8af10d81ab9fdd4ca.json",
+    "2f693d2946c6ff7ff7f4c886e7432a45ecc437c033a47d53102288a51829946e.json",
+    "2f718497ca60d373b308744249424dfb13084ffdc017725b002866394e30b4b3.json",
+    "30c46c6bd7100c90566b237a97adccd98826d8a49a200e942606da9ace329ebe.json",
+    "30ebe561f9af6ee51854991a43e97b54e7602ec7b7ee835f91ba2ffdf91ba6c4.json",
+    "30f4e8163b8046bf450c5e911c77d4850a73642cdcaf64b4e79f1e45eff1d7d4.json",
+    "319ccbe2104336a16c6a916cad6657aab6382edab02937d4c6adcf1308e65bb7.json",
+    "3234e6f671ddc289b68bdfb838308b0cca0b1fa43ae66b683e95165e91622e70.json",
+    "3354006445ca2acebdba9512653d41dc93e2ee82e75d2c62342fe7107501baae.json",
+    "34a33bd067a030f9b26069dc0aa3241fff3fc0841c9947d55973c7e52111d48e.json",
+    "3756fe66fd1c1ebe483ee39b09e11866ab6afedc080b8560ff5b0a75c6f08fcf.json",
+    "378a6742e2f995715445e4ac0ff7b554fea3f3cfbb456454604742627b0fc0e7.json",
+    "3b688d9ce103452f0453895a9f4140edd0a1af2bf36fc59c5049df32bf8ae255.json",
+    "3bfd375d431234b522b0ae0a5a3cda946599a995709ba1b25eca25c78344ab97.json",
+    "3c66208c2eee41c242ee684d79a03a05846a96798be7cfb8f90755d56b7c9d19.json",
+    "3cbae36bf3ce05e23e40ffa54982331b8c448d23c344debe86e574a163c2b9f0.json",
+    "3ef22c8c68e2b579b42aacbea12ee230436c115dcd1dbd747d2f73f60e0a5bc5.json",
+    "3f486811a4c861f92ba0ea324106c2431bd78a446440daf0d6c5112b0b5fa808.json",
+    "401f6c234e1074e0016dde21f3928596d940b7cd151bb6989a4cf2337348a5bf.json",
+    "4022d12ba26467366e897d5d69c44902544ccd2ac6ba2eb31fd3ffc0ce5de7e1.json",
+    "409f00af0c7748b5904ee6dca996693055fbebbdd68919a9ea7593f432ee60d1.json",
+    "4113e3cf6eee4d5cff359b65fd8e0d40d95c85cc6b08e76ab2dddb7308a74cdb.json",
+    "4170ad129525797db84963a331b6f09416300716576168ced750de46acb5e931.json",
+    "422bb2a8f720d861a19a0964767e228b4b14eb99820edd65265b4562540f52e9.json",
+    "42517183e1a22a52a32ed22b78cc7ceb4c4daf164946e31ecf779a93aea1f0e5.json",
+    "430ff618bf53028418142b8f44c5d0847c002e5ed3c2d4a9d4f7da73c28c5d3a.json",
+    "444179084b82c8aa0c3535f58944e29714db79f5b97a0273eb9f1fdae34c1a6c.json",
+    "44fd5b71191dd614a62b3317eb6297af4dc9ea9721044b0611c15baa09f5d9b6.json",
+    "454c2bde5531420f96af37e25aecd0b522434677aaf8d096c128147227319f5a.json",
+    "47be1863ec138ee52d215b1b6224c6f242f4804f8a09230129798e677a5031cd.json",
+    "48e2c6e46434fafe55a4ae6fa2bdc6010a36feeca3d56dd4650180421e27c37f.json",
+    "4967f62e7449bf1baf07629ca2d0f6e0cd618f92f27c566f011766d47d09e875.json",
+    "4a59e5397c49d85879e83be39c3840c8532477aef8024a67fc4924d8c368fcb4.json",
+    "4a8f442513e3727892d8aba717adecafbdd7ab3142a40ef2a1e49dbce50cb543.json",
+    "4b1b1dade567baa57a9dc2a813be44681ebcd55387cd378becec25f078cdf81a.json",
+    "4b4db82a8186c0f9315f6dab32dfecb3e31bb83905d00e92c19d79a07676b15f.json",
+    "4b568be2329b4a3ee41e5d8cc81fa3087a3c4ca8cfd2a6afa07040e68c003dcf.json",
+    "4bdbf3029718156ea8679146bb9b2011805ff14ec535d300574ce933c4f325af.json",
+    "4c0a76251fe622922012ec231821362a1cf1cf5b00677e2f968158bff20ff8e1.json",
+    "4dfaa5fed875b2c1ac16e166f69a091ba4a3fd036c1c4b51057329f34a904285.json",
+    "4e4b3388f4c43132be71e5e1239df19279adcfbaa8a62f5818a9501fc318f046.json",
+    "4e85cbe92a834d928bc9ef35c229b47148a556c53e4670dc43df37cb2f1705ce.json",
+    "4edb71b9ce142459bffdb56c25628a477b0363194737717cac1d73b76d618fec.json",
+    "4f906b6fd45687f0ee22684b96e5b6e356213b6b0f8e41909f4f4be303b94b43.json",
+    "5021d43e701d86634456934cef1dc8b0c1ca2573689431f837c8acfb61b1c9d0.json",
+    "507be208e7ca0a21bcc29ea7ab386caa7ee07b450abd7a88e2a19986118eddb5.json",
+    "5217391a28f037a4edeb9bb858288e2d435b133dceff33b0893258cd85af554c.json",
+    "526daebe692fc9c4f5a722de0a47c71c77e9bc29e867114d0c38f43756e78ea4.json",
+    "5360f1c2dd15378cd64cb642ad9b63fda464ad4f5259937965e264be127b7b07.json",
+    "53f1683e0f8aac520b8d3b1714ed3ba9b49163a9291144712aa1511129cabdda.json",
+    "542e6676079b4aa6fb4fa950e11d51a5d3c2c6fdd357a8c0ad03d55b69f3fd51.json",
+    "5593db0165e67792cccf29ec1958d48d187218d859cfc6a12e2d6b3fa1482441.json",
+    "55be76357b7a8cd6c8be1935e3cf7a772f93f55774154d3474a75e6e175e2347.json",
+    "566f98e330ca2cd61b64446a05481cbde727b2091478836bd8432416ee6cca7f.json",
+    "567c80c197bd30b2d1907be6dbae4349f171cb1d8311925f63c78d3980ff584b.json",
+    "5902a0072f74b97d0a48da134d2eacd62b8eeb05ea25867684cf1017da0d8336.json",
+    "59a9bd29919be74de6607b06c221cb9e4d0587e4c96dd9f4eb3bc0c5e60f2016.json",
+    "5aab4405e650d9b46a54a971d7a178b6b26a79f647a184f1e2fb3dc4ddbb63b4.json",
+    "5b93ef082d4d32fcb78c1d4358474c9b4e10a2f5ebf5912b60c74a39380ca1dd.json",
+    "5bef322dc5fb6b92d285a45441e5d4583cb78693e0c6f1466e9348574b95f058.json",
+    "5cc7fbad9512d44c32e2bf684e8398a5b9c41516d9e4fd3bc5fa102338eb6a30.json",
+    "5d3828bc43d896c6dd3df37d03df95c84b2944b78481600aed0f330ad849221f.json",
+    "5db37cb0c1344baf5abb9103994c6b4eed8225bbc803d6700824a58e6625296c.json",
+    "5ed558cc1ac8d956bb2fc9a893afb4f506931619b30ed01cf0a8df300ea2cf09.json",
+    "607e23086833515b64896d7f2100efcea4a27d5d44b5fa745c2b7aeff31bddb0.json",
+    "60df857289e48da7c955a4ca74c33058f93aba7d59ec4b9bdd0d8e349a3cb445.json",
+    "619706195ad4d9264dd7397f68c7ff6642e8af2a84ee35859e04f3d89f224291.json",
+    "61e9e06eb86951ec007ad716cd0ddcb508680e848f1822bdaf96233ccb33d537.json",
+    "641104c6b1488c460e7ac8405e460c8f1d67dadcbc2ed158fcfe1629b83170e8.json",
+    "644d5228a05e1a30fb04b4524213eb60c6e1243a0ec8430ca3e0dd6086e6d80b.json",
+    "6481489663e1cf36884a5b74090e0ac0329260f70f0e5663288353fc93546fdd.json",
+    "656ce34996820303478eb19048eaba14b5de802a04767ed23a47d260e6e29f48.json",
+    "663818d635479de8d12c79e93a8196ae0ce23abf4ed78be559a06e437ca35992.json",
+    "66b09e1e063e8953ca87437d2aebec6ac7f8b709f44c2eca58f41c39fae9a3b5.json",
+    "66b0bb5d8b2ea5f8afd80f9285c7205361f7dd579b471ead0f98f8b42412589e.json",
+    "6757eb7c58dfa863bfe51fabacb5a8ff6346c98ad373680e5fdbd5759abc9a94.json",
+    "6790b7f61b64e10fae3c094d226aaac121cde65258d97dc03ffd4ce5b817fecf.json",
+    "6937545984748dac4ecf7b5189446dfedb28578e5793363eaeffee8b726c373d.json",
+    "6f6bbedbb0d3a481370ed0698e9925663ac970cd95ee7da7e21914b3c3120fba.json",
+    "70229b930c27af3cb39a47add47f0a36ae13c541e3549e1c2c998d98eadeca92.json",
+    "7119340ae3245b3f23c89e1418bb39b1258f454974b2694658269e2c9b4e0d67.json",
+    "725588132a009e12de32b0fd709eccb8e56c4f843032283e3667f479b7ff7c25.json",
+    "72616d5fd8e3d12428f96676f2c5885f5fd1163cecf45d5685621e68a74b871d.json",
+    "72a0507e6d91ee154dac3b88546deed2d46de9ddc25090db9b586e19f3283390.json",
+    "72c3380cbe769c80f5a2682dbbfbc0ed1f81c667e47a0534410f765ce2ee008a.json",
+    "72c3b6756ae987f56fb25bb99096f3380043795494942980852be38b4a8d5083.json",
+    "737496adb9e3bb42824e7f563c791ba3495497e35cc99e70dda0be71ff61a042.json",
+    "747367bbcafa64af271e00e07429b502297d3fdd174a2ee5ec1d4d98efd2357b.json",
+    "74bb95de068f262fa5a820e6399c18b363a9a3896b192d1c63997619fa64762d.json",
+    "7556a0266c4773f0f0446400201cedf50067e1d89929b113fa091f420dfce8a9.json",
+    "76a75fa2dfa043587fdc8a53ccd44d069104a7b1789987a36156595d755deaa7.json",
+    "76dc873cb3626433e96b219c4ee6a982a2b68a5cf360fcae963c36cc21c3116d.json",
+    "77669bcd03708227733597b23b7ea27f9ac9d65a65d5baa5e995c279c93a3a9c.json",
+    "781ec4233c23d513bb864ce7f16aaf49f126004ef3614bfff79339ab05cb8f11.json",
+    "781fe459a16a865178ce5b7e4431958930325c8ccafb9bc9f6b57e20548c5a1a.json",
+    "785ff4d0728e3e6d33d04faa3a299e12d17338820587e8b97dbf8aa2f65a18c4.json",
+    "7b3d00cca4c71d8f3748a9fe5a61a24bafcccaeec35df201578108c0f309cb88.json",
+    "7b3f7aed792d429f7b002d80605f265a2a6cf72b54f979327e56c0acd1be68e4.json",
+    "7b40c990a3baf4249340a595a550984102838142c7d399d4d075d6cfc51daa1f.json",
+    "7c6357ff7911096714bba9fc589aa72e450723ef83b432e58b337c21249363ea.json",
+    "7c6fd7c6f31b169d81284596279083f5aa106b133fad7f3e79f3ef4abc202305.json",
+    "7d11cb07417c982967bbdc38dfdfccb304a8dbcfe135231685be453aa40ad063.json",
+    "7d18a957e65dcdb0d30addc9c92dc8b831855c84ce4a0119f59f32ea9ea3e177.json",
+    "7eb3671ec4d51decada6c0b91ebae567e0e6a44359e9f37120b630eea8a8b20d.json",
+    "7f2a250b8051f281ad8b5a67751fd534ea0ef955c4483ae7cf550ad125435468.json",
+    "7feae2edd9602a54d59e847a0544c9e1bafabed1e8016bddadcdf82b6fcbc6a5.json",
+    "826b99f79ff3b7ab17b12e6f3d5d86006debbc44e89b311633250cd781e0412f.json",
+    "83348d42f64478a062ffcf8c77e7d38b3a1a3da95f4d5a35e8d504a35aeae351.json",
+    "88b84b275b0c5e98e1b68be944975f44f063d138c2a2fdc340fab13706745a8f.json",
+    "890298d86829fe22e469551dc32c9c154fc5459f3b5c9a849c1b0174b30adf40.json",
+    "892194142bf10e3c3e2d131b9bc79433997431793406d599ab7ad4dafa77bfde.json",
+    "89978d774406ce36b47a6acd64fede020cb4dcfd8b872fd7d021549d9cff084c.json",
+    "8ae8f6ca20b671328c269c4a9a433c6b8d468cb1cd329d12e0f76462e3501af1.json",
+    "8bf8673c28d9a52dbaea30c20b07cd22c33e6600cb89899f4bd22eff959e25e1.json",
+    "8c65ef4a15fee2352444e7318cef0bf5e57e8a5f708bbb5d91c735c218ad06e7.json",
+    "8fd746a5895218aff4f0d8a18c662f19ff6209d71956f69b90c11dc25b091567.json",
+    "91e5ea86b1963c24ec20f0af8ff261e88820f5ec52ab6d65f8b74f215d7af890.json",
+    "9244690cacf55d56b54f11b6ecd902d80746759da1456146068560c91e1ad2c6.json",
+    "9268839561bfc36d4ad8b80caa04813275df3e4a7816724316e3bdbc2eafda9c.json",
+    "938c00bfb3804dae5342f45934bbd1573001f1bc0ab9f89074f84d1db2f0eba6.json",
+    "961cdec69750409b334282ecd30111b576f47d633b7f4e49e6e4e641a6b574fc.json",
+    "97f598aa229f63bdbf9d4c80e59554c745d2eab71fb2055ad34a88210a805ea5.json",
+    "995c4186d346403f3e89923d77126f28bbe51ac27784271c32ee2e5cdaf8da8f.json",
+    "996bbbb8d1d7dab78fadb42c77ae4a31a43f21f53e64620039e9cb52a98b3b1b.json",
+    "99daeda4af7f0978763ff83fecd5344062e235dc027c58cc736f9586148b39e3.json",
+    "9ba99628ccbf9b864612251ef006b0b8cfb395ad036a0515c16dfdfbcd0b650b.json",
+    "9c60c3d84cbed2b8102ae1910ef9049781a4bbe39bb7cd5264975499d923b199.json",
+    "9cb34085b147583664855fbb9c2fa3386fc893ddae1bde82f97b848952a768b0.json",
+    "9d0f1c47f4ca4283a07982643fb45c9584e13f1f153b7cff6b1d179566f67dfe.json",
+    "9d3d5c77d026013a0875b90167fd66a9e93fcf3586e9886be510d5cb8bc9e3cd.json",
+    "9df4690eaa08ef9ad654e9e0feff12281f7b312cb68f1e0fa2d2b06646fa343a.json",
+    "9f091163cb57b7ddc502dfafa3789c1f5c61db81e1e8678800d354ae936f16ba.json",
+    "a0136d132deefd30912dd86ce50da15e28e1be055277680735592306f492df00.json",
+    "a20ae06e17ec06833092cf4a38941c2c0de844bee7101186b7a94209c9a35b60.json",
+    "a24cbd5da61c006da899215b999ed63c7dd2591b5cdc2dad8cdde6c66a22e6c1.json",
+    "a32608272b553702a8b8444287221b82c9bb6c29e11ca8db1f2edf93667dd469.json",
+    "a34fdb67ebcd81db7a2ed8322f6297e50ca2a1be1ff5bbd41e7333bbe00fbede.json",
+    "a36a41d812420eade23603b88420d1eb862014ef0ce0c1490a8a92d0b628a3ef.json",
+    "a5b9b0d1a7ec1e26cd5d3d1f261d8deba29e75dd1eda818e73d6283cabc79827.json",
+    "a65ac9206ba57d5fb8e10c4084ee9656b38c148cd28ba1a96dd9fa6ec2fd1018.json",
+    "a793f0ccff7cc700f097c5a6a85f2c2d0b845a561d502520549811676f02d868.json",
+    "a853c0195756ead0932755fbe00694b01231e660ef4c1fa987449105d852c24e.json",
+    "ab21574cc16385193dfc1dea5fa509251562a32bae023b09c69ebce4f50b1311.json",
+    "abc8cfa9f7b056b8eabfc77f91ff2cdd7e2f5c344608151da5608396ebf8ad87.json",
+    "ac9c858c03f1093a749b7299f739ee06f05d7a8687d777ef39a4001303300cf1.json",
+    "af45464904a06825699fe4644ba9c6c826c3b237c986008bc7ac4db4633f6e4a.json",
+    "b09662f37c95055bce73cefa1111c62eebabe318ab575fee51dc050a8a87b4b2.json",
+    "b0dfe6f99973a894d3701b64522e64ea58d5fab393ee36f72af907714ae7d6e8.json",
+    "b17e0b9351f2d6baa643a845e0c11c84ed859531cb44b81c8ddade9d9e89a035.json",
+    "b1b59a476c4d00c5ec6dba06d11d8acad8e6200f730d36f2aeddc1e477cb5141.json",
+    "b26a240a6629277d931b3a379667a0c40f18f2f122dc7f23c78da877ae4a3e41.json",
+    "b3f4db260c98b595d70f3fe170d3335c60c3f2235c0329caf63b2cbd2b0acc3f.json",
+    "b412c283330b811bfbf688e98352c7f2628f91b29c890f9f34d4de09935f23c3.json",
+    "b483e2284bdc011a29192d5079c8f24d277f877331376dde0208ef6405a72725.json",
+    "b542df0e901c6b4df932c94df0ecebdcdb04052076ae0aa0b5060686a950d0c8.json",
+    "b58e0df9f6bc77bcc758f5d5b30f1361c576c9a9d9c1e96efcf490242bbe26b8.json",
+    "b619b11a748f8d40433a40065b7977c40ae261682adb996628897ba5590a5c36.json",
+    "b7a2cbf641d03482fc751c2425cdc18ca894fb242f77e947b353bcf0f46ad4eb.json",
+    "b8233737edcb2e184bbe1d75446070de2750a1b0b5b5d671c82d1c0dcd2baa85.json",
+    "b86b13f31a901ce9390c6bc255db1225e7de07aa18b8770254e844f7383b062e.json",
+    "b8af0900faedd9235229d7aaa693b7294c31f7cb4c7b2e5505e3afb6be1af7f4.json",
+    "b98617994bea277517837b6e5e4707faf30c64c02241bc422515f74d905bd755.json",
+    "b9922e3d2de027a7ab1e2759432b1cced49566166583a279e5d0682aa6dac940.json",
+    "b9fd8bbfd6cb7e52bb8cf0d7b7967bf61c5f19a06515cc093cfcba764901cc52.json",
+    "baa1a4186ba88e4da9aa38273cc4db1c1d1c3cf69eb2992d331a647505b71339.json",
+    "bb0ff62ad03a94cfd990fa2e430024392749076127c575ce435aaef5b44d4106.json",
+    "bb4ba741990c71032932875bc4580a31dbf4d224e442c5e69e3724e740f8b479.json",
+    "bc3bd75b96140fc5238aa00b6a1dbddf4ebfbbca671c9f4f867117121cf3b27e.json",
+    "bc9233502953fbd09a1453c5b11027fd4b0d77bbc206ce628717bf479ae73830.json",
+    "bc95cc629c0f3ea268b14687fcd6e6e7350e2c5b5db9f707306e0953e9dd0150.json",
+    "bd51647f02e805a07def3a7fa08ba351fadbfdfbbb2732c04f45d4ca86964970.json",
+    "bd551943702d312d4d588006ff47c0439925d22c86a635d523ff854827a7e8af.json",
+    "be632173b4ac5f8ff39178052d52680554357f05f6b90b27f7c968daa458b491.json",
+    "be68cd0748f2ed6bbc277c9ab77312b707576c1a1ec3d1290b89300b75d9bc7a.json",
+    "be69be72a8d1e87186fdddc838ac19614af111d7b7c4f2dcd5735f3851d0d03d.json",
+    "be787749ebb5ffdc48ef1678b275034c2ffc4e4d67bd99f6d9fcfa711d24376c.json",
+    "bef520dc74b870361e46180670abb8a21a859a6770b87f8a0433c742b9641d90.json",
+    "c1cb7faaa6edb7362955449fcdfb06ea5633c2a0e5f59ec209a7ed56ce046fe9.json",
+    "c1da08c93ffb2aeb6e3caf2835aad2b1bcf6d2e037f697ff516b9ec9b8c55e4e.json",
+    "c206e459146ad5c746dbe92f5c0eb3c381da3bdae45e0bd98f8eb9fd45c8884b.json",
+    "c28bcab42be08ca9893d47269934466a281f501979e82aaf24c883f2a0631d62.json",
+    "c2fd91d1bb14eedfc8a20894f3a8fdf716396ddd00db119db0820127a1718b58.json",
+    "c36749b4f776d7c5334e7e08f867f2c7a441b234fa66d1d1394a4407c04bbba8.json",
+    "c45bcb388f08fcc0704cf008e9311b99e9c8a65b2adeb7bd9d5fe27f96bfc70b.json",
+    "c6ce4d139b115139a6cab802d669c36b533cb83a2b6455f25742123694bcf0aa.json",
+    "c75c240a2da343a955d231f328d3bcd83170914e3449552caf7338f7be78f8cd.json",
+    "c90b5c2170e3f3eee50440d7a44e30e811d1f846271014f786ea36531184e560.json",
+    "c9c8a19e57d617fe2cf0f856ae1a32d76704b536dca9a3007ef23558c5cf3628.json",
+    "c9e9e16c8330e4f0a569e72e919a0dde138601f38be93b69a6a42e9cad10d590.json",
+    "cc7a553cd32183f27512b019374cdc8ef4fef952a050c1e074e593208aafb11e.json",
+    "cc94daeb56b3d3e0e83d84837090ead68f7724a185c1f83d56193bb53a3febd8.json",
+    "cef16b46d6a71986c92533d09344b98a2d349317e346bd27d2fa3075c75fe057.json",
+    "cf1da046ef08278030bfbce733d701490d921f46bbb578608fad91b7eba4d1f4.json",
+    "cfc2ef9d1baff417e3e74b2974465e07b4e4be6a4228aaa301b9290344d7baa7.json",
+    "d18bddb7b437305833d89cac58b92ce96b9f41ca30311f643c06a81df4e734d7.json",
+    "d1d0f18baac57553aa318bcb26125b8ca5aa78bc48c4e8157bce2b34faca7e56.json",
+    "d1e16f2ddbf04866cce2aaff5ecd5d6dd21ad4d4fcf538169bdddf64cecdff8e.json",
+    "d2670511067d244798cf152e1ebc5a430d7b2125290cb3a0498400b53ed11c98.json",
+    "d7108abd632a08676d4dcfce9d6395b78a57873c91864405851da1f8e84c3491.json",
+    "d7c6659d757291938f84c5409d2f267289909499e97b5a54feacb03880d4ca5b.json",
+    "d87cf7004902a13c4c8e5215c84c9bce92445144cd8029d7f0018497053d7caf.json",
+    "d96ebe31c79f091b770f9cbb13d0259720c1ee173898574f475bee1c6b01752e.json",
+    "d9892ae8fc4adadb9344855c9a2ea86ab455fe8219e40cbef0da703cc2f00ee8.json",
+    "da2703d22e1870a015dea4a3fb28654d0cecc04e9521f47f859770d7e341efdc.json",
+    "daeb85cb2294c57cc47f26f0bdea2a5986f9b4dcd715593ce37469e119a31abf.json",
+    "db2c7c72743f91fe3227d391463267082622e64ac7dea8f829f12ba280cb84b7.json",
+    "db62d28d363ab781aeb8f5381556cda487a0760675ac35cde809ab642446aedb.json",
+    "dc8d4c586eee6b328b298f6961217ada531bf38250951b2e1130730427a62ec7.json",
+    "dd183cbd2928e789ba08f735f4beabd0209c22b6a9c8d24a7f27d41f798e1ffa.json",
+    "de43a99ca8602e2aa2e462466c985a311a33799f1014bd088bc47f5b3676c3cb.json",
+    "df1897b6da2a6395674949e30d7d0ba0fd8fcdd03317e3db673c852833f6923b.json",
+    "e0e8214db6611d01e5b6faf4776da7189ee8b3fa5cb0f16bf5abb90bb153096e.json",
+    "e3a15b4127cc03e7e8c3d95367f017077940d1ba79e6798564d0fda4b1aacdd8.json",
+    "e49ca4b420e5c893f0fab5482d593a4f626cfe4bbe09014088890d58a6db40a0.json",
+    "e4e0a94623259cab35d6e52fbc5b8e077bf38624af6b329f1e7b579ece1df380.json",
+    "e70a27e514e998b1ba2dfbae39ddf69ddd3c31614fe8800086a208ca3de88c91.json",
+    "e753af61914a50db2a687eb7758e3ec16449039cf4d2b12fde4347246fe4a925.json",
+    "e79abb0114f728fcb58ff747edb941e731f146e5a854f36ba84cbc5a9e0f68d6.json",
+    "e7a9806375630e44d1ea0bb3499b1ac4f1ba77d803a97b070252741ae3f5a859.json",
+    "e85ae7044c3e6408a41f3898f8f71ae490bf02c59a122a36cec5a628061d2525.json",
+    "e881aa2177e9af1e3b95856465c8570a3963575a06779ff0bf106df0f11a4227.json",
+    "e900c4348ee0a563edf8be84fb8cb10e6b622c4dfed5f0d91b2e0f5e9610fa11.json",
+    "e9be0008b4778b334f29610b01d693fd0e33c68c93e96057436932d735c5c62d.json",
+    "ec548ae062a94130ec5e1ae87776ecb158244bc639c42a2e3daa3e39bca003fb.json",
+    "ec56190a8bb48c17dc1e629709436236d294da2f0b18f99f561c9304d68c04cf.json",
+    "ec7f3239260195303d2b6014451fa9ca66a74ec6a050c414651a29b620d2700a.json",
+    "edbcf98571a414a5b505334042df1627a78bce1c4092dc8c037f60908ba24520.json",
+    "ededfc67c3cb0e54035c079b324125eed454987f2d624e5ba7ef42c3ba6bd83c.json",
+    "ee8b8d96b34ed29cab7235e5db6f8732b0052236526453db2027fecd25dfc828.json",
+    "ef33d73dde6b311ac5bb9d9133cabffa1006cfab52396cca93edf624da0b87d4.json",
+    "ef7ccc860d028a184448896bb108ef5343a2420a0d22a045866da3b0664a2019.json",
+    "efd46bff6da9458f54f083cbe2b8494c7c272617e43a1a04913e9f9e174427da.json",
+    "f07a86ab722a8bab6e61ff9e9baee4c4c4aa358cf8faf79ca1fe42dcba89f0cf.json",
+    "f0828e8e6ec088c33a8f0def94a852d0afc0c2e3c5e8c88012075d7a88f43cdf.json",
+    "f0ccbcf4eba66cb45ed2b7c1d2a3c43a0fd32ad67d50ae3f257a45603c7d4838.json",
+    "f1b046b946f5d09f1d576934cd5819b627a57fe576c656b3cd1a8dbed7c3884b.json",
+    "f1ca1d08426197aa8afdfc49554b7535c7be4e77b849728da6e48c2bfeee3c21.json",
+    "f2078492f84d8421c59ce1604f099f03e81349b5aac69a593e42c6adec57732d.json",
+    "f2bf19dcb9b99b4f3d9430ee7167a2a71dca82f91bdb8cd3cb556283b2d0e66a.json",
+    "f2e9af947f310a6b558a6a39fe7bed15efdd9a37a539bf9e5b791bdf90b17522.json",
+    "f389d81df9d34b7b8d14905c51efa525aa1456b9a7f454442a0a5ffab09477d6.json",
+    "f46f780766c45e8c598a30943c4141f4fc349a1d7344ae830bae40f416b40a39.json",
+    "f4b7a5eebde1f84f8d289238e8421ac97fbd2cf5dc438b63e1ad9b6ba515a459.json",
+    "f5227bde048fd0de7770b72e9b814de7eaf94743bc16c6489a2dc4cbafed1d9c.json",
+    "f552a384248dd47041916ba5f63d6f5e041f4c72cdf65f38d5c83ea1c8022185.json",
+    "f5b717a0ecd15112bc0c80f44e47ead0df675eb32ad416286b5d0ee29150981f.json",
+    "f612398e797b790d1487f9b45a666b50213d6e019d51ffeb12192e10061665a8.json",
+    "f76cb4def715d0c83ad82f92bcda11197beb4b6b7a33f8016ac50160c406acc5.json",
+    "f771a9871571aecaa10c45b3a1187259094ba349401a62071f8b37d4b9eeb6ea.json",
+    "f8d512ebd4d1911be978171dfe8e089ffd18d79361161094091e35c803122d63.json",
+    "f9e6d681e470724ca476baf80dc99f45cec07c5a2eca1b14ef700ac0498dfeb9.json",
+    "fa36ac08f62d1839e02d7adcda90f158cad130726a3aa4291b6573542943207b.json",
+    "fa9f5bbe4bb872c235f50ba0acc72cd1c5ce2877426943cb40691d8f7a419f2a.json",
+    "faa1aff86bc626db7cf384ce107f702dcbcb01c7b79b0a2dc8a655faac26833f.json",
+    "fb1e87cd1e747a8d5d89a4815f8a8d81adb59cb3d2dbb67e7cb8c09f34e8ce29.json",
+    "fb84bb18ff2eb83b133ae2b9a1f85c24e9a1acf17f0d2e1094e32144be93e439.json",
+    "fd33787f85ba034c62fe9605b58f2f42f17e42bac8a5f86a4060124c8fa0ac5d.json",
+    "fe25f4eec80978d42bb4f22076e0f018ec0bc9c0787b49b221256b2420da9fe6.json",
+    "fecaff22f52a0c7b849248cebeef8a1561cadeba6e551b093a18add8644340a8.json",
+    "ff4b2b3f402dc9b68680ce6b6f1d14714339c3a5485352e9160588a61166465b.json",
+    "ffb0eed0dff9126302ebea40999e8da1f694fb97bc53113a022166a5d5b6b4a6.json"
+  ],
+  "prepared_receipt_sha256": "42ff6656c65b4ad04576c2df085ab8e24c4d58b7b95c9f43fdbe638f77eb2d6b",
+  "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+  "proof": {
+    "all_pre_stop_requests_paired": true,
+    "api_dead_before_client_kill": true,
+    "api_dead_before_job_cancellation": true,
+    "api_killed_while_stopped": true,
+    "api_pid": 3370380,
+    "api_start_ticks": 900591657,
+    "api_stopped_before_new_requests": true,
+    "client_killed_while_stopped": true,
+    "client_pid": 1231046,
+    "client_start_ticks": 916760176
+  },
+  "request_records": [
+    {
+      "creation_proof": "Absent from the frozen request filename set before API stop; created only after the stopped API was verified and the client resumed.",
+      "filename": "5d9497cff9608ca3258855e0456131a8be3c7a7105e209c5152ccd3f50e06f42.json",
+      "payload_sha256": "686109e0bb5464eaa3eb383acb20fd4fe388ac13c95fd682f8b4abd7b0038123",
+      "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+      "request_created_after_api_stop": true,
+      "request_file_sha256": "821e8ee017b505ceac0a375b83e549ab39ee1e2275415956350a606de99caddd",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+      "server_stopped_at_creation": true
+    },
+    {
+      "creation_proof": "Absent from the frozen request filename set before API stop; created only after the stopped API was verified and the client resumed.",
+      "filename": "ca47cbf251213bdee4ee0a5cbe3e9dd65b2670715002767b43768035e0b5ffdd.json",
+      "payload_sha256": "3ef5e1c635acdb7cdb32beba237eb7a2ee7a6f53ec9e150782aca141526d5b61",
+      "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+      "request_created_after_api_stop": true,
+      "request_file_sha256": "06fdaa292dea2ef5e0b79770414ecd55284890590093bd6e5598a8b8ee970203",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+      "server_stopped_at_creation": true
+    },
+    {
+      "creation_proof": "Absent from the frozen request filename set before API stop; created only after the stopped API was verified and the client resumed.",
+      "filename": "d1ae6b4318b64152e5cb5410a3745d08f706fd3d829120e21eb4391e73f7e659.json",
+      "payload_sha256": "818c7bdb4f2cd72a19514df7495df2c0ed6d3d5f8568347680428f4966295447",
+      "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+      "request_created_after_api_stop": true,
+      "request_file_sha256": "08d12d815b20f63eb6bc269386fe5c883d018aeee77384e3a33b28654665599b",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+      "server_stopped_at_creation": true
+    },
+    {
+      "creation_proof": "Absent from the frozen request filename set before API stop; created only after the stopped API was verified and the client resumed.",
+      "filename": "e0babf49431ca35fa796f208b8f8c9d3c9107bea1ea04c75aca518bf94964a0a.json",
+      "payload_sha256": "d59ce17a0dfcf948adf397df0fb07042c2d61517cb7772c3de4443a3725af7b8",
+      "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+      "request_created_after_api_stop": true,
+      "request_file_sha256": "0c2195834e27f8813797d334ed687c1e46399cf28a776dee804b2c27c9056197",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+      "server_stopped_at_creation": true
+    }
+  ],
+  "run_directory": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+  "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+  "stage": "drained_and_job_terminal",
+  "terminal_accounting": {
+    "captured_at": "2026-10-17T22:29:54.661602-07:00",
+    "exit_code": "1:0",
+    "job_id": "237676",
+    "state": "FAILED"
+  },
+  "updated_at": "2026-10-17T22:29:05.453550-07:00"
+}

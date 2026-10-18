@@ -1,0 +1,207 @@
+{
+  "task": "P16",
+  "variant": "QWEN_ZERO_SHOT_REACTION_FULL_SEQUENCE_ALL384_FULL_SOURCE_DESCRIPTIONS",
+  "cases": 5651,
+  "fixed_global_class_count": 384,
+  "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3",
+  "source_archive": "sources/catalog_reaction__Reaction.zip",
+  "source_archive_url": "https://miladeepgraphlearningproteindata.s3.us-east-2.amazonaws.com/data/Reaction.zip",
+  "source_archive_md5": "d1c20341616ad3890349247017a34d68",
+  "source_archive_sha256": "ec4c8cc70cebca87165f6aeca10f319762bbe9ae0a75b7c8bdd6bb4f40967a80",
+  "test_lmdb_member": "Reaction/Reaction_test.lmdb/data.mdb",
+  "test_lmdb_sha256": "99aad9e47cb939393ef706412636b436fa6ff29ee29648bfade511ea1d51de8b",
+  "label_source_provenance": {
+    "sources/catalog_reaction__data__zero_shot_classification__reaction_name.tsv": {
+      "sha256": "13ddeaee45703ea3f129c7f9d1d851b035a855082d3eba6f0f90981988e04375",
+      "git_blob_sha1": "5cb7ea51567dc0bcc515f697266cf7d3e54d365c",
+      "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_name.tsv"
+    },
+    "sources/catalog_reaction__data__zero_shot_classification__reaction_language.tsv": {
+      "sha256": "0617006ec8e1266915cd96cde9bcf3b02cf27db731c9d06b96fbd05d5bfac5fa",
+      "git_blob_sha1": "54e5aa644231f880ebe0fa97b9b03025df992747",
+      "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_language.tsv"
+    },
+    "sources/catalog_reaction__data__zero_shot_classification__reaction_template.tsv": {
+      "sha256": "8933b21780c8e03a6c397cfad31049baca301467d8d38406cc11149f84b9db1a",
+      "git_blob_sha1": "74bcc9af5de9cfc0358d769cb8a5cd96133f72c3",
+      "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_template.tsv"
+    },
+    "sources/catalog_reaction__data__zero_shot_classification__reaction_description.tsv": {
+      "sha256": "d19d0bd57ea8b8dcf44b4ad6ec4133f18c25c5e943b6a3a5d3d4fb04ebea0201",
+      "git_blob_sha1": "74b9580717fba66df137e6eb381a760dfdbb891c",
+      "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_description.tsv"
+    }
+  },
+  "class_context_sha256": "e19dea7152b963c79c621e60740b93561e9200b48357d019bdbb0d7ffb91a05b",
+  "native_code_provenance": {
+    "records": [
+      {
+        "path": "sources/catalog_reaction__data__zero_shot_classification__reaction_description.tsv",
+        "upstream_path": "data/zero_shot_classification/reaction_description.tsv",
+        "url": "https://raw.githubusercontent.com/DeepGraphLearning/ProtST/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_description.tsv",
+        "git_blob_sha1": "74b9580717fba66df137e6eb381a760dfdbb891c",
+        "sha256": "d19d0bd57ea8b8dcf44b4ad6ec4133f18c25c5e943b6a3a5d3d4fb04ebea0201",
+        "bytes": 174260,
+        "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      },
+      {
+        "path": "sources/catalog_reaction__data__zero_shot_classification__reaction_language.tsv",
+        "upstream_path": "data/zero_shot_classification/reaction_language.tsv",
+        "url": "https://raw.githubusercontent.com/DeepGraphLearning/ProtST/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_language.tsv",
+        "git_blob_sha1": "54e5aa644231f880ebe0fa97b9b03025df992747",
+        "sha256": "0617006ec8e1266915cd96cde9bcf3b02cf27db731c9d06b96fbd05d5bfac5fa",
+        "bytes": 61900,
+        "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      },
+      {
+        "path": "sources/catalog_reaction__data__zero_shot_classification__reaction_name.tsv",
+        "upstream_path": "data/zero_shot_classification/reaction_name.tsv",
+        "url": "https://raw.githubusercontent.com/DeepGraphLearning/ProtST/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_name.tsv",
+        "git_blob_sha1": "5cb7ea51567dc0bcc515f697266cf7d3e54d365c",
+        "sha256": "13ddeaee45703ea3f129c7f9d1d851b035a855082d3eba6f0f90981988e04375",
+        "bytes": 48844,
+        "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      },
+      {
+        "path": "sources/catalog_reaction__data__zero_shot_classification__reaction_template.tsv",
+        "upstream_path": "data/zero_shot_classification/reaction_template.tsv",
+        "url": "https://raw.githubusercontent.com/DeepGraphLearning/ProtST/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_template.tsv",
+        "git_blob_sha1": "74bcc9af5de9cfc0358d769cb8a5cd96133f72c3",
+        "sha256": "8933b21780c8e03a6c397cfad31049baca301467d8d38406cc11149f84b9db1a",
+        "bytes": 194612,
+        "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      },
+      {
+        "path": "sources/catalog_reaction__README.md",
+        "upstream_path": "README.md",
+        "url": "https://raw.githubusercontent.com/DeepGraphLearning/ProtST/db53a76ed2430eb66dd9c8134ace99fd60980fb3/README.md",
+        "git_blob_sha1": "22c97bf942f5976430d1137eb23c7ee7ae161f14",
+        "sha256": "efacbdae2a99f57ea8f88536d2aa0fd0cabfd1f0d0b606c7b40938b0917248f3",
+        "bytes": 10674,
+        "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      },
+      {
+        "path": "sources/catalog_reaction__protst__data.py",
+        "upstream_path": "protst/data.py",
+        "url": "https://raw.githubusercontent.com/DeepGraphLearning/ProtST/db53a76ed2430eb66dd9c8134ace99fd60980fb3/protst/data.py",
+        "git_blob_sha1": "a1dba360b6f2ad0deed040f902d9660f77001d31",
+        "sha256": "7f7d794e2b9e8f5af6911dea23196bc0a9fd97aefe201023699284ae392bfc83",
+        "bytes": 4988,
+        "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      },
+      {
+        "path": "sources/catalog_reaction__protst__dataset.py",
+        "upstream_path": "protst/dataset.py",
+        "url": "https://raw.githubusercontent.com/DeepGraphLearning/ProtST/db53a76ed2430eb66dd9c8134ace99fd60980fb3/protst/dataset.py",
+        "git_blob_sha1": "f149bd1ee82bf08530e414f4cdc863415313f3f1",
+        "sha256": "36f348e8da65029623b5c22a7e80a805b9181ded9ef434d6235ddeed4259e7d9",
+        "bytes": 14835,
+        "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      },
+      {
+        "path": "sources/catalog_reaction__script__run_zero_shot.py",
+        "upstream_path": "script/run_zero_shot.py",
+        "url": "https://raw.githubusercontent.com/DeepGraphLearning/ProtST/db53a76ed2430eb66dd9c8134ace99fd60980fb3/script/run_zero_shot.py",
+        "git_blob_sha1": "6fbd828e139751fcb91072c7b26681a8a4e5ac74",
+        "sha256": "c946c1eea5000388615d3ee51aa302ff89c982ab062d271ed2d144487f6cee52",
+        "bytes": 6590,
+        "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      },
+      {
+        "path": "sources/catalog_reaction__config__zero_shot__PretrainESM__zero_shot.yaml",
+        "upstream_path": "config/zero_shot/PretrainESM/zero_shot.yaml",
+        "url": "https://raw.githubusercontent.com/DeepGraphLearning/ProtST/db53a76ed2430eb66dd9c8134ace99fd60980fb3/config/zero_shot/PretrainESM/zero_shot.yaml",
+        "git_blob_sha1": "1282a6d6742c8c6c0c926556c989d685b0929aa7",
+        "sha256": "a4d474bcb11521f9324f8e194ed89516d8d11e3e7466e2da4dfc7b74a87463c2",
+        "bytes": 654,
+        "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      },
+      {
+        "path": "sources/catalog_reaction__LICENSE",
+        "upstream_path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/DeepGraphLearning/ProtST/db53a76ed2430eb66dd9c8134ace99fd60980fb3/LICENSE",
+        "git_blob_sha1": "7579016eb0c906e82deb725a6f345fb95001690a",
+        "sha256": "febde3d68fe7e1ed882276da2b89915c9ed09e90789f9cd834ed2e74bd25042a",
+        "bytes": 11342,
+        "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3"
+      }
+    ]
+  },
+  "global_class_mapping": "Original integer LMDB label unchanged; official fetch_labels constructs labels[id] from fixed TSV ids0..383. EC/name/comment crosswalk verified across all four native tables; candidates never inferred from observed test labels.",
+  "independent_biochemical_remapping": "Not performed: native LMDB carries integer label and sequence, not separate EC annotation. The jointly released loader/evaluator/table contract defines the authoritative mapping.",
+  "source_order": "All original LMDB numeric keys0..5650, no filtering/reordering",
+  "complete_sequences_retained": true,
+  "sequence_lengths": {
+    "min": 20,
+    "max": 1119
+  },
+  "class_context_characters": 143725,
+  "required_information_actually_prepared": [
+    "complete original amino-acid sequence",
+    "fixed classification objective",
+    "all384 complete original pre-training-template class descriptions, including alternative names and comments"
+  ],
+  "scorer_only_fields": [
+    "native label"
+  ],
+  "native_metric": "top1 multiclass accuracy over all5651 test rows",
+  "native_predictor_definition": "One normalized protein embedding and one normalized text embedding per class; scaled dot-product, argmax. Each run uses one selected TSV/field; text encoded with max_length128 and truncation. No prompt ensemble in run_zero_shot.py.",
+  "prompt_alternatives": {
+    "name_only": "reaction_name.tsv:name",
+    "natural_language": "reaction_language.tsv:name",
+    "pretraining_name": "reaction_template.tsv:name",
+    "pretraining_full_description": "reaction_template.tsv:description"
+  },
+  "ensemble_definition": "Paper predictor ensemble mixes zero-shot classifier with a separately trained supervised predictor; it is distinct from prompt alternatives and is not used here.",
+  "published_context": {
+    "paper_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+    "locator": "Table11, printedp15; AppendixB.3",
+    "pretraining_name_accuracy_percent": 29.85,
+    "pretraining_description_accuracy_percent": 21.91,
+    "values_rounded_as_published": true,
+    "unmatched_training_representation_context": true
+  },
+  "comparison_caveat": "New zero-shot Qwen generative integer classifier, full raw sequence and all full descriptions jointly supplied; native ProtST encodes descriptions separately with128-token truncation and compares embeddings. This is not a matched architecture/context or few-shot/head-trained reproduction. README's bare-name command and paper's selected pretraining-name29.85 are distinct source variants.",
+  "task_demands": {
+    "labels": [
+      "biological reaction-class prediction",
+      "learned sequence representation",
+      "mapping to fixed class descriptions"
+    ],
+    "classification_is_provisional": true
+  },
+  "reference_evidence": "Existing source EC-derived reaction-category annotation, not a new experimental measurement",
+  "good_score_establishes": "Agreement with native reaction classes on the declared released test under this explicit input/model protocol",
+  "bad_score_establishes": "Limited source-class recovery; does not isolate general reasoning or biological factuality",
+  "explanation_support_score": null,
+  "mechanism_validation": "Not evaluated; correct class does not validate a rationale",
+  "contamination": "Public pretraining exposure unknown; no labels sent, no train/dev examples or feedback tuning",
+  "repository_license": "Pinned ProtST LICENSE is Apache2.0; archive has no separate data license file, so no independent dataset-license claim is made.",
+  "train_or_validation_examples_read": 0,
+  "fewshot_examples_supplied": 0,
+  "new_head_training": false,
+  "execution_authorized": false,
+  "inference_dispatched": 0,
+  "files": {
+    "class_ontology.json": {
+      "sha256": "b43ec328351984b4aac0242ce73af71796e0ef3af2d9498124a547a52ca5eb9b",
+      "bytes": 607236
+    },
+    "class_context.txt": {
+      "sha256": "e19dea7152b963c79c621e60740b93561e9200b48357d019bdbb0d7ffb91a05b",
+      "bytes": 143725
+    },
+    "model_inputs.jsonl": {
+      "sha256": "64639aa9e0ac46d7a4af86c2e823d3aa469db5645401190a82a0ea41ae856229",
+      "bytes": 824629264
+    },
+    "scorer_references.jsonl": {
+      "sha256": "588e609dfcdd131f84a82968a5fa7d45b2341f8823ba46b9e712a5e16d136cd3",
+      "bytes": 1335552
+    },
+    "ordered_case_ids.json": {
+      "sha256": "cc47f873b9c01f1da3025ee902606f54124d45202f1bc58a73b92162b0148ba9",
+      "bytes": 134517
+    }
+  }
+}

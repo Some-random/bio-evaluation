@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "execution_authorized": true,
+  "workers": [
+    {
+      "worker_id": "extended0",
+      "port": 8026,
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 32768,
+      "qos": "il-interactive",
+      "gres": "gpu:a100:1",
+      "wall_time": "12:00:00",
+      "entries": [
+        {
+          "task_id": "P03",
+          "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_000",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p03_shard_000.json",
+          "config_sha256": "486d5b3effd42a3fcdad8be5c8f1bb3cb2733ad82f5c009a3efe0e7bd2980078",
+          "input_sha256": "95b76aa0d83492d5dbe4db62342dfe09814fcee6280d6621e5643edfeff7ab2a",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p03_shard_000.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        }
+      ]
+    },
+    {
+      "worker_id": "extended1",
+      "port": 8027,
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "max_model_len": 32768,
+      "qos": "il-interactive",
+      "gres": "gpu:a100:1",
+      "wall_time": "12:00:00",
+      "entries": [
+        {
+          "task_id": "P03",
+          "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16_shard_001",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended",
+          "config_path": "configs/local_extended_p03_shard_001.json",
+          "config_sha256": "02280f7bc63e76fb7b5aa3e485f493f15c74332f4a1bd2b12ca4e909267fd4af",
+          "input_sha256": "a1ba19256a031ebbd0d22c948b80908edd229b5885de6d1bd127f1c5082a7e20",
+          "runner_sha256": "16a7010d2b606926bb4611bc9941d37f4ca4ce9a1353cd785b3619843cf58dd2",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "estimated_max_seconds": 30720,
+          "command_files_sha256": {
+            "scripts/execute_local_extended_shard.py": "d1dac3b94643a144e3c8c60912863b18bc49fc8efc4a46ce2bf0281d0d8e818a"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_extended_shard.py",
+                "--config",
+                "configs/local_extended_p03_shard_001.json"
+              ]
+            }
+          ],
+          "completion_file": "completion.json"
+        }
+      ]
+    }
+  ],
+  "created_at_utc": "2026-10-16T07:11:02.956213+00:00",
+  "runtime_artifacts": {
+    "runtime_archive.json": {
+      "sha256": "732def4d7a95da921b67dbfcc8bbf1e602218868b7ee40e3cc9990e059f92893",
+      "bytes": 8411525120,
+      "mtime_ns": 1792128556914575791
+    },
+    "cuda_overlay_archive.json": {
+      "sha256": "e9f9c715bc3ce46a7d9d8b0d40a05372be14a978821df1f8facaf3039cca09a2",
+      "bytes": 275179520,
+      "mtime_ns": 1792129194098355806
+    }
+  },
+  "infrastructure_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_fast_v2.pool_worker.py": "22a8f79834475d176d9ae22f4fda7c21faa1a8c0c5558739ef07b652ce195898",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_fast_v2.runtime_common.py": "93611c2b597857222f6400bcf9151ce70ae7f8053c7871600bc49106e67370f4",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_fast_v2.pool_worker.sbatch": "3adfb833717e6f94ce04eb2ac9dc803a13518dfb190d0af6567fb3fbf7791318"
+  },
+  "worker_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_fast_v2.pool_worker.py",
+  "runtime_common_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_fast_v2.runtime_common.py",
+  "sbatch_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended_fast_v2.pool_worker.sbatch"
+}

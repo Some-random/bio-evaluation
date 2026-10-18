@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "segment_id": "340dd2ae5be44c32ab63056c4049184f",
+  "amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7",
+  "started_at_utc": "2026-10-18T06:14:55.613564+00:00",
+  "stage": "running",
+  "endpoints": [
+    {
+      "endpoint_id": "replica_0",
+      "endpoint": "http://127.0.0.1:8050/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/replica_0/server_identity.json",
+      "server_identity_sha256": "7216722fc96cf69a3826d06135fbb414fc59194e25916f528b4585c15e7d7291",
+      "max_inflight": 32,
+      "max_model_len": 65536,
+      "tensor_parallel_size": 1,
+      "length_limits": [
+        {
+          "max_prompt_tokens": 192,
+          "max_inflight": 32,
+          "capacity_evidence_sha256": "0e384f8e0d2755873ff5393780806aca24ec68aaa582c3a7165fc06c5e9022c4"
+        },
+        {
+          "max_prompt_tokens": 1536,
+          "max_inflight": 16,
+          "capacity_evidence_sha256": "f2a16643aad4470adbad9616a8a2f21ee29e3dd7d660e4db1d5cb267fd9e2b6b"
+        },
+        {
+          "max_prompt_tokens": 7000,
+          "max_inflight": 16,
+          "capacity_evidence_sha256": "8297b747f2469431de62207f5c267fa30a396c2c3acec6cbff4aba3fa530af31"
+        },
+        {
+          "max_prompt_tokens": 16384,
+          "max_inflight": 8,
+          "capacity_evidence_sha256": "314fdb1c842504d0646ad953ec25604d291ab81962b9a9ac7de6d003c3168540"
+        },
+        {
+          "max_prompt_tokens": 45056,
+          "max_inflight": 4,
+          "capacity_evidence_sha256": "71e4ccaa91bb4875e501a637736635eda4c8afa18980efbb30bd6d94e572b8eb"
+        },
+        {
+          "max_prompt_tokens": 49152,
+          "max_inflight": 4,
+          "capacity_evidence_sha256": "5b7bab46fbb83f44cf5bb701bea362920220618cc9db2d66f384a2319fe17c54"
+        }
+      ],
+      "server_identity": {
+        "model": "Qwen/Qwen3.8-27B",
+        "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+        "dtype": "bfloat16",
+        "tensor_parallel_size": 1,
+        "max_model_len": 65536,
+        "max_num_seqs": 32,
+        "endpoint": "http://127.0.0.1:8050/v1",
+        "gpu_uuids": [
+          "GPU-ed6c3700-fb45-144f-b650-71690855c987"
+        ],
+        "hostname": "ampere3.stanford.edu",
+        "pid": 1069303,
+        "proc_start_ticks": "917250019",
+        "slurm_job_id": "240418",
+        "observed_gpu_processes": [
+          {
+            "pid": 1070218,
+            "gpu_uuid": "GPU-ed6c3700-fb45-144f-b650-71690855c987",
+            "used_memory": "71500 MiB"
+          }
+        ],
+        "command": [
+          "/tmp/bio-shared-240418-2hqsuN/python/bin/python3.12",
+          "-m",
+          "vllm.entrypoints.cli.main",
+          "serve",
+          "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+          "--served-model-name",
+          "Qwen/Qwen3.8-27B",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8050",
+          "--dtype",
+          "bfloat16",
+          "--tensor-parallel-size",
+          "1",
+          "--gpu-memory-utilization",
+          "0.90",
+          "--max-model-len",
+          "65536",
+          "--max-num-seqs",
+          "32",
+          "--reasoning-parser",
+          "qwen3",
+          "--enable-prefix-caching",
+          "--limit-mm-per-prompt",
+          "{\"image\": 1, \"video\": 0}"
+        ]
+      }
+    },
+    {
+      "endpoint_id": "replica_1",
+      "endpoint": "http://127.0.0.1:8051/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/replica_1/server_identity.json",
+      "server_identity_sha256": "06ec4ad84dcb6dbe7af20aa0f1d558288b6865cc60dffbadfd882ef95540ec50",
+      "max_inflight": 32,
+      "max_model_len": 65536,
+      "tensor_parallel_size": 1,
+      "length_limits": [
+        {
+          "max_prompt_tokens": 192,
+          "max_inflight": 32,
+          "capacity_evidence_sha256": "0e384f8e0d2755873ff5393780806aca24ec68aaa582c3a7165fc06c5e9022c4"
+        },
+        {
+          "max_prompt_tokens": 1536,
+          "max_inflight": 16,
+          "capacity_evidence_sha256": "f2a16643aad4470adbad9616a8a2f21ee29e3dd7d660e4db1d5cb267fd9e2b6b"
+        },
+        {
+          "max_prompt_tokens": 7000,
+          "max_inflight": 16,
+          "capacity_evidence_sha256": "8297b747f2469431de62207f5c267fa30a396c2c3acec6cbff4aba3fa530af31"
+        },
+        {
+          "max_prompt_tokens": 16384,
+          "max_inflight": 8,
+          "capacity_evidence_sha256": "314fdb1c842504d0646ad953ec25604d291ab81962b9a9ac7de6d003c3168540"
+        },
+        {
+          "max_prompt_tokens": 45056,
+          "max_inflight": 4,
+          "capacity_evidence_sha256": "71e4ccaa91bb4875e501a637736635eda4c8afa18980efbb30bd6d94e572b8eb"
+        },
+        {
+          "max_prompt_tokens": 49152,
+          "max_inflight": 4,
+          "capacity_evidence_sha256": "5b7bab46fbb83f44cf5bb701bea362920220618cc9db2d66f384a2319fe17c54"
+        }
+      ],
+      "server_identity": {
+        "model": "Qwen/Qwen3.8-27B",
+        "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+        "dtype": "bfloat16",
+        "tensor_parallel_size": 1,
+        "max_model_len": 65536,
+        "max_num_seqs": 32,
+        "endpoint": "http://127.0.0.1:8051/v1",
+        "gpu_uuids": [
+          "GPU-ed2075e0-db0c-8026-cd41-a22c523ab1cf"
+        ],
+        "hostname": "ampere3.stanford.edu",
+        "pid": 1069304,
+        "proc_start_ticks": "917250026",
+        "slurm_job_id": "240418",
+        "observed_gpu_processes": [
+          {
+            "pid": 1070213,
+            "gpu_uuid": "GPU-ed2075e0-db0c-8026-cd41-a22c523ab1cf",
+            "used_memory": "71500 MiB"
+          }
+        ],
+        "command": [
+          "/tmp/bio-shared-240418-2hqsuN/python/bin/python3.12",
+          "-m",
+          "vllm.entrypoints.cli.main",
+          "serve",
+          "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+          "--served-model-name",
+          "Qwen/Qwen3.8-27B",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8051",
+          "--dtype",
+          "bfloat16",
+          "--tensor-parallel-size",
+          "1",
+          "--gpu-memory-utilization",
+          "0.90",
+          "--max-model-len",
+          "65536",
+          "--max-num-seqs",
+          "32",
+          "--reasoning-parser",
+          "qwen3",
+          "--enable-prefix-caching",
+          "--limit-mm-per-prompt",
+          "{\"image\": 1, \"video\": 0}"
+        ]
+      }
+    },
+    {
+      "endpoint_id": "replica_2",
+      "endpoint": "http://127.0.0.1:8052/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/replica_2/server_identity.json",
+      "server_identity_sha256": "33e361409c09d324efc7a1bcff8a57e23fdc821486d81bf96f3614a375950972",
+      "max_inflight": 32,
+      "max_model_len": 65536,
+      "tensor_parallel_size": 1,
+      "length_limits": [
+        {
+          "max_prompt_tokens": 192,
+          "max_inflight": 32,
+          "capacity_evidence_sha256": "0e384f8e0d2755873ff5393780806aca24ec68aaa582c3a7165fc06c5e9022c4"
+        },
+        {
+          "max_prompt_tokens": 1536,
+          "max_inflight": 16,
+          "capacity_evidence_sha256": "f2a16643aad4470adbad9616a8a2f21ee29e3dd7d660e4db1d5cb267fd9e2b6b"
+        },
+        {
+          "max_prompt_tokens": 7000,
+          "max_inflight": 16,
+          "capacity_evidence_sha256": "8297b747f2469431de62207f5c267fa30a396c2c3acec6cbff4aba3fa530af31"
+        },
+        {
+          "max_prompt_tokens": 16384,
+          "max_inflight": 8,
+          "capacity_evidence_sha256": "314fdb1c842504d0646ad953ec25604d291ab81962b9a9ac7de6d003c3168540"
+        },
+        {
+          "max_prompt_tokens": 45056,
+          "max_inflight": 4,
+          "capacity_evidence_sha256": "71e4ccaa91bb4875e501a637736635eda4c8afa18980efbb30bd6d94e572b8eb"
+        },
+        {
+          "max_prompt_tokens": 49152,
+          "max_inflight": 4,
+          "capacity_evidence_sha256": "5b7bab46fbb83f44cf5bb701bea362920220618cc9db2d66f384a2319fe17c54"
+        }
+      ],
+      "server_identity": {
+        "model": "Qwen/Qwen3.8-27B",
+        "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+        "dtype": "bfloat16",
+        "tensor_parallel_size": 1,
+        "max_model_len": 65536,
+        "max_num_seqs": 32,
+        "endpoint": "http://127.0.0.1:8052/v1",
+        "gpu_uuids": [
+          "GPU-a77a690a-13e1-c12b-9754-caa7ca186800"
+        ],
+        "hostname": "ampere3.stanford.edu",
+        "pid": 1069305,
+        "proc_start_ticks": "917250033",
+        "slurm_job_id": "240418",
+        "observed_gpu_processes": [
+          {
+            "pid": 1070202,
+            "gpu_uuid": "GPU-a77a690a-13e1-c12b-9754-caa7ca186800",
+            "used_memory": "71500 MiB"
+          }
+        ],
+        "command": [
+          "/tmp/bio-shared-240418-2hqsuN/python/bin/python3.12",
+          "-m",
+          "vllm.entrypoints.cli.main",
+          "serve",
+          "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+          "--served-model-name",
+          "Qwen/Qwen3.8-27B",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8052",
+          "--dtype",
+          "bfloat16",
+          "--tensor-parallel-size",
+          "1",
+          "--gpu-memory-utilization",
+          "0.90",
+          "--max-model-len",
+          "65536",
+          "--max-num-seqs",
+          "32",
+          "--reasoning-parser",
+          "qwen3",
+          "--enable-prefix-caching",
+          "--limit-mm-per-prompt",
+          "{\"image\": 1, \"video\": 0}"
+        ]
+      }
+    },
+    {
+      "endpoint_id": "replica_3",
+      "endpoint": "http://127.0.0.1:8053/v1",
+      "server_identity_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/replica_3/server_identity.json",
+      "server_identity_sha256": "35354e2c9f39bcd4dc1f366be8e97deffab8292703887f592167818db3250cde",
+      "max_inflight": 32,
+      "max_model_len": 65536,
+      "tensor_parallel_size": 1,
+      "length_limits": [
+        {
+          "max_prompt_tokens": 192,
+          "max_inflight": 32,
+          "capacity_evidence_sha256": "0e384f8e0d2755873ff5393780806aca24ec68aaa582c3a7165fc06c5e9022c4"
+        },
+        {
+          "max_prompt_tokens": 1536,
+          "max_inflight": 16,
+          "capacity_evidence_sha256": "f2a16643aad4470adbad9616a8a2f21ee29e3dd7d660e4db1d5cb267fd9e2b6b"
+        },
+        {
+          "max_prompt_tokens": 7000,
+          "max_inflight": 16,
+          "capacity_evidence_sha256": "8297b747f2469431de62207f5c267fa30a396c2c3acec6cbff4aba3fa530af31"
+        },
+        {
+          "max_prompt_tokens": 16384,
+          "max_inflight": 8,
+          "capacity_evidence_sha256": "314fdb1c842504d0646ad953ec25604d291ab81962b9a9ac7de6d003c3168540"
+        },
+        {
+          "max_prompt_tokens": 45056,
+          "max_inflight": 4,
+          "capacity_evidence_sha256": "71e4ccaa91bb4875e501a637736635eda4c8afa18980efbb30bd6d94e572b8eb"
+        },
+        {
+          "max_prompt_tokens": 49152,
+          "max_inflight": 4,
+          "capacity_evidence_sha256": "5b7bab46fbb83f44cf5bb701bea362920220618cc9db2d66f384a2319fe17c54"
+        }
+      ],
+      "server_identity": {
+        "model": "Qwen/Qwen3.8-27B",
+        "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+        "dtype": "bfloat16",
+        "tensor_parallel_size": 1,
+        "max_model_len": 65536,
+        "max_num_seqs": 32,
+        "endpoint": "http://127.0.0.1:8053/v1",
+        "gpu_uuids": [
+          "GPU-6a40fd04-5ca8-dbca-a9c3-79bee052b4ac"
+        ],
+        "hostname": "ampere3.stanford.edu",
+        "pid": 1069307,
+        "proc_start_ticks": "917250039",
+        "slurm_job_id": "240418",
+        "observed_gpu_processes": [
+          {
+            "pid": 1070250,
+            "gpu_uuid": "GPU-6a40fd04-5ca8-dbca-a9c3-79bee052b4ac",
+            "used_memory": "71500 MiB"
+          }
+        ],
+        "command": [
+          "/tmp/bio-shared-240418-2hqsuN/python/bin/python3.12",
+          "-m",
+          "vllm.entrypoints.cli.main",
+          "serve",
+          "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+          "--served-model-name",
+          "Qwen/Qwen3.8-27B",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8053",
+          "--dtype",
+          "bfloat16",
+          "--tensor-parallel-size",
+          "1",
+          "--gpu-memory-utilization",
+          "0.90",
+          "--max-model-len",
+          "65536",
+          "--max-num-seqs",
+          "32",
+          "--reasoning-parser",
+          "qwen3",
+          "--enable-prefix-caching",
+          "--limit-mm-per-prompt",
+          "{\"image\": 1, \"video\": 0}"
+        ]
+      }
+    }
+  ],
+  "protocol_changes": [],
+  "actual_runner_sha256": "58a753c4322f17e0fcec4a8fb41a5e6fb57af27bd7268bb4832fa25cc813699b",
+  "baseline_statuses": {}
+}

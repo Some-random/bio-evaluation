@@ -1,0 +1,26 @@
+{
+  "points": [
+    {
+      "best_tested_concurrency": 4,
+      "output_tokens_per_second": 67.8184357694596,
+      "sampled_peak_kv_fraction": 0.7640750670241288,
+      "tested_input_tokens": 49152,
+      "tested_output_tokens": 4096
+    }
+  ],
+  "provenance": {
+    "base_url": "http://127.0.0.1:8053",
+    "client_sha256": "d08a6b2a1739c99ec07a66f0e619ce5f94fd2d9816142b6bcc72c34069bab58b",
+    "created_at": "2026-10-17T22:55:59.486871-07:00",
+    "launcher_sha256": "9022a7873a50c3fd9ebdd665600a4c8b82a88f69184e6078729dafb646e8a4ac",
+    "plan_sha256": "f33b60862229ea3b5422bc77494c10a39bfc3d0a3d40d9f746aeb6da5a8f3e82",
+    "sampling": {
+      "seed": 42,
+      "temperature": 1.0,
+      "top_k": 20,
+      "top_p": 0.95
+    },
+    "synthetic_only": true
+  },
+  "restriction": "Measured synthetic points on this server; no production configuration was changed and no robust optimum or other hardware/workload result is claimed."
+}

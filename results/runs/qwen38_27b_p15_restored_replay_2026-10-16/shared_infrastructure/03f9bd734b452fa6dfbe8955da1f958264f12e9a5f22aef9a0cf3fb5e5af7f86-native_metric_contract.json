@@ -1,0 +1,49 @@
+{
+  "source_code_revisions": {
+    "ProtST": "db53a76ed2430eb66dd9c8134ace99fd60980fb3",
+    "TorchDrug": "6066fbd82360abb5f270cba1eca560af01b8cc90",
+    "DeepFRI": "3bd6c7eae67894ccedbe1117e33b3abe544bca71"
+  },
+  "native_metric_names": [
+    "auprc@micro",
+    "f1_max"
+  ],
+  "source_functions": [
+    {
+      "source_path": "sources/deepfri_contract_audit_2026-10-15/torchdrug__torchdrug__metrics__metric.py",
+      "file_sha256": "760f376d4125ab2cc9332c9e83b944d4464da51aea577d75266d9247aca81776",
+      "function": "area_under_prc",
+      "line": 32,
+      "function_source_sha256": "9ad0a5d87c26587eea73ab7d30f3b0f1bc926da95693c2fd352a3ec8329891eb"
+    },
+    {
+      "source_path": "sources/deepfri_contract_audit_2026-10-15/torchdrug__torchdrug__metrics__metric.py",
+      "file_sha256": "760f376d4125ab2cc9332c9e83b944d4464da51aea577d75266d9247aca81776",
+      "function": "f1_max",
+      "line": 234,
+      "function_source_sha256": "bd3e2a05e7145a8ed7fd5a60c98b47a8320809964735420db88ae29c5abac86a"
+    },
+    {
+      "source_path": "sources/deepfri_contract_audit_2026-10-15/torchdrug__torchdrug__tasks__property_prediction.py",
+      "file_sha256": "ccc3fec3f4584058869cebc10b9656cd462b1eb443183ccf78b5b5bb19c7721e",
+      "function": "MultipleBinaryClassification.evaluate",
+      "line": 314,
+      "function_source_sha256": "94a81696cd6efb6cbe6f85c252b612f78834a58a98fefdc7405c0f229a3115f6"
+    },
+    {
+      "source_path": "sources/deepfri_contract_audit_2026-10-15/deepfri__deepfrier__utils.py",
+      "file_sha256": "96f2eb9a1aea9b8fd0504469557f67944013ba30a146ce335b81090be314e3c6",
+      "function": "_micro_aupr",
+      "line": 115,
+      "function_source_sha256": "9c5df2c9d0cc586fe205661060233ef455ceedcadaffeebe89ee6560b3e211a4"
+    }
+  ],
+  "confidence_contract": "One genuine finite score per case/class in fixed source-global class order; original ProtST outputs learned-head BCE logits, no thresholded-label substitution. The disabled Qwen proposal explicitly defines omitted sparse numeric-map entries as zero before inference. Malformed/missing/truncated outputs do not become all-zero vectors.",
+  "auprc_micro_definition": "Flatten every case/class pair, sort descending using torch.argsort; sum precision at positive ranks and divide by number of positives plus 1e-10. This is rank average precision.",
+  "f1_max_definition": "Sort labels within each protein; update per-protein cumulative precision/recall at global descending score ranks. Mean precision uses proteins with at least one predicted term; mean recall uses all proteins (zero-target rows contribute zero). Return maximum harmonic mean over every rank position, epsilon 1e-10. Not a fixed 0.01 threshold grid.",
+  "tie_qualification": "Source torch.argsort tie order and within-tie rank evaluation are retained. Sparse omitted zeros make this consequential; future scorer must pin CPU/Torch/thread/case/class ordering before responses. Author dependency/device ordering is unavailable, so exact tie-equivalence is unverified.",
+  "deepfri_original_metric_difference": "DeepFRI utils._micro_aupr calls sklearn.average_precision_score(average=micro), which groups tied thresholds; it can differ from TorchDrug rank AP on tied scores. Do not merge these metric names or choose the better result.",
+  "output_score_ontology_propagation": "No score propagation in audited ProtST/TorchDrug MultipleBinaryClassification.predict/evaluate. Use provided target matrix directly. Do not add max-child-to-parent prediction propagation silently.",
+  "no_metrics_computed": true,
+  "no_model_inference": true
+}

@@ -1,0 +1,2700 @@
+{
+  "branch": "EC",
+  "class_count": 538,
+  "selection_rule": "Complete global released annotation-header vocabulary in exact source order; no test-positive selection",
+  "source_annotation_path": "sources/deepfri_contract_audit_2026-10-15/zenodo__EnzymeCommission__nrPDB-EC_annot.tsv",
+  "source_annotation_sha256": "2623ff47939da974b35e05edf69dabb43cb7e113dfc4d59856ce3550c0022f0a",
+  "description_source": "ExPASy ENZYME 02-Sep-2026 supplemental display names; not a verified 2020 author prompt or vocabulary revision",
+  "classes": [
+    {
+      "index": 0,
+      "class_id": "1.4.3.-",
+      "description": "With oxygen as acceptor."
+    },
+    {
+      "index": 1,
+      "class_id": "4.2.1.1",
+      "description": "carbonic anhydrase."
+    },
+    {
+      "index": 2,
+      "class_id": "2.7.6.-",
+      "description": "Diphosphotransferases."
+    },
+    {
+      "index": 3,
+      "class_id": "3.5.1.88",
+      "description": "peptide deformylase."
+    },
+    {
+      "index": 4,
+      "class_id": "5.4.99.-",
+      "description": "Transferring other groups."
+    },
+    {
+      "index": 5,
+      "class_id": "3.1.21.4",
+      "description": "type II site-specific deoxyribonuclease."
+    },
+    {
+      "index": 6,
+      "class_id": "2.3.1.48",
+      "description": "histone acetyltransferase."
+    },
+    {
+      "index": 7,
+      "class_id": "7.2.1.-",
+      "description": "Linked to oxidoreductase reactions."
+    },
+    {
+      "index": 8,
+      "class_id": "1.16.3.1",
+      "description": "ferroxidase."
+    },
+    {
+      "index": 9,
+      "class_id": "3.4.19.12",
+      "description": "ubiquitinyl hydrolase 1."
+    },
+    {
+      "index": 10,
+      "class_id": "1.3.8.-",
+      "description": "With a flavin as acceptor."
+    },
+    {
+      "index": 11,
+      "class_id": "2.7.7.19",
+      "description": "polynucleotide adenylyltransferase."
+    },
+    {
+      "index": 12,
+      "class_id": "2.4.2.-",
+      "description": "Pentosyltransferases."
+    },
+    {
+      "index": 13,
+      "class_id": "1.1.1.169",
+      "description": "2-dehydropantoate 2-reductase."
+    },
+    {
+      "index": 14,
+      "class_id": "2.4.2.10",
+      "description": "orotate phosphoribosyltransferase."
+    },
+    {
+      "index": 15,
+      "class_id": "3.5.3.1",
+      "description": "arginase."
+    },
+    {
+      "index": 16,
+      "class_id": "3.3.2.-",
+      "description": "Ether hydrolases."
+    },
+    {
+      "index": 17,
+      "class_id": "3.1.26.4",
+      "description": "ribonuclease H."
+    },
+    {
+      "index": 18,
+      "class_id": "7.1.1.9",
+      "description": "cytochrome-c oxidase."
+    },
+    {
+      "index": 19,
+      "class_id": "3.4.13.9",
+      "description": "Xaa-Pro dipeptidase."
+    },
+    {
+      "index": 20,
+      "class_id": "1.1.1.100",
+      "description": "3-oxoacyl-[acyl-carrier-protein] reductase."
+    },
+    {
+      "index": 21,
+      "class_id": "5.1.1.-",
+      "description": "Acting on amino acids and derivatives."
+    },
+    {
+      "index": 22,
+      "class_id": "3.1.22.-",
+      "description": "Endodeoxyribonucleases producing other than 5'-phosphomonoesters."
+    },
+    {
+      "index": 23,
+      "class_id": "3.4.21.-",
+      "description": "Serine endopeptidases."
+    },
+    {
+      "index": 24,
+      "class_id": "1.11.1.-",
+      "description": "Peroxidases."
+    },
+    {
+      "index": 25,
+      "class_id": "3.4.22.28",
+      "description": "picornain 3C."
+    },
+    {
+      "index": 26,
+      "class_id": "4.6.1.18",
+      "description": "pancreatic ribonuclease."
+    },
+    {
+      "index": 27,
+      "class_id": "3.4.21.4",
+      "description": "trypsin."
+    },
+    {
+      "index": 28,
+      "class_id": "6.1.1.4",
+      "description": "leucine--tRNA ligase."
+    },
+    {
+      "index": 29,
+      "class_id": "1.15.1.1",
+      "description": "superoxide dismutase."
+    },
+    {
+      "index": 30,
+      "class_id": "3.4.19.-",
+      "description": "Omega peptidases."
+    },
+    {
+      "index": 31,
+      "class_id": "3.4.11.1",
+      "description": "leucyl aminopeptidase."
+    },
+    {
+      "index": 32,
+      "class_id": "3.4.25.1",
+      "description": "proteasome endopeptidase complex."
+    },
+    {
+      "index": 33,
+      "class_id": "1.3.1.9",
+      "description": "enoyl-[acyl-carrier-protein] reductase (NADH)."
+    },
+    {
+      "index": 34,
+      "class_id": "2.4.99.-",
+      "description": "Transferring other glycosyl groups."
+    },
+    {
+      "index": 35,
+      "class_id": "1.1.99.-",
+      "description": "With other acceptors."
+    },
+    {
+      "index": 36,
+      "class_id": "1.97.1.12",
+      "description": "photosystem I."
+    },
+    {
+      "index": 37,
+      "class_id": "2.7.4.6",
+      "description": "nucleoside-diphosphate kinase."
+    },
+    {
+      "index": 38,
+      "class_id": "1.17.1.-",
+      "description": "With NAD(+) or NADP(+) as acceptor."
+    },
+    {
+      "index": 39,
+      "class_id": "1.7.2.-",
+      "description": "With a cytochrome as acceptor."
+    },
+    {
+      "index": 40,
+      "class_id": "2.7.1.71",
+      "description": "shikimate kinase."
+    },
+    {
+      "index": 41,
+      "class_id": "4.2.1.11",
+      "description": "phosphopyruvate hydratase."
+    },
+    {
+      "index": 42,
+      "class_id": "3.4.21.90",
+      "description": "togavirin."
+    },
+    {
+      "index": 43,
+      "class_id": "4.1.99.-",
+      "description": "Other carbon-carbon lyases."
+    },
+    {
+      "index": 44,
+      "class_id": "2.8.1.1",
+      "description": "thiosulfate sulfurtransferase."
+    },
+    {
+      "index": 45,
+      "class_id": "3.6.4.13",
+      "description": "RNA helicase."
+    },
+    {
+      "index": 46,
+      "class_id": "6.3.4.4",
+      "description": "adenylosuccinate synthase."
+    },
+    {
+      "index": 47,
+      "class_id": "2.7.11.1",
+      "description": "non-specific serine/threonine protein kinase."
+    },
+    {
+      "index": 48,
+      "class_id": "2.7.7.23",
+      "description": "UDP-N-acetylglucosamine diphosphorylase."
+    },
+    {
+      "index": 49,
+      "class_id": "1.9.3.-",
+      "description": "With oxygen as acceptor."
+    },
+    {
+      "index": 50,
+      "class_id": "2.3.1.39",
+      "description": "[acyl-carrier-protein] S-malonyltransferase."
+    },
+    {
+      "index": 51,
+      "class_id": "4.1.1.11",
+      "description": "aspartate 1-decarboxylase."
+    },
+    {
+      "index": 52,
+      "class_id": "3.2.1.26",
+      "description": "beta-fructofuranosidase."
+    },
+    {
+      "index": 53,
+      "class_id": "3.1.13.-",
+      "description": "Exoribonucleases producing 5'-phosphomonoesters."
+    },
+    {
+      "index": 54,
+      "class_id": "1.8.99.-",
+      "description": "With other acceptors."
+    },
+    {
+      "index": 55,
+      "class_id": "1.11.1.6",
+      "description": "catalase."
+    },
+    {
+      "index": 56,
+      "class_id": "4.2.1.2",
+      "description": "fumarate hydratase."
+    },
+    {
+      "index": 57,
+      "class_id": "5.3.4.1",
+      "description": "protein disulfide-isomerase."
+    },
+    {
+      "index": 58,
+      "class_id": "3.2.1.4",
+      "description": "cellulase."
+    },
+    {
+      "index": 59,
+      "class_id": "3.4.21.5",
+      "description": "thrombin."
+    },
+    {
+      "index": 60,
+      "class_id": "1.14.16.-",
+      "description": "With reduced pteridine as one donor, and incorporation of one atom of oxygen."
+    },
+    {
+      "index": 61,
+      "class_id": "6.3.4.2",
+      "description": "CTP synthase (glutamine hydrolyzing)."
+    },
+    {
+      "index": 62,
+      "class_id": "2.1.1.37",
+      "description": "DNA (cytosine-5-)-methyltransferase."
+    },
+    {
+      "index": 63,
+      "class_id": "1.12.99.-",
+      "description": "With other acceptors."
+    },
+    {
+      "index": 64,
+      "class_id": "2.1.1.361",
+      "description": "[histone H4]-lysine(20) N-methyltransferase."
+    },
+    {
+      "index": 65,
+      "class_id": "2.1.1.-",
+      "description": "Methyltransferases."
+    },
+    {
+      "index": 66,
+      "class_id": "3.1.8.1",
+      "description": "aryldialkylphosphatase."
+    },
+    {
+      "index": 67,
+      "class_id": "2.7.11.-",
+      "description": "Protein-serine/threonine kinases."
+    },
+    {
+      "index": 68,
+      "class_id": "2.3.2.24",
+      "description": "(E3-independent) E2 ubiquitin-conjugating enzyme."
+    },
+    {
+      "index": 69,
+      "class_id": "2.7.7.48",
+      "description": "RNA-directed RNA polymerase."
+    },
+    {
+      "index": 70,
+      "class_id": "3.5.1.98",
+      "description": "histone deacetylase."
+    },
+    {
+      "index": 71,
+      "class_id": "3.1.1.31",
+      "description": "6-phosphogluconolactonase."
+    },
+    {
+      "index": 72,
+      "class_id": "2.7.11.22",
+      "description": "cyclin-dependent kinase."
+    },
+    {
+      "index": 73,
+      "class_id": "1.18.1.2",
+      "description": "ferredoxin--NADP(+) reductase."
+    },
+    {
+      "index": 74,
+      "class_id": "3.1.13.4",
+      "description": "poly(A)-specific ribonuclease."
+    },
+    {
+      "index": 75,
+      "class_id": "4.1.1.23",
+      "description": "orotidine-5'-phosphate decarboxylase."
+    },
+    {
+      "index": 76,
+      "class_id": "3.2.2.27",
+      "description": "uracil-DNA glycosylase."
+    },
+    {
+      "index": 77,
+      "class_id": "2.5.1.7",
+      "description": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase."
+    },
+    {
+      "index": 78,
+      "class_id": "1.14.11.-",
+      "description": "With 2-oxoglutarate as one donor, and incorporation of one atom each of oxygen into both donors."
+    },
+    {
+      "index": 79,
+      "class_id": "3.5.1.2",
+      "description": "glutaminase."
+    },
+    {
+      "index": 80,
+      "class_id": "6.3.1.2",
+      "description": "glutamine synthetase."
+    },
+    {
+      "index": 81,
+      "class_id": "4.3.2.-",
+      "description": "Lyases acting on amides, amidines, etc."
+    },
+    {
+      "index": 82,
+      "class_id": "4.1.2.25",
+      "description": "dihydroneopterin aldolase."
+    },
+    {
+      "index": 83,
+      "class_id": "5.3.2.-",
+      "description": "Interconverting keto- and enol-groups."
+    },
+    {
+      "index": 84,
+      "class_id": "2.7.1.1",
+      "description": "hexokinase."
+    },
+    {
+      "index": 85,
+      "class_id": "3.1.11.-",
+      "description": "Exodeoxyribonucleases producing 5'-phosphomonoesters."
+    },
+    {
+      "index": 86,
+      "class_id": "2.7.7.4",
+      "description": "sulfate adenylyltransferase."
+    },
+    {
+      "index": 87,
+      "class_id": "3.6.3.14",
+      "description": "Transferred entry: 7.1.2.2."
+    },
+    {
+      "index": 88,
+      "class_id": "4.2.1.20",
+      "description": "tryptophan synthase."
+    },
+    {
+      "index": 89,
+      "class_id": "2.3.1.41",
+      "description": "beta-ketoacyl-[acyl-carrier-protein] synthase I."
+    },
+    {
+      "index": 90,
+      "class_id": "1.18.6.1",
+      "description": "nitrogenase."
+    },
+    {
+      "index": 91,
+      "class_id": "2.3.1.74",
+      "description": "chalcone synthase."
+    },
+    {
+      "index": 92,
+      "class_id": "6.3.2.19",
+      "description": "Transferred entry: 2.3.2.23, 2.3.2.27 and 6.2.1.45."
+    },
+    {
+      "index": 93,
+      "class_id": "3.2.2.22",
+      "description": "rRNA N-glycosylase."
+    },
+    {
+      "index": 94,
+      "class_id": "2.8.4.1",
+      "description": "coenzyme-B sulfoethylthiotransferase."
+    },
+    {
+      "index": 95,
+      "class_id": "2.4.2.17",
+      "description": "ATP phosphoribosyltransferase."
+    },
+    {
+      "index": 96,
+      "class_id": "2.1.1.56",
+      "description": "mRNA (guanine-N(7))-methyltransferase."
+    },
+    {
+      "index": 97,
+      "class_id": "1.10.3.-",
+      "description": "With oxygen as acceptor."
+    },
+    {
+      "index": 98,
+      "class_id": "2.5.1.54",
+      "description": "3-deoxy-7-phosphoheptulonate synthase."
+    },
+    {
+      "index": 99,
+      "class_id": "1.2.1.11",
+      "description": "aspartate-semialdehyde dehydrogenase."
+    },
+    {
+      "index": 100,
+      "class_id": "4.2.1.8",
+      "description": "mannonate dehydratase."
+    },
+    {
+      "index": 101,
+      "class_id": "3.1.3.16",
+      "description": "protein-serine/threonine phosphatase."
+    },
+    {
+      "index": 102,
+      "class_id": "1.12.7.2",
+      "description": "ferredoxin hydrogenase."
+    },
+    {
+      "index": 103,
+      "class_id": "2.7.1.-",
+      "description": "Phosphotransferases with an alcohol group as acceptor."
+    },
+    {
+      "index": 104,
+      "class_id": "1.17.4.1",
+      "description": "ribonucleoside-diphosphate reductase."
+    },
+    {
+      "index": 105,
+      "class_id": "2.7.10.-",
+      "description": "Protein-tyrosine kinases."
+    },
+    {
+      "index": 106,
+      "class_id": "3.1.2.14",
+      "description": "oleoyl-[acyl-carrier-protein] hydrolase."
+    },
+    {
+      "index": 107,
+      "class_id": "5.3.1.6",
+      "description": "ribose-5-phosphate isomerase."
+    },
+    {
+      "index": 108,
+      "class_id": "3.4.21.91",
+      "description": "flavivirin."
+    },
+    {
+      "index": 109,
+      "class_id": "2.2.1.-",
+      "description": "Transketolases and transaldolases."
+    },
+    {
+      "index": 110,
+      "class_id": "2.7.1.2",
+      "description": "glucokinase."
+    },
+    {
+      "index": 111,
+      "class_id": "2.7.3.-",
+      "description": "Phosphotransferases with a nitrogenous group as acceptor."
+    },
+    {
+      "index": 112,
+      "class_id": "3.1.22.4",
+      "description": "Transferred entry: 3.1.21.10."
+    },
+    {
+      "index": 113,
+      "class_id": "2.3.1.16",
+      "description": "acetyl-CoA C-acyltransferase."
+    },
+    {
+      "index": 114,
+      "class_id": "4.99.1.-",
+      "description": "Other lyases."
+    },
+    {
+      "index": 115,
+      "class_id": "2.7.1.35",
+      "description": "pyridoxal kinase."
+    },
+    {
+      "index": 116,
+      "class_id": "3.4.22.69",
+      "description": "SARS coronavirus main proteinase."
+    },
+    {
+      "index": 117,
+      "class_id": "3.1.27.-",
+      "description": "Endoribonucleases producing other than 5'-phosphomonoesters."
+    },
+    {
+      "index": 118,
+      "class_id": "1.12.7.-",
+      "description": "With an iron-sulfur protein as acceptor."
+    },
+    {
+      "index": 119,
+      "class_id": "5.1.3.-",
+      "description": "Acting on carbohydrates and derivatives."
+    },
+    {
+      "index": 120,
+      "class_id": "2.7.7.65",
+      "description": "diguanylate cyclase."
+    },
+    {
+      "index": 121,
+      "class_id": "1.17.4.-",
+      "description": "With a disulfide as acceptor."
+    },
+    {
+      "index": 122,
+      "class_id": "5.3.1.24",
+      "description": "phosphoribosylanthranilate isomerase."
+    },
+    {
+      "index": 123,
+      "class_id": "4.2.1.59",
+      "description": "3-hydroxyacyl-[acyl-carrier-protein] dehydratase."
+    },
+    {
+      "index": 124,
+      "class_id": "2.5.1.10",
+      "description": "(2E,6E)-farnesyl diphosphate synthase."
+    },
+    {
+      "index": 125,
+      "class_id": "1.8.4.11",
+      "description": "peptide-methionine (S)-S-oxide reductase."
+    },
+    {
+      "index": 126,
+      "class_id": "3.4.25.-",
+      "description": "Threonine endopeptidases."
+    },
+    {
+      "index": 127,
+      "class_id": "2.7.10.2",
+      "description": "non-specific protein-tyrosine kinase."
+    },
+    {
+      "index": 128,
+      "class_id": "5.2.1.-",
+      "description": "Cis-trans isomerases."
+    },
+    {
+      "index": 129,
+      "class_id": "6.1.1.3",
+      "description": "threonine--tRNA ligase."
+    },
+    {
+      "index": 130,
+      "class_id": "2.7.7.49",
+      "description": "RNA-directed DNA polymerase."
+    },
+    {
+      "index": 131,
+      "class_id": "2.8.4.-",
+      "description": "Transferring alkylthio groups."
+    },
+    {
+      "index": 132,
+      "class_id": "4.1.3.-",
+      "description": "Oxo-acid-lyases."
+    },
+    {
+      "index": 133,
+      "class_id": "2.3.1.31",
+      "description": "homoserine O-acetyltransferase."
+    },
+    {
+      "index": 134,
+      "class_id": "1.1.1.205",
+      "description": "IMP dehydrogenase."
+    },
+    {
+      "index": 135,
+      "class_id": "3.1.30.-",
+      "description": "Endoribonucleases active with either ribo- or deoxyribonucleic acids and producing 5'-phosphomonoesters."
+    },
+    {
+      "index": 136,
+      "class_id": "3.4.23.-",
+      "description": "Aspartic endopeptidases."
+    },
+    {
+      "index": 137,
+      "class_id": "6.5.1.2",
+      "description": "DNA ligase (NAD(+))."
+    },
+    {
+      "index": 138,
+      "class_id": "6.1.1.15",
+      "description": "proline--tRNA ligase."
+    },
+    {
+      "index": 139,
+      "class_id": "3.6.4.-",
+      "description": "Acting on ATP; involved in cellular and subcellular movement."
+    },
+    {
+      "index": 140,
+      "class_id": "6.2.1.-",
+      "description": "Acid--thiol ligases."
+    },
+    {
+      "index": 141,
+      "class_id": "4.1.3.3",
+      "description": "N-acetylneuraminate lyase."
+    },
+    {
+      "index": 142,
+      "class_id": "2.7.7.60",
+      "description": "2-C-methyl-D-erythritol 4-phosphate cytidylyltransferase."
+    },
+    {
+      "index": 143,
+      "class_id": "6.3.2.6",
+      "description": "phosphoribosylaminoimidazolesuccinocarboxamide synthase."
+    },
+    {
+      "index": 144,
+      "class_id": "5.1.1.3",
+      "description": "glutamate racemase."
+    },
+    {
+      "index": 145,
+      "class_id": "2.4.2.9",
+      "description": "uracil phosphoribosyltransferase."
+    },
+    {
+      "index": 146,
+      "class_id": "1.14.13.-",
+      "description": "With NADH or NADPH as one donor, and incorporation of one atom of oxygen."
+    },
+    {
+      "index": 147,
+      "class_id": "1.1.2.-",
+      "description": "With a cytochrome as acceptor."
+    },
+    {
+      "index": 148,
+      "class_id": "1.1.1.1",
+      "description": "alcohol dehydrogenase."
+    },
+    {
+      "index": 149,
+      "class_id": "5.1.99.-",
+      "description": "Acting on other compounds."
+    },
+    {
+      "index": 150,
+      "class_id": "2.8.2.-",
+      "description": "Sulfotransferases."
+    },
+    {
+      "index": 151,
+      "class_id": "2.5.1.47",
+      "description": "cysteine synthase."
+    },
+    {
+      "index": 152,
+      "class_id": "2.7.11.24",
+      "description": "mitogen-activated protein kinase."
+    },
+    {
+      "index": 153,
+      "class_id": "3.4.22.15",
+      "description": "cathepsin L."
+    },
+    {
+      "index": 154,
+      "class_id": "2.6.1.42",
+      "description": "branched-chain-amino-acid transaminase."
+    },
+    {
+      "index": 155,
+      "class_id": "2.1.3.2",
+      "description": "aspartate carbamoyltransferase."
+    },
+    {
+      "index": 156,
+      "class_id": "3.2.2.9",
+      "description": "adenosylhomocysteine nucleosidase."
+    },
+    {
+      "index": 157,
+      "class_id": "4.2.3.3",
+      "description": "methylglyoxal synthase."
+    },
+    {
+      "index": 158,
+      "class_id": "2.6.1.-",
+      "description": "Transaminases."
+    },
+    {
+      "index": 159,
+      "class_id": "1.5.1.-",
+      "description": "With NAD(+) or NADP(+) as acceptor."
+    },
+    {
+      "index": 160,
+      "class_id": "2.7.7.24",
+      "description": "glucose-1-phosphate thymidylyltransferase."
+    },
+    {
+      "index": 161,
+      "class_id": "2.1.1.57",
+      "description": "methyltransferase cap1."
+    },
+    {
+      "index": 162,
+      "class_id": "6.1.1.20",
+      "description": "phenylalanine--tRNA ligase."
+    },
+    {
+      "index": 163,
+      "class_id": "5.3.1.5",
+      "description": "xylose isomerase."
+    },
+    {
+      "index": 164,
+      "class_id": "2.7.1.25",
+      "description": "adenylyl-sulfate kinase."
+    },
+    {
+      "index": 165,
+      "class_id": "2.2.1.1",
+      "description": "transketolase."
+    },
+    {
+      "index": 166,
+      "class_id": "3.6.1.1",
+      "description": "inorganic diphosphatase."
+    },
+    {
+      "index": 167,
+      "class_id": "2.3.3.16",
+      "description": "citrate synthase (unknown stereospecificity)."
+    },
+    {
+      "index": 168,
+      "class_id": "6.3.4.-",
+      "description": "Other carbon--nitrogen ligases."
+    },
+    {
+      "index": 169,
+      "class_id": "2.7.7.9",
+      "description": "UTP--glucose-1-phosphate uridylyltransferase."
+    },
+    {
+      "index": 170,
+      "class_id": "1.18.1.-",
+      "description": "With NAD(+) or NADP(+) as acceptor."
+    },
+    {
+      "index": 171,
+      "class_id": "4.2.99.-",
+      "description": "Other carbon-oxygen lyases."
+    },
+    {
+      "index": 172,
+      "class_id": "4.1.2.4",
+      "description": "deoxyribose-phosphate aldolase."
+    },
+    {
+      "index": 173,
+      "class_id": "3.1.3.1",
+      "description": "alkaline phosphatase."
+    },
+    {
+      "index": 174,
+      "class_id": "5.3.3.8",
+      "description": "Delta(3)-Delta(2)-enoyl-CoA isomerase."
+    },
+    {
+      "index": 175,
+      "class_id": "3.2.1.1",
+      "description": "alpha-amylase."
+    },
+    {
+      "index": 176,
+      "class_id": "2.7.10.1",
+      "description": "receptor protein-tyrosine kinase."
+    },
+    {
+      "index": 177,
+      "class_id": "4.2.1.113",
+      "description": "o-succinylbenzoate synthase."
+    },
+    {
+      "index": 178,
+      "class_id": "4.2.2.2",
+      "description": "pectate lyase."
+    },
+    {
+      "index": 179,
+      "class_id": "6.1.1.1",
+      "description": "tyrosine--tRNA ligase."
+    },
+    {
+      "index": 180,
+      "class_id": "3.1.3.-",
+      "description": "Phosphoric monoester hydrolases."
+    },
+    {
+      "index": 181,
+      "class_id": "1.2.4.-",
+      "description": "With a disulfide as acceptor."
+    },
+    {
+      "index": 182,
+      "class_id": "1.6.99.-",
+      "description": "With other acceptors."
+    },
+    {
+      "index": 183,
+      "class_id": "2.5.1.18",
+      "description": "glutathione transferase."
+    },
+    {
+      "index": 184,
+      "class_id": "3.4.22.29",
+      "description": "picornain 2A."
+    },
+    {
+      "index": 185,
+      "class_id": "3.1.3.2",
+      "description": "acid phosphatase."
+    },
+    {
+      "index": 186,
+      "class_id": "1.1.1.27",
+      "description": "L-lactate dehydrogenase."
+    },
+    {
+      "index": 187,
+      "class_id": "2.3.1.286",
+      "description": "protein acetyllysine N-acetyltransferase."
+    },
+    {
+      "index": 188,
+      "class_id": "1.14.15.-",
+      "description": "With reduced iron-sulfur protein as one donor, and incorporation of one atom of oxygen."
+    },
+    {
+      "index": 189,
+      "class_id": "2.7.7.3",
+      "description": "pantetheine-phosphate adenylyltransferase."
+    },
+    {
+      "index": 190,
+      "class_id": "3.1.13.2",
+      "description": "exoribonuclease H."
+    },
+    {
+      "index": 191,
+      "class_id": "2.7.7.6",
+      "description": "DNA-directed RNA polymerase."
+    },
+    {
+      "index": 192,
+      "class_id": "5.4.99.18",
+      "description": "5-(carboxyamino)imidazole ribonucleotide mutase."
+    },
+    {
+      "index": 193,
+      "class_id": "4.1.1.39",
+      "description": "ribulose-bisphosphate carboxylase."
+    },
+    {
+      "index": 194,
+      "class_id": "2.7.4.8",
+      "description": "guanylate kinase."
+    },
+    {
+      "index": 195,
+      "class_id": "5.6.2.1",
+      "description": "DNA topoisomerase."
+    },
+    {
+      "index": 196,
+      "class_id": "2.3.1.-",
+      "description": "Transferring groups other than amino-acyl groups."
+    },
+    {
+      "index": 197,
+      "class_id": "1.7.1.-",
+      "description": "With NAD(+) or NADP(+) as acceptor."
+    },
+    {
+      "index": 198,
+      "class_id": "1.6.5.2",
+      "description": "NAD(P)H dehydrogenase (quinone)."
+    },
+    {
+      "index": 199,
+      "class_id": "1.18.6.-",
+      "description": "With dinitrogen as acceptor."
+    },
+    {
+      "index": 200,
+      "class_id": "4.6.1.2",
+      "description": "guanylate cyclase."
+    },
+    {
+      "index": 201,
+      "class_id": "2.6.1.52",
+      "description": "phosphoserine transaminase."
+    },
+    {
+      "index": 202,
+      "class_id": "3.1.6.-",
+      "description": "Sulfuric ester hydrolases."
+    },
+    {
+      "index": 203,
+      "class_id": "1.6.5.-",
+      "description": "With a quinone or similar compound as acceptor."
+    },
+    {
+      "index": 204,
+      "class_id": "2.3.2.31",
+      "description": "RBR-type E3 ubiquitin transferase."
+    },
+    {
+      "index": 205,
+      "class_id": "3.6.5.5",
+      "description": "dynamin GTPase."
+    },
+    {
+      "index": 206,
+      "class_id": "2.8.3.-",
+      "description": "CoA-transferases."
+    },
+    {
+      "index": 207,
+      "class_id": "2.3.2.-",
+      "description": "Aminoacyltransferases."
+    },
+    {
+      "index": 208,
+      "class_id": "3.2.1.18",
+      "description": "exo-alpha-sialidase."
+    },
+    {
+      "index": 209,
+      "class_id": "3.5.99.-",
+      "description": "In other compounds."
+    },
+    {
+      "index": 210,
+      "class_id": "3.1.4.35",
+      "description": "3',5'-cyclic-GMP phosphodiesterase."
+    },
+    {
+      "index": 211,
+      "class_id": "3.1.8.-",
+      "description": "Phosphoric triester hydrolases."
+    },
+    {
+      "index": 212,
+      "class_id": "2.3.1.12",
+      "description": "dihydrolipoyllysine-residue acetyltransferase."
+    },
+    {
+      "index": 213,
+      "class_id": "1.6.2.-",
+      "description": "With a heme protein as acceptor."
+    },
+    {
+      "index": 214,
+      "class_id": "2.1.1.72",
+      "description": "site-specific DNA-methyltransferase (adenine-specific)."
+    },
+    {
+      "index": 215,
+      "class_id": "2.3.3.-",
+      "description": "Acyl groups converted into alkyl groups on transfer."
+    },
+    {
+      "index": 216,
+      "class_id": "3.4.21.92",
+      "description": "endopeptidase Clp."
+    },
+    {
+      "index": 217,
+      "class_id": "1.14.11.27",
+      "description": "[histone H3]-dimethyl-L-lysine(36) demethylase."
+    },
+    {
+      "index": 218,
+      "class_id": "2.7.11.17",
+      "description": "calcium/calmodulin-dependent protein kinase."
+    },
+    {
+      "index": 219,
+      "class_id": "2.1.1.359",
+      "description": "[histone H3]-lysine(36) N-trimethyltransferase."
+    },
+    {
+      "index": 220,
+      "class_id": "2.7.13.-",
+      "description": "Protein-histidine kinases."
+    },
+    {
+      "index": 221,
+      "class_id": "2.5.1.15",
+      "description": "dihydropteroate synthase."
+    },
+    {
+      "index": 222,
+      "class_id": "6.3.3.-",
+      "description": "Cyclo-ligases."
+    },
+    {
+      "index": 223,
+      "class_id": "3.2.1.22",
+      "description": "alpha-galactosidase."
+    },
+    {
+      "index": 224,
+      "class_id": "6.1.1.6",
+      "description": "lysine--tRNA ligase."
+    },
+    {
+      "index": 225,
+      "class_id": "4.3.3.7",
+      "description": "4-hydroxy-tetrahydrodipicolinate synthase."
+    },
+    {
+      "index": 226,
+      "class_id": "3.4.11.18",
+      "description": "methionyl aminopeptidase."
+    },
+    {
+      "index": 227,
+      "class_id": "4.2.3.4",
+      "description": "3-dehydroquinate synthase."
+    },
+    {
+      "index": 228,
+      "class_id": "3.1.2.-",
+      "description": "Thiolester hydrolases."
+    },
+    {
+      "index": 229,
+      "class_id": "2.4.2.8",
+      "description": "hypoxanthine phosphoribosyltransferase."
+    },
+    {
+      "index": 230,
+      "class_id": "4.1.1.48",
+      "description": "indole-3-glycerol-phosphate synthase."
+    },
+    {
+      "index": 231,
+      "class_id": "3.7.1.-",
+      "description": "In ketonic substances."
+    },
+    {
+      "index": 232,
+      "class_id": "3.1.4.53",
+      "description": "3',5'-cyclic-AMP phosphodiesterase."
+    },
+    {
+      "index": 233,
+      "class_id": "7.2.2.-",
+      "description": "Linked to the hydrolysis of a nucleoside triphosphate."
+    },
+    {
+      "index": 234,
+      "class_id": "2.7.6.5",
+      "description": "GTP diphosphokinase."
+    },
+    {
+      "index": 235,
+      "class_id": "3.6.5.3",
+      "description": "protein-synthesizing GTPase."
+    },
+    {
+      "index": 236,
+      "class_id": "4.3.3.-",
+      "description": "Amine-lyases."
+    },
+    {
+      "index": 237,
+      "class_id": "2.7.1.21",
+      "description": "thymidine kinase."
+    },
+    {
+      "index": 238,
+      "class_id": "3.1.4.-",
+      "description": "Phosphoric diester hydrolases."
+    },
+    {
+      "index": 239,
+      "class_id": "1.11.1.24",
+      "description": "thioredoxin-dependent peroxiredoxin."
+    },
+    {
+      "index": 240,
+      "class_id": "3.6.4.10",
+      "description": "non-chaperonin molecular chaperone ATPase."
+    },
+    {
+      "index": 241,
+      "class_id": "1.14.14.1",
+      "description": "unspecific monooxygenase."
+    },
+    {
+      "index": 242,
+      "class_id": "3.5.1.60",
+      "description": "N-(long-chain-acyl)ethanolamine deacylase."
+    },
+    {
+      "index": 243,
+      "class_id": "3.2.1.52",
+      "description": "beta-N-acetylhexosaminidase."
+    },
+    {
+      "index": 244,
+      "class_id": "1.16.3.-",
+      "description": "With oxygen as acceptor."
+    },
+    {
+      "index": 245,
+      "class_id": "3.1.26.3",
+      "description": "ribonuclease III."
+    },
+    {
+      "index": 246,
+      "class_id": "3.4.24.69",
+      "description": "bontoxilysin."
+    },
+    {
+      "index": 247,
+      "class_id": "3.5.1.11",
+      "description": "penicillin amidase."
+    },
+    {
+      "index": 248,
+      "class_id": "2.1.1.193",
+      "description": "16S rRNA (uracil(1498)-N(3))-methyltransferase."
+    },
+    {
+      "index": 249,
+      "class_id": "1.7.2.1",
+      "description": "nitrite reductase (NO-forming)."
+    },
+    {
+      "index": 250,
+      "class_id": "1.14.99.-",
+      "description": "Miscellaneous."
+    },
+    {
+      "index": 251,
+      "class_id": "3.6.5.2",
+      "description": "small monomeric GTPase."
+    },
+    {
+      "index": 252,
+      "class_id": "2.7.7.n1",
+      "description": "Transferred entry: 2.7.7.108."
+    },
+    {
+      "index": 253,
+      "class_id": "4.1.1.-",
+      "description": "Carboxy-lyases."
+    },
+    {
+      "index": 254,
+      "class_id": "2.3.2.26",
+      "description": "HECT-type E3 ubiquitin transferase."
+    },
+    {
+      "index": 255,
+      "class_id": "2.4.1.15",
+      "description": "alpha,alpha-trehalose-phosphate synthase (UDP-forming)."
+    },
+    {
+      "index": 256,
+      "class_id": "2.5.1.-",
+      "description": "Transferring alkyl or aryl groups, other than methyl groups."
+    },
+    {
+      "index": 257,
+      "class_id": "3.1.3.11",
+      "description": "fructose-bisphosphatase."
+    },
+    {
+      "index": 258,
+      "class_id": "1.14.11.67",
+      "description": "[histone H3]-trimethyl-L-lysine(4) demethylase."
+    },
+    {
+      "index": 259,
+      "class_id": "2.3.1.180",
+      "description": "beta-ketoacyl-[acyl-carrier-protein] synthase III."
+    },
+    {
+      "index": 260,
+      "class_id": "2.4.2.7",
+      "description": "adenine phosphoribosyltransferase."
+    },
+    {
+      "index": 261,
+      "class_id": "3.6.4.12",
+      "description": "DNA helicase."
+    },
+    {
+      "index": 262,
+      "class_id": "2.5.1.19",
+      "description": "3-phosphoshikimate 1-carboxyvinyltransferase."
+    },
+    {
+      "index": 263,
+      "class_id": "1.1.1.-",
+      "description": "With NAD(+) or NADP(+) as acceptor."
+    },
+    {
+      "index": 264,
+      "class_id": "1.8.1.9",
+      "description": "thioredoxin-disulfide reductase (NADPH)."
+    },
+    {
+      "index": 265,
+      "class_id": "1.9.3.1",
+      "description": "Transferred entry: 7.1.1.9."
+    },
+    {
+      "index": 266,
+      "class_id": "2.7.1.15",
+      "description": "ribokinase."
+    },
+    {
+      "index": 267,
+      "class_id": "2.7.1.11",
+      "description": "6-phosphofructokinase."
+    },
+    {
+      "index": 268,
+      "class_id": "3.4.11.-",
+      "description": "Aminopeptidases."
+    },
+    {
+      "index": 269,
+      "class_id": "2.1.2.-",
+      "description": "Hydroxymethyl-, formyl- and related transferases."
+    },
+    {
+      "index": 270,
+      "class_id": "7.6.2.-",
+      "description": "Linked to the hydrolysis of a nucleoside triphosphate."
+    },
+    {
+      "index": 271,
+      "class_id": "3.5.1.28",
+      "description": "N-acetylmuramoyl-L-alanine amidase."
+    },
+    {
+      "index": 272,
+      "class_id": "3.8.1.5",
+      "description": "haloalkane dehalogenase."
+    },
+    {
+      "index": 273,
+      "class_id": "6.3.4.13",
+      "description": "phosphoribosylamine--glycine ligase."
+    },
+    {
+      "index": 274,
+      "class_id": "1.11.1.9",
+      "description": "glutathione peroxidase."
+    },
+    {
+      "index": 275,
+      "class_id": "1.13.11.-",
+      "description": "With incorporation of two atoms of oxygen."
+    },
+    {
+      "index": 276,
+      "class_id": "4.1.2.13",
+      "description": "fructose-bisphosphate aldolase."
+    },
+    {
+      "index": 277,
+      "class_id": "3.4.16.4",
+      "description": "serine-type D-Ala-D-Ala carboxypeptidase."
+    },
+    {
+      "index": 278,
+      "class_id": "6.1.1.7",
+      "description": "alanine--tRNA ligase."
+    },
+    {
+      "index": 279,
+      "class_id": "1.1.3.-",
+      "description": "With oxygen as acceptor."
+    },
+    {
+      "index": 280,
+      "class_id": "2.4.1.129",
+      "description": "Transferred entry: 2.4.99.28."
+    },
+    {
+      "index": 281,
+      "class_id": "3.1.1.29",
+      "description": "peptidyl-tRNA hydrolase."
+    },
+    {
+      "index": 282,
+      "class_id": "3.4.21.53",
+      "description": "endopeptidase La."
+    },
+    {
+      "index": 283,
+      "class_id": "3.6.5.-",
+      "description": "Acting on GTP; involved in cellular and subcellular movement."
+    },
+    {
+      "index": 284,
+      "class_id": "3.1.1.4",
+      "description": "phospholipase A2."
+    },
+    {
+      "index": 285,
+      "class_id": "1.1.1.86",
+      "description": "ketol-acid reductoisomerase (NADP(+))."
+    },
+    {
+      "index": 286,
+      "class_id": "3.2.2.-",
+      "description": "Hydrolyzing N-glycosyl compounds."
+    },
+    {
+      "index": 287,
+      "class_id": "2.6.1.1",
+      "description": "aspartate transaminase."
+    },
+    {
+      "index": 288,
+      "class_id": "4.2.99.18",
+      "description": "DNA-(apurinic or apyrimidinic site) lyase."
+    },
+    {
+      "index": 289,
+      "class_id": "5.5.1.-",
+      "description": "Intramolecular lyases."
+    },
+    {
+      "index": 290,
+      "class_id": "2.7.11.30",
+      "description": "receptor protein serine/threonine kinase."
+    },
+    {
+      "index": 291,
+      "class_id": "3.1.26.-",
+      "description": "Endoribonucleases producing 5'-phosphomonoesters."
+    },
+    {
+      "index": 292,
+      "class_id": "1.8.1.4",
+      "description": "dihydrolipoyl dehydrogenase."
+    },
+    {
+      "index": 293,
+      "class_id": "1.14.14.-",
+      "description": "With reduced flavin or flavoprotein as one donor, and incorporation of one atom of oxygen."
+    },
+    {
+      "index": 294,
+      "class_id": "3.2.1.14",
+      "description": "chitinase."
+    },
+    {
+      "index": 295,
+      "class_id": "3.5.4.-",
+      "description": "In cyclic amidines."
+    },
+    {
+      "index": 296,
+      "class_id": "2.1.2.1",
+      "description": "glycine hydroxymethyltransferase."
+    },
+    {
+      "index": 297,
+      "class_id": "3.2.1.3",
+      "description": "glucan 1,4-alpha-glucosidase."
+    },
+    {
+      "index": 298,
+      "class_id": "1.97.1.-",
+      "description": "Other oxidoreductases."
+    },
+    {
+      "index": 299,
+      "class_id": "6.3.4.14",
+      "description": "biotin carboxylase."
+    },
+    {
+      "index": 300,
+      "class_id": "2.7.12.1",
+      "description": "dual-specificity kinase."
+    },
+    {
+      "index": 301,
+      "class_id": "2.7.11.25",
+      "description": "mitogen-activated protein kinase kinase kinase."
+    },
+    {
+      "index": 302,
+      "class_id": "2.5.1.17",
+      "description": "corrinoid adenosyltransferase."
+    },
+    {
+      "index": 303,
+      "class_id": "6.3.5.2",
+      "description": "GMP synthase (glutamine-hydrolyzing)."
+    },
+    {
+      "index": 304,
+      "class_id": "6.3.2.1",
+      "description": "pantoate--beta-alanine ligase (AMP-forming)."
+    },
+    {
+      "index": 305,
+      "class_id": "3.2.1.78",
+      "description": "mannan endo-1,4-beta-mannosidase."
+    },
+    {
+      "index": 306,
+      "class_id": "3.1.11.2",
+      "description": "exodeoxyribonuclease III."
+    },
+    {
+      "index": 307,
+      "class_id": "1.6.99.3",
+      "description": "Deleted entry."
+    },
+    {
+      "index": 308,
+      "class_id": "2.1.2.2",
+      "description": "phosphoribosylglycinamide formyltransferase 1."
+    },
+    {
+      "index": 309,
+      "class_id": "1.1.1.42",
+      "description": "isocitrate dehydrogenase (NADP(+))."
+    },
+    {
+      "index": 310,
+      "class_id": "7.1.1.8",
+      "description": "quinol--cytochrome-c reductase."
+    },
+    {
+      "index": 311,
+      "class_id": "7.1.1.2",
+      "description": "NADH:ubiquinone reductase (H(+)-translocating)."
+    },
+    {
+      "index": 312,
+      "class_id": "3.1.2.2",
+      "description": "palmitoyl-CoA hydrolase."
+    },
+    {
+      "index": 313,
+      "class_id": "3.4.22.46",
+      "description": "L-peptidase."
+    },
+    {
+      "index": 314,
+      "class_id": "3.1.3.36",
+      "description": "phosphoinositide 5-phosphatase."
+    },
+    {
+      "index": 315,
+      "class_id": "2.4.1.-",
+      "description": "Hexosyltransferases."
+    },
+    {
+      "index": 316,
+      "class_id": "3.1.3.33",
+      "description": "polynucleotide 5'-phosphatase."
+    },
+    {
+      "index": 317,
+      "class_id": "4.3.2.2",
+      "description": "adenylosuccinate lyase."
+    },
+    {
+      "index": 318,
+      "class_id": "1.14.12.-",
+      "description": "With NADH or NADPH as one donor, and incorporation of two atoms of oxygen into one donor."
+    },
+    {
+      "index": 319,
+      "class_id": "1.13.12.-",
+      "description": "With incorporation of one atom of oxygen (internal monooxygenases or internal mixed function oxidases)."
+    },
+    {
+      "index": 320,
+      "class_id": "3.4.22.-",
+      "description": "Cysteine endopeptidases."
+    },
+    {
+      "index": 321,
+      "class_id": "5.3.1.1",
+      "description": "triose-phosphate isomerase."
+    },
+    {
+      "index": 322,
+      "class_id": "4.2.1.-",
+      "description": "Hydro-lyases."
+    },
+    {
+      "index": 323,
+      "class_id": "3.2.1.169",
+      "description": "protein O-GlcNAcase."
+    },
+    {
+      "index": 324,
+      "class_id": "3.2.1.17",
+      "description": "lysozyme."
+    },
+    {
+      "index": 325,
+      "class_id": "6.5.1.1",
+      "description": "DNA ligase (ATP)."
+    },
+    {
+      "index": 326,
+      "class_id": "1.1.1.35",
+      "description": "3-hydroxyacyl-CoA dehydrogenase."
+    },
+    {
+      "index": 327,
+      "class_id": "1.3.5.-",
+      "description": "With a quinone or related compound as acceptor."
+    },
+    {
+      "index": 328,
+      "class_id": "1.2.1.3",
+      "description": "aldehyde dehydrogenase (NAD(+))."
+    },
+    {
+      "index": 329,
+      "class_id": "2.5.1.1",
+      "description": "dimethylallyltranstransferase."
+    },
+    {
+      "index": 330,
+      "class_id": "7.2.2.8",
+      "description": "P-type Cu(+) transporter."
+    },
+    {
+      "index": 331,
+      "class_id": "6.3.1.-",
+      "description": "Acid--ammonia (or amine) ligases (amide synthases)."
+    },
+    {
+      "index": 332,
+      "class_id": "2.5.1.78",
+      "description": "6,7-dimethyl-8-ribityllumazine synthase."
+    },
+    {
+      "index": 333,
+      "class_id": "2.7.7.50",
+      "description": "mRNA guanylyltransferase."
+    },
+    {
+      "index": 334,
+      "class_id": "2.1.3.-",
+      "description": "Carboxy- and carbamoyltransferases."
+    },
+    {
+      "index": 335,
+      "class_id": "2.7.7.-",
+      "description": "Nucleotidyltransferases."
+    },
+    {
+      "index": 336,
+      "class_id": "5.4.3.8",
+      "description": "glutamate-1-semialdehyde 2,1-aminomutase."
+    },
+    {
+      "index": 337,
+      "class_id": "2.7.2.4",
+      "description": "aspartate kinase."
+    },
+    {
+      "index": 338,
+      "class_id": "1.10.3.2",
+      "description": "laccase."
+    },
+    {
+      "index": 339,
+      "class_id": "3.1.1.3",
+      "description": "triacylglycerol lipase."
+    },
+    {
+      "index": 340,
+      "class_id": "3.6.1.15",
+      "description": "nucleoside-triphosphate phosphatase."
+    },
+    {
+      "index": 341,
+      "class_id": "5.6.2.2",
+      "description": "DNA topoisomerase (ATP-hydrolyzing)."
+    },
+    {
+      "index": 342,
+      "class_id": "3.1.3.3",
+      "description": "phosphoserine phosphatase."
+    },
+    {
+      "index": 343,
+      "class_id": "3.2.1.20",
+      "description": "alpha-glucosidase."
+    },
+    {
+      "index": 344,
+      "class_id": "3.6.1.9",
+      "description": "nucleotide diphosphatase."
+    },
+    {
+      "index": 345,
+      "class_id": "2.3.2.27",
+      "description": "RING-type E3 ubiquitin transferase."
+    },
+    {
+      "index": 346,
+      "class_id": "3.6.1.23",
+      "description": "dUTP diphosphatase."
+    },
+    {
+      "index": 347,
+      "class_id": "6.1.1.-",
+      "description": "Ligases forming aminoacyl-tRNA and related compounds."
+    },
+    {
+      "index": 348,
+      "class_id": "4.2.1.10",
+      "description": "3-dehydroquinate dehydratase."
+    },
+    {
+      "index": 349,
+      "class_id": "3.4.13.-",
+      "description": "Dipeptidases."
+    },
+    {
+      "index": 350,
+      "class_id": "6.3.2.4",
+      "description": "D-alanine--D-alanine ligase."
+    },
+    {
+      "index": 351,
+      "class_id": "1.1.1.2",
+      "description": "alcohol dehydrogenase (NADP(+))."
+    },
+    {
+      "index": 352,
+      "class_id": "3.4.21.107",
+      "description": "peptidase Do."
+    },
+    {
+      "index": 353,
+      "class_id": "1.6.99.1",
+      "description": "NADPH dehydrogenase."
+    },
+    {
+      "index": 354,
+      "class_id": "2.7.4.9",
+      "description": "dTMP kinase."
+    },
+    {
+      "index": 355,
+      "class_id": "1.15.1.-",
+      "description": "Acting on superoxide as acceptor."
+    },
+    {
+      "index": 356,
+      "class_id": "3.6.1.34",
+      "description": "Transferred entry: 7.1.2.2."
+    },
+    {
+      "index": 357,
+      "class_id": "1.3.1.-",
+      "description": "With NAD(+) or NADP(+) as acceptor."
+    },
+    {
+      "index": 358,
+      "class_id": "3.6.1.55",
+      "description": "8-oxo-dGTP diphosphatase."
+    },
+    {
+      "index": 359,
+      "class_id": "3.4.24.-",
+      "description": "Metalloendopeptidases."
+    },
+    {
+      "index": 360,
+      "class_id": "3.6.1.-",
+      "description": "In phosphorus-containing anhydrides."
+    },
+    {
+      "index": 361,
+      "class_id": "4.1.1.50",
+      "description": "adenosylmethionine decarboxylase."
+    },
+    {
+      "index": 362,
+      "class_id": "4.2.2.-",
+      "description": "Acting on polysaccharides."
+    },
+    {
+      "index": 363,
+      "class_id": "3.3.1.1",
+      "description": "Transferred entry: 3.13.2.1."
+    },
+    {
+      "index": 364,
+      "class_id": "3.4.22.1",
+      "description": "cathepsin B."
+    },
+    {
+      "index": 365,
+      "class_id": "3.1.4.11",
+      "description": "phosphoinositide phospholipase C."
+    },
+    {
+      "index": 366,
+      "class_id": "3.5.1.1",
+      "description": "asparaginase."
+    },
+    {
+      "index": 367,
+      "class_id": "3.3.1.-",
+      "description": "Thioether and trialkylsulfonium hydrolases."
+    },
+    {
+      "index": 368,
+      "class_id": "1.1.1.267",
+      "description": "1-deoxy-D-xylulose-5-phosphate reductoisomerase."
+    },
+    {
+      "index": 369,
+      "class_id": "3.2.1.55",
+      "description": "non-reducing end alpha-L-arabinofuranosidase."
+    },
+    {
+      "index": 370,
+      "class_id": "1.1.1.25",
+      "description": "shikimate dehydrogenase (NADP(+))."
+    },
+    {
+      "index": 371,
+      "class_id": "3.6.1.7",
+      "description": "acylphosphatase."
+    },
+    {
+      "index": 372,
+      "class_id": "2.7.13.3",
+      "description": "histidine kinase."
+    },
+    {
+      "index": 373,
+      "class_id": "2.7.1.40",
+      "description": "pyruvate kinase."
+    },
+    {
+      "index": 374,
+      "class_id": "2.3.1.9",
+      "description": "acetyl-CoA C-acetyltransferase."
+    },
+    {
+      "index": 375,
+      "class_id": "1.7.3.-",
+      "description": "With oxygen as acceptor."
+    },
+    {
+      "index": 376,
+      "class_id": "5.4.2.-",
+      "description": "Phosphotransferases (phosphomutases)."
+    },
+    {
+      "index": 377,
+      "class_id": "1.7.1.17",
+      "description": "FMN-dependent NADH-azoreductase."
+    },
+    {
+      "index": 378,
+      "class_id": "3.2.2.6",
+      "description": "ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase."
+    },
+    {
+      "index": 379,
+      "class_id": "4.1.1.33",
+      "description": "diphosphomevalonate decarboxylase."
+    },
+    {
+      "index": 380,
+      "class_id": "1.8.5.-",
+      "description": "With a quinone or similar compound as acceptor."
+    },
+    {
+      "index": 381,
+      "class_id": "5.3.3.-",
+      "description": "Transposing C=C bonds."
+    },
+    {
+      "index": 382,
+      "class_id": "3.2.1.31",
+      "description": "beta-glucuronidase."
+    },
+    {
+      "index": 383,
+      "class_id": "6.3.5.-",
+      "description": "Carbon--nitrogen ligases with glutamine as amido-N-donor."
+    },
+    {
+      "index": 384,
+      "class_id": "1.14.19.-",
+      "description": "With oxidation of a pair of donors resulting in the reduction of molecular oxygen to two molecules of water."
+    },
+    {
+      "index": 385,
+      "class_id": "6.1.1.11",
+      "description": "serine--tRNA ligase."
+    },
+    {
+      "index": 386,
+      "class_id": "1.12.99.6",
+      "description": "hydrogenase (acceptor)."
+    },
+    {
+      "index": 387,
+      "class_id": "1.4.1.-",
+      "description": "With NAD(+) or NADP(+) as acceptor."
+    },
+    {
+      "index": 388,
+      "class_id": "4.6.1.1",
+      "description": "adenylate cyclase."
+    },
+    {
+      "index": 389,
+      "class_id": "3.1.3.86",
+      "description": "phosphatidylinositol-3,4,5-trisphosphate 5-phosphatase."
+    },
+    {
+      "index": 390,
+      "class_id": "3.2.1.91",
+      "description": "cellulose 1,4-beta-cellobiosidase (non-reducing end)."
+    },
+    {
+      "index": 391,
+      "class_id": "4.3.2.10",
+      "description": "imidazole glycerol-phosphate synthase."
+    },
+    {
+      "index": 392,
+      "class_id": "3.4.16.-",
+      "description": "Serine-type carboxypeptidases."
+    },
+    {
+      "index": 393,
+      "class_id": "3.1.3.5",
+      "description": "5'-nucleotidase."
+    },
+    {
+      "index": 394,
+      "class_id": "3.5.4.4",
+      "description": "adenosine deaminase."
+    },
+    {
+      "index": 395,
+      "class_id": "6.4.1.-",
+      "description": "Forming carbon-carbon bonds."
+    },
+    {
+      "index": 396,
+      "class_id": "1.17.1.8",
+      "description": "4-hydroxy-tetrahydrodipicolinate reductase."
+    },
+    {
+      "index": 397,
+      "class_id": "2.5.1.16",
+      "description": "spermidine synthase."
+    },
+    {
+      "index": 398,
+      "class_id": "4.3.1.-",
+      "description": "Ammonia-lyases."
+    },
+    {
+      "index": 399,
+      "class_id": "3.4.23.16",
+      "description": "HIV-1 retropepsin."
+    },
+    {
+      "index": 400,
+      "class_id": "6.3.3.1",
+      "description": "phosphoribosylformylglycinamidine cyclo-ligase."
+    },
+    {
+      "index": 401,
+      "class_id": "3.2.1.73",
+      "description": "licheninase."
+    },
+    {
+      "index": 402,
+      "class_id": "5.1.3.13",
+      "description": "dTDP-4-dehydrorhamnose 3,5-epimerase."
+    },
+    {
+      "index": 403,
+      "class_id": "1.2.1.12",
+      "description": "glyceraldehyde-3-phosphate dehydrogenase (phosphorylating)."
+    },
+    {
+      "index": 404,
+      "class_id": "1.6.2.4",
+      "description": "NADPH--hemoprotein reductase."
+    },
+    {
+      "index": 405,
+      "class_id": "6.1.1.17",
+      "description": "glutamate--tRNA ligase."
+    },
+    {
+      "index": 406,
+      "class_id": "2.3.1.1",
+      "description": "amino-acid N-acetyltransferase."
+    },
+    {
+      "index": 407,
+      "class_id": "3.5.3.-",
+      "description": "In linear amidines."
+    },
+    {
+      "index": 408,
+      "class_id": "3.2.1.8",
+      "description": "endo-1,4-beta-xylanase."
+    },
+    {
+      "index": 409,
+      "class_id": "2.1.1.45",
+      "description": "thymidylate synthase."
+    },
+    {
+      "index": 410,
+      "class_id": "3.2.1.21",
+      "description": "beta-glucosidase."
+    },
+    {
+      "index": 411,
+      "class_id": "5.1.3.2",
+      "description": "UDP-glucose 4-epimerase."
+    },
+    {
+      "index": 412,
+      "class_id": "2.3.1.129",
+      "description": "acyl-[acyl-carrier-protein]--UDP-N-acetylglucosamine O-acyltransferase."
+    },
+    {
+      "index": 413,
+      "class_id": "2.7.2.-",
+      "description": "Phosphotransferases with a carboxy group as acceptor."
+    },
+    {
+      "index": 414,
+      "class_id": "5.3.1.-",
+      "description": "Interconverting aldoses and ketoses."
+    },
+    {
+      "index": 415,
+      "class_id": "2.7.2.8",
+      "description": "acetylglutamate kinase."
+    },
+    {
+      "index": 416,
+      "class_id": "2.4.2.1",
+      "description": "purine-nucleoside phosphorylase."
+    },
+    {
+      "index": 417,
+      "class_id": "1.14.14.18",
+      "description": "heme oxygenase (biliverdin-producing)."
+    },
+    {
+      "index": 418,
+      "class_id": "3.5.1.5",
+      "description": "urease."
+    },
+    {
+      "index": 419,
+      "class_id": "3.5.4.38",
+      "description": "single-stranded DNA cytosine deaminase."
+    },
+    {
+      "index": 420,
+      "class_id": "5.4.3.-",
+      "description": "Transferring amino groups."
+    },
+    {
+      "index": 421,
+      "class_id": "6.5.1.-",
+      "description": "Forming phosphoric ester bonds."
+    },
+    {
+      "index": 422,
+      "class_id": "2.7.12.2",
+      "description": "mitogen-activated protein kinase kinase."
+    },
+    {
+      "index": 423,
+      "class_id": "2.5.1.55",
+      "description": "3-deoxy-8-phosphooctulonate synthase."
+    },
+    {
+      "index": 424,
+      "class_id": "1.8.1.7",
+      "description": "glutathione-disulfide reductase."
+    },
+    {
+      "index": 425,
+      "class_id": "3.1.21.-",
+      "description": "Endodeoxyribonucleases producing 5'-phosphomonoesters."
+    },
+    {
+      "index": 426,
+      "class_id": "1.8.4.12",
+      "description": "peptide-methionine (R)-S-oxide reductase."
+    },
+    {
+      "index": 427,
+      "class_id": "1.11.1.15",
+      "description": "Transferred entry: 1.11.1.24, 1.11.1.25, 1.11.1.26, 1.11.1.27, 1.11.1.28 and 1.11.1.29."
+    },
+    {
+      "index": 428,
+      "class_id": "1.1.1.85",
+      "description": "3-isopropylmalate dehydrogenase."
+    },
+    {
+      "index": 429,
+      "class_id": "3.6.1.3",
+      "description": "Deleted entry."
+    },
+    {
+      "index": 430,
+      "class_id": "2.7.1.33",
+      "description": "pantothenate kinase."
+    },
+    {
+      "index": 431,
+      "class_id": "2.7.8.7",
+      "description": "holo-[acyl-carrier-protein] synthase."
+    },
+    {
+      "index": 432,
+      "class_id": "3.1.3.25",
+      "description": "inositol-phosphate phosphatase."
+    },
+    {
+      "index": 433,
+      "class_id": "3.2.1.96",
+      "description": "mannosyl-glycoprotein endo-beta-N-acetylglucosaminidase."
+    },
+    {
+      "index": 434,
+      "class_id": "7.1.1.-",
+      "description": "Hydron translocation or charge separation linked to oxidoreductase reactions."
+    },
+    {
+      "index": 435,
+      "class_id": "3.2.1.39",
+      "description": "glucan endo-1,3-beta-D-glucosidase."
+    },
+    {
+      "index": 436,
+      "class_id": "2.4.2.3",
+      "description": "uridine phosphorylase."
+    },
+    {
+      "index": 437,
+      "class_id": "3.5.4.9",
+      "description": "methenyltetrahydrofolate cyclohydrolase."
+    },
+    {
+      "index": 438,
+      "class_id": "2.2.1.2",
+      "description": "transaldolase."
+    },
+    {
+      "index": 439,
+      "class_id": "3.6.3.-",
+      "description": "Acting on acid anhydrides; catalyzing transmembrane movement of substances."
+    },
+    {
+      "index": 440,
+      "class_id": "3.5.1.-",
+      "description": "In linear amides."
+    },
+    {
+      "index": 441,
+      "class_id": "1.11.1.7",
+      "description": "peroxidase."
+    },
+    {
+      "index": 442,
+      "class_id": "1.5.1.5",
+      "description": "methylenetetrahydrofolate dehydrogenase (NADP(+))."
+    },
+    {
+      "index": 443,
+      "class_id": "2.4.2.19",
+      "description": "nicotinate-nucleotide diphosphorylase (carboxylating)."
+    },
+    {
+      "index": 444,
+      "class_id": "1.8.3.2",
+      "description": "thiol oxidase."
+    },
+    {
+      "index": 445,
+      "class_id": "1.3.99.-",
+      "description": "With other acceptors."
+    },
+    {
+      "index": 446,
+      "class_id": "1.5.3.-",
+      "description": "With oxygen as acceptor."
+    },
+    {
+      "index": 447,
+      "class_id": "5.6.1.-",
+      "description": "Enzymes altering polypeptide conformation or assembly."
+    },
+    {
+      "index": 448,
+      "class_id": "1.8.1.-",
+      "description": "With NAD(+) or NADP(+) as acceptor."
+    },
+    {
+      "index": 449,
+      "class_id": "2.7.3.9",
+      "description": "phosphoenolpyruvate--protein phosphotransferase."
+    },
+    {
+      "index": 450,
+      "class_id": "2.5.1.6",
+      "description": "methionine adenosyltransferase."
+    },
+    {
+      "index": 451,
+      "class_id": "3.4.21.62",
+      "description": "subtilisin."
+    },
+    {
+      "index": 452,
+      "class_id": "1.8.4.-",
+      "description": "With a disulfide as acceptor."
+    },
+    {
+      "index": 453,
+      "class_id": "5.3.1.16",
+      "description": "1-(5-phosphoribosyl)-5- [(5-phosphoribosylamino)methylideneamino]imidazole-4-carboxamide isomerase."
+    },
+    {
+      "index": 454,
+      "class_id": "2.3.2.2",
+      "description": "gamma-glutamyltransferase."
+    },
+    {
+      "index": 455,
+      "class_id": "3.4.17.-",
+      "description": "Metallocarboxypeptidases."
+    },
+    {
+      "index": 456,
+      "class_id": "2.7.4.-",
+      "description": "Phosphotransferases with a phosphate group as acceptor."
+    },
+    {
+      "index": 457,
+      "class_id": "3.2.1.-",
+      "description": "Glycosidases, i.e. enzymes hydrolyzing O- and S-glycosyl compounds."
+    },
+    {
+      "index": 458,
+      "class_id": "6.3.1.5",
+      "description": "NAD(+) synthase."
+    },
+    {
+      "index": 459,
+      "class_id": "4.3.3.6",
+      "description": "pyridoxal 5'-phosphate synthase (glutamine hydrolyzing)."
+    },
+    {
+      "index": 460,
+      "class_id": "2.1.3.3",
+      "description": "ornithine carbamoyltransferase."
+    },
+    {
+      "index": 461,
+      "class_id": "1.5.1.3",
+      "description": "dihydrofolate reductase."
+    },
+    {
+      "index": 462,
+      "class_id": "3.5.2.3",
+      "description": "dihydroorotase."
+    },
+    {
+      "index": 463,
+      "class_id": "5.4.2.11",
+      "description": "phosphoglycerate mutase (2,3-diphosphoglycerate-dependent)."
+    },
+    {
+      "index": 464,
+      "class_id": "2.7.7.8",
+      "description": "polyribonucleotide nucleotidyltransferase."
+    },
+    {
+      "index": 465,
+      "class_id": "2.8.1.7",
+      "description": "cysteine desulfurase."
+    },
+    {
+      "index": 466,
+      "class_id": "2.7.7.7",
+      "description": "DNA-directed DNA polymerase."
+    },
+    {
+      "index": 467,
+      "class_id": "3.2.1.37",
+      "description": "xylan 1,4-beta-xylosidase."
+    },
+    {
+      "index": 468,
+      "class_id": "2.7.12.-",
+      "description": "Dual-specificity kinases (those acting on Ser/Thr and Tyr residues)."
+    },
+    {
+      "index": 469,
+      "class_id": "5.3.1.9",
+      "description": "glucose-6-phosphate isomerase."
+    },
+    {
+      "index": 470,
+      "class_id": "1.2.7.-",
+      "description": "With an iron-sulfur protein as acceptor."
+    },
+    {
+      "index": 471,
+      "class_id": "6.1.1.2",
+      "description": "tryptophan--tRNA ligase."
+    },
+    {
+      "index": 472,
+      "class_id": "7.1.2.-",
+      "description": "Hydron translocation linked to the hydrolysis of a nucleoside triphosphate."
+    },
+    {
+      "index": 473,
+      "class_id": "2.3.1.5",
+      "description": "arylamine N-acetyltransferase."
+    },
+    {
+      "index": 474,
+      "class_id": "3.4.14.-",
+      "description": "Dipeptidyl-peptidases and tripeptidyl-peptidases."
+    },
+    {
+      "index": 475,
+      "class_id": "6.1.1.10",
+      "description": "methionine--tRNA ligase."
+    },
+    {
+      "index": 476,
+      "class_id": "1.16.1.-",
+      "description": "With NAD(+) or NADP(+) as acceptor."
+    },
+    {
+      "index": 477,
+      "class_id": "2.1.1.228",
+      "description": "tRNA (guanine(37)-N(1))-methyltransferase."
+    },
+    {
+      "index": 478,
+      "class_id": "3.5.2.6",
+      "description": "beta-lactamase."
+    },
+    {
+      "index": 479,
+      "class_id": "2.1.1.354",
+      "description": "[histone H3]-lysine(4) N-trimethyltransferase."
+    },
+    {
+      "index": 480,
+      "class_id": "2.7.4.3",
+      "description": "adenylate kinase."
+    },
+    {
+      "index": 481,
+      "class_id": "4.1.2.-",
+      "description": "Aldehyde-lyases."
+    },
+    {
+      "index": 482,
+      "class_id": "4.4.1.5",
+      "description": "lactoylglutathione lyase."
+    },
+    {
+      "index": 483,
+      "class_id": "5.3.4.-",
+      "description": "Transposing S-S bonds."
+    },
+    {
+      "index": 484,
+      "class_id": "4.6.1.-",
+      "description": "Phosphorus-oxygen lyases."
+    },
+    {
+      "index": 485,
+      "class_id": "5.1.1.1",
+      "description": "alanine racemase."
+    },
+    {
+      "index": 486,
+      "class_id": "3.4.24.3",
+      "description": "microbial collagenase."
+    },
+    {
+      "index": 487,
+      "class_id": "4.4.1.-",
+      "description": "Carbon-sulfur lyases."
+    },
+    {
+      "index": 488,
+      "class_id": "1.3.7.-",
+      "description": "With an iron-sulfur protein as acceptor."
+    },
+    {
+      "index": 489,
+      "class_id": "2.3.1.117",
+      "description": "2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-succinyltransferase."
+    },
+    {
+      "index": 490,
+      "class_id": "5.4.99.5",
+      "description": "chorismate mutase."
+    },
+    {
+      "index": 491,
+      "class_id": "1.2.1.-",
+      "description": "With NAD(+) or NADP(+) as acceptor."
+    },
+    {
+      "index": 492,
+      "class_id": "2.4.2.30",
+      "description": "NAD(+) ADP-ribosyltransferase."
+    },
+    {
+      "index": 493,
+      "class_id": "1.14.18.-",
+      "description": "With another compound as one donor, and incorporation of one atom of oxygen."
+    },
+    {
+      "index": 494,
+      "class_id": "3.1.1.1",
+      "description": "carboxylesterase."
+    },
+    {
+      "index": 495,
+      "class_id": "3.1.3.48",
+      "description": "protein-tyrosine-phosphatase."
+    },
+    {
+      "index": 496,
+      "class_id": "3.4.21.98",
+      "description": "hepacivirin."
+    },
+    {
+      "index": 497,
+      "class_id": "5.6.2.-",
+      "description": "Enzymes altering nucleic acid conformation."
+    },
+    {
+      "index": 498,
+      "class_id": "3.1.26.5",
+      "description": "ribonuclease P."
+    },
+    {
+      "index": 499,
+      "class_id": "7.2.1.1",
+      "description": "NADH:ubiquinone reductase (Na(+)-transporting)."
+    },
+    {
+      "index": 500,
+      "class_id": "2.7.11.12",
+      "description": "cGMP-dependent protein kinase."
+    },
+    {
+      "index": 501,
+      "class_id": "1.3.3.-",
+      "description": "With oxygen as acceptor."
+    },
+    {
+      "index": 502,
+      "class_id": "2.7.7.18",
+      "description": "nicotinate-nucleotide adenylyltransferase."
+    },
+    {
+      "index": 503,
+      "class_id": "3.1.1.-",
+      "description": "Carboxylic ester hydrolases."
+    },
+    {
+      "index": 504,
+      "class_id": "5.2.1.8",
+      "description": "peptidylprolyl isomerase."
+    },
+    {
+      "index": 505,
+      "class_id": "2.7.1.69",
+      "description": "Transferred entry: 2.7.1.191, 2.7.1.192, 2.7.1.193, 2.7.1.194, 2.7.1.195, 2.7.1.196, 2.7.1.197, 2.7.1.198, 2.7.1.199, 2.7.1.200, 2.7.1.201, 2.7.1.202, 2.7.1.203, 2.7.1.204, 2.7.1.205, 2.7.1.206, 2.7.1.207 and 2.7.1.208."
+    },
+    {
+      "index": 506,
+      "class_id": "1.1.1.37",
+      "description": "(S)-malate dehydrogenase (NAD(+), oxaloacetate-forming)."
+    },
+    {
+      "index": 507,
+      "class_id": "3.6.4.6",
+      "description": "vesicle-fusing ATPase."
+    },
+    {
+      "index": 508,
+      "class_id": "3.1.4.17",
+      "description": "3',5'-cyclic-nucleotide phosphodiesterase."
+    },
+    {
+      "index": 509,
+      "class_id": "2.7.11.13",
+      "description": "protein kinase C."
+    },
+    {
+      "index": 510,
+      "class_id": "3.5.2.-",
+      "description": "In cyclic amides."
+    },
+    {
+      "index": 511,
+      "class_id": "4.2.1.17",
+      "description": "enoyl-CoA hydratase."
+    },
+    {
+      "index": 512,
+      "class_id": "2.7.2.3",
+      "description": "phosphoglycerate kinase."
+    },
+    {
+      "index": 513,
+      "class_id": "4.2.3.-",
+      "description": "Acting on phosphates."
+    },
+    {
+      "index": 514,
+      "class_id": "5.3.99.-",
+      "description": "Other intramolecular oxidoreductases."
+    },
+    {
+      "index": 515,
+      "class_id": "3.1.1.72",
+      "description": "acetylxylan esterase."
+    },
+    {
+      "index": 516,
+      "class_id": "2.3.1.179",
+      "description": "beta-ketoacyl-[acyl-carrier-protein] synthase II."
+    },
+    {
+      "index": 517,
+      "class_id": "3.2.1.23",
+      "description": "beta-galactosidase."
+    },
+    {
+      "index": 518,
+      "class_id": "1.14.13.25",
+      "description": "methane monooxygenase (soluble)."
+    },
+    {
+      "index": 519,
+      "class_id": "3.1.26.13",
+      "description": "retroviral ribonuclease H."
+    },
+    {
+      "index": 520,
+      "class_id": "3.8.1.-",
+      "description": "In C-halide compounds."
+    },
+    {
+      "index": 521,
+      "class_id": "4.1.1.20",
+      "description": "diaminopimelate decarboxylase."
+    },
+    {
+      "index": 522,
+      "class_id": "2.7.11.26",
+      "description": "[tau protein] kinase."
+    },
+    {
+      "index": 523,
+      "class_id": "6.1.1.21",
+      "description": "histidine--tRNA ligase."
+    },
+    {
+      "index": 524,
+      "class_id": "2.7.11.21",
+      "description": "polo kinase."
+    },
+    {
+      "index": 525,
+      "class_id": "2.7.4.22",
+      "description": "UMP kinase."
+    },
+    {
+      "index": 526,
+      "class_id": "1.8.3.-",
+      "description": "With oxygen as acceptor."
+    },
+    {
+      "index": 527,
+      "class_id": "2.3.1.57",
+      "description": "diamine N-acetyltransferase."
+    },
+    {
+      "index": 528,
+      "class_id": "1.3.5.1",
+      "description": "succinate dehydrogenase."
+    },
+    {
+      "index": 529,
+      "class_id": "3.1.1.53",
+      "description": "sialate O-acetylesterase."
+    },
+    {
+      "index": 530,
+      "class_id": "7.1.2.2",
+      "description": "H(+)-transporting two-sector ATPase."
+    },
+    {
+      "index": 531,
+      "class_id": "6.4.1.2",
+      "description": "acetyl-CoA carboxylase."
+    },
+    {
+      "index": 532,
+      "class_id": "2.7.8.-",
+      "description": "Transferases for other substituted phosphate groups."
+    },
+    {
+      "index": 533,
+      "class_id": "6.3.2.-",
+      "description": "Acid--amino-acid ligases (peptide synthases)."
+    },
+    {
+      "index": 534,
+      "class_id": "2.8.1.-",
+      "description": "Sulfurtransferases."
+    },
+    {
+      "index": 535,
+      "class_id": "3.5.4.5",
+      "description": "cytidine deaminase."
+    },
+    {
+      "index": 536,
+      "class_id": "4.6.1.12",
+      "description": "2-C-methyl-D-erythritol 2,4-cyclodiphosphate synthase."
+    },
+    {
+      "index": 537,
+      "class_id": "2.3.2.23",
+      "description": "E2 ubiquitin-conjugating enzyme."
+    }
+  ]
+}

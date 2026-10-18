@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "execution_authorized": true,
+  "workers": [
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "deepfri_p12",
+      "port": 8028,
+      "max_model_len": 16384,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "3-00:00:00",
+      "entries": [
+        {
+          "task_id": "P12",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri",
+          "config_path": "configs/local_deepfri_p12_restored_replay.json",
+          "config_sha256": "1fe5cfb8590fb3e7b3248d502bf102d97e8ddfbaae6475fefe06cfa5dfc913c9",
+          "run_id": "qwen38_27b_p12_restored_replay_2026-10-16",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "89bc64b7353b87f0aa6361f9ca8793e6d0cf76020f4c4230d8046a913827473b",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1919,
+          "lane": 2,
+          "port": 8028,
+          "max_model_len": 16384,
+          "estimated_max_seconds": 216000,
+          "full_task_native_scoring": true,
+          "command_files_sha256": {
+            "scripts/execute_local_deepfri_confidence_eight_gpu.py": "3bd2f2c4b4985ba021e10248863eba48dcd756c965e5511556528547a06e68ba"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_deepfri_confidence_eight_gpu.py",
+                "--config",
+                "configs/local_deepfri_p12_restored_replay.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237689"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "deepfri_p13",
+      "port": 8029,
+      "max_model_len": 40960,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "3-00:00:00",
+      "entries": [
+        {
+          "task_id": "P13",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri",
+          "config_path": "configs/local_deepfri_p13_restored_replay.json",
+          "config_sha256": "e4d27f0a8c78097cc2133b39bce01c1c566bcf18330976629e2057fb9e61fbc6",
+          "run_id": "qwen38_27b_p13_restored_replay_2026-10-16",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "e48f5741b057ef4c7b6625c91b373121fb150a1965a026e72e08f071e22e3f97",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 3416,
+          "lane": 3,
+          "port": 8029,
+          "max_model_len": 40960,
+          "estimated_max_seconds": 216000,
+          "full_task_native_scoring": true,
+          "command_files_sha256": {
+            "scripts/execute_local_deepfri_confidence_eight_gpu.py": "3bd2f2c4b4985ba021e10248863eba48dcd756c965e5511556528547a06e68ba"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_deepfri_confidence_eight_gpu.py",
+                "--config",
+                "configs/local_deepfri_p13_restored_replay.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237690"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "deepfri_p14",
+      "port": 8030,
+      "max_model_len": 16384,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "3-00:00:00",
+      "entries": [
+        {
+          "task_id": "P14",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri",
+          "config_path": "configs/local_deepfri_p14_restored_replay.json",
+          "config_sha256": "660bbe0fa5dc464dc8212610b4a3e284086648d93fbbc448835475bcbab3d470",
+          "run_id": "qwen38_27b_p14_restored_replay_2026-10-16",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "9d276def7c1590e4f20acfac066fa84b911492a1b295a60b56f5b1666b2b6bc5",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 3416,
+          "lane": 4,
+          "port": 8030,
+          "max_model_len": 16384,
+          "estimated_max_seconds": 216000,
+          "full_task_native_scoring": true,
+          "command_files_sha256": {
+            "scripts/execute_local_deepfri_confidence_eight_gpu.py": "3bd2f2c4b4985ba021e10248863eba48dcd756c965e5511556528547a06e68ba"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_deepfri_confidence_eight_gpu.py",
+                "--config",
+                "configs/local_deepfri_p14_restored_replay.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237691"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "deepfri_p15",
+      "port": 8031,
+      "max_model_len": 16384,
+      "qos": "il",
+      "gres": "gpu:a100:1",
+      "wall_time": "3-00:00:00",
+      "entries": [
+        {
+          "task_id": "P15",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri",
+          "config_path": "configs/local_deepfri_p15_restored_replay.json",
+          "config_sha256": "de7974465067081566089b0ac08ee271f2d103d086c67abac40a9d5d79aa5345",
+          "run_id": "qwen38_27b_p15_restored_replay_2026-10-16",
+          "runner": "scripts/run_local_labbench_eight_gpu.py",
+          "runner_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4",
+          "input_sha256": "928dcd948598a51ac22819f667a38d04f42de2238c79b5bf27f1e45cfc3f6cb1",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 3416,
+          "lane": 5,
+          "port": 8031,
+          "max_model_len": 16384,
+          "estimated_max_seconds": 216000,
+          "full_task_native_scoring": true,
+          "command_files_sha256": {
+            "scripts/execute_local_deepfri_confidence_eight_gpu.py": "3bd2f2c4b4985ba021e10248863eba48dcd756c965e5511556528547a06e68ba"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_deepfri_confidence_eight_gpu.py",
+                "--config",
+                "configs/local_deepfri_p15_restored_replay.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237692"
+    }
+  ],
+  "created_at_utc": "2026-10-16T07:20:39.051261+00:00",
+  "runtime_artifacts": {
+    "runtime_archive.json": {
+      "sha256": "732def4d7a95da921b67dbfcc8bbf1e602218868b7ee40e3cc9990e059f92893",
+      "bytes": 8411525120,
+      "mtime_ns": 1792128556914575791
+    },
+    "cuda_overlay_archive.json": {
+      "sha256": "e9f9c715bc3ce46a7d9d8b0d40a05372be14a978821df1f8facaf3039cca09a2",
+      "bytes": 275179520,
+      "mtime_ns": 1792129194098355806
+    }
+  },
+  "infrastructure_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri_pool_v1.pool_worker.py": "369a08ae7d22f40b16675ee5532e2e1b339a59f69a0914b7538e6465e3fa284b",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri_pool_v1.runtime_common.py": "93611c2b597857222f6400bcf9151ce70ae7f8053c7871600bc49106e67370f4",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri_pool_v1.pool_worker.sbatch": "3adfb833717e6f94ce04eb2ac9dc803a13518dfb190d0af6567fb3fbf7791318"
+  },
+  "worker_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri_pool_v1.pool_worker.py",
+  "runtime_common_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri_pool_v1.runtime_common.py",
+  "sbatch_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri_pool_v1.pool_worker.sbatch"
+}

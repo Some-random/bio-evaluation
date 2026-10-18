@@ -1,0 +1,234 @@
+{
+  "configs/cpu_commands.json": {
+    "browsable_copy": "shared_infrastructure/a9967edc7c4d030af7d0565a1e1d5ea5b44db531d616a6d6b9ff662324620f94-cpu_commands.json",
+    "expected_sha256": "a9967edc7c4d030af7d0565a1e1d5ea5b44db531d616a6d6b9ff662324620f94"
+  },
+  "configs/local_labbench_b07.json": {
+    "browsable_copy": "shared_infrastructure/6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680-local_labbench_b07.json",
+    "expected_sha256": "6667048d2efcf876f1dd787d57bc49f33962d5ec911332b4082d695473966680"
+  },
+  "configs/local_posttrain_protein_p29_ood_review.json": {
+    "browsable_copy": "shared_infrastructure/88aabc8549e2fdcffecd2cc0c6e1a0cb3bbdd1ebacca2a47c93d33d4b54b6eb4-local_posttrain_protein_p29_ood_review.json",
+    "expected_sha256": "88aabc8549e2fdcffecd2cc0c6e1a0cb3bbdd1ebacca2a47c93d33d4b54b6eb4"
+  },
+  "configs/local_posttrain_protein_p29_ood_shard_000_review.json": {
+    "browsable_copy": "shared_infrastructure/249396420c2698a62489abcb54109565fb287febe2baf40d99e8908135746b7e-local_posttrain_protein_p29_ood_shard_000_review.json",
+    "expected_sha256": "249396420c2698a62489abcb54109565fb287febe2baf40d99e8908135746b7e"
+  },
+  "data/catalog_posttrain_protein/P29/ood/input_provenance.json": {
+    "browsable_copy": "shared_infrastructure/37a2e9066789c7a5f9f89a0a65eca3f299b267f3931b2762dea8c808e7f501b4-input_provenance.json",
+    "expected_sha256": "37a2e9066789c7a5f9f89a0a65eca3f299b267f3931b2762dea8c808e7f501b4"
+  },
+  "data/catalog_posttrain_protein/P29/ood/model_inputs.jsonl": {
+    "browsable_copy": null,
+    "expected_sha256": "8c6bf65fd4e3763dfa182e6073178f6e1d4698d9b232232a11acbc50751c426e"
+  },
+  "data/catalog_posttrain_protein/P29/ood/ordered_case_ids.json": {
+    "browsable_copy": "shared_infrastructure/e7c6b3d1fe9f800d71b0af9953069af7039b953bcbcc916bef1ff39873238db5-ordered_case_ids.json",
+    "expected_sha256": "e7c6b3d1fe9f800d71b0af9953069af7039b953bcbcc916bef1ff39873238db5"
+  },
+  "data/catalog_posttrain_protein/P29/ood/organism_counts.json": {
+    "browsable_copy": "shared_infrastructure/cd52d70ee7fd175b76c59413fa7d5c149404d32e263cd3aafb1196537380eec0-organism_counts.json",
+    "expected_sha256": "cd52d70ee7fd175b76c59413fa7d5c149404d32e263cd3aafb1196537380eec0"
+  },
+  "data/catalog_posttrain_protein/P29/preparation.json": {
+    "browsable_copy": "shared_infrastructure/1a01fdb6e0c55202c8daa497a6b2817890967963980fc63ff3af2ed4691f7fb3-preparation.json",
+    "expected_sha256": "1a01fdb6e0c55202c8daa497a6b2817890967963980fc63ff3af2ed4691f7fb3"
+  },
+  "data/local_posttrain_protein_shards/P29/ood/shard_000/model_inputs.jsonl": {
+    "browsable_copy": null,
+    "expected_sha256": "72b882f35f98cc27d765dc9efc31a1852bdcbf6332f552258055b34e9a0e0d19"
+  },
+  "reports/POSTTRAIN_NATIVE_GAP_AUDIT.md": {
+    "browsable_copy": "shared_infrastructure/c6b00d46f0c041e97796c5011932fd7980b2b04b692445e3b57ed884220210c2-POSTTRAIN_NATIVE_GAP_AUDIT.md",
+    "expected_sha256": "c6b00d46f0c041e97796c5011932fd7980b2b04b692445e3b57ed884220210c2"
+  },
+  "reports/posttrain_native_gap_audit.json": {
+    "browsable_copy": "shared_infrastructure/fda44e30f898df313c4c49ebc9eef4a12de6c5dde5b7985c24391011776abc67-posttrain_native_gap_audit.json",
+    "expected_sha256": "fda44e30f898df313c4c49ebc9eef4a12de6c5dde5b7985c24391011776abc67"
+  },
+  "scripts/aggregate_local_posttrain_protein_shards.py": {
+    "browsable_copy": "shared_infrastructure/48d4cd8b04adeb0ad4e3271169a9900f175d4e7db674a9bd124a55dcf947f781-aggregate_local_posttrain_protein_shards.py",
+    "expected_sha256": "48d4cd8b04adeb0ad4e3271169a9900f175d4e7db674a9bd124a55dcf947f781"
+  },
+  "scripts/bioreason_pro_contract.py": {
+    "browsable_copy": "shared_infrastructure/889baf7a8b4d2ac11f0162a453e4ad05d5264783e620d66d56df80702fc257b5-bioreason_pro_contract.py",
+    "expected_sha256": "889baf7a8b4d2ac11f0162a453e4ad05d5264783e620d66d56df80702fc257b5"
+  },
+  "scripts/execute_local_posttrain_protein_shard.py": {
+    "browsable_copy": "shared_infrastructure/68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6-execute_local_posttrain_protein_shard.py",
+    "expected_sha256": "68bd5d6bff3236a55ecc0617fbc835e57044a337640d60a5896e26ceeb2623c6"
+  },
+  "scripts/local_posttrain_protein_shards.py": {
+    "browsable_copy": "shared_infrastructure/b700abdf304f738a927aaeae79b6158a8f8bf27b059e5baa131ed61be1d0578f-local_posttrain_protein_shards.py",
+    "expected_sha256": "b700abdf304f738a927aaeae79b6158a8f8bf27b059e5baa131ed61be1d0578f"
+  },
+  "scripts/posttrain_protein_contract.py": {
+    "browsable_copy": "shared_infrastructure/c2361a579698a05f5b6970b44cad8c89a75db6699388abdac0f3402232930a8d-posttrain_protein_contract.py",
+    "expected_sha256": "c2361a579698a05f5b6970b44cad8c89a75db6699388abdac0f3402232930a8d"
+  },
+  "scripts/prepare_catalog_posttrain_protein.py": {
+    "browsable_copy": "shared_infrastructure/c921b7d251c61440bd1df890af71933ef1e1dc1af5a57b5ecb76d01644d6e1bd-prepare_catalog_posttrain_protein.py",
+    "expected_sha256": "c921b7d251c61440bd1df890af71933ef1e1dc1af5a57b5ecb76d01644d6e1bd"
+  },
+  "scripts/prepare_local_posttrain_protein_shards.py": {
+    "browsable_copy": "shared_infrastructure/b7b6ca86a91906ee649b092928b64848e737004f0c1884e3bc3d2bf1423f90b1-prepare_local_posttrain_protein_shards.py",
+    "expected_sha256": "b7b6ca86a91906ee649b092928b64848e737004f0c1884e3bc3d2bf1423f90b1"
+  },
+  "scripts/run_local_labbench_eight_gpu.py": {
+    "browsable_copy": "shared_infrastructure/038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4-run_local_labbench_eight_gpu.py",
+    "expected_sha256": "038428fcee253d5cec709a5b8fd503fc60a1694707fde0f92c55ccaf33111fd4"
+  },
+  "scripts/run_local_labbench_multimodal.py": {
+    "browsable_copy": "shared_infrastructure/ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d-run_local_labbench_multimodal.py",
+    "expected_sha256": "ffd1e6794f75d709a3551b120365a41e476fe0ba92c8a1c29bef8aec0a23924d"
+  },
+  "scripts/run_pinned_cpu.py": {
+    "browsable_copy": "shared_infrastructure/fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f-run_pinned_cpu.py",
+    "expected_sha256": "fd0fcedfb0092bf00848b16918c368dbb1ecb536c46c7f8f5d0dc7f70dfeac4f"
+  },
+  "scripts/score_local_bioreason_pro.py": {
+    "browsable_copy": "shared_infrastructure/5d93fef9076b739733bee5a1554bec655ef384ec80e1d7511667e11f715504a7-score_local_bioreason_pro.py",
+    "expected_sha256": "5d93fef9076b739733bee5a1554bec655ef384ec80e1d7511667e11f715504a7"
+  },
+  "scripts/score_local_posttrain_protein.py": {
+    "browsable_copy": "shared_infrastructure/c8670a0a749e318c2a43b4136c3386f7325fa2449a39697639fdb150437cf8fd-score_local_posttrain_protein.py",
+    "expected_sha256": "c8670a0a749e318c2a43b4136c3386f7325fa2449a39697639fdb150437cf8fd"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/additional_author_source_manifest.json": {
+    "browsable_copy": "shared_infrastructure/66014a2e87f81baadc20430cd77349ed13c0c581ca0612c2eb7f890b5a1b218a-additional_author_source_manifest.json",
+    "expected_sha256": "66014a2e87f81baadc20430cd77349ed13c0c581ca0612c2eb7f890b5a1b218a"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__LICENSE": {
+    "browsable_copy": null,
+    "expected_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__dataset__cafa5__collate.py": {
+    "browsable_copy": "shared_infrastructure/0a285f4b8d9e1c85f90b88eae10099047053a8c337571874a9a8fbbe1e7f4350-author__BioReason-Pro__bioreason2__dataset__cafa5__collate.py",
+    "expected_sha256": "0a285f4b8d9e1c85f90b88eae10099047053a8c337571874a9a8fbbe1e7f4350"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__dataset__cafa5__format.py": {
+    "browsable_copy": "shared_infrastructure/b3bad7b37f6ad6fde0412068ecaea6245a86ae8712c20ca1eed1e78aed4cf670-author__BioReason-Pro__bioreason2__dataset__cafa5__format.py",
+    "expected_sha256": "b3bad7b37f6ad6fde0412068ecaea6245a86ae8712c20ca1eed1e78aed4cf670"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__dataset__cafa5__generate.py": {
+    "browsable_copy": "shared_infrastructure/9dace790ed1f42d691d191cd024afbfaf9e9ca2b8e6ea8725e2b21f337cc7316-author__BioReason-Pro__bioreason2__dataset__cafa5__generate.py",
+    "expected_sha256": "9dace790ed1f42d691d191cd024afbfaf9e9ca2b8e6ea8725e2b21f337cc7316"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__dataset__cafa5__load.py": {
+    "browsable_copy": "shared_infrastructure/fcdc7cf59e61de5bd6cc6caa9c7ef7eedd4d9de3d43642d121da8759ed234aff-author__BioReason-Pro__bioreason2__dataset__cafa5__load.py",
+    "expected_sha256": "fcdc7cf59e61de5bd6cc6caa9c7ef7eedd4d9de3d43642d121da8759ed234aff"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__dataset__cafa5__processor.py": {
+    "browsable_copy": "shared_infrastructure/6a7900db2f118c6abbe9b390ddec80e0a28da8d1e4ca76fe3fefd5d89a4e4209-author__BioReason-Pro__bioreason2__dataset__cafa5__processor.py",
+    "expected_sha256": "6a7900db2f118c6abbe9b390ddec80e0a28da8d1e4ca76fe3fefd5d89a4e4209"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__dataset__go-basic.obo": {
+    "browsable_copy": null,
+    "expected_sha256": "0c0062efbb1b199a6a54e62c0c48ff0038d39173aecc7edfab66a20090d5ec2d"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__dataset__prompts__cafa5.py": {
+    "browsable_copy": "shared_infrastructure/b07d602525ef5607de855ea7adbf43e2b7d7c4462fa3cc9a5918cde64cfea8b5-author__BioReason-Pro__bioreason2__dataset__prompts__cafa5.py",
+    "expected_sha256": "b07d602525ef5607de855ea7adbf43e2b7d7c4462fa3cc9a5918cde64cfea8b5"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__dataset__reasoning__load.py": {
+    "browsable_copy": "shared_infrastructure/91d9e0084b4dc29f78f8b89ee61ee6916ee0cbaaa958326d67381ba1bb0cc836-author__BioReason-Pro__bioreason2__dataset__reasoning__load.py",
+    "expected_sha256": "91d9e0084b4dc29f78f8b89ee61ee6916ee0cbaaa958326d67381ba1bb0cc836"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__models__pl__processing_pl.py": {
+    "browsable_copy": "shared_infrastructure/1e89c6d08e034d462fa54aaee121085d33ff6a3c403a4c48c812562b94d86aa1-author__BioReason-Pro__bioreason2__models__pl__processing_pl.py",
+    "expected_sha256": "1e89c6d08e034d462fa54aaee121085d33ff6a3c403a4c48c812562b94d86aa1"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__models__protein_llm.py": {
+    "browsable_copy": "shared_infrastructure/2eef983f30c47ab1fbbe112559d1df6bddb7368e324ed1e8a83e39df835cb4cf-author__BioReason-Pro__bioreason2__models__protein_llm.py",
+    "expected_sha256": "2eef983f30c47ab1fbbe112559d1df6bddb7368e324ed1e8a83e39df835cb4cf"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__protein_modules__protein_module.py": {
+    "browsable_copy": "shared_infrastructure/691364cd5445d5a0e8f378f29007f57d1274a75f805fa962c357ef5421749e4a-author__BioReason-Pro__bioreason2__protein_modules__protein_module.py",
+    "expected_sha256": "691364cd5445d5a0e8f378f29007f57d1274a75f805fa962c357ef5421749e4a"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__utils__go_reward.py": {
+    "browsable_copy": "shared_infrastructure/3787817192b6ba36aaf93f5023cd41e3cc61714c24fba49ec5a5d0a4ad69a7ea-author__BioReason-Pro__bioreason2__utils__go_reward.py",
+    "expected_sha256": "3787817192b6ba36aaf93f5023cd41e3cc61714c24fba49ec5a5d0a4ad69a7ea"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__bioreason2__utils__protein_utils.py": {
+    "browsable_copy": "shared_infrastructure/94c529804be9f1b3474e1a87897a9bd1bea77c9d11800cde1e3a37264460848f-author__BioReason-Pro__bioreason2__utils__protein_utils.py",
+    "expected_sha256": "94c529804be9f1b3474e1a87897a9bd1bea77c9d11800cde1e3a37264460848f"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__data__download.sh": {
+    "browsable_copy": "shared_infrastructure/b67c4ef3f5be6e96ae28ec986151cd2e11a17feda21dfeadeeb3679642697729-author__BioReason-Pro__data__download.sh",
+    "expected_sha256": "b67c4ef3f5be6e96ae28ec986151cd2e11a17feda21dfeadeeb3679642697729"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__scripts__submit_id_ood_eval_rl.sh": {
+    "browsable_copy": "shared_infrastructure/feca4bce025177ea0d0fc276187ff060823ca64de40db19e5235fb482a82cdd7-author__BioReason-Pro__scripts__submit_id_ood_eval_rl.sh",
+    "expected_sha256": "feca4bce025177ea0d0fc276187ff060823ca64de40db19e5235fb482a82cdd7"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__scripts__sweep_protein_grpo.sh": {
+    "browsable_copy": "shared_infrastructure/44e9aa7090da4263d9cf063b0ad296adff31a12c6f3921bb484f9813b853cf92-author__BioReason-Pro__scripts__sweep_protein_grpo.sh",
+    "expected_sha256": "44e9aa7090da4263d9cf063b0ad296adff31a12c6f3921bb484f9813b853cf92"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__train_protein_grpo.py": {
+    "browsable_copy": "shared_infrastructure/6e1f49b545979b109cee9dde64036b6182c594c7fb8ad0d3657e631b9a998d88-author__BioReason-Pro__train_protein_grpo.py",
+    "expected_sha256": "6e1f49b545979b109cee9dde64036b6182c594c7fb8ad0d3657e631b9a998d88"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason-Pro__train_protein_llm.py": {
+    "browsable_copy": "shared_infrastructure/a47c291734eb4fa73bc47cf9aa2130c563bcbe977618f6a85f17b68d82b09967-author__BioReason-Pro__train_protein_llm.py",
+    "expected_sha256": "a47c291734eb4fa73bc47cf9aa2130c563bcbe977618f6a85f17b68d82b09967"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason__bioreason__dataset__kegg.py": {
+    "browsable_copy": "shared_infrastructure/d1884cd2114b1ef2e31bb0dd82abdbe9fba6b4c7a94169e99882722a9a1779b8-author__BioReason__bioreason__dataset__kegg.py",
+    "expected_sha256": "d1884cd2114b1ef2e31bb0dd82abdbe9fba6b4c7a94169e99882722a9a1779b8"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason__bioreason__dataset__utils.py": {
+    "browsable_copy": "shared_infrastructure/0d587b9ecd29df6ecc713aea363ee06c045c654b6c7f7ec94e5928f0a2aa730a-author__BioReason__bioreason__dataset__utils.py",
+    "expected_sha256": "0d587b9ecd29df6ecc713aea363ee06c045c654b6c7f7ec94e5928f0a2aa730a"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason__bioreason__dna_modules__dna_module.py": {
+    "browsable_copy": "shared_infrastructure/df0d64e18cd23c0920738680e18f5475e67896bda8ba3e37ec3e13d78badd88e-author__BioReason__bioreason__dna_modules__dna_module.py",
+    "expected_sha256": "df0d64e18cd23c0920738680e18f5475e67896bda8ba3e37ec3e13d78badd88e"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason__bioreason__models__dna_llm.py": {
+    "browsable_copy": "shared_infrastructure/00a585468b83b5c68e3673dcd0c51756cdd05c22b61bbc0afad7527e686f3791-author__BioReason__bioreason__models__dna_llm.py",
+    "expected_sha256": "00a585468b83b5c68e3673dcd0c51756cdd05c22b61bbc0afad7527e686f3791"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason__download_datasets.py": {
+    "browsable_copy": "shared_infrastructure/1a957f1f5d7a9e447057bba971afb939b18b1fa0e5992bf0ff75646dfa1290e5-author__BioReason__download_datasets.py",
+    "expected_sha256": "1a957f1f5d7a9e447057bba971afb939b18b1fa0e5992bf0ff75646dfa1290e5"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason__submit_id_ood_eval_rl.sh": {
+    "browsable_copy": "shared_infrastructure/b74e91a739926305ed1f6c476631522a9330a69cd32184053ef40d3a4feb342c-author__BioReason__submit_id_ood_eval_rl.sh",
+    "expected_sha256": "b74e91a739926305ed1f6c476631522a9330a69cd32184053ef40d3a4feb342c"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__BioReason__train_dna_qwen.py": {
+    "browsable_copy": "shared_infrastructure/476dc40f560bafc8b1b41989aaba7bbd1c876c1d234d697f18c571d17643bb0d-author__BioReason__train_dna_qwen.py",
+    "expected_sha256": "476dc40f560bafc8b1b41989aaba7bbd1c876c1d234d697f18c571d17643bb0d"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__LICENSE": {
+    "browsable_copy": null,
+    "expected_sha256": "d5c4d1b9e34bd32e0a44fa1723062914a1bc265910cfc09ec2390838b574d494"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__c2s_original__README.md": {
+    "browsable_copy": "shared_infrastructure/02928ff63d22276f0a299e4a4f52beeedc1d9528e2efed497758e04725053ec9-author__c2s_original__README.md",
+    "expected_sha256": "02928ff63d22276f0a299e4a4f52beeedc1d9528e2efed497758e04725053ec9"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__c2s_original__tutorials__c2s_tutorial_7_custom_prompt_templates.ipynb": {
+    "browsable_copy": null,
+    "expected_sha256": "19d847f2a7a2119e337b771d2b36e769275ee1f598662a5b217d89208a038cae"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__c2s_original__tutorials__c2s_tutorial_9_natural_language_interpretation.ipynb": {
+    "browsable_copy": null,
+    "expected_sha256": "e14c336d5f139b09dbf0662121a3f339d772d79a70574691c5567a65a0e26787"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author__harvest_results.py": {
+    "browsable_copy": "shared_infrastructure/4762f6f3bb024ea40745e9b936ee2afda2c7c034d711d3d4ff3a631f6bf5fa7f-author__harvest_results.py",
+    "expected_sha256": "4762f6f3bb024ea40745e9b936ee2afda2c7c034d711d3d4ff3a631f6bf5fa7f"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/author_source_manifest.json": {
+    "browsable_copy": "shared_infrastructure/2d78d889544bf80a49f995050d3860a5eadafbdfae67ea42a8dc265166c44add-author_source_manifest.json",
+    "expected_sha256": "2d78d889544bf80a49f995050d3860a5eadafbdfae67ea42a8dc265166c44add"
+  },
+  "sources/posttrain_gap_audit_2026-10-15/rl_author_source_manifest.json": {
+    "browsable_copy": "shared_infrastructure/66014a2e87f81baadc20430cd77349ed13c0c581ca0612c2eb7f890b5a1b218a-rl_author_source_manifest.json",
+    "expected_sha256": "66014a2e87f81baadc20430cd77349ed13c0c581ca0612c2eb7f890b5a1b218a"
+  }
+}

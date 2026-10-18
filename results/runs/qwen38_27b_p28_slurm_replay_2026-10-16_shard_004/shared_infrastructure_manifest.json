@@ -1,0 +1,362 @@
+[
+  {
+    "browsable_copy": "shared_infrastructure/56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7-amendment_v2.json",
+    "kind": "infrastructure_amendment",
+    "sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7",
+    "source": ".local/shared_vllm_migration_2026-10-17/amendment_v2.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/58a753c4322f17e0fcec4a8fb41a5e6fb57af27bd7268bb4832fa25cc813699b-shared_vllm_resume.py",
+    "kind": "adapter_code",
+    "sha256": "58a753c4322f17e0fcec4a8fb41a5e6fb57af27bd7268bb4832fa25cc813699b",
+    "source": "scripts/shared_vllm_resume.py"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/2b21738d3e70b8320b57a30cf187ae83843a1717136a1711b0d0fd4aff30a968-run_shared_vllm_evaluations.py",
+    "kind": "adapter_code",
+    "sha256": "2b21738d3e70b8320b57a30cf187ae83843a1717136a1711b0d0fd4aff30a968",
+    "source": "scripts/run_shared_vllm_evaluations.py"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/ac856c600ca55c04337c013f7e0b39e0a140d155d35ba2cf8cb6e8bf27d6ec6a-prepare_shared_vllm_amendment.py",
+    "kind": "adapter_code",
+    "sha256": "ac856c600ca55c04337c013f7e0b39e0a140d155d35ba2cf8cb6e8bf27d6ec6a",
+    "source": "scripts/prepare_shared_vllm_amendment.py"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/f2a16643aad4470adbad9616a8a2f21ee29e3dd7d660e4db1d5cb267fd9e2b6b-results.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "f2a16643aad4470adbad9616a8a2f21ee29e3dd7d660e4db1d5cb267fd9e2b6b",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark/results.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/984d9c1a3bc6cf4fd803968512ae7a9234f5dd3ecba7b0a94fec314211f2025c-measured_concurrency_by_input_length.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "984d9c1a3bc6cf4fd803968512ae7a9234f5dd3ecba7b0a94fec314211f2025c",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark/measured_concurrency_by_input_length.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/7b81fc97522753d22e5c34ac22c35a54bc00c8b18d29b937e9819122ae5f1ce0-progress.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "7b81fc97522753d22e5c34ac22c35a54bc00c8b18d29b937e9819122ae5f1ce0",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark/progress.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/026729d5868ec675d72076b477dcc5595b3592ef33ea5f4c80efc338aada89ec-concurrency_001_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "026729d5868ec675d72076b477dcc5595b3592ef33ea5f4c80efc338aada89ec",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark/input_001536/concurrency_001_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/5a091df7d5ec2dc5076ea7af5d7ddbcb56f636f0eac4d6bb92999c7337c2c11f-concurrency_002_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "5a091df7d5ec2dc5076ea7af5d7ddbcb56f636f0eac4d6bb92999c7337c2c11f",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark/input_001536/concurrency_002_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/c3ea755ed3ddf83764a09f938b1f50d722a680b4d7157b99e6cf3e772f925788-concurrency_004_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "c3ea755ed3ddf83764a09f938b1f50d722a680b4d7157b99e6cf3e772f925788",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark/input_001536/concurrency_004_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/705185378a961d9d00a889a2420cb6b86ad3815b409e6923152405030946a11d-concurrency_008_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "705185378a961d9d00a889a2420cb6b86ad3815b409e6923152405030946a11d",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark/input_001536/concurrency_008_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/a1f5829ce52d12fa9051b3f243377d8b108b10a4eb1dee077e0c78d0605c36e9-concurrency_016_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "a1f5829ce52d12fa9051b3f243377d8b108b10a4eb1dee077e0c78d0605c36e9",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark/input_001536/concurrency_016_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/71e4ccaa91bb4875e501a637736635eda4c8afa18980efbb30bd6d94e572b8eb-results.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "71e4ccaa91bb4875e501a637736635eda4c8afa18980efbb30bd6d94e572b8eb",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark_clean_45056/results.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/5b82a2d1a7d9e410ff6d8e57324a2be64d752077844af5a128c70da4310ec068-measured_concurrency_by_input_length.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "5b82a2d1a7d9e410ff6d8e57324a2be64d752077844af5a128c70da4310ec068",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark_clean_45056/measured_concurrency_by_input_length.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/f702599a60c8b60c4478eb03203a361e279c1b2731c6c35f76b672179134102b-progress.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "f702599a60c8b60c4478eb03203a361e279c1b2731c6c35f76b672179134102b",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark_clean_45056/progress.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/0acdf142800c993598a9fc82186f634f5319b4092d6769d73a348f597eec63df-concurrency_001_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "0acdf142800c993598a9fc82186f634f5319b4092d6769d73a348f597eec63df",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark_clean_45056/input_045056/concurrency_001_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/0f416739fa86421269621b91c12e0fdffe6f2413e4a9bfad12af701333654ad1-concurrency_002_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "0f416739fa86421269621b91c12e0fdffe6f2413e4a9bfad12af701333654ad1",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark_clean_45056/input_045056/concurrency_002_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/7912a2510e603942716f2c4ea1738ed3a4e5b7390160f53f689d21b9b98268a2-concurrency_004_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "7912a2510e603942716f2c4ea1738ed3a4e5b7390160f53f689d21b9b98268a2",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/length_benchmark_clean_45056/input_045056/concurrency_004_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/8297b747f2469431de62207f5c267fa30a396c2c3acec6cbff4aba3fa530af31-results.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "8297b747f2469431de62207f5c267fa30a396c2c3acec6cbff4aba3fa530af31",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_1/length_benchmark/results.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/6547459ec8382fd8c8a3687960347d74540d1804e02d1775c4b4422a9aca21b0-measured_concurrency_by_input_length.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "6547459ec8382fd8c8a3687960347d74540d1804e02d1775c4b4422a9aca21b0",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_1/length_benchmark/measured_concurrency_by_input_length.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/8a1135efa1328036afafd7308a8d6178b9ecd3b19975058de10b433e1bedaa98-progress.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "8a1135efa1328036afafd7308a8d6178b9ecd3b19975058de10b433e1bedaa98",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_1/length_benchmark/progress.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/30a4178bdc35ea8af5ac00f2a2be3063ba624f30ede1de9154d041510f8029db-concurrency_001_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "30a4178bdc35ea8af5ac00f2a2be3063ba624f30ede1de9154d041510f8029db",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_1/length_benchmark/input_007000/concurrency_001_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/a2f637aa224d2c0577f410e1449cf72e4525027c37894a625dd29709425c64d9-concurrency_002_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "a2f637aa224d2c0577f410e1449cf72e4525027c37894a625dd29709425c64d9",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_1/length_benchmark/input_007000/concurrency_002_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/aaca2ba2c3b0296e176d40b770622c5bdd041d40de67cc69309c599c8198b042-concurrency_004_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "aaca2ba2c3b0296e176d40b770622c5bdd041d40de67cc69309c599c8198b042",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_1/length_benchmark/input_007000/concurrency_004_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/b52ea5a867a67d965dfd85351cb485e5e65397b768fb07dced37231433a9408e-concurrency_008_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "b52ea5a867a67d965dfd85351cb485e5e65397b768fb07dced37231433a9408e",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_1/length_benchmark/input_007000/concurrency_008_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/87153d51cdab91c2b2f7db2c2fcd2db81b1c32a1927b0ec699cddf00fc589fda-concurrency_016_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "87153d51cdab91c2b2f7db2c2fcd2db81b1c32a1927b0ec699cddf00fc589fda",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_1/length_benchmark/input_007000/concurrency_016_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/314fdb1c842504d0646ad953ec25604d291ab81962b9a9ac7de6d003c3168540-results.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "314fdb1c842504d0646ad953ec25604d291ab81962b9a9ac7de6d003c3168540",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark/results.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/dc9ba82179f447d1d932dd95bcce15a160b9857b4b0a0a0c32d0c4422be9b75c-measured_concurrency_by_input_length.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "dc9ba82179f447d1d932dd95bcce15a160b9857b4b0a0a0c32d0c4422be9b75c",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark/measured_concurrency_by_input_length.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/22410802e80ee6130db92466d2e4f3b73418a2e421cf84e1814f0810cd7c51bf-progress.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "22410802e80ee6130db92466d2e4f3b73418a2e421cf84e1814f0810cd7c51bf",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark/progress.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/e69ddd05392cc30d2d2c643d6431b353cb11a745a035ebac3ff931d6c135dbd7-concurrency_001_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "e69ddd05392cc30d2d2c643d6431b353cb11a745a035ebac3ff931d6c135dbd7",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark/input_016384/concurrency_001_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/6a583f7dbd0be8689543e9111031ad9a197da59e0f52f15884da871b2e7e38fd-concurrency_002_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "6a583f7dbd0be8689543e9111031ad9a197da59e0f52f15884da871b2e7e38fd",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark/input_016384/concurrency_002_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/52bd6b9ea7e3f98d3d97f3116b03e9d2cc0492eb6840a92d57080793828913b4-concurrency_004_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "52bd6b9ea7e3f98d3d97f3116b03e9d2cc0492eb6840a92d57080793828913b4",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark/input_016384/concurrency_004_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/56fc6be6b3cb6fcf4f552e332fadcec3c9e985dddc5e35d542c10a43c8bee490-concurrency_008_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "56fc6be6b3cb6fcf4f552e332fadcec3c9e985dddc5e35d542c10a43c8bee490",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark/input_016384/concurrency_008_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/0e384f8e0d2755873ff5393780806aca24ec68aaa582c3a7165fc06c5e9022c4-results.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "0e384f8e0d2755873ff5393780806aca24ec68aaa582c3a7165fc06c5e9022c4",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark_clean_192/results.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/43521a90201555f6081b950e74b54f29077573f1cb94aadd5dd451f7c03f48ee-measured_concurrency_by_input_length.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "43521a90201555f6081b950e74b54f29077573f1cb94aadd5dd451f7c03f48ee",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark_clean_192/measured_concurrency_by_input_length.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/1c427e69326a12832e34f73191de566fe62f0f0dbd7d3be7dbf4229723b356c2-progress.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "1c427e69326a12832e34f73191de566fe62f0f0dbd7d3be7dbf4229723b356c2",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark_clean_192/progress.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/915de3484f6f515377d40900b7bc49295bb625cc80d45ea0b1f25a8b5d3572e8-concurrency_032_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "915de3484f6f515377d40900b7bc49295bb625cc80d45ea0b1f25a8b5d3572e8",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/length_benchmark_clean_192/input_000192/concurrency_032_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/5b7bab46fbb83f44cf5bb701bea362920220618cc9db2d66f384a2319fe17c54-results.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "5b7bab46fbb83f44cf5bb701bea362920220618cc9db2d66f384a2319fe17c54",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_3/length_benchmark_clean_49152/results.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/513b132c34a9ec23e4e3aede558b3bfb9954955dccae4e782b3514c09ab85dac-measured_concurrency_by_input_length.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "513b132c34a9ec23e4e3aede558b3bfb9954955dccae4e782b3514c09ab85dac",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_3/length_benchmark_clean_49152/measured_concurrency_by_input_length.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/55b39ce90cc59ae1d56c87c36076a5829b0d72b673c8a057c01c11931de748de-progress.json",
+    "kind": "capacity_evidence_files",
+    "sha256": "55b39ce90cc59ae1d56c87c36076a5829b0d72b673c8a057c01c11931de748de",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_3/length_benchmark_clean_49152/progress.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/3a43ffed9475d2b72b333150da3b4fe15c4a147efb5d5eee6c176fe4efc81fa8-concurrency_001_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "3a43ffed9475d2b72b333150da3b4fe15c4a147efb5d5eee6c176fe4efc81fa8",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_3/length_benchmark_clean_49152/input_049152/concurrency_001_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/75459654ba25da65151f377c7bacdd903a1fe96bba12b3d1d0def59bf78313d4-concurrency_002_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "75459654ba25da65151f377c7bacdd903a1fe96bba12b3d1d0def59bf78313d4",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_3/length_benchmark_clean_49152/input_049152/concurrency_002_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/532f4feb08d34c34932587734f92854abec4b4f563d08261adfe5903ca6598c6-concurrency_004_live_metrics.jsonl",
+    "kind": "capacity_evidence_files",
+    "sha256": "532f4feb08d34c34932587734f92854abec4b4f563d08261adfe5903ca6598c6",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_3/length_benchmark_clean_49152/input_049152/concurrency_004_live_metrics.jsonl"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/f9b6da00499968827d09ae77ca62cf13aed7e772ce32937abc4ac646d95e1f70-237671_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "f9b6da00499968827d09ae77ca62cf13aed7e772ce32937abc4ac646d95e1f70",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237671_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/b23d493474251298bb591e62aa825b8f9591a50dc0cb1ff2a42966c11907be86-237672_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "b23d493474251298bb591e62aa825b8f9591a50dc0cb1ff2a42966c11907be86",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237672_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/034377903b48fc819ab560167eca29a015bc65977a4eae9227b1f245bcdf92b0-237674_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "034377903b48fc819ab560167eca29a015bc65977a4eae9227b1f245bcdf92b0",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237674_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/600c12f925300736c2dee77f8b2677549f81633b9309e9f0a9ee87ca1acf64a5-237675_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "600c12f925300736c2dee77f8b2677549f81633b9309e9f0a9ee87ca1acf64a5",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237675_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/7a29fcad0ac392a38cda8b25cb367b62ccb9701b8378af5b2e4b92a6c1ba56c5-237676_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "7a29fcad0ac392a38cda8b25cb367b62ccb9701b8378af5b2e4b92a6c1ba56c5",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237676_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/9a432fc5e21b4a5a4804a58e8ee2c39347af7fcd18cfc5106ea14a0ba5dcd483-237717_attempt_1.json",
+    "kind": "negative_execution_receipts",
+    "sha256": "9a432fc5e21b4a5a4804a58e8ee2c39347af7fcd18cfc5106ea14a0ba5dcd483",
+    "source": ".local/shared_vllm_migration_2026-10-17/drains/237717_attempt_1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/08e23f835df49659ebcd6f5da82e655c056b8a35d6a90cf7f6733eddf76e1bce-extended_fast_v2.json",
+    "kind": "source_plans",
+    "sha256": "08e23f835df49659ebcd6f5da82e655c056b8a35d6a90cf7f6733eddf76e1bce",
+    "source": ".local/remaining_evaluations/extended_fast_v2.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/4e0b26baec5d9a547abd1f05dfdbe9430391d2816817cbd4b6fedbcdfb5518e8-extended_bulk_v2.json",
+    "kind": "source_plans",
+    "sha256": "4e0b26baec5d9a547abd1f05dfdbe9430391d2816817cbd4b6fedbcdfb5518e8",
+    "source": ".local/remaining_evaluations/extended_bulk_v2.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/e662b329176090eefd168a4e901804575c50e0824da0477d6f005de1d3550913-p28_pool_v2.json",
+    "kind": "source_plans",
+    "sha256": "e662b329176090eefd168a4e901804575c50e0824da0477d6f005de1d3550913",
+    "source": ".local/remaining_evaluations/p28_pool_v2.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/57287cd2151ff1c77138fdba6e999a141658bb5fae95265bcbf0391c5fb19cb5-p29_pool_v1.json",
+    "kind": "source_plans",
+    "sha256": "57287cd2151ff1c77138fdba6e999a141658bb5fae95265bcbf0391c5fb19cb5",
+    "source": ".local/remaining_evaluations/p29_pool_v1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/028d8156f98f034406b14291b133be4ed6a53e3f38f6ac8deb7a813bf216c4e0-p16_pool_v1.json",
+    "kind": "source_plans",
+    "sha256": "028d8156f98f034406b14291b133be4ed6a53e3f38f6ac8deb7a813bf216c4e0",
+    "source": ".local/remaining_evaluations/p16_pool_v1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/1800cdf58e0504f3e67220041669d0c5c30edb636672cbb6a76f6627113626c8-deepfri_pool_v1.json",
+    "kind": "source_plans",
+    "sha256": "1800cdf58e0504f3e67220041669d0c5c30edb636672cbb6a76f6627113626c8",
+    "source": ".local/remaining_evaluations/deepfri_pool_v1.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/724fc881b3077468e83a6a87963ada6072db6bd279b5b8d8364bab7cde3ad7e9-context_check.json",
+    "kind": "run_context_check",
+    "sha256": "724fc881b3077468e83a6a87963ada6072db6bd279b5b8d8364bab7cde3ad7e9",
+    "source": ".local/remaining_evaluations/p28_preflight/qwen38_27b_p28_slurm_replay_2026-10-16_shard_004/context_check.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/7216722fc96cf69a3826d06135fbb414fc59194e25916f528b4585c15e7d7291-server_identity.json",
+    "kind": "actual_server",
+    "sha256": "7216722fc96cf69a3826d06135fbb414fc59194e25916f528b4585c15e7d7291",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_0/server_identity.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/06ec4ad84dcb6dbe7af20aa0f1d558288b6865cc60dffbadfd882ef95540ec50-server_identity.json",
+    "kind": "actual_server",
+    "sha256": "06ec4ad84dcb6dbe7af20aa0f1d558288b6865cc60dffbadfd882ef95540ec50",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_1/server_identity.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/33e361409c09d324efc7a1bcff8a57e23fdc821486d81bf96f3614a375950972-server_identity.json",
+    "kind": "actual_server",
+    "sha256": "33e361409c09d324efc7a1bcff8a57e23fdc821486d81bf96f3614a375950972",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_2/server_identity.json"
+  },
+  {
+    "browsable_copy": "shared_infrastructure/35354e2c9f39bcd4dc1f366be8e97deffab8292703887f592167818db3250cde-server_identity.json",
+    "kind": "actual_server",
+    "sha256": "35354e2c9f39bcd4dc1f366be8e97deffab8292703887f592167818db3250cde",
+    "source": ".local/shared_vllm_pool_2026-10-17_v3/replica_3/server_identity.json"
+  }
+]

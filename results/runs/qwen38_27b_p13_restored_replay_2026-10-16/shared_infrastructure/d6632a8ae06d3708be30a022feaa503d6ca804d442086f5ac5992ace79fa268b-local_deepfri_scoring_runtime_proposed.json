@@ -1,0 +1,14 @@
+{
+  "python": "3.12.15",
+  "torch": "2.13.0+cu130",
+  "numpy": "2.3.5",
+  "tie_grouped_sklearn_runtime": {
+    "python": "3.10.22",
+    "sklearn": "1.5.2",
+    "numpy": "1.21.5"
+  },
+  "device": "cpu",
+  "dtype": "float32",
+  "num_threads": 1,
+  "num_interop_threads": 1
+}

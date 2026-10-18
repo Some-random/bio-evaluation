@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004",
+  "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16",
+  "config_path": "configs/local_reaction_p16_shard_004.json",
+  "frozen_configuration_sha256": "977a4f0e871a4355ec794e647e86539bfaf2c9bd84b9f1068fbc12c476ca9197",
+  "frozen_runner": "scripts/run_local_labbench_multimodal.py",
+  "frozen_runner_sha256": "7bf9c8cd7c83a814de9febfd80458d1d6d5f55be3ffc063e0f7f21243e618a25",
+  "case_contract_sha256": "d8b0406f421ed3f0918a26bf6f4a4e3851a9f61410c12972a3ce3895a2b83104",
+  "amendment_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_migration_2026-10-17/amendment_v2.json",
+  "amendment_sha256": "56e1e37891ef10913d23a7bc9f9dcb6ea0fd1a2f5c41285ebaa71e275d80b7e7",
+  "adapter_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/shared_vllm_resume.py": "58a753c4322f17e0fcec4a8fb41a5e6fb57af27bd7268bb4832fa25cc813699b",
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/run_shared_vllm_evaluations.py": "2b21738d3e70b8320b57a30cf187ae83843a1717136a1711b0d0fd4aff30a968",
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/prepare_shared_vllm_amendment.py": "ac856c600ca55c04337c013f7e0b39e0a140d155d35ba2cf8cb6e8bf27d6ec6a"
+  },
+  "baseline_files_sha256": {},
+  "original_run_manifest_sha256": null,
+  "created_at_utc": "2026-10-18T06:14:54.462119+00:00",
+  "policy": "Preserve all historical bytes; never redispatch saved requests, including errors, truncations and ambiguous calls."
+}

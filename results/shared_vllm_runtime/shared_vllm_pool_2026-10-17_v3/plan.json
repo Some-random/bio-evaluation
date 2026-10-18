@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "infrastructure_only": true,
+  "root": "/dfs/scratch0/dongweij/bio-evaluation",
+  "replicas": 4,
+  "first_port": 8050,
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "checkpoint_precision": "original BF16",
+  "max_model_len": 65536,
+  "max_num_seqs": 32,
+  "runtime_common": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/runtime_common.py",
+  "benchmark_profiles": [
+    1536,
+    7000,
+    16384,
+    45056
+  ],
+  "length_benchmark_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/benchmark_vllm_prompt_lengths.py",
+  "length_benchmark_plan": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/length_benchmark.json",
+  "benchmark_client": "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/benchmark_vllm_concurrency.py",
+  "code_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/run_shared_vllm_pool.py": "47d020084600837749eabe5015e382ceea4f5f63ae42d57ae3850e795e40b4a0",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/runtime_common.py": "93611c2b597857222f6400bcf9151ce70ae7f8053c7871600bc49106e67370f4",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/benchmark_vllm_prompt_lengths.py": "9022a7873a50c3fd9ebdd665600a4c8b82a88f69184e6078729dafb646e8a4ac",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/benchmark_vllm_concurrency.py": "d08a6b2a1739c99ec07a66f0e619ce5f94fd2d9816142b6bcc72c34069bab58b",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_pool_2026-10-17_v3/length_benchmark.json": "ad302adfd47546c7bd07b3918cca6078b06235c86904da18baaf0339d43d3942"
+  },
+  "created_at": "2026-10-17T22:28:39.158480-07:00",
+  "project_gpu_ceiling": 8,
+  "resource_request": {
+    "partition": "il",
+    "account": "infolab",
+    "qos": "il",
+    "gres": "gpu:a100:4",
+    "nodes": 1,
+    "cpus": 32,
+    "memory": "320G",
+    "wall_time": "2-00:00:00"
+  },
+  "publication_exclusions": [
+    "weights",
+    "credentials",
+    "environments",
+    "caches",
+    "unrelated Affibody data"
+  ],
+  "resource_note": "Four B200s were idle at initial audit; two were acquired by other users before submission. Use normal-priority single-node four-A100 allocation.",
+  "supersedes_held_job": "240417",
+  "change": "Bounded synthetic tokenization for long inputs, no biological input changes."
+}

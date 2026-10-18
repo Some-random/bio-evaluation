@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "execution_authorized": true,
+  "workers": [
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p16_0",
+      "port": 8026,
+      "max_model_len": 65536,
+      "qos": "il",
+      "gres": "gpu:b200:1",
+      "wall_time": "2-00:00:00",
+      "entries": [
+        {
+          "task_id": "P16",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16",
+          "config_path": "configs/local_reaction_p16_shard_000.json",
+          "config_sha256": "fac098bef4659a3dfa0b21498c24b49dd4adc1b69bc901af5f601cdb6eab9990",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
+          "runner": "scripts/run_local_labbench_multimodal.py",
+          "runner_sha256": "7bf9c8cd7c83a814de9febfd80458d1d6d5f55be3ffc063e0f7f21243e618a25",
+          "input_sha256": "d2280d9799d74ee8b8537f9ae123f2aa4dc4ad2f3367d313e25fb8e1a6653287",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 0,
+          "port": 8026,
+          "max_model_len": 65536,
+          "gres": "gpu:b200:1",
+          "estimated_max_seconds": 21600,
+          "command_files_sha256": {
+            "scripts/execute_local_reaction_shard.py": "af0ee63ea10fd187461289873662ddfc6bb323aa277baed6f2eea9da4c0ceaf5"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_reaction_shard.py",
+                "--config",
+                "configs/local_reaction_p16_shard_000.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P16",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16",
+          "config_path": "configs/local_reaction_p16_shard_002.json",
+          "config_sha256": "403fd7d5eae9e84720aa20902eaca888cf2797f8faf84179322c25f8be11c572",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_002",
+          "runner": "scripts/run_local_labbench_multimodal.py",
+          "runner_sha256": "7bf9c8cd7c83a814de9febfd80458d1d6d5f55be3ffc063e0f7f21243e618a25",
+          "input_sha256": "60e0f43b9963b431929b923869b1791ae7965431fd3b3666591ae5b314eea7b3",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 0,
+          "port": 8026,
+          "max_model_len": 65536,
+          "gres": "gpu:b200:1",
+          "estimated_max_seconds": 21600,
+          "command_files_sha256": {
+            "scripts/execute_local_reaction_shard.py": "af0ee63ea10fd187461289873662ddfc6bb323aa277baed6f2eea9da4c0ceaf5"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_reaction_shard.py",
+                "--config",
+                "configs/local_reaction_p16_shard_002.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P16",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16",
+          "config_path": "configs/local_reaction_p16_shard_004.json",
+          "config_sha256": "977a4f0e871a4355ec794e647e86539bfaf2c9bd84b9f1068fbc12c476ca9197",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004",
+          "runner": "scripts/run_local_labbench_multimodal.py",
+          "runner_sha256": "7bf9c8cd7c83a814de9febfd80458d1d6d5f55be3ffc063e0f7f21243e618a25",
+          "input_sha256": "cf58b7cfd4cc844659c59824794868e7f5d78477ab4398b3676ecda95e537f1f",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 0,
+          "port": 8026,
+          "max_model_len": 65536,
+          "gres": "gpu:b200:1",
+          "estimated_max_seconds": 21600,
+          "command_files_sha256": {
+            "scripts/execute_local_reaction_shard.py": "af0ee63ea10fd187461289873662ddfc6bb323aa277baed6f2eea9da4c0ceaf5"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_reaction_shard.py",
+                "--config",
+                "configs/local_reaction_p16_shard_004.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237687"
+    },
+    {
+      "gpu_count": 1,
+      "tensor_parallel_size": 1,
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "worker_id": "p16_1",
+      "port": 8027,
+      "max_model_len": 65536,
+      "qos": "il",
+      "gres": "gpu:b200:1",
+      "wall_time": "2-00:00:00",
+      "entries": [
+        {
+          "task_id": "P16",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16",
+          "config_path": "configs/local_reaction_p16_shard_001.json",
+          "config_sha256": "654a274f78d15dba7177087656b8297ce51ac983330db89dba59dd93d7998c38",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_001",
+          "runner": "scripts/run_local_labbench_multimodal.py",
+          "runner_sha256": "7bf9c8cd7c83a814de9febfd80458d1d6d5f55be3ffc063e0f7f21243e618a25",
+          "input_sha256": "73973606d169b9db2daae4d6e703a052b7109564c8fd09c342c8ca6dcd16fb58",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 1,
+          "port": 8027,
+          "max_model_len": 65536,
+          "gres": "gpu:b200:1",
+          "estimated_max_seconds": 21600,
+          "command_files_sha256": {
+            "scripts/execute_local_reaction_shard.py": "af0ee63ea10fd187461289873662ddfc6bb323aa277baed6f2eea9da4c0ceaf5"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_reaction_shard.py",
+                "--config",
+                "configs/local_reaction_p16_shard_001.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P16",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16",
+          "config_path": "configs/local_reaction_p16_shard_003.json",
+          "config_sha256": "fd07a14c1cbc1d1e153682b64ab680f0169e10e21a93c47db45efe4def9662de",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_003",
+          "runner": "scripts/run_local_labbench_multimodal.py",
+          "runner_sha256": "7bf9c8cd7c83a814de9febfd80458d1d6d5f55be3ffc063e0f7f21243e618a25",
+          "input_sha256": "017cff01bc7115e2bdcb5e5265224b9041631ef9b8937926a5a485e40fc0d505",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 1024,
+          "lane": 1,
+          "port": 8027,
+          "max_model_len": 65536,
+          "gres": "gpu:b200:1",
+          "estimated_max_seconds": 21600,
+          "command_files_sha256": {
+            "scripts/execute_local_reaction_shard.py": "af0ee63ea10fd187461289873662ddfc6bb323aa277baed6f2eea9da4c0ceaf5"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_reaction_shard.py",
+                "--config",
+                "configs/local_reaction_p16_shard_003.json"
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": "P16",
+          "project_root": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16",
+          "config_path": "configs/local_reaction_p16_shard_005.json",
+          "config_sha256": "8e20262ddd15da22a40fbe5b2af12e4ecca9d541183afc95e94183154f82af16",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_005",
+          "runner": "scripts/run_local_labbench_multimodal.py",
+          "runner_sha256": "7bf9c8cd7c83a814de9febfd80458d1d6d5f55be3ffc063e0f7f21243e618a25",
+          "input_sha256": "7ff8eef3f58f67d1656877d0f52217e49d5b4a0b4b0a86a605cad3e22175ec7b",
+          "generation_sha256": "6b383eacdb3110a0f58233b00cf49d66bab3c565248c782290c6d42b6f6f3f5f",
+          "case_count": 531,
+          "lane": 1,
+          "port": 8027,
+          "max_model_len": 65536,
+          "gres": "gpu:b200:1",
+          "estimated_max_seconds": 21600,
+          "command_files_sha256": {
+            "scripts/execute_local_reaction_shard.py": "af0ee63ea10fd187461289873662ddfc6bb323aa277baed6f2eea9da4c0ceaf5"
+          },
+          "commands": [
+            {
+              "label": "execute",
+              "argv": [
+                "{python}",
+                "-u",
+                "scripts/execute_local_reaction_shard.py",
+                "--config",
+                "configs/local_reaction_p16_shard_005.json"
+              ]
+            }
+          ]
+        }
+      ],
+      "dependency": "afterany:237688"
+    }
+  ],
+  "created_at_utc": "2026-10-16T07:18:47.622437+00:00",
+  "runtime_artifacts": {
+    "runtime_archive.json": {
+      "sha256": "732def4d7a95da921b67dbfcc8bbf1e602218868b7ee40e3cc9990e059f92893",
+      "bytes": 8411525120,
+      "mtime_ns": 1792128556914575791
+    },
+    "cuda_overlay_archive.json": {
+      "sha256": "e9f9c715bc3ce46a7d9d8b0d40a05372be14a978821df1f8facaf3039cca09a2",
+      "bytes": 275179520,
+      "mtime_ns": 1792129194098355806
+    }
+  },
+  "infrastructure_files_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16_pool_v1.pool_worker.py": "369a08ae7d22f40b16675ee5532e2e1b339a59f69a0914b7538e6465e3fa284b",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16_pool_v1.runtime_common.py": "93611c2b597857222f6400bcf9151ce70ae7f8053c7871600bc49106e67370f4",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16_pool_v1.pool_worker.sbatch": "3adfb833717e6f94ce04eb2ac9dc803a13518dfb190d0af6567fb3fbf7791318"
+  },
+  "worker_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16_pool_v1.pool_worker.py",
+  "runtime_common_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16_pool_v1.runtime_common.py",
+  "sbatch_script": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16_pool_v1.pool_worker.sbatch"
+}

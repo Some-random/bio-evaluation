@@ -1,0 +1,2455 @@
+{
+  "branch": "MF",
+  "class_count": 489,
+  "selection_rule": "Complete global released annotation-header vocabulary in exact source order; no test-positive selection",
+  "source_annotation_path": "sources/deepfri_contract_audit_2026-10-15/zenodo__GeneOntology__nrPDB-GO_annot.tsv",
+  "source_annotation_sha256": "6748e4e5f2d5024e31763f524b6df5132eebc8ccc1d8d6470faee6049c9065e9",
+  "description_source": "Exact released 2019.06.18 annotation header",
+  "classes": [
+    {
+      "index": 0,
+      "class_id": "GO:0016681",
+      "description": "oxidoreductase activity, acting on diphenols and related substances as donors, cytochrome as acceptor"
+    },
+    {
+      "index": 1,
+      "class_id": "GO:0005126",
+      "description": "cytokine receptor binding"
+    },
+    {
+      "index": 2,
+      "class_id": "GO:0008134",
+      "description": "transcription factor binding"
+    },
+    {
+      "index": 3,
+      "class_id": "GO:0016168",
+      "description": "chlorophyll binding"
+    },
+    {
+      "index": 4,
+      "class_id": "GO:0045182",
+      "description": "translation regulator activity"
+    },
+    {
+      "index": 5,
+      "class_id": "GO:0004532",
+      "description": "exoribonuclease activity"
+    },
+    {
+      "index": 6,
+      "class_id": "GO:0003918",
+      "description": "DNA topoisomerase type II (double strand cut, ATP-hydrolyzing) activity"
+    },
+    {
+      "index": 7,
+      "class_id": "GO:0003755",
+      "description": "peptidyl-prolyl cis-trans isomerase activity"
+    },
+    {
+      "index": 8,
+      "class_id": "GO:0004540",
+      "description": "ribonuclease activity"
+    },
+    {
+      "index": 9,
+      "class_id": "GO:0032559",
+      "description": "adenyl ribonucleotide binding"
+    },
+    {
+      "index": 10,
+      "class_id": "GO:0008144",
+      "description": "drug binding"
+    },
+    {
+      "index": 11,
+      "class_id": "GO:0019843",
+      "description": "rRNA binding"
+    },
+    {
+      "index": 12,
+      "class_id": "GO:0008320",
+      "description": "protein transmembrane transporter activity"
+    },
+    {
+      "index": 13,
+      "class_id": "GO:0016884",
+      "description": "carbon-nitrogen ligase activity, with glutamine as amido-N-donor"
+    },
+    {
+      "index": 14,
+      "class_id": "GO:0016893",
+      "description": "endonuclease activity, active with either ribo- or deoxyribonucleic acids and producing 5'-phosphomonoesters"
+    },
+    {
+      "index": 15,
+      "class_id": "GO:0016151",
+      "description": "nickel cation binding"
+    },
+    {
+      "index": 16,
+      "class_id": "GO:0043178",
+      "description": "alcohol binding"
+    },
+    {
+      "index": 17,
+      "class_id": "GO:0004364",
+      "description": "glutathione transferase activity"
+    },
+    {
+      "index": 18,
+      "class_id": "GO:0004180",
+      "description": "carboxypeptidase activity"
+    },
+    {
+      "index": 19,
+      "class_id": "GO:0003823",
+      "description": "antigen binding"
+    },
+    {
+      "index": 20,
+      "class_id": "GO:0008422",
+      "description": "beta-glucosidase activity"
+    },
+    {
+      "index": 21,
+      "class_id": "GO:1901982",
+      "description": "maltose binding"
+    },
+    {
+      "index": 22,
+      "class_id": "GO:0022857",
+      "description": "transmembrane transporter activity"
+    },
+    {
+      "index": 23,
+      "class_id": "GO:0019825",
+      "description": "oxygen binding"
+    },
+    {
+      "index": 24,
+      "class_id": "GO:0030234",
+      "description": "enzyme regulator activity"
+    },
+    {
+      "index": 25,
+      "class_id": "GO:0003714",
+      "description": "transcription corepressor activity"
+    },
+    {
+      "index": 26,
+      "class_id": "GO:0051920",
+      "description": "peroxiredoxin activity"
+    },
+    {
+      "index": 27,
+      "class_id": "GO:0008658",
+      "description": "penicillin binding"
+    },
+    {
+      "index": 28,
+      "class_id": "GO:0016655",
+      "description": "oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor"
+    },
+    {
+      "index": 29,
+      "class_id": "GO:0034061",
+      "description": "DNA polymerase activity"
+    },
+    {
+      "index": 30,
+      "class_id": "GO:0016614",
+      "description": "oxidoreductase activity, acting on CH-OH group of donors"
+    },
+    {
+      "index": 31,
+      "class_id": "GO:0042054",
+      "description": "histone methyltransferase activity"
+    },
+    {
+      "index": 32,
+      "class_id": "GO:0008289",
+      "description": "lipid binding"
+    },
+    {
+      "index": 33,
+      "class_id": "GO:0002020",
+      "description": "protease binding"
+    },
+    {
+      "index": 34,
+      "class_id": "GO:0042379",
+      "description": "chemokine receptor binding"
+    },
+    {
+      "index": 35,
+      "class_id": "GO:0070011",
+      "description": "peptidase activity, acting on L-amino acid peptides"
+    },
+    {
+      "index": 36,
+      "class_id": "GO:0008236",
+      "description": "serine-type peptidase activity"
+    },
+    {
+      "index": 37,
+      "class_id": "GO:0016861",
+      "description": "intramolecular oxidoreductase activity, interconverting aldoses and ketoses"
+    },
+    {
+      "index": 38,
+      "class_id": "GO:0003700",
+      "description": "DNA-binding transcription factor activity"
+    },
+    {
+      "index": 39,
+      "class_id": "GO:0016651",
+      "description": "oxidoreductase activity, acting on NAD(P)H"
+    },
+    {
+      "index": 40,
+      "class_id": "GO:0016743",
+      "description": "carboxyl- or carbamoyltransferase activity"
+    },
+    {
+      "index": 41,
+      "class_id": "GO:0004520",
+      "description": "endodeoxyribonuclease activity"
+    },
+    {
+      "index": 42,
+      "class_id": "GO:0016301",
+      "description": "kinase activity"
+    },
+    {
+      "index": 43,
+      "class_id": "GO:0015144",
+      "description": "carbohydrate transmembrane transporter activity"
+    },
+    {
+      "index": 44,
+      "class_id": "GO:0030597",
+      "description": "RNA glycosylase activity"
+    },
+    {
+      "index": 45,
+      "class_id": "GO:0004713",
+      "description": "protein tyrosine kinase activity"
+    },
+    {
+      "index": 46,
+      "class_id": "GO:0016769",
+      "description": "transferase activity, transferring nitrogenous groups"
+    },
+    {
+      "index": 47,
+      "class_id": "GO:0017171",
+      "description": "serine hydrolase activity"
+    },
+    {
+      "index": 48,
+      "class_id": "GO:0015078",
+      "description": "proton transmembrane transporter activity"
+    },
+    {
+      "index": 49,
+      "class_id": "GO:0016709",
+      "description": "oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, NAD(P)H as one donor, and incorporation of one atom of oxygen"
+    },
+    {
+      "index": 50,
+      "class_id": "GO:0050897",
+      "description": "cobalt ion binding"
+    },
+    {
+      "index": 51,
+      "class_id": "GO:0008483",
+      "description": "transaminase activity"
+    },
+    {
+      "index": 52,
+      "class_id": "GO:0052689",
+      "description": "carboxylic ester hydrolase activity"
+    },
+    {
+      "index": 53,
+      "class_id": "GO:0019904",
+      "description": "protein domain specific binding"
+    },
+    {
+      "index": 54,
+      "class_id": "GO:0016638",
+      "description": "oxidoreductase activity, acting on the CH-NH2 group of donors"
+    },
+    {
+      "index": 55,
+      "class_id": "GO:0004812",
+      "description": "aminoacyl-tRNA ligase activity"
+    },
+    {
+      "index": 56,
+      "class_id": "GO:0005230",
+      "description": "extracellular ligand-gated ion channel activity"
+    },
+    {
+      "index": 57,
+      "class_id": "GO:0016829",
+      "description": "lyase activity"
+    },
+    {
+      "index": 58,
+      "class_id": "GO:0016894",
+      "description": "endonuclease activity, active with either ribo- or deoxyribonucleic acids and producing 3'-phosphomonoesters"
+    },
+    {
+      "index": 59,
+      "class_id": "GO:0019239",
+      "description": "deaminase activity"
+    },
+    {
+      "index": 60,
+      "class_id": "GO:0022829",
+      "description": "wide pore channel activity"
+    },
+    {
+      "index": 61,
+      "class_id": "GO:1901681",
+      "description": "sulfur compound binding"
+    },
+    {
+      "index": 62,
+      "class_id": "GO:0098772",
+      "description": "molecular function regulator"
+    },
+    {
+      "index": 63,
+      "class_id": "GO:0008009",
+      "description": "chemokine activity"
+    },
+    {
+      "index": 64,
+      "class_id": "GO:0070063",
+      "description": "RNA polymerase binding"
+    },
+    {
+      "index": 65,
+      "class_id": "GO:0070003",
+      "description": "threonine-type peptidase activity"
+    },
+    {
+      "index": 66,
+      "class_id": "GO:0015079",
+      "description": "potassium ion transmembrane transporter activity"
+    },
+    {
+      "index": 67,
+      "class_id": "GO:0048029",
+      "description": "monosaccharide binding"
+    },
+    {
+      "index": 68,
+      "class_id": "GO:0008080",
+      "description": "N-acetyltransferase activity"
+    },
+    {
+      "index": 69,
+      "class_id": "GO:0046812",
+      "description": "host cell surface binding"
+    },
+    {
+      "index": 70,
+      "class_id": "GO:0016774",
+      "description": "phosphotransferase activity, carboxyl group as acceptor"
+    },
+    {
+      "index": 71,
+      "class_id": "GO:0008242",
+      "description": "omega peptidase activity"
+    },
+    {
+      "index": 72,
+      "class_id": "GO:0008170",
+      "description": "N-methyltransferase activity"
+    },
+    {
+      "index": 73,
+      "class_id": "GO:0008017",
+      "description": "microtubule binding"
+    },
+    {
+      "index": 74,
+      "class_id": "GO:0016746",
+      "description": "transferase activity, transferring acyl groups"
+    },
+    {
+      "index": 75,
+      "class_id": "GO:0016857",
+      "description": "racemase and epimerase activity, acting on carbohydrates and derivatives"
+    },
+    {
+      "index": 76,
+      "class_id": "GO:0008135",
+      "description": "translation factor activity, RNA binding"
+    },
+    {
+      "index": 77,
+      "class_id": "GO:0004185",
+      "description": "serine-type carboxypeptidase activity"
+    },
+    {
+      "index": 78,
+      "class_id": "GO:0004536",
+      "description": "deoxyribonuclease activity"
+    },
+    {
+      "index": 79,
+      "class_id": "GO:0008235",
+      "description": "metalloexopeptidase activity"
+    },
+    {
+      "index": 80,
+      "class_id": "GO:0101005",
+      "description": "ubiquitinyl hydrolase activity"
+    },
+    {
+      "index": 81,
+      "class_id": "GO:0016825",
+      "description": "hydrolase activity, acting on acid phosphorus-nitrogen bonds"
+    },
+    {
+      "index": 82,
+      "class_id": "GO:0030674",
+      "description": "protein-macromolecule adaptor activity"
+    },
+    {
+      "index": 83,
+      "class_id": "GO:0004177",
+      "description": "aminopeptidase activity"
+    },
+    {
+      "index": 84,
+      "class_id": "GO:0004722",
+      "description": "protein serine/threonine phosphatase activity"
+    },
+    {
+      "index": 85,
+      "class_id": "GO:0043177",
+      "description": "organic acid binding"
+    },
+    {
+      "index": 86,
+      "class_id": "GO:0019200",
+      "description": "carbohydrate kinase activity"
+    },
+    {
+      "index": 87,
+      "class_id": "GO:0005319",
+      "description": "lipid transporter activity"
+    },
+    {
+      "index": 88,
+      "class_id": "GO:0017076",
+      "description": "purine nucleotide binding"
+    },
+    {
+      "index": 89,
+      "class_id": "GO:0016775",
+      "description": "phosphotransferase activity, nitrogenous group as acceptor"
+    },
+    {
+      "index": 90,
+      "class_id": "GO:0019842",
+      "description": "vitamin binding"
+    },
+    {
+      "index": 91,
+      "class_id": "GO:0004298",
+      "description": "threonine-type endopeptidase activity"
+    },
+    {
+      "index": 92,
+      "class_id": "GO:0072341",
+      "description": "modified amino acid binding"
+    },
+    {
+      "index": 93,
+      "class_id": "GO:0015925",
+      "description": "galactosidase activity"
+    },
+    {
+      "index": 94,
+      "class_id": "GO:0016813",
+      "description": "hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amidines"
+    },
+    {
+      "index": 95,
+      "class_id": "GO:0051539",
+      "description": "4 iron, 4 sulfur cluster binding"
+    },
+    {
+      "index": 96,
+      "class_id": "GO:0005249",
+      "description": "voltage-gated potassium channel activity"
+    },
+    {
+      "index": 97,
+      "class_id": "GO:0048030",
+      "description": "disaccharide binding"
+    },
+    {
+      "index": 98,
+      "class_id": "GO:0005524",
+      "description": "ATP binding"
+    },
+    {
+      "index": 99,
+      "class_id": "GO:0008810",
+      "description": "cellulase activity"
+    },
+    {
+      "index": 100,
+      "class_id": "GO:0016855",
+      "description": "racemase and epimerase activity, acting on amino acids and derivatives"
+    },
+    {
+      "index": 101,
+      "class_id": "GO:0008081",
+      "description": "phosphoric diester hydrolase activity"
+    },
+    {
+      "index": 102,
+      "class_id": "GO:0060090",
+      "description": "molecular adaptor activity"
+    },
+    {
+      "index": 103,
+      "class_id": "GO:0019840",
+      "description": "isoprenoid binding"
+    },
+    {
+      "index": 104,
+      "class_id": "GO:0051015",
+      "description": "actin filament binding"
+    },
+    {
+      "index": 105,
+      "class_id": "GO:0008198",
+      "description": "ferrous iron binding"
+    },
+    {
+      "index": 106,
+      "class_id": "GO:0046912",
+      "description": "transferase activity, transferring acyl groups, acyl groups converted into alkyl on transfer"
+    },
+    {
+      "index": 107,
+      "class_id": "GO:0009055",
+      "description": "electron transfer activity"
+    },
+    {
+      "index": 108,
+      "class_id": "GO:0090079",
+      "description": "translation regulator activity, nucleic acid binding"
+    },
+    {
+      "index": 109,
+      "class_id": "GO:0008121",
+      "description": "ubiquinol-cytochrome-c reductase activity"
+    },
+    {
+      "index": 110,
+      "class_id": "GO:0004312",
+      "description": "fatty acid synthase activity"
+    },
+    {
+      "index": 111,
+      "class_id": "GO:0017069",
+      "description": "snRNA binding"
+    },
+    {
+      "index": 112,
+      "class_id": "GO:0140318",
+      "description": "protein transporter activity"
+    },
+    {
+      "index": 113,
+      "class_id": "GO:0004784",
+      "description": "superoxide dismutase activity"
+    },
+    {
+      "index": 114,
+      "class_id": "GO:0035639",
+      "description": "purine ribonucleoside triphosphate binding"
+    },
+    {
+      "index": 115,
+      "class_id": "GO:0016765",
+      "description": "transferase activity, transferring alkyl or aryl (other than methyl) groups"
+    },
+    {
+      "index": 116,
+      "class_id": "GO:0016679",
+      "description": "oxidoreductase activity, acting on diphenols and related substances as donors"
+    },
+    {
+      "index": 117,
+      "class_id": "GO:0008238",
+      "description": "exopeptidase activity"
+    },
+    {
+      "index": 118,
+      "class_id": "GO:0015103",
+      "description": "inorganic anion transmembrane transporter activity"
+    },
+    {
+      "index": 119,
+      "class_id": "GO:0004869",
+      "description": "cysteine-type endopeptidase inhibitor activity"
+    },
+    {
+      "index": 120,
+      "class_id": "GO:0051087",
+      "description": "chaperone binding"
+    },
+    {
+      "index": 121,
+      "class_id": "GO:0004553",
+      "description": "hydrolase activity, hydrolyzing O-glycosyl compounds"
+    },
+    {
+      "index": 122,
+      "class_id": "GO:0038023",
+      "description": "signaling receptor activity"
+    },
+    {
+      "index": 123,
+      "class_id": "GO:0005344",
+      "description": "oxygen carrier activity"
+    },
+    {
+      "index": 124,
+      "class_id": "GO:0140097",
+      "description": "catalytic activity, acting on DNA"
+    },
+    {
+      "index": 125,
+      "class_id": "GO:0018024",
+      "description": "histone-lysine N-methyltransferase activity"
+    },
+    {
+      "index": 126,
+      "class_id": "GO:0016721",
+      "description": "oxidoreductase activity, acting on superoxide radicals as acceptor"
+    },
+    {
+      "index": 127,
+      "class_id": "GO:0008234",
+      "description": "cysteine-type peptidase activity"
+    },
+    {
+      "index": 128,
+      "class_id": "GO:0031406",
+      "description": "carboxylic acid binding"
+    },
+    {
+      "index": 129,
+      "class_id": "GO:0004112",
+      "description": "cyclic-nucleotide phosphodiesterase activity"
+    },
+    {
+      "index": 130,
+      "class_id": "GO:0016798",
+      "description": "hydrolase activity, acting on glycosyl bonds"
+    },
+    {
+      "index": 131,
+      "class_id": "GO:0016730",
+      "description": "oxidoreductase activity, acting on iron-sulfur proteins as donors"
+    },
+    {
+      "index": 132,
+      "class_id": "GO:0042887",
+      "description": "amide transmembrane transporter activity"
+    },
+    {
+      "index": 133,
+      "class_id": "GO:0019887",
+      "description": "protein kinase regulator activity"
+    },
+    {
+      "index": 134,
+      "class_id": "GO:0004197",
+      "description": "cysteine-type endopeptidase activity"
+    },
+    {
+      "index": 135,
+      "class_id": "GO:0005509",
+      "description": "calcium ion binding"
+    },
+    {
+      "index": 136,
+      "class_id": "GO:0050660",
+      "description": "flavin adenine dinucleotide binding"
+    },
+    {
+      "index": 137,
+      "class_id": "GO:0016462",
+      "description": "pyrophosphatase activity"
+    },
+    {
+      "index": 138,
+      "class_id": "GO:0004550",
+      "description": "nucleoside diphosphate kinase activity"
+    },
+    {
+      "index": 139,
+      "class_id": "GO:0031625",
+      "description": "ubiquitin protein ligase binding"
+    },
+    {
+      "index": 140,
+      "class_id": "GO:0034062",
+      "description": "5'-3' RNA polymerase activity"
+    },
+    {
+      "index": 141,
+      "class_id": "GO:0061629",
+      "description": "RNA polymerase II-specific DNA-binding transcription factor binding"
+    },
+    {
+      "index": 142,
+      "class_id": "GO:0019001",
+      "description": "guanyl nucleotide binding"
+    },
+    {
+      "index": 143,
+      "class_id": "GO:0016702",
+      "description": "oxidoreductase activity, acting on single donors with incorporation of molecular oxygen, incorporation of two atoms of oxygen"
+    },
+    {
+      "index": 144,
+      "class_id": "GO:0042393",
+      "description": "histone binding"
+    },
+    {
+      "index": 145,
+      "class_id": "GO:0030247",
+      "description": "polysaccharide binding"
+    },
+    {
+      "index": 146,
+      "class_id": "GO:0008138",
+      "description": "protein tyrosine/serine/threonine phosphatase activity"
+    },
+    {
+      "index": 147,
+      "class_id": "GO:0004402",
+      "description": "histone acetyltransferase activity"
+    },
+    {
+      "index": 148,
+      "class_id": "GO:0032550",
+      "description": "purine ribonucleoside binding"
+    },
+    {
+      "index": 149,
+      "class_id": "GO:0015002",
+      "description": "heme-copper terminal oxidase activity"
+    },
+    {
+      "index": 150,
+      "class_id": "GO:0070180",
+      "description": "large ribosomal subunit rRNA binding"
+    },
+    {
+      "index": 151,
+      "class_id": "GO:0043022",
+      "description": "ribosome binding"
+    },
+    {
+      "index": 152,
+      "class_id": "GO:0003690",
+      "description": "double-stranded DNA binding"
+    },
+    {
+      "index": 153,
+      "class_id": "GO:0004386",
+      "description": "helicase activity"
+    },
+    {
+      "index": 154,
+      "class_id": "GO:0031267",
+      "description": "small GTPase binding"
+    },
+    {
+      "index": 155,
+      "class_id": "GO:0019901",
+      "description": "protein kinase binding"
+    },
+    {
+      "index": 156,
+      "class_id": "GO:0016817",
+      "description": "hydrolase activity, acting on acid anhydrides"
+    },
+    {
+      "index": 157,
+      "class_id": "GO:0003707",
+      "description": "steroid hormone receptor activity"
+    },
+    {
+      "index": 158,
+      "class_id": "GO:0008047",
+      "description": "enzyme activator activity"
+    },
+    {
+      "index": 159,
+      "class_id": "GO:0004518",
+      "description": "nuclease activity"
+    },
+    {
+      "index": 160,
+      "class_id": "GO:0008168",
+      "description": "methyltransferase activity"
+    },
+    {
+      "index": 161,
+      "class_id": "GO:0005085",
+      "description": "guanyl-nucleotide exchange factor activity"
+    },
+    {
+      "index": 162,
+      "class_id": "GO:0102567",
+      "description": "phospholipase A2 activity (consuming 1,2-dipalmitoylphosphatidylcholine)"
+    },
+    {
+      "index": 163,
+      "class_id": "GO:0004857",
+      "description": "enzyme inhibitor activity"
+    },
+    {
+      "index": 164,
+      "class_id": "GO:0005504",
+      "description": "fatty acid binding"
+    },
+    {
+      "index": 165,
+      "class_id": "GO:0097599",
+      "description": "xylanase activity"
+    },
+    {
+      "index": 166,
+      "class_id": "GO:0016877",
+      "description": "ligase activity, forming carbon-sulfur bonds"
+    },
+    {
+      "index": 167,
+      "class_id": "GO:0015926",
+      "description": "glucosidase activity"
+    },
+    {
+      "index": 168,
+      "class_id": "GO:0140104",
+      "description": "molecular carrier activity"
+    },
+    {
+      "index": 169,
+      "class_id": "GO:0001664",
+      "description": "G protein-coupled receptor binding"
+    },
+    {
+      "index": 170,
+      "class_id": "GO:0042803",
+      "description": "protein homodimerization activity"
+    },
+    {
+      "index": 171,
+      "class_id": "GO:0015631",
+      "description": "tubulin binding"
+    },
+    {
+      "index": 172,
+      "class_id": "GO:0060089",
+      "description": "molecular transducer activity"
+    },
+    {
+      "index": 173,
+      "class_id": "GO:0004623",
+      "description": "phospholipase A2 activity"
+    },
+    {
+      "index": 174,
+      "class_id": "GO:0000981",
+      "description": "DNA-binding transcription factor activity, RNA polymerase II-specific"
+    },
+    {
+      "index": 175,
+      "class_id": "GO:0019787",
+      "description": "ubiquitin-like protein transferase activity"
+    },
+    {
+      "index": 176,
+      "class_id": "GO:0032561",
+      "description": "guanyl ribonucleotide binding"
+    },
+    {
+      "index": 177,
+      "class_id": "GO:0046789",
+      "description": "host cell surface receptor binding"
+    },
+    {
+      "index": 178,
+      "class_id": "GO:0016903",
+      "description": "oxidoreductase activity, acting on the aldehyde or oxo group of donors"
+    },
+    {
+      "index": 179,
+      "class_id": "GO:0042562",
+      "description": "hormone binding"
+    },
+    {
+      "index": 180,
+      "class_id": "GO:0070851",
+      "description": "growth factor receptor binding"
+    },
+    {
+      "index": 181,
+      "class_id": "GO:0099094",
+      "description": "ligand-gated cation channel activity"
+    },
+    {
+      "index": 182,
+      "class_id": "GO:0008276",
+      "description": "protein methyltransferase activity"
+    },
+    {
+      "index": 183,
+      "class_id": "GO:0016410",
+      "description": "N-acyltransferase activity"
+    },
+    {
+      "index": 184,
+      "class_id": "GO:0047661",
+      "description": "amino-acid racemase activity"
+    },
+    {
+      "index": 185,
+      "class_id": "GO:0140110",
+      "description": "transcription regulator activity"
+    },
+    {
+      "index": 186,
+      "class_id": "GO:0005096",
+      "description": "GTPase activator activity"
+    },
+    {
+      "index": 187,
+      "class_id": "GO:0051082",
+      "description": "unfolded protein binding"
+    },
+    {
+      "index": 188,
+      "class_id": "GO:0016667",
+      "description": "oxidoreductase activity, acting on a sulfur group of donors"
+    },
+    {
+      "index": 189,
+      "class_id": "GO:0003697",
+      "description": "single-stranded DNA binding"
+    },
+    {
+      "index": 190,
+      "class_id": "GO:0008061",
+      "description": "chitin binding"
+    },
+    {
+      "index": 191,
+      "class_id": "GO:0030246",
+      "description": "carbohydrate binding"
+    },
+    {
+      "index": 192,
+      "class_id": "GO:0008233",
+      "description": "peptidase activity"
+    },
+    {
+      "index": 193,
+      "class_id": "GO:0044325",
+      "description": "ion channel binding"
+    },
+    {
+      "index": 194,
+      "class_id": "GO:0031369",
+      "description": "translation initiation factor binding"
+    },
+    {
+      "index": 195,
+      "class_id": "GO:0016879",
+      "description": "ligase activity, forming carbon-nitrogen bonds"
+    },
+    {
+      "index": 196,
+      "class_id": "GO:0034212",
+      "description": "peptide N-acetyltransferase activity"
+    },
+    {
+      "index": 197,
+      "class_id": "GO:0004888",
+      "description": "transmembrane signaling receptor activity"
+    },
+    {
+      "index": 198,
+      "class_id": "GO:0019208",
+      "description": "phosphatase regulator activity"
+    },
+    {
+      "index": 199,
+      "class_id": "GO:0046914",
+      "description": "transition metal ion binding"
+    },
+    {
+      "index": 200,
+      "class_id": "GO:0008408",
+      "description": "3'-5' exonuclease activity"
+    },
+    {
+      "index": 201,
+      "class_id": "GO:0061783",
+      "description": "peptidoglycan muralytic activity"
+    },
+    {
+      "index": 202,
+      "class_id": "GO:0016868",
+      "description": "intramolecular transferase activity, phosphotransferases"
+    },
+    {
+      "index": 203,
+      "class_id": "GO:0019205",
+      "description": "nucleobase-containing compound kinase activity"
+    },
+    {
+      "index": 204,
+      "class_id": "GO:0004089",
+      "description": "carbonate dehydratase activity"
+    },
+    {
+      "index": 205,
+      "class_id": "GO:0016747",
+      "description": "transferase activity, transferring acyl groups other than amino-acyl groups"
+    },
+    {
+      "index": 206,
+      "class_id": "GO:0016742",
+      "description": "hydroxymethyl-, formyl- and related transferase activity"
+    },
+    {
+      "index": 207,
+      "class_id": "GO:0004519",
+      "description": "endonuclease activity"
+    },
+    {
+      "index": 208,
+      "class_id": "GO:0003712",
+      "description": "transcription coregulator activity"
+    },
+    {
+      "index": 209,
+      "class_id": "GO:0005216",
+      "description": "ion channel activity"
+    },
+    {
+      "index": 210,
+      "class_id": "GO:0016891",
+      "description": "endoribonuclease activity, producing 5'-phosphomonoesters"
+    },
+    {
+      "index": 211,
+      "class_id": "GO:0003887",
+      "description": "DNA-directed DNA polymerase activity"
+    },
+    {
+      "index": 212,
+      "class_id": "GO:0016881",
+      "description": "acid-amino acid ligase activity"
+    },
+    {
+      "index": 213,
+      "class_id": "GO:0005262",
+      "description": "calcium channel activity"
+    },
+    {
+      "index": 214,
+      "class_id": "GO:0005198",
+      "description": "structural molecule activity"
+    },
+    {
+      "index": 215,
+      "class_id": "GO:0003678",
+      "description": "DNA helicase activity"
+    },
+    {
+      "index": 216,
+      "class_id": "GO:0019900",
+      "description": "kinase binding"
+    },
+    {
+      "index": 217,
+      "class_id": "GO:0022804",
+      "description": "active transmembrane transporter activity"
+    },
+    {
+      "index": 218,
+      "class_id": "GO:0016849",
+      "description": "phosphorus-oxygen lyase activity"
+    },
+    {
+      "index": 219,
+      "class_id": "GO:0045296",
+      "description": "cadherin binding"
+    },
+    {
+      "index": 220,
+      "class_id": "GO:0016846",
+      "description": "carbon-sulfur lyase activity"
+    },
+    {
+      "index": 221,
+      "class_id": "GO:0017080",
+      "description": "sodium channel regulator activity"
+    },
+    {
+      "index": 222,
+      "class_id": "GO:0005525",
+      "description": "GTP binding"
+    },
+    {
+      "index": 223,
+      "class_id": "GO:0015252",
+      "description": "proton channel activity"
+    },
+    {
+      "index": 224,
+      "class_id": "GO:0005125",
+      "description": "cytokine activity"
+    },
+    {
+      "index": 225,
+      "class_id": "GO:0016833",
+      "description": "oxo-acid-lyase activity"
+    },
+    {
+      "index": 226,
+      "class_id": "GO:0016676",
+      "description": "oxidoreductase activity, acting on a heme group of donors, oxygen as acceptor"
+    },
+    {
+      "index": 227,
+      "class_id": "GO:0005539",
+      "description": "glycosaminoglycan binding"
+    },
+    {
+      "index": 228,
+      "class_id": "GO:0016705",
+      "description": "oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen"
+    },
+    {
+      "index": 229,
+      "class_id": "GO:0050839",
+      "description": "cell adhesion molecule binding"
+    },
+    {
+      "index": 230,
+      "class_id": "GO:0016209",
+      "description": "antioxidant activity"
+    },
+    {
+      "index": 231,
+      "class_id": "GO:0022803",
+      "description": "passive transmembrane transporter activity"
+    },
+    {
+      "index": 232,
+      "class_id": "GO:0019871",
+      "description": "sodium channel inhibitor activity"
+    },
+    {
+      "index": 233,
+      "class_id": "GO:0008757",
+      "description": "S-adenosylmethionine-dependent methyltransferase activity"
+    },
+    {
+      "index": 234,
+      "class_id": "GO:0003924",
+      "description": "GTPase activity"
+    },
+    {
+      "index": 235,
+      "class_id": "GO:1990837",
+      "description": "sequence-specific double-stranded DNA binding"
+    },
+    {
+      "index": 236,
+      "class_id": "GO:0016838",
+      "description": "carbon-oxygen lyase activity, acting on phosphates"
+    },
+    {
+      "index": 237,
+      "class_id": "GO:0005267",
+      "description": "potassium channel activity"
+    },
+    {
+      "index": 238,
+      "class_id": "GO:0004601",
+      "description": "peroxidase activity"
+    },
+    {
+      "index": 239,
+      "class_id": "GO:0061733",
+      "description": "peptide-lysine-N-acetyltransferase activity"
+    },
+    {
+      "index": 240,
+      "class_id": "GO:0016776",
+      "description": "phosphotransferase activity, phosphate group as acceptor"
+    },
+    {
+      "index": 241,
+      "class_id": "GO:0004896",
+      "description": "cytokine receptor activity"
+    },
+    {
+      "index": 242,
+      "class_id": "GO:0019899",
+      "description": "enzyme binding"
+    },
+    {
+      "index": 243,
+      "class_id": "GO:0004252",
+      "description": "serine-type endopeptidase activity"
+    },
+    {
+      "index": 244,
+      "class_id": "GO:0016818",
+      "description": "hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides"
+    },
+    {
+      "index": 245,
+      "class_id": "GO:0036459",
+      "description": "thiol-dependent ubiquitinyl hydrolase activity"
+    },
+    {
+      "index": 246,
+      "class_id": "GO:0004549",
+      "description": "tRNA-specific ribonuclease activity"
+    },
+    {
+      "index": 247,
+      "class_id": "GO:0042578",
+      "description": "phosphoric ester hydrolase activity"
+    },
+    {
+      "index": 248,
+      "class_id": "GO:0016782",
+      "description": "transferase activity, transferring sulfur-containing groups"
+    },
+    {
+      "index": 249,
+      "class_id": "GO:0008092",
+      "description": "cytoskeletal protein binding"
+    },
+    {
+      "index": 250,
+      "class_id": "GO:0016853",
+      "description": "isomerase activity"
+    },
+    {
+      "index": 251,
+      "class_id": "GO:0032182",
+      "description": "ubiquitin-like protein binding"
+    },
+    {
+      "index": 252,
+      "class_id": "GO:0016830",
+      "description": "carbon-carbon lyase activity"
+    },
+    {
+      "index": 253,
+      "class_id": "GO:0097367",
+      "description": "carbohydrate derivative binding"
+    },
+    {
+      "index": 254,
+      "class_id": "GO:0017016",
+      "description": "Ras GTPase binding"
+    },
+    {
+      "index": 255,
+      "class_id": "GO:0022853",
+      "description": "active ion transmembrane transporter activity"
+    },
+    {
+      "index": 256,
+      "class_id": "GO:0003725",
+      "description": "double-stranded RNA binding"
+    },
+    {
+      "index": 257,
+      "class_id": "GO:0003677",
+      "description": "DNA binding"
+    },
+    {
+      "index": 258,
+      "class_id": "GO:0030546",
+      "description": "signaling receptor activator activity"
+    },
+    {
+      "index": 259,
+      "class_id": "GO:0030695",
+      "description": "GTPase regulator activity"
+    },
+    {
+      "index": 260,
+      "class_id": "GO:0003684",
+      "description": "damaged DNA binding"
+    },
+    {
+      "index": 261,
+      "class_id": "GO:0003954",
+      "description": "NADH dehydrogenase activity"
+    },
+    {
+      "index": 262,
+      "class_id": "GO:0016773",
+      "description": "phosphotransferase activity, alcohol group as acceptor"
+    },
+    {
+      "index": 263,
+      "class_id": "GO:0044389",
+      "description": "ubiquitin-like protein ligase binding"
+    },
+    {
+      "index": 264,
+      "class_id": "GO:0046906",
+      "description": "tetrapyrrole binding"
+    },
+    {
+      "index": 265,
+      "class_id": "GO:0004308",
+      "description": "exo-alpha-sialidase activity"
+    },
+    {
+      "index": 266,
+      "class_id": "GO:0005506",
+      "description": "iron ion binding"
+    },
+    {
+      "index": 267,
+      "class_id": "GO:0003779",
+      "description": "actin binding"
+    },
+    {
+      "index": 268,
+      "class_id": "GO:0031072",
+      "description": "heat shock protein binding"
+    },
+    {
+      "index": 269,
+      "class_id": "GO:0016675",
+      "description": "oxidoreductase activity, acting on a heme group of donors"
+    },
+    {
+      "index": 270,
+      "class_id": "GO:0000049",
+      "description": "tRNA binding"
+    },
+    {
+      "index": 271,
+      "class_id": "GO:0051427",
+      "description": "hormone receptor binding"
+    },
+    {
+      "index": 272,
+      "class_id": "GO:0003968",
+      "description": "RNA-directed 5'-3' RNA polymerase activity"
+    },
+    {
+      "index": 273,
+      "class_id": "GO:0003777",
+      "description": "microtubule motor activity"
+    },
+    {
+      "index": 274,
+      "class_id": "GO:0016811",
+      "description": "hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in linear amides"
+    },
+    {
+      "index": 275,
+      "class_id": "GO:0019902",
+      "description": "phosphatase binding"
+    },
+    {
+      "index": 276,
+      "class_id": "GO:0016741",
+      "description": "transferase activity, transferring one-carbon groups"
+    },
+    {
+      "index": 277,
+      "class_id": "GO:0140102",
+      "description": "catalytic activity, acting on a rRNA"
+    },
+    {
+      "index": 278,
+      "class_id": "GO:0016645",
+      "description": "oxidoreductase activity, acting on the CH-NH group of donors"
+    },
+    {
+      "index": 279,
+      "class_id": "GO:0140375",
+      "description": "immune receptor activity"
+    },
+    {
+      "index": 280,
+      "class_id": "GO:0019783",
+      "description": "ubiquitin-like protein-specific protease activity"
+    },
+    {
+      "index": 281,
+      "class_id": "GO:0030594",
+      "description": "neurotransmitter receptor activity"
+    },
+    {
+      "index": 282,
+      "class_id": "GO:0004672",
+      "description": "protein kinase activity"
+    },
+    {
+      "index": 283,
+      "class_id": "GO:0071949",
+      "description": "FAD binding"
+    },
+    {
+      "index": 284,
+      "class_id": "GO:0061659",
+      "description": "ubiquitin-like protein ligase activity"
+    },
+    {
+      "index": 285,
+      "class_id": "GO:0004725",
+      "description": "protein tyrosine phosphatase activity"
+    },
+    {
+      "index": 286,
+      "class_id": "GO:0004129",
+      "description": "cytochrome-c oxidase activity"
+    },
+    {
+      "index": 287,
+      "class_id": "GO:0016836",
+      "description": "hydro-lyase activity"
+    },
+    {
+      "index": 288,
+      "class_id": "GO:0046933",
+      "description": "proton-transporting ATP synthase activity, rotational mechanism"
+    },
+    {
+      "index": 289,
+      "class_id": "GO:0019888",
+      "description": "protein phosphatase regulator activity"
+    },
+    {
+      "index": 290,
+      "class_id": "GO:0061135",
+      "description": "endopeptidase regulator activity"
+    },
+    {
+      "index": 291,
+      "class_id": "GO:0008083",
+      "description": "growth factor activity"
+    },
+    {
+      "index": 292,
+      "class_id": "GO:0099106",
+      "description": "ion channel regulator activity"
+    },
+    {
+      "index": 293,
+      "class_id": "GO:0051540",
+      "description": "metal cluster binding"
+    },
+    {
+      "index": 294,
+      "class_id": "GO:0016772",
+      "description": "transferase activity, transferring phosphorus-containing groups"
+    },
+    {
+      "index": 295,
+      "class_id": "GO:0004867",
+      "description": "serine-type endopeptidase inhibitor activity"
+    },
+    {
+      "index": 296,
+      "class_id": "GO:0008194",
+      "description": "UDP-glycosyltransferase activity"
+    },
+    {
+      "index": 297,
+      "class_id": "GO:0051537",
+      "description": "2 iron, 2 sulfur cluster binding"
+    },
+    {
+      "index": 298,
+      "class_id": "GO:0003727",
+      "description": "single-stranded RNA binding"
+    },
+    {
+      "index": 299,
+      "class_id": "GO:0030598",
+      "description": "rRNA N-glycosylase activity"
+    },
+    {
+      "index": 300,
+      "class_id": "GO:0043565",
+      "description": "sequence-specific DNA binding"
+    },
+    {
+      "index": 301,
+      "class_id": "GO:0015267",
+      "description": "channel activity"
+    },
+    {
+      "index": 302,
+      "class_id": "GO:0016646",
+      "description": "oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor"
+    },
+    {
+      "index": 303,
+      "class_id": "GO:0016799",
+      "description": "hydrolase activity, hydrolyzing N-glycosyl compounds"
+    },
+    {
+      "index": 304,
+      "class_id": "GO:0016278",
+      "description": "lysine N-methyltransferase activity"
+    },
+    {
+      "index": 305,
+      "class_id": "GO:0042626",
+      "description": "ATPase-coupled transmembrane transporter activity"
+    },
+    {
+      "index": 306,
+      "class_id": "GO:0016783",
+      "description": "sulfurtransferase activity"
+    },
+    {
+      "index": 307,
+      "class_id": "GO:0140101",
+      "description": "catalytic activity, acting on a tRNA"
+    },
+    {
+      "index": 308,
+      "class_id": "GO:0016814",
+      "description": "hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amidines"
+    },
+    {
+      "index": 309,
+      "class_id": "GO:0008800",
+      "description": "beta-lactamase activity"
+    },
+    {
+      "index": 310,
+      "class_id": "GO:0051213",
+      "description": "dioxygenase activity"
+    },
+    {
+      "index": 311,
+      "class_id": "GO:0004033",
+      "description": "aldo-keto reductase (NADP) activity"
+    },
+    {
+      "index": 312,
+      "class_id": "GO:0016701",
+      "description": "oxidoreductase activity, acting on single donors with incorporation of molecular oxygen"
+    },
+    {
+      "index": 313,
+      "class_id": "GO:0016840",
+      "description": "carbon-nitrogen lyase activity"
+    },
+    {
+      "index": 314,
+      "class_id": "GO:0001883",
+      "description": "purine nucleoside binding"
+    },
+    {
+      "index": 315,
+      "class_id": "GO:0015035",
+      "description": "protein disulfide oxidoreductase activity"
+    },
+    {
+      "index": 316,
+      "class_id": "GO:0004222",
+      "description": "metalloendopeptidase activity"
+    },
+    {
+      "index": 317,
+      "class_id": "GO:0042625",
+      "description": "ATPase-coupled ion transmembrane transporter activity"
+    },
+    {
+      "index": 318,
+      "class_id": "GO:0070279",
+      "description": "vitamin B6 binding"
+    },
+    {
+      "index": 319,
+      "class_id": "GO:0003682",
+      "description": "chromatin binding"
+    },
+    {
+      "index": 320,
+      "class_id": "GO:0004659",
+      "description": "prenyltransferase activity"
+    },
+    {
+      "index": 321,
+      "class_id": "GO:0016725",
+      "description": "oxidoreductase activity, acting on CH or CH2 groups"
+    },
+    {
+      "index": 322,
+      "class_id": "GO:0016875",
+      "description": "ligase activity, forming carbon-oxygen bonds"
+    },
+    {
+      "index": 323,
+      "class_id": "GO:0005543",
+      "description": "phospholipid binding"
+    },
+    {
+      "index": 324,
+      "class_id": "GO:0016597",
+      "description": "amino acid binding"
+    },
+    {
+      "index": 325,
+      "class_id": "GO:0008324",
+      "description": "cation transmembrane transporter activity"
+    },
+    {
+      "index": 326,
+      "class_id": "GO:0022834",
+      "description": "ligand-gated channel activity"
+    },
+    {
+      "index": 327,
+      "class_id": "GO:0001067",
+      "description": "regulatory region nucleic acid binding"
+    },
+    {
+      "index": 328,
+      "class_id": "GO:0004807",
+      "description": "triose-phosphate isomerase activity"
+    },
+    {
+      "index": 329,
+      "class_id": "GO:0022832",
+      "description": "voltage-gated channel activity"
+    },
+    {
+      "index": 330,
+      "class_id": "GO:0022835",
+      "description": "transmitter-gated channel activity"
+    },
+    {
+      "index": 331,
+      "class_id": "GO:0005179",
+      "description": "hormone activity"
+    },
+    {
+      "index": 332,
+      "class_id": "GO:0050145",
+      "description": "nucleoside monophosphate kinase activity"
+    },
+    {
+      "index": 333,
+      "class_id": "GO:0005507",
+      "description": "copper ion binding"
+    },
+    {
+      "index": 334,
+      "class_id": "GO:0016279",
+      "description": "protein-lysine N-methyltransferase activity"
+    },
+    {
+      "index": 335,
+      "class_id": "GO:0061630",
+      "description": "ubiquitin protein ligase activity"
+    },
+    {
+      "index": 336,
+      "class_id": "GO:0016859",
+      "description": "cis-trans isomerase activity"
+    },
+    {
+      "index": 337,
+      "class_id": "GO:0032555",
+      "description": "purine ribonucleotide binding"
+    },
+    {
+      "index": 338,
+      "class_id": "GO:0015318",
+      "description": "inorganic molecular entity transmembrane transporter activity"
+    },
+    {
+      "index": 339,
+      "class_id": "GO:0030554",
+      "description": "adenyl nucleotide binding"
+    },
+    {
+      "index": 340,
+      "class_id": "GO:0070008",
+      "description": "serine-type exopeptidase activity"
+    },
+    {
+      "index": 341,
+      "class_id": "GO:0004497",
+      "description": "monooxygenase activity"
+    },
+    {
+      "index": 342,
+      "class_id": "GO:0016758",
+      "description": "transferase activity, transferring hexosyl groups"
+    },
+    {
+      "index": 343,
+      "class_id": "GO:0016812",
+      "description": "hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amides"
+    },
+    {
+      "index": 344,
+      "class_id": "GO:0060589",
+      "description": "nucleoside-triphosphatase regulator activity"
+    },
+    {
+      "index": 345,
+      "class_id": "GO:0016810",
+      "description": "hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds"
+    },
+    {
+      "index": 346,
+      "class_id": "GO:0030414",
+      "description": "peptidase inhibitor activity"
+    },
+    {
+      "index": 347,
+      "class_id": "GO:0016668",
+      "description": "oxidoreductase activity, acting on a sulfur group of donors, NAD(P) as acceptor"
+    },
+    {
+      "index": 348,
+      "class_id": "GO:0016661",
+      "description": "oxidoreductase activity, acting on other nitrogenous compounds as donors"
+    },
+    {
+      "index": 349,
+      "class_id": "GO:0050136",
+      "description": "NADH dehydrogenase (quinone) activity"
+    },
+    {
+      "index": 350,
+      "class_id": "GO:0008237",
+      "description": "metallopeptidase activity"
+    },
+    {
+      "index": 351,
+      "class_id": "GO:0017048",
+      "description": "Rho GTPase binding"
+    },
+    {
+      "index": 352,
+      "class_id": "GO:0015276",
+      "description": "ligand-gated ion channel activity"
+    },
+    {
+      "index": 353,
+      "class_id": "GO:0016788",
+      "description": "hydrolase activity, acting on ester bonds"
+    },
+    {
+      "index": 354,
+      "class_id": "GO:0015288",
+      "description": "porin activity"
+    },
+    {
+      "index": 355,
+      "class_id": "GO:0016835",
+      "description": "carbon-oxygen lyase activity"
+    },
+    {
+      "index": 356,
+      "class_id": "GO:0090729",
+      "description": "toxin activity"
+    },
+    {
+      "index": 357,
+      "class_id": "GO:0016684",
+      "description": "oxidoreductase activity, acting on peroxide as acceptor"
+    },
+    {
+      "index": 358,
+      "class_id": "GO:0019865",
+      "description": "immunoglobulin binding"
+    },
+    {
+      "index": 359,
+      "class_id": "GO:0032549",
+      "description": "ribonucleoside binding"
+    },
+    {
+      "index": 360,
+      "class_id": "GO:0004674",
+      "description": "protein serine/threonine kinase activity"
+    },
+    {
+      "index": 361,
+      "class_id": "GO:0102568",
+      "description": "phospholipase A2 activity consuming 1,2-dioleoylphosphatidylethanolamine)"
+    },
+    {
+      "index": 362,
+      "class_id": "GO:0016722",
+      "description": "oxidoreductase activity, oxidizing metal ions"
+    },
+    {
+      "index": 363,
+      "class_id": "GO:0016248",
+      "description": "channel inhibitor activity"
+    },
+    {
+      "index": 364,
+      "class_id": "GO:0003743",
+      "description": "translation initiation factor activity"
+    },
+    {
+      "index": 365,
+      "class_id": "GO:0008200",
+      "description": "ion channel inhibitor activity"
+    },
+    {
+      "index": 366,
+      "class_id": "GO:0004714",
+      "description": "transmembrane receptor protein tyrosine kinase activity"
+    },
+    {
+      "index": 367,
+      "class_id": "GO:0019104",
+      "description": "DNA N-glycosylase activity"
+    },
+    {
+      "index": 368,
+      "class_id": "GO:0008201",
+      "description": "heparin binding"
+    },
+    {
+      "index": 369,
+      "class_id": "GO:0070001",
+      "description": "aspartic-type peptidase activity"
+    },
+    {
+      "index": 370,
+      "class_id": "GO:0051536",
+      "description": "iron-sulfur cluster binding"
+    },
+    {
+      "index": 371,
+      "class_id": "GO:0000977",
+      "description": "RNA polymerase II transcription regulatory region sequence-specific DNA binding"
+    },
+    {
+      "index": 372,
+      "class_id": "GO:0140297",
+      "description": "DNA-binding transcription factor binding"
+    },
+    {
+      "index": 373,
+      "class_id": "GO:0019213",
+      "description": "deacetylase activity"
+    },
+    {
+      "index": 374,
+      "class_id": "GO:0022836",
+      "description": "gated channel activity"
+    },
+    {
+      "index": 375,
+      "class_id": "GO:0010181",
+      "description": "FMN binding"
+    },
+    {
+      "index": 376,
+      "class_id": "GO:0003713",
+      "description": "transcription coactivator activity"
+    },
+    {
+      "index": 377,
+      "class_id": "GO:0042802",
+      "description": "identical protein binding"
+    },
+    {
+      "index": 378,
+      "class_id": "GO:0016874",
+      "description": "ligase activity"
+    },
+    {
+      "index": 379,
+      "class_id": "GO:0019199",
+      "description": "transmembrane receptor protein kinase activity"
+    },
+    {
+      "index": 380,
+      "class_id": "GO:0019829",
+      "description": "ATPase-coupled cation transmembrane transporter activity"
+    },
+    {
+      "index": 381,
+      "class_id": "GO:0070566",
+      "description": "adenylyltransferase activity"
+    },
+    {
+      "index": 382,
+      "class_id": "GO:0046983",
+      "description": "protein dimerization activity"
+    },
+    {
+      "index": 383,
+      "class_id": "GO:0046982",
+      "description": "protein heterodimerization activity"
+    },
+    {
+      "index": 384,
+      "class_id": "GO:0008270",
+      "description": "zinc ion binding"
+    },
+    {
+      "index": 385,
+      "class_id": "GO:0051287",
+      "description": "NAD binding"
+    },
+    {
+      "index": 386,
+      "class_id": "GO:0004175",
+      "description": "endopeptidase activity"
+    },
+    {
+      "index": 387,
+      "class_id": "GO:0015075",
+      "description": "ion transmembrane transporter activity"
+    },
+    {
+      "index": 388,
+      "class_id": "GO:0016790",
+      "description": "thiolester hydrolase activity"
+    },
+    {
+      "index": 389,
+      "class_id": "GO:0017137",
+      "description": "Rab GTPase binding"
+    },
+    {
+      "index": 390,
+      "class_id": "GO:0008094",
+      "description": "DNA-dependent ATPase activity"
+    },
+    {
+      "index": 391,
+      "class_id": "GO:0046527",
+      "description": "glucosyltransferase activity"
+    },
+    {
+      "index": 392,
+      "class_id": "GO:0016628",
+      "description": "oxidoreductase activity, acting on the CH-CH group of donors, NAD or NADP as acceptor"
+    },
+    {
+      "index": 393,
+      "class_id": "GO:0015929",
+      "description": "hexosaminidase activity"
+    },
+    {
+      "index": 394,
+      "class_id": "GO:0015077",
+      "description": "monovalent inorganic cation transmembrane transporter activity"
+    },
+    {
+      "index": 395,
+      "class_id": "GO:0016796",
+      "description": "exonuclease activity, active with either ribo- or deoxyribonucleic acids and producing 5'-phosphomonoesters"
+    },
+    {
+      "index": 396,
+      "class_id": "GO:0008171",
+      "description": "O-methyltransferase activity"
+    },
+    {
+      "index": 397,
+      "class_id": "GO:0003735",
+      "description": "structural constituent of ribosome"
+    },
+    {
+      "index": 398,
+      "class_id": "GO:0033293",
+      "description": "monocarboxylic acid binding"
+    },
+    {
+      "index": 399,
+      "class_id": "GO:0000287",
+      "description": "magnesium ion binding"
+    },
+    {
+      "index": 400,
+      "class_id": "GO:0005261",
+      "description": "cation channel activity"
+    },
+    {
+      "index": 401,
+      "class_id": "GO:0004521",
+      "description": "endoribonuclease activity"
+    },
+    {
+      "index": 402,
+      "class_id": "GO:0016887",
+      "description": "ATPase activity"
+    },
+    {
+      "index": 403,
+      "class_id": "GO:0008374",
+      "description": "O-acyltransferase activity"
+    },
+    {
+      "index": 404,
+      "class_id": "GO:0016779",
+      "description": "nucleotidyltransferase activity"
+    },
+    {
+      "index": 405,
+      "class_id": "GO:0016888",
+      "description": "endodeoxyribonuclease activity, producing 5'-phosphomonoesters"
+    },
+    {
+      "index": 406,
+      "class_id": "GO:0008175",
+      "description": "tRNA methyltransferase activity"
+    },
+    {
+      "index": 407,
+      "class_id": "GO:0005102",
+      "description": "signaling receptor binding"
+    },
+    {
+      "index": 408,
+      "class_id": "GO:0017056",
+      "description": "structural constituent of nuclear pore"
+    },
+    {
+      "index": 409,
+      "class_id": "GO:0016997",
+      "description": "alpha-sialidase activity"
+    },
+    {
+      "index": 410,
+      "class_id": "GO:0036361",
+      "description": "racemase activity, acting on amino acids and derivatives"
+    },
+    {
+      "index": 411,
+      "class_id": "GO:0016831",
+      "description": "carboxy-lyase activity"
+    },
+    {
+      "index": 412,
+      "class_id": "GO:0003774",
+      "description": "motor activity"
+    },
+    {
+      "index": 413,
+      "class_id": "GO:0000976",
+      "description": "transcription regulatory region sequence-specific DNA binding"
+    },
+    {
+      "index": 414,
+      "class_id": "GO:0022890",
+      "description": "inorganic cation transmembrane transporter activity"
+    },
+    {
+      "index": 415,
+      "class_id": "GO:0050661",
+      "description": "NADP binding"
+    },
+    {
+      "index": 416,
+      "class_id": "GO:0035091",
+      "description": "phosphatidylinositol binding"
+    },
+    {
+      "index": 417,
+      "class_id": "GO:0015291",
+      "description": "secondary active transmembrane transporter activity"
+    },
+    {
+      "index": 418,
+      "class_id": "GO:0003899",
+      "description": "DNA-directed 5'-3' RNA polymerase activity"
+    },
+    {
+      "index": 419,
+      "class_id": "GO:0003724",
+      "description": "RNA helicase activity"
+    },
+    {
+      "index": 420,
+      "class_id": "GO:0016854",
+      "description": "racemase and epimerase activity"
+    },
+    {
+      "index": 421,
+      "class_id": "GO:0008173",
+      "description": "RNA methyltransferase activity"
+    },
+    {
+      "index": 422,
+      "class_id": "GO:0008199",
+      "description": "ferric iron binding"
+    },
+    {
+      "index": 423,
+      "class_id": "GO:0140098",
+      "description": "catalytic activity, acting on RNA"
+    },
+    {
+      "index": 424,
+      "class_id": "GO:0005516",
+      "description": "calmodulin binding"
+    },
+    {
+      "index": 425,
+      "class_id": "GO:0016791",
+      "description": "phosphatase activity"
+    },
+    {
+      "index": 426,
+      "class_id": "GO:0061134",
+      "description": "peptidase regulator activity"
+    },
+    {
+      "index": 427,
+      "class_id": "GO:0015085",
+      "description": "calcium ion transmembrane transporter activity"
+    },
+    {
+      "index": 428,
+      "class_id": "GO:0005215",
+      "description": "transporter activity"
+    },
+    {
+      "index": 429,
+      "class_id": "GO:0016832",
+      "description": "aldehyde-lyase activity"
+    },
+    {
+      "index": 430,
+      "class_id": "GO:1904680",
+      "description": "peptide transmembrane transporter activity"
+    },
+    {
+      "index": 431,
+      "class_id": "GO:0047429",
+      "description": "nucleoside-triphosphate diphosphatase activity"
+    },
+    {
+      "index": 432,
+      "class_id": "GO:0016866",
+      "description": "intramolecular transferase activity"
+    },
+    {
+      "index": 433,
+      "class_id": "GO:0070403",
+      "description": "NAD+ binding"
+    },
+    {
+      "index": 434,
+      "class_id": "GO:0043021",
+      "description": "ribonucleoprotein complex binding"
+    },
+    {
+      "index": 435,
+      "class_id": "GO:0016298",
+      "description": "lipase activity"
+    },
+    {
+      "index": 436,
+      "class_id": "GO:0048018",
+      "description": "receptor ligand activity"
+    },
+    {
+      "index": 437,
+      "class_id": "GO:0001882",
+      "description": "nucleoside binding"
+    },
+    {
+      "index": 438,
+      "class_id": "GO:0016896",
+      "description": "exoribonuclease activity, producing 5'-phosphomonoesters"
+    },
+    {
+      "index": 439,
+      "class_id": "GO:0005496",
+      "description": "steroid binding"
+    },
+    {
+      "index": 440,
+      "class_id": "GO:0017111",
+      "description": "nucleoside-triphosphatase activity"
+    },
+    {
+      "index": 441,
+      "class_id": "GO:0030545",
+      "description": "receptor regulator activity"
+    },
+    {
+      "index": 442,
+      "class_id": "GO:0022824",
+      "description": "transmitter-gated ion channel activity"
+    },
+    {
+      "index": 443,
+      "class_id": "GO:0004866",
+      "description": "endopeptidase inhibitor activity"
+    },
+    {
+      "index": 444,
+      "class_id": "GO:0004620",
+      "description": "phospholipase activity"
+    },
+    {
+      "index": 445,
+      "class_id": "GO:0020037",
+      "description": "heme binding"
+    },
+    {
+      "index": 446,
+      "class_id": "GO:0008066",
+      "description": "glutamate receptor activity"
+    },
+    {
+      "index": 447,
+      "class_id": "GO:0008509",
+      "description": "anion transmembrane transporter activity"
+    },
+    {
+      "index": 448,
+      "class_id": "GO:0033218",
+      "description": "amide binding"
+    },
+    {
+      "index": 449,
+      "class_id": "GO:0005244",
+      "description": "voltage-gated ion channel activity"
+    },
+    {
+      "index": 450,
+      "class_id": "GO:0016860",
+      "description": "intramolecular oxidoreductase activity"
+    },
+    {
+      "index": 451,
+      "class_id": "GO:0048038",
+      "description": "quinone binding"
+    },
+    {
+      "index": 452,
+      "class_id": "GO:0044877",
+      "description": "protein-containing complex binding"
+    },
+    {
+      "index": 453,
+      "class_id": "GO:0042277",
+      "description": "peptide binding"
+    },
+    {
+      "index": 454,
+      "class_id": "GO:0004527",
+      "description": "exonuclease activity"
+    },
+    {
+      "index": 455,
+      "class_id": "GO:0030170",
+      "description": "pyridoxal phosphate binding"
+    },
+    {
+      "index": 456,
+      "class_id": "GO:0070492",
+      "description": "oligosaccharide binding"
+    },
+    {
+      "index": 457,
+      "class_id": "GO:0016757",
+      "description": "transferase activity, transferring glycosyl groups"
+    },
+    {
+      "index": 458,
+      "class_id": "GO:0003746",
+      "description": "translation elongation factor activity"
+    },
+    {
+      "index": 459,
+      "class_id": "GO:0003916",
+      "description": "DNA topoisomerase activity"
+    },
+    {
+      "index": 460,
+      "class_id": "GO:0030145",
+      "description": "manganese ion binding"
+    },
+    {
+      "index": 461,
+      "class_id": "GO:0022884",
+      "description": "macromolecule transmembrane transporter activity"
+    },
+    {
+      "index": 462,
+      "class_id": "GO:0016627",
+      "description": "oxidoreductase activity, acting on the CH-CH group of donors"
+    },
+    {
+      "index": 463,
+      "class_id": "GO:0003723",
+      "description": "RNA binding"
+    },
+    {
+      "index": 464,
+      "class_id": "GO:0019207",
+      "description": "kinase regulator activity"
+    },
+    {
+      "index": 465,
+      "class_id": "GO:0004930",
+      "description": "G protein-coupled receptor activity"
+    },
+    {
+      "index": 466,
+      "class_id": "GO:0097747",
+      "description": "RNA polymerase activity"
+    },
+    {
+      "index": 467,
+      "class_id": "GO:0005088",
+      "description": "Ras guanyl-nucleotide exchange factor activity"
+    },
+    {
+      "index": 468,
+      "class_id": "GO:0016763",
+      "description": "transferase activity, transferring pentosyl groups"
+    },
+    {
+      "index": 469,
+      "class_id": "GO:0003796",
+      "description": "lysozyme activity"
+    },
+    {
+      "index": 470,
+      "class_id": "GO:0008137",
+      "description": "NADH dehydrogenase (ubiquinone) activity"
+    },
+    {
+      "index": 471,
+      "class_id": "GO:0008649",
+      "description": "rRNA methyltransferase activity"
+    },
+    {
+      "index": 472,
+      "class_id": "GO:0022843",
+      "description": "voltage-gated cation channel activity"
+    },
+    {
+      "index": 473,
+      "class_id": "GO:0004721",
+      "description": "phosphoprotein phosphatase activity"
+    },
+    {
+      "index": 474,
+      "class_id": "GO:0015036",
+      "description": "disulfide oxidoreductase activity"
+    },
+    {
+      "index": 475,
+      "class_id": "GO:0140096",
+      "description": "catalytic activity, acting on a protein"
+    },
+    {
+      "index": 476,
+      "class_id": "GO:0016247",
+      "description": "channel regulator activity"
+    },
+    {
+      "index": 477,
+      "class_id": "GO:0046873",
+      "description": "metal ion transmembrane transporter activity"
+    },
+    {
+      "index": 478,
+      "class_id": "GO:0034987",
+      "description": "immunoglobulin receptor binding"
+    },
+    {
+      "index": 479,
+      "class_id": "GO:0051020",
+      "description": "GTPase binding"
+    },
+    {
+      "index": 480,
+      "class_id": "GO:0015399",
+      "description": "primary active transmembrane transporter activity"
+    },
+    {
+      "index": 481,
+      "class_id": "GO:0004190",
+      "description": "aspartic-type endopeptidase activity"
+    },
+    {
+      "index": 482,
+      "class_id": "GO:0016407",
+      "description": "acetyltransferase activity"
+    },
+    {
+      "index": 483,
+      "class_id": "GO:0016616",
+      "description": "oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor"
+    },
+    {
+      "index": 484,
+      "class_id": "GO:0004842",
+      "description": "ubiquitin-protein transferase activity"
+    },
+    {
+      "index": 485,
+      "class_id": "GO:0004970",
+      "description": "ionotropic glutamate receptor activity"
+    },
+    {
+      "index": 486,
+      "class_id": "GO:0016620",
+      "description": "oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor"
+    },
+    {
+      "index": 487,
+      "class_id": "GO:0003729",
+      "description": "mRNA binding"
+    },
+    {
+      "index": 488,
+      "class_id": "GO:0032553",
+      "description": "ribonucleotide binding"
+    }
+  ]
+}
