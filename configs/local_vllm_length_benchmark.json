@@ -1,0 +1,35 @@
+{
+  "protocol": "synthetic_length_aware_full_batches_v1",
+  "synthetic_only": true,
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "required_server": {
+    "dtype": "bfloat16",
+    "tensor_parallel_size": 1,
+    "max_model_len": 65536,
+    "max_num_seqs": 32,
+    "prefix_caching": true,
+    "loopback_only": true,
+    "exclusive_while_benchmarking": true
+  },
+  "input_tokens": [1536, 4096, 7000, 16384, 45056],
+  "output_tokens": 4096,
+  "concurrencies": [4, 8, 16, 32],
+  "workload_seed": 20261018,
+  "generation": {"temperature": 1.0, "top_p": 0.95, "top_k": 20, "seed": 42},
+  "warmup_requests": 4,
+  "warmup_output_tokens": 64,
+  "request_timeout_seconds": 1200,
+  "metrics_interval_seconds": 1,
+  "maximum_measured_kv_fraction": 0.85,
+  "projection_safety_multiplier": 1.10,
+  "notes": [
+    "No Slurm job is submitted and no GPU is allocated by this client. Root coordinates the eight-GPU ceiling and an exclusive loopback replica.",
+    "At each length, measure one full batch at concurrency four, then measure higher concurrency only when its projected KV peak fits the declared headroom.",
+    "The next-point projection is the last measured peak KV fraction times its concurrency ratio times the safety multiplier. This is a memory-admission heuristic, not a measured result.",
+    "All measured requests have the same forced 4096-token decode length. Full-batch request counts grow with concurrency; total work therefore differs across points.",
+    "Missing live KV telemetry, any preemption, token-count mismatch or request failure prevents recommendations for that point. Skipped concurrency levels are explicitly unmeasured.",
+    "No held-out records, labels or biological responses are used. This synthetic completions workload does not assess answer quality or reproduce chat/thinking prompts.",
+    "The 45056-token profile measures independent synthetic long prompts, not the shared-prefix P16 workload. No production inference setting is edited by the client."
+  ]
+}
