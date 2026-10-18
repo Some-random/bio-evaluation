@@ -1,0 +1,59 @@
+{
+  "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026",
+  "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part011/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026-trajectories-2db044685dc74eba0053.tar.gz",
+  "asset_id": 652089200,
+  "archive_sha256": "bb3f294f3ec269d3d9ad9222124d9c9a782ef5f3cf9293c008c5819a5861fce8",
+  "archive_bytes": 10629,
+  "server_digest": "sha256:bb3f294f3ec269d3d9ad9222124d9c9a782ef5f3cf9293c008c5819a5861fce8",
+  "raw_request_response_json_preserved": true,
+  "cases": [
+    {
+      "filename": "4371441dd24cbc687e5cc3db1e682dd58a746236e2a8a56f35119dd1c776cbab.json",
+      "case_id": "fluorescence:test:26660",
+      "request_sha256": "d58cecdd5d07daa61cea2213a1da6c93a08ad530e2310ab20602e922976a5fdd",
+      "response_sha256": "db7bcde3564ad1bea29e24e40e3bff10f8a5b0d9522d14b0db07fced554ceef8",
+      "payload_sha256": "0f85643a5beda4425cb7038cd10ab19fc45fc4cd919ac400d59fd7536bc37107",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part011/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026-trajectories-2db044685dc74eba0053.tar.gz",
+      "archive_sha256": "bb3f294f3ec269d3d9ad9222124d9c9a782ef5f3cf9293c008c5819a5861fce8",
+      "request_member": "requests/4371441dd24cbc687e5cc3db1e682dd58a746236e2a8a56f35119dd1c776cbab.json",
+      "response_member": "responses/4371441dd24cbc687e5cc3db1e682dd58a746236e2a8a56f35119dd1c776cbab.json"
+    },
+    {
+      "filename": "99ab949f0190051afd8ff45c1dc1ef397d4b6b2e684dc8cb7c77455b017cd17e.json",
+      "case_id": "fluorescence:test:26661",
+      "request_sha256": "b46f6535e1836e994fd0806b631736f26874060e547c2ffe4b86e8962dc335b9",
+      "response_sha256": "cd76447beabcd41feec1ddc52fcf0c3f22b87c2d7788226819a8aacfd6012a81",
+      "payload_sha256": "ad7f3bd8d2630c938fb4f5fcb15d09bf6c6c990fce941829454640ec3f7b6417",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part011/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026-trajectories-2db044685dc74eba0053.tar.gz",
+      "archive_sha256": "bb3f294f3ec269d3d9ad9222124d9c9a782ef5f3cf9293c008c5819a5861fce8",
+      "request_member": "requests/99ab949f0190051afd8ff45c1dc1ef397d4b6b2e684dc8cb7c77455b017cd17e.json",
+      "response_member": "responses/99ab949f0190051afd8ff45c1dc1ef397d4b6b2e684dc8cb7c77455b017cd17e.json"
+    },
+    {
+      "filename": "b42679b3d1e987c01387fe787da53d9bee012647bfc713a90bfdb20f9684dc0e.json",
+      "case_id": "fluorescence:test:26659",
+      "request_sha256": "a6e38e763c28144218571d1358cdbe05f74fe593db2197b6e95607e3e7071b78",
+      "response_sha256": "c0530da6dac20c527b75aa0725e3e86c393028cffe9e4d1d6645c7c5f12d57c2",
+      "payload_sha256": "963fa0bfae3db2359ea5fa93008a103341bb298d6725ac93190aebd52cb1606c",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part011/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026-trajectories-2db044685dc74eba0053.tar.gz",
+      "archive_sha256": "bb3f294f3ec269d3d9ad9222124d9c9a782ef5f3cf9293c008c5819a5861fce8",
+      "request_member": "requests/b42679b3d1e987c01387fe787da53d9bee012647bfc713a90bfdb20f9684dc0e.json",
+      "response_member": "responses/b42679b3d1e987c01387fe787da53d9bee012647bfc713a90bfdb20f9684dc0e.json"
+    },
+    {
+      "filename": "dcc316ed781f64334235cfed646d64988709a6987486b9990aef677d8c9577bd.json",
+      "case_id": "fluorescence:test:26657",
+      "request_sha256": "d766227ffd4e8e7fdf73767123732919e071587405e4747e217306e813a23887",
+      "response_sha256": "d10899ec531ef7d5550a92e073a8c11c94a219aa3af137a952e5735a0549135a",
+      "payload_sha256": "e65f8c5161e16090e39b60539564fb6a4e87f363eb125efa364a7319878ed4b7",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part011/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026-trajectories-2db044685dc74eba0053.tar.gz",
+      "archive_sha256": "bb3f294f3ec269d3d9ad9222124d9c9a782ef5f3cf9293c008c5819a5861fce8",
+      "request_member": "requests/dcc316ed781f64334235cfed646d64988709a6987486b9990aef677d8c9577bd.json",
+      "response_member": "responses/dcc316ed781f64334235cfed646d64988709a6987486b9990aef677d8c9577bd.json"
+    }
+  ]
+}
