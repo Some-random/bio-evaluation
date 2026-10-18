@@ -232,6 +232,14 @@
     "status": "response_saved"
   },
   {
+    "archive": "shared_vllm_metadata_batches/6a9898b8a4ac01ef2ef561d6fb0d8f4aac8e9e0829504be3c4e159e568d5d11c.tar.gz",
+    "archive_sha256": "2f12363172906c7f682f4ab6cc8db6fb8fdb543024736792f2c9d1dfc302d377",
+    "filename": "7b2c9bd7ad3ff1ab16335166f6ce244cd855e5b087e34f47195ea73dc99429bd.json",
+    "member": "shared_vllm_dispatch/7b2c9bd7ad3ff1ab16335166f6ce244cd855e5b087e34f47195ea73dc99429bd.json",
+    "sha256": "c6c83955ee5513248f07943c78ce6a515c245a5f349a1cb2fdf90036cace207e",
+    "status": "response_saved"
+  },
+  {
     "archive": "shared_vllm_metadata_batches/f0507f6b496692859db0d583384453d863fa2b35a79c417805798fd76542833a.tar.gz",
     "archive_sha256": "ccb4c2e645420ade6791e56e029d6d6057246d670ee14263cc5fea38e8e5c265",
     "filename": "7bea8cd6ab2cf7f8d23f8a0bf73766c81ff0320fe5e129b53b47692b5d49cf78.json",
@@ -352,12 +360,12 @@
     "status": "response_saved"
   },
   {
-    "archive": "shared_vllm_metadata_batches/pending.tar.gz",
-    "archive_sha256": "ff3863ba28e795d23d689327f7981c76a2b44639b406f90e35fc13151fea9b83",
+    "archive": "shared_vllm_metadata_batches/6a9898b8a4ac01ef2ef561d6fb0d8f4aac8e9e0829504be3c4e159e568d5d11c.tar.gz",
+    "archive_sha256": "2f12363172906c7f682f4ab6cc8db6fb8fdb543024736792f2c9d1dfc302d377",
     "filename": "c61d830444b47d192a164546dc208dec409e321c087bfc97498e455a8d8ccf1e.json",
     "member": "shared_vllm_dispatch/c61d830444b47d192a164546dc208dec409e321c087bfc97498e455a8d8ccf1e.json",
-    "sha256": "c388ea0a25b2d5c46c26aec67f6d2f501bbb172512c094bcdb5ea7f7ee448915",
-    "status": "request_saved"
+    "sha256": "b5f9228734896a856a2cfcf07f134238b45c57a94d19931e17b3f1f0ea2d5068",
+    "status": "response_saved"
   },
   {
     "archive": "shared_vllm_metadata_batches/cfe40cc7eb0ae3a5c989537e27432e0a1cc4b36111794bc11157277cf6c27493.tar.gz",
@@ -462,5 +470,13 @@
     "member": "shared_vllm_dispatch/f7c3f20d1702279a08156ba0de0e58798831cef90fcc3032e35d3c490f1fb4c3.json",
     "sha256": "94a2d35621ba25e6e36619b9f3ec4f56a889a21bc2dd9a8e0a464aed8df4805a",
     "status": "response_saved"
+  },
+  {
+    "archive": "shared_vllm_metadata_batches/pending.tar.gz",
+    "archive_sha256": "80d2b44dd29cd17a332a97d843c147d0f06606cc68019bef6a5e92eb4f747d6a",
+    "filename": "fd5832a9d186965eb8a2b77a454e796d6ab619e9be5c621579c7b9e4477b2932.json",
+    "member": "shared_vllm_dispatch/fd5832a9d186965eb8a2b77a454e796d6ab619e9be5c621579c7b9e4477b2932.json",
+    "sha256": "aac8844caae3c74d9e08ab78848ed4e3ff507bdc067931d40d8e39bb237f6753",
+    "status": "request_saved"
   }
 ]
