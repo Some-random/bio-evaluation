@@ -8,14 +8,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 2773476.0,
-        "kv_fraction": 0.9901234567901235,
-        "preemptions": 1646.0,
-        "prompt_tokens": 7707941.0,
-        "running": 10.0,
-        "waiting": 54.0
+        "generation_tokens": 2789611.0,
+        "kv_fraction": 0.9703703703703703,
+        "preemptions": 1667.0,
+        "prompt_tokens": 7741009.0,
+        "running": 12.0,
+        "waiting": 52.0
       },
-      "preemption_delta": 4.0,
+      "preemption_delta": 1.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "adda75db85bbc6862b8dac08c774e950a0bb804dfe981b1a258d1a300228f78e"
     },
@@ -26,8 +26,8 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 2378157.0,
-        "kv_fraction": 0.9679012345679012,
+        "generation_tokens": 2379972.0,
+        "kv_fraction": 0.8790123456790123,
         "preemptions": 1513.0,
         "prompt_tokens": 8603590.0,
         "running": 12.0,
@@ -44,14 +44,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 2515884.0,
-        "kv_fraction": 0.9111111111111111,
-        "preemptions": 1390.0,
-        "prompt_tokens": 10656082.0,
-        "running": 17.0,
-        "waiting": 47.0
+        "generation_tokens": 2531156.0,
+        "kv_fraction": 0.9654320987654321,
+        "preemptions": 1391.0,
+        "prompt_tokens": 10700772.0,
+        "running": 14.0,
+        "waiting": 50.0
       },
-      "preemption_delta": 10.0,
+      "preemption_delta": 0.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "e76d7785c2b0aa7c44ddfc4fcd8627f15f37bcaf10ab91db7680a980799516a2"
     },
@@ -62,42 +62,42 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 2869775.0,
-        "kv_fraction": 0.9654320987654321,
-        "preemptions": 1373.0,
-        "prompt_tokens": 8960865.0,
-        "running": 9.0,
-        "waiting": 55.0
+        "generation_tokens": 2890652.0,
+        "kv_fraction": 0.980246913580247,
+        "preemptions": 1434.0,
+        "prompt_tokens": 9124620.0,
+        "running": 14.0,
+        "waiting": 50.0
       },
-      "preemption_delta": 0.0,
+      "preemption_delta": 12.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "fa210779888d71abf5db3a847d3c22e697ee657e5d6b9b9f73b9b2ebdac6d681"
     }
   ],
   "flags": [
     {
-      "delta": 4.0,
+      "delta": 1.0,
       "endpoint_id": "saturation_0",
       "type": "preemptions_increased"
     },
     {
       "endpoint_id": "saturation_0",
-      "fraction": 0.9901234567901235,
+      "fraction": 0.9703703703703703,
       "type": "high_kv_usage"
     },
     {
-      "endpoint_id": "saturation_1",
-      "fraction": 0.9679012345679012,
-      "type": "high_kv_usage"
-    },
-    {
-      "delta": 10.0,
       "endpoint_id": "saturation_2",
+      "fraction": 0.9654320987654321,
+      "type": "high_kv_usage"
+    },
+    {
+      "delta": 12.0,
+      "endpoint_id": "saturation_3",
       "type": "preemptions_increased"
     },
     {
       "endpoint_id": "saturation_3",
-      "fraction": 0.9654320987654321,
+      "fraction": 0.980246913580247,
       "type": "high_kv_usage"
     },
     {
@@ -112,7 +112,7 @@
   "plan_sha256": "b0215a7cde359bbf820eb2b7a1891eef7805e78d5989cb8edac150bd61bcfbd3",
   "planned_native_cases": 24061,
   "pool_stage": "evaluating",
-  "pool_stage_source_age_seconds": 16704.16909122467,
+  "pool_stage_source_age_seconds": 17015.029539108276,
   "pool_stage_source_updated_at_pacific": "2026-10-18T11:21:46.059841-07:00",
   "pool_stage_timestamp_is_not_a_runtime_heartbeat": true,
   "recent_response_metadata": [],
@@ -520,5 +520,5 @@
   ],
   "saved_responses_unique_logical_sources": 9397,
   "schema_version": 1,
-  "updated_at_pacific": "2026-10-18T16:00:11.979677-07:00"
+  "updated_at_pacific": "2026-10-18T16:05:22.684667-07:00"
 }
