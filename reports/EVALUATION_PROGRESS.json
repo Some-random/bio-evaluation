@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-18T00:21:16.449704+00:00",
+  "generatedAt": "2026-10-18T00:31:34.721176+00:00",
   "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-  "runSnapshotAt": "2026-10-18T00:21:16.449704+00:00",
+  "runSnapshotAt": "2026-10-18T00:31:34.721176+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-18T00:21:16.449704+00:00",
+    "updatedAt": "2026-10-18T00:31:34.721176+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
     "reports/RESULTS_AT_A_GLANCE.json": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
-    ".local/remaining_evaluations/supervisor_status.json": "e0d8e23c76c393735d1ad400c9064413bc243cb1d7dc888345f437d790822a46",
-    ".local/remaining_evaluations/upload_status.json": "bee8f2eee10613d70eb968323a4e4a845406102af2336b93efbb547ac7791a83"
+    ".local/remaining_evaluations/supervisor_status.json": "1c51249adf4c199d0c018e83aab61d1a3148e7107f4c0a571cb3830fc86eb475",
+    ".local/remaining_evaluations/upload_status.json": "bbe013987d2b392e6b86e606b27faf4fe9e80372fad93c6615861e8590ac532c"
   },
   "uploader": {
     "stage": "watching",
-    "commitSha": "25a1aa02c756d008d53a655d9062fa36d8eb10d9",
+    "commitSha": "d8ead2176014ad1a6e655ae444be95d4e44c1c38",
     "repositoryPrivateVerified": false
   },
   "scheduler": {
@@ -173,7 +173,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 34177,
+    "uploaded": 34349,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -198,10 +198,10 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 24096,
+      "uploaded": 24197,
       "saved": null,
       "generationRuns": 27,
-      "terminalRuns": 18,
+      "terminalRuns": 19,
       "allTerminal": false,
       "nativeMetricsValid": null,
       "progressSource": "uploaded_trajectories",
@@ -238,7 +238,7 @@
     {
       "taskId": "P08",
       "planned": 12851,
-      "uploaded": 0,
+      "uploaded": 7,
       "saved": null,
       "generationRuns": 13,
       "terminalRuns": 0,
@@ -320,7 +320,7 @@
     {
       "taskId": "P16",
       "planned": 5651,
-      "uploaded": 1460,
+      "uploaded": 1516,
       "saved": null,
       "generationRuns": 6,
       "terminalRuns": 1,
@@ -360,7 +360,7 @@
     {
       "taskId": "P29",
       "planned": 14872,
-      "uploaded": 3800,
+      "uploaded": 3808,
       "saved": null,
       "generationRuns": 15,
       "terminalRuns": 3,
@@ -405,7 +405,7 @@
   ],
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/upload_status.json",
-    "snapshotAt": "2026-10-18T00:21:16.449704+00:00",
+    "snapshotAt": "2026-10-18T00:31:34.721176+00:00",
     "fallback": true,
     "selection": "most_recent_valid_run_snapshot"
   },
