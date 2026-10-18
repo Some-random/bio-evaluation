@@ -17,7 +17,7 @@ BioReason, BioReason-Pro and Bio-posttrain settings are set aside from this main
 | Designing proteins | 6 | Antibody design; Finding a sequence for a desired shape; Protein sequence and structure generation; Building around a functional protein part; Designing proteins that bind a target; Making fluorescent proteins brighter | Propose a protein sequence or shape that meets specified requirements |
 | Protein shapes and motion | 5 | Local structure and residue prediction; Protein structure ranking; Protein folding; Protein shape changes, motion and stability; Structure-derived questions and output checks | What shape does this protein take? How does it move or stay folded? |
 | Understanding biomedical images | 2 | Biomedical visual question answering; Scientific figures, documents and visual conversations | Answer questions about medical images and scientific figures |
-| DNA, RNA and small molecules | 3 | Molecular interactions and binding affinity; RNA structure ranking; Small-molecule properties | Predict genetic effects, gene activity, molecular binding and chemical properties |
+| DNA, RNA and small molecules | 3 | Molecular interactions and binding affinity; RNA structure ranking; Small-molecule properties | Predict molecular binding, RNA structure and chemical properties |
 | **Total** | **31** | | |
 
 ## Worked examples
