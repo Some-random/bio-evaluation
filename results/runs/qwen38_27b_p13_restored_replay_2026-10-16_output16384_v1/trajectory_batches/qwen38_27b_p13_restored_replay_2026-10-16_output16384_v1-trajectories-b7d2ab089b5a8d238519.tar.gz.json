@@ -1,0 +1,35 @@
+{
+  "run_id": "qwen38_27b_p13_restored_replay_2026-10-16_output16384_v1",
+  "asset": "https://github.com/Some-random/bio-evaluation/releases/download/output-budget-revision-2026-10-18-trajectories/qwen38_27b_p13_restored_replay_2026-10-16_output16384_v1-trajectories-b7d2ab089b5a8d238519.tar.gz",
+  "asset_id": 654391642,
+  "archive_sha256": "208695266f4571c3119ab8bc850c43a8e1a95b31b78051fc19c1bdbe9a18f4fd",
+  "archive_bytes": 59242,
+  "server_digest": "sha256:208695266f4571c3119ab8bc850c43a8e1a95b31b78051fc19c1bdbe9a18f4fd",
+  "raw_request_response_json_preserved": true,
+  "cases": [
+    {
+      "filename": "00a30b74dc6de1110693c04a17888cc7599d2429464c6f03025f2f1089071b1c.json",
+      "case_id": "6JB6-A",
+      "request_sha256": "099ad9271e6a6e6d433e0c73976674a0de36d37a45e4ed364f2789fb65d0253c",
+      "response_sha256": "60dd9d67c890363bff5277d3873837e32ec19cea56663345c9bb92359b817c63",
+      "payload_sha256": "60c760c5741bb70bfdd305f546f7cb26f87ff2172d5fe731e39a527133730d48",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/output-budget-revision-2026-10-18-trajectories/qwen38_27b_p13_restored_replay_2026-10-16_output16384_v1-trajectories-b7d2ab089b5a8d238519.tar.gz",
+      "archive_sha256": "208695266f4571c3119ab8bc850c43a8e1a95b31b78051fc19c1bdbe9a18f4fd",
+      "request_member": "requests/00a30b74dc6de1110693c04a17888cc7599d2429464c6f03025f2f1089071b1c.json",
+      "response_member": "responses/00a30b74dc6de1110693c04a17888cc7599d2429464c6f03025f2f1089071b1c.json"
+    },
+    {
+      "filename": "1c9ea311e9e1592a2a1d438f2e8ca2e9eb6accccc04be48cf4484989a5c43f05.json",
+      "case_id": "6B3J-R",
+      "request_sha256": "8e2f33aa0f66ab360921a8e15766cbe6bf276a60df4cf4c4c903e52d4b20d485",
+      "response_sha256": "124e697f80ac9a25ba00d8d30fc671496cd4ca1815fb27ba11b5b85314ebaad9",
+      "payload_sha256": "0c491f6fcc4e574fa33686baf52b03203dab563c19a6a63f36730eb5405885b7",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/output-budget-revision-2026-10-18-trajectories/qwen38_27b_p13_restored_replay_2026-10-16_output16384_v1-trajectories-b7d2ab089b5a8d238519.tar.gz",
+      "archive_sha256": "208695266f4571c3119ab8bc850c43a8e1a95b31b78051fc19c1bdbe9a18f4fd",
+      "request_member": "requests/1c9ea311e9e1592a2a1d438f2e8ca2e9eb6accccc04be48cf4484989a5c43f05.json",
+      "response_member": "responses/1c9ea311e9e1592a2a1d438f2e8ca2e9eb6accccc04be48cf4484989a5c43f05.json"
+    }
+  ]
+}
