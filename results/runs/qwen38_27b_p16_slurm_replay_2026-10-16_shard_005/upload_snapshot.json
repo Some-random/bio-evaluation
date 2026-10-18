@@ -2,11 +2,13 @@
   "task_id": "P16",
   "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_005",
   "kind": "shard_or_test",
-  "uploaded_trajectories": 523,
+  "uploaded_trajectories": 531,
   "planned": 531,
-  "terminal": false,
-  "execution_success": false,
+  "terminal": true,
+  "execution_success": true,
+  "generation_exit_code": 0,
+  "scoring_exit_code": 0,
   "native_metrics_valid": null,
-  "complete_raw_coverage": false,
+  "complete_raw_coverage": true,
   "github_url": "https://github.com/Some-random/bio-evaluation/tree/main/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_005"
 }

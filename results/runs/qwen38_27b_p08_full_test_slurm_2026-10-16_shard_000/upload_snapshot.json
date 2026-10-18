@@ -2,11 +2,13 @@
   "task_id": "P08",
   "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_000",
   "kind": "shard_or_test",
-  "uploaded_trajectories": 1023,
+  "uploaded_trajectories": 1024,
   "planned": 1024,
-  "terminal": false,
-  "execution_success": false,
+  "terminal": true,
+  "execution_success": true,
+  "generation_exit_code": 0,
+  "scoring_exit_code": 0,
   "native_metrics_valid": null,
-  "complete_raw_coverage": false,
+  "complete_raw_coverage": true,
   "github_url": "https://github.com/Some-random/bio-evaluation/tree/main/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_000"
 }

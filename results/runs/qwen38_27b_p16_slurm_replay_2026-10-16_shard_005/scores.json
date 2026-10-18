@@ -1,0 +1,71 @@
+{
+  "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_005",
+  "task_id": "P16",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "protocol_variant": "QWEN_ZERO_SHOT_REACTION_FULL_SEQUENCE_ALL384_FULL_SOURCE_DESCRIPTIONS",
+  "planned": 531,
+  "requests_saved": 531,
+  "completed": 531,
+  "parsed": 115,
+  "invalid_outputs": 416,
+  "missing_or_failed_outputs": 0,
+  "statuses": {
+    "completed": 531
+  },
+  "finish_reasons": {
+    "stop": 141,
+    "length": 390
+  },
+  "token_usage": {
+    "prompt_tokens": 23760628,
+    "completion_tokens": 1953346,
+    "total_tokens": 25713974
+  },
+  "metrics": {
+    "accuracy": 0.0,
+    "correct": 0,
+    "planned": 531,
+    "parsed": 115,
+    "missing": 0,
+    "invalid": 416,
+    "all_case_policy": "Every original test row remains in denominator; missing/invalid predictions count incorrect."
+  },
+  "truncated_outputs": 390,
+  "input_modalities": [
+    "amino_acid_sequence",
+    "text"
+  ],
+  "scoring_output_lock_sha256": "ff0e5a3a4072af39971f0bf6314f8104e1216f1fb45297f6b4d76d62d84545af",
+  "case_scope": "task_shard_only",
+  "held_before_inference": 0,
+  "explanation_support_score": null,
+  "comparison_to_paper": "Native released Reaction test and384-class top1 accuracy; prompted Qwen has different representation/context/pretraining from ProtST. Closest native full-description comparator21.91% accuracy, ProtST Table11 printedp15 (rounded); paper pretraining-name29.85% is a separate label-text variant. Native text embeddings truncate each description at128tokens; Qwen receives all complete descriptions jointly.",
+  "interpretation": {
+    "likely_demands": {
+      "labels": [
+        "biological_outcome_prediction",
+        "sequence_representation"
+      ],
+      "status": "provisional analyst description; internal computation unknown"
+    },
+    "actually_supplied": "Archived full original amino-acid sequence, fixed classification objective and all384 complete source pretraining-template descriptions, including alternative names/comments. No per-protein target label, retrieval, tools or fewshot examples.",
+    "reference_answer_source": "Pinned native EC-derived Reaction integer class0..383 from original held-out LMDB; fixed global ontology constructed from official public class tables independently of test labels. Reference file hashed before inference and opened after output lock.",
+    "good_score_establishes": "Recovery of source outcomes on the declared released test under the fixed zero-shot protocol.",
+    "bad_score_establishes": "Limited outcome recovery for this input/regime; does not independently establish deficient general reasoning.",
+    "explanation_correctness": "Unassessed; correct prediction does not certify rationale and unsupported mechanism is not automatically false."
+  },
+  "contamination": "Reference labels excluded, inputs frozen, outputs hash-locked before scoring, no training or test-guided changes. Prior exposure to public source data unknown.",
+  "shard_index": 5,
+  "shard_count": 6,
+  "shard_size": 1024,
+  "full_test_case_count": 5651,
+  "source_start_index": 5120,
+  "source_stop_index": 5651,
+  "aggregate_config_file": "configs/local_reaction_p16_aggregate.json",
+  "full_input_file": "data/local_reaction_shards/P16/full/model_inputs.jsonl",
+  "full_input_sha256": "79b81ab1995c82c7ff38ad3efb7b35467c7e98f69bc94d7ad0fa6fcaa1b40811",
+  "full_review_file": "configs/local_reaction_p16_review.json",
+  "full_review_sha256": "a5e2b77bdcf3524a170d612e315cac728c5c2c0ac288b8d54fe6085706f2f951",
+  "shard_metric_interpretation": "Partial task only. Full-test native384-class accuracy is computed separately from the complete union of raw predictions; shard metric values must never be averaged."
+}
