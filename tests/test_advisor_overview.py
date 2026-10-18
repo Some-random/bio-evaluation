@@ -106,8 +106,8 @@ class AdvisorOverviewTests(unittest.TestCase):
         self.assertIn("not datasets or individual test questions", output)
         rows = [line.split("|") for line in output.splitlines() if line.startswith("| ")]
         counts = [int(row[2].strip()) for row in rows if row[2].strip().isdigit()]
-        self.assertEqual(counts, [5, 5, 4, 1, 6, 5, 2, 6])
-        self.assertEqual(sum(counts), 34)
+        self.assertEqual(counts, [5, 5, 4, 1, 6, 5, 2, 3])
+        self.assertEqual(sum(counts), 31)
 
     def test_companion_keeps_full_reasoning_and_additional_examples(self):
         with patch.object(render, "REPORTS", self.reports):
@@ -119,15 +119,42 @@ class AdvisorOverviewTests(unittest.TestCase):
         self.assertNotIn("Synthetic source correction.", output)
         self.assertNotIn("**Source check:**", output)
 
-    def test_every_dataset_is_preserved_without_run_bookkeeping(self):
+    def test_main_scope_excludes_whole_family_and_archive_preserves_every_dataset(self):
         output = self.overview()
+        excluded = set(render.main_scope()["excluded_task_ids"])
+        archive = render.archived_evaluations(self.data)
+        inventory = render.complete_inventory(self.data)
+        results = render.grouped_results(self.data)
         for group in self.data["groups"]:
-            self.assertIn(render.cell(group["dataset"]), output, group["id"])
+            dataset = render.cell(group["dataset"])
+            self.assertIn(dataset, inventory, group["id"])
+            if set(group["taskIds"]) & excluded:
+                self.assertNotIn(dataset, output, group["id"])
+                self.assertNotIn(dataset, results, group["id"])
+                self.assertIn(dataset, archive, group["id"])
+            else:
+                self.assertIn(dataset, output, group["id"])
+        self.assertIn("ARCHIVED_EVALUATIONS.md", output)
+        self.assertIn("all 64 settings", archive)
+        self.assertIn("retains 57", archive)
         for phrase in ["Run status", "Running or queued", "trajectories uploaded", "finished runs",
                        "runnable with the current setup", "Status / what's missing", "heartbeat"]:
             self.assertNotIn(phrase, output)
         self.assertIn("Input / required computation", output)
         self.assertEqual(self.data, self.original)
+
+    def test_scope_filters_mixed_protocol_groups_without_altering_source(self):
+        data = {"groups": [{"taskIds": ["P01", "P28"],
+            "protocols": [{"taskId": "P01"}, {"taskId": "P28"}],
+            "results": [{"taskId": "P01", "metricText": "0.0"},
+                {"taskId": "P28", "metricText": "1.0"}]}]}
+        original = copy.deepcopy(data)
+        filtered = render.main_data(data, {"excluded_task_ids": ["P28"]})
+        self.assertEqual(filtered["groups"][0]["taskIds"], ["P01"])
+        self.assertEqual(filtered["groups"][0]["results"], [{"taskId": "P01", "metricText": "0.0"}])
+        self.assertEqual(data, original)
+        with self.assertRaises(ValueError):
+            render.main_data(data, {"excluded_task_ids": ["TYPO"]})
 
     def test_pacific_timezone_observes_summer_and_winter_without_changing_source(self):
         self.assertEqual(render.pacific_time("2026-10-16T13:49:27+00:00"), "2026-10-16 06:49 PDT")

@@ -11,12 +11,27 @@ import tempfile
 from zoneinfo import ZoneInfo
 
 COMPARISONS = "reports/PUBLISHED_BENCHMARK_COMPARISONS_2026-10-15.json"
+MAIN_SCOPE = "configs/main_evaluation_scope.json"
 P43_COUNTS = {"human": 1200, "biosnap": 5493, "bindingdb": 9840}
 COUNT_KEYS = {"planned", "completed", "parsed", "correct", "invalid", "invalid_outputs", "missing", "held", "total"}
 PERCENT_METRICS = {"accuracy", "strict_accuracy", "precision", "coverage", "closed_accuracy", "open_token_recall"}
 
 
 def sha(raw): return hashlib.sha256(raw).hexdigest()
+
+
+def apply_main_scope(report, scope):
+    """Keep full aggregate records; qualify their separate main presentation."""
+    excluded = scope.get("excluded_task_ids", [])
+    if (not isinstance(excluded, list) or any(not isinstance(value, str) for value in excluded)
+            or len(excluded) != len(set(excluded))):
+        raise ValueError("Invalid main evaluation scope")
+    report["main_report_scope"] = scope
+    report["main_catalog_settings"] = (report["catalog_settings"] - len(excluded)
+        if type(report.get("catalog_settings")) is int else None)
+    report["main_completed_whole_declared_setting_ids"] = [task_id
+        for task_id in report["completed_whole_declared_setting_ids"] if task_id not in excluded]
+    return report
 
 
 def number(value):
@@ -198,7 +213,8 @@ def build_report(root: Path, generated_at=None):
     for task, description in [("N04", "Exact network-held-out CSVs/IDs unavailable; author genomics link redirects to sign-in. Original N01 is not a substitute."),
                               ("N05", "Exact adapted hepatoblastoma split/vector alignment/RNA evaluator missing; upstream MEDEA questions or gene lists do not replace required expression inputs.")]:
         if task in gaps: blockers.append({"task_ids": [task], "description": description, "source_report": "reports/POSTTRAIN_NATIVE_GAP_AUDIT.md", "source_status": gaps[task].get("status")})
-    return clean({"generated_at_utc": generated_at or datetime.now(timezone.utc).isoformat(), "catalog_settings": registry_doc.get("task_count"),
+    scope = read(MAIN_SCOPE, {}) or {}
+    result = clean({"generated_at_utc": generated_at or datetime.now(timezone.utc).isoformat(), "catalog_settings": registry_doc.get("task_count"),
         "completed_whole_declared_setting_ids": sorted(whole_ids), "whole_completion_is_not_full_paper_replication": True,
         "completed_rows": sorted(rows, key=lambda r: (r["task_id"], r.get("dataset") or r.get("native_split") or "", r["run_id"])),
         "diagnostic_only_finished_runs": sorted(diagnostic_rows, key=lambda r: (r["task_id"], r["run_id"])),
@@ -209,6 +225,7 @@ def build_report(root: Path, generated_at=None):
         "blockers": blockers, "excluded_or_not_yet_terminal_runs": excluded, "warnings": warnings, "source_sha256": provenance,
         "reporting_policy": "Only existing aggregate score/completion/manifest and public reference/report metadata read; no case inputs, per-case outputs, requests, responses, labels, inference or frozen-result edits. Failed/incomplete shards never become whole-task completion. Null metrics stay undefined.",
         "interpretation": "Outcome scores do not validate explanations or establish internal reasoning. Public pretraining exposure unknown. Paper values have different training/protocols and supply no matched superiority/significance claim."})
+    return apply_main_scope(result, scope)
 
 
 def format_value(name, value):
@@ -269,7 +286,12 @@ def incomplete_evaluation(row, report):
 
 
 def render_markdown(report):
-    rows = report["completed_rows"]
+    scope = report.get("main_report_scope", {})
+    excluded = set(scope.get("excluded_task_ids", []))
+    rows = [row for row in report["completed_rows"] if row["task_id"] not in excluded]
+    diagnostics = [row for row in report.get("diagnostic_only_finished_runs", []) if row["task_id"] not in excluded]
+    completed_ids = [task_id for task_id in report["completed_whole_declared_setting_ids"] if task_id not in excluded]
+    main_count = report.get("main_catalog_settings", report["catalog_settings"])
     limits = sorted({row["generation"]["max_tokens"] for row in rows if isinstance(row.get("generation"), dict)
                      and number(row["generation"].get("max_tokens")) and row["generation"]["max_tokens"] != 1})
     limit_text = "/".join(f"{value:,}" for value in limits) if limits else "unrecorded"
@@ -278,11 +300,15 @@ def render_markdown(report):
         raise ValueError("The score timestamp must include its source timezone")
     display_time = moment.astimezone(ZoneInfo("America/Los_Angeles")).strftime("%Y-%m-%d %H:%M %Z")
     lines = ["# Results at a glance", "", f"Snapshot: {display_time}. Fixed local Qwen3.8-27B baseline; "
-        f"{len(report['completed_whole_declared_setting_ids'])} of {report['catalog_settings']} settings have completed evaluations of their declared scope. "
+        f"{len(completed_ids)} of {main_count} main settings have completed evaluations of their declared scope. "
         "This does not mean full paper replication. Finished shards and incomplete runs are excluded below.", "",
         "These are contextual comparisons: the local baseline is zero-shot; BioT5+/medical systems use task training. LAB references below use the public-set GPT-5.2 column; prompt/decoding/repeat differences remain. "
         f"B01 covers 197/199 public cases with two held before inference. No superiority or significance claim follows. Generated-answer output caps in this snapshot: {limit_text} tokens; P43 instead uses a prespecified one-token conditional likelihood score. Paper ± values preserve reported dispersion; its definition and repeat counts are not always established.", "",
         "| Setting | Local score | Published reference | Qualification |", "|---|---|---|---|"]
+    if excluded:
+        lines[4:4] = [f"{scope['excluded_family']} settings are set aside from the main comparison. "
+            f"[Archived settings and original records]({scope['archive_report']}) remain available; "
+            "the structured report preserves all original scores and denominators.", ""]
     for row in rows:
         suffix = " / " + (row.get("dataset") or row.get("native_split") or "") if row.get("dataset") or row.get("native_split") else ""
         label = row["task_id"] + suffix + " " + row["task_name"].replace("LAB-Bench / ", "")
@@ -291,10 +317,9 @@ def render_markdown(report):
         if row["completion_scope"] in {"dataset_component", "native_split_component"}: caveats = "Completed component. " + caveats
         if not caveats: caveats = "Declared local variant; input, training and scoring qualifications in linked result and JSON."
         lines.append("| " + " | ".join(map(cell, [f"[{label}](../{row['source_scores']})", local_display(row), published_display(row), caveats])) + " |")
-    if any(incomplete_evaluation(row, report) for row in rows) or report.get("diagnostic_only_finished_runs"):
+    if any(incomplete_evaluation(row, report) for row in rows) or diagnostics:
         lines += ["", "\\* Incomplete benchmark coverage or scoring. Case counts and parsing details remain in the [structured report](RESULTS_AT_A_GLANCE.json)."]
     if not rows: lines += ["", "No verified terminal whole-run or dataset-component score is available yet."]
-    diagnostics = report.get("diagnostic_only_finished_runs", [])
     if diagnostics:
         lines += ["", "Finished executions with undefined full-test metrics, excluded from benchmark completion counts:", ""]
         for row in diagnostics:
@@ -304,7 +329,7 @@ def render_markdown(report):
     if p43["completed_components"]:
         lines += ["", "P43: " + ", ".join(p43["completed_components"]) + " component tests completed. " +
             ("All 3 tests have an exact 16,533-ID validated aggregate; each dataset's AUROC/AP remains separate." if p43["whole_setting_complete"] else "The whole setting remains incomplete until Human 1,200 + BioSNAP 5,493 + BindingDB 9,840 cases have a validated 16,533-ID union. No pooled score or mean of datasets is reported.")]
-    audit = report["P29_seed_only_offline_audit"]
+    audit = report["P29_seed_only_offline_audit"] if "P29" not in excluded else None
     if audit:
         parts = []
         for split, values in audit["splits"].items():
@@ -313,9 +338,10 @@ def render_markdown(report):
         lines += ["", "Separate offline P29 input/reference audit, **not Qwen results**: " + "; ".join(parts) +
             ". Native targets include predictor-derived terms also supplied in context; this can reward recovery/copying and does not isolate novel function inference. Curated references also overlap predictor context. "
             "[Audit](POSTTRAIN_NATIVE_GAP_AUDIT.md)."]
-    if report["blockers"]:
-        lines += ["", "Genuine source blockers: " + " ".join("[" + "/".join(b["task_ids"]) + "](" + b["source_report"].removeprefix("reports/") + "): " + b["description"]
-            + (" [Publisher release](" + b["publisher_url"] + ")." if b.get("publisher_url") else "") for b in report["blockers"])]
+    blockers = [b for b in report["blockers"] if set(b["task_ids"]) - excluded]
+    if blockers:
+        lines += ["", "Genuine source blockers: " + " ".join("[" + "/".join(task_id for task_id in b["task_ids"] if task_id not in excluded) + "](" + b["source_report"].removeprefix("reports/") + "): " + b["description"]
+            + (" [Publisher release](" + b["publisher_url"] + ")." if b.get("publisher_url") else "") for b in blockers)]
     lines += ["", "Outcome scores do not validate explanations or identify internal reasoning; public pretraining exposure is unknown. Undefined metrics remain undefined. "
         "[Full coverage/provenance](LOCAL_SUITE_RESULTS.md) · [Structured concise report](RESULTS_AT_A_GLANCE.json).", ""]
     if report["warnings"]: lines += ["Snapshot metadata warnings: " + "; ".join(report["warnings"]), ""]

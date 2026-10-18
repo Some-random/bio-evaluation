@@ -37,7 +37,7 @@ class ReportTests(unittest.TestCase):
             "scores_sha256": report.sha(source.read_bytes()), "run_manifest_sha256": report.sha(manifest.read_bytes()), **(completion_extra or {})})
         return score, source
 
-    def build(self): return report.build_report(self.root, generated_at="synthetic_snapshot")
+    def build(self): return report.build_report(self.root, generated_at="2026-10-18T19:00:00+00:00")
 
     def test_shard_or_unverified_union_never_whole_task_completion(self):
         self.emit("shard", task="P03", score_extra={"case_scope": "task_shard_only", "shard_index": 0})
@@ -115,6 +115,29 @@ class ReportTests(unittest.TestCase):
         text = report.render_markdown(value); self.assertIn("accuracy undefined", text); self.assertNotIn("accuracy 0.0%", text)
         self.assertEqual(report.format_value("accuracy", 0), "0.0%")
         self.assertIsNone(report.clean(float("nan")))
+
+    def test_main_scope_filters_whole_settings_but_retains_native_records(self):
+        self.emit("retained_low_score", task="P10", metrics={"accuracy": 0.0})
+        self.emit("archived_high_score", task="N03", metrics={"accuracy": 1.0})
+        self.emit("archived_diagnostic", task="P28", metrics={"accuracy": None})
+        scope = {"schema_version": 1, "excluded_task_ids": ["N03", "P28"],
+            "excluded_family": "Synthetic family", "archive_report": "ARCHIVED_EVALUATIONS.md"}
+        self.write(report.MAIN_SCOPE, scope)
+        value = self.build()
+        self.assertEqual(value["completed_whole_declared_setting_ids"], ["N03", "P10"])
+        self.assertEqual(value["main_completed_whole_declared_setting_ids"], ["P10"])
+        self.assertEqual(value["main_catalog_settings"], 62)
+        self.assertEqual(len(value["completed_rows"]), 2)
+        self.assertEqual(len(value["diagnostic_only_finished_runs"]), 1)
+        self.assertIn(report.MAIN_SCOPE, value["source_sha256"])
+        value["generated_at_utc"] = "2026-10-18T19:00:00+00:00"
+        displayed = report.render_markdown(value)
+        self.assertIn("1 of 62 main settings", displayed)
+        self.assertIn("P10 Synthetic PPI", displayed)
+        self.assertIn("accuracy 0.0%", displayed)
+        self.assertNotIn("N03", displayed)
+        self.assertNotIn("P28", displayed)
+        self.assertIn("ARCHIVED_EVALUATIONS.md", displayed)
 
     def test_legacy_regression_parsed_only_cannot_complete_full_benchmark(self):
         self.emit("p06", task="P06", planned=1366,

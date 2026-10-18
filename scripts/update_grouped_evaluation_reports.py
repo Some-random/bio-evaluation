@@ -7,6 +7,7 @@ The snapshot retains the source hashes and timestamps from the reviewed export.
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 from datetime import datetime
 import hashlib
@@ -21,6 +22,40 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "reports"
 PACIFIC = ZoneInfo("America/Los_Angeles")
+
+
+def main_scope():
+    scope = json.loads((ROOT / "configs/main_evaluation_scope.json").read_text())
+    excluded = scope["excluded_task_ids"]
+    if (scope.get("schema_version") != 1 or not isinstance(excluded, list)
+            or any(not isinstance(task_id, str) for task_id in excluded)
+            or len(excluded) != len(set(excluded))):
+        raise ValueError("Invalid main evaluation scope")
+    return scope
+
+
+def main_data(data, scope):
+    """Select presentation scope without changing the complete catalog or scores."""
+    excluded = set(scope["excluded_task_ids"])
+    known = {task_id for group in data["groups"] for task_id in group["taskIds"]}
+    if not excluded <= known:
+        raise ValueError("Main evaluation scope names unknown catalog settings")
+    selected = copy.deepcopy(data)
+    selected["groups"] = []
+    for source in data["groups"]:
+        group = copy.deepcopy(source)
+        if group["taskIds"] and set(group["taskIds"]) <= excluded:
+            continue
+        group["taskIds"] = [task_id for task_id in group["taskIds"] if task_id not in excluded]
+        group["protocols"] = [row for row in group["protocols"] if row["taskId"] not in excluded]
+        group["results"] = [row for row in group["results"] if row["taskId"] not in excluded]
+        selected["groups"].append(group)
+    return selected
+
+
+def archive_note(scope):
+    return (f"{scope['excluded_family']} settings are set aside from this main comparison. "
+        f"[Archived settings and original records]({scope['archive_report']}) remain available.")
 
 
 def text(value):
@@ -439,12 +474,21 @@ def overview(data):
     assert len(assigned) == len(set(assigned)) == len(group_by_id) == 76
     assert set(assigned) == set(group_by_id)
 
+    scope = main_scope()
+    data = main_data(data, scope)
+    group_by_id = {group["id"]: group for group in data["groups"]}
+    megatasks = [(category, [(family, [group_id for group_id in ids if group_id in group_by_id])
+        for family, ids in families if any(group_id in group_by_id for group_id in ids)])
+        for category, families in megatasks]
+    family_count = sum(len(families) for _, families in megatasks)
+
     out = [
         "# Biological evaluation overview", "",
         "General-purpose baseline: **Qwen3.8-27B**, with text and image inputs.", "",
         "This catalog spans biological prediction, scientific evidence, protein design and three-dimensional structure. "
-        "The map below shows **34 task families in 8 categories** without opening the detailed catalog. "
+        f"The map below shows **{family_count} task families in {len(megatasks)} categories** without opening the detailed catalog. "
         "The counts are task families, not datasets or individual test questions.", "",
+        archive_note(scope), "",
         "## Task map", "",
         "| Category | Number of task families | Tasks | Typical question or output |", "|---|---:|---|---|",
     ]
@@ -456,7 +500,7 @@ def overview(data):
         "Propose a protein sequence or shape that meets specified requirements",
         "What shape does this protein take? How does it move or stay folded?",
         "Answer questions about medical images and scientific figures",
-        "Predict genetic effects, gene activity, molecular binding and chemical properties",
+        "Predict molecular binding, RNA structure and chemical properties",
     ]
     for (category, families), interface in zip(megatasks, typical):
         out.append("| " + " | ".join(cell(value) for value in [category, len(families),
@@ -655,6 +699,8 @@ def result_section(group, results, diagnostic=False):
 
 
 def grouped_results(data):
+    scope = main_scope()
+    data = main_data(data, scope)
     out = ["# Biological evaluation results by scientific capability", "",
         "[Overview](EVALUATION_OVERVIEW.md) · [Complete inventory](TASK_HIERARCHY_COMPLETE.md) · [Coverage crosswalk](TASK_COVERAGE_MAP.csv)", "",
         snapshot_note(data), "",
@@ -664,6 +710,7 @@ def grouped_results(data):
         "pooled scores or claims of superiority. All reference records and alternate metric values are retained in the details.", "",
         "A declared run may be complete despite invalid answers when its native scorer explicitly counts invalid answers in the denominator. "
         "That is different from an undefined native primary metric; finished runs with undefined primary metrics are labeled diagnostics separately below.", ""]
+    out += [archive_note(scope), ""]
     for category in categories(data):
         out += [f"## {category}", ""]
         has_result = False
@@ -700,6 +747,51 @@ def grouped_results(data):
     return "\n".join(out)
 
 
+def archived_evaluations(data):
+    scope = main_scope()
+    excluded = set(scope["excluded_task_ids"])
+    out = ["# Archived evaluation settings", "",
+        "[Main evaluation overview](EVALUATION_OVERVIEW.md) · "
+        "[Complete original catalog](TASK_HIERARCHY_COMPLETE.md) · "
+        "[Original result metadata](RESULTS_AT_A_GLANCE.json)", "",
+        f"Scope decision: **{scope['decided_at_pacific']} (Pacific time)**. "
+        f"{scope['excluded_family']} settings are excluded from the main task map, displayed comparisons and main completion counts.", "",
+        scope["reason"], "", scope["retention"], "",
+        "This archive is a presentation record. Runtime changes are recorded separately; "
+        "archived data are not silently removed from an original run's denominator.", "",
+        "| Setting | Dataset | Reason for setting aside |", "|---|---|---|"]
+    reasons = {
+        "N01": "Native continuation scoring accepts label words in reasoning; strict final-label validity is a separate diagnostic.",
+        "N02": "Native continuation scoring accepts label words in reasoning; strict final-label validity is a separate diagnostic.",
+        "N03": "Native continuation scoring accepts label words in reasoning; strict final-label validity is a separate diagnostic.",
+        "N04": "Exact network-held-out inputs and split are not recovered; no substitute is presented as the native evaluation.",
+        "N05": "Exact split, expression-vector alignment and native evaluator are not recovered.",
+        "P28": "BioReason-Pro is set aside with the complete family; severe output-budget/format limitations remain documented in original records.",
+        "P29": "Predictor-derived annotations occur in both allowed input context and augmented targets, so the native score does not isolate new function inference.",
+    }
+    archived = []
+    for group in data["groups"]:
+        for protocol in group["protocols"]:
+            if protocol["taskId"] in excluded:
+                task_id = protocol["taskId"]
+                out.append(f"| {task_id} | {cell(group['dataset'])} | {cell(reasons[task_id])} |")
+        if set(group["taskIds"]) & excluded:
+            archived.append(group)
+    out += ["", "## Preserved dataset and result records", ""]
+    for source in archived:
+        group = copy.deepcopy(source)
+        group["protocols"] = [row for row in group["protocols"] if row["taskId"] in excluded]
+        group["results"] = [row for row in group["results"] if row["taskId"] in excluded]
+        out += inventory_detail(group)
+        for result in group["results"]:
+            out += result_details(result)
+    registered = {task_id for group in data["groups"] for task_id in group["taskIds"]}
+    out += [f"The original machine-readable catalog and coverage crosswalk retain all {len(registered)} settings. "
+        f"The main presentation retains {len(registered - excluded)} of those settings; "
+        "catalog-only datasets and diagnostics remain in their scientific categories.", ""]
+    return "\n".join(out)
+
+
 def coverage_csv(data):
     output = io.StringIO(newline="")
     writer = csv.writer(output, lineterminator="\n")
@@ -727,6 +819,7 @@ def main():
         "WORKED_EXAMPLES.md": worked_examples(),
         "TASK_HIERARCHY_COMPLETE.md": complete_inventory(data),
         "RESULTS_GROUPED.md": grouped_results(data),
+        "ARCHIVED_EVALUATIONS.md": archived_evaluations(data),
         "TASK_COVERAGE_MAP.csv": coverage_csv(data),
     }
     for name, content in outputs.items():

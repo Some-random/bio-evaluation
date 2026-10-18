@@ -221,3 +221,30 @@ record the real visibility rather than asserting that it remains private.
 The earlier exclusions for model weights, credentials, environments, caches
 and unrelated Affibody data remain in force. This changes publication only,
 not frozen inference protocols, biological input reviews or compute limits.
+
+On October 18, 2026 Pacific time, the user explicitly requested increasing the
+limit behind truncated answers, authorized simple parsing fixes or leaving
+unrecoverable outputs invalid, and authorized dropping problematic BioReason
+evaluations. This authorizes a **prospective 16,384-token output budget** for
+all not-yet-dispatched cases of the retained active tasks, replacing the previous
+4,096-token budget for those future calls. The existing 65,536-token server
+context accommodates the reviewed inputs plus this output budget; no larger
+input context or model change is required. Keep every completed or ambiguous
+old call immutable and never selectively regenerate failed/truncated answers.
+Freeze the exact undispatched cohort after a clean drain, preserve per-case
+budget/provenance, and explicitly label combined task results as a mixed
+4K/16K-budget continuation rather than a uniform-16K condition or matched paper
+replication. The earlier proposed whole-case 16K rerun remains unexecuted; the
+current instruction is to finish the remaining work without duplicating old
+calls. Other prompts, sampling settings, inputs and native metric formulas
+remain unchanged. The ceiling remains eight GPUs.
+
+Archive BioReason/Bio-posttrain settings N01–N05, P28 and P29 from the main
+advisor-facing view and stop further P28/P29 dispatch after outstanding calls
+drain. Retain their original catalog entries, raw outputs, scores and audits.
+Do not replace the native scorers with favorable diagnostics or silently omit
+invalid cases from retained tasks. Formatting-only parser revisions must be
+separately named, frozen before application, tested on synthetic examples and
+reported against the same full denominators; ambiguous/absent final answers
+stay invalid. No held-out answer may guide an extraction rule. All unrelated
+execution holds and biological input reviews remain unchanged.

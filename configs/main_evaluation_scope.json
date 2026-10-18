@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "decided_at_pacific": "2026-10-18",
+  "authorization": "User requested removing or ignoring problematic BioReason evaluations from the main evaluation.",
+  "excluded_task_ids": ["N01", "N02", "N03", "N04", "N05", "P28", "P29"],
+  "excluded_family": "BioReason, BioReason-Pro and Bio-posttrain",
+  "reason": "Set aside the complete family because native scoring/reference dependence or unrecovered native inputs make it unsuitable for the current main comparison. This is a task-family scope decision, not filtering individual cases or low scores.",
+  "archive_report": "ARCHIVED_EVALUATIONS.md",
+  "retention": "Keep all original catalog entries, scores, references, interpretation records and saved trajectories unchanged. Exclude these settings only from the main presentation and main completion counts; do not delete or rescore artifacts."
+}

@@ -29,6 +29,7 @@ OWNED = (
     "reports/WORKED_EXAMPLES.md",
     "reports/TASK_HIERARCHY_COMPLETE.md",
     "reports/RESULTS_GROUPED.md",
+    "reports/ARCHIVED_EVALUATIONS.md",
     "reports/TASK_COVERAGE_MAP.csv",
 )
 SCORE_PAIR = ("reports/RESULTS_AT_A_GLANCE.md", "reports/RESULTS_AT_A_GLANCE.json")
