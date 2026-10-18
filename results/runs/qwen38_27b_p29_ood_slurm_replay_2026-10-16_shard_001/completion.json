@@ -1,0 +1,31 @@
+{
+  "generation_exit_code": 0,
+  "scoring_exit_code": 0,
+  "raw_audit_exit_code": 0,
+  "native_metric_scoring": "deferred_global_only_no_shard_GO-F1",
+  "finished_at_utc": "2026-10-18T03:59:08.557312+00:00",
+  "configuration_sha256": "b52518a488f6bff78b21e8ae2ab434366b461bd0b650ba56c0e56cdb2d840357",
+  "case_scope": "task_shard_only",
+  "execution_approval": {
+    "approval_file": "configs/local_posttrain_protein_execution_approval.json",
+    "approval_sha256": "930562ba1395fee78ad5aedaab8eb0792b2d05f3cd412d24f183f4e95072d847",
+    "plan_sha256": "b258d8128eb9b5108c6373361ee73bcdf51df3a1b5766871ffdc352c353bf633"
+  },
+  "retry_or_resampling": false,
+  "native_split": "ood",
+  "global_shard_index": 8,
+  "shard_index": 1,
+  "shard_count": 8,
+  "shard_size": 1024,
+  "full_test_case_count": 7883,
+  "source_start_index": 1024,
+  "source_stop_index": 2048,
+  "aggregate_config_file": "configs/local_posttrain_protein_p29_ood_aggregate.json",
+  "full_input_file": "data/catalog_posttrain_protein/P29/ood/model_inputs.jsonl",
+  "full_input_sha256": "8c6bf65fd4e3763dfa182e6073178f6e1d4698d9b232232a11acbc50751c426e",
+  "full_review_file": "configs/local_posttrain_protein_p29_ood_review.json",
+  "full_review_sha256": "88aabc8549e2fdcffecd2cc0c6e1a0cb3bbdd1ebacca2a47c93d33d4b54b6eb4",
+  "run_manifest_sha256": "4e17eccaadeb1591b6b9083a476d3f5dc6431e3dd0f4967fb78442b6c17f1b08",
+  "scores_sha256": "88c0fc2e8e8ebe5e15d8485cacea997647a11918fb1c5267cabf247c8a92849a",
+  "scoring_output_lock_sha256": "0e970bd58567b91fcb5601fc3ce946de17c5273d3b5938f57dd3d2d47a4141d0"
+}
