@@ -8,11 +8,11 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 1233196.0,
-        "kv_fraction": 0.4021447721179625,
+        "generation_tokens": 1266689.0,
+        "kv_fraction": 0.3136729222520107,
         "preemptions": 0.0,
-        "prompt_tokens": 2668100.0,
-        "running": 14.0,
+        "prompt_tokens": 2767455.0,
+        "running": 7.0,
         "waiting": 0.0
       },
       "preemption_delta": 0.0,
@@ -26,11 +26,11 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 1165390.0,
-        "kv_fraction": 0.3887399463806971,
+        "generation_tokens": 1193826.0,
+        "kv_fraction": 0.46112600536193027,
         "preemptions": 0.0,
-        "prompt_tokens": 2317656.0,
-        "running": 10.0,
+        "prompt_tokens": 2420474.0,
+        "running": 9.0,
         "waiting": 0.0
       },
       "preemption_delta": 0.0,
@@ -44,11 +44,11 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 1258935.0,
-        "kv_fraction": 0.3351206434316354,
+        "generation_tokens": 1321886.0,
+        "kv_fraction": 0.2278820375335121,
         "preemptions": 0.0,
-        "prompt_tokens": 2337179.0,
-        "running": 12.0,
+        "prompt_tokens": 2358440.0,
+        "running": 9.0,
         "waiting": 0.0
       },
       "preemption_delta": 0.0,
@@ -62,11 +62,11 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 1154021.0,
-        "kv_fraction": 0.4745308310991957,
+        "generation_tokens": 1197990.0,
+        "kv_fraction": 0.3833780160857909,
         "preemptions": 0.0,
-        "prompt_tokens": 3081762.0,
-        "running": 13.0,
+        "prompt_tokens": 3147538.0,
+        "running": 9.0,
         "waiting": 0.0
       },
       "preemption_delta": 0.0,
@@ -76,8 +76,8 @@
   ],
   "flags": [
     {
-      "fraction": 0.6007434944237918,
-      "responses": 1345,
+      "fraction": 0.602135231316726,
+      "responses": 1405,
       "type": "high_length_finish_fraction"
     }
   ],
@@ -87,370 +87,526 @@
   "plan_sha256": "1c2d73a7a2bf8e6445d9f7b1ba53663a4963a2466059e2cb35854a637905dd5e",
   "planned_native_cases": 45570,
   "pool_stage": "evaluating",
-  "pool_stage_source_age_seconds": 4713.591886758804,
+  "pool_stage_source_age_seconds": 4895.931754112244,
   "pool_stage_source_updated_at_pacific": "2026-10-17T23:13:01.649271-07:00",
   "pool_stage_timestamp_is_not_a_runtime_heartbeat": true,
   "recent_response_metadata": [
     {
-      "completion_tokens": 834,
-      "empty_final": false,
-      "filename": "f8f296d189a9c08f73c5e6f02bb22e7c9fcdb143753e58df9b15a47070997113.json",
-      "finish_reason": "stop",
-      "http_status": 200,
-      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002",
-      "prompt_tokens": 86,
-      "saved_at_pacific": "2026-10-18T00:31:07.701214-07:00",
-      "status": "completed"
-    },
-    {
-      "completion_tokens": 882,
-      "empty_final": false,
-      "filename": "eb5de2d349650caca856d5ba709b4c318cebc7747d21da56f3b696f0a0d97a96.json",
-      "finish_reason": "stop",
-      "http_status": 200,
-      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
-      "prompt_tokens": 82,
-      "saved_at_pacific": "2026-10-18T00:31:10.392542-07:00",
-      "status": "completed"
-    },
-    {
-      "completion_tokens": 920,
-      "empty_final": false,
-      "filename": "6605d83537e30869174d3bf0e0eaa8b567996e5ee0553d2c586d82dae0242d29.json",
-      "finish_reason": "stop",
-      "http_status": 200,
-      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009",
-      "prompt_tokens": 81,
-      "saved_at_pacific": "2026-10-18T00:31:21.360765-07:00",
-      "status": "completed"
-    },
-    {
-      "completion_tokens": 3120,
-      "empty_final": false,
-      "filename": "2745fd1e683f7d842b69cf5c36d09ab0a6c132d4b96dadc49b9166ff80229ceb.json",
-      "finish_reason": "stop",
+      "completion_tokens": 4096,
+      "empty_final": true,
+      "filename": "fb0edbb931833d45fc8e87bf761dfbd75337d086aa350add3a2dac701d7ec58b.json",
+      "finish_reason": "length",
       "http_status": 200,
       "logical_run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025",
-      "prompt_tokens": 185,
-      "saved_at_pacific": "2026-10-18T00:30:52.646319-07:00",
+      "prompt_tokens": 183,
+      "saved_at_pacific": "2026-10-18T00:33:44.633332-07:00",
       "status": "completed"
     },
     {
-      "completion_tokens": 904,
+      "completion_tokens": 1313,
       "empty_final": false,
-      "filename": "bcdc3ac43331f0ce247e76bda9bb564afca5b0b4e975c4018a40f392179ca170.json",
+      "filename": "69e311ea439e28bdcf970b35b72550d1935fe8f418dc666f13df140813c85ee8.json",
       "finish_reason": "stop",
       "http_status": 200,
-      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
-      "prompt_tokens": 86,
-      "saved_at_pacific": "2026-10-18T00:31:20.560398-07:00",
+      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004",
+      "prompt_tokens": 82,
+      "saved_at_pacific": "2026-10-18T00:34:03.242692-07:00",
+      "status": "completed"
+    },
+    {
+      "completion_tokens": 1991,
+      "empty_final": false,
+      "filename": "dddcde16e4bd515cdfe334df30e3f0f1658a89b7524a5d3e46e7651477bf9c73.json",
+      "finish_reason": "stop",
+      "http_status": 200,
+      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010",
+      "prompt_tokens": 82,
+      "saved_at_pacific": "2026-10-18T00:33:53.231020-07:00",
       "status": "completed"
     },
     {
       "completion_tokens": 4096,
       "empty_final": true,
-      "filename": "65aa04ea4185a9773bc3abc02a0b9dd9b042950b20532610393081764d364ceb.json",
+      "filename": "18ef6438e3d5fbacf9d26f40a967ccc68a0801e5f83faf4aa7efaa1ea7eda8b6.json",
+      "finish_reason": "length",
+      "http_status": 200,
+      "logical_run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026",
+      "prompt_tokens": 187,
+      "saved_at_pacific": "2026-10-18T00:33:44.633060-07:00",
+      "status": "completed"
+    },
+    {
+      "completion_tokens": 2146,
+      "empty_final": false,
+      "filename": "220a2aa718a6ab8e029598286fc6ba8e0ae6945f8eb263710df32c0d46cbf96b.json",
+      "finish_reason": "stop",
+      "http_status": 200,
+      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+      "prompt_tokens": 80,
+      "saved_at_pacific": "2026-10-18T00:34:25.326148-07:00",
+      "status": "completed"
+    },
+    {
+      "completion_tokens": 4096,
+      "empty_final": false,
+      "filename": "05fe70ef55505764c095047c6a77c1c78e11168f6aadd7e81994eb7acaa3c59a.json",
+      "finish_reason": "length",
+      "http_status": 200,
+      "logical_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_002",
+      "prompt_tokens": 2801,
+      "saved_at_pacific": "2026-10-18T00:34:08.442899-07:00",
+      "status": "completed"
+    },
+    {
+      "completion_tokens": 4096,
+      "empty_final": false,
+      "filename": "72806d36c28a016a72a083b4e7c1a52caa0939d7fbebbafed90399726ad9231a.json",
+      "finish_reason": "length",
+      "http_status": 200,
+      "logical_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_005",
+      "prompt_tokens": 1966,
+      "saved_at_pacific": "2026-10-18T00:34:20.956499-07:00",
+      "status": "completed"
+    },
+    {
+      "completion_tokens": 4096,
+      "empty_final": false,
+      "filename": "e76d0aa039156883936f0ead377fb930a1f443a643ffa82d3805f494ee6e030e.json",
       "finish_reason": "length",
       "http_status": 200,
       "logical_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_006",
-      "prompt_tokens": 1602,
-      "saved_at_pacific": "2026-10-18T00:30:35.361552-07:00",
+      "prompt_tokens": 1260,
+      "saved_at_pacific": "2026-10-18T00:34:25.855389-07:00",
       "status": "completed"
     },
     {
       "completion_tokens": 4096,
-      "empty_final": false,
-      "filename": "a78d3e00f56ea95e5b99cdfde198f9607c31e121fa845b80f4f9c65d2515f369.json",
+      "empty_final": true,
+      "filename": "489eabd089f22b0b20b17d56731f3508bb874603dbc1a99143326348ea8a6bf9.json",
+      "finish_reason": "length",
+      "http_status": 200,
+      "logical_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_007",
+      "prompt_tokens": 1256,
+      "saved_at_pacific": "2026-10-18T00:34:25.804307-07:00",
+      "status": "completed"
+    },
+    {
+      "completion_tokens": 4096,
+      "empty_final": true,
+      "filename": "3c2a61dfb1e3d07d20f05f5afc29998f7914f1a9010bcb7baffe59afedf2842d.json",
+      "finish_reason": "length",
+      "http_status": 200,
+      "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002",
+      "prompt_tokens": 1130,
+      "saved_at_pacific": "2026-10-18T00:34:25.885821-07:00",
+      "status": "completed"
+    },
+    {
+      "completion_tokens": 4096,
+      "empty_final": true,
+      "filename": "b65d633380714b3cc7dc6652adcffd75ea3d3c21db291985299c2e37aeaae119.json",
+      "finish_reason": "length",
+      "http_status": 200,
+      "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003",
+      "prompt_tokens": 1753,
+      "saved_at_pacific": "2026-10-18T00:34:25.926499-07:00",
+      "status": "completed"
+    },
+    {
+      "completion_tokens": 4096,
+      "empty_final": true,
+      "filename": "c0887bad92f6c77fceb6cbd88b2caa4f3c31beca5ad6b4578ce3906b7b92f316.json",
       "finish_reason": "length",
       "http_status": 200,
       "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003",
-      "prompt_tokens": 1356,
-      "saved_at_pacific": "2026-10-18T00:30:50.296458-07:00",
+      "prompt_tokens": 1433,
+      "saved_at_pacific": "2026-10-18T00:34:36.787823-07:00",
       "status": "completed"
     },
     {
       "completion_tokens": 4096,
       "empty_final": true,
-      "filename": "8c5c2a084561c88be1c1258969a176581ab9c47941993a5ecb6738c2edd16f2e.json",
+      "filename": "5c848ac955b9892d71c59856a67dd7bedfdb5dc6dd994be17b3fbc725fed34ba.json",
+      "finish_reason": "length",
+      "http_status": 200,
+      "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004",
+      "prompt_tokens": 1427,
+      "saved_at_pacific": "2026-10-18T00:34:36.956938-07:00",
+      "status": "completed"
+    },
+    {
+      "completion_tokens": 4096,
+      "empty_final": true,
+      "filename": "3224c4d1f9f7cef90d3424d5cf9c4a4434c0211c67a268f1d612c02b34319c7d.json",
+      "finish_reason": "length",
+      "http_status": 200,
+      "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005",
+      "prompt_tokens": 2262,
+      "saved_at_pacific": "2026-10-18T00:34:36.998884-07:00",
+      "status": "completed"
+    },
+    {
+      "completion_tokens": 4096,
+      "empty_final": true,
+      "filename": "3a8c8565e9205ed0079aa239c2d7a9450bd4228d5a35bdd3acbdae01ca9d2db2.json",
       "finish_reason": "length",
       "http_status": 200,
       "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005",
-      "prompt_tokens": 1846,
-      "saved_at_pacific": "2026-10-18T00:30:34.882827-07:00",
+      "prompt_tokens": 1030,
+      "saved_at_pacific": "2026-10-18T00:34:37.081630-07:00",
       "status": "completed"
     },
     {
       "completion_tokens": 4096,
-      "empty_final": false,
-      "filename": "f55a5318aeb7edccf610cc88e076626a595f241415530a8cc289d21f372a1e63.json",
+      "empty_final": true,
+      "filename": "d28bdd3540bf95a67460e719c8a94058801cc4fb3ea5b4d85835d04b4f596b1a.json",
       "finish_reason": "length",
       "http_status": 200,
       "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006",
-      "prompt_tokens": 1029,
-      "saved_at_pacific": "2026-10-18T00:31:12.995629-07:00",
+      "prompt_tokens": 1018,
+      "saved_at_pacific": "2026-10-18T00:34:37.040219-07:00",
       "status": "completed"
     },
     {
       "completion_tokens": 4096,
       "empty_final": true,
-      "filename": "f3443b6b9cbb1ea342a4a533f1d4c756f47f5dccb8849da8ad59c647c9827033.json",
+      "filename": "81b984e11f7775dbba65b95506c721586e88a8c08067fd00672a9b94eb3f2eae.json",
       "finish_reason": "length",
       "http_status": 200,
-      "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
-      "prompt_tokens": 1658,
-      "saved_at_pacific": "2026-10-18T00:30:48.330480-07:00",
+      "logical_run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
+      "prompt_tokens": 44856,
+      "saved_at_pacific": "2026-10-18T00:33:45.526568-07:00",
       "status": "completed"
     },
     {
       "completion_tokens": 4096,
       "empty_final": true,
-      "filename": "a33c9d6b872088a32e43baf23aac81a90c445cdbf5abed335f14e26e3f0d09db.json",
+      "filename": "2b7ee1f067c38cdbfd64ae96e03394eb2143ee67a3da2a5faef957e11bfe4674.json",
       "finish_reason": "length",
       "http_status": 200,
-      "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007",
-      "prompt_tokens": 1147,
-      "saved_at_pacific": "2026-10-18T00:30:35.410541-07:00",
+      "logical_run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004",
+      "prompt_tokens": 44890,
+      "saved_at_pacific": "2026-10-18T00:33:44.375963-07:00",
       "status": "completed"
     },
     {
       "completion_tokens": 4096,
       "empty_final": true,
-      "filename": "34d1fc221301796825ee1f12e4aedf4844090786b430a524ca1c66686ef0e34b.json",
+      "filename": "06e0edd0aa5b8555648f1597cdeb30aaea356dd6a7741a372562dbdbe22a30b7.json",
       "finish_reason": "length",
       "http_status": 200,
-      "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
-      "prompt_tokens": 1610,
-      "saved_at_pacific": "2026-10-18T00:31:25.302840-07:00",
+      "logical_run_id": "qwen38_27b_p14_restored_replay_2026-10-16",
+      "prompt_tokens": 9355,
+      "saved_at_pacific": "2026-10-18T00:34:08.324935-07:00",
       "status": "completed"
     },
     {
-      "completion_tokens": 4096,
-      "empty_final": true,
-      "filename": "be62509a8ab186ae823c15d1496beb368e11f8ba92314cc9c72d6a5f2601030e.json",
-      "finish_reason": "length",
-      "http_status": 200,
-      "logical_run_id": "qwen38_27b_p12_restored_replay_2026-10-16",
-      "prompt_tokens": 11208,
-      "saved_at_pacific": "2026-10-18T00:31:13.275204-07:00",
-      "status": "completed"
-    },
-    {
-      "completion_tokens": 1600,
+      "completion_tokens": 2867,
       "empty_final": false,
-      "filename": "f736dd41a0359fcbab464ce8885ba8c76b22c7351a67f6c5b48578a876b0b89b.json",
+      "filename": "19f6cccac8da287144cc7e49985228ddf5a82beb32cc356cc972090eeda4e0ca.json",
       "finish_reason": "stop",
       "http_status": 200,
-      "logical_run_id": "qwen38_27b_p13_restored_replay_2026-10-16",
-      "prompt_tokens": 32724,
-      "saved_at_pacific": "2026-10-18T00:31:23.677966-07:00",
-      "status": "completed"
-    },
-    {
-      "completion_tokens": 1144,
-      "empty_final": false,
-      "filename": "bb681190e563936beeccfe134665824b75d95d45a6f88632eea40e20becd67b2.json",
-      "finish_reason": "stop",
-      "http_status": 200,
-      "logical_run_id": "qwen38_27b_p15_restored_replay_2026-10-16",
-      "prompt_tokens": 5405,
-      "saved_at_pacific": "2026-10-18T00:31:23.259136-07:00",
+      "logical_run_id": "qwen38_27b_p14_restored_replay_2026-10-16",
+      "prompt_tokens": 9316,
+      "saved_at_pacific": "2026-10-18T00:34:36.304592-07:00",
       "status": "completed"
     }
   ],
   "response_format": {
-    "empty_final_count": 615,
-    "length_finish_count": 808,
-    "new_responses_since_last_check": 15,
-    "shared_response_metadata_scanned": 1345,
+    "empty_final_count": 644,
+    "length_finish_count": 846,
+    "new_responses_since_last_check": 20,
+    "shared_response_metadata_scanned": 1405,
     "transport_or_server_error_count": 0
   },
   "runs": [
     {
       "empty_final_count": 0,
       "finish_reasons": {
-        "stop": 37
+        "stop": 38
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 614,
       "http_statuses": {
-        "200": 37
+        "200": 38
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:31:07.701214-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:11.485031-07:00",
       "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002",
       "planned": 1024,
-      "requests_saved": 651,
-      "responses_saved": 651,
-      "shared_response_metadata_scanned": 37,
+      "requests_saved": 653,
+      "responses_saved": 652,
+      "shared_response_metadata_scanned": 38,
       "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002_shared_continuation_v1",
       "task_id": "P08"
     },
     {
       "empty_final_count": 0,
       "finish_reasons": {
-        "stop": 37
+        "stop": 38
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 37
+        "200": 38
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:31:10.392542-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:02.957781-07:00",
       "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 37,
-      "shared_response_metadata_scanned": 37,
+      "requests_saved": 39,
+      "responses_saved": 38,
+      "shared_response_metadata_scanned": 38,
       "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
       "task_id": "P08"
     },
     {
-      "empty_final_count": 35,
+      "empty_final_count": 36,
       "finish_reasons": {
-        "length": 35
+        "length": 36,
+        "stop": 1
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 531,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:20.608278-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:32:06.512062-07:00",
       "logical_run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024",
       "planned": 1024,
-      "requests_saved": 568,
-      "responses_saved": 566,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 570,
+      "responses_saved": 568,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024",
       "task_id": "P07"
     },
     {
       "empty_final_count": 0,
       "finish_reasons": {
-        "stop": 36
+        "stop": 38
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 36
+        "200": 38
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:26.692761-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:06.516546-07:00",
       "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 36,
-      "shared_response_metadata_scanned": 36,
+      "requests_saved": 39,
+      "responses_saved": 38,
+      "shared_response_metadata_scanned": 38,
       "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003",
       "task_id": "P08"
     },
     {
       "empty_final_count": 0,
       "finish_reasons": {
-        "stop": 37
+        "stop": 38
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 37
+        "200": 38
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:31:21.360765-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:17.585332-07:00",
       "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 37,
-      "shared_response_metadata_scanned": 37,
+      "requests_saved": 38,
+      "responses_saved": 38,
+      "shared_response_metadata_scanned": 38,
       "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009",
       "task_id": "P08"
     },
     {
-      "empty_final_count": 34,
+      "empty_final_count": 35,
       "finish_reasons": {
-        "length": 34,
+        "length": 35,
         "stop": 2
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 506,
       "http_statuses": {
-        "200": 36
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:52.646319-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:44.633332-07:00",
       "logical_run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025",
       "planned": 1024,
-      "requests_saved": 543,
-      "responses_saved": 542,
-      "shared_response_metadata_scanned": 36,
+      "requests_saved": 544,
+      "responses_saved": 543,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025",
       "task_id": "P07"
     },
     {
       "empty_final_count": 0,
       "finish_reasons": {
-        "stop": 36
+        "stop": 38
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 36
+        "200": 38
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:41.935769-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:03.242692-07:00",
       "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 36,
-      "shared_response_metadata_scanned": 36,
+      "requests_saved": 38,
+      "responses_saved": 38,
+      "shared_response_metadata_scanned": 38,
       "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004",
       "task_id": "P08"
     },
     {
       "empty_final_count": 0,
       "finish_reasons": {
-        "stop": 36
+        "stop": 38
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 36
+        "200": 38
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:11.937745-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:53.231020-07:00",
       "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 36,
-      "shared_response_metadata_scanned": 36,
+      "requests_saved": 38,
+      "responses_saved": 38,
+      "shared_response_metadata_scanned": 38,
       "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010",
       "task_id": "P08"
     },
     {
-      "empty_final_count": 34,
+      "empty_final_count": 36,
       "finish_reasons": {
-        "length": 33,
+        "length": 35,
         "stop": 2
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 507,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:45.018864-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:44.633060-07:00",
       "logical_run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026",
       "planned": 593,
-      "requests_saved": 544,
-      "responses_saved": 542,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 545,
+      "responses_saved": 544,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_026",
       "task_id": "P07"
     },
     {
       "empty_final_count": 0,
       "finish_reasons": {
-        "stop": 37
+        "stop": 38
+      },
+      "generation_exit_code": null,
+      "generation_terminal": false,
+      "historical_responses_not_scanned": 0,
+      "http_statuses": {
+        "200": 38
+      },
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:12.118780-07:00",
+      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
+      "planned": 1024,
+      "requests_saved": 38,
+      "responses_saved": 38,
+      "shared_response_metadata_scanned": 38,
+      "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
+      "task_id": "P08"
+    },
+    {
+      "empty_final_count": 0,
+      "finish_reasons": {
+        "stop": 38
+      },
+      "generation_exit_code": null,
+      "generation_terminal": false,
+      "historical_responses_not_scanned": 0,
+      "http_statuses": {
+        "200": 38
+      },
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:10.999584-07:00",
+      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
+      "planned": 1024,
+      "requests_saved": 38,
+      "responses_saved": 38,
+      "shared_response_metadata_scanned": 38,
+      "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
+      "task_id": "P08"
+    },
+    {
+      "empty_final_count": 0,
+      "finish_reasons": {
+        "stop": 38
+      },
+      "generation_exit_code": null,
+      "generation_terminal": false,
+      "historical_responses_not_scanned": 410,
+      "http_statuses": {
+        "200": 38
+      },
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:08.878004-07:00",
+      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006",
+      "planned": 1024,
+      "requests_saved": 448,
+      "responses_saved": 448,
+      "shared_response_metadata_scanned": 38,
+      "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006_shared_continuation_v1",
+      "task_id": "P08"
+    },
+    {
+      "empty_final_count": 0,
+      "finish_reasons": {
+        "stop": 38
+      },
+      "generation_exit_code": null,
+      "generation_terminal": false,
+      "historical_responses_not_scanned": 0,
+      "http_statuses": {
+        "200": 38
+      },
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:11.099322-07:00",
+      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012",
+      "planned": 563,
+      "requests_saved": 38,
+      "responses_saved": 38,
+      "shared_response_metadata_scanned": 38,
+      "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012",
+      "task_id": "P08"
+    },
+    {
+      "empty_final_count": 0,
+      "finish_reasons": {
+        "stop": 38
+      },
+      "generation_exit_code": null,
+      "generation_terminal": false,
+      "historical_responses_not_scanned": 321,
+      "http_statuses": {
+        "200": 38
+      },
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:25.326148-07:00",
+      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
+      "planned": 1024,
+      "requests_saved": 359,
+      "responses_saved": 359,
+      "shared_response_metadata_scanned": 38,
+      "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007_shared_continuation_v1",
+      "task_id": "P08"
+    },
+    {
+      "empty_final_count": 13,
+      "finish_reasons": {
+        "length": 37
       },
       "generation_exit_code": null,
       "generation_terminal": false,
@@ -458,520 +614,420 @@
       "http_statuses": {
         "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:31:20.560398-07:00",
-      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
-      "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 37,
-      "shared_response_metadata_scanned": 37,
-      "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005",
-      "task_id": "P08"
-    },
-    {
-      "empty_final_count": 0,
-      "finish_reasons": {
-        "stop": 36
-      },
-      "generation_exit_code": null,
-      "generation_terminal": false,
-      "historical_responses_not_scanned": 0,
-      "http_statuses": {
-        "200": 36
-      },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:27.387841-07:00",
-      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
-      "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 36,
-      "shared_response_metadata_scanned": 36,
-      "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011",
-      "task_id": "P08"
-    },
-    {
-      "empty_final_count": 0,
-      "finish_reasons": {
-        "stop": 36
-      },
-      "generation_exit_code": null,
-      "generation_terminal": false,
-      "historical_responses_not_scanned": 410,
-      "http_statuses": {
-        "200": 36
-      },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:29.926926-07:00",
-      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006",
-      "planned": 1024,
-      "requests_saved": 447,
-      "responses_saved": 446,
-      "shared_response_metadata_scanned": 36,
-      "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006_shared_continuation_v1",
-      "task_id": "P08"
-    },
-    {
-      "empty_final_count": 0,
-      "finish_reasons": {
-        "stop": 36
-      },
-      "generation_exit_code": null,
-      "generation_terminal": false,
-      "historical_responses_not_scanned": 0,
-      "http_statuses": {
-        "200": 36
-      },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:33.818770-07:00",
-      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012",
-      "planned": 563,
-      "requests_saved": 37,
-      "responses_saved": 36,
-      "shared_response_metadata_scanned": 36,
-      "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012",
-      "task_id": "P08"
-    },
-    {
-      "empty_final_count": 0,
-      "finish_reasons": {
-        "stop": 36
-      },
-      "generation_exit_code": null,
-      "generation_terminal": false,
-      "historical_responses_not_scanned": 321,
-      "http_statuses": {
-        "200": 36
-      },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:46.135603-07:00",
-      "logical_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007",
-      "planned": 1024,
-      "requests_saved": 358,
-      "responses_saved": 357,
-      "shared_response_metadata_scanned": 36,
-      "storage_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007_shared_continuation_v1",
-      "task_id": "P08"
-    },
-    {
-      "empty_final_count": 12,
-      "finish_reasons": {
-        "length": 35
-      },
-      "generation_exit_code": null,
-      "generation_terminal": false,
-      "historical_responses_not_scanned": 0,
-      "http_statuses": {
-        "200": 35
-      },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:00.541471-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:08.442899-07:00",
       "logical_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_002",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_002",
       "task_id": "P28"
     },
     {
       "empty_final_count": 13,
       "finish_reasons": {
-        "length": 35
+        "length": 36
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 36
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:18.517340-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:32:09.880253-07:00",
       "logical_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_003",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 36,
+      "shared_response_metadata_scanned": 36,
       "storage_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_003",
       "task_id": "P28"
     },
     {
       "empty_final_count": 9,
       "finish_reasons": {
-        "length": 35
+        "length": 36
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 36
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:57.362128-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:31:55.921606-07:00",
       "logical_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_004",
       "planned": 1024,
-      "requests_saved": 36,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 36,
+      "shared_response_metadata_scanned": 36,
       "storage_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_004",
       "task_id": "P28"
     },
     {
       "empty_final_count": 11,
       "finish_reasons": {
-        "length": 35
+        "length": 37
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:57.334912-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:20.956499-07:00",
       "logical_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_005",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_005",
       "task_id": "P28"
     },
     {
       "empty_final_count": 18,
       "finish_reasons": {
-        "length": 34,
+        "length": 36,
         "stop": 1
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:35.361552-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:25.855389-07:00",
       "logical_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_006",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_006",
       "task_id": "P28"
     },
     {
-      "empty_final_count": 8,
+      "empty_final_count": 9,
       "finish_reasons": {
-        "length": 35
+        "length": 37
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:18.413820-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:25.804307-07:00",
       "logical_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_007",
       "planned": 991,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p28_slurm_replay_2026-10-16_shard_007",
       "task_id": "P28"
     },
     {
-      "empty_final_count": 32,
+      "empty_final_count": 34,
       "finish_reasons": {
-        "length": 35
+        "length": 37
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:18.518033-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:25.885821-07:00",
       "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_002",
       "task_id": "P29"
     },
     {
-      "empty_final_count": 30,
+      "empty_final_count": 32,
       "finish_reasons": {
-        "length": 35
+        "length": 37
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:18.518309-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:25.926499-07:00",
       "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_003",
       "task_id": "P29"
     },
     {
-      "empty_final_count": 24,
+      "empty_final_count": 26,
       "finish_reasons": {
-        "length": 34,
+        "length": 36,
         "stop": 1
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:50.296458-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:36.787823-07:00",
       "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_003",
       "task_id": "P29"
     },
     {
-      "empty_final_count": 30,
+      "empty_final_count": 31,
       "finish_reasons": {
-        "length": 35
+        "length": 36
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 36
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:26.293649-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:32:07.033460-07:00",
       "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_004",
       "planned": 1024,
-      "requests_saved": 36,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 36,
+      "shared_response_metadata_scanned": 36,
       "storage_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_004",
       "task_id": "P29"
     },
     {
-      "empty_final_count": 31,
+      "empty_final_count": 32,
       "finish_reasons": {
-        "length": 34,
+        "length": 36,
         "stop": 1
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:32.756262-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:36.956938-07:00",
       "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004",
       "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_004",
-      "task_id": "P29"
-    },
-    {
-      "empty_final_count": 28,
-      "finish_reasons": {
-        "length": 35
-      },
-      "generation_exit_code": null,
-      "generation_terminal": false,
-      "historical_responses_not_scanned": 0,
-      "http_statuses": {
-        "200": 35
-      },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:26.342717-07:00",
-      "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005",
-      "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
-      "storage_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005",
-      "task_id": "P29"
-    },
-    {
-      "empty_final_count": 31,
-      "finish_reasons": {
-        "length": 34,
-        "stop": 1
-      },
-      "generation_exit_code": null,
-      "generation_terminal": false,
-      "historical_responses_not_scanned": 0,
-      "http_statuses": {
-        "200": 35
-      },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:34.882827-07:00",
-      "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005",
-      "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
-      "storage_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005",
-      "task_id": "P29"
-    },
-    {
-      "empty_final_count": 29,
-      "finish_reasons": {
-        "length": 35
-      },
-      "generation_exit_code": null,
-      "generation_terminal": false,
-      "historical_responses_not_scanned": 0,
-      "http_statuses": {
-        "200": 35
-      },
-      "latest_shared_response_at_pacific": "2026-10-18T00:31:12.995629-07:00",
-      "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006",
-      "planned": 1024,
-      "requests_saved": 37,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
-      "storage_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006",
       "task_id": "P29"
     },
     {
       "empty_final_count": 30,
       "finish_reasons": {
-        "length": 35
+        "length": 37
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:48.330480-07:00",
-      "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
-      "planned": 845,
-      "requests_saved": 36,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
-      "storage_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:36.998884-07:00",
+      "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005",
+      "planned": 1024,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
+      "storage_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_005",
       "task_id": "P29"
     },
     {
       "empty_final_count": 33,
       "finish_reasons": {
-        "length": 35
+        "length": 36,
+        "stop": 1
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:35.410541-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:37.081630-07:00",
+      "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005",
+      "planned": 1024,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
+      "storage_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_005",
+      "task_id": "P29"
+    },
+    {
+      "empty_final_count": 31,
+      "finish_reasons": {
+        "length": 37
+      },
+      "generation_exit_code": null,
+      "generation_terminal": false,
+      "historical_responses_not_scanned": 0,
+      "http_statuses": {
+        "200": 37
+      },
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:37.040219-07:00",
+      "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006",
+      "planned": 1024,
+      "requests_saved": 38,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
+      "storage_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_006",
+      "task_id": "P29"
+    },
+    {
+      "empty_final_count": 31,
+      "finish_reasons": {
+        "length": 36
+      },
+      "generation_exit_code": null,
+      "generation_terminal": false,
+      "historical_responses_not_scanned": 0,
+      "http_statuses": {
+        "200": 36
+      },
+      "latest_shared_response_at_pacific": "2026-10-18T00:32:37.237804-07:00",
+      "logical_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
+      "planned": 845,
+      "requests_saved": 38,
+      "responses_saved": 36,
+      "shared_response_metadata_scanned": 36,
+      "storage_run_id": "qwen38_27b_p29_id_slurm_replay_2026-10-16_shard_006",
+      "task_id": "P29"
+    },
+    {
+      "empty_final_count": 34,
+      "finish_reasons": {
+        "length": 36
+      },
+      "generation_exit_code": null,
+      "generation_terminal": false,
+      "historical_responses_not_scanned": 0,
+      "http_statuses": {
+        "200": 36
+      },
+      "latest_shared_response_at_pacific": "2026-10-18T00:32:49.624793-07:00",
       "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007",
       "planned": 715,
-      "requests_saved": 36,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 36,
+      "shared_response_metadata_scanned": 36,
       "storage_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_007",
+      "task_id": "P29"
+    },
+    {
+      "empty_final_count": 31,
+      "finish_reasons": {
+        "length": 36
+      },
+      "generation_exit_code": null,
+      "generation_terminal": false,
+      "historical_responses_not_scanned": 0,
+      "http_statuses": {
+        "200": 36
+      },
+      "latest_shared_response_at_pacific": "2026-10-18T00:32:39.207710-07:00",
+      "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
+      "planned": 1024,
+      "requests_saved": 38,
+      "responses_saved": 36,
+      "shared_response_metadata_scanned": 36,
+      "storage_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
       "task_id": "P29"
     },
     {
       "empty_final_count": 30,
       "finish_reasons": {
-        "length": 35
-      },
-      "generation_exit_code": null,
-      "generation_terminal": false,
-      "historical_responses_not_scanned": 0,
-      "http_statuses": {
-        "200": 35
-      },
-      "latest_shared_response_at_pacific": "2026-10-18T00:31:25.302840-07:00",
-      "logical_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
-      "planned": 1024,
-      "requests_saved": 36,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
-      "storage_run_id": "qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_000",
-      "task_id": "P29"
-    },
-    {
-      "empty_final_count": 29,
-      "finish_reasons": {
-        "length": 29,
+        "length": 30,
         "stop": 6
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 571,
       "http_statuses": {
-        "200": 35
+        "200": 36
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:30:33.666706-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:45.526568-07:00",
       "logical_run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
       "planned": 1024,
-      "requests_saved": 607,
-      "responses_saved": 606,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 608,
+      "responses_saved": 607,
+      "shared_response_metadata_scanned": 36,
       "storage_run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
       "task_id": "P16"
     },
     {
-      "empty_final_count": 23,
+      "empty_final_count": 24,
       "finish_reasons": {
-        "length": 23,
-        "stop": 11
+        "length": 24,
+        "stop": 12
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 34
+        "200": 36
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:27:30.141411-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:16.704871-07:00",
       "logical_run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_002",
       "planned": 1024,
-      "requests_saved": 36,
-      "responses_saved": 34,
-      "shared_response_metadata_scanned": 34,
+      "requests_saved": 38,
+      "responses_saved": 36,
+      "shared_response_metadata_scanned": 36,
       "storage_run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_002",
       "task_id": "P16"
     },
     {
-      "empty_final_count": 25,
+      "empty_final_count": 27,
       "finish_reasons": {
-        "length": 25,
+        "length": 27,
         "stop": 9
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 34
+        "200": 36
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:45.533332-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:44.375963-07:00",
       "logical_run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004",
       "planned": 1024,
-      "requests_saved": 36,
-      "responses_saved": 34,
-      "shared_response_metadata_scanned": 34,
+      "requests_saved": 37,
+      "responses_saved": 36,
+      "shared_response_metadata_scanned": 36,
       "storage_run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004",
       "task_id": "P16"
     },
     {
-      "empty_final_count": 21,
+      "empty_final_count": 22,
       "finish_reasons": {
-        "length": 21,
+        "length": 22,
         "stop": 14
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 36
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:31:13.275204-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:33:21.625510-07:00",
       "logical_run_id": "qwen38_27b_p12_restored_replay_2026-10-16",
       "planned": 1919,
-      "requests_saved": 36,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 38,
+      "responses_saved": 36,
+      "shared_response_metadata_scanned": 36,
       "storage_run_id": "qwen38_27b_p12_restored_replay_2026-10-16",
       "task_id": "P12"
     },
@@ -979,41 +1035,41 @@
       "empty_final_count": 5,
       "finish_reasons": {
         "length": 7,
+        "stop": 29
+      },
+      "generation_exit_code": null,
+      "generation_terminal": false,
+      "historical_responses_not_scanned": 0,
+      "http_statuses": {
+        "200": 36
+      },
+      "latest_shared_response_at_pacific": "2026-10-18T00:32:08.694021-07:00",
+      "logical_run_id": "qwen38_27b_p13_restored_replay_2026-10-16",
+      "planned": 3416,
+      "requests_saved": 38,
+      "responses_saved": 36,
+      "shared_response_metadata_scanned": 36,
+      "storage_run_id": "qwen38_27b_p13_restored_replay_2026-10-16",
+      "task_id": "P13"
+    },
+    {
+      "empty_final_count": 9,
+      "finish_reasons": {
+        "length": 9,
         "stop": 28
       },
       "generation_exit_code": null,
       "generation_terminal": false,
       "historical_responses_not_scanned": 0,
       "http_statuses": {
-        "200": 35
+        "200": 37
       },
-      "latest_shared_response_at_pacific": "2026-10-18T00:31:23.677966-07:00",
-      "logical_run_id": "qwen38_27b_p13_restored_replay_2026-10-16",
-      "planned": 3416,
-      "requests_saved": 36,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
-      "storage_run_id": "qwen38_27b_p13_restored_replay_2026-10-16",
-      "task_id": "P13"
-    },
-    {
-      "empty_final_count": 8,
-      "finish_reasons": {
-        "length": 8,
-        "stop": 27
-      },
-      "generation_exit_code": null,
-      "generation_terminal": false,
-      "historical_responses_not_scanned": 0,
-      "http_statuses": {
-        "200": 35
-      },
-      "latest_shared_response_at_pacific": "2026-10-18T00:29:14.424887-07:00",
+      "latest_shared_response_at_pacific": "2026-10-18T00:34:36.304592-07:00",
       "logical_run_id": "qwen38_27b_p14_restored_replay_2026-10-16",
       "planned": 3416,
-      "requests_saved": 36,
-      "responses_saved": 35,
-      "shared_response_metadata_scanned": 35,
+      "requests_saved": 37,
+      "responses_saved": 37,
+      "shared_response_metadata_scanned": 37,
       "storage_run_id": "qwen38_27b_p14_restored_replay_2026-10-16",
       "task_id": "P14"
     },
@@ -1032,14 +1088,14 @@
       "latest_shared_response_at_pacific": "2026-10-18T00:31:23.259136-07:00",
       "logical_run_id": "qwen38_27b_p15_restored_replay_2026-10-16",
       "planned": 3416,
-      "requests_saved": 36,
+      "requests_saved": 38,
       "responses_saved": 36,
       "shared_response_metadata_scanned": 36,
       "storage_run_id": "qwen38_27b_p15_restored_replay_2026-10-16",
       "task_id": "P15"
     }
   ],
-  "saved_responses_unique_logical_sources": 4805,
+  "saved_responses_unique_logical_sources": 4865,
   "schema_version": 1,
-  "updated_at_pacific": "2026-10-18T00:31:35.575539-07:00"
+  "updated_at_pacific": "2026-10-18T00:34:37.976273-07:00"
 }
