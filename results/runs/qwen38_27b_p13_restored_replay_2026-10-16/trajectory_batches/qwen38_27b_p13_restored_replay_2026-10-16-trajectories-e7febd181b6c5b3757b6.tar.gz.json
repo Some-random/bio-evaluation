@@ -1,0 +1,35 @@
+{
+  "run_id": "qwen38_27b_p13_restored_replay_2026-10-16",
+  "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part013/qwen38_27b_p13_restored_replay_2026-10-16-trajectories-e7febd181b6c5b3757b6.tar.gz",
+  "asset_id": 652835981,
+  "archive_sha256": "fa36188c81c2ff602fad780bb80010202080a1243d28d20ec065e5438f2b4930",
+  "archive_bytes": 57007,
+  "server_digest": "sha256:fa36188c81c2ff602fad780bb80010202080a1243d28d20ec065e5438f2b4930",
+  "raw_request_response_json_preserved": true,
+  "cases": [
+    {
+      "filename": "424dc23737c0e6070bc6dd101c04eb13ab5ddc9729470500500b2249767772b4.json",
+      "case_id": "4DCH-A",
+      "request_sha256": "c68d34117cc9e0e99d0f78dc2ae4f573c6e7887b202f92bc108912fce30087b2",
+      "response_sha256": "23d0af9dc00879ade7fce77bea759908fe5750861ffbcc18d7a877d257468eec",
+      "payload_sha256": "f95f96fa8b727fd3b2787f9efc330ca8d2fc236e4253f7deac661dc8aee9ee92",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part013/qwen38_27b_p13_restored_replay_2026-10-16-trajectories-e7febd181b6c5b3757b6.tar.gz",
+      "archive_sha256": "fa36188c81c2ff602fad780bb80010202080a1243d28d20ec065e5438f2b4930",
+      "request_member": "requests/424dc23737c0e6070bc6dd101c04eb13ab5ddc9729470500500b2249767772b4.json",
+      "response_member": "responses/424dc23737c0e6070bc6dd101c04eb13ab5ddc9729470500500b2249767772b4.json"
+    },
+    {
+      "filename": "e454630645fff79f74fa34c318eb7779810e5c27b6a400a3c1891d64a7b1191b.json",
+      "case_id": "6NU3-p",
+      "request_sha256": "bfd3e39acd688c337bbe1f756ae3da48968de2552a57d0518232e08d198a0053",
+      "response_sha256": "25d3b94fe117af1008479274585e1ca9978ea16b4c414381b65183d19fc096ca",
+      "payload_sha256": "1105879176b9aa8d19749995aebadfe986f1aa0e9f85b1bb2798324d8861640e",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/remaining-evaluations-2026-10-16-trajectories-part013/qwen38_27b_p13_restored_replay_2026-10-16-trajectories-e7febd181b6c5b3757b6.tar.gz",
+      "archive_sha256": "fa36188c81c2ff602fad780bb80010202080a1243d28d20ec065e5438f2b4930",
+      "request_member": "requests/e454630645fff79f74fa34c318eb7779810e5c27b6a400a3c1891d64a7b1191b.json",
+      "response_member": "responses/e454630645fff79f74fa34c318eb7779810e5c27b6a400a3c1891d64a7b1191b.json"
+    }
+  ]
+}
