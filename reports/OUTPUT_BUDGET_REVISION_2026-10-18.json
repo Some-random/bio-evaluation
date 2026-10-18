@@ -1,0 +1,835 @@
+{
+  "prepared_at_pacific": "2026-10-18T12:44:10.422547-07:00",
+  "condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+  "old_output_budget": 4096,
+  "future_output_budget": 16384,
+  "server_context": 65536,
+  "maximum_reviewed_input_tokens": 45219,
+  "maximum_input_plus_new_budget": 61603,
+  "project_gpus": 8,
+  "vllm_version": "0.32.0",
+  "queue_limit_per_gpu": 64,
+  "main_settings": 57,
+  "main_task_families": 31,
+  "categories": 8,
+  "archived_task_ids": [
+    "N01",
+    "N02",
+    "N03",
+    "N04",
+    "N05",
+    "P28",
+    "P29"
+  ],
+  "retained_future16k_case_counts": {
+    "P07": 71,
+    "P08": 5548,
+    "P12": 1470,
+    "P13": 2968,
+    "P14": 2928,
+    "P15": 2928,
+    "P16": 1232
+  },
+  "future16k_total": 17145,
+  "groups": [
+    {
+      "group": "existing_pool",
+      "launcher": {
+        "group": "existing_pool",
+        "condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+        "launcher": {
+          "pid": 1509777,
+          "state": "R",
+          "ppid": 1509767,
+          "start_ticks": "922210234",
+          "argv": [
+            "/tmp/bio-saturation-240418-31bmlxoq/python/bin/python3.12",
+            "-u",
+            ".local/evaluation_revision_2026-10-18/budget_queue/launch_budget_revision.py",
+            "--group",
+            "existing_pool",
+            "--source-amendment",
+            "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/amendment_existing_pool.json",
+            "--source-amendment-sha256",
+            "b7f966e3ede1fca67e8c66889a1e6dd0650beabaf2ad0fc0da92bb27c5130461"
+          ]
+        },
+        "python": "/tmp/bio-saturation-240418-31bmlxoq/python/bin/python3.12",
+        "slurm_job_id": "240418",
+        "slurm_step_id": "57",
+        "runner_sha256": "a0f7812390ebdf4b558ec6a9839d9791fc905eaa3a7b40e51ead54402074d5c4",
+        "root_drain_receipt_sha256": "739e13109f4905f337f3f4959e2f1b6c77337c79c0e92d1eab8127abc5feb054",
+        "plan_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/plan_existing_pool.json",
+        "plan_sha256": "52f794c8d0dc0464f2e2283b8dcbf54eef77e4eaf3f3ca9ee4698c6102d87f35",
+        "new16k_cases": 7534,
+        "run_count": 9,
+        "dispatcher": {
+          "pid": 1515016,
+          "state": "R",
+          "ppid": 1509777,
+          "start_ticks": "922295306",
+          "argv": [
+            "/tmp/bio-saturation-240418-31bmlxoq/python/bin/python3.12",
+            "-u",
+            "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/run_budget_revision.py",
+            "--plan",
+            "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/plan_existing_pool.json",
+            "--plan-sha256",
+            "52f794c8d0dc0464f2e2283b8dcbf54eef77e4eaf3f3ca9ee4698c6102d87f35"
+          ]
+        },
+        "stage": "evaluating",
+        "log_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/dispatcher_existing_pool.log",
+        "updated_at_pacific": "2026-10-18T12:33:44.380282-07:00"
+      },
+      "plan_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/plan_existing_pool.json",
+      "plan_sha256": "52f794c8d0dc0464f2e2283b8dcbf54eef77e4eaf3f3ca9ee4698c6102d87f35",
+      "health": {
+        "updated_at_pacific": "2026-10-18T12:43:44.357633-07:00",
+        "group": "existing_pool",
+        "condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+        "launcher_stage": "evaluating",
+        "automatic_actions": [],
+        "biological_correctness_checked": false,
+        "stage": "observing_revision",
+        "plan_sha256": "52f794c8d0dc0464f2e2283b8dcbf54eef77e4eaf3f3ca9ee4698c6102d87f35",
+        "output_budget": 16384,
+        "endpoints": [
+          {
+            "endpoint_id": "saturation_0",
+            "server_identity_sha256": "4f2a779d44c996c68ed9f35622f4c26db319541c43107366ff24814d928fdfcc",
+            "gpu_uuids": [
+              "GPU-ed6c3700-fb45-144f-b650-71690855c987"
+            ],
+            "healthy": true,
+            "metrics": {
+              "running": 21.0,
+              "waiting": 43.0,
+              "kv_fraction": 0.9977777777777778,
+              "preemptions": 274.0,
+              "prompt_tokens": 3673140.0,
+              "generation_tokens": 844028.0
+            },
+            "seconds_without_token_progress": 4.76837158203125e-07
+          },
+          {
+            "endpoint_id": "saturation_1",
+            "server_identity_sha256": "d07f2e7743ad8060d75596a9b196132b340bc859fca69db963e90cc20cf7a17a",
+            "gpu_uuids": [
+              "GPU-ed2075e0-db0c-8026-cd41-a22c523ab1cf"
+            ],
+            "healthy": true,
+            "metrics": {
+              "running": 16.0,
+              "waiting": 48.0,
+              "kv_fraction": 0.9688888888888889,
+              "preemptions": 378.0,
+              "prompt_tokens": 3576533.0,
+              "generation_tokens": 907648.0
+            },
+            "seconds_without_token_progress": 9.5367431640625e-07
+          },
+          {
+            "endpoint_id": "saturation_2",
+            "server_identity_sha256": "18a7af878454965261c26123f7d593efed1c22cedbcc478fac5236a5f2e1bc6a",
+            "gpu_uuids": [
+              "GPU-a77a690a-13e1-c12b-9754-caa7ca186800"
+            ],
+            "healthy": true,
+            "metrics": {
+              "running": 18.0,
+              "waiting": 46.0,
+              "kv_fraction": 0.9666666666666667,
+              "preemptions": 261.0,
+              "prompt_tokens": 3370875.0,
+              "generation_tokens": 814404.0
+            },
+            "seconds_without_token_progress": 4.76837158203125e-07
+          },
+          {
+            "endpoint_id": "saturation_3",
+            "server_identity_sha256": "1b9d4d0eb1ad2b2b8a6115bfb20da04a840ce9352cb78c070aa011d8ce249e5a",
+            "gpu_uuids": [
+              "GPU-6a40fd04-5ca8-dbca-a9c3-79bee052b4ac"
+            ],
+            "healthy": true,
+            "metrics": {
+              "running": 16.0,
+              "waiting": 48.0,
+              "kv_fraction": 0.9177777777777778,
+              "preemptions": 301.0,
+              "prompt_tokens": 2505321.0,
+              "generation_tokens": 602408.0
+            },
+            "seconds_without_token_progress": 4.76837158203125e-07
+          }
+        ],
+        "runs": [
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008_output16384_v1",
+            "task_id": "P08",
+            "planned": 670,
+            "responses_saved": 5,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 665,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_024_output16384_v1",
+            "task_id": "P07",
+            "planned": 43,
+            "responses_saved": 1,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 42,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_003_output16384_v1",
+            "task_id": "P08",
+            "planned": 670,
+            "responses_saved": 6,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 664,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_004_output16384_v1",
+            "task_id": "P08",
+            "planned": 670,
+            "responses_saved": 5,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 665,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_006_output16384_v1",
+            "task_id": "P08",
+            "planned": 260,
+            "responses_saved": 5,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 255,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_012_output16384_v1",
+            "task_id": "P08",
+            "planned": 209,
+            "responses_saved": 5,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 204,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_002_output16384_v1",
+            "task_id": "P16",
+            "planned": 574,
+            "responses_saved": 1,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 573,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p12_restored_replay_2026-10-16_output16384_v1",
+            "task_id": "P12",
+            "planned": 1470,
+            "responses_saved": 11,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 1459,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p13_restored_replay_2026-10-16_output16384_v1",
+            "task_id": "P13",
+            "planned": 2968,
+            "responses_saved": 16,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 2952,
+            "generation_terminal": false
+          }
+        ],
+        "by_task": {
+          "P08": {
+            "planned": 2479,
+            "responses_saved": 26,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 2453
+          },
+          "P07": {
+            "planned": 43,
+            "responses_saved": 1,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 42
+          },
+          "P16": {
+            "planned": 574,
+            "responses_saved": 1,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 573
+          },
+          "P12": {
+            "planned": 1470,
+            "responses_saved": 11,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 1459
+          },
+          "P13": {
+            "planned": 2968,
+            "responses_saved": 16,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 2952
+          }
+        },
+        "totals": {
+          "planned": 7534,
+          "responses_saved": 55,
+          "length_finishes": 0,
+          "empty_final_fields": 0,
+          "transport_or_server_errors": 0,
+          "remaining": 7479
+        },
+        "flags": [
+          {
+            "type": "high_kv_usage",
+            "endpoint_id": "saturation_0"
+          },
+          {
+            "type": "preemptions_increased",
+            "endpoint_id": "saturation_0"
+          },
+          {
+            "type": "high_kv_usage",
+            "endpoint_id": "saturation_1"
+          },
+          {
+            "type": "high_kv_usage",
+            "endpoint_id": "saturation_2"
+          },
+          {
+            "type": "preemptions_increased",
+            "endpoint_id": "saturation_2"
+          }
+        ],
+        "interpretation": "Only the frozen future16k cohort is counted here; old4k calls remain in original archives and full mixed-budget metrics. Empty final is distinct from separately saved reasoning."
+      },
+      "future16k_cases": 7534
+    },
+    {
+      "group": "new_pool",
+      "launcher": {
+        "group": "new_pool",
+        "condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+        "launcher": {
+          "pid": 453096,
+          "state": "R",
+          "ppid": 453082,
+          "start_ticks": "922209547",
+          "argv": [
+            "/tmp/bio-saturation-240936-eedAaD/python/bin/python3.12",
+            "-u",
+            ".local/evaluation_revision_2026-10-18/budget_queue/launch_budget_revision.py",
+            "--group",
+            "new_pool",
+            "--source-amendment",
+            "/dfs/scratch0/dongweij/bio-evaluation/.local/shared_vllm_saturation_2026-10-18/amendment_new_pool.json",
+            "--source-amendment-sha256",
+            "376d4bff3cd52b1e21adb9c708b266aa41358990c68f7b6d32a91bf5e4b81383"
+          ]
+        },
+        "python": "/tmp/bio-saturation-240936-eedAaD/python/bin/python3.12",
+        "slurm_job_id": "240936",
+        "slurm_step_id": "10",
+        "runner_sha256": "a0f7812390ebdf4b558ec6a9839d9791fc905eaa3a7b40e51ead54402074d5c4",
+        "root_drain_receipt_sha256": "24003bebda7eb40a9f2ca046bf2b585be27cb4ca21dd63ddae7de98614919dfe",
+        "plan_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/plan_new_pool.json",
+        "plan_sha256": "e0a33a21455c585ed41f9ec89fbd7364e283ede6cd2f9eab85bd613bdc563055",
+        "new16k_cases": 9611,
+        "run_count": 11,
+        "dispatcher": {
+          "pid": 471237,
+          "state": "R",
+          "ppid": 453096,
+          "start_ticks": "922297965",
+          "argv": [
+            "/tmp/bio-saturation-240936-eedAaD/python/bin/python3.12",
+            "-u",
+            "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/run_budget_revision.py",
+            "--plan",
+            "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/plan_new_pool.json",
+            "--plan-sha256",
+            "e0a33a21455c585ed41f9ec89fbd7364e283ede6cd2f9eab85bd613bdc563055"
+          ]
+        },
+        "stage": "evaluating",
+        "log_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/dispatcher_new_pool.log",
+        "updated_at_pacific": "2026-10-18T12:34:18.102812-07:00"
+      },
+      "plan_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/budget_queue/plan_new_pool.json",
+      "plan_sha256": "e0a33a21455c585ed41f9ec89fbd7364e283ede6cd2f9eab85bd613bdc563055",
+      "health": {
+        "updated_at_pacific": "2026-10-18T12:43:44.447859-07:00",
+        "group": "new_pool",
+        "condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+        "launcher_stage": "evaluating",
+        "automatic_actions": [],
+        "biological_correctness_checked": false,
+        "stage": "observing_revision",
+        "plan_sha256": "e0a33a21455c585ed41f9ec89fbd7364e283ede6cd2f9eab85bd613bdc563055",
+        "output_budget": 16384,
+        "endpoints": [
+          {
+            "endpoint_id": "saturation_0",
+            "server_identity_sha256": "adda75db85bbc6862b8dac08c774e950a0bb804dfe981b1a258d1a300228f78e",
+            "gpu_uuids": [
+              "GPU-40deb617-b7e0-2a66-7fa0-2944dbdbb6af"
+            ],
+            "healthy": true,
+            "metrics": {
+              "running": 25.0,
+              "waiting": 39.0,
+              "kv_fraction": 0.9333333333333333,
+              "preemptions": 720.0,
+              "prompt_tokens": 3182536.0,
+              "generation_tokens": 1439859.0
+            },
+            "seconds_without_token_progress": 4.76837158203125e-07
+          },
+          {
+            "endpoint_id": "saturation_1",
+            "server_identity_sha256": "a49f31276bc6afded8ab9104a6ffc0fd5f0cebab8ecc7c17fe45c1ef0e18e316",
+            "gpu_uuids": [
+              "GPU-bbf5f079-4e2c-e483-d657-0b27f6f17f7e"
+            ],
+            "healthy": true,
+            "metrics": {
+              "running": 32.0,
+              "waiting": 32.0,
+              "kv_fraction": 0.9851851851851852,
+              "preemptions": 618.0,
+              "prompt_tokens": 4261876.0,
+              "generation_tokens": 1068520.0
+            },
+            "seconds_without_token_progress": 4.76837158203125e-07
+          },
+          {
+            "endpoint_id": "saturation_2",
+            "server_identity_sha256": "e76d7785c2b0aa7c44ddfc4fcd8627f15f37bcaf10ab91db7680a980799516a2",
+            "gpu_uuids": [
+              "GPU-6aa89bc8-a8bd-ff8c-e6ee-0ed681919ebf"
+            ],
+            "healthy": true,
+            "metrics": {
+              "running": 16.0,
+              "waiting": 48.0,
+              "kv_fraction": 0.9777777777777777,
+              "preemptions": 574.0,
+              "prompt_tokens": 5535425.0,
+              "generation_tokens": 1127859.0
+            },
+            "seconds_without_token_progress": 4.76837158203125e-07
+          },
+          {
+            "endpoint_id": "saturation_3",
+            "server_identity_sha256": "fa210779888d71abf5db3a847d3c22e697ee657e5d6b9b9f73b9b2ebdac6d681",
+            "gpu_uuids": [
+              "GPU-ee2166d2-f4b8-19c0-1386-9b11538ece35"
+            ],
+            "healthy": true,
+            "metrics": {
+              "running": 14.0,
+              "waiting": 50.0,
+              "kv_fraction": 0.9234567901234568,
+              "preemptions": 471.0,
+              "prompt_tokens": 3635858.0,
+              "generation_tokens": 1538070.0
+            },
+            "seconds_without_token_progress": 4.76837158203125e-07
+          }
+        ],
+        "runs": [
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_002_output16384_v1",
+            "task_id": "P08",
+            "planned": 53,
+            "responses_saved": 7,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 46,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_009_output16384_v1",
+            "task_id": "P08",
+            "planned": 667,
+            "responses_saved": 8,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 659,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_shard_025_output16384_v1",
+            "task_id": "P07",
+            "planned": 28,
+            "responses_saved": 0,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 28,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_010_output16384_v1",
+            "task_id": "P08",
+            "planned": 667,
+            "responses_saved": 8,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 659,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_005_output16384_v1",
+            "task_id": "P08",
+            "planned": 667,
+            "responses_saved": 8,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 659,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011_output16384_v1",
+            "task_id": "P08",
+            "planned": 668,
+            "responses_saved": 6,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 662,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_007_output16384_v1",
+            "task_id": "P08",
+            "planned": 347,
+            "responses_saved": 7,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 340,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000_output16384_v1",
+            "task_id": "P16",
+            "planned": 43,
+            "responses_saved": 6,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 37,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_004_output16384_v1",
+            "task_id": "P16",
+            "planned": 615,
+            "responses_saved": 6,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 609,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p14_restored_replay_2026-10-16_output16384_v1",
+            "task_id": "P14",
+            "planned": 2928,
+            "responses_saved": 30,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 2898,
+            "generation_terminal": false
+          },
+          {
+            "run_id": "qwen38_27b_p15_restored_replay_2026-10-16_output16384_v1",
+            "task_id": "P15",
+            "planned": 2928,
+            "responses_saved": 28,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 2900,
+            "generation_terminal": false
+          }
+        ],
+        "by_task": {
+          "P08": {
+            "planned": 3069,
+            "responses_saved": 44,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 3025
+          },
+          "P07": {
+            "planned": 28,
+            "responses_saved": 0,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 28
+          },
+          "P16": {
+            "planned": 658,
+            "responses_saved": 12,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 646
+          },
+          "P14": {
+            "planned": 2928,
+            "responses_saved": 30,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 2898
+          },
+          "P15": {
+            "planned": 2928,
+            "responses_saved": 28,
+            "length_finishes": 0,
+            "empty_final_fields": 0,
+            "transport_or_server_errors": 0,
+            "remaining": 2900
+          }
+        },
+        "totals": {
+          "planned": 9611,
+          "responses_saved": 114,
+          "length_finishes": 0,
+          "empty_final_fields": 0,
+          "transport_or_server_errors": 0,
+          "remaining": 9497
+        },
+        "flags": [
+          {
+            "type": "preemptions_increased",
+            "endpoint_id": "saturation_0"
+          },
+          {
+            "type": "high_kv_usage",
+            "endpoint_id": "saturation_1"
+          },
+          {
+            "type": "preemptions_increased",
+            "endpoint_id": "saturation_1"
+          },
+          {
+            "type": "high_kv_usage",
+            "endpoint_id": "saturation_2"
+          },
+          {
+            "type": "preemptions_increased",
+            "endpoint_id": "saturation_2"
+          },
+          {
+            "type": "preemptions_increased",
+            "endpoint_id": "saturation_3"
+          }
+        ],
+        "interpretation": "Only the frozen future16k cohort is counted here; old4k calls remain in original archives and full mixed-budget metrics. Empty final is distinct from separately saved reasoning."
+      },
+      "future16k_cases": 9611
+    }
+  ],
+  "parser_diagnostic": {
+    "version": "FORMAT_ONLY_REVISION_DIAGNOSTICS_2026_10_18",
+    "prepared_at_pacific": "2026-10-18T12:18:47.961430-07:00",
+    "p08_disjoint_case_union_verified": true,
+    "p08_counts": {
+      "planned": 12851,
+      "completed": 7251,
+      "missing_or_failed": 5600,
+      "blank_final": 10,
+      "token_limit_finish": 8,
+      "native_scalar_parsed": 7130,
+      "format_parser_parsed": 7130,
+      "recovered_scalar_parses": 0,
+      "native_values_preserved": 7130
+    },
+    "deepfri_summaries": [
+      {
+        "task": "P12",
+        "run_id": "qwen38_27b_p12_restored_replay_2026-10-16",
+        "snapshot_at_pacific": "2026-10-18T12:18:09.816363-07:00",
+        "counts": {
+          "planned": 1919,
+          "completed": 415,
+          "missing_or_failed": 1504,
+          "blank_final": 208,
+          "token_limit_finish": 217,
+          "native_parsed": 192,
+          "fence_only_parsed": 192,
+          "recovered_parses": 0,
+          "native_vectors_preserved": 192
+        },
+        "errors": {
+          "Missing, truncated or unfinished final answer": 217,
+          "Unknown class or nonnumeric confidence": 6
+        },
+        "reference_labels_opened": false,
+        "reasoning_fields_used": false,
+        "native_schema_and_finish_checks_unchanged": true,
+        "original_native_scores_unchanged": true,
+        "accuracy_or_auc_computed": false,
+        "all_original_planned_slots_retained": true,
+        "input_output_lock_sha256": "813f3ca0116c91dfeb15d8a82f68e32b1acb9e26e84f6d9444833e5f7e8046dc"
+      },
+      {
+        "task": "P13",
+        "run_id": "qwen38_27b_p13_restored_replay_2026-10-16",
+        "snapshot_at_pacific": "2026-10-18T12:18:11.905270-07:00",
+        "counts": {
+          "planned": 3416,
+          "completed": 419,
+          "missing_or_failed": 2997,
+          "blank_final": 72,
+          "token_limit_finish": 84,
+          "native_parsed": 305,
+          "fence_only_parsed": 305,
+          "recovered_parses": 0,
+          "native_vectors_preserved": 305
+        },
+        "errors": {
+          "Unknown class or nonnumeric confidence": 25,
+          "Missing, truncated or unfinished final answer": 85,
+          "Duplicate JSON key": 4
+        },
+        "reference_labels_opened": false,
+        "reasoning_fields_used": false,
+        "native_schema_and_finish_checks_unchanged": true,
+        "original_native_scores_unchanged": true,
+        "accuracy_or_auc_computed": false,
+        "all_original_planned_slots_retained": true,
+        "input_output_lock_sha256": "735140c033810dc897b1b4ca4fed004d22441035a66e8423ab8357ed2b8cd311"
+      },
+      {
+        "task": "P14",
+        "run_id": "qwen38_27b_p14_restored_replay_2026-10-16",
+        "snapshot_at_pacific": "2026-10-18T12:18:13.840382-07:00",
+        "counts": {
+          "planned": 3416,
+          "completed": 457,
+          "missing_or_failed": 2959,
+          "blank_final": 78,
+          "token_limit_finish": 81,
+          "native_parsed": 356,
+          "fence_only_parsed": 356,
+          "recovered_parses": 0,
+          "native_vectors_preserved": 356
+        },
+        "errors": {
+          "Missing, truncated or unfinished final answer": 83,
+          "Unknown class or nonnumeric confidence": 18
+        },
+        "reference_labels_opened": false,
+        "reasoning_fields_used": false,
+        "native_schema_and_finish_checks_unchanged": true,
+        "original_native_scores_unchanged": true,
+        "accuracy_or_auc_computed": false,
+        "all_original_planned_slots_retained": true,
+        "input_output_lock_sha256": "03053958d677c72f6d47046b35dd75f08c5f8fcd17bf1f42f4a016ede1890846"
+      },
+      {
+        "task": "P15",
+        "run_id": "qwen38_27b_p15_restored_replay_2026-10-16",
+        "snapshot_at_pacific": "2026-10-18T12:18:15.884504-07:00",
+        "counts": {
+          "planned": 3416,
+          "completed": 463,
+          "missing_or_failed": 2953,
+          "blank_final": 16,
+          "token_limit_finish": 21,
+          "native_parsed": 436,
+          "fence_only_parsed": 436,
+          "recovered_parses": 0,
+          "native_vectors_preserved": 436
+        },
+        "errors": {
+          "Missing, truncated or unfinished final answer": 22,
+          "Unknown class or nonnumeric confidence": 3,
+          "Duplicate JSON key": 2
+        },
+        "reference_labels_opened": false,
+        "reasoning_fields_used": false,
+        "native_schema_and_finish_checks_unchanged": true,
+        "original_native_scores_unchanged": true,
+        "accuracy_or_auc_computed": false,
+        "all_original_planned_slots_retained": true,
+        "input_output_lock_sha256": "c5f29a88ec151733f4d9b00b7156ea6d84ff4c10e160b28ee56b369cf8faff2d"
+      }
+    ],
+    "synthetic_tests_passed": 9,
+    "reference_labels_opened": false,
+    "native_results_unchanged": true,
+    "historical_tasks_not_diagnosed": [
+      "P01",
+      "P06",
+      "B07",
+      "B08",
+      "V04",
+      "V05"
+    ],
+    "historical_unavailable_reason": "Original completed run folders absent from current shared checkout and retained CPU node; old raw response artifacts were not recovered within bounded lookup. No recovery counts claimed for these tasks. Existing historical aggregate reports remain unchanged.",
+    "recommendation": "Retain native parsers and all invalid slots. Frozen formatting-only diagnostics recovered no answers in these snapshots. Most DeepFRI invalid outputs are truncated/unfinished; remaining unknown-class, nonnumeric-confidence and duplicate-key cases require model output changes rather than formatting cleanup. Longer-budget inference is handled separately by root; no inference issued here."
+  },
+  "old_outputs_resampled": false,
+  "model_facing_delta": {
+    "max_tokens": {
+      "before": 4096,
+      "after": 16384
+    }
+  },
+  "old_eta_superseded": true,
+  "archive": {
+    "path": "reports/benchmark_assets/output_budget_revision_2026-10-18.tar.gz",
+    "sha256": "0942a4a7b7fc2058c4fc4afc98965680bf8d28961d2a57d43cd61f6d4974fb64",
+    "members": 119,
+    "content_policy": "Frozen source, tests, cohorts and evidence only; no live trajectory directories, weights, environments, caches or credentials."
+  }
+}
