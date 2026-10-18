@@ -1,8 +1,13 @@
 {
   "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
   "task_id": "P16",
-  "stage": "executing",
+  "stage": "failed",
   "slurm_job_id": "237717",
   "worker_id": "p16_0",
-  "command_results": []
+  "command_results": [
+    {
+      "label": "execute",
+      "exit_code": -9
+    }
+  ]
 }
