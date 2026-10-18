@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-18T00:00:25.144035+00:00",
+  "generatedAt": "2026-10-18T00:05:35.339419+00:00",
   "scoreSnapshotAt": "2026-10-16T13:49:27.755824+00:00",
-  "runSnapshotAt": "2026-10-18T00:00:25.144035+00:00",
+  "runSnapshotAt": "2026-10-18T00:05:35.339419+00:00",
   "heartbeat": {
     "status": "fresh",
-    "updatedAt": "2026-10-18T00:00:25.144035+00:00",
+    "updatedAt": "2026-10-18T00:05:35.339419+00:00",
     "staleAfterSeconds": 300
   },
   "sourceHashes": {
     "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
     "reports/RESULTS_AT_A_GLANCE.json": "5ed9013f1464c22d1fa254e05f69e4f87220c13d0d1c4ce3f1d44627b869473b",
-    ".local/remaining_evaluations/supervisor_status.json": "18dfbfe39d7f76a31894373e1cd6fdedf35b335460c6f80abb2c30ae794b1a29",
-    ".local/remaining_evaluations/upload_status.json": "cd00635f7caf566c26f8f39a1069a7f3b06f1c0bbf085f88ea8f2e9a57cb6be1"
+    ".local/remaining_evaluations/supervisor_status.json": "6e9eaea173d02c72cf0be3f7575c9a077ed057ad851197f6c02acd2d5bf1dea6",
+    ".local/remaining_evaluations/upload_status.json": "e0ab8dc62dc66e1c5ed502da01092579f94f3f69c598447a5b0517b0e6ceb85d"
   },
   "uploader": {
     "stage": "watching",
-    "commitSha": "0ce1a8fda9687088625134e79902abd5cbf79a9e",
+    "commitSha": "d88d9f5ab94abaa2c3f94e92c5be3f64153e9e95",
     "repositoryPrivateVerified": false
   },
   "scheduler": {
@@ -173,7 +173,7 @@
   "allSuccessfulNativeMetrics": false,
   "totals": {
     "planned": 83690,
-    "uploaded": 33834,
+    "uploaded": 33923,
     "saved": null,
     "scheduledSettings": 10,
     "generationRuns": 76
@@ -198,7 +198,7 @@
     {
       "taskId": "P07",
       "planned": 27217,
-      "uploaded": 23890,
+      "uploaded": 23941,
       "saved": null,
       "generationRuns": 27,
       "terminalRuns": 18,
@@ -320,7 +320,7 @@
     {
       "taskId": "P16",
       "planned": 5651,
-      "uploaded": 1347,
+      "uploaded": 1377,
       "saved": null,
       "generationRuns": 6,
       "terminalRuns": 1,
@@ -360,7 +360,7 @@
     {
       "taskId": "P29",
       "planned": 14872,
-      "uploaded": 3776,
+      "uploaded": 3784,
       "saved": null,
       "generationRuns": 15,
       "terminalRuns": 3,
@@ -405,7 +405,7 @@
   ],
   "runSnapshotSource": {
     "path": ".local/remaining_evaluations/upload_status.json",
-    "snapshotAt": "2026-10-18T00:00:25.144035+00:00",
+    "snapshotAt": "2026-10-18T00:05:35.339419+00:00",
     "fallback": true,
     "selection": "most_recent_valid_run_snapshot"
   },
