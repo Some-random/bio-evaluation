@@ -8,8 +8,8 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 3984019.0,
-        "kv_fraction": 0.945679012345679,
+        "generation_tokens": 3984519.0,
+        "kv_fraction": 0.8814814814814815,
         "preemptions": 2444.0,
         "prompt_tokens": 11989010.0,
         "running": 6.0,
@@ -26,14 +26,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4040025.0,
-        "kv_fraction": 1.0,
-        "preemptions": 2928.0,
-        "prompt_tokens": 13740029.0,
-        "running": 31.0,
-        "waiting": 33.0
+        "generation_tokens": 4106472.0,
+        "kv_fraction": 0.9925925925925926,
+        "preemptions": 2976.0,
+        "prompt_tokens": 13858675.0,
+        "running": 33.0,
+        "waiting": 30.0
       },
-      "preemption_delta": 15.0,
+      "preemption_delta": 14.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "a49f31276bc6afded8ab9104a6ffc0fd5f0cebab8ecc7c17fe45c1ef0e18e316"
     },
@@ -44,14 +44,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4017657.0,
-        "kv_fraction": 0.9777777777777777,
-        "preemptions": 2521.0,
-        "prompt_tokens": 15929533.0,
-        "running": 27.0,
-        "waiting": 37.0
+        "generation_tokens": 4073097.0,
+        "kv_fraction": 0.9703703703703703,
+        "preemptions": 2573.0,
+        "prompt_tokens": 16113154.0,
+        "running": 28.0,
+        "waiting": 36.0
       },
-      "preemption_delta": 11.0,
+      "preemption_delta": 15.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "e76d7785c2b0aa7c44ddfc4fcd8627f15f37bcaf10ab91db7680a980799516a2"
     },
@@ -62,47 +62,47 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4131775.0,
-        "kv_fraction": 0.980246913580247,
-        "preemptions": 2382.0,
-        "prompt_tokens": 13799517.0,
-        "running": 20.0,
-        "waiting": 44.0
+        "generation_tokens": 4180996.0,
+        "kv_fraction": 0.9925925925925926,
+        "preemptions": 2429.0,
+        "prompt_tokens": 13887831.0,
+        "running": 28.0,
+        "waiting": 36.0
       },
-      "preemption_delta": 10.0,
+      "preemption_delta": 23.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "fa210779888d71abf5db3a847d3c22e697ee657e5d6b9b9f73b9b2ebdac6d681"
     }
   ],
   "flags": [
     {
+      "delta": 14.0,
+      "endpoint_id": "saturation_1",
+      "type": "preemptions_increased"
+    },
+    {
+      "endpoint_id": "saturation_1",
+      "fraction": 0.9925925925925926,
+      "type": "high_kv_usage"
+    },
+    {
       "delta": 15.0,
-      "endpoint_id": "saturation_1",
-      "type": "preemptions_increased"
-    },
-    {
-      "endpoint_id": "saturation_1",
-      "fraction": 1.0,
-      "type": "high_kv_usage"
-    },
-    {
-      "delta": 11.0,
       "endpoint_id": "saturation_2",
       "type": "preemptions_increased"
     },
     {
       "endpoint_id": "saturation_2",
-      "fraction": 0.9777777777777777,
+      "fraction": 0.9703703703703703,
       "type": "high_kv_usage"
     },
     {
-      "delta": 10.0,
+      "delta": 23.0,
       "endpoint_id": "saturation_3",
       "type": "preemptions_increased"
     },
     {
       "endpoint_id": "saturation_3",
-      "fraction": 0.980246913580247,
+      "fraction": 0.9925925925925926,
       "type": "high_kv_usage"
     },
     {
@@ -117,7 +117,7 @@
   "plan_sha256": "b0215a7cde359bbf820eb2b7a1891eef7805e78d5989cb8edac150bd61bcfbd3",
   "planned_native_cases": 24061,
   "pool_stage": "evaluating",
-  "pool_stage_source_age_seconds": 29452.78397345543,
+  "pool_stage_source_age_seconds": 29639.04825282097,
   "pool_stage_source_updated_at_pacific": "2026-10-18T11:21:46.059841-07:00",
   "pool_stage_timestamp_is_not_a_runtime_heartbeat": true,
   "recent_response_metadata": [],
@@ -525,5 +525,5 @@
   ],
   "saved_responses_unique_logical_sources": 9397,
   "schema_version": 1,
-  "updated_at_pacific": "2026-10-18T19:32:40.452976-07:00"
+  "updated_at_pacific": "2026-10-18T19:35:46.769478-07:00"
 }
