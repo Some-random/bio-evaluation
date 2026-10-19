@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-19T01:29:56.927942-07:00",
-  "score_snapshot_at": "2026-10-19T08:28:02.495277+00:00",
-  "catalog_snapshot_at": "2026-10-19T08:26:35.324012+00:00",
+  "generated_at_pacific": "2026-10-19T05:01:38.330224-07:00",
+  "score_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
+  "catalog_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
   "retained_setting_count": 57,
   "retained_setting_ids": [
     "B01",
@@ -402,35 +402,51 @@
       "task": "Protein stability regression — TAPE",
       "category": "Protein properties, interactions and developability",
       "dataset": "Protein stability regression — TAPE",
-      "condition": "Catalog contract; no verified scored condition",
-      "condition_kind": "unverified",
-      "run_id": null,
-      "protocol_variant": null,
+      "condition": "Native declared score; mixed 4K/16K continuation",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1",
+      "result_type": "original_or_replay",
+      "protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH__MIXED_BUDGET_4K16K_CONTINUATION",
       "input_protocol": "Protein sequence → stability scalar; zero-shot",
-      "output_budget": "Not established",
+      "output_budget": "4,096 × 7,303; 16,384 × 5,548 (mixed)",
       "usable_answer_rate": {
-        "value": null,
-        "display": "Not established",
-        "definition": "No verified full-run parse counts"
+        "value": 0.9817134853318807,
+        "display": "12,616/12,851 (98.2%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
       },
-      "native_score": null,
+      "native_score": {
+        "planned": 12851,
+        "parsed": 12616,
+        "missing": 0,
+        "invalid": 235,
+        "spearman": null,
+        "spearman_parsed_only": -0.12158796841646605,
+        "undefined_constant_or_insufficient": false,
+        "all_case_rule": "No invented prediction for failures. Full-test Spearman requires every output to parse; incomplete valid-only correlation is separately labeled."
+      },
       "diagnostic_score": null,
-      "score_display": "No verified native score",
+      "score_display": "spearman undefined; spearman_parsed_only -0.1216",
       "evidence": {
-        "category": "Whole-task metric pending",
-        "detail": "No verified whole-task native score in the aggregate snapshot."
+        "category": "Incomplete native metric",
+        "detail": "A finished execution with an undefined metric is not a complete quality evaluation."
       },
-      "counts": {},
-      "finish_reasons": {},
-      "source_scores": null,
-      "source_score_sha256": null,
-      "source_row_category": null,
+      "counts": {
+        "planned": 12851,
+        "completed": 12851,
+        "parsed": 12616,
+        "invalid_outputs": 235,
+        "missing_or_failed_outputs": 0,
+        "held_before_inference": 0
+      },
+      "finish_reasons": {
+        "stop": 12843,
+        "length": 8
+      },
+      "source_scores": "results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
+      "source_score_sha256": "53ad6a4142efefdfff140decfaeb16efee1f077ae3629788a57da1fd56f7404e",
+      "source_row_category": "diagnostic_only_finished_runs",
       "source_protocol_url": "https://github.com/songlab-cal/tape",
-      "case_scope": "Official TAPE stability split; retain the numerical target.",
-      "excluded_run_reasons": [
-        "missing_or_nonzero_terminal_completion",
-        "shard_only"
-      ],
+      "case_scope": "full_frozen_reviewed_released_test",
       "native_metrics_recomputed": false
     },
     {
@@ -639,32 +655,66 @@
       "task": "GO biological process — DeepFRI split",
       "category": "Protein function, annotations and descriptions",
       "dataset": "GO biological process — DeepFRI split",
-      "condition": "Catalog contract; no verified scored condition",
-      "condition_kind": "unverified",
-      "run_id": null,
-      "protocol_variant": null,
+      "condition": "Native declared score; offline compatibility repair; mixed 4K/16K continuation",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "result_type": "offline_scorer_compatibility_repair",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
       "input_protocol": "Protein sequence → biological-process confidence scores; zero-shot",
-      "output_budget": "Not established",
+      "output_budget": "4,096 × 448; 16,384 × 2,968 (mixed)",
       "usable_answer_rate": {
-        "value": null,
-        "display": "Not established",
-        "definition": "No verified full-run parse counts"
+        "value": 0.8729508196721312,
+        "display": "2,982/3,416 (87.3%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
       },
-      "native_score": null,
+      "native_score": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.03828682005405426,
+          "f1_max": 0.18172448873519897,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.035366846712735565
+          },
+          "valid_cases": 2982,
+          "planned_cases": 3416
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.03459365293383598,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.033529206507236085
+          },
+          "case_count": 3416,
+          "is_model_prediction": false
+        }
+      },
       "diagnostic_score": null,
-      "score_display": "No verified native score",
+      "score_display": "auprc@micro undefined; f1_max undefined",
       "evidence": {
-        "category": "Scoring unresolved",
-        "detail": "No verified whole-task native metric; scorer repair / completion remains pending."
+        "category": "Scorer repaired; metric incomplete",
+        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged."
       },
-      "counts": {},
-      "finish_reasons": {},
-      "source_scores": null,
-      "source_score_sha256": null,
-      "source_row_category": null,
+      "counts": {
+        "planned": 3416,
+        "completed": 3416,
+        "parsed": 2982,
+        "invalid_outputs": 434,
+        "missing_or_failed_outputs": null,
+        "held_before_inference": 0
+      },
+      "finish_reasons": {
+        "stop": 3328,
+        "length": 88
+      },
+      "source_scores": "results/scoring_corrections/qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "source_score_sha256": "2765bdbff4451853e4531cad2edb6ea76fedaecb0d376ab763f5dd1cb5679ac1",
+      "source_row_category": "diagnostic_only_finished_runs",
       "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
-      "case_scope": "Keep BP/MF/CC separate; ProtST's DeepFRI-derived split.",
-      "excluded_run_reasons": [],
+      "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
       "native_metrics_recomputed": false
     },
     {
@@ -2960,8 +3010,8 @@
     }
   ],
   "source_sha256": {
-    "reports/RESULTS_AT_A_GLANCE.json": "29457230d08793ae3e918872388e1c8ea5f5272c9437be5e36b512a7406f4420",
-    "reports/TASK_HIERARCHY_DATA.json": "e937eba29b7c215b94caabff1eeb2eb4ec4f950f5de2687bb5ff43c174df59c9",
+    "reports/RESULTS_AT_A_GLANCE.json": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+    "reports/TASK_HIERARCHY_DATA.json": "205f3fdbe4bb0c1403ac0e5b32030ca5ba3cd43516457f818c5a5cac870a44c0",
     "reports/REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.json": "68d143a13641237c1141b4d47ecdda438f7f81711ffccc7a4cdd6069764f449b"
   },
   "policy": "Aggregate metadata only. All retained settings included; runs, datasets and extraction conditions remain separate. No pooled averages, score recomputation, raw answers, labels or inference. Parse counts are qualified by their native meaning; missing verified scores remain unknown.",

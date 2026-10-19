@@ -1,6 +1,6 @@
 {
   "version": "SCORER_COMPATIBILITY_REPAIR_2026_10_19",
-  "updated_at_pacific": "2026-10-19T01:27:44.882929-07:00",
+  "updated_at_pacific": "2026-10-19T04:33:35.795477-07:00",
   "repair": "Only explicit API content=null versus normalized saved text=\"\" is equivalent for provenance.",
   "original_scorer_sha256": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7",
   "derived_scorer_sha256": "8e9f16fcac02afbfee88fcf271a62bd974d559c803aa78dabf7dbac8999ebb91",
@@ -62,6 +62,64 @@
         "metrics.OFFLINE_ALL_ZERO_REFERENCE.f1_max"
       ],
       "native_score_artifact_sha256": "f614927d646ee04fcc7deb3fd62995af15dafd13b0b9cfecd610cbcb7b809698"
+    },
+    {
+      "task_id": "P13",
+      "task_name": "Biological-process annotation",
+      "run_id": "qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "planned": 3416,
+      "completed": 3416,
+      "parsed": 2982,
+      "invalid_outputs": 434,
+      "finish_reasons": {
+        "stop": 3328,
+        "length": 88
+      },
+      "parse_error_counts": {
+        "Unknown class or nonnumeric confidence": 271,
+        "Missing, truncated or unfinished final answer": 108,
+        "Duplicate JSON key": 52,
+        "Unterminated string starting at: line 3 column 9762 (char 9763)": 1,
+        "Unterminated string starting at: line 3 column 9516 (char 9517)": 1,
+        "Unterminated string starting at: line 3 column 10254 (char 10255)": 1
+      },
+      "metrics": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.03828682005405426,
+          "f1_max": 0.18172448873519897,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.035366846712735565
+          },
+          "valid_cases": 2982,
+          "planned_cases": 3416
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.03459365293383598,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.033529206507236085
+          },
+          "case_count": 3416,
+          "is_model_prediction": false
+        }
+      },
+      "output_budget_counts": {
+        "4096": 448,
+        "16384": 2968
+      },
+      "normalization_counts": {
+        "equal": 3322,
+        "explicit_null_to_empty": 94
+      },
+      "nonfinite_native_metric_paths": [
+        "metrics.OFFLINE_ALL_ZERO_REFERENCE.f1_max"
+      ],
+      "native_score_artifact_sha256": "9216b7c91b1557e249603cbaa4a20329a219bbca52c99196782eb7c32008edf9"
     },
     {
       "task_id": "P14",
@@ -188,6 +246,18 @@
       "original_raw_outputs_unchanged": true
     },
     {
+      "task_id": "P13",
+      "original_failed_run_id": "qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_v1",
+      "new_run_id": "qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+      "scores_file": "results/scoring_corrections/qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "scores_sha256": "2765bdbff4451853e4531cad2edb6ea76fedaecb0d376ab763f5dd1cb5679ac1",
+      "completed_at_pacific": "2026-10-19T04:33:17.303947-07:00",
+      "correction": "null-versus-empty provenance compatibility; original failed attempt retained",
+      "no_new_model_generation": true,
+      "original_raw_outputs_unchanged": true
+    },
+    {
       "task_id": "P14",
       "original_failed_run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_v1",
       "new_run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
@@ -212,7 +282,5 @@
       "original_raw_outputs_unchanged": true
     }
   ],
-  "pending_tasks": [
-    "P13"
-  ]
+  "pending_tasks": []
 }
