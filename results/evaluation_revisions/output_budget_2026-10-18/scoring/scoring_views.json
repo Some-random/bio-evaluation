@@ -70,13 +70,21 @@
     "terminal": false
   },
   "qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1": {
-    "generation_budget_condition": null,
+    "execution_success": true,
+    "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
     "kind": "derived_native_scoring",
-    "native_metrics_valid": null,
+    "native_metric_issues": [],
+    "native_metrics_valid": true,
+    "output_budget_counts": {
+      "16384": 1232,
+      "4096": 4419
+    },
     "planned": 5651,
     "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1",
-    "scored_benchmark_completed": false,
+    "scored_benchmark_completed": true,
+    "scores_sha256": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b",
+    "scoring_exit_code": 0,
     "task_id": "P16",
-    "terminal": false
+    "terminal": true
   }
 }
