@@ -1,5 +1,56 @@
 # OpenAI policy warning and evaluation status
 
+## Current conclusion — October 19, 2026, Pacific time
+
+The original incident is operationally contained, but provider clarification is
+still unrecorded. The 43 explicit `bio_policy` rejections in the P18 run are
+verified local evidence. They are a plausible explanation for the warning;
+the provider has not confirmed the email's exact triggering requests. The
+373 transport failures are a separate category with unknown provider outcomes.
+None of these 418 P18 case records is a completed model prediction or a
+biological benchmark score. Continuing the original batch after the initial
+policy rejections was a runner-control failure.
+
+The earlier global job remains disabled. The current dispatcher stops further
+submissions on policy/access errors, preserves in-flight outcomes, makes no
+automatic retries and requires exact reviewed case/protocol authorization.
+Requests now carry one stable private safety identifier; that identifier is
+for attribution, not provider approval or an exemption from safety checks.
+The user reported submitting an appeal; no response has been recorded.
+
+The separately authorized October 19 comparison is complete: Luna LitQA2,
+SuppQA and protein localization, plus the already completed Sol QA condition.
+No further Sol calls were authorized after the user selected Luna only. Gold
+labels and prior Qwen outputs were isolated from model input, predictions
+were locked before scoring, and failures remained in full denominators. This
+successful scoped work does not establish that the historical warning is
+resolved or authorize retrying rejected P18 requests. See the
+[comparison results](OPENAI_QWEN_COMPARISON_RESULTS_2026-10-19.md) and
+[dispatcher isolation evidence](COMPARISON_DISPATCH_ISOLATION_2026-10-19.md).
+
+The later B06 independent input review and GFP-only P18 preparation were
+interrupted by automatic checks reporting "possible biological risk" without
+returning exact triggers. Their completed receipts are preserved and the
+interrupted actions were not retried or rerouted. These interruptions do not
+establish that every case in the benchmarks, or GFP research as a whole, is
+prohibited. Ordinary source acquisition continued independently, as recorded
+in the [acquisition report](SOURCE_ACQUISITION_PROGRESS_2026-10-19.md).
+
+The scoring/extraction problems are separate from this policy incident. The
+P12–P15 software compatibility repair and additional P08/P16/P36 diagnostics
+are published, while invalid outputs, unavailable historical evidence and
+undefined full metrics remain explicit. See the
+[current repair plan](EVALUATION_REPAIR_PLAN_2026-10-19.md). No selective
+replacement generations or paper-comparability claims follow from those repairs.
+
+Progress messages now run every two hours at even-numbered
+America/Los_Angeles hours; the next scheduled message is October 19 at 6 PM
+PDT. This changes reporting cadence only. The original incident record below
+is retained as historical evidence; its then-current upload and global-hold
+statements do not describe the later scoped comparison or public publication.
+
+## Original October 14 record
+
 Checked 14 October 2026, 12:17 PST (fixed UTC−8). The user pasted an email
 warning about Prohibited Biological Use and possible additional enforcement
 after seven calendar days without remediation. The authenticity, receipt time,

@@ -38,6 +38,21 @@ There is no unconditional shared “pilot passed, launch everything” sequence.
 
 [Machine-readable task-specific requirements](../configs/task_specific_delivery_gates_2026-10-19.json) · [Decision table](EVALUATION_DECISION_TABLE.md) · [Integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md)
 
-## Cross-model comparison preparation
+## Completed scoped model comparison
 
-The requested GPT-6-luna comparison starts with the preserved LitQA2 and SuppQA conditions: 279 cases, with all Qwen answers delivered and unambiguous. Protein localization is the next sequence-based candidate; figure/table QA form an optional visual block. Exact cases, prompts, scoring references and original Qwen artifacts are prepared for reuse. No fresh Qwen run is required. OpenAI dispatch remains held pending the recorded account-scope issue and task review; the three neutral API checks did not constitute benchmark clearance. [Comparison protocol and evidence](GPT6_LUNA_QWEN_COMPARISON_PLAN_2026-10-19.md).
+The separately reviewed October 19 comparison has finished and been scored.
+Luna answered all 197 LitQA2 and 82 SuppQA cases, scoring 97/197 and 44/82.
+Protein localization closed all 2,773 cases with 2,770 delivered responses and
+three transport failures; Luna scored 1,575/2,773. Native and strict answer
+scores agree. The exact archived Qwen inputs and outputs were reused without
+regeneration. The previously completed Sol QA results remain archived; further
+Sol inference was cancelled when the user selected Luna only. Figure/table QA
+remains a separately proposed visual comparison.
+
+The old global authorization remains disabled as historical incident state.
+This later case-scoped comparison did not retry the flagged material and does
+not establish provider clearance of the historical warning. The current
+results and execution evidence supersede the earlier preparation-only status:
+[comparison results](OPENAI_QWEN_COMPARISON_RESULTS_2026-10-19.md),
+[dispatcher isolation](COMPARISON_DISPATCH_ISOLATION_2026-10-19.md), and
+[incident follow-up](POLICY_INCIDENT_2026-10-14.md).

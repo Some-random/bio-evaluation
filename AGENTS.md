@@ -421,3 +421,11 @@ block, recorded under `p18_gfp_candidate/review_interruption.json`. Exact
 triggers were not returned. Do not retry or reroute those interrupted actions.
 These events do not classify every benchmark case or GFP research as unsafe;
 other already-running ordinary source/evaluator downloads continue.
+
+The user subsequently changed evaluation progress messages from hourly to
+**every two hours**. Keep the existing full-catalog scheduler and history under
+`.local/hourly_evaluation_updates/catalog_2026-10-19/`; the historical directory
+name is unchanged. It now reports at even-numbered Pacific hours, with the next
+scheduled message at 6 PM PDT on October 19. This supersedes earlier hourly
+reporting instructions, does not stop ongoing work, and does not change any
+inference authorization, held cases or benchmark protocols.
