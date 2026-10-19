@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "task_id": "P36",
+      "run_id": "p36-qwen3.8-27b-biot5-reviewed59-20261016",
+      "protocol_variant": "QWEN_FULLTEXT_BIOT5_DESIGN_PAIRED_SOURCE_ROUGE_PARTIAL",
+      "status": "verified_archived_subset",
+      "full_source_cases": 5876,
+      "counts": {
+        "planned": 59,
+        "raw_responses": 59,
+        "completed": 17,
+        "parsed": 0,
+        "invalid_outputs": 59,
+        "empty_final_fields": 42,
+        "missing_or_failed_outputs": 0,
+        "original_dispatch_error_statuses": 42
+      },
+      "finish_reasons": {
+        "stop": 33,
+        "length": 26
+      },
+      "archived_lexical_metric": {
+        "name": "ROUGE-L",
+        "value": 0.12347117664198978,
+        "text_strings": 17,
+        "denominator": 59
+      },
+      "full_benchmark_complete": false,
+      "inference_performed": false,
+      "raw_hashes_verified": true,
+      "scores_sha256": "aa85ba27ac77c7df8251a2701a71a6b2f6b8e8713743838d3b02320334248aec",
+      "completion_sha256": "6020d6864eaa715d5d15fb986bf20e608facc8951c9146cd7bce0fbe8f4c8b17",
+      "evidence_manifest_sha256": "6bb6d590cceca7598f02987a688d3166fbe8bfc46cee473eb9bee493aab6f684",
+      "source_evidence": "https://github.com/Some-random/bio-evaluation/releases/download/continuation-2026-10-16-reviewed-p36-and-source-preparation/p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-e68bc40942c2bc64c4045413.tar.gz",
+      "archive_sha256": "e88fbe84a224bcaa9edd96a3bb29de78cecbbf10cf6a28e0232e2e0264a3e432",
+      "qualification": "All59 received HTTP200 raw outputs;17 supplied final strings and42 had null finals/nonempty reasoning. Zero outputs met native sequence serialization; lexical paired-reference ROUGE is not design quality or full5876-source completion. All59 requests already attempted: never-dispatched count0; no selective retry.",
+      "generation": {
+        "max_tokens": 4096
+      }
+    }
+  ]
+}

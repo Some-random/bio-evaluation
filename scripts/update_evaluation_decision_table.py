@@ -1,4 +1,4 @@
-"""Render a decision table from aggregate result and task-catalog metadata only.
+"""Render a decision table from aggregate results and verified subset metadata.
 
 No raw requests, answers, labels, inference, scoring or existing report mutation.
 Every retained setting appears; repeated runs and extraction conditions stay
@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCORES = 'reports/RESULTS_AT_A_GLANCE.json'
 CATALOG = 'reports/TASK_HIERARCHY_DATA.json'
 REACTION_DIAGNOSTIC = 'reports/REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.json'
+RECOVERED_SUBSET_EVIDENCE = 'reports/RECOVERED_SUBSET_EVIDENCE_2026-10-19.json'
 OUTPUT_JSON = 'reports/EVALUATION_DECISION_TABLE.json'
 OUTPUT_MD = 'reports/EVALUATION_DECISION_TABLE.md'
 ARCHIVE_IDS = {'N01', 'N02', 'N03', 'N04', 'N05', 'P28', 'P29'}
@@ -248,7 +249,75 @@ def reaction_condition(rows, diagnostic):
     return result
 
 
-def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagnostic=None):
+def recovered_subset_rows(document, mapping):
+    """Describe recovered P36 evidence without treating it as a full task score.
+
+    The portable input records an already audited archive. This renderer never
+    reads raw generations or reinterprets a legacy dispatch-error status.
+    """
+    if document is None:return []
+    if document.get('schema_version') != 1 or not isinstance(document.get('entries'), list):
+        raise ValueError('Unsupported recovered-subset evidence schema')
+    rows = []; seen = set()
+    for entry in document['entries']:
+        task = entry.get('task_id'); counts = entry.get('counts') or {}
+        planned = counts.get('planned'); full_count = entry.get('full_source_cases')
+        parsed = counts.get('parsed'); final_strings = counts.get('completed')
+        empty = counts.get('empty_final_fields'); invalid = counts.get('invalid_outputs')
+        finishes = entry.get('finish_reasons') or {}; metric = entry.get('archived_lexical_metric') or {}
+        if task != 'P36' or task not in mapping:
+            raise ValueError('Recovered subset is not a supported retained task')
+        if (entry.get('status') != 'verified_archived_subset'
+                or entry.get('full_benchmark_complete') is not False
+                or entry.get('inference_performed') is not False
+                or entry.get('raw_hashes_verified') is not True):
+            raise ValueError('Recovered subset lacks verified, non-complete provenance')
+        if (any(type(value) is not int for value in
+                [planned, full_count, parsed, final_strings, empty, invalid])
+                or not 0 < planned < full_count or parsed != 0
+                or not 0 <= final_strings <= planned or empty + final_strings != planned
+                or invalid != planned or counts.get('raw_responses') != planned
+                or counts.get('missing_or_failed_outputs') != 0
+                or any(type(value) is not int or value < 0 for value in finishes.values())
+                or sum(finishes.values()) != planned):
+            raise ValueError('Recovered subset counts omit failures or imply unverified completion')
+        if (metric.get('name') != 'ROUGE-L' or not finite(metric.get('value'))
+                or metric.get('text_strings') != final_strings or metric.get('denominator') != planned):
+            raise ValueError('Archived lexical metric has a mismatched scope')
+        for field in ['scores_sha256', 'completion_sha256', 'evidence_manifest_sha256', 'archive_sha256']:
+            digest = entry.get(field, '')
+            if not isinstance(digest, str) or len(digest) != 64 or any(c not in '0123456789abcdef' for c in digest):
+                raise ValueError('Recovered subset lacks a valid ' + field)
+        run_id = entry.get('run_id'); key = (task, run_id)
+        if not run_id or key in seen:raise ValueError('Missing or duplicate recovered subset run')
+        if not entry.get('source_evidence'):raise ValueError('Recovered subset lacks an evidence link')
+        seen.add(key); info = mapping[task]; group = info['group']; protocol = info['protocol']
+        rows.append({'task_id': task, 'task': protocol.get('title') or group['task'],
+            'category': group['category'], 'dataset': protocol.get('title') or group['dataset'],
+            'condition': f'Archived reviewed subset: {planned:,} of {full_count:,} source cases',
+            'condition_kind': 'recovered_subset', 'run_id': run_id,
+            'result_type': 'recovered_subset_attempt', 'protocol_variant': entry.get('protocol_variant'),
+            'input_protocol': INPUTS[task], 'output_budget': budget(entry),
+            'usable_answer_rate': {'value': 0.0, 'display': f'0/{planned:,} native-valid; {empty:,} empty finals',
+                'definition': 'Native protein-serialization-valid outputs divided by the complete reviewed subset; all raw responses were delivered'},
+            'native_score': None, 'diagnostic_score': None,
+            'archived_lexical_metric': copy.deepcopy(metric),
+            'score_display': f"No full-task score; archived ROUGE-L {metric['value']:.4f} ({planned:,} slots; {final_strings:,} final strings)",
+            'evidence': {'category': 'Recovered subset; output / format failure',
+                'detail': f'{planned:,}/{planned:,} raw responses verified; {finishes.get("length", 0):,} hit the cap. '
+                    'No valid native protein sequence was delivered. Lexical overlap does not establish design quality; the full source benchmark remains unevaluated.'},
+            'counts': copy.deepcopy(counts), 'finish_reasons': copy.deepcopy(finishes),
+            'source_scores': None, 'source_score_sha256': entry['scores_sha256'],
+            'source_evidence': entry['source_evidence'], 'source_row_category': 'recovered_subset_evidence',
+            'evidence_manifest_sha256': entry['evidence_manifest_sha256'],
+            'archive_sha256': entry['archive_sha256'], 'completion_sha256': entry['completion_sha256'],
+            'source_protocol_url': protocol.get('sourceUrl') or group.get('sourceUrl'),
+            'case_scope': 'reviewed_subset_only', 'full_source_cases': full_count,
+            'full_benchmark_complete': False, 'native_metrics_recomputed': False})
+    return rows
+
+
+def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagnostic=None, recovered_subset_evidence=None):
     excluded = set((scores.get('main_report_scope') or {}).get('excluded_task_ids', ARCHIVE_IDS))
     mapping = catalog_map(catalog, excluded)
     expected = scores.get('main_catalog_settings')
@@ -288,6 +357,8 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
                     'source_scores': source, 'source_score_sha256': raw.get('scores_sha256'), 'source_row_category': category,
                     'source_protocol_url': protocol.get('sourceUrl') or group.get('sourceUrl'),
                     'case_scope': raw.get('case_scope'), 'native_metrics_recomputed': False})
+    subset_rows = recovered_subset_rows(recovered_subset_evidence, mapping)
+    rows.extend(subset_rows); observed.update(row['task_id'] for row in subset_rows)
     excluded_runs = scores.get('excluded_or_not_yet_terminal_runs', [])
     for task, info in mapping.items():
         if task in observed:continue
@@ -326,7 +397,8 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
         'score_snapshot_at': scores.get('generated_at_utc'), 'catalog_snapshot_at': (catalog.get('meta') or {}).get('generatedAt'),
         'retained_setting_count': len(mapping), 'retained_setting_ids': sorted(mapping), 'excluded_setting_ids': sorted(excluded),
         'row_count': len(rows), 'rows': rows, 'source_sha256': source_hashes or {},
-        'policy': 'Aggregate metadata only. All retained settings included; runs, datasets and extraction conditions remain separate. No pooled averages, score recomputation, raw answers, labels or inference. Parse counts are qualified by their native meaning; missing verified scores remain unknown.',
+        'recovered_subset_setting_ids': sorted({row['task_id'] for row in subset_rows}),
+        'policy': 'Aggregate and verified archived-subset metadata only. All retained settings included; runs, datasets and extraction conditions remain separate. Recovered subsets do not count as completed full benchmarks. No pooled averages, score recomputation, raw answers, labels or inference. Parse counts are qualified by their native meaning; missing verified scores remain unknown.',
         'model': (catalog.get('meta') or {}).get('model', {}).get('name')}
 
 
@@ -345,13 +417,15 @@ def render(report, root=ROOT):
             if current is not None:text.append('')
             current = row['category'];text += ['## ' + current, '', '| Setting / dataset | Input / protocol / condition | Output tokens | Usable-answer rate | Native score / separate diagnostic | Evidence status |', '|---|---|---|---|---|---|']
         label = row['task_id'] + ' ' + row['task']
-        if row.get('source_scores'):
+        if row.get('source_evidence'):
+            label = '[' + label + '](' + row['source_evidence'] + ')'
+        elif row.get('source_scores'):
             href = '../' + row['source_scores'] if (Path(root) / row['source_scores']).is_file() else 'RESULTS_AT_A_GLANCE.json'
             label = '[' + label + '](' + href + ')'
         elif row.get('source_protocol_url'):label = '[' + label + '](' + row['source_protocol_url'] + ')'
         if row['dataset'] != row['task']:label += '<br>' + row['dataset']
         state = '**' + row['evidence']['category'] + '**<br>' + row['evidence']['detail']
-        if row['condition_kind'] not in {'native', 'unverified'}:score = 'Diagnostic: ' + row['score_display']
+        if row['condition_kind'] not in {'native', 'unverified', 'recovered_subset'}:score = 'Diagnostic: ' + row['score_display']
         else:score = row['score_display']
         text.append('| ' + ' | '.join(cell(x) for x in [label, row['input_protocol'] + '<br>' + row['condition'], row['output_budget'], row['usable_answer_rate']['display'], score, state]) + ' |')
     text += ['', 'Archived BioReason settings remain in [their separate records](ARCHIVED_EVALUATIONS.md). Task inputs, explanations and reference labels are not reproduced here.', '']
@@ -364,7 +438,10 @@ def generate(root=ROOT):
         raw = (root / name).read_bytes();docs[name] = json.loads(raw);hashes[name] = hashlib.sha256(raw).hexdigest()
     if (root / REACTION_DIAGNOSTIC).is_file():
         raw = (root / REACTION_DIAGNOSTIC).read_bytes();docs[REACTION_DIAGNOSTIC] = json.loads(raw);hashes[REACTION_DIAGNOSTIC] = hashlib.sha256(raw).hexdigest()
-    result = build(docs[SCORES], docs[CATALOG], source_hashes=hashes, reaction_diagnostic=docs.get(REACTION_DIAGNOSTIC))
+    if (root / RECOVERED_SUBSET_EVIDENCE).is_file():
+        raw = (root / RECOVERED_SUBSET_EVIDENCE).read_bytes();docs[RECOVERED_SUBSET_EVIDENCE] = json.loads(raw);hashes[RECOVERED_SUBSET_EVIDENCE] = hashlib.sha256(raw).hexdigest()
+    result = build(docs[SCORES], docs[CATALOG], source_hashes=hashes,
+        reaction_diagnostic=docs.get(REACTION_DIAGNOSTIC), recovered_subset_evidence=docs.get(RECOVERED_SUBSET_EVIDENCE))
     for name, content in [(OUTPUT_JSON, json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + '\n'), (OUTPUT_MD, render(result, root))]:
         path = root / name;path.parent.mkdir(parents=True, exist_ok=True);temporary = path.with_suffix(path.suffix + '.tmp');temporary.write_text(content);temporary.replace(path)
     return result

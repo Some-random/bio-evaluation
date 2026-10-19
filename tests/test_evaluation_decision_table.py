@@ -38,7 +38,69 @@ def reaction_diagnostic():
         'diagnostic_result_sha256':'inner-result-hash'}
 
 
+def recovered_subset():
+    return {'schema_version':1,'entries':[{
+        'task_id':'P36','run_id':'historical-reviewed-subset','protocol_variant':'SYNTHETIC_PARTIAL',
+        'status':'verified_archived_subset','full_source_cases':5876,
+        'counts':{'planned':59,'raw_responses':59,'completed':17,'parsed':0,
+                  'invalid_outputs':59,'empty_final_fields':42,'missing_or_failed_outputs':0},
+        'finish_reasons':{'stop':33,'length':26},'generation':{'max_tokens':4096},
+        'archived_lexical_metric':{'name':'ROUGE-L','value':.123,'text_strings':17,'denominator':59},
+        'full_benchmark_complete':False,'inference_performed':False,'raw_hashes_verified':True,
+        'scores_sha256':'a'*64,'completion_sha256':'b'*64,'evidence_manifest_sha256':'c'*64,
+        'archive_sha256':'d'*64,'source_evidence':'https://example.org/verified-archive.tar.gz'}]}
+
+
 class DecisionTests(unittest.TestCase):
+    def test_recovered_subset_preserves_failed_outputs_without_promoting_score(self):
+        native=row('P03'); source=scores(['P03','P36','N01'],[native]); before=copy.deepcopy(source)
+        out=report.build(source,catalog(['P03','P36','N01']),recovered_subset_evidence=recovered_subset())
+        value=next(r for r in out['rows'] if r['task_id']=='P36')
+        self.assertEqual(out['retained_setting_ids'],['P03','P36'])
+        self.assertEqual(out['recovered_subset_setting_ids'],['P36'])
+        self.assertEqual(sum(r['condition_kind']=='native' for r in out['rows']),1)
+        self.assertEqual(source,before)
+        self.assertIsNone(value['native_score']);self.assertIsNone(value['diagnostic_score'])
+        self.assertEqual(value['result_type'],'recovered_subset_attempt')
+        self.assertEqual(value['counts']['raw_responses'],59)
+        self.assertEqual(value['counts']['invalid_outputs'],59)
+        self.assertEqual(value['counts']['empty_final_fields'],42)
+        self.assertEqual(value['usable_answer_rate']['value'],0.)
+        self.assertFalse(value['full_benchmark_complete'])
+        self.assertIn('59 of 5,876',value['condition'])
+        self.assertIn('59 slots; 17 final strings',value['score_display'])
+        rendered=report.render(out)
+        self.assertIn('No full-task score; archived ROUGE-L',rendered)
+        self.assertNotIn('Diagnostic: No full-task score',rendered)
+
+    def test_recovered_subset_rejects_promotion_and_hidden_failures(self):
+        changes=[('full_benchmark_complete',True),('raw_hashes_verified',False),
+                 ('inference_performed',True),('scores_sha256','unverified')]
+        for key,value in changes:
+            evidence=recovered_subset();evidence['entries'][0][key]=value
+            with self.subTest(field=key),self.assertRaises(ValueError):
+                report.build(scores(['P36']),catalog(['P36']),recovered_subset_evidence=evidence)
+        for key,value in [('planned',17),('raw_responses',17),('parsed',17),
+                          ('invalid_outputs',42),('empty_final_fields',0),('missing_or_failed_outputs',42)]:
+            evidence=recovered_subset();evidence['entries'][0]['counts'][key]=value
+            with self.subTest(count=key),self.assertRaises(ValueError):
+                report.build(scores(['P36']),catalog(['P36']),recovered_subset_evidence=evidence)
+        evidence=recovered_subset();evidence['entries'][0]['archived_lexical_metric']['denominator']=17
+        with self.assertRaises(ValueError):
+            report.build(scores(['P36']),catalog(['P36']),recovered_subset_evidence=evidence)
+
+    def test_generate_optionally_ingests_portable_recovered_metadata(self):
+        with tempfile.TemporaryDirectory()as tmp:
+            root=Path(tmp);(root/'reports').mkdir()
+            for name,value in [(report.SCORES,scores(['P36'])),(report.CATALOG,catalog(['P36'])),
+                               (report.RECOVERED_SUBSET_EVIDENCE,recovered_subset())]:
+                (root/name).write_text(json.dumps(value))
+            out=report.generate(root)
+            self.assertIn(report.RECOVERED_SUBSET_EVIDENCE,out['source_sha256'])
+            self.assertEqual(out['rows'][0]['counts']['planned'],59)
+            self.assertEqual(out['rows'][0]['output_budget'],'4,096')
+            self.assertIsNone(out['rows'][0]['native_score'])
+
     def test_repaired_scorer_keeps_undefined_metrics_and_separate_result_type(self):
         source=row('P14', metrics={'auprc@micro':None,'f1_max':None},
                    scorer_recovery={'version':'synthetic_guard_repair'})

@@ -1,6 +1,6 @@
 # Evaluation decision table
 
-Generated 2026-10-19 05:01 PDT; score snapshot 2026-10-19 04:33 PDT.
+Generated 2026-10-19 11:38 PDT; score snapshot 2026-10-19 04:33 PDT.
 
 All **57 retained settings** appear below. Each source dataset, run or extraction condition stays separate; there is no overall average. Native scores remain unchanged. A saved or nonempty response is not necessarily a usable answer.
 
@@ -84,7 +84,7 @@ Links for unavailable original score files open retained aggregate metadata. The
 
 | Setting / dataset | Input / protocol / condition | Output tokens | Usable-answer rate | Native score / separate diagnostic | Evidence status |
 |---|---|---|---|---|---|
-| [P36 BioT5+ description-guided protein design](https://github.com/QizhiPei/BioT5) | Functional description → protein sequence<br>Catalog contract; no verified scored condition | Not established | Not established | No verified native score | **No verified result**<br>Current aggregate metadata provides no completed score; this does not prove the task was never attempted. |
+| [P36 BioT5+ description-guided protein design](https://github.com/Some-random/bio-evaluation/releases/download/continuation-2026-10-16-reviewed-p36-and-source-preparation/p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-e68bc40942c2bc64c4045413.tar.gz) | Functional description → protein sequence<br>Archived reviewed subset: 59 of 5,876 source cases | 4,096 | 0/59 native-valid; 42 empty finals | No full-task score; archived ROUGE-L 0.1235 (59 slots; 17 final strings) | **Recovered subset; output / format failure**<br>59/59 raw responses verified; 26 hit the cap. No valid native protein sequence was delivered. Lexical overlap does not establish design quality; the full source benchmark remains unevaluated. |
 | [P37 NatureLM unconditional generation](https://github.com/microsoft/SFM) | Unconditional protein-sequence generation<br>Catalog contract; no verified scored condition | Not established | Not established | No verified native score | **No verified result**<br>Current aggregate metadata provides no completed score; this does not prove the task was never attempted. |
 | [P38 NatureLM stability/solubility-conditioned generation](https://github.com/microsoft/SFM) | Requested stability/solubility property → protein sequence<br>Catalog contract; no verified scored condition | Not established | Not established | No verified native score | **No verified result**<br>Current aggregate metadata provides no completed score; this does not prove the task was never attempted. |
 | [P39 NatureLM heme-binding case study](https://github.com/microsoft/SFM) | Heme-related conditioning → protein sequence<br>Catalog contract; no verified scored condition | Not established | Not established | No verified native score | **No verified result**<br>Current aggregate metadata provides no completed score; this does not prove the task was never attempted. |

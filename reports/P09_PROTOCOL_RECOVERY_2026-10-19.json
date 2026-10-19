@@ -1,0 +1,105 @@
+{
+  "checked_at_pacific": "2026-10-19T11:35:39.142085-07:00",
+  "task_id": "P09",
+  "status": "blocked_missing_native_label_definition_and_test_artifact",
+  "official_current_commit": "bcb1351bc6490d4a98cae74e7eead30a028fae00",
+  "source_commit_unchanged_since_prior_audit": true,
+  "verified_publisher_files": [
+    {
+      "path": "NatureLM/.pre-commit-config.yaml",
+      "sha256": "c1fbc47616ef637a3ba04e376e794e9dd3b6df38da63b8f6e8b299df7dd274ea",
+      "git_blob": "83d94b8375fcbfb4f4d284c1c41dc6be4909c3ba"
+    },
+    {
+      "path": "NatureLM/.python-version",
+      "sha256": "49a506dd32096b010d75205acf3430c9ae6c40351888129499e5a5e487126c93",
+      "git_blob": "2c0733315e415bfb5e5b353f9996ecd964d395b2"
+    },
+    {
+      "path": "NatureLM/8x7b_base_model.ipynb",
+      "sha256": "7069266fd4e390780bdbf13ca617deef1881440f55884520a129d9702623a79c",
+      "git_blob": "c0470c1f0bec77e76967cef8ad3bde0de84d3669"
+    },
+    {
+      "path": "NatureLM/8x7b_inst_model.ipynb",
+      "sha256": "6162a444778558674a6543472a6a31e310006b7254c6ef797a869cb9a2b6b033",
+      "git_blob": "caf388050f59a30c11219287c12c16581bcdacd2"
+    },
+    {
+      "path": "NatureLM/README.md",
+      "sha256": "02f627fd44588c3736d1ca4419fd87ec05c762ea9c1265fae73914825194a1fc",
+      "git_blob": "a7ac89e556f7273910d3d02df62a4f43e44f58a8"
+    },
+    {
+      "path": "NatureLM/pyproject.toml",
+      "sha256": "dca0bd292bb9dbab2ee0ea096d79d5f70f0921f46267ee5c75a30bf109f53800",
+      "git_blob": "ba6100bcdb817b0625575eafdc8ed5eeee45cea1"
+    },
+    {
+      "path": "NatureLM/uv.lock",
+      "sha256": "44ccc23037851a5d4411a29eaa279f5efa1ebffe3125af549ff9776f936ca72d",
+      "git_blob": "0ff53960ccce50b563d3f89fab53cb9350d89eb0"
+    }
+  ],
+  "source_release_count": 0,
+  "source_branch_count": 1,
+  "official_microsoft_naturelm_dataset_search_count": 0,
+  "source_digests_verified": true,
+  "draft_gate_test": {
+    "passed": true,
+    "dispatch_allowed": false,
+    "missing_required_fields": [
+      "native_stability_label_conversion",
+      "native_processed_test_manifest",
+      "native_test_labels",
+      "native_answer_extraction"
+    ]
+  },
+  "new_inference_calls": 0,
+  "original_scores_modified": false,
+  "completion_claim": "Source recovery reviewed; native evaluation remains blocked, not completed.",
+  "source_receipts": [
+    {
+      "path": ".local/catalog_resume_2026-10-19/p09/github_main_commit.json",
+      "url": "https://api.github.com/repos/microsoft/SFM/commits/main",
+      "status": 200,
+      "bytes": 66037,
+      "sha256": "a13b578533b0a57bbe7b91bedd6741e670870c47cff0fdc8e4d5b890d17c067b"
+    },
+    {
+      "path": ".local/catalog_resume_2026-10-19/p09/github_branches.json",
+      "url": "https://api.github.com/repos/microsoft/SFM/branches?per_page=100",
+      "status": 200,
+      "bytes": 195,
+      "sha256": "1ab03b7c37ea341c4210801646a9350dfed8813a8a1f7991ea01771a51be00a7"
+    },
+    {
+      "path": ".local/catalog_resume_2026-10-19/p09/github_releases.json",
+      "url": "https://api.github.com/repos/microsoft/SFM/releases?per_page=100",
+      "status": 200,
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": ".local/catalog_resume_2026-10-19/p09/github_issues.json",
+      "url": "https://api.github.com/repos/microsoft/SFM/issues?state=all&per_page=100",
+      "status": 200,
+      "bytes": 21232,
+      "sha256": "9301265b3e54977b32870989f4a411488b4bd89053c7d8af6c619bf24aaadfe1"
+    },
+    {
+      "path": ".local/catalog_resume_2026-10-19/p09/hf_microsoft_naturelm_datasets.json",
+      "url": "https://huggingface.co/api/datasets?author=microsoft&search=NatureLM&limit=100",
+      "status": 200,
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": ".local/catalog_resume_2026-10-19/p09/naturelm_paper.html",
+      "url": "https://arxiv.org/html/2502.07527v3",
+      "status": 200,
+      "bytes": 616992,
+      "sha256": "2acb3c38eb0554804acbd1d5cdc6e380d78de86f3ced8f7d49cddbfaa9564f27"
+    }
+  ]
+}

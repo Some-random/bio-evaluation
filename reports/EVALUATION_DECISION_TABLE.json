@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-19T05:01:38.330224-07:00",
+  "generated_at_pacific": "2026-10-19T11:38:01.036269-07:00",
   "score_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
   "catalog_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
   "retained_setting_count": 57,
@@ -2196,32 +2196,56 @@
       "task": "BioT5+ description-guided protein design",
       "category": "Protein design",
       "dataset": "BioT5+ description-guided protein design",
-      "condition": "Catalog contract; no verified scored condition",
-      "condition_kind": "unverified",
-      "run_id": null,
-      "protocol_variant": null,
+      "condition": "Archived reviewed subset: 59 of 5,876 source cases",
+      "condition_kind": "recovered_subset",
+      "run_id": "p36-qwen3.8-27b-biot5-reviewed59-20261016",
+      "result_type": "recovered_subset_attempt",
+      "protocol_variant": "QWEN_FULLTEXT_BIOT5_DESIGN_PAIRED_SOURCE_ROUGE_PARTIAL",
       "input_protocol": "Functional description → protein sequence",
-      "output_budget": "Not established",
+      "output_budget": "4,096",
       "usable_answer_rate": {
-        "value": null,
-        "display": "Not established",
-        "definition": "No verified full-run parse counts"
+        "value": 0.0,
+        "display": "0/59 native-valid; 42 empty finals",
+        "definition": "Native protein-serialization-valid outputs divided by the complete reviewed subset; all raw responses were delivered"
       },
       "native_score": null,
       "diagnostic_score": null,
-      "score_display": "No verified native score",
-      "evidence": {
-        "category": "No verified result",
-        "detail": "Current aggregate metadata provides no completed score; this does not prove the task was never attempted."
+      "archived_lexical_metric": {
+        "name": "ROUGE-L",
+        "value": 0.12347117664198978,
+        "text_strings": 17,
+        "denominator": 59
       },
-      "counts": {},
-      "finish_reasons": {},
+      "score_display": "No full-task score; archived ROUGE-L 0.1235 (59 slots; 17 final strings)",
+      "evidence": {
+        "category": "Recovered subset; output / format failure",
+        "detail": "59/59 raw responses verified; 26 hit the cap. No valid native protein sequence was delivered. Lexical overlap does not establish design quality; the full source benchmark remains unevaluated."
+      },
+      "counts": {
+        "planned": 59,
+        "raw_responses": 59,
+        "completed": 17,
+        "parsed": 0,
+        "invalid_outputs": 59,
+        "empty_final_fields": 42,
+        "missing_or_failed_outputs": 0,
+        "original_dispatch_error_statuses": 42
+      },
+      "finish_reasons": {
+        "stop": 33,
+        "length": 26
+      },
       "source_scores": null,
-      "source_score_sha256": null,
-      "source_row_category": null,
+      "source_score_sha256": "aa85ba27ac77c7df8251a2701a71a6b2f6b8e8713743838d3b02320334248aec",
+      "source_evidence": "https://github.com/Some-random/bio-evaluation/releases/download/continuation-2026-10-16-reviewed-p36-and-source-preparation/p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-e68bc40942c2bc64c4045413.tar.gz",
+      "source_row_category": "recovered_subset_evidence",
+      "evidence_manifest_sha256": "6bb6d590cceca7598f02987a688d3166fbe8bfc46cee473eb9bee493aab6f684",
+      "archive_sha256": "e88fbe84a224bcaa9edd96a3bb29de78cecbbf10cf6a28e0232e2e0264a3e432",
+      "completion_sha256": "6020d6864eaa715d5d15fb986bf20e608facc8951c9146cd7bce0fbe8f4c8b17",
       "source_protocol_url": "https://github.com/QizhiPei/BioT5",
-      "case_scope": "The paper does not define a generally established benchmark for this task.",
-      "excluded_run_reasons": [],
+      "case_scope": "reviewed_subset_only",
+      "full_source_cases": 5876,
+      "full_benchmark_complete": false,
       "native_metrics_recomputed": false
     },
     {
@@ -3011,9 +3035,13 @@
   ],
   "source_sha256": {
     "reports/RESULTS_AT_A_GLANCE.json": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
-    "reports/TASK_HIERARCHY_DATA.json": "205f3fdbe4bb0c1403ac0e5b32030ca5ba3cd43516457f818c5a5cac870a44c0",
-    "reports/REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.json": "68d143a13641237c1141b4d47ecdda438f7f81711ffccc7a4cdd6069764f449b"
+    "reports/TASK_HIERARCHY_DATA.json": "a980acdd168e615fd3fdf24c4b4b77b25338821a5aaef2e75a6f57af084c1af4",
+    "reports/REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.json": "68d143a13641237c1141b4d47ecdda438f7f81711ffccc7a4cdd6069764f449b",
+    "reports/RECOVERED_SUBSET_EVIDENCE_2026-10-19.json": "05fb2eee24657b2c9c427600dca7270befc0db4317c85e5ed4e15b97490c5678"
   },
-  "policy": "Aggregate metadata only. All retained settings included; runs, datasets and extraction conditions remain separate. No pooled averages, score recomputation, raw answers, labels or inference. Parse counts are qualified by their native meaning; missing verified scores remain unknown.",
+  "recovered_subset_setting_ids": [
+    "P36"
+  ],
+  "policy": "Aggregate and verified archived-subset metadata only. All retained settings included; runs, datasets and extraction conditions remain separate. Recovered subsets do not count as completed full benchmarks. No pooled averages, score recomputation, raw answers, labels or inference. Parse counts are qualified by their native meaning; missing verified scores remain unknown.",
   "model": "Qwen/Qwen3.8-27B"
 }
