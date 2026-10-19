@@ -8,14 +8,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4390896.0,
-        "kv_fraction": 0.9728395061728395,
-        "preemptions": 2864.0,
-        "prompt_tokens": 12922038.0,
-        "running": 28.0,
-        "waiting": 36.0
+        "generation_tokens": 4473163.0,
+        "kv_fraction": 0.9851851851851852,
+        "preemptions": 2921.0,
+        "prompt_tokens": 13107911.0,
+        "running": 29.0,
+        "waiting": 35.0
       },
-      "preemption_delta": 16.0,
+      "preemption_delta": 13.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "adda75db85bbc6862b8dac08c774e950a0bb804dfe981b1a258d1a300228f78e"
     },
@@ -26,14 +26,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4622413.0,
-        "kv_fraction": 0.9753086419753086,
-        "preemptions": 3440.0,
-        "prompt_tokens": 15140602.0,
-        "running": 29.0,
-        "waiting": 35.0
+        "generation_tokens": 4714908.0,
+        "kv_fraction": 0.9679012345679012,
+        "preemptions": 3510.0,
+        "prompt_tokens": 15330442.0,
+        "running": 27.0,
+        "waiting": 37.0
       },
-      "preemption_delta": 14.0,
+      "preemption_delta": 20.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "a49f31276bc6afded8ab9104a6ffc0fd5f0cebab8ecc7c17fe45c1ef0e18e316"
     },
@@ -44,14 +44,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4608958.0,
-        "kv_fraction": 0.9851851851851852,
-        "preemptions": 3015.0,
-        "prompt_tokens": 17328660.0,
-        "running": 31.0,
-        "waiting": 33.0
+        "generation_tokens": 4705049.0,
+        "kv_fraction": 0.9876543209876543,
+        "preemptions": 3065.0,
+        "prompt_tokens": 17503859.0,
+        "running": 25.0,
+        "waiting": 39.0
       },
-      "preemption_delta": 17.0,
+      "preemption_delta": 7.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "e76d7785c2b0aa7c44ddfc4fcd8627f15f37bcaf10ab91db7680a980799516a2"
     },
@@ -62,57 +62,57 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4700105.0,
-        "kv_fraction": 0.9975308641975309,
-        "preemptions": 2922.0,
-        "prompt_tokens": 15100620.0,
-        "running": 34.0,
-        "waiting": 30.0
+        "generation_tokens": 4790511.0,
+        "kv_fraction": 0.9851851851851852,
+        "preemptions": 3007.0,
+        "prompt_tokens": 15279864.0,
+        "running": 32.0,
+        "waiting": 32.0
       },
-      "preemption_delta": 26.0,
+      "preemption_delta": 22.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "fa210779888d71abf5db3a847d3c22e697ee657e5d6b9b9f73b9b2ebdac6d681"
     }
   ],
   "flags": [
     {
-      "delta": 16.0,
+      "delta": 13.0,
       "endpoint_id": "saturation_0",
       "type": "preemptions_increased"
     },
     {
       "endpoint_id": "saturation_0",
-      "fraction": 0.9728395061728395,
-      "type": "high_kv_usage"
-    },
-    {
-      "delta": 14.0,
-      "endpoint_id": "saturation_1",
-      "type": "preemptions_increased"
-    },
-    {
-      "endpoint_id": "saturation_1",
-      "fraction": 0.9753086419753086,
-      "type": "high_kv_usage"
-    },
-    {
-      "delta": 17.0,
-      "endpoint_id": "saturation_2",
-      "type": "preemptions_increased"
-    },
-    {
-      "endpoint_id": "saturation_2",
       "fraction": 0.9851851851851852,
       "type": "high_kv_usage"
     },
     {
-      "delta": 26.0,
+      "delta": 20.0,
+      "endpoint_id": "saturation_1",
+      "type": "preemptions_increased"
+    },
+    {
+      "endpoint_id": "saturation_1",
+      "fraction": 0.9679012345679012,
+      "type": "high_kv_usage"
+    },
+    {
+      "delta": 7.0,
+      "endpoint_id": "saturation_2",
+      "type": "preemptions_increased"
+    },
+    {
+      "endpoint_id": "saturation_2",
+      "fraction": 0.9876543209876543,
+      "type": "high_kv_usage"
+    },
+    {
+      "delta": 22.0,
       "endpoint_id": "saturation_3",
       "type": "preemptions_increased"
     },
     {
       "endpoint_id": "saturation_3",
-      "fraction": 0.9975308641975309,
+      "fraction": 0.9851851851851852,
       "type": "high_kv_usage"
     },
     {
@@ -127,7 +127,7 @@
   "plan_sha256": "b0215a7cde359bbf820eb2b7a1891eef7805e78d5989cb8edac150bd61bcfbd3",
   "planned_native_cases": 24061,
   "pool_stage": "evaluating",
-  "pool_stage_source_age_seconds": 31203.410635471344,
+  "pool_stage_source_age_seconds": 31451.950437784195,
   "pool_stage_source_updated_at_pacific": "2026-10-18T11:21:46.059841-07:00",
   "pool_stage_timestamp_is_not_a_runtime_heartbeat": true,
   "recent_response_metadata": [],
@@ -535,5 +535,5 @@
   ],
   "saved_responses_unique_logical_sources": 9397,
   "schema_version": 1,
-  "updated_at_pacific": "2026-10-18T20:01:51.142774-07:00"
+  "updated_at_pacific": "2026-10-18T20:05:59.882575-07:00"
 }
