@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "attempt_started_at_pacific": "2026-10-19T12:05:22.832505-07:00",
+  "case_id": "fluorescence:valid:4812",
+  "payload": {
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    },
+    "max_tokens": 16384,
+    "messages": [
+      {
+        "content": "Predict the log-fluorescence intensity of this green fluorescent protein variant on the original TAPE/Sarkisyan experimental scale (the log_fluorescence target). Return only one finite numerical value.\n\nComplete protein sequence:\nSKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTPVTTLSYGVQCFSRYPDHMKQHDFLKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYNSHNVYIMADKQKNGIKVNFKIRHNIEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSALSKDPNEKRDHMVLLEFVTAAGNTHGMDELYK",
+        "role": "user"
+      }
+    ],
+    "model": "Qwen/Qwen3.8-27B",
+    "n": 1,
+    "seed": 42,
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "payload_sha256": "e79506eb0c91895934b211b7b83a92185cfec7bad2c617b2296f17c9892d8d32",
+  "plan_sha256": "c3052d87b886f03543825989d3dd752d0894e4332d431525f81ec1a54a7db6c9",
+  "prompt_tokens": 187
+}

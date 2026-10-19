@@ -35,7 +35,7 @@
       "evidence_manifest_sha256": "6bb6d590cceca7598f02987a688d3166fbe8bfc46cee473eb9bee493aab6f684",
       "source_evidence": "https://github.com/Some-random/bio-evaluation/releases/download/continuation-2026-10-16-reviewed-p36-and-source-preparation/p36-qwen3.8-27b-biot5-reviewed59-20261016-metadata-e68bc40942c2bc64c4045413.tar.gz",
       "archive_sha256": "e88fbe84a224bcaa9edd96a3bb29de78cecbbf10cf6a28e0232e2e0264a3e432",
-      "qualification": "All59 received HTTP200 raw outputs;17 supplied final strings and42 had null finals/nonempty reasoning. Zero outputs met native sequence serialization; lexical paired-reference ROUGE is not design quality or full5876-source completion. All59 requests already attempted: never-dispatched count0; no selective retry.",
+      "qualification": "All 59 reviewed slots received HTTP 200; 17 supplied final strings and 42 had empty finals. Exact raw serialization accepted zero. A separate outer-whitespace-only diagnostic recovers five complete standard-amino-acid serializations, without assessing biological function. Archived ROUGE uses target sequence and full input prompt as alternative references and does not establish design quality. The 5,876-case source benchmark is not complete; no selective retry occurred.",
       "generation": {
         "max_tokens": 4096
       }

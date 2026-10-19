@@ -1,0 +1,27 @@
+{
+  "checked_at_pacific": "2026-10-19T12:25:29.443386-07:00",
+  "reference_labels_read": false,
+  "check": "Every archived valid sparse vector equals exact JSON scores in saved raw final; no conversion or repair",
+  "tasks": [
+    {
+      "task_id": "P12",
+      "valid_vectors_verified_against_raw_final": 1634,
+      "diagnoses_sha256": "1596fded321acab2d13aa5f8598a6bc06c8e31962dc6e84a7c262196bd5e9292"
+    },
+    {
+      "task_id": "P13",
+      "valid_vectors_verified_against_raw_final": 2982,
+      "diagnoses_sha256": "489f452640e44c995cb4c2e4b9d2f56a0778500cfb38f6c85e6fd1f46cbdb607"
+    },
+    {
+      "task_id": "P14",
+      "valid_vectors_verified_against_raw_final": 3120,
+      "diagnoses_sha256": "6416db5998e0a0d34db02abcbfdbc9451121749af6834d705369334a02e45cca"
+    },
+    {
+      "task_id": "P15",
+      "valid_vectors_verified_against_raw_final": 3340,
+      "diagnoses_sha256": "e3a0cf28c8240cf8219e97c4a8671294a8890cf60fe5b463fecff0f3197e6174"
+    }
+  ]
+}

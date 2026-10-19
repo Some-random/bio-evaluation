@@ -1,0 +1,53 @@
+{
+  "created_at_pacific": "2026-10-19T12:24:45.065066-07:00",
+  "task_id": "P08",
+  "experiment": "offline_sensitivity_existing_mixed_4k16k_outputs",
+  "source_file": ".local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/per_case_scores.json",
+  "source_sha256": "2c6f6bbe41878d63412649d8588f3bd5fee5d235cce19152643460b3843cf473",
+  "classifier_sha256": "4e33ad245970b16a4783fe08bd367310cc28dcf83409cd3c2ba78ffc1896ed13",
+  "planned": 12851,
+  "parsed": 12616,
+  "invalid": 235,
+  "native_parser_reproduction_matches_every_row": true,
+  "full_test_spearman": null,
+  "parsed_only_spearman_recomputed": -0.12158796841646605,
+  "format_categories": {
+    "native_scalar": 12616,
+    "abstention_or_insufficient_information": 210,
+    "unicode_minus_only_scalar": 11,
+    "truncated_invalid": 8,
+    "empty_final": 4,
+    "qualified_estimate_or_uncertainty": 2
+  },
+  "bounds": {
+    "n": 12851,
+    "accepted": 12616,
+    "invalid": 235,
+    "accepted_fixed_covariance": -20783784910.25,
+    "target_rank_sum_squares": 176848868082.0,
+    "predictor_rank_sum_squares_upper": 176859959850.0,
+    "denominator_upper": 176854413879.04477,
+    "rectangle": {
+      "valid_rank_shift_term": 4777763615.0,
+      "invalid_rank_term": 4015368000.0,
+      "numerator_upper": -11990653295.25,
+      "correlation_upper": -0.06779957046167201
+    },
+    "pairwise": {
+      "valid_invalid_absolute_term": 5896253401.0,
+      "invalid_invalid_absolute_term": 48309300.0,
+      "numerator_upper": -14839222209.25,
+      "correlation_upper": -0.08390642836541767
+    },
+    "a_filled_or_repaired_score": false
+  },
+  "prose_with_scalar_looking_lines": 54,
+  "scalar_line_is_not_a_commitment_or_scoring_repair": true,
+  "format_only_candidates": 11,
+  "original_predictions_changed": false,
+  "new_inference_calls": 0,
+  "targets_used_for_format_classification": false,
+  "target_use": "Reproducing archived correlation and worst-case sensitivity bounds only",
+  "sign_flip_or_rescaling_applied": false,
+  "invalid_inventory_sha256": "381b88a9cbea37bcf12c96297a3773e30937557eaf6f7e0bfc5606996bd40425"
+}

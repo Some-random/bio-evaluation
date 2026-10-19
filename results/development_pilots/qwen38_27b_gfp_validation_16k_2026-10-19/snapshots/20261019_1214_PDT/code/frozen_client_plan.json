@@ -1,0 +1,49 @@
+{
+  "prepared_at_pacific": "2026-10-19T11:37:43.381227-07:00",
+  "run_id": "qwen38_27b_gfp_validation_format_delivery_16k_2026-10-19_v1",
+  "status": "ready_for_runtime_preflight_no_inference",
+  "endpoint": "http://127.0.0.1:8261/v1",
+  "identity_file": ".local/catalog_resume_2026-10-19/development/runtime/server_identity.json",
+  "output_directory": ".local/catalog_resume_2026-10-19/development/runtime/run_v1",
+  "concurrency": 4,
+  "context_limit": 65536,
+  "parser": "exact unchanged P07 native parse_number",
+  "retained_denominator": 12,
+  "correctness_scoring": null,
+  "network_inference_performed": false,
+  "retry_policy": "No retries; pre-POST persistence; stop queued dispatch on ambiguous network failure",
+  "files_sha256": {
+    "runner.py": "06e932101d3543ba8407e6c211fa57d1c2a4c48d8351f35f040e887634965e9d",
+    "native_numeric_parser.py": "317c8260921fbe3646c22bf61ee90b188a7f2e63319f2e88dde65ac01a173035",
+    "native_parser_provenance.json": "29126636da98c7ccca6cd32c04e26387ecd6bb7c6b0364b5556eb202095874cc",
+    "gfp_validation_requests.jsonl": "ca610e0ef8354c76deff92da9a49f8212b33a20a48b1a43595e264c1b6d75a7d",
+    "gfp_validation_settings.json": "b12907572f4f4e9f1f53207a03272181ee59d2e5b180d1fa5acfe8eac71039bb",
+    "selection.json": "d85067da8bc97eaa16a0991f02ffcbb251210ae7f9b9c3f3a08dd5da24f27e4e"
+  },
+  "synthetic_validation": {
+    "tests_passed": 6,
+    "covers": [
+      "same parser as P07 source",
+      "normal stop and finite final value",
+      "no correctness comparison",
+      "49152-token input boundary",
+      "server identity guards",
+      "maximum 4 concurrent calls",
+      "all requests/raw responses archived",
+      "ambiguous errors never retried",
+      "frozen real validation input hashes"
+    ]
+  },
+  "launch_argv": [
+    "python",
+    ".local/catalog_resume_2026-10-19/development/runner.py",
+    "--endpoint",
+    "http://127.0.0.1:8261/v1",
+    "--identity-file",
+    ".local/catalog_resume_2026-10-19/development/runtime/server_identity.json",
+    "--model-path",
+    "/dfs/scratch0/tchen/models/Qwen3.8-27B",
+    "--output",
+    ".local/catalog_resume_2026-10-19/development/runtime/run_v1"
+  ]
+}

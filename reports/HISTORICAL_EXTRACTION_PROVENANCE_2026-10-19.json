@@ -1,0 +1,62 @@
+{
+  "schema_version": 2,
+  "version": "HISTORICAL_ORIGINAL_CONTRACT_BINDING_V2",
+  "verified_at_pacific": "2026-10-19T12:25:16.963916-07:00",
+  "authoritative_runner": ".local/evaluation_revision_2026-10-18/repair_plan_2026-10-19/historical_diagnostics/run_visible_extraction.py",
+  "runner_sha256": "6fefeedca62bafbde2ee6896185a3b5cbdd5c07271294357ccbfa2c3d13813a6",
+  "original_runner_sha256": "8926b1f553f3d3f77ac12b15c7576c8a1fb2cef8de53a23034aff0628b5ba4af",
+  "original_runner_matches_published_v1_bundle": true,
+  "rule_parser_unchanged": true,
+  "rule_parser_sha256": "2d8a34f6cbe20daa2cb0eddd6701e04421f486824726e5fc9b4b448c639b0944",
+  "files_sha256": {
+    "extraction_rules_v1.py": "2d8a34f6cbe20daa2cb0eddd6701e04421f486824726e5fc9b4b448c639b0944",
+    "test_extraction_rules_v1.py": "4c198999596ff5b139197ce6f254572747cfa5ec32ec282d0c88f67384edbd61",
+    "extraction_rules_freeze_v1.json": "c8d4c7dfb399f4babfd8063f31b411c9a0cb48979db0cd1bb77273ed55b48b13",
+    "run_visible_extraction.py": "6fefeedca62bafbde2ee6896185a3b5cbdd5c07271294357ccbfa2c3d13813a6",
+    "test_run_visible_extraction.py": "685e96b9a2c37d2420aa52f4d6169da2e797395db050526d9c844cd202864df4",
+    "extraction_provenance_freeze_v2.json": "65a422ef05c0666d6f906cfdb4a24ee7d84a1308c927e21c437fe3306f7a2bac",
+    "historical_availability.json": "270aa5440ccc8d6dd061a9679437d060eb5de616c6ecbd062797effe40262549",
+    "README.md": "e614cf609035c3b98bca28ec70434c02469d2f43657c5db896e6e82ac228bf3b"
+  },
+  "archive_path": "reports/benchmark_assets/historical_extraction_tools_provenance_v2_2026-10-19.tar.gz",
+  "archive_sha256": "2fef7a86facb26715bd943f047c254c337e66c1f67ff882d1de55e9f7d016a50",
+  "synthetic_tests_passed": 23,
+  "validated_properties": [
+    "opened and hashed actual original contract and run-manifest files",
+    "original run manifest binds contract hash",
+    "exact ordered case IDs and full denominator",
+    "task/run/protocol/model/revision identity",
+    "each request file and canonical payload hash",
+    "request-response linkage",
+    "raw response and saved final hashes",
+    "per-case OPEN/CLOSED/MCQ rule from original contract",
+    "absent and empty finals remain invalid",
+    "no references or reasoning used to select answers"
+  ],
+  "negative_fixtures": [
+    "boolean-only proof",
+    "wrong run identity",
+    "bogus contract hash",
+    "wrong case order or omitted case",
+    "request substitution",
+    "choice permutation",
+    "wrong request-response association",
+    "raw/saved output disagreement",
+    "wrong model revision",
+    "missing response unexpectedly appears"
+  ],
+  "historical_tasks_still_blocked": [
+    "P01",
+    "V01",
+    "V02",
+    "V03",
+    "V04",
+    "V05"
+  ],
+  "real_historical_runs_scored": 0,
+  "reference_correctness_computed": false,
+  "new_inference_performed": false,
+  "original_native_scores_changed": false,
+  "limitation": "Unavailable original raw runs/contract proof remain required. Different restored schemas require an independently validated field mapping; the tool does not manufacture original manifests.",
+  "clean_archive_extraction_tests_passed": 23
+}

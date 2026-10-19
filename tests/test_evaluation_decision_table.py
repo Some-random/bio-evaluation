@@ -51,7 +51,77 @@ def recovered_subset():
         'archive_sha256':'d'*64,'source_evidence':'https://example.org/verified-archive.tar.gz'}]}
 
 
+def whitespace_diagnostic():
+    return {'diagnostic_version':'P36_OUTER_WHITESPACE_ONLY_V1',
+        'source_run_id':'historical-reviewed-subset','source_score_sha256':'a'*64,
+        'planned':59,'exact_valid':0,'normalized_valid':5,
+        **{k:False for k in ['native_score_changed','native_artifacts_modified',
+            'reference_answers_used','reasoning_used_for_extraction','inference_performed']},
+        'rows':[{'case_id':str(i),'accepted':i<5,'exact_native_serialization':False,
+                 'trimmed_serialization':i<5,'finish_reason':'stop','residue_count':70 if i<5 else None} for i in range(59)]}
+
+
 class DecisionTests(unittest.TestCase):
+    def test_matched_subset_annotation_preserves_native_score(self):
+        native=row('P12',metrics={'auprc@micro':None,'f1_max':None,
+            'PARSED_ONLY_DIAGNOSTIC':{'auprc@micro':.02,'f1_max':.1}})
+        source=scores(['P12'],[native]); before=copy.deepcopy(source)
+        item={'task_id':'P12','run_id':'original','score_sha256':'pinned-native-hash',
+            'planned':10,'valid':8,'invalid':2,'same_case_count':8,
+            'partition':{'valid':8,'unknown_identifier':2},
+            'matched_subset_case_ids_sha256':'a'*64,'matched_subset_evidence_sha256':'b'*64,
+            'model_parsed_subset':{'source_auprc_micro':.02,'source_f1_max':.1},
+            'matched_subset_all_zero_reference':{'source_auprc_micro':.01,'source_f1_max':None},
+            'full_test_primary_metrics':{'source_auprc_micro':None,'source_f1_max':None}}
+        doc={'new_inference_calls':0,'predictions_repaired':0,'original_scores_overwritten':False,
+            'rules':{'reference_blind':True},'tasks':[item]}
+        result=report.build(source,catalog(['P12']),deepfri_analysis=doc)
+        self.assertEqual(source,before); self.assertEqual(result['row_count'],1)
+        self.assertEqual(result['rows'][0]['native_score'],native['metrics'])
+        self.assertEqual(result['rows'][0]['offline_failure_analysis']['matched_subset_case_count'],8)
+        for key,value in [('run_id','wrong'),('score_sha256','wrong'),('same_case_count',9)]:
+            bad=copy.deepcopy(doc);bad['tasks'][0][key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                report.build(source,catalog(['P12']),deepfri_analysis=bad)
+
+    def test_p08_bound_preserves_undefined_score_and_source_predictions(self):
+        native=row('P08',metrics={'spearman':None,'spearman_parsed_only':-.12})
+        src=scores(['P08'],[native]);before=copy.deepcopy(src)
+        doc={'source_run_id':'original','source_score_sha256':'pinned-native-hash',
+             'planned':10,'parsed':8,'invalid':2,'full_test_spearman':None,
+             'original_predictions_changed':False,'new_inference_calls':0,
+             'targets_used_for_format_classification':False,
+             'parsed_only_spearman_recomputed':-.12,
+             'validation':{'independent_recalculation':{'passed':True}},
+             'interpretation':{'universal_upper_bound_main':-.06}}
+        out=report.build(src,catalog(['P08']),p08_sensitivity=doc)['rows'][0]
+        self.assertEqual(src,before);self.assertIsNone(out['native_score']['spearman'])
+        self.assertEqual(out['offline_sensitivity']['finite_imputation_spearman_upper_bound'],-.06)
+        for key,value in [('source_run_id','replay'),('source_score_sha256','wrong'),('original_predictions_changed',True)]:
+            bad=copy.deepcopy(doc);bad[key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                report.build(src,catalog(['P08']),p08_sensitivity=bad)
+
+    def test_whitespace_recovery_is_separate_and_preserves_exact_zero(self):
+        src=recovered_subset();before=copy.deepcopy(src)
+        out=report.build(scores(['P36']),catalog(['P36']),recovered_subset_evidence=src,p36_whitespace=whitespace_diagnostic())
+        exact=next(r for r in out['rows'] if r['condition_kind']=='recovered_subset')
+        diag=next(r for r in out['rows'] if r['condition_kind']=='outer_whitespace_only')
+        self.assertEqual(src,before)
+        self.assertEqual(exact['counts']['parsed'],0)
+        self.assertEqual(diag['counts'],{'planned':59,'parsed':5,'invalid_outputs':54})
+        self.assertIsNone(diag['native_score']);self.assertFalse(diag['full_benchmark_complete'])
+        self.assertNotEqual(diag['source_row_category'],'completed_rows')
+        self.assertIn('biological function unassessed',diag['score_display'])
+        self.assertIn('alternative references',exact['evidence']['detail'])
+
+    def test_whitespace_diagnostic_rejects_wrong_run_or_changed_count(self):
+        for key,value in [('source_run_id','wrong-run'),('source_score_sha256','e'*64),
+                          ('normalized_valid',6),('reference_answers_used',True)]:
+            doc=whitespace_diagnostic();doc[key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                report.build(scores(['P36']),catalog(['P36']),recovered_subset_evidence=recovered_subset(),p36_whitespace=doc)
+
     def test_recovered_subset_preserves_failed_outputs_without_promoting_score(self):
         native=row('P03'); source=scores(['P03','P36','N01'],[native]); before=copy.deepcopy(source)
         out=report.build(source,catalog(['P03','P36','N01']),recovered_subset_evidence=recovered_subset())

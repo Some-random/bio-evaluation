@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "updated_at_pacific": "2026-10-19T12:29:22.541551-07:00",
+  "status": "review_requirements_only_no_dispatch_authorization",
+  "shared_synthetic_pilot_is_full_run_gate": false,
+  "common_requirements": [
+    "Use permitted development/example cases selected without held-out correctness.",
+    "Exercise the actual task prompt structure and native final-answer parser.",
+    "Preserve complete inputs and required modalities.",
+    "Freeze model, sampling, context, output budget, failure handling and full case manifest before a new run.",
+    "Give every fresh run a separate ID; retain every original generation and score.",
+    "Report failures and costs on the complete development set, without selecting successful examples.",
+    "A delivery pass does not establish biological correctness or authorize a full run by itself."
+  ],
+  "tasks": {
+    "B08": {
+      "priority": "first small complete QA rerun only after its own checks",
+      "full_scope_cases": 33,
+      "current_state": "proposed_not_dispatched",
+      "required_checks": [
+        "Cloning-specific development/examples with actual prompt scaffolding and choice syntax.",
+        "Include relevant long inputs; verify source choices and native answer-tag extraction.",
+        "Record finite context/token counts and final-answer delivery, then review/freeze the complete 33-case configuration."
+      ],
+      "existing_evidence": "33 historical input identities and tokenizer context checks pass; actual cloning development delivery is not demonstrated."
+    },
+    "B07": {
+      "priority": "next QA priority after its own checks",
+      "full_scope_cases": 600,
+      "current_state": "not_ready",
+      "required_checks": [
+        "Sequence-QA development examples covering representative sequence lengths and source question types.",
+        "Actual native CoT prompt and answer-choice parser, preserving full sequences.",
+        "Record truncation, empty finals, parse rate and latency before freezing the full run."
+      ]
+    },
+    "P42": {
+      "priority": "separate sequence-generation branch",
+      "full_scope_candidate_slots": 200,
+      "current_state": "not_ready",
+      "regimes": [
+        "replace_only",
+        "full_atomic"
+      ],
+      "historical_sampling": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": -1,
+        "min_p": 0.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "repetition_penalty": 1.0,
+        "n": 1,
+        "enable_thinking": true,
+        "max_tokens": 1024
+      },
+      "required_checks": [
+        "Full-length GFP candidates under both native edit regimes and the native candidate parser.",
+        "Validate operation constraints and resulting complete sequence, not a ten-residue toy edit.",
+        "Freeze task-specific sampling and a documented per-slot randomness policy; do not silently reuse generic pilot settings or a shared seed.",
+        "Preserve all 100 candidate slots per regime and distinguish the trained fluorescence proxy from experimental validation."
+      ]
+    },
+    "P16": {
+      "priority": "defer large rerun pending a defined question and relevant checks",
+      "full_scope_cases": 5651,
+      "current_state": "deferred_not_dispatched",
+      "required_checks": [
+        "Representative permitted sequence-plus-joint-class-description development prompts.",
+        "Normal final class delivery with the frozen native class range and extraction rule.",
+        "State what a rerun tests beyond formatting: the existing terminal-number diagnostic recovered only three additional correct labels."
+      ]
+    },
+    "P07": {
+      "priority": "last large rerun; strongest delivery requirement",
+      "full_scope_cases": 27217,
+      "current_state": "not_ready_real_validation_delivery_incomplete",
+      "real_validation_pilot": {
+        "planned": 12,
+        "responses_saved": 12,
+        "normal_finite_numeric_finals": 10,
+        "length_finishes": 2,
+        "empty_finals": 2,
+        "transport_errors": 0,
+        "biological_correctness_assessed": false
+      },
+      "required_checks": [
+        "Publish all twelve actual-validation requests/responses, costs and failures.",
+        "Demonstrate reliable finite scalar delivery on representative permitted development inputs beyond trivial arithmetic.",
+        "Specify handling of residual failures and the local full-score completeness policy before committing to 27,217 cases.",
+        "Do not infer that twelve successes would guarantee complete delivery on the full task; current evidence has two failures."
+      ]
+    },
+    "P08": {
+      "priority": "offline sensitivity/formatting/direction analysis first",
+      "current_state": "deprioritize_full_rerun_for_parsing_alone",
+      "required_checks": [
+        "Preserve the undefined full-score record and published parsed-case correlation.",
+        "Report the verified missing-output sensitivity bound and distinguish syntax errors, abstentions and qualified estimates.",
+        "Audit stability_score direction and meaning; any prompt clarification is a separately frozen future protocol."
+      ],
+      "offline_checks_completed": true,
+      "evidence_report": "reports/P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.json"
+    },
+    "P12-P15": {
+      "priority": "before more protein-function inference",
+      "current_state": "offline_analysis_complete_revised_interface_not_yet_validated",
+      "required_checks": [
+        "Partition output-schema failures and report truncation crosscuts.",
+        "Distinguish unknown identifiers, numeric strings, wrong types, nonfinite values and identical versus conflicting duplicates.",
+        "Compare model and reference baselines on identical parsed-case IDs; show source and tie-grouped AP separately.",
+        "Freeze conservative normalization on output-only/development evidence before any application."
+      ],
+      "offline_checks_completed": true,
+      "evidence_report": "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json"
+    }
+  }
+}

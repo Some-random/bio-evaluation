@@ -173,6 +173,10 @@ def presentation_caveats(row):
         if any(key.lower() == "spearman" and value is None for key, value in (row.get("metrics") or {}).items()):
             message += ". Full-test correlation is undefined; parsed-only correlation is incomplete"
         additions.append(message + ".")
+    if task == "P08" and row.get("scores_sha256") == "53ad6a4142efefdfff140decfaeb16efee1f077ae3629788a57da1fd56f7404e":
+        additions.append("Verified offline sensitivity: keeping the 12,616 accepted predictions fixed, any finite values for the 235 invalid outputs give full-test Spearman at most -0.067800. This is a bound, not an imputed score; full-test Spearman remains undefined. Eleven rejected finals are Unicode-minus formatting cases; most others are abstention/qualified prose. The native score direction was reviewed; the archived prompt does not give its explicit numerical definition. See the [sensitivity proof](P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.md).")
+    if task in {"P12", "P13", "P14", "P15"}:
+        additions.append("Withholding a full score when predictions are invalid is this evaluation's local completeness policy, separate from the numerical metric formula. [Same-parsed-case references and the output-error taxonomy](DEEPFRI_FAILURE_ANALYSIS_2026-10-19.md) are available separately.")
     for message in additions:
         if message not in caveats:
             caveats.append(message)

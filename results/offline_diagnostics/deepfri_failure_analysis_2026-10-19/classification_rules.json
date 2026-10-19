@@ -1,0 +1,31 @@
+{
+  "rules": {
+    "version": "DEEPFRI_OUTPUT_FAILURE_PARTITION_V1",
+    "no_prediction_repair": true,
+    "reference_blind": true,
+    "partition_precedence": [
+      "valid",
+      "unfinished_nonstop",
+      "empty_final",
+      "malformed_json",
+      "duplicate_conflicting",
+      "duplicate_identical_only",
+      "wrong_schema",
+      "unknown_identifier",
+      "numeric_string",
+      "wrong_value_type",
+      "nonnumeric_string",
+      "nonfinite_numeric",
+      "out_of_range_numeric"
+    ],
+    "crosscuts": "All syntactically observable violations are retained even when another violation has partition priority; completed nonempty length-finished JSON is inspected but never made valid.",
+    "numeric_string": "String matching optional ASCII sign, decimal/scientific notation, and outer whitespace; no conversion applied.",
+    "duplicates": "All JSON objects inspected. Equal finite JSON numbers compare numerically; booleans are distinct from numbers. Object pairs and order retained; conflicting and identical duplicates may coexist.",
+    "missing_reference_policy": "Fail closed; no guessed case labels or baseline.",
+    "subset_policy": "Use original corrected scorer's valid case IDs and vectors unchanged. All-zero baseline uses those exact ordered case IDs and full original class order.",
+    "completeness_policy": "Requiring every planned vector before a full-test primary score is local evaluation policy, separate from the underlying AP/Fmax formulas."
+  },
+  "rules_sha256": "cdd51e4f84c51525a29b730ad2e6e61bdde2db4268ba6ee9b3de7d71b3649110",
+  "script_sha256": "3a9f93af7709a2d6333e82033e1f88ef7cdd64b2a90b2dc23f01bc5fc0af2a3b",
+  "tests_sha256": "27ad741dd9da4c4929e1ec09e8f416e6936d933875c556afc6b33ed47247b04b"
+}

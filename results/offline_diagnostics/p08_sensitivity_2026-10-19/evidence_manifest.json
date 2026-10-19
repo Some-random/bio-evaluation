@@ -1,0 +1,90 @@
+{
+  "verified_at_pacific": "2026-10-19T12:25:00.882979-07:00",
+  "task_id": "P08",
+  "original_files": [
+    {
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/per_case_scores.json",
+      "source_sha256": "2c6f6bbe41878d63412649d8588f3bd5fee5d235cce19152643460b3843cf473"
+    },
+    {
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
+      "source_sha256": "53ad6a4142efefdfff140decfaeb16efee1f077ae3629788a57da1fd56f7404e"
+    },
+    {
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/completion.json",
+      "source_sha256": "c4b70b767c9b0aa5e110c1caaa11617746836ea0d39b98a55d023999763b84cf"
+    },
+    {
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/native_scores_unmodified.json",
+      "source_sha256": "6fca06cf1a107ef0ad0d72b4244d15bf76c1cfbf6407c1b59154f82a85491dcd"
+    }
+  ],
+  "original_score_hash_matches_completion": true,
+  "portable_original_case_snapshot": "per_case_scores.source.json.gz",
+  "uncompressed_snapshot_sha256": "2c6f6bbe41878d63412649d8588f3bd5fee5d235cce19152643460b3843cf473",
+  "files_sha256": {
+    "analysis.json": "a7d36299c9fa5eb83bda8a0cda569109de01211d227de79f900436f00bf878a4",
+    "analyze.py": "fb5c211c75743b2770f18ffd2130ab28ce14114467fbe605ed9fb3b41b57fe61",
+    "format_rules.py": "4e33ad245970b16a4783fe08bd367310cc28dcf83409cd3c2ba78ffc1896ed13",
+    "format_rules_freeze.json": "b63cb0a4656c60a5719caa38fd08aaad6ec8f3d0c0cbda2d4783f68a30cf5529",
+    "independent_check.py": "5814ae17abb93a8d5f30202cb2c658949d4dd7e3967ab79479676f4803f121f0",
+    "independent_validation.json": "e620286be44e0495206cf7b883521e4a2f07444d8b600a72dd365df76d500561",
+    "invalid_format_inventory.json": "381b88a9cbea37bcf12c96297a3773e30937557eaf6f7e0bfc5606996bd40425",
+    "original_completion.json": "c4b70b767c9b0aa5e110c1caaa11617746836ea0d39b98a55d023999763b84cf",
+    "original_native_scores_unmodified.json": "6fca06cf1a107ef0ad0d72b4244d15bf76c1cfbf6407c1b59154f82a85491dcd",
+    "original_scores.json": "53ad6a4142efefdfff140decfaeb16efee1f077ae3629788a57da1fd56f7404e",
+    "per_case_scores.source.json.gz": "8b2fec291a783994a89a514023d398d56cd9352bb1fabe9744f12c6755576f2a",
+    "sources/manifest.json": "857e49c77813d5339e99beb2c5c06a639bad445f02640bb2e96c3588f18aaac6",
+    "sources/tape_LICENSE": "b03177f56a7d17c782dfd8400ca4a29c272f46fd2ed48569d9194682f27e7001",
+    "sources/tape_README.md": "b28c74fe3cd6b69a8ba6d84891d0539e54dfef882abd5ed4d11ed0b029bb477a",
+    "sources/tape_tape__datasets.py": "8a9669c36e82ed6453939975cbca47bd0f6deed352ec5e5291753ff83ac1a987",
+    "sources/torchdrug_LICENSE": "27ec53b99dec07b14569010783c34532976be12964fca6a9cc39831601b0c98b",
+    "sources/torchdrug_torchdrug__datasets__stability.py": "1c6ff43ce25b4fac78517c9dad275171c73672e877f4e4a2512187484228823d",
+    "synthetic_tests.log": "2b7075b38cc3d8d3135aeed6243fa0cb32c5ea543a989bd5dbbae246f056925d",
+    "test_analyze.py": "34fbef58e1f066db912d1a9e885e5d2db01ba39b31577177dcf79e0bd42643d6"
+  },
+  "source_code_links": [
+    {
+      "repository": "songlab-cal/tape",
+      "commit": "6d345c2b2bbf52cd32cf179325c222afd92aec7e",
+      "path": "results/offline_diagnostics/p08_sensitivity_2026-10-19/sources/tape_tape__datasets.py",
+      "upstream_path": "tape/datasets.py",
+      "url": "https://raw.githubusercontent.com/songlab-cal/tape/6d345c2b2bbf52cd32cf179325c222afd92aec7e/tape/datasets.py",
+      "sha256": "8a9669c36e82ed6453939975cbca47bd0f6deed352ec5e5291753ff83ac1a987"
+    },
+    {
+      "repository": "songlab-cal/tape",
+      "commit": "6d345c2b2bbf52cd32cf179325c222afd92aec7e",
+      "path": "results/offline_diagnostics/p08_sensitivity_2026-10-19/sources/tape_README.md",
+      "upstream_path": "README.md",
+      "url": "https://raw.githubusercontent.com/songlab-cal/tape/6d345c2b2bbf52cd32cf179325c222afd92aec7e/README.md",
+      "sha256": "b28c74fe3cd6b69a8ba6d84891d0539e54dfef882abd5ed4d11ed0b029bb477a"
+    },
+    {
+      "repository": "DeepGraphLearning/torchdrug",
+      "commit": "6066fbd82360abb5f270cba1eca560af01b8cc90",
+      "path": "results/offline_diagnostics/p08_sensitivity_2026-10-19/sources/torchdrug_torchdrug__datasets__stability.py",
+      "upstream_path": "torchdrug/datasets/stability.py",
+      "url": "https://raw.githubusercontent.com/DeepGraphLearning/torchdrug/6066fbd82360abb5f270cba1eca560af01b8cc90/torchdrug/datasets/stability.py",
+      "sha256": "1c6ff43ce25b4fac78517c9dad275171c73672e877f4e4a2512187484228823d"
+    },
+    {
+      "repository": "songlab-cal/tape",
+      "commit": "6d345c2b2bbf52cd32cf179325c222afd92aec7e",
+      "path": "results/offline_diagnostics/p08_sensitivity_2026-10-19/sources/tape_LICENSE",
+      "upstream_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/songlab-cal/tape/6d345c2b2bbf52cd32cf179325c222afd92aec7e/LICENSE",
+      "sha256": "b03177f56a7d17c782dfd8400ca4a29c272f46fd2ed48569d9194682f27e7001"
+    },
+    {
+      "repository": "DeepGraphLearning/torchdrug",
+      "commit": "6066fbd82360abb5f270cba1eca560af01b8cc90",
+      "path": "results/offline_diagnostics/p08_sensitivity_2026-10-19/sources/torchdrug_LICENSE",
+      "upstream_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/DeepGraphLearning/torchdrug/6066fbd82360abb5f270cba1eca560af01b8cc90/LICENSE",
+      "sha256": "27ec53b99dec07b14569010783c34532976be12964fca6a9cc39831601b0c98b"
+    }
+  ],
+  "original_files_modified": false,
+  "new_inference_calls": 0
+}

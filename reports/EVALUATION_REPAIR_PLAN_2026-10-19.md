@@ -1,28 +1,39 @@
-# Evaluation repair plan
+# Evaluation action plan
 
-Started October 19, 2026, Pacific time. Immediate scope: repair and interpret saved outputs, then validate answer delivery on synthetic/development inputs. Existing runs and scores remain preserved.
+Updated October 19, 2026, Pacific time. Current priority: improve the existing evidence through offline analyses, and continue resolving unfinished catalog tasks. The optional full-task repetitions below are not an active generation queue and are not the remaining catalog case count. Original scores, raw outputs and denominators stay unchanged.
 
-The catalog contains **64 evaluation settings**, with **57 retained in the main view** and seven BioReason-family settings archived. The seven settings in the final overnight continuation (P07, P08, P12–P16) were only the last active batch. Its 17,145 newly generated responses do not represent the full catalog or a uniform-budget rerun. See the [complete decision table](EVALUATION_DECISION_TABLE.md) for every retained setting and its evidence status.
+## Closed items
 
-| Work | Concrete output | Status |
+- P12–P15 null-versus-empty compatibility repair: all four completed and published. Their original failures remain archived; full AP/Fmax remain undefined under the local completeness policy.
+- P16 terminal-number diagnostic: published separately, 12/5,651 correct alongside original 9/5,651.
+- B02 and P42 output-delivery qualifications: added prominently.
+- Historical-output search: documented; absent originals remain unavailable evidence, not zero recovery counts. Further recovery should target the original storage or an identified backup.
+
+These items are not being sent back for another general audit. [Completed-work review](COMPLETED_WORK_REVIEW.md).
+
+## Completed follow-up revision
+
+| Review item | Work | Completed deliverable |
 |---|---|---|
-| P12–P15 scorer compatibility | Separately named scoring runs accepting raw null versus normalized empty final, with the original denominator and metric rules | [All four completed and published; P13 recovery finished October 19 at 4:33 AM PDT. Original failures are preserved. Full AP/Fmax remain undefined because invalid confidence vectors remain](SCORER_COMPATIBILITY_REPAIR_2026-10-19.md) |
-| P16 reaction extraction | Frozen terminal-number diagnostic beside the original score, independently checked against all saved cases | Done: [12/5,651 versus original 9/5,651, with reproducible export](REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.md) |
-| P03 localization and P43 interactions | Delivery statistics, retrospective class balance, invalid-answer upper bound, prediction concentration and likelihood-interface check | [Verified: P03 stays below its descriptive majority reference even if every invalid answer is recovered correctly](PREDICTION_TASK_AUDIT_2026-10-19.md) |
-| B02 and P42 qualifications | Prominent truncation/zero-accepted-output statements in the public results table | Verified counts; prominent qualifications added |
-| P01 and V01–V05 extraction | Recover hash-verified raw records; freeze conservative extraction/ambiguity rules on synthetic cases before rescoring | [Blocked on unavailable original raw files; frozen tools and 18 checks ready](HISTORICAL_EXTRACTION_STATUS_2026-10-19.md) |
-| Qwen output-delivery pilot | Same checkpoint, thinking enabled, 16K output cap; synthetic inputs spanning answer formats and context lengths; saved requests/responses, latency and usage | [Completed: 12/12 synthetic checks passed, zero truncated or empty finals](OUTPUT_DELIVERY_PILOT_2026-10-19.md) |
-| Real GFP validation delivery | Twelve deterministically selected validation sequences, unchanged numeric-answer contract, no reference labels or correctness scoring | Inputs and client frozen; submitted October 19 on one A100, with runtime preflight before dispatch. Results pending. Separate from the historical P07 test run. |
-| P36 archived subset | Recover original score/completion records and reconcile all 59 request/response pairs against their published hashes | [Recovered and added to the decision table](RECOVERED_SUBSET_EVIDENCE_2026-10-19.json): 59 responses, 42 empty finals, 26 truncations, zero native-valid protein sequences. This is subset evidence, not a completed full benchmark. |
-| P09 native stability protocol | Recover the published binary-label conversion and exact processed test | [Publisher sources rechecked](P09_PROTOCOL_RECOVERY_2026-10-19.md); the label conversion and processed test remain unavailable. No substitute threshold or test labels invented. |
-| OpenAI request identity | One persistent end-user safety identifier, three neutral smoke tests, no previously flagged benchmark requests | [Completed: one stable identifier, 3/3 neutral tests passed](OPENAI_SAFETY_IDENTIFIER_CHECK_2026-10-19.md) |
+| 1 | P36 serialization interpretation | Exact 0/59 preserved; separate outer-whitespace-only 5/59 diagnostic published with hashes. Archived ROUGE uses both target sequence and full input prompt; function/design success remains unassessed. [Evidence](P36_WHITESPACE_DIAGNOSTIC_2026-10-19.md). |
+| 2 | P08 stability evidence | Parsed-case correlation reproduced; conservative full-test upper bound −0.067800 established for any finite replacement of missing values. Invalid answers classified without references and native score direction checked. Full-test correlation remains undefined. [Evidence](P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.md). |
+| 3 | P12–P15 remaining failures | Failure types separated, including unknown IDs and identical versus conflicting duplicates. All-zero references evaluated on exactly the model's parsed case IDs; native AP and tie-grouped AP preserved. [Evidence](DEEPFRI_FAILURE_ANALYSIS_2026-10-19.md). |
+| 4 | Task-specific delivery requirements | Shared synthetic-pass gate replaced. Complete real-GFP pilot published: 12 responses, 10 finite numeric finals, two truncated empty finals, no transport failures. [Requirements](TASK_SPECIFIC_DELIVERY_GATES_2026-10-19.md). |
+| 5 | Historical extraction provenance | Tool now opens and hashes the actual original contract, verifies exact case membership and run/protocol/request association, and selects OPEN/CLOSED rules per case. All 23 synthetic checks pass, including wrong-run and bogus-hash cases. Real historical rescoring remains blocked on absent source evidence. [Status](HISTORICAL_EXTRACTION_STATUS_2026-10-19.md). |
 
-The [decision table](EVALUATION_DECISION_TABLE.md) distinguishes usable-answer coverage, the native metric, separately named diagnostics, and what the evidence supports. Native non-abstention coverage is not presented as the fraction of usable answers.
+The all-outputs-must-parse condition is a local completeness policy, distinct from the numerical metric formula. Clearly labeled subset analyses and sensitivity bounds can be useful without replacing undefined full scores.
 
-The pilot is an interface check, not another scored benchmark. Its protocol and acceptance checks were frozen before generation. Passing these simple synthetic cases shows that the tested formats and long inputs can work; it does not establish reliable delivery on difficult biological questions. The real GFP validation pilot addresses that remaining delivery check without loading reference labels or inspecting test correctness. Any subsequent full rerun gets its own run ID and covers the entire declared case set; successful retries will never be spliced into old results.
+## Conditional future runs
 
-Proposed full-rerun order after the pilot: **B08 cloning (33), P42 GFP design (200), B07 SeqQA (600), P16 reaction (5,651), then P07 GFP prediction (27,217)**. None of these new full reruns has started under this plan.
+There is no unconditional shared “pilot passed, launch everything” sequence. Each optional repeated evaluation requires its own relevant development evidence and separately reviewed frozen protocol. These proposals do not replace work on the unfinished catalog.
 
-Next model comparisons should use identical cases, essential inputs and validated answer semantics. P03, P43, B01, B04 and B05 are the starting candidates, subject to their existing qualifications.
+| Task | Decision before a full run |
+|---|---|
+| B08 cloning, 33 cases | First small complete QA candidate after cloning-specific development/example checks using the actual prompt and native answer format. Inputs and context fit are verified; inference has not started. |
+| B07 SeqQA, 600 cases | Next QA priority after representative sequence-length and question-type delivery checks. |
+| P42 GFP design, 200 slots | Separate generation branch. Validate full-length sequences in both edit regimes; freeze task-specific sampling and per-slot randomness. A ten-residue toy edit is insufficient. |
+| P16 reaction, 5,651 cases | Defer the large repeat until actual sequence/class-description delivery is checked and its scientific purpose is stated. Parser recovery alone added only three correct labels. |
+| P07 fluorescence, 27,217 cases | Last large repeat. The real-GFP pilot did not achieve complete delivery; define a reliable scalar procedure and residual-failure policy before this workload. |
+| P08 stability | Deprioritize a full repeat whose sole purpose is parser repair; the negative-correlation sensitivity result is more informative now. |
 
-[Integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md) · [Current results](RESULTS_AT_A_GLANCE.md)
+[Machine-readable task-specific requirements](../configs/task_specific_delivery_gates_2026-10-19.json) · [Decision table](EVALUATION_DECISION_TABLE.md) · [Integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md)

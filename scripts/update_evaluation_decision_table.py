@@ -20,6 +20,9 @@ SCORES = 'reports/RESULTS_AT_A_GLANCE.json'
 CATALOG = 'reports/TASK_HIERARCHY_DATA.json'
 REACTION_DIAGNOSTIC = 'reports/REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.json'
 RECOVERED_SUBSET_EVIDENCE = 'reports/RECOVERED_SUBSET_EVIDENCE_2026-10-19.json'
+P36_WHITESPACE = 'reports/P36_WHITESPACE_DIAGNOSTIC_2026-10-19.json'
+P08_SENSITIVITY = 'reports/P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.json'
+DEEPFRI_FAILURES = 'reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json'
 OUTPUT_JSON = 'reports/EVALUATION_DECISION_TABLE.json'
 OUTPUT_MD = 'reports/EVALUATION_DECISION_TABLE.md'
 ARCHIVE_IDS = {'N01', 'N02', 'N03', 'N04', 'N05', 'P28', 'P29'}
@@ -298,14 +301,14 @@ def recovered_subset_rows(document, mapping):
             'condition_kind': 'recovered_subset', 'run_id': run_id,
             'result_type': 'recovered_subset_attempt', 'protocol_variant': entry.get('protocol_variant'),
             'input_protocol': INPUTS[task], 'output_budget': budget(entry),
-            'usable_answer_rate': {'value': 0.0, 'display': f'0/{planned:,} native-valid; {empty:,} empty finals',
-                'definition': 'Native protein-serialization-valid outputs divided by the complete reviewed subset; all raw responses were delivered'},
+            'usable_answer_rate': {'value': 0.0, 'display': f'0/{planned:,} exact raw-format; {empty:,} empty finals',
+                'definition': 'Literal raw protein-serialization matches without outer-whitespace normalization, divided by the complete reviewed subset; all raw responses were delivered'},
             'native_score': None, 'diagnostic_score': None,
             'archived_lexical_metric': copy.deepcopy(metric),
             'score_display': f"No full-task score; archived ROUGE-L {metric['value']:.4f} ({planned:,} slots; {final_strings:,} final strings)",
             'evidence': {'category': 'Recovered subset; output / format failure',
                 'detail': f'{planned:,}/{planned:,} raw responses verified; {finishes.get("length", 0):,} hit the cap. '
-                    'No valid native protein sequence was delivered. Lexical overlap does not establish design quality; the full source benchmark remains unevaluated.'},
+                    'No output matched the literal raw serialization. This exact-format statistic does not exclude sequences recoverable by separately defined whitespace normalization. The archived ROUGE uses the target sequence and full input prompt as alternative references; lexical overlap does not establish design quality. The full source benchmark remains unevaluated.'},
             'counts': copy.deepcopy(counts), 'finish_reasons': copy.deepcopy(finishes),
             'source_scores': None, 'source_score_sha256': entry['scores_sha256'],
             'source_evidence': entry['source_evidence'], 'source_row_category': 'recovered_subset_evidence',
@@ -317,7 +320,121 @@ def recovered_subset_rows(document, mapping):
     return rows
 
 
-def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagnostic=None, recovered_subset_evidence=None):
+def p36_whitespace_condition(rows, diagnostic):
+    """Display a separately verified serialization diagnostic, not a design score."""
+    if diagnostic is None:return None
+    candidates = [r for r in rows if r['task_id'] == 'P36' and r['condition_kind'] == 'recovered_subset']
+    if len(candidates) != 1:raise ValueError('P36 diagnostic requires one original subset record')
+    source = candidates[0]; n = source['counts']['planned']; entries = diagnostic.get('rows', [])
+    if (diagnostic.get('diagnostic_version') != 'P36_OUTER_WHITESPACE_ONLY_V1'
+            or diagnostic.get('source_run_id') != source['run_id']
+            or diagnostic.get('source_score_sha256') != source['source_score_sha256']
+            or diagnostic.get('planned') != n or len(entries) != n
+            or len({r.get('case_id') for r in entries}) != n
+            or any(diagnostic.get(k) is not False for k in ['native_score_changed',
+                'native_artifacts_modified', 'reference_answers_used', 'reasoning_used_for_extraction', 'inference_performed'])):
+        raise ValueError('P36 diagnostic has incompatible provenance or scope')
+    accepted = [r for r in entries if r.get('accepted') is True]
+    exact = sum(r.get('exact_native_serialization') is True for r in entries)
+    if (diagnostic.get('exact_valid') != exact or exact != source['counts']['parsed']
+            or diagnostic.get('normalized_valid') != len(accepted)
+            or any(r.get('finish_reason') != 'stop' or r.get('trimmed_serialization') is not True
+                or type(r.get('residue_count')) is not int or r['residue_count'] <= 0 for r in accepted)):
+        raise ValueError('P36 diagnostic counts or complete-sequence conditions disagree')
+    source['evidence']['detail'] += f' A separate outer-whitespace diagnostic recovers {len(accepted)}/{n} complete serializations; biological function remains unassessed.'
+    out = copy.deepcopy(source)
+    out.update(condition='Separate outer-whitespace-only serialization diagnostic; same reviewed subset',
+        condition_kind='outer_whitespace_only', result_type='offline_serialization_diagnostic',
+        native_score=None, diagnostic_score={'serialization_valid_fraction': len(accepted)/n},
+        source_native_score_sha256=source['source_score_sha256'], source_score_sha256=None,
+        source_original_counts=copy.deepcopy(source['counts']),
+        counts={'planned':n, 'parsed':len(accepted), 'invalid_outputs':n-len(accepted)},
+        usable_answer_rate={'value':len(accepted)/n, 'display':f'{len(accepted)}/{n} complete serializations after outer trim',
+            'definition':'Normal stop, original serialization grammar and standard amino-acid alphabet after str.strip() only; no biological quality assessment'},
+        score_display=f'{len(accepted)}/{n} syntactically complete sequences; biological function unassessed',
+        source_evidence='P36_WHITESPACE_DIAGNOSTIC_2026-10-19.md', source_row_category='offline_format_diagnostic',
+        evidence={'category':'Separate format diagnostic; partial subset',
+            'detail':'Only surrounding whitespace removed; no residues changed, no reference answers or reasoning used. Exact raw-format result remains zero. ROUGE is a separate qualified lexical diagnostic.'})
+    return out
+
+
+def apply_p08_sensitivity(rows, diagnostic):
+    if diagnostic is None:return
+    found = [r for r in rows if r['task_id'] == 'P08' and r['condition_kind'] == 'native'
+             and r['run_id'] == diagnostic.get('source_run_id')]
+    if len(found) != 1:raise ValueError('P08 sensitivity requires its exact original run')
+    row = found[0]; counts = row['counts']; bound = diagnostic.get('interpretation', {}).get('universal_upper_bound_main')
+    if (diagnostic.get('source_score_sha256') != row['source_score_sha256']
+            or diagnostic.get('planned') != counts.get('planned')
+            or diagnostic.get('parsed') != counts.get('parsed')
+            or diagnostic.get('invalid') != counts.get('invalid_outputs')
+            or diagnostic.get('full_test_spearman') is not None
+            or diagnostic.get('original_predictions_changed') is not False
+            or diagnostic.get('new_inference_calls') != 0
+            or diagnostic.get('targets_used_for_format_classification') is not False
+            or diagnostic.get('validation', {}).get('independent_recalculation', {}).get('passed') is not True
+            or not finite(bound) or not -1 <= bound < 0
+            or not math.isclose(diagnostic['parsed_only_spearman_recomputed'],
+                row['native_score']['spearman_parsed_only'], abs_tol=1e-12)):
+        raise ValueError('P08 sensitivity does not preserve its source or verified bound')
+    row['offline_sensitivity'] = {
+        'finite_imputation_spearman_upper_bound': bound,
+        'accepted_predictions_held_fixed': counts['parsed'],
+        'original_full_score_unchanged': True,
+        'report': P08_SENSITIVITY,
+        'format_categories': copy.deepcopy(diagnostic.get('format_categories', {}))}
+    row['score_display'] += f'; finite-imputation upper bound {bound:.4f} (not a score)'
+    row['evidence'] = {'category':'Negative native-target rank agreement; full score undefined',
+        'detail':f"{counts['parsed']:,}/{counts['planned']:,} numeric predictions; keeping them fixed, any finite values for the {counts['invalid_outputs']:,} invalid cases still give negative full-test Spearman. The full score remains undefined under the local completeness policy. This concerns the requested native scale under the archived prompt. [Proof and formatting audit](P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.md)."}
+
+
+def apply_deepfri_analysis(rows, diagnostic):
+    """Attach verified subset comparisons without changing original score fields."""
+    if diagnostic is None:return
+    if (diagnostic.get('new_inference_calls') != 0 or diagnostic.get('predictions_repaired') != 0
+            or diagnostic.get('original_scores_overwritten') is not False
+            or diagnostic.get('rules', {}).get('reference_blind') is not True):
+        raise ValueError('Protein-function analysis changes the original experiment')
+    seen = set()
+    for item in diagnostic.get('tasks', []):
+        task = item['task_id']
+        if task not in {'P12', 'P13', 'P14', 'P15'} or task in seen:
+            raise ValueError('Unexpected or repeated protein-function analysis')
+        seen.add(task)
+        found = [r for r in rows if r['task_id'] == task and r['condition_kind'] == 'native'
+                 and r['run_id'] == item.get('run_id')]
+        if len(found) != 1:raise ValueError('Protein-function analysis requires the exact original run')
+        row = found[0]; counts = row['counts']; model = item['model_parsed_subset']
+        original = row['native_score'].get('PARSED_ONLY_DIAGNOSTIC', {})
+        if (row['source_score_sha256'] != item.get('score_sha256')
+                or counts.get('planned') != item.get('planned')
+                or counts.get('parsed') != item.get('valid')
+                or counts.get('invalid_outputs') != item.get('invalid')
+                or item.get('same_case_count') != item.get('valid')
+                or sum(item.get('partition', {}).values()) != item.get('planned')
+                or any(item.get('full_test_primary_metrics', {}).get(k) is not None
+                       for k in ('source_auprc_micro', 'source_f1_max'))
+                or model.get('source_auprc_micro') != original.get('auprc@micro')
+                or model.get('source_f1_max') != original.get('f1_max')
+                or any(len(item.get(k, '')) != 64 for k in
+                       ('matched_subset_case_ids_sha256', 'matched_subset_evidence_sha256'))):
+            raise ValueError('Protein-function subset provenance or counts disagree')
+        row['offline_failure_analysis'] = {
+            'report': DEEPFRI_FAILURES,
+            'partition': copy.deepcopy(item['partition']),
+            'matched_subset_case_count': item['same_case_count'],
+            'matched_subset_case_ids_sha256': item['matched_subset_case_ids_sha256'],
+            'matched_subset_evidence_sha256': item['matched_subset_evidence_sha256'],
+            'model_parsed_subset': copy.deepcopy(model),
+            'matched_subset_all_zero_reference': copy.deepcopy(item['matched_subset_all_zero_reference']),
+        }
+        row['evidence']['detail'] += (
+            ' Full-score completeness is a local policy. '
+            '[Failure categories and same-case reference comparisons](DEEPFRI_FAILURE_ANALYSIS_2026-10-19.md) '
+            'are separate subset diagnostics; the older full-set zero reference is not a matched comparison.')
+
+
+def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagnostic=None, recovered_subset_evidence=None, p36_whitespace=None, p08_sensitivity=None, deepfri_analysis=None):
     excluded = set((scores.get('main_report_scope') or {}).get('excluded_task_ids', ARCHIVE_IDS))
     mapping = catalog_map(catalog, excluded)
     expected = scores.get('main_catalog_settings')
@@ -359,6 +476,10 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
                     'case_scope': raw.get('case_scope'), 'native_metrics_recomputed': False})
     subset_rows = recovered_subset_rows(recovered_subset_evidence, mapping)
     rows.extend(subset_rows); observed.update(row['task_id'] for row in subset_rows)
+    whitespace_row = p36_whitespace_condition(rows, p36_whitespace)
+    if whitespace_row:
+        whitespace_row['source_score_sha256'] = (source_hashes or {}).get(P36_WHITESPACE)
+        rows.append(whitespace_row)
     excluded_runs = scores.get('excluded_or_not_yet_terminal_runs', [])
     for task, info in mapping.items():
         if task in observed:continue
@@ -389,6 +510,8 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
         if correction:
             correction['source_score_sha256'] = (source_hashes or {}).get(REACTION_DIAGNOSTIC)
             rows.append(correction)
+    apply_p08_sensitivity(rows, p08_sensitivity)
+    apply_deepfri_analysis(rows, deepfri_analysis)
     category_order = {}
     for group in catalog.get('groups', []):
         category_order.setdefault(group['category'], len(category_order))
@@ -440,8 +563,16 @@ def generate(root=ROOT):
         raw = (root / REACTION_DIAGNOSTIC).read_bytes();docs[REACTION_DIAGNOSTIC] = json.loads(raw);hashes[REACTION_DIAGNOSTIC] = hashlib.sha256(raw).hexdigest()
     if (root / RECOVERED_SUBSET_EVIDENCE).is_file():
         raw = (root / RECOVERED_SUBSET_EVIDENCE).read_bytes();docs[RECOVERED_SUBSET_EVIDENCE] = json.loads(raw);hashes[RECOVERED_SUBSET_EVIDENCE] = hashlib.sha256(raw).hexdigest()
+    if (root / P36_WHITESPACE).is_file():
+        raw = (root / P36_WHITESPACE).read_bytes();docs[P36_WHITESPACE] = json.loads(raw);hashes[P36_WHITESPACE] = hashlib.sha256(raw).hexdigest()
+    if (root / P08_SENSITIVITY).is_file():
+        raw = (root / P08_SENSITIVITY).read_bytes();docs[P08_SENSITIVITY] = json.loads(raw);hashes[P08_SENSITIVITY] = hashlib.sha256(raw).hexdigest()
+    if (root / DEEPFRI_FAILURES).is_file():
+        raw = (root / DEEPFRI_FAILURES).read_bytes();docs[DEEPFRI_FAILURES] = json.loads(raw);hashes[DEEPFRI_FAILURES] = hashlib.sha256(raw).hexdigest()
     result = build(docs[SCORES], docs[CATALOG], source_hashes=hashes,
-        reaction_diagnostic=docs.get(REACTION_DIAGNOSTIC), recovered_subset_evidence=docs.get(RECOVERED_SUBSET_EVIDENCE))
+        reaction_diagnostic=docs.get(REACTION_DIAGNOSTIC), recovered_subset_evidence=docs.get(RECOVERED_SUBSET_EVIDENCE),
+        p36_whitespace=docs.get(P36_WHITESPACE), p08_sensitivity=docs.get(P08_SENSITIVITY),
+        deepfri_analysis=docs.get(DEEPFRI_FAILURES))
     for name, content in [(OUTPUT_JSON, json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + '\n'), (OUTPUT_MD, render(result, root))]:
         path = root / name;path.parent.mkdir(parents=True, exist_ok=True);temporary = path.with_suffix(path.suffix + '.tmp');temporary.write_text(content);temporary.replace(path)
     return result

@@ -6,6 +6,10 @@ Reviewed October 18, 2026, at 11:00 PM PDT.
 
 ## October 19 follow-up
 
+The later review adds three narrower findings. [P36 whitespace normalization](P36_WHITESPACE_DIAGNOSTIC_2026-10-19.md) recovers five complete sequence serializations out of 59 while preserving the exact raw-format result of zero; biological function remains unassessed. Its archived ROUGE uses the target sequence and full input prompt as alternative references. [P08 sensitivity analysis](P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.md) proves that filling only its 235 invalid predictions cannot turn its negative rank agreement positive: a conservative full-test Spearman upper bound is −0.067800. The exact full score remains undefined. [P12–P15 failure analysis](DEEPFRI_FAILURE_ANALYSIS_2026-10-19.md) separates truncation from label-vocabulary and duplicate-key problems and compares references on the same parsed case IDs.
+
+The completed real-GFP validation pilot returned 12 responses: ten normal finite numeric finals and two truncated empty finals. It did not meet complete-delivery requirements. [Task-specific gates](TASK_SPECIFIC_DELIVERY_GATES_2026-10-19.md) replace the shared synthetic-pass gate for future runs. The historical extraction tool now requires actual hash-linked contracts and per-case question types; real historical rescoring remains blocked on missing originals. Full-score withholding when any output is invalid is a local completeness policy, distinct from the underlying numerical metric formulas.
+
 The [action plan](EVALUATION_REPAIR_PLAN_2026-10-19.md) and [decision table](EVALUATION_DECISION_TABLE.md) now separate informative predictive results, answer-delivery failures, scorer failures and extraction diagnostics. The historical findings below remain available; this follow-up updates their interpretation.
 
 - **P16:** The independently frozen terminal-number diagnostic recovers 850 normally finished labels, but only three more correct predictions. Accuracy is **12/5,651 (0.212%)**, alongside the unchanged original **9/5,651 (0.159%)**. This particular formatting repair does little to explain the poor reaction-class recovery under the tested full-sequence, joint-description generative interface. [Rule, counts and reproducible records](REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.md).
@@ -15,7 +19,7 @@ The [action plan](EVALUATION_REPAIR_PLAN_2026-10-19.md) and [decision table](EVA
 - **P12–P15:** The narrow null-versus-empty compatibility repair completed for all four settings. Their full AP/Fmax remain undefined because 285, 434, 296 and 76 predictions respectively remain invalid. Missing final answers remain invalid, genuine nonempty conflicts still fail, and original attempts are preserved. P13 recovery finished October 19 at 4:33 AM PDT. [Repair records](SCORER_COMPATIBILITY_REPAIR_2026-10-19.md).
 - **P01 and V01–V05:** Frozen extraction checks are ready, but full rescoring is blocked by unavailable historical raw records in the local copies and public releases checked so far. No improved score is asserted from synthetic tests.
 
-No new full benchmark rerun is part of these changes. The delivery pilot uses synthetic cases; the existing mixed-budget results cannot establish a causal benefit from 16K outputs.
+No new full benchmark rerun is part of these changes. The earlier synthetic delivery pilot and the subsequent real-validation pilot remain separate from benchmark scores; the existing mixed-budget results cannot establish a causal benefit from 16K outputs.
 
 ## Original October 18 findings
 

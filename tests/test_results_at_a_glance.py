@@ -12,6 +12,16 @@ import update_results_at_a_glance as report
 
 
 class ReportTests(unittest.TestCase):
+    def test_p08_sensitivity_note_is_bound_to_original_score_hash(self):
+        row={'task_id':'P08','scores_sha256':'53ad6a4142efefdfff140decfaeb16efee1f077ae3629788a57da1fd56f7404e',
+             'counts':{'planned':12851,'parsed':12616,'invalid_outputs':235},
+             'metrics':{'spearman':None,'spearman_parsed_only':-.12158796841646605}}
+        before=copy.deepcopy(row)
+        self.assertIn('at most -0.067800',' '.join(report.presentation_caveats(row)))
+        self.assertEqual(row,before)
+        row['scores_sha256']='different-run'
+        self.assertNotIn('at most -0.067800',' '.join(report.presentation_caveats(row)))
+
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory(); self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)

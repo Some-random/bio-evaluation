@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "completed_at_pacific": "2026-10-19T12:31:13.023577-07:00",
+  "status": "passed",
+  "verification": "Portable evidence only; no original .local archive reads by verifier. Exact source AP/Fmax and tie-grouped AP reproduced on all four model and matched all-zero subsets.",
+  "job_id": "242246",
+  "job_exit_code": "0:0",
+  "allocated_cpus": 2,
+  "allocated_gpus": 0,
+  "model_inference_calls": 0,
+  "script": "scripts/verify_deepfri_matched_subset.py",
+  "script_sha256": "24a16d36fb6d7822fe3bfc53745a601822a2e71064b9e25e6f9a5eeb0b85a73b",
+  "analysis_sha256": "32e201698766dc1ec75b734d766cb4cffb42a062abfcfe8f265d0e5990797572",
+  "report_sha256": "32e201698766dc1ec75b734d766cb4cffb42a062abfcfe8f265d0e5990797572",
+  "stdout_sha256": "ea0ca1f5ae113f951f8b187f57935235ad0a93dc423230b9c3cd38bbc15d0887",
+  "passed_tasks": {
+    "P12": 1634,
+    "P13": 2982,
+    "P14": 3120,
+    "P15": 3340
+  },
+  "synthetic_classifier_tests_passed": 10,
+  "original_raw_outputs_modified": false,
+  "original_scores_overwritten": false
+}

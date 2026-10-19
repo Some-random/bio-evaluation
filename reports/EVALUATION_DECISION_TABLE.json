@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-19T11:38:01.036269-07:00",
+  "generated_at_pacific": "2026-10-19T12:29:03.120190-07:00",
   "score_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
   "catalog_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
   "retained_setting_count": 57,
@@ -72,7 +72,7 @@
     "P28",
     "P29"
   ],
-  "row_count": 67,
+  "row_count": 68,
   "rows": [
     {
       "task_id": "P01",
@@ -425,10 +425,10 @@
         "all_case_rule": "No invented prediction for failures. Full-test Spearman requires every output to parse; incomplete valid-only correlation is separately labeled."
       },
       "diagnostic_score": null,
-      "score_display": "spearman undefined; spearman_parsed_only -0.1216",
+      "score_display": "spearman undefined; spearman_parsed_only -0.1216; finite-imputation upper bound -0.0678 (not a score)",
       "evidence": {
-        "category": "Incomplete native metric",
-        "detail": "A finished execution with an undefined metric is not a complete quality evaluation."
+        "category": "Negative native-target rank agreement; full score undefined",
+        "detail": "12,616/12,851 numeric predictions; keeping them fixed, any finite values for the 235 invalid cases still give negative full-test Spearman. The full score remains undefined under the local completeness policy. This concerns the requested native scale under the archived prompt. [Proof and formatting audit](P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.md)."
       },
       "counts": {
         "planned": 12851,
@@ -447,7 +447,21 @@
       "source_row_category": "diagnostic_only_finished_runs",
       "source_protocol_url": "https://github.com/songlab-cal/tape",
       "case_scope": "full_frozen_reviewed_released_test",
-      "native_metrics_recomputed": false
+      "native_metrics_recomputed": false,
+      "offline_sensitivity": {
+        "finite_imputation_spearman_upper_bound": -0.06779957046167201,
+        "accepted_predictions_held_fixed": 12616,
+        "original_full_score_unchanged": true,
+        "report": "reports/P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.json",
+        "format_categories": {
+          "native_scalar": 12616,
+          "abstention_or_insufficient_information": 210,
+          "unicode_minus_only_scalar": 11,
+          "truncated_invalid": 8,
+          "empty_final": 4,
+          "qualified_estimate_or_uncertainty": 2
+        }
+      }
     },
     {
       "task_id": "P09",
@@ -629,7 +643,7 @@
       "score_display": "auprc@micro undefined; f1_max undefined",
       "evidence": {
         "category": "Scorer repaired; metric incomplete",
-        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged."
+        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged. Full-score completeness is a local policy. [Failure categories and same-case reference comparisons](DEEPFRI_FAILURE_ANALYSIS_2026-10-19.md) are separate subset diagnostics; the older full-set zero reference is not a matched comparison."
       },
       "counts": {
         "planned": 1919,
@@ -648,7 +662,30 @@
       "source_row_category": "diagnostic_only_finished_runs",
       "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
       "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
-      "native_metrics_recomputed": false
+      "native_metrics_recomputed": false,
+      "offline_failure_analysis": {
+        "report": "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json",
+        "partition": {
+          "valid": 1634,
+          "unfinished_nonstop": 239,
+          "unknown_identifier": 39,
+          "empty_final": 5,
+          "duplicate_identical_only": 2
+        },
+        "matched_subset_case_count": 1634,
+        "matched_subset_case_ids_sha256": "0df94c1562baa38ae0ce982fea3f77e913f063c7b5525f7686dad9da8c6afce8",
+        "matched_subset_evidence_sha256": "215e046f07660330a6e07191c6ba87dbeebd12a2ee24d33ae26f38bf15b91e9a",
+        "model_parsed_subset": {
+          "source_auprc_micro": 0.00564891891553998,
+          "source_f1_max": 0.027645308524370193,
+          "tie_grouped_micro_ap": 0.005121906021781843
+        },
+        "matched_subset_all_zero_reference": {
+          "source_auprc_micro": 0.004437925759702921,
+          "source_f1_max": null,
+          "tie_grouped_micro_ap": 0.004376106255090479
+        }
+      }
     },
     {
       "task_id": "P13",
@@ -696,7 +733,7 @@
       "score_display": "auprc@micro undefined; f1_max undefined",
       "evidence": {
         "category": "Scorer repaired; metric incomplete",
-        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged."
+        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged. Full-score completeness is a local policy. [Failure categories and same-case reference comparisons](DEEPFRI_FAILURE_ANALYSIS_2026-10-19.md) are separate subset diagnostics; the older full-set zero reference is not a matched comparison."
       },
       "counts": {
         "planned": 3416,
@@ -715,7 +752,32 @@
       "source_row_category": "diagnostic_only_finished_runs",
       "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
       "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
-      "native_metrics_recomputed": false
+      "native_metrics_recomputed": false,
+      "offline_failure_analysis": {
+        "report": "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json",
+        "partition": {
+          "valid": 2982,
+          "unknown_identifier": 271,
+          "unfinished_nonstop": 88,
+          "duplicate_identical_only": 49,
+          "empty_final": 20,
+          "duplicate_conflicting": 3,
+          "malformed_json": 3
+        },
+        "matched_subset_case_count": 2982,
+        "matched_subset_case_ids_sha256": "57f2b6184ccdb8676cc92af1df7d2d1162ffc26e6e3b3d5904ccf13bce5d8447",
+        "matched_subset_evidence_sha256": "b4b1a2ea5b36f3d69bc29594ce2e88c1fa32017b5daccc7ca1fa1f7c4152cf96",
+        "model_parsed_subset": {
+          "source_auprc_micro": 0.03828682005405426,
+          "source_f1_max": 0.18172448873519897,
+          "tie_grouped_micro_ap": 0.035366846712735565
+        },
+        "matched_subset_all_zero_reference": {
+          "source_auprc_micro": 0.034546758979558945,
+          "source_f1_max": null,
+          "tie_grouped_micro_ap": 0.033626531879560086
+        }
+      }
     },
     {
       "task_id": "P14",
@@ -763,7 +825,7 @@
       "score_display": "auprc@micro undefined; f1_max undefined",
       "evidence": {
         "category": "Scorer repaired; metric incomplete",
-        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged."
+        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged. Full-score completeness is a local policy. [Failure categories and same-case reference comparisons](DEEPFRI_FAILURE_ANALYSIS_2026-10-19.md) are separate subset diagnostics; the older full-set zero reference is not a matched comparison."
       },
       "counts": {
         "planned": 3416,
@@ -782,7 +844,30 @@
       "source_row_category": "diagnostic_only_finished_runs",
       "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
       "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
-      "native_metrics_recomputed": false
+      "native_metrics_recomputed": false,
+      "offline_failure_analysis": {
+        "report": "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json",
+        "partition": {
+          "valid": 3120,
+          "unfinished_nonstop": 89,
+          "unknown_identifier": 197,
+          "empty_final": 7,
+          "duplicate_identical_only": 3
+        },
+        "matched_subset_case_count": 3120,
+        "matched_subset_case_ids_sha256": "01b2a64fa32b6bf42469d24d09aea6e1aa56e39346ccd21e0dba2bdde042eb73",
+        "matched_subset_evidence_sha256": "d7ee21db639689820026791ff24915fa38b328a48278ebbf36a77dde8598f76a",
+        "model_parsed_subset": {
+          "source_auprc_micro": 0.02469353936612606,
+          "source_f1_max": 0.1107293888926506,
+          "tie_grouped_micro_ap": 0.02227928997924679
+        },
+        "matched_subset_all_zero_reference": {
+          "source_auprc_micro": 0.018157802522182465,
+          "source_f1_max": null,
+          "tie_grouped_micro_ap": 0.018077185255099364
+        }
+      }
     },
     {
       "task_id": "P15",
@@ -830,7 +915,7 @@
       "score_display": "auprc@micro undefined; f1_max undefined",
       "evidence": {
         "category": "Scorer repaired; metric incomplete",
-        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged."
+        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged. Full-score completeness is a local policy. [Failure categories and same-case reference comparisons](DEEPFRI_FAILURE_ANALYSIS_2026-10-19.md) are separate subset diagnostics; the older full-set zero reference is not a matched comparison."
       },
       "counts": {
         "planned": 3416,
@@ -849,7 +934,31 @@
       "source_row_category": "diagnostic_only_finished_runs",
       "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
       "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
-      "native_metrics_recomputed": false
+      "native_metrics_recomputed": false,
+      "offline_failure_analysis": {
+        "report": "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json",
+        "partition": {
+          "valid": 3340,
+          "unfinished_nonstop": 22,
+          "unknown_identifier": 44,
+          "empty_final": 2,
+          "duplicate_identical_only": 6,
+          "duplicate_conflicting": 2
+        },
+        "matched_subset_case_count": 3340,
+        "matched_subset_case_ids_sha256": "861a1eae69f09529ac30e940590a1204feab5145bb5d6029bb06640d69bd60eb",
+        "matched_subset_evidence_sha256": "d7600b4611f9bf0ab339a00b4ddb1095c563dbc01048752f4f2c16eb14e01d41",
+        "model_parsed_subset": {
+          "source_auprc_micro": 0.07652562856674194,
+          "source_f1_max": 0.2367788702249527,
+          "tie_grouped_micro_ap": 0.06717208094727285
+        },
+        "matched_subset_all_zero_reference": {
+          "source_auprc_micro": 0.03706362843513489,
+          "source_f1_max": 0.0710822269320488,
+          "tie_grouped_micro_ap": 0.03655501497005988
+        }
+      }
     },
     {
       "task_id": "P16",
@@ -2205,8 +2314,8 @@
       "output_budget": "4,096",
       "usable_answer_rate": {
         "value": 0.0,
-        "display": "0/59 native-valid; 42 empty finals",
-        "definition": "Native protein-serialization-valid outputs divided by the complete reviewed subset; all raw responses were delivered"
+        "display": "0/59 exact raw-format; 42 empty finals",
+        "definition": "Literal raw protein-serialization matches without outer-whitespace normalization, divided by the complete reviewed subset; all raw responses were delivered"
       },
       "native_score": null,
       "diagnostic_score": null,
@@ -2219,7 +2328,7 @@
       "score_display": "No full-task score; archived ROUGE-L 0.1235 (59 slots; 17 final strings)",
       "evidence": {
         "category": "Recovered subset; output / format failure",
-        "detail": "59/59 raw responses verified; 26 hit the cap. No valid native protein sequence was delivered. Lexical overlap does not establish design quality; the full source benchmark remains unevaluated."
+        "detail": "59/59 raw responses verified; 26 hit the cap. No output matched the literal raw serialization. This exact-format statistic does not exclude sequences recoverable by separately defined whitespace normalization. The archived ROUGE uses the target sequence and full input prompt as alternative references; lexical overlap does not establish design quality. The full source benchmark remains unevaluated. A separate outer-whitespace diagnostic recovers 5/59 complete serializations; biological function remains unassessed."
       },
       "counts": {
         "planned": 59,
@@ -2247,6 +2356,71 @@
       "full_source_cases": 5876,
       "full_benchmark_complete": false,
       "native_metrics_recomputed": false
+    },
+    {
+      "task_id": "P36",
+      "task": "BioT5+ description-guided protein design",
+      "category": "Protein design",
+      "dataset": "BioT5+ description-guided protein design",
+      "condition": "Separate outer-whitespace-only serialization diagnostic; same reviewed subset",
+      "condition_kind": "outer_whitespace_only",
+      "run_id": "p36-qwen3.8-27b-biot5-reviewed59-20261016",
+      "result_type": "offline_serialization_diagnostic",
+      "protocol_variant": "QWEN_FULLTEXT_BIOT5_DESIGN_PAIRED_SOURCE_ROUGE_PARTIAL",
+      "input_protocol": "Functional description → protein sequence",
+      "output_budget": "4,096",
+      "usable_answer_rate": {
+        "value": 0.0847457627118644,
+        "display": "5/59 complete serializations after outer trim",
+        "definition": "Normal stop, original serialization grammar and standard amino-acid alphabet after str.strip() only; no biological quality assessment"
+      },
+      "native_score": null,
+      "diagnostic_score": {
+        "serialization_valid_fraction": 0.0847457627118644
+      },
+      "archived_lexical_metric": {
+        "name": "ROUGE-L",
+        "value": 0.12347117664198978,
+        "text_strings": 17,
+        "denominator": 59
+      },
+      "score_display": "5/59 syntactically complete sequences; biological function unassessed",
+      "evidence": {
+        "category": "Separate format diagnostic; partial subset",
+        "detail": "Only surrounding whitespace removed; no residues changed, no reference answers or reasoning used. Exact raw-format result remains zero. ROUGE is a separate qualified lexical diagnostic."
+      },
+      "counts": {
+        "planned": 59,
+        "parsed": 5,
+        "invalid_outputs": 54
+      },
+      "finish_reasons": {
+        "stop": 33,
+        "length": 26
+      },
+      "source_scores": null,
+      "source_score_sha256": "aba51168710d868a45fb624d3ba0d6963a2fefe276dd323da7e645e845e2a491",
+      "source_evidence": "P36_WHITESPACE_DIAGNOSTIC_2026-10-19.md",
+      "source_row_category": "offline_format_diagnostic",
+      "evidence_manifest_sha256": "6bb6d590cceca7598f02987a688d3166fbe8bfc46cee473eb9bee493aab6f684",
+      "archive_sha256": "e88fbe84a224bcaa9edd96a3bb29de78cecbbf10cf6a28e0232e2e0264a3e432",
+      "completion_sha256": "6020d6864eaa715d5d15fb986bf20e608facc8951c9146cd7bce0fbe8f4c8b17",
+      "source_protocol_url": "https://github.com/QizhiPei/BioT5",
+      "case_scope": "reviewed_subset_only",
+      "full_source_cases": 5876,
+      "full_benchmark_complete": false,
+      "native_metrics_recomputed": false,
+      "source_native_score_sha256": "aa85ba27ac77c7df8251a2701a71a6b2f6b8e8713743838d3b02320334248aec",
+      "source_original_counts": {
+        "planned": 59,
+        "raw_responses": 59,
+        "completed": 17,
+        "parsed": 0,
+        "invalid_outputs": 59,
+        "empty_final_fields": 42,
+        "missing_or_failed_outputs": 0,
+        "original_dispatch_error_statuses": 42
+      }
     },
     {
       "task_id": "P37",
@@ -3037,7 +3211,10 @@
     "reports/RESULTS_AT_A_GLANCE.json": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
     "reports/TASK_HIERARCHY_DATA.json": "a980acdd168e615fd3fdf24c4b4b77b25338821a5aaef2e75a6f57af084c1af4",
     "reports/REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.json": "68d143a13641237c1141b4d47ecdda438f7f81711ffccc7a4cdd6069764f449b",
-    "reports/RECOVERED_SUBSET_EVIDENCE_2026-10-19.json": "05fb2eee24657b2c9c427600dca7270befc0db4317c85e5ed4e15b97490c5678"
+    "reports/RECOVERED_SUBSET_EVIDENCE_2026-10-19.json": "298ac2eb237558f335f34cb2246c4d354362d7bcb5ff555e685165a04e8cdaf3",
+    "reports/P36_WHITESPACE_DIAGNOSTIC_2026-10-19.json": "aba51168710d868a45fb624d3ba0d6963a2fefe276dd323da7e645e845e2a491",
+    "reports/P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.json": "d90d53cb0882b6e181734037b017f67c6253503ad32e719b570e945ea88c0e4d",
+    "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json": "32e201698766dc1ec75b734d766cb4cffb42a062abfcfe8f265d0e5990797572"
   },
   "recovered_subset_setting_ids": [
     "P36"
