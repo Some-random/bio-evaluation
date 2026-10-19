@@ -1,0 +1,3 @@
+run_id,task_id,protocol_variant,model,metric,value,planned,completed,parsed,case_scope
+qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1,P08,QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH,Qwen/Qwen3.8-27B,spearman,,12851,12851,12616,full_frozen_reviewed_released_test
+qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1,P08,QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH,Qwen/Qwen3.8-27B,spearman_parsed_only,-0.12158796841646605,12851,12851,12616,full_frozen_reviewed_released_test

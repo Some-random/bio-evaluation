@@ -1,0 +1,20 @@
+{
+  "execution_success": true,
+  "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+  "kind": "derived_native_scoring",
+  "native_metric_issues": [
+    "A required native primary metric is missing, undefined or nonfinite"
+  ],
+  "native_metrics_valid": false,
+  "output_budget_counts": {
+    "16384": 5548,
+    "4096": 7303
+  },
+  "planned": 12851,
+  "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1",
+  "scored_benchmark_completed": false,
+  "scores_sha256": "53ad6a4142efefdfff140decfaeb16efee1f077ae3629788a57da1fd56f7404e",
+  "scoring_exit_code": 0,
+  "task_id": "P08",
+  "terminal": true
+}
