@@ -1,0 +1,47 @@
+{
+  "updated_at_pacific": "2026-10-19T14:38:23.604451-07:00",
+  "role": "Verified complete scoring evidence; status records may still be pending or failed",
+  "sealed_score_files": {
+    "publicqa_gpt-6-luna": {
+      "path": "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6-luna.scores.json",
+      "sha256": "91c8b55f704e8c2be711f5d4488b7c49eed5a66b88a34b7808d7e76d6da738ac",
+      "plan_path": "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6-luna.scoring_plan.json",
+      "plan_sha256": "90580832d2b5233722b2355af29e34810865f9cc2a85d88641b82c8c3ab4a3a5"
+    },
+    "publicqa_gpt-6_1-sol": {
+      "path": "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6_1-sol.scores.json",
+      "sha256": "c1897691ecfd204419b69a07a58eb111bdc2c029134ff30538fd967f12c7f56c",
+      "plan_path": "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6_1-sol.scoring_plan.json",
+      "plan_sha256": "1a71eabf871c910531edd8da204bb3a675367050a374a58698da74477fd37ed9"
+    }
+  },
+  "files_sha256": {
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_scoring_status.json": "e788661dbada9ef81ba54de54d5e3796a273cbecc80004566ceb9b647bae0603",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_scoring_watcher_start.json": "4405a3051e00110b74e7d13a31d0b7cecf564a10f334b29fb784f7cb351fb2b1",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6-luna.attempt_001.json": "d0c8aeb06f94fe5a59b82daad53f9d3330946b2806ab09d5c042f2b5a8daea86",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6-luna.scores.json": "91c8b55f704e8c2be711f5d4488b7c49eed5a66b88a34b7808d7e76d6da738ac",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6-luna.scores.sha256": "25a6db24a5ed5ae4719f6ddd136e1304960ee8e8a3580dfa134de7b1b4581014",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6-luna.scoring_plan.json": "90580832d2b5233722b2355af29e34810865f9cc2a85d88641b82c8c3ab4a3a5",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6_1-sol.attempt_001.json": "b5fb771ac62b57088c08d99e64461015f741309ce9d288336f05127fa077eba6",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6_1-sol.scores.json": "c1897691ecfd204419b69a07a58eb111bdc2c029134ff30538fd967f12c7f56c",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6_1-sol.scores.sha256": "54728b21fb6151113c235c0a0ad99a1a15f2c072914a6cb23ca3b985e1632e0b",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6_1-sol.scoring_plan.json": "1a71eabf871c910531edd8da204bb3a675367050a374a58698da74477fd37ed9",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_scoring_status.json": "7fc7237caca0d6a44a56f3efd57a69db7a7b4055fe0fefaff86d95846697f4bf",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_scoring_watcher_start.json": "dbe3094d8ba1a1f6b0b5374700a2637b6a75a35e22f691ce45b7e892dbf18e53"
+  },
+  "scoring_terminal": {
+    "publicqa_gpt-6-luna": {
+      "state": "completed",
+      "score_sha256": "91c8b55f704e8c2be711f5d4488b7c49eed5a66b88a34b7808d7e76d6da738ac",
+      "error_type": null,
+      "error": null
+    },
+    "publicqa_gpt-6_1-sol": {
+      "state": "completed",
+      "score_sha256": "c1897691ecfd204419b69a07a58eb111bdc2c029134ff30538fd967f12c7f56c",
+      "error_type": null,
+      "error": null
+    }
+  },
+  "no_new_inference": true
+}

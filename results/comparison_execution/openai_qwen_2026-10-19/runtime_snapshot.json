@@ -1,5 +1,5 @@
 {
-  "updated_at_pacific": "2026-10-19T14:31:00.060131-07:00",
+  "updated_at_pacific": "2026-10-19T14:37:22.270800-07:00",
   "public_export_version": 2,
   "public_responses": "Privacy-redacted metadata with original/public hash mapping; exact originals retained privately. Original lock hashes refer to private raw responses.",
   "role": "generation_and_development_evidence_not_completed_benchmark_scores",
@@ -78,10 +78,10 @@
         "P03"
       ],
       "planned": 2773,
-      "saved": 378,
+      "saved": 597,
       "complete_prediction_lock": false,
       "terminal_outcomes": {
-        "completed": 378
+        "completed": 597
       },
       "transport_or_server_errors": 0,
       "truncations": 0,
@@ -89,12 +89,12 @@
       "refusals": 0,
       "per_task": {
         "P03": {
-          "saved": 378,
-          "observed_terminal": 378
+          "saved": 597,
+          "observed_terminal": 597
         }
       },
-      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_gpt-6-luna_saved_378.tar.gz",
-      "trajectory_sha256": "e8cde7d974cc7798cb2b506deedd23ad42f623524b8f15415e5728d8ac83758d",
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_gpt-6-luna_saved_597.tar.gz",
+      "trajectory_sha256": "37ae0364bad056a79b1a0953a450332b90535f81d35e264ae2e2ea184d197e5f",
       "usage": null,
       "standard_uncached_cost_estimate_usd": null,
       "biological_correctness_assessed": false
@@ -205,8 +205,12 @@
       },
       "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_gpt-6-luna_complete.tar.gz",
       "trajectory_sha256": "78e03f9245248d3926b38fd6b41beb253bd9cb1d338a422a917a1b8a295a1648",
-      "usage": null,
-      "standard_uncached_cost_estimate_usd": null,
+      "usage": {
+        "input_tokens": 52485,
+        "output_tokens": 202307,
+        "cached_input_tokens": 0
+      },
+      "standard_uncached_cost_estimate_usd": 0.106402,
       "biological_correctness_assessed": false
     },
     {
@@ -239,11 +243,20 @@
       },
       "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_gpt-6_1-sol_complete.tar.gz",
       "trajectory_sha256": "1dd9fa23ae92cf73210b96e2774af28e414eb0c866f11710daa87a27702fcf3b",
-      "usage": null,
-      "standard_uncached_cost_estimate_usd": null,
+      "usage": {
+        "input_tokens": 52485,
+        "output_tokens": 64464,
+        "cached_input_tokens": 0
+      },
+      "standard_uncached_cost_estimate_usd": 0.74961,
       "biological_correctness_assessed": false
     }
   ],
   "no_qwen_reruns": true,
-  "benchmark_scoring_requires_complete_prediction_lock": true
+  "benchmark_scoring_requires_complete_prediction_lock": true,
+  "export_cache": {
+    "original_files_read_this_snapshot": 2986,
+    "verified_cached_public_files_reused": 0,
+    "policy": "Original metadata, expected hashes and privacy/scanner code hashes invalidate cached exports."
+  }
 }

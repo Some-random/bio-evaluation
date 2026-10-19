@@ -1,0 +1,48 @@
+{
+  "updated_at_pacific": "2026-10-19T14:38:22.356720-07:00",
+  "role": "Complete reused Qwen evidence packaged once per immutable prediction-lock hash",
+  "archives": {
+    "publicqa": {
+      "archive": "results/comparison_execution/openai_qwen_2026-10-19/qwen_archives/publicqa_6e70e9f769a2b94b.tar.gz",
+      "archive_sha256": "f5e5cf707ba0f875fee8e8acc2063fd60791d56d26947b3a1623b21f1333d945",
+      "archive_bytes": 441934,
+      "prediction_lock_sha256": "6e70e9f769a2b94be8f07e32a2de6f42ecf2c8b995415f4447570ba0099ce108",
+      "model": "Qwen/Qwen3.8-27B",
+      "run_id": "archived_qwen_publicqa_panel_2026-10-19_v2",
+      "case_count": 279,
+      "contains": "Exact reused Qwen requests, raw responses, visible finals and sealed prediction lock; no new Qwen generation",
+      "privacy_review": {
+        "non_null_private_response_metadata_fields_found": 0,
+        "checked_field_names": [
+          "safety_identifier",
+          "encrypted_content",
+          "user"
+        ],
+        "all_selected_json_files_recursively_checked": true
+      },
+      "original_candidates_sha256": "ae3dbf78683cc2060c58a9364f833515cb59871fc6c21388dc4813b55a3ecbe0",
+      "original_case_manifest_sha256": "546ee988292215bbffb8b894133c4d74c17a5b5258043a0c350f1a4cd60e8f44"
+    },
+    "localization": {
+      "archive": "results/comparison_execution/openai_qwen_2026-10-19/qwen_archives/localization_7d853406c6e3cff5.tar.gz",
+      "archive_sha256": "ffedab380090c5278ac51492fdb819bd819bb18cc1243554bfc83a0708988d8a",
+      "archive_bytes": 4682510,
+      "prediction_lock_sha256": "7d853406c6e3cff590f4b3adc9b4be5bd4f6ed374d8b8bd8464cb45f2dce4488",
+      "model": "Qwen/Qwen3.8-27B",
+      "run_id": "archived_qwen_localization_panel_2026-10-19_v2",
+      "case_count": 2773,
+      "contains": "Exact reused Qwen requests, raw responses, visible finals and sealed prediction lock; no new Qwen generation",
+      "privacy_review": {
+        "non_null_private_response_metadata_fields_found": 0,
+        "checked_field_names": [
+          "safety_identifier",
+          "encrypted_content",
+          "user"
+        ],
+        "all_selected_json_files_recursively_checked": true
+      },
+      "original_candidates_sha256": "ae3dbf78683cc2060c58a9364f833515cb59871fc6c21388dc4813b55a3ecbe0",
+      "original_case_manifest_sha256": "546ee988292215bbffb8b894133c4d74c17a5b5258043a0c350f1a4cd60e8f44"
+    }
+  }
+}

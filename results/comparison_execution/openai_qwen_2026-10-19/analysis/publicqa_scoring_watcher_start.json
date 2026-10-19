@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "stage": "watching",
+  "started_at_pacific": "2026-10-19T14:21:58.505375-07:00",
+  "pid": 2507499,
+  "new_inference_calls": 0,
+  "opens_reference_labels_only_after_complete_prediction_lock_validation": true,
+  "frozen_source_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/score_model_comparison.py": "145f734c6152656119b4de5568ed37b58d3f786cf6da4c6e8a018011af40d3d6",
+    "/dfs/scratch0/dongweij/bio-evaluation/configs/comparison_answer_policy_v1.json": "81bcae4b7b0ec0303fda77c6804280da124824635ba86be7d96381a7e0404604",
+    "/dfs/scratch0/dongweij/bio-evaluation/reports/GPT6_LUNA_QWEN_COMPARISON_CANDIDATES_2026-10-19.json": "ae3dbf78683cc2060c58a9364f833515cb59871fc6c21388dc4813b55a3ecbe0",
+    "/dfs/scratch0/dongweij/bio-evaluation/results/comparison_preparation/gpt6_luna_qwen_2026-10-19/case_manifest.jsonl": "546ee988292215bbffb8b894133c4d74c17a5b5258043a0c350f1a4cd60e8f44"
+  },
+  "models": {
+    "gpt-6-luna": {
+      "model": "gpt-6-luna",
+      "expected_run_id": "openai_publicqa_gpt-6-luna_4k_2026-10-19_v2",
+      "runtime_record_sha256_at_watcher_start": "697c2432550ea9cd3ec0763978e08e5da30cd1b17929bf35babd7e6204c5bc44",
+      "planned": 279,
+      "state": "awaiting_prediction_lock",
+      "attempt_count": 0,
+      "runtime_directory": ".local/comparison_execution_2026-10-19/runtime/publicqa_gpt-6-luna",
+      "scoring_output": ".local/comparison_execution_2026-10-19/analysis/publicqa_gpt-6-luna.scores.json"
+    },
+    "gpt-6_1-sol": {
+      "model": "gpt-6.1-sol",
+      "expected_run_id": "openai_publicqa_gpt-6_1-sol_4k_2026-10-19_v2",
+      "runtime_record_sha256_at_watcher_start": "f2197563891dcff39648c5ee897d89715f3fed97ccf43b998c0eda5aa83f1718",
+      "planned": 279,
+      "state": "awaiting_prediction_lock",
+      "attempt_count": 0,
+      "runtime_directory": ".local/comparison_execution_2026-10-19/runtime/publicqa_gpt-6_1-sol",
+      "scoring_output": ".local/comparison_execution_2026-10-19/analysis/publicqa_gpt-6_1-sol.scores.json"
+    }
+  }
+}

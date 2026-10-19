@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "stage": "watching",
+  "started_at_pacific": "2026-10-19T14:21:26.050889-07:00",
+  "pid": 2507020,
+  "new_inference_calls": 0,
+  "opens_reference_labels_only_after_complete_prediction_lock_validation": true,
+  "frozen_source_sha256": {
+    "/dfs/scratch0/dongweij/bio-evaluation/scripts/score_model_comparison.py": "145f734c6152656119b4de5568ed37b58d3f786cf6da4c6e8a018011af40d3d6",
+    "/dfs/scratch0/dongweij/bio-evaluation/configs/comparison_answer_policy_v1.json": "81bcae4b7b0ec0303fda77c6804280da124824635ba86be7d96381a7e0404604",
+    "/dfs/scratch0/dongweij/bio-evaluation/reports/GPT6_LUNA_QWEN_COMPARISON_CANDIDATES_2026-10-19.json": "ae3dbf78683cc2060c58a9364f833515cb59871fc6c21388dc4813b55a3ecbe0",
+    "/dfs/scratch0/dongweij/bio-evaluation/results/comparison_preparation/gpt6_luna_qwen_2026-10-19/case_manifest.jsonl": "546ee988292215bbffb8b894133c4d74c17a5b5258043a0c350f1a4cd60e8f44"
+  },
+  "models": {
+    "gpt-6-luna": {
+      "model": "gpt-6-luna",
+      "planned": 2773,
+      "state": "awaiting_prediction_lock",
+      "attempt_count": 0,
+      "runtime_directory": ".local/comparison_execution_2026-10-19/runtime/localization_gpt-6-luna",
+      "scoring_output": ".local/comparison_execution_2026-10-19/analysis/localization_gpt-6-luna.scores.json"
+    }
+  },
+  "updated_at_pacific": "2026-10-19T14:38:07.463811-07:00"
+}
