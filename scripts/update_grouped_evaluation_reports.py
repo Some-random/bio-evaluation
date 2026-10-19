@@ -485,7 +485,7 @@ def overview(data):
     out = [
         "# Biological evaluation overview", "",
         "General-purpose baseline: **Qwen3.8-27B**, with text and image inputs.", "",
-        "[Results and scoring qualifications](RESULTS_AT_A_GLANCE.md) · [Evaluation integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md) · [Action plan](EVALUATION_REPAIR_PLAN_2026-10-19.md)", "",
+        "[Action plan](EVALUATION_REPAIR_PLAN_2026-10-19.md) · [Evaluation decision table](EVALUATION_DECISION_TABLE.md) · [Results and scoring qualifications](RESULTS_AT_A_GLANCE.md) · [Evaluation integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md)", "",
         "This catalog spans biological prediction, scientific evidence, protein design and three-dimensional structure. "
         f"The map below shows **{family_count} task families in {len(megatasks)} categories** without opening the detailed catalog. "
         "The counts are task families, not datasets or individual test questions.", "",

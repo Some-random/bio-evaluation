@@ -4,6 +4,21 @@ Reviewed October 18, 2026, at 11:00 PM PDT.
 
 **Several results have substantial parsing, output-budget or metric limitations. The suite cannot be treated as a uniformly fair comparison of biological prediction ability.** Keeping a source metric and its full denominator makes a result reproducible; it does not remove these limitations.
 
+## October 19 follow-up
+
+The [action plan](EVALUATION_REPAIR_PLAN_2026-10-19.md) and [decision table](EVALUATION_DECISION_TABLE.md) now separate informative predictive results, answer-delivery failures, scorer failures and extraction diagnostics. The historical findings below remain available; this follow-up updates their interpretation.
+
+- **P16:** The independently frozen terminal-number diagnostic recovers 850 normally finished labels, but only three more correct predictions. Accuracy is **12/5,651 (0.212%)**, alongside the unchanged original **9/5,651 (0.159%)**. This particular formatting repair does little to explain the poor reaction-class recovery under the tested full-sequence, joint-description generative interface. [Rule, counts and reproducible records](REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.md).
+- **P42:** Zero of 200 candidate outputs were accepted; 196 reached the 1,024-token cap with thinking enabled. Its zero oracle-success score leaves candidate quality unmeasured. Any future positive oracle result would concern a trained fluorescence proxy, not experimental validation.
+- **P03 and P43:** P03's 724/2,773 correct answers are accompanied by a 98.2% parse rate. Even recovering all 51 invalid answers as correct would reach only 27.95%, below the test set's descriptive 29.14% majority reference. P43's near-chance AUROCs come from valid one-token likelihood scores; the native length finish is intentional. [Prediction-task audit and qualifications](PREDICTION_TASK_AUDIT_2026-10-19.md).
+- **B02:** Only 427/520 answers parsed; 93 reached the output cap. Its native non-abstention coverage must not be confused with usable-answer coverage. For B07, 76/86 parsed answers were correct, but that selected-subset rate cannot replace 76/600 full-task accuracy.
+- **P12–P15:** A narrowly scoped null-versus-empty compatibility repair is being applied in separately named scoring attempts. Missing final answers remain invalid, genuine nonempty conflicts still fail, and original attempts are preserved.
+- **P01 and V01–V05:** Frozen extraction checks are ready, but full rescoring is blocked by unavailable historical raw records in the local copies and public releases checked so far. No improved score is asserted from synthetic tests.
+
+No new full benchmark rerun is part of these changes. The delivery pilot uses synthetic cases; the existing mixed-budget results cannot establish a causal benefit from 16K outputs.
+
+## Original October 18 findings
+
 | Setting | Confirmed finding | What the result supports |
 |---|---|---|
 | P16 reaction classification | Of 5,651 responses, 1,120 parse and 4,531 are invalid. Among 904 nonempty rejected finals, 851 end with a standalone class number in the allowed range; 850 of these finish normally. The parser requires the entire final text to be a number, optionally prefixed `Answer:`. | The frozen 9/5,651 score measures prediction plus a strict output interface. It is strongly confounded by formatting and truncation. The 851 labels were identified without looking at correctness; their recoverability does not establish that they are correct. |

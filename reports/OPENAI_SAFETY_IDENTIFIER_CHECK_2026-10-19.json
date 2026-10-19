@@ -1,0 +1,81 @@
+{
+  "tested_at_pacific": "2026-10-19T01:03:38.956752-07:00",
+  "kind": "BENIGN_SAFETY_IDENTIFIER_CONNECTIVITY_TEST",
+  "all_passed": true,
+  "one_stable_identifier_for_all_requests": true,
+  "identifier_rotations": 0,
+  "retries": 0,
+  "benchmark_requests_dispatched": 0,
+  "cases": [
+    {
+      "case": "connectivity",
+      "prompt": "Reply with exactly: OK",
+      "http_status": 200,
+      "status": "completed",
+      "output": "OK",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 11,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 5,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 16
+      },
+      "passed": true,
+      "elapsed_seconds": 2.407
+    },
+    {
+      "case": "arithmetic",
+      "prompt": "What is 2 + 2? Reply with the number only.",
+      "http_status": 200,
+      "status": "completed",
+      "output": "4",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 20,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 5,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 25
+      },
+      "passed": true,
+      "elapsed_seconds": 1.648
+    },
+    {
+      "case": "basic_terminology",
+      "prompt": "What does DNA stand for? Reply with the expanded name only.",
+      "http_status": 200,
+      "status": "completed",
+      "output": "Deoxyribonucleic acid",
+      "model": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 19,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 30
+      },
+      "passed": true,
+      "elapsed_seconds": 1.305
+    }
+  ],
+  "source_receipt_sha256": "b2e986f0e7241d51f50747739f4d5b8ec4102c0c9077b15c86bb2670d1e309d2",
+  "private_identifier_and_credentials_omitted": true,
+  "documentation": "https://developers.openai.com/api/docs/guides/safety-checks",
+  "biological_policy_hold_changed": false
+}

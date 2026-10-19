@@ -51,12 +51,14 @@ class QualificationTests(unittest.TestCase):
 
     def test_reaction_audit_numbers_require_the_exact_audited_score(self):
         original = row('P16')
-        self.assertNotIn('851', ' '.join(report.presentation_caveats(original)))
+        self.assertNotIn('850 normally finished', ' '.join(report.presentation_caveats(original)))
         audited = row('P16', scores_sha256='024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b')
         before = copy.deepcopy(audited)
         text = ' '.join(report.presentation_caveats(audited))
-        self.assertIn('851 rejected nonempty answers', text)
-        self.assertIn('correctness was not measured', text)
+        self.assertIn('850 normally finished labels', text)
+        self.assertIn('12/5,651 (0.212%)', text)
+        self.assertIn('original 9/5,651 (0.159%)', text)
+        self.assertIn('original score remains unchanged', text)
         self.assertEqual(audited, before)
 
     def test_retained_legacy_rows_are_qualified_without_mutation(self):

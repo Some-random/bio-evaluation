@@ -248,3 +248,22 @@ separately named, frozen before application, tested on synthetic examples and
 reported against the same full denominators; ambiguous/absent final answers
 stay invalid. No held-out answer may guide an extraction rule. All unrelated
 execution holds and biological input reviews remain unchanged.
+
+On October 19 Pacific time, the user requested implementing the audit repair
+plan. Offline rescoring of existing outputs may proceed under separately named,
+frozen extraction or compatibility corrections, preserving all original scores,
+raw outputs and full denominators. The immediate scope also includes a small
+synthetic/permitted-development output-delivery pilot with the same Qwen
+checkpoint, reasoning enabled and a 16,384-token cap. A synthetic format check
+does not establish biological performance or authorize selective replacement
+of failed cases. Proposed full-task reruns remain separate experiments requiring
+a reviewed, frozen protocol; never splice their results into historical runs.
+
+The user also specifically authorized configuring the documented OpenAI
+`safety_identifier` and testing a few neutral requests. A single persistent
+opaque end-user identifier is stored privately outside this repository and
+attached by `scripts/openai_request_identity.py`; never rotate it to bypass
+restrictions. Three neutral smoke tests completed successfully. This narrow
+test authorization does not resume OpenAI benchmark inference, remove the
+biological policy hold, or authorize retrying the flagged material. Credentials
+and the private identity configuration must not be published.

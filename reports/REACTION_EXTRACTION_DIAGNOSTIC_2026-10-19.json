@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "task_id": "P16",
+  "diagnostic_variant": "P16_NORMAL_STOP_TERMINAL_CLASS_DIAGNOSTIC_V1",
+  "generated_at_pacific": "2026-10-19T01:04:58.386400-07:00",
+  "source_native_run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1",
+  "source_native_protocol_variant": "QWEN_ZERO_SHOT_REACTION_FULL_SEQUENCE_ALL384_FULL_SOURCE_DESCRIPTIONS__MIXED_BUDGET_4K16K_CONTINUATION",
+  "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+  "full_original_denominator": 5651,
+  "counts": {
+    "planned": 5651,
+    "original_accepted": 1120,
+    "original_correct": 9,
+    "diagnostic_accepted": 1970,
+    "diagnostic_correct": 12,
+    "recovered": 850,
+    "recovered_correct": 3,
+    "length_finishes": 3595,
+    "empty_finals": 3627
+  },
+  "counts_by_output_budget": {
+    "4096": {
+      "planned": 4419,
+      "original_accepted": 817,
+      "original_correct": 8,
+      "diagnostic_accepted": 964,
+      "diagnostic_correct": 11,
+      "recovered": 147,
+      "recovered_correct": 3,
+      "length_finishes": 3444,
+      "empty_finals": 3414
+    },
+    "16384": {
+      "planned": 1232,
+      "original_accepted": 303,
+      "original_correct": 1,
+      "diagnostic_accepted": 1006,
+      "diagnostic_correct": 1,
+      "recovered": 703,
+      "recovered_correct": 0,
+      "length_finishes": 151,
+      "empty_finals": 213
+    }
+  },
+  "decisions": {
+    "ineligible_non_stop_finish": 3595,
+    "retained_original_accepted_prediction": 1120,
+    "ineligible_empty_final": 85,
+    "terminal_bare_or_answer_integer": 387,
+    "terminal_bold_integer": 463,
+    "no_allowed_terminal_class_integer": 1
+  },
+  "native_accuracy_unchanged": 0.0015926384710670677,
+  "diagnostic_accuracy": 0.002123517961422757,
+  "freeze_receipt_sha256": "fa8e0b4e572e9038c6fdcdf850df33823febb623828c0d38edafc5a3f6a7f12d",
+  "code_sha256": "5f158ece81e695ce110dca844908476be40af01e61cb4663f18247f864685bc7",
+  "config_sha256": "331e16b030888ca5a508de934e87305be735efdab48baab010cbffe24854422f",
+  "per_case_diagnostic_sha256": "739a423d1f71db7852d05874a8a9657e5ba2dce302a61a4825bd2b28e8340155",
+  "source_inputs": {
+    "per_case_scores": {
+      "original_source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/per_case_scores.json",
+      "snapshot_path": "input_snapshot/per_case_scores.json",
+      "sha256": "a3f92a2289416ee8ec9b03f523600f8dc87588518b473156d104d050271c6f26"
+    },
+    "references": {
+      "original_source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/data/catalog_reaction/P16/scorer_references.jsonl",
+      "snapshot_path": "input_snapshot/scorer_references.jsonl",
+      "sha256": "588e609dfcdd131f84a82968a5fa7d45b2341f8823ba46b9e712a5e16d136cd3"
+    },
+    "native_scores": {
+      "original_source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
+      "snapshot_path": "input_snapshot/scores.json",
+      "sha256": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b"
+    },
+    "budget_map": {
+      "original_source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/per_case_budget_map.json",
+      "snapshot_path": "input_snapshot/per_case_budget_map.json",
+      "sha256": "9dafff466ea170cb8a08a338db421ef1f617ac1cbb6355dfd9bec0055a8be6c2"
+    },
+    "run_manifest": {
+      "original_source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/run_manifest.json",
+      "snapshot_path": "input_snapshot/run_manifest.json",
+      "sha256": "32336c111ca29d56cc96b5a1c945a2cb2728d430874da121b5d48fe8da87495c"
+    },
+    "completion_receipt": {
+      "original_source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/completion.json",
+      "snapshot_path": "input_snapshot/completion.json",
+      "sha256": "c73681814f2e6c5909a4bf04916c099df1962734a166189662acb49a2be828e0"
+    }
+  },
+  "reference_labels_used_to_select_rule": false,
+  "inference_or_regeneration": false,
+  "native_artifacts_modified": false,
+  "eligible_recovery_policy": {
+    "retain_original_accepted_predictions": true,
+    "only_originally_invalid": true,
+    "required_finish_reason": "stop",
+    "empty_finals_stay_invalid": true,
+    "length_finishes_stay_invalid": true,
+    "line": "final nonempty line after trimming surrounding whitespace",
+    "allowed_forms": [
+      "one integer, optional terminal period",
+      "Answer: followed by one integer, case-insensitive, optional terminal period",
+      "one integer surrounded by balanced Markdown **bold**, optional terminal period outside bold"
+    ],
+    "integer_range_inclusive": [
+      0,
+      383
+    ],
+    "no_leading_zero_except_zero": true,
+    "reject_prose_on_final_line": true,
+    "no_extraction_from_reasoning": true,
+    "no_rule_selection_or_prediction_selection_using_gold": true
+  },
+  "qualification": "Separate post-run formatting diagnostic requested by the user. Retains every original accepted prediction, all cases and mixed output budgets. Changes only original invalid normal-stop finals with an allowed terminal class line. Does not replace the original strict score, establish biological correctness of rationales, or form a matched paper comparison.",
+  "source_scores": "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
+  "source_scores_sha256": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b",
+  "source_per_case_scores_sha256": "a3f92a2289416ee8ec9b03f523600f8dc87588518b473156d104d050271c6f26",
+  "diagnostic_result_sha256": "d89d55e4e373e736727580228090e085a5df92ca25043c1db6953a77300c46bc",
+  "public_summary_scope": "Complete full-denominator aggregate of the separately named P16 diagnostic; per-case reproduction materials are in the pinned bundle.",
+  "reproduction_bundle": {
+    "report_relative_path": "benchmark_assets/reaction_extraction_diagnostic_2026-10-19.tar.gz",
+    "sha256": "ef40472d61d78cc06e6ffef22ae284a9a5c57ab64ae36cce012ba373073b1b34",
+    "bytes": 2169846,
+    "members": 14
+  },
+  "synthetic_tests": {
+    "passed": true,
+    "count": 12
+  },
+  "clean_directory_reproduction_verified": true,
+  "native_score_replaced": false,
+  "post_run_diagnostic": true
+}

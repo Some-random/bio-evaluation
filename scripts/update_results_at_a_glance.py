@@ -147,7 +147,7 @@ def presentation_caveats(row):
     if task == "P16" and type(planned) is int and type(parsed) is int:
         additions.append(f"Strict whole-final integer parsing accepts {parsed:,}/{planned:,} answers. The score combines prediction and output-format failures.")
         if row.get("scores_sha256") == "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b":
-            additions.append("Label-blind audit: 851 rejected nonempty answers end with an in-range class number; 850 finish normally. Their correctness was not measured by this formatting audit.")
+            additions.append("A separate frozen terminal-number diagnostic recovers 850 normally finished labels but only three additional correct predictions: 12/5,651 (0.212%) versus the original 9/5,651 (0.159%). The original score remains unchanged; this tested interface still has very poor class recovery. See the reaction extraction diagnostic.")
     if task in {"V01", "V02", "V03"}:
         additions.append("CLOSED uses source substring Yes/No matching, which can credit ambiguous text; OPEN measures token recall. These lexical scores can reward verbose answers and are not strict semantic answer accuracy.")
         if task == "V03":
@@ -395,7 +395,8 @@ def render_markdown(report):
     lines = ["# Results at a glance", "", f"Snapshot: {display_time}. Fixed local Qwen3.8-27B baseline; "
         f"{len(completed_ids)} of {main_count} main settings have completed evaluations of their declared scope. "
         "This does not mean full paper replication. Finished shards and incomplete runs are excluded below.", "",
-        "[Evaluation integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md) identifies output-delivery and metric limitations; completed execution does not guarantee an informative model-quality score.", "",
+        "[Evaluation integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md) identifies output-delivery and metric limitations; completed execution does not guarantee an informative model-quality score.",
+        "[Action plan](EVALUATION_REPAIR_PLAN_2026-10-19.md) · [Decision table](EVALUATION_DECISION_TABLE.md) · [Separate reaction extraction diagnostic](REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.md)", "",
         "These are contextual comparisons: the local baseline is zero-shot; BioT5+/medical systems use task training. LAB references below use the public-set GPT-5.2 column; prompt/decoding/repeat differences remain. "
         f"B01 covers 197/199 public cases with two held before inference. No superiority or significance claim follows. Generated-answer output caps in this snapshot: {limit_text} tokens; P43 instead uses a prespecified one-token conditional likelihood score. Paper ± values preserve reported dispersion; its definition and repeat counts are not always established.", "",
         "| Setting | Local score | Published reference | Qualification |", "|---|---|---|---|"]
