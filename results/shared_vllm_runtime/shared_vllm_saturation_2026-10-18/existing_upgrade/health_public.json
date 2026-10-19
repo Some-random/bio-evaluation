@@ -8,14 +8,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4733106.0,
-        "kv_fraction": 0.9888888888888889,
-        "preemptions": 2242.0,
-        "prompt_tokens": 22231740.0,
-        "running": 16.0,
-        "waiting": 48.0
+        "generation_tokens": 4773640.0,
+        "kv_fraction": 0.9511111111111111,
+        "preemptions": 2245.0,
+        "prompt_tokens": 22407006.0,
+        "running": 14.0,
+        "waiting": 50.0
       },
-      "preemption_delta": 4.0,
+      "preemption_delta": 3.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "4f2a779d44c996c68ed9f35622f4c26db319541c43107366ff24814d928fdfcc"
     },
@@ -26,14 +26,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4468530.0,
-        "kv_fraction": 0.9177777777777778,
-        "preemptions": 2267.0,
-        "prompt_tokens": 20409076.0,
-        "running": 11.0,
-        "waiting": 53.0
+        "generation_tokens": 4498858.0,
+        "kv_fraction": 0.9933333333333333,
+        "preemptions": 2281.0,
+        "prompt_tokens": 20585055.0,
+        "running": 14.0,
+        "waiting": 50.0
       },
-      "preemption_delta": 1.0,
+      "preemption_delta": 14.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "d07f2e7743ad8060d75596a9b196132b340bc859fca69db963e90cc20cf7a17a"
     },
@@ -44,14 +44,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4334990.0,
-        "kv_fraction": 0.8933333333333333,
-        "preemptions": 2438.0,
-        "prompt_tokens": 19226062.0,
-        "running": 12.0,
-        "waiting": 52.0
+        "generation_tokens": 4372716.0,
+        "kv_fraction": 0.9488888888888889,
+        "preemptions": 2467.0,
+        "prompt_tokens": 19347380.0,
+        "running": 15.0,
+        "waiting": 49.0
       },
-      "preemption_delta": 1.0,
+      "preemption_delta": 5.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "18a7af878454965261c26123f7d593efed1c22cedbcc478fac5236a5f2e1bc6a"
     },
@@ -62,47 +62,47 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 4321943.0,
-        "kv_fraction": 0.9933333333333333,
-        "preemptions": 2152.0,
-        "prompt_tokens": 20332633.0,
-        "running": 21.0,
-        "waiting": 43.0
+        "generation_tokens": 4364606.0,
+        "kv_fraction": 0.9888888888888889,
+        "preemptions": 2159.0,
+        "prompt_tokens": 20442346.0,
+        "running": 16.0,
+        "waiting": 48.0
       },
-      "preemption_delta": 7.0,
+      "preemption_delta": 0.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "1b9d4d0eb1ad2b2b8a6115bfb20da04a840ce9352cb78c070aa011d8ce249e5a"
     }
   ],
   "flags": [
     {
-      "delta": 4.0,
+      "delta": 3.0,
       "endpoint_id": "saturation_0",
       "type": "preemptions_increased"
     },
     {
       "endpoint_id": "saturation_0",
-      "fraction": 0.9888888888888889,
+      "fraction": 0.9511111111111111,
       "type": "high_kv_usage"
     },
     {
-      "delta": 1.0,
+      "delta": 14.0,
       "endpoint_id": "saturation_1",
       "type": "preemptions_increased"
     },
     {
-      "delta": 1.0,
+      "endpoint_id": "saturation_1",
+      "fraction": 0.9933333333333333,
+      "type": "high_kv_usage"
+    },
+    {
+      "delta": 5.0,
       "endpoint_id": "saturation_2",
       "type": "preemptions_increased"
     },
     {
-      "delta": 7.0,
       "endpoint_id": "saturation_3",
-      "type": "preemptions_increased"
-    },
-    {
-      "endpoint_id": "saturation_3",
-      "fraction": 0.9933333333333333,
+      "fraction": 0.9888888888888889,
       "type": "high_kv_usage"
     },
     {
@@ -117,7 +117,7 @@
   "plan_sha256": "ca0b86d1bc0d5715a8b07eee9dfda0862928d69e8bffdea63159322c292c0e8b",
   "planned_native_cases": 20916,
   "pool_stage": "evaluating",
-  "pool_stage_source_age_seconds": 36992.70981001854,
+  "pool_stage_source_age_seconds": 37178.42103624344,
   "pool_stage_source_updated_at_pacific": "2026-10-18T11:25:08.525315-07:00",
   "pool_stage_timestamp_is_not_a_runtime_heartbeat": true,
   "recent_response_metadata": [],
@@ -505,5 +505,5 @@
   ],
   "saved_responses_unique_logical_sources": 7716,
   "schema_version": 1,
-  "updated_at_pacific": "2026-10-18T21:41:42.731196-07:00"
+  "updated_at_pacific": "2026-10-18T21:44:48.449058-07:00"
 }
