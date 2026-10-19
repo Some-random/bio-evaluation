@@ -1,7 +1,9 @@
 {
   "case_scope": "all_never_dispatched_at_clean_pause",
   "condition": "MIXED_BUDGET_4K16K_CONTINUATION",
-  "generation_terminal": false,
+  "execution_success": true,
+  "generation_exit_code": 0,
+  "generation_terminal": true,
   "native_metrics_valid": null,
   "original_source_cases": 1024,
   "parent_checkpoint_sha256": "10659ec69831af5a2078d3a5bfa7667b8454a6323a5869294754fd5cc5b4ba98",
@@ -9,7 +11,7 @@
   "planned_cohort_cases": 670,
   "raw_saved_responses_are_not_benchmark_metrics": true,
   "response_status_counts": {
-    "completed": 668
+    "completed": 670
   },
   "retained_parent_output_budget": 4096,
   "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008_output16384_v1",
@@ -18,7 +20,7 @@
   "source_run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_008",
   "task_id": "P08",
   "this_cohort_output_budget": 16384,
-  "uploaded_saved_responses": 668,
-  "uploaded_trajectories": 668,
+  "uploaded_saved_responses": 670,
+  "uploaded_trajectories": 670,
   "whole_task_metrics_require_original4k_and_new16k_union": true
 }
