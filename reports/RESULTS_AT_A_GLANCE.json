@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-19T06:02:20.477019+00:00",
+  "generated_at_utc": "2026-10-19T08:26:35.324012+00:00",
   "catalog_settings": 64,
   "completed_whole_declared_setting_ids": [
     "B01",
@@ -275,6 +275,7 @@
         "197/199 public cases; two held before inference. Original LAB paper includes private cases and means over three runs."
       ],
       "explanation_support_score": null,
+      "scorer_recovery": null,
       "source_scores": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/scores.json",
       "source_completion": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/completion.json",
       "scores_sha256": "5b8d04effeec755cb0c0ba3de29dde6b47ce8a7b34a0743766ef4d40f6c4a4fb",
@@ -634,6 +635,7 @@
         "Public release 82/82; one seeded run, no tools; published decoder/repeats differ."
       ],
       "explanation_support_score": null,
+      "scorer_recovery": null,
       "source_scores": "results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/scores.json",
       "source_completion": "results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/completion.json",
       "scores_sha256": "7aae5d9c7f24d75d42e341d7bd8d174fafc64aff054c6ee6ca6448e73df9e927",
@@ -887,6 +889,7 @@
         "Public release 181/181; one seeded run, no tools; published decoder/repeats differ."
       ],
       "explanation_support_score": null,
+      "scorer_recovery": null,
       "source_scores": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/scores.json",
       "source_completion": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/completion.json",
       "scores_sha256": "a8a980724acc6f811f80f9e7ff5f9dd773d3704565da5d9bfd38c8152bf852b5",
@@ -1139,6 +1142,7 @@
         "Public release 244/244; one seeded run, no tools; published decoder/repeats differ."
       ],
       "explanation_support_score": null,
+      "scorer_recovery": null,
       "source_scores": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/scores.json",
       "source_completion": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/completion.json",
       "scores_sha256": "1641758fe72f79d51392eeb1aa51c127d16d6e503b69d16cfe9a88c143e96968",
@@ -2113,6 +2117,7 @@
       ],
       "caveats": [],
       "explanation_support_score": null,
+      "scorer_recovery": null,
       "source_scores": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/scores.json",
       "source_completion": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/completion.json",
       "scores_sha256": "b2502d3ded2d81fc3f03c8260cd6d2db01dc5ae914e6d84e5ae6c81c18882e4a",
@@ -2480,6 +2485,7 @@
         "Mixed 4K/16K continuation: 4419 original cases retain 4,096-token caps; 1232 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation."
       ],
       "explanation_support_score": null,
+      "scorer_recovery": null,
       "source_scores": "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
       "source_completion": "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/completion.json",
       "scores_sha256": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b",
@@ -4106,6 +4112,7 @@
         "All planned requests finished, but the full-test primary metric is undefined. Parsed-only diagnostics do not complete the benchmark and cannot replace its native metric."
       ],
       "explanation_support_score": null,
+      "scorer_recovery": null,
       "source_scores": "results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
       "source_completion": "results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/completion.json",
       "scores_sha256": "18979759cc43b82517e9933712274c6a82f33bb3b83eaae59b56ba6ac29710e6",

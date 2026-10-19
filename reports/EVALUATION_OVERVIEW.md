@@ -1338,4 +1338,4 @@ Published source size/units: Processed test 12,943 molecules (train 103,547; val
 
 </details>
 
-Result references updated: **2026-10-18 23:02 PDT**. Display times use Pacific time (PST/PDT).
+Result references updated: **2026-10-19 01:26 PDT**. Display times use Pacific time (PST/PDT).

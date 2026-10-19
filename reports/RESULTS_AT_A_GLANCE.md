@@ -1,6 +1,6 @@
 # Results at a glance
 
-Snapshot: 2026-10-18 23:02 PDT. Fixed local Qwen3.8-27B baseline; 24 of 57 main settings have completed evaluations of their declared scope. This does not mean full paper replication. Finished shards and incomplete runs are excluded below.
+Snapshot: 2026-10-19 01:26 PDT. Fixed local Qwen3.8-27B baseline; 24 of 57 main settings have completed evaluations of their declared scope. This does not mean full paper replication. Finished shards and incomplete runs are excluded below.
 
 BioReason, BioReason-Pro and Bio-posttrain settings are set aside from the main comparison. [Archived settings and original records](ARCHIVED_EVALUATIONS.md) remain available; the structured report preserves all original scores and denominators.
 
