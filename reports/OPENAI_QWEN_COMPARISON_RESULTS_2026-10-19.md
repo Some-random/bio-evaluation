@@ -1,10 +1,10 @@
 # OpenAI and archived Qwen comparison
 
-Updated October 19, 2026, 02:41 PM PDT. Only complete, sealed benchmark score files appear in the accuracy tables. Saved generation responses alone are not completed benchmark scores.
+Updated October 19, 2026, 02:47 PM PDT. Only complete, sealed benchmark score files appear in the accuracy tables. Saved generation responses alone are not completed benchmark scores.
 
 | Dispatched condition | Saved / planned | Complete output lock | Errors | Truncations | Empty finals | Refusals |
 |---|---:|---|---:|---:|---:|---:|
-| localization_gpt-6-luna | 744/2773 | No | 0 | 0 | 0 | 0 |
+| localization_gpt-6-luna | 1002/2773 | No | 0 | 0 | 0 | 0 |
 | publicqa_gpt-6-luna | 279/279 | Yes | 0 | 0 | 0 | 0 |
 | publicqa_gpt-6_1-sol | 279/279 | Yes | 0 | 0 | 0 | 0 |
 
