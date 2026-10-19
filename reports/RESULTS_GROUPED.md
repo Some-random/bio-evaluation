@@ -2,7 +2,7 @@
 
 [Overview](EVALUATION_OVERVIEW.md) · [Complete inventory](TASK_HIERARCHY_COMPLETE.md) · [Coverage crosswalk](TASK_COVERAGE_MAP.csv)
 
-Stored scores: **2026-10-18 17:21 PDT**. Running-work snapshot: **2026-10-17 23:12 PDT**. Display times use Pacific time.
+Stored scores: **2026-10-18 21:00 PDT**. Running-work snapshot: **2026-10-17 23:12 PDT**. Display times use Pacific time.
 
 Only existing stored local outcomes are shown. The category order matches the complete inventory. **\*** marks incomplete coverage or scoring; count records are in expandable details. Undefined values remain undefined. Published values are separate contextual comparisons, not matched replications, pooled scores or claims of superiority. All reference records and alternate metric values are retained in the details.
 
@@ -789,6 +789,78 @@ NEW source result: these are Mol-Instructions' own numbers, NOT BioT5+. BioT5+'s
 ```
 
 [Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p26_description_full_parallel_2026-10-15/scores.json)
+
+</details>
+
+### Biochemical reaction classification
+
+**Dataset/protocol:** ProtST reaction classification — zero/few-shot
+
+| Scientific setting | Local stored result | Published reference — different protocol |
+|---|---|---|
+| Reaction class — zero-/few-shot | accuracy 0.2% | ProtST-ESM-1b: zero shot accuracy 29.85%; Table 11, printed p.15 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+
+Zero-shot text-label matching is not the same protocol as fitting a fully supervised classifier.
+
+<details>
+<summary>Reaction class — zero-/few-shot: protocol, counts and complete metric record</summary>
+
+**Native/local protocol:** `QWEN_ZERO_SHOT_REACTION_FULL_SEQUENCE_ALL384_FULL_SOURCE_DESCRIPTIONS__MIXED_BUDGET_4K16K_CONTINUATION`
+
+**Coverage:** full_frozen_reviewed_ProtST_Reaction_test; completed_declared_run.
+
+**Saved count record:**
+
+```json
+{
+  "planned": 5651,
+  "completed": 5651,
+  "parsed": 1120,
+  "invalid_outputs": 4531,
+  "missing_or_failed_outputs": 0,
+  "held_before_inference": 0
+}
+```
+
+**Complete stored metrics, including alternate/diagnostic values:**
+
+```json
+{
+  "accuracy": 0.0015926384710670677,
+  "correct": 9,
+  "planned": 5651,
+  "parsed": 1120,
+  "missing": 0,
+  "invalid": 4531,
+  "all_case_policy": "Every original test row remains in denominator; missing/invalid predictions count incorrect."
+}
+```
+
+**Comparison qualification:** Native released Reaction test and384-class top1 accuracy; prompted Qwen has different representation/context/pretraining from ProtST. Closest native full-description comparator21.91% accuracy, ProtST Table11 printedp15 (rounded); paper pretraining-name29.85% is a separate label-text variant. Native text embeddings truncate each description at128tokens; Qwen receives all complete descriptions jointly. Output-budget condition: MIXED_BUDGET_4K16K_CONTINUATION; 4419 historical cases retain4096 tokens and 1232 clean never-dispatched cases receive16384 tokens. Original invalid/truncated cases remain included. This is not a uniform16k evaluation or a matched budget comparison.
+
+Mixed 4K/16K continuation: 4419 original cases retain 4,096-token caps; 1232 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation.
+
+**All stored published-reference records — separate from the local run:**
+
+```json
+[
+  {
+    "model": "ProtST-ESM-1b",
+    "metrics": {
+      "zero_shot_accuracy_percent": 29.85
+    },
+    "source_id": "PROTST",
+    "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+    "source_locator": "Table 11, printed p.15",
+    "protocol": "zero-shot embedding similarity to label names in published pretraining template",
+    "value_status": "published_rounded_as_printed",
+    "run_count": null,
+    "reported_std": null
+  }
+]
+```
+
+[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json)
 
 </details>
 

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-19T00:21:19.387317+00:00",
+  "generated_at_utc": "2026-10-19T04:00:18.537712+00:00",
   "catalog_settings": 64,
   "completed_whole_declared_setting_ids": [
     "B01",
@@ -17,6 +17,7 @@
     "P03",
     "P10",
     "P11",
+    "P16",
     "P23",
     "P24",
     "P25",
@@ -2371,6 +2372,123 @@
       }
     },
     {
+      "task_id": "P16",
+      "task_name": "Reaction class — zero-/few-shot",
+      "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1",
+      "dataset": null,
+      "native_split": null,
+      "completion_scope": "completed_declared_run",
+      "case_scope": "full_frozen_reviewed_ProtST_Reaction_test",
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+      "protocol_variant": "QWEN_ZERO_SHOT_REACTION_FULL_SEQUENCE_ALL384_FULL_SOURCE_DESCRIPTIONS__MIXED_BUDGET_4K16K_CONTINUATION",
+      "local_training_regime": "Fixed zero-shot baseline; no benchmark task training or test-guided prompt/model selection",
+      "generation": {
+        "max_tokens": null,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        },
+        "output_budget_counts": {
+          "4096": 4419,
+          "16384": 1232
+        }
+      },
+      "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+      "native_protocol_variant": "QWEN_ZERO_SHOT_REACTION_FULL_SEQUENCE_ALL384_FULL_SOURCE_DESCRIPTIONS",
+      "finished_at_utc": null,
+      "counts": {
+        "planned": 5651,
+        "completed": 5651,
+        "parsed": 1120,
+        "invalid_outputs": 4531,
+        "missing_or_failed_outputs": 0,
+        "held_before_inference": 0
+      },
+      "finish_reasons": {
+        "length": 3595,
+        "stop": 2056
+      },
+      "metrics": {
+        "accuracy": 0.0015926384710670677,
+        "correct": 9,
+        "planned": 5651,
+        "parsed": 1120,
+        "missing": 0,
+        "invalid": 4531,
+        "all_case_policy": "Every original test row remains in denominator; missing/invalid predictions count incorrect."
+      },
+      "metric_units": "Accuracy/precision/coverage fractions; AUROC/AP fractions; other metrics preserve source-native units",
+      "curated_only_diagnostic_metrics": null,
+      "comparison_to_paper": "Native released Reaction test and384-class top1 accuracy; prompted Qwen has different representation/context/pretraining from ProtST. Closest native full-description comparator21.91% accuracy, ProtST Table11 printedp15 (rounded); paper pretraining-name29.85% is a separate label-text variant. Native text embeddings truncate each description at128tokens; Qwen receives all complete descriptions jointly. Output-budget condition: MIXED_BUDGET_4K16K_CONTINUATION; 4419 historical cases retain4096 tokens and 1232 clean never-dispatched cases receive16384 tokens. Original invalid/truncated cases remain included. This is not a uniform16k evaluation or a matched budget comparison.",
+      "comparison_status": "contextual_side_by_side_no_superiority_or_significance_claim",
+      "selected_published_reference": {
+        "model": "ProtST-ESM-1b",
+        "metrics": {
+          "zero_shot_accuracy_percent": 29.85
+        },
+        "source_id": "PROTST",
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 11, printed p.15",
+        "protocol": "zero-shot embedding similarity to label names in published pretraining template",
+        "value_status": "published_rounded_as_printed",
+        "run_count": null,
+        "reported_std": null,
+        "display_model": "ProtST-ESM-1b",
+        "display_metrics": {
+          "zero_shot_accuracy_percent": 29.85
+        },
+        "display_scope": "published protocol; contextual"
+      },
+      "all_published_references": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "zero_shot_accuracy_percent": 29.85
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 11, printed p.15",
+          "protocol": "zero-shot embedding similarity to label names in published pretraining template",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "caveats": [
+        "Mixed 4K/16K continuation: 4419 original cases retain 4,096-token caps; 1232 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation."
+      ],
+      "explanation_support_score": null,
+      "source_scores": "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
+      "source_completion": "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/completion.json",
+      "scores_sha256": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b",
+      "completion_score_hash_verified": true,
+      "full_test_id_union_validation": {
+        "complete": true,
+        "union_matches_full_test_ids": true,
+        "expected_test_case_count": 5651,
+        "unique_observed_case_count": 5651,
+        "missing_case_count": 0,
+        "extra_case_count": 0,
+        "duplicate_case_count": 0,
+        "sealed_completion_snapshot": {
+          "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_sources/e34ddd458e744c0fed089295e98aaf0ee24a1bfa6a84516659660663d9c20659",
+          "receipt_sha256": "687a3a0af618c9148c84c71f08bc8c386d3fe24b4740f06b2012fb33e4b79e83",
+          "wrapper_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_completion_scoring.py",
+          "wrapper_sha256": "ca3453f41dd85fe9ffe48c99c0cc79745861b54177b19fb764e9c106182e38a8",
+          "native_input_bytes_match_frozen_raw_slots": true
+        }
+      },
+      "input_reference_dependence": null,
+      "seed_predictor_overlap": null
+    },
+    {
       "task_id": "P23",
       "task_name": "Mol-Instructions: Protein function generation",
       "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15",
@@ -4722,7 +4840,10 @@
     "results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_002/run_manifest.json": "9492a929ddbc603ab6e7b5b68954bbf69e0d4849744122993c3026f1f80a4520",
     "results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json": "18979759cc43b82517e9933712274c6a82f33bb3b83eaae59b56ba6ac29710e6",
     "results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/completion.json": "3d8d74177e4755b887e0e2fc1ae08a0b3c2c15406814530b6a0bbd8a0ded0380",
-    "results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/run_manifest.json": "c555a4e6c737d4f440efc2ea2e3edc9ace81dedeb0487aa3abdebd33860b556a"
+    "results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/run_manifest.json": "c555a4e6c737d4f440efc2ea2e3edc9ace81dedeb0487aa3abdebd33860b556a",
+    "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b",
+    "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/completion.json": "c73681814f2e6c5909a4bf04916c099df1962734a166189662acb49a2be828e0",
+    "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/run_manifest.json": "32336c111ca29d56cc96b5a1c945a2cb2728d430874da121b5d48fe8da87495c"
   },
   "reporting_policy": "Only existing aggregate score/completion/manifest and public reference/report metadata read; no case inputs, per-case outputs, requests, responses, labels, inference or frozen-result edits. Failed/incomplete shards never become whole-task completion. Null metrics stay undefined.",
   "interpretation": "Outcome scores do not validate explanations or establish internal reasoning. Public pretraining exposure unknown. Paper values have different training/protocols and supply no matched superiority/significance claim.",
@@ -4758,6 +4879,7 @@
     "P03",
     "P10",
     "P11",
+    "P16",
     "P23",
     "P24",
     "P25",

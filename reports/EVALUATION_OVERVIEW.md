@@ -179,7 +179,7 @@ Qwen results and published reference results use the stated protocols and are no
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
-| Biochemical reaction classification | ProtST reaction classification — zero/few-shot | Protein sequence plus reaction-label descriptions | — | Zero-/few-shot results are reported, but a numeric value for the exact zero-shot reaction setting is not transcribed here. Do not substitute the fully supervised reaction score. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Biochemical reaction classification | ProtST reaction classification — zero/few-shot | Protein sequence plus reaction-label descriptions | accuracy 0.2% | ProtST-ESM-1b: zero shot accuracy 29.85%; Table 11, printed p.15 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 
 #### Evidence support for protein explanations
 
@@ -689,6 +689,8 @@ Published source size/units: ProtST zero-shot/few-shot experiment; shots and ens
 **Biochemical reaction classification:** Which of the specified reaction categories matches this protein? Metric: Accuracy. ProtST zero-shot/few-shot experiment; shots and ensemble settings must be recorded.
 
 Zero-shot text-label matching is not the same protocol as fitting a fully supervised classifier.
+
+**Comparison qualification:** Native released Reaction test and384-class top1 accuracy; prompted Qwen has different representation/context/pretraining from ProtST. Closest native full-description comparator21.91% accuracy, ProtST Table11 printedp15 (rounded); paper pretraining-name29.85% is a separate label-text variant. Native text embeddings truncate each description at128tokens; Qwen receives all complete descriptions jointly. Output-budget condition: MIXED_BUDGET_4K16K_CONTINUATION; 4419 historical cases retain4096 tokens and 1232 clean never-dispatched cases receive16384 tokens. Original invalid/truncated cases remain included. This is not a uniform16k evaluation or a matched budget comparison.
 
 [Source 1](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf), [Source 2](https://github.com/DeepGraphLearning/ProtST)
 
@@ -1334,4 +1336,4 @@ Published source size/units: Processed test 12,943 molecules (train 103,547; val
 
 </details>
 
-Result references updated: **2026-10-18 17:21 PDT**. Display times use Pacific time (PST/PDT).
+Result references updated: **2026-10-18 21:00 PDT**. Display times use Pacific time (PST/PDT).
