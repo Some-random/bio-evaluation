@@ -1,7 +1,9 @@
 {
   "case_scope": "all_never_dispatched_at_clean_pause",
   "condition": "MIXED_BUDGET_4K16K_CONTINUATION",
-  "generation_terminal": false,
+  "execution_success": true,
+  "generation_exit_code": 0,
+  "generation_terminal": true,
   "native_metrics_valid": null,
   "original_source_cases": 3416,
   "parent_checkpoint_sha256": "009128f2ca6712c1a3b0aa6511824de7322c575ff446477b824c2abe9f76fbf9",
@@ -9,7 +11,7 @@
   "planned_cohort_cases": 2928,
   "raw_saved_responses_are_not_benchmark_metrics": true,
   "response_status_counts": {
-    "completed": 2927
+    "completed": 2928
   },
   "retained_parent_output_budget": 4096,
   "run_id": "qwen38_27b_p14_restored_replay_2026-10-16_output16384_v1",
@@ -18,7 +20,7 @@
   "source_run_id": "qwen38_27b_p14_restored_replay_2026-10-16",
   "task_id": "P14",
   "this_cohort_output_budget": 16384,
-  "uploaded_saved_responses": 2927,
-  "uploaded_trajectories": 2927,
+  "uploaded_saved_responses": 2928,
+  "uploaded_trajectories": 2928,
   "whole_task_metrics_require_original4k_and_new16k_union": true
 }
