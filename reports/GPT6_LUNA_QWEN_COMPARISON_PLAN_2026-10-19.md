@@ -2,6 +2,8 @@
 
 Updated October 19, 2026, Pacific time. **Run the 279 LitQA2/SuppQA cases first with GPT-6 Luna and GPT-6.1 Sol; make protein localization the committed second stage.** Reuse the exact archived Qwen3.8-27B outputs. FigQA/TableQA remain a separate vision comparison.
 
+[Comparison results and public trajectories](OPENAI_QWEN_COMPARISON_RESULTS_2026-10-19.md) contain the actual execution and scoring evidence; the plan below records the frozen design.
+
 The user has authorized this new reviewed comparison. Execution still requires independent, model-specific development delivery evidence, frozen contracts, input/risk review and a reviewed cost estimate. This plan is not proof of dispatch or that the 4K budget passed. [Current scope configuration](../configs/openai_qwen_comparison_execution_v2_2026-10-19.json).
 
 | Stage | Task and dataset | Cases | Archived Qwen usable answers | Archived Qwen correct / all cases | Supplied input and interpretation |

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "comparison_id": "gpt-6-luna_vs_qwen_publicqa_4k_2026-10-19_v2",
+  "tasks": [
+    "B01",
+    "B03"
+  ],
+  "candidates": {
+    "path": "reports/GPT6_LUNA_QWEN_COMPARISON_CANDIDATES_2026-10-19.json",
+    "sha256": "ae3dbf78683cc2060c58a9364f833515cb59871fc6c21388dc4813b55a3ecbe0"
+  },
+  "case_manifest": {
+    "path": "results/comparison_preparation/gpt6_luna_qwen_2026-10-19/case_manifest.jsonl",
+    "sha256": "546ee988292215bbffb8b894133c4d74c17a5b5258043a0c350f1a4cd60e8f44"
+  },
+  "answer_policy": {
+    "path": "configs/comparison_answer_policy_v1.json",
+    "sha256": "81bcae4b7b0ec0303fda77c6804280da124824635ba86be7d96381a7e0404604"
+  },
+  "native_constant": {
+    "path": ".local/litqa2_replay/baseline/sources/chembench_constant.py",
+    "sha256": "71b4a92edfbe5b33e9a327b0773a2ae9cfd9946b48452f13127929a29e91021d"
+  },
+  "frozen_protocol": {
+    "path": ".local/comparison_execution_2026-10-19/inputs/publicqa_gpt-6-luna.protocol.json",
+    "sha256": "383250d4034ac6e3102a0ce0823483ccd7bdc934a482f15bc3e6c4f67f4981be"
+  },
+  "frozen_request_file": {
+    "path": ".local/comparison_execution_2026-10-19/bundles/publicqa_gpt-6-luna/requests.jsonl",
+    "sha256": "79cd5cf645120808fdeb07ef0a22d2b10d6f5ff285129885dfad5078955d401c"
+  },
+  "qwen": {
+    "model": "Qwen/Qwen3.8-27B",
+    "run_id": "archived_qwen_publicqa_panel_2026-10-19_v2",
+    "protocol_id": "openai_qwen_publicqa_4k_2026-10-19_v2",
+    "response_style": "qwen_archive",
+    "lock": {
+      "path": ".local/comparison_execution_2026-10-19/qwen_archives/publicqa/predictions_lock.json",
+      "sha256": "6e70e9f769a2b94be8f07e32a2de6f42ecf2c8b995415f4447570ba0099ce108"
+    }
+  },
+  "openai": {
+    "model": "gpt-6-luna",
+    "run_id": "openai_publicqa_gpt-6-luna_4k_2026-10-19_v2",
+    "protocol_id": "openai_qwen_publicqa_4k_2026-10-19_v2",
+    "response_style": "openai_responses",
+    "lock": {
+      "path": ".local/comparison_execution_2026-10-19/runtime/publicqa_gpt-6-luna/predictions_lock.json",
+      "sha256": "0a40c3efdb8621c3e8810a8709127ba583399449d6dfb81e8440e5c4f8eb78f2"
+    }
+  },
+  "uncertainty_grouping": {
+    "B01": "case",
+    "B03": "group"
+  }
+}

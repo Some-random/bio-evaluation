@@ -1,5 +1,7 @@
 {
-  "updated_at_pacific": "2026-10-19T14:20:36.636475-07:00",
+  "updated_at_pacific": "2026-10-19T14:31:00.060131-07:00",
+  "public_export_version": 2,
+  "public_responses": "Privacy-redacted metadata with original/public hash mapping; exact originals retained privately. Original lock hashes refer to private raw responses.",
   "role": "generation_and_development_evidence_not_completed_benchmark_scores",
   "runs": [
     {
@@ -26,7 +28,7 @@
         }
       },
       "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_development_gpt-6-luna_complete.tar.gz",
-      "trajectory_sha256": "d999263327f965e542b609b0ba40ce483c43392b245ecca7c9cc1225718dbd9d",
+      "trajectory_sha256": "34a6b1c89231d908f54c3640673dc2ffd175efe5ba113d819b249991b8396af3",
       "usage": {
         "input_tokens": 7063,
         "output_tokens": 5050,
@@ -59,7 +61,7 @@
         }
       },
       "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_development_gpt-6_1-sol_complete.tar.gz",
-      "trajectory_sha256": "a8fcdbac925d5831ea7749a4e1da71d721462a98aaab756fc413b8efe6b0234e",
+      "trajectory_sha256": "4d00fe0ea2efe9c291213b96db2bacbfbaad3eb3299bdbe83391b857a5bac6c5",
       "usage": {
         "input_tokens": 7063,
         "output_tokens": 2891,
@@ -76,10 +78,10 @@
         "P03"
       ],
       "planned": 2773,
-      "saved": 16,
+      "saved": 378,
       "complete_prediction_lock": false,
       "terminal_outcomes": {
-        "completed": 16
+        "completed": 378
       },
       "transport_or_server_errors": 0,
       "truncations": 0,
@@ -87,12 +89,12 @@
       "refusals": 0,
       "per_task": {
         "P03": {
-          "saved": 16,
-          "observed_terminal": 16
+          "saved": 378,
+          "observed_terminal": 378
         }
       },
-      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_gpt-6-luna_saved_16.tar.gz",
-      "trajectory_sha256": "a4c7c819d6e5adb5f73d4e01af626079ff3e9bdb8c4e537c7cb847dff0422713",
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_gpt-6-luna_saved_378.tar.gz",
+      "trajectory_sha256": "e8cde7d974cc7798cb2b506deedd23ad42f623524b8f15415e5728d8ac83758d",
       "usage": null,
       "standard_uncached_cost_estimate_usd": null,
       "biological_correctness_assessed": false
@@ -126,7 +128,7 @@
         }
       },
       "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_development_gpt-6-luna_complete.tar.gz",
-      "trajectory_sha256": "177e351d2fab96f29dd52af37caad1e8a2aa584c724c0ec7f5e9f91bdc4cd99e",
+      "trajectory_sha256": "21f0d04b9a2d6f6a590203dbdb6106c49a94425efdd798b992e3e653c7a51af2",
       "usage": {
         "input_tokens": 2821,
         "output_tokens": 1294,
@@ -164,7 +166,7 @@
         }
       },
       "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_development_gpt-6_1-sol_complete.tar.gz",
-      "trajectory_sha256": "df9a61f9671aba3dced40b76286384b44e3717b787ec36e8170f81b3ee04481b",
+      "trajectory_sha256": "874bc5d00c45463f64dee683b40c6b2caf82c8bb4af6c0bcb9c0f5a9f8541985",
       "usage": {
         "input_tokens": 2821,
         "output_tokens": 186,
@@ -182,10 +184,10 @@
         "B03"
       ],
       "planned": 279,
-      "saved": 83,
-      "complete_prediction_lock": false,
+      "saved": 279,
+      "complete_prediction_lock": true,
       "terminal_outcomes": {
-        "completed": 83
+        "completed": 279
       },
       "transport_or_server_errors": 0,
       "truncations": 0,
@@ -193,16 +195,16 @@
       "refusals": 0,
       "per_task": {
         "B01": {
-          "saved": 83,
-          "observed_terminal": 83
+          "saved": 197,
+          "observed_terminal": 197
         },
         "B03": {
-          "saved": 0,
-          "observed_terminal": 0
+          "saved": 82,
+          "observed_terminal": 82
         }
       },
-      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_gpt-6-luna_saved_83.tar.gz",
-      "trajectory_sha256": "565761cc13b243f78ca4225f203ef9ff30e4386a932e0ca1426090ffb9b8086a",
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_gpt-6-luna_complete.tar.gz",
+      "trajectory_sha256": "78e03f9245248d3926b38fd6b41beb253bd9cb1d338a422a917a1b8a295a1648",
       "usage": null,
       "standard_uncached_cost_estimate_usd": null,
       "biological_correctness_assessed": false
@@ -216,10 +218,10 @@
         "B03"
       ],
       "planned": 279,
-      "saved": 78,
-      "complete_prediction_lock": false,
+      "saved": 279,
+      "complete_prediction_lock": true,
       "terminal_outcomes": {
-        "completed": 78
+        "completed": 279
       },
       "transport_or_server_errors": 0,
       "truncations": 0,
@@ -227,16 +229,16 @@
       "refusals": 0,
       "per_task": {
         "B01": {
-          "saved": 78,
-          "observed_terminal": 78
+          "saved": 197,
+          "observed_terminal": 197
         },
         "B03": {
-          "saved": 0,
-          "observed_terminal": 0
+          "saved": 82,
+          "observed_terminal": 82
         }
       },
-      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_gpt-6_1-sol_saved_78.tar.gz",
-      "trajectory_sha256": "9442ecd21dde1d6ba9996da73dfbd32d3a6bb05523bad34d238485624eb15f8b",
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_gpt-6_1-sol_complete.tar.gz",
+      "trajectory_sha256": "1dd9fa23ae92cf73210b96e2774af28e414eb0c866f11710daa87a27702fcf3b",
       "usage": null,
       "standard_uncached_cost_estimate_usd": null,
       "biological_correctness_assessed": false

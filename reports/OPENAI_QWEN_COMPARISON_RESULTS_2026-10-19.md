@@ -1,12 +1,14 @@
 # OpenAI and archived Qwen comparison
 
-Updated October 19, 2026, 2:20 PM PDT. The new benchmark runs are underway; no new benchmark accuracy has been calculated yet.
+Updated October 19, 2026, 2:34 PM PDT. Both 279-case QA conditions are complete and scored. Luna protein localization is still running.
 
 | Task | Cases | Archived Qwen replay | GPT-6 Luna | GPT-6.1 Sol |
 |---|---:|---:|---|---|
-| LitQA2: closed-book biological literature QA | 197 | 77 correct; 39.09% | Running | Running |
-| SuppQA: closed-book paper-specific QA | 82 | 31 correct; 37.80% | Running | Running |
+| LitQA2: closed-book biological literature QA | 197 | 77/197; 39.09% | 97/197; 49.24% | 112/197; 56.85% |
+| SuppQA: closed-book paper-specific QA | 82 | 31/82; 37.80% | 44/82; 53.66% | 46/82; 56.10% |
 | Protein localization: sequence to one of ten compartments | 2,773 | 724 correct; 26.11% | Running | Development passed; larger-run budget decision pending |
+
+All 558 new QA responses finished normally and parsed unambiguously. Native and strict accuracy agree. Recorded standard uncached cost estimates are **$0.106402 for Luna** and **$0.749610 for Sol**, or approximately **$0.86 total** for QA; development calls are separate. [Luna full scores and paired analysis](../results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6-luna.scores.json) · [Sol full scores and paired analysis](../results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6_1-sol.scores.json).
 
 The original Qwen outputs are reused. Question text, choice order, complete protein sequences and the shared localization definitions stay identical. SuppQA supplies paper titles and DOIs, without papers, supplements or retrieval. FigQA and TableQA remain a separate future vision condition requiring the original images.
 
