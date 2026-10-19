@@ -1,5 +1,7 @@
 # Biological evaluations
 
+**Review the completed work:** [Results, findings, methodology and audit evidence](reports/COMPLETED_WORK_REVIEW.md).
+
 ## [All tasks and results](reports/EVALUATION_OVERVIEW.md)
 
 **Model: Qwen3.8-27B.** The overview starts with 31 task families in 8 categories, then one correct answer and one simple question with a substantial tool workflow. Dataset details remain in collapsible categories.
