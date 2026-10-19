@@ -1,13 +1,23 @@
 {
   "qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1": {
-    "generation_budget_condition": null,
+    "execution_success": true,
+    "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
     "kind": "derived_native_scoring",
-    "native_metrics_valid": null,
+    "native_metric_issues": [
+      "A required native primary metric is missing, undefined or nonfinite"
+    ],
+    "native_metrics_valid": false,
+    "output_budget_counts": {
+      "16384": 71,
+      "4096": 27146
+    },
     "planned": 27217,
     "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1",
     "scored_benchmark_completed": false,
+    "scores_sha256": "18979759cc43b82517e9933712274c6a82f33bb3b83eaae59b56ba6ac29710e6",
+    "scoring_exit_code": 0,
     "task_id": "P07",
-    "terminal": false
+    "terminal": true
   },
   "qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1": {
     "generation_budget_condition": null,

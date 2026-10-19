@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/tmp/bio-cpu-supervisor-237730-6G6tNR/python/bin/python3.10",
+    "-u",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/mixed_budget_scoring.py",
+    "--native-only-spec",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/mixed_scoring_spec.json",
+    "--native-config",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/configs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1.json",
+    "--native-folder",
+    "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/extended/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1"
+  ],
+  "started_at_pacific": "2026-10-18T17:14:55.827035-07:00",
+  "native_calls_planned": 1,
+  "spec_sha256": "bf3aab4580f8431cfaa9a2b70439d0d738a410f89410a32b5806db614afdcfbe",
+  "native_scorer_sha256": "71701e33509f5f7b1ad041ce66ad1a28193ae8675e13eb37a22ed7c1fd38d3d0",
+  "output_lock_sha256": "8d768986353e8692a79f4d45691faba1f5b14bcb248d2274433d10a1fb7c9d67"
+}
