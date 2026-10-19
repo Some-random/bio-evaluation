@@ -2,9 +2,11 @@
 
 Started October 19, 2026, Pacific time. Immediate scope: repair and interpret saved outputs, then validate answer delivery on synthetic/development inputs. Existing runs and scores remain preserved.
 
+The catalog contains **64 evaluation settings**, with **57 retained in the main view** and seven BioReason-family settings archived. The seven settings in the final overnight continuation (P07, P08, P12–P16) were only the last active batch. Its 17,145 newly generated responses do not represent the full catalog or a uniform-budget rerun. See the [complete decision table](EVALUATION_DECISION_TABLE.md) for every retained setting and its evidence status.
+
 | Work | Concrete output | Status |
 |---|---|---|
-| P12–P15 scorer compatibility | Separately named scoring runs accepting raw null versus normalized empty final, with the original denominator and metric rules | [P12/P14/P15 completed; original failures preserved. Full AP/Fmax remain undefined. One P13 recovery is scheduled after its original scoring attempt, if the same defect occurs](SCORER_COMPATIBILITY_REPAIR_2026-10-19.md) |
+| P12–P15 scorer compatibility | Separately named scoring runs accepting raw null versus normalized empty final, with the original denominator and metric rules | [All four completed and published; P13 recovery finished October 19 at 4:33 AM PDT. Original failures are preserved. Full AP/Fmax remain undefined because invalid confidence vectors remain](SCORER_COMPATIBILITY_REPAIR_2026-10-19.md) |
 | P16 reaction extraction | Frozen terminal-number diagnostic beside the original score, independently checked against all saved cases | Done: [12/5,651 versus original 9/5,651, with reproducible export](REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.md) |
 | P03 localization and P43 interactions | Delivery statistics, retrospective class balance, invalid-answer upper bound, prediction concentration and likelihood-interface check | [Verified: P03 stays below its descriptive majority reference even if every invalid answer is recovered correctly](PREDICTION_TASK_AUDIT_2026-10-19.md) |
 | B02 and P42 qualifications | Prominent truncation/zero-accepted-output statements in the public results table | Verified counts; prominent qualifications added |
