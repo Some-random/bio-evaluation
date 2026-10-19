@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "reviewed_at_pacific": "2026-10-19T14:15:18.856797-07:00",
+  "scope_review_passed": true,
+  "prior_flagged_requests_excluded": true,
+  "current_user_authorization": "2026-10-19: let us go for this OpenAI evaluation; fixed reviewed comparison and independent development checks",
+  "provider_clearance_claimed": false,
+  "historical_warning_resolved": false,
+  "reviewed_bundles": [
+    {
+      "protocol_id": "openai_qwen_publicqa_4k_2026-10-19_v2",
+      "model": "gpt-6-luna",
+      "frozen_roster_sha256": "545b625b6c8c9db3daba40a91be81b372dd4f8badf526bad50a6b06d202fb57d",
+      "frozen_protocol_sha256": "383250d4034ac6e3102a0ce0823483ccd7bdc934a482f15bc3e6c4f67f4981be",
+      "case_count": 279,
+      "task_ids": [
+        "B01",
+        "B03"
+      ]
+    },
+    {
+      "protocol_id": "openai_qwen_publicqa_4k_2026-10-19_v2",
+      "model": "gpt-6.1-sol",
+      "frozen_roster_sha256": "808eddf78a15a5178b8678964c5fd740ffd510d41b852c9395f81099e1d8159b",
+      "frozen_protocol_sha256": "892dc2642cabb78fd75c4d9151935784cf16e833d4e22e64db52a24c60f15d72",
+      "case_count": 279,
+      "task_ids": [
+        "B01",
+        "B03"
+      ]
+    },
+    {
+      "protocol_id": "openai_qwen_localization_4k_2026-10-19_v2",
+      "model": "gpt-6-luna",
+      "frozen_roster_sha256": "b681a49a7848958f36208c50efcce946cd7a0dd63c55e476864c7c793d38dffb",
+      "frozen_protocol_sha256": "727912e463ce9d8949bf1889b084726d8ba7c6a0299164ce5fb253fa918e6aeb",
+      "case_count": 2773,
+      "task_ids": [
+        "P03"
+      ]
+    },
+    {
+      "protocol_id": "openai_qwen_localization_4k_2026-10-19_v2",
+      "model": "gpt-6.1-sol",
+      "frozen_roster_sha256": "5a65418673803cd86606e76606418f4514b5abed125d7bf0f985424893b89011",
+      "frozen_protocol_sha256": "d0738c89f53c012ed4de1e0d9a27e0f50232fbfb9342f1054f3dbeffa4c5ddb3",
+      "case_count": 2773,
+      "task_ids": [
+        "P03"
+      ]
+    },
+    {
+      "protocol_id": "openai_qwen_publicqa_delivery_development_2026-10-19_v2",
+      "model": "gpt-6-luna",
+      "frozen_roster_sha256": "87c82bbf1815fc5213ef7bff123784f571a9dfb6e6f98f92110b201abd7cf1a7",
+      "frozen_protocol_sha256": "dec47d93d17ae52e20a21f7bca646a100918aaba0622714e2c4285a8dc9a7f10",
+      "case_count": 12,
+      "task_ids": [
+        "B01",
+        "B03"
+      ]
+    },
+    {
+      "protocol_id": "openai_qwen_publicqa_delivery_development_2026-10-19_v2",
+      "model": "gpt-6.1-sol",
+      "frozen_roster_sha256": "e928f12b9e5d6e77e28eb0132a08fc4f26ef2e27f7a6f8ae49287c8a8dd40815",
+      "frozen_protocol_sha256": "a1c09df39d821230d5c5f191900ecb9b1e50f0975ec938341be498ccff9e245a",
+      "case_count": 12,
+      "task_ids": [
+        "B01",
+        "B03"
+      ]
+    },
+    {
+      "protocol_id": "openai_qwen_localization_delivery_development_2026-10-19_v2",
+      "model": "gpt-6-luna",
+      "frozen_roster_sha256": "15e4148baffedbcdc9e9916a332088de2ed344d7949507548b9416c4059bd300",
+      "frozen_protocol_sha256": "4c2d6aa1bff5883a40d3e667e5332260b380a4be11d4c987eb13b364b7423a27",
+      "case_count": 12,
+      "task_ids": [
+        "P03"
+      ]
+    },
+    {
+      "protocol_id": "openai_qwen_localization_delivery_development_2026-10-19_v2",
+      "model": "gpt-6.1-sol",
+      "frozen_roster_sha256": "a498176fa38c0afeccfaf1c5385f84ee9d88bf12f12a9c7a92f63b58dab08d9b",
+      "frozen_protocol_sha256": "65a0d5e83e821455cb3a8ffbbe09d3b301ccf817aed876d3abcd824a066abfe5",
+      "case_count": 12,
+      "task_ids": [
+        "P03"
+      ]
+    }
+  ],
+  "first_stage_input_review_sha256": "813d45d6b7137693e91af4e10919f3b1136d6baab32689124ef5eb04d3eb8c0f",
+  "p03_input_review_sha256": "334ed780abd7c6240492df26825886303f24e4c30393efbc41a8aea4a2da6300",
+  "development_preparation_report_sha256": "b154ffadbd3ae5c58cb271f22cf8f80c050f19f2a6d2863ff7c52d43fad20410",
+  "development_review": "All12 newly authored questions and separate targets/source facts independently inspected: classic cellbiology, no pathogen optimization or operational experiment instructions. Twelve official P03 valid inputs retain only sequence plus complete shared ontology. No source targets or prior answers supplied. Delivery only, no biological correctness scored.",
+  "benchmark_review": "QA exact reviewed197+82 and original frozen input order; P03 exact2773 source order and sequence/shared ontology contract. No case selection by correctness. Two heldB01 and all43 flaggedP18 requests remain excluded.",
+  "dispatch_rules": "Stable original safety identifier, no retries, no tools, stop new submissions on provider policy/access error; all outcomes retained."
+}

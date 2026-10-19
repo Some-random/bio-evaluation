@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "protocol_id": "openai_qwen_publicqa_4k_2026-10-19_v2",
+  "allowed_models": [
+    "gpt-6.1-sol"
+  ],
+  "task_ids": [
+    "B01",
+    "B03"
+  ],
+  "generation": {
+    "max_output_tokens": 4096,
+    "reasoning": {
+      "effort": "medium"
+    },
+    "service_tier": "default",
+    "store": false
+  },
+  "task_condition": "closed_book_literature_qa_without_retrieval",
+  "case_count": 279,
+  "input_roster_sha256": "808eddf78a15a5178b8678964c5fd740ffd510d41b852c9395f81099e1d8159b",
+  "answer_policy": "configs/comparison_answer_policy_v1.json",
+  "no_tools": true,
+  "no_shared_context": true,
+  "native_inputs_preserved": true,
+  "prior_training_exposure": "unknown",
+  "archived_qwen_baseline_reused": true
+}

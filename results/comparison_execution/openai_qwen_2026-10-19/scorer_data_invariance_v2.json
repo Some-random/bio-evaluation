@@ -1,0 +1,38 @@
+{
+  "new_inference_calls": 0,
+  "source_sha256": "c8184228dcdf78bd9e5c837631882c004f211a195af70535431a1230d3ad1ae8",
+  "checks": [
+    {
+      "stage": "publicqa",
+      "model": "gpt-6-luna",
+      "cases": 279,
+      "gold_and_qwen_metadata_changed": true,
+      "outgoing_payloads_byte_identical": true,
+      "canonical_output_sha256": "681ea7420f9cc65bbb86c021416f751598873faf10c50d11f99742a7ac812165"
+    },
+    {
+      "stage": "publicqa",
+      "model": "gpt-6.1-sol",
+      "cases": 279,
+      "gold_and_qwen_metadata_changed": true,
+      "outgoing_payloads_byte_identical": true,
+      "canonical_output_sha256": "0242e464252535560584176b095739650119cfa948657c3c52f692cad6892b57"
+    },
+    {
+      "stage": "localization",
+      "model": "gpt-6-luna",
+      "cases": 2773,
+      "gold_and_qwen_metadata_changed": true,
+      "outgoing_payloads_byte_identical": true,
+      "canonical_output_sha256": "93da32df29fc1893f2de073d4cf5e0d0ca95a69695a62af1d48221b313532c7a"
+    },
+    {
+      "stage": "localization",
+      "model": "gpt-6.1-sol",
+      "cases": 2773,
+      "gold_and_qwen_metadata_changed": true,
+      "outgoing_payloads_byte_identical": true,
+      "canonical_output_sha256": "b9abc57c87025fe35769dc810739de3dc23d2749ac66bd187adb88da7967efd3"
+    }
+  ]
+}

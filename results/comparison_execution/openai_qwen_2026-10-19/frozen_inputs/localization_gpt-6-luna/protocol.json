@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "protocol_id": "openai_qwen_localization_4k_2026-10-19_v2",
+  "allowed_models": [
+    "gpt-6-luna"
+  ],
+  "task_ids": [
+    "P03"
+  ],
+  "generation": {
+    "max_output_tokens": 4096,
+    "reasoning": {
+      "effort": "medium"
+    },
+    "service_tier": "default",
+    "store": false
+  },
+  "task_condition": "complete_sequence_to_native_ten_class_localization",
+  "case_count": 2773,
+  "input_roster_sha256": "b681a49a7848958f36208c50efcce946cd7a0dd63c55e476864c7c793d38dffb",
+  "answer_policy": "configs/comparison_answer_policy_v1.json",
+  "no_tools": true,
+  "no_shared_context": true,
+  "native_inputs_preserved": true,
+  "prior_training_exposure": "unknown",
+  "archived_qwen_baseline_reused": true
+}

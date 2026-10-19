@@ -1,50 +1,80 @@
-# GPT-6-luna versus Qwen3.8-27B: comparison preparation
+# OpenAI versus archived Qwen: fixed-task comparison
 
-Prepared October 19, 2026, Pacific time. **Start with LitQA2 and SuppQA: 279 cases with complete, unambiguous Qwen answer delivery.** This is offline preparation. There are no new GPT benchmark results and no new Qwen generations.
+Updated October 19, 2026, Pacific time. **Run the 279 LitQA2/SuppQA cases first with GPT-6 Luna and GPT-6.1 Sol; make protein localization the committed second stage.** Reuse the exact archived Qwen3.8-27B outputs. FigQA/TableQA remain a separate vision comparison.
 
-The comparison reuses exact archived Qwen runs whose requests, responses, case identities and scoring references remain available. The table uses those specific replay scores, rather than substituting higher historical headline scores. Tasks are selected for reliable delivery and interpretable scoring; individual cases are not selected for Qwen correctness.
+The user has authorized this new reviewed comparison. Execution still requires independent, model-specific development delivery evidence, frozen contracts, input/risk review and a reviewed cost estimate. This plan is not proof of dispatch or that the 4K budget passed. [Current scope configuration](../configs/openai_qwen_comparison_execution_v2_2026-10-19.json).
 
-| Priority | Task and dataset | Cases | Qwen usable answers | Qwen correct / all cases | What it tests |
+| Stage | Task and dataset | Cases | Archived Qwen usable answers | Archived Qwen correct / all cases | Supplied input and interpretation |
 |---|---|---:|---:|---:|---|
-| First text comparison | B01 — LAB-Bench LitQA2 | 197 | 197/197 (100%) | 77/197 (39.1%) | Biological literature questions with fixed choices. The same two previously held cases remain excluded. |
-| First text comparison | B03 — LAB-Bench SuppQA | 82 | 82/82 (100%) | 31/82 (37.8%) | Paper-specific questions with the original paper title, DOI and choices. |
-| Next sequence comparison | P03 — DeepLoc/PEER protein localization | 2,773 | 2,722/2,773 (98.2%) | 724/2,773 (26.1%) | A complete amino-acid sequence goes in; one of ten cellular-location classes comes out. Invalid answers remain wrong in all-case accuracy. |
-| Optional visual comparison | B04 — LAB-Bench FigQA | 181 | 180/181 (99.4%) | 131/181 (72.4%) | Scientific figure images, questions and choices. |
-| Optional visual comparison | B05 — LAB-Bench TableQA | 244 | 236/244 (96.7%) | 215/244 (88.1%) | Scientific table images, questions and choices, including multiple images. |
+| First: closed-book QA | B01 — LAB-Bench LitQA2 | 197 | 197/197 (100%) | 77/197 (39.1%) | Original biology question and choices; no retrieval. The two previously held cases remain excluded. |
+| First: closed-book QA | B03 — LAB-Bench SuppQA | 82 | 82/82 (100%) | 31/82 (37.8%) | Original question, paper title, DOI and choices; no paper, supplement or retrieval. |
+| Committed second stage | P03 — DeepLoc/PEER protein localization | 2,773 | 2,722/2,773 (98.2%) | 724/2,773 (26.1%) | Complete published sequence and the same ten-class ontology; predict one cellular location. |
+| Separate vision condition | B04 — LAB-Bench FigQA | 181 | 180/181 (99.4%) | 131/181 (72.4%) | Original scientific figure images, question and choices. |
+| Separate vision condition | B05 — LAB-Bench TableQA | 244 | 236/244 (96.7%) | 215/244 (88.1%) | Original table images, question and choices, including multi-image cases. |
 
-“Usable” is native parser validity, not native non-abstention coverage. B01/B03 have no truncations, empty finals or HTTP errors. B04 has one truncation/empty final; B05 has eight truncations and seven empty finals. P03 has 47 truncations and 51 empty finals. All five archived conditions report zero HTTP errors.
+These are the specific **archived replay baselines** with inspectable requests, responses and original scorer references. They are not replacements for historical headline scores from other runs. Tasks were selected for delivery/scoring reliability before seeing new OpenAI correctness; individual cases are not selected for Qwen correctness. [Candidate evidence and exact run identities](GPT6_LUNA_QWEN_COMPARISON_CANDIDATES_2026-10-19.json).
 
-An additional output-only check found a single unambiguous native answer value for every parsed B01/B03/B04/B05 response, agreeing with its saved prediction. This does not validate the explanation. [Frozen rule and findings](../results/comparison_preparation/gpt6_luna_qwen_2026-10-19/qwen_answer_semantics_check.json).
+“Usable” means a valid answer under the frozen parser and can include the explicit insufficient-information choice: Qwen selected it for nine B01 and three B03 cases. It does not mean a substantive or correct answer. Native LAB non-abstention coverage is separate. B01/B03 have zero truncations, empty finals and transport errors. The selected B04 replay has one truncation/empty final; B05 has eight truncations and seven empty finals; P03 has 47 truncations and 51 empty finals. All five archived conditions report zero transport errors.
 
-## Common comparison contract
+## What the comparison measures
 
-- Use the exact same complete case cohorts, user text, choice permutations and required images. Preserve paper metadata for SuppQA and full sequences for P03. No new system prompt, hints, tools or web search.
-- Reuse the archived Qwen outputs. Give GPT-6-luna a separate run ID and retain every output, refusal, error and truncation. No selective successful retries or dropping Qwen's invalid cases.
-- The proposed first condition uses the same nominal **4,096-token total output cap** as these archived Qwen runs, with medium reasoning requested. It is a comparison under that budget, not a claim about each model's maximum capability.
-- OpenAI does not support Qwen's temperature/top-p settings when reasoning is enabled, and Qwen's top-k and fixed seed are not portable equivalents. The proposal omits these parameters and records the difference. Equal token counts and the word “medium” do not equalize actual reasoning compute. A different budget or prompt becomes another named condition.
-- Apply the same frozen native scorer and full denominator. Report usable-answer rate, truncations, empty finals, refusals and errors beside accuracy. Native abstention precision and coverage remain separate. Also apply the frozen unambiguity check symmetrically to both models; ambiguous answers do not become clear answers merely because a permissive parser returns a letter.
-- Report each task separately, paired correctness disagreements and an uncertainty interval for the accuracy difference. Do not pool the task scores into one biological-capability number.
-- Save model identity, request/response hashes, final text, usage, latency and cost. OpenAI exposes reasoning summaries where supported, not raw private reasoning; these are not equivalent to Qwen's saved reasoning text.
+LitQA2 tests answers to fixed biological-literature questions without retrieval. SuppQA is **closed-book paper-specific QA**: the paper title and DOI stay because they are legitimate native inputs, but a DOI does not fetch the article. Success could reflect scientific knowledge, remembered literature, option-based inference or prior benchmark exposure. This condition does not establish reading an unfamiliar supplied paper or supplement.
 
-Any case-level uncertainty calculation describes this fixed benchmark sample. Questions from the same paper or related protein sequences may be dependent; retain available grouping metadata and use grouped resampling where justified. It is not an interval over independent biological experiments or over every possible model run.
+P03 adds a sequence-to-outcome prediction objective. It is committed in both this plan and the current v2 configuration, rather than an optional sequence add-on. Its full Luna run follows the P03-specific development/input gate. The Sol P03 run additionally needs budget review because its output ceiling exceeds the initial spending guard.
 
-GPT-6-luna accepts text and image inputs, so visual tasks are technically possible. The same original image bytes/order must be preserved; vendor image processing remains a qualification. [Official model documentation](https://developers.openai.com/api/docs/models/gpt-6-luna) · [Reasoning and supported parameters](https://developers.openai.com/api/docs/guides/latest-model) · [Reasoning summaries](https://developers.openai.com/api/docs/guides/reasoning).
+## The actual dispatcher and input boundary
 
-At the documented standard output price of $0.50 per million tokens, the first 279 cases have an **output-token cost ceiling of $0.571392** at the proposed cap. Input tokens and any other applicable billing are additional. This is arithmetic from the proposed limit, not a measured bill or completion-time estimate. [Pricing source](https://developers.openai.com/api/docs/models/gpt-6-luna).
+[Dispatcher](../scripts/run_isolated_openai_comparison.py) · [Input-isolation and invariance tests](../tests/test_isolated_openai_comparison.py) · [Frozen answer policy](../configs/comparison_answer_policy_v1.json) · [Scoring contract](COMPARISON_SCORING_CONTRACT_2026-10-19.md).
 
-## Why these come before other settings
+Each preparation row has a dedicated `payload_without_private_safety_identifier` field. The runner submits only that allowlisted payload, adding the existing stable private safety identifier separately. It never serializes the surrounding case manifest, Qwen result, reference row, correctness flag or coding-agent conversation into the model request.
 
-Defer P07/P42, B07/B08 and P12–P15 for this first comparison because their delivery or schema issues need separate work. Defer medical VQA's ambiguous lexical/extraction metrics. P43 drug–target interaction has complete scores, but its one-token Yes/No likelihood method requires a validated probability interface; generated Yes/No answers or self-reported confidence are not interchangeable with that score. P43's original raw response availability is also incomplete.
+Every request is a fresh single-user context. No system hint, prior assistant solution, shared conversation, previous-response ID, web search, tool, file attachment or extra evidence is supplied. The text/sequence worker runs under Linux Landlock with a minimized bundle and output directory; it cannot read the repository, target references, Qwen responses, reports or unrelated files. Isolation failure blocks execution.
 
-## Evidence and current execution status
+Before each call, the dispatcher verifies exact case identity/order, the frozen user text and choice order, allowed roles/fields, model and generation settings. It records the public-payload hash and the hash of the actual submitted bytes after adding the private identity; the secret value is not published. Source bundle and protocol hashes bind the eventual output lock to what was actually dispatched.
 
-All candidate case sets and scoring references are checked against the archived run manifests. Missing top-level input paths do not require recreating labels: exact frozen copies and matching hashes were located in the retained replay archives. No labels are reconstructed from Qwen correctness flags.
+Scorer-data invariance tests change or remove separate labels, predictions, correctness flags and audit paths while keeping legitimate questions/options fixed. Model-facing bytes must remain identical. Changing an option's actual text would change a legitimate input and is not the intended invariance test.
 
-- [Candidate evidence and source hashes](GPT6_LUNA_QWEN_COMPARISON_CANDIDATES_2026-10-19.json)
-- [Per-case artifact manifest](../results/comparison_preparation/gpt6_luna_qwen_2026-10-19/case_manifest.jsonl) — analysis/scorer evidence only; never solver input.
-- [279 proposed text requests](../results/comparison_preparation/gpt6_luna_qwen_2026-10-19/luna_text_requests_proposed.jsonl) — exact user prompts, no answers, no credentials or private identifier.
-- [Proposed configuration](../configs/proposed_gpt6_luna_qwen_comparison_2026-10-19.json)
+For the separate vision comparison, exact required image bytes, order and detail must first be frozen in a dedicated contract. The present text/sequence dispatcher does not enable FigQA/TableQA as text-only substitutes. Both OpenAI model pages document image input; image support alone is not an executed vision evaluation. [Luna documentation](https://developers.openai.com/api/docs/models/gpt-6-luna) · [Sol documentation](https://developers.openai.com/api/docs/models/gpt-6.1-sol).
 
-These files do not enable dispatch. The existing OpenAI benchmark hold remains recorded pending account-scope clarification and task/case review. The earlier three neutral connectivity checks are not benchmark clearance. The existing stable private safety identifier must be preserved at any future authorized dispatch; it is an abuse-monitoring identifier, not an exemption. [Official safety-identifier documentation](https://developers.openai.com/api/docs/guides/safety-checks).
+## Task-specific development gates and budget
 
-Before a full comparison, validate the API mapping and native answer delivery on suitable permitted development examples, then freeze the protocol before examining held-out GPT correctness. Keep the existing flagged-task holds. Public benchmark pretraining exposure remains unknown for both models, and answer accuracy does not establish faithful biological reasoning.
+The first candidate condition is **4,096 total output tokens**, medium reasoning, Standard processing (`service_tier: default`) and `store: false`. The allowance includes reasoning and visible output; exhaustion can leave no final answer. Qwen's temperature/top-p/top-k and seed are not portable equivalents to OpenAI reasoning controls. Disclose those differences; equal nominal token caps and “medium” do not equalize reasoning compute.
+
+The independent preparation contains **12 newly authored primary-source-grounded QA questions**—six literature-like and six paper-specific—and **12 real P03 validation sequences** spanning 40–1,000 residues. The public LAB release's train-named rows are evaluation material and are not reused as development examples. [Development inputs, provenance and limitations](COMPARISON_DEVELOPMENT_GATE_2026-10-19.md).
+
+Development must run separately for each model. Inspect native and strict final-answer delivery, truncations, empty finals, refusals, errors, actual usage and latency. Freeze the model-specific budget and residual-failure policy before inspecting held-out correctness. Small-panel success is an initial check, not a guarantee of all-case reliability. A failed check stays visible; a changed budget or prompt becomes another named condition. The earlier generic synthetic checks and unrelated GFP pilot are insufficient gates for these tasks.
+
+At documented Standard short-context rates, the output ceilings for one attempt per case are:
+
+| Stage | GPT-6 Luna | GPT-6.1 Sol |
+|---|---:|---:|
+| LitQA2 + SuppQA: 279 × 4,096 output tokens | $0.571392 | $11.427840 |
+| P03: 2,773 × 4,096 output tokens | $5.679104 | $113.582080 |
+
+Input charges and development requests are additional; these are ceilings from the proposed allowance, not measured bills. Luna costs $0.10 input / $0.50 output per million tokens; Sol costs $2 input / $10 output. [Official Luna pricing](https://developers.openai.com/api/docs/models/gpt-6-luna) · [Official Sol pricing](https://developers.openai.com/api/docs/models/gpt-6.1-sol).
+
+Using the frozen user-text byte counts plus a conservative allowance of 100 input tokens per request gives planning totals including input of approximately **$0.596107 Luna / $11.922134 Sol for the 279 QA cases**, and **$6.236182 Luna / $124.723644 Sol for P03**. This byte-based reservation is a conservative planning estimate rather than exact vendor tokenization or a measured bill; development costs remain additional.
+
+The **agent-imposed initial $50 spending guard remains**; it is not a numerical cap supplied by the user. Sol's P03 output ceiling alone exceeds it, so that stage is pending explicit budget review. No automatic Sol localization dispatch is authorized by listing it in the scientific plan.
+
+## Freeze outputs before scoring
+
+[Offline scorer](../scripts/score_model_comparison.py) · [Scorer synthetic and negative tests](../tests/test_score_model_comparison.py).
+
+Save every response, refusal, transport/API error, truncation and empty final. Seal the complete ordered output set before opening the original target references. The scorer verifies actual request/response/final hashes and run/model/protocol associations before reading the hash-pinned original label archives. Labels are never reconstructed from Qwen correctness flags.
+
+Report each task separately, with **native accuracy and unambiguous-answer accuracy over the full denominator**. The same frozen policy applies to archived Qwen and OpenAI. Preserve native permissive parsing beside the strict diagnostic; never choose an interpretation using the gold label. Invalid, missing, refused or truncated outcomes stay in the comparison denominator. Do not selectively replace failures or rerun Qwen to fill its invalid cases.
+
+For both native and strict outcomes, report both-correct, OpenAI-only-correct, Qwen-only-correct and both-wrong counts, the accuracy gap, an exact McNemar discordance test and a paired bootstrap interval. Keep paper/DOI groups together when complete verified grouping is available; otherwise label case-level uncertainty. Protein-family dependence remains unresolved without verified grouping. One SuppQA question changes its accuracy by about 1.22 percentage points, so small gaps require paired uncertainty context. No pooled overall biology score is proposed.
+
+## Authorization, original evidence and claim limits
+
+The historical global OpenAI hold record remains unchanged, and no provider response or warning resolution is claimed. The current user's “let's go” instruction authorizes this **new, narrowly reviewed benign comparison and its development checks**; it does not resume the prior flagged scope. P18's flagged requests and the same two held B01 cases remain excluded. Use the original stable private safety identifier; it is monitoring metadata, not an exemption. Stop new dispatch on policy/access failures and preserve outcomes without identity rotation, provider switching or retries designed to bypass a block.
+
+The [original proposed config](../configs/proposed_gpt6_luna_qwen_comparison_2026-10-19.json) and [279 draft request bytes](../results/comparison_preparation/gpt6_luna_qwen_2026-10-19/luna_text_requests_proposed.jsonl) remain immutable preparation provenance from commit `d7832220`. The original config's `optional_sequence_task` key describes that earlier draft and is superseded by the committed second stage in the [v2 scope](../configs/openai_qwen_comparison_execution_v2_2026-10-19.json). Actual stage-specific protocol, minimized request, review and completion receipts determine execution status.
+
+The [per-case evidence manifest](../results/comparison_preparation/gpt6_luna_qwen_2026-10-19/case_manifest.jsonl) is exclusively audit/scorer material. It contains Qwen correctness flags and response paths and must never become solver input. Five older B01 OpenAI cases existed before the historical hold; this new fixed-cohort comparison remains a separate condition and does not select replacements using those results.
+
+**Inference-time answer separation is auditable; prior training exposure remains unknown for both models.** Public questions or proteins may have been seen during training. Clean requests, shuffled choices and a benchmark canary cannot establish novelty. The result supports a comparison of named model conditions on these fixed cases, inputs and budgets. It does not establish faithful reasoning, unfamiliar-paper reading, novel-protein generalization or a general verdict on biological intelligence.
+
+Reusing the archived Qwen outputs is justified for this unchanged input condition. Supplying papers, altering options, redesigning the answer format or changing the output budget would define a separate experiment and generally require a new matched Qwen condition as well.

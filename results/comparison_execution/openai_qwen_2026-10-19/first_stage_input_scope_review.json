@@ -1,0 +1,40 @@
+{
+  "reviewed_at_pacific": "2026-10-19T14:05:31.602137-07:00",
+  "scope": "Exact newly authorized closed-book LitQA2/SuppQA comparison only",
+  "scope_review_passed": true,
+  "basis": "Original pre-generation question/choice/title/DOI input reviews matched exactly; new comparison asks the same questions without adding protocols, optimization, tools or target evidence. Previously flagged/held material remains excluded.",
+  "current_user_authorization": "let's go for this openai eval; implement supplied review and compare named models under frozen task conditions",
+  "provider_response_reported": false,
+  "provider_warning_resolved": false,
+  "prior_flagged_requests_excluded": true,
+  "previous_policy_block_records": 43,
+  "candidate_block_overlap": 0,
+  "held_case_overlap": 0,
+  "source_case_manifest_sha256": "546ee988292215bbffb8b894133c4d74c17a5b5258043a0c350f1a4cd60e8f44",
+  "prior_warning_audit_sha256": "62129b60dbfb96004965e9a8b8f650caabbd20f1bc149ddc8860bf78b626f7b1",
+  "input_reviews": [
+    {
+      "path": "configs/local_labbench_litqa2_review.json",
+      "sha256": "21205e078478e508e8e9a4fe9accac4fd5f2affd325f8fcd976dc27e4366fa3d",
+      "task_id": "B01",
+      "approved_cases": 197,
+      "input_only_review": true
+    },
+    {
+      "path": "configs/local_labbench_b03_review.json",
+      "sha256": "77e8873286f9d878432c668c458dcf9ac604c2912009298927cb60a7dafeb8cb",
+      "task_id": "B03",
+      "approved_cases": 82,
+      "input_only_review": true
+    }
+  ],
+  "case_count": 279,
+  "task_ids": [
+    "B01",
+    "B03"
+  ],
+  "no_prior_answers_or_labels_used_for_case_selection": true,
+  "historical_openai_exposure": "The B01 input review records five earlier completed GPT-6-luna cases before the blanket hold. The new whole-cohort condition remains separate and does not select or replace cases based on those results.",
+  "provider_clearance_claimed": false,
+  "runtime_rule": "Preserve stable identity; no retries or provider changes; stop new dispatch on policy/access errors; preserve every outcome."
+}

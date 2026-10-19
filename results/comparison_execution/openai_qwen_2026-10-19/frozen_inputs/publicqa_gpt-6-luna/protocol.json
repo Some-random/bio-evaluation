@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "protocol_id": "openai_qwen_publicqa_4k_2026-10-19_v2",
+  "allowed_models": [
+    "gpt-6-luna"
+  ],
+  "task_ids": [
+    "B01",
+    "B03"
+  ],
+  "generation": {
+    "max_output_tokens": 4096,
+    "reasoning": {
+      "effort": "medium"
+    },
+    "service_tier": "default",
+    "store": false
+  },
+  "task_condition": "closed_book_literature_qa_without_retrieval",
+  "case_count": 279,
+  "input_roster_sha256": "545b625b6c8c9db3daba40a91be81b372dd4f8badf526bad50a6b06d202fb57d",
+  "answer_policy": "configs/comparison_answer_policy_v1.json",
+  "no_tools": true,
+  "no_shared_context": true,
+  "native_inputs_preserved": true,
+  "prior_training_exposure": "unknown",
+  "archived_qwen_baseline_reused": true
+}

@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "role": "scorer_and_authoring_only_not_model_payload",
+  "authored_for_development_not_benchmark": true,
+  "source_verified_pacific": "2026-10-19",
+  "sources": {
+    "gfp": {
+      "title": "Wavelength mutations and posttranslational autoxidation of green fluorescent protein",
+      "doi": "10.1073/pnas.91.26.12501",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7809066/",
+      "basis": "Primary research abstract and original-paper bibliographic record.",
+      "verified_facts_paraphrased": "GFP fluorophore maturation needs oxygen. Its dilution-independent maturation supports a self-contained process. A Tyr66-to-histidine substitution produced a blue-emitting variant."
+    },
+    "kdel": {
+      "title": "A C-terminal signal prevents secretion of luminal ER proteins",
+      "doi": "10.1016/0092-8674(87)90086-9",
+      "url": "https://www.sciencedirect.com/science/article/pii/0092867487900869",
+      "basis": "Primary research publisher abstract.",
+      "verified_facts_paraphrased": "Altering the C terminus of grp78 caused secretion. Adding grp78's final six residues to chicken lysozyme instead promoted ER accumulation, supporting a transferable terminal retention signal."
+    },
+    "rnai": {
+      "title": "RNA as a target of double-stranded RNA-mediated genetic interference in Caenorhabditis elegans",
+      "doi": "10.1073/pnas.95.26.15502",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9860998/",
+      "basis": "Primary research abstract and abstract-associated source record.",
+      "verified_facts_paraphrased": "The authors found no corresponding DNA-sequence change. Interference with an upstream operon gene spared the downstream gene, supporting action after transcription. Targeted mRNA was depleted while a different control mRNA remained."
+    },
+    "microsomes": {
+      "title": "Transfer of proteins across membranes. II. Reconstitution of functional rough microsomes from heterologous components.",
+      "doi": "10.1083/jcb.67.3.852",
+      "url": "https://rupress.org/jcb/article-abstract/67/3/852/48431/Transfer-of-proteins-across-membranes-II",
+      "basis": "Primary research publisher abstract.",
+      "verified_facts_paraphrased": "Native reticulocyte small ribosomal subunits, free-polysome large subunits and stripped dog-pancreas microsomes supported synthesis into a protease-protected compartment. Attempts to process completed precursor with solubilized activity were unsuccessful."
+    },
+    "aquaporin": {
+      "title": "Appearance of water channels in Xenopus oocytes expressing red cell CHIP28 protein",
+      "doi": "10.1126/science.256.5055.385",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1373524/",
+      "basis": "Primary research abstract.",
+      "verified_facts_paraphrased": "Oocytes expressing CHIP28 had increased osmotic water permeability. Mercuric chloride reversibly inhibited that increase. The work supported CHIP28 as part of a membrane water channel."
+    },
+    "autophagy": {
+      "title": "Dissection of autophagosome formation using Apg5-deficient mouse embryonic stem cells",
+      "doi": "10.1083/jcb.152.4.657",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11266458/",
+      "basis": "Primary research abstract.",
+      "verified_facts_paraphrased": "Apg5 reached isolation membranes without conjugation to Apg12, but conjugation was needed for membrane elongation. The Apg12-Apg5 system was also needed to target LC3 to those membranes."
+    }
+  },
+  "cases": [
+    {
+      "case_id": "dev-lit-gfp-oxygen-v1",
+      "task_id": "B01",
+      "source_id": "gfp",
+      "question": "Newly synthesized Aequorea GFP is abundant but initially nonfluorescent in an oxygen-depleted sample. After oxygen is restored, fluorescence develops without an increase in GFP abundance. Which interpretation best explains why fluorescence alone could underestimate protein expression in the original sample?",
+      "choices": [
+        "Fluorophore maturation can lag behind protein production because it requires oxygen.",
+        "Oxygen acts only by increasing the amount of GFP messenger RNA.",
+        "Insufficient information to answer the question",
+        "The fluorescence change necessarily means the sample now contains more GFP protein.",
+        "The observation proves that GFP maturation is independent of chemical conditions."
+      ],
+      "target_choice": "A",
+      "unsure_choice": "C",
+      "reference_explanation": "The original work separates production of the GFP polypeptide from oxygen-dependent fluorophore maturation. The scenario concerns maturation rather than a change in protein abundance."
+    },
+    {
+      "case_id": "dev-lit-er-retention-v1",
+      "task_id": "B01",
+      "source_id": "kdel",
+      "question": "A soluble protein enters the ER normally, but removing its terminal KDEL sequence causes much more of it to appear outside the cell. Which distinction is most consistent with this observation?",
+      "choices": [
+        "KDEL removal must abolish all translation of the protein.",
+        "ER entry and ER residence are the same targeting step.",
+        "The protein can enter the secretory pathway while lacking the signal that normally favors ER residence.",
+        "Insufficient information to answer the question",
+        "ER entry by itself guarantees permanent ER residence."
+      ],
+      "target_choice": "C",
+      "unsure_choice": "D",
+      "reference_explanation": "ER entry and ER retention are distinct. The transferable C-terminal signal identified by Munro and Pelham concerns ER residence versus secretion."
+    },
+    {
+      "case_id": "dev-lit-rnai-operon-v1",
+      "task_id": "B01",
+      "source_id": "rnai",
+      "question": "In a C. elegans operon, double-stranded RNA directed against the upstream gene lowers that gene's expression but leaves the downstream gene functional. No corresponding change in the target DNA sequence is detected. Which mechanism is most consistent with these combined findings?",
+      "choices": [
+        "Deletion of both operon genes from the chromosome.",
+        "A requirement to stop transcription of every gene in the operon.",
+        "Insufficient information to answer the question",
+        "A sequence-directed effect on the target RNA after transcription.",
+        "A change in the upstream promoter that necessarily abolishes all downstream expression."
+      ],
+      "target_choice": "D",
+      "unsure_choice": "C",
+      "reference_explanation": "Sparing the downstream gene argues against shutting down shared transcription. Together with unchanged DNA, this supports the paper's post-transcriptional interpretation."
+    },
+    {
+      "case_id": "dev-lit-microsome-timing-v1",
+      "task_id": "B01",
+      "source_id": "microsomes",
+      "question": "In the classic immunoglobulin light-chain microsome experiments, functional membrane-associated synthesis produced a processed, protected product, while attempts to process an already completed precursor with solubilized activity failed. What is the most appropriate conclusion about that experimental system?",
+      "choices": [
+        "Processing of a fully completed precursor was established as equivalent to membrane-associated synthesis.",
+        "The results support coupling of nascent-chain synthesis with membrane-associated processing and segregation.",
+        "Insufficient information to answer the question",
+        "The protected compartment was established by completed precursor alone, without ribosomes.",
+        "Post-translational processing of every secretory protein was ruled out by these experiments."
+      ],
+      "target_choice": "B",
+      "unsure_choice": "C",
+      "reference_explanation": "The source supports a nascent-chain/membrane-associated process in this system, not a universal assertion about all protein transport."
+    },
+    {
+      "case_id": "dev-lit-aquaporin-function-v1",
+      "task_id": "B01",
+      "source_id": "aquaporin",
+      "question": "A membrane protein is abundant in red blood cells, but abundance alone does not identify its transport function. Expressing its RNA in Xenopus oocytes greatly increases osmotic water permeability. Which additional observation most directly strengthens a water-channel interpretation rather than an inference based only on where the protein is expressed?",
+      "choices": [
+        "The protein is abundant in another tissue, without a functional test.",
+        "A second assay detects RNA but does not measure water movement.",
+        "The expressed protein can be recognized by an antibody.",
+        "Insufficient information to answer the question",
+        "A known water-channel inhibitor reversibly reduces the induced water permeability."
+      ],
+      "target_choice": "E",
+      "unsure_choice": "D",
+      "reference_explanation": "A reversible functional perturbation of the induced permeability adds evidence beyond the protein's tissue distribution, as in the original CHIP28 experiment."
+    },
+    {
+      "case_id": "dev-lit-autophagy-recruitment-v1",
+      "task_id": "B01",
+      "source_id": "autophagy",
+      "question": "Apg5 can still appear on an isolation membrane when its conjugation to Apg12 is disrupted, but membrane elongation is defective. What does this reveal about using membrane recruitment alone as evidence that the autophagy machinery is functioning normally?",
+      "choices": [
+        "Recruitment is sufficient to prove that a complete autophagosome has formed.",
+        "Recruitment and productive membrane development are separable steps.",
+        "Insufficient information to answer the question",
+        "The conjugate is unnecessary for isolation-membrane elongation.",
+        "The defect establishes that Apg5 never associates with a membrane."
+      ],
+      "target_choice": "B",
+      "unsure_choice": "C",
+      "reference_explanation": "The paper distinguishes membrane targeting from the later elongation function that requires the conjugate."
+    },
+    {
+      "case_id": "dev-supp-gfp-blue-v1",
+      "task_id": "B03",
+      "source_id": "gfp",
+      "question": "Which alteration was associated with the striking blue-emitting GFP variant reported in this paper?",
+      "choices": [
+        "Replacing Tyr-66 with tryptophan.",
+        "Replacing Ser-65 with alanine while retaining Tyr-66.",
+        "Insufficient information to answer the question",
+        "Replacing Tyr-66 with histidine.",
+        "Attaching an external blue pigment without a GFP sequence change."
+      ],
+      "target_choice": "D",
+      "unsure_choice": "C",
+      "reference_explanation": "The primary abstract identifies the blue variant as carrying histidine at the position normally occupied by Tyr-66."
+    },
+    {
+      "case_id": "dev-supp-kdel-transfer-v1",
+      "task_id": "B03",
+      "source_id": "kdel",
+      "question": "Which reported experiment showed that the ER-residence information was transferable to a protein normally secreted from the cell?",
+      "choices": [
+        "Adding the last six amino acids of grp78 to chicken lysozyme caused ER accumulation rather than secretion.",
+        "Deleting the last six grp78 residues caused lysozyme to accumulate in the ER.",
+        "Insufficient information to answer the question",
+        "Replacing the lysozyme signal peptide alone established that its C terminus was irrelevant.",
+        "Expressing unmodified lysozyme established a retention signal in every secreted protein."
+      ],
+      "target_choice": "A",
+      "unsure_choice": "C",
+      "reference_explanation": "The lysozyme fusion tests transfer of the terminal retention information, complementing the loss-of-function effect of grp78 C-terminal alterations."
+    },
+    {
+      "case_id": "dev-supp-rnai-specificity-v1",
+      "task_id": "B03",
+      "source_id": "rnai",
+      "question": "The authors examined targeted RNA as well as DNA and operon behavior. Which control most directly distinguishes a target-specific loss of mRNA signal from a general disappearance of all germ-line RNA?",
+      "choices": [
+        "Checking only that the targeted gene still had the original DNA sequence.",
+        "Showing that a different germ-line mRNA retained its signal when the targeted mRNA lost signal.",
+        "Measuring only a loss of total fluorescence without examining a control transcript.",
+        "Insufficient information to answer the question",
+        "Observing an upstream phenotype without measuring RNA."
+      ],
+      "target_choice": "B",
+      "unsure_choice": "D",
+      "reference_explanation": "The source describes an unaffected cey-2 control signal after targeting mex-3. This is a target-specific RNA control rather than evidence of a general RNA loss."
+    },
+    {
+      "case_id": "dev-supp-microsome-components-v1",
+      "task_id": "B03",
+      "source_id": "microsomes",
+      "question": "Which reconstitution result supported formation of a functional, protease-protected compartment from components of different biological origins?",
+      "choices": [
+        "Completed light chains and detergent-solubilized processing activity reproduced the full reaction.",
+        "Insufficient information to answer the question",
+        "Reticulocyte ribosomal components worked with stripped dog-pancreas microsomes to support protected light-chain synthesis.",
+        "Stripped microsomes alone synthesized and segregated light chains without ribosomes.",
+        "Only ribosomes and membranes from the same tissue could support segregation."
+      ],
+      "target_choice": "C",
+      "unsure_choice": "B",
+      "reference_explanation": "The heterologous reconstitution used the specified ribosomal components and stripped microsomes. The source does not support the completed-precursor claim."
+    },
+    {
+      "case_id": "dev-supp-aquaporin-inhibition-v1",
+      "task_id": "B03",
+      "source_id": "aquaporin",
+      "question": "How did mercuric chloride affect the water-permeability phenotype of oocytes expressing CHIP28 in the reported experiment?",
+      "choices": [
+        "It irreversibly increased the induced permeability.",
+        "It reversibly increased the induced permeability.",
+        "It removed all osmotic gradients without changing membrane permeability.",
+        "Insufficient information to answer the question",
+        "It reversibly inhibited the increased osmotic water permeability."
+      ],
+      "target_choice": "E",
+      "unsure_choice": "D",
+      "reference_explanation": "The primary abstract reports reversible inhibition of the induced water permeability, not a change in cell identity or an irreversible membrane removal."
+    },
+    {
+      "case_id": "dev-supp-autophagy-lc3-v1",
+      "task_id": "B03",
+      "source_id": "autophagy",
+      "question": "Besides its role in isolation-membrane elongation, which localization event was reported to require the Apg12-Apg5 system?",
+      "choices": [
+        "Apg5 reaching an isolation membrane before conjugation.",
+        "Directing LC3 to the isolation membranes.",
+        "All secreted proteins returning from Golgi to ER.",
+        "Insufficient information to answer the question",
+        "The initial targeting of every ER-resident protein."
+      ],
+      "target_choice": "B",
+      "unsure_choice": "D",
+      "reference_explanation": "The primary study identifies LC3 targeting to isolation membranes as dependent on Apg12-Apg5."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "protocol_id": "openai_qwen_localization_4k_2026-10-19_v2",
+  "allowed_models": [
+    "gpt-6.1-sol"
+  ],
+  "task_ids": [
+    "P03"
+  ],
+  "generation": {
+    "max_output_tokens": 4096,
+    "reasoning": {
+      "effort": "medium"
+    },
+    "service_tier": "default",
+    "store": false
+  },
+  "task_condition": "complete_sequence_to_native_ten_class_localization",
+  "case_count": 2773,
+  "input_roster_sha256": "5a65418673803cd86606e76606418f4514b5abed125d7bf0f985424893b89011",
+  "answer_policy": "configs/comparison_answer_policy_v1.json",
+  "no_tools": true,
+  "no_shared_context": true,
+  "native_inputs_preserved": true,
+  "prior_training_exposure": "unknown",
+  "archived_qwen_baseline_reused": true
+}

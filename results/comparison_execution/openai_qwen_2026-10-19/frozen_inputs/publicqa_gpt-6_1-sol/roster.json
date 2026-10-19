@@ -1,0 +1,1401 @@
+{
+  "protocol_id": "openai_qwen_publicqa_4k_2026-10-19_v2",
+  "model": "gpt-6.1-sol",
+  "cases": [
+    {
+      "task_id": "B01",
+      "case_id": "e3b5a4af-41d9-48db-becf-29a08d0ad28e",
+      "payload_sha256": "0bd2ae2968307f06b21400697d53e8c466e6d92d0e6028dc5ff9c3009733c9e3"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "76184ccf-4bf0-469e-a442-11d04b4ff8b0",
+      "payload_sha256": "38f7f11c85a8adf82de18ea619468f1bd6ec80af8c67797af74f1f00bce3c1d2"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "39129e1c-096f-4414-bf4f-37fadbbe364c",
+      "payload_sha256": "522fe1226695dcec2c0475e7034a140fcba08fc8371e459855e9c2b6ea733fe4"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "27234279-f50c-4cfc-86e2-af68364a8f94",
+      "payload_sha256": "88872defc393387d6fedc3c44a36175f5ddf4b469c6f9bd63514c2ad2073ed6f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "517e7cf8-c5d2-4391-9e2a-235b79d93050",
+      "payload_sha256": "e13089fa1e30bd9eaa7a89db452c603043271ae38a879967cdc6fc6bf00a1f7e"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "cb710074-73a8-4407-b0c7-7dc868f1bc76",
+      "payload_sha256": "27fc4955158128792c5f0a6c0dddcff494c061eea5b636e34894e1dca578f691"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "2c05315d-6898-4667-b454-d99b7381bedb",
+      "payload_sha256": "24b7303aaaf7b8f2e500304b4af3f076a1085a4467deb590024ad1aa5f41b31a"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "5c4c602c-9624-4eae-ac44-efe4c0dd10e6",
+      "payload_sha256": "190961b20d0e1b3ae0b7081f702fbc8f5704ff503132caae377ae6b73cc38fbb"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c9bdb9b5-28c1-44da-93b6-b1fc9d8bf369",
+      "payload_sha256": "151740e69322123b920072e676b9acd63b4cb3149ae77620bcece21866a667a6"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "e6b0f9e5-e976-47dc-b839-0b2fca967e9e",
+      "payload_sha256": "caa8ae9b6ef073f7381f2638114b1abbd720332ddd30b2ee4bc2ce1dcccf4f73"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "247eeb85-a552-4b87-b83e-327538fcb8a9",
+      "payload_sha256": "a9e729121e3b8042674af2e6cf73ccea2b3daeba5f79e23cee1ae789d5a0335e"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "39c985ce-70e8-48e4-bd76-744cd07cb56a",
+      "payload_sha256": "d587276d1e14eeb336ec74a4093d6c72fd39ab76f210fbf925ff066dffc4240d"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "a214f5f8-0de8-43cf-82e0-7930003e4a0c",
+      "payload_sha256": "fb539311a8b645f0f40191e4351842115a2a7bc4c37c37ae5d678f0774430efa"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "a43e5166-d0e8-48f8-a113-648acac7ed59",
+      "payload_sha256": "05e43ccf340b2ad8e048235972a3bb3320ad7d8bc1ce70d0195b9ad2addb9e37"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "dd29920d-cb70-440f-961c-3e1103776c4f",
+      "payload_sha256": "b7c16ac0c461f1a09941d0ae004f98e10794dadfd9081479c1b0d7038a5264b3"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "7d805bb8-4c7c-431f-b068-acf5e5459985",
+      "payload_sha256": "75a84479026d032047d670e13e2eaefc03fbc0434257059d727505b293ec209c"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "8d7fa642-ee46-4a13-8ea9-61cc2d4f4ddd",
+      "payload_sha256": "10386071246a4b34c43b1fbbfe5d87c94113b4b8b5383b807a9e4682642eda20"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "487539f9-2f17-4009-aa4a-c41322445f11",
+      "payload_sha256": "2b135513653371a60530178a3847f0576a9fe7773c318bafe66ab6c390b45601"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "5049c648-b1bb-4624-8824-9d93dfb04e51",
+      "payload_sha256": "0f7ac0000fcc87188ba3e6b8eb3fcb1ff34537dcda4308d641f8691b9d344fc2"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "a18883e9-218a-4719-8d2c-cf94d740de1a",
+      "payload_sha256": "32bb70cfd8c5f853a770a49f2c82078d34c18e2b877d73de4d0bed5f66cd8077"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "d7833c0f-2a16-40d2-b6a0-6764aa3003a6",
+      "payload_sha256": "29b93f53fd72b44e0682942288d766b65bfe628572a66af7841e97d32b3cabcf"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "1ccdc348-50e1-4941-9151-5e50411a2b41",
+      "payload_sha256": "64ff48d122bce83cbc78b8ad67edac3a764c0e5997b0e07bced01bee8f993e56"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "1e5f5199-84f4-4133-ab87-2372fa6ca722",
+      "payload_sha256": "28f6223ba06abf3bf2ed8b404442cf9b6a51f327b485d626c1aefa9c438f5cf5"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "d2860d38-dfb9-4b80-905f-812c32573915",
+      "payload_sha256": "463affe7915552c5b26dc82c9ef8565d4956160ddbcbd4363c485110701a2f03"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "77a41274-cd9c-48bc-a347-e0746907840d",
+      "payload_sha256": "e89746654619005bf6c58f307163e360f94e06e32971d4946c6fa825425d61f8"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "5a2128ad-3127-4595-b810-db128d1a2335",
+      "payload_sha256": "1e6937260b3e070259eb63128c98448052ccf40af587894cd4cfa8856aee2e4f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "d65103ae-c881-4116-a0a7-1b233eb6275a",
+      "payload_sha256": "db51b7fb6038ecc75940dc8d75a06340861cba8184f3b2d2979bc1ecba6a2943"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ab5eb050-d134-4445-9307-6faa08be7474",
+      "payload_sha256": "a0db63b600542786b39cc2674d3d34afb3d4691c6ae4282779df0fc399cc2fdc"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "82de3e92-abe2-46ac-ad17-23417b9c4da7",
+      "payload_sha256": "37006653b77dfceca5004f07216521988f254d6a07a7cf502801ff9460d38940"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "7cf0fcde-fea8-420c-8531-2f2fe9e38980",
+      "payload_sha256": "9fc5150797edccd3e2c8fd6094b7d89683ef26d68c05e0565676722fb0870d95"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "da5b2a8f-ba08-4692-851f-2e0bf142a02f",
+      "payload_sha256": "73bab852b18ebb336a17c444b612475933f3343a2dac39c377e910206eb8ef98"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "e2fb56b7-08cd-4dc0-bc63-b45931a74fc9",
+      "payload_sha256": "5ca467574017e8d88d698f888c2533c0636697bb9826b056f29ba9cc84add486"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "eda34fde-798e-43a1-a9d3-a804d3d8ee4e",
+      "payload_sha256": "ea5c6d58f501e222d036579e42e4270f09d2cc8f7faa4dcbd2ace0c17f5dc767"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "0eede7a8-fe1f-42d3-a2c6-478083648644",
+      "payload_sha256": "9fd5abb9a95d546fef1f4f654af94dbce4249ea4ab8a7170cd01603b41411b35"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "d1307e50-3c03-4c76-81ee-2decb5de5f14",
+      "payload_sha256": "2a00d3833807933cb60d79315e1f87eabcebd15568687f4207d42a9ce7c65aee"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "10cece36-a507-4a93-9600-13f3e0e677f8",
+      "payload_sha256": "b7d65815f83f19841ae866711beaf34596155cecba9c522748f6a8317d80942c"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "f5a84803-3917-43eb-801b-8dc0c5400da1",
+      "payload_sha256": "5d522b44df0a948b7bb44b84a1a2e0821365a6cd80b4594f16d8f2779c724e5a"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c47dd378-dde3-4a45-9184-6abfa6163717",
+      "payload_sha256": "58a520722ce3da22cf0f33f76b1dfc286ef5c11144bf6c1844b17e3f84b90faa"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "0bac8974-554c-439a-a9a2-22fa509c8d5d",
+      "payload_sha256": "66811cda436bdcd94e072a2f40a2645eb7317ad2f0a93f87a80bafcc922781bc"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "aaa85379-1e4b-4642-9ec4-e1a6d6c29c3b",
+      "payload_sha256": "a2a918dbe6c2d7bb8d264be74f28094ba42947f8f8b6bddeb1bf04ac1b337f3b"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "aa1835b2-2b1c-4986-b7af-e174da0124b0",
+      "payload_sha256": "6d35c8a8ca9e50261276ed9d85b139eb326038edef80a4610c2e161083aa81ff"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "5a9c6697-a65c-49c0-9e02-38b2a276fde7",
+      "payload_sha256": "b53221d941fc385ca413de9ec9c927afcf902f5213580510d2fde72666c55aa8"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "37a4d007-793e-4a89-922a-c1b05f4f82c1",
+      "payload_sha256": "746c38bb148f7fa831abffbdacdc0b64ea871142289434e1bbeffe1619e8ac3e"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c9baf8e0-c4c7-4ba3-b5c4-18e9af8b2df1",
+      "payload_sha256": "7ff455bc010b592ce6f7b4eff0db5e5520d643f4387231ffebf61b735285f200"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "d0f69626-66ee-4807-937d-c3a024441812",
+      "payload_sha256": "362e7cdc6768e23ac64c3b4ea827b15ddc517f44c2aea3be0ffd366fc55665c7"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "462a9f38-7cbe-4e12-a6e2-b1d7028c3a8b",
+      "payload_sha256": "b5c414747448fdc80f86587e234a796c118a46bc1828f217f871c7eba0bc86b3"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "86f111e5-402b-4ef5-b101-8be1bf5be7c6",
+      "payload_sha256": "a6a78452b5ad08bb4ce391dff79e97e478a574d1c1c009b14ef93ed82b9bc488"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "cbe93a43-09cd-4cb4-9edd-f22fe8c28415",
+      "payload_sha256": "4503cf91a8e723a10a5dc784f44e2fbebd5404f24b574c7e515d6deb3c1a7bd5"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "7a88e6f7-fb8e-4a24-b08d-9b7a6edafe57",
+      "payload_sha256": "e1c5a0cb23bf4672bf78362ef7249af2472a10e202994b2af46eff0c272711ec"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "91387526-9268-4a3c-9abe-73819707d0b0",
+      "payload_sha256": "bc35ddb15e4d85c55d3dee3472d4a5b732be83199d086f8892a33ced8af31c24"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "7b98796f-25be-4c58-a52a-4e366c0ffd95",
+      "payload_sha256": "d7c741c2ded7d1cbe31e57b116bc8fa372c859d5badd8fe08bfa1a91070e776e"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "5e20e26d-6192-4563-abb3-a4857e3dbc7c",
+      "payload_sha256": "11ddd90823543027d10e19d6268c0d967a73923f23fc7bd6c2041462c50052d3"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "b105af85-833e-48bc-ac78-48f73c9673fd",
+      "payload_sha256": "a2370ad6f2fc659a7725a4b2330fc4424671953c4d005d4b91c1c2a75accae29"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "5b6d6f82-a585-4aa8-9fe6-e7d35f7cb2ae",
+      "payload_sha256": "d29b3e34839701be19fe82af95ef588af4194b835378161d7de53eba06972625"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "12321eab-6ad6-4218-8815-18bc51c14544",
+      "payload_sha256": "a4bbf9e3f5d5085e45013d0925109fd91006387485954d72938e6e0bbd0b3f8f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c33446f6-fbff-4186-8a51-28a17f68bd40",
+      "payload_sha256": "8fa6e4e83bfcf315be012d201c5f0c3b5e155f6af386dc47fc328e0408c5fede"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "b1d5a5f5-6e89-4dfb-b60d-5a9824b015f3",
+      "payload_sha256": "0a786f977924086b1e7fe243a7f170f81fc72f3f24dd09868638c18a1a8a3c9e"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "6aa10957-bdd9-4dab-a4e1-234a17cb87dd",
+      "payload_sha256": "7d16f4b17c59a6e1ab9faa1a09ada536dd22a959b1be879c345c56246df400b6"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "28ebecdf-949e-4d20-aca9-5989b7a9d6e9",
+      "payload_sha256": "baec5fddcda081fb0cc07acd8156e432072f9c845a6e56bc653cbbb28f1299ca"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "dbb51a1c-f9a2-4960-a93c-118957659790",
+      "payload_sha256": "3b7acebdd45cd00c7e4ef47782becc49f13e88078e65f70ccaa1cde0ada9143c"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "3d40f373-59d3-4666-87bd-6db64fd7b4fb",
+      "payload_sha256": "9cb749b6744d2bc0ef14b5f4d1bccbb8fdecb5fb4eb255131195434f99743b00"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "85c67ef3-322c-42b4-b745-c05e07e7b8ac",
+      "payload_sha256": "ca487137a1c799266f146d2f78657d44528d2f8f7a9c315606b660dc4467ac25"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "653635b7-3bc6-4a7b-98c7-c02038c0e928",
+      "payload_sha256": "c0023ebdaf237da50d9520034e7c2b963b5ec27b62566027e1e779cb910cafc3"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "100b570f-1c4f-4214-8402-f1b15f9989b4",
+      "payload_sha256": "a817a924601a20a2a9d57f8fcbdf6fd954c3a1b27a51c9013ec954ca56a8b29d"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "0a9d6516-95ef-4d7b-a28d-d7cde27b7b55",
+      "payload_sha256": "003e32778342fb6222408cdfb580012f535666fcd69f157563b7413b01da4320"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "8d61a14b-60ef-43b0-8003-b60cb6657428",
+      "payload_sha256": "5ab37e072f977f6fbb8bd8fd6c0c778053729e7f13b22196b3879611dd405ab1"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "4d4cb121-9525-499a-9475-9b212465c72d",
+      "payload_sha256": "69694c991f8b296eaef82f1c3e77164508efbe0b1a8c5b6f8acb7c3feccac3fe"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ca4c9d21-b842-4875-9a6a-bcb9f6c55073",
+      "payload_sha256": "1560e38b51fc55b9cc98bd55d1aa0193e5ba64d16aca8581e752b58d8904071f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c3816cb5-8c87-4946-b133-43f415ab6b2a",
+      "payload_sha256": "4a633a59f27e06e1f03d960171d7e3882d8fc41293a63d366421b17e41d62594"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "59745f75-52bf-4815-905c-3dfad1ef8923",
+      "payload_sha256": "eb8ee9cf702af80af4bc065f89552d4b4a39d8f8dee80fd59679be0ab20f1452"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "26691c84-514b-4712-a43e-09705d681e45",
+      "payload_sha256": "20123d0d253fdb14caaa65eba61c0305583ae2d28a4c800e4b7d87c4af1ee3ea"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "0e53a08c-4252-4a84-962b-5b396f9740aa",
+      "payload_sha256": "f4f510936b246ed4bde131e36b8670cdfe2ae49aff898d03a2d4212a6e417771"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "8ade3e3a-4792-4965-b9d9-05e528ebbfa0",
+      "payload_sha256": "7e3ea02e169e43e7501ff7d9d3a127e30f6e3360835d1c294dc496beaac7f982"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "f5a4b449-e647-4ae0-8419-c221792482c9",
+      "payload_sha256": "19c36750adcee09a93fd3c4649ff351c66fe79bff0de9486979d06fa90659ccc"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "5806ed2a-1005-44f1-8d70-332048fea8f4",
+      "payload_sha256": "15c8aabc9f44c2635f44f0cc6d3dbd499536c663266628e3a3fab32fe249cff2"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "6fff0994-6d02-470a-9d61-8e35420412b6",
+      "payload_sha256": "c9d3b928c858f77a87034795a25522621d2fd8c94941bcd63d6a00b09235d1cd"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "8266ac61-92d6-423d-8e7a-fe47b3a7e885",
+      "payload_sha256": "e57ea26ea8d77ced65e7bd274a6af39430fb982dd7dc277c33b2b97e272c8404"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "322454df-45a8-41b3-9b0a-4e808144023c",
+      "payload_sha256": "a8d09bfa1665198ce5f08bb2cbac06b14b2c98d4439bf96ce4f7679862ac47f0"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "3c9f23e2-fdd0-431b-aca7-4f9556c78f1f",
+      "payload_sha256": "1ad1e7b906fc6dd2aa4d0fae6233d626ac955cd9fe06be0d44df4081172e02e7"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "983f1ef5-fc7d-4f4a-8f48-e704641eae12",
+      "payload_sha256": "8020c1e186cf9eeab44bb241ac1d234c8c505c18edff16ee18deb7b023659057"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "7d2c8d44-ecf3-40d2-ab69-b6195c46ffe9",
+      "payload_sha256": "b5e4320c94f7ea06816fdc9d1c3d77f23245da622d045c2da6e71d08637bb58f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "720e20c2-9ad1-4d98-9f01-8b7fb3782a46",
+      "payload_sha256": "c50f9bfcc67324f419eb2e94896fb210db13e2eea17214106d042ea76d26e879"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "dbfbae3d-62f6-4710-8d13-8ce4c8485567",
+      "payload_sha256": "d1f012f05c830f6e35cdef9bf727b7d6662bbed4d73879927b6b3138014dec25"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "7a42c784-7ae0-48fe-a71f-0a547b8fabb3",
+      "payload_sha256": "146ba3d3e4daa9120464ba4ad7bd9d9a98646d270dec097e8945d8a4c5ec98c6"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "0708b62f-9652-49eb-8ba6-28878afa7445",
+      "payload_sha256": "e9e005499e6ca5d77e933ae4d3a2070cd34bdf349c06a7fbb9d62696432d4864"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "5b3b7d05-9e54-445c-b374-d4c6b60923b4",
+      "payload_sha256": "6b055b374a6df1d4052996c0320c245914334cc2f20ee4b525cda3ae42825c83"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "623a831f-41ee-4e0e-936a-87f93d96369e",
+      "payload_sha256": "fd9408c3b5a32ac16a55cba6b700949c731e1d0d23f4560b8562e8fc24adb65b"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "99e8fa71-b59c-4aef-8cf6-40102a10622f",
+      "payload_sha256": "8a23d05315570e642c2a10618c69d2a4a7e0c415dcc1fccaf1e8893f708c72c4"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "0b1d5537-db47-420c-984b-9b56d38e6d98",
+      "payload_sha256": "fbaeb3b983a6612e8e9b03e8cd3dfd642a28bd97b8cb97848c9be025979988f4"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ade96656-7ed1-4e21-b009-b7a73e13bff5",
+      "payload_sha256": "5eeb02032109fba6260dbdeba7c2be53a8772430e42feac52b871f695614f16f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "78a2c1d2-f035-4c7d-a7ee-40dfd95ca88a",
+      "payload_sha256": "bc7246f8dd0f668eeec1be63d0907ce573c7747a52742197c0c175f760f57ee1"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "224efcd7-3652-47f8-84dd-15b4c6fafae2",
+      "payload_sha256": "2c5887267b70e385aae1d6e6900a283d2a4c66564c7b752e30155d0d7bdfcc8d"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "55187fb4-e7ee-4027-b74f-cab50f328442",
+      "payload_sha256": "0488c25a40d671c2381b563e6692bf2a266eb121d901144e79315d6a3bb4ef0d"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "25a9cf59-1c28-4ddf-b797-f43efb9349e6",
+      "payload_sha256": "39af73d4fa55953787bfea6e6a1dbced05f8659ce68beddbac655b1b4a217669"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "cdc80639-dc21-4337-bccc-d61d9aec6560",
+      "payload_sha256": "15ba3cb2453a37587d692e0c8819284cf6dd7fe2992272060dcc95636c23eebf"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "12a20d8d-cd49-47eb-9a19-6a38519ee3dc",
+      "payload_sha256": "cd0e435f37ab6edf2b4d1ef406edf4bb611614468d7a9ce2fbdceedcc3bcce81"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "4bb69c9d-2485-42d2-b8aa-aa647b407ca4",
+      "payload_sha256": "26c3b83e42fa2aec4c8c1302aaa863c887522e0c712cbbcbd4bce51bec8cee8f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "8c833521-56c4-458d-8c65-2bbf66190cae",
+      "payload_sha256": "9a00831b6dae2afa2728b13d66ee6d61122147e0352982d4098bebd32ae55c4c"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "255fd5fb-9623-4030-8bf2-253247df7c82",
+      "payload_sha256": "8ed28525a80e5870a8797476d675bae05b7da9c4e48c5cfeab3f6773e978c2fa"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "38ada695-2c79-459b-8e68-dbed734c74f9",
+      "payload_sha256": "b462a9a6ffe6e5626f82234bd346b486051a05a2746b632115a5b46aac50eda2"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "925ffe20-b8a9-4ac4-943c-7a16966f4a4b",
+      "payload_sha256": "524f984adf326f600e09537eb4e85ffe861b088b38e2cc6b25b467c092eb3698"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "e763edaa-b112-460a-a564-d58a6685e639",
+      "payload_sha256": "7a0f23bd8362077311fc015e100753f8d3149b482e4d9b2952ffe9003861d813"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "8af900bb-5794-40db-910e-10d5857ce5bd",
+      "payload_sha256": "f4b3464f47c50d88986452d3f4e864ecb980b5aca6879f112700abfcdd7b1203"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "6194ebfc-2d5c-4ccc-8883-da7c471b61e6",
+      "payload_sha256": "cef93c51fcfba722b868373695461eb7b685446dd1f0756d271f8527935797e6"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "1f1b07d7-39ce-4665-9b70-4ab77e3c87aa",
+      "payload_sha256": "d220bc0833c3586bc28a2f7ac54ecacdac842833743d9a278b5245e016beaa10"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "55668039-396e-488a-b2c3-bbe840550433",
+      "payload_sha256": "4e26c3430856e6820188567a0db819f480e4e45b5bff7e60f7ed34cdc274c7ce"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "4f050bf3-27cd-4a14-8422-45df5e2bb079",
+      "payload_sha256": "1ba711bd93b31834383df2320fce7e17b9e99e43ee0dc6ca36d7e6b4b4dc5c6d"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "cff00d08-5655-4214-97ac-8fa9504c1165",
+      "payload_sha256": "90ec1d2776a85741c979568641dc2ac6eca4eacf0b6e429f67e4b60d79f14c99"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "0eeb7ea9-fc80-4dee-9418-1c328c3ab653",
+      "payload_sha256": "1366cc247ac2b5fca4ddff7c8031a4864e56dbe71ec9a8c02232bad96fef6c1f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "658f7050-d137-477e-8693-26609080cecd",
+      "payload_sha256": "de696ff16e31a71951a0cc029464faaaf4ded7e7419a303c1eaf70a943d2bc19"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "8696273a-7fea-411a-b6c6-0e826e1e02b5",
+      "payload_sha256": "4da02da108b8acdf1086343157d67c410ed5bbfbeaa48c0ec2ee38747607fd9e"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "99713efa-d1b1-4fc5-a4b1-cbae2b3a5798",
+      "payload_sha256": "9e466b106b036bc89d3ab5b9be6087511649247fca96e41ad5405a6a9ead3aa0"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ce6dd5f7-0706-41dd-a383-9b0d22ef00a1",
+      "payload_sha256": "5de04447e648cbb0a3acdeb4c676b0c71f448e2d80b39d7ef0d3231dd22976ad"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "400786c1-e6c6-4f46-a501-86fdd048ed88",
+      "payload_sha256": "4bc9cf1f8a80bbe4ed1370c4dcec325bc5725f342caf0ec47c0d651512239d51"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "e820cbcf-6df1-4c1c-b985-c02f39f52781",
+      "payload_sha256": "995b9a433b18ef59d3bc9c645549b0f9eb7b5f0b1b7a6df2dd3815f0b24fcf53"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "230dec20-cd02-4613-a7b1-e28058ed46fe",
+      "payload_sha256": "f0f4c72450fd583a6d35432c505a114a7d5f783b36898f4003c0753c7524e54a"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "db851865-5cbf-4d55-b6db-34f22ef5e727",
+      "payload_sha256": "633c8e0559f6afcbf92b196b7b94516dfe12947cc2f87ebb7f031540e5b73bb3"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "7975ddb0-a784-4f85-a297-c80e1cb5dcf2",
+      "payload_sha256": "1c45d3b033a5ab10c9bdf8663925b263f14b6c8a92fcad112ac235b04901168e"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "a1d01019-d2b1-4619-92ec-7ea38578819f",
+      "payload_sha256": "33a7e1021870ed5c7a2c4dc01a6fc5282ea058b181b718cb2cb0d3e061efd0b1"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "fe074387-3765-4020-8f5d-e395d1094121",
+      "payload_sha256": "67d346f0013b89371cd65e26925edcf5ccf358cdedca043a434d602dca366174"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "f0b6cea0-e005-47bc-be0d-9a10b219cae6",
+      "payload_sha256": "5d76effc48c248ce71251cce9843ff665647e41bf5a88cc5b0cf39b159b9bcfb"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ae02d0e9-edf5-4c39-a215-3cbc8f4c565d",
+      "payload_sha256": "537e6deb0c2fccb42d1640fa28fe15a0d10b1f578cb867b125f321411435f80c"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "fd60a0e7-ba64-49a9-843a-6f5cb17c5fa9",
+      "payload_sha256": "38bb08349b694453443c9c851b1bcd8393ee48f564943c01f888e6d7adf4f9d4"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "14fd2b75-76fb-4c29-a21d-c557b2bcf2ff",
+      "payload_sha256": "c5f068dbea8b66ae5febe8a90006761e75035eec9e666ed5b9ee332c835dd513"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "e9f142f0-8ef6-47cd-b846-7283a93308d4",
+      "payload_sha256": "4d4feafd233de7db6e145efe6583d367577f038c7cb3710dcdb9ab4f36c05d2b"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "398ebac1-fd2d-45b1-9415-d82db4b4d83c",
+      "payload_sha256": "aa676be17644a135af1f0a2f959a614c97108a6e9424217f11ff495a211032d3"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "7e7150d6-bc73-4a29-a5b3-4ef8399ed947",
+      "payload_sha256": "a65a565562554f06be2f2990c4ee3a56cdd1cc6c729b1f6685483278dfcbad9c"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "58b39fab-337b-452d-b74f-84f9a188ce88",
+      "payload_sha256": "07f04702aef644cc1afa1821879c65ddbda6235d2815f89fff46c8047f2c251a"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "80e6571e-8f5d-496a-8ba3-9c9f5b783f5d",
+      "payload_sha256": "5e2790942cc2ff3cd5f51b54307e01d12a780a5a29ecd1c3d47b7b890d2610d8"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "154e7b14-4ed5-4cf3-9149-0c4843fc62cc",
+      "payload_sha256": "3c423c9f7b73606e2334aa090f0f09d2fa4ec7cb9e3413f2d0ba00b0a05a29db"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "a71ef7a2-31a2-460d-9ff4-32d7722353c3",
+      "payload_sha256": "7d6f3cbf0eddfd3236ec7e6b482ea0fd82f473619d9c8ec4adb3041622283ab9"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c624ed31-214f-4c80-9544-5514a096b1d3",
+      "payload_sha256": "811e17970796e62c483c7205aacb267518c01732c7816b8c0005b21fb7b99ae8"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "bcd2f213-c6c6-4660-af35-a7bd1c6a1170",
+      "payload_sha256": "3952bbcd47a3d76ad662eb188b9ed04bc22509d01f3ef32cdd2a374d552dd029"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "24fae97b-03f3-48b8-b623-abf07faee02e",
+      "payload_sha256": "bee106e5ea40223896145e20d4165224a0772227ab79d1c449e8d1f6b04f832c"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ce93661b-e3c4-4a7a-96b6-87492259c501",
+      "payload_sha256": "6ad5aeab61a0edfc9de30c7c3789289fa76bc41da2e614c5b9f2c5896993a4e6"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "941c04dc-c89d-4a90-87b0-930625268a38",
+      "payload_sha256": "c2d33007ea946ca656e4aed1edce5f49c9fc9819dd774a0fbbd6d507f0a24a89"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ea4ce240-2864-4ee5-9ffc-2dbda0f8f550",
+      "payload_sha256": "0e505f2cd5c0f804779ee78fe4d3d6189ffeac413db9784f3b26665052403c29"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "cff68274-4bbe-4fa0-a181-36a9af3cc0f1",
+      "payload_sha256": "c796c198394657c6604a7577acd3bf779912f89a12b755c7d657a6c8862db7aa"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "2c262f91-52b6-421d-8341-8748f923459e",
+      "payload_sha256": "1968c3a3220c5c2798198975a12d8381a9fcaf4eddf662ed5f7fab2addaf377e"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "6f8a51e2-f7ad-4033-b43d-370348e4809f",
+      "payload_sha256": "5e70d2eb1742411c151e79a5b40b6a512abdbde8ec7a9798630b3cc8ee0f4881"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "9a0b82cb-6a99-4e50-83fc-3ef2ebd277cc",
+      "payload_sha256": "0e55c54c4245860f30125c9f8325869d9a32d5abdeca783d7c8689d859b6017f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "8b665114-7729-4dac-a64f-4862a5397b82",
+      "payload_sha256": "88e3517fbaf5d5379bdce84b48fb2cf8e1338c8fe490c2b4abbd819e437ea760"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "5c808548-92c4-4ae7-990c-e2df81e3c2ae",
+      "payload_sha256": "e30e03d85ee7a1b823b64e2180b70c7676d3bf2132ec0bcf22263064210f8c0a"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "564e715f-8d30-410b-bdb5-0dc5206589a7",
+      "payload_sha256": "ea6570fb4eb1c5541c3d2c05575e52ab67d119140757e4588eea290184d4dedf"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "e90ea0fc-4659-4b20-acae-75dc4b97a101",
+      "payload_sha256": "eba53557acc88052b66cddfc459fcb6a57f5283a052d2d61a08166fa1eb07d0a"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c246753c-27d2-4ae4-8630-b9b4077ba6f6",
+      "payload_sha256": "592de30a0b7f515d63af299ba96feb8ca79d52296fe7160db4e6eaf0f14b3512"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "22306bd7-7e84-415d-aebb-11c6312eb081",
+      "payload_sha256": "dc002ec06d1a4fc3ec3b253f06d0dc1f112132ce3d0c66856e46c3194f9ec0dc"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "7d71dffb-b591-4b88-b0c6-e125a1b083b4",
+      "payload_sha256": "c755c247df3d6dc32d6fd0ee5097f9f92eca3b9347b4a3f041377cb8dd307745"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "fca26d7c-05cf-40b0-9fd6-a63ed7950909",
+      "payload_sha256": "e1cac51653bffab4be6de5bfe97e5118b9f305ad7ba0dcd3dd1b2fed7330f5ff"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c6e11fac-8f9c-4cf1-aa6e-4d25731ba74f",
+      "payload_sha256": "b1848808b4df1cf565cda61e3ec5436eb06f34c66ed616e303abac172ce99723"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "bace5737-ba26-422a-8706-0fb1e92b689f",
+      "payload_sha256": "10f3aba46f571d3e7199b7f7b90722e5088de754ad8a15194f018dfdae0caab1"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ff7328e2-4954-46a2-8ea3-d40b4df0c0ea",
+      "payload_sha256": "e964d45643358c6abbf51ddda3d2227d27c308f15a58d753d9262d39485c6cde"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "76bcaeeb-93bd-4951-99b9-cf4613de1a37",
+      "payload_sha256": "6c529afd9c02b4986ff7a599383a6e00d77fb4c4e14fb123c3e54bd254ab7dcc"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "850f86d3-0139-43df-89fd-e606c30aaa8b",
+      "payload_sha256": "11432d65cedc9c4267e0516f2b580357890be92aafc3024f726d8ada0f22c8da"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "634f6745-f3b3-4cb1-9859-96ffb954b98a",
+      "payload_sha256": "eb31ed4891db3cd0d9409662f4ab916c55cfb02ef4dc74dad9a865138e5ece0a"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "d1eabedb-656f-4f89-a65f-4ed89478ba9f",
+      "payload_sha256": "3dabe6462e86ed4e383fd5833ff6376b74255b5126ec2f77d2f51bb752f0fe5a"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "58f69c8d-cb94-4021-a84f-c549a7b976e1",
+      "payload_sha256": "eae284049199cc4f11f42ea07317a537599a9866e2332c0f13c67a1b8fc72408"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "20980744-f9ff-4e39-a08d-106eada6900c",
+      "payload_sha256": "af023720ac480a985123d67d1e213a0c87f5b85634dae794bb6fbc88078f75f2"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "a6622141-68d6-418f-8e30-7a5eff3d4fa8",
+      "payload_sha256": "8decd90d1a523cbfa4afa2b867213b50b14a85ca66e8b00e0421193369c5d9fe"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "9fe3ff3b-60cf-472d-ab1a-2bda1868f1b4",
+      "payload_sha256": "1ea14eb14fad3ab9cf4b38961043599e7cee5cdd9d8e9173d3b77fb07e789218"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "9088251a-99fe-4b91-b6a9-375154ec4f58",
+      "payload_sha256": "94365ff194fc181eee419a1b9a2c016decbacda7c357152c6d5763e093d80113"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "b8ec372b-ae29-473e-96bc-86ff1ead24ea",
+      "payload_sha256": "d6658c7bea432811ac2ceb35748ebb3c42d704ec2444dbe01dfde90f68a8c6fa"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "a45c277e-55d9-4e7f-b1de-37fc2e19daf6",
+      "payload_sha256": "2bbfe441185ada6b221799e26c28fe6d46a8b557c926602fc618c3a99ac86c47"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "a8aa19cc-e4d1-4aa1-8c4e-2a518b4c99d6",
+      "payload_sha256": "adce34ab10c9f00111dfb9fa3c4b5a7584a9caeb792a1c893e91c869e05a0159"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "2c3ba95c-47d5-4798-9911-ffdb11c940e4",
+      "payload_sha256": "4931e99358fb8a04f515c13a1694b49bfc1273b29898439e55f18c96d3e7c978"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "49d2630e-9d26-4e12-89a3-3050a609abf5",
+      "payload_sha256": "20b4790c168e8df0bc78902d758d39e47d36207dedbac05fa9f49c36cf41cc73"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c758f685-ba4a-4bf0-bd85-567c60ff1508",
+      "payload_sha256": "0b6d04a2c9c0cab40f2d4776b45d7baff9f871e0adbc72573b188bb131519c67"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "5966d3db-5a23-4ea7-a719-2472019d94a6",
+      "payload_sha256": "5a6d5790197ac336fb59b484cb6343602302aeba18c00163369ff151575072a8"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "fd54d745-447c-4fcd-80de-463fcd3de6a4",
+      "payload_sha256": "cb04a7cbd2c20654a607de3368bc564dd4a29a78d955269aef07e07fb0992b95"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "3f5bae15-bd5d-43e3-8e5e-944b1e533529",
+      "payload_sha256": "b0a5565b72d145d46b2a9b8449c9734a09fc1a01301906c83e2444ac5333fbb3"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "4d11258d-ee8c-4bc7-91a8-613c7a41f139",
+      "payload_sha256": "fb33a701145a488fcbd9383c4fa7078b0e94577d8a2ec9192a99bb16c10e5959"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "178a5e56-340f-4ba8-a3e5-f024ca016f40",
+      "payload_sha256": "1ad6088be7e58848a475550cf2ac924c0676c0732c26ab733a1bf8505f441a84"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c75879f4-9329-4594-8f6a-c4d421f2439f",
+      "payload_sha256": "e1c0180fca6554201a85d9a9b09e8c47ddc26b0ea5af3e4a0127ddd4d2f1bae7"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "b2a0249b-2850-4576-8b78-8408c1e47324",
+      "payload_sha256": "fcbe86e9881a24e543882e33ed1e137bb2cf7e42abe51bb5a57758164e95d596"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "f7346ea0-5f1b-45e9-a1d6-493c754159c1",
+      "payload_sha256": "64a3fa1a8270c64a7a20810ef843e190e8ee6627a96a8012580ea349e799aa36"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "3d3fea17-c8ee-4005-94cb-d8798be696c3",
+      "payload_sha256": "4aa82b965cdf26a2614e98b1c36ed1485ad4fbf60daeaa527cf48972ffd71e1b"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ab58e166-f0b5-49ae-ac56-c38b5d6e8aad",
+      "payload_sha256": "41e3b655c2d4488f23e4d8c978aa86638957ad19597c355f13d708a63d0ba182"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "a73b2c2d-a3ac-49e6-8e2e-44b4c1e6de94",
+      "payload_sha256": "fe817732c6cf9c2123234e536bc2bacd99774551a2158436f39ca9c4d01047c0"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "04dbe07d-8b2c-4daf-b5b2-ef0e93f1fd2a",
+      "payload_sha256": "920a807f8b31af132cdc9ddfa289a9b18c371ebc191c88f59576b07a255f0f94"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "4a6705b5-85e5-44c1-8444-65be30192802",
+      "payload_sha256": "240504957a7e9b770492d620ac089cabd8a0768716ab65d4baf5b9a5c9e1d3b7"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "08397294-3d99-4790-915c-b8bcb1e9e661",
+      "payload_sha256": "f5d339b9dd874d0d55fc2d675a75b9f5d983ac08c65c2307ac9f4eb6e00256f6"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "837b2489-723a-4099-9b68-c2a9ea688f4d",
+      "payload_sha256": "5f1baabf9a99d66aeafa3757564476b606242c96ba22c93ccbbbd7ebb5ef5572"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "745f5a0d-5f8f-405e-bb46-f37b3d1f0678",
+      "payload_sha256": "7c5b6f5f7ef5a79bb72289d4122d20fa964d94bf603561d24c3e9c8e2ed7d32b"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "bca1be77-208b-4d57-ac29-05aa6d58bdbf",
+      "payload_sha256": "a23c6f7b9940b393de3098fefe70ec2221264acbb30c7c49b47284d28021563f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "2dc20a2f-de54-4bfe-a34f-1ba395f342cf",
+      "payload_sha256": "0d055a535a8506f7285f8a66987625d962ecaf32cca7d42173b4c8a9e84a0d98"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "afb36e40-0836-4810-909e-eabfe17dcd8b",
+      "payload_sha256": "64608a34a857b48c833f66afff2ac414aee97da3a2e0541f4d4be414bb171244"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c6f097c9-2216-4e98-af45-8101681b38ec",
+      "payload_sha256": "21eeba83fc1befd26bfb7703fa0260ea2a1aab07aaaae9e90c1f1ac54bdb8ff8"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "9f797d29-9f3a-481d-b2fe-326cbc686273",
+      "payload_sha256": "595bfd657036adf868c1037b25e8c7f635fccc92c13bd4dac98151950b90aedc"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "0d5cf8a7-a240-4a8f-be4e-c16712f90d79",
+      "payload_sha256": "ec62436a595c93ca512797dbe2adbf4d443990a82eb297f19fba6a35799aa4f7"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "40400348-eabb-4b25-90d1-e33589d3e5a4",
+      "payload_sha256": "1addee03c8415303df41740cc0867d3ba7910e9e8607b51d28e35b2e9b1e145f"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "4949fc05-5f78-4dd0-8d9c-3dbb6004740a",
+      "payload_sha256": "f61c301f2a1016b452ac24beac847f7f2e4521a2153b9b7720e64c9c70e81dd0"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "c7b36a1c-ea80-4ae5-b2f1-3932cb16c3cf",
+      "payload_sha256": "1f5314f9369a3dfb2d1ac4c854a6489884f3a201536f1821a40bb0d65732f930"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ebe57888-662f-488f-ade1-c0aaffe638b1",
+      "payload_sha256": "e1e3c6ee34a97343be0b186d3e6e67090fdc120e816eca268fa12e849d059e35"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "ef07d562-fc18-43c9-8201-7a189d76eeb9",
+      "payload_sha256": "27ad95eef034b40c6fbb199d0fbdf34fb9591379c44b6467aa7b28814d4cdf36"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "b331480e-dfc7-4e92-931a-c71f491c4795",
+      "payload_sha256": "d1e31f310cda78b530851e06faae383aac17276eeda620c40f74a123f8334540"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "58950824-2665-445d-939b-9512d5d01a2b",
+      "payload_sha256": "9b1e17e44c4e374775d1c840332d83b9ce56aea40ed8d79affa17ca43ea233f7"
+    },
+    {
+      "task_id": "B01",
+      "case_id": "8d12cb90-73c6-4cc1-9f83-0fa9fd822e92",
+      "payload_sha256": "c185f8b38f534627855e65e0c0a3f74e4668cae6a6e6ac90b743795ffac10155"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "0284e566-0c84-4333-a44d-12bd6c4c9a9c",
+      "payload_sha256": "c7bc2c2529bb8606c2984f00a10db981e286b59c40978a862efd27d6cad73552"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "02af18a7-aa18-4f4a-bc40-a8e81b4258dc",
+      "payload_sha256": "2f9b2592639ee905d349956a182b81ecbe975dfc9d9beaa469415326ada8ea2b"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "0348e600-f5cc-4fa8-89eb-d2cb3ae18752",
+      "payload_sha256": "980bd80131d4960c1de78851bb87ddd12061f59f68495eafa1ec8f52b88e58d3"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "03f5a91c-f167-475e-8ccb-4c7561c767a9",
+      "payload_sha256": "4ba05ee63cf92609e49bec90163ad463628ac9f362837703883fc8ef21ca6de0"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "05e60207-57a7-4b6b-b294-354893a3d246",
+      "payload_sha256": "1ef091d8912c27bde70149d23512a3e4389811ceba2995c770a9dec3cd889ca4"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "1026513d-a087-427b-ab16-8a7c199e039e",
+      "payload_sha256": "37c0cba0581e50d3f1441be976debfa3dd3cb73d07ed485edadd33a63f518563"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "10512e71-a619-42ab-8e1a-3b5b4decda5d",
+      "payload_sha256": "1cf94e1a00aab226fdfbcb9bc16b0a96ec44bcb345aa56a858b6e9cdb10299e5"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "11c0a95f-70e6-4e5b-9ace-0cf6b97ad83b",
+      "payload_sha256": "987442f672cb371aa1f13c349d3a217150bd2ff2da2a1b76c7af5f749b6d66cc"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "181019ef-1151-4668-9178-13641d24bd85",
+      "payload_sha256": "a24a5b84d45704d3b62ffa96a1ad0d11af4caabe7bbfbfcf90b7d34a3b38b091"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "19b4836a-0635-4aad-9817-8934cbb7ca73",
+      "payload_sha256": "07a2f61034e4e81c36586ba8e8d49fb995b1a9ed293ae1fe4ab96793ed4117c1"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "1b0eaf02-0861-40b6-89bf-a267c9c8c206",
+      "payload_sha256": "e44f3592501d517b8121ca80c6b128ab3b0c56a67ad36a3a7e2c365a0bbf83b4"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "20c5295d-7cce-4a70-b950-640ea6e69806",
+      "payload_sha256": "02f0902778c9edbc5dd138e66aae6dbb259c36d3e0f4db411db958f36b378d12"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "27685d85-ec01-4ba0-a690-35a89b609105",
+      "payload_sha256": "ccfcd30e7d14d3b920550f7dcd794e6fc6894de02e1fe18828195386c1bfd3fe"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "2a34cefb-d28e-426e-a925-829bda3435d8",
+      "payload_sha256": "74c60e765f839af1f753583457211d75acd45e884d203a448ed2f8d985aa2686"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "2af1880c-a4dc-4da2-b4d5-131ef96c6350",
+      "payload_sha256": "71e06cf388796b2db910235cf792644afbe675de9199c8635df7b3f5a8650b94"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "3041bea7-5161-44e8-abcd-ebfb404a1553",
+      "payload_sha256": "e31d727c883e9a8ea6875c5601cf39388495c2cd23b1deeb981210c5e87c732e"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "30fce0db-9bb8-4a89-ae5c-78f665da41f6",
+      "payload_sha256": "cb1caa8553b0c26f3d35689a244019b3ba4b54d7d183b85da84537787699bf48"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "311df379-df7a-4410-a32a-8bbb79376304",
+      "payload_sha256": "6bacd72b86e3034246d44c1e95ab191b68c4e1666c85c18f04ed3bd997d4f528"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "3417bcfa-c37a-4e25-8a0c-1fd963741eea",
+      "payload_sha256": "e196cf9af7982887cc9ff2cd1a1cb57f2e28689c1572c4605f53e1c08ac0daf9"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "37730e76-f5dc-42be-91c1-3f69147b465a",
+      "payload_sha256": "e6afe48d294f3f69fe047291ac7aa1a845101c2d6545a3bbee64f00a657d7eb3"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "38217b58-50a4-4376-b35a-78b8c5c1a980",
+      "payload_sha256": "097bbf3ae38eb860293e3c49206e1c2c5cf6f37dbd58f176faa192aa06c2e5ca"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "3bee1e75-3b9c-4270-bb9e-e65b1a941b48",
+      "payload_sha256": "000236e187dc606ab71780ab40d19f69e70d9f485224f38260f3aecf7c04da9a"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "404f6ac4-0605-406b-b32e-0fc14d1600f4",
+      "payload_sha256": "d8878c2a4a9b6f0a8725aae283a161182e739d7f13c3dc6adddcd9eb4f300d08"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "41478c97-f6f8-47f5-818b-1db407be9075",
+      "payload_sha256": "ba87b83dd47ada18964b4afd4df9f21efc3fd7ba3dcb182092162972702feedb"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "459ee10b-aa46-47ad-af55-8c0e5a0015ef",
+      "payload_sha256": "0c1d6b9681d4c3aaa226ffe6b1cfcd2ac0f81986312fe0c006b038d6560e2536"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "4b3bbf7d-e352-4ff9-b79a-65d15566de13",
+      "payload_sha256": "95d9faba52c926607d553b930b4df6884c7e430f92a4120bb9706030447f0570"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "4f3bd821-52d6-4875-b8ec-d92ca0fe644f",
+      "payload_sha256": "5ce38bcaca7203591057b42194aaf99ca12f5c4b2b33ad083bb82809ddeb2116"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "58c7753e-549d-4fea-86b2-54fbdbf7ada9",
+      "payload_sha256": "4ded33e6ac62a5d9d5489c335af76a3cb1cdabac6d0aab81c4cdc4b43db3da8e"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "59bf5188-9844-459c-94cf-89ed8cd3287f",
+      "payload_sha256": "386215c4bdbd33c0b55fc5330a7a65048f6cce7778891037103248a66900c615"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "5a974da2-cca9-49e1-a421-e6d3ad9c17ee",
+      "payload_sha256": "88ae05b6d7a641468cf6b4c385b03ddc4ac8fd502629762e1b59e8838be7bc92"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "5d457a9d-4f9b-4ad9-aac3-dd15e60f00cd",
+      "payload_sha256": "fe6a8ddc334c10d6f9f830b630949c6f02727b449bef0bf81538df3b2b72e0f7"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "5dd6b784-487d-48bd-ac36-9653fc11c0ad",
+      "payload_sha256": "3b25a33519d51a90bae22e64145483f465220abefb63a9583256a6050132d752"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "6b6dda99-3651-4bce-86c9-4fc2032479db",
+      "payload_sha256": "d4dec199df3eea457ae3c5c48eecac6fec5baa52aca275d56f3f49956dc5aaca"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "70be3149-5beb-443f-bfe8-cf14da0dd59c",
+      "payload_sha256": "9607dcc3ea9bb6e44c8af0d8dd8b27ffb6c5ec685cbe1d69013797fe0b7a3d91"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "72434cfd-5cda-48e3-942f-12c99104b8a1",
+      "payload_sha256": "d36278366bdb999edb52b50dac3ee35514dad74f68114a8a5c679ddb5a9a0462"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "74884486-15bc-45de-9174-2efe35a2c8fc",
+      "payload_sha256": "fc7b5bf5ae0d0941b7439b4aa5a04ef082965000dc1a1509cc867624e5b91de3"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "7faf65d7-55c9-4586-9e1e-9d4e39e93601",
+      "payload_sha256": "8ea0e958671fd5e1cf62514b3b2bb44d804c5a7989834fca8652de1304c8589b"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "823bc7ee-a275-46a2-8143-7aaf057fe331",
+      "payload_sha256": "50d0daf0caa3af9f40ccdebf3352b336fc4c727f9ebaf6893cf4ecc4fda43db2"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "8719a6b8-76e9-44ae-b26b-65821de0ac99",
+      "payload_sha256": "36d15d79f5a1567447ae5330c2eb980560b072804c8e492233dc7aa1c04ea4b3"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "8ba7a888-70c6-404e-949d-60e4145b8eb6",
+      "payload_sha256": "234c29aafe78ca1a72e8719f4f72927dde62a25ba20467969ae9d4be66005339"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "8c2e99ce-7af0-4e73-a058-151135647076",
+      "payload_sha256": "9e753714bbe638fa286d25f5b4cb3e2fba37c876f678e495cb61110ddeca9034"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "93099819-56be-40bf-b54d-427b663a2381",
+      "payload_sha256": "79970b2afe8f77b1300ea7b4fae7bbde0d41e01ae3396e72cee7a7f14c2272a4"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "93566dc3-5f5c-491e-b723-60712cca625d",
+      "payload_sha256": "e56f640d88a848966f1a8a0337d166e0e1a90ab44293ade4f8a7575ec6faf03f"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "9379deb7-21f2-4263-86f8-2d15d1a82160",
+      "payload_sha256": "5ee47444091a530b6da081fa7087f7609ae26a36286e0a6f3bf76adf9fa05700"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "966e60e1-6b15-4105-b2a4-b1859e1963fc",
+      "payload_sha256": "dacaab3931227d03e40de1275fad574bf3c1c1b138a78043847c7cf815c1b3d3"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "97e98c7d-105b-4af5-99be-6e1fe4a2cce6",
+      "payload_sha256": "4205c41cacd9cb96fddc53d403a3109f45f049f55314f9775bf29c25d875c226"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "9b972351-d2f8-4491-8a7c-3fb5a3e429a9",
+      "payload_sha256": "a6b429da9f113e5f7a71a89eaaa3307a18564a556eb2f9991f45683e26707ce3"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "9dbf4365-801d-42f9-80a9-357b4d93c793",
+      "payload_sha256": "fa9dd2c1bc8041df91eac3e0e018319b4f65613a1759a6c31053236fd79ad6ff"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "a140f0c0-8b5c-4670-8716-22c93ad45c06",
+      "payload_sha256": "8c2ae49221e060e1b5ebb1b323da8335f6094ed4aab5a87308d526cb9a233ae0"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "a1cf5586-4afc-48e6-a0d2-9554f9413983",
+      "payload_sha256": "0385ed824d9de57fa5aecb8d5ef61e72ede80f59202f4b86d68e87a33b7586e8"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "a49b9aa0-8b29-47ba-a757-9f247b37b47a",
+      "payload_sha256": "608adcb44bc9983e71ed73279d18ade1331dd901cdf21cc13351e8246685f5cc"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "a5eff44a-ec71-44a8-bdb6-173fd9ea92ce",
+      "payload_sha256": "22336d100c9262132a1556c16876221697c39ed533e8fca75a13507ddcdfe35b"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "a8b1cd02-4bd9-43ad-927e-c2c4eb7c528b",
+      "payload_sha256": "ef4d5261ff32598de135b0b6699609b7e0dcfe646953ccf2dba520541e29d275"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "aa904a36-3656-45a8-a0d2-912c04dd2558",
+      "payload_sha256": "5e09c1b658eb5a307a801463d10ef901109e5308d8bc96b4242c2df9b605bf61"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "b226af16-8f63-4e2d-bf3c-c94a1cc2e32e",
+      "payload_sha256": "edb3d2ab70294942648482c82343fccca429c02416da2df56e723bbbd6a9526e"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "b3d8ddd1-4829-405c-b72b-f5dcf114636f",
+      "payload_sha256": "4e88eb9bbbd7b6c95c19b6bd98abb0315d3a7d3feb2d4f316b8afe4e6543edf2"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "b5dbe6b5-95e5-4c1a-810f-8877c6d46c72",
+      "payload_sha256": "a8fe588727f56a67138888b6173b9d429e6761c819317e57c669326e3b9ce88d"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "b6b4077d-a0db-4d26-9b3c-57fc469ad431",
+      "payload_sha256": "78497f21e93a77f677445fa39b491fc6b14a40bc4c9b956504ff3254338f1bb2"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "bbb9143b-6f7c-4960-bd44-ab8972a1da27",
+      "payload_sha256": "402d492652f943a243203cd3803c9a234091f6b247834be9d03f686808f0a1e5"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "bbc4ff4f-89f6-4f27-99e1-f03482feeffb",
+      "payload_sha256": "5f4ab09b3c1cdb93a99a6694097a1ed10d8ea0ca46ae5650ac53a40d70cea80d"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "bc806521-164f-4f66-90e7-9d28f5fc319e",
+      "payload_sha256": "4dc36a1a7ce5b0f6b273f11d24cc77a2ac672a1dc6c741b62c817513809e41ad"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "bd08e5ba-e26b-4258-b3a2-543c842d028a",
+      "payload_sha256": "d4540c315e4a7116178c7390a3a8f5e2ed5b56e40b0383ed7bdafb65502f8ca0"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "befeb56e-6f04-4be7-9304-4ede1bdd25bc",
+      "payload_sha256": "c4d3c7223edd83d535d5dec9f446aea4438a50bc1ae9a6492fc6d5aed847a33d"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "c04cc31d-9aee-46bf-9628-e153c72a44e3",
+      "payload_sha256": "4d8ee2dd8dcfe182825d8176fdac0f07062137c89d5f2baff805b8697d1e811b"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "c81b515b-c24d-4937-b972-67d89fc7a09f",
+      "payload_sha256": "c1efededcfd28461730f7a2f014bde68952ece8ccd37baa9f99ebab09da153b8"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "c8e4f3d2-2fb3-428f-bb02-8593513efc54",
+      "payload_sha256": "2b9285f4a454785b3742b903eb9c2fb3c3a6f486cd94977611f530aa466f3584"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "cdab2021-feed-497f-992a-a8f73df33957",
+      "payload_sha256": "e1645123afc8e836ebcfb13369b68e5cfe84af7048164a6dc3ea944ba154af44"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "ceeac89d-59c1-48a7-93db-46b045391906",
+      "payload_sha256": "09301efae978834f7b1507d9f16dcf678906899694355fe73516a4dd859109b4"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "cf4608f5-2241-4c3b-a85a-7d2cda3733ee",
+      "payload_sha256": "edff38ef59844ee179501ec08308e0fa2d92c545c8ac2aae29f80f47ac235b20"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "d454257b-b65f-4ed8-9873-07d0d685fb40",
+      "payload_sha256": "cacf1bb6c4b7ab819ab182165fd128eb6c47dd8326c0e4fc30c76ec7b42d1b16"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "d540a38e-6247-4a19-8752-873b792ff3d4",
+      "payload_sha256": "2035079780e03306c84d8d78fc3cf115801d00f9d22a12485a4235ca40c91b40"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "d57031ac-e7d7-4274-876b-36449ecdd640",
+      "payload_sha256": "a4bdc0ddcb81269c7c7037f009a4615fdaeb8a425d31dcf3ef3339c452cf4aba"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "dce3628e-905d-4b90-a6d0-877a2ccbbc33",
+      "payload_sha256": "d44e00d503fb41e048364dbc7e5bee938cbf679d0172524fbea90aa185c74732"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "de9956c2-4b42-4529-8926-48848c8237f6",
+      "payload_sha256": "218b6c42a16b8bc955f1b09dac273e6469d3b8f5ad630b93bcd79c556ebcb7f8"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "df1365b0-4731-4f40-8dd7-64f4793a1729",
+      "payload_sha256": "add055cd605932d82ec815f8c21cbc22ba59c38f751bc461af2aeea0adc7fbf9"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "e3857371-2a36-4019-b23e-177b4b5a4be5",
+      "payload_sha256": "7f9ce41bf250c22d8f68199fa3f79de5373a3f561f11daa0c6e3ffc3d1ca13e8"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "e5ed958b-1cc9-4848-8e37-a895beb835e2",
+      "payload_sha256": "c44d057bf50d9bb8e7a34d7d56e27ae437f7124f28c85bae96a84589f6f190a3"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "e77c9e8d-087c-4be1-90b5-987f36cbc27a",
+      "payload_sha256": "95f4cc06e5d7b896dc9cb1b5b60212de2b6228c15d09c907ee0769f8f2a0ef0d"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "ea25f382-3885-4294-875e-10fccf6f4b3c",
+      "payload_sha256": "2129acb0e264e4392880261a028d7617d831c30dd458c224c220bb322d731517"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "ebb6a0ef-5421-4392-8717-f574c9600842",
+      "payload_sha256": "2112779a6d7ea8f5be26ef41dbc86d7277fe848a0cebd591f79f558f2ac4adc4"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "ed0ad27f-c1ed-4796-a8f6-dd49c66b2515",
+      "payload_sha256": "e730252022d25fb8ca385b8b2c44db2ca9cfd8ba03feb70618f143be8be24f3a"
+    },
+    {
+      "task_id": "B03",
+      "case_id": "f13fbc77-553f-4a4c-b29b-ca178262eeef",
+      "payload_sha256": "0105c71109b3b9abae287c016630658dc78d1122d7a38fc3b754f316ce32d7f9"
+    }
+  ]
+}

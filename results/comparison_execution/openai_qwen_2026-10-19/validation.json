@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "file": "text_development_requests_proposed.jsonl",
+      "cases": 12,
+      "payload_structure_and_hashes_passed": true
+    },
+    {
+      "file": "p03_validation_requests_proposed.jsonl",
+      "cases": 12,
+      "payload_structure_and_hashes_passed": true
+    }
+  ],
+  "new_inference_calls": 0,
+  "api_mapping_executed": false,
+  "delivery_performance_measured": false,
+  "independent_target_review_required": true,
+  "note": "This is frozen-input integrity, not an API or biological-output test."
+}

@@ -1,0 +1,239 @@
+{
+  "schema_version": 2,
+  "comparison_id": "openai_qwen_matched_public_tasks_2026-10-19_v2",
+  "updated_at_pacific": "2026-10-19T14:13:04.827210-07:00",
+  "role": "scoped_execution_plan_not_a_runtime_dispatch_authorization",
+  "status": "development_and_runtime_receipts_required_before_test_dispatch",
+  "new_inference_calls_recorded_by_this_plan": 0,
+  "models": [
+    "gpt-6-luna",
+    "gpt-6.1-sol"
+  ],
+  "archived_baseline": "Qwen/Qwen3.8-27B original BF16",
+  "current_user_authorization": {
+    "instruction": "let's go for this openai eval",
+    "accepted_scope": "New reviewed benign fixed-case comparison and independent task-specific development checks. This is not a blanket resume of historical OpenAI tasks.",
+    "global_hold_record_preserved": {
+      "path": "configs/execution_authorization.json",
+      "sha256": "402aabf83588881db4f02eef30f4b87c8a03432f19e1e091a1dc6c5492b66bc4",
+      "bytes": 948
+    },
+    "provider_response_reported": false,
+    "provider_warning_resolved": false,
+    "flagged_P18_held": true,
+    "two_previously_held_B01_cases_excluded": true,
+    "stable_private_safety_identifier_required": true,
+    "identity_rotation_or_provider_rerouting_for_policy_rejections": false,
+    "stop_rule": "Stop new dispatch on policy or access failure; retain all outcomes; no automatic retries, replacement generations, changed identities or changed providers."
+  },
+  "stages": [
+    {
+      "stage_id": "publicqa",
+      "priority": 1,
+      "committed": true,
+      "task_ids": [
+        "B01",
+        "B03"
+      ],
+      "cases": 279,
+      "task_case_counts": {
+        "B01": 197,
+        "B03": 82
+      },
+      "condition": "closed_book_biological_literature_and_paper_specific_qa_without_retrieval",
+      "models": [
+        "gpt-6-luna",
+        "gpt-6.1-sol"
+      ],
+      "status": "pending_model_specific_development_delivery_evidence"
+    },
+    {
+      "stage_id": "localization",
+      "priority": 2,
+      "committed": true,
+      "task_ids": [
+        "P03"
+      ],
+      "cases": 2773,
+      "condition": "full_published_sequence_plus_same_complete_ten_class_ontology",
+      "models": [
+        "gpt-6-luna",
+        "gpt-6.1-sol"
+      ],
+      "luna_status": "pending_p03_development_input_review_and_freeze",
+      "sol_status": "pending_budget_review_and_p03_development_input_review_and_freeze",
+      "not_optional_sequence_task": true
+    },
+    {
+      "stage_id": "vision",
+      "priority": 3,
+      "separate_condition": true,
+      "committed_to_this_dispatcher": false,
+      "task_ids": [
+        "B04",
+        "B05"
+      ],
+      "cases": 425,
+      "task_case_counts": {
+        "B04": 181,
+        "B05": 244
+      },
+      "status": "separate_image_bytes_order_and_detail_contract_required; no dispatch by text-only runner"
+    }
+  ],
+  "generation_candidate": {
+    "max_output_tokens": 4096,
+    "reasoning": {
+      "effort": "medium"
+    },
+    "service_tier": "default",
+    "store": false
+  },
+  "decoding_qualification": "Qwen temperature/top_p/top_k/seed do not have portable reasoning-mode equivalents. Keep exact task input, disclose model-specific sampling, and do not interpret equal token caps or medium effort as equal reasoning compute.",
+  "development": {
+    "budget_delivery_validated": false,
+    "report": "reports/COMPARISON_DEVELOPMENT_GATE_2026-10-19.md",
+    "readiness": "reports/COMPARISON_DEVELOPMENT_GATE_2026-10-19.json",
+    "text_cases": {
+      "B01_like_newly_authored": 6,
+      "B03_like_newly_authored": 6
+    },
+    "p03_official_validation_cases": 12,
+    "budget_ready_requires": "Completed model-specific delivery records, reviewed native and strict answer delivery, actual usage/truncation/error counts, and frozen residual-failure policy before held-out correctness.",
+    "limits": "A small independent development panel is an initial check, not a guarantee of benchmark reliability. No benchmark case is relabeled as development."
+  },
+  "solver_boundary": {
+    "dedicated_field": "payload_without_private_safety_identifier",
+    "permitted_added_execution_metadata": "Existing stable private safety_identifier only; never put its value in public artifacts.",
+    "fresh_request_per_case": true,
+    "tools": false,
+    "retrieval": false,
+    "previous_response_or_conversation": false,
+    "dispatcher": "scripts/run_isolated_openai_comparison.py",
+    "filesystem_isolation": "Linux Landlock worker permits only minimal bundle/output and required runtime files; deny repository, labels, reports and Qwen results.",
+    "hash_policy": "Verify frozen prompt, choice order and allowlisted fields immediately before call; record public payload hash and hash of actual submitted bytes including private identity.",
+    "invariance_test": "tests/test_isolated_openai_comparison.py",
+    "prediction_lock_before_scoring": true
+  },
+  "scoring": {
+    "policy": {
+      "path": "configs/comparison_answer_policy_v1.json",
+      "sha256": "81bcae4b7b0ec0303fda77c6804280da124824635ba86be7d96381a7e0404604",
+      "bytes": 2050
+    },
+    "scorer": "scripts/score_model_comparison.py",
+    "contract": "reports/COMPARISON_SCORING_CONTRACT_2026-10-19.md",
+    "metrics": [
+      "native_all_case_accuracy",
+      "strict_unambiguous_all_case_accuracy",
+      "usable_answer_rate",
+      "native_non_abstention_coverage_separate",
+      "truncations_empty_finals_refusals_errors",
+      "actual_usage_latency_cost"
+    ],
+    "paired": [
+      "both_correct",
+      "openai_only_correct",
+      "qwen_only_correct",
+      "both_wrong",
+      "accuracy_difference",
+      "exact_two_sided_McNemar",
+      "paired_bootstrap_interval"
+    ],
+    "grouping": "Keep DOI/paper grouping where verified and complete; otherwise label case-level uncertainty. Protein-family dependence may remain unresolved.",
+    "failure_policy": "Every declared case remains in the denominator; no selective replacement. Score native and strict outcomes separately under the frozen symmetric policy.",
+    "labels_source": "Hash-pinned original scorer references, opened only after complete prediction locks and associations pass; never derive labels from Qwen correctness flags."
+  },
+  "budget": {
+    "agent_imposed_initial_guard_usd": 50,
+    "guard_is_user_numeric_cap": false,
+    "pricing_checked_pacific": "2026-10-19T14:13:04.828359-07:00",
+    "standard_usd_per_million": {
+      "gpt-6-luna": {
+        "input": 0.1,
+        "output": 0.5
+      },
+      "gpt-6.1-sol": {
+        "input": 2,
+        "output": 10
+      }
+    },
+    "output_only_ceiling_usd": {
+      "publicqa_279": {
+        "gpt-6-luna": 0.571392,
+        "gpt-6.1-sol": 11.42784
+      },
+      "p03_2773": {
+        "gpt-6-luna": 5.679104,
+        "gpt-6.1-sol": 113.58208
+      }
+    },
+    "input_charges_additional": true,
+    "development_charges_additional": true,
+    "prices_are_not_measured_bills": true,
+    "p03_sol_budget_review_required": true,
+    "p03_sol_reason": "Its output-only ceiling exceeds the initial $50 guard; no automatic Sol localization dispatch.",
+    "sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+    ],
+    "conservative_input_token_reservation": {
+      "rule": "frozen UTF-8 user-text bytes plus 100 tokens per request; planning reservation, not exact vendor tokenization",
+      "publicqa_279": {
+        "user_text_bytes": 219247,
+        "input_tokens_reserved": 247147,
+        "input_usd": {
+          "gpt-6-luna": 0.0247147,
+          "gpt-6.1-sol": 0.494294
+        },
+        "total_with_output_usd": {
+          "gpt-6-luna": 0.5961067,
+          "gpt-6.1-sol": 11.922134
+        }
+      },
+      "p03_2773": {
+        "user_text_bytes": 5293482,
+        "input_tokens_reserved": 5570782,
+        "input_usd": {
+          "gpt-6-luna": 0.5570782,
+          "gpt-6.1-sol": 11.141564
+        },
+        "total_with_output_usd": {
+          "gpt-6-luna": 6.2361822,
+          "gpt-6.1-sol": 124.723644
+        }
+      }
+    }
+  },
+  "interpretation": {
+    "inference_time_separation": "Audit that actual model requests contain legitimate fixed task inputs and no added gold answers, Qwen solutions, correctness flags, key passages or scorer-only labels.",
+    "training_exposure": "Unknown for both models; public-question/protein novelty is not established by clean requests or a canary.",
+    "suppqa": "Title and DOI do not retrieve a paper. This condition is closed-book paper-specific QA, not reading an unfamiliar supplied paper.",
+    "allowed_claim": "Named model conditions on these fixed tasks, inputs and output budgets.",
+    "not_established": [
+      "faithful reasoning from a correct answer",
+      "unfamiliar-paper reading",
+      "novel-protein generalization",
+      "one overall biological-reasoning verdict"
+    ]
+  },
+  "preserved_preparation": {
+    "commit": "d7832220e36c0e7ec598b36588dd0a1f378ac376",
+    "original_plan": {
+      "path": "reports/GPT6_LUNA_QWEN_COMPARISON_PLAN_2026-10-19.md",
+      "sha256": "0c1ee764c928d21ed45e79e4d3a4555a0a973f3845ef8bf453c19e3310fca0f0",
+      "bytes": 7648
+    },
+    "original_proposed_config": {
+      "path": "configs/proposed_gpt6_luna_qwen_comparison_2026-10-19.json",
+      "sha256": "cbba5c9b44a17aa566b1d8797095b985d9c4cae0193d97e0e62519d18342f02c",
+      "bytes": 4120
+    },
+    "original_draft_requests": {
+      "path": "results/comparison_preparation/gpt6_luna_qwen_2026-10-19/luna_text_requests_proposed.jsonl",
+      "sha256": "12d7374f6c8a50908eeae4bd90914f5292de0a9e7ed182a988b96f287db99620",
+      "bytes": 466687
+    },
+    "note": "Original draft request/config bytes remain unchanged. The old optional_sequence_task key is archived planning provenance and is superseded by committed stage 2 here."
+  }
+}

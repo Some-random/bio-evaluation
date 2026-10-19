@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "checked_at_pacific": "2026-10-19T14:15:27.576606-07:00",
+  "status": "zero_network_validation_passed",
+  "dispatcher": {
+    "path": "scripts/run_isolated_openai_comparison.py",
+    "sha256": "c8184228dcdf78bd9e5c837631882c004f211a195af70535431a1230d3ad1ae8"
+  },
+  "tests": [
+    {
+      "path": "tests/test_isolated_openai_comparison.py",
+      "sha256": "460e5e364508a93cf02908b340d539d258231df32f6d1e885d320266a158b8db",
+      "passed": 19,
+      "failed": 0
+    },
+    {
+      "path": "tests/test_score_model_comparison.py",
+      "sha256": "b25a37030da898631ab6b43f8cb0e274261b156ead9983774b852094111a8c4b",
+      "passed": 20,
+      "failed": 0
+    }
+  ],
+  "integration_terminal_outcomes": [
+    "completed",
+    "truncated",
+    "empty_final",
+    "http_error",
+    "transport_error",
+    "refusal"
+  ],
+  "proof": {
+    "actual_kernel_isolation_receipt": {
+      "abi": 4,
+      "mechanism": "Linux Landlock",
+      "mode": "dry-run",
+      "repository_read_probe_denied": true,
+      "secret_fd_closed_before_isolation": true,
+      "unrelated_files_denied_by_default": true
+    },
+    "summary": {
+      "empty_finals": 0,
+      "new_inference_calls": 0,
+      "not_dispatched": 0,
+      "planned": 3,
+      "predictions_lock_sha256": "569cde203b11bf25b2da5337282383e0c14d8711fc0ea11653b49236c8badec6",
+      "refusals": 0,
+      "saved": 3,
+      "stopped_after_provider_policy_or_access_error": false,
+      "transport_or_response_errors": 0,
+      "truncations": 0
+    },
+    "bundle_manifest_sha256": "b3d04429e2c3f765334d282d1d6b4ea72a1ec5b41282439d165012cc17178984",
+    "outside_bundle_probe_location": "Temporary synthetic file inside the evaluation repository, outside the worker bundle and output directory.",
+    "receipt_file_sha256": "215e2c73eacf2b301307228f53c82ebbd337cab148d62821283ee53c846f6533",
+    "synthetic_predictions_lock_sha256": "569cde203b11bf25b2da5337282383e0c14d8711fc0ea11653b49236c8badec6",
+    "scoring_performed": false,
+    "private_identity_loaded": false,
+    "api_credentials_loaded": false,
+    "remote_transport_used": false
+  },
+  "verification_new_inference_calls": 0,
+  "benchmark_correctness_scored_by_this_verification": false,
+  "scope": "This report documents dispatcher validation only. It does not claim that later separately authorized development or benchmark runs have not occurred.",
+  "actual_receipt_verification": {
+    "before_private_identity_or_key_read": true,
+    "opens_and_hashes_actual_files": true,
+    "required_live_cli_options": [
+      "--reviewed-input-receipt",
+      "--risk-review-receipt"
+    ],
+    "actual_benchmark_development_evidence_required": true,
+    "development_evidence_cli_option": "--development-evidence",
+    "development_lock_and_all_per_case_artifact_hashes_verified_before_credentials": true,
+    "matches_scoped_authorization_sha_fields": [
+      "reviewed_input_receipt_sha256",
+      "risk_review_receipt_sha256"
+    ],
+    "required_receipt_fields": {
+      "scope_review_passed": true,
+      "prior_flagged_requests_excluded": true
+    },
+    "exact_reviewed_bundle_fields": [
+      "protocol_id",
+      "model",
+      "frozen_roster_sha256",
+      "frozen_protocol_sha256",
+      "task_ids",
+      "case_count"
+    ]
+  },
+  "dispatch_boundaries": {
+    "payload_only": "payload_without_private_safety_identifier",
+    "additional_private_runtime_field": "safety_identifier",
+    "fresh_context": true,
+    "tools_permitted": false,
+    "shared_conversation_permitted": false,
+    "no_retries": true,
+    "concurrency_default": 4,
+    "concurrency_maximum": 8,
+    "actual_wire_sha256_recorded_before_transport": true,
+    "public_body_excludes_private_identity_value": true,
+    "policy_or_access_error_stops_future_submissions": true,
+    "inflight_outcomes_preserved": true,
+    "complete_prediction_lock_before_reference_scoring": true
+  },
+  "limitations": [
+    "SHA-256 pins are integrity checks against operator-trusted reviewed artifacts, not digital signatures or independent provider approval.",
+    "A trusted operator able to rewrite both authorization and review records remains outside this threat model; the evaluated API model cannot access those files.",
+    "The actual-wire hash records the bytes handed to the transport; it is not a provider-signed receipt. TLS validates the fixed API endpoint.",
+    "Filesystem isolation permits the minimal bundle/output and explicit interpreter/TLS/DNS system paths; it is not a general network sandbox.",
+    "The fixed dispatcher has one API endpoint and rejects tools, redirects, previous-response context, extra roles, and unreviewed payload fields.",
+    "Clean inference requests cannot establish that public benchmark data were absent from either model pretraining.",
+    "Passing serving/provenance tests does not establish delivery reliability or biological correctness on benchmark cases."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "policy_id": "MATCHED_NATIVE_AND_UNAMBIGUOUS_FULL_DENOMINATOR_V1",
+  "frozen_before_new_benchmark_inference": true,
+  "references_used_to_select_rule": false,
+  "native_lab": {
+    "constant_sha256": "71b4a92edfbe5b33e9a327b0773a2ae9cfd9946b48452f13127929a29e91021d",
+    "regex": "(?:\\[ANSWER\\]|\\[ANS\\]|<ANS>|<ANSWER>|<ans>)\\s*([A-Z](?:,\\s*[A-Z])*)\\s*(?:\\..*?|,.*?)?(?:\\[/?ANSWER\\]|\\[/ANS\\]|</ANS>|</ANSWER>|</ans>)",
+    "rule": "Pinned deterministic ChemBench parser, without model extraction fallback; sorted distinct tagged values, then native plain-letter/comma/space fallback."
+  },
+  "unambiguous_lab": {
+    "rule": "Exactly one distinct in-range single-letter tag value; repeated identical single-letter tags permitted. Multiple distinct values, multi-letter tag, malformed/mismatched tags or out-of-range tags invalid. Plain fallback only an exact raw single in-range uppercase letter. No reasoning text, similarity or reference-guided extraction.",
+    "all_marker_syntax_checked": true
+  },
+  "p03": {
+    "regex": "\\s*(?:Answer\\s*:\\s*)?([0-9])\\.?\\s*",
+    "rule": "Native strict ten-class 0-9 whole-visible-final parser, case insensitive."
+  },
+  "failure_policy": "Every planned case retained. Transport/HTTP errors, refusals, truncations, non-completed responses, missing final text and ambiguous strict outputs score incorrect. No selective replacement. Native parser is preserved separately from this explicit delivery-failure rule.",
+  "abstention_policy": "A valid explicit insufficient-information option is parsed, usable abstention; not a missing answer. Native non-abstention coverage is not usable-answer rate.",
+  "uncertainty": {
+    "seed": 20261019,
+    "bootstrap_replicates": 10000,
+    "confidence": 0.95,
+    "grouping": "Use scorer-only group_id for cluster resampling only when complete on every selected case; otherwise require explicit case-level scope. Fixed one-generation paired benchmark, not independent biological experiments or across-run model variance."
+  }
+}

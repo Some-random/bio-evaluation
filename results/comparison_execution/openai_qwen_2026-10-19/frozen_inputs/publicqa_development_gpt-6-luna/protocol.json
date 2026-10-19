@@ -1,0 +1,21 @@
+{
+  "protocol_id": "openai_qwen_publicqa_delivery_development_2026-10-19_v2",
+  "allowed_models": [
+    "gpt-6-luna"
+  ],
+  "task_ids": [
+    "B01",
+    "B03"
+  ],
+  "generation": {
+    "max_output_tokens": 4096,
+    "reasoning": {
+      "effort": "medium"
+    },
+    "service_tier": "default",
+    "store": false
+  },
+  "purpose": "independent_task_relevant_delivery_development_no_biological_scoring",
+  "advance_requirement": "all twelve normally completed, nonempty, native-valid and unambiguous; no provider/access error",
+  "benchmark_labels_read": false
+}
