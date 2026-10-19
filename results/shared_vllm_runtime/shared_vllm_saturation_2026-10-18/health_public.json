@@ -8,11 +8,11 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 7373489.0,
-        "kv_fraction": 0.13827160493827162,
+        "generation_tokens": 7375876.0,
+        "kv_fraction": 0.0864197530864198,
         "preemptions": 5471.0,
         "prompt_tokens": 19329679.0,
-        "running": 2.0,
+        "running": 1.0,
         "waiting": 0.0
       },
       "preemption_delta": 0.0,
@@ -87,7 +87,7 @@
   "plan_sha256": "b0215a7cde359bbf820eb2b7a1891eef7805e78d5989cb8edac150bd61bcfbd3",
   "planned_native_cases": 24061,
   "pool_stage": "evaluating",
-  "pool_stage_source_age_seconds": 40096.25152540207,
+  "pool_stage_source_age_seconds": 40158.28968667984,
   "pool_stage_source_updated_at_pacific": "2026-10-18T11:21:46.059841-07:00",
   "pool_stage_timestamp_is_not_a_runtime_heartbeat": true,
   "recent_response_metadata": [],
@@ -495,5 +495,5 @@
   ],
   "saved_responses_unique_logical_sources": 9397,
   "schema_version": 1,
-  "updated_at_pacific": "2026-10-18T22:30:03.871916-07:00"
+  "updated_at_pacific": "2026-10-18T22:31:05.901905-07:00"
 }
