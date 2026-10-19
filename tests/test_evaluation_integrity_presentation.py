@@ -34,6 +34,21 @@ def document(rows, diagnostics=None):
 
 
 class QualificationTests(unittest.TestCase):
+    def test_missing_design_endpoints_do_not_become_failed_valid_proteins(self):
+        value = row('P42', counts={'planned': 200, 'parsed': 0}, finish_reasons={'length': 196})
+        text = ' '.join(report.presentation_caveats(value))
+        self.assertIn('0/200 parsed', text)
+        self.assertIn('196/200', text)
+        self.assertIn('quality remains unmeasured', text)
+        self.assertIn('not experimental validation', text)
+
+    def test_partial_delivery_and_selected_subset_rates_are_explicit(self):
+        b02 = row('B02')
+        self.assertIn('3/10 parsed', ' '.join(report.presentation_caveats(b02)))
+        b07 = row('B07', metrics={'n_correct': 2, 'accuracy': .2})
+        self.assertIn('2/3 parsed answers were correct', ' '.join(report.presentation_caveats(b07)))
+        self.assertIn('not full-task accuracy', ' '.join(report.presentation_caveats(b07)))
+
     def test_reaction_audit_numbers_require_the_exact_audited_score(self):
         original = row('P16')
         self.assertNotIn('851', ' '.join(report.presentation_caveats(original)))

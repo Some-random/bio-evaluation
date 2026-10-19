@@ -129,11 +129,19 @@ def presentation_caveats(row):
     invalid = counts.get("invalid_outputs")
     length = (row.get("finish_reasons") or {}).get("length")
     additions = []
+    if task == "B02" and type(planned) is int and type(parsed) is int:
+        message = f"Usable-answer coverage: {parsed:,}/{planned:,} parsed"
+        if type(length) is int:
+            message += f"; {length:,}/{planned:,} reached the output cap"
+        additions.append(message + ". Answer delivery partly limits this score; native non-abstention coverage is a different quantity.")
     if task == "B07" and type(planned) is int and type(parsed) is int:
         message = f"Output delivery: {parsed:,}/{planned:,} final answers parsed"
         if type(length) is int:
             message += f"; {length:,}/{planned:,} outputs reached the output-token cap"
         additions.append(message + ". The score includes invalid answers and does not isolate biological correctness. Native coverage measures non-abstention, not parsing.")
+        correct = (row.get("metrics") or {}).get("n_correct")
+        if type(correct) is int and parsed > 0:
+            additions.append(f"{correct:,}/{parsed:,} parsed answers were correct ({100 * correct / parsed:.1f}%) on this selected subset; that subset rate is not full-task accuracy.")
     if task == "P01" and type(planned) is int and type(invalid) is int:
         additions.append(f"Strict whole-final Yes/No parsing rejects {invalid:,}/{planned:,} outputs. Invalid answers remain failures; this does not establish that each rejected biological prediction is wrong.")
     if task == "P16" and type(planned) is int and type(parsed) is int:
@@ -146,6 +154,13 @@ def presentation_caveats(row):
             additions.append("The corrected CLOSED score fixes the denominator; it retains the source substring rule.")
     if task == "V05":
         additions.append("Native extraction scores only the final character; full-text choice matching is a separate adaptation. The large difference measures output-extraction sensitivity, not a controlled change in medical knowledge.")
+    if task == "P42":
+        if parsed == 0 and type(planned) is int:
+            message = f"Zero accepted candidate outputs: 0/{planned:,} parsed"
+            if type(length) is int:
+                message += f"; {length:,}/{planned:,} reached the output cap"
+            additions.append(message + ". Candidate design quality remains unmeasured; zero oracle success does not show that valid candidates were evaluated and failed.")
+        additions.append("The fluorescence evaluator is a trained proxy; proxy improvement is not experimental validation.")
     if task in {"P23", "P24", "P25", "P26"}:
         message = "ROUGE measures lexical overlap, not biological factuality."
         if type(length) is int and type(planned) is int:

@@ -13,6 +13,8 @@ import time
 
 import requests
 
+from openai_request_identity import load_safety_identifier, with_safety_identifier
+
 ROOT = Path(__file__).resolve().parents[1]
 PST = dt.timezone(dt.timedelta(hours=-8))
 MODEL = "gpt-6-luna"
@@ -122,6 +124,7 @@ def main():
     parser.add_argument("--tasks", nargs="+")
     parser.add_argument("--run", required=True)
     parser.add_argument("--key-file")
+    parser.add_argument("--identity-file", type=Path, default=Path.home() / ".config/openai/request_identity.json")
     parser.add_argument("--concurrency", type=int, default=8)
     args = parser.parse_args()
     auth = json.loads((ROOT / "configs/execution_authorization.json").read_text())
@@ -129,6 +132,7 @@ def main():
         raise SystemExit("Policy warning hold is active. No API calls are permitted pending review.")
     if not auth.get("inference_authorized") or auth["model"] != MODEL:
         raise SystemExit("Inference is not authorized for this model.")
+    safety_identifier = load_safety_identifier(args.identity_file)
     key = os.environ.get("OPENAI_API_KEY") or (Path(args.key_file).read_text().strip() if args.key_file else None)
     if not key or "\n" in key:
         raise SystemExit("A runtime API credential is required.")
@@ -150,6 +154,7 @@ def main():
     except BlockingIOError:
         raise SystemExit("This run already has an active worker.")
     fixed = {"model":MODEL, "planned_cases":len(cases), "case_contract_sha256":digest(cases),
+             "safety_identifier":safety_identifier,
              "tools":[], "input_file_sha256":hashlib.sha256(path.read_bytes()).hexdigest(),
              "protocols":sorted({c["variant"] for c in cases}),
              "model_selection_on_test":False, "global_guard_usd":auth["initial_agent_spending_guard_usd"]}
@@ -172,7 +177,7 @@ def main():
             previous = {}
         if permanent.is_set():
             return "provider_blocked"
-        payload = payload_for(case)
+        payload = with_safety_identifier(payload_for(case), safety_identifier)
         request_hash = digest(payload)
         write_json(folder / "requests" / (identity + ".json"),
                    {"task":case["task"],"case_id":case["case_id"],"variant":case["variant"],
