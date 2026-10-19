@@ -1,10 +1,10 @@
 # OpenAI and archived Qwen comparison
 
-Updated October 19, 2026, 02:38 PM PDT. Only complete, sealed benchmark score files appear in the accuracy tables. Saved generation responses alone are not completed benchmark scores.
+Updated October 19, 2026, 02:41 PM PDT. Only complete, sealed benchmark score files appear in the accuracy tables. Saved generation responses alone are not completed benchmark scores.
 
 | Dispatched condition | Saved / planned | Complete output lock | Errors | Truncations | Empty finals | Refusals |
 |---|---:|---|---:|---:|---:|---:|
-| localization_gpt-6-luna | 597/2773 | No | 0 | 0 | 0 | 0 |
+| localization_gpt-6-luna | 744/2773 | No | 0 | 0 | 0 | 0 |
 | publicqa_gpt-6-luna | 279/279 | Yes | 0 | 0 | 0 | 0 |
 | publicqa_gpt-6_1-sol | 279/279 | Yes | 0 | 0 | 0 | 0 |
 
@@ -16,7 +16,7 @@ Updated October 19, 2026, 02:38 PM PDT. Only complete, sealed benchmark score fi
 
 Runtime aggregate usage may wait for terminal execution metadata; per-response actual token usage is preserved in the linked raw archives. The cost column uses documented Standard uncached prices and is an estimate, not a provider invoice.
 
-Sol protein-localization benchmark inference is **not dispatched**: development passed, but the larger-run budget review remains pending. The currently dispatched benchmark scope is Luna/Sol QA and Luna localization.
+Sol protein-localization benchmark inference was **not dispatched; the user chose Luna only for continuing work**. The completed Luna/Sol QA comparisons are preserved, and current inference continues with Luna localization only. [Prospective model scope](../configs/openai_comparison_model_scope_2026-10-19.json).
 
 The original Qwen outputs are reused. SuppQA supplies its title and DOI but no paper, supplement or retrieval. Protein localization supplies the complete published sequence and the same ten-class definitions. FigQA/TableQA remain a separate vision condition.
 

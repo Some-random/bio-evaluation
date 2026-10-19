@@ -1,6 +1,8 @@
 # OpenAI versus archived Qwen: fixed-task comparison
 
-Updated October 19, 2026, Pacific time. **Run the 279 LitQA2/SuppQA cases first with GPT-6 Luna and GPT-6.1 Sol; make protein localization the committed second stage.** Reuse the exact archived Qwen3.8-27B outputs. FigQA/TableQA remain a separate vision comparison.
+**Continuing execution is GPT-6 Luna only**, following the user's latest instruction. Completed Sol QA/development results remain historical comparison evidence; no Sol protein-localization run was dispatched. The [prospective model-scope override](../configs/openai_comparison_model_scope_2026-10-19.json) supersedes model-selection proposals below without changing frozen executed conditions.
+
+Updated October 19, 2026, Pacific time. **The 279-case LitQA2/SuppQA comparison has completed for Luna and Sol; continuing inference is Luna protein localization only.** Reuse the exact archived Qwen3.8-27B outputs. FigQA/TableQA remain a separate vision comparison.
 
 [Comparison results and public trajectories](OPENAI_QWEN_COMPARISON_RESULTS_2026-10-19.md) contain the actual execution and scoring evidence; the plan below records the frozen design.
 
@@ -22,7 +24,7 @@ These are the specific **archived replay baselines** with inspectable requests, 
 
 LitQA2 tests answers to fixed biological-literature questions without retrieval. SuppQA is **closed-book paper-specific QA**: the paper title and DOI stay because they are legitimate native inputs, but a DOI does not fetch the article. Success could reflect scientific knowledge, remembered literature, option-based inference or prior benchmark exposure. This condition does not establish reading an unfamiliar supplied paper or supplement.
 
-P03 adds a sequence-to-outcome prediction objective. It is committed in both this plan and the current v2 configuration, rather than an optional sequence add-on. Its full Luna run follows the P03-specific development/input gate. The Sol P03 run additionally needs budget review because its output ceiling exceeds the initial spending guard.
+P03 adds a sequence-to-outcome prediction objective. It is committed in both this plan and the current v2 configuration, rather than an optional sequence add-on. Its full Luna run follows the P03-specific development/input gate. Sol P03 was not dispatched; the user subsequently chose Luna only for continuing work.
 
 ## The actual dispatcher and input boundary
 
@@ -57,7 +59,7 @@ Input charges and development requests are additional; these are ceilings from t
 
 Using the frozen user-text byte counts plus a conservative allowance of 100 input tokens per request gives planning totals including input of approximately **$0.596107 Luna / $11.922134 Sol for the 279 QA cases**, and **$6.236182 Luna / $124.723644 Sol for P03**. This byte-based reservation is a conservative planning estimate rather than exact vendor tokenization or a measured bill; development costs remain additional.
 
-The **agent-imposed initial $50 spending guard remains**; it is not a numerical cap supplied by the user. Sol's P03 output ceiling alone exceeds it, so that stage is pending explicit budget review. No automatic Sol localization dispatch is authorized by listing it in the scientific plan.
+The **agent-imposed initial $50 spending guard remains**; it is not a numerical cap supplied by the user. Sol's P03 output ceiling alone exceeds it. That proposed Sol stage was not dispatched, and the user subsequently chose Luna only; its pricing is retained as context rather than a request to start it.
 
 ## Freeze outputs before scoring
 
