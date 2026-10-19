@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-19T04:00:18.537712+00:00",
+  "generated_at_utc": "2026-10-19T06:02:20.477019+00:00",
   "catalog_settings": 64,
   "completed_whole_declared_setting_ids": [
     "B01",
@@ -2431,22 +2431,37 @@
       "selected_published_reference": {
         "model": "ProtST-ESM-1b",
         "metrics": {
-          "zero_shot_accuracy_percent": 29.85
+          "zero_shot_accuracy_percent": 21.91
         },
         "source_id": "PROTST",
         "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
-        "source_locator": "Table 11, printed p.15",
-        "protocol": "zero-shot embedding similarity to label names in published pretraining template",
+        "source_locator": "Table 11, Description column, printed p.15; Appendix B.3",
+        "protocol": "zero-shot embedding similarity to full label descriptions (names, alternative names and scientific comments) in published pretraining template",
         "value_status": "published_rounded_as_printed",
         "run_count": null,
         "reported_std": null,
+        "reference_selection_qualification": "Closest label-text variant to the frozen Qwen full-description context; protein/text representations and output interfaces still differ. The separate name variant is retained below.",
         "display_model": "ProtST-ESM-1b",
         "display_metrics": {
-          "zero_shot_accuracy_percent": 29.85
+          "zero_shot_accuracy_percent": 21.91
         },
         "display_scope": "published protocol; contextual"
       },
       "all_published_references": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "zero_shot_accuracy_percent": 21.91
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 11, Description column, printed p.15; Appendix B.3",
+          "protocol": "zero-shot embedding similarity to full label descriptions (names, alternative names and scientific comments) in published pretraining template",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "reference_selection_qualification": "Closest label-text variant to the frozen Qwen full-description context; protein/text representations and output interfaces still differ. The separate name variant is retained below."
+        },
         {
           "model": "ProtST-ESM-1b",
           "metrics": {
@@ -4552,7 +4567,7 @@
   ],
   "warnings": [],
   "source_sha256": {
-    "reports/PUBLISHED_BENCHMARK_COMPARISONS_2026-10-15.json": "6cd943be625dd62e6e3bcefe6a77131b38f92d1046f493159208e759c4da5546",
+    "reports/PUBLISHED_BENCHMARK_COMPARISONS_2026-10-15.json": "fc5060bcba675fd2f54cdf7b1b596434a933b65aa511f14bfd3cafaa22a0b80d",
     "reports/v04_output_format_qualification.json": "e6c412a2a8817be997b70f014fe028fa308c1e4427e58a8e6994bb0cbb783f5a",
     "reports/labbench_vision_aggregate_integrity_qualification.json": "1ab7264388141ee2fefb22948e382d5f22a3d98b41feeecbff1638c7dc45e09c",
     "results/runs/qwen38_27b_b02_public_reviewed_2026-10-15/scores.json": "07448327f790ed477aabbc18271b9f524f4eb0de03729aaa831e98561411e49a",

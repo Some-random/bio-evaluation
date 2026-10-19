@@ -2,7 +2,7 @@
 
 [Overview](EVALUATION_OVERVIEW.md) · [Complete inventory](TASK_HIERARCHY_COMPLETE.md) · [Coverage crosswalk](TASK_COVERAGE_MAP.csv)
 
-Stored scores: **2026-10-18 21:00 PDT**. Running-work snapshot: **2026-10-17 23:12 PDT**. Display times use Pacific time.
+Stored scores: **2026-10-18 23:02 PDT**. Running-work snapshot: **2026-10-17 23:12 PDT**. Display times use Pacific time.
 
 Only existing stored local outcomes are shown. The category order matches the complete inventory. **\*** marks incomplete coverage or scoring; count records are in expandable details. Undefined values remain undefined. Published values are separate contextual comparisons, not matched replications, pooled scores or claims of superiority. All reference records and alternate metric values are retained in the details.
 
@@ -798,7 +798,7 @@ NEW source result: these are Mol-Instructions' own numbers, NOT BioT5+. BioT5+'s
 
 | Scientific setting | Local stored result | Published reference — different protocol |
 |---|---|---|
-| Reaction class — zero-/few-shot | accuracy 0.2% | ProtST-ESM-1b: zero shot accuracy 29.85%; Table 11, printed p.15 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Reaction class — zero-/few-shot | accuracy 0.2% | ProtST-ESM-1b: zero shot accuracy 21.91%; Table 11, Description column, printed p.15; Appendix B.3 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 
 Zero-shot text-label matching is not the same protocol as fitting a fully supervised classifier.
 
@@ -844,6 +844,20 @@ Mixed 4K/16K continuation: 4419 original cases retain 4,096-token caps; 1232 pre
 
 ```json
 [
+  {
+    "model": "ProtST-ESM-1b",
+    "metrics": {
+      "zero_shot_accuracy_percent": 21.91
+    },
+    "source_id": "PROTST",
+    "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+    "source_locator": "Table 11, Description column, printed p.15; Appendix B.3",
+    "protocol": "zero-shot embedding similarity to full label descriptions (names, alternative names and scientific comments) in published pretraining template",
+    "value_status": "published_rounded_as_printed",
+    "run_count": null,
+    "reported_std": null,
+    "reference_selection_qualification": "Closest label-text variant to the frozen Qwen full-description context; protein/text representations and output interfaces still differ. The separate name variant is retained below."
+  },
   {
     "model": "ProtST-ESM-1b",
     "metrics": {

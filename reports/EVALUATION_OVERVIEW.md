@@ -2,6 +2,8 @@
 
 General-purpose baseline: **Qwen3.8-27B**, with text and image inputs.
 
+[Results and scoring qualifications](RESULTS_AT_A_GLANCE.md) · [Evaluation integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md)
+
 This catalog spans biological prediction, scientific evidence, protein design and three-dimensional structure. The map below shows **31 task families in 8 categories** without opening the detailed catalog. The counts are task families, not datasets or individual test questions.
 
 BioReason, BioReason-Pro and Bio-posttrain settings are set aside from this main comparison. [Archived settings and original records](ARCHIVED_EVALUATIONS.md) remain available.
@@ -179,7 +181,7 @@ Qwen results and published reference results use the stated protocols and are no
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
-| Biochemical reaction classification | ProtST reaction classification — zero/few-shot | Protein sequence plus reaction-label descriptions | accuracy 0.2% | ProtST-ESM-1b: zero shot accuracy 29.85%; Table 11, printed p.15 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Biochemical reaction classification | ProtST reaction classification — zero/few-shot | Protein sequence plus reaction-label descriptions | accuracy 0.2% | ProtST-ESM-1b: zero shot accuracy 21.91%; Table 11, Description column, printed p.15; Appendix B.3 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 
 #### Evidence support for protein explanations
 
@@ -1336,4 +1338,4 @@ Published source size/units: Processed test 12,943 molecules (train 103,547; val
 
 </details>
 
-Result references updated: **2026-10-18 21:00 PDT**. Display times use Pacific time (PST/PDT).
+Result references updated: **2026-10-18 23:02 PDT**. Display times use Pacific time (PST/PDT).
