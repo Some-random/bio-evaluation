@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-19T08:28:02.495277+00:00",
+  "generated_at_utc": "2026-10-19T10:49:29.861847+00:00",
   "catalog_settings": 64,
   "completed_whole_declared_setting_ids": [
     "B01",
@@ -4137,6 +4137,141 @@
       "seed_predictor_overlap": null
     },
     {
+      "task_id": "P08",
+      "task_name": "Protein stability regression — TAPE",
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1",
+      "dataset": null,
+      "native_split": null,
+      "completion_scope": "diagnostic_only_primary_metrics_invalid",
+      "case_scope": "full_frozen_reviewed_released_test",
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+      "protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH__MIXED_BUDGET_4K16K_CONTINUATION",
+      "local_training_regime": "Fixed zero-shot baseline; no benchmark task training or test-guided prompt/model selection",
+      "generation": {
+        "max_tokens": null,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        },
+        "output_budget_counts": {
+          "4096": 7303,
+          "16384": 5548
+        }
+      },
+      "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+      "native_protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH",
+      "finished_at_utc": null,
+      "counts": {
+        "planned": 12851,
+        "completed": 12851,
+        "parsed": 12616,
+        "invalid_outputs": 235,
+        "missing_or_failed_outputs": 0,
+        "held_before_inference": 0
+      },
+      "finish_reasons": {
+        "stop": 12843,
+        "length": 8
+      },
+      "metrics": {
+        "planned": 12851,
+        "parsed": 12616,
+        "missing": 0,
+        "invalid": 235,
+        "spearman": null,
+        "spearman_parsed_only": -0.12158796841646605,
+        "undefined_constant_or_insufficient": false,
+        "all_case_rule": "No invented prediction for failures. Full-test Spearman requires every output to parse; incomplete valid-only correlation is separately labeled."
+      },
+      "metric_units": "Accuracy/precision/coverage fractions; AUROC/AP fractions; other metrics preserve source-native units",
+      "curated_only_diagnostic_metrics": null,
+      "comparison_to_paper": "Original released public test data and native outcome/metric; zero-shot Qwen prompt/representation/training regime differs from native-trained TAPE/ProtST heads. PyTorch stability release12851 differs from original2019 paper12839 and is explicitly version-qualified. Output-budget condition: MIXED_BUDGET_4K16K_CONTINUATION; 7303 historical cases retain4096 tokens and 5548 clean never-dispatched cases receive16384 tokens. Original invalid/truncated cases remain included. This is not a uniform16k evaluation or a matched budget comparison.",
+      "comparison_status": "contextual_side_by_side_no_superiority_or_significance_claim",
+      "selected_published_reference": {
+        "model": "ProtST-ESM-1b",
+        "metrics": {
+          "fixed_encoder": {
+            "spearman": 0.766
+          },
+          "full_model_tuning": {
+            "spearman": 0.751
+          }
+        },
+        "source_id": "PROTST",
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 2, printed p.6",
+        "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
+        "value_status": "published_rounded_as_printed",
+        "run_count": null,
+        "reported_std": null,
+        "display_model": "ProtST-ESM-1b",
+        "display_metrics": {
+          "fixed_encoder": {
+            "spearman": 0.766
+          },
+          "full_model_tuning": {
+            "spearman": 0.751
+          }
+        },
+        "display_scope": "published protocol; contextual"
+      },
+      "all_published_references": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "fixed_encoder": {
+              "spearman": 0.766
+            },
+            "full_model_tuning": {
+              "spearman": 0.751
+            }
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 2, printed p.6",
+          "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "caveats": [
+        "Mixed 4K/16K continuation: 7303 original cases retain 4,096-token caps; 5548 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation.",
+        "All planned requests finished, but the full-test primary metric is undefined. Parsed-only diagnostics do not complete the benchmark and cannot replace its native metric."
+      ],
+      "explanation_support_score": null,
+      "scorer_recovery": null,
+      "source_scores": "results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
+      "source_completion": "results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/completion.json",
+      "scores_sha256": "53ad6a4142efefdfff140decfaeb16efee1f077ae3629788a57da1fd56f7404e",
+      "completion_score_hash_verified": true,
+      "full_test_id_union_validation": {
+        "complete": true,
+        "union_matches_full_test_ids": true,
+        "expected_test_case_count": 12851,
+        "unique_observed_case_count": 12851,
+        "missing_case_count": 0,
+        "extra_case_count": 0,
+        "duplicate_case_count": 0,
+        "sealed_completion_snapshot": {
+          "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_sources/a6fd152fa7a1f0c7140a211e3212ce23ba71316469b387f14c83c386acdd03c4",
+          "receipt_sha256": "b349891953cb8099f1ff13175d20b2b52e44f4317c234b1422b3ff22e51b25c9",
+          "wrapper_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_completion_scoring.py",
+          "wrapper_sha256": "ca3453f41dd85fe9ffe48c99c0cc79745861b54177b19fb764e9c106182e38a8",
+          "native_input_bytes_match_frozen_raw_slots": true
+        }
+      },
+      "input_reference_dependence": null,
+      "seed_predictor_overlap": null
+    },
+    {
       "task_id": "P12",
       "task_name": "Enzyme Commission labels — DeepFRI split",
       "run_id": "qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
@@ -4944,6 +5079,12 @@
       "source_scores": "results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_shard_023/scores.json"
     },
     {
+      "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1",
+      "task_id": "P08",
+      "reason": "diagnostic_only_primary_metrics_invalid",
+      "source_scores": "results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json"
+    },
+    {
       "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_000",
       "task_id": "P08",
       "reason": "shard_only",
@@ -5351,7 +5492,10 @@
     "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json": "6613f0b989967dc7fbd3825438fcbc467ee7002d17edac964a21309b0a7ac980",
     "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/completion.json": "1938a283bbfc2c9933e448383d633b48caf1f14bda615f8ee6aab4c4b40f02a4",
     "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/run_manifest.json": "9f3f43e51d54b99e7b50becb63da1131187e5219f28e4fafe7bee629881524c3",
-    "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scoring_correction.json": "2dd934210e100245b769a2fb643b33ce93a1831476b7d5d1a90d401fe535a755"
+    "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scoring_correction.json": "2dd934210e100245b769a2fb643b33ce93a1831476b7d5d1a90d401fe535a755",
+    "results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json": "53ad6a4142efefdfff140decfaeb16efee1f077ae3629788a57da1fd56f7404e",
+    "results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/completion.json": "c4b70b767c9b0aa5e110c1caaa11617746836ea0d39b98a55d023999763b84cf",
+    "results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/run_manifest.json": "d5f9e38f5d3444bb2bd994e84ee1f102f4cf85a7b1225168b37e31b2bbf87d93"
   },
   "reporting_policy": "Only existing aggregate score/completion/manifest and public reference/report metadata read; no case inputs, per-case outputs, requests, responses, labels, inference or frozen-result edits. Failed/incomplete shards never become whole-task completion. Null metrics stay undefined.",
   "interpretation": "Outcome scores do not validate explanations or establish internal reasoning. Public pretraining exposure unknown. Paper values have different training/protocols and supply no matched superiority/significance claim.",

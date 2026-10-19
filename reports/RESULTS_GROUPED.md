@@ -2,7 +2,7 @@
 
 [Overview](EVALUATION_OVERVIEW.md) · [Complete inventory](TASK_HIERARCHY_COMPLETE.md) · [Coverage crosswalk](TASK_COVERAGE_MAP.csv)
 
-Stored scores: **2026-10-19 01:28 PDT**. Running-work snapshot: **2026-10-17 23:12 PDT**. Display times use Pacific time.
+Stored scores: **2026-10-19 03:49 PDT**. Running-work snapshot: **2026-10-17 23:12 PDT**. Display times use Pacific time.
 
 Only existing stored local outcomes are shown. The category order matches the complete inventory. **\*** marks incomplete coverage or scoring; count records are in expandable details. Undefined values remain undefined. Published values are separate contextual comparisons, not matched replications, pooled scores or claims of superiority. All reference records and alternate metric values are retained in the details.
 
@@ -351,6 +351,88 @@ All planned requests finished, but the full-test primary metric is undefined. Pa
 ```
 
 [Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json)
+
+</details>
+
+### Protein stability*
+
+**Dataset/protocol:** TAPE / Rocklin stability
+
+**Finished diagnostic only:** the full native primary metric is undefined. The parsed-only value below does not complete the benchmark or replace the native metric.
+
+| Scientific setting | Local stored result | Published reference — different protocol |
+|---|---|---|
+| Protein stability regression — TAPE* | spearman undefined; spearman_parsed_only -0.1216 | ProtST-ESM-1b: fixed encoder.spearman 0.766; full model tuning.spearman 0.751; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+
+Full-model supervised fine-tuning. Do not conflate with NatureLM's binarized stability task.
+
+<details>
+<summary>Protein stability regression — TAPE: protocol, counts and complete metric record</summary>
+
+**Native/local protocol:** `QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH__MIXED_BUDGET_4K16K_CONTINUATION`
+
+**Coverage:** full_frozen_reviewed_released_test; diagnostic_only_primary_metrics_invalid.
+
+**Saved count record:**
+
+```json
+{
+  "planned": 12851,
+  "completed": 12851,
+  "parsed": 12616,
+  "invalid_outputs": 235,
+  "missing_or_failed_outputs": 0,
+  "held_before_inference": 0
+}
+```
+
+**Complete stored metrics, including alternate/diagnostic values:**
+
+```json
+{
+  "planned": 12851,
+  "parsed": 12616,
+  "missing": 0,
+  "invalid": 235,
+  "spearman": null,
+  "spearman_parsed_only": -0.12158796841646605,
+  "undefined_constant_or_insufficient": false,
+  "all_case_rule": "No invented prediction for failures. Full-test Spearman requires every output to parse; incomplete valid-only correlation is separately labeled."
+}
+```
+
+**Comparison qualification:** Original released public test data and native outcome/metric; zero-shot Qwen prompt/representation/training regime differs from native-trained TAPE/ProtST heads. PyTorch stability release12851 differs from original2019 paper12839 and is explicitly version-qualified. Output-budget condition: MIXED_BUDGET_4K16K_CONTINUATION; 7303 historical cases retain4096 tokens and 5548 clean never-dispatched cases receive16384 tokens. Original invalid/truncated cases remain included. This is not a uniform16k evaluation or a matched budget comparison.
+
+Mixed 4K/16K continuation: 7303 original cases retain 4,096-token caps; 5548 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation.
+
+All planned requests finished, but the full-test primary metric is undefined. Parsed-only diagnostics do not complete the benchmark and cannot replace its native metric.
+
+**All stored published-reference records — separate from the local run:**
+
+```json
+[
+  {
+    "model": "ProtST-ESM-1b",
+    "metrics": {
+      "fixed_encoder": {
+        "spearman": 0.766
+      },
+      "full_model_tuning": {
+        "spearman": 0.751
+      }
+    },
+    "source_id": "PROTST",
+    "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+    "source_locator": "Table 2, printed p.6",
+    "protocol": "two-layer MLP trained on official task split; frozen encoder and full tuning are separate regimes",
+    "value_status": "published_rounded_as_printed",
+    "run_count": null,
+    "reported_std": null
+  }
+]
+```
+
+[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json)
 
 </details>
 
