@@ -1,0 +1,46 @@
+{
+  "checked_at_pacific": "2026-10-19T13:18:59.959777-07:00",
+  "rule_file": "delivery_rules_v1.json",
+  "rule_sha256": "b9f802492edbbcac820e7cba4111179e2637619bf7173a8721837efeaff885d7",
+  "native_regex_source_sha256": "71b4a92edfbe5b33e9a327b0773a2ae9cfd9946b48452f13127929a29e91021d",
+  "diagnosis_uses_reference_targets": false,
+  "new_inference_calls": 0,
+  "tasks": [
+    {
+      "task_id": "B01",
+      "run_id": "qwen38_27b_litqa2_replay_2026-10-16",
+      "planned": 197,
+      "native_parsed": 197,
+      "unambiguous_native_parsed": 197,
+      "parsed_but_ambiguous_case_ids": [],
+      "saved_answer_mismatch_case_ids": []
+    },
+    {
+      "task_id": "B03",
+      "run_id": "qwen38_27b_b03_slurm_replay_2026-10-16",
+      "planned": 82,
+      "native_parsed": 82,
+      "unambiguous_native_parsed": 82,
+      "parsed_but_ambiguous_case_ids": [],
+      "saved_answer_mismatch_case_ids": []
+    },
+    {
+      "task_id": "B04",
+      "run_id": "qwen38_27b_b04_slurm_replay_2026-10-16",
+      "planned": 181,
+      "native_parsed": 180,
+      "unambiguous_native_parsed": 180,
+      "parsed_but_ambiguous_case_ids": [],
+      "saved_answer_mismatch_case_ids": []
+    },
+    {
+      "task_id": "B05",
+      "run_id": "qwen38_27b_b05_slurm_replay_2026-10-16",
+      "planned": 244,
+      "native_parsed": 236,
+      "unambiguous_native_parsed": 236,
+      "parsed_but_ambiguous_case_ids": [],
+      "saved_answer_mismatch_case_ids": []
+    }
+  ]
+}

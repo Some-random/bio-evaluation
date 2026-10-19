@@ -1,0 +1,685 @@
+{
+  "schema_version": 1,
+  "prepared_at_pacific": "2026-10-19T13:22:06.382453-07:00",
+  "status": "proposed_not_dispatched",
+  "new_inference_calls": 0,
+  "openai_inference_authorized": false,
+  "provider_warning_resolved": false,
+  "reason_not_dispatched": "Offline candidate preparation only. Existing OpenAI biological benchmark hold and unresolved provider warning remain; latest user request does not establish provider clearance.",
+  "checkpoint_reference": "Qwen/Qwen3.8-27B original BF16, pinned revision 1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "openai_model_requested": "gpt-6-luna",
+  "provider_model_capabilities_verified_by_this_preparation": true,
+  "historical_qwen_regeneration_required": false,
+  "case_manifest": {
+    "path": "results/comparison_preparation/gpt6_luna_qwen_2026-10-19/case_manifest.jsonl",
+    "sha256": "546ee988292215bbffb8b894133c4d74c17a5b5258043a0c350f1a4cd60e8f44",
+    "bytes": 4757293
+  },
+  "case_manifest_row_count": 3477,
+  "no_target_labels_in_case_manifest": true,
+  "solver_boundary": "The case manifest is bookkeeping, not a solver prompt. It contains correctness flags and paths to response artifacts. Only frozen archived request messages and separately reviewed provider execution settings may be submitted.",
+  "recommendation": {
+    "first_stage": {
+      "task_ids": [
+        "B01",
+        "B03"
+      ],
+      "case_count": 279,
+      "why": "Text-only native multiple choice, 100% parsed Qwen responses, complete exact-case request/response/reference evidence."
+    },
+    "optional_vision": {
+      "task_ids": [
+        "B04",
+        "B05"
+      ],
+      "case_count": 425,
+      "why": "Useful audited scientific image/table reading signals; preserve original image bytes and verify provider vision input support before dispatch. Existing local review was text-only."
+    },
+    "additional_protein_sequence": {
+      "task_ids": [
+        "P03"
+      ],
+      "case_count": 2773,
+      "why": "98.16% parsed, interpretable full-denominator accuracy; offers raw-sequence outcome prediction distinct from scientific reading."
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "B01",
+      "name": "LAB-Bench LitQA2",
+      "priority": "first_stage_text",
+      "required_modality": "text",
+      "status": "proposed_not_dispatched",
+      "new_inference_calls": 0,
+      "source_qwen_run_id": "qwen38_27b_litqa2_replay_2026-10-16",
+      "source_protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "generation": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "run_artifacts": {
+        "run_manifest.json": {
+          "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/run_manifest.json",
+          "sha256": "66a279e37b531074eed406d0a4774e89587fbfd267f5b736a75f9f955bb4b873",
+          "bytes": 4457
+        },
+        "scores.json": {
+          "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/scores.json",
+          "sha256": "5b8d04effeec755cb0c0ba3de29dde6b47ce8a7b34a0743766ef4d40f6c4a4fb",
+          "bytes": 1117
+        },
+        "completion.json": {
+          "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/completion.json",
+          "sha256": "70b6b26f188083d4f4c81e34f003e29be3a42d007b80114c31e6a8c189351376",
+          "bytes": 295
+        },
+        "per_case_scores.json": {
+          "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/per_case_scores.json",
+          "sha256": "9aec9deab0775fac041ae6b7c01ac74380fe79a87511d1287d906aca607b0e61",
+          "bytes": 44063
+        }
+      },
+      "frozen_input_artifact": {
+        "path": ".local/litqa2_replay/baseline/data/local_labbench_litqa2/model_inputs.jsonl",
+        "sha256": "8dcab1262e5b0e1805b3cbd21897e1ecb566680f71407f4598213c0a59c28b3b",
+        "bytes": 195499
+      },
+      "frozen_case_contract_sha256": "92a0e0c22ffaedcbb38dff3e82fd4a512489d94775f35b8398fcbfbec267f036",
+      "source_case_ids_sha256": "64d7c71ef09b731c7d17a56c60c5262eb1efccff5d95462cd4b78d7090e70669",
+      "input_review_artifact": {
+        "path": "configs/local_labbench_litqa2_review.json",
+        "sha256": "21205e078478e508e8e9a4fe9accac4fd5f2affd325f8fcd976dc27e4366fa3d",
+        "bytes": 9757
+      },
+      "input_review_is_openai_provider_clearance": false,
+      "source_reference_archive": {
+        "path": ".local/litqa2_replay/baseline/data/labbench/scorer_references.jsonl",
+        "sha256": "2236079f908f00e7d413ff0f73de3bb3644148edf3b7f3a40c1f697cda4c7346",
+        "bytes": 262467
+      },
+      "source_reference_archive_task_case_count": 199,
+      "counts": {
+        "planned": 197,
+        "responses_saved": 197,
+        "parsed": 197,
+        "correct": 77,
+        "invalid_outputs": 0,
+        "length_finishes": 0,
+        "empty_finals": 0,
+        "transport_or_response_errors": 0,
+        "required_images": 0
+      },
+      "qwen_metrics": {
+        "accuracy": 0.39086294416243655,
+        "precision": 0.4095744680851064,
+        "coverage": 0.9543147208121827,
+        "n_total": 197,
+        "n_correct": 77,
+        "n_sure": 188
+      },
+      "qwen_token_usage_observation": {
+        "prompt_tokens": 38782,
+        "completion_tokens": 170580,
+        "total_tokens": 209362
+      },
+      "checks": {
+        "exact_input_hash_matches_frozen_configuration": true,
+        "exact_case_contract_matches_original_run": true,
+        "exact_reference_hash_matches_frozen_configuration": true,
+        "no_missing_or_extra_requests_or_responses": true,
+        "source_case_order_preserved": true,
+        "review_approved_case_ids_match": true,
+        "held_cases_excluded": true,
+        "every_request_payload_hash_and_response_association_verified": true,
+        "every_reference_derived_correct_flag_matches": true,
+        "actual_image_bytes_match_recorded_hashes": true
+      },
+      "native_scorer": {
+        "parser": "scripts/score_results.py::lab_answer",
+        "metrics": [
+          "accuracy",
+          "precision",
+          "coverage"
+        ],
+        "all_case_rule": "Invalid/missing answers count incorrect; all planned cases retained. LAB coverage is non-abstention, not parse rate.",
+        "label_contract": "Frozen native shuffled target_choice, unsure_choice and choice_count; deterministic ChemBench parser with no model fallback."
+      },
+      "provider_parity_requirements": [
+        "Keep exact full original messages, choices, sequence and required images.",
+        "Freeze provider-supported generation settings before inference; disclose unsupported Qwen-specific top_k/seed/thinking controls.",
+        "Retain 4,096 total output cap for historical condition comparison; any larger cap is a separately named experiment.",
+        "Freeze extraction and retain invalid outputs; report answer delivery separately from correctness.",
+        "Preserve existing two held B01 cases and all other held/flagged material."
+      ],
+      "image_contents_reviewed": null
+    },
+    {
+      "task_id": "B03",
+      "name": "LAB-Bench SuppQA",
+      "priority": "first_stage_text",
+      "required_modality": "text",
+      "status": "proposed_not_dispatched",
+      "new_inference_calls": 0,
+      "source_qwen_run_id": "qwen38_27b_b03_slurm_replay_2026-10-16",
+      "source_protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "generation": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "run_artifacts": {
+        "run_manifest.json": {
+          "path": "results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/run_manifest.json",
+          "sha256": "9e9e2feb7acc13c603902e1a14ad8cfbe7f096c3cbce0a6ed8396445bc2c29f5",
+          "bytes": 6141
+        },
+        "scores.json": {
+          "path": "results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/scores.json",
+          "sha256": "7aae5d9c7f24d75d42e341d7bd8d174fafc64aff054c6ee6ca6448e73df9e927",
+          "bytes": 1317
+        },
+        "completion.json": {
+          "path": "results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/completion.json",
+          "sha256": "366799758179b4be0f359aa0ce2322f5155758d1383484c26f3103e35d7f2feb",
+          "bytes": 491
+        },
+        "per_case_scores.json": {
+          "path": "results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/per_case_scores.json",
+          "sha256": "98b0b72bd524fd886089925030703fe74c7ab5d3fabb2813795ae406b353f29b",
+          "bytes": 18425
+        }
+      },
+      "frozen_input_artifact": {
+        "path": ".local/parallel_labbench/runs/B03/data/local_labbench_suite/B03/model_inputs.jsonl",
+        "sha256": "a4d48d39d5e13769788840d8a70605dc8527ac1e8911a225709c9bebe12eba42",
+        "bytes": 90183
+      },
+      "frozen_case_contract_sha256": "9dc060c44a23a2be30e8c11d3f5f4c5a9280dc7d79d81f53a769010f5f177e32",
+      "source_case_ids_sha256": "f6d25ff2863b782408356614e239dacfd23382da9218223862ea9c7cbba0b1eb",
+      "input_review_artifact": {
+        "path": "configs/local_labbench_b03_review.json",
+        "sha256": "77e8873286f9d878432c668c458dcf9ac604c2912009298927cb60a7dafeb8cb",
+        "bytes": 4677
+      },
+      "input_review_is_openai_provider_clearance": false,
+      "source_reference_archive": {
+        "path": ".local/parallel_labbench/source/data/labbench_native_complete/scorer_references.jsonl",
+        "sha256": "c7129db0155bd8513abb43b53c2c53bfd4051df7ea01f25708f289cbb78c7702",
+        "bytes": 330955
+      },
+      "source_reference_archive_task_case_count": 82,
+      "counts": {
+        "planned": 82,
+        "responses_saved": 82,
+        "parsed": 82,
+        "correct": 31,
+        "invalid_outputs": 0,
+        "length_finishes": 0,
+        "empty_finals": 0,
+        "transport_or_response_errors": 0,
+        "required_images": 0
+      },
+      "qwen_metrics": {
+        "accuracy": 0.3780487804878049,
+        "precision": 0.3924050632911392,
+        "coverage": 0.9634146341463414,
+        "n_total": 82,
+        "n_correct": 31,
+        "n_sure": 79
+      },
+      "qwen_token_usage_observation": {
+        "prompt_tokens": 19959,
+        "completion_tokens": 70831,
+        "total_tokens": 90790
+      },
+      "checks": {
+        "exact_input_hash_matches_frozen_configuration": true,
+        "exact_case_contract_matches_original_run": true,
+        "exact_reference_hash_matches_frozen_configuration": true,
+        "no_missing_or_extra_requests_or_responses": true,
+        "source_case_order_preserved": true,
+        "review_approved_case_ids_match": true,
+        "held_cases_excluded": true,
+        "every_request_payload_hash_and_response_association_verified": true,
+        "every_reference_derived_correct_flag_matches": true,
+        "actual_image_bytes_match_recorded_hashes": true
+      },
+      "native_scorer": {
+        "parser": "scripts/score_results.py::lab_answer",
+        "metrics": [
+          "accuracy",
+          "precision",
+          "coverage"
+        ],
+        "all_case_rule": "Invalid/missing answers count incorrect; all planned cases retained. LAB coverage is non-abstention, not parse rate.",
+        "label_contract": "Frozen native shuffled target_choice, unsure_choice and choice_count; deterministic ChemBench parser with no model fallback."
+      },
+      "provider_parity_requirements": [
+        "Keep exact full original messages, choices, sequence and required images.",
+        "Freeze provider-supported generation settings before inference; disclose unsupported Qwen-specific top_k/seed/thinking controls.",
+        "Retain 4,096 total output cap for historical condition comparison; any larger cap is a separately named experiment.",
+        "Freeze extraction and retain invalid outputs; report answer delivery separately from correctness.",
+        "Preserve existing two held B01 cases and all other held/flagged material."
+      ],
+      "image_contents_reviewed": null
+    },
+    {
+      "task_id": "B04",
+      "name": "LAB-Bench FigQA",
+      "priority": "optional_vision",
+      "required_modality": "image_and_text",
+      "status": "proposed_not_dispatched",
+      "new_inference_calls": 0,
+      "source_qwen_run_id": "qwen38_27b_b04_slurm_replay_2026-10-16",
+      "source_protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "generation": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "run_artifacts": {
+        "run_manifest.json": {
+          "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/run_manifest.json",
+          "sha256": "92e834feba1499e6ca9f6bf4fdabc6c87d46f35c2883b2b2a2449e6205dc1e3d",
+          "bytes": 6131
+        },
+        "scores.json": {
+          "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/scores.json",
+          "sha256": "a8a980724acc6f811f80f9e7ff5f9dd773d3704565da5d9bfd38c8152bf852b5",
+          "bytes": 1342
+        },
+        "completion.json": {
+          "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/completion.json",
+          "sha256": "ab4dc2ceeb012bbb4b84821be4610da742b5e8b9bb150973aa11835dea890bbe",
+          "bytes": 491
+        },
+        "per_case_scores.json": {
+          "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/per_case_scores.json",
+          "sha256": "9f341c6d4f4ec75e27412d0cebcfa67a5c6e8bc40c0e16e923ac09fb66241fcc",
+          "bytes": 40421
+        }
+      },
+      "frozen_input_artifact": {
+        "path": ".local/parallel_labbench/runs/B04/data/local_labbench_suite/B04/model_inputs.jsonl",
+        "sha256": "eef6be1a656d50bb8e1a8b157b330a464adbc02a487481b6a651cb260e01ae80",
+        "bytes": 329801470
+      },
+      "frozen_case_contract_sha256": "01c036ca9c1ce60e1f893ceea6ae9939d333347e2e631e8269318c50da298dee",
+      "source_case_ids_sha256": "6cc9c5572f05efa22412b5877496c6f15edc771db2f17b8b15086a37e537dbe9",
+      "input_review_artifact": {
+        "path": "configs/local_labbench_b04_review.json",
+        "sha256": "81656d4ab50361026defda1dfa9b6bacfaf9f59a062c7303346e5f973b07a715",
+        "bytes": 11100
+      },
+      "input_review_is_openai_provider_clearance": false,
+      "source_reference_archive": {
+        "path": ".local/parallel_labbench/source/data/labbench_native_complete/scorer_references.jsonl",
+        "sha256": "c7129db0155bd8513abb43b53c2c53bfd4051df7ea01f25708f289cbb78c7702",
+        "bytes": 330955
+      },
+      "source_reference_archive_task_case_count": 181,
+      "counts": {
+        "planned": 181,
+        "responses_saved": 181,
+        "parsed": 180,
+        "correct": 131,
+        "invalid_outputs": 1,
+        "length_finishes": 1,
+        "empty_finals": 1,
+        "transport_or_response_errors": 0,
+        "required_images": 181
+      },
+      "qwen_metrics": {
+        "accuracy": 0.7237569060773481,
+        "precision": 0.7277777777777777,
+        "coverage": 0.994475138121547,
+        "n_total": 181,
+        "n_correct": 131,
+        "n_sure": 180
+      },
+      "qwen_token_usage_observation": {
+        "prompt_tokens": 1980394,
+        "completion_tokens": 151426,
+        "total_tokens": 2131820
+      },
+      "checks": {
+        "exact_input_hash_matches_frozen_configuration": true,
+        "exact_case_contract_matches_original_run": true,
+        "exact_reference_hash_matches_frozen_configuration": true,
+        "no_missing_or_extra_requests_or_responses": true,
+        "source_case_order_preserved": true,
+        "review_approved_case_ids_match": true,
+        "held_cases_excluded": true,
+        "every_request_payload_hash_and_response_association_verified": true,
+        "every_reference_derived_correct_flag_matches": true,
+        "actual_image_bytes_match_recorded_hashes": true
+      },
+      "native_scorer": {
+        "parser": "scripts/score_results.py::lab_answer",
+        "metrics": [
+          "accuracy",
+          "precision",
+          "coverage"
+        ],
+        "all_case_rule": "Invalid/missing answers count incorrect; all planned cases retained. LAB coverage is non-abstention, not parse rate.",
+        "label_contract": "Frozen native shuffled target_choice, unsure_choice and choice_count; deterministic ChemBench parser with no model fallback."
+      },
+      "provider_parity_requirements": [
+        "Keep exact full original messages, choices, sequence and required images.",
+        "Freeze provider-supported generation settings before inference; disclose unsupported Qwen-specific top_k/seed/thinking controls.",
+        "Retain 4,096 total output cap for historical condition comparison; any larger cap is a separately named experiment.",
+        "Freeze extraction and retain invalid outputs; report answer delivery separately from correctness.",
+        "Preserve existing two held B01 cases and all other held/flagged material."
+      ],
+      "image_contents_reviewed": false
+    },
+    {
+      "task_id": "B05",
+      "name": "LAB-Bench TableQA",
+      "priority": "optional_vision",
+      "required_modality": "image_and_text",
+      "status": "proposed_not_dispatched",
+      "new_inference_calls": 0,
+      "source_qwen_run_id": "qwen38_27b_b05_slurm_replay_2026-10-16",
+      "source_protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "generation": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "run_artifacts": {
+        "run_manifest.json": {
+          "path": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/run_manifest.json",
+          "sha256": "31d6960d1e869d92fd5428cb53162c0bf8fd12c9e8263c206d627439596174b3",
+          "bytes": 6131
+        },
+        "scores.json": {
+          "path": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/scores.json",
+          "sha256": "1641758fe72f79d51392eeb1aa51c127d16d6e503b69d16cfe9a88c143e96968",
+          "bytes": 1344
+        },
+        "completion.json": {
+          "path": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/completion.json",
+          "sha256": "367bc9b09db40e341956d113e27d69b99e68f16f228cc50eb2020b21f5872fcf",
+          "bytes": 491
+        },
+        "per_case_scores.json": {
+          "path": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/per_case_scores.json",
+          "sha256": "f8156ecf03b605aecd6dc484095b85994c378a0eac33d5e81f8b858f302bbd6d",
+          "bytes": 54969
+        }
+      },
+      "frozen_input_artifact": {
+        "path": ".local/parallel_labbench/runs/B05/data/local_labbench_suite/B05/model_inputs.jsonl",
+        "sha256": "06e7c4aa7537f7003e3e098845450e72f104eb54b6520cc7a4a8a7afce04c3bf",
+        "bytes": 144831085
+      },
+      "frozen_case_contract_sha256": "a37e1a7b4bb6d9e018a91bb2533f328b28c2ebe4978c64078ab0df269945c66a",
+      "source_case_ids_sha256": "232bab035d3d8f44338f69dd15d872d3524ab722627c2e0ca5d254d65898903e",
+      "input_review_artifact": {
+        "path": "configs/local_labbench_b05_review.json",
+        "sha256": "6c0a6859d2e3a6f85a7c0bf62e5027b31c9df99c1a0703dd6fc6a1d09bf7431e",
+        "bytes": 13954
+      },
+      "input_review_is_openai_provider_clearance": false,
+      "source_reference_archive": {
+        "path": ".local/parallel_labbench/source/data/labbench_native_complete/scorer_references.jsonl",
+        "sha256": "c7129db0155bd8513abb43b53c2c53bfd4051df7ea01f25708f289cbb78c7702",
+        "bytes": 330955
+      },
+      "source_reference_archive_task_case_count": 244,
+      "counts": {
+        "planned": 244,
+        "responses_saved": 244,
+        "parsed": 236,
+        "correct": 215,
+        "invalid_outputs": 8,
+        "length_finishes": 8,
+        "empty_finals": 7,
+        "transport_or_response_errors": 0,
+        "required_images": 262
+      },
+      "qwen_metrics": {
+        "accuracy": 0.8811475409836066,
+        "precision": 0.899581589958159,
+        "coverage": 0.9795081967213115,
+        "n_total": 244,
+        "n_correct": 215,
+        "n_sure": 239
+      },
+      "qwen_token_usage_observation": {
+        "prompt_tokens": 1618160,
+        "completion_tokens": 161239,
+        "total_tokens": 1779399
+      },
+      "checks": {
+        "exact_input_hash_matches_frozen_configuration": true,
+        "exact_case_contract_matches_original_run": true,
+        "exact_reference_hash_matches_frozen_configuration": true,
+        "no_missing_or_extra_requests_or_responses": true,
+        "source_case_order_preserved": true,
+        "review_approved_case_ids_match": true,
+        "held_cases_excluded": true,
+        "every_request_payload_hash_and_response_association_verified": true,
+        "every_reference_derived_correct_flag_matches": true,
+        "actual_image_bytes_match_recorded_hashes": true
+      },
+      "native_scorer": {
+        "parser": "scripts/score_results.py::lab_answer",
+        "metrics": [
+          "accuracy",
+          "precision",
+          "coverage"
+        ],
+        "all_case_rule": "Invalid/missing answers count incorrect; all planned cases retained. LAB coverage is non-abstention, not parse rate.",
+        "label_contract": "Frozen native shuffled target_choice, unsure_choice and choice_count; deterministic ChemBench parser with no model fallback."
+      },
+      "provider_parity_requirements": [
+        "Keep exact full original messages, choices, sequence and required images.",
+        "Freeze provider-supported generation settings before inference; disclose unsupported Qwen-specific top_k/seed/thinking controls.",
+        "Retain 4,096 total output cap for historical condition comparison; any larger cap is a separately named experiment.",
+        "Freeze extraction and retain invalid outputs; report answer delivery separately from correctness.",
+        "Preserve existing two held B01 cases and all other held/flagged material."
+      ],
+      "image_contents_reviewed": false
+    },
+    {
+      "task_id": "P03",
+      "name": "DeepLoc protein subcellular localization",
+      "priority": "additional_sequence_prediction",
+      "required_modality": "protein_sequence_and_text",
+      "status": "proposed_not_dispatched",
+      "new_inference_calls": 0,
+      "source_qwen_run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16",
+      "source_protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_DEEPLOC_NATIVE_LABELS",
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "generation": {
+        "max_tokens": 4096,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        }
+      },
+      "run_artifacts": {
+        "run_manifest.json": {
+          "path": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/run_manifest.json",
+          "sha256": "0a70bd50c625d0bec3d94579d811cc2b7f246bef6234e007d4d0c43c4ca1ea81",
+          "bytes": 6360
+        },
+        "scores.json": {
+          "path": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/scores.json",
+          "sha256": "b2502d3ded2d81fc3f03c8260cd6d2db01dc5ae914e6d84e5ae6c81c18882e4a",
+          "bytes": 10117
+        },
+        "completion.json": {
+          "path": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/completion.json",
+          "sha256": "d4bc2b7b49d73121697e9356da2fafd99c9fc64eaf2df7439fb821b6b8de92e5",
+          "bytes": 7878
+        },
+        "per_case_scores.json": {
+          "path": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/per_case_scores.json",
+          "sha256": "b00376da8c1a9b1e32e19d955802d5a7d1885ca97b4a60a9a4240844bce8cc9b",
+          "bytes": 979854
+        }
+      },
+      "frozen_input_artifact": {
+        "path": ".local/remaining_evaluations/extended/data/local_catalog_extended_shards/P03/full/model_inputs.jsonl",
+        "sha256": "c0f467d8558ad9ca23c8de33b07f138b53c7c4b8c86675694dc0baddb3783b5a",
+        "bytes": 5919070
+      },
+      "frozen_case_contract_sha256": "1e34e5e53d8b038c46b80a26ece10341a9898e910e8fa3aad15540f96514270a",
+      "source_case_ids_sha256": "41a17e541d3ce04a52f66b5564226b2a540d3472f803b3a2f63120ee1fc56934",
+      "input_review_artifact": {
+        "path": "configs/local_extended_p03_review.json",
+        "sha256": "334ed780abd7c6240492df26825886303f24e4c30393efbc41a8aea4a2da6300",
+        "bytes": 116418
+      },
+      "input_review_is_openai_provider_clearance": false,
+      "source_reference_archive": {
+        "path": ".local/remaining_evaluations/extended/data/catalog_extended/P03/scorer_references.jsonl",
+        "sha256": "103ea79f4d7c62f43fe5d02bf864bea218712beae138980b83aa91287b8a33b4",
+        "bytes": 749263
+      },
+      "source_reference_archive_task_case_count": 2773,
+      "counts": {
+        "planned": 2773,
+        "responses_saved": 2773,
+        "parsed": 2722,
+        "correct": 724,
+        "invalid_outputs": 51,
+        "length_finishes": 47,
+        "empty_finals": 51,
+        "transport_or_response_errors": 0,
+        "required_images": 0
+      },
+      "qwen_metrics": {
+        "planned": 2773,
+        "parsed": 2722,
+        "missing": 0,
+        "invalid": 51,
+        "accuracy": 0.2610890732059142,
+        "correct": 724,
+        "all_case_rule": "Invalid/missing classes count incorrect; all planned rows stay in denominator."
+      },
+      "qwen_token_usage_observation": {
+        "prompt_tokens": 1697595,
+        "completion_tokens": 4149287,
+        "total_tokens": 5846882
+      },
+      "checks": {
+        "exact_input_hash_matches_frozen_configuration": true,
+        "exact_case_contract_matches_original_run": true,
+        "exact_reference_hash_matches_frozen_configuration": true,
+        "no_missing_or_extra_requests_or_responses": true,
+        "source_case_order_preserved": true,
+        "review_approved_case_ids_match": true,
+        "held_cases_excluded": true,
+        "every_request_payload_hash_and_response_association_verified": true,
+        "every_reference_derived_correct_flag_matches": true,
+        "actual_image_bytes_match_recorded_hashes": true
+      },
+      "native_scorer": {
+        "parser": "scripts/score_local_catalog_extended.py::parse_class_id",
+        "metrics": [
+          "accuracy"
+        ],
+        "all_case_rule": "Invalid/missing answers count incorrect; all planned cases retained.",
+        "label_contract": "Native ten classes 0–9"
+      },
+      "provider_parity_requirements": [
+        "Keep exact full original messages, choices, sequence and required images.",
+        "Freeze provider-supported generation settings before inference; disclose unsupported Qwen-specific top_k/seed/thinking controls.",
+        "Retain 4,096 total output cap for historical condition comparison; any larger cap is a separately named experiment.",
+        "Freeze extraction and retain invalid outputs; report answer delivery separately from correctness.",
+        "Preserve existing two held B01 cases and all other held/flagged material."
+      ],
+      "image_contents_reviewed": null
+    }
+  ],
+  "held_b01_case_ids": [
+    "df061613-2591-4faa-be03-791c76375cb5",
+    "1ff2b2e4-492e-4e35-bf33-f0fb53ab938c"
+  ],
+  "excluded_or_deprioritized": [
+    {
+      "task_id": "P43",
+      "reason": "Complete archived aggregate metrics but original local raw folders unavailable. Historical score uses constrained one-token no-thinking conditional Yes/No likelihood with both explicit token probabilities; provider compatibility/parity unresolved. Do not replace continuous score with sampled hard labels."
+    },
+    {
+      "task_id": "B02",
+      "reason": "93/520 truncated and parser-invalid responses; weaker delivery baseline than the selected QA tasks."
+    },
+    {
+      "task_id": "B07/B08/P07/P42",
+      "reason": "Major historical answer-delivery limitations; task-specific readiness work remains."
+    },
+    {
+      "task_id": "V01–V05/P01",
+      "reason": "Metric/extraction limitations and missing historical originals prevent equally reliable paired baseline."
+    }
+  ],
+  "interpretation_limits": [
+    "Existing replay accuracy is the comparator; do not substitute more favorable original-run headlines.",
+    "Scientific reading, closed-book answer recovery and sequence prediction are distinct task types; do not pool into one biological reasoning score.",
+    "Public benchmark pretraining exposure is unknown.",
+    "Native LAB multiple-tag parser behavior is preserved; the separately frozen output-only unambiguity check is recorded alongside it.",
+    "No provider clearance, dispatch permission, test-guided case selection or model inference is created by this preparation."
+  ],
+  "provider_documentation": {
+    "model": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+    "parameters": "https://developers.openai.com/api/docs/guides/latest-model",
+    "checked_at_pacific": "2026-10-19T13:22:44.306183-07:00",
+    "text_and_image_input_supported": true,
+    "medium_reasoning_supported": true,
+    "reasoning_mode_omits_temperature_and_top_p": true,
+    "account_benchmark_permission_established": false
+  },
+  "separate_unambiguity_check": {
+    "path": "results/comparison_preparation/gpt6_luna_qwen_2026-10-19/qwen_answer_semantics_check.json",
+    "sha256": "76f5d6a69893c6dfa9fb650c1fd972fa7ee16b0662edb5406f22acd6ea5daa20",
+    "references_used_to_select_rule": false
+  }
+}

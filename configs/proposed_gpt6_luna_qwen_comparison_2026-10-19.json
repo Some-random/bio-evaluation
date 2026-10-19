@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "proposed_at_pacific": "2026-10-19T13:19:47.257214-07:00",
+  "status": "proposed_not_dispatched",
+  "comparison_id": "gpt6_luna_vs_qwen38_archived_exact_cases_2026-10-19_v1",
+  "new_inference_calls": 0,
+  "dispatch_authorized": false,
+  "existing_execution_authorization_sha256": "402aabf83588881db4f02eef30f4b87c8a03432f19e1e091a1dc6c5492b66bc4",
+  "first_stage_tasks": [
+    "B01",
+    "B03"
+  ],
+  "first_stage_cases": 279,
+  "optional_vision_tasks": [
+    "B04",
+    "B05"
+  ],
+  "optional_sequence_task": "P03",
+  "draft_request_file": "results/comparison_preparation/gpt6_luna_qwen_2026-10-19/luna_text_requests_proposed.jsonl",
+  "draft_request_file_sha256": "12d7374f6c8a50908eeae4bd90914f5292de0a9e7ed182a988b96f287db99620",
+  "model": "gpt-6-luna",
+  "endpoint": "https://api.openai.com/v1/responses",
+  "generation": {
+    "max_output_tokens": 4096,
+    "reasoning": {
+      "effort": "medium"
+    },
+    "service_tier": "default",
+    "store": false
+  },
+  "sampling_differences": "Qwen uses temperature1/top_p0.95/top_k20/seed42. OpenAI GPT-6 reasoning mode does not support temperature/top_p; top_k and seeded equivalence are not portable. Omit these parameters and disclose model-specific sampling. Matching nominal medium effort does not equalize hidden compute.",
+  "identity_policy": "At any future authorized dispatch, load the existing stable private safety_identifier; never rotate it, embed its value here, or treat it as provider clearance.",
+  "preservation_policy": "Same exact user text, choice permutation, case IDs and primary scorer. No new system prompt, tools, web search, missing-input substitution, or output-format redesign. Keep invalid/truncated/refused outputs in all-case metrics and separately report each type.",
+  "selection_policy": "Full declared archived cohorts selected for prior delivery/scoring reliability, not a selection of individually correct Qwen cases. Held B01 cases remain excluded.",
+  "future_preconditions": [
+    "Resolve recorded OpenAI benchmark/account-scope hold without retrying flagged material.",
+    "Complete task/case input review for this provider; prior local review is not provider clearance.",
+    "Validate API mapping and native answer delivery on permitted development cases, then freeze protocol and hash all contracts before held-out calls.",
+    "For vision tasks, freeze exact original image bytes/order and image detail; report vendor image processing differences."
+  ],
+  "reporting": [
+    "Per-task all-case accuracy and usable-answer rate; native abstention precision/coverage labeled separately.",
+    "Separately frozen unambiguity check on both models; no reference-guided answer extraction.",
+    "Paired per-case correctness comparison, exact McNemar discordance test and paired-bootstrap accuracy-gap confidence interval.",
+    "Observed input/output/reasoning token usage, latency and billed cost; do not infer hidden reasoning correctness from an answer score."
+  ],
+  "reasoning_record_policy": "Save actual API responses, final text, token counts and summaries if explicitly supported; OpenAI raw private reasoning is not exposed and is not comparable to saved Qwen reasoning text.",
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+  "price_checked_pacific": "2026-10-19T13:19:47.262008-07:00",
+  "standard_usd_per_million_tokens": {
+    "input": 0.1,
+    "output": 0.5
+  },
+  "first_stage_output_cost_upper_bound_usd": 0.571392,
+  "cost_limit_note": "Output-token upper bound only; input/image tokens, any cache-write pricing and taxes are additional. No current charges or runtime ETA are asserted.",
+  "uncertainty_scope": "Case-level paired uncertainty is conditional on the fixed benchmark and one generation per model; retain paper/protein grouping metadata and use grouped resampling where justified. Do not claim independent biological observations or across-run variance.",
+  "case_order_policy": "Preserve the exact archived case-manifest order within each whole task. Requests are independent, with no shared conversation or previous-response context."
+}

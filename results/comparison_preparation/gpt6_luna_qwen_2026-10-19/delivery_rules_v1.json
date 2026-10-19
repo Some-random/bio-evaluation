@@ -1,0 +1,8 @@
+{
+  "version": "NATIVE_LAB_MCQ_UNAMBIGUITY_CHECK_V1",
+  "frozen_at_pacific": "2026-10-19T13:18:59.620398-07:00",
+  "rule": "Normally finished native-parsed answer with one distinct single-letter answer-tag value, or the native exact plain-letter fallback. Multiple distinct tags or a multi-letter tag are ambiguous. Repeated identical single-letter tags do not create a conflicting answer. No full-text similarity or reasoning-channel extraction.",
+  "references_used_to_select_rule": false,
+  "luna_generations_observed": false,
+  "native_score_replaced": false
+}

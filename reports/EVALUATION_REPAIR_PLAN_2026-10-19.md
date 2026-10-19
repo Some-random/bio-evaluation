@@ -37,3 +37,7 @@ There is no unconditional shared “pilot passed, launch everything” sequence.
 | P08 stability | Deprioritize a full repeat whose sole purpose is parser repair; the negative-correlation sensitivity result is more informative now. |
 
 [Machine-readable task-specific requirements](../configs/task_specific_delivery_gates_2026-10-19.json) · [Decision table](EVALUATION_DECISION_TABLE.md) · [Integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md)
+
+## Cross-model comparison preparation
+
+The requested GPT-6-luna comparison starts with the preserved LitQA2 and SuppQA conditions: 279 cases, with all Qwen answers delivered and unambiguous. Protein localization is the next sequence-based candidate; figure/table QA form an optional visual block. Exact cases, prompts, scoring references and original Qwen artifacts are prepared for reuse. No fresh Qwen run is required. OpenAI dispatch remains held pending the recorded account-scope issue and task review; the three neutral API checks did not constitute benchmark clearance. [Comparison protocol and evidence](GPT6_LUNA_QWEN_COMPARISON_PLAN_2026-10-19.md).
