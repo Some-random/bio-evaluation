@@ -1,5 +1,5 @@
 {
-  "updated_at_pacific": "2026-10-19T15:06:05.489957-07:00",
+  "updated_at_pacific": "2026-10-19T15:10:59.943033-07:00",
   "public_export_version": 2,
   "public_responses": "Privacy-redacted metadata with original/public hash mapping; exact originals retained privately. Original lock hashes refer to private raw responses.",
   "role": "generation_and_development_evidence_not_completed_benchmark_scores",
@@ -78,10 +78,10 @@
         "P03"
       ],
       "planned": 2773,
-      "saved": 1780,
+      "saved": 2047,
       "complete_prediction_lock": false,
       "terminal_outcomes": {
-        "completed": 1777,
+        "completed": 2044,
         "transport_error": 3
       },
       "transport_or_server_errors": 3,
@@ -90,12 +90,12 @@
       "refusals": 0,
       "per_task": {
         "P03": {
-          "saved": 1780,
-          "observed_terminal": 1780
+          "saved": 2047,
+          "observed_terminal": 2047
         }
       },
-      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_gpt-6-luna_saved_1780.tar.gz",
-      "trajectory_sha256": "7f1b4cc15f3bdf2d89f424192f9ce2bb0f5f4104ee517b23795b32b08ec1a658",
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_gpt-6-luna_saved_2047.tar.gz",
+      "trajectory_sha256": "9a60dbd0f7473710fba9b61bbbf48797d7632e5e0ca6d7c4286fda080da6805a",
       "usage": null,
       "standard_uncached_cost_estimate_usd": null,
       "biological_correctness_assessed": false
@@ -256,8 +256,8 @@
   "no_qwen_reruns": true,
   "benchmark_scoring_requires_complete_prediction_lock": true,
   "export_cache": {
-    "original_files_read_this_snapshot": 1180,
-    "verified_cached_public_files_reused": 7721,
+    "original_files_read_this_snapshot": 1335,
+    "verified_cached_public_files_reused": 8901,
     "policy": "Original metadata, expected hashes and privacy/scanner code hashes invalidate cached exports."
   }
 }
