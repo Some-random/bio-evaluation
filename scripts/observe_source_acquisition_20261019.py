@@ -24,6 +24,7 @@ SOURCES = {
     'proteor1_resume': 'proteor1_checkpoints/resume_status.json',
     'b06_input_review': 'b06_review/review_receipt.json',
     'b06_review_interruption': 'b06_review/review_interruption.json',
+    'p18_preparation_interruption': 'p18_gfp_candidate/review_interruption.json',
     'arxivqa_assets': 'vision/arxivqa/completion.json',
     'slidevqa_images': 'vision/slidevqa/spooled_progress.json',
     'slidevqa_process': 'vision/slidevqa/spool_watcher_status.json',

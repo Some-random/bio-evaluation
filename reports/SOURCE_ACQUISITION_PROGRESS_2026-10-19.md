@@ -1,6 +1,6 @@
 # Official-source acquisition
 
-Snapshot: 2026-10-19T15:48:12.673173-07:00 (America/Los_Angeles).
+Snapshot: 2026-10-19T15:51:39.760563-07:00 (America/Los_Angeles).
 
 **Three previously missing prediction archives, all LLaVA-Med images, full upstream ChartQA images, ArxivQA assets and60upstream RAbD structures have been acquired. Other downloads continue.**
 
@@ -20,7 +20,7 @@ These are source/data/evaluator acquisitions, not newly completed biological ben
 | P35 | ProtST retrieval | Complete GO corpus acquired and publisher MD5 verified;8.53GB checkpoint final verification continues; pinned source files recovered. | Full retained corpus inventory and a declared Qwen ranking interface/relevance evaluation remain unfinished. |
 | P37 | Generation structure evaluator | OmegaFold checkpoint downloaded and locally hashed; pinned source recovered; final source-integrity receipt is authoritative. | Native sampling/filter/clustering/folding settings and cohort remain unresolved. |
 | P40 | RAbD structural context | All60 upstream PDB coordinate files acquired from RCSB; gzip CRC/header identities checked and local hashes recorded. | These are current upstream coordinates, not a certified processed paper holdout. Exact masks, numbering and evaluation settings remain unresolved. |
-| P41 | Proteo-R1 checkpoints | Public understanding/generation checkpoints are being acquired as opaque files, with publisher LFS SHA256 checks. | Exact test holdout, preprocessing and complete runtime/scoring contract remain unresolved. No checkpoint loading. |
+| P41 | Proteo-R1 checkpoints | Both public understanding/generation releases acquired:16files,9.87GB; checkpoint weights match publisher LFS SHA256s. Short transfers resumed from preserved prefixes. | Exact test holdout, preprocessing and complete runtime/scoring contract remain unresolved. No checkpoint loading. |
 | P09/P27/P38 | NatureLM missing artifacts | Current official source was reacquired and hashed; original generator weights are distinct from evaluation artifacts. | Binary stability conversion, temporal test manifest, exact property heads and reference cohort were not found in inspected author releases. |
 | P19-P22 | PFArena | Current official code and metadata acquired. Exact dataset access probe still returns401. | Legitimate Hugging Face dataset access is needed; no gate terms were accepted or access controls bypassed. |
 | P30-P32/source | MutaDescribe | Six official test/validation CSVs and45official/reproduction source files acquired and publisher-hash checked;35.4MBtotal. Test splits contain1248structural and1611temporal cases. | Original interrupted source review and execution holds are not lifted by downloading files. Exact old trigger remains unknown; original two-stage interface differs from reproduction-provided context. |
@@ -31,7 +31,7 @@ The B06 worker continued independent input review after excluding the previously
 
 An automatic biological-safety check interrupted that review again; the exact new trigger was not returned. Completed records and the prior hold are preserved. The blocked content was not retried or forwarded to Qwen. This does not establish that every ProtocolQA or MutaDescribe case is prohibited.
 
-Previously rejected P18 material remains held. P30-P32 source acquisition keeps mutation content opaque and does not resume the interrupted review or authorize inference.
+Previously rejected P18 material remains held. A subsequent GFP-only P18 metadata/contract preparation attempt also received an automatic biological-safety block; its exact trigger was not returned and the action was not retried. This does not establish that GFP research or every P18 case is prohibited. P30-P32 source acquisition keeps mutation content opaque and does not resume the interrupted review or authorize inference.
 
 ## Sources and live evidence
 

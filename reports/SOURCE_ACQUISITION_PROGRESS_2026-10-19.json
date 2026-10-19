@@ -83,7 +83,7 @@
     },
     {
       "asset": "Proteo-R1 checkpoints",
-      "availability": "Public understanding/generation checkpoints are being acquired as opaque files, with publisher LFS SHA256 checks.",
+      "availability": "Both public understanding/generation releases acquired:16files,9.87GB; checkpoint weights match publisher LFS SHA256s. Short transfers resumed from preserved prefixes.",
       "remaining": "Exact test holdout, preprocessing and complete runtime/scoring contract remain unresolved. No checkpoint loading.",
       "task_ids": "P41"
     },
@@ -111,12 +111,14 @@
     ".local/source_acquisition_2026-10-19/b06_review/review_receipt.json": "5154930d53daf29bcef5a52d28327f3e47d65f567d17addbba49ccba3bcbae0c",
     ".local/source_acquisition_2026-10-19/evaluators/P38_missing_artifacts.json": "5c988a3575eef4d14819be8cf9895997d81630a72f065d7e53f01a8d2174d6ce",
     ".local/source_acquisition_2026-10-19/evaluators/handoff_receipt.json": "586c1420f4992376deb5a0498b898008728b83f607732692733066694ace1115",
+    ".local/source_acquisition_2026-10-19/mutadescribe_sources/protocol_recovery_report.json": "95481757976a25d17a11d69a4574aee823a630dc23141a5f05b4b41d2adac3a5",
+    ".local/source_acquisition_2026-10-19/p18_gfp_candidate/review_interruption.json": "a987a12319a209443c302d9029c16c81e84ee200bf5259d44ad883523b5eabac",
     ".local/source_acquisition_2026-10-19/prediction_datasets/file_manifest.json": "88770e493ea1574cfe5b1c78ff1c36fa5ef15b98df45f4147a6b2135306512c3",
     ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json": "82475704e041303676d8b24a470fba657b9a8383cfee763b53f71b75668a9ab0",
-    ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json": "ccf29805afb0a40a45e6dfc6cd5f37c1d529f34c24de12c4c1432b6a3bc978e3",
-    ".local/source_acquisition_2026-10-19/proteor1_checkpoints/resume_status.json": "b2536731884741f22daa545b8440a30f60f22f24262528c52bce81736ef5999d",
+    ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json": "0c740c4e04073918c754bf5418063f3087a55cbf52acf377669efd380bf89e3d",
+    ".local/source_acquisition_2026-10-19/proteor1_checkpoints/resume_status.json": "ae55c2fc7e924f8bbb9739c22c541c195b009b219792b4f46b872e9c31967844",
     ".local/source_acquisition_2026-10-19/protocols/manifest.json": "20267254997b2260e208b08e3a4b30167d08cd22466a9f621b525b6c19352d7e",
-    ".local/source_acquisition_2026-10-19/status.json": "d2105b6aeee85132644f10fe914ba160fa933a506c5b8c8bc8e2dd6c87c38cd6",
+    ".local/source_acquisition_2026-10-19/status.json": "f6a28ecb52b98c4cf38c691169bcf5bc40034e086101218cbe7e48a064b886a4",
     ".local/source_acquisition_2026-10-19/structural_context/manifest.json": "3218c8fa5378cfa910f4f964f54f92c478149074fdd7b52584e0253e6e2417ab",
     ".local/source_acquisition_2026-10-19/vision/PUBLIC_SOURCE_SUMMARY.json": "bd8022714493fed865af91bacc61ad8270aa0b47bdc537202e619350fc1053b2",
     ".local/source_acquisition_2026-10-19/vision/arxivqa/completion.json": "74fc8c6e545f7f31df0d3cb42f890b6d20c6c15d23b41c4954ad3e7e94f66972",
@@ -124,7 +126,7 @@
     ".local/source_acquisition_2026-10-19/vision/v06/completion.json": "a9fb382389da18efdbe707e65b0d6c500cd18143de691d3f27101b94d423941f"
   },
   "full_catalog_complete": false,
-  "generated_at_pacific": "2026-10-19T15:48:12.673173-07:00",
+  "generated_at_pacific": "2026-10-19T15:51:39.760563-07:00",
   "model_weights_published": false,
   "new_inference_calls": 0,
   "new_training": false,
@@ -138,11 +140,11 @@
     "poll_seconds": 60,
     "role": "read_only_source_acquisition_observer_not_benchmark_execution",
     "training_by_observer": false,
-    "updated_at_pacific": "2026-10-19T15:47:58.650608-07:00",
+    "updated_at_pacific": "2026-10-19T15:51:03.390064-07:00",
     "workers": [
       {
         "name": "prediction_datasets",
-        "source_age_seconds": 948,
+        "source_age_seconds": 1133,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json",
         "source_sha256": "82475704e041303676d8b24a470fba657b9a8383cfee763b53f71b75668a9ab0",
@@ -174,7 +176,7 @@
       },
       {
         "name": "protocol_sources",
-        "source_age_seconds": 1042,
+        "source_age_seconds": 1227,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/protocols/manifest.json",
         "source_sha256": "20267254997b2260e208b08e3a4b30167d08cd22466a9f621b525b6c19352d7e",
@@ -192,7 +194,7 @@
       },
       {
         "name": "rabd_coordinates",
-        "source_age_seconds": 883,
+        "source_age_seconds": 1068,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/structural_context/manifest.json",
         "source_sha256": "3218c8fa5378cfa910f4f964f54f92c478149074fdd7b52584e0253e6e2417ab",
@@ -207,7 +209,7 @@
       },
       {
         "name": "chartqa_images",
-        "source_age_seconds": 820,
+        "source_age_seconds": 1004,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/chartqa/completion.json",
         "source_sha256": "9d25793eb9be5876e2de962d8619162a18dffb341848bea39c6acee514c0a378",
@@ -223,7 +225,7 @@
       },
       {
         "name": "llava_med_images",
-        "source_age_seconds": 1034,
+        "source_age_seconds": 1218,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/v06/completion.json",
         "source_sha256": "a9fb382389da18efdbe707e65b0d6c500cd18143de691d3f27101b94d423941f",
@@ -269,7 +271,7 @@
             "bytes": 8531223409,
             "id": "P35_ProtST_ESM1b",
             "observed_transferred_bytes": 8531223409,
-            "recent_measured_bytes_per_second": 3611530.1622144957,
+            "recent_measured_bytes_per_second": 0.0,
             "state": "downloading_parallel_ranges"
           },
           {
@@ -293,21 +295,21 @@
         ],
         "name": "evaluator_transfers",
         "process_exists": true,
-        "source_age_seconds": 21,
+        "source_age_seconds": 15,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/evaluators/status.json",
-        "source_sha256": "277190c7cc8cde17201d3a23f91903698cc24aefc19e3716e53cdb396c67404c",
+        "source_sha256": "893be34db6829f31b6d50a49f649378c23af27d46fdf39c1992e4029e8691641",
         "summary": {
           "all_downloads_complete": false,
           "pid": 2576907,
           "role": "source_acquisition_progress_only",
-          "updated_at_utc": "2026-10-19T22:47:27.363358+00:00"
+          "updated_at_utc": "2026-10-19T22:50:46.846162+00:00"
         }
       },
       {
         "name": "protst_transfer",
         "process_exists": true,
-        "source_age_seconds": 59,
+        "source_age_seconds": 242,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/evaluators/protst_parallel_transfer.json",
         "source_sha256": "420ef6a0a44d7ccbdb78e7d22ac9cfd7416f2d167798048c6d9e054dd250cb23",
@@ -326,40 +328,44 @@
       {
         "name": "proteor1_checkpoints",
         "process_exists": false,
-        "source_age_seconds": 130,
+        "source_age_seconds": 93,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json",
-        "source_sha256": "ccf29805afb0a40a45e6dfc6cd5f37c1d529f34c24de12c4c1432b6a3bc978e3",
+        "source_sha256": "0c740c4e04073918c754bf5418063f3087a55cbf52acf377669efd380bf89e3d",
         "summary": {
+          "all_files_verified": true,
           "expected_bytes": 9872881070,
-          "finished_at_pacific": "2026-10-19T15:45:50.519843-07:00",
-          "observed_verified_bytes": 4133164571,
-          "observed_verified_file_count": 14,
+          "finished_at_pacific": "2026-10-19T15:49:30.319643-07:00",
+          "observed_verified_bytes": 9872881070,
+          "observed_verified_file_count": 16,
           "pid": 2580530,
           "planned_files": 16,
           "stage": "acquisition_terminal",
           "updated_at_pacific": "2026-10-19T15:45:50.118739-07:00",
-          "verified_bytes": 4133164571,
-          "verified_files": 14
+          "verified_bytes": 9872881070,
+          "verified_files": 16
         }
       },
       {
         "name": "proteor1_resume",
-        "process_exists": true,
-        "source_age_seconds": 106,
+        "process_exists": false,
+        "source_age_seconds": 92,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/proteor1_checkpoints/resume_status.json",
-        "source_sha256": "b2536731884741f22daa545b8440a30f60f22f24262528c52bce81736ef5999d",
+        "source_sha256": "ae55c2fc7e924f8bbb9739c22c541c195b009b219792b4f46b872e9c31967844",
         "summary": {
-          "observed_verified_bytes": 0,
-          "observed_verified_file_count": 0,
+          "all_files_verified": true,
+          "finished_at_pacific": "2026-10-19T15:49:30.878904-07:00",
+          "observed_verified_bytes": 5739716499,
+          "observed_verified_file_count": 2,
           "pid": 2590120,
-          "stage": "resuming_short_source_transfers"
+          "stage": "terminal",
+          "updated_at_pacific": "2026-10-19T15:49:29.570206-07:00"
         }
       },
       {
         "name": "b06_input_review",
-        "source_age_seconds": 297,
+        "source_age_seconds": 479,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/b06_review/review_receipt.json",
         "source_sha256": "5154930d53daf29bcef5a52d28327f3e47d65f567d17addbba49ccba3bcbae0c",
@@ -375,7 +381,7 @@
       },
       {
         "name": "b06_review_interruption",
-        "source_age_seconds": 108,
+        "source_age_seconds": 290,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/b06_review/review_interruption.json",
         "source_sha256": "729068329203e9664ff2e28c21a1ff210c924b13a63e5ae1805de4ebf8652db2",
@@ -388,7 +394,7 @@
       },
       {
         "name": "arxivqa_assets",
-        "source_age_seconds": 292,
+        "source_age_seconds": 475,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/arxivqa/completion.json",
         "source_sha256": "74fc8c6e545f7f31df0d3cb42f890b6d20c6c15d23b41c4954ad3e7e94f66972",
@@ -399,29 +405,29 @@
       },
       {
         "name": "slidevqa_images",
-        "source_age_seconds": 22,
+        "source_age_seconds": 15,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/slidevqa/spooled_progress.json",
-        "source_sha256": "0aefc8a858eb79133e508d2101596afdb58ba47f807508b6c2a4b62503055ef8",
+        "source_sha256": "dd4bcd7f9c26bc3ff5ac5561967523c9514e21378c6d34b7391a1bf6abc2dca7",
         "summary": {
-          "failed_images": 40,
+          "failed_images": 120,
           "planned_images": 8000,
-          "updated_at_pacific": "2026-10-19T15:47:27.508787-07:00",
-          "verified_bytes": 129485694,
-          "verified_images": 1675
+          "updated_at_pacific": "2026-10-19T15:50:47.492225-07:00",
+          "verified_bytes": 187612354,
+          "verified_images": 2395
         }
       },
       {
         "name": "slidevqa_process",
         "process_exists": true,
-        "source_age_seconds": 19,
+        "source_age_seconds": 13,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/slidevqa/spool_watcher_status.json",
-        "source_sha256": "ea2ba4b412288e9d9638fbf29bc8c87817777771f84669c4197d635491701414",
+        "source_sha256": "fc652a0553c7aad6e7f0a3e87dc13d667516535bff713f8b80716197cf10298c",
         "summary": {
           "pid": 2584687,
           "stage": "watching",
-          "updated_at_pacific": "2026-10-19T15:47:42.078434-07:00"
+          "updated_at_pacific": "2026-10-19T15:50:50.038786-07:00"
         }
       }
     ]

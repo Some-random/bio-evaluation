@@ -409,3 +409,15 @@ and independent review of other cases may continue. This does not authorize
 rephrasing, forwarding or rerunning the previously flagged requests through
 Qwen or another provider. Keep actual execution reviews and frozen per-case
 scopes distinct from permission to download a source corpus.
+
+During this new acquisition work, an independent B06 input review (excluding
+its previously identified held case before content inspection) was again
+interrupted by an automatic biological-safety check. Preserve
+`.local/source_acquisition_2026-10-19/b06_review/review_receipt.json` and
+`review_interruption.json`; completed candidate records are not dispatch
+approval or full-benchmark completion. A subsequent GFP-only P18 metadata/
+contract preparation attempt also received an automatic biological-safety
+block, recorded under `p18_gfp_candidate/review_interruption.json`. Exact
+triggers were not returned. Do not retry or reroute those interrupted actions.
+These events do not classify every benchmark case or GFP research as unsafe;
+other already-running ordinary source/evaluator downloads continue.
