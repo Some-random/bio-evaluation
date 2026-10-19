@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/mixed_budget_scoring.py", line 474, in <module>
+    main()
+  File "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/mixed_budget_scoring.py", line 465, in main
+    result = invoke_native(read(args.native_only_spec), args.native_config, args.native_folder)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/mixed_budget_scoring.py", line 303, in invoke_native
+    result = native.score(folder, root=root, config_path=config_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri/scripts/score_local_deepfri_confidence.py", line 184, in score
+    raise ValueError("Saved final/finish fields conflict")
+ValueError: Saved final/finish fields conflict
