@@ -161,10 +161,10 @@ Qwen results and published reference results use the stated protocols and are no
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
-| Enzyme Commission annotation | DeepFRI-derived EC and GO test splits<br>Enzyme Commission labels — DeepFRI split | Protein sequence | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Enzyme Commission annotation* | DeepFRI-derived EC and GO test splits<br>Enzyme Commission labels — DeepFRI split | Protein sequence | **Diagnostic only:** auprc@micro undefined; f1_max undefined<br>Full native primary metric undefined. | ProtST-ESM-1b: aupr 0.894; fmax 0.878; Table 3, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Gene Ontology: biological process | DeepFRI-derived EC and GO test splits<br>GO biological process — DeepFRI split | Protein sequence | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Gene Ontology: molecular function | DeepFRI-derived EC and GO test splits<br>GO molecular function — DeepFRI split | Protein sequence | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
-| Gene Ontology: cellular component | DeepFRI-derived EC and GO test splits<br>GO cellular component — DeepFRI split | Protein sequence | — | Fmax, ProtST-ESM-2 vs ESM-2: EC 0.878 vs 0.874; GO-BP 0.482 vs 0.472; GO-MF 0.668 vs 0.662; GO-CC 0.487 vs 0.472. · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Gene Ontology: molecular function* | DeepFRI-derived EC and GO test splits<br>GO molecular function — DeepFRI split | Protein sequence | **Diagnostic only:** auprc@micro undefined; f1_max undefined<br>Full native primary metric undefined. | ProtST-ESM-1b: aupr 0.644; fmax 0.661; Table 3, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+| Gene Ontology: cellular component* | DeepFRI-derived EC and GO test splits<br>GO cellular component — DeepFRI split | Protein sequence | **Diagnostic only:** auprc@micro undefined; f1_max undefined<br>Full native primary metric undefined. | ProtST-ESM-1b: aupr 0.364; fmax 0.488; Table 3, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Enzyme and Gene Ontology annotation | PFMBench GO/EC annotation panel | Protein sequences/features; partner/context inputs for interaction tasks | — | ESM2-Adapter, Table 1 means: GO-CC F1 0.6130; GO-MF F1 0.6488; GO-BP F1 0.5412; EC F1 0.7379 · [source](https://arxiv.org/html/2506.14796v1) |
 
 #### Protein function descriptions
@@ -623,6 +623,12 @@ Not a free-form rationale score. GO label incompleteness and ontology propagatio
 **Gene Ontology: cellular component:** Where does the protein act, or in which complex? Metric: Micro-AP/AUPR; Fmax. Keep BP/MF/CC separate; ProtST's DeepFRI-derived split.
 
 Not a free-form rationale score. GO label incompleteness and ontology propagation affect evaluation.
+
+**Comparison qualification:** Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation. Mixed historical4096/prospective16384 budgets; the separately versioned scorer accepts only explicit raw null versus normalized empty final text for provenance. Missing finals remain invalid. Original failed scoring attempt and all raw bytes are preserved; no generation was repeated.
+
+**Comparison qualification:** Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation. Mixed historical4096/prospective16384 budgets; the separately versioned scorer accepts only explicit raw null versus normalized empty final text for provenance. Missing finals remain invalid. Original failed scoring attempt and all raw bytes are preserved; no generation was repeated.
+
+**Comparison qualification:** Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation. Mixed historical4096/prospective16384 budgets; the separately versioned scorer accepts only explicit raw null versus normalized empty final text for provenance. Missing finals remain invalid. Original failed scoring attempt and all raw bytes are preserved; no generation was repeated.
 
 [Source 1](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf), [Source 2](https://github.com/DeepGraphLearning/ProtST)
 
@@ -1338,4 +1344,4 @@ Published source size/units: Processed test 12,943 molecules (train 103,547; val
 
 </details>
 
-Result references updated: **2026-10-19 01:26 PDT**. Display times use Pacific time (PST/PDT).
+Result references updated: **2026-10-19 01:28 PDT**. Display times use Pacific time (PST/PDT).

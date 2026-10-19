@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-19T08:26:35.324012+00:00",
+  "generated_at_utc": "2026-10-19T08:28:02.495277+00:00",
   "catalog_settings": 64,
   "completed_whole_declared_setting_ids": [
     "B01",
@@ -4135,6 +4135,462 @@
       },
       "input_reference_dependence": null,
       "seed_predictor_overlap": null
+    },
+    {
+      "task_id": "P12",
+      "task_name": "Enzyme Commission labels — DeepFRI split",
+      "run_id": "qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "dataset": null,
+      "native_split": null,
+      "completion_scope": "diagnostic_only_primary_metrics_invalid",
+      "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+      "local_training_regime": "Fixed zero-shot baseline; no benchmark task training or test-guided prompt/model selection",
+      "generation": {
+        "max_tokens": null,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        },
+        "output_budget_counts": {
+          "4096": 449,
+          "16384": 1470
+        }
+      },
+      "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+      "native_protocol_variant": null,
+      "finished_at_utc": null,
+      "counts": {
+        "planned": 1919,
+        "completed": 1919,
+        "parsed": 1634,
+        "invalid_outputs": 285,
+        "missing_or_failed_outputs": null,
+        "held_before_inference": 0
+      },
+      "finish_reasons": {
+        "stop": 1680,
+        "length": 239
+      },
+      "metrics": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.00564891891553998,
+          "f1_max": 0.027645308524370193,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.0051219060217818435
+          },
+          "valid_cases": 1634,
+          "planned_cases": 1919
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.004455736372619867,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.004380960498710798
+          },
+          "case_count": 1919,
+          "is_model_prediction": false
+        }
+      },
+      "metric_units": "Accuracy/precision/coverage fractions; AUROC/AP fractions; other metrics preserve source-native units",
+      "curated_only_diagnostic_metrics": null,
+      "comparison_to_paper": "Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation. Mixed historical4096/prospective16384 budgets; the separately versioned scorer accepts only explicit raw null versus normalized empty final text for provenance. Missing finals remain invalid. Original failed scoring attempt and all raw bytes are preserved; no generation was repeated.",
+      "comparison_status": "contextual_side_by_side_no_superiority_or_significance_claim",
+      "selected_published_reference": {
+        "model": "ProtST-ESM-1b",
+        "metrics": {
+          "aupr": 0.894,
+          "fmax": 0.878
+        },
+        "source_id": "PROTST",
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 3, printed p.6",
+        "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+        "value_status": "published_rounded_as_printed",
+        "run_count": null,
+        "reported_std": null,
+        "display_model": "ProtST-ESM-1b",
+        "display_metrics": {
+          "aupr": 0.894,
+          "fmax": 0.878
+        },
+        "display_scope": "published protocol; contextual"
+      },
+      "all_published_references": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "aupr": 0.894,
+            "fmax": 0.878
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 3, printed p.6",
+          "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "caveats": [
+        "Mixed 4K/16K continuation: 449 original cases retain 4,096-token caps; 1470 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation.",
+        "Separate offline scorer compatibility repair: explicit raw null and normalized empty final text are treated as equivalent. Missing confidence vectors remain invalid; native parsing, metric formulas, denominators and generations are unchanged. The original failed attempt is preserved.",
+        "All planned requests finished, but the full-test primary metric is undefined. Parsed-only diagnostics do not complete the benchmark and cannot replace its native metric."
+      ],
+      "explanation_support_score": null,
+      "scorer_recovery": {
+        "version": "NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+        "original_failed_run_id": "qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_v1",
+        "original_scorer_sha256": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7",
+        "derived_scorer_sha256": "8e9f16fcac02afbfee88fcf271a62bd974d559c803aa78dabf7dbac8999ebb91",
+        "normalization_counts": {
+          "equal": 1685,
+          "explicit_null_to_empty": 234
+        },
+        "native_parser_and_metric_formulas_unchanged": true,
+        "scorer_provenance_guard_changed": true,
+        "raw_outputs_modified": false,
+        "generation_or_selective_reruns": false
+      },
+      "source_scores": "results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "source_completion": "results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/completion.json",
+      "scores_sha256": "e4f9ecd775592e15834e82b2416310bcb7413eefc7624f9ae243666498011021",
+      "completion_score_hash_verified": true,
+      "full_test_id_union_validation": {
+        "complete": true,
+        "union_matches_full_test_ids": true,
+        "expected_test_case_count": 1919,
+        "unique_observed_case_count": 1919,
+        "missing_case_count": 0,
+        "extra_case_count": 0,
+        "duplicate_case_count": 0,
+        "sealed_completion_snapshot": {
+          "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_sources/50faec3dbfd6f77d524421f4b20f1d45b8475370fcc1080d24cdae1281905ca4",
+          "receipt_sha256": "2f504d0f88058a98e34432ff74e809ff804441699461c4ae59555b98727f0758",
+          "wrapper_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_completion_scoring.py",
+          "wrapper_sha256": "ca3453f41dd85fe9ffe48c99c0cc79745861b54177b19fb764e9c106182e38a8",
+          "native_input_bytes_match_frozen_raw_slots": true
+        }
+      },
+      "input_reference_dependence": null,
+      "seed_predictor_overlap": null
+    },
+    {
+      "task_id": "P14",
+      "task_name": "GO molecular function — DeepFRI split",
+      "run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "dataset": null,
+      "native_split": null,
+      "completion_scope": "diagnostic_only_primary_metrics_invalid",
+      "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+      "local_training_regime": "Fixed zero-shot baseline; no benchmark task training or test-guided prompt/model selection",
+      "generation": {
+        "max_tokens": null,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        },
+        "output_budget_counts": {
+          "4096": 488,
+          "16384": 2928
+        }
+      },
+      "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+      "native_protocol_variant": null,
+      "finished_at_utc": null,
+      "counts": {
+        "planned": 3416,
+        "completed": 3416,
+        "parsed": 3120,
+        "invalid_outputs": 296,
+        "missing_or_failed_outputs": null,
+        "held_before_inference": 0
+      },
+      "finish_reasons": {
+        "stop": 3327,
+        "length": 89
+      },
+      "metrics": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.02469353936612606,
+          "f1_max": 0.1107293888926506,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.022279289979246795
+          },
+          "valid_cases": 3120,
+          "planned_cases": 3416
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.01826496608555317,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.01815108020478633
+          },
+          "case_count": 3416,
+          "is_model_prediction": false
+        }
+      },
+      "metric_units": "Accuracy/precision/coverage fractions; AUROC/AP fractions; other metrics preserve source-native units",
+      "curated_only_diagnostic_metrics": null,
+      "comparison_to_paper": "Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation. Mixed historical4096/prospective16384 budgets; the separately versioned scorer accepts only explicit raw null versus normalized empty final text for provenance. Missing finals remain invalid. Original failed scoring attempt and all raw bytes are preserved; no generation was repeated.",
+      "comparison_status": "contextual_side_by_side_no_superiority_or_significance_claim",
+      "selected_published_reference": {
+        "model": "ProtST-ESM-1b",
+        "metrics": {
+          "aupr": 0.644,
+          "fmax": 0.661
+        },
+        "source_id": "PROTST",
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 3, printed p.6",
+        "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+        "value_status": "published_rounded_as_printed",
+        "run_count": null,
+        "reported_std": null,
+        "display_model": "ProtST-ESM-1b",
+        "display_metrics": {
+          "aupr": 0.644,
+          "fmax": 0.661
+        },
+        "display_scope": "published protocol; contextual"
+      },
+      "all_published_references": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "aupr": 0.644,
+            "fmax": 0.661
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 3, printed p.6",
+          "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "caveats": [
+        "Mixed 4K/16K continuation: 488 original cases retain 4,096-token caps; 2928 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation.",
+        "Separate offline scorer compatibility repair: explicit raw null and normalized empty final text are treated as equivalent. Missing confidence vectors remain invalid; native parsing, metric formulas, denominators and generations are unchanged. The original failed attempt is preserved.",
+        "All planned requests finished, but the full-test primary metric is undefined. Parsed-only diagnostics do not complete the benchmark and cannot replace its native metric."
+      ],
+      "explanation_support_score": null,
+      "scorer_recovery": {
+        "version": "NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+        "original_failed_run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_v1",
+        "original_scorer_sha256": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7",
+        "derived_scorer_sha256": "8e9f16fcac02afbfee88fcf271a62bd974d559c803aa78dabf7dbac8999ebb91",
+        "normalization_counts": {
+          "equal": 3325,
+          "explicit_null_to_empty": 91
+        },
+        "native_parser_and_metric_formulas_unchanged": true,
+        "scorer_provenance_guard_changed": true,
+        "raw_outputs_modified": false,
+        "generation_or_selective_reruns": false
+      },
+      "source_scores": "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "source_completion": "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/completion.json",
+      "scores_sha256": "23f784a46d1ef5dee452abb36bdfbebf2c2690043fac68e21ef900785b34bac1",
+      "completion_score_hash_verified": true,
+      "full_test_id_union_validation": {
+        "complete": true,
+        "union_matches_full_test_ids": true,
+        "expected_test_case_count": 3416,
+        "unique_observed_case_count": 3416,
+        "missing_case_count": 0,
+        "extra_case_count": 0,
+        "duplicate_case_count": 0,
+        "sealed_completion_snapshot": {
+          "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_sources/ff4b591e808e874572a84fe056e18fadcc08d61287a8ee0b2fcc4aa31ef1b8e2",
+          "receipt_sha256": "8681ff07d5c6bcc4c164b7d84c5082cb6fb7300e1b3e059cbf4029449a92fb13",
+          "wrapper_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_completion_scoring.py",
+          "wrapper_sha256": "ca3453f41dd85fe9ffe48c99c0cc79745861b54177b19fb764e9c106182e38a8",
+          "native_input_bytes_match_frozen_raw_slots": true
+        }
+      },
+      "input_reference_dependence": null,
+      "seed_predictor_overlap": null
+    },
+    {
+      "task_id": "P15",
+      "task_name": "GO cellular component — DeepFRI split",
+      "run_id": "qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "dataset": null,
+      "native_split": null,
+      "completion_scope": "diagnostic_only_primary_metrics_invalid",
+      "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
+      "model": "Qwen/Qwen3.8-27B",
+      "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+      "local_training_regime": "Fixed zero-shot baseline; no benchmark task training or test-guided prompt/model selection",
+      "generation": {
+        "max_tokens": null,
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "seed": 42,
+        "n": 1,
+        "chat_template_kwargs": {
+          "enable_thinking": true,
+          "reasoning_effort": "medium"
+        },
+        "output_budget_counts": {
+          "4096": 488,
+          "16384": 2928
+        }
+      },
+      "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+      "native_protocol_variant": null,
+      "finished_at_utc": null,
+      "counts": {
+        "planned": 3416,
+        "completed": 3416,
+        "parsed": 3340,
+        "invalid_outputs": 76,
+        "missing_or_failed_outputs": null,
+        "held_before_inference": 0
+      },
+      "finish_reasons": {
+        "stop": 3394,
+        "length": 22
+      },
+      "metrics": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.07652562856674194,
+          "f1_max": 0.2367788702249527,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.06717208094727284
+          },
+          "valid_cases": 3340,
+          "planned_cases": 3416
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.036887455731630325,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.0365906762295082
+          },
+          "case_count": 3416,
+          "is_model_prediction": false
+        }
+      },
+      "metric_units": "Accuracy/precision/coverage fractions; AUROC/AP fractions; other metrics preserve source-native units",
+      "curated_only_diagnostic_metrics": null,
+      "comparison_to_paper": "Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation. Mixed historical4096/prospective16384 budgets; the separately versioned scorer accepts only explicit raw null versus normalized empty final text for provenance. Missing finals remain invalid. Original failed scoring attempt and all raw bytes are preserved; no generation was repeated.",
+      "comparison_status": "contextual_side_by_side_no_superiority_or_significance_claim",
+      "selected_published_reference": {
+        "model": "ProtST-ESM-1b",
+        "metrics": {
+          "aupr": 0.364,
+          "fmax": 0.488
+        },
+        "source_id": "PROTST",
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 3, printed p.6",
+        "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+        "value_status": "published_rounded_as_printed",
+        "run_count": null,
+        "reported_std": null,
+        "display_model": "ProtST-ESM-1b",
+        "display_metrics": {
+          "aupr": 0.364,
+          "fmax": 0.488
+        },
+        "display_scope": "published protocol; contextual"
+      },
+      "all_published_references": [
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
+            "aupr": 0.364,
+            "fmax": 0.488
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 3, printed p.6",
+          "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null
+        }
+      ],
+      "caveats": [
+        "Mixed 4K/16K continuation: 488 original cases retain 4,096-token caps; 2928 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation.",
+        "Separate offline scorer compatibility repair: explicit raw null and normalized empty final text are treated as equivalent. Missing confidence vectors remain invalid; native parsing, metric formulas, denominators and generations are unchanged. The original failed attempt is preserved.",
+        "All planned requests finished, but the full-test primary metric is undefined. Parsed-only diagnostics do not complete the benchmark and cannot replace its native metric."
+      ],
+      "explanation_support_score": null,
+      "scorer_recovery": {
+        "version": "NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+        "original_failed_run_id": "qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_v1",
+        "original_scorer_sha256": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7",
+        "derived_scorer_sha256": "8e9f16fcac02afbfee88fcf271a62bd974d559c803aa78dabf7dbac8999ebb91",
+        "normalization_counts": {
+          "equal": 3398,
+          "explicit_null_to_empty": 18
+        },
+        "native_parser_and_metric_formulas_unchanged": true,
+        "scorer_provenance_guard_changed": true,
+        "raw_outputs_modified": false,
+        "generation_or_selective_reruns": false
+      },
+      "source_scores": "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "source_completion": "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/completion.json",
+      "scores_sha256": "6613f0b989967dc7fbd3825438fcbc467ee7002d17edac964a21309b0a7ac980",
+      "completion_score_hash_verified": true,
+      "full_test_id_union_validation": {
+        "complete": true,
+        "union_matches_full_test_ids": true,
+        "expected_test_case_count": 3416,
+        "unique_observed_case_count": 3416,
+        "missing_case_count": 0,
+        "extra_case_count": 0,
+        "duplicate_case_count": 0,
+        "sealed_completion_snapshot": {
+          "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_sources/fbc60414bd415fb57c85eabe4ab1d16ae53f54e20b9f922cd50d67b432c38793",
+          "receipt_sha256": "3144a6113e3bfc8db900582371ec0aa010faa1161ba9f83074568f2a65edd0b6",
+          "wrapper_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_completion_scoring.py",
+          "wrapper_sha256": "ca3453f41dd85fe9ffe48c99c0cc79745861b54177b19fb764e9c106182e38a8",
+          "native_input_bytes_match_frozen_raw_slots": true
+        }
+      },
+      "input_reference_dependence": null,
+      "seed_predictor_overlap": null
     }
   ],
   "P43": {
@@ -4570,6 +5026,24 @@
       "task_id": "P29",
       "reason": "no_reported_primary_metric",
       "source_scores": "results/runs/qwen38_27b_p29_ood_slurm_replay_2026-10-16_shard_002/scores.json"
+    },
+    {
+      "run_id": "qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "task_id": "P12",
+      "reason": "diagnostic_only_primary_metrics_invalid",
+      "source_scores": "results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json"
+    },
+    {
+      "run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "task_id": "P14",
+      "reason": "diagnostic_only_primary_metrics_invalid",
+      "source_scores": "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json"
+    },
+    {
+      "run_id": "qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "task_id": "P15",
+      "reason": "diagnostic_only_primary_metrics_invalid",
+      "source_scores": "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json"
     }
   ],
   "warnings": [],
@@ -4865,7 +5339,19 @@
     "results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/run_manifest.json": "c555a4e6c737d4f440efc2ea2e3edc9ace81dedeb0487aa3abdebd33860b556a",
     "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b",
     "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/completion.json": "c73681814f2e6c5909a4bf04916c099df1962734a166189662acb49a2be828e0",
-    "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/run_manifest.json": "32336c111ca29d56cc96b5a1c945a2cb2728d430874da121b5d48fe8da87495c"
+    "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/run_manifest.json": "32336c111ca29d56cc96b5a1c945a2cb2728d430874da121b5d48fe8da87495c",
+    "results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json": "e4f9ecd775592e15834e82b2416310bcb7413eefc7624f9ae243666498011021",
+    "results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/completion.json": "9dc924850de45bea65f41e616d5944d2afb5a5a5e50fbf854d479d16ab97eede",
+    "results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/run_manifest.json": "a75b66bed8cb9797fdf03e188132e87589a7d7c3a99e431e9f8d7daa9c13c60a",
+    "results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scoring_correction.json": "b1c49ef6c4c501abd87b1853ba69901c7a8162ce58758c9bf0387d710ef1d009",
+    "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json": "23f784a46d1ef5dee452abb36bdfbebf2c2690043fac68e21ef900785b34bac1",
+    "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/completion.json": "99317f591d1fd54dcb9c410258582b4306a3916afad11a851fbc25d620e7becb",
+    "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/run_manifest.json": "ad80525d06b0082c2216645fcac5dc019d44976dda8cdfdea9e05e9b47f8e859",
+    "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scoring_correction.json": "f2e7550b4bea9a45af2b9abdd4a8e45d5535e91428cdf67e8be09280d30a55a0",
+    "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json": "6613f0b989967dc7fbd3825438fcbc467ee7002d17edac964a21309b0a7ac980",
+    "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/completion.json": "1938a283bbfc2c9933e448383d633b48caf1f14bda615f8ee6aab4c4b40f02a4",
+    "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/run_manifest.json": "9f3f43e51d54b99e7b50becb63da1131187e5219f28e4fafe7bee629881524c3",
+    "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scoring_correction.json": "2dd934210e100245b769a2fb643b33ce93a1831476b7d5d1a90d401fe535a755"
   },
   "reporting_policy": "Only existing aggregate score/completion/manifest and public reference/report metadata read; no case inputs, per-case outputs, requests, responses, labels, inference or frozen-result edits. Failed/incomplete shards never become whole-task completion. Null metrics stay undefined.",
   "interpretation": "Outcome scores do not validate explanations or establish internal reasoning. Public pretraining exposure unknown. Paper values have different training/protocols and supply no matched superiority/significance claim.",

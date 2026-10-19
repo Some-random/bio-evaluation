@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-19T08:26:35.324012+00:00",
-  "scoreSnapshotAt": "2026-10-19T08:26:35.324012+00:00",
+  "generatedAt": "2026-10-19T08:28:02.495277+00:00",
+  "scoreSnapshotAt": "2026-10-19T08:28:02.495277+00:00",
   "runSnapshotAt": "2026-10-18T06:12:58.250371+00:00",
   "heartbeat": {
     "status": "stale",
@@ -9,8 +9,8 @@
   },
   "sourceHashes": {
     "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451",
-    "reports/RESULTS_AT_A_GLANCE.json": "89f5901a8e271eb9755a189b28da8288f8f39eeee2ae533e95599f07f85c1dc9",
-    ".local/remaining_evaluations/supervisor_status.json": "68075b8d04df6ec77507c5b902f330c0242427b3f46ae652a433d48e91214d8d",
+    "reports/RESULTS_AT_A_GLANCE.json": "29457230d08793ae3e918872388e1c8ea5f5272c9437be5e36b512a7406f4420",
+    ".local/remaining_evaluations/supervisor_status.json": "3a08c5c02b42ce06af05c3d31d27d1a11f73076eebc292b6fea07a4341018c1c",
     ".local/remaining_evaluations/upload_status.json": "252027fb467dcf07fcd3f355d9cc0c8c6f8a22794fe17b6973f65a4c81c5a1f3"
   },
   "uploader": {
@@ -388,8 +388,8 @@
     },
     {
       "path": "reports/RESULTS_AT_A_GLANCE.json",
-      "sha256": "89f5901a8e271eb9755a189b28da8288f8f39eeee2ae533e95599f07f85c1dc9",
-      "snapshotAt": "2026-10-19T08:26:35.324012+00:00",
+      "sha256": "29457230d08793ae3e918872388e1c8ea5f5272c9437be5e36b512a7406f4420",
+      "snapshotAt": "2026-10-19T08:28:02.495277+00:00",
       "historical": false,
       "note": "Current score-report metadata; report refresh does not rerun evaluation."
     }
@@ -409,7 +409,7 @@
   "metadataNotice": {
     "source": ".local/remaining_evaluations/supervisor_status.json",
     "stage": "retry_pending",
-    "updatedAt": "2026-10-19T08:26:20.477029+00:00",
+    "updatedAt": "2026-10-19T08:33:30.552133+00:00",
     "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
   }
 }
