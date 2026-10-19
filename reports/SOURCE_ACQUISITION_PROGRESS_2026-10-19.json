@@ -53,8 +53,8 @@
     },
     {
       "asset": "SlideVQA",
-      "availability": "Public author-linked original images are downloading under a bounded durable worker; read live receipts.",
-      "remaining": "Some original URLs return404. Hugging Face mirror requires legitimate account access. Raw assets and annotations stay internal under source license.",
+      "availability": "Public author-linked original images are downloading under a bounded durable worker. 3660 / 8000 images verified; 220 failed URLs at the recorded observation.",
+      "remaining": "Some original URLs return 404. Hugging Face mirror requires legitimate account access. Raw assets and annotations stay internal under source license.",
       "task_ids": "V07/upstream"
     },
     {
@@ -119,7 +119,7 @@
     ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json": "0c740c4e04073918c754bf5418063f3087a55cbf52acf377669efd380bf89e3d",
     ".local/source_acquisition_2026-10-19/proteor1_checkpoints/resume_status.json": "ae55c2fc7e924f8bbb9739c22c541c195b009b219792b4f46b872e9c31967844",
     ".local/source_acquisition_2026-10-19/protocols/manifest.json": "20267254997b2260e208b08e3a4b30167d08cd22466a9f621b525b6c19352d7e",
-    ".local/source_acquisition_2026-10-19/status.json": "8ef1e3782707177a4c7ba20f0f59d18f8460f53419802016ae13354f911ba191",
+    ".local/source_acquisition_2026-10-19/status.json": "84b4c877cb576fdd3b235b7af27c692a61d22f367367a58883fb43c8a9b39f10",
     ".local/source_acquisition_2026-10-19/structural_context/manifest.json": "3218c8fa5378cfa910f4f964f54f92c478149074fdd7b52584e0253e6e2417ab",
     ".local/source_acquisition_2026-10-19/vision/PUBLIC_SOURCE_SUMMARY.json": "bd8022714493fed865af91bacc61ad8270aa0b47bdc537202e619350fc1053b2",
     ".local/source_acquisition_2026-10-19/vision/arxivqa/completion.json": "74fc8c6e545f7f31df0d3cb42f890b6d20c6c15d23b41c4954ad3e7e94f66972",
@@ -127,7 +127,7 @@
     ".local/source_acquisition_2026-10-19/vision/v06/completion.json": "a9fb382389da18efdbe707e65b0d6c500cd18143de691d3f27101b94d423941f"
   },
   "full_catalog_complete": false,
-  "generated_at_pacific": "2026-10-19T15:54:46.526086-07:00",
+  "generated_at_pacific": "2026-10-19T15:56:29.618204-07:00",
   "model_weights_published": false,
   "new_inference_calls": 0,
   "new_training": false,
@@ -137,15 +137,15 @@
   "source_runtime": {
     "downloaded_assets_are_not_completed_benchmark_scores": true,
     "inference_calls_by_observer": 0,
-    "observer_pid": 2599644,
+    "observer_pid": 2602063,
     "poll_seconds": 60,
     "role": "read_only_source_acquisition_observer_not_benchmark_execution",
     "training_by_observer": false,
-    "updated_at_pacific": "2026-10-19T15:54:45.635780-07:00",
+    "updated_at_pacific": "2026-10-19T15:56:13.355139-07:00",
     "workers": [
       {
         "name": "prediction_datasets",
-        "source_age_seconds": 1355,
+        "source_age_seconds": 1443,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json",
         "source_sha256": "82475704e041303676d8b24a470fba657b9a8383cfee763b53f71b75668a9ab0",
@@ -177,7 +177,7 @@
       },
       {
         "name": "protocol_sources",
-        "source_age_seconds": 1449,
+        "source_age_seconds": 1537,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/protocols/manifest.json",
         "source_sha256": "20267254997b2260e208b08e3a4b30167d08cd22466a9f621b525b6c19352d7e",
@@ -195,7 +195,7 @@
       },
       {
         "name": "rabd_coordinates",
-        "source_age_seconds": 1290,
+        "source_age_seconds": 1378,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/structural_context/manifest.json",
         "source_sha256": "3218c8fa5378cfa910f4f964f54f92c478149074fdd7b52584e0253e6e2417ab",
@@ -210,7 +210,7 @@
       },
       {
         "name": "chartqa_images",
-        "source_age_seconds": 1226,
+        "source_age_seconds": 1313,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/chartqa/completion.json",
         "source_sha256": "9d25793eb9be5876e2de962d8619162a18dffb341848bea39c6acee514c0a378",
@@ -226,7 +226,7 @@
       },
       {
         "name": "llava_med_images",
-        "source_age_seconds": 1440,
+        "source_age_seconds": 1528,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/v06/completion.json",
         "source_sha256": "a9fb382389da18efdbe707e65b0d6c500cd18143de691d3f27101b94d423941f",
@@ -298,7 +298,7 @@
         ],
         "name": "evaluator_transfers",
         "process_exists": false,
-        "source_age_seconds": 168,
+        "source_age_seconds": 256,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/evaluators/status.json",
         "source_sha256": "69e7e3d0092c3cad95c4e32965dbf5dee9c1396fa5780a4d854ce64cc91ba777",
@@ -312,7 +312,7 @@
       {
         "name": "protst_transfer",
         "process_exists": false,
-        "source_age_seconds": 213,
+        "source_age_seconds": 300,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/evaluators/protst_parallel_transfer.json",
         "source_sha256": "141e09e698324d58025bac0c6f7e745c447a2f42fe5c8c3e359c24bd6a1233c6",
@@ -331,7 +331,7 @@
       {
         "name": "proteor1_checkpoints",
         "process_exists": false,
-        "source_age_seconds": 315,
+        "source_age_seconds": 403,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json",
         "source_sha256": "0c740c4e04073918c754bf5418063f3087a55cbf52acf377669efd380bf89e3d",
@@ -352,7 +352,7 @@
       {
         "name": "proteor1_resume",
         "process_exists": false,
-        "source_age_seconds": 315,
+        "source_age_seconds": 402,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/proteor1_checkpoints/resume_status.json",
         "source_sha256": "ae55c2fc7e924f8bbb9739c22c541c195b009b219792b4f46b872e9c31967844",
@@ -368,7 +368,7 @@
       },
       {
         "name": "mutadescribe_sources",
-        "source_age_seconds": 469,
+        "source_age_seconds": 557,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/mutadescribe_sources/schema_and_counts.json",
         "source_sha256": "bcddbcf70094df59ce46da9305a09f90feff062fad8a2405b7cfbbfad7d0f9dd",
@@ -383,7 +383,7 @@
       },
       {
         "name": "b06_input_review",
-        "source_age_seconds": 702,
+        "source_age_seconds": 789,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/b06_review/review_receipt.json",
         "source_sha256": "5154930d53daf29bcef5a52d28327f3e47d65f567d17addbba49ccba3bcbae0c",
@@ -399,7 +399,7 @@
       },
       {
         "name": "b06_review_interruption",
-        "source_age_seconds": 513,
+        "source_age_seconds": 600,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/b06_review/review_interruption.json",
         "source_sha256": "729068329203e9664ff2e28c21a1ff210c924b13a63e5ae1805de4ebf8652db2",
@@ -412,7 +412,7 @@
       },
       {
         "name": "p18_preparation_interruption",
-        "source_age_seconds": 188,
+        "source_age_seconds": 276,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/p18_gfp_candidate/review_interruption.json",
         "source_sha256": "a987a12319a209443c302d9029c16c81e84ee200bf5259d44ad883523b5eabac",
@@ -424,7 +424,7 @@
       },
       {
         "name": "arxivqa_assets",
-        "source_age_seconds": 697,
+        "source_age_seconds": 785,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/arxivqa/completion.json",
         "source_sha256": "74fc8c6e545f7f31df0d3cb42f890b6d20c6c15d23b41c4954ad3e7e94f66972",
@@ -435,30 +435,42 @@
       },
       {
         "name": "slidevqa_images",
-        "source_age_seconds": 17,
+        "source_age_seconds": 14,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/slidevqa/spooled_progress.json",
-        "source_sha256": "dcdea0c27e28953a951552c6d5e49b61890ead48bfe7d29e4184be791e69ccb0",
+        "source_sha256": "ee7c50a43fa156ba4ee1e2f2627dacb704b5ffb1a422aaf27606eada6c40439d",
         "summary": {
-          "failed_images": 200,
+          "failed_images": 220,
           "planned_images": 8000,
-          "updated_at_pacific": "2026-10-19T15:54:27.533274-07:00",
-          "verified_bytes": 252977548,
-          "verified_images": 3195
+          "updated_at_pacific": "2026-10-19T15:55:58.744554-07:00",
+          "verified_bytes": 282227003,
+          "verified_images": 3540
         }
       },
       {
         "name": "slidevqa_process",
         "process_exists": true,
-        "source_age_seconds": 17,
+        "source_age_seconds": 14,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/slidevqa/spool_watcher_status.json",
-        "source_sha256": "7eca81007760c6a7dc38d6ba06ac8c67e06315c137700b4c303fa641f0002620",
+        "source_sha256": "2042132156f08034fbdb5c0d5184a9da454dd107ec88f54d29e69a61c88be38c",
         "summary": {
           "pid": 2584687,
           "stage": "watching",
-          "updated_at_pacific": "2026-10-19T15:54:28.772543-07:00"
+          "updated_at_pacific": "2026-10-19T15:55:59.265752-07:00"
         }
+      },
+      {
+        "name": "slidevqa_terminal",
+        "reason": "receipt_not_available_counts_unknown",
+        "source_available": false,
+        "source_path": ".local/source_acquisition_2026-10-19/vision/slidevqa/spooled_archive_receipt.json"
+      },
+      {
+        "name": "source_publication_watcher",
+        "reason": "receipt_not_available_counts_unknown",
+        "source_available": false,
+        "source_path": ".local/source_acquisition_2026-10-19/publication_watcher/status.json"
       }
     ]
   }

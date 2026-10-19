@@ -21,6 +21,13 @@ def main():
     now = datetime.datetime.now(ZoneInfo('America/Los_Angeles')).isoformat()
     prediction = read('prediction_datasets/summary.json') or {}
     review = read('b06_review/review_receipt.json') or {}
+    slide = read('vision/slidevqa/spooled_archive_receipt.json')
+    slide_progress = slide or read('vision/slidevqa/spooled_progress.json') or {}
+    slide_status = ('Acquisition attempt complete; private archive and image hashes revalidated. '
+                    if slide else 'Public author-linked original images are downloading under a bounded durable worker. ')
+    slide_status += (str(slide_progress.get('verified_images', 'unknown')) + ' / ' +
+                     str(slide_progress.get('planned_images', 'unknown')) + ' images verified; ' +
+                     str(slide_progress.get('failed_images', 'unknown')) + ' failed URLs at the recorded observation.')
     rows = [
         ('P04', 'PEER beta-lactamase', 'Official archive downloaded; publisher MD5 matches.', 'Assay/case eligibility and frozen input/scoring preparation remain unfinished.'),
         ('P05', 'FLIP AAV', 'Official splits archive and exact two_vs_many CSV/FASTA downloaded; pinned Git blob verified.', 'Input-only eligibility review and a frozen Qwen protocol remain unfinished.'),
@@ -29,7 +36,7 @@ def main():
         ('V07/upstream', 'ChartQA', 'All 1,509 official images verified against pinned Git blob hashes; 2,500 questions covered.', 'This is upstream ChartQA, not certification of the exact Ryze Table 3 condition.'),
         ('V07/upstream', 'ArxivQA', 'Official 100,000-row JSON and 7.95 GB image archive publisher SHA256s verified; non-label mapping matches Ryze-Data.', 'Exact paper Table 3 roster/run correspondence remains unverified.'),
         ('V07/source', 'Ryze-Data', 'New official author repository acquired: 151 Git blobs at ea5c0de8fbb495abaab882f395f8e84d7e056019.', 'Real loaders, prompts, downstream Qwen3-VL-8B QA and scorers are recovered; exact Table 3 and ChartQA branch remain unresolved.'),
-        ('V07/upstream', 'SlideVQA', 'Public author-linked original images are downloading under a bounded durable worker; read live receipts.', 'Some original URLs return404. Hugging Face mirror requires legitimate account access. Raw assets and annotations stay internal under source license.'),
+        ('V07/upstream', 'SlideVQA', slide_status, 'Some original URLs return 404. Hugging Face mirror requires legitimate account access. Raw assets and annotations stay internal under source license.'),
         ('P34', 'Optimization evaluator', 'ESM1b encoder and five previously permitted heads/start assets recovered; inspect integrity receipts.', 'Qwen likelihood/search adapter and source-versus-paper execution contract remain unfinished. No model forward or held landscape.'),
         ('P35', 'ProtST retrieval', 'Complete GO corpus and 8.53 GB checkpoint acquired. Corpus publisher MD5 and checkpoint publisher S3 multipart ETag match; pinned source files recovered.', 'No independent publisher checkpoint SHA256 was available. Full retained corpus inventory and a declared Qwen ranking interface/relevance evaluation remain unfinished.'),
         ('P37', 'Generation structure evaluator', 'OmegaFold checkpoint acquired; publisher S3 multipart ETag matched and local SHA256 recorded; pinned source recovered.', 'No independent publisher checkpoint SHA256 was available. Native sampling/filter/clustering/folding settings and cohort remain unresolved.'),
@@ -44,6 +51,7 @@ def main():
                 'protocols/manifest.json', 'structural_context/manifest.json',
                 'vision/PUBLIC_SOURCE_SUMMARY.json', 'vision/chartqa/completion.json',
                 'vision/v06/completion.json', 'vision/arxivqa/completion.json',
+                'vision/slidevqa/spooled_archive_receipt.json',
                 'evaluators/handoff_receipt.json', 'evaluators/completion.json', 'evaluators/P38_missing_artifacts.json',
                 'proteor1_checkpoints/manifest.json', 'proteor1_checkpoints/resume_status.json',
                 'b06_review/review_receipt.json', 'b06_review/review_interruption.json',
@@ -66,7 +74,7 @@ def main():
     report = ROOT / 'reports/SOURCE_ACQUISITION_PROGRESS_2026-10-19.json'
     report.write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
     lines = ['# Official-source acquisition', '', 'Snapshot: ' + now + ' (America/Los_Angeles).', '',
-        '**Three previously missing prediction archives, all LLaVA-Med images, full upstream ChartQA images, ArxivQA assets, evaluator checkpoints and 60 upstream RAbD structures have been acquired. SlideVQA downloads continue.**', '',
+        '**Three previously missing prediction archives, all LLaVA-Med images, full upstream ChartQA images, ArxivQA assets, evaluator checkpoints and 60 upstream RAbD structures have been acquired.** ' + ('The SlideVQA acquisition attempt is terminal; missing originals are listed below.' if slide else 'SlideVQA downloads continue.'), '',
         'These are source/data/evaluator acquisitions, not newly completed biological benchmark scores. Existing Qwen generations and scientific scores are preserved. Model weights remain local.', '',
         '| Setting | Asset | Acquisition | Remaining work |', '|---|---|---|---|']
     for tid, title, status, remaining in rows:

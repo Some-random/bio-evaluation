@@ -29,6 +29,8 @@ SOURCES = {
     'arxivqa_assets': 'vision/arxivqa/completion.json',
     'slidevqa_images': 'vision/slidevqa/spooled_progress.json',
     'slidevqa_process': 'vision/slidevqa/spool_watcher_status.json',
+    'slidevqa_terminal': 'vision/slidevqa/spooled_archive_receipt.json',
+    'source_publication_watcher': 'publication_watcher/status.json',
 }
 FIELDS = (
     'stage', 'state', 'status', 'role', 'pid', 'updated_at_pacific', 'finished_at_pacific',
@@ -46,6 +48,9 @@ FIELDS = (
     'new_inference_calls', 'remaining_independent_unreviewed_count',
     'source_asset_count', 'evaluation_csv_file_count', 'total_downloaded_bytes',
     'holds_lifted', 'raw_rows_displayed',
+    'questions_with_all20_verified_images', 'observed_outcomes',
+    'verified_image_hashes_revalidated', 'archive_bytes', 'commit_sha',
+    'remote_bytes_verified',
 )
 
 
