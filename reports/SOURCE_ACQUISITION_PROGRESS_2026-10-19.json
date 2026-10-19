@@ -1,0 +1,429 @@
+{
+  "b06_provider_review_interrupted_again": true,
+  "b06_review": {
+    "full_benchmark_review_complete": false,
+    "native_benchmark_dispatch_ready": false,
+    "remaining_independent_unreviewed_count": 48,
+    "reviewed_ordinary_benign_candidate_count": 59,
+    "source_case_count": 108
+  },
+  "case_review_is_not_benchmark_dispatch": true,
+  "entries": [
+    {
+      "asset": "PEER beta-lactamase",
+      "availability": "Official archive downloaded; publisher MD5 matches.",
+      "remaining": "Assay/case eligibility and frozen input/scoring preparation remain unfinished.",
+      "task_ids": "P04"
+    },
+    {
+      "asset": "FLIP AAV",
+      "availability": "Official splits archive and exact two_vs_many CSV/FASTA downloaded; pinned Git blob verified.",
+      "remaining": "Input-only eligibility review and a frozen Qwen protocol remain unfinished.",
+      "task_ids": "P05"
+    },
+    {
+      "asset": "ProteinGym substitutions",
+      "availability": "Official v1.3 archive downloaded; all217 assay CSV member CRCs passed.",
+      "remaining": "Assay eligibility and release-specific prediction/scoring protocol remain unfinished; flagged assays remain held.",
+      "task_ids": "P17"
+    },
+    {
+      "asset": "LLaVA-Med images",
+      "availability": "All50 original images recovered, covering193questions, including31previously missing.",
+      "remaining": "Native GPT-4-0314 judge access/execution is unresolved and outside the Luna-only comparison scope.",
+      "task_ids": "V06"
+    },
+    {
+      "asset": "ChartQA",
+      "availability": "All1509 official images verified against pinned Git blob hashes;2500questions covered.",
+      "remaining": "This is upstream ChartQA, not certification of the exact Ryze Table3 condition.",
+      "task_ids": "V07/upstream"
+    },
+    {
+      "asset": "ArxivQA",
+      "availability": "Official100000-row JSON and7.95GB image archive publisher SHA256s verified; non-label mapping matches Ryze-Data.",
+      "remaining": "Exact paper Table3 roster/run correspondence remains unverified.",
+      "task_ids": "V07/upstream"
+    },
+    {
+      "asset": "Ryze-Data",
+      "availability": "New official author repository acquired:151 Git blobs at ea5c0de8fbb495abaab882f395f8e84d7e056019.",
+      "remaining": "Real loaders, prompts, downstream Qwen3-VL-8B QA and scorers are recovered; exact Table3 and ChartQA branch remain unresolved.",
+      "task_ids": "V07/source"
+    },
+    {
+      "asset": "SlideVQA",
+      "availability": "Public author-linked original images are downloading under a bounded durable worker; read live receipts.",
+      "remaining": "Some original URLs return404. Hugging Face mirror requires legitimate account access. Raw assets and annotations stay internal under source license.",
+      "task_ids": "V07/upstream"
+    },
+    {
+      "asset": "Optimization evaluator",
+      "availability": "ESM1b encoder and five previously permitted heads/start assets recovered; inspect integrity receipts.",
+      "remaining": "Qwen likelihood/search adapter and source-versus-paper execution contract remain unfinished. No model forward or held landscape.",
+      "task_ids": "P34"
+    },
+    {
+      "asset": "ProtST retrieval",
+      "availability": "Complete GO corpus acquired and publisher MD5 verified;8.53GB checkpoint final verification continues; pinned source files recovered.",
+      "remaining": "Full retained corpus inventory and a declared Qwen ranking interface/relevance evaluation remain unfinished.",
+      "task_ids": "P35"
+    },
+    {
+      "asset": "Generation structure evaluator",
+      "availability": "OmegaFold checkpoint downloaded and locally hashed; pinned source recovered; final source-integrity receipt is authoritative.",
+      "remaining": "Native sampling/filter/clustering/folding settings and cohort remain unresolved.",
+      "task_ids": "P37"
+    },
+    {
+      "asset": "RAbD structural context",
+      "availability": "All60 upstream PDB coordinate files acquired from RCSB; gzip CRC/header identities checked and local hashes recorded.",
+      "remaining": "These are current upstream coordinates, not a certified processed paper holdout. Exact masks, numbering and evaluation settings remain unresolved.",
+      "task_ids": "P40"
+    },
+    {
+      "asset": "Proteo-R1 checkpoints",
+      "availability": "Public understanding/generation checkpoints are being acquired as opaque files, with publisher LFS SHA256 checks.",
+      "remaining": "Exact test holdout, preprocessing and complete runtime/scoring contract remain unresolved. No checkpoint loading.",
+      "task_ids": "P41"
+    },
+    {
+      "asset": "NatureLM missing artifacts",
+      "availability": "Current official source was reacquired and hashed; original generator weights are distinct from evaluation artifacts.",
+      "remaining": "Binary stability conversion, temporal test manifest, exact property heads and reference cohort were not found in inspected author releases.",
+      "task_ids": "P09/P27/P38"
+    },
+    {
+      "asset": "PFArena",
+      "availability": "Current official code and metadata acquired. Exact dataset access probe still returns401.",
+      "remaining": "Legitimate Hugging Face dataset access is needed; no gate terms were accepted or access controls bypassed.",
+      "task_ids": "P19-P22"
+    },
+    {
+      "asset": "MutaDescribe",
+      "availability": "Six official test/validation CSVs and45official/reproduction source files acquired and publisher-hash checked;35.4MBtotal. Test splits contain1248structural and1611temporal cases.",
+      "remaining": "Original interrupted source review and execution holds are not lifted by downloading files. Exact old trigger remains unknown; original two-stage interface differs from reproduction-provided context.",
+      "task_ids": "P30-P32/source"
+    }
+  ],
+  "evidence_receipt_sha256": {
+    ".local/source_acquisition_2026-10-19/b06_review/review_interruption.json": "729068329203e9664ff2e28c21a1ff210c924b13a63e5ae1805de4ebf8652db2",
+    ".local/source_acquisition_2026-10-19/b06_review/review_receipt.json": "5154930d53daf29bcef5a52d28327f3e47d65f567d17addbba49ccba3bcbae0c",
+    ".local/source_acquisition_2026-10-19/evaluators/P38_missing_artifacts.json": "5c988a3575eef4d14819be8cf9895997d81630a72f065d7e53f01a8d2174d6ce",
+    ".local/source_acquisition_2026-10-19/evaluators/handoff_receipt.json": "586c1420f4992376deb5a0498b898008728b83f607732692733066694ace1115",
+    ".local/source_acquisition_2026-10-19/prediction_datasets/file_manifest.json": "88770e493ea1574cfe5b1c78ff1c36fa5ef15b98df45f4147a6b2135306512c3",
+    ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json": "82475704e041303676d8b24a470fba657b9a8383cfee763b53f71b75668a9ab0",
+    ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json": "ccf29805afb0a40a45e6dfc6cd5f37c1d529f34c24de12c4c1432b6a3bc978e3",
+    ".local/source_acquisition_2026-10-19/proteor1_checkpoints/resume_status.json": "b2536731884741f22daa545b8440a30f60f22f24262528c52bce81736ef5999d",
+    ".local/source_acquisition_2026-10-19/protocols/manifest.json": "20267254997b2260e208b08e3a4b30167d08cd22466a9f621b525b6c19352d7e",
+    ".local/source_acquisition_2026-10-19/status.json": "d2105b6aeee85132644f10fe914ba160fa933a506c5b8c8bc8e2dd6c87c38cd6",
+    ".local/source_acquisition_2026-10-19/structural_context/manifest.json": "3218c8fa5378cfa910f4f964f54f92c478149074fdd7b52584e0253e6e2417ab",
+    ".local/source_acquisition_2026-10-19/vision/PUBLIC_SOURCE_SUMMARY.json": "bd8022714493fed865af91bacc61ad8270aa0b47bdc537202e619350fc1053b2",
+    ".local/source_acquisition_2026-10-19/vision/arxivqa/completion.json": "74fc8c6e545f7f31df0d3cb42f890b6d20c6c15d23b41c4954ad3e7e94f66972",
+    ".local/source_acquisition_2026-10-19/vision/chartqa/completion.json": "9d25793eb9be5876e2de962d8619162a18dffb341848bea39c6acee514c0a378",
+    ".local/source_acquisition_2026-10-19/vision/v06/completion.json": "a9fb382389da18efdbe707e65b0d6c500cd18143de691d3f27101b94d423941f"
+  },
+  "full_catalog_complete": false,
+  "generated_at_pacific": "2026-10-19T15:48:12.673173-07:00",
+  "model_weights_published": false,
+  "new_inference_calls": 0,
+  "new_training": false,
+  "prediction_archive_bytes": 145124901,
+  "restricted_slidevqa_content_published": false,
+  "role": "source_acquisition_snapshot_not_benchmark_results",
+  "source_runtime": {
+    "downloaded_assets_are_not_completed_benchmark_scores": true,
+    "inference_calls_by_observer": 0,
+    "observer_pid": 2590651,
+    "poll_seconds": 60,
+    "role": "read_only_source_acquisition_observer_not_benchmark_execution",
+    "training_by_observer": false,
+    "updated_at_pacific": "2026-10-19T15:47:58.650608-07:00",
+    "workers": [
+      {
+        "name": "prediction_datasets",
+        "source_age_seconds": 948,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json",
+        "source_sha256": "82475704e041303676d8b24a470fba657b9a8383cfee763b53f71b75668a9ab0",
+        "summary": {
+          "compressed_archive_bytes": 145124901,
+          "native_benchmark_dispatch_ready": false,
+          "new_inference_calls": 0,
+          "updated_at_pacific": "2026-10-19T15:30:33.064403-07:00"
+        },
+        "tasks": {
+          "P04": {
+            "native_split_counts_from_publisher_loader": {
+              "test": 520,
+              "train": 4158,
+              "valid": 520
+            },
+            "status": "official_archive_downloaded_integrity_verified",
+            "updated_at_pacific": "2026-10-19T15:30:05.486397-07:00"
+          },
+          "P05": {
+            "status": "official_archive_and_exact_two_vs_many_members_downloaded_verified",
+            "updated_at_pacific": "2026-10-19T15:30:31.957533-07:00"
+          },
+          "P17": {
+            "status": "official_v1_3_substitution_archive_downloaded_all_member_crcs_verified",
+            "updated_at_pacific": "2026-10-19T15:30:11.402329-07:00"
+          }
+        }
+      },
+      {
+        "name": "protocol_sources",
+        "source_age_seconds": 1042,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/protocols/manifest.json",
+        "source_sha256": "20267254997b2260e208b08e3a4b30167d08cd22466a9f621b525b6c19352d7e",
+        "summary": {
+          "downloaded_bytes": 3690358,
+          "downloaded_files": 291,
+          "finished_at_pacific": "2026-10-19T15:30:36.656143-07:00",
+          "observed_verified_bytes": 3690358,
+          "observed_verified_file_count": 291,
+          "planned_source_files": 292,
+          "stage": "source_acquisition_terminal",
+          "unavailable_files": 1,
+          "updated_at_pacific": "2026-10-19T15:30:36.554587-07:00"
+        }
+      },
+      {
+        "name": "rabd_coordinates",
+        "source_age_seconds": 883,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/structural_context/manifest.json",
+        "source_sha256": "3218c8fa5378cfa910f4f964f54f92c478149074fdd7b52584e0253e6e2417ab",
+        "summary": {
+          "downloaded": 60,
+          "downloaded_bytes": 14174938,
+          "finished_at_pacific": "2026-10-19T15:33:15.704309-07:00",
+          "planned": 60,
+          "stage": "acquisition_terminal",
+          "updated_at_pacific": "2026-10-19T15:33:15.208610-07:00"
+        }
+      },
+      {
+        "name": "chartqa_images",
+        "source_age_seconds": 820,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/vision/chartqa/completion.json",
+        "source_sha256": "9d25793eb9be5876e2de962d8619162a18dffb341848bea39c6acee514c0a378",
+        "summary": {
+          "case_count": 2500,
+          "cases_with_verified_image": 2500,
+          "failed_images": 0,
+          "finished_at_pacific": "2026-10-19T15:34:17.535372-07:00",
+          "planned_images": 1509,
+          "verified_bytes": 69167561,
+          "verified_images": 1509
+        }
+      },
+      {
+        "name": "llava_med_images",
+        "source_age_seconds": 1034,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/vision/v06/completion.json",
+        "source_sha256": "a9fb382389da18efdbe707e65b0d6c500cd18143de691d3f27101b94d423941f",
+        "summary": {
+          "blocked_images": 0,
+          "expected_images": 50,
+          "finished_at_pacific": "2026-10-19T15:30:45.644393-07:00",
+          "newly_recovered_previously_blocked_images": 31,
+          "questions": 193,
+          "questions_with_verified_images": 193,
+          "verified_bytes": 6524926,
+          "verified_images": 50
+        }
+      },
+      {
+        "assets": [
+          {
+            "actual_bytes": 2609617413,
+            "bytes": 2609617413,
+            "id": "P34_ESM1b_encoder",
+            "observed_transferred_bytes": 2609617413,
+            "publisher_digest_verified": true,
+            "recent_measured_bytes_per_second": 0.0,
+            "state": "complete_verified"
+          },
+          {
+            "actual_bytes": 614641,
+            "id": "ProtST_pinned_source",
+            "observed_transferred_bytes": 614641,
+            "publisher_digest_verified": false,
+            "recent_measured_bytes_per_second": 0.0,
+            "state": "complete_verified"
+          },
+          {
+            "actual_bytes": 690837,
+            "id": "OmegaFold_pinned_source",
+            "observed_transferred_bytes": 690837,
+            "publisher_digest_verified": false,
+            "recent_measured_bytes_per_second": 0.0,
+            "state": "complete_verified"
+          },
+          {
+            "bytes": 8531223409,
+            "id": "P35_ProtST_ESM1b",
+            "observed_transferred_bytes": 8531223409,
+            "recent_measured_bytes_per_second": 3611530.1622144957,
+            "state": "downloading_parallel_ranges"
+          },
+          {
+            "actual_bytes": 3181611124,
+            "bytes": 3181611124,
+            "id": "P37_OmegaFold_model1",
+            "observed_transferred_bytes": 3181611124,
+            "publisher_digest_verified": false,
+            "recent_measured_bytes_per_second": 0.0,
+            "state": "complete_verified"
+          },
+          {
+            "actual_bytes": 1691808865,
+            "bytes": 1691808865,
+            "id": "P35_GO_corpus",
+            "observed_transferred_bytes": 1691808865,
+            "publisher_digest_verified": true,
+            "recent_measured_bytes_per_second": 0.0,
+            "state": "complete_verified"
+          }
+        ],
+        "name": "evaluator_transfers",
+        "process_exists": true,
+        "source_age_seconds": 21,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/evaluators/status.json",
+        "source_sha256": "277190c7cc8cde17201d3a23f91903698cc24aefc19e3716e53cdb396c67404c",
+        "summary": {
+          "all_downloads_complete": false,
+          "pid": 2576907,
+          "role": "source_acquisition_progress_only",
+          "updated_at_utc": "2026-10-19T22:47:27.363358+00:00"
+        }
+      },
+      {
+        "name": "protst_transfer",
+        "process_exists": true,
+        "source_age_seconds": 59,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/evaluators/protst_parallel_transfer.json",
+        "source_sha256": "420ef6a0a44d7ccbdb78e7d22ac9cfd7416f2d167798048c6d9e054dd250cb23",
+        "summary": {
+          "contiguous_original_prefix_bytes": 222470144,
+          "expected_bytes": 8531223409,
+          "measured_bytes_per_second": 18670700.10022554,
+          "new_bytes_completed": 8308753265,
+          "new_inference_calls": 0,
+          "pid": 2584279,
+          "role": "resumable_same_official_object_range_acquisition",
+          "state": "downloading_parallel_ranges",
+          "updated_at_utc": "2026-10-19T22:47:00.694584+00:00"
+        }
+      },
+      {
+        "name": "proteor1_checkpoints",
+        "process_exists": false,
+        "source_age_seconds": 130,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json",
+        "source_sha256": "ccf29805afb0a40a45e6dfc6cd5f37c1d529f34c24de12c4c1432b6a3bc978e3",
+        "summary": {
+          "expected_bytes": 9872881070,
+          "finished_at_pacific": "2026-10-19T15:45:50.519843-07:00",
+          "observed_verified_bytes": 4133164571,
+          "observed_verified_file_count": 14,
+          "pid": 2580530,
+          "planned_files": 16,
+          "stage": "acquisition_terminal",
+          "updated_at_pacific": "2026-10-19T15:45:50.118739-07:00",
+          "verified_bytes": 4133164571,
+          "verified_files": 14
+        }
+      },
+      {
+        "name": "proteor1_resume",
+        "process_exists": true,
+        "source_age_seconds": 106,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/proteor1_checkpoints/resume_status.json",
+        "source_sha256": "b2536731884741f22daa545b8440a30f60f22f24262528c52bce81736ef5999d",
+        "summary": {
+          "observed_verified_bytes": 0,
+          "observed_verified_file_count": 0,
+          "pid": 2590120,
+          "stage": "resuming_short_source_transfers"
+        }
+      },
+      {
+        "name": "b06_input_review",
+        "source_age_seconds": 297,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/b06_review/review_receipt.json",
+        "source_sha256": "5154930d53daf29bcef5a52d28327f3e47d65f567d17addbba49ccba3bcbae0c",
+        "summary": {
+          "full_benchmark_review_complete": false,
+          "native_benchmark_dispatch_ready": false,
+          "new_inference_calls": 0,
+          "remaining_independent_unreviewed_count": 48,
+          "reviewed_ordinary_benign_candidate_count": 59,
+          "source_case_count": 108,
+          "updated_at_pacific": "2026-10-19T15:43:03.759892-07:00"
+        }
+      },
+      {
+        "name": "b06_review_interruption",
+        "source_age_seconds": 108,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/b06_review/review_interruption.json",
+        "source_sha256": "729068329203e9664ff2e28c21a1ff210c924b13a63e5ae1805de4ebf8652db2",
+        "summary": {
+          "completed_review_receipt_preserved": true,
+          "exact_trigger_case_unknown": true,
+          "new_inference_calls": 0,
+          "stage": "input_review_interrupted_by_provider_biological_safety_check"
+        }
+      },
+      {
+        "name": "arxivqa_assets",
+        "source_age_seconds": 292,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/vision/arxivqa/completion.json",
+        "source_sha256": "74fc8c6e545f7f31df0d3cb42f890b6d20c6c15d23b41c4954ad3e7e94f66972",
+        "summary": {
+          "all_files_verified": true,
+          "finished_at_pacific": "2026-10-19T15:43:08.263395-07:00"
+        }
+      },
+      {
+        "name": "slidevqa_images",
+        "source_age_seconds": 22,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/vision/slidevqa/spooled_progress.json",
+        "source_sha256": "0aefc8a858eb79133e508d2101596afdb58ba47f807508b6c2a4b62503055ef8",
+        "summary": {
+          "failed_images": 40,
+          "planned_images": 8000,
+          "updated_at_pacific": "2026-10-19T15:47:27.508787-07:00",
+          "verified_bytes": 129485694,
+          "verified_images": 1675
+        }
+      },
+      {
+        "name": "slidevqa_process",
+        "process_exists": true,
+        "source_age_seconds": 19,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/vision/slidevqa/spool_watcher_status.json",
+        "source_sha256": "ea2ba4b412288e9d9638fbf29bc8c87817777771f84669c4197d635491701414",
+        "summary": {
+          "pid": 2584687,
+          "stage": "watching",
+          "updated_at_pacific": "2026-10-19T15:47:42.078434-07:00"
+        }
+      }
+    ]
+  }
+}

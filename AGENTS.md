@@ -285,3 +285,127 @@ itself push GitHub changes. Subsequent reporting should refresh and publish the
 decision table and new correction artifacts when this task becomes terminal.
 The synthetic delivery pilot completed 12/12 checks and released its GPU;
 this establishes simple format delivery, not biological predictive performance.
+
+On October 19, the user clarified again that finishing the seven-setting
+continuation does not finish the full catalog. Continue permitted work across
+the 57 retained settings; the seven archived BioReason settings stay archived.
+The original P13 compatibility recovery is now terminal and published alongside
+P12/P14/P15; consult the correction report rather than restarting its watcher.
+The current continuation work is recorded under
+`.local/catalog_resume_2026-10-19/`. It includes recovered P36 subset evidence
+(59 raw responses, not a full benchmark), further source recovery, a separately
+frozen 12-case GFP validation delivery pilot, and preparation of a separate
+uniform-16K B08 protocol. Job 242190 requests one A100 for the validation pilot;
+read its runtime status and Slurm state before any further launch. No validation
+labels are used or scored. This does not authorize selective retries, changes to
+frozen historical runs, held tasks, new head training, or OpenAI benchmark calls.
+
+The user reaffirmed hourly progress updates for the resumed work. The active
+scheduler is `.local/hourly_evaluation_updates/catalog_2026-10-19/`, with a
+top-of-hour cron entry queuing this conversation. It covers the full retained
+catalog, uses Pacific display times, and does not automatically disable when
+one batch or pilot finishes. The older seven-task scheduler state remains
+disabled historical evidence. Consult the new schedule receipt/state/history;
+do not install duplicate schedulers or revive the old batch-specific updater.
+
+On October 19 at midday, the user challenged the estimate that counted the
+33,701-case proposed rerun list as remaining catalog work. Keep these scopes
+separate: uncompleted catalog settings, offline corrections to saved outputs,
+and optional fresh full-task repetitions. The proposed B08/P42/B07/P16/P07
+reruns have not been launched and are not an active remaining-case queue.
+Do not quote their size or extrapolate the four-request development pilot as
+the completion time for the full catalog. Prioritize explaining and advancing
+the unfinished catalog work; retain existing results and use saved outputs for
+offline repairs wherever possible.
+
+The October 19 follow-up review requires focused offline P36/P08 diagnostics,
+P12–P15 failure taxonomy with same-case reference baselines, and strict original
+case/run/request provenance in the historical extraction tool. Preserve the
+original metrics. The shared synthetic pilot is not a full-run readiness gate.
+Use `configs/task_specific_delivery_gates_2026-10-19.json` and its report for
+task-specific review requirements. No optional full-task repetition is started
+by that configuration. The real GFP development pilot finished 12/12 calls,
+with ten numeric final answers and two truncated empty finals; it did not pass
+complete-delivery requirements. Its GPU was released after completion.
+
+The user then requested identifying stable evaluation tasks for GPT-6-luna versus
+Qwen3.8 comparisons. Offline preparation now records exact archived Qwen
+conditions, case/request/response hashes and matching scorer references in
+`reports/GPT6_LUNA_QWEN_COMPARISON_PLAN_2026-10-19.md` and the proposed config.
+Start with the 279 LitQA2/SuppQA cases for delivery reliability; do not replace
+their replay baselines with historical headline scores. This preparation made
+no new inference calls and did not change the recorded OpenAI account-scope
+hold. The user has been asked whether the appeal received a response. No answer
+or provider clarification has been recorded yet. Preserve the two held B01
+cases, flagged-task holds, original Qwen generations and all full denominators.
+
+The user subsequently said "let's go for this openai eval" and supplied a
+specific execution review. This authorizes the new, narrowly reviewed comparison
+and its independent development checks, including GPT-6-luna and GPT-6.1 Sol.
+It does not authorize retrying the previously flagged P18 traffic, restoring
+held B01 cases, or broadly resuming the old all-catalog OpenAI job. Preserve the
+old global disabled authorization as historical state; use a separately hashed,
+case-scoped authorization with the current user instruction and input review.
+Do not claim a provider appeal response or resolved warning that was not given.
+The initial 279 cases remain LitQA2/SuppQA with their archived Qwen baselines.
+P03 is a committed second stage with its own development/input checks; vision
+is separate. Actual dispatch must pass isolation/leakage tests and the relevant
+development delivery check, retain the existing stable safety identifier, and
+stop new submissions on a provider policy/access rejection. Score only after
+predictions lock. Keep the agent's recorded spending guard and actual usage
+ledger explicit; no new training, selective retries or larger GPU allocation.
+
+The scoped OpenAI comparison is now actually executing under
+`.local/comparison_execution_2026-10-19/`. All four independent 12-case QA/P03
+development delivery panels passed without biological correctness scoring.
+Both 279-case QA model conditions are closed and scored: Luna B01 97/197,
+B03 44/82; Sol B01 112/197, B03 46/82. Native and strict scores agree and all
+558 responses are normally finished, parsed and error-free. The Qwen replay
+baselines remain 77/197 and 31/82; they were not regenerated. Luna's full
+2,773-case P03 condition is running. Sol P03 has not been dispatched: the user
+was asked asynchronously about its conservative $125 ceiling, exceeding the
+agent-imposed initial $50 guard. No approval is recorded; elapsed time does
+not authorize it. The user then asked why Sol was included and what the task
+means; this was a clarification request, not budget approval. Sol is an extra
+GPT-6.1 reference model from the supplied review; the original requested
+comparison was Luna versus Qwen. Continue Luna and retain Sol P03 as pending.
+Existing held cases and the old global disabled scope stay held.
+
+Read `control/status.json`, `analysis/publicqa_scoring_status.json` and
+`analysis/localization_scoring_status.json` under that execution directory.
+The singleton read-only runtime monitor and separate one-attempt offline
+scoring watchers are already active; do not duplicate inference or scoring.
+Current publication state belongs in `publication_watcher/status.json` and
+the catalog publication receipt, not in stale aggregate reporting files.
+
+Provider responses echo the private safety identifier and contain opaque
+encrypted state. Preserve exact originals and locks locally. Public exports
+must redact non-null safety_identifier, encrypted_content and legacy user
+metadata, preserve final answers, and carry original/public hash mappings.
+The early public archives were corrected at current HEAD; older Git history
+remains unchanged and contained this identifier metadata, not API credentials.
+Do not rotate the stable identifier or rewrite Git history to hide this issue.
+Use the reviewed version-2 privacy export and its pinned helper; response
+hashes in original locks refer to private original bytes, not redacted files.
+
+On October 19 Pacific time, the user explicitly instructed: **"just do luna now please"**. Continuing OpenAI comparison inference is now **GPT-6 Luna only**. Preserve the already completed GPT-6.1 Sol QA/development outputs and scores, but do not launch any further Sol inference; Sol P03 was not dispatched. Continue the existing Luna P03 run. `configs/openai_comparison_model_scope_2026-10-19.json` is the prospective model-scope override. It does not alter frozen v2 protocols, answer policy, candidates, original generations or prediction locks. All flagged-task holds, held B01 cases, identity and no-retry rules remain unchanged.
+
+The user subsequently requested downloading the unfinished official assets
+together and finding published evaluation implementations for missing pieces.
+Parallel source/data/evaluator acquisition is active under
+`.local/source_acquisition_2026-10-19/`. This includes public evaluation
+checkpoints, with no new training or model forwards. Check the per-worker
+manifests and processes before launching duplicate transfers. Preserve exact
+publisher identities, original splits and hashes; distinguish publisher-verified
+digests from newly calculated local digests. Store inputs and references
+separately before any future solver dispatch. Do not publish downloaded model
+weights or credentials. Source recovery is authorized without another general
+permission question; gated terms and access challenges must not be bypassed.
+
+The user's stated research purpose is recorded. Do not treat an interrupted
+review as a finding that every case in a benchmark is prohibited. Identify
+previously rejected material and keep it separate; metadata-first preparation
+and independent review of other cases may continue. This does not authorize
+rephrasing, forwarding or rerunning the previously flagged requests through
+Qwen or another provider. Keep actual execution reviews and frozen per-case
+scopes distinct from permission to download a source corpus.
