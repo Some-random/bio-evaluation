@@ -1,0 +1,269 @@
+{
+  "checked_at_pacific": "2026-10-19T14:19:12.138975-07:00",
+  "model": "gpt-6-luna",
+  "tasks": [
+    "P03"
+  ],
+  "planned": 12,
+  "saved": 12,
+  "delivery_passed_count": 12,
+  "gate_passed": true,
+  "biological_correctness_assessed": false,
+  "criterion_frozen_before_dispatch": "Every12 normal, nonempty, nativevalid and unambiguous; no trunc/refusal/accesserror; no correctness or modelanswer used to change prompts.",
+  "development_lock_sha256": "e7224b7d42e21770ce3884b2ecbda99e21b0a4f2dec415470c5f27df009d6b35",
+  "rows": [
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:2553",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 357,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 107,
+        "output_tokens_details": {
+          "reasoning_tokens": 100
+        },
+        "total_tokens": 464
+      },
+      "latency_seconds": 3.0476086009293795
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:1904",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 401,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 102,
+        "output_tokens_details": {
+          "reasoning_tokens": 95
+        },
+        "total_tokens": 503
+      },
+      "latency_seconds": 3.598019746132195
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:2427",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 437,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 110,
+        "output_tokens_details": {
+          "reasoning_tokens": 103
+        },
+        "total_tokens": 547
+      },
+      "latency_seconds": 3.025496426038444
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:732",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 475,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 462,
+        "output_tokens_details": {
+          "reasoning_tokens": 455
+        },
+        "total_tokens": 937
+      },
+      "latency_seconds": 4.264075252227485
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:1736",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 509,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 395,
+        "output_tokens_details": {
+          "reasoning_tokens": 388
+        },
+        "total_tokens": 904
+      },
+      "latency_seconds": 4.658556245267391
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:2536",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 542,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 121,
+        "output_tokens_details": {
+          "reasoning_tokens": 114
+        },
+        "total_tokens": 663
+      },
+      "latency_seconds": 2.4442740119993687
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:2299",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 580,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 414,
+        "output_tokens_details": {
+          "reasoning_tokens": 407
+        },
+        "total_tokens": 994
+      },
+      "latency_seconds": 5.572470188140869
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:940",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 616,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1438,
+        "output_tokens_details": {
+          "reasoning_tokens": 1431
+        },
+        "total_tokens": 2054
+      },
+      "latency_seconds": 14.916537357494235
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:1469",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 673,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 472,
+        "output_tokens_details": {
+          "reasoning_tokens": 465
+        },
+        "total_tokens": 1145
+      },
+      "latency_seconds": 7.061790415085852
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:885",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 731,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1257,
+        "output_tokens_details": {
+          "reasoning_tokens": 1250
+        },
+        "total_tokens": 1988
+      },
+      "latency_seconds": 14.280807348899543
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:92",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 874,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 126,
+        "output_tokens_details": {
+          "reasoning_tokens": 119
+        },
+        "total_tokens": 1000
+      },
+      "latency_seconds": 3.4838642133399844
+    },
+    {
+      "task_id": "P03",
+      "case_id": "subcellular_localization:valid:2753",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 868,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 46,
+        "output_tokens_details": {
+          "reasoning_tokens": 39
+        },
+        "total_tokens": 914
+      },
+      "latency_seconds": 1.3603451633825898
+    }
+  ],
+  "limits": "Small delivery panel does not establish benchmark-wide reliability or biological performance."
+}

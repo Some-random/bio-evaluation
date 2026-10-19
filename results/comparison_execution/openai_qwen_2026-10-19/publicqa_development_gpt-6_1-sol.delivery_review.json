@@ -1,0 +1,270 @@
+{
+  "checked_at_pacific": "2026-10-19T14:17:47.885198-07:00",
+  "model": "gpt-6.1-sol",
+  "tasks": [
+    "B01",
+    "B03"
+  ],
+  "planned": 12,
+  "saved": 12,
+  "delivery_passed_count": 12,
+  "gate_passed": true,
+  "biological_correctness_assessed": false,
+  "criterion_frozen_before_dispatch": "Every12 normal, nonempty, nativevalid and unambiguous; no trunc/refusal/accesserror; no correctness or modelanswer used to change prompts.",
+  "development_lock_sha256": "8889165a9719cbfc70b6df7440c500eaf56264169a7a1079a0e0b164f59bd44f",
+  "rows": [
+    {
+      "task_id": "B01",
+      "case_id": "dev-lit-gfp-oxygen-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 229,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 240
+      },
+      "latency_seconds": 2.068422663025558
+    },
+    {
+      "task_id": "B01",
+      "case_id": "dev-lit-er-retention-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 211,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 222
+      },
+      "latency_seconds": 2.2725166492164135
+    },
+    {
+      "task_id": "B01",
+      "case_id": "dev-lit-rnai-operon-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 226,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 237
+      },
+      "latency_seconds": 2.111251326277852
+    },
+    {
+      "task_id": "B01",
+      "case_id": "dev-lit-microsome-timing-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 237,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 248
+      },
+      "latency_seconds": 2.2994659394025803
+    },
+    {
+      "task_id": "B01",
+      "case_id": "dev-lit-aquaporin-function-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 233,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 244
+      },
+      "latency_seconds": 1.914762096479535
+    },
+    {
+      "task_id": "B01",
+      "case_id": "dev-lit-autophagy-recruitment-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 226,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 237
+      },
+      "latency_seconds": 1.742330614477396
+    },
+    {
+      "task_id": "B03",
+      "case_id": "dev-supp-gfp-blue-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 226,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 25,
+        "output_tokens_details": {
+          "reasoning_tokens": 12
+        },
+        "total_tokens": 251
+      },
+      "latency_seconds": 4.279523598961532
+    },
+    {
+      "task_id": "B03",
+      "case_id": "dev-supp-kdel-transfer-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 259,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 270
+      },
+      "latency_seconds": 1.8448805697262287
+    },
+    {
+      "task_id": "B03",
+      "case_id": "dev-supp-rnai-specificity-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 260,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 271
+      },
+      "latency_seconds": 2.722781302407384
+    },
+    {
+      "task_id": "B03",
+      "case_id": "dev-supp-microsome-components-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 254,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 34,
+        "output_tokens_details": {
+          "reasoning_tokens": 21
+        },
+        "total_tokens": 288
+      },
+      "latency_seconds": 3.135993347503245
+    },
+    {
+      "task_id": "B03",
+      "case_id": "dev-supp-aquaporin-inhibition-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 226,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 11,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 237
+      },
+      "latency_seconds": 2.2566259130835533
+    },
+    {
+      "task_id": "B03",
+      "case_id": "dev-supp-autophagy-lc3-v1",
+      "terminal_status": "completed",
+      "native_valid": true,
+      "unambiguous_valid": true,
+      "delivery_passed": true,
+      "usage": {
+        "input_tokens": 234,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 28,
+        "output_tokens_details": {
+          "reasoning_tokens": 15
+        },
+        "total_tokens": 262
+      },
+      "latency_seconds": 1.800298267044127
+    }
+  ],
+  "limits": "Small delivery panel does not establish benchmark-wide reliability or biological performance."
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "protocol_id": "openai_qwen_localization_4k_2026-10-19_v2",
+  "model": "gpt-6.1-sol",
+  "reviewed": true,
+  "delivery_passed": true,
+  "biological_correctness_assessed": false,
+  "max_output_tokens": 4096,
+  "reasoning_effort": "medium",
+  "dispatch_authorized": true,
+  "frozen_protocol_sha256": "d0738c89f53c012ed4de1e0d9a27e0f50232fbfb9342f1054f3dbeffa4c5ddb3",
+  "dispatcher_sha256": "c8184228dcdf78bd9e5c837631882c004f211a195af70535431a1230d3ad1ae8",
+  "task_ids": [
+    "P03"
+  ],
+  "development_evidence_sha256": "deb32743cf714fe8a8defea64232662e730545893ee654fe5470aa7361d25b8f",
+  "development_evidence_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/comparison_execution_2026-10-19/runtime/localization_development_gpt-6_1-sol/predictions_lock.json",
+  "development_protocol_id": "openai_qwen_localization_delivery_development_2026-10-19_v2",
+  "development_protocol_sha256": "65a0d5e83e821455cb3a8ffbbe09d3b301ccf817aed876d3abcd824a066abfe5",
+  "development_roster_sha256": "a498176fa38c0afeccfaf1c5385f84ee9d88bf12f12a9c7a92f63b58dab08d9b",
+  "development_request_file_sha256": "ccde7958665fb9ac9dac4bd86dbc2fcc409531d201eeb5065f65016033c6dfbf",
+  "development_case_count": 12,
+  "delivery_review_sha256": "e9f6ff832eb157d153cefd0606feca06204965204cae039aeef1f45876a0081f"
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "protocol_id": "openai_qwen_publicqa_4k_2026-10-19_v2",
+  "model": "gpt-6-luna",
+  "reviewed": true,
+  "delivery_passed": true,
+  "biological_correctness_assessed": false,
+  "max_output_tokens": 4096,
+  "reasoning_effort": "medium",
+  "dispatch_authorized": true,
+  "frozen_protocol_sha256": "383250d4034ac6e3102a0ce0823483ccd7bdc934a482f15bc3e6c4f67f4981be",
+  "dispatcher_sha256": "c8184228dcdf78bd9e5c837631882c004f211a195af70535431a1230d3ad1ae8",
+  "task_ids": [
+    "B01",
+    "B03"
+  ],
+  "development_evidence_sha256": "37c02eb4b3b77a53cdc1aa1456e12d46eb7c09f2460a3a1a3f46ecd2843edafa",
+  "development_evidence_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/comparison_execution_2026-10-19/runtime/publicqa_development_gpt-6-luna/predictions_lock.json",
+  "development_protocol_id": "openai_qwen_publicqa_delivery_development_2026-10-19_v2",
+  "development_protocol_sha256": "dec47d93d17ae52e20a21f7bca646a100918aaba0622714e2c4285a8dc9a7f10",
+  "development_roster_sha256": "87c82bbf1815fc5213ef7bff123784f571a9dfb6e6f98f92110b201abd7cf1a7",
+  "development_request_file_sha256": "9626446bd30cb43820babee55d6672541a1cedb81249c2d5ceef68cd971e3f88",
+  "development_case_count": 12,
+  "delivery_review_sha256": "87b78d67c3e020b9b2a948b0ec9815d7a2d4085162dbce6e332c45d07ea2b829"
+}

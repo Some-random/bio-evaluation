@@ -1,0 +1,247 @@
+{
+  "updated_at_pacific": "2026-10-19T14:20:36.636475-07:00",
+  "role": "generation_and_development_evidence_not_completed_benchmark_scores",
+  "runs": [
+    {
+      "slug": "localization_development_gpt-6-luna",
+      "model": "gpt-6-luna",
+      "run_id": "openai_localization_development_gpt-6-luna_4k_2026-10-19_v2",
+      "task_ids": [
+        "P03"
+      ],
+      "planned": 12,
+      "saved": 12,
+      "complete_prediction_lock": true,
+      "terminal_outcomes": {
+        "completed": 12
+      },
+      "transport_or_server_errors": 0,
+      "truncations": 0,
+      "empty_finals": 0,
+      "refusals": 0,
+      "per_task": {
+        "P03": {
+          "saved": 12,
+          "observed_terminal": 12
+        }
+      },
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_development_gpt-6-luna_complete.tar.gz",
+      "trajectory_sha256": "d999263327f965e542b609b0ba40ce483c43392b245ecca7c9cc1225718dbd9d",
+      "usage": {
+        "input_tokens": 7063,
+        "output_tokens": 5050,
+        "cached_input_tokens": 0
+      },
+      "standard_uncached_cost_estimate_usd": 0.0032313000000000003,
+      "biological_correctness_assessed": false
+    },
+    {
+      "slug": "localization_development_gpt-6_1-sol",
+      "model": "gpt-6.1-sol",
+      "run_id": "openai_localization_development_gpt-6_1-sol_4k_2026-10-19_v2",
+      "task_ids": [
+        "P03"
+      ],
+      "planned": 12,
+      "saved": 12,
+      "complete_prediction_lock": true,
+      "terminal_outcomes": {
+        "completed": 12
+      },
+      "transport_or_server_errors": 0,
+      "truncations": 0,
+      "empty_finals": 0,
+      "refusals": 0,
+      "per_task": {
+        "P03": {
+          "saved": 12,
+          "observed_terminal": 12
+        }
+      },
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_development_gpt-6_1-sol_complete.tar.gz",
+      "trajectory_sha256": "a8fcdbac925d5831ea7749a4e1da71d721462a98aaab756fc413b8efe6b0234e",
+      "usage": {
+        "input_tokens": 7063,
+        "output_tokens": 2891,
+        "cached_input_tokens": 0
+      },
+      "standard_uncached_cost_estimate_usd": 0.043036,
+      "biological_correctness_assessed": false
+    },
+    {
+      "slug": "localization_gpt-6-luna",
+      "model": "gpt-6-luna",
+      "run_id": "openai_localization_gpt-6-luna_4k_2026-10-19_v2",
+      "task_ids": [
+        "P03"
+      ],
+      "planned": 2773,
+      "saved": 16,
+      "complete_prediction_lock": false,
+      "terminal_outcomes": {
+        "completed": 16
+      },
+      "transport_or_server_errors": 0,
+      "truncations": 0,
+      "empty_finals": 0,
+      "refusals": 0,
+      "per_task": {
+        "P03": {
+          "saved": 16,
+          "observed_terminal": 16
+        }
+      },
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_gpt-6-luna_saved_16.tar.gz",
+      "trajectory_sha256": "a4c7c819d6e5adb5f73d4e01af626079ff3e9bdb8c4e537c7cb847dff0422713",
+      "usage": null,
+      "standard_uncached_cost_estimate_usd": null,
+      "biological_correctness_assessed": false
+    },
+    {
+      "slug": "publicqa_development_gpt-6-luna",
+      "model": "gpt-6-luna",
+      "run_id": "openai_publicqa_development_gpt-6-luna_4k_2026-10-19_v2",
+      "task_ids": [
+        "B01",
+        "B03"
+      ],
+      "planned": 12,
+      "saved": 12,
+      "complete_prediction_lock": true,
+      "terminal_outcomes": {
+        "completed": 12
+      },
+      "transport_or_server_errors": 0,
+      "truncations": 0,
+      "empty_finals": 0,
+      "refusals": 0,
+      "per_task": {
+        "B01": {
+          "saved": 6,
+          "observed_terminal": 6
+        },
+        "B03": {
+          "saved": 6,
+          "observed_terminal": 6
+        }
+      },
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_development_gpt-6-luna_complete.tar.gz",
+      "trajectory_sha256": "177e351d2fab96f29dd52af37caad1e8a2aa584c724c0ec7f5e9f91bdc4cd99e",
+      "usage": {
+        "input_tokens": 2821,
+        "output_tokens": 1294,
+        "cached_input_tokens": 0
+      },
+      "standard_uncached_cost_estimate_usd": 0.0009291,
+      "biological_correctness_assessed": false
+    },
+    {
+      "slug": "publicqa_development_gpt-6_1-sol",
+      "model": "gpt-6.1-sol",
+      "run_id": "openai_publicqa_development_gpt-6_1-sol_4k_2026-10-19_v2",
+      "task_ids": [
+        "B01",
+        "B03"
+      ],
+      "planned": 12,
+      "saved": 12,
+      "complete_prediction_lock": true,
+      "terminal_outcomes": {
+        "completed": 12
+      },
+      "transport_or_server_errors": 0,
+      "truncations": 0,
+      "empty_finals": 0,
+      "refusals": 0,
+      "per_task": {
+        "B01": {
+          "saved": 6,
+          "observed_terminal": 6
+        },
+        "B03": {
+          "saved": 6,
+          "observed_terminal": 6
+        }
+      },
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_development_gpt-6_1-sol_complete.tar.gz",
+      "trajectory_sha256": "df9a61f9671aba3dced40b76286384b44e3717b787ec36e8170f81b3ee04481b",
+      "usage": {
+        "input_tokens": 2821,
+        "output_tokens": 186,
+        "cached_input_tokens": 0
+      },
+      "standard_uncached_cost_estimate_usd": 0.007502,
+      "biological_correctness_assessed": false
+    },
+    {
+      "slug": "publicqa_gpt-6-luna",
+      "model": "gpt-6-luna",
+      "run_id": "openai_publicqa_gpt-6-luna_4k_2026-10-19_v2",
+      "task_ids": [
+        "B01",
+        "B03"
+      ],
+      "planned": 279,
+      "saved": 83,
+      "complete_prediction_lock": false,
+      "terminal_outcomes": {
+        "completed": 83
+      },
+      "transport_or_server_errors": 0,
+      "truncations": 0,
+      "empty_finals": 0,
+      "refusals": 0,
+      "per_task": {
+        "B01": {
+          "saved": 83,
+          "observed_terminal": 83
+        },
+        "B03": {
+          "saved": 0,
+          "observed_terminal": 0
+        }
+      },
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_gpt-6-luna_saved_83.tar.gz",
+      "trajectory_sha256": "565761cc13b243f78ca4225f203ef9ff30e4386a932e0ca1426090ffb9b8086a",
+      "usage": null,
+      "standard_uncached_cost_estimate_usd": null,
+      "biological_correctness_assessed": false
+    },
+    {
+      "slug": "publicqa_gpt-6_1-sol",
+      "model": "gpt-6.1-sol",
+      "run_id": "openai_publicqa_gpt-6_1-sol_4k_2026-10-19_v2",
+      "task_ids": [
+        "B01",
+        "B03"
+      ],
+      "planned": 279,
+      "saved": 78,
+      "complete_prediction_lock": false,
+      "terminal_outcomes": {
+        "completed": 78
+      },
+      "transport_or_server_errors": 0,
+      "truncations": 0,
+      "empty_finals": 0,
+      "refusals": 0,
+      "per_task": {
+        "B01": {
+          "saved": 78,
+          "observed_terminal": 78
+        },
+        "B03": {
+          "saved": 0,
+          "observed_terminal": 0
+        }
+      },
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/publicqa_gpt-6_1-sol_saved_78.tar.gz",
+      "trajectory_sha256": "9442ecd21dde1d6ba9996da73dfbd32d3a6bb05523bad34d238485624eb15f8b",
+      "usage": null,
+      "standard_uncached_cost_estimate_usd": null,
+      "biological_correctness_assessed": false
+    }
+  ],
+  "no_qwen_reruns": true,
+  "benchmark_scoring_requires_complete_prediction_lock": true
+}

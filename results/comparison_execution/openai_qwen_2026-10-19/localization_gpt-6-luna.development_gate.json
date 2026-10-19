@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "protocol_id": "openai_qwen_localization_4k_2026-10-19_v2",
+  "model": "gpt-6-luna",
+  "reviewed": true,
+  "delivery_passed": true,
+  "biological_correctness_assessed": false,
+  "max_output_tokens": 4096,
+  "reasoning_effort": "medium",
+  "dispatch_authorized": true,
+  "frozen_protocol_sha256": "727912e463ce9d8949bf1889b084726d8ba7c6a0299164ce5fb253fa918e6aeb",
+  "dispatcher_sha256": "c8184228dcdf78bd9e5c837631882c004f211a195af70535431a1230d3ad1ae8",
+  "task_ids": [
+    "P03"
+  ],
+  "development_evidence_sha256": "e7224b7d42e21770ce3884b2ecbda99e21b0a4f2dec415470c5f27df009d6b35",
+  "development_evidence_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/comparison_execution_2026-10-19/runtime/localization_development_gpt-6-luna/predictions_lock.json",
+  "development_protocol_id": "openai_qwen_localization_delivery_development_2026-10-19_v2",
+  "development_protocol_sha256": "4c2d6aa1bff5883a40d3e667e5332260b380a4be11d4c987eb13b364b7423a27",
+  "development_roster_sha256": "15e4148baffedbcdc9e9916a332088de2ed344d7949507548b9416c4059bd300",
+  "development_request_file_sha256": "7f1ccb0f70810d2a57265ca38971ae666a851cbd58b5fcec140151169f9ed59f",
+  "development_case_count": 12,
+  "delivery_review_sha256": "d07bbcae0fba6e5232d66b244165e8a4906eb88739178dc7cd6dcc02e3094ff4"
+}
