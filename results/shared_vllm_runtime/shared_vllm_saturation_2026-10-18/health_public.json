@@ -8,14 +8,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 3596510.0,
-        "kv_fraction": 0.9827160493827161,
-        "preemptions": 2117.0,
-        "prompt_tokens": 10629061.0,
-        "running": 13.0,
-        "waiting": 51.0
+        "generation_tokens": 3656339.0,
+        "kv_fraction": 0.908641975308642,
+        "preemptions": 2129.0,
+        "prompt_tokens": 10708736.0,
+        "running": 6.0,
+        "waiting": 58.0
       },
-      "preemption_delta": 4.0,
+      "preemption_delta": 0.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "adda75db85bbc6862b8dac08c774e950a0bb804dfe981b1a258d1a300228f78e"
     },
@@ -26,14 +26,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 3088978.0,
-        "kv_fraction": 0.8814814814814815,
-        "preemptions": 2053.0,
-        "prompt_tokens": 11205930.0,
+        "generation_tokens": 3119995.0,
+        "kv_fraction": 0.9777777777777777,
+        "preemptions": 2091.0,
+        "prompt_tokens": 11384098.0,
         "running": 13.0,
         "waiting": 51.0
       },
-      "preemption_delta": 0.0,
+      "preemption_delta": 2.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "a49f31276bc6afded8ab9104a6ffc0fd5f0cebab8ecc7c17fe45c1ef0e18e316"
     },
@@ -44,14 +44,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 3402054.0,
-        "kv_fraction": 0.9827160493827161,
-        "preemptions": 1990.0,
-        "prompt_tokens": 13973149.0,
-        "running": 11.0,
-        "waiting": 53.0
+        "generation_tokens": 3447707.0,
+        "kv_fraction": 0.9925925925925926,
+        "preemptions": 2007.0,
+        "prompt_tokens": 14155386.0,
+        "running": 9.0,
+        "waiting": 55.0
       },
-      "preemption_delta": 2.0,
+      "preemption_delta": 0.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "e76d7785c2b0aa7c44ddfc4fcd8627f15f37bcaf10ab91db7680a980799516a2"
     },
@@ -62,48 +62,38 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 3669477.0,
-        "kv_fraction": 0.9901234567901235,
-        "preemptions": 1914.0,
-        "prompt_tokens": 12133905.0,
-        "running": 10.0,
-        "waiting": 54.0
+        "generation_tokens": 3701522.0,
+        "kv_fraction": 0.928395061728395,
+        "preemptions": 1949.0,
+        "prompt_tokens": 12234241.0,
+        "running": 8.0,
+        "waiting": 56.0
       },
-      "preemption_delta": 1.0,
+      "preemption_delta": 3.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "fa210779888d71abf5db3a847d3c22e697ee657e5d6b9b9f73b9b2ebdac6d681"
     }
   ],
   "flags": [
     {
-      "delta": 4.0,
-      "endpoint_id": "saturation_0",
-      "type": "preemptions_increased"
-    },
-    {
-      "endpoint_id": "saturation_0",
-      "fraction": 0.9827160493827161,
-      "type": "high_kv_usage"
-    },
-    {
       "delta": 2.0,
-      "endpoint_id": "saturation_2",
+      "endpoint_id": "saturation_1",
       "type": "preemptions_increased"
     },
     {
-      "endpoint_id": "saturation_2",
-      "fraction": 0.9827160493827161,
+      "endpoint_id": "saturation_1",
+      "fraction": 0.9777777777777777,
       "type": "high_kv_usage"
     },
     {
-      "delta": 1.0,
+      "endpoint_id": "saturation_2",
+      "fraction": 0.9925925925925926,
+      "type": "high_kv_usage"
+    },
+    {
+      "delta": 3.0,
       "endpoint_id": "saturation_3",
       "type": "preemptions_increased"
-    },
-    {
-      "endpoint_id": "saturation_3",
-      "fraction": 0.9901234567901235,
-      "type": "high_kv_usage"
     },
     {
       "fraction": 0.5665538253215978,
@@ -117,7 +107,7 @@
   "plan_sha256": "b0215a7cde359bbf820eb2b7a1891eef7805e78d5989cb8edac150bd61bcfbd3",
   "planned_native_cases": 24061,
   "pool_stage": "evaluating",
-  "pool_stage_source_age_seconds": 24109.415470838547,
+  "pool_stage_source_age_seconds": 24481.930906534195,
   "pool_stage_source_updated_at_pacific": "2026-10-18T11:21:46.059841-07:00",
   "pool_stage_timestamp_is_not_a_runtime_heartbeat": true,
   "recent_response_metadata": [],
@@ -525,5 +515,5 @@
   ],
   "saved_responses_unique_logical_sources": 9397,
   "schema_version": 1,
-  "updated_at_pacific": "2026-10-18T18:03:37.096563-07:00"
+  "updated_at_pacific": "2026-10-18T18:09:49.762713-07:00"
 }
