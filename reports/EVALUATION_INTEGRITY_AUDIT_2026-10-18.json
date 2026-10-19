@@ -1,0 +1,1586 @@
+{
+  "reviewed_at_pacific": "2026-10-18T23:03:07.352673-07:00",
+  "kind": "TARGETED_EVALUATION_INTEGRITY_AUDIT",
+  "frozen_native_scores_changed": false,
+  "new_inference_dispatched": false,
+  "scorer_recovery_status": "prepared_and_synthetically_tested_not_run_on_benchmark",
+  "records": [
+    {
+      "source_path": ".local/evaluation_revision_2026-10-18/integrity_audit_2026-10-18/reaction_findings.json",
+      "sha256": "57b396c3d8bbc4a32c3e56e0b856357164f41a7a52f40e9fc15d1342ae7df8d9",
+      "evidence": {
+        "schema_version": 1,
+        "task_id": "P16",
+        "created_at_pacific": "2026-10-18T22:59:20.398943-07:00",
+        "audit_mode": "read_only_label_blind_output_format_audit_with_separate_reference_alignment_checks",
+        "run_directory": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1",
+        "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1",
+        "protocol_variant": "QWEN_ZERO_SHOT_REACTION_FULL_SEQUENCE_ALL384_FULL_SOURCE_DESCRIPTIONS__MIXED_BUDGET_4K16K_CONTINUATION",
+        "finding": "Substantial final-answer formatting and budget confounds; frozen accuracy is reproducible under this output contract but is not an isolated biological-prediction measure.",
+        "method": {
+          "population": "All5651 frozen per_case_scores rows; no case selection by correctness. Counts use persisted parsed flags and finish metadata.",
+          "budget_assignment": "SHA256 canonical JSON[P16,native_protocol_variant,case_id] raw filename joined to frozen per_case_budget_map.",
+          "terminal_format_scope": "Only nonempty outputs already marked invalid by frozen parser; inspect final nonempty line; require a standalone decimal0..383 with optional Answer prefix/period, or balanced Markdown bold around integer. This is a formatting classification, not a new prediction or score.",
+          "terminal_format_regexes": [
+            "(?:Answer\\s*:\\s*)?(0|[1-9]\\d{0,2})\\.?",
+            "\\*\\*(0|[1-9]\\d{0,2})\\*\\*\\.?"
+          ],
+          "terminal_format_case_handling": "First regex case-insensitive; both whole-line fullmatch; additionally require integer<384. No gold label is consulted.",
+          "raw_sample": "Within each of six budget(4096/16384) x output_state(parsed/empty/nonempty_invalid) strata, lexicographically sort case identity SHA256 filenames and inspect first8;48total. Nonrandom audit sample; not a prevalence estimator.",
+          "reference_check_separate": "Check all keyed references/case order/existing score targets only for alignment and frozen hash identity; do not apply a new extraction rule or compute counterfactual accuracy.",
+          "original_score_recalculated": false,
+          "new_predictions_generated": false,
+          "files_or_parsers_modified": false,
+          "inference_dispatched": false,
+          "modification_scope": "Only this audit JSON is created; all evaluation inputs, raw outputs, parsers, scores, protocols and processes remain untouched."
+        },
+        "full_population_counts_by_output_budget": {
+          "4096": {
+            "cases": 4419,
+            "parsed": 817,
+            "invalid": 3602,
+            "length_finishes": 3444,
+            "empty_final_text": 3414,
+            "length_and_empty_final": 3403,
+            "nonempty_invalid": 188,
+            "stop_and_empty_final": 11
+          },
+          "16384": {
+            "cases": 1232,
+            "parsed": 303,
+            "invalid": 929,
+            "length_finishes": 151,
+            "empty_final_text": 213,
+            "length_and_empty_final": 139,
+            "nonempty_invalid": 716,
+            "stop_and_empty_final": 74
+          }
+        },
+        "full_population_terminal_format_counts_by_output_budget": {
+          "4096": {
+            "standalone_terminal_bare_or_answer_integer": 56,
+            "standalone_terminal_integer_finish_stop": 147,
+            "other_last_line": 41,
+            "standalone_terminal_bold_integer": 91
+          },
+          "16384": {
+            "standalone_terminal_bold_integer": 372,
+            "standalone_terminal_integer_finish_stop": 703,
+            "standalone_terminal_bare_or_answer_integer": 332,
+            "standalone_terminal_integer_finish_length": 1,
+            "other_last_line": 12
+          }
+        },
+        "total_terminal_integer_rejections": 851,
+        "total_terminal_integer_rejections_normal_stop": 850,
+        "total_terminal_integer_rejections_length_finish": 1,
+        "existing_frozen_score": {
+          "correct": 9,
+          "planned": 5651,
+          "accuracy": 0.0015926384710670677,
+          "parsed": 1120,
+          "invalid": 4531,
+          "truncated": 3595
+        },
+        "full_population_invariant_checks": {
+          "reference_count_5651": true,
+          "score_count_5651": true,
+          "ordered_reference_ids_equal_scores": true,
+          "exact_reference_targets_equal_scores": true,
+          "ordered_ids_exact_native_source_order": true,
+          "ids_unique": true,
+          "budgets_cover_exact_score_id_filenames": true,
+          "reference_hash_matches_frozen_manifest": true,
+          "class_ids_exact_0_through_383": true,
+          "all_four_source_class_tables_and_git_blobs_verified": true,
+          "prepared_context_equals_verified_source": true,
+          "parser_file_hash_matches_frozen_manifest": true,
+          "scorer_file_hash_matches_frozen_manifest": true,
+          "native_output_lock_contract_hash_valid": true,
+          "native_and_mixed_locks_agree_on_all_raw_file_hashes": true,
+          "manifest_bytes_match_completion_receipt": true,
+          "scores_bytes_match_completion_receipt": true,
+          "budget_map_bytes_match_mixed_output_lock": true
+        },
+        "raw_sample_checks": {
+          "sampled": 48,
+          "stored_text_equals_api_content_passed": 48,
+          "scored_text_equals_api_content_passed": 48,
+          "response_bytes_match_native_output_lock_passed": 48,
+          "request_bytes_match_native_output_lock_passed": 48,
+          "request_hash_matches_payload_passed": 48,
+          "request_budget_matches_per_case_map_passed": 48,
+          "full_pinned_class_context_in_prompt_passed": 48,
+          "nonempty_separate_reasoning": 48,
+          "empty_content_nonempty_reasoning": 16
+        },
+        "raw_sample_cases": [
+          {
+            "case_id": "Reaction:test:714",
+            "budget": 4096,
+            "state": "empty",
+            "filename": "00220063db6c0802cd3ef8225e6cc3cc83c430a4404573564b1a91e13e4822c8.json",
+            "response_sha256": "8da41598c08a951f14fd4dfe03f070cfa51454ac00ba518d4da955bc5801f413",
+            "request_sha256": "1647359b2b4935003e38f3ddff247abb60cea79b89210799cce4395edc581d75",
+            "content_chars": 0,
+            "reasoning_chars": 10319,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:1088",
+            "budget": 4096,
+            "state": "empty",
+            "filename": "00492927a5bd263c9a143c6029654880e5030b05bb4671276db12f65d1dd9bb0.json",
+            "response_sha256": "dc9331d632bce4d02cdb8e16982d9fc30f7c193274d0cfa3701bc63e09b7034c",
+            "request_sha256": "d5d645f517e7c1aea5c8b9d68107d0b292467397a5b03bf9b64a6df05c3c4883",
+            "content_chars": 0,
+            "reasoning_chars": 9116,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:5478",
+            "budget": 4096,
+            "state": "empty",
+            "filename": "005fdc8e0d7fb9cef0b5824bacf60f2790122748846f84997b912324f62d2557.json",
+            "response_sha256": "e8a4f8981b41d778acd14b0d9678a1f14976573a05c7bae6c7599f9c409300c0",
+            "request_sha256": "c96f463dde9440495c10ca5e48ce8132a103ee2886a41b5e63f8f9de91908b59",
+            "content_chars": 0,
+            "reasoning_chars": 8539,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4350",
+            "budget": 4096,
+            "state": "empty",
+            "filename": "006721e2d528a120131e01a9720b971356f6608a4d2b5fe21cee289b7953a7d6.json",
+            "response_sha256": "7dd25804844ab210c7db085947b23f5e0f0d945b416f980baa5dd7ffc3f3989e",
+            "request_sha256": "4935400eeaaa14617051a95ce11125ce0574021df5ea3638f39af32b8954065f",
+            "content_chars": 0,
+            "reasoning_chars": 10217,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:553",
+            "budget": 4096,
+            "state": "empty",
+            "filename": "0069ab872a866a072a2f74db725d71af03a1977d905590d8ac9f9a41aa9776d2.json",
+            "response_sha256": "1874f409deee1579d14ac223aaecf45defb3b9b853948e6675ccf8f5e4824002",
+            "request_sha256": "7f074808ff11bb3cdef1e31155609211f10e4a0e169f94e2e74fb7abcb648cef",
+            "content_chars": 0,
+            "reasoning_chars": 10919,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:126",
+            "budget": 4096,
+            "state": "empty",
+            "filename": "007e26a1f779e28aab9e8ab149dbfb07d8f6afbfaff6d54f8c3a08a8ab94af8d.json",
+            "response_sha256": "21acb8bd4b5f11fd8e10ce45759a49a81eab626e42997ff9016d937e8a6c7b94",
+            "request_sha256": "75cb53a5228cd0bcb59568eb5de57fb2278a9e7d770d8696342f35ae63a984dd",
+            "content_chars": 0,
+            "reasoning_chars": 12268,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2497",
+            "budget": 4096,
+            "state": "empty",
+            "filename": "009c8c77c1fbf73fe1b2f36c7b191678fd332bd107f3fd374563103849b24708.json",
+            "response_sha256": "2f2b72a1e251b114177f47326f3902812d69dea9c154c84bfa38db8bcd9ea1df",
+            "request_sha256": "267b4a3e007f9a8712e74b69092022a86e284b5419bf8496b40e201abecf8790",
+            "content_chars": 0,
+            "reasoning_chars": 10557,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:468",
+            "budget": 4096,
+            "state": "empty",
+            "filename": "009dc8fb52ec6e646effa8730447c4a3b9f7c3c0d665c9b70df8e1be9f4faaf5.json",
+            "response_sha256": "f68abe42a8bcc2ae7aae291ee9e0bb60f42f88a2e66e17b43bfe3680023f9ce0",
+            "request_sha256": "b95b879e0f280d00e959a1ac96726cbc32128bc15e257a8fb7b8603c6877b6e9",
+            "content_chars": 0,
+            "reasoning_chars": 10652,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4176",
+            "budget": 4096,
+            "state": "nonempty_invalid",
+            "filename": "00cf73c060ba3e344c4cf16098d60ffb909e68a59cde61222f7a3fb73f8f1e44.json",
+            "response_sha256": "4f1413b2cdb539c9979f304d9dfc1e0b78f75071b44af16c2332c01c344438d1",
+            "request_sha256": "d3b68351cf85ffdf60511e2585073ef1135c191adf04e8151d1ea6231b154f19",
+            "content_chars": 1196,
+            "reasoning_chars": 10101,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:228",
+            "budget": 4096,
+            "state": "nonempty_invalid",
+            "filename": "010e152ddb3360f5d5effad781060ce74b33ad5218feaca3286dad7a9091d9e0.json",
+            "response_sha256": "9cb140aa3d8cad0814d20eacf9cced8f78ba292129f03ce84f8ff87d907903da",
+            "request_sha256": "ebf83320e0a5d370680246a1d008ee936dce7154ffa31a97fa36396271f49e41",
+            "content_chars": 261,
+            "reasoning_chars": 10934,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:78",
+            "budget": 4096,
+            "state": "nonempty_invalid",
+            "filename": "0162fe920367067f5262d0eb854e0e72d1ac2be7ef3a968c2bc72aff21c843f9.json",
+            "response_sha256": "09ed9d9e472f0783f830818fd3a4a4db59b368972c0148c0fa03aaf82eed1d19",
+            "request_sha256": "a68382a9d311fb3c0faa99d948d444ea2b05b36619dbb2fc434abc8ac3261fa0",
+            "content_chars": 939,
+            "reasoning_chars": 9027,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2217",
+            "budget": 4096,
+            "state": "nonempty_invalid",
+            "filename": "0530ee08ed38fcfa910a8ff3d91d7b68e03be81d1220a2102866efd82af9bc94.json",
+            "response_sha256": "7bdc494d8aa16f297d9c634eb4c6e8e07cea4be8d12333180332213da554ff53",
+            "request_sha256": "80b834eb6536d65d734ccdd3a78dbcf7241d10d9ecd73770ac49728e5a1d4349",
+            "content_chars": 1003,
+            "reasoning_chars": 8791,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:5224",
+            "budget": 4096,
+            "state": "nonempty_invalid",
+            "filename": "0623a61a2dfb40a0ef17caa461525e67b8dc6b7ed28aeee391fd0f4487af7d04.json",
+            "response_sha256": "aabd6909b887554633a605b342cab2a63ecc120880884768bfd469b81441ff92",
+            "request_sha256": "be4ce908e2bc5fed93665686fe3a2dcf76c13aa76916a306e1a7499dfca04ad3",
+            "content_chars": 1007,
+            "reasoning_chars": 9107,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4297",
+            "budget": 4096,
+            "state": "nonempty_invalid",
+            "filename": "0666655abd08991c8bb05b989f0a8d3c29d8b72f49fe77820810676e1e4e4ae4.json",
+            "response_sha256": "2340a05e860c13b58e3be0cd08eef476aeee541ee2e49c05968721d9b86be85d",
+            "request_sha256": "484a6bc8c3e5bde79f8eb1870d4a5950b85b1b8117ccd31a71b7c8eeaadfcad8",
+            "content_chars": 1130,
+            "reasoning_chars": 8062,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:1941",
+            "budget": 4096,
+            "state": "nonempty_invalid",
+            "filename": "08b991c91e325554f5e3741adecc85d5e8d7679934c4986681d08e3d7036b750.json",
+            "response_sha256": "a07cbae1a73fd3eb509bad7b1db72f3afc7788985eed410d04cb42b5613fb915",
+            "request_sha256": "9bed50f4927173fc58087a720927ac78ae45ea5d0f094f0b00f365f75f127451",
+            "content_chars": 1222,
+            "reasoning_chars": 7913,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4314",
+            "budget": 4096,
+            "state": "nonempty_invalid",
+            "filename": "09b8df933aeeba498ee50d14ff655fc27cbf72fd277e317a167fef1d5ac5e2d7.json",
+            "response_sha256": "596fb712c990e24e91ca19a188183f669edf24ac30266ca616decc2456e9d685",
+            "request_sha256": "f79f604e1a7d8edcc7f3de76ca4e45ec490facc25d36f51ca3b45c82f6b00a79",
+            "content_chars": 930,
+            "reasoning_chars": 10074,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4171",
+            "budget": 4096,
+            "state": "parsed",
+            "filename": "00652ba1201bbe4cf72426ea234c0e6d4e964523053af513d21ca3ec92b9aa2e.json",
+            "response_sha256": "2231acaa9f7dc70cdea14014eee87dc16a8877aedd7b72d8b6f59d22deb242c7",
+            "request_sha256": "efdfc8eca138d8484809c35b8ec30d9342bcd91ae3ac26ac3410b189b520f456",
+            "content_chars": 3,
+            "reasoning_chars": 10785,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:5202",
+            "budget": 4096,
+            "state": "parsed",
+            "filename": "00b54c7d533037817b822a661a2b55cb2dbd88f9a8a60277099490bdd5cd88f9.json",
+            "response_sha256": "e371ecb039a2aa83723b46cc28c3631727d5a394bf879970d9429389ab139f95",
+            "request_sha256": "f195a6a1ec3e3c0cc793d8fca3c27066504e58c8fd803d2f4aa58375295e15e3",
+            "content_chars": 5,
+            "reasoning_chars": 5182,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:1134",
+            "budget": 4096,
+            "state": "parsed",
+            "filename": "00f9f1748aab94adfc36aa30ebea355dfa1b1a9169186125b9b424e59ac6357a.json",
+            "response_sha256": "d6d23029b957906b405536f5b9bba966f97957ff51abf5ea9717bdacba3e535d",
+            "request_sha256": "73b7ed63d03467a7d6fbffeb6138b74d7ad30b3b19bc12423e7cb9012cbe3771",
+            "content_chars": 3,
+            "reasoning_chars": 4754,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:903",
+            "budget": 4096,
+            "state": "parsed",
+            "filename": "016bde6d060f6a47f1151097fe93915bec536bb7f49accae9f4f3a51209149c0.json",
+            "response_sha256": "23179e81694ad5721c69518b623b5f4d868af03d7bd6904f58ae9da64c8a7c99",
+            "request_sha256": "91f2feac353f689d33ce90d6aaee9d5d0ca8df0a3a5e5d6a82344faf077eec39",
+            "content_chars": 3,
+            "reasoning_chars": 9441,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:5569",
+            "budget": 4096,
+            "state": "parsed",
+            "filename": "01df07a26eb1f07334cc0d5f4b7dd44379ce1f01baa420d464d03394039bfaa6.json",
+            "response_sha256": "d85d913650d8a9db0e3ee16481aa8750401ad8d92b04237a3fef6f7120ee0ba9",
+            "request_sha256": "dfd4fc85102bb2637831e35d2a0d4f17e240f1f2dd94d962be1e000b60a77c50",
+            "content_chars": 5,
+            "reasoning_chars": 3246,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:1250",
+            "budget": 4096,
+            "state": "parsed",
+            "filename": "023045fcf287d35a20596883d5738a6f8827dec9a1ad94fbe1de7cbaa7f21810.json",
+            "response_sha256": "88b6927bf5581625934ad263b7ff2cc27230c886aa1ecb1a04bf73d297780323",
+            "request_sha256": "1835f0751e7da36ca0e6d52c472bb85fa021f13790f108fc9a1cc7130533e69c",
+            "content_chars": 4,
+            "reasoning_chars": 8636,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:3858",
+            "budget": 4096,
+            "state": "parsed",
+            "filename": "02647142842a8a04e8ad3295d690160c42b288cbc8d9d255a83df96dcc6bc283.json",
+            "response_sha256": "3f491fa4df4d3197d24550b1c68ffdc46df7b9f66880c6b72f2a3724c15b6174",
+            "request_sha256": "97a1397b2bdc1b26995d7810e2f5dd508c0bc3d562a8fe915ddd1f79bca81f49",
+            "content_chars": 4,
+            "reasoning_chars": 5273,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:1532",
+            "budget": 4096,
+            "state": "parsed",
+            "filename": "027712673dfd723fcb8989d51de117c2376b69ee7b4b44f26b5c8d135702075e.json",
+            "response_sha256": "530b56cb834f43b928fc12420f61a5dde4602eff4f1ce4f507ee49987b6d6bd7",
+            "request_sha256": "558abdfaf9cc6fed12319c3abdeaa780235b39369931092210130ee369a84f60",
+            "content_chars": 4,
+            "reasoning_chars": 9767,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2524",
+            "budget": 16384,
+            "state": "empty",
+            "filename": "00b56f18723589c55e3112d3933c94116818b74c66f284d8aec367178b726ce2.json",
+            "response_sha256": "d0605acd3eb1ca5e73db7f6fd144add3e114b282cab79636de9eb63aa7cec603",
+            "request_sha256": "543045779e992db452c410b207ca764ddf6c0b5d50d431f094c5966fd9f68457",
+            "content_chars": 0,
+            "reasoning_chars": 43471,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2834",
+            "budget": 16384,
+            "state": "empty",
+            "filename": "0190af4da35eaff573157921fe54702d250e5b6df1177f76285f536cbeb42703.json",
+            "response_sha256": "e3861baa80ee1e39e3a6ef87710474bf61ad18a706c3d302510abff87b0665a7",
+            "request_sha256": "a612e3650ba18316b40cdd765d07ebd3436ececb37f5fe01012a2bcfdcf96c75",
+            "content_chars": 0,
+            "reasoning_chars": 32995,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2886",
+            "budget": 16384,
+            "state": "empty",
+            "filename": "024a0ad4a9d55fe4ccb00edc808628347254edf979d3911557adc5b81981875a.json",
+            "response_sha256": "c42ec8908bd35e2dc5419d9cf0792cc2108d0b7dc1cf674a56acc1e95cdf4a05",
+            "request_sha256": "f7a822dc9585485f9942f6e0ff2b9646d8cf663b54b07f3e23da46d0d43f8d12",
+            "content_chars": 0,
+            "reasoning_chars": 46008,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:5037",
+            "budget": 16384,
+            "state": "empty",
+            "filename": "025f9d0b1fe5e4c399d2488ff198aa7f7b8604805c9b192e7ac4d4e8752a29e0.json",
+            "response_sha256": "750c0ff5c3b280eb68c15bf2a6f334cbea57a340aea260ddda91580c4a1a4abb",
+            "request_sha256": "78c691b0fe883dd847219053450767650470c33f173a6dc5a154bb4fd154fd6e",
+            "content_chars": 0,
+            "reasoning_chars": 11760,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4931",
+            "budget": 16384,
+            "state": "empty",
+            "filename": "02687098b25e8b59d6b7114f1f26941f40be83bee6dae5d5301334e35d37169e.json",
+            "response_sha256": "fcbb49faac0b59b97389777b7f311548430d4d4707832f6db901a65b548953d6",
+            "request_sha256": "dc429c4e7cec6b8ab7e26857c286d778551d0cb17a86238bc6250d5f169880d3",
+            "content_chars": 0,
+            "reasoning_chars": 40862,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2782",
+            "budget": 16384,
+            "state": "empty",
+            "filename": "03e90b6f338e9b1dd2b2de447d73535b7048d3c3ec5237ad49e89e3411ebad07.json",
+            "response_sha256": "7ae8502ad49aaf00bb1e43f2182bd6990860d885c84da0803073f4d35f0f923d",
+            "request_sha256": "388fbdee2622d5a39952187b75e9a4623b4669150658b5a217db5b6778c1c4dc",
+            "content_chars": 0,
+            "reasoning_chars": 39488,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2597",
+            "budget": 16384,
+            "state": "empty",
+            "filename": "04531c6c5ad2d3e8570a34cb5db86051ca897163e6e399d62f0c167ac709afa2.json",
+            "response_sha256": "82270c0a1c673adebcf62246656c38b97beb2d48f486f93220e5a39ceeab8b64",
+            "request_sha256": "81cee3aa6a249d9ef1b744c20039b1977d5f9d5fe1e2885ecc791174a66f8623",
+            "content_chars": 0,
+            "reasoning_chars": 45812,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2534",
+            "budget": 16384,
+            "state": "empty",
+            "filename": "0c28b9b06083ad559a3ad12694ee2e5155861433e19106b7ef9df8462e3ba552.json",
+            "response_sha256": "c712617c2e1cbfa102eb13a79b838aea218953801be9e377a058dee15b05be10",
+            "request_sha256": "8e70a18848881434c30298df1533ba5a0197574414f2d12ea310c965fdddca77",
+            "content_chars": 0,
+            "reasoning_chars": 41551,
+            "finish_reason": "length",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4689",
+            "budget": 16384,
+            "state": "nonempty_invalid",
+            "filename": "009b039d77db6ade6c560cbdb0a2afd7dc8797d5d4cbe1bbdcf2c1ddca0dddd4.json",
+            "response_sha256": "bd335daf77cf05605578e5994231ccb94f63685a5d5e77995c9c091293d26900",
+            "request_sha256": "5a54e681f590c309245f2e02f4906022d6ec9e861bce39c54b43edfb68c96f74",
+            "content_chars": 1259,
+            "reasoning_chars": 25553,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2857",
+            "budget": 16384,
+            "state": "nonempty_invalid",
+            "filename": "00da09c853326910b1d9084c458f1cc07405557d3feece2dda78cb67d2f73ced.json",
+            "response_sha256": "12afaa3bd5d0e453ca5d981ace9c6965eddd7be2d29afb6d248a84626e652018",
+            "request_sha256": "7183b35c2a14c9fe5cbf4aaaa69a168c3dbc6f9355b056e75be454ac2fe17faf",
+            "content_chars": 1044,
+            "reasoning_chars": 12579,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4655",
+            "budget": 16384,
+            "state": "nonempty_invalid",
+            "filename": "019d80fcd0a03fc654243b50f3d9aa287c15c1434abed9c0f768e8f0bc04bc6b.json",
+            "response_sha256": "7f79d3529850f9d4e4b5ba8a0854d3534d67994082e8cdfed04a834a5a20a52d",
+            "request_sha256": "841c321040b76385b6f11f83ef5a39f60a8de4c6e8f61f3a50de3f462532a52d",
+            "content_chars": 1164,
+            "reasoning_chars": 21842,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:5084",
+            "budget": 16384,
+            "state": "nonempty_invalid",
+            "filename": "02471df74d984a0db76713c401e356a525a1666558c0c41911e25c84266615c7.json",
+            "response_sha256": "340f4b0037ee389f0de4645a329b81a1095489cbc08f281b1d64bb4f701cbbcd",
+            "request_sha256": "1b3a5eb189960c1fc65f44f8ec46e2ce35ac9423d5281aefc75b99bb04864ed2",
+            "content_chars": 1400,
+            "reasoning_chars": 29247,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:5082",
+            "budget": 16384,
+            "state": "nonempty_invalid",
+            "filename": "025db715add2d61190803f7b2fcdc0f87623cb59a3fcc47b07e7fad688a22dab.json",
+            "response_sha256": "3c43d90d6e16501f900948c31ac645d66523bb8ec81f0ad6238b6cd4802a8eac",
+            "request_sha256": "a9edeaacbd34fc29967a3994e53156e0f506077d6123bf157444aa0e041eb199",
+            "content_chars": 1107,
+            "reasoning_chars": 33453,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4665",
+            "budget": 16384,
+            "state": "nonempty_invalid",
+            "filename": "027f67e7fed4a135030093fdda50dd69062ade50180f312f6404fcf68864cd79.json",
+            "response_sha256": "b3337645db2cf7a85e72cf72353bfd7898b038d005299fcfd5f4e687b431b2f0",
+            "request_sha256": "b87a7835340bcb0757e4ddb893beee984013301650da6638e98d2d4c3ed160a4",
+            "content_chars": 1124,
+            "reasoning_chars": 26328,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4901",
+            "budget": 16384,
+            "state": "nonempty_invalid",
+            "filename": "03f453122327b89845630d26da0e0eb0ef7f99dadd83714921a3c0a0cf474056.json",
+            "response_sha256": "1b0a98b877e3db2b009e6445e2bb28ad07c09f620eaecadce6ab4b63526c4637",
+            "request_sha256": "d753cfd63f2a98c11a7fa3266eb28b88d49ad10323d1dab01025ec9c59dd775f",
+            "content_chars": 1555,
+            "reasoning_chars": 26562,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2681",
+            "budget": 16384,
+            "state": "nonempty_invalid",
+            "filename": "04195da1d97f18bcc5192a771cf5b0ca6eea694ba14d931a99b204768d8a3b38.json",
+            "response_sha256": "bd5d7c672cc2480add1b33f6bc370841d18a588ab1146ef2a4bfe2f6a4eff52a",
+            "request_sha256": "870e72fe807c9ebc66b535512fdfe0aca2b7cd847300556b205791c3651f0b64",
+            "content_chars": 1006,
+            "reasoning_chars": 33283,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2549",
+            "budget": 16384,
+            "state": "parsed",
+            "filename": "00a348c15dcfb5cd8cf7d6cda829fb7176501e45a28136ad6c11399db75c3f25.json",
+            "response_sha256": "3add9422dba4fa3645c2316723a3abbde7a17d598fe32af89a6ef39af2791694",
+            "request_sha256": "dd7e759aac00254d3796f6eda27603d7e1f74181d49b27b408840f911f3ecf2f",
+            "content_chars": 3,
+            "reasoning_chars": 17146,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2543",
+            "budget": 16384,
+            "state": "parsed",
+            "filename": "011d8d0a8b5119a630f3b12a8178420dec706fadcee5a12e1cb4a1729c0ba244.json",
+            "response_sha256": "3f0f99a3229bb9b424e5917b28dd12e2896b2a4fd41c1537fe1169b74734191e",
+            "request_sha256": "f168af84a49db5341a52c69097a96bab9521dfcbcfc6430829f938bbedf0b6d8",
+            "content_chars": 5,
+            "reasoning_chars": 25485,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:3022",
+            "budget": 16384,
+            "state": "parsed",
+            "filename": "034b1658c9d0dcd09258687a72c256e597306a8c9be3e9a096e5b965fcc777c1.json",
+            "response_sha256": "89b22697680c9ea6aeab276a07f132423249ebc4d4855903470f5f55f6d73397",
+            "request_sha256": "19facee462561f45b007732c7e2ab69b24015ab52c895ff67202ef5e3d38e932",
+            "content_chars": 5,
+            "reasoning_chars": 4850,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2950",
+            "budget": 16384,
+            "state": "parsed",
+            "filename": "047ddda4e3f3b73f1e22405c01aecaa040e459a7a4a29ea29647d01f2142c5a3.json",
+            "response_sha256": "329f3a370baeb899ae3a4a93787b9c375f7a9b1e8ec5fb99361602af1d011cf6",
+            "request_sha256": "3cd3ef7bedf6a6f2211306c493452af8500d6e32b6e0b34ff3aabf6c248f78e4",
+            "content_chars": 5,
+            "reasoning_chars": 18955,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2780",
+            "budget": 16384,
+            "state": "parsed",
+            "filename": "04ce23c10368d7b14bd75e07091e41d8bfd0219f11e60e63ea0895869c9527b7.json",
+            "response_sha256": "9aa4e35c0b10374d04dd222724f09149f3b1091d0dc24c0c7bb776503d316cf4",
+            "request_sha256": "f8e383804071091559936d06cfd555f80d9bbbc00d37cded94dc1241abbe6c5d",
+            "content_chars": 3,
+            "reasoning_chars": 9187,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4928",
+            "budget": 16384,
+            "state": "parsed",
+            "filename": "0552865d039a8f2a58f261258b4a31c0c96911970726def4b9d0bb6f640f97ce.json",
+            "response_sha256": "2fa788f84ac729845fb2bb38bb1dffc57e7d8d9df73d15eeadb78077945ceb3c",
+            "request_sha256": "e26c5a294a79b4f74b7f33f3e095ec61d6cf451118fb94b167f024dccffa590e",
+            "content_chars": 4,
+            "reasoning_chars": 9411,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:2536",
+            "budget": 16384,
+            "state": "parsed",
+            "filename": "07e194d37ea2fc29e9b61411d1b9e39d6a73ecf7fea39e8acb285a9e573fd08f.json",
+            "response_sha256": "97be880739cbc0fa6e4e16c66a8ed93426cbecb58def54de0c73ccad07463af0",
+            "request_sha256": "f5859f09538c4f267533db47f7b23cefade68ad7d841eb11433c51970293fbd6",
+            "content_chars": 5,
+            "reasoning_chars": 23477,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          },
+          {
+            "case_id": "Reaction:test:4835",
+            "budget": 16384,
+            "state": "parsed",
+            "filename": "08fe776c2fd6fb4da206d79dc1c86e01842e432075d3bf4e4e36aa3d23fb8297.json",
+            "response_sha256": "ec776ee680183b0e83e26bf22961faee20e80ecd593293ef0fff08622d9d078a",
+            "request_sha256": "b8c6bcf60afac11e8fb024268d41b1f2d006fbdf8b5aaf911cda4bf243a5e440",
+            "content_chars": 4,
+            "reasoning_chars": 12474,
+            "finish_reason": "stop",
+            "checks": {
+              "stored_text_equals_api_content": true,
+              "scored_text_equals_api_content": true,
+              "response_bytes_match_native_output_lock": true,
+              "request_bytes_match_native_output_lock": true,
+              "request_hash_matches_payload": true,
+              "request_budget_matches_per_case_map": true,
+              "full_pinned_class_context_in_prompt": true
+            }
+          }
+        ],
+        "representative_format_examples": [
+          {
+            "case_id": "Reaction:test:18",
+            "last_line": "5",
+            "finish_reason": "stop",
+            "response_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/responses/240cd13e78a3495c3ac31b8026a483841e00d2f8dbd7f12bea6d908eefbb8d1f.json"
+          },
+          {
+            "case_id": "Reaction:test:152",
+            "last_line": "**23**",
+            "finish_reason": "stop",
+            "response_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/responses/78e6b6dc931d549b148171c6fdd82fc3bc6594b4143227f7e20e9d871914c7a5.json"
+          },
+          {
+            "case_id": "Reaction:test:981",
+            "last_line": "**37**",
+            "finish_reason": "stop",
+            "response_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/responses/effa024f166cd2576eaa81d696ad8de0bb1dda78a298b92f6d3b0a14b119d13e.json"
+          },
+          {
+            "case_id": "Reaction:test:982",
+            "last_line": "325",
+            "finish_reason": "stop",
+            "response_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/responses/81c0b9574ae940c8553956983572613c181212b53d8f61fa2b61fb72a510bf95.json"
+          }
+        ],
+        "source_table_provenance": {
+          "sources/catalog_reaction__data__zero_shot_classification__reaction_name.tsv": {
+            "sha256": "13ddeaee45703ea3f129c7f9d1d851b035a855082d3eba6f0f90981988e04375",
+            "git_blob_sha1": "5cb7ea51567dc0bcc515f697266cf7d3e54d365c",
+            "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_name.tsv"
+          },
+          "sources/catalog_reaction__data__zero_shot_classification__reaction_language.tsv": {
+            "sha256": "0617006ec8e1266915cd96cde9bcf3b02cf27db731c9d06b96fbd05d5bfac5fa",
+            "git_blob_sha1": "54e5aa644231f880ebe0fa97b9b03025df992747",
+            "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_language.tsv"
+          },
+          "sources/catalog_reaction__data__zero_shot_classification__reaction_template.tsv": {
+            "sha256": "8933b21780c8e03a6c397cfad31049baca301467d8d38406cc11149f84b9db1a",
+            "git_blob_sha1": "74bcc9af5de9cfc0358d769cb8a5cd96133f72c3",
+            "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_template.tsv"
+          },
+          "sources/catalog_reaction__data__zero_shot_classification__reaction_description.tsv": {
+            "sha256": "d19d0bd57ea8b8dcf44b4ad6ec4133f18c25c5e943b6a3a5d3d4fb04ebea0201",
+            "git_blob_sha1": "74b9580717fba66df137e6eb381a760dfdbb891c",
+            "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_classification/reaction_description.tsv"
+          }
+        },
+        "file_pins": {
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/per_case_scores.json": {
+            "sha256": "a3f92a2289416ee8ec9b03f523600f8dc87588518b473156d104d050271c6f26",
+            "bytes": 2961113
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json": {
+            "sha256": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b",
+            "bytes": 4808
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/native_scores_unmodified.json": {
+            "sha256": "0f03ac18d81cab72e7da68766a2f918056871ae33b309893292f8288ff7af4d3",
+            "bytes": 3084
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/per_case_budget_map.json": {
+            "sha256": "9dafff466ea170cb8a08a338db421ef1f617ac1cbb6355dfd9bec0055a8be6c2",
+            "bytes": 470471
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scoring_output_lock.json": {
+            "sha256": "7b60042634c9f27a816ad81ec59237c578d678da790e3af035921d2eeae925c2",
+            "bytes": 1746506
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/mixed_budget_output_lock.json": {
+            "sha256": "4b4a2f9f0edd509ff9c8700b3ee8d237d877b3479a6e7e75f4f9ee3210660f05",
+            "bytes": 1746573
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/run_manifest.json": {
+            "sha256": "32336c111ca29d56cc96b5a1c945a2cb2728d430874da121b5d48fe8da87495c",
+            "bytes": 2874752
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/completion.json": {
+            "sha256": "c73681814f2e6c5909a4bf04916c099df1962734a166189662acb49a2be828e0",
+            "bytes": 1524
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/data/catalog_reaction/P16/scorer_references.jsonl": {
+            "sha256": "588e609dfcdd131f84a82968a5fa7d45b2341f8823ba46b9e712a5e16d136cd3",
+            "bytes": 1335552
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/scripts/prepare_catalog_reaction.py": {
+            "sha256": "5378f8d389e59c60f124c14c837a6f0f72d864cb6d1f21369c3b5df6a2d7ea06",
+            "bytes": 15450
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/scripts/score_local_reaction.py": {
+            "sha256": "292092d21753d879124f4035cbe2da56a7ee3827436a04df8d1d3fb31d6ab6dc",
+            "bytes": 10882
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/data/catalog_reaction/P16/class_context.txt": {
+            "sha256": "e19dea7152b963c79c621e60740b93561e9200b48357d019bdbb0d7ffb91a05b",
+            "bytes": 143725
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/data/catalog_reaction/P16/class_ontology.json": {
+            "sha256": "b43ec328351984b4aac0242ce73af71796e0ef3af2d9498124a547a52ca5eb9b",
+            "bytes": 607236
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/sources/catalog_reaction__script__run_zero_shot.py": {
+            "sha256": "c946c1eea5000388615d3ee51aa302ff89c982ab062d271ed2d144487f6cee52",
+            "bytes": 6590
+          },
+          "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/p16/sources/catalog_reaction__protst__dataset.py": {
+            "sha256": "36f348e8da65029623b5c22a7e80a805b9181ded9ef434d6235ddeed4259e7d9",
+            "bytes": 14835
+          }
+        },
+        "limitations": [
+          "851 terminal-label cases are format observations, not851 correct answers. No counterfactual gold-scored parser recovery is reported.",
+          "Raw API content equality was inspected for48 deterministically selected cases, not all5651 raw envelopes; full counts derive from frozen per-case scoring artifact.",
+          "All source table/class mapping/order checks pass; no independent biochemical remapping of native LMDB integer labels was attempted.",
+          "Current class parser is a custom generative adaptation; original ProtST uses embedding argmax and does not have a textual-output parser.",
+          "Original ProtST separately embeds label text with configured truncation; Qwen receives all384 full descriptions jointly (~44542class-context tokens). Different learned representations, context interfaces and training exposure prevent matched model/reasoning claims.",
+          "Historical4K and prospective16K cohorts are disjoint source/time subsets; their rates do not establish a controlled causal benefit of increasing output budget.",
+          "Separate reasoning was not mined for candidate answers. Empty content stays empty even when reasoning exists.",
+          "Earlier9005-output simple-parser diagnostic coveredP08andDeepFRI, not this P16task; its zero-recovery finding cannot be generalized to P16.",
+          "No inference, reruns, process actions, parser changes or public publication occurred in this audit."
+        ]
+      }
+    },
+    {
+      "source_path": ".local/evaluation_revision_2026-10-18/integrity_audit_2026-10-18/suite_findings.json",
+      "sha256": "7c2b6ad24b8c5325a412a05d3f9e717c9d5a9be755e5e9ab35d0d64210d829a2",
+      "evidence": {
+        "schema_version": 1,
+        "created_at_pacific": "2026-10-18T22:59:00.707309-07:00",
+        "audit_mode": "read_only_no_inference_no_rescoring_no_protocol_or_process_changes",
+        "snapshot_generated_at_utc": "2026-10-19T04:00:18.537712+00:00",
+        "findings": [
+          {
+            "finding_id": "B07_OUTPUT_INTERFACE",
+            "task_ids": [
+              "B07"
+            ],
+            "severity": "material_limitation",
+            "statement": "Most outputs hit the historical 4K cap and have no parsed final answer; low accuracy cannot isolate biological correctness.",
+            "counts": {
+              "planned": 600,
+              "completed": 600,
+              "parsed": 86,
+              "invalid_outputs": 514,
+              "missing_or_failed_outputs": null,
+              "held_before_inference": 0,
+              "finish_reasons": {
+                "length": 514,
+                "stop": 86
+              },
+              "metrics": {
+                "accuracy": 0.12666666666666668,
+                "precision": 0.12773109243697478,
+                "coverage": 0.9916666666666667,
+                "n_total": 600,
+                "n_correct": 76,
+                "n_sure": 595
+              },
+              "run_id": "qwen38_27b_b07_public_reviewed_2026-10-15"
+            },
+            "evidence_paths": [
+              "reports/RESULTS_AT_A_GLANCE.json",
+              "scripts/score_results.py"
+            ],
+            "verification_basis": "existing_aggregate_metadata_and_local_implementation_inspection"
+          },
+          {
+            "finding_id": "B08_OUTPUT_INTERFACE",
+            "task_ids": [
+              "B08"
+            ],
+            "severity": "material_limitation",
+            "statement": "All outputs hit the historical 4K cap; no parsed answers. Zero accuracy is output delivery failure under this condition.",
+            "counts": {
+              "planned": 33,
+              "completed": 33,
+              "parsed": 0,
+              "invalid_outputs": 33,
+              "missing_or_failed_outputs": null,
+              "held_before_inference": 0,
+              "finish_reasons": {
+                "length": 33
+              },
+              "metrics": {
+                "accuracy": 0.0,
+                "precision": 0.0,
+                "coverage": 1.0,
+                "n_total": 33,
+                "n_correct": 0,
+                "n_sure": 33
+              },
+              "run_id": "qwen38_27b_b08_public_reviewed_2026-10-15"
+            },
+            "evidence_paths": [
+              "reports/RESULTS_AT_A_GLANCE.json",
+              "scripts/score_results.py"
+            ],
+            "verification_basis": "existing_aggregate_metadata_and_local_implementation_inspection"
+          },
+          {
+            "finding_id": "P01_OUTPUT_INTERFACE",
+            "task_ids": [
+              "P01"
+            ],
+            "severity": "material_limitation",
+            "statement": "Over half of completed outputs are invalid under strict whole-final Yes/No parsing despite only three length finishes. Historical raw outputs unavailable locally; safe recoverability and causes are unverified.",
+            "counts": {
+              "planned": 1999,
+              "completed": 1999,
+              "parsed": 930,
+              "invalid_outputs": 1069,
+              "missing_or_failed_outputs": 0,
+              "held_before_inference": 0,
+              "finish_reasons": {
+                "stop": 1996,
+                "length": 3
+              },
+              "metrics": {
+                "accuracy": 0.24212106053026514,
+                "correct": 484,
+                "planned": 1999,
+                "parsed": 930,
+                "missing": 0,
+                "invalid": 1069,
+                "all_case_rule": "Missing or invalid model answers count as incorrect; report transport failures separately."
+              },
+              "run_id": "qwen38_27b_p01_original_test_2026-10-15"
+            },
+            "evidence_paths": [
+              "reports/RESULTS_AT_A_GLANCE.json",
+              "scripts/catalog_metric_helpers.py"
+            ],
+            "verification_basis": "existing_aggregate_metadata_and_local_implementation_inspection"
+          },
+          {
+            "finding_id": "P07_OUTPUT_INTERFACE",
+            "task_ids": [
+              "P07"
+            ],
+            "severity": "material_limitation",
+            "statement": "Full-test Spearman remains undefined; most outputs hit the cap. Parsed-only correlation is an incomplete diagnostic.",
+            "counts": {
+              "planned": 27217,
+              "completed": 27217,
+              "parsed": 1382,
+              "invalid_outputs": 25835,
+              "missing_or_failed_outputs": 0,
+              "held_before_inference": 0,
+              "finish_reasons": {
+                "stop": 1476,
+                "length": 25741
+              },
+              "metrics": {
+                "planned": 27217,
+                "parsed": 1382,
+                "missing": 0,
+                "invalid": 25835,
+                "spearman": null,
+                "spearman_parsed_only": 0.015499699811494717,
+                "undefined_constant_or_insufficient": false,
+                "all_case_rule": "No invented prediction for failures. Full-test Spearman requires every output to parse; incomplete valid-only correlation is separately labeled."
+              },
+              "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1"
+            },
+            "evidence_paths": [
+              "reports/RESULTS_AT_A_GLANCE.json",
+              "scripts/score_local_catalog_extended.py"
+            ],
+            "verification_basis": "existing_aggregate_metadata_and_local_implementation_inspection"
+          },
+          {
+            "finding_id": "MEDICAL_LEXICAL_METRIC",
+            "task_ids": [
+              "V01",
+              "V02",
+              "V03"
+            ],
+            "severity": "material_interpretation_limit",
+            "statement": "CLOSED native source substring matching can credit ambiguous text containing both yes and no. V03 correction changes the denominator, not this substring predicate. OPEN token recall is a lexical score and can reward verbosity; reported headline scores are not strict semantic answer accuracy.",
+            "counts": {},
+            "evidence_paths": [
+              "scripts/prepare_medical_vqa.py:153",
+              "scripts/prepare_pathvqa_native.py:136",
+              "scripts/score_local_medical_vqa.py:215"
+            ],
+            "verification_basis": "existing_aggregate_metadata_and_local_implementation_inspection"
+          },
+          {
+            "finding_id": "V04_WHOLE_FINAL_MATCH",
+            "task_ids": [
+              "V04"
+            ],
+            "severity": "material_limitation",
+            "statement": "All500 final outputs contain15–263 words (median70), but strict scoring matches the whole normalized final. Zero exact matches does not demonstrate500wrong clinical predictions. Historical official executable is unrecovered.",
+            "counts": {
+              "planned": 500,
+              "multiline_finals": 500,
+              "minimum_words": 15,
+              "median_words": 70,
+              "maximum_words": 263,
+              "strict_accuracy": 0
+            },
+            "evidence_paths": [
+              "reports/v04_output_format_qualification.json",
+              "scripts/score_vqamed2019_native.py"
+            ],
+            "verification_basis": "existing_aggregate_metadata_and_local_implementation_inspection"
+          },
+          {
+            "finding_id": "V05_FINAL_CHARACTER",
+            "task_ids": [
+              "V05"
+            ],
+            "severity": "material_limitation",
+            "statement": "Native scoring extracts only the final character then applies source choice similarity. The2% native and49.75% adapted full-text scores are different output extraction protocols; neither should be silently substituted for the other.",
+            "counts": {
+              "native_td_final_character_accuracy": 0.02,
+              "adapted_full_text_closest_choice_accuracy": 0.4975,
+              "adapted_full_text_released_label_accuracy": 0.4975,
+              "strict_final_label_accuracy": 0.007
+            },
+            "evidence_paths": [
+              "scripts/pmcvqa_clean_protocol.py:111",
+              "reports/pmcvqa_clean_native_preparation.json"
+            ],
+            "verification_basis": "existing_aggregate_metadata_and_local_implementation_inspection"
+          },
+          {
+            "finding_id": "DESCRIPTION_OUTPUT_CAP",
+            "task_ids": [
+              "P23",
+              "P24",
+              "P25",
+              "P26"
+            ],
+            "severity": "material_interpretation_limit",
+            "statement": "ROUGE measures lexical overlap, not biological factuality. Parsed counts include any string record, including empty strings; they are not complete usable-answer counts. Many outputs reached the cap. Exact BioT5+ paper metric equivalence remains unresolved.",
+            "counts": {
+              "planned": 9128,
+              "length_finishes": 3827,
+              "per_task": {
+                "P23": {
+                  "planned": 3494,
+                  "length_finishes": 1076
+                },
+                "P24": {
+                  "planned": 1601,
+                  "length_finishes": 832
+                },
+                "P25": {
+                  "planned": 1400,
+                  "length_finishes": 885
+                },
+                "P26": {
+                  "planned": 2633,
+                  "length_finishes": 1034
+                }
+              }
+            },
+            "evidence_paths": [
+              "scripts/score_local_descriptions.py:167",
+              "reports/RESULTS_AT_A_GLANCE.json"
+            ],
+            "verification_basis": "existing_aggregate_metadata_and_local_implementation_inspection"
+          },
+          {
+            "finding_id": "LITQA2_RAW_RECONCILIATION",
+            "task_ids": [
+              "B01"
+            ],
+            "severity": "verified_positive_control",
+            "statement": "All197 replay raw responses reconcile with archived text/finish and request hashes. Every response contains one explicit ANSWER tag agreeing with its saved parser prediction. Per-case saved flags reproduce77correct and188non-abstentions; labels/source mapping were not newly read.",
+            "counts": {
+              "responses": 197,
+              "nonempty_final": 197,
+              "stop_finish": 197,
+              "saved_final_or_finish_mismatch": 0,
+              "request_response_hash_mismatch": 0,
+              "literal_answer_tag_vs_saved_parser_mismatch": 0,
+              "max_output_tokens": 2259,
+              "saved_correct_flags": 77,
+              "saved_sure_flags": 188
+            },
+            "evidence_paths": [
+              "results/runs/qwen38_27b_litqa2_replay_2026-10-16/responses",
+              "results/runs/qwen38_27b_litqa2_replay_2026-10-16/requests",
+              "results/runs/qwen38_27b_litqa2_replay_2026-10-16/per_case_scores.json"
+            ],
+            "verification_basis": "fresh_all197_raw_response_request_and_saved_score_flag_reconciliation"
+          },
+          {
+            "finding_id": "SOURCE_IMAGE_AND_LABEL_CHECKS",
+            "task_ids": [
+              "B04",
+              "B05",
+              "P01",
+              "P02",
+              "P10",
+              "P11"
+            ],
+            "severity": "previously_verified_positive_controls",
+            "statement": "Prior425-case FigQA/TableQA audit reconstructs publisher prompts, permutations, actual image bytes and request mappings with no discrepancy. Prior P01/P02/P10/P11 source audit has matching ordered sequence/label canonical hashes. B04 native-wrapper re-encoding changes pixels under a diagnostic runtime; historical effect on scores is unknown.",
+            "counts": {},
+            "evidence_paths": [
+              "reports/labbench_vision_postrun_integrity_audit.md",
+              "reports/labbench_vision_postrun_integrity_audit.json",
+              "reports/labbench_vision_native_serialization_qualification.json",
+              "reports/catalog_split_identity_2026-10-15.json"
+            ],
+            "verification_basis": "inspection_of_existing_frozen_audits_not_fresh_source_reexecution"
+          },
+          {
+            "finding_id": "PAPER_COMPARISON_LIMIT",
+            "task_ids": [
+              "ALL"
+            ],
+            "severity": "interpretation_limit",
+            "statement": "Published values are contextual: zero-shot Qwen versus specialist/task-trained systems and differing prompt, decoder, image, split and repeat conditions. Mixed4K/16K results are explicitly qualified. No controlled model ranking or contamination-free claim is supported.",
+            "counts": {},
+            "evidence_paths": [
+              "reports/RESULTS_AT_A_GLANCE.md",
+              "reports/RESULTS_AT_A_GLANCE.json",
+              "AGENTS.md"
+            ],
+            "verification_basis": "existing_aggregate_metadata_and_local_implementation_inspection"
+          }
+        ],
+        "verification_limits": [
+          "Historical data/ and sources/ roots are unavailable in this checkout.",
+          "Original P01/B07/B08 raw run folders are unavailable locally; causes and recoverable answer counts are not newly established.",
+          "Prior source/image audits are inspected evidence, not a fresh rerun of their original external artifacts.",
+          "No biological rationale correctness grading, public pretraining exposure audit, significance test or matched paper replication was performed.",
+          "No held pathogen-task content was examined."
+        ],
+        "evidence_sha256": {
+          "reports/RESULTS_AT_A_GLANCE.json": "5604d199b3008013c6f3c593834b4df586a73984802ea764fe692d6f9108ae93",
+          "reports/v04_output_format_qualification.json": "e6c412a2a8817be997b70f014fe028fa308c1e4427e58a8e6994bb0cbb783f5a",
+          "scripts/catalog_metric_helpers.py": "3c4b72488249d0e6f10735d0d861405e052b55387387e5c99d2aa792ef1c8232",
+          "scripts/prepare_medical_vqa.py": "7989c3776968c1c49ab4130274f570a45c812245b2cce8cfd67281f453cae6d2",
+          "scripts/prepare_pathvqa_native.py": "9e34517640ee56a69c7a5beaa90e2b6838447f614fe789bb4fedc719886fef4f",
+          "scripts/pmcvqa_clean_protocol.py": "3a10257206e2407d16d1a9e68b42871532410404f80afcb4c982c6e772259cba",
+          "scripts/score_local_descriptions.py": "493467519637eb39a127a1c554e392a428c4991d0bed9693fbeaef716dd546f8",
+          "reports/labbench_vision_postrun_integrity_audit.json": "d71b13c39d609e554ac77d6997df39c2841f48fbd35f2fbfa9b2893bd3a757dc",
+          "reports/catalog_split_identity_2026-10-15.json": "34c4ed4fe8bd60bd3930dda8718a2b27e635642685a8a6682667134f6de58128"
+        }
+      }
+    },
+    {
+      "source_path": ".local/evaluation_revision_2026-10-18/scoring/null_equivalence_recovery_v1/derivation_receipt.json",
+      "sha256": "15f47a9aa97a44a80c7860de648465a8956d650947c5756aa7c35b53acc02e28",
+      "evidence": {
+        "version": "DEEPFRI_NULL_EQUIVALENCE_RECOVERY_V1",
+        "state": "prepared_not_executed",
+        "original_scorer_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/remaining_evaluations/deepfri/scripts/score_local_deepfri_confidence.py",
+        "original_scorer_sha256": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7",
+        "derived_scorer_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/null_equivalence_recovery_v1/score_local_deepfri_confidence_null_equivalence_v1.py",
+        "derived_scorer_sha256": "8e9f16fcac02afbfee88fcf271a62bd974d559c803aa78dabf7dbac8999ebb91",
+        "diff_sha256": "93d2d058551b1d138d1e081862f193437dc5b2fc5b7c3886cc8fac528980e7bf",
+        "changes": "Only allow explicit API content=null versus saved normalized text empty string in provenance equality; finish mismatch and all other content mismatches remain rejected. No parser, native formulas, target, denominator, confidence semantics, input, output budget or sampling changes.",
+        "inference_dispatched": false,
+        "native_scoring_executed": false,
+        "existing_files_modified": false
+      }
+    },
+    {
+      "source_path": ".local/evaluation_revision_2026-10-18/scoring/null_equivalence_recovery_v1/synthetic_test_receipt.json",
+      "sha256": "352f6e9d7c74462b605ecf48322121814cec7076a70e76c0769b138fd121475c",
+      "evidence": {
+        "status": "passed",
+        "tests": 11,
+        "synthetic_only": true,
+        "real_model_outputs_scored": false,
+        "inference_dispatched": false,
+        "completed_at_pacific": "2026-10-18T23:00:32.661659-07:00",
+        "python": "/tmp/bio-shared-scoring-237730-j59z3bie/python/bin/python3.12",
+        "slurm_job_id": 237730,
+        "resources": {
+          "cpu": 1,
+          "memory": "4G"
+        },
+        "files_sha256": {
+          "REVIEW_PLAN.md": "bde64e0328f6055c929f3dcd85949f7ccabcef795d671c78b07adfac71466097",
+          "native_guard_only.diff": "93d2d058551b1d138d1e081862f193437dc5b2fc5b7c3886cc8fac528980e7bf",
+          "test_null_equivalence_recovery.py": "83229598cc404477b78195aed4a9fd4442cb896983bba13471cb30201f73314e",
+          "score_local_deepfri_confidence_null_equivalence_v1.py": "8e9f16fcac02afbfee88fcf271a62bd974d559c803aa78dabf7dbac8999ebb91",
+          "derivation_receipt.json": "15f47a9aa97a44a80c7860de648465a8956d650947c5756aa7c35b53acc02e28"
+        },
+        "checks": [
+          "Exact raw null / saved empty only normalization; whitespace and every other divergent field rejected",
+          "All finish mismatches rejected",
+          "Entire derived module AST equals frozen original after restoring the sole guard expression",
+          "Missing/truncated finals remain invalid predictions",
+          "Three-row synthetic matrix retains denominator3 and primary null gate when one invalid",
+          "Unchanged source-native AP/Fmax on perfect artificial tensor equals1"
+        ]
+      }
+    }
+  ],
+  "reporting_corrections": [
+    "Prominent task-specific parsing, truncation and metric caveats added during display; canonical score records retained.",
+    "P16 reference registry adds 21.91% Description first and preserves 29.85% Name as a separate variant, verified against official Table11 and AppendixB.3."
+  ],
+  "limits": [
+    "Historical raw/source folders are missing for several tasks; not all cases in the suite were freshly verified.",
+    "P16 terminal-integer audit examined formatting without correctness labels; no recovered accuracy was computed.",
+    "The null-equivalence repair keeps missing finals invalid and cannot create a valid full-test AP/Fmax when invalid vectors remain."
+  ]
+}

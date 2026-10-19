@@ -116,6 +116,54 @@ def select_reference(task_id, dataset, registry):
     return None
 
 
+def presentation_caveats(row):
+    """Add output-delivery/metric qualifications using aggregate metadata only.
+
+    Works on retained historical rows as well as newly collected rows. Never
+    reads raw cases or changes scores, denominators or completion decisions.
+    """
+    caveats = list(row.get("caveats", []))
+    task = row.get("task_id")
+    counts = row.get("counts") or {}
+    planned, parsed = counts.get("planned"), counts.get("parsed")
+    invalid = counts.get("invalid_outputs")
+    length = (row.get("finish_reasons") or {}).get("length")
+    additions = []
+    if task == "B07" and type(planned) is int and type(parsed) is int:
+        message = f"Output delivery: {parsed:,}/{planned:,} final answers parsed"
+        if type(length) is int:
+            message += f"; {length:,}/{planned:,} outputs reached the output-token cap"
+        additions.append(message + ". The score includes invalid answers and does not isolate biological correctness. Native coverage measures non-abstention, not parsing.")
+    if task == "P01" and type(planned) is int and type(invalid) is int:
+        additions.append(f"Strict whole-final Yes/No parsing rejects {invalid:,}/{planned:,} outputs. Invalid answers remain failures; this does not establish that each rejected biological prediction is wrong.")
+    if task == "P16" and type(planned) is int and type(parsed) is int:
+        additions.append(f"Strict whole-final integer parsing accepts {parsed:,}/{planned:,} answers. The score combines prediction and output-format failures.")
+        if row.get("scores_sha256") == "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b":
+            additions.append("Label-blind audit: 851 rejected nonempty answers end with an in-range class number; 850 finish normally. Their correctness was not measured by this formatting audit.")
+    if task in {"V01", "V02", "V03"}:
+        additions.append("CLOSED uses source substring Yes/No matching, which can credit ambiguous text; OPEN measures token recall. These lexical scores can reward verbose answers and are not strict semantic answer accuracy.")
+        if task == "V03":
+            additions.append("The corrected CLOSED score fixes the denominator; it retains the source substring rule.")
+    if task == "V05":
+        additions.append("Native extraction scores only the final character; full-text choice matching is a separate adaptation. The large difference measures output-extraction sensitivity, not a controlled change in medical knowledge.")
+    if task in {"P23", "P24", "P25", "P26"}:
+        message = "ROUGE measures lexical overlap, not biological factuality."
+        if type(length) is int and type(planned) is int:
+            message += f" {length:,}/{planned:,} outputs reached the output-token cap."
+        additions.append(message + " Parsed means a text record, even when empty; it does not mean a usable complete annotation.")
+    if task == "P07" and type(planned) is int and type(parsed) is int:
+        message = f"Output delivery: {parsed:,}/{planned:,} numeric final answers parsed"
+        if type(length) is int:
+            message += f"; {length:,}/{planned:,} outputs reached the output-token cap"
+        if any(key.lower() == "spearman" and value is None for key, value in (row.get("metrics") or {}).items()):
+            message += ". Full-test correlation is undefined; parsed-only correlation is incomplete"
+        additions.append(message + ".")
+    for message in additions:
+        if message not in caveats:
+            caveats.append(message)
+    return caveats
+
+
 def build_report(root: Path, generated_at=None):
     root = Path(root); provenance, warnings, excluded, rows, aggregate_containers, diagnostic_rows = {}, [], [], [], [], []
     def read(name, default=None):
@@ -332,6 +380,7 @@ def render_markdown(report):
     lines = ["# Results at a glance", "", f"Snapshot: {display_time}. Fixed local Qwen3.8-27B baseline; "
         f"{len(completed_ids)} of {main_count} main settings have completed evaluations of their declared scope. "
         "This does not mean full paper replication. Finished shards and incomplete runs are excluded below.", "",
+        "[Evaluation integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md) identifies output-delivery and metric limitations; completed execution does not guarantee an informative model-quality score.", "",
         "These are contextual comparisons: the local baseline is zero-shot; BioT5+/medical systems use task training. LAB references below use the public-set GPT-5.2 column; prompt/decoding/repeat differences remain. "
         f"B01 covers 197/199 public cases with two held before inference. No superiority or significance claim follows. Generated-answer output caps in this snapshot: {limit_text} tokens; P43 instead uses a prespecified one-token conditional likelihood score. Paper ± values preserve reported dispersion; its definition and repeat counts are not always established.", "",
         "| Setting | Local score | Published reference | Qualification |", "|---|---|---|---|"]
@@ -343,7 +392,7 @@ def render_markdown(report):
         suffix = " / " + (row.get("dataset") or row.get("native_split") or "") if row.get("dataset") or row.get("native_split") else ""
         label = row["task_id"] + suffix + " " + row["task_name"].replace("LAB-Bench / ", "")
         if incomplete_evaluation(row, report): label += "*"
-        caveats = " ".join(row["caveats"])
+        caveats = " ".join(presentation_caveats(row))
         if row["completion_scope"] in {"dataset_component", "native_split_component"}: caveats = "Completed component. " + caveats
         if not caveats: caveats = "Declared local variant; input, training and scoring qualifications in linked result and JSON."
         lines.append("| " + " | ".join(map(cell, [f"[{label}](../{row['source_scores']})", local_display(row), published_display(row), caveats])) + " |")
@@ -354,7 +403,8 @@ def render_markdown(report):
         lines += ["", "Finished executions with undefined full-test metrics, excluded from benchmark completion counts:", ""]
         for row in diagnostics:
             lines.append(f"- [{row['task_id']} {row['task_name']}*](../{row['source_scores']}): "
-                         f"{local_display(row)}. Parsed-only values are incomplete diagnostics and do not replace the native full-test score.")
+                         f"{local_display(row)}. Parsed-only values are incomplete diagnostics and do not replace the native full-test score. "
+                         + " ".join(presentation_caveats(row)))
     p43 = report["P43"]
     if p43["completed_components"]:
         lines += ["", "P43: " + ", ".join(p43["completed_components"]) + " component tests completed. " +

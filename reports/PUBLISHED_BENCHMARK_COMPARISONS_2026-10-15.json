@@ -724,6 +724,20 @@
         {
           "model": "ProtST-ESM-1b",
           "metrics": {
+            "zero_shot_accuracy_percent": 21.91
+          },
+          "source_id": "PROTST",
+          "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "source_locator": "Table 11, Description column, printed p.15; Appendix B.3",
+          "protocol": "zero-shot embedding similarity to full label descriptions (names, alternative names and scientific comments) in published pretraining template",
+          "value_status": "published_rounded_as_printed",
+          "run_count": null,
+          "reported_std": null,
+          "reference_selection_qualification": "Closest label-text variant to the frozen Qwen full-description context; protein/text representations and output interfaces still differ. The separate name variant is retained below."
+        },
+        {
+          "model": "ProtST-ESM-1b",
+          "metrics": {
             "zero_shot_accuracy_percent": 29.85
           },
           "source_id": "PROTST",
