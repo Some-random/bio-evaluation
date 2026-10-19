@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "comparison_id": "gpt-6-luna_vs_qwen_localization_4k_2026-10-19_v2",
+  "tasks": [
+    "P03"
+  ],
+  "candidates": {
+    "path": "reports/GPT6_LUNA_QWEN_COMPARISON_CANDIDATES_2026-10-19.json",
+    "sha256": "ae3dbf78683cc2060c58a9364f833515cb59871fc6c21388dc4813b55a3ecbe0"
+  },
+  "case_manifest": {
+    "path": "results/comparison_preparation/gpt6_luna_qwen_2026-10-19/case_manifest.jsonl",
+    "sha256": "546ee988292215bbffb8b894133c4d74c17a5b5258043a0c350f1a4cd60e8f44"
+  },
+  "answer_policy": {
+    "path": "configs/comparison_answer_policy_v1.json",
+    "sha256": "81bcae4b7b0ec0303fda77c6804280da124824635ba86be7d96381a7e0404604"
+  },
+  "native_constant": {
+    "path": ".local/litqa2_replay/baseline/sources/chembench_constant.py",
+    "sha256": "71b4a92edfbe5b33e9a327b0773a2ae9cfd9946b48452f13127929a29e91021d"
+  },
+  "frozen_protocol": {
+    "path": ".local/comparison_execution_2026-10-19/inputs/localization_gpt-6-luna.protocol.json",
+    "sha256": "727912e463ce9d8949bf1889b084726d8ba7c6a0299164ce5fb253fa918e6aeb"
+  },
+  "frozen_request_file": {
+    "path": ".local/comparison_execution_2026-10-19/bundles/localization_gpt-6-luna/requests.jsonl",
+    "sha256": "94707c0f30634d10eb1590e89d6113816b846ebeb0e5342448957d13bc50d66b"
+  },
+  "qwen": {
+    "model": "Qwen/Qwen3.8-27B",
+    "run_id": "archived_qwen_localization_panel_2026-10-19_v2",
+    "protocol_id": "openai_qwen_localization_4k_2026-10-19_v2",
+    "response_style": "qwen_archive",
+    "lock": {
+      "path": ".local/comparison_execution_2026-10-19/qwen_archives/localization/predictions_lock.json",
+      "sha256": "7d853406c6e3cff590f4b3adc9b4be5bd4f6ed374d8b8bd8464cb45f2dce4488"
+    }
+  },
+  "openai": {
+    "model": "gpt-6-luna",
+    "run_id": "openai_localization_gpt-6-luna_4k_2026-10-19_v2",
+    "protocol_id": "openai_qwen_localization_4k_2026-10-19_v2",
+    "response_style": "openai_responses",
+    "lock": {
+      "path": ".local/comparison_execution_2026-10-19/runtime/localization_gpt-6-luna/predictions_lock.json",
+      "sha256": "7510d39f6c15f57fdd6ec7050f725748d631ee4a438b7e5aa5cc071f70fe586c"
+    }
+  },
+  "uncertainty_grouping": {
+    "P03": "case"
+  }
+}

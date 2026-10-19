@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "stage": "watching",
+  "stage": "terminal",
   "started_at_pacific": "2026-10-19T14:21:26.050889-07:00",
   "pid": 2507020,
   "new_inference_calls": 0,
@@ -15,11 +15,100 @@
     "gpt-6-luna": {
       "model": "gpt-6-luna",
       "planned": 2773,
-      "state": "awaiting_prediction_lock",
-      "attempt_count": 0,
+      "state": "completed",
+      "attempt_count": 1,
       "runtime_directory": ".local/comparison_execution_2026-10-19/runtime/localization_gpt-6-luna",
-      "scoring_output": ".local/comparison_execution_2026-10-19/analysis/localization_gpt-6-luna.scores.json"
+      "scoring_output": ".local/comparison_execution_2026-10-19/analysis/localization_gpt-6-luna.scores.json",
+      "attempt_started_at_pacific": "2026-10-19T15:22:38.664863-07:00",
+      "attempt_finished_at_pacific": "2026-10-19T15:24:08.497174-07:00",
+      "score_sha256": "b4af89f2bae4df2db41ea8de67fecea21491e228a93b79febf9b18aa9e31b608",
+      "source_plan_sha256": "dc0a8c175abcf2c7c992782682bb9b92b5a3268696cc421500644ed62e1591a2",
+      "prediction_lock_sha256": "7510d39f6c15f57fdd6ec7050f725748d631ee4a438b7e5aa5cc071f70fe586c",
+      "tasks": {
+        "P03": {
+          "qwen": {
+            "planned": 2773,
+            "native_correct": 724,
+            "native_accuracy": 0.2610890732059142,
+            "unambiguous_correct": 724,
+            "unambiguous_accuracy": 0.2610890732059142,
+            "native_parsed": 2722,
+            "usable_answer_rate": 0.9816083663901911,
+            "unambiguous_parsed": 2722,
+            "unambiguous_answer_rate": 0.9816083663901911,
+            "explicit_parsed_abstentions": 0,
+            "native_non_abstention_coverage": null,
+            "native_non_abstention_precision": null,
+            "transport_or_server_errors": 0,
+            "not_dispatched": 0,
+            "truncations": 47,
+            "empty_finals": 51,
+            "refusals": 0,
+            "denominator_policy": "Every declared case; failures/invalid answers incorrect, explicit abstentions parsed."
+          },
+          "openai": {
+            "planned": 2773,
+            "native_correct": 1575,
+            "native_accuracy": 0.567976920302921,
+            "unambiguous_correct": 1575,
+            "unambiguous_accuracy": 0.567976920302921,
+            "native_parsed": 2770,
+            "usable_answer_rate": 0.998918139199423,
+            "unambiguous_parsed": 2770,
+            "unambiguous_answer_rate": 0.998918139199423,
+            "explicit_parsed_abstentions": 0,
+            "native_non_abstention_coverage": null,
+            "native_non_abstention_precision": null,
+            "transport_or_server_errors": 3,
+            "not_dispatched": 0,
+            "truncations": 0,
+            "empty_finals": 3,
+            "refusals": 0,
+            "denominator_policy": "Every declared case; failures/invalid answers incorrect, explicit abstentions parsed."
+          },
+          "native_paired": {
+            "both_correct": 546,
+            "openai_only_correct": 1029,
+            "qwen_only_correct": 178,
+            "both_wrong": 1020,
+            "openai_minus_qwen_accuracy": 0.30688784709700684,
+            "mcnemar_exact_two_sided_p": 6.618049827448894e-146,
+            "mcnemar_scope": "Conditional exact paired discordance test; case-independence assumption is not guaranteed by public benchmarks.",
+            "paired_bootstrap_percentile_interval": [
+              0.285250631085467,
+              0.3285250631085467
+            ],
+            "bootstrap_replicates": 10000,
+            "seed": 20261019,
+            "confidence": 0.95,
+            "resampling_unit": "case",
+            "resampling_unit_count": 2773,
+            "uncertainty_scope": "Fixed selected benchmark and one generation per model; not training-contamination assurance, independent biological experiments, or across-run variance."
+          },
+          "unambiguous_paired": {
+            "both_correct": 546,
+            "openai_only_correct": 1029,
+            "qwen_only_correct": 178,
+            "both_wrong": 1020,
+            "openai_minus_qwen_accuracy": 0.30688784709700684,
+            "mcnemar_exact_two_sided_p": 6.618049827448894e-146,
+            "mcnemar_scope": "Conditional exact paired discordance test; case-independence assumption is not guaranteed by public benchmarks.",
+            "paired_bootstrap_percentile_interval": [
+              0.285250631085467,
+              0.3285250631085467
+            ],
+            "bootstrap_replicates": 10000,
+            "seed": 20261019,
+            "confidence": 0.95,
+            "resampling_unit": "case",
+            "resampling_unit_count": 2773,
+            "uncertainty_scope": "Fixed selected benchmark and one generation per model; not training-contamination assurance, independent biological experiments, or across-run variance."
+          }
+        }
+      }
     }
   },
-  "updated_at_pacific": "2026-10-19T15:21:06.574368-07:00"
+  "updated_at_pacific": "2026-10-19T15:22:38.663196-07:00",
+  "all_terminal": true,
+  "finished_at_pacific": "2026-10-19T15:24:08.707095-07:00"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at_pacific": "2026-10-19T15:21:13.620514-07:00",
+  "updated_at_pacific": "2026-10-19T15:24:14.766010-07:00",
   "role": "Verified complete scoring evidence; status records may still be pending or failed",
   "sealed_score_files": {
     "publicqa_gpt-6-luna": {
@@ -13,10 +13,20 @@
       "sha256": "c1897691ecfd204419b69a07a58eb111bdc2c029134ff30538fd967f12c7f56c",
       "plan_path": "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6_1-sol.scoring_plan.json",
       "plan_sha256": "1a71eabf871c910531edd8da204bb3a675367050a374a58698da74477fd37ed9"
+    },
+    "localization_gpt-6-luna": {
+      "path": "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_gpt-6-luna.scores.json",
+      "sha256": "b4af89f2bae4df2db41ea8de67fecea21491e228a93b79febf9b18aa9e31b608",
+      "plan_path": "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_gpt-6-luna.scoring_plan.json",
+      "plan_sha256": "dc0a8c175abcf2c7c992782682bb9b92b5a3268696cc421500644ed62e1591a2"
     }
   },
   "files_sha256": {
-    "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_scoring_status.json": "f52dbae5bae4ae10f5bcf6a610aae5a5ed96074f6cc8306b6297b09d64dc5e75",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_gpt-6-luna.attempt_001.json": "cb218f8cd484eb0c937eda4dc2981cfd6b8515c29746326c7e953a3c12db15f1",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_gpt-6-luna.scores.json": "b4af89f2bae4df2db41ea8de67fecea21491e228a93b79febf9b18aa9e31b608",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_gpt-6-luna.scores.sha256": "5eb2fac1310a62280b7b123021a34df8324f319176885b1fc46a1bee3c97f935",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_gpt-6-luna.scoring_plan.json": "dc0a8c175abcf2c7c992782682bb9b92b5a3268696cc421500644ed62e1591a2",
+    "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_scoring_status.json": "cc48e469e3da4ab10701194bac31653466091b870304a055681b57fb9e466a0c",
     "results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_scoring_watcher_start.json": "4405a3051e00110b74e7d13a31d0b7cecf564a10f334b29fb784f7cb351fb2b1",
     "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6-luna.attempt_001.json": "d0c8aeb06f94fe5a59b82daad53f9d3330946b2806ab09d5c042f2b5a8daea86",
     "results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6-luna.scores.json": "91c8b55f704e8c2be711f5d4488b7c49eed5a66b88a34b7808d7e76d6da738ac",
@@ -39,6 +49,12 @@
     "publicqa_gpt-6_1-sol": {
       "state": "completed",
       "score_sha256": "c1897691ecfd204419b69a07a58eb111bdc2c029134ff30538fd967f12c7f56c",
+      "error_type": null,
+      "error": null
+    },
+    "localization_gpt-6-luna": {
+      "state": "completed",
+      "score_sha256": "b4af89f2bae4df2db41ea8de67fecea21491e228a93b79febf9b18aa9e31b608",
       "error_type": null,
       "error": null
     }

@@ -1,10 +1,10 @@
 # OpenAI and archived Qwen comparison
 
-Updated October 19, 2026, 03:21 PM PDT. Only complete, sealed benchmark score files appear in the accuracy tables. Saved generation responses alone are not completed benchmark scores.
+Updated October 19, 2026, 03:24 PM PDT. Only complete, sealed benchmark score files appear in the accuracy tables. Saved generation responses alone are not completed benchmark scores.
 
 | Dispatched condition | Saved / planned | Complete output lock | Errors | Truncations | Empty finals | Refusals |
 |---|---:|---|---:|---:|---:|---:|
-| localization_gpt-6-luna | 2639/2773 | No | 3 | 0 | 3 | 0 |
+| localization_gpt-6-luna | 2773/2773 | Yes | 3 | 0 | 3 | 0 |
 | publicqa_gpt-6-luna | 279/279 | Yes | 0 | 0 | 0 | 0 |
 | publicqa_gpt-6_1-sol | 279/279 | Yes | 0 | 0 | 0 | 0 |
 
@@ -34,6 +34,8 @@ Native and strict unambiguous accuracy use every planned case. An explicit insuf
 | SuppQA (closed-book paper-specific QA) | gpt-6-luna | 44/82 | 53.66% | 44/82 | 53.66% | 82/82 | 82/82 | 1 |
 | LitQA2 (closed-book literature QA) | gpt-6.1-sol | 112/197 | 56.85% | 112/197 | 56.85% | 197/197 | 197/197 | 8 |
 | SuppQA (closed-book paper-specific QA) | gpt-6.1-sol | 46/82 | 56.10% | 46/82 | 56.10% | 82/82 | 82/82 | 3 |
+| Protein localization | Qwen3.8-27B archived | 724/2773 | 26.11% | 724/2773 | 26.11% | 2722/2773 | 2722/2773 | 0 |
+| Protein localization | gpt-6-luna | 1575/2773 | 56.80% | 1575/2773 | 56.80% | 2770/2773 | 2770/2773 | 0 |
 
 ### Delivery and native abstention measures
 
@@ -45,6 +47,8 @@ Native and strict unambiguous accuracy use every planned case. An explicit insuf
 | B03 | gpt-6-luna | 0 | 0 | 0 | 0 | 0 | 98.78% | 54.32% |
 | B01 | gpt-6.1-sol | 0 | 0 | 0 | 0 | 0 | 95.94% | 59.26% |
 | B03 | gpt-6.1-sol | 0 | 0 | 0 | 0 | 0 | 96.34% | 58.23% |
+| P03 | Qwen3.8-27B archived | 0 | 0 | 47 | 51 | 0 | Not applicable | Not applicable |
+| P03 | gpt-6-luna | 3 | 0 | 0 | 3 | 0 | Not applicable | Not applicable |
 
 Native coverage is non-abstention, not usable-answer rate. Errors, refusals, truncations, missing finals and invalid answers stay in the comparison denominator.
 
@@ -60,6 +64,8 @@ Native coverage is non-abstention, not usable-answer rate. Errors, refusals, tru
 | B01 | gpt-6.1-sol | Strict | 63 | 49 | 14 | 71 | +17.77 pp | [+10.15, +25.38] pp | 1.1123e-05 | case (197) |
 | B03 | gpt-6.1-sol | Native | 21 | 25 | 10 | 26 | +18.29 pp | [+4.88, +31.71] pp | 0.0166738 | scorer_group_id (82) |
 | B03 | gpt-6.1-sol | Strict | 21 | 25 | 10 | 26 | +18.29 pp | [+4.88, +31.71] pp | 0.0166738 | scorer_group_id (82) |
+| P03 | gpt-6-luna | Native | 546 | 1029 | 178 | 1020 | +30.69 pp | [+28.53, +32.85] pp | 6.61805e-146 | case (2773) |
+| P03 | gpt-6-luna | Strict | 546 | 1029 | 178 | 1020 | +30.69 pp | [+28.53, +32.85] pp | 6.61805e-146 | case (2773) |
 
 The paired intervals are conditional on these fixed public cases and one generation per model. DOI groups stay together where verified; protein-family dependence may remain unresolved. The conventional McNemar result does not establish independent cases. No pooled overall biological-capability score is computed.
 
@@ -69,7 +75,7 @@ The paired intervals are conditional on these fixed public cases and one generat
 |---|---|---|
 | publicqa_gpt-6-luna | completed | [Sealed full result](../results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6-luna.scores.json) |
 | publicqa_gpt-6_1-sol | completed | [Sealed full result](../results/comparison_execution/openai_qwen_2026-10-19/analysis/publicqa_gpt-6_1-sol.scores.json) |
-| localization_gpt-6-luna | awaiting_prediction_lock | Waiting for complete generation/validated scoring |
+| localization_gpt-6-luna | completed | [Sealed full result](../results/comparison_execution/openai_qwen_2026-10-19/analysis/localization_gpt-6-luna.scores.json) |
 
 [Complete reused Qwen request/response/final archives](../results/comparison_execution/openai_qwen_2026-10-19/qwen_archives/manifest.json) · [Generation snapshot and trajectory archives](../results/comparison_execution/openai_qwen_2026-10-19/runtime_snapshot.json) · [Scoring publication inventory](../results/comparison_execution/openai_qwen_2026-10-19/analysis/publication_inventory.json) · [Execution plan](GPT6_LUNA_QWEN_COMPARISON_PLAN_2026-10-19.md) · [Scoring contract](COMPARISON_SCORING_CONTRACT_2026-10-19.md) · [Development review](COMPARISON_DEVELOPMENT_GATE_2026-10-19.md) · [Isolation checks](COMPARISON_DISPATCH_ISOLATION_2026-10-19.md).
 

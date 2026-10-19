@@ -1,5 +1,5 @@
 {
-  "updated_at_pacific": "2026-10-19T15:20:55.372096-07:00",
+  "updated_at_pacific": "2026-10-19T15:23:51.569584-07:00",
   "public_export_version": 2,
   "public_responses": "Privacy-redacted metadata with original/public hash mapping; exact originals retained privately. Original lock hashes refer to private raw responses.",
   "role": "generation_and_development_evidence_not_completed_benchmark_scores",
@@ -78,10 +78,10 @@
         "P03"
       ],
       "planned": 2773,
-      "saved": 2639,
-      "complete_prediction_lock": false,
+      "saved": 2773,
+      "complete_prediction_lock": true,
       "terminal_outcomes": {
-        "completed": 2636,
+        "completed": 2770,
         "transport_error": 3
       },
       "transport_or_server_errors": 3,
@@ -90,12 +90,12 @@
       "refusals": 0,
       "per_task": {
         "P03": {
-          "saved": 2639,
-          "observed_terminal": 2639
+          "saved": 2773,
+          "observed_terminal": 2773
         }
       },
-      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_gpt-6-luna_saved_2639.tar.gz",
-      "trajectory_sha256": "9c214f34b06af82712118f1189bd6dc46edd8d1c7b4d7852925b9d587a16084d",
+      "trajectory_archive": "results/comparison_execution/openai_qwen_2026-10-19/trajectories/localization_gpt-6-luna_complete.tar.gz",
+      "trajectory_sha256": "577deb179e16ca29d6a2153fd99f687d1c42e51f7082ce6676a80a6390370d8e",
       "usage": null,
       "standard_uncached_cost_estimate_usd": null,
       "biological_correctness_assessed": false
@@ -256,8 +256,8 @@
   "no_qwen_reruns": true,
   "benchmark_scoring_requires_complete_prediction_lock": true,
   "export_cache": {
-    "original_files_read_this_snapshot": 1830,
-    "verified_cached_public_files_reused": 11366,
+    "original_files_read_this_snapshot": 3897,
+    "verified_cached_public_files_reused": 9971,
     "policy": "Original metadata, expected hashes and privacy/scanner code hashes invalidate cached exports."
   }
 }
