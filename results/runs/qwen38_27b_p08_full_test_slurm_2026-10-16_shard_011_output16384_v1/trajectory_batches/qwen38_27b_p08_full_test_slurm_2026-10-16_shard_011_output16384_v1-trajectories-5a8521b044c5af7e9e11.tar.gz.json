@@ -1,0 +1,59 @@
+{
+  "run_id": "qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011_output16384_v1",
+  "asset": "https://github.com/Some-random/bio-evaluation/releases/download/output-budget-revision-2026-10-18-trajectories-part002/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011_output16384_v1-trajectories-5a8521b044c5af7e9e11.tar.gz",
+  "asset_id": 655106610,
+  "archive_sha256": "5d1e7195d4770202808885309993f012023f8c84ffd42206ecc4c1723ae0e821",
+  "archive_bytes": 9157,
+  "server_digest": "sha256:5d1e7195d4770202808885309993f012023f8c84ffd42206ecc4c1723ae0e821",
+  "raw_request_response_json_preserved": true,
+  "cases": [
+    {
+      "filename": "6c8bad2d5892645bdd4e0e08f4a1ed56ab22f207f597ec6d3cb30c11d3b40a9e.json",
+      "case_id": "stability:test:11862",
+      "request_sha256": "83a95d1ddfaba08bf4ec94644e3597250a7395caf96c4c0bd59ef9710419be3a",
+      "response_sha256": "296eda776037a34f661405702a612d98aea94702175200a4b78bab7c9d7d572a",
+      "payload_sha256": "7d32aa436cf44eec0881cccdbeef915217d5ef5b97c422160c1d528ffe67c40b",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/output-budget-revision-2026-10-18-trajectories-part002/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011_output16384_v1-trajectories-5a8521b044c5af7e9e11.tar.gz",
+      "archive_sha256": "5d1e7195d4770202808885309993f012023f8c84ffd42206ecc4c1723ae0e821",
+      "request_member": "requests/6c8bad2d5892645bdd4e0e08f4a1ed56ab22f207f597ec6d3cb30c11d3b40a9e.json",
+      "response_member": "responses/6c8bad2d5892645bdd4e0e08f4a1ed56ab22f207f597ec6d3cb30c11d3b40a9e.json"
+    },
+    {
+      "filename": "86a1b1b193db47a125e4c1af70cd482e1055b24f61cb11d822c34b95b8a135c8.json",
+      "case_id": "stability:test:11865",
+      "request_sha256": "da532b55769d8e271579a9356559ba32ad01c4986a99a9d00400dc8c016025c4",
+      "response_sha256": "458a51f5c3d7532a3a60f4a338ff75719caf8d1cd1b4f1f0e9b08535bef118e2",
+      "payload_sha256": "ff26f2235ad9ac9b13287ee7c645b4b4fd2ac1508c2c85895c4f4807f57917dc",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/output-budget-revision-2026-10-18-trajectories-part002/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011_output16384_v1-trajectories-5a8521b044c5af7e9e11.tar.gz",
+      "archive_sha256": "5d1e7195d4770202808885309993f012023f8c84ffd42206ecc4c1723ae0e821",
+      "request_member": "requests/86a1b1b193db47a125e4c1af70cd482e1055b24f61cb11d822c34b95b8a135c8.json",
+      "response_member": "responses/86a1b1b193db47a125e4c1af70cd482e1055b24f61cb11d822c34b95b8a135c8.json"
+    },
+    {
+      "filename": "94829bf3a24a8c1328a2fc38b80b61efc0152663bce8799221679288f7170a9c.json",
+      "case_id": "stability:test:11863",
+      "request_sha256": "68e4ea0d689cb231f7cf8bc83e2762fadae58c97533b4a95244255197d3436fd",
+      "response_sha256": "fe94e25f5e768c715c0077f96f9dfffd891875c11eb2b3c246c426ecd67fb7bd",
+      "payload_sha256": "6135fc8f55341992f0a787ede9d20af29bfacfd5f39aae3308e55a37e4d33bc7",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/output-budget-revision-2026-10-18-trajectories-part002/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011_output16384_v1-trajectories-5a8521b044c5af7e9e11.tar.gz",
+      "archive_sha256": "5d1e7195d4770202808885309993f012023f8c84ffd42206ecc4c1723ae0e821",
+      "request_member": "requests/94829bf3a24a8c1328a2fc38b80b61efc0152663bce8799221679288f7170a9c.json",
+      "response_member": "responses/94829bf3a24a8c1328a2fc38b80b61efc0152663bce8799221679288f7170a9c.json"
+    },
+    {
+      "filename": "f1b86d47cf1a01bdd16b2034d7abc6d93c8e5e04cfbf935fb5ec1ba973398435.json",
+      "case_id": "stability:test:11866",
+      "request_sha256": "c8653a9a4ab9c0662538e887f87bd83eec85f777cddcd669abcae019f9593156",
+      "response_sha256": "53dbf6b9895da629e04d2675bed5c84ff8d9a1d8ee3bbe8f4a2ce7a68cff494f",
+      "payload_sha256": "50a5c90449ed51f031565cc384ef339f3e8a0fdc18fe1dbefdd2e4714eca9fae",
+      "status": "completed",
+      "asset": "https://github.com/Some-random/bio-evaluation/releases/download/output-budget-revision-2026-10-18-trajectories-part002/qwen38_27b_p08_full_test_slurm_2026-10-16_shard_011_output16384_v1-trajectories-5a8521b044c5af7e9e11.tar.gz",
+      "archive_sha256": "5d1e7195d4770202808885309993f012023f8c84ffd42206ecc4c1723ae0e821",
+      "request_member": "requests/f1b86d47cf1a01bdd16b2034d7abc6d93c8e5e04cfbf935fb5ec1ba973398435.json",
+      "response_member": "responses/f1b86d47cf1a01bdd16b2034d7abc6d93c8e5e04cfbf935fb5ec1ba973398435.json"
+    }
+  ]
+}
