@@ -8,14 +8,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 3271140.0,
-        "kv_fraction": 0.8844444444444445,
-        "preemptions": 1709.0,
-        "prompt_tokens": 15376384.0,
-        "running": 12.0,
-        "waiting": 52.0
+        "generation_tokens": 3332724.0,
+        "kv_fraction": 0.9933333333333333,
+        "preemptions": 1726.0,
+        "prompt_tokens": 15676765.0,
+        "running": 13.0,
+        "waiting": 51.0
       },
-      "preemption_delta": 8.0,
+      "preemption_delta": 2.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "4f2a779d44c996c68ed9f35622f4c26db319541c43107366ff24814d928fdfcc"
     },
@@ -26,14 +26,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 3082205.0,
-        "kv_fraction": 0.92,
-        "preemptions": 1679.0,
-        "prompt_tokens": 13661101.0,
-        "running": 14.0,
-        "waiting": 50.0
+        "generation_tokens": 3138665.0,
+        "kv_fraction": 0.96,
+        "preemptions": 1695.0,
+        "prompt_tokens": 13827320.0,
+        "running": 10.0,
+        "waiting": 54.0
       },
-      "preemption_delta": 7.0,
+      "preemption_delta": 3.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "d07f2e7743ad8060d75596a9b196132b340bc859fca69db963e90cc20cf7a17a"
     },
@@ -44,14 +44,14 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 2990832.0,
-        "kv_fraction": 0.9822222222222222,
-        "preemptions": 1747.0,
-        "prompt_tokens": 12879626.0,
-        "running": 11.0,
-        "waiting": 53.0
+        "generation_tokens": 3035496.0,
+        "kv_fraction": 0.9622222222222222,
+        "preemptions": 1783.0,
+        "prompt_tokens": 13211228.0,
+        "running": 16.0,
+        "waiting": 48.0
       },
-      "preemption_delta": 0.0,
+      "preemption_delta": 14.0,
       "seconds_without_token_progress": 0,
       "server_identity_sha256": "18a7af878454965261c26123f7d593efed1c22cedbcc478fac5236a5f2e1bc6a"
     },
@@ -62,12 +62,12 @@
       ],
       "healthy": true,
       "metrics": {
-        "generation_tokens": 2959602.0,
-        "kv_fraction": 0.8911111111111111,
-        "preemptions": 1547.0,
+        "generation_tokens": 2963143.0,
+        "kv_fraction": 0.9933333333333333,
+        "preemptions": 1568.0,
         "prompt_tokens": 13181739.0,
-        "running": 7.0,
-        "waiting": 57.0
+        "running": 9.0,
+        "waiting": 55.0
       },
       "preemption_delta": 0.0,
       "seconds_without_token_progress": 0,
@@ -76,18 +76,38 @@
   ],
   "flags": [
     {
-      "delta": 8.0,
+      "delta": 2.0,
       "endpoint_id": "saturation_0",
       "type": "preemptions_increased"
     },
     {
-      "delta": 7.0,
+      "endpoint_id": "saturation_0",
+      "fraction": 0.9933333333333333,
+      "type": "high_kv_usage"
+    },
+    {
+      "delta": 3.0,
       "endpoint_id": "saturation_1",
       "type": "preemptions_increased"
     },
     {
+      "endpoint_id": "saturation_1",
+      "fraction": 0.96,
+      "type": "high_kv_usage"
+    },
+    {
+      "delta": 14.0,
       "endpoint_id": "saturation_2",
-      "fraction": 0.9822222222222222,
+      "type": "preemptions_increased"
+    },
+    {
+      "endpoint_id": "saturation_2",
+      "fraction": 0.9622222222222222,
+      "type": "high_kv_usage"
+    },
+    {
+      "endpoint_id": "saturation_3",
+      "fraction": 0.9933333333333333,
       "type": "high_kv_usage"
     },
     {
@@ -102,7 +122,7 @@
   "plan_sha256": "ca0b86d1bc0d5715a8b07eee9dfda0862928d69e8bffdea63159322c292c0e8b",
   "planned_native_cases": 20916,
   "pool_stage": "evaluating",
-  "pool_stage_source_age_seconds": 28164.860011339188,
+  "pool_stage_source_age_seconds": 28537.97771167755,
   "pool_stage_source_updated_at_pacific": "2026-10-18T11:25:08.525315-07:00",
   "pool_stage_timestamp_is_not_a_runtime_heartbeat": true,
   "recent_response_metadata": [],
@@ -490,5 +510,5 @@
   ],
   "saved_responses_unique_logical_sources": 7716,
   "schema_version": 1,
-  "updated_at_pacific": "2026-10-18T19:14:35.132731-07:00"
+  "updated_at_pacific": "2026-10-18T19:20:48.055275-07:00"
 }
