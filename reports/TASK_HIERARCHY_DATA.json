@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generatedAt": "2026-10-19T10:49:29.861847+00:00",
-    "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+    "generatedAt": "2026-10-19T11:33:51.788767+00:00",
+    "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
     "runSnapshotAt": "2026-10-18T06:12:58.250371+00:00",
     "model": {
       "name": "Qwen/Qwen3.8-27B",
@@ -31,17 +31,17 @@
       "Task-case totals, not independent biological observations; datasets/protocols can overlap."
     ],
     "sourceHashes": {
-      "reports/RESULTS_AT_A_GLANCE.json": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
+      "reports/RESULTS_AT_A_GLANCE.json": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
       "reports/CURRENT_EXECUTION_STATUS_2026-10-16.json": "7d415be7c08da72976cc07537ff1d420054f40a809a69db44f6df20b818f58c2",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/EVALUATION_INVENTORY.csv": "c813f6702a0af51e272e344bfbc02d913541103d3f4acf849e4547ac78c3764c",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/AGENT_TASK_MAPPING.csv": "3f17b92ccf2c19e8475b0eba88c396363dad1a5d1e6ae8644dffb9161fbb70ec",
       "handoff/Bio_Evaluation_Agent_Package_2026-10-16/Biological_Evaluation_Master.xlsx": "3bbe6cee62c15266814fa082825a9f6349c32d34e976855eda604bef68336f6f",
-      "reports/EVALUATION_PROGRESS.json": "f1544578f3b5ce5fbcd8fe541929a7c32a217944d5bc8b02436bc0cfbdb19cbb",
-      ".local/remaining_evaluations/supervisor_status.json": "4d3c2f2cd6ec8e02374a9473dbba1ffaf784defb500bda3b1b680506e3dc7d4a",
+      "reports/EVALUATION_PROGRESS.json": "6192758df0e0a60a19aa0e06e1cbacb1da2f836e4207e039c7e5c45393246520",
+      ".local/remaining_evaluations/supervisor_status.json": "421372aed895524ab4812702abc1d623e62711689e558f2d3be1d4a37e3d2149",
       ".local/remaining_evaluations/upload_status.json": "252027fb467dcf07fcd3f355d9cc0c8c6f8a22794fe17b6973f65a4c81c5a1f3",
       "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json": "bbc45d078704958137b4ea308b47f15163c72ba357d624f4dd145b5818791451"
     },
-    "localResultRows": 35,
+    "localResultRows": 36,
     "uploadedResponses": 41591,
     "heartbeat": {
       "status": "stale",
@@ -71,7 +71,7 @@
     "metadataNotice": {
       "source": ".local/remaining_evaluations/supervisor_status.json",
       "stage": "retry_pending",
-      "updatedAt": "2026-10-19T10:48:40.460910+00:00",
+      "updatedAt": "2026-10-19T11:33:09.012105+00:00",
       "note": "The supervisor reported a transient metadata/publication failure; progress uses the last successful run snapshot."
     },
     "scoreSnapshotSources": [
@@ -84,14 +84,14 @@
       },
       {
         "path": "reports/RESULTS_AT_A_GLANCE.json",
-        "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-        "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+        "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+        "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
         "historical": false,
         "note": "Current score-report metadata; report refresh does not rerun evaluation."
       }
     ],
     "historicalResultRows": 0,
-    "currentResultRows": 35,
+    "currentResultRows": 36,
     "verifiedCompletionClaims": [
       {
         "taskId": "B01",
@@ -123,8 +123,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -195,8 +195,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -213,8 +213,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -231,8 +231,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -249,8 +249,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -267,8 +267,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -285,8 +285,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -303,8 +303,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -321,8 +321,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -339,8 +339,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -357,8 +357,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -375,8 +375,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -393,8 +393,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -411,8 +411,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -429,8 +429,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -459,8 +459,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         },
@@ -601,8 +601,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -619,8 +619,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -637,8 +637,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -655,8 +655,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -673,8 +673,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -691,8 +691,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -715,8 +715,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -739,8 +739,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -763,8 +763,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -787,8 +787,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -805,8 +805,8 @@
         ],
         "source": {
           "path": "reports/RESULTS_AT_A_GLANCE.json",
-          "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-          "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+          "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "historical": false,
           "note": "Current score-report metadata; report refresh does not rerun evaluation."
         }
@@ -942,15 +942,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p01_original_test_2026-10-15/scores.json",
             "sourceScoresSha256": "85a31d75557586e850d615b9178d22bd79a75b94a8678c614b9c5c92344dd81b"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P01",
             "task_name": "Solubility — PEER",
@@ -1192,15 +1192,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p02_original_test_2026-10-15/scores.json",
             "sourceScoresSha256": "214c93f6e2d725550a75a9b01d54ee155cf1f962ef99e4648a3333abed9d1012"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P02",
             "task_name": "Binary localization — DeepLoc/PEER",
@@ -1392,15 +1392,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/scores.json",
             "sourceScoresSha256": "b2502d3ded2d81fc3f03c8260cd6d2db01dc5ae914e6d84e5ae6c81c18882e4a"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P03",
             "task_name": "Subcellular localization — DeepLoc",
@@ -1695,15 +1695,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "diagnostic_only_finished_runs",
             "sourceScores": "results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
             "sourceScoresSha256": "18979759cc43b82517e9933712274c6a82f33bb3b83eaae59b56ba6ac29710e6"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P07",
             "task_name": "GFP fluorescence — TAPE",
@@ -1944,15 +1944,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "diagnostic_only_finished_runs",
             "sourceScores": "results/runs/qwen38_27b_p08_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
             "sourceScoresSha256": "53ad6a4142efefdfff140decfaeb16efee1f077ae3629788a57da1fd56f7404e"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P08",
             "task_name": "Protein stability regression — TAPE",
@@ -2193,15 +2193,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "diagnostic_only_finished_runs",
             "sourceScores": "results/runs/qwen38_27b_p06_original_test_2026-10-15/scores.json",
             "sourceScoresSha256": "7af3d8a3235930d18d02d85c98cdd04b375db49c72f077d08b2788d49d5e778a"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P06",
             "task_name": "Thermostability — FLIP/Meltome",
@@ -2448,15 +2448,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p10_original_test_2026-10-15/scores.json",
             "sourceScoresSha256": "a0d8b8777b712a72a1c4d484844c1b990ed44f76fadea824f13f35a45eddea8d"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P10",
             "task_name": "Human protein–protein interaction — PEER",
@@ -2649,15 +2649,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p11_original_test_2026-10-15/scores.json",
             "sourceScoresSha256": "4a6ae94af3364fed0da07075b95d89bf9d613c73bbc98a0c9555e3f17b106b06"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P11",
             "task_name": "Yeast protein–protein interaction — PEER",
@@ -3134,15 +3134,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "diagnostic_only_finished_runs",
             "sourceScores": "results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
             "sourceScoresSha256": "e4f9ecd775592e15834e82b2416310bcb7413eefc7624f9ae243666498011021"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P12",
             "task_name": "Enzyme Commission labels — DeepFRI split",
@@ -3298,6 +3298,238 @@
           "verifiedSourceRowSha256": "7c9a57a28784e27da72fa85d13a7df5ffa0c92f9457da14ed29129bccf67383e"
         },
         {
+          "taskId": "P13",
+          "title": "GO biological process — DeepFRI split",
+          "metricText": "auprc@micro undefined; f1_max undefined",
+          "publishedText": "ProtST-ESM-1b: aupr 0.328; fmax 0.48; Table 3, printed p.6",
+          "publishedUrl": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+          "counts": {
+            "planned": 3416,
+            "completed": 3416,
+            "parsed": 2982,
+            "invalid_outputs": 434,
+            "missing_or_failed_outputs": null,
+            "held_before_inference": 0
+          },
+          "incomplete": true,
+          "sourceUrl": "https://github.com/Some-random/bio-evaluation/blob/main/results/scoring_corrections/qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+          "protocol": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+          "caveats": [
+            "Mixed 4K/16K continuation: 448 original cases retain 4,096-token caps; 2968 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation.",
+            "Separate offline scorer compatibility repair: explicit raw null and normalized empty final text are treated as equivalent. Missing confidence vectors remain invalid; native parsing, metric formulas, denominators and generations are unchanged. The original failed attempt is preserved.",
+            "All planned requests finished, but the full-test primary metric is undefined. Parsed-only diagnostics do not complete the benchmark and cannot replace its native metric."
+          ],
+          "comparison": "Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation. Mixed historical4096/prospective16384 budgets; the separately versioned scorer accepts only explicit raw null versus normalized empty final text for provenance. Missing finals remain invalid. Original failed scoring attempt and all raw bytes are preserved; no generation was repeated.",
+          "metrics": {
+            "auprc@micro": null,
+            "f1_max": null,
+            "TIE_GROUPED_AP_DIAGNOSTIC": {
+              "sklearn_micro_average_precision": null
+            },
+            "PARSED_ONLY_DIAGNOSTIC": {
+              "auprc@micro": 0.03828682005405426,
+              "f1_max": 0.18172448873519897,
+              "TIE_GROUPED_AP_DIAGNOSTIC": {
+                "sklearn_micro_average_precision": 0.035366846712735565
+              },
+              "valid_cases": 2982,
+              "planned_cases": 3416
+            },
+            "OFFLINE_ALL_ZERO_REFERENCE": {
+              "auprc@micro": 0.03459365293383598,
+              "f1_max": null,
+              "TIE_GROUPED_AP_DIAGNOSTIC": {
+                "sklearn_micro_average_precision": 0.033529206507236085
+              },
+              "case_count": 3416,
+              "is_model_prediction": false
+            }
+          },
+          "finishedAt": null,
+          "completionScope": "diagnostic_only_primary_metrics_invalid",
+          "caseScope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
+          "publishedReferences": [
+            {
+              "model": "ProtST-ESM-1b",
+              "metrics": {
+                "aupr": 0.328,
+                "fmax": 0.48
+              },
+              "source_id": "PROTST",
+              "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+              "source_locator": "Table 3, printed p.6",
+              "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+              "value_status": "published_rounded_as_printed",
+              "run_count": null,
+              "reported_std": null
+            }
+          ],
+          "scoreProvenance": {
+            "path": "reports/RESULTS_AT_A_GLANCE.json",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
+            "historical": false,
+            "note": "Current score-report metadata; report refresh does not rerun evaluation.",
+            "rowCategory": "diagnostic_only_finished_runs",
+            "sourceScores": "results/scoring_corrections/qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+            "sourceScoresSha256": "2765bdbff4451853e4531cad2edb6ea76fedaecb0d376ab763f5dd1cb5679ac1"
+          },
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
+          "verifiedSourceRow": {
+            "task_id": "P13",
+            "task_name": "GO biological process — DeepFRI split",
+            "run_id": "qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+            "dataset": null,
+            "native_split": null,
+            "completion_scope": "diagnostic_only_primary_metrics_invalid",
+            "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
+            "model": "Qwen/Qwen3.8-27B",
+            "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+            "checkpoint_precision": "publisher BF16 checkpoint; automatic BF16 KV cache; no quantization",
+            "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+            "local_training_regime": "Fixed zero-shot baseline; no benchmark task training or test-guided prompt/model selection",
+            "generation": {
+              "max_tokens": null,
+              "temperature": 1.0,
+              "top_p": 0.95,
+              "top_k": 20,
+              "seed": 42,
+              "n": 1,
+              "chat_template_kwargs": {
+                "enable_thinking": true,
+                "reasoning_effort": "medium"
+              },
+              "output_budget_counts": {
+                "4096": 448,
+                "16384": 2968
+              }
+            },
+            "generation_budget_condition": "MIXED_BUDGET_4K16K_CONTINUATION",
+            "native_protocol_variant": null,
+            "finished_at_utc": null,
+            "counts": {
+              "planned": 3416,
+              "completed": 3416,
+              "parsed": 2982,
+              "invalid_outputs": 434,
+              "missing_or_failed_outputs": null,
+              "held_before_inference": 0
+            },
+            "finish_reasons": {
+              "stop": 3328,
+              "length": 88
+            },
+            "metrics": {
+              "auprc@micro": null,
+              "f1_max": null,
+              "TIE_GROUPED_AP_DIAGNOSTIC": {
+                "sklearn_micro_average_precision": null
+              },
+              "PARSED_ONLY_DIAGNOSTIC": {
+                "auprc@micro": 0.03828682005405426,
+                "f1_max": 0.18172448873519897,
+                "TIE_GROUPED_AP_DIAGNOSTIC": {
+                  "sklearn_micro_average_precision": 0.035366846712735565
+                },
+                "valid_cases": 2982,
+                "planned_cases": 3416
+              },
+              "OFFLINE_ALL_ZERO_REFERENCE": {
+                "auprc@micro": 0.03459365293383598,
+                "f1_max": null,
+                "TIE_GROUPED_AP_DIAGNOSTIC": {
+                  "sklearn_micro_average_precision": 0.033529206507236085
+                },
+                "case_count": 3416,
+                "is_model_prediction": false
+              }
+            },
+            "metric_units": "Accuracy/precision/coverage fractions; AUROC/AP fractions; other metrics preserve source-native units",
+            "curated_only_diagnostic_metrics": null,
+            "comparison_to_paper": "Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation. Mixed historical4096/prospective16384 budgets; the separately versioned scorer accepts only explicit raw null versus normalized empty final text for provenance. Missing finals remain invalid. Original failed scoring attempt and all raw bytes are preserved; no generation was repeated.",
+            "comparison_status": "contextual_side_by_side_no_superiority_or_significance_claim",
+            "selected_published_reference": {
+              "model": "ProtST-ESM-1b",
+              "metrics": {
+                "aupr": 0.328,
+                "fmax": 0.48
+              },
+              "source_id": "PROTST",
+              "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+              "source_locator": "Table 3, printed p.6",
+              "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+              "value_status": "published_rounded_as_printed",
+              "run_count": null,
+              "reported_std": null,
+              "display_model": "ProtST-ESM-1b",
+              "display_metrics": {
+                "aupr": 0.328,
+                "fmax": 0.48
+              },
+              "display_scope": "published protocol; contextual"
+            },
+            "all_published_references": [
+              {
+                "model": "ProtST-ESM-1b",
+                "metrics": {
+                  "aupr": 0.328,
+                  "fmax": 0.48
+                },
+                "source_id": "PROTST",
+                "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+                "source_locator": "Table 3, printed p.6",
+                "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+                "value_status": "published_rounded_as_printed",
+                "run_count": null,
+                "reported_std": null
+              }
+            ],
+            "caveats": [
+              "Mixed 4K/16K continuation: 448 original cases retain 4,096-token caps; 2968 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation.",
+              "Separate offline scorer compatibility repair: explicit raw null and normalized empty final text are treated as equivalent. Missing confidence vectors remain invalid; native parsing, metric formulas, denominators and generations are unchanged. The original failed attempt is preserved.",
+              "All planned requests finished, but the full-test primary metric is undefined. Parsed-only diagnostics do not complete the benchmark and cannot replace its native metric."
+            ],
+            "explanation_support_score": null,
+            "scorer_recovery": {
+              "version": "NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+              "original_failed_run_id": "qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_v1",
+              "original_scorer_sha256": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7",
+              "derived_scorer_sha256": "8e9f16fcac02afbfee88fcf271a62bd974d559c803aa78dabf7dbac8999ebb91",
+              "normalization_counts": {
+                "equal": 3322,
+                "explicit_null_to_empty": 94
+              },
+              "native_parser_and_metric_formulas_unchanged": true,
+              "scorer_provenance_guard_changed": true,
+              "raw_outputs_modified": false,
+              "generation_or_selective_reruns": false
+            },
+            "source_scores": "results/scoring_corrections/qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+            "source_completion": "results/scoring_corrections/qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/completion.json",
+            "scores_sha256": "2765bdbff4451853e4531cad2edb6ea76fedaecb0d376ab763f5dd1cb5679ac1",
+            "completion_score_hash_verified": true,
+            "full_test_id_union_validation": {
+              "complete": true,
+              "union_matches_full_test_ids": true,
+              "expected_test_case_count": 3416,
+              "unique_observed_case_count": 3416,
+              "missing_case_count": 0,
+              "extra_case_count": 0,
+              "duplicate_case_count": 0,
+              "sealed_completion_snapshot": {
+                "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_sources/9137a4a269cdb083719554e6c8aed381d97d55e4555bc5892200710ba4d8b212",
+                "receipt_sha256": "be3fb0b4eb18f179378655a24c00013a95381675612951439d507f28b577bb85",
+                "wrapper_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_completion_scoring.py",
+                "wrapper_sha256": "ca3453f41dd85fe9ffe48c99c0cc79745861b54177b19fb764e9c106182e38a8",
+                "native_input_bytes_match_frozen_raw_slots": true
+              }
+            },
+            "input_reference_dependence": null,
+            "seed_predictor_overlap": null
+          },
+          "verifiedSourceRowSha256": "937bca128865054497bb942e9a031d342bab2910a7e95b1e7976971120628fb9"
+        },
+        {
           "taskId": "P14",
           "title": "GO molecular function — DeepFRI split",
           "metricText": "auprc@micro undefined; f1_max undefined",
@@ -3366,15 +3598,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "diagnostic_only_finished_runs",
             "sourceScores": "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
             "sourceScoresSha256": "23f784a46d1ef5dee452abb36bdfbebf2c2690043fac68e21ef900785b34bac1"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P14",
             "task_name": "GO molecular function — DeepFRI split",
@@ -3598,15 +3830,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "diagnostic_only_finished_runs",
             "sourceScores": "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
             "sourceScoresSha256": "6613f0b989967dc7fbd3825438fcbc467ee7002d17edac964a21309b0a7ac980"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P15",
             "task_name": "GO cellular component — DeepFRI split",
@@ -3878,15 +4110,15 @@
           "publishedReferences": [],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p23_description_full_parallel_2026-10-15/scores.json",
             "sourceScoresSha256": "07ad7b2c42b9101e4518af6261cc09759ecf821103d4028566155843a0186807"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P23",
             "task_name": "Mol-Instructions: Protein function generation",
@@ -3992,15 +4224,15 @@
           "publishedReferences": [],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p24_description_full_parallel_2026-10-15/scores.json",
             "sourceScoresSha256": "71288d20094fd924286886e3ca16f977f3493c06e457eae198adde9005bfd4cf"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P24",
             "task_name": "Mol-Instructions: Catalytic activity generation",
@@ -4106,15 +4338,15 @@
           "publishedReferences": [],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p25_description_full_parallel_2026-10-15/scores.json",
             "sourceScoresSha256": "959a351147d67df58e6467069fa7b498e52e5887c5edba273d81b45ff09fa24e"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P25",
             "task_name": "Mol-Instructions: Domain and motif generation",
@@ -4220,15 +4452,15 @@
           "publishedReferences": [],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p26_description_full_parallel_2026-10-15/scores.json",
             "sourceScoresSha256": "dc649cf4a62d619b0316bf72b6a0b3b1b292daf0c4516de359895fe30d108063"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P26",
             "task_name": "Mol-Instructions: Functional description generation",
@@ -4537,15 +4769,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
             "sourceScoresSha256": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P16",
             "task_name": "Reaction class — zero-/few-shot",
@@ -5348,15 +5580,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/scores.json",
             "sourceScoresSha256": "5b8d04effeec755cb0c0ba3de29dde6b47ce8a7b34a0743766ef4d40f6c4a4fb"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "B01",
             "task_name": "LAB-Bench / LitQA2",
@@ -5538,15 +5770,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_b02_public_reviewed_2026-10-15/scores.json",
             "sourceScoresSha256": "07448327f790ed477aabbc18271b9f524f4eb0de03729aaa831e98561411e49a"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "B02",
             "task_name": "LAB-Bench / DbQA",
@@ -5730,15 +5962,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/scores.json",
             "sourceScoresSha256": "7aae5d9c7f24d75d42e341d7bd8d174fafc64aff054c6ee6ca6448e73df9e927"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "B03",
             "task_name": "LAB-Bench / SuppQA",
@@ -5936,15 +6168,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/scores.json",
             "sourceScoresSha256": "a8a980724acc6f811f80f9e7ff5f9dd773d3704565da5d9bfd38c8152bf852b5"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "B04",
             "task_name": "LAB-Bench / FigQA",
@@ -6143,15 +6375,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/scores.json",
             "sourceScoresSha256": "1641758fe72f79d51392eeb1aa51c127d16d6e503b69d16cfe9a88c143e96968"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "B05",
             "task_name": "LAB-Bench / TableQA",
@@ -6333,15 +6565,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_b07_public_reviewed_2026-10-15/scores.json",
             "sourceScoresSha256": "7485aa61236d103c67a1fe692148d30ef1234e2ff13e72f267096a4a009aa37f"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "B07",
             "task_name": "LAB-Bench / SeqQA",
@@ -6527,15 +6759,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_b08_public_reviewed_2026-10-15/scores.json",
             "sourceScoresSha256": "d06efe40faf83d49cd688a2f0451006c244b138ea69861d41bc3cd0ff28ff417"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "B08",
             "task_name": "LAB-Bench / Cloning scenarios",
@@ -7520,15 +7752,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_v01_native_test_2026-10-15/scores.json",
             "sourceScoresSha256": "9852b01a5030104865a23e6fbcc447bcefea5ffa08d71c85081e9afe5cfe1343"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "V01",
             "task_name": "VQA-RAD",
@@ -7704,15 +7936,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_v02_native_test_2026-10-15/scores.json",
             "sourceScoresSha256": "88807c326e34b7939e70e574a698bbefddb711b880e20f9562704683332ca750"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "V02",
             "task_name": "SLAKE — English",
@@ -7889,15 +8121,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu/scores.json",
             "sourceScoresSha256": "9275fc494595cfdb04a83e59169462a3958d3763813d8e3c5fe8754f79e5f580"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "V03",
             "task_name": "PathVQA",
@@ -8075,15 +8307,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_v04_original_test500_2026-10-15/scores.json",
             "sourceScoresSha256": "f026572c716d7755439e0775538f56a6d88e2cd33b74319f5c454bc97e4fe22d"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "V04",
             "task_name": "ImageCLEF-VQA 2019",
@@ -8339,15 +8571,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_v05_pmcvqa_clean2000_td_2026-10-15/scores.json",
             "sourceScoresSha256": "213b9d584f9cf24673ccf55ae09f621f88680fab80537b9ccdc9978900b07cdf"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "V05",
             "task_name": "PMC-VQA held-out evaluation",
@@ -8624,15 +8856,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_dti_bindingdb_likelihood_2026-10-15/scores.json",
             "sourceScoresSha256": "76450468482a2315f24f82379dfb55e990986128467e9d8a65772baa272645c4"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P43",
             "task_name": "Drug–target interaction — BioSNAP/Human/BindingDB",
@@ -8805,15 +9037,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_dti_biosnap_likelihood_2026-10-15/scores.json",
             "sourceScoresSha256": "e013b6b00b66db8e68748a46addfed7fecdcdc46c278c514717eebc3aedac8af"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P43",
             "task_name": "Drug–target interaction — BioSNAP/Human/BindingDB",
@@ -8986,15 +9218,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_dti_human_likelihood_2026-10-15/scores.json",
             "sourceScoresSha256": "c2c563e1bfd927515341ee54d0555027ae496349fdc6ce8c64825cc44379e962"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P43",
             "task_name": "Drug–target interaction — BioSNAP/Human/BindingDB",
@@ -9230,15 +9462,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_n01_full_windows_2026-10-15/scores.json",
             "sourceScoresSha256": "46ed052b35c51ddc94dff8ba05b6692685101e4e22dc232a609e1a43adae9641"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "N01",
             "task_name": "BioReason KEGG pathway/disease test",
@@ -9480,15 +9712,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_n02_full_windows_2026-10-15/scores.json",
             "sourceScoresSha256": "03176dde5c4ff37436ceef90af02a9450a1579b885bf70b15010204c91007658"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "N02",
             "task_name": "BioReason VEP-Coding",
@@ -9678,15 +9910,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_n03_full_windows_2026-10-15/scores.json",
             "sourceScoresSha256": "36e886c34b468ddce41de78ff2e579bfae691cc21c00c31ec71d15ec07f9822f"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "N03",
             "task_name": "BioReason VEP-Non-SNV",
@@ -10395,15 +10627,15 @@
           ],
           "scoreProvenance": {
             "path": "reports/RESULTS_AT_A_GLANCE.json",
-            "sha256": "8dea80527e3260600f11244f580e8c50fb7f58a7e50f26d36e7e3f84b5bb4f5a",
-            "snapshotAt": "2026-10-19T10:49:29.861847+00:00",
+            "sha256": "d35f142f779433e83bc0fe4ca2413761d9d7c123b1272f692483356d0f9ebeaf",
+            "snapshotAt": "2026-10-19T11:33:51.788767+00:00",
             "historical": false,
             "note": "Current score-report metadata; report refresh does not rerun evaluation.",
             "rowCategory": "completed_rows",
             "sourceScores": "results/runs/qwen38_27b_p42_gfp_qualified_two_regimes_2026-10-15/scores.json",
             "sourceScoresSha256": "21e2ea0d6c767baf407f1c336e1d47e485aa7d8f9372578c4951cd40121d6a36"
           },
-          "scoreSnapshotAt": "2026-10-19T10:49:29.861847+00:00",
+          "scoreSnapshotAt": "2026-10-19T11:33:51.788767+00:00",
           "verifiedSourceRow": {
             "task_id": "P42",
             "task_name": "STRIDE GFP generated-candidate evaluation",

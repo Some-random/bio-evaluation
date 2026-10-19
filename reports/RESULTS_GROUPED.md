@@ -2,7 +2,7 @@
 
 [Overview](EVALUATION_OVERVIEW.md) · [Complete inventory](TASK_HIERARCHY_COMPLETE.md) · [Coverage crosswalk](TASK_COVERAGE_MAP.csv)
 
-Stored scores: **2026-10-19 03:49 PDT**. Running-work snapshot: **2026-10-17 23:12 PDT**. Display times use Pacific time.
+Stored scores: **2026-10-19 04:33 PDT**. Running-work snapshot: **2026-10-17 23:12 PDT**. Display times use Pacific time.
 
 Only existing stored local outcomes are shown. The category order matches the complete inventory. **\*** marks incomplete coverage or scoring; count records are in expandable details. Undefined values remain undefined. Published values are separate contextual comparisons, not matched replications, pooled scores or claims of superiority. All reference records and alternate metric values are retained in the details.
 
@@ -781,6 +781,101 @@ All planned requests finished, but the full-test primary metric is undefined. Pa
 ```
 
 [Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json)
+
+</details>
+
+### Enzyme and Gene Ontology annotation*
+
+**Dataset/protocol:** DeepFRI-derived EC and GO test splits
+
+**Finished diagnostic only:** the full native primary metric is undefined. The parsed-only value below does not complete the benchmark or replace the native metric.
+
+| Scientific setting | Local stored result | Published reference — different protocol |
+|---|---|---|
+| GO biological process — DeepFRI split* | auprc@micro undefined; f1_max undefined | ProtST-ESM-1b: aupr 0.328; fmax 0.48; Table 3, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
+
+Full-model supervised tuning. Keep ontology branches separate. This is annotation recovery, not verification of every rationale.
+
+<details>
+<summary>GO biological process — DeepFRI split: protocol, counts and complete metric record</summary>
+
+**Native/local protocol:** `QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1`
+
+**Coverage:** exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta; diagnostic_only_primary_metrics_invalid.
+
+**Saved count record:**
+
+```json
+{
+  "planned": 3416,
+  "completed": 3416,
+  "parsed": 2982,
+  "invalid_outputs": 434,
+  "missing_or_failed_outputs": null,
+  "held_before_inference": 0
+}
+```
+
+**Complete stored metrics, including alternate/diagnostic values:**
+
+```json
+{
+  "auprc@micro": null,
+  "f1_max": null,
+  "TIE_GROUPED_AP_DIAGNOSTIC": {
+    "sklearn_micro_average_precision": null
+  },
+  "PARSED_ONLY_DIAGNOSTIC": {
+    "auprc@micro": 0.03828682005405426,
+    "f1_max": 0.18172448873519897,
+    "TIE_GROUPED_AP_DIAGNOSTIC": {
+      "sklearn_micro_average_precision": 0.035366846712735565
+    },
+    "valid_cases": 2982,
+    "planned_cases": 3416
+  },
+  "OFFLINE_ALL_ZERO_REFERENCE": {
+    "auprc@micro": 0.03459365293383598,
+    "f1_max": null,
+    "TIE_GROUPED_AP_DIAGNOSTIC": {
+      "sklearn_micro_average_precision": 0.033529206507236085
+    },
+    "case_count": 3416,
+    "is_model_prediction": false
+  }
+}
+```
+
+**Comparison qualification:** Zero-shot prompted Qwen sparse confidence adaptation; no trained specialist head. Complete released FASTA differs from PDB-modeled sequences, source first-550 crop, and unpublished author parser-retained case identities. EC supplemental names use ExPASy 02-Sep-2026; GO names are exact source-global header names. Native AP/Fmax formula use does not establish matched training, case coverage, probability calibration, mechanistic explanation or contamination-free evaluation. Mixed historical4096/prospective16384 budgets; the separately versioned scorer accepts only explicit raw null versus normalized empty final text for provenance. Missing finals remain invalid. Original failed scoring attempt and all raw bytes are preserved; no generation was repeated.
+
+Mixed 4K/16K continuation: 448 original cases retain 4,096-token caps; 2968 previously undispatched cases use 16,384-token caps. Original invalid/truncated answers remain counted; this is not a uniform-16K evaluation.
+
+Separate offline scorer compatibility repair: explicit raw null and normalized empty final text are treated as equivalent. Missing confidence vectors remain invalid; native parsing, metric formulas, denominators and generations are unchanged. The original failed attempt is preserved.
+
+All planned requests finished, but the full-test primary metric is undefined. Parsed-only diagnostics do not complete the benchmark and cannot replace its native metric.
+
+**All stored published-reference records — separate from the local run:**
+
+```json
+[
+  {
+    "model": "ProtST-ESM-1b",
+    "metrics": {
+      "aupr": 0.328,
+      "fmax": 0.48
+    },
+    "source_id": "PROTST",
+    "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+    "source_locator": "Table 3, printed p.6",
+    "protocol": "supervised full-model tuning; DeepFRI EC/GO split with 95% sequence-identity cutoff",
+    "value_status": "published_rounded_as_printed",
+    "run_count": null,
+    "reported_std": null
+  }
+]
+```
+
+[Original score artifact](https://github.com/Some-random/bio-evaluation/blob/main/results/scoring_corrections/qwen38_27b_p13_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json)
 
 </details>
 
