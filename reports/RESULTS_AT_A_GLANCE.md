@@ -1,6 +1,6 @@
 # Results at a glance
 
-Snapshot: 2026-10-18 12:42 PDT. Fixed local Qwen3.8-27B baseline; 23 of 57 main settings have completed evaluations of their declared scope. This does not mean full paper replication. Finished shards and incomplete runs are excluded below.
+Snapshot: 2026-10-18 17:21 PDT. Fixed local Qwen3.8-27B baseline; 23 of 57 main settings have completed evaluations of their declared scope. This does not mean full paper replication. Finished shards and incomplete runs are excluded below.
 
 BioReason, BioReason-Pro and Bio-posttrain settings are set aside from the main comparison. [Archived settings and original records](ARCHIVED_EVALUATIONS.md) remain available; the structured report preserves all original scores and denominators.
 
@@ -39,6 +39,7 @@ These are contextual comparisons: the local baseline is zero-shot; BioT5+/medica
 Finished executions with undefined full-test metrics, excluded from benchmark completion counts:
 
 - [P06 Thermostability — FLIP/Meltome*](../results/runs/qwen38_27b_p06_original_test_2026-10-15/scores.json): spearman undefined; spearman_parsed_only 0.0254. Parsed-only values are incomplete diagnostics and do not replace the native full-test score.
+- [P07 GFP fluorescence — TAPE*](../results/runs/qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1/scores.json): spearman undefined; spearman_parsed_only 0.0155. Parsed-only values are incomplete diagnostics and do not replace the native full-test score.
 
 P43: bindingdb, biosnap, human component tests completed. All 3 tests have an exact 16,533-ID validated aggregate; each dataset's AUROC/AP remains separate.
 

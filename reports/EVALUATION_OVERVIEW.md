@@ -125,7 +125,7 @@ Qwen results and published reference results use the stated protocols and are no
 
 | Task | Dataset/protocol | Input / required computation | Qwen result | Published reference |
 |---|---|---|---|---|
-| Protein fluorescence | TAPE GFP / Sarkisyan fluorescence | Protein/variant sequence | — | Spearman: ProtST-ESM-2 0.682; ESM-2 0.677. · [source](https://arxiv.org/html/2206.02096v2) |
+| Protein fluorescence* | TAPE GFP / Sarkisyan fluorescence | Protein/variant sequence | **Diagnostic only:** spearman undefined; spearman_parsed_only 0.0155<br>Full native primary metric undefined. | ProtST-ESM-1b: fixed encoder.spearman 0.523; full model tuning.spearman 0.682; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Protein stability | TAPE / Rocklin stability | Protein/variant sequence | — | Spearman: ProtST-ESM-2 0.738; ESM-2 0.718. · [source](https://arxiv.org/html/2206.02096v2) |
 | Protein thermostability prediction* | FLIP — AAV and Meltome<br>Thermostability — FLIP/Meltome | Protein/variant sequence | **Diagnostic only:** spearman undefined; spearman_parsed_only 0.0254<br>Full native primary metric undefined. | ProtST-ESM-1b: fixed encoder.spearman 0.68; full model tuning.spearman 0.681; Table 2, printed p.6 · [source](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) |
 | Enzyme activity | Envision β-lactamase — PEER split | Protein/variant sequence | — | Spearman: ProtST-ESM-2 0.879; ESM-2 0.867. · [source](https://arxiv.org/html/2206.02096v2) |
@@ -493,6 +493,8 @@ Published source size/units: Test: 27,217 variants. Train: 21,446; validation: 5
 **Protein fluorescence:** Which GFP variants emit stronger fluorescence under the measured conditions? Metric: Spearman correlation. TAPE fluorescence split; sequence-distance extrapolation is part of the benchmark.
 
 The numerical endpoint is assay-specific; these tasks do not establish a general ability to explain mechanisms.
+
+**Comparison qualification:** Original released public test data and native outcome/metric; zero-shot Qwen prompt/representation/training regime differs from native-trained TAPE/ProtST heads. Output-budget condition: MIXED_BUDGET_4K16K_CONTINUATION; 27146 historical cases retain4096 tokens and 71 clean never-dispatched cases receive16384 tokens. Original invalid/truncated cases remain included. This is not a uniform16k evaluation or a matched budget comparison.
 
 [Source 1](https://arxiv.org/html/2206.02096v2), [Source 2](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf), [Source 3](https://github.com/songlab-cal/tape)
 
@@ -1332,4 +1334,4 @@ Published source size/units: Processed test 12,943 molecules (train 103,547; val
 
 </details>
 
-Result references updated: **2026-10-18 12:42 PDT**. Display times use Pacific time (PST/PDT).
+Result references updated: **2026-10-18 17:21 PDT**. Display times use Pacific time (PST/PDT).
