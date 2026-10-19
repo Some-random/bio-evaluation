@@ -39,6 +39,15 @@ def reaction_diagnostic():
 
 
 class DecisionTests(unittest.TestCase):
+    def test_repaired_scorer_keeps_undefined_metrics_and_separate_result_type(self):
+        source=row('P14', metrics={'auprc@micro':None,'f1_max':None},
+                   scorer_recovery={'version':'synthetic_guard_repair'})
+        value=report.build(scores(['P14'],[source]),catalog(['P14']))['rows'][0]
+        self.assertEqual(value['result_type'],'offline_scorer_compatibility_repair')
+        self.assertEqual(value['evidence']['category'],'Scorer repaired; metric incomplete')
+        self.assertIsNone(value['native_score']['f1_max'])
+        self.assertIn('offline compatibility repair',value['condition'])
+
     def test_complete_retained_coverage_and_no_archived_ids(self):
         ids=['P01','P04','P12','N01'];out=report.build(scores(ids),catalog(ids))
         self.assertEqual(out['retained_setting_ids'],['P01','P04','P12'])

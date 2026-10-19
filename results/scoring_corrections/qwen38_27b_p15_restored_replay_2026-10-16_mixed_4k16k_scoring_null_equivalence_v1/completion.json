@@ -1,0 +1,34 @@
+{
+  "finished_at_pacific": "2026-10-19T01:26:49.340600-07:00",
+  "scoring_exit_code": 0,
+  "generation_exit_code": 0,
+  "generation_attempts": 0,
+  "version": "NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+  "prepared_manifest_sha256": "5e1ccb8b177e0a118461ac371ab06e23f52ec202f6945520a2c1aef1ac61cc9f",
+  "planned": 3416,
+  "original_case_denominator_unchanged": true,
+  "original_outputs_modified": false,
+  "automatic_retry": false,
+  "normalization_counts": {
+    "equal": 3398,
+    "explicit_null_to_empty": 18
+  },
+  "scores_sha256": "6613f0b989967dc7fbd3825438fcbc467ee7002d17edac964a21309b0a7ac980",
+  "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+  "full_test_id_union_validation": {
+    "complete": true,
+    "union_matches_full_test_ids": true,
+    "expected_test_case_count": 3416,
+    "unique_observed_case_count": 3416,
+    "missing_case_count": 0,
+    "extra_case_count": 0,
+    "duplicate_case_count": 0,
+    "sealed_completion_snapshot": {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_sources/fbc60414bd415fb57c85eabe4ab1d16ae53f54e20b9f922cd50d67b432c38793",
+      "receipt_sha256": "3144a6113e3bfc8db900582371ec0aa010faa1161ba9f83074568f2a65edd0b6",
+      "wrapper_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/evaluation_revision_2026-10-18/scoring/sealed_completion_v2/sealed_completion_scoring.py",
+      "wrapper_sha256": "ca3453f41dd85fe9ffe48c99c0cc79745861b54177b19fb764e9c106182e38a8",
+      "native_input_bytes_match_frozen_raw_slots": true
+    }
+  }
+}

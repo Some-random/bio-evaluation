@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "completed_at_pacific": "2026-10-19T01:28:18.166216-07:00",
+  "status": "all_12_synthetic_delivery_checks_passed",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "dtype": "bfloat16",
+  "vllm_version": "0.32.0",
+  "generation": {
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    },
+    "max_tokens": 16384,
+    "n": 1,
+    "seed": 42,
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "context_limit": 65536,
+  "concurrency": 1,
+  "dedicated_gpus": 1,
+  "counts": {
+    "passed": 12,
+    "stop_finishes": 12,
+    "length_finishes": 0,
+    "empty_finals": 0,
+    "separate_reasoning_present": 12
+  },
+  "planned": 12,
+  "completed": 12,
+  "new_biological_benchmark_generations": 0,
+  "raw_usage_token_totals": {
+    "prompt_tokens": 189798,
+    "completion_tokens": 938,
+    "reasoning_tokens": 804,
+    "total_tokens": 190736
+  },
+  "timings": {
+    "slurm_allocation_elapsed": "00:12:57",
+    "cold_startup_to_ready_seconds": 709.072578,
+    "sum_request_wall_seconds": 58.064,
+    "request_latencies_not_representative_of_benchmark_throughput": true
+  },
+  "cases": [
+    {
+      "case_id": "scalar_short",
+      "kind": "scalar",
+      "passed": true,
+      "prompt_tokens": 53,
+      "server_prompt_tokens": 53,
+      "completion_tokens": 75,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 16.559,
+      "extra_protein_keys": null
+    },
+    {
+      "case_id": "binary_short",
+      "kind": "binary",
+      "passed": true,
+      "prompt_tokens": 56,
+      "server_prompt_tokens": 56,
+      "completion_tokens": 53,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 1.981,
+      "extra_protein_keys": null
+    },
+    {
+      "case_id": "choice_short",
+      "kind": "choice",
+      "passed": true,
+      "prompt_tokens": 77,
+      "server_prompt_tokens": 77,
+      "completion_tokens": 60,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 2.263,
+      "extra_protein_keys": null
+    },
+    {
+      "case_id": "class_index_short",
+      "kind": "class_index",
+      "passed": true,
+      "prompt_tokens": 64,
+      "server_prompt_tokens": 64,
+      "completion_tokens": 73,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 2.686,
+      "extra_protein_keys": null
+    },
+    {
+      "case_id": "confidence_short",
+      "kind": "confidence",
+      "passed": true,
+      "prompt_tokens": 76,
+      "server_prompt_tokens": 76,
+      "completion_tokens": 81,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 2.959,
+      "extra_protein_keys": null
+    },
+    {
+      "case_id": "protein_short",
+      "kind": "protein",
+      "passed": true,
+      "prompt_tokens": 73,
+      "server_prompt_tokens": 73,
+      "completion_tokens": 80,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 3.06,
+      "extra_protein_keys": []
+    },
+    {
+      "case_id": "scalar_long",
+      "kind": "scalar",
+      "passed": true,
+      "prompt_tokens": 31553,
+      "server_prompt_tokens": 31553,
+      "completion_tokens": 71,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 10.876,
+      "extra_protein_keys": null
+    },
+    {
+      "case_id": "binary_long",
+      "kind": "binary",
+      "passed": true,
+      "prompt_tokens": 31556,
+      "server_prompt_tokens": 31556,
+      "completion_tokens": 63,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 2.55,
+      "extra_protein_keys": null
+    },
+    {
+      "case_id": "choice_long",
+      "kind": "choice",
+      "passed": true,
+      "prompt_tokens": 31577,
+      "server_prompt_tokens": 31577,
+      "completion_tokens": 55,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 2.246,
+      "extra_protein_keys": null
+    },
+    {
+      "case_id": "class_index_long",
+      "kind": "class_index",
+      "passed": true,
+      "prompt_tokens": 31564,
+      "server_prompt_tokens": 31564,
+      "completion_tokens": 111,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 4.395,
+      "extra_protein_keys": null
+    },
+    {
+      "case_id": "confidence_long",
+      "kind": "confidence",
+      "passed": true,
+      "prompt_tokens": 31576,
+      "server_prompt_tokens": 31576,
+      "completion_tokens": 104,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 4.139,
+      "extra_protein_keys": null
+    },
+    {
+      "case_id": "protein_long",
+      "kind": "protein",
+      "passed": true,
+      "prompt_tokens": 31573,
+      "server_prompt_tokens": 31573,
+      "completion_tokens": 112,
+      "finish_reason": "stop",
+      "empty_final": false,
+      "reasoning_fields_present": [
+        "reasoning"
+      ],
+      "elapsed_seconds": 4.35,
+      "extra_protein_keys": []
+    }
+  ],
+  "acceptance": "All twelve normally stopped, nonempty final answers must satisfy their frozen toy contract. No post-output rule changes.",
+  "acceptance_review": "Final channel required to be nonempty with stop finish and satisfy the frozen toy predicate. Reasoning is never searched for answers. Protein native JSON parser permits extra keys; any observed extra keys are disclosed separately.",
+  "anomalies": [],
+  "v1_aborted_attempt": {
+    "stopped_at_pacific": "2026-10-19T01:14:43.049379-07:00",
+    "reason": "Pilot blocked behind existing evaluation queue; move complete synthetic pilot to dedicated GPU.",
+    "dispatched_requests": 1,
+    "saved_responses": 0,
+    "inflight_outcome": "unknown unless a final response artifact exists",
+    "existing_evaluation_untouched": true,
+    "original_plan_preserved": true,
+    "subsequent_run_is_separate_development_iteration": true
+  },
+  "tokenization_correction": {
+    "v1_bug": "len(BatchEncoding) counted2mappingkeys instead ofinputtokenIDs.",
+    "v2_all_stored_counts_match_API_usage": true,
+    "all12_payloads_identical_to_independently_tokenized_v1": true,
+    "maximum_input_plus_output_budget": 47961,
+    "minimum_context_margin_tokens": 17575
+  },
+  "startup_wait_extension": {
+    "paused_at_pacific": "2026-10-19T01:22:52.568547-07:00",
+    "resumed_at_pacific": "2026-10-19T01:27:12.059302-07:00",
+    "action": "Only the identity-verified Python readiness checker was paused/resumed; server,engine,payloads andgenerationprotocol unchanged."
+  },
+  "slurm_terminal": {
+    "job_id": "241878",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "started_at_pacific": "2026-10-19T01:15:23-07:00",
+    "ended_at_pacific": "2026-10-19T01:28:20-07:00",
+    "elapsed": "00:12:57",
+    "allocated_resources": "billing=10,cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1",
+    "gpu_released": true,
+    "verification": "Main Slurm job terminal COMPLETED exit0:0; batch shell trap shuts down its dedicated server.",
+    "auxiliary_verification_rejection": "Step241878.2 exited1 when an identity guard rejected the Slurm-renamed script path, before any signal. A subsequent byte-identity check succeeded; this was not a model request failure."
+  },
+  "plan_sha256": "ca2023cfd24be91feb8a75209ea5622f6358daadd6ff5704fe74ab826cc7979f",
+  "native_contract_sha256": "bccb1a295bed84534f1554dcb6d3b7f80a5e4ee017ee95f635be59cae765a547",
+  "runner_sha256": "5133c0cc2cb88f9c8448b137f0276c60b3d3cf39ec5f8ec5e7f37a832ba28dcb",
+  "artifact_audit_sha256": "338c5ddc07c9797b3fe054b3e46736d2349ea4e9335f1b82505d9ae383380190",
+  "reproduction_bundle": {
+    "path": "reports/benchmark_assets/output_delivery_pilot_2026-10-19.tar.gz",
+    "sha256": "f5f05517c61eb41c3c978a4a089f28ecbd8f39e623f99a1c594c9a87c3d18236",
+    "bytes": 41254,
+    "members": 42,
+    "clean_directory_offline_reproduction_verified": true
+  },
+  "limitations": [
+    "Synthetic text-delivery checks only; no biological benchmark score or evidence that the full-evaluation configuration is ready.",
+    "Toy answers are supplied or straightforward; no substantive biological reasoning is tested.",
+    "One sample per interface/length condition; no reliability estimate.",
+    "Protein acceptance mirrors the native parser, which is looser than the prompt about additional JSON keys.",
+    "Repeated neutral padding and prefix caching reduce later long-input prefill work; timings cannot set evaluation throughput, cost or ETA.",
+    "Cold checkpoint loading, compilation and cache waits are reported separately from request latencies.",
+    "The aborted first request has no saved completion; it is not silently retried or counted as a completed pilot observation."
+  ]
+}

@@ -135,7 +135,7 @@ class AggregateMetadataTests(unittest.TestCase):
         self.emit("newer")
         value = refresh.merged_report(self.build(), [(previous, "old.json", "c" * 64)])
         self.assertEqual({row["run_id"] for row in value["completed_rows"]}, {"older", "newer"})
-        text = scores.render_markdown(value)
+        text = scores.render_markdown(value, self.root)
         self.assertIn("runs/newer/scores.json", text)
         self.assertNotIn("runs/older/scores.json", text)
 

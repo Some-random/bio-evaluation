@@ -1,0 +1,12 @@
+{
+  "task_id": "P14",
+  "original_failed_run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_v1",
+  "new_run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+  "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+  "scores_file": "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+  "scores_sha256": "23f784a46d1ef5dee452abb36bdfbebf2c2690043fac68e21ef900785b34bac1",
+  "completed_at_pacific": "2026-10-19T01:27:00.628558-07:00",
+  "correction": "null-versus-empty provenance compatibility; original failed attempt retained",
+  "no_new_model_generation": true,
+  "original_raw_outputs_unchanged": true
+}

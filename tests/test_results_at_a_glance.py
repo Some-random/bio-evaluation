@@ -39,6 +39,29 @@ class ReportTests(unittest.TestCase):
 
     def build(self): return report.build_report(self.root, generated_at="2026-10-18T19:00:00+00:00")
 
+    def test_scoring_correction_requires_matching_proof_and_stays_incomplete(self):
+        value, source = self.emit("repair", task="P14",
+            metrics={"auprc@micro":None,"f1_max":None},
+            score_extra={"scorer_recovery":{"version":"synthetic"}})
+        target=self.root/"results/scoring_corrections/repair"
+        target.parent.mkdir(parents=True)
+        source.parent.rename(target)
+        self.write("results/scoring_corrections/repair/completion.json", {
+            "generation_exit_code":0,"scoring_exit_code":0,"generation_attempts":0,
+            "scores_sha256":report.sha((target/"scores.json").read_bytes())})
+        self.assertEqual(self.build()["diagnostic_only_finished_runs"],[])
+        proof={"task_id":"P14","new_run_id":"repair","protocol_variant":"SYNTHETIC",
+               "scores_sha256":report.sha((target/"scores.json").read_bytes()),
+               "no_new_model_generation":True,"original_raw_outputs_unchanged":True}
+        self.write("results/scoring_corrections/repair/scoring_correction.json",proof)
+        result=self.build()
+        self.assertEqual(result["completed_whole_declared_setting_ids"],[])
+        self.assertEqual(len(result["diagnostic_only_finished_runs"]),1)
+        self.assertIsNone(result["diagnostic_only_finished_runs"][0]["metrics"]["f1_max"])
+        proof["scores_sha256"]="foreign"
+        self.write("results/scoring_corrections/repair/scoring_correction.json",proof)
+        self.assertEqual(self.build()["diagnostic_only_finished_runs"],[])
+
     def test_shard_or_unverified_union_never_whole_task_completion(self):
         self.emit("shard", task="P03", score_extra={"case_scope": "task_shard_only", "shard_index": 0})
         self.emit("unverified_aggregate", task="P07", config_extra={"shard_count": 2})
@@ -96,7 +119,7 @@ class ReportTests(unittest.TestCase):
         self.emit("held", planned=3, score_extra={"held_before_inference": 1})
         self.emit("complete_deduplicated_source", planned=2)
         value = self.build()
-        text = report.render_markdown(value)
+        text = report.render_markdown(value, self.root)
         self.assertIn("| Setting | Local score | Published reference | Qualification |", text)
         self.assertNotIn("Cases: completed/planned; parsed", text)
         self.assertIn("[P10 Synthetic PPI](../results/runs/full_with_invalid_answers/scores.json)", text)

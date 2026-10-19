@@ -267,3 +267,21 @@ restrictions. Three neutral smoke tests completed successfully. This narrow
 test authorization does not resume OpenAI benchmark inference, remove the
 biological policy hold, or authorize retrying the flagged material. Credentials
 and the private identity configuration must not be published.
+
+The October 19 scorer repair is complete for P12/P14/P15. Consult
+`reports/SCORER_COMPATIBILITY_REPAIR_2026-10-19.json` and
+`results/scoring_corrections/`, alongside the original failed attempts. Their
+full AP/Fmax remain undefined because invalid confidence vectors remain.
+The original scoring watcher's failed statuses are historical and must not
+be described as a still-unrepaired software crash for these three tasks.
+
+A single P13 offline recovery watcher is active under
+`.local/evaluation_revision_2026-10-18/scoring/null_equivalence_recovery_v1/p13_watcher_v2/`.
+Read its `status.json` before acting. It waits for the original scoring attempt,
+skips a successful original, and permits exactly one separately named recovery
+only for the verified null/empty compatibility defect. Do not start a duplicate.
+It exports new score metadata for the existing report collector, but does not
+itself push GitHub changes. Subsequent reporting should refresh and publish the
+decision table and new correction artifacts when this task becomes terminal.
+The synthetic delivery pilot completed 12/12 checks and released its GPU;
+this establishes simple format delivery, not biological predictive performance.

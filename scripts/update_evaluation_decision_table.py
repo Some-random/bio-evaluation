@@ -22,7 +22,7 @@ REACTION_DIAGNOSTIC = 'reports/REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.json'
 OUTPUT_JSON = 'reports/EVALUATION_DECISION_TABLE.json'
 OUTPUT_MD = 'reports/EVALUATION_DECISION_TABLE.md'
 ARCHIVE_IDS = {'N01', 'N02', 'N03', 'N04', 'N05', 'P28', 'P29'}
-COUNT_METRICS = {'correct', 'planned', 'parsed', 'missing', 'invalid', 'total', 'invalid_outputs', 'missing_or_failed_outputs', 'undefined_constant_or_insufficient'}
+COUNT_METRICS = {'correct', 'planned', 'parsed', 'missing', 'invalid', 'total', 'invalid_outputs', 'missing_or_failed_outputs', 'undefined_constant_or_insufficient', 'valid_cases', 'planned_cases', 'case_count'}
 PERCENT_METRICS = {'accuracy', 'strict_accuracy', 'precision', 'coverage', 'closed_accuracy', 'closed_accuracy_corrected', 'strict_final_label_accuracy', 'native_td_final_character_accuracy', 'adapted_full_text_closest_choice_accuracy', 'adapted_full_text_released_label_accuracy'}
 INPUTS = {
     'P01': 'Protein sequence → Yes/No; zero-shot',
@@ -30,6 +30,10 @@ INPUTS = {
     'P03': 'Protein sequence → localization class; zero-shot',
     'P07': 'Protein sequence → fluorescence scalar; zero-shot',
     'P08': 'Protein sequence → stability scalar; zero-shot',
+    'P12': 'Protein sequence → enzyme-label confidence scores; zero-shot',
+    'P13': 'Protein sequence → biological-process confidence scores; zero-shot',
+    'P14': 'Protein sequence → molecular-function confidence scores; zero-shot',
+    'P15': 'Protein sequence → cellular-component confidence scores; zero-shot',
     'P16': 'Protein sequence + reaction descriptions → class ID; zero-shot',
     'P19': 'Reference protein + objective → single substitutions',
     'P20': 'Reference + objective + candidate combinations; no measured targets',
@@ -132,6 +136,10 @@ def evidence(task, row, condition='native'):
     truncations = (row.get('finish_reasons') or {}).get('length')
     if condition != 'native':
         return {'category': 'Separate extraction diagnostic', 'detail': 'Offline extraction condition; retains the same full denominator and cannot replace the native score.'}
+    if row.get('scorer_recovery'):
+        undefined = any(value is None for _, value in metric_items(row.get('metrics') or {}))
+        return {'category': 'Scorer repaired; metric incomplete' if undefined else 'Scorer compatibility repaired',
+                'detail': 'The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged.'}
     if task in {'B01', 'B04', 'B05'}:
         detail = 'Measured label accuracy under this scope; no matched paper-ranking or rationale-validity claim.'
         held = counts.get('held_before_inference')
@@ -257,6 +265,7 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
             seen.add(key); observed.add(task); info = mapping[task]; group = info['group']; protocol = info['protocol']
             run_note = 'replay' if 'replay' in raw['run_id'] else 'original run'
             if raw.get('generation_budget_condition') == 'MIXED_BUDGET_4K16K_CONTINUATION':run_note = 'mixed 4K/16K continuation'
+            if raw.get('scorer_recovery'):run_note = 'offline compatibility repair; ' + run_note
             for condition, label, metrics in conditions(raw):
                 source = raw.get('source_scores')
                 answer_rate = usable(raw, task)
@@ -269,11 +278,12 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
                 rows.append({'task_id': task, 'task': protocol.get('title') or raw.get('task_name') or group['task'],
                     'category': group['category'], 'dataset': raw.get('dataset') or raw.get('native_split') or protocol.get('title') or group['dataset'],
                     'condition': label + '; ' + run_note, 'condition_kind': condition, 'run_id': raw['run_id'],
+                    'result_type': 'offline_scorer_compatibility_repair' if raw.get('scorer_recovery') else ('original_or_replay' if condition == 'native' else 'offline_extraction_diagnostic'),
                     'protocol_variant': raw.get('protocol_variant'), 'input_protocol': INPUTS.get(task, group.get('inputInterface') or protocol.get('scientificQuestion') or 'Required input not specified in catalog'),
                     'output_budget': budget(raw), 'usable_answer_rate': answer_rate,
                     'native_score': copy.deepcopy(metrics) if condition == 'native' else None,
                     'diagnostic_score': copy.deepcopy(metrics) if condition != 'native' else None,
-                    'score_display': metric_text(metrics), 'evidence': evidence_status,
+                    'score_display': metric_text({key: metrics.get(key) for key in ('auprc@micro','f1_max')}) if task in {'P12','P13','P14','P15'} else metric_text(metrics), 'evidence': evidence_status,
                     'counts': copy.deepcopy(raw.get('counts') or {}), 'finish_reasons': copy.deepcopy(raw.get('finish_reasons') or {}),
                     'source_scores': source, 'source_score_sha256': raw.get('scores_sha256'), 'source_row_category': category,
                     'source_protocol_url': protocol.get('sourceUrl') or group.get('sourceUrl'),
@@ -323,18 +333,21 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
 def cell(value):return str(value).replace('|', '\\|').replace('\n', '<br>')
 
 
-def render(report):
+def render(report, root=ROOT):
     text = ['# Evaluation decision table', '',
         f"Generated {pacific(report['generated_at_pacific'])}; score snapshot {pacific(report['score_snapshot_at'])}.", '',
         f"All **{report['retained_setting_count']} retained settings** appear below. Each source dataset, run or extraction condition stays separate; there is no overall average. Native scores remain unchanged. A saved or nonempty response is not necessarily a usable answer.", '',
-        '“Positive” identifies a useful measured example, not a controlled win over paper models. Unknown entries do not mean never attempted. [Integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md) · [Original score summary](RESULTS_AT_A_GLANCE.md).', '']
+        '“Positive” identifies a useful measured example, not a controlled win over paper models. Unknown entries do not mean never attempted. [Integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md) · [Original score summary](RESULTS_AT_A_GLANCE.md).', '',
+        'Links for unavailable original score files open retained aggregate metadata. The structured table preserves their original paths and hashes; this does not restore missing originals.', '']
     current = None
     for row in report['rows']:
         if current != row['category']:
             if current is not None:text.append('')
             current = row['category'];text += ['## ' + current, '', '| Setting / dataset | Input / protocol / condition | Output tokens | Usable-answer rate | Native score / separate diagnostic | Evidence status |', '|---|---|---|---|---|---|']
         label = row['task_id'] + ' ' + row['task']
-        if row.get('source_scores'):label = '[' + label + '](../' + row['source_scores'] + ')'
+        if row.get('source_scores'):
+            href = '../' + row['source_scores'] if (Path(root) / row['source_scores']).is_file() else 'RESULTS_AT_A_GLANCE.json'
+            label = '[' + label + '](' + href + ')'
         elif row.get('source_protocol_url'):label = '[' + label + '](' + row['source_protocol_url'] + ')'
         if row['dataset'] != row['task']:label += '<br>' + row['dataset']
         state = '**' + row['evidence']['category'] + '**<br>' + row['evidence']['detail']
@@ -352,7 +365,7 @@ def generate(root=ROOT):
     if (root / REACTION_DIAGNOSTIC).is_file():
         raw = (root / REACTION_DIAGNOSTIC).read_bytes();docs[REACTION_DIAGNOSTIC] = json.loads(raw);hashes[REACTION_DIAGNOSTIC] = hashlib.sha256(raw).hexdigest()
     result = build(docs[SCORES], docs[CATALOG], source_hashes=hashes, reaction_diagnostic=docs.get(REACTION_DIAGNOSTIC))
-    for name, content in [(OUTPUT_JSON, json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + '\n'), (OUTPUT_MD, render(result))]:
+    for name, content in [(OUTPUT_JSON, json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + '\n'), (OUTPUT_MD, render(result, root))]:
         path = root / name;path.parent.mkdir(parents=True, exist_ok=True);temporary = path.with_suffix(path.suffix + '.tmp');temporary.write_text(content);temporary.replace(path)
     return result
 

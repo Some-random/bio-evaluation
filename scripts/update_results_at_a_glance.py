@@ -192,7 +192,9 @@ def build_report(root: Path, generated_at=None):
     registry = {r["task_id"]: r for r in registry_doc.get("tasks", [])}
     qualification = read("reports/v04_output_format_qualification.json", {}) or {}
     vision_audit = read("reports/labbench_vision_aggregate_integrity_qualification.json", {}) or {}
-    for path in sorted((root / "results/runs").glob("*/scores.json")):
+    score_paths = list((root / "results/runs").glob("*/scores.json"))
+    score_paths += list((root / "results/scoring_corrections").glob("*/scores.json"))
+    for path in sorted(score_paths):
         base = str(path.parent.relative_to(root)); score_name = base + "/scores.json"
         score = read(score_name, {}) or {}; done = read(base + "/completion.json", {}) or {}
         manifest = read(base + "/run_manifest.json", {}) or {}; config = manifest.get("configuration", {})
@@ -206,6 +208,15 @@ def build_report(root: Path, generated_at=None):
         elif not isinstance(score.get("metrics"), dict) or not list(flatten(score["metrics"])): reason = "no_reported_primary_metric"
         elif done.get("scores_sha256") and done["scores_sha256"] != provenance[score_name]: reason = "terminal_score_hash_mismatch"
         elif done.get("run_manifest_sha256") and done["run_manifest_sha256"] != provenance.get(base + "/run_manifest.json"): reason = "terminal_manifest_hash_mismatch"
+        if reason is None and path.parent.parent.name == "scoring_corrections":
+            correction = read(base + "/scoring_correction.json", {}) or {}
+            if (correction.get("task_id") != task_id or correction.get("new_run_id") != run_id
+                    or correction.get("protocol_variant") != score.get("protocol_variant")
+                    or correction.get("scores_sha256") != provenance[score_name]
+                    or correction.get("no_new_model_generation") is not True
+                    or correction.get("original_raw_outputs_unchanged") is not True
+                    or done.get("generation_attempts") != 0 or not score.get("scorer_recovery")):
+                reason = "unverified_scoring_correction"
         kind = coverage_kind(score, config)
         if reason is None and kind in {"shard_only", "unverified_shard_aggregate", "unverified_dataset_aggregate"}: reason = kind
         if reason:
@@ -247,6 +258,8 @@ def build_report(root: Path, generated_at=None):
             caveats.append("All cases completed under the original 4,096-token output budget; no 16K regeneration.")
         elif budget_condition == "PROSPECTIVE_16K_FULL_TASK":
             caveats.append("All original cases were previously undispatched and use the prospective 16,384-token output budget.")
+        if score.get("scorer_recovery"):
+            caveats.append("Separate offline scorer compatibility repair: explicit raw null and normalized empty final text are treated as equivalent. Missing confidence vectors remain invalid; native parsing, metric formulas, denominators and generations are unchanged. The original failed attempt is preserved.")
         reference = select_reference(task_id, dataset, source)
         row = {"task_id": task_id, "task_name": source.get("task", task_id), "run_id": run_id,
             "dataset": dataset, "native_split": score.get("native_split"), "completion_scope": kind,
@@ -264,6 +277,7 @@ def build_report(root: Path, generated_at=None):
             "comparison_to_paper": score.get("comparison_to_paper"), "comparison_status": "contextual_side_by_side_no_superiority_or_significance_claim",
             "selected_published_reference": reference, "all_published_references": source.get("published_baselines", []),
             "caveats": caveats, "explanation_support_score": score.get("explanation_support_score"),
+            "scorer_recovery": score.get("scorer_recovery"),
             "source_scores": score_name, "source_completion": base + "/completion.json", "scores_sha256": provenance[score_name],
             "completion_score_hash_verified": bool(done.get("scores_sha256")), "full_test_id_union_validation": score.get("full_test_id_union_validation"),
             "input_reference_dependence": score.get("native_reference_qualification"), "seed_predictor_overlap": score.get("seed_predictor_overlap")}
@@ -317,6 +331,9 @@ def format_value(name, value):
 
 def local_display(row):
     metrics = list(flatten(row["metrics"]))
+    if row["task_id"] in {"P12", "P13", "P14", "P15"}:
+        return "; ".join(key + " " + format_value(key, row["metrics"].get(key))
+                         for key in ("auprc@micro", "f1_max"))
     if row["task_id"].startswith("B"):
         keys = ["accuracy", "precision", "coverage"]
         return "; ".join(key + " " + format_value(key, row["metrics"].get(key)) for key in keys)
@@ -363,7 +380,13 @@ def incomplete_evaluation(row, report):
     return any(value is None for _, value in flatten(row["metrics"]))
 
 
-def render_markdown(report):
+def score_href(source, root):
+    # Do not fabricate a restored original score from retained aggregate data.
+    return "../" + source if (Path(root) / source).is_file() else "RESULTS_AT_A_GLANCE.json"
+
+
+def render_markdown(report, root=None):
+    root = Path(root) if root is not None else Path(__file__).resolve().parents[1]
     scope = report.get("main_report_scope", {})
     excluded = set(scope.get("excluded_task_ids", []))
     def latest_conditions(values):
@@ -397,6 +420,7 @@ def render_markdown(report):
         "This does not mean full paper replication. Finished shards and incomplete runs are excluded below.", "",
         "[Evaluation integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md) identifies output-delivery and metric limitations; completed execution does not guarantee an informative model-quality score.",
         "[Action plan](EVALUATION_REPAIR_PLAN_2026-10-19.md) · [Decision table](EVALUATION_DECISION_TABLE.md) · [Separate reaction extraction diagnostic](REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.md)", "",
+        "Where an original detailed score file is unavailable, its link opens the retained aggregate JSON. Original paths and hashes remain recorded; missing originals have not been reconstructed.", "",
         "These are contextual comparisons: the local baseline is zero-shot; BioT5+/medical systems use task training. LAB references below use the public-set GPT-5.2 column; prompt/decoding/repeat differences remain. "
         f"B01 covers 197/199 public cases with two held before inference. No superiority or significance claim follows. Generated-answer output caps in this snapshot: {limit_text} tokens; P43 instead uses a prespecified one-token conditional likelihood score. Paper ± values preserve reported dispersion; its definition and repeat counts are not always established.", "",
         "| Setting | Local score | Published reference | Qualification |", "|---|---|---|---|"]
@@ -411,14 +435,14 @@ def render_markdown(report):
         caveats = " ".join(presentation_caveats(row))
         if row["completion_scope"] in {"dataset_component", "native_split_component"}: caveats = "Completed component. " + caveats
         if not caveats: caveats = "Declared local variant; input, training and scoring qualifications in linked result and JSON."
-        lines.append("| " + " | ".join(map(cell, [f"[{label}](../{row['source_scores']})", local_display(row), published_display(row), caveats])) + " |")
+        lines.append("| " + " | ".join(map(cell, [f"[{label}]({score_href(row['source_scores'], root)})", local_display(row), published_display(row), caveats])) + " |")
     if any(incomplete_evaluation(row, report) for row in rows) or diagnostics:
         lines += ["", "\\* Incomplete benchmark coverage or scoring. Case counts and parsing details remain in the [structured report](RESULTS_AT_A_GLANCE.json)."]
     if not rows: lines += ["", "No verified terminal whole-run or dataset-component score is available yet."]
     if diagnostics:
         lines += ["", "Finished executions with undefined full-test metrics, excluded from benchmark completion counts:", ""]
         for row in diagnostics:
-            lines.append(f"- [{row['task_id']} {row['task_name']}*](../{row['source_scores']}): "
+            lines.append(f"- [{row['task_id']} {row['task_name']}*]({score_href(row['source_scores'], root)}): "
                          f"{local_display(row)}. Parsed-only values are incomplete diagnostics and do not replace the native full-test score. "
                          + " ".join(presentation_caveats(row)))
     p43 = report["P43"]
@@ -446,7 +470,7 @@ def render_markdown(report):
 
 def write_report(root, report):
     outputs = {"reports/RESULTS_AT_A_GLANCE.json": json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n",
-               "reports/RESULTS_AT_A_GLANCE.md": render_markdown(report)}
+               "reports/RESULTS_AT_A_GLANCE.md": render_markdown(report, root)}
     for name, content in outputs.items():
         path = Path(root) / name; path.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent, delete=False) as handle:

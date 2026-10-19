@@ -4,17 +4,17 @@ Started October 19, 2026, Pacific time. Immediate scope: repair and interpret sa
 
 | Work | Concrete output | Status |
 |---|---|---|
-| P12–P15 scorer compatibility | Separately named scoring runs accepting raw null versus normalized empty final, with the original denominator and metric rules | Implementing; original failed attempts preserved |
+| P12–P15 scorer compatibility | Separately named scoring runs accepting raw null versus normalized empty final, with the original denominator and metric rules | [P12/P14/P15 completed; original failures preserved. Full AP/Fmax remain undefined. One P13 recovery is scheduled after its original scoring attempt, if the same defect occurs](SCORER_COMPATIBILITY_REPAIR_2026-10-19.md) |
 | P16 reaction extraction | Frozen terminal-number diagnostic beside the original score, independently checked against all saved cases | Done: [12/5,651 versus original 9/5,651, with reproducible export](REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.md) |
 | P03 localization and P43 interactions | Delivery statistics, retrospective class balance, invalid-answer upper bound, prediction concentration and likelihood-interface check | [Verified: P03 stays below its descriptive majority reference even if every invalid answer is recovered correctly](PREDICTION_TASK_AUDIT_2026-10-19.md) |
 | B02 and P42 qualifications | Prominent truncation/zero-accepted-output statements in the public results table | Verified counts; prominent qualifications added |
 | P01 and V01–V05 extraction | Recover hash-verified raw records; freeze conservative extraction/ambiguity rules on synthetic cases before rescoring | [Blocked on unavailable original raw files; frozen tools and 18 checks ready](HISTORICAL_EXTRACTION_STATUS_2026-10-19.md) |
-| Qwen output-delivery pilot | Same checkpoint, thinking enabled, 16K output cap; synthetic inputs spanning answer formats and context lengths; saved requests/responses, latency and usage | Running 12 synthetic cases in a separate pilot |
+| Qwen output-delivery pilot | Same checkpoint, thinking enabled, 16K output cap; synthetic inputs spanning answer formats and context lengths; saved requests/responses, latency and usage | [Completed: 12/12 synthetic checks passed, zero truncated or empty finals](OUTPUT_DELIVERY_PILOT_2026-10-19.md) |
 | OpenAI request identity | One persistent end-user safety identifier, three neutral smoke tests, no previously flagged benchmark requests | [Completed: one stable identifier, 3/3 neutral tests passed](OPENAI_SAFETY_IDENTIFIER_CHECK_2026-10-19.md) |
 
 The [decision table](EVALUATION_DECISION_TABLE.md) distinguishes usable-answer coverage, the native metric, separately named diagnostics, and what the evidence supports. Native non-abstention coverage is not presented as the fraction of usable answers.
 
-The pilot is a gate, not another scored benchmark. Its protocol and acceptance checks must be frozen before generation. A successful format-only toy test does not establish valid biological predictions. Any subsequent full rerun gets its own run ID and covers the entire declared case set; successful retries will never be spliced into old results.
+The pilot is an interface check, not another scored benchmark. Its protocol and acceptance checks were frozen before generation. Passing these simple synthetic cases shows that the tested formats and long inputs can work; it does not establish reliable delivery on difficult biological questions. Real permitted-development validation is still needed before treating the full-rerun configuration as settled. Any subsequent full rerun gets its own run ID and covers the entire declared case set; successful retries will never be spliced into old results.
 
 Proposed full-rerun order after the pilot: **B08 cloning (33), P42 GFP design (200), B07 SeqQA (600), P16 reaction (5,651), then P07 GFP prediction (27,217)**. None of these new full reruns has started under this plan.
 

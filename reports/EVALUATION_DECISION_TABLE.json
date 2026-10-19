@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-19T01:16:04.539880-07:00",
-  "score_snapshot_at": "2026-10-19T06:02:20.477019+00:00",
-  "catalog_snapshot_at": "2026-10-19T06:02:20.477019+00:00",
+  "generated_at_pacific": "2026-10-19T01:29:56.927942-07:00",
+  "score_snapshot_at": "2026-10-19T08:28:02.495277+00:00",
+  "catalog_snapshot_at": "2026-10-19T08:26:35.324012+00:00",
   "retained_setting_count": 57,
   "retained_setting_ids": [
     "B01",
@@ -82,6 +82,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p01_original_test_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_FULL_SEQUENCE_TEXT_BIOT5_TEST",
       "input_protocol": "Protein sequence → Yes/No; zero-shot",
       "output_budget": "4,096",
@@ -132,6 +133,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p02_original_test_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_FULL_SEQUENCE_TEXT_BIOT5_TEST",
       "input_protocol": "Protein sequence → binary localization; zero-shot",
       "output_budget": "4,096",
@@ -182,6 +184,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_DEEPLOC_NATIVE_LABELS",
       "input_protocol": "Protein sequence → localization class; zero-shot",
       "output_budget": "4,096",
@@ -298,6 +301,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p06_original_test_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_FLIP_HUMAN_CELL",
       "input_protocol": "Protein/variant sequence",
       "output_budget": "4,096",
@@ -349,6 +353,7 @@
       "condition": "Native declared score; mixed 4K/16K continuation",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_FLUORESCENCE_PYTORCH__MIXED_BUDGET_4K16K_CONTINUATION",
       "input_protocol": "Protein sequence → fluorescence scalar; zero-shot",
       "output_budget": "4,096 × 27,146; 16,384 × 71 (mixed)",
@@ -469,6 +474,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p10_original_test_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_FULL_SEQUENCE_TEXT_BIOT5_TEST",
       "input_protocol": "Two full protein sequences",
       "output_budget": "4,096",
@@ -519,6 +525,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p11_original_test_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_FULL_SEQUENCE_TEXT_BIOT5_TEST",
       "input_protocol": "Two full protein sequences",
       "output_budget": "4,096",
@@ -565,32 +572,66 @@
       "task": "Enzyme Commission labels — DeepFRI split",
       "category": "Protein function, annotations and descriptions",
       "dataset": "Enzyme Commission labels — DeepFRI split",
-      "condition": "Catalog contract; no verified scored condition",
-      "condition_kind": "unverified",
-      "run_id": null,
-      "protocol_variant": null,
-      "input_protocol": "Protein sequence",
-      "output_budget": "Not established",
+      "condition": "Native declared score; offline compatibility repair; mixed 4K/16K continuation",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "result_type": "offline_scorer_compatibility_repair",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+      "input_protocol": "Protein sequence → enzyme-label confidence scores; zero-shot",
+      "output_budget": "4,096 × 449; 16,384 × 1,470 (mixed)",
       "usable_answer_rate": {
-        "value": null,
-        "display": "Not established",
-        "definition": "No verified full-run parse counts"
+        "value": 0.8514851485148515,
+        "display": "1,634/1,919 (85.1%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
       },
-      "native_score": null,
+      "native_score": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.00564891891553998,
+          "f1_max": 0.027645308524370193,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.0051219060217818435
+          },
+          "valid_cases": 1634,
+          "planned_cases": 1919
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.004455736372619867,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.004380960498710798
+          },
+          "case_count": 1919,
+          "is_model_prediction": false
+        }
+      },
       "diagnostic_score": null,
-      "score_display": "No verified native score",
+      "score_display": "auprc@micro undefined; f1_max undefined",
       "evidence": {
-        "category": "Scoring unresolved",
-        "detail": "No verified whole-task native metric; scorer repair / completion remains pending."
+        "category": "Scorer repaired; metric incomplete",
+        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged."
       },
-      "counts": {},
-      "finish_reasons": {},
-      "source_scores": null,
-      "source_score_sha256": null,
-      "source_row_category": null,
+      "counts": {
+        "planned": 1919,
+        "completed": 1919,
+        "parsed": 1634,
+        "invalid_outputs": 285,
+        "missing_or_failed_outputs": null,
+        "held_before_inference": 0
+      },
+      "finish_reasons": {
+        "stop": 1680,
+        "length": 239
+      },
+      "source_scores": "results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "source_score_sha256": "e4f9ecd775592e15834e82b2416310bcb7413eefc7624f9ae243666498011021",
+      "source_row_category": "diagnostic_only_finished_runs",
       "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
-      "case_scope": "ProtST uses the DeepFRI task split with a 95% sequence-identity cutoff.",
-      "excluded_run_reasons": [],
+      "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
       "native_metrics_recomputed": false
     },
     {
@@ -602,7 +643,7 @@
       "condition_kind": "unverified",
       "run_id": null,
       "protocol_variant": null,
-      "input_protocol": "Protein sequence",
+      "input_protocol": "Protein sequence → biological-process confidence scores; zero-shot",
       "output_budget": "Not established",
       "usable_answer_rate": {
         "value": null,
@@ -631,32 +672,66 @@
       "task": "GO molecular function — DeepFRI split",
       "category": "Protein function, annotations and descriptions",
       "dataset": "GO molecular function — DeepFRI split",
-      "condition": "Catalog contract; no verified scored condition",
-      "condition_kind": "unverified",
-      "run_id": null,
-      "protocol_variant": null,
-      "input_protocol": "Protein sequence",
-      "output_budget": "Not established",
+      "condition": "Native declared score; offline compatibility repair; mixed 4K/16K continuation",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "result_type": "offline_scorer_compatibility_repair",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+      "input_protocol": "Protein sequence → molecular-function confidence scores; zero-shot",
+      "output_budget": "4,096 × 488; 16,384 × 2,928 (mixed)",
       "usable_answer_rate": {
-        "value": null,
-        "display": "Not established",
-        "definition": "No verified full-run parse counts"
+        "value": 0.9133489461358314,
+        "display": "3,120/3,416 (91.3%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
       },
-      "native_score": null,
+      "native_score": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.02469353936612606,
+          "f1_max": 0.1107293888926506,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.022279289979246795
+          },
+          "valid_cases": 3120,
+          "planned_cases": 3416
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.01826496608555317,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.01815108020478633
+          },
+          "case_count": 3416,
+          "is_model_prediction": false
+        }
+      },
       "diagnostic_score": null,
-      "score_display": "No verified native score",
+      "score_display": "auprc@micro undefined; f1_max undefined",
       "evidence": {
-        "category": "Scoring unresolved",
-        "detail": "No verified whole-task native metric; scorer repair / completion remains pending."
+        "category": "Scorer repaired; metric incomplete",
+        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged."
       },
-      "counts": {},
-      "finish_reasons": {},
-      "source_scores": null,
-      "source_score_sha256": null,
-      "source_row_category": null,
+      "counts": {
+        "planned": 3416,
+        "completed": 3416,
+        "parsed": 3120,
+        "invalid_outputs": 296,
+        "missing_or_failed_outputs": null,
+        "held_before_inference": 0
+      },
+      "finish_reasons": {
+        "stop": 3327,
+        "length": 89
+      },
+      "source_scores": "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "source_score_sha256": "23f784a46d1ef5dee452abb36bdfbebf2c2690043fac68e21ef900785b34bac1",
+      "source_row_category": "diagnostic_only_finished_runs",
       "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
-      "case_scope": "Keep BP/MF/CC separate; ProtST's DeepFRI-derived split.",
-      "excluded_run_reasons": [],
+      "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
       "native_metrics_recomputed": false
     },
     {
@@ -664,32 +739,66 @@
       "task": "GO cellular component — DeepFRI split",
       "category": "Protein function, annotations and descriptions",
       "dataset": "GO cellular component — DeepFRI split",
-      "condition": "Catalog contract; no verified scored condition",
-      "condition_kind": "unverified",
-      "run_id": null,
-      "protocol_variant": null,
-      "input_protocol": "Protein sequence",
-      "output_budget": "Not established",
+      "condition": "Native declared score; offline compatibility repair; mixed 4K/16K continuation",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "result_type": "offline_scorer_compatibility_repair",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+      "input_protocol": "Protein sequence → cellular-component confidence scores; zero-shot",
+      "output_budget": "4,096 × 488; 16,384 × 2,928 (mixed)",
       "usable_answer_rate": {
-        "value": null,
-        "display": "Not established",
-        "definition": "No verified full-run parse counts"
+        "value": 0.977751756440281,
+        "display": "3,340/3,416 (97.8%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
       },
-      "native_score": null,
+      "native_score": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.07652562856674194,
+          "f1_max": 0.2367788702249527,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.06717208094727284
+          },
+          "valid_cases": 3340,
+          "planned_cases": 3416
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.036887455731630325,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.0365906762295082
+          },
+          "case_count": 3416,
+          "is_model_prediction": false
+        }
+      },
       "diagnostic_score": null,
-      "score_display": "No verified native score",
+      "score_display": "auprc@micro undefined; f1_max undefined",
       "evidence": {
-        "category": "Scoring unresolved",
-        "detail": "No verified whole-task native metric; scorer repair / completion remains pending."
+        "category": "Scorer repaired; metric incomplete",
+        "detail": "The original crash is preserved as a separate attempt. Missing confidence vectors remain invalid; native formulas and all original generations are unchanged."
       },
-      "counts": {},
-      "finish_reasons": {},
-      "source_scores": null,
-      "source_score_sha256": null,
-      "source_row_category": null,
+      "counts": {
+        "planned": 3416,
+        "completed": 3416,
+        "parsed": 3340,
+        "invalid_outputs": 76,
+        "missing_or_failed_outputs": null,
+        "held_before_inference": 0
+      },
+      "finish_reasons": {
+        "stop": 3394,
+        "length": 22
+      },
+      "source_scores": "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "source_score_sha256": "6613f0b989967dc7fbd3825438fcbc467ee7002d17edac964a21309b0a7ac980",
+      "source_row_category": "diagnostic_only_finished_runs",
       "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
-      "case_scope": "Keep BP/MF/CC separate; ProtST's DeepFRI-derived split.",
-      "excluded_run_reasons": [],
+      "case_scope": "exact_zenodo_released_test_list_at_95_percent_cutoff_full_fasta",
       "native_metrics_recomputed": false
     },
     {
@@ -700,6 +809,7 @@
       "condition": "Native declared score; mixed 4K/16K continuation",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_ZERO_SHOT_REACTION_FULL_SEQUENCE_ALL384_FULL_SOURCE_DESCRIPTIONS__MIXED_BUDGET_4K16K_CONTINUATION",
       "input_protocol": "Protein sequence + reaction descriptions → class ID; zero-shot",
       "output_budget": "4,096 × 4,419; 16,384 × 1,232 (mixed)",
@@ -750,6 +860,7 @@
       "condition": "Offline terminal-class extraction; same mixed 4K/16K cohort",
       "condition_kind": "post_run_terminal_class",
       "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1",
+      "result_type": "original_or_replay",
       "protocol_variant": "P16_NORMAL_STOP_TERMINAL_CLASS_DIAGNOSTIC_V1",
       "input_protocol": "Protein sequence + reaction descriptions → class ID; zero-shot",
       "output_budget": "4,096 × 4,419; 16,384 × 1,232 (mixed)",
@@ -802,6 +913,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p23_description_full_parallel_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE",
       "input_protocol": "Full protein sequence and instruction",
       "output_budget": "4,096",
@@ -850,6 +962,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p24_description_full_parallel_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE",
       "input_protocol": "Full protein sequence and instruction",
       "output_budget": "4,096",
@@ -898,6 +1011,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p25_description_full_parallel_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE",
       "input_protocol": "Full protein sequence and instruction",
       "output_budget": "4,096",
@@ -946,6 +1060,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p26_description_full_parallel_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_FULL_SEQUENCE_BIOT5_EXPORT_MOLINST_GOLD_ONLY_ROUGE",
       "input_protocol": "Full protein sequence and instruction",
       "output_budget": "4,096",
@@ -1456,6 +1571,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_litqa2_public_reviewed_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Question + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -1504,6 +1620,7 @@
       "condition": "Native declared score; replay",
       "condition_kind": "native",
       "run_id": "qwen38_27b_litqa2_replay_2026-10-16",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Question + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -1552,6 +1669,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_b02_public_reviewed_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Question + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -1601,6 +1719,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_b03_public_reviewed_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Question + paper metadata + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -1649,6 +1768,7 @@
       "condition": "Native declared score; replay",
       "condition_kind": "native",
       "run_id": "qwen38_27b_b03_slurm_replay_2026-10-16",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Question + paper metadata + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -1697,6 +1817,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_b04_public_reviewed_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Figure image + question + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -1746,6 +1867,7 @@
       "condition": "Native declared score; replay",
       "condition_kind": "native",
       "run_id": "qwen38_27b_b04_slurm_replay_2026-10-16",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Figure image + question + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -1795,6 +1917,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_b05_public_reviewed_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Table images + question + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -1844,6 +1967,7 @@
       "condition": "Native declared score; replay",
       "condition_kind": "native",
       "run_id": "qwen38_27b_b05_slurm_replay_2026-10-16",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Table images + question + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -1926,6 +2050,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_b07_public_reviewed_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Sequence + question + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -1975,6 +2100,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_b08_public_reviewed_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PUBLIC_COT_LOCAL_REVIEWED",
       "input_protocol": "Cloning scenario + choices; native CoT, no tools",
       "output_budget": "4,096",
@@ -2221,6 +2347,7 @@
       "condition": "Insert/delete/replace candidate condition; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p42_gfp_qualified_two_regimes_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_GFP_QUALIFIED_TWO_REGIMES_ENDPOINT_1_TO_3",
       "input_protocol": "Reference protein → candidate JSON; zero-shot",
       "output_budget": "1,024",
@@ -2267,6 +2394,7 @@
       "condition": "Replace-only candidate condition; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p42_gfp_qualified_two_regimes_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_GFP_QUALIFIED_TWO_REGIMES_ENDPOINT_1_TO_3",
       "input_protocol": "Reference protein → candidate JSON; zero-shot",
       "output_budget": "1,024",
@@ -2313,6 +2441,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_v01_native_test_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_TEST_QUESTION_IMAGE_LOCAL_ZERO_SHOT",
       "input_protocol": "Radiology image + question; zero-shot",
       "output_budget": "4,096",
@@ -2358,6 +2487,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_v02_native_test_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_TEST_QUESTION_IMAGE_LOCAL_ZERO_SHOT",
       "input_protocol": "Medical image + English question; zero-shot",
       "output_budget": "4,096",
@@ -2404,6 +2534,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu",
+      "result_type": "original_or_replay",
       "protocol_variant": "SOURCE_QUALIFIED_PATHVQA_HF_TEST_IMAGE_ZERO_SHOT",
       "input_protocol": "Pathology image + question; zero-shot; 6,719-row released mirror",
       "output_budget": "4,096",
@@ -2450,6 +2581,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_v04_original_test500_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_IMAGECLEF2019_QUESTION_IMAGE_QUALIFIED_STRICT_ACCURACY",
       "input_protocol": "Medical image + question; whole-final exact-match scoring",
       "output_budget": "4,096",
@@ -2494,6 +2626,7 @@
       "condition": "Native final-character extraction; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_v05_pmcvqa_clean2000_td_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "NATIVE_PMCVQA_CLEAN2000_TD_PROMPT_QWEN_ZERO_SHOT",
       "input_protocol": "Scientific figure + question + four choices; zero-shot",
       "output_budget": "4,096",
@@ -2539,6 +2672,7 @@
       "condition": "Offline full-text similarity extraction; original run",
       "condition_kind": "full_text",
       "run_id": "qwen38_27b_v05_pmcvqa_clean2000_td_2026-10-15",
+      "result_type": "offline_extraction_diagnostic",
       "protocol_variant": "NATIVE_PMCVQA_CLEAN2000_TD_PROMPT_QWEN_ZERO_SHOT",
       "input_protocol": "Scientific figure + question + four choices; zero-shot",
       "output_budget": "4,096",
@@ -2585,6 +2719,7 @@
       "condition": "Offline strict final-label extraction; original run",
       "condition_kind": "strict_label",
       "run_id": "qwen38_27b_v05_pmcvqa_clean2000_td_2026-10-15",
+      "result_type": "offline_extraction_diagnostic",
       "protocol_variant": "NATIVE_PMCVQA_CLEAN2000_TD_PROMPT_QWEN_ZERO_SHOT",
       "input_protocol": "Scientific figure + question + four choices; zero-shot",
       "output_budget": "4,096",
@@ -2696,6 +2831,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_dti_bindingdb_likelihood_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_DTI_FIRST_TOKEN_CONDITIONAL_YES_NO_LIKELIHOOD",
       "input_protocol": "Molecule + protein → conditional Yes/No likelihood",
       "output_budget": "1 (likelihood only)",
@@ -2740,6 +2876,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_dti_biosnap_likelihood_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_DTI_FIRST_TOKEN_CONDITIONAL_YES_NO_LIKELIHOOD",
       "input_protocol": "Molecule + protein → conditional Yes/No likelihood",
       "output_budget": "1 (likelihood only)",
@@ -2784,6 +2921,7 @@
       "condition": "Native declared score; original run",
       "condition_kind": "native",
       "run_id": "qwen38_27b_dti_human_likelihood_2026-10-15",
+      "result_type": "original_or_replay",
       "protocol_variant": "QWEN_DTI_FIRST_TOKEN_CONDITIONAL_YES_NO_LIKELIHOOD",
       "input_protocol": "Molecule + protein → conditional Yes/No likelihood",
       "output_budget": "1 (likelihood only)",
@@ -2822,8 +2960,8 @@
     }
   ],
   "source_sha256": {
-    "reports/RESULTS_AT_A_GLANCE.json": "eab58e47c26ebc8fe0af3232f846d814affd72e2253abad9a8662a3ff9e1ab1d",
-    "reports/TASK_HIERARCHY_DATA.json": "9e1eef14586d0db971d1ec32c77613a4d53ed168dfdab1bdd2b6f882cd4b96bb",
+    "reports/RESULTS_AT_A_GLANCE.json": "29457230d08793ae3e918872388e1c8ea5f5272c9437be5e36b512a7406f4420",
+    "reports/TASK_HIERARCHY_DATA.json": "e937eba29b7c215b94caabff1eeb2eb4ec4f950f5de2687bb5ff43c174df59c9",
     "reports/REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.json": "68d143a13641237c1141b4d47ecdda438f7f81711ffccc7a4cdd6069764f449b"
   },
   "policy": "Aggregate metadata only. All retained settings included; runs, datasets and extraction conditions remain separate. No pooled averages, score recomputation, raw answers, labels or inference. Parse counts are qualified by their native meaning; missing verified scores remain unknown.",

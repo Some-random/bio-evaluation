@@ -1,0 +1,218 @@
+{
+  "version": "SCORER_COMPATIBILITY_REPAIR_2026_10_19",
+  "updated_at_pacific": "2026-10-19T01:27:44.882929-07:00",
+  "repair": "Only explicit API content=null versus normalized saved text=\"\" is equivalent for provenance.",
+  "original_scorer_sha256": "b943895878c02edb98b65d537f778c899d1ba4386b7765bebcc76d75eb2fb0a7",
+  "derived_scorer_sha256": "8e9f16fcac02afbfee88fcf271a62bd974d559c803aa78dabf7dbac8999ebb91",
+  "new_model_generations": 0,
+  "invalid_predictions_repaired_or_dropped": 0,
+  "native_metric_formulas_and_original_denominators_unchanged": true,
+  "completed_repairs": [
+    {
+      "task_id": "P12",
+      "task_name": "Enzyme annotation",
+      "run_id": "qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "planned": 1919,
+      "completed": 1919,
+      "parsed": 1634,
+      "invalid_outputs": 285,
+      "finish_reasons": {
+        "stop": 1680,
+        "length": 239
+      },
+      "parse_error_counts": {
+        "Missing, truncated or unfinished final answer": 244,
+        "Unknown class or nonnumeric confidence": 39,
+        "Duplicate JSON key": 2
+      },
+      "metrics": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.00564891891553998,
+          "f1_max": 0.027645308524370193,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.0051219060217818435
+          },
+          "valid_cases": 1634,
+          "planned_cases": 1919
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.004455736372619867,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.004380960498710798
+          },
+          "case_count": 1919,
+          "is_model_prediction": false
+        }
+      },
+      "output_budget_counts": {
+        "4096": 449,
+        "16384": 1470
+      },
+      "normalization_counts": {
+        "equal": 1685,
+        "explicit_null_to_empty": 234
+      },
+      "nonfinite_native_metric_paths": [
+        "metrics.OFFLINE_ALL_ZERO_REFERENCE.f1_max"
+      ],
+      "native_score_artifact_sha256": "f614927d646ee04fcc7deb3fd62995af15dafd13b0b9cfecd610cbcb7b809698"
+    },
+    {
+      "task_id": "P14",
+      "task_name": "Molecular-function annotation",
+      "run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "planned": 3416,
+      "completed": 3416,
+      "parsed": 3120,
+      "invalid_outputs": 296,
+      "finish_reasons": {
+        "stop": 3327,
+        "length": 89
+      },
+      "parse_error_counts": {
+        "Missing, truncated or unfinished final answer": 96,
+        "Unknown class or nonnumeric confidence": 197,
+        "Duplicate JSON key": 3
+      },
+      "metrics": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.02469353936612606,
+          "f1_max": 0.1107293888926506,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.022279289979246795
+          },
+          "valid_cases": 3120,
+          "planned_cases": 3416
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.01826496608555317,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.01815108020478633
+          },
+          "case_count": 3416,
+          "is_model_prediction": false
+        }
+      },
+      "output_budget_counts": {
+        "4096": 488,
+        "16384": 2928
+      },
+      "normalization_counts": {
+        "equal": 3325,
+        "explicit_null_to_empty": 91
+      },
+      "nonfinite_native_metric_paths": [
+        "metrics.OFFLINE_ALL_ZERO_REFERENCE.f1_max"
+      ],
+      "native_score_artifact_sha256": "d0ba4fd1b7ba1371262f1e1e3b7e03cde9ebd4a20e4d523286535d4488c1a444"
+    },
+    {
+      "task_id": "P15",
+      "task_name": "Cellular-component annotation",
+      "run_id": "qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "planned": 3416,
+      "completed": 3416,
+      "parsed": 3340,
+      "invalid_outputs": 76,
+      "finish_reasons": {
+        "stop": 3394,
+        "length": 22
+      },
+      "parse_error_counts": {
+        "Missing, truncated or unfinished final answer": 24,
+        "Unknown class or nonnumeric confidence": 44,
+        "Duplicate JSON key": 8
+      },
+      "metrics": {
+        "auprc@micro": null,
+        "f1_max": null,
+        "TIE_GROUPED_AP_DIAGNOSTIC": {
+          "sklearn_micro_average_precision": null
+        },
+        "PARSED_ONLY_DIAGNOSTIC": {
+          "auprc@micro": 0.07652562856674194,
+          "f1_max": 0.2367788702249527,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.06717208094727284
+          },
+          "valid_cases": 3340,
+          "planned_cases": 3416
+        },
+        "OFFLINE_ALL_ZERO_REFERENCE": {
+          "auprc@micro": 0.036887455731630325,
+          "f1_max": null,
+          "TIE_GROUPED_AP_DIAGNOSTIC": {
+            "sklearn_micro_average_precision": 0.0365906762295082
+          },
+          "case_count": 3416,
+          "is_model_prediction": false
+        }
+      },
+      "output_budget_counts": {
+        "4096": 488,
+        "16384": 2928
+      },
+      "normalization_counts": {
+        "equal": 3398,
+        "explicit_null_to_empty": 18
+      },
+      "nonfinite_native_metric_paths": [
+        "metrics.OFFLINE_ALL_ZERO_REFERENCE.f1_max"
+      ],
+      "native_score_artifact_sha256": "9b873348950f3ae3b1f1cc7ac31f2794b79650f6447351dae33447d3a5fe7c66"
+    }
+  ],
+  "corrections": [
+    {
+      "task_id": "P12",
+      "original_failed_run_id": "qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_v1",
+      "new_run_id": "qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+      "scores_file": "results/scoring_corrections/qwen38_27b_p12_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "scores_sha256": "e4f9ecd775592e15834e82b2416310bcb7413eefc7624f9ae243666498011021",
+      "completed_at_pacific": "2026-10-19T01:24:48.124008-07:00",
+      "correction": "null-versus-empty provenance compatibility; original failed attempt retained",
+      "no_new_model_generation": true,
+      "original_raw_outputs_unchanged": true
+    },
+    {
+      "task_id": "P14",
+      "original_failed_run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_v1",
+      "new_run_id": "qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+      "scores_file": "results/scoring_corrections/qwen38_27b_p14_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "scores_sha256": "23f784a46d1ef5dee452abb36bdfbebf2c2690043fac68e21ef900785b34bac1",
+      "completed_at_pacific": "2026-10-19T01:27:00.628558-07:00",
+      "correction": "null-versus-empty provenance compatibility; original failed attempt retained",
+      "no_new_model_generation": true,
+      "original_raw_outputs_unchanged": true
+    },
+    {
+      "task_id": "P15",
+      "original_failed_run_id": "qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_v1",
+      "new_run_id": "qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1",
+      "protocol_variant": "QWEN_ZERO_SHOT_SPARSE_CONFIDENCE_DEEPFRI_RELEASED_TEST95_FULL_SEQUENCE__MIXED_BUDGET_4K16K_CONTINUATION__NULL_EQUIVALENCE_SCORING_RECOVERY_V1",
+      "scores_file": "results/scoring_corrections/qwen38_27b_p15_restored_replay_2026-10-16_mixed_4k16k_scoring_null_equivalence_v1/scores.json",
+      "scores_sha256": "6613f0b989967dc7fbd3825438fcbc467ee7002d17edac964a21309b0a7ac980",
+      "completed_at_pacific": "2026-10-19T01:26:49.340600-07:00",
+      "correction": "null-versus-empty provenance compatibility; original failed attempt retained",
+      "no_new_model_generation": true,
+      "original_raw_outputs_unchanged": true
+    }
+  ],
+  "pending_tasks": [
+    "P13"
+  ]
+}
