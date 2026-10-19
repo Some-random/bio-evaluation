@@ -2,7 +2,7 @@
 
 General-purpose baseline: **Qwen3.8-27B**, with text and image inputs.
 
-[Results and scoring qualifications](RESULTS_AT_A_GLANCE.md) · [Evaluation integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md)
+[Results and scoring qualifications](RESULTS_AT_A_GLANCE.md) · [Evaluation integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md) · [Action plan](EVALUATION_REPAIR_PLAN_2026-10-19.md)
 
 This catalog spans biological prediction, scientific evidence, protein design and three-dimensional structure. The map below shows **31 task families in 8 categories** without opening the detailed catalog. The counts are task families, not datasets or individual test questions.
 
