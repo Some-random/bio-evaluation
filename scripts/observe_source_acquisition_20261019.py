@@ -22,6 +22,7 @@ SOURCES = {
     'protst_transfer': 'evaluators/protst_parallel_transfer.json',
     'proteor1_checkpoints': 'proteor1_checkpoints/manifest.json',
     'proteor1_resume': 'proteor1_checkpoints/resume_status.json',
+    'mutadescribe_sources': 'mutadescribe_sources/schema_and_counts.json',
     'b06_input_review': 'b06_review/review_receipt.json',
     'b06_review_interruption': 'b06_review/review_interruption.json',
     'p18_preparation_interruption': 'p18_gfp_candidate/review_interruption.json',
@@ -43,6 +44,8 @@ FIELDS = (
     'new_bytes_completed', 'contiguous_original_prefix_bytes', 'measured_bytes_per_second',
     'all_files_verified', 'exact_trigger_case_unknown', 'completed_review_receipt_preserved',
     'new_inference_calls', 'remaining_independent_unreviewed_count',
+    'source_asset_count', 'evaluation_csv_file_count', 'total_downloaded_bytes',
+    'holds_lifted', 'raw_rows_displayed',
 )
 
 

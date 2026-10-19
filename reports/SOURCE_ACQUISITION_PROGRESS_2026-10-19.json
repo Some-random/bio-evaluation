@@ -23,32 +23,32 @@
     },
     {
       "asset": "ProteinGym substitutions",
-      "availability": "Official v1.3 archive downloaded; all217 assay CSV member CRCs passed.",
+      "availability": "Official v1.3 archive downloaded; all 217 assay CSV member CRCs passed.",
       "remaining": "Assay eligibility and release-specific prediction/scoring protocol remain unfinished; flagged assays remain held.",
       "task_ids": "P17"
     },
     {
       "asset": "LLaVA-Med images",
-      "availability": "All50 original images recovered, covering193questions, including31previously missing.",
+      "availability": "All 50 original images recovered, covering 193 questions, including 31 previously missing.",
       "remaining": "Native GPT-4-0314 judge access/execution is unresolved and outside the Luna-only comparison scope.",
       "task_ids": "V06"
     },
     {
       "asset": "ChartQA",
-      "availability": "All1509 official images verified against pinned Git blob hashes;2500questions covered.",
-      "remaining": "This is upstream ChartQA, not certification of the exact Ryze Table3 condition.",
+      "availability": "All 1,509 official images verified against pinned Git blob hashes; 2,500 questions covered.",
+      "remaining": "This is upstream ChartQA, not certification of the exact Ryze Table 3 condition.",
       "task_ids": "V07/upstream"
     },
     {
       "asset": "ArxivQA",
-      "availability": "Official100000-row JSON and7.95GB image archive publisher SHA256s verified; non-label mapping matches Ryze-Data.",
-      "remaining": "Exact paper Table3 roster/run correspondence remains unverified.",
+      "availability": "Official 100,000-row JSON and 7.95 GB image archive publisher SHA256s verified; non-label mapping matches Ryze-Data.",
+      "remaining": "Exact paper Table 3 roster/run correspondence remains unverified.",
       "task_ids": "V07/upstream"
     },
     {
       "asset": "Ryze-Data",
-      "availability": "New official author repository acquired:151 Git blobs at ea5c0de8fbb495abaab882f395f8e84d7e056019.",
-      "remaining": "Real loaders, prompts, downstream Qwen3-VL-8B QA and scorers are recovered; exact Table3 and ChartQA branch remain unresolved.",
+      "availability": "New official author repository acquired: 151 Git blobs at ea5c0de8fbb495abaab882f395f8e84d7e056019.",
+      "remaining": "Real loaders, prompts, downstream Qwen3-VL-8B QA and scorers are recovered; exact Table 3 and ChartQA branch remain unresolved.",
       "task_ids": "V07/source"
     },
     {
@@ -65,25 +65,25 @@
     },
     {
       "asset": "ProtST retrieval",
-      "availability": "Complete GO corpus acquired and publisher MD5 verified;8.53GB checkpoint final verification continues; pinned source files recovered.",
-      "remaining": "Full retained corpus inventory and a declared Qwen ranking interface/relevance evaluation remain unfinished.",
+      "availability": "Complete GO corpus and 8.53 GB checkpoint acquired. Corpus publisher MD5 and checkpoint publisher S3 multipart ETag match; pinned source files recovered.",
+      "remaining": "No independent publisher checkpoint SHA256 was available. Full retained corpus inventory and a declared Qwen ranking interface/relevance evaluation remain unfinished.",
       "task_ids": "P35"
     },
     {
       "asset": "Generation structure evaluator",
-      "availability": "OmegaFold checkpoint downloaded and locally hashed; pinned source recovered; final source-integrity receipt is authoritative.",
-      "remaining": "Native sampling/filter/clustering/folding settings and cohort remain unresolved.",
+      "availability": "OmegaFold checkpoint acquired; publisher S3 multipart ETag matched and local SHA256 recorded; pinned source recovered.",
+      "remaining": "No independent publisher checkpoint SHA256 was available. Native sampling/filter/clustering/folding settings and cohort remain unresolved.",
       "task_ids": "P37"
     },
     {
       "asset": "RAbD structural context",
-      "availability": "All60 upstream PDB coordinate files acquired from RCSB; gzip CRC/header identities checked and local hashes recorded.",
+      "availability": "All 60 upstream PDB coordinate files acquired from RCSB; gzip CRC/header identities checked and local hashes recorded.",
       "remaining": "These are current upstream coordinates, not a certified processed paper holdout. Exact masks, numbering and evaluation settings remain unresolved.",
       "task_ids": "P40"
     },
     {
       "asset": "Proteo-R1 checkpoints",
-      "availability": "Both public understanding/generation releases acquired:16files,9.87GB; checkpoint weights match publisher LFS SHA256s. Short transfers resumed from preserved prefixes.",
+      "availability": "Both public understanding/generation releases acquired: 16 files, 9.87 GB; checkpoint weights match publisher LFS SHA256s. Short transfers resumed from preserved prefixes.",
       "remaining": "Exact test holdout, preprocessing and complete runtime/scoring contract remain unresolved. No checkpoint loading.",
       "task_ids": "P41"
     },
@@ -95,13 +95,13 @@
     },
     {
       "asset": "PFArena",
-      "availability": "Current official code and metadata acquired. Exact dataset access probe still returns401.",
+      "availability": "Current official code and metadata acquired. Exact dataset access probe still returns 401.",
       "remaining": "Legitimate Hugging Face dataset access is needed; no gate terms were accepted or access controls bypassed.",
       "task_ids": "P19-P22"
     },
     {
       "asset": "MutaDescribe",
-      "availability": "Six official test/validation CSVs and45official/reproduction source files acquired and publisher-hash checked;35.4MBtotal. Test splits contain1248structural and1611temporal cases.",
+      "availability": "Six official test/validation CSVs and 45 official/reproduction source files acquired and publisher-hash checked; 35.4 MB total. Test splits contain 1,248 structural and 1,611 temporal cases.",
       "remaining": "Original interrupted source review and execution holds are not lifted by downloading files. Exact old trigger remains unknown; original two-stage interface differs from reproduction-provided context.",
       "task_ids": "P30-P32/source"
     }
@@ -110,6 +110,7 @@
     ".local/source_acquisition_2026-10-19/b06_review/review_interruption.json": "729068329203e9664ff2e28c21a1ff210c924b13a63e5ae1805de4ebf8652db2",
     ".local/source_acquisition_2026-10-19/b06_review/review_receipt.json": "5154930d53daf29bcef5a52d28327f3e47d65f567d17addbba49ccba3bcbae0c",
     ".local/source_acquisition_2026-10-19/evaluators/P38_missing_artifacts.json": "5c988a3575eef4d14819be8cf9895997d81630a72f065d7e53f01a8d2174d6ce",
+    ".local/source_acquisition_2026-10-19/evaluators/completion.json": "0dcbc3baf6ee2c9935c7e263aea8cb207f7a845e57a45a917b6f3b6b77db565d",
     ".local/source_acquisition_2026-10-19/evaluators/handoff_receipt.json": "586c1420f4992376deb5a0498b898008728b83f607732692733066694ace1115",
     ".local/source_acquisition_2026-10-19/mutadescribe_sources/protocol_recovery_report.json": "95481757976a25d17a11d69a4574aee823a630dc23141a5f05b4b41d2adac3a5",
     ".local/source_acquisition_2026-10-19/p18_gfp_candidate/review_interruption.json": "a987a12319a209443c302d9029c16c81e84ee200bf5259d44ad883523b5eabac",
@@ -118,7 +119,7 @@
     ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json": "0c740c4e04073918c754bf5418063f3087a55cbf52acf377669efd380bf89e3d",
     ".local/source_acquisition_2026-10-19/proteor1_checkpoints/resume_status.json": "ae55c2fc7e924f8bbb9739c22c541c195b009b219792b4f46b872e9c31967844",
     ".local/source_acquisition_2026-10-19/protocols/manifest.json": "20267254997b2260e208b08e3a4b30167d08cd22466a9f621b525b6c19352d7e",
-    ".local/source_acquisition_2026-10-19/status.json": "f6a28ecb52b98c4cf38c691169bcf5bc40034e086101218cbe7e48a064b886a4",
+    ".local/source_acquisition_2026-10-19/status.json": "8ef1e3782707177a4c7ba20f0f59d18f8460f53419802016ae13354f911ba191",
     ".local/source_acquisition_2026-10-19/structural_context/manifest.json": "3218c8fa5378cfa910f4f964f54f92c478149074fdd7b52584e0253e6e2417ab",
     ".local/source_acquisition_2026-10-19/vision/PUBLIC_SOURCE_SUMMARY.json": "bd8022714493fed865af91bacc61ad8270aa0b47bdc537202e619350fc1053b2",
     ".local/source_acquisition_2026-10-19/vision/arxivqa/completion.json": "74fc8c6e545f7f31df0d3cb42f890b6d20c6c15d23b41c4954ad3e7e94f66972",
@@ -126,7 +127,7 @@
     ".local/source_acquisition_2026-10-19/vision/v06/completion.json": "a9fb382389da18efdbe707e65b0d6c500cd18143de691d3f27101b94d423941f"
   },
   "full_catalog_complete": false,
-  "generated_at_pacific": "2026-10-19T15:51:39.760563-07:00",
+  "generated_at_pacific": "2026-10-19T15:54:46.526086-07:00",
   "model_weights_published": false,
   "new_inference_calls": 0,
   "new_training": false,
@@ -136,15 +137,15 @@
   "source_runtime": {
     "downloaded_assets_are_not_completed_benchmark_scores": true,
     "inference_calls_by_observer": 0,
-    "observer_pid": 2590651,
+    "observer_pid": 2599644,
     "poll_seconds": 60,
     "role": "read_only_source_acquisition_observer_not_benchmark_execution",
     "training_by_observer": false,
-    "updated_at_pacific": "2026-10-19T15:51:03.390064-07:00",
+    "updated_at_pacific": "2026-10-19T15:54:45.635780-07:00",
     "workers": [
       {
         "name": "prediction_datasets",
-        "source_age_seconds": 1133,
+        "source_age_seconds": 1355,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json",
         "source_sha256": "82475704e041303676d8b24a470fba657b9a8383cfee763b53f71b75668a9ab0",
@@ -176,7 +177,7 @@
       },
       {
         "name": "protocol_sources",
-        "source_age_seconds": 1227,
+        "source_age_seconds": 1449,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/protocols/manifest.json",
         "source_sha256": "20267254997b2260e208b08e3a4b30167d08cd22466a9f621b525b6c19352d7e",
@@ -194,7 +195,7 @@
       },
       {
         "name": "rabd_coordinates",
-        "source_age_seconds": 1068,
+        "source_age_seconds": 1290,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/structural_context/manifest.json",
         "source_sha256": "3218c8fa5378cfa910f4f964f54f92c478149074fdd7b52584e0253e6e2417ab",
@@ -209,7 +210,7 @@
       },
       {
         "name": "chartqa_images",
-        "source_age_seconds": 1004,
+        "source_age_seconds": 1226,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/chartqa/completion.json",
         "source_sha256": "9d25793eb9be5876e2de962d8619162a18dffb341848bea39c6acee514c0a378",
@@ -225,7 +226,7 @@
       },
       {
         "name": "llava_med_images",
-        "source_age_seconds": 1218,
+        "source_age_seconds": 1440,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/v06/completion.json",
         "source_sha256": "a9fb382389da18efdbe707e65b0d6c500cd18143de691d3f27101b94d423941f",
@@ -268,18 +269,20 @@
             "state": "complete_verified"
           },
           {
+            "actual_bytes": 8531223409,
             "bytes": 8531223409,
             "id": "P35_ProtST_ESM1b",
             "observed_transferred_bytes": 8531223409,
+            "publisher_digest_verified": true,
             "recent_measured_bytes_per_second": 0.0,
-            "state": "downloading_parallel_ranges"
+            "state": "complete_verified"
           },
           {
             "actual_bytes": 3181611124,
             "bytes": 3181611124,
             "id": "P37_OmegaFold_model1",
             "observed_transferred_bytes": 3181611124,
-            "publisher_digest_verified": false,
+            "publisher_digest_verified": true,
             "recent_measured_bytes_per_second": 0.0,
             "state": "complete_verified"
           },
@@ -294,41 +297,41 @@
           }
         ],
         "name": "evaluator_transfers",
-        "process_exists": true,
-        "source_age_seconds": 15,
+        "process_exists": false,
+        "source_age_seconds": 168,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/evaluators/status.json",
-        "source_sha256": "893be34db6829f31b6d50a49f649378c23af27d46fdf39c1992e4029e8691641",
+        "source_sha256": "69e7e3d0092c3cad95c4e32965dbf5dee9c1396fa5780a4d854ce64cc91ba777",
         "summary": {
-          "all_downloads_complete": false,
+          "all_downloads_complete": true,
           "pid": 2576907,
           "role": "source_acquisition_progress_only",
-          "updated_at_utc": "2026-10-19T22:50:46.846162+00:00"
+          "updated_at_utc": "2026-10-19T22:51:56.843824+00:00"
         }
       },
       {
         "name": "protst_transfer",
-        "process_exists": true,
-        "source_age_seconds": 242,
+        "process_exists": false,
+        "source_age_seconds": 213,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/evaluators/protst_parallel_transfer.json",
-        "source_sha256": "420ef6a0a44d7ccbdb78e7d22ac9cfd7416f2d167798048c6d9e054dd250cb23",
+        "source_sha256": "141e09e698324d58025bac0c6f7e745c447a2f42fe5c8c3e359c24bd6a1233c6",
         "summary": {
           "contiguous_original_prefix_bytes": 222470144,
           "expected_bytes": 8531223409,
-          "measured_bytes_per_second": 18670700.10022554,
+          "measured_bytes_per_second": 10801284.371365262,
           "new_bytes_completed": 8308753265,
           "new_inference_calls": 0,
           "pid": 2584279,
           "role": "resumable_same_official_object_range_acquisition",
-          "state": "downloading_parallel_ranges",
-          "updated_at_utc": "2026-10-19T22:47:00.694584+00:00"
+          "state": "complete_verified",
+          "updated_at_utc": "2026-10-19T22:51:12.902144+00:00"
         }
       },
       {
         "name": "proteor1_checkpoints",
         "process_exists": false,
-        "source_age_seconds": 93,
+        "source_age_seconds": 315,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json",
         "source_sha256": "0c740c4e04073918c754bf5418063f3087a55cbf52acf377669efd380bf89e3d",
@@ -349,7 +352,7 @@
       {
         "name": "proteor1_resume",
         "process_exists": false,
-        "source_age_seconds": 92,
+        "source_age_seconds": 315,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/proteor1_checkpoints/resume_status.json",
         "source_sha256": "ae55c2fc7e924f8bbb9739c22c541c195b009b219792b4f46b872e9c31967844",
@@ -364,8 +367,23 @@
         }
       },
       {
+        "name": "mutadescribe_sources",
+        "source_age_seconds": 469,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/mutadescribe_sources/schema_and_counts.json",
+        "source_sha256": "bcddbcf70094df59ce46da9305a09f90feff062fad8a2405b7cfbbfad7d0f9dd",
+        "summary": {
+          "evaluation_csv_file_count": 6,
+          "holds_lifted": false,
+          "raw_rows_displayed": false,
+          "source_asset_count": 45,
+          "status": "official_source_and_evaluation_files_acquired",
+          "total_downloaded_bytes": 35447492
+        }
+      },
+      {
         "name": "b06_input_review",
-        "source_age_seconds": 479,
+        "source_age_seconds": 702,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/b06_review/review_receipt.json",
         "source_sha256": "5154930d53daf29bcef5a52d28327f3e47d65f567d17addbba49ccba3bcbae0c",
@@ -381,7 +399,7 @@
       },
       {
         "name": "b06_review_interruption",
-        "source_age_seconds": 290,
+        "source_age_seconds": 513,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/b06_review/review_interruption.json",
         "source_sha256": "729068329203e9664ff2e28c21a1ff210c924b13a63e5ae1805de4ebf8652db2",
@@ -393,8 +411,20 @@
         }
       },
       {
+        "name": "p18_preparation_interruption",
+        "source_age_seconds": 188,
+        "source_available": true,
+        "source_path": ".local/source_acquisition_2026-10-19/p18_gfp_candidate/review_interruption.json",
+        "source_sha256": "a987a12319a209443c302d9029c16c81e84ee200bf5259d44ad883523b5eabac",
+        "summary": {
+          "exact_trigger_case_unknown": true,
+          "new_inference_calls": 0,
+          "stage": "source_preparation_interrupted_by_provider_biological_safety_check"
+        }
+      },
+      {
         "name": "arxivqa_assets",
-        "source_age_seconds": 475,
+        "source_age_seconds": 697,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/arxivqa/completion.json",
         "source_sha256": "74fc8c6e545f7f31df0d3cb42f890b6d20c6c15d23b41c4954ad3e7e94f66972",
@@ -405,29 +435,29 @@
       },
       {
         "name": "slidevqa_images",
-        "source_age_seconds": 15,
+        "source_age_seconds": 17,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/slidevqa/spooled_progress.json",
-        "source_sha256": "dd4bcd7f9c26bc3ff5ac5561967523c9514e21378c6d34b7391a1bf6abc2dca7",
+        "source_sha256": "dcdea0c27e28953a951552c6d5e49b61890ead48bfe7d29e4184be791e69ccb0",
         "summary": {
-          "failed_images": 120,
+          "failed_images": 200,
           "planned_images": 8000,
-          "updated_at_pacific": "2026-10-19T15:50:47.492225-07:00",
-          "verified_bytes": 187612354,
-          "verified_images": 2395
+          "updated_at_pacific": "2026-10-19T15:54:27.533274-07:00",
+          "verified_bytes": 252977548,
+          "verified_images": 3195
         }
       },
       {
         "name": "slidevqa_process",
         "process_exists": true,
-        "source_age_seconds": 13,
+        "source_age_seconds": 17,
         "source_available": true,
         "source_path": ".local/source_acquisition_2026-10-19/vision/slidevqa/spool_watcher_status.json",
-        "source_sha256": "fc652a0553c7aad6e7f0a3e87dc13d667516535bff713f8b80716197cf10298c",
+        "source_sha256": "7eca81007760c6a7dc38d6ba06ac8c67e06315c137700b4c303fa641f0002620",
         "summary": {
           "pid": 2584687,
           "stage": "watching",
-          "updated_at_pacific": "2026-10-19T15:50:50.038786-07:00"
+          "updated_at_pacific": "2026-10-19T15:54:28.772543-07:00"
         }
       }
     ]
