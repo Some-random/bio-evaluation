@@ -1,0 +1,44 @@
+{
+  "task_id": "P07",
+  "run_id": "qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1",
+  "protocol_variant": "QWEN_P07_FULL_SEQUENCE_NONTHINKING_FINITE_SCALAR_256_V1",
+  "scored_at_pacific": "2026-10-20T12:54:26.205675-07:00",
+  "config_sha256": "6df344fd403e63f5214fab20582cab2e751485dcfd53016aedc0b9d3069b4648",
+  "prediction_lock_sha256": "ec3d2afa15e432c48c6574856a1ce01e2a9fba4b1b39bf7705abb40efafdb5d1",
+  "reference_sha256": "6646734617ba389e58607a5b3d8e7c03340f8915b6330bdc9f082352ab34d8a3",
+  "native_scorer_sha256": "71701e33509f5f7b1ad041ce66ad1a28193ae8675e13eb37a22ed7c1fd38d3d0",
+  "scipy_version": "1.15.3",
+  "planned": 27217,
+  "terminal": 27217,
+  "metrics": {
+    "planned": 27217,
+    "parsed": 27217,
+    "missing": 0,
+    "invalid": 0,
+    "spearman": 0.029997720050903433,
+    "spearman_parsed_only": null,
+    "undefined_constant_or_insufficient": false,
+    "all_case_rule": "No invented prediction for failures. Full-test Spearman requires every output to parse; incomplete valid-only correlation is separately labeled."
+  },
+  "statuses": {
+    "response_saved": 27217
+  },
+  "counts": {
+    "responses_saved": 27217,
+    "delivery_passed": 27217,
+    "transport_errors": 0,
+    "http_errors": 0,
+    "response_errors": 0,
+    "truncations": 0,
+    "empty_finals": 0,
+    "refusals": 0,
+    "not_dispatched": 0
+  },
+  "primary_metric": "global native Spearman",
+  "primary_metric_value": 0.029997720050903433,
+  "full_benchmark_score_defined": true,
+  "subset_diagnostic_is_full_score": false,
+  "failures_retried_or_imputed": false,
+  "historical_run_changed": false,
+  "meaning": "Experimental fluorescence outcome agreement for a separately named zero-shot full-sequence Qwen nonthinking scalar condition; no trained head, mechanistic or contamination-free claim"
+}

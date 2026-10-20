@@ -1,0 +1,34 @@
+{
+  "configuration_sha256": "e1ef7893a8b366f75d0c39782b6f10d35c19c054f1cfb365b359a6e087a6dc3f",
+  "empty_finals": 0,
+  "historical_input_sha256": "068d4d951f3e6e220514cabdcef151afcf82108d635ddbe82a0ce9b18ceb0f4d",
+  "historical_results_unchanged": true,
+  "interpretation": "Biological outcome prediction on the12851-row released PyTorch stability test. Native experimental scale and Spearman preserved; generation delivery adaptation and training regime differ from paper specialist heads. Mechanism/rationale and contamination remain unassessed.",
+  "metrics": {
+    "aggregation": "one global average-tie Spearman; no shard-correlation averaging",
+    "all_case_policy": "Every original planned case retained. No fabricated prediction fills invalid answers; incomplete parsed-only correlation is separate.",
+    "invalid_or_missing": 0,
+    "planned": 12851,
+    "prediction_transform": "none; no sign flip",
+    "spearman": 0.22698189017768255,
+    "spearman_parsed_only": null,
+    "target_transform": "none",
+    "undefined_constant_or_insufficient": false,
+    "valid_predictions": 12851
+  },
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "new_model_calls_by_scorer": 0,
+  "prediction_lock_sha256": "c50d588eaf87b407f6a14e8bf133b8f8dbc4fad42db2ded9a360de75f19c38cc",
+  "protocol_variant": "QWEN_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH_NONTHINKING_STRUCTURED_SCALAR_20261020_V1",
+  "reference_sha256": "bb6bc3a78b14ad195ebb2df56f968963d08006834130e1755152aa2824853427",
+  "run_id": "qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1",
+  "scored_at_pacific": "2026-10-20T13:05:00.562133-07:00",
+  "source_archive_sha256": "0580bc854e13701431dbbaf942756b8611598e3422599104bc7b0a151b6ec38f",
+  "statuses": {
+    "response_saved": 12851
+  },
+  "task_id": "P08",
+  "transport_or_response_errors": 0,
+  "truncations": 0
+}

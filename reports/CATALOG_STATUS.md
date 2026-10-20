@@ -1,24 +1,26 @@
 # Full retained catalog status
 
-Observed **2026-10-20T12:38:20.239977-07:00** (America/Los_Angeles). Exactly **57 settings**, one row each.
+Observed **2026-10-20T13:34:51.795431-07:00** (America/Los_Angeles). Exactly **57 settings**, one row each.
 
 Done means a defined score for the declared evaluated condition. It does not imply matched-paper replication, complete original-paper scope, or good performance. Saved responses alone do not count as done.
 
 | Status | Count |
 |---|---:|
-| Done: defined score for the declared evaluated condition | 26 |
+| Done: defined score for the declared evaluated condition | 28 |
 | Running generation | 3 |
 | Queued for generation in the frozen runtime | 1 |
-| Doable agent work not finished | 17 |
+| Doable agent work not finished | 15 |
 | Held at the user's request | 3 |
 | Biological/provider interruption or restriction | 7 |
 | Whole setting established impossible | 0 |
 
-Doable agent work includes 15 implementation review preparation, 2 offline scoring repair. These tasks are not all in a live generation queue.
+Doable agent work includes 15 implementation review preparation. These tasks are not all in a live generation queue.
 
-**Stale aggregate metadata:** the old controller record is from 2026-10-20T02:42:35.961935-07:00. Direct per-task progress/completion/score evidence below takes precedence.
+**Dated runtime health observation (2026-10-20T13:15:23-07:00):** HTTP model/health checks timed out while multiple DFS readers and the server stalled in filesystem I/O. GPU activity did not establish healthy HTTP delivery. [Observation details](CATALOG_RUNTIME_IO_2026-10-20.json); current health requires a fresh check.
 
-The existing controller was restarted under supervision around **12:31 PM PDT** after an `Errno 116` stale-file-handle crash. Its supervisor is fresh at 2026-10-20T12:38:05.698999-07:00; pool heartbeat fresh: **True**. This does not create a new protocol or extra inference scope.
+Current successor runtime job: 243499. Old predecessor drain exits remain historical evidence.
+
+The existing controller was restarted under supervision around **12:31 PM PDT** after an `Errno 116` stale-file-handle crash. Its supervisor is fresh at 2026-10-20T13:34:46.688045-07:00; pool heartbeat fresh: **True**. This does not create a new protocol or extra inference scope.
 
 Exceptions for training and replacement judges remain user-held. Biological/provider holds are separate and cannot be cleared by a simple continuation instruction. Exact native unavailability is tracked separately from whether an available adaptation can proceed.
 
@@ -40,15 +42,15 @@ Exceptions for training and replacement judges remain user-held. Biological/prov
 | P04 | Beta-lactamase activity — PEER | Agent work | — | Inventory the acquired 520-case test LMDB, review assay eligibility, isolate targets and freeze a scalar delivery/scoring contract. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
 | P05 | AAV variant fitness — FLIP | Agent work | — | Review the available FLIP AAV assay scope, isolate test inputs/targets and freeze scalar delivery and scoring. | [catalog_extended_preparation.json](../reports/catalog_extended_preparation.json) |
 | P06 | Thermostability — FLIP/Meltome | Done | 1,366/1,366 | Preserve sealed predictions and score; reconcile/publicly publish this tracker and report metadata. | [scores.json](../results/runs/qwen38_27b_p06_full_test_nonthinking_regex256_2026-10-20_v1/scores.json) |
-| P07 | GFP fluorescence — TAPE | Agent work: scoring repair | 27,217/27,217 | Complete once-only offline scoring against the sealed prediction lock, preserving failed attempt evidence; no regeneration. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
-| P08 | Protein stability regression — TAPE | Agent work: scoring repair | 12,851/12,851 | Complete once-only offline scoring against the sealed prediction lock, preserving failed attempt evidence; no regeneration. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
+| P07 | GFP fluorescence — TAPE | Done | 27,217/27,217 | Preserve sealed predictions and score; reconcile/publicly publish this tracker and report metadata. | [scores.json](../results/runs/qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1/scores.json) |
+| P08 | Protein stability regression — TAPE | Done | 12,851/12,851 | Preserve sealed predictions and score; reconcile/publicly publish this tracker and report metadata. | [scores.json](../results/runs/qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1/scores.json) |
 | P09 | Stability classification — NatureLM/PEER | Done | — | Preserve sealed predictions and score; reconcile/publicly publish this tracker and report metadata. | [scores.json](../results/runs/qwen38_27b_p09_scireason_gt1_from_p08_2026-10-20_v1/scores.json) |
 | P10 | Human protein–protein interaction — PEER | Done | — | Preserve existing scores and qualifications; no new generation is pending for this setting. | [EVALUATION_DECISION_TABLE.json](../reports/EVALUATION_DECISION_TABLE.json) |
 | P11 | Yeast protein–protein interaction — PEER | Done | — | Preserve existing scores and qualifications; no new generation is pending for this setting. | [EVALUATION_DECISION_TABLE.json](../reports/EVALUATION_DECISION_TABLE.json) |
-| P12 | Enzyme Commission labels — DeepFRI split | Running | 945/1,919 | Continue the existing one-attempt cohort, seal every outcome, then run native offline scoring after closure. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
-| P13 | GO biological process — DeepFRI split | Running | 252/3,416 | Continue the existing one-attempt cohort, seal every outcome, then run native offline scoring after closure. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
-| P14 | GO molecular function — DeepFRI split | Running | 788/3,416 | Continue the existing one-attempt cohort, seal every outcome, then run native offline scoring after closure. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
-| P15 | GO cellular component — DeepFRI split | Queued | Unknown/3,416 | Existing runtime starts this grant when a client slot opens; no new permission required. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
+| P12 | Enzyme Commission labels — DeepFRI split | Running | 984/1,919 | Continue the existing one-attempt cohort, seal every outcome, then run native offline scoring after closure. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
+| P13 | GO biological process — DeepFRI split | Running | 272/3,416 | Continue the existing one-attempt cohort, seal every outcome, then run native offline scoring after closure. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
+| P14 | GO molecular function — DeepFRI split | Running | 834/3,416 | Continue the existing one-attempt cohort, seal every outcome, then run native offline scoring after closure. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
+| P15 | GO cellular component — DeepFRI split | Queued | 0/3,416 | Existing runtime starts this grant when a client slot opens; no new permission required. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
 | P16 | Reaction class — zero-/few-shot | Done | — | Preserve existing scores and qualifications; no new generation is pending for this setting. | [EVALUATION_DECISION_TABLE.json](../reports/EVALUATION_DECISION_TABLE.json) |
 | P17 | ProteinGym DMS substitution benchmark | Agent work | — | Review permissible assay scopes in the acquired ProteinGym release and implement a version-matched, full-denominator score adapter. | [CATALOG_STATUS.json](../reports/CATALOG_STATUS.json) |
 | P18 | PG-LLM / ProteinGym-LLM ranking | Provider held | — | Preserve completed evidence and holds; do not retry, rephrase or reroute the interrupted/flagged action. Continue only separate permitted offline metadata/scoring work. | [AGENTS.md](../AGENTS.md) |
@@ -92,13 +94,11 @@ Exceptions for training and replacement judges remain user-held. Biological/prov
 | B08 | A score for the declared evaluated scope does not establish matched-paper reproduction. reviewed_public_subset Separate uniform-16K 33-case proposal remains proposed/not dispatched; it is not an active remaining queue. |
 | P04 | Source archive acquired; assay eligibility and runtime preparation remain unfinished. Already authorized agent work; an internal exact frozen grant is an engineering gate, not another broad user permission request. |
 | P05 | Released inputs available; eligibility review and execution preparation unfinished. Already authorized agent work; an internal exact frozen grant is an engineering gate, not another broad user permission request. Primary source has no embedded timestamp; this read verifies availability, not a fresh execution heartbeat. |
-| P07 | Released full test and native correlation formula available; new nonthinking constrained-scalar condition is separate from historical generation.  |
-| P08 | Released full test and native correlation formula available; new nonthinking constrained-scalar condition is separate from historical generation.  |
 | P09 | Original NatureLM binary conversion/test labels unavailable in inspected author releases. Completed declared >1.0 rule-derived adaptation reuses sealed P08 predictions. 53.28768189245972% accuracy (6848/12851); no extra model generation; not native NatureLM label certification. |
-| P12 | Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition.  |
-| P13 | Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition.  |
-| P14 | Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition.  |
-| P15 | Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition. No progress is not proof of zero requests. This queue classification uses the frozen grant and absence of a started record, not filename response counts. Primary source has no embedded timestamp; this read verifies availability, not a fresh execution heartbeat. |
+| P12 | Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition. Current verified successor job 243499; predecessor drain exits remain historical operational evidence. |
+| P13 | Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition. Current verified successor job 243499; predecessor drain exits remain historical operational evidence. |
+| P14 | Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition. Current verified successor job 243499; predecessor drain exits remain historical operational evidence. |
+| P15 | Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition. Current verified successor job 243499; predecessor drain exits remain historical operational evidence. No progress is not proof of zero requests. This queue classification uses the frozen grant and absence of a started record, not filename response counts. |
 | P17 | 217 released assay CSVs acquired; reviewed execution scope remains unfinished. Already authorized agent work; an internal exact frozen grant is an engineering gate, not another broad user permission request. |
 | P18 | Source availability is separate from this execution/review hold; no claim that the whole source corpus is prohibited or missing. Primary source has no embedded timestamp; this read verifies availability, not a fresh execution heartbeat. |
 | P19 | Required sources available; full coverage limited by unfinished review and existing case holds. Already authorized agent work; an internal exact frozen grant is an engineering gate, not another broad user permission request. |

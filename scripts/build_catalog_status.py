@@ -45,6 +45,7 @@ USER_HOLDS = {
     "P44": "Replacement external judge remains held. Prepare available evidence/rubric metadata; a scoring/judge choice requires a user decision.",
 }
 PROVIDER_HOLDS = {"P18", "B06", "P20", "P30", "P31", "P32", "P36"}
+CONTINUATION_MANIFEST_SHA256 = "64b1f81dfa7a138458905736545ecb93f592c7cd85dc8528b6621ca125b260d4"
 
 
 def load(path: Path):
@@ -78,6 +79,54 @@ def score_defined(data):
     if "auprc@micro" in metrics or "f1_max" in metrics:
         return all(isinstance(metrics.get(key), (int, float)) and not isinstance(metrics.get(key), bool) and math.isfinite(metrics[key]) for key in ("auprc@micro", "f1_max"))
     return any(isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value) for value in values)
+
+
+def task_queue_evidence(root, task, direct, now):
+    """Prefer verified successor queue records; preserve old operational exits."""
+    original = root / ".local/catalog_execution_2026-10-20/runtime/queue"
+    result = {"grant": original / f"10_{task}_benchmark.grant.json",
+              "started": original / f"10_{task}_benchmark.started.json",
+              "finished": original / f"10_{task}_benchmark.finished.json",
+              "continuation": False, "evidence_paths": []}
+    base = root / ".local/catalog_execution_2026-10-20/continuation_v1"
+    runtime = base / "runtime"
+    stem = f"{task}_benchmark_continuation1"
+    grant_path = runtime / "queue" / (stem + ".grant.json")
+    paths = {"manifest": base / "manifest.json", "submission": base / "submission_receipt.json",
+             "pool": runtime / "status.json", "identity": runtime / "server_identity.json",
+             "predecessor": runtime / "predecessor_terminal_receipt.json",
+             "boundary": runtime / f"{task}_boundary.json", "grant": grant_path}
+    try:
+        if not all(path.is_file() and not path.is_symlink() for path in paths.values()):
+            return result
+        docs = {key: load(path) for key, path in paths.items()}
+        manifest, pool, identity, grant = (docs[key] for key in ("manifest", "pool", "identity", "grant"))
+        if hashlib.sha256(paths["manifest"].read_bytes()).hexdigest() != CONTINUATION_MANIFEST_SHA256:
+            return result
+        job = str(docs["submission"]["job_id"])
+        age = age_seconds(timestamp(pool), now)
+        if (task not in manifest["task_ids"] or pool.get("stage") != "serving_task_queue"
+                or age is None or not -60 <= age <= 180
+                or str(pool.get("job_id")) != job or str(identity.get("job_id")) != job
+                or str(docs["predecessor"].get("successor_job_id")) != job
+                or str(docs["predecessor"].get("original_job_id")) != str(manifest["original_job_id"])
+                or docs["predecessor"].get("original_job_state") not in {
+                    "COMPLETED", "FAILED", "CANCELLED", "TIMEOUT", "PREEMPTED", "NODE_FAIL"}
+                or grant.get("task_id") != task or grant.get("authorized") is not True
+                or grant.get("config_sha256") != docs["boundary"].get("config_sha256")
+                or grant.get("continuation_boundary_sha256") != hashlib.sha256(paths["boundary"].read_bytes()).hexdigest()
+                or grant.get("server_identity_sha256") != hashlib.sha256(paths["identity"].read_bytes()).hexdigest()):
+            return result
+        if direct and (direct.get("run_id") != grant.get("run_id")
+                       or direct.get("config_sha256") != grant.get("config_sha256")):
+            return result
+        result.update(grant=grant_path, started=grant_path.with_name(stem + ".started.json"),
+            finished=grant_path.with_name(stem + ".finished.json"), continuation=True,
+            job_id=job, active_client=stem in pool.get("active_clients", []),
+            evidence_paths=[str(path.relative_to(root)) for path in paths.values()])
+    except (OSError, ValueError, TypeError, KeyError):
+        pass
+    return result
 
 
 def build(root: Path):
@@ -215,16 +264,20 @@ def build(root: Path):
             row.update(category="agent_work", substatus="offline_scoring_repair", status="Complete new generation sealed; defined score still needs an offline scoring repair.", next_action="Complete once-only offline scoring against the sealed prediction lock, preserving failed attempt evidence; no regeneration.")
             row["exact_native_condition_availability"] = "Released full test and native correlation formula available; new nonthinking constrained-scalar condition is separate from historical generation."
         elif task in {"P12", "P13", "P14", "P15"}:
-            grant = queue / f"10_{task}_benchmark.grant.json"
-            started = queue / f"10_{task}_benchmark.started.json"
-            finished = queue / f"10_{task}_benchmark.finished.json"
+            selected = task_queue_evidence(root, task, direct, now)
+            grant, started, finished = (selected[key] for key in ("grant", "started", "finished"))
+            row["evidence_paths"].extend(selected["evidence_paths"])
+            if selected["continuation"]:
+                row["scope_notes"].append(f"Current verified successor job {selected['job_id']}; predecessor drain exits remain historical operational evidence.")
+                if row["runtime"] is not None:
+                    row["runtime"]["active_job_id"] = selected["job_id"]
             row["exact_native_condition_availability"] = "Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition."
             progress_fresh = direct and age_seconds(timestamp(direct), now) is not None and age_seconds(timestamp(direct), now) <= 600
-            pool_client_active = pool_fresh and f"10_{task}_benchmark" in pool.get("active_clients", [])
+            pool_client_active = selected["active_client"] if selected["continuation"] else pool_fresh and f"10_{task}_benchmark" in pool.get("active_clients", [])
             if direct and not completion and started.exists() and not finished.exists() and (progress_fresh or pool_client_active):
                 row.update(category="running", substatus="generation_live_evidence", status="Direct generation progress and frozen started grant; recent progress or fresh pool active-client evidence confirms activity.", next_action="Continue the existing one-attempt cohort, seal every outcome, then run native offline scoring after closure.")
                 row["evidence_paths"].append(relative(started))
-                if pool_client_active:
+                if pool_client_active and not selected["continuation"]:
                     row["evidence_paths"].append(relative(pool_path))
             elif grant.exists() and not started.exists():
                 row.update(category="queued", substatus="frozen_grant_not_started", status="Frozen authorized runtime grant queued; no started record or progress observed.", next_action="Existing runtime starts this grant when a client slot opens; no new permission required.")
@@ -280,6 +333,15 @@ def build(root: Path):
     supervisor_path = root / ".local/catalog_execution_2026-10-20/control/driver_supervisor_status.json"
     supervisor = load(supervisor_path) or {}
     supervisor_age = age_seconds(timestamp(supervisor), now)
+    active_jobs = sorted({row["runtime"]["active_job_id"] for row in rows
+                          if row.get("runtime") and row["runtime"].get("active_job_id")})
+    if active_jobs:
+        pool_path = root / ".local/catalog_execution_2026-10-20/continuation_v1/runtime/status.json"
+        pool = load(pool_path) or {}
+        pool_age = age_seconds(timestamp(pool), now)
+        pool_fresh = pool_age is not None and -60 <= pool_age <= 180 and pool.get("stage") == "serving_task_queue"
+    health_path = root / "reports/CATALOG_RUNTIME_IO_2026-10-20.json"
+    operational_health = load(health_path)
     result = {
         "schema_version": 1,
         "generated_at_pacific": now.isoformat(),
@@ -304,6 +366,8 @@ def build(root: Path):
             "controller_age_seconds": age_seconds(controller_time, now),
             "controller_is_live_evidence_only_if_recent": age_seconds(controller_time, now) is not None and age_seconds(controller_time, now) <= 180,
             "pool_recorded_at_pacific": timestamp(pool),
+            "pool_source_path": str(pool_path.relative_to(root)),
+            "active_successor_job_ids": active_jobs,
             "pool_is_fresh": pool_fresh,
             "pool_active_clients": pool.get("active_clients"),
             "supervisor_recorded_at_pacific": timestamp(supervisor),
@@ -314,6 +378,7 @@ def build(root: Path):
             "note": "This tracker reads direct task evidence and does not promote the old controller or planning registry to live execution.",
         },
         "rows": rows,
+        "operational_health_observation": operational_health,
         "evidence": list(evidence_records.values()),
         "validation": {"exactly_57_rows": True, "no_duplicate_setting_ids": True, "exact_retained_id_set": True, "categories_mutually_exclusive": True, "counts_sum_to_57": True},
     }
@@ -330,6 +395,11 @@ def markdown(data):
     breakdown = data["agent_work_breakdown"]
     if breakdown:
         lines += ["", "Doable agent work includes " + ", ".join(f"{value} {key.replace('_', ' ')}" for key, value in breakdown.items()) + ". These tasks are not all in a live generation queue."]
+    health = data.get("operational_health_observation")
+    if health:
+        lines += ["", f"**Dated runtime health observation ({health['observed_at_pacific']}):** HTTP model/health checks timed out while multiple DFS readers and the server stalled in filesystem I/O. GPU activity did not establish healthy HTTP delivery. [Observation details](CATALOG_RUNTIME_IO_2026-10-20.json); current health requires a fresh check."]
+    if data["freshness"].get("active_successor_job_ids"):
+        lines += ["", "Current successor runtime job: " + ", ".join(data["freshness"]["active_successor_job_ids"]) + ". Old predecessor drain exits remain historical evidence."]
     if not data["freshness"]["controller_is_live_evidence_only_if_recent"]:
         lines += ["", f"**Stale aggregate metadata:** the old controller record is from {data['freshness']['controller_recorded_at_pacific']}. Direct per-task progress/completion/score evidence below takes precedence."]
     if data["freshness"]["supervisor_is_fresh"]:

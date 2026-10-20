@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-20T12:37:40.015738-07:00",
+  "generated_at_pacific": "2026-10-20T13:34:29.492465-07:00",
   "historical_artifacts_modified": false,
   "new_inference_calls_by_exporter": 0,
   "completed_rows": [
@@ -49,6 +49,100 @@
       "trajectory_archive": {
         "path": "results/trajectory_archives/qwen38_27b_p06_full_test_nonthinking_regex256_2026-10-20_v1.tar.gz",
         "sha256": "9d281dec6c6cc4c59c1727ef519dcbf543d0dd9e2c403000f724f26fcbce5dbe"
+      }
+    },
+    {
+      "task_id": "P07",
+      "run_id": "qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1",
+      "protocol_variant": "QWEN_P07_FULL_SEQUENCE_NONTHINKING_FINITE_SCALAR_256_V1",
+      "protocol_description": "nonthinking constrained scalar, 256 output tokens",
+      "new_complete_generation": true,
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "counts": {
+        "planned": 27217,
+        "completed": 27217,
+        "parsed": 27217,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
+      "finish_reasons": {
+        "length": 0,
+        "stop": 27217
+      },
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "max_tokens": 256,
+        "n": 1,
+        "seed": 42,
+        "structured_outputs": {
+          "regex": "[+-]?[0-9]{1,12}(\\.[0-9]{1,12})?([eE][+-]?[0-9]{1,2})?"
+        },
+        "temperature": 1.0,
+        "top_k": 20,
+        "top_p": 0.95
+      },
+      "metrics": {
+        "spearman": 0.029997720050903433
+      },
+      "source_scores": "results/runs/qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1/scores.json",
+      "scores_sha256": "f79fdcb9a294eb09e09cf8fe4642e04f7eb413f260cf22661054d596dc1416e3",
+      "prediction_lock_sha256": "ec3d2afa15e432c48c6574856a1ce01e2a9fba4b1b39bf7705abb40efafdb5d1",
+      "config_sha256": "6df344fd403e63f5214fab20582cab2e751485dcfd53016aedc0b9d3069b4648",
+      "case_scope": "complete previously reviewed original test cohort; new independent condition",
+      "interpretation": "Zero-shot full-sequence annotation adaptation; native metric formulas preserved. No matched trained-head or PDB/crop reproduction claim.",
+      "trajectory_archive": {
+        "path": "results/trajectory_archives/qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1.tar.gz",
+        "sha256": "5ca882a6a51b3eb3bce067ba96c6f41e26134dd127afd65f491a62b6387e4dfc"
+      }
+    },
+    {
+      "task_id": "P08",
+      "run_id": "qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1",
+      "protocol_variant": "QWEN_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH_NONTHINKING_STRUCTURED_SCALAR_20261020_V1",
+      "protocol_description": "nonthinking constrained scalar, 256 output tokens",
+      "new_complete_generation": true,
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "counts": {
+        "planned": 12851,
+        "completed": 12851,
+        "parsed": 12851,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
+      "finish_reasons": {
+        "length": 0,
+        "stop": 12851
+      },
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "max_tokens": 256,
+        "n": 1,
+        "seed": 42,
+        "structured_outputs": {
+          "regex": "[+-]?[0-9]{1,12}(\\.[0-9]{1,12})?([eE][+-]?[0-9]{1,2})?"
+        },
+        "temperature": 1.0,
+        "top_k": 20,
+        "top_p": 0.95
+      },
+      "metrics": {
+        "spearman": 0.22698189017768255
+      },
+      "source_scores": "results/runs/qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1/scores.json",
+      "scores_sha256": "83ff575019fb3f5305b6b9859edc17e7a4ada3787f3de23e5f7fbddc764da006",
+      "prediction_lock_sha256": "c50d588eaf87b407f6a14e8bf133b8f8dbc4fad42db2ded9a360de75f19c38cc",
+      "config_sha256": "e1ef7893a8b366f75d0c39782b6f10d35c19c054f1cfb365b359a6e087a6dc3f",
+      "case_scope": "complete previously reviewed original test cohort; new independent condition",
+      "interpretation": "Biological outcome prediction on the12851-row released PyTorch stability test. Native experimental scale and Spearman preserved; generation delivery adaptation and training regime differ from paper specialist heads. Mechanism/rationale and contamination remain unassessed.",
+      "trajectory_archive": {
+        "path": "results/trajectory_archives/qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1.tar.gz",
+        "sha256": "ebae0a056d6d9fdd0eb280560a6b8ad819e7f45148978a3768b51107dddd917c"
       }
     }
   ],

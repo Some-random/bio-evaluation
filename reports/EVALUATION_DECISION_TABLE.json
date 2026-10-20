@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-20T12:38:16.651579-07:00",
+  "generated_at_pacific": "2026-10-20T13:34:41.721473-07:00",
   "score_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
   "catalog_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
-  "new_generation_score_snapshot_at": "2026-10-20T12:37:40.015738-07:00",
+  "new_generation_score_snapshot_at": "2026-10-20T13:34:29.492465-07:00",
   "retained_setting_count": 57,
   "retained_setting_ids": [
     "B01",
@@ -73,7 +73,7 @@
     "P28",
     "P29"
   ],
-  "row_count": 69,
+  "row_count": 71,
   "rows": [
     {
       "task_id": "P01",
@@ -403,6 +403,58 @@
       "task": "GFP fluorescence — TAPE",
       "category": "Protein properties, interactions and developability",
       "dataset": "GFP fluorescence — TAPE",
+      "condition": "Native declared score; new complete generation; nonthinking constrained scalar, 256 output tokens",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1",
+      "result_type": "new_complete_generation",
+      "protocol_variant": "QWEN_P07_FULL_SEQUENCE_NONTHINKING_FINITE_SCALAR_256_V1",
+      "input_protocol": "Protein sequence → fluorescence scalar; zero-shot",
+      "output_budget": "256",
+      "usable_answer_rate": {
+        "value": 1.0,
+        "display": "27,217/27,217 (100.0%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
+      },
+      "native_score": {
+        "spearman": 0.029997720050903433
+      },
+      "diagnostic_score": null,
+      "score_display": "spearman 0.0300",
+      "evidence": {
+        "category": "Measured, new delivery condition",
+        "detail": "Zero-shot full-sequence annotation adaptation; native metric formulas preserved. No matched trained-head or PDB/crop reproduction claim. Historical generations and scores remain separate."
+      },
+      "counts": {
+        "planned": 27217,
+        "completed": 27217,
+        "parsed": 27217,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
+      "finish_reasons": {
+        "length": 0,
+        "stop": 27217
+      },
+      "source_scores": "results/runs/qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1/scores.json",
+      "source_score_sha256": "f79fdcb9a294eb09e09cf8fe4642e04f7eb413f260cf22661054d596dc1416e3",
+      "source_row_category": "completed_rows",
+      "source_protocol_url": "https://github.com/songlab-cal/tape",
+      "case_scope": "complete previously reviewed original test cohort; new independent condition",
+      "native_metrics_recomputed": false,
+      "prediction_lock_sha256": "ec3d2afa15e432c48c6574856a1ce01e2a9fba4b1b39bf7705abb40efafdb5d1",
+      "config_sha256": "6df344fd403e63f5214fab20582cab2e751485dcfd53016aedc0b9d3069b4648",
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "trajectory_archive": {
+        "path": "results/trajectory_archives/qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1.tar.gz",
+        "sha256": "5ca882a6a51b3eb3bce067ba96c6f41e26134dd127afd65f491a62b6387e4dfc"
+      }
+    },
+    {
+      "task_id": "P07",
+      "task": "GFP fluorescence — TAPE",
+      "category": "Protein properties, interactions and developability",
+      "dataset": "GFP fluorescence — TAPE",
       "condition": "Native declared score; mixed 4K/16K continuation",
       "condition_kind": "native",
       "run_id": "qwen38_27b_p07_full_test_slurm_2026-10-16_mixed_4k16k_scoring_v1",
@@ -449,6 +501,58 @@
       "source_protocol_url": "https://github.com/songlab-cal/tape",
       "case_scope": "full_frozen_reviewed_released_test",
       "native_metrics_recomputed": false
+    },
+    {
+      "task_id": "P08",
+      "task": "Protein stability regression — TAPE",
+      "category": "Protein properties, interactions and developability",
+      "dataset": "Protein stability regression — TAPE",
+      "condition": "Native declared score; new complete generation; nonthinking constrained scalar, 256 output tokens",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1",
+      "result_type": "new_complete_generation",
+      "protocol_variant": "QWEN_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH_NONTHINKING_STRUCTURED_SCALAR_20261020_V1",
+      "input_protocol": "Protein sequence → stability scalar; zero-shot",
+      "output_budget": "256",
+      "usable_answer_rate": {
+        "value": 1.0,
+        "display": "12,851/12,851 (100.0%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
+      },
+      "native_score": {
+        "spearman": 0.22698189017768255
+      },
+      "diagnostic_score": null,
+      "score_display": "spearman 0.2270",
+      "evidence": {
+        "category": "Measured, new delivery condition",
+        "detail": "Biological outcome prediction on the12851-row released PyTorch stability test. Native experimental scale and Spearman preserved; generation delivery adaptation and training regime differ from paper specialist heads. Mechanism/rationale and contamination remain unassessed. Historical generations and scores remain separate."
+      },
+      "counts": {
+        "planned": 12851,
+        "completed": 12851,
+        "parsed": 12851,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
+      "finish_reasons": {
+        "length": 0,
+        "stop": 12851
+      },
+      "source_scores": "results/runs/qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1/scores.json",
+      "source_score_sha256": "83ff575019fb3f5305b6b9859edc17e7a4ada3787f3de23e5f7fbddc764da006",
+      "source_row_category": "completed_rows",
+      "source_protocol_url": "https://github.com/songlab-cal/tape",
+      "case_scope": "complete previously reviewed original test cohort; new independent condition",
+      "native_metrics_recomputed": false,
+      "prediction_lock_sha256": "c50d588eaf87b407f6a14e8bf133b8f8dbc4fad42db2ded9a360de75f19c38cc",
+      "config_sha256": "e1ef7893a8b366f75d0c39782b6f10d35c19c054f1cfb365b359a6e087a6dc3f",
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "trajectory_archive": {
+        "path": "results/trajectory_archives/qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1.tar.gz",
+        "sha256": "ebae0a056d6d9fdd0eb280560a6b8ad819e7f45148978a3768b51107dddd917c"
+      }
     },
     {
       "task_id": "P08",
@@ -3291,7 +3395,7 @@
     "reports/P36_WHITESPACE_DIAGNOSTIC_2026-10-19.json": "aba51168710d868a45fb624d3ba0d6963a2fefe276dd323da7e645e845e2a491",
     "reports/P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.json": "d90d53cb0882b6e181734037b017f67c6253503ad32e719b570e945ea88c0e4d",
     "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json": "32e201698766dc1ec75b734d766cb4cffb42a062abfcfe8f265d0e5990797572",
-    "reports/CATALOG_NEW_SCORES_2026-10-20.json": "d59f14eea4482be4afb6eef461b9747e2734d4d701a2f0f22f20f5f49ec95cb3"
+    "reports/CATALOG_NEW_SCORES_2026-10-20.json": "6c6a316d82eeb0397c6f414090e2978eb568444a5a641e58e3e8461b018b50fe"
   },
   "recovered_subset_setting_ids": [
     "P36"
