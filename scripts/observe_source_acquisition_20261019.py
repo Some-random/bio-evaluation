@@ -37,6 +37,8 @@ SOURCES = {
     'round2_structural_assets': '../source_recovery_round2_2026-10-19/structural/manifest.json',
     'round2_rabd_imgt': '../source_recovery_round2_2026-10-19/rabd_imgt/status.json',
     'round2_ryze_protocol': '../source_recovery_round2_2026-10-19/ryze_protocol/status.json',
+    'round2_pfarena_native_preflight': '../source_recovery_round2_2026-10-19/pfarena/native_preflight/status.json',
+    'round2_slidevqa_native_preflight': '../source_recovery_round2_2026-10-19/slidevqa/native_preflight/source_preflight.json',
 }
 FIELDS = (
     'stage', 'state', 'status', 'role', 'pid', 'updated_at_pacific', 'finished_at_pacific',
@@ -77,6 +79,19 @@ FIELDS = (
     'authenticated_dataset_complete', 'authenticated_dataset_verified_files',
     'authenticated_dataset_planned_files', 'authenticated_dataset_verified_bytes',
     'authenticated_dataset_failed_files',
+    'inspection_receipt_created_at_pacific', 'target_table_count',
+    'native_evaluation_ready_certified', 'biological_rows_read', 'new_protocol_created',
+    'expected_question_count', 'expected_deck_count', 'expected_distinct_page_identities',
+    'question_page_links_verified', 'combined_page_identities_available',
+    'prospective_questions_with_all20_images', 'first_round_questions_with_all20_images',
+    'questions_gaining_full_page_coverage', 'missing_page_identities',
+    'duplicate_page_identities', 'foreign_page_identities',
+    'prospective_condition_adopted', 'benchmark_ready',
+    'native_target_table_count', 'T4_context_pairs_verified',
+    'exact_pinned_target_paths_present', 'target_files_nonempty',
+    'source_ast_checks_passed', 'native_input_preparation_complete',
+    'native_evaluation_readiness_certified',
+    'strict_flag_is_not_full_ranking_delivery_validation',
 )
 
 

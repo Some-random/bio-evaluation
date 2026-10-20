@@ -75,6 +75,17 @@ def main():
         path = BASE / 'pfarena/authenticated' / name
         if path.is_file():
             hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
+    native_preflight = {}
+    for name, filename in (('pfarena', 'PUBLIC_SUMMARY.json'), ('slidevqa', 'source_preflight.json')):
+        path = BASE / name / 'native_preflight' / filename
+        receipt = read(path)
+        if receipt is not None:
+            hashes[str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
+            # PFArena's explicit public projection contains aggregate source checks only.
+            # SlideVQA exports scalar coverage/provenance, never per-case licensed records.
+            native_preflight[name] = receipt if name == 'pfarena' else {
+                k: v for k, v in receipt.items() if v is None or type(v) in (int, float, str, bool)}
+    data['native_input_preflight'] = native_preflight
     target = ROOT / 'reports/SOURCE_RECOVERY_FOLLOWUP_2026-10-19.json'
     target.write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
     structural = records['structural'].get('summary', {})
@@ -105,6 +116,26 @@ def main():
         'Original acquisition receipts and frozen Qwen outputs are preserved. Image archives, restricted SlideVQA material, raw reproduction data, source files with unreviewed credential-like comments and model weights stay local. This page exports aggregate counts and provenance only.', '',
         '[Initial acquisition](SOURCE_ACQUISITION_PROGRESS_2026-10-19.md) · [Official PFArena](https://github.com/AMix-Bio/PFArena) · [Proteo-R1](https://github.com/smiles724/Proteo-R1) · [MEAN](https://github.com/THUNLP-MT/MEAN) · [NatureLM resources](https://github.com/NatureLM/Resources) · [Ryze-Data](https://github.com/Chivier/Ryze-Data)', '',
         'Live aggregate receipts feed the existing two-hour progress schedule. A completed source search is not a completed benchmark score.']
+    extra = []
+    if 'pfarena' in native_preflight or 'slidevqa' in native_preflight:
+        extra = ['## Offline input preflight begun at 8 PM PDT', '',
+                 'These are newly timestamped checks from the 8 PM update, not evidence of intervening background evaluation between 6 and 8 PM. No inference, scoring or protocol adoption occurred.', '']
+    if 'pfarena' in native_preflight:
+        pfa = native_preflight['pfarena']
+        counts = ', '.join(x['task_id'] + ' ' + str(x['on_disk_target_table_count'])
+                           for x in pfa['per_task_path_coverage'])
+        extra += ['PFArena: ' + counts + ' = ' + str(pfa['target_table_count']) +
+                  ' task tables, with all pinned target paths present and nonempty and all 29 T4 context pairs available. These are file/table counts, not model calls or benchmark cases. Ten source files pass syntax checks. Input/reference isolation, a frozen case-scoped configuration and runtime/delivery checks remain unfinished.', '',
+                  'The direct LLM branch does not inherently require PLM or AlphaFold calls. The native strict scorer checks assay coverage and minimum top-k counts, but does not enforce a complete candidate permutation; missing ranking tails are assigned deterministic ranks. Strict scoring alone must not be described as full answer delivery. Native formulas remain unchanged, and no actual prediction coverage or score effect has been assessed.', '']
+    if 'slidevqa' in native_preflight:
+        vis = native_preflight['slidevqa']
+        extra += ['SlideVQA: verified ' + str(vis['question_page_links_verified']) +
+                  ' ordered case-to-page links across ' + str(vis['expected_distinct_page_identities']) +
+                  ' page identities and ' + str(vis['expected_deck_count']) + ' decks. An explicitly prospective condition using 7,700 originals plus 300 processed copies covers ' +
+                  str(vis['prospective_questions_with_all20_images']) + '/' + str(vis['expected_question_count']) +
+                  ' questions with all 20 images, compared with 2,125 using only the first acquisition. Missing, duplicate, foreign and reordered page references are zero. This establishes input availability for that distinct encoding condition; it has not been adopted or dispatched and does not establish the paper\'s exact Ryze recipe.', '']
+    boundary = lines.index('## Source and publication boundaries')
+    lines[boundary:boundary] = extra
     (ROOT / 'reports/SOURCE_RECOVERY_FOLLOWUP_2026-10-19.md').write_text('\n'.join(lines) + '\n')
     print(json.dumps({'generated_at_pacific': stamp, 'worker_records': len(records),
                       'vendor_files_verified': verified_vendor, 'evidence_receipts': len(hashes)}))

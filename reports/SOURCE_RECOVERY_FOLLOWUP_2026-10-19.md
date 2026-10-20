@@ -1,6 +1,6 @@
 # Follow-up recovery of evaluation inputs and tools
 
-Snapshot: 2026-10-19T18:04:18.652416-07:00 (America/Los_Angeles).
+Snapshot: 2026-10-19T20:06:35.472075-07:00 (America/Los_Angeles).
 
 The initial bulk transfers were not the end of source recovery. This follow-up checked author histories, supplements, public original-image copies and tool dependencies. No new benchmark inference, training or model forwards were run.
 
@@ -26,6 +26,16 @@ Ryze's released mapping inventories cover 100,000 ArxivQA questions over 54,399 
 The ArxivQA fanout patch is frozen separately with synthetic checks for shared-image questions, existing outputs and dry-run behavior. It is a preparation correction, not a new score. Source recovery alone does not authorize benchmark dispatch.
 
 [Preparation patch](../scripts/source_preparation/ryze_arxiv_fanout_20261019.patch) · [Synthetic patch-check receipt](SOURCE_PREPARATION_REPAIR_2026-10-19.json). Seven additional local transport tests cover exact ranges, response lengths, corruption detection and completed-file reuse; they made no network or model calls.
+
+## Offline input preflight begun at 8 PM PDT
+
+These are newly timestamped checks from the 8 PM update, not evidence of intervening background evaluation between 6 and 8 PM. No inference, scoring or protocol adoption occurred.
+
+PFArena: T1 123, T2 74, T3 67, T4 29 = 293 task tables, with all pinned target paths present and nonempty and all 29 T4 context pairs available. These are file/table counts, not model calls or benchmark cases. Ten source files pass syntax checks. Input/reference isolation, a frozen case-scoped configuration and runtime/delivery checks remain unfinished.
+
+The direct LLM branch does not inherently require PLM or AlphaFold calls. The native strict scorer checks assay coverage and minimum top-k counts, but does not enforce a complete candidate permutation; missing ranking tails are assigned deterministic ranks. Strict scoring alone must not be described as full answer delivery. Native formulas remain unchanged, and no actual prediction coverage or score effect has been assessed.
+
+SlideVQA: verified 44300 ordered case-to-page links across 8000 page identities and 400 decks. An explicitly prospective condition using 7,700 originals plus 300 processed copies covers 2215/2215 questions with all 20 images, compared with 2,125 using only the first acquisition. Missing, duplicate, foreign and reordered page references are zero. This establishes input availability for that distinct encoding condition; it has not been adopted or dispatched and does not establish the paper's exact Ryze recipe.
 
 ## Source and publication boundaries
 

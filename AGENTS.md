@@ -460,3 +460,10 @@ copies, with image-encoding provenance kept separate. Read the round-two
 completion receipts and follow-up report before treating a download as pending.
 Exact native protocol/input compatibility and historical-byte identity remain
 separate checks; no new inference was performed by this recovery.
+
+At the 8 PM October 19 update, offline metadata preflights verified all 293
+PFArena task-table paths and all 44,300 ordered SlideVQA case/page links.
+The prospective 7,700-original/300-processed image condition covers 2,215
+cases but remains unadopted. Native PFArena strict scoring does not enforce
+a full candidate-ranking permutation; report output completeness separately
+without changing native formulas. These preflights create no dispatch scope.
