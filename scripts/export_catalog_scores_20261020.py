@@ -42,6 +42,52 @@ def all_finite(metrics):
     return bool(values) and all(type(x) in (int, float) and math.isfinite(x) for x in values)
 
 
+def derived_p09(scanner):
+    """Export the sealed rule-derived condition without claiming new generation."""
+    folder = BASE / 'tasks/P09'
+    score_path = folder / 'scores.json'
+    if not score_path.exists():
+        return []
+    score, config = read(score_path), read(folder / 'adaptation_config.json')
+    source = Path(config['p08_expected_run'])
+    completion = read(source / 'completion.json')
+    n = config['planned']
+    if (score['configuration_sha256'] != sha(folder / 'adaptation_config.json')
+            or score['prediction_lock_sha256'] != sha(source / 'prediction_lock.json')
+            or completion['prediction_lock_sha256'] != score['prediction_lock_sha256']
+            or completion['terminal'] != n or completion['planned'] != n
+            or score['metrics']['planned'] != n
+            or score['metrics']['valid_predictions'] != n
+            or score['metrics']['invalid_or_missing'] != 0
+            or score['new_model_calls_by_scorer'] != 0
+            or score['historical_runs_modified'] is not False
+            or not all_finite({'accuracy_percent': score['metrics']['accuracy_percent']})):
+        raise ValueError('P09 derived score differs from its frozen complete source')
+    public = ROOT / 'results/runs' / config['run_id'] / 'scores.json'
+    public.parent.mkdir(parents=True, exist_ok=True)
+    scanner.scan_file(score_path)
+    if public.exists() and public.read_bytes() != score_path.read_bytes():
+        raise ValueError('Existing P09 score export changed')
+    public.write_bytes(score_path.read_bytes())
+    return [{'task_id': 'P09', 'run_id': config['run_id'],
+        'protocol_variant': config['protocol_variant'],
+        'protocol_description': 'declared >1.0 rule derived offline from sealed P08 scalar predictions',
+        'new_complete_generation': False, 'derived_from_sealed_generation': True,
+        'new_inference_calls': 0, 'full_benchmark_complete': True,
+        'full_primary_metric_defined': True,
+        'counts': {'planned': n, 'completed': n, 'parsed': n, 'invalid_outputs': 0,
+                   'missing_or_failed_outputs': 0},
+        'metrics': {'accuracy_percent': score['metrics']['accuracy_percent']},
+        'source_scores': str(public.relative_to(ROOT)), 'scores_sha256': sha(public),
+        'prediction_lock_sha256': score['prediction_lock_sha256'],
+        'config_sha256': score['configuration_sha256'],
+        'prediction_source_task_id': 'P08',
+        'prediction_source_run_id': score['prediction_source_run_id'],
+        'material_differences': score['material_differences'],
+        'case_scope': 'Complete released 12,851-case stability split; derived adaptation, not native NatureLM labels',
+        'interpretation': score['interpretation']}]
+
+
 def trajectory(folder, run_id, lock, scanner):
     destination = ROOT / 'results/trajectory_archives' / (run_id + '.tar.gz')
     receipt = destination.with_suffix('.manifest.json')
@@ -135,7 +181,8 @@ def export(archive=True):
     document = {'schema_version': 1,
         'generated_at_pacific': datetime.datetime.now(ZoneInfo('America/Los_Angeles')).isoformat(),
         'historical_artifacts_modified': False, 'new_inference_calls_by_exporter': 0,
-        'completed_rows': completed, 'diagnostic_only_finished_runs': undefined}
+        'completed_rows': completed, 'diagnostic_only_finished_runs': undefined,
+        'derived_completed_rows': derived_p09(scanner)}
     temporary = OUTPUT.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(document, indent=2, allow_nan=False) + '\n')
     temporary.replace(OUTPUT)

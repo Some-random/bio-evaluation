@@ -62,6 +62,38 @@ def whitespace_diagnostic():
 
 
 class DecisionTests(unittest.TestCase):
+    def test_derived_adaptation_is_scored_without_claiming_new_inference(self):
+        source = scores(['P09'])
+        before = copy.deepcopy(source)
+        derived = row('P09', run='derived-whole-cohort',
+            metrics={'accuracy_percent': 53.2},
+            counts={'planned': 10, 'completed': 10, 'parsed': 10},
+            new_complete_generation=False, derived_from_sealed_generation=True,
+            new_inference_calls=0, full_benchmark_complete=True,
+            full_primary_metric_defined=True, scores_sha256='a'*64,
+            prediction_lock_sha256='b'*64, config_sha256='c'*64,
+            prediction_source_task_id='P08', prediction_source_run_id='source-generation',
+            protocol_description='declared numeric threshold',
+            interpretation='Declared adaptation; native binary mapping unverified.')
+        document = {'schema_version': 1, 'historical_artifacts_modified': False,
+                    'derived_completed_rows': [derived]}
+        result = report.build(source, catalog(['P09']), new_generation_scores=document)
+        self.assertEqual(source, before)
+        output = result['rows'][0]
+        self.assertEqual(output['result_type'], 'derived_from_sealed_generation')
+        self.assertEqual(output['native_score'], {'accuracy_percent': 53.2})
+        self.assertEqual(output['prediction_source_task_id'], 'P08')
+        self.assertIn('No new inference', output['evidence']['detail'])
+        for key, value in [('new_inference_calls', 1), ('prediction_source_task_id', 'P07'),
+                           ('new_complete_generation', True)]:
+            bad = copy.deepcopy(document)
+            bad['derived_completed_rows'][0][key] = value
+            with self.subTest(key=key), self.assertRaisesRegex(ValueError, 'sealed source'):
+                report.build(source, catalog(['P09']), new_generation_scores=bad)
+        document['derived_completed_rows'][0]['counts']['parsed'] = 9
+        with self.assertRaises(ValueError):
+            report.build(source, catalog(['P09']), new_generation_scores=document)
+
     def test_new_generation_adds_condition_without_replacing_undefined_history(self):
         old = row('P06', metrics={'spearman': None})
         source = scores(['P06']);source['diagnostic_only_finished_runs'] = [old]

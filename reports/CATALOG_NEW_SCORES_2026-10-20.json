@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-20T01:33:13.475830-07:00",
+  "generated_at_pacific": "2026-10-20T12:37:40.015738-07:00",
   "historical_artifacts_modified": false,
   "new_inference_calls_by_exporter": 0,
   "completed_rows": [
@@ -52,5 +52,44 @@
       }
     }
   ],
-  "diagnostic_only_finished_runs": []
+  "diagnostic_only_finished_runs": [],
+  "derived_completed_rows": [
+    {
+      "task_id": "P09",
+      "run_id": "qwen38_27b_p09_scireason_gt1_from_p08_2026-10-20_v1",
+      "protocol_variant": "SCIREASON_DECLARED_GT1_RULE_DERIVED_FROM_QWEN_P08_NONTHINKING_SCALAR_20261020_V1",
+      "protocol_description": "declared >1.0 rule derived offline from sealed P08 scalar predictions",
+      "new_complete_generation": false,
+      "derived_from_sealed_generation": true,
+      "new_inference_calls": 0,
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "counts": {
+        "planned": 12851,
+        "completed": 12851,
+        "parsed": 12851,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
+      "metrics": {
+        "accuracy_percent": 53.28768189245972
+      },
+      "source_scores": "results/runs/qwen38_27b_p09_scireason_gt1_from_p08_2026-10-20_v1/scores.json",
+      "scores_sha256": "6e03f9612f876d4b3f570b00c5937607d9bf0c9552eebc783b83238635a91f31",
+      "prediction_lock_sha256": "c50d588eaf87b407f6a14e8bf133b8f8dbc4fad42db2ded9a360de75f19c38cc",
+      "config_sha256": "a81ddda1c285ba4789596a0c78a8c0cfbba15052525b86adb25d20279552e494",
+      "prediction_source_task_id": "P08",
+      "prediction_source_run_id": "qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1",
+      "material_differences": [
+        "Uses declared SciReason numeric threshold; original NatureLM binary mapping remains unverified",
+        "Reuses one independently frozen P08 scalar prediction per exact matching complete sequence",
+        "P08 prompt and constrained nonthinking scalar delivery differ from original binary prompts and SciReason variable prompts",
+        "Uses finite numeric comparison directly; does not reproduce SciReason first-number regex bugs",
+        "No external cascade judge, few-shot examples, new heads or training",
+        "Released12851 test differs from historical TAPE paper12839; no historical paper split identity claimed"
+      ],
+      "case_scope": "Complete released 12,851-case stability split; derived adaptation, not native NatureLM labels",
+      "interpretation": "Declared >1.0 stability rule-derived binary accuracy from the complete new P08 scalar prediction condition. An explicitly labelled available-code adaptation, not certification of original NatureLM binary labels, original training regime or execution of SciReason's released cascade. No mechanistic/rationale or contamination-free claim."
+    }
+  ]
 }

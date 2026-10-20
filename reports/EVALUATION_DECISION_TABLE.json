@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-20T01:33:47.501028-07:00",
+  "generated_at_pacific": "2026-10-20T12:38:16.651579-07:00",
   "score_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
   "catalog_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
-  "new_generation_score_snapshot_at": "2026-10-20T01:33:13.475830-07:00",
+  "new_generation_score_snapshot_at": "2026-10-20T12:37:40.015738-07:00",
   "retained_setting_count": 57,
   "retained_setting_ids": [
     "B01",
@@ -521,33 +521,56 @@
       "task": "Stability classification — NatureLM/PEER",
       "category": "Protein properties, interactions and developability",
       "dataset": "Stability classification — NatureLM/PEER",
-      "condition": "Catalog contract; no verified scored condition",
-      "condition_kind": "unverified",
-      "run_id": null,
-      "protocol_variant": null,
+      "condition": "Native declared score; offline derived condition; declared >1.0 rule derived offline from sealed P08 scalar predictions",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_p09_scireason_gt1_from_p08_2026-10-20_v1",
+      "result_type": "derived_from_sealed_generation",
+      "protocol_variant": "SCIREASON_DECLARED_GT1_RULE_DERIVED_FROM_QWEN_P08_NONTHINKING_SCALAR_20261020_V1",
       "input_protocol": "Protein sequence",
-      "output_budget": "Not established",
+      "output_budget": "Not recorded",
       "usable_answer_rate": {
-        "value": null,
-        "display": "Not established",
-        "definition": "No verified full-run parse counts"
+        "value": 1.0,
+        "display": "12,851/12,851 (100.0%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
       },
-      "native_score": null,
+      "native_score": {
+        "accuracy_percent": 53.28768189245972
+      },
       "diagnostic_score": null,
-      "score_display": "No verified native score",
+      "score_display": "accuracy_percent 53.2877",
       "evidence": {
-        "category": "No verified result",
-        "detail": "Current aggregate metadata provides no completed score; this does not prove the task was never attempted."
+        "category": "Measured, declared rule-derived adaptation",
+        "detail": "Declared >1.0 stability rule-derived binary accuracy from the complete new P08 scalar prediction condition. An explicitly labelled available-code adaptation, not certification of original NatureLM binary labels, original training regime or execution of SciReason's released cascade. No mechanistic/rationale or contamination-free claim. No new inference; source: qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1."
       },
-      "counts": {},
+      "counts": {
+        "planned": 12851,
+        "completed": 12851,
+        "parsed": 12851,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
       "finish_reasons": {},
-      "source_scores": null,
-      "source_score_sha256": null,
-      "source_row_category": null,
+      "source_scores": "results/runs/qwen38_27b_p09_scireason_gt1_from_p08_2026-10-20_v1/scores.json",
+      "source_score_sha256": "6e03f9612f876d4b3f570b00c5937607d9bf0c9552eebc783b83238635a91f31",
+      "source_row_category": "completed_rows",
       "source_protocol_url": "https://github.com/microsoft/SFM",
-      "case_scope": "NatureLM §7.2 uses classification. Exact label-conversion rule not resolved in this review.",
-      "excluded_run_reasons": [],
-      "native_metrics_recomputed": false
+      "case_scope": "Complete released 12,851-case stability split; derived adaptation, not native NatureLM labels",
+      "native_metrics_recomputed": false,
+      "prediction_lock_sha256": "c50d588eaf87b407f6a14e8bf133b8f8dbc4fad42db2ded9a360de75f19c38cc",
+      "config_sha256": "a81ddda1c285ba4789596a0c78a8c0cfbba15052525b86adb25d20279552e494",
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "prediction_source_task_id": "P08",
+      "prediction_source_run_id": "qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1",
+      "new_inference_calls": 0,
+      "material_differences": [
+        "Uses declared SciReason numeric threshold; original NatureLM binary mapping remains unverified",
+        "Reuses one independently frozen P08 scalar prediction per exact matching complete sequence",
+        "P08 prompt and constrained nonthinking scalar delivery differ from original binary prompts and SciReason variable prompts",
+        "Uses finite numeric comparison directly; does not reproduce SciReason first-number regex bugs",
+        "No external cascade judge, few-shot examples, new heads or training",
+        "Released12851 test differs from historical TAPE paper12839; no historical paper split identity claimed"
+      ]
     },
     {
       "task_id": "P10",
@@ -3268,7 +3291,7 @@
     "reports/P36_WHITESPACE_DIAGNOSTIC_2026-10-19.json": "aba51168710d868a45fb624d3ba0d6963a2fefe276dd323da7e645e845e2a491",
     "reports/P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.json": "d90d53cb0882b6e181734037b017f67c6253503ad32e719b570e945ea88c0e4d",
     "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json": "32e201698766dc1ec75b734d766cb4cffb42a062abfcfe8f265d0e5990797572",
-    "reports/CATALOG_NEW_SCORES_2026-10-20.json": "a495bccd4c0d6f37711d0499250cd7ca619722633557581f5c648bce9259374d"
+    "reports/CATALOG_NEW_SCORES_2026-10-20.json": "d59f14eea4482be4afb6eef461b9747e2734d4d701a2f0f22f20f5f49ec95cb3"
   },
   "recovered_subset_setting_ids": [
     "P36"

@@ -457,6 +457,23 @@ def add_new_generation_scores(scores, document):
                     or row.get('full_primary_metric_defined') is not True):
                 raise ValueError('Saved responses cannot promote an incomplete primary score')
             result.setdefault(category, []).append(copy.deepcopy(row))
+    for row in document.get('derived_completed_rows', []):
+        counts = row.get('counts') or {}
+        n = counts.get('planned')
+        if (row.get('task_id') != 'P09' or row.get('prediction_source_task_id') != 'P08'
+                or not row.get('prediction_source_run_id')
+                or row.get('new_complete_generation') is not False
+                or row.get('derived_from_sealed_generation') is not True
+                or row.get('new_inference_calls') != 0
+                or row.get('full_benchmark_complete') is not True
+                or row.get('full_primary_metric_defined') is not True
+                or type(n) is not int or n <= 0
+                or counts.get('completed') != n or counts.get('parsed') != n
+                or any(not isinstance(row.get(key), str) or len(row[key]) != 64
+                       or any(c not in '0123456789abcdef' for c in row[key])
+                       for key in ('scores_sha256', 'prediction_lock_sha256', 'config_sha256'))):
+            raise ValueError('Derived condition lacks its complete sealed source identity')
+        result.setdefault('completed_rows', []).append(copy.deepcopy(row))
     return result
 
 
@@ -480,6 +497,7 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
             if raw.get('generation_budget_condition') == 'MIXED_BUDGET_4K16K_CONTINUATION':run_note = 'mixed 4K/16K continuation'
             if raw.get('scorer_recovery'):run_note = 'offline compatibility repair; ' + run_note
             if raw.get('new_complete_generation'):run_note = 'new complete generation; ' + raw['protocol_description']
+            if raw.get('derived_from_sealed_generation'):run_note = 'offline derived condition; ' + raw['protocol_description']
             for condition, label, metrics in conditions(raw):
                 source = raw.get('source_scores')
                 answer_rate = usable(raw, task)
@@ -487,6 +505,9 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
                 if raw.get('new_complete_generation'):
                     evidence_status = {'category': 'Measured, new delivery condition' if raw.get('full_primary_metric_defined') else 'New generation; primary metric undefined',
                         'detail': raw['interpretation'] + ' Historical generations and scores remain separate.'}
+                if raw.get('derived_from_sealed_generation'):
+                    evidence_status = {'category': 'Measured, declared rule-derived adaptation',
+                        'detail': raw['interpretation'] + ' No new inference; source: ' + raw['prediction_source_run_id'] + '.'}
                 if task == 'P42':
                     answer_rate['display'] = 'Per-condition unavailable; ' + answer_rate['display'] + ' across both conditions'
                     answer_rate['definition'] += '; aggregate counts cover both candidate regimes'
@@ -495,7 +516,7 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
                 rows.append({'task_id': task, 'task': protocol.get('title') or raw.get('task_name') or group['task'],
                     'category': group['category'], 'dataset': raw.get('dataset') or raw.get('native_split') or protocol.get('title') or group['dataset'],
                     'condition': label + '; ' + run_note, 'condition_kind': condition, 'run_id': raw['run_id'],
-                    'result_type': 'new_complete_generation' if raw.get('new_complete_generation') else ('offline_scorer_compatibility_repair' if raw.get('scorer_recovery') else ('original_or_replay' if condition == 'native' else 'offline_extraction_diagnostic')),
+                    'result_type': 'derived_from_sealed_generation' if raw.get('derived_from_sealed_generation') else ('new_complete_generation' if raw.get('new_complete_generation') else ('offline_scorer_compatibility_repair' if raw.get('scorer_recovery') else ('original_or_replay' if condition == 'native' else 'offline_extraction_diagnostic'))),
                     'protocol_variant': raw.get('protocol_variant'), 'input_protocol': INPUTS.get(task, group.get('inputInterface') or protocol.get('scientificQuestion') or 'Required input not specified in catalog'),
                     'output_budget': budget(raw), 'usable_answer_rate': answer_rate,
                     'native_score': copy.deepcopy(metrics) if condition == 'native' else None,
@@ -505,7 +526,7 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
                     'source_scores': source, 'source_score_sha256': raw.get('scores_sha256'), 'source_row_category': category,
                     'source_protocol_url': protocol.get('sourceUrl') or group.get('sourceUrl'),
                     'case_scope': raw.get('case_scope'), 'native_metrics_recomputed': False,
-                    **({key: raw[key] for key in ('prediction_lock_sha256', 'config_sha256', 'full_benchmark_complete', 'full_primary_metric_defined', 'trajectory_archive') if key in raw} if raw.get('new_complete_generation') else {})})
+                    **({key: raw[key] for key in ('prediction_lock_sha256', 'config_sha256', 'full_benchmark_complete', 'full_primary_metric_defined', 'trajectory_archive', 'prediction_source_task_id', 'prediction_source_run_id', 'new_inference_calls', 'material_differences') if key in raw} if raw.get('new_complete_generation') or raw.get('derived_from_sealed_generation') else {})})
     subset_rows = recovered_subset_rows(recovered_subset_evidence, mapping)
     rows.extend(subset_rows); observed.update(row['task_id'] for row in subset_rows)
     whitespace_row = p36_whitespace_condition(rows, p36_whitespace)
@@ -565,6 +586,7 @@ def render(report, root=ROOT):
     text = ['# Evaluation decision table', '',
         f"Generated {pacific(report['generated_at_pacific'])}; score snapshot {pacific(report['score_snapshot_at'])}.", '',
         f"All **{report['retained_setting_count']} retained settings** appear below. Each source dataset, run or extraction condition stays separate; there is no overall average. Native scores remain unchanged. A saved or nonempty response is not necessarily a usable answer.", '',
+        'For the current one-row-per-setting execution status and next action, see [the catalog tracker](CATALOG_STATUS.md). This table retains separate historical and adapted score conditions.', '',
         '“Positive” identifies a useful measured example, not a controlled win over paper models. Unknown entries do not mean never attempted. [Integrity audit](EVALUATION_INTEGRITY_AUDIT_2026-10-18.md) · [Original score summary](RESULTS_AT_A_GLANCE.md).', '',
         'Links for unavailable original score files open retained aggregate metadata. The structured table preserves their original paths and hashes; this does not restore missing originals.', '']
     current = None
