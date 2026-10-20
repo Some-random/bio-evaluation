@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_at_pacific": "2026-10-20T14:12:54.539073-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "e257e0feb1632b620cf33633699587381c2d76e68c73d71d3e7c2195b23bacaa",
+  "report_sha256": "a87142dfc8b9a3eb8e0103ffd9ce7a2ac571244e8c00894186b31bfc6a7b39c0",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
@@ -4597,5 +4597,662 @@
     "description_display_metric": "ROUGE-L",
     "old_undefined_runs_and_extraction_diagnostics_displayed": false,
     "detailed_audit_preserved_locally": ".local/catalog_execution_2026-10-20/markdown_report/internal_report_before_presentation.md"
+  },
+  "dataset_context_added_at_pacific": "2026-10-20T14:36:21.913656-07:00",
+  "dataset_context": {
+    "year_convention": "Named dataset/evaluation introduction; earlier underlying dataset and later benchmark dates distinguished when applicable.",
+    "example_convention": "Short published questions or source-based illustrations; no answers, raw sequences, structures or full test records reproduced.",
+    "records": [
+      {
+        "id": "B01",
+        "dataset": "LAB-Bench: LitQA2",
+        "year": 2024,
+        "year_note": "LitQA2 is the 2024 LAB-Bench dataset; earlier LitQA work is a different release.",
+        "example": "According to the study, how does the specified Spindle E variant affect mature piRNA abundance in silkworm cells?",
+        "example_type": "paraphrased_paper_example",
+        "source_urls": [
+          "https://arxiv.org/abs/2407.10362",
+          "https://arxiv.org/html/2407.10362v3"
+        ],
+        "notes": "Shortened paraphrase of Appendix A.1.4. No answer or sequence included."
+      },
+      {
+        "id": "B02",
+        "dataset": "LAB-Bench: DbQA",
+        "year": 2024,
+        "year_note": "LAB-Bench release year.",
+        "example": "Which listed human gene falls within chromosome band 4q33 in Ensembl Release 110?",
+        "example_type": "paraphrased_paper_example",
+        "source_urls": [
+          "https://arxiv.org/abs/2407.10362",
+          "https://arxiv.org/html/2407.10362v3"
+        ],
+        "notes": "Paraphrase of Appendix A.1.1 gene-location example; supplied choices omitted."
+      },
+      {
+        "id": "B03",
+        "dataset": "LAB-Bench: SuppQA",
+        "year": 2024,
+        "year_note": "LAB-Bench release year.",
+        "example": "In the supplementary methods for [paper], what incubation duration is used in the specified sample-processing step?",
+        "example_type": "paraphrased_paper_example_with_placeholder",
+        "source_urls": [
+          "https://arxiv.org/abs/2407.10362",
+          "https://arxiv.org/html/2407.10362v3"
+        ],
+        "notes": "Generalized from Appendix A.1.5; paper identifier, procedure details and answer omitted. This is not a verbatim test question."
+      },
+      {
+        "id": "B04",
+        "dataset": "LAB-Bench: FigQA",
+        "year": 2024,
+        "year_note": "LAB-Bench release year.",
+        "example": "Where does the half waveplate occur relative to the SLM?",
+        "example_type": "quoted_paper_example",
+        "source_urls": [
+          "https://arxiv.org/abs/2407.10362",
+          "https://arxiv.org/html/2407.10362v3"
+        ],
+        "notes": "11-word question in Appendix A.1.7. Accompanying figure required; answer omitted."
+      },
+      {
+        "id": "B05",
+        "dataset": "LAB-Bench: TableQA",
+        "year": 2024,
+        "year_note": "LAB-Bench release year.",
+        "example": "Using the table, calculate the ratio of increased crotonylated sites to increased succinylated sites.",
+        "example_type": "paraphrased_paper_example",
+        "source_urls": [
+          "https://arxiv.org/abs/2407.10362",
+          "https://arxiv.org/html/2407.10362v3"
+        ],
+        "notes": "Paraphrase of Appendix A.1.8; accompanying table required, no answer included."
+      },
+      {
+        "id": "B07",
+        "dataset": "LAB-Bench: SeqQA",
+        "year": 2024,
+        "year_note": "LAB-Bench release year.",
+        "example": "What is the percent GC of the DNA sequence [sequence]?",
+        "example_type": "paper_question_template_with_placeholder",
+        "source_urls": [
+          "https://arxiv.org/abs/2407.10362",
+          "https://arxiv.org/html/2407.10362v3"
+        ],
+        "notes": "Uses the published percent-GC question template in C.7.15. A placeholder replaces the sequence; this is not a reproduced full case. Combined verbatim LAB-Bench wording kept below 25 words."
+      },
+      {
+        "id": "B08",
+        "dataset": "LAB-Bench: Cloning Scenarios",
+        "year": 2024,
+        "year_note": "LAB-Bench release year.",
+        "example": "From the supplied plasmid and fragment sequences, identify the element carried by the DNA fragment.",
+        "example_type": "paraphrased_paper_example",
+        "source_urls": [
+          "https://arxiv.org/abs/2407.10362",
+          "https://arxiv.org/html/2407.10362v3"
+        ],
+        "notes": "Paraphrase of Appendix A.1.3 first question; sequences, workflow details, answer and choices omitted."
+      },
+      {
+        "id": "V01",
+        "dataset": "VQA-RAD",
+        "year": 2018,
+        "year_note": "Dataset paper published November 20, 2018.",
+        "example": "Which organ is shown in this radiology image?",
+        "example_type": "illustrative_task_prompt",
+        "source_urls": [
+          "https://www.nature.com/articles/sdata2018251",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC6244189/"
+        ],
+        "notes": "Illustrative organ-identification prompt based on the paper’s question taxonomy; not claimed to be an authentic test row. Requires the image."
+      },
+      {
+        "id": "V02",
+        "dataset": "SLAKE (English)",
+        "year": 2021,
+        "year_note": "Introduced in 2021; do not substitute the date of a later mirror or cleaned dataset.",
+        "example": "Does the image contain left lung?",
+        "example_type": "quoted_paper_example",
+        "source_urls": [
+          "https://arxiv.org/abs/2102.09542",
+          "https://arxiv.org/pdf/2102.09542"
+        ],
+        "notes": "Seven-word question from Figure 1. Requires the image; answer omitted."
+      },
+      {
+        "id": "V03",
+        "dataset": "PathVQA",
+        "year": 2020,
+        "year_note": "Original dataset paper first submitted March 7, 2020.",
+        "example": "What is expanded in the region of epiphysis?",
+        "example_type": "quoted_paper_example",
+        "source_urls": [
+          "https://arxiv.org/abs/2003.10286",
+          "https://arxiv.org/html/2003.10286"
+        ],
+        "notes": "Nine-word question from Table 2. Requires pathology image/context; answer omitted."
+      },
+      {
+        "id": "V04",
+        "dataset": "ImageCLEF-VQA 2019",
+        "year": 2019,
+        "year_note": "Year of the evaluated 2019 challenge edition; VQA-Med also has other yearly editions.",
+        "example": "In what plane is this mammograph taken?",
+        "example_type": "quoted_official_dataset_example",
+        "source_urls": [
+          "https://www.imageclef.org/2019/medical/vqa/",
+          "https://github.com/abachaa/VQA-Med-2019"
+        ],
+        "notes": "Eight-word example in the official README. Requires the image; answer omitted."
+      },
+      {
+        "id": "V05",
+        "dataset": "PMC-VQA",
+        "year": 2023,
+        "year_note": "Dataset first introduced May 17, 2023; the paper was subsequently revised in 2024.",
+        "example": "What is the view of the brain used in the image?",
+        "example_type": "quoted_paper_example",
+        "source_urls": [
+          "https://arxiv.org/abs/2305.10415",
+          "https://arxiv.org/pdf/2305.10415"
+        ],
+        "notes": "Thirteen-word question in Figure 1. Requires the image; answer and choices omitted."
+      },
+      {
+        "id": "V07",
+        "dataset": "SlideVQA / Ryze visual extraction",
+        "year": 2023,
+        "year_note": "SlideVQA dataset: 2023. Ryze evaluation framework: 2026. Recommend display “2023; Ryze 2026”.",
+        "example": "According to the slide, what percentage is attributed to internal meeting decisions?",
+        "example_type": "paraphrased_paper_example",
+        "source_urls": [
+          "https://arxiv.org/abs/2301.04883",
+          "https://arxiv.org/pdf/2301.04883",
+          "https://arxiv.org/abs/2606.00902"
+        ],
+        "notes": "Paraphrase of SlideVQA Figure 1 single-span example. Requires the slide deck. This example comes from SlideVQA, not a claim to be from the unrecovered exact Ryze Table 3 subset."
+      },
+      {
+        "id": "P01",
+        "dataset": "DeepSol solubility — PEER",
+        "year": 2022,
+        "year_note": "Year refers to the PEER benchmark release; the underlying DeepSol dataset/paper is from 2018.",
+        "example": "Will [protein sequence] be soluble when expressed?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2206.02096",
+          "https://github.com/DeepGraphLearning/PEER_Benchmark",
+          "https://academic.oup.com/bioinformatics/article/34/15/2605/4938490"
+        ],
+        "notes": "Do not equate expression solubility with the soluble/membrane localization label in P02.",
+        "original_dataset_year": 2018
+      },
+      {
+        "id": "P02",
+        "dataset": "DeepLoc binary localization — PEER",
+        "year": 2022,
+        "year_note": "Year refers to PEER; DeepLoc was introduced in 2017.",
+        "example": "Is [protein sequence] a membrane-bound or soluble protein?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2206.02096",
+          "https://github.com/DeepGraphLearning/PEER_Benchmark",
+          "https://academic.oup.com/bioinformatics/article/33/21/3387/3931857"
+        ],
+        "notes": "Binary localization, not ten-class cellular compartment prediction.",
+        "original_dataset_year": 2017
+      },
+      {
+        "id": "P03",
+        "dataset": "DeepLoc subcellular localization — PEER/ProtST",
+        "year": 2022,
+        "year_note": "PEER benchmark release 2022; original DeepLoc 2017; the evaluated class descriptions follow ProtST (2023).",
+        "example": "Which cellular compartment contains [protein sequence], among the ten listed locations?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2206.02096",
+          "https://academic.oup.com/bioinformatics/article/33/21/3387/3931857",
+          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
+        ],
+        "notes": "2773-row publisher PEER LMDB with original ten-class labels; benchmark year does not date individual annotations.",
+        "original_dataset_year": 2017,
+        "interface_year": 2023
+      },
+      {
+        "id": "P04",
+        "dataset": "Envision beta-lactamase activity — PEER",
+        "year": 2022,
+        "year_note": "Year refers to the PEER benchmark release, not the older underlying experimental measurements.",
+        "example": "What activity score does the assay assign to [protein variant sequence]?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2206.02096",
+          "https://github.com/DeepGraphLearning/PEER_Benchmark",
+          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
+        ],
+        "notes": "A task-format example only, with no real protein sequence, mutation or activity prediction."
+      },
+      {
+        "id": "P05",
+        "dataset": "AAV fitness — FLIP",
+        "year": 2021,
+        "year_note": "Original FLIP benchmark released in 2021; evaluated preparation targets its two_vs_many split.",
+        "example": "What fitness score does the assay assign to [AAV variant sequence]?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://www.biorxiv.org/content/10.1101/2021.11.09.467890v1",
+          "https://github.com/J-SNACKKB/FLIP",
+          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
+        ],
+        "notes": "Pure input/output illustration; no viral sequence, mutation identity, ranking or engineering recommendation."
+      },
+      {
+        "id": "P06",
+        "dataset": "Meltome thermostability — FLIP",
+        "year": 2021,
+        "year_note": "Year refers to FLIP; the original Meltome atlas paper is from 2020.",
+        "example": "What is the melting temperature of [protein sequence]?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://www.biorxiv.org/content/10.1101/2021.11.09.467890v1",
+          "https://github.com/J-SNACKKB/FLIP",
+          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
+        ],
+        "notes": "The evaluated split is FLIP human_cell; this endpoint differs from TAPE stability in P08.",
+        "original_dataset_year": 2020
+      },
+      {
+        "id": "P07",
+        "dataset": "GFP fluorescence — TAPE",
+        "year": 2019,
+        "year_note": "Year refers to the TAPE benchmark; the underlying GFP measurements were published earlier.",
+        "example": "What is the log-fluorescence value for [GFP variant sequence]?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/1906.08230",
+          "https://github.com/songlab-cal/tape"
+        ],
+        "notes": "A prediction task, not a request to design a brighter protein."
+      },
+      {
+        "id": "P08",
+        "dataset": "Protein folding stability — TAPE",
+        "year": 2019,
+        "year_note": "Year refers to TAPE; current evaluation uses its released PyTorch stability split.",
+        "example": "What is the folding-stability score of [protein sequence]?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/1906.08230",
+          "https://github.com/songlab-cal/tape"
+        ],
+        "notes": "The native stability score is not a melting temperature; preserve this distinction from P06."
+      },
+      {
+        "id": "P09",
+        "dataset": "Stability classification — NatureLM-style adaptation",
+        "year": 2025,
+        "year_note": "Year is the NatureLM paper protocol, not a verified release of its exact test set; the local derived adaptation was created in 2026.",
+        "example": "Does [protein sequence] meet the benchmark threshold for the stable class?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2502.07527",
+          "https://arxiv.org/html/2502.07527v3#S7.SS2"
+        ],
+        "notes": "Illustrates the classification endpoint. Actual local score is derived offline from P08 scalar predictions, not an independent response to this question.",
+        "local_adaptation_year": 2026
+      },
+      {
+        "id": "P10",
+        "dataset": "Human protein interactions — PEER",
+        "year": 2022,
+        "year_note": "Year refers to the PEER benchmark release; the source interaction dataset predates PEER.",
+        "example": "Do [human protein sequence A] and [human protein sequence B] interact?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2206.02096",
+          "https://github.com/DeepGraphLearning/PEER_Benchmark"
+        ],
+        "notes": "No interaction answer, target or sequence is provided."
+      },
+      {
+        "id": "P11",
+        "dataset": "Yeast protein interactions — PEER",
+        "year": 2022,
+        "year_note": "Year refers to the PEER benchmark release; the source interaction dataset predates PEER.",
+        "example": "Do [yeast protein sequence A] and [yeast protein sequence B] interact?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2206.02096",
+          "https://github.com/DeepGraphLearning/PEER_Benchmark"
+        ],
+        "notes": "No interaction answer, target or sequence is provided."
+      },
+      {
+        "id": "P16",
+        "dataset": "Enzyme reaction classes — IEConv/ProtST",
+        "year": 2020,
+        "year_note": "Underlying reaction benchmark introduced in the 2020 IEConv preprint (ICLR 2021); ProtST supplied the 2023 zero-shot text interface.",
+        "example": "Which of the 384 reaction classes matches [protein sequence]?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2007.06252",
+          "https://github.com/phermosilla/IEConv_proteins",
+          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
+        ],
+        "notes": "Current local condition uses ProtST class descriptions and sequence input, not the original IEConv structural model.",
+        "interface_year": 2023
+      },
+      {
+        "id": "P17",
+        "dataset": "ProteinGym substitutions",
+        "year": 2022,
+        "year_note": "ProteinGym first appeared with Tranception in 2022; expanded benchmark paper in 2023. Planned archive is v1.3; its exact release date is not established here.",
+        "example": "How do the assay scores differ across [protein variant sequences]?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2205.13760",
+          "https://proceedings.neurips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+          "https://github.com/OATML-Markslab/ProteinGym"
+        ],
+        "notes": "Assay-defined numerical fitness prediction; broad mixed corpus includes held scope. No real variant or assay content inspected for this illustration.",
+        "expanded_benchmark_year": 2023,
+        "planned_version": "v1.3"
+      },
+      {
+        "id": "P19",
+        "dataset": "PFArena T1 — single-mutant generation",
+        "year": 2026,
+        "year_note": "PFArena first public paper and benchmark release: September 2026.",
+        "example": "Task: return single-substitution candidates for [protein] under [assay description].",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2609.28921",
+          "https://arxiv.org/html/2609.28921v1#S2.SS1.SSS1"
+        ],
+        "notes": "High-level format illustration only; no mutation positions, sequences, scores or engineering advice."
+      },
+      {
+        "id": "P21",
+        "dataset": "PFArena T3 — anchor-informed ranking",
+        "year": 2026,
+        "year_note": "PFArena first public paper and benchmark release: September 2026.",
+        "example": "Rank [candidate variants] using [assay description] and the supplied score for [reference variant].",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2609.28921",
+          "https://arxiv.org/html/2609.28921v1#S2.SS1.SSS3"
+        ],
+        "notes": "Reference variant means one measured anchor. No candidate identities or rankings are supplied."
+      },
+      {
+        "id": "P22",
+        "dataset": "PFArena T4 — single-mutant-informed ranking",
+        "year": 2026,
+        "year_note": "PFArena first public paper and benchmark release: September 2026.",
+        "example": "Rank [combined variants] using [assay description] and supplied measurements for their individual substitutions.",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2609.28921",
+          "https://arxiv.org/html/2609.28921v1#S2.SS1.SSS4"
+        ],
+        "notes": "Only describes the permitted input/output contract; no actual substitutions or scores."
+      },
+      {
+        "id": "P23",
+        "dataset": "Mol-Instructions — protein function",
+        "year": 2023,
+        "year_note": "Dataset first released June 2023; ICLR paper published 2024. Current evaluation uses its BioT5+ export.",
+        "example": "What biological function is associated with [protein sequence]?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2306.08018",
+          "https://github.com/zjunlp/Mol-Instructions"
+        ],
+        "notes": "Paraphrases the protein function instruction family, not a particular test example.",
+        "publication_year": 2024
+      },
+      {
+        "id": "P24",
+        "dataset": "Mol-Instructions — catalytic activity",
+        "year": 2023,
+        "year_note": "Dataset first released June 2023; ICLR paper published 2024. Current evaluation uses its BioT5+ export.",
+        "example": "What reaction does [protein sequence] catalyze?",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2306.08018",
+          "https://github.com/zjunlp/Mol-Instructions"
+        ],
+        "notes": "Paraphrases the catalytic activity instruction family, without a real enzyme or reaction answer.",
+        "publication_year": 2024
+      },
+      {
+        "id": "P25",
+        "dataset": "Mol-Instructions — domains and motifs",
+        "year": 2023,
+        "year_note": "Dataset first released June 2023; ICLR paper published 2024. Current evaluation uses its BioT5+ export.",
+        "example": "Describe the domains and motifs associated with [protein sequence].",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2306.08018",
+          "https://github.com/zjunlp/Mol-Instructions"
+        ],
+        "notes": "Paraphrases the domain/motif instruction family.",
+        "publication_year": 2024
+      },
+      {
+        "id": "P26",
+        "dataset": "Mol-Instructions — general function",
+        "year": 2023,
+        "year_note": "Dataset first released June 2023; ICLR paper published 2024. Current evaluation uses its BioT5+ export.",
+        "example": "Write a short description of the overall role of [protein sequence].",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2306.08018",
+          "https://github.com/zjunlp/Mol-Instructions"
+        ],
+        "notes": "Distinct Mol-Instructions general_function subset from the protein_function subset in P23.",
+        "publication_year": 2024
+      },
+      {
+        "id": "P27",
+        "dataset": "NatureLM — protein characteristics description",
+        "year": 2025,
+        "year_note": "Year dates the NatureLM evaluation protocol; its exact frozen NCBI temporal test release remains unavailable in the audited sources.",
+        "example": "Describe the properties and functions of [protein sequence].",
+        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
+        "source_urls": [
+          "https://arxiv.org/abs/2502.07527",
+          "https://arxiv.org/html/2502.07527v3#S4.SS4"
+        ],
+        "notes": "Any alternative cohort is an adaptation and must not be described as the original released NatureLM dataset."
+      },
+      {
+        "id": "P34",
+        "dataset": "MutaPLM iterative optimization evaluation",
+        "year": 2024,
+        "year_note": "The iterative optimization evaluation is described in the 2024 MutaPLM paper; this is not the release year of every underlying experimental fitness landscape.",
+        "example": "Given [protein] and [evaluation objective], propose the next candidate in an iterative optimization run.",
+        "example_type": "Illustrative task paraphrase with placeholders; not an authentic test item.",
+        "source_urls": [
+          "https://arxiv.org/abs/2410.22949",
+          "https://github.com/PharMolix/MutaPLM"
+        ],
+        "notes": [
+          "The first public paper was submitted October 30, 2024 and appeared at NeurIPS 2024.",
+          "Describe this as an evaluation task, not a single newly released question-answer dataset."
+        ]
+      },
+      {
+        "id": "P35",
+        "dataset": "ProtST text-to-protein retrieval",
+        "year": 2023,
+        "year_note": "Release year of the ProtST retrieval evaluation, not the original Gene Ontology or protein-database resource.",
+        "example": "Which proteins in [candidate collection] best match [functional description]?",
+        "example_type": "Illustrative task paraphrase with placeholders; not an authentic test item.",
+        "source_urls": [
+          "https://proceedings.mlr.press/v202/xu23t.html",
+          "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/script/run_t2p_retrieval.py"
+        ],
+        "notes": [
+          "ProtST first appeared January 2023 and at ICML 2023.",
+          "The reported five-query task retrieves candidates; it is not itself a universally labelled QA set."
+        ]
+      },
+      {
+        "id": "P37",
+        "dataset": "NatureLM unconditional protein generation",
+        "year": 2025,
+        "year_note": "Release year of the NatureLM evaluation; no conventional question-answer dataset is used for unconditional generation.",
+        "example": "Input: the protein start token only. Output: a generated protein sequence.",
+        "example_type": "Task paraphrase of the published unconditional input contract; no sequence or test item reproduced.",
+        "source_urls": [
+          "https://arxiv.org/abs/2502.07527",
+          "https://arxiv.org/html/2502.07527v3#S4.SS1"
+        ],
+        "notes": [
+          "The first NatureLM paper was submitted February 11, 2025.",
+          "Section 4.1 explicitly uses only the protein start token; inventing a natural-language question would misstate the original task."
+        ]
+      },
+      {
+        "id": "P38",
+        "dataset": "NatureLM property-conditioned protein generation",
+        "year": 2025,
+        "year_note": "Release year of the NatureLM property-conditioned generation evaluation.",
+        "example": "Generate a soluble protein sequence.",
+        "example_type": "Published illustrative prompt from NatureLM Example 4.1; not claimed to be an evaluated test row.",
+        "source_urls": [
+          "https://arxiv.org/abs/2502.07527",
+          "https://arxiv.org/html/2502.07527v3#S4.SS2"
+        ],
+        "notes": [
+          "This is a six-word quotation from the paper's own prompt example.",
+          "Current local proxy evaluators are an adaptation; the historical task/example year remains 2025."
+        ]
+      },
+      {
+        "id": "P39",
+        "dataset": "NatureLM heme-binding generation case study",
+        "year": 2025,
+        "year_note": "Release year of the NatureLM case study; no standardized released test cohort or question bank is established.",
+        "example": "Design a heme-binding protein sequence.",
+        "example_type": "Published illustrative prompt from NatureLM Example 4.2; no sequence or procedural details reproduced.",
+        "source_urls": [
+          "https://arxiv.org/abs/2502.07527",
+          "https://arxiv.org/html/2502.07527v3#S4.SS5"
+        ],
+        "notes": [
+          "This is a seven-word quotation from the paper's own case-study prompt.",
+          "A qualitative case study should not be described as a released scored question-answer dataset."
+        ]
+      },
+      {
+        "id": "P40",
+        "dataset": "RAbD antibody-region redesign benchmark",
+        "year": 2018,
+        "year_note": "Original RAbD benchmark/framework: 2018. The NatureLM evaluation was published in 2025; the separate Proteo-R1 structural protocol in 2026.",
+        "example": "Complete [masked antibody region] using [antigen and antibody-framework context].",
+        "example_type": "Illustrative task paraphrase with placeholders; not an authentic complex or design request.",
+        "source_urls": [
+          "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006112",
+          "https://arxiv.org/html/2502.07527v3#S4.SS3",
+          "https://arxiv.org/abs/2605.02937"
+        ],
+        "notes": [
+          "Original RAbD paper published April 27, 2018.",
+          "The currently prepared local 60-complex condition uses recovered current structures and is not proof of the exact original processed benchmark bytes."
+        ]
+      },
+      {
+        "id": "P41",
+        "dataset": "Proteo-R1 structural design demonstrations",
+        "year": 2026,
+        "year_note": "Release year of the Proteo-R1 task/demonstrations. Its underlying SAbDab resource was published online in 2013, in the 2014 NAR database issue.",
+        "example": "Complete [masked antibody structure] while preserving [fixed framework context].",
+        "example_type": "Illustrative task paraphrase with placeholders; not an authentic structural test case.",
+        "source_urls": [
+          "https://arxiv.org/abs/2605.02937",
+          "https://github.com/smiles724/Proteo-R1",
+          "https://doi.org/10.1093/nar/gkt1043"
+        ],
+        "notes": [
+          "Proteo-R1 was first submitted May 1, 2026; journal reference ICML 2026.",
+          "Released demonstrations and the full SAbDab holdout are distinct; do not relabel five demonstrations as the complete paper test set."
+        ]
+      },
+      {
+        "id": "P42",
+        "dataset": "STRIDE GFP candidate-editing evaluation",
+        "year": 2026,
+        "year_note": "Release year of the STRIDE evaluation, not the age of the underlying GFP measurements or trained evaluator.",
+        "example": "Given [reference GFP sequence], return a candidate using the task's permitted edit notation.",
+        "example_type": "Illustrative task paraphrase with placeholders; no sequence, mutation or experimental optimization instructions.",
+        "source_urls": [
+          "https://arxiv.org/abs/2603.03573",
+          "https://proceedings.mlr.press/v306/zhang26ik.html",
+          "https://github.com/daiheng-zhang/STRIDE"
+        ],
+        "notes": [
+          "First public paper submitted March 3, 2026; ICML 2026 publication.",
+          "The local result is automated evaluator acceptance, not experimentally measured fluorescence."
+        ]
+      },
+      {
+        "id": "P43",
+        "dataset": "Drug-target interaction: BindingDB (DrugBAN split)",
+        "year": 2000,
+        "year_note": "BindingDB launched in 2000; its commonly cited foundational dataset paper is from 2007. The evaluated DrugBAN benchmark split was described in a 2022 preprint, published in a journal in 2023; 2000 is not the date of that split.",
+        "example": "Do [drug representation] and [protein sequence] interact?",
+        "example_type": "Illustrative task paraphrase with placeholders; not an authentic drug-protein pair.",
+        "source_urls": [
+          "https://arxiv.org/abs/2208.02194",
+          "https://github.com/peizhenbai/DrugBAN",
+          "https://pubmed.ncbi.nlm.nih.gov/17145705/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC4702793/"
+        ],
+        "notes": [
+          "The exact local test set uses DrugBAN's released split.",
+          "For an original-dataset year column instead of evaluation-release year, use '2000 (database)' or '2007 (source paper)' explicitly; avoid presenting 2007 as the initial database launch."
+        ]
+      },
+      {
+        "id": "P43",
+        "dataset": "Drug-target interaction: BioSNAP (DrugBAN split)",
+        "year": 2018,
+        "year_note": "The BioSNAP collection is dated August 2018. The evaluated DrugBAN benchmark split was described in a 2022 preprint, published in a journal in 2023; 2018 is not the date of that split.",
+        "example": "Do [drug representation] and [protein sequence] interact?",
+        "example_type": "Illustrative task paraphrase with placeholders; not an authentic drug-protein pair.",
+        "source_urls": [
+          "https://arxiv.org/abs/2208.02194",
+          "https://github.com/peizhenbai/DrugBAN",
+          "https://snap.stanford.edu/biodata/",
+          "https://snap.stanford.edu/biodata/datasets/10002/10002-ChG-Miner.html"
+        ],
+        "notes": [
+          "The BioSNAP collection's own citation specifies 2018.",
+          "Use '2018 (BioSNAP); 2022 (DrugBAN split)' if displaying both original resource and evaluated benchmark provenance."
+        ]
+      },
+      {
+        "id": "P43",
+        "dataset": "Drug-target interaction: Human (DrugBAN split)",
+        "year": 2015,
+        "year_note": "The original Human compound-protein dataset is from Liu et al. 2015 and was later processed in TransformerCPI (2020). The evaluated DrugBAN benchmark split was described in a 2022 preprint, published in a journal in 2023; 2015 is not the date of that split.",
+        "example": "Do [compound representation] and [human protein sequence] interact?",
+        "example_type": "Illustrative task paraphrase with placeholders; not an authentic compound-protein pair.",
+        "source_urls": [
+          "https://arxiv.org/abs/2208.02194",
+          "https://github.com/peizhenbai/DrugBAN",
+          "https://pubmed.ncbi.nlm.nih.gov/26072486/"
+        ],
+        "notes": [
+          "The original Human dataset paper is 'Improving compound-protein interaction prediction by building up highly credible negative samples', published June 15, 2015.",
+          "DrugBAN's README cites TransformerCPI 2020 as its immediate Human data source; do not label Human a novel DrugBAN dataset."
+        ]
+      }
+    ],
+    "unique_evaluation_count": 43,
+    "dataset_row_count": 45
   }
 }
