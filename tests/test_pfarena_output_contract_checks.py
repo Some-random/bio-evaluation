@@ -141,6 +141,12 @@ class RankingContractTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     audit.audit_full_ranking(expected, [])
 
+    def test_iterators_sets_and_mappings_are_not_frozen_sequences(self):
+        for expected in (iter(()), iter(("a",)), {"a", "b"}, {"a": 1}):
+            with self.subTest(value_type=type(expected).__name__):
+                with self.assertRaises(ValueError):
+                    audit.audit_full_ranking(expected, [])
+
     def test_missing_ranking_field_is_explicit(self):
         self.assertEqual(audit.audit_ranking_object(self.IDS, {}).errors, ("missing_ranking_field",))
 

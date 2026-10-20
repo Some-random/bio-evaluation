@@ -9,7 +9,7 @@
     ".local/source_recovery_round2_2026-10-19/pfarena/authenticated/completion.json": "fdcdc8741b1d4b3a4ade830574741f8a1dc46d044a8531c3bd85552c5eec9b18",
     ".local/source_recovery_round2_2026-10-19/pfarena/authenticated/completion_reconciliation.json": "7e0d0f53ee440a16b2c252195c82e53b81e1aaaa47bfe35209068b2bcf301097",
     ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/PUBLIC_SUMMARY.json": "80e887d178be8aebdd1bfc94862cb397643c4afe380af1c41f396f066e9be943",
-    ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/synthetic_contract_checks/PUBLIC_SUMMARY.json": "9eaf9a12635e337531abb0f154ad587679836d1d40ae367cb2f847e101b1b41d",
+    ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/synthetic_contract_checks/PUBLIC_SUMMARY.json": "789efa00b5a64c1722ba2946d04fbb0ed2f55a3698ff45a9b66be2cc6bd4246d",
     ".local/source_recovery_round2_2026-10-19/pfarena/status.json": "e2766f04132c226cd66f15d335628ba84e41fb37bf61316bb3b05430e316e19c",
     ".local/source_recovery_round2_2026-10-19/rabd_imgt/PUBLIC_SUMMARY.json": "42515bac389276318ae3099774fecf9058a7260535427f757dda60acb890fefa",
     ".local/source_recovery_round2_2026-10-19/rabd_imgt/RECOVERY_SUMMARY.md": "061f7fc7e7b718aa6637f25a0dba1dbfecb7168f1605c2edbcc8132f13924a3b",
@@ -30,7 +30,7 @@
     ".local/source_recovery_round2_2026-10-19/structural/status.json": "061935506e94de8fd44c0be3c5b75ff3d8fb6565e2f881a9a1771209e746eac4"
   },
   "full_catalog_complete": false,
-  "generated_at_pacific": "2026-10-19T22:05:30.312216-07:00",
+  "generated_at_pacific": "2026-10-19T22:08:51.018066-07:00",
   "interpretation": "Reproduction code, live source renderings and reconstructed protocols are explicitly distinct from exact native paper artifacts.",
   "local_transport_validation": {
     "at_pacific": "2026-10-19T17:52:58.303806-07:00",
@@ -325,7 +325,7 @@
     "adapter_only": false,
     "conditioning_positive_controls": "Changing native T3 anchor score or T4 supplied component context changes the prompt and remains visible; changing legitimate candidate order also changes the prompt.",
     "dispatch_authorization_created": false,
-    "finished_at_pacific": "2026-10-19T22:04:51.455327-07:00",
+    "finished_at_pacific": "2026-10-19T22:07:18.694099-07:00",
     "held_review_retried": false,
     "input_reference_invariance": [
       {
@@ -411,12 +411,12 @@
     "runtime_or_full_file_loader_validated": false,
     "skips": [],
     "source_file_sha256": {
-      "scripts/pfarena_output_contract_checks.py": "f274def9615030576b91102654e04fd5de33f97bca6cd034946f7ccb39f44525",
-      "tests/test_pfarena_output_contract_checks.py": "b88ab6e93c578765115ec441eb09b6b07587ce60a65c0d65d4d44be8e81a14c5"
+      "scripts/pfarena_output_contract_checks.py": "b52dfb9ee73652ffd02c4f7e0622ec3a242200e7edd2ca34a20b0a1f8b0cc0fe",
+      "tests/test_pfarena_output_contract_checks.py": "a085b6a9b1ed9120a0c58bb2d4e4cbe5d160ac51da448fce297aab6f7eb8a9da"
     },
     "stage": "synthetic_contract_checks_passed",
-    "started_at_pacific": "2026-10-19T22:04:50.962570-07:00",
-    "successful_subtests": 26,
+    "started_at_pacific": "2026-10-19T22:07:18.626824-07:00",
+    "successful_subtests": 30,
     "successful_test_ids": [
       "synthetic_pfarena_contract_test_suite.NativeSyntheticSeparationTests.test_candidate_order_is_a_real_input_positive_control",
       "synthetic_pfarena_contract_test_suite.NativeSyntheticSeparationTests.test_each_ranking_task_has_separate_full_set_checks",
@@ -434,6 +434,7 @@
       "synthetic_pfarena_contract_test_suite.RankingContractTests.test_duplicate_candidate_is_flagged",
       "synthetic_pfarena_contract_test_suite.RankingContractTests.test_integer_is_not_coerced_to_candidate_id",
       "synthetic_pfarena_contract_test_suite.RankingContractTests.test_invalid_frozen_candidate_contract_is_rejected",
+      "synthetic_pfarena_contract_test_suite.RankingContractTests.test_iterators_sets_and_mappings_are_not_frozen_sequences",
       "synthetic_pfarena_contract_test_suite.RankingContractTests.test_malformed_identifiers_are_flagged",
       "synthetic_pfarena_contract_test_suite.RankingContractTests.test_missing_candidate_is_flagged",
       "synthetic_pfarena_contract_test_suite.RankingContractTests.test_missing_ranking_field_is_explicit",
@@ -442,14 +443,20 @@
       "synthetic_pfarena_contract_test_suite.RankingContractTests.test_unknown_candidate_is_flagged",
       "synthetic_pfarena_contract_test_suite.RankingContractTests.test_whitespace_is_not_silently_repaired"
     ],
+    "superseded_check": {
+      "previous_publication_commit": "6ad86dc",
+      "previous_receipt_sha256": "9eaf9a12635e337531abb0f154ad587679836d1d40ae367cb2f847e101b1b41d",
+      "previous_tests_passed": 23,
+      "reason": "Enforce frozen candidate IDs as a nonempty Sequence; reject generators, sets and mappings before auditing."
+    },
     "synthetic_fixture_scope": "Invented 10-residue strings, candidate tokens and scalar labels only. No benchmark cases or biological measurements.",
     "tests_errored": 0,
     "tests_failed": 0,
-    "tests_passed": 23,
-    "tests_run": 23,
+    "tests_passed": 24,
+    "tests_run": 24,
     "tests_skipped": 0,
     "training": false,
-    "updated_at_pacific": "2026-10-19T22:04:51.455327-07:00",
+    "updated_at_pacific": "2026-10-19T22:07:18.694099-07:00",
     "upstream_repository": "AMix-Bio/PFArena",
     "upstream_revision": "e8f8b3c404d39783a43eaa96ae461f313730114d",
     "upstream_source_sha256": {

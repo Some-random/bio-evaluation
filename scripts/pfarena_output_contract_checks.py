@@ -38,7 +38,8 @@ def audit_full_ranking(candidate_ids: Sequence[str], ranking: Any) -> RankingAud
     An invalid frozen input contract raises ``ValueError``. An invalid answer
     produces an audit result. This does not replace native metric semantics.
     """
-    if isinstance(candidate_ids, (str, bytes)) or not candidate_ids:
+    if (isinstance(candidate_ids, (str, bytes))
+            or not isinstance(candidate_ids, Sequence) or not candidate_ids):
         raise ValueError("Expected a nonempty frozen candidate-ID sequence")
     expected = tuple(candidate_ids)
     if any(_malformed_identifier(value) for value in expected):

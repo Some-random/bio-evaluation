@@ -1,6 +1,6 @@
 # Follow-up recovery of evaluation inputs and tools
 
-Snapshot: 2026-10-19T22:05:30.312216-07:00 (America/Los_Angeles).
+Snapshot: 2026-10-19T22:08:51.018066-07:00 (America/Los_Angeles).
 
 The initial bulk transfers were not the end of source recovery. This follow-up checked author histories, supplements, public original-image copies and tool dependencies. No new benchmark inference, training or model forwards were run.
 
@@ -39,7 +39,7 @@ SlideVQA: verified 44300 ordered case-to-page links across 8000 page identities 
 
 ## Synthetic contract checks begun at 10 PM PDT
 
-A separate delivery-audit helper and 23 synthetic tests were added without modifying native prompts, parsers, scorers, original outputs or execution permissions. All 23 tests pass with no skipped native-builder checks in this environment. The tests execute exact hash-pinned upstream context, prompt and request builders through an in-memory recording client; no SDK setup or API transport is run.
+A separate delivery-audit helper and 24 synthetic tests were added without modifying native prompts, parsers, scorers, original outputs or execution permissions. All 24 tests pass with no skipped native-builder checks in this environment. The tests execute exact hash-pinned upstream context, prompt and request builders through an in-memory recording client; no SDK setup or API transport is run.
 
 For all four PFArena tasks, changing or removing scorer-only target/prior-output fields leaves the captured model payload byte-identical. Positive controls show that candidate order and legitimate T3/T4 conditioning still affect the prompt. This validates these synthetic construction paths, not real file loading or case-level input isolation.
 
