@@ -2,11 +2,11 @@
   "schema_version": 1,
   "generated_at_pacific": "2026-10-20T14:12:54.539073-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "a87142dfc8b9a3eb8e0103ffd9ce7a2ac571244e8c00894186b31bfc6a7b39c0",
+  "report_sha256": "45f095d281358e358531c0c8e99740afc226d63d247355d1206e264f312e695c",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
-  "raw_case_content_included": false,
+  "raw_case_content_included": true,
   "qwen": {
     "additional_historical_score_source_checked_at_pacific": "2026-10-20T14:10:48.585467-07:00",
     "defined_setting_count": 28,
@@ -4599,660 +4599,595 @@
     "detailed_audit_preserved_locally": ".local/catalog_execution_2026-10-20/markdown_report/internal_report_before_presentation.md"
   },
   "dataset_context_added_at_pacific": "2026-10-20T14:36:21.913656-07:00",
-  "dataset_context": {
-    "year_convention": "Named dataset/evaluation introduction; earlier underlying dataset and later benchmark dates distinguished when applicable.",
-    "example_convention": "Short published questions or source-based illustrations; no answers, raw sequences, structures or full test records reproduced.",
-    "records": [
-      {
-        "id": "B01",
-        "dataset": "LAB-Bench: LitQA2",
-        "year": 2024,
-        "year_note": "LitQA2 is the 2024 LAB-Bench dataset; earlier LitQA work is a different release.",
-        "example": "According to the study, how does the specified Spindle E variant affect mature piRNA abundance in silkworm cells?",
-        "example_type": "paraphrased_paper_example",
-        "source_urls": [
-          "https://arxiv.org/abs/2407.10362",
-          "https://arxiv.org/html/2407.10362v3"
-        ],
-        "notes": "Shortened paraphrase of Appendix A.1.4. No answer or sequence included."
-      },
-      {
-        "id": "B02",
-        "dataset": "LAB-Bench: DbQA",
-        "year": 2024,
-        "year_note": "LAB-Bench release year.",
-        "example": "Which listed human gene falls within chromosome band 4q33 in Ensembl Release 110?",
-        "example_type": "paraphrased_paper_example",
-        "source_urls": [
-          "https://arxiv.org/abs/2407.10362",
-          "https://arxiv.org/html/2407.10362v3"
-        ],
-        "notes": "Paraphrase of Appendix A.1.1 gene-location example; supplied choices omitted."
-      },
-      {
-        "id": "B03",
-        "dataset": "LAB-Bench: SuppQA",
-        "year": 2024,
-        "year_note": "LAB-Bench release year.",
-        "example": "In the supplementary methods for [paper], what incubation duration is used in the specified sample-processing step?",
-        "example_type": "paraphrased_paper_example_with_placeholder",
-        "source_urls": [
-          "https://arxiv.org/abs/2407.10362",
-          "https://arxiv.org/html/2407.10362v3"
-        ],
-        "notes": "Generalized from Appendix A.1.5; paper identifier, procedure details and answer omitted. This is not a verbatim test question."
-      },
-      {
-        "id": "B04",
-        "dataset": "LAB-Bench: FigQA",
-        "year": 2024,
-        "year_note": "LAB-Bench release year.",
-        "example": "Where does the half waveplate occur relative to the SLM?",
-        "example_type": "quoted_paper_example",
-        "source_urls": [
-          "https://arxiv.org/abs/2407.10362",
-          "https://arxiv.org/html/2407.10362v3"
-        ],
-        "notes": "11-word question in Appendix A.1.7. Accompanying figure required; answer omitted."
-      },
-      {
-        "id": "B05",
-        "dataset": "LAB-Bench: TableQA",
-        "year": 2024,
-        "year_note": "LAB-Bench release year.",
-        "example": "Using the table, calculate the ratio of increased crotonylated sites to increased succinylated sites.",
-        "example_type": "paraphrased_paper_example",
-        "source_urls": [
-          "https://arxiv.org/abs/2407.10362",
-          "https://arxiv.org/html/2407.10362v3"
-        ],
-        "notes": "Paraphrase of Appendix A.1.8; accompanying table required, no answer included."
-      },
-      {
-        "id": "B07",
-        "dataset": "LAB-Bench: SeqQA",
-        "year": 2024,
-        "year_note": "LAB-Bench release year.",
-        "example": "What is the percent GC of the DNA sequence [sequence]?",
-        "example_type": "paper_question_template_with_placeholder",
-        "source_urls": [
-          "https://arxiv.org/abs/2407.10362",
-          "https://arxiv.org/html/2407.10362v3"
-        ],
-        "notes": "Uses the published percent-GC question template in C.7.15. A placeholder replaces the sequence; this is not a reproduced full case. Combined verbatim LAB-Bench wording kept below 25 words."
-      },
-      {
-        "id": "B08",
-        "dataset": "LAB-Bench: Cloning Scenarios",
-        "year": 2024,
-        "year_note": "LAB-Bench release year.",
-        "example": "From the supplied plasmid and fragment sequences, identify the element carried by the DNA fragment.",
-        "example_type": "paraphrased_paper_example",
-        "source_urls": [
-          "https://arxiv.org/abs/2407.10362",
-          "https://arxiv.org/html/2407.10362v3"
-        ],
-        "notes": "Paraphrase of Appendix A.1.3 first question; sequences, workflow details, answer and choices omitted."
-      },
-      {
-        "id": "V01",
-        "dataset": "VQA-RAD",
-        "year": 2018,
-        "year_note": "Dataset paper published November 20, 2018.",
-        "example": "Which organ is shown in this radiology image?",
-        "example_type": "illustrative_task_prompt",
-        "source_urls": [
-          "https://www.nature.com/articles/sdata2018251",
-          "https://pmc.ncbi.nlm.nih.gov/articles/PMC6244189/"
-        ],
-        "notes": "Illustrative organ-identification prompt based on the paper’s question taxonomy; not claimed to be an authentic test row. Requires the image."
-      },
-      {
-        "id": "V02",
-        "dataset": "SLAKE (English)",
-        "year": 2021,
-        "year_note": "Introduced in 2021; do not substitute the date of a later mirror or cleaned dataset.",
-        "example": "Does the image contain left lung?",
-        "example_type": "quoted_paper_example",
-        "source_urls": [
-          "https://arxiv.org/abs/2102.09542",
-          "https://arxiv.org/pdf/2102.09542"
-        ],
-        "notes": "Seven-word question from Figure 1. Requires the image; answer omitted."
-      },
-      {
-        "id": "V03",
-        "dataset": "PathVQA",
-        "year": 2020,
-        "year_note": "Original dataset paper first submitted March 7, 2020.",
-        "example": "What is expanded in the region of epiphysis?",
-        "example_type": "quoted_paper_example",
-        "source_urls": [
-          "https://arxiv.org/abs/2003.10286",
-          "https://arxiv.org/html/2003.10286"
-        ],
-        "notes": "Nine-word question from Table 2. Requires pathology image/context; answer omitted."
-      },
-      {
-        "id": "V04",
-        "dataset": "ImageCLEF-VQA 2019",
-        "year": 2019,
-        "year_note": "Year of the evaluated 2019 challenge edition; VQA-Med also has other yearly editions.",
-        "example": "In what plane is this mammograph taken?",
-        "example_type": "quoted_official_dataset_example",
-        "source_urls": [
-          "https://www.imageclef.org/2019/medical/vqa/",
-          "https://github.com/abachaa/VQA-Med-2019"
-        ],
-        "notes": "Eight-word example in the official README. Requires the image; answer omitted."
-      },
-      {
-        "id": "V05",
-        "dataset": "PMC-VQA",
-        "year": 2023,
-        "year_note": "Dataset first introduced May 17, 2023; the paper was subsequently revised in 2024.",
-        "example": "What is the view of the brain used in the image?",
-        "example_type": "quoted_paper_example",
-        "source_urls": [
-          "https://arxiv.org/abs/2305.10415",
-          "https://arxiv.org/pdf/2305.10415"
-        ],
-        "notes": "Thirteen-word question in Figure 1. Requires the image; answer and choices omitted."
-      },
-      {
-        "id": "V07",
-        "dataset": "SlideVQA / Ryze visual extraction",
-        "year": 2023,
-        "year_note": "SlideVQA dataset: 2023. Ryze evaluation framework: 2026. Recommend display “2023; Ryze 2026”.",
-        "example": "According to the slide, what percentage is attributed to internal meeting decisions?",
-        "example_type": "paraphrased_paper_example",
-        "source_urls": [
-          "https://arxiv.org/abs/2301.04883",
-          "https://arxiv.org/pdf/2301.04883",
-          "https://arxiv.org/abs/2606.00902"
-        ],
-        "notes": "Paraphrase of SlideVQA Figure 1 single-span example. Requires the slide deck. This example comes from SlideVQA, not a claim to be from the unrecovered exact Ryze Table 3 subset."
-      },
-      {
-        "id": "P01",
-        "dataset": "DeepSol solubility — PEER",
-        "year": 2022,
-        "year_note": "Year refers to the PEER benchmark release; the underlying DeepSol dataset/paper is from 2018.",
-        "example": "Will [protein sequence] be soluble when expressed?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2206.02096",
-          "https://github.com/DeepGraphLearning/PEER_Benchmark",
-          "https://academic.oup.com/bioinformatics/article/34/15/2605/4938490"
-        ],
-        "notes": "Do not equate expression solubility with the soluble/membrane localization label in P02.",
-        "original_dataset_year": 2018
-      },
-      {
-        "id": "P02",
-        "dataset": "DeepLoc binary localization — PEER",
-        "year": 2022,
-        "year_note": "Year refers to PEER; DeepLoc was introduced in 2017.",
-        "example": "Is [protein sequence] a membrane-bound or soluble protein?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2206.02096",
-          "https://github.com/DeepGraphLearning/PEER_Benchmark",
-          "https://academic.oup.com/bioinformatics/article/33/21/3387/3931857"
-        ],
-        "notes": "Binary localization, not ten-class cellular compartment prediction.",
-        "original_dataset_year": 2017
-      },
-      {
-        "id": "P03",
-        "dataset": "DeepLoc subcellular localization — PEER/ProtST",
-        "year": 2022,
-        "year_note": "PEER benchmark release 2022; original DeepLoc 2017; the evaluated class descriptions follow ProtST (2023).",
-        "example": "Which cellular compartment contains [protein sequence], among the ten listed locations?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2206.02096",
-          "https://academic.oup.com/bioinformatics/article/33/21/3387/3931857",
-          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
-        ],
-        "notes": "2773-row publisher PEER LMDB with original ten-class labels; benchmark year does not date individual annotations.",
-        "original_dataset_year": 2017,
-        "interface_year": 2023
-      },
-      {
-        "id": "P04",
-        "dataset": "Envision beta-lactamase activity — PEER",
-        "year": 2022,
-        "year_note": "Year refers to the PEER benchmark release, not the older underlying experimental measurements.",
-        "example": "What activity score does the assay assign to [protein variant sequence]?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2206.02096",
-          "https://github.com/DeepGraphLearning/PEER_Benchmark",
-          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
-        ],
-        "notes": "A task-format example only, with no real protein sequence, mutation or activity prediction."
-      },
-      {
-        "id": "P05",
-        "dataset": "AAV fitness — FLIP",
-        "year": 2021,
-        "year_note": "Original FLIP benchmark released in 2021; evaluated preparation targets its two_vs_many split.",
-        "example": "What fitness score does the assay assign to [AAV variant sequence]?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://www.biorxiv.org/content/10.1101/2021.11.09.467890v1",
-          "https://github.com/J-SNACKKB/FLIP",
-          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
-        ],
-        "notes": "Pure input/output illustration; no viral sequence, mutation identity, ranking or engineering recommendation."
-      },
-      {
-        "id": "P06",
-        "dataset": "Meltome thermostability — FLIP",
-        "year": 2021,
-        "year_note": "Year refers to FLIP; the original Meltome atlas paper is from 2020.",
-        "example": "What is the melting temperature of [protein sequence]?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://www.biorxiv.org/content/10.1101/2021.11.09.467890v1",
-          "https://github.com/J-SNACKKB/FLIP",
-          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
-        ],
-        "notes": "The evaluated split is FLIP human_cell; this endpoint differs from TAPE stability in P08.",
-        "original_dataset_year": 2020
-      },
-      {
-        "id": "P07",
-        "dataset": "GFP fluorescence — TAPE",
-        "year": 2019,
-        "year_note": "Year refers to the TAPE benchmark; the underlying GFP measurements were published earlier.",
-        "example": "What is the log-fluorescence value for [GFP variant sequence]?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/1906.08230",
-          "https://github.com/songlab-cal/tape"
-        ],
-        "notes": "A prediction task, not a request to design a brighter protein."
-      },
-      {
-        "id": "P08",
-        "dataset": "Protein folding stability — TAPE",
-        "year": 2019,
-        "year_note": "Year refers to TAPE; current evaluation uses its released PyTorch stability split.",
-        "example": "What is the folding-stability score of [protein sequence]?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/1906.08230",
-          "https://github.com/songlab-cal/tape"
-        ],
-        "notes": "The native stability score is not a melting temperature; preserve this distinction from P06."
-      },
-      {
-        "id": "P09",
-        "dataset": "Stability classification — NatureLM-style adaptation",
-        "year": 2025,
-        "year_note": "Year is the NatureLM paper protocol, not a verified release of its exact test set; the local derived adaptation was created in 2026.",
-        "example": "Does [protein sequence] meet the benchmark threshold for the stable class?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2502.07527",
-          "https://arxiv.org/html/2502.07527v3#S7.SS2"
-        ],
-        "notes": "Illustrates the classification endpoint. Actual local score is derived offline from P08 scalar predictions, not an independent response to this question.",
-        "local_adaptation_year": 2026
-      },
-      {
-        "id": "P10",
-        "dataset": "Human protein interactions — PEER",
-        "year": 2022,
-        "year_note": "Year refers to the PEER benchmark release; the source interaction dataset predates PEER.",
-        "example": "Do [human protein sequence A] and [human protein sequence B] interact?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2206.02096",
-          "https://github.com/DeepGraphLearning/PEER_Benchmark"
-        ],
-        "notes": "No interaction answer, target or sequence is provided."
-      },
-      {
-        "id": "P11",
-        "dataset": "Yeast protein interactions — PEER",
-        "year": 2022,
-        "year_note": "Year refers to the PEER benchmark release; the source interaction dataset predates PEER.",
-        "example": "Do [yeast protein sequence A] and [yeast protein sequence B] interact?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2206.02096",
-          "https://github.com/DeepGraphLearning/PEER_Benchmark"
-        ],
-        "notes": "No interaction answer, target or sequence is provided."
-      },
-      {
-        "id": "P16",
-        "dataset": "Enzyme reaction classes — IEConv/ProtST",
-        "year": 2020,
-        "year_note": "Underlying reaction benchmark introduced in the 2020 IEConv preprint (ICLR 2021); ProtST supplied the 2023 zero-shot text interface.",
-        "example": "Which of the 384 reaction classes matches [protein sequence]?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2007.06252",
-          "https://github.com/phermosilla/IEConv_proteins",
-          "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf"
-        ],
-        "notes": "Current local condition uses ProtST class descriptions and sequence input, not the original IEConv structural model.",
-        "interface_year": 2023
-      },
-      {
-        "id": "P17",
-        "dataset": "ProteinGym substitutions",
-        "year": 2022,
-        "year_note": "ProteinGym first appeared with Tranception in 2022; expanded benchmark paper in 2023. Planned archive is v1.3; its exact release date is not established here.",
-        "example": "How do the assay scores differ across [protein variant sequences]?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2205.13760",
-          "https://proceedings.neurips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
-          "https://github.com/OATML-Markslab/ProteinGym"
-        ],
-        "notes": "Assay-defined numerical fitness prediction; broad mixed corpus includes held scope. No real variant or assay content inspected for this illustration.",
-        "expanded_benchmark_year": 2023,
-        "planned_version": "v1.3"
-      },
-      {
-        "id": "P19",
-        "dataset": "PFArena T1 — single-mutant generation",
-        "year": 2026,
-        "year_note": "PFArena first public paper and benchmark release: September 2026.",
-        "example": "Task: return single-substitution candidates for [protein] under [assay description].",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2609.28921",
-          "https://arxiv.org/html/2609.28921v1#S2.SS1.SSS1"
-        ],
-        "notes": "High-level format illustration only; no mutation positions, sequences, scores or engineering advice."
-      },
-      {
-        "id": "P21",
-        "dataset": "PFArena T3 — anchor-informed ranking",
-        "year": 2026,
-        "year_note": "PFArena first public paper and benchmark release: September 2026.",
-        "example": "Rank [candidate variants] using [assay description] and the supplied score for [reference variant].",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2609.28921",
-          "https://arxiv.org/html/2609.28921v1#S2.SS1.SSS3"
-        ],
-        "notes": "Reference variant means one measured anchor. No candidate identities or rankings are supplied."
-      },
-      {
-        "id": "P22",
-        "dataset": "PFArena T4 — single-mutant-informed ranking",
-        "year": 2026,
-        "year_note": "PFArena first public paper and benchmark release: September 2026.",
-        "example": "Rank [combined variants] using [assay description] and supplied measurements for their individual substitutions.",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2609.28921",
-          "https://arxiv.org/html/2609.28921v1#S2.SS1.SSS4"
-        ],
-        "notes": "Only describes the permitted input/output contract; no actual substitutions or scores."
-      },
-      {
-        "id": "P23",
-        "dataset": "Mol-Instructions — protein function",
-        "year": 2023,
-        "year_note": "Dataset first released June 2023; ICLR paper published 2024. Current evaluation uses its BioT5+ export.",
-        "example": "What biological function is associated with [protein sequence]?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2306.08018",
-          "https://github.com/zjunlp/Mol-Instructions"
-        ],
-        "notes": "Paraphrases the protein function instruction family, not a particular test example.",
-        "publication_year": 2024
-      },
-      {
-        "id": "P24",
-        "dataset": "Mol-Instructions — catalytic activity",
-        "year": 2023,
-        "year_note": "Dataset first released June 2023; ICLR paper published 2024. Current evaluation uses its BioT5+ export.",
-        "example": "What reaction does [protein sequence] catalyze?",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2306.08018",
-          "https://github.com/zjunlp/Mol-Instructions"
-        ],
-        "notes": "Paraphrases the catalytic activity instruction family, without a real enzyme or reaction answer.",
-        "publication_year": 2024
-      },
-      {
-        "id": "P25",
-        "dataset": "Mol-Instructions — domains and motifs",
-        "year": 2023,
-        "year_note": "Dataset first released June 2023; ICLR paper published 2024. Current evaluation uses its BioT5+ export.",
-        "example": "Describe the domains and motifs associated with [protein sequence].",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2306.08018",
-          "https://github.com/zjunlp/Mol-Instructions"
-        ],
-        "notes": "Paraphrases the domain/motif instruction family.",
-        "publication_year": 2024
-      },
-      {
-        "id": "P26",
-        "dataset": "Mol-Instructions — general function",
-        "year": 2023,
-        "year_note": "Dataset first released June 2023; ICLR paper published 2024. Current evaluation uses its BioT5+ export.",
-        "example": "Write a short description of the overall role of [protein sequence].",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2306.08018",
-          "https://github.com/zjunlp/Mol-Instructions"
-        ],
-        "notes": "Distinct Mol-Instructions general_function subset from the protein_function subset in P23.",
-        "publication_year": 2024
-      },
-      {
-        "id": "P27",
-        "dataset": "NatureLM — protein characteristics description",
-        "year": 2025,
-        "year_note": "Year dates the NatureLM evaluation protocol; its exact frozen NCBI temporal test release remains unavailable in the audited sources.",
-        "example": "Describe the properties and functions of [protein sequence].",
-        "example_type": "Illustrative paraphrase with placeholders; not a verbatim benchmark row",
-        "source_urls": [
-          "https://arxiv.org/abs/2502.07527",
-          "https://arxiv.org/html/2502.07527v3#S4.SS4"
-        ],
-        "notes": "Any alternative cohort is an adaptation and must not be described as the original released NatureLM dataset."
-      },
-      {
-        "id": "P34",
-        "dataset": "MutaPLM iterative optimization evaluation",
-        "year": 2024,
-        "year_note": "The iterative optimization evaluation is described in the 2024 MutaPLM paper; this is not the release year of every underlying experimental fitness landscape.",
-        "example": "Given [protein] and [evaluation objective], propose the next candidate in an iterative optimization run.",
-        "example_type": "Illustrative task paraphrase with placeholders; not an authentic test item.",
-        "source_urls": [
-          "https://arxiv.org/abs/2410.22949",
-          "https://github.com/PharMolix/MutaPLM"
-        ],
-        "notes": [
-          "The first public paper was submitted October 30, 2024 and appeared at NeurIPS 2024.",
-          "Describe this as an evaluation task, not a single newly released question-answer dataset."
-        ]
-      },
-      {
-        "id": "P35",
-        "dataset": "ProtST text-to-protein retrieval",
-        "year": 2023,
-        "year_note": "Release year of the ProtST retrieval evaluation, not the original Gene Ontology or protein-database resource.",
-        "example": "Which proteins in [candidate collection] best match [functional description]?",
-        "example_type": "Illustrative task paraphrase with placeholders; not an authentic test item.",
-        "source_urls": [
-          "https://proceedings.mlr.press/v202/xu23t.html",
-          "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/script/run_t2p_retrieval.py"
-        ],
-        "notes": [
-          "ProtST first appeared January 2023 and at ICML 2023.",
-          "The reported five-query task retrieves candidates; it is not itself a universally labelled QA set."
-        ]
-      },
-      {
-        "id": "P37",
-        "dataset": "NatureLM unconditional protein generation",
-        "year": 2025,
-        "year_note": "Release year of the NatureLM evaluation; no conventional question-answer dataset is used for unconditional generation.",
-        "example": "Input: the protein start token only. Output: a generated protein sequence.",
-        "example_type": "Task paraphrase of the published unconditional input contract; no sequence or test item reproduced.",
-        "source_urls": [
-          "https://arxiv.org/abs/2502.07527",
-          "https://arxiv.org/html/2502.07527v3#S4.SS1"
-        ],
-        "notes": [
-          "The first NatureLM paper was submitted February 11, 2025.",
-          "Section 4.1 explicitly uses only the protein start token; inventing a natural-language question would misstate the original task."
-        ]
-      },
-      {
-        "id": "P38",
-        "dataset": "NatureLM property-conditioned protein generation",
-        "year": 2025,
-        "year_note": "Release year of the NatureLM property-conditioned generation evaluation.",
-        "example": "Generate a soluble protein sequence.",
-        "example_type": "Published illustrative prompt from NatureLM Example 4.1; not claimed to be an evaluated test row.",
-        "source_urls": [
-          "https://arxiv.org/abs/2502.07527",
-          "https://arxiv.org/html/2502.07527v3#S4.SS2"
-        ],
-        "notes": [
-          "This is a six-word quotation from the paper's own prompt example.",
-          "Current local proxy evaluators are an adaptation; the historical task/example year remains 2025."
-        ]
-      },
-      {
-        "id": "P39",
-        "dataset": "NatureLM heme-binding generation case study",
-        "year": 2025,
-        "year_note": "Release year of the NatureLM case study; no standardized released test cohort or question bank is established.",
-        "example": "Design a heme-binding protein sequence.",
-        "example_type": "Published illustrative prompt from NatureLM Example 4.2; no sequence or procedural details reproduced.",
-        "source_urls": [
-          "https://arxiv.org/abs/2502.07527",
-          "https://arxiv.org/html/2502.07527v3#S4.SS5"
-        ],
-        "notes": [
-          "This is a seven-word quotation from the paper's own case-study prompt.",
-          "A qualitative case study should not be described as a released scored question-answer dataset."
-        ]
-      },
-      {
-        "id": "P40",
-        "dataset": "RAbD antibody-region redesign benchmark",
-        "year": 2018,
-        "year_note": "Original RAbD benchmark/framework: 2018. The NatureLM evaluation was published in 2025; the separate Proteo-R1 structural protocol in 2026.",
-        "example": "Complete [masked antibody region] using [antigen and antibody-framework context].",
-        "example_type": "Illustrative task paraphrase with placeholders; not an authentic complex or design request.",
-        "source_urls": [
-          "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006112",
-          "https://arxiv.org/html/2502.07527v3#S4.SS3",
-          "https://arxiv.org/abs/2605.02937"
-        ],
-        "notes": [
-          "Original RAbD paper published April 27, 2018.",
-          "The currently prepared local 60-complex condition uses recovered current structures and is not proof of the exact original processed benchmark bytes."
-        ]
-      },
-      {
-        "id": "P41",
-        "dataset": "Proteo-R1 structural design demonstrations",
-        "year": 2026,
-        "year_note": "Release year of the Proteo-R1 task/demonstrations. Its underlying SAbDab resource was published online in 2013, in the 2014 NAR database issue.",
-        "example": "Complete [masked antibody structure] while preserving [fixed framework context].",
-        "example_type": "Illustrative task paraphrase with placeholders; not an authentic structural test case.",
-        "source_urls": [
-          "https://arxiv.org/abs/2605.02937",
-          "https://github.com/smiles724/Proteo-R1",
-          "https://doi.org/10.1093/nar/gkt1043"
-        ],
-        "notes": [
-          "Proteo-R1 was first submitted May 1, 2026; journal reference ICML 2026.",
-          "Released demonstrations and the full SAbDab holdout are distinct; do not relabel five demonstrations as the complete paper test set."
-        ]
-      },
-      {
-        "id": "P42",
-        "dataset": "STRIDE GFP candidate-editing evaluation",
-        "year": 2026,
-        "year_note": "Release year of the STRIDE evaluation, not the age of the underlying GFP measurements or trained evaluator.",
-        "example": "Given [reference GFP sequence], return a candidate using the task's permitted edit notation.",
-        "example_type": "Illustrative task paraphrase with placeholders; no sequence, mutation or experimental optimization instructions.",
-        "source_urls": [
-          "https://arxiv.org/abs/2603.03573",
-          "https://proceedings.mlr.press/v306/zhang26ik.html",
-          "https://github.com/daiheng-zhang/STRIDE"
-        ],
-        "notes": [
-          "First public paper submitted March 3, 2026; ICML 2026 publication.",
-          "The local result is automated evaluator acceptance, not experimentally measured fluorescence."
-        ]
-      },
-      {
-        "id": "P43",
-        "dataset": "Drug-target interaction: BindingDB (DrugBAN split)",
-        "year": 2000,
-        "year_note": "BindingDB launched in 2000; its commonly cited foundational dataset paper is from 2007. The evaluated DrugBAN benchmark split was described in a 2022 preprint, published in a journal in 2023; 2000 is not the date of that split.",
-        "example": "Do [drug representation] and [protein sequence] interact?",
-        "example_type": "Illustrative task paraphrase with placeholders; not an authentic drug-protein pair.",
-        "source_urls": [
-          "https://arxiv.org/abs/2208.02194",
-          "https://github.com/peizhenbai/DrugBAN",
-          "https://pubmed.ncbi.nlm.nih.gov/17145705/",
-          "https://pmc.ncbi.nlm.nih.gov/articles/PMC4702793/"
-        ],
-        "notes": [
-          "The exact local test set uses DrugBAN's released split.",
-          "For an original-dataset year column instead of evaluation-release year, use '2000 (database)' or '2007 (source paper)' explicitly; avoid presenting 2007 as the initial database launch."
-        ]
-      },
-      {
-        "id": "P43",
-        "dataset": "Drug-target interaction: BioSNAP (DrugBAN split)",
-        "year": 2018,
-        "year_note": "The BioSNAP collection is dated August 2018. The evaluated DrugBAN benchmark split was described in a 2022 preprint, published in a journal in 2023; 2018 is not the date of that split.",
-        "example": "Do [drug representation] and [protein sequence] interact?",
-        "example_type": "Illustrative task paraphrase with placeholders; not an authentic drug-protein pair.",
-        "source_urls": [
-          "https://arxiv.org/abs/2208.02194",
-          "https://github.com/peizhenbai/DrugBAN",
-          "https://snap.stanford.edu/biodata/",
-          "https://snap.stanford.edu/biodata/datasets/10002/10002-ChG-Miner.html"
-        ],
-        "notes": [
-          "The BioSNAP collection's own citation specifies 2018.",
-          "Use '2018 (BioSNAP); 2022 (DrugBAN split)' if displaying both original resource and evaluated benchmark provenance."
-        ]
-      },
-      {
-        "id": "P43",
-        "dataset": "Drug-target interaction: Human (DrugBAN split)",
-        "year": 2015,
-        "year_note": "The original Human compound-protein dataset is from Liu et al. 2015 and was later processed in TransformerCPI (2020). The evaluated DrugBAN benchmark split was described in a 2022 preprint, published in a journal in 2023; 2015 is not the date of that split.",
-        "example": "Do [compound representation] and [human protein sequence] interact?",
-        "example_type": "Illustrative task paraphrase with placeholders; not an authentic compound-protein pair.",
-        "source_urls": [
-          "https://arxiv.org/abs/2208.02194",
-          "https://github.com/peizhenbai/DrugBAN",
-          "https://pubmed.ncbi.nlm.nih.gov/26072486/"
-        ],
-        "notes": [
-          "The original Human dataset paper is 'Improving compound-protein interaction prediction by building up highly credible negative samples', published June 15, 2015.",
-          "DrugBAN's README cites TransformerCPI 2020 as its immediate Human data source; do not label Human a novel DrugBAN dataset."
-        ]
-      }
-    ],
-    "unique_evaluation_count": 43,
-    "dataset_row_count": 45
-  }
+  "question_content_scope": "verified_short_questions_or_instruction_excerpts_only",
+  "question_reference_answers_included": false,
+  "single_table_revision_at_pacific": "2026-10-20T14:54:14.298183-07:00",
+  "verified_questions": [
+    {
+      "id": "B01",
+      "dataset": "LAB-Bench: LitQA2",
+      "origin": "exact_saved_request_question",
+      "question_excerpt_sha256": "2632e9f104fb71ebcbf1114fc7bbc1ca58eb6e9d841dbdf8aacbb6dd15f6dd49",
+      "verbatim": true,
+      "source_url": "https://github.com/Some-random/bio-evaluation/blob/2a7f87963f98927a02ce66c57c1738e216f84405/results/runs/qwen38_27b_litqa2_replay_2026-10-16/requests/05709e2e5d04ddecc96afc5828ea3f5c5497e523cfdbdff5132ada6bcb4a71de.json",
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_litqa2_replay_2026-10-16/requests/05709e2e5d04ddecc96afc5828ea3f5c5497e523cfdbdff5132ada6bcb4a71de.json",
+      "source_sha256": "a08d9e9b1a4805f61474071259497c1883b1286f471c302c0dd2efc4bd0b9ef1",
+      "run_id": "qwen38_27b_litqa2_replay_2026-10-16",
+      "case_id": "4949fc05-5f78-4dd0-8d9c-3dbb6004740a",
+      "note": "saved request in the completed reviewed Qwen run"
+    },
+    {
+      "id": "B02",
+      "dataset": "LAB-Bench: DbQA",
+      "origin": "exact_released_question_from_archived_preparation",
+      "question_excerpt_sha256": "57302416b230246f0d282fc68e77bfb877ce5a13c4380d03d04edc7d2ae45b68",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/futurehouse/lab-bench/blob/5c77cec648430f30611808808861eb86f81d5eaa/DbQA/train-00000-of-00001.parquet",
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/artifacts/evaluation-assets.tar.gz.part0000",
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": "3c44bd92-e02a-4829-9156-b1df56be9174",
+      "note": "Not asserted from preparation; original Qwen request file not locally recovered"
+    },
+    {
+      "id": "B03",
+      "dataset": "LAB-Bench: SuppQA",
+      "origin": "exact_saved_request_question",
+      "question_excerpt_sha256": "5eba8893aaa7ff7a2b0d404970c4589b3e829ffd7894d0c32e5a35db6fb22685",
+      "verbatim": true,
+      "source_url": "https://github.com/Some-random/bio-evaluation/blob/bbdf2832496a87f1be98b386dccabac423addb79/results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/trajectory_index.json",
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/requests/233d18eec5829c279a6a8eec1e86296b4e225fe527444929cf3bf95df3b3e92b.json",
+      "source_sha256": "c2b07a7870a1d530c2e16b3f8ef8e0a4291e36c7587ac5853fa12dd64e8cfdad",
+      "run_id": "qwen38_27b_b03_slurm_replay_2026-10-16",
+      "case_id": "30fce0db-9bb8-4a89-ae5c-78f665da41f6",
+      "note": "saved request in the completed reviewed Qwen run"
+    },
+    {
+      "id": "B04",
+      "dataset": "LAB-Bench: FigQA",
+      "origin": "exact_saved_request_question",
+      "question_excerpt_sha256": "c7a7175452d62acf6e0de10a363e285792d847dee4460ba99c426f4099bf070e",
+      "verbatim": true,
+      "source_url": "https://github.com/Some-random/bio-evaluation/blob/bbdf2832496a87f1be98b386dccabac423addb79/results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/trajectory_index.json",
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/requests/68a4c9545b85499d0036184e2d19a2f245411db7890c5c65e10b76bd846cc008.json",
+      "source_sha256": "e008d48d6288d60fb0384b6881fa917a95fa197458a6d0a27f7ccc6be8b260d2",
+      "run_id": "qwen38_27b_b04_slurm_replay_2026-10-16",
+      "case_id": "3d5b84db-c3e2-4c3f-a359-ef502b968f9d",
+      "note": "saved request in the completed reviewed Qwen run"
+    },
+    {
+      "id": "B05",
+      "dataset": "LAB-Bench: TableQA",
+      "origin": "exact_saved_request_question",
+      "question_excerpt_sha256": "4cb136cef8d87528cd2a1095163de2728d21f592e8383bd19ef590efa5c0b9e6",
+      "verbatim": true,
+      "source_url": "https://github.com/Some-random/bio-evaluation/blob/bbdf2832496a87f1be98b386dccabac423addb79/results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/trajectory_index.json",
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/requests/03347599650da332c163393327a395437cfe58c2b6f1bda16bdca9bce0011cc6.json",
+      "source_sha256": "e79a47d6b40c14ad7a9060583510de77eba25e20d313ae44b46d48d089e2c284",
+      "run_id": "qwen38_27b_b05_slurm_replay_2026-10-16",
+      "case_id": "5d3f8067-fe32-4abb-9646-276150413965",
+      "note": "saved request in the completed reviewed Qwen run"
+    },
+    {
+      "id": "B07",
+      "dataset": "LAB-Bench: SeqQA",
+      "origin": "exact_released_question_from_archived_preparation",
+      "question_excerpt_sha256": "f0a59be6d6219e14d8520c63ca06d851e5c734eade281de26bafad60d5acc3f0",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/futurehouse/lab-bench/blob/5c77cec648430f30611808808861eb86f81d5eaa/SeqQA/train-00000-of-00001.parquet",
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/artifacts/evaluation-assets.tar.gz.part0000",
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": "944d8892-ff7a-402e-b6b1-2768872361e1",
+      "note": "Not asserted from preparation; original Qwen request file not locally recovered"
+    },
+    {
+      "id": "B08",
+      "dataset": "LAB-Bench: Cloning Scenarios",
+      "origin": "exact_question_excerpt_from_released_case",
+      "question_excerpt_sha256": "53ae8fafdbfa2231a56f9cbad4207c0b1d802a22c21c764745008b79645eeb0c",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/futurehouse/lab-bench/blob/5c77cec648430f30611808808861eb86f81d5eaa/CloningScenarios/train-00000-of-00001.parquet",
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_resume_2026-10-19/b08_uniform16k_draft/model_inputs.jsonl",
+      "source_sha256": "63ab1d4f5ccc1b8bf2685690e9867b0bfeb58bb36d1f7a04407d708e7e6b6009",
+      "run_id": null,
+      "case_id": "24f6a29d-11b2-41ed-b1ac-c70a943e97d2",
+      "note": "Current uniform-16K file is preparation only; not claimed as dispatched"
+    },
+    {
+      "id": "V01",
+      "dataset": "VQA-RAD",
+      "origin": "exact_released_test_question",
+      "question_excerpt_sha256": "ca19c829fbb2d23bc27f37c3018dd8cd20adefabcfcdcc2efd769698b76487b5",
+      "verbatim": true,
+      "source_url": "https://osf.io/download/6qdas/",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": "V01:13",
+      "note": "Original run request not recovered; this is an actual source test question, not an assertion of a recovered request"
+    },
+    {
+      "id": "V02",
+      "dataset": "SLAKE (English)",
+      "origin": "exact_released_test_question",
+      "question_excerpt_sha256": "d474ca421da5e2ca2afdcd85ca2d411febe38c1eb0534363b6e87d0216c6d132",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/BoKelvin/SLAKE/resolve/a9083ce6c34ac3ffb17671a605962924d8a8f9e9/test.json",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": "V02:11936",
+      "note": "Original run request not recovered; this is an actual source test question, not an assertion of a recovered request"
+    },
+    {
+      "id": "V03",
+      "dataset": "PathVQA",
+      "origin": "exact_published_dataset_question",
+      "question_excerpt_sha256": "324e89e36900c28629cc26ed02cfb9b1a7666dc74f33b3898737934df287d625",
+      "verbatim": true,
+      "source_url": "https://arxiv.org/html/2003.10286",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "Paper dataset example, not recovered local request"
+    },
+    {
+      "id": "V04",
+      "dataset": "ImageCLEF-VQA 2019",
+      "origin": "exact_released_test_question",
+      "question_excerpt_sha256": "b92060d41bdd780419ff04902dbe7268ddd1e0b57ca2bdcf8213cb468016a786",
+      "verbatim": true,
+      "source_url": "https://raw.githubusercontent.com/abachaa/VQA-Med-2019/e673406ebc64cf499397e8abc0b63771b2db4bb9/VQAMed2019Test/VQAMed2019_Test_Questions.txt",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": "synpic54082",
+      "note": "Original run request not recovered; this is an actual source test question, not an assertion of a recovered request"
+    },
+    {
+      "id": "V05",
+      "dataset": "PMC-VQA",
+      "origin": "exact_published_dataset_question",
+      "question_excerpt_sha256": "f84117acac72047f5d559638dc480c941c0e59fc8102e83d75ea848593e69e84",
+      "verbatim": true,
+      "source_url": "https://arxiv.org/pdf/2305.10415",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "Paper dataset example, not recovered local request"
+    },
+    {
+      "id": "V07",
+      "dataset": "SlideVQA / Ryze visual extraction",
+      "origin": "exact_released_test_question",
+      "question_excerpt_sha256": "5ef0a42da2e77e6819dc52cc79a24b38a889610d4ddac8dfeb86e5f27d995965",
+      "verbatim": true,
+      "source_url": "https://github.com/nttmdlab-nlp/SlideVQA/blob/0d4168a935d60b0b218097205a02fb1133c8bead/annotations/qa/test.jsonl#L1",
+      "source_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/source_acquisition_2026-10-19/vision/slidevqa/source/annotations/qa/test.jsonl",
+      "source_sha256": "889531a1f74ccd51c70e82e991879340aa5a750ee3422c66d31602208982c5c3",
+      "run_id": null,
+      "case_id": "V07_slidevqa_test_00000",
+      "note": "Released test row used in prepared inputs; no inference or completed case review claimed. Only this short public question is proposed for display, not private annotations or references."
+    },
+    {
+      "id": "P01",
+      "dataset": "DeepSol solubility — PEER",
+      "origin": "exact_published_task_definition_excerpt",
+      "question_excerpt_sha256": "22cfe490626298d3ca7b5eb312e4d3f31050ec516dbc515a169af812d53427aa",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task177_solubility_peer_test.json",
+      "source_path": "sources/biot5_data__tasks_plus__task177_solubility_peer_test.json",
+      "source_sha256": "9969927c394040332bd9f00e4adc7d7d3e6e158efc548823c4e589079a93343f",
+      "run_id": null,
+      "case_id": null,
+      "note": "Exact source definition used by the frozen evaluation builder; original saved request unavailable. Protein sequences omitted."
+    },
+    {
+      "id": "P02",
+      "dataset": "DeepLoc binary localization — PEER",
+      "origin": "exact_published_task_definition_excerpt",
+      "question_excerpt_sha256": "d2499d2ae9c31cc9c3468dea562ba30ab4e26ff11ed98ed2205146c0ecdfca36",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task180_binloc_peer_test.json",
+      "source_path": "sources/biot5_data__tasks_plus__task180_binloc_peer_test.json",
+      "source_sha256": "5d33982e7b7b3fe570cfdb5340844c82e233019f270b0fb60b42f1beec7a8097",
+      "run_id": null,
+      "case_id": null,
+      "note": "Exact source definition used by the frozen evaluation builder; original saved request unavailable. Protein sequences omitted."
+    },
+    {
+      "id": "P03",
+      "dataset": "DeepLoc subcellular localization — PEER/ProtST",
+      "origin": "exact_dispatched_instruction_excerpt",
+      "question_excerpt_sha256": "ba307f4051a5a82a672beb696b2a84217538cc2e835bd4679410c9b96c9ea7dd",
+      "verbatim": true,
+      "source_url": null,
+      "source_path": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/requests/000e83b6472bb4750667db74e0a2df2ff75a2d2eeb6b961c779936efec2958a8.json",
+      "source_sha256": "57bcc24242bf09710cf362e183a59fb956b95237d626d17fcfba5809fb54dcce",
+      "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16",
+      "case_id": "subcellular_localization:test:1684",
+      "note": "Verbatim opening instruction from a saved request. Sequence payload and any following class-list context omitted."
+    },
+    {
+      "id": "P04",
+      "dataset": "Envision beta-lactamase activity — PEER",
+      "origin": "not_an_authored_question",
+      "question_excerpt_sha256": "ce23c8fa6e432e1441c639b24a21662fc40d8fdfc992c79fcce172fa9344da20",
+      "verbatim": false,
+      "source_url": "https://arxiv.org/abs/2206.02096",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "Explanatory statement, not a quoted dataset question."
+    },
+    {
+      "id": "P05",
+      "dataset": "AAV fitness — FLIP",
+      "origin": "not_an_authored_question",
+      "question_excerpt_sha256": "912aff9e3e059308e8dd53925f3c52a964b42514195522b945b13e3054140537",
+      "verbatim": false,
+      "source_url": "https://www.biorxiv.org/content/10.1101/2021.11.09.467890v1",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "Explanatory statement, not a quoted dataset question."
+    },
+    {
+      "id": "P06",
+      "dataset": "Meltome thermostability — FLIP",
+      "origin": "exact_dispatched_instruction_excerpt",
+      "question_excerpt_sha256": "d1dbc50a61358312d2a301bbb151ba072d10856c662cc2baac2edcb8e25055a5",
+      "verbatim": true,
+      "source_url": null,
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/P06/runtime/benchmark/requests/00a4d3ad6a675b0ea58116cdbad8789a7463e518fbb99c49752792db9c44600a.json",
+      "source_sha256": "af68d2158c905acb677d04789c64a3bb5e587c39af6153c54f3682df2df46c7f",
+      "run_id": "qwen38_27b_p06_full_test_nonthinking_regex256_2026-10-20_v1",
+      "case_id": "human_cell:7114",
+      "note": "Verbatim opening instruction from a saved request. Sequence payload and any following class-list context omitted."
+    },
+    {
+      "id": "P07",
+      "dataset": "GFP fluorescence — TAPE",
+      "origin": "exact_dispatched_instruction_excerpt",
+      "question_excerpt_sha256": "5729eb184e5c1d1a7b81cbc6e8b7ba14c413e23b328bd280b64e6c85053080e2",
+      "verbatim": true,
+      "source_url": null,
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/P07/runtime/benchmark/requests/0000e5f4d1cee4ea760a792cd0f24649f7dbc03b7826b6b3e4b222868df7c245.json",
+      "source_sha256": "415b21b3146db11f78f043f5f361982f9940c78cb892b0647fb7699df659fb7e",
+      "run_id": "qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1",
+      "case_id": "fluorescence:test:9091",
+      "note": "Verbatim opening instruction from a saved request. Sequence payload and any following class-list context omitted."
+    },
+    {
+      "id": "P08",
+      "dataset": "Protein folding stability — TAPE",
+      "origin": "exact_dispatched_instruction_excerpt",
+      "question_excerpt_sha256": "41c634fa72f4a44cc225c1069289658d446e4c4af25de1e6dd9487a3fb5af28e",
+      "verbatim": true,
+      "source_url": null,
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/P08/runtime/benchmark/requests/000fb4466f4cb646f7bb0c3f05365bd85e8a2b4670074486f8d3a5b65ac80334.json",
+      "source_sha256": "37023275f83f1a95cf775cffd5bcb40c2d2863fd23e175139e863f1e8e7a04bb",
+      "run_id": "qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1",
+      "case_id": "stability:test:7166",
+      "note": "Verbatim opening instruction from a saved request. Sequence payload and any following class-list context omitted."
+    },
+    {
+      "id": "P09",
+      "dataset": "Stability classification — NatureLM-style adaptation",
+      "origin": "not_an_authored_question",
+      "question_excerpt_sha256": "eb7a79df570b58d73d49d9a85ea7c42502b3238e59d03b7b279224ac9aa200a3",
+      "verbatim": false,
+      "source_url": "https://arxiv.org/abs/2502.07527",
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/P09/adaptation_config.json",
+      "source_sha256": null,
+      "run_id": "qwen38_27b_p09_scireason_gt1_from_p08_2026-10-20_v1",
+      "case_id": null,
+      "note": "Explanatory statement, not a quoted dataset question."
+    },
+    {
+      "id": "P10",
+      "dataset": "Human protein interactions — PEER",
+      "origin": "exact_published_task_definition_excerpt",
+      "question_excerpt_sha256": "92e36bd17d78d01c165e5a75fff2108a23935b15a6e90c02e8d33d62e138bc6a",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task174_human_ppi_peer_test.json",
+      "source_path": "sources/biot5_data__tasks_plus__task174_human_ppi_peer_test.json",
+      "source_sha256": "3d3a5607140e88ddeab44da11b3d121fd7e8c986b031f1539ad79ddc9aec0a61",
+      "run_id": null,
+      "case_id": null,
+      "note": "Exact source definition used by the frozen evaluation builder; original saved request unavailable. Protein sequences omitted."
+    },
+    {
+      "id": "P11",
+      "dataset": "Yeast protein interactions — PEER",
+      "origin": "exact_published_task_definition_excerpt",
+      "question_excerpt_sha256": "cac243ba184d42955307931a82faf6ee0b79a29d6998fb2e395b925617108aeb",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task171_yeast_ppi_peer_test.json",
+      "source_path": "sources/biot5_data__tasks_plus__task171_yeast_ppi_peer_test.json",
+      "source_sha256": "f15a6e70cf25baed4e1252dd91bda85c9ee2bb3c47a18d65a7640319adba21a2",
+      "run_id": null,
+      "case_id": null,
+      "note": "Exact source definition used by the frozen evaluation builder; original saved request unavailable. Protein sequences omitted."
+    },
+    {
+      "id": "P16",
+      "dataset": "Enzyme reaction classes — IEConv/ProtST",
+      "origin": "exact_dispatched_instruction_excerpt",
+      "question_excerpt_sha256": "a455fa4bf8ca3f757d75e8818beb2681acb2fc30cbdd032852c31367522c3293",
+      "verbatim": true,
+      "source_url": null,
+      "source_path": "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_000/requests/00220063db6c0802cd3ef8225e6cc3cc83c430a4404573564b1a91e13e4822c8.json",
+      "source_sha256": "1647359b2b4935003e38f3ddff247abb60cea79b89210799cce4395edc581d75",
+      "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
+      "case_id": "Reaction:test:714",
+      "note": "Verbatim opening instruction from a saved request. Sequence payload and any following class-list context omitted."
+    },
+    {
+      "id": "P17",
+      "dataset": "ProteinGym substitutions",
+      "origin": "not_an_authored_question",
+      "question_excerpt_sha256": "44d105d6bea4cd4f28753f10e74a3b048dc60e591e90eae85472856a87997771",
+      "verbatim": false,
+      "source_url": "https://arxiv.org/abs/2205.13760",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "Explanatory statement, not a quoted dataset question."
+    },
+    {
+      "id": "P19",
+      "dataset": "PFArena T1 — single-mutant generation",
+      "origin": "exact_native_prompt_template_excerpt_not_dispatched",
+      "question_excerpt_sha256": "c1d829aaa437ae8941ee47f5c2a17560ae01cef413b82bd2d2e8a4cb3064cd47",
+      "verbatim": true,
+      "source_url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/prompts/single_mutant_generation.py",
+      "source_path": ".local/source_recovery_round2_2026-10-19/pfarena/official_code/code/prompts/single_mutant_generation.py",
+      "source_sha256": "18457c36c4bfd565534783a98520343f02dff3dbed7636ba6c8e9b642266560f",
+      "run_id": null,
+      "case_id": null,
+      "note": "Native task-goal excerpt; only prepared reviewed scope exists, no model dispatch shown."
+    },
+    {
+      "id": "P21",
+      "dataset": "PFArena T3 — anchor-informed ranking",
+      "origin": "exact_native_prompt_template_excerpt_not_dispatched",
+      "question_excerpt_sha256": "4faad28033802c0de7677b99ac2949e15a32086c86c005b71be1de845603f519",
+      "verbatim": true,
+      "source_url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/prompts/multi_mutant_ranking_anchor.py",
+      "source_path": ".local/source_recovery_round2_2026-10-19/pfarena/official_code/code/prompts/multi_mutant_ranking_anchor.py",
+      "source_sha256": "b9b42655d35e83f41f91342f58f08b356121e371eb89b9646aad3cf2d54b4405",
+      "run_id": null,
+      "case_id": null,
+      "note": "Native task-goal excerpt. This setting supplies one measured anchor variant. No model dispatch shown."
+    },
+    {
+      "id": "P22",
+      "dataset": "PFArena T4 — single-mutant-informed ranking",
+      "origin": "exact_native_prompt_template_excerpt_not_dispatched",
+      "question_excerpt_sha256": "4faad28033802c0de7677b99ac2949e15a32086c86c005b71be1de845603f519",
+      "verbatim": true,
+      "source_url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/prompts/multi_mutant_ranking_mutation.py",
+      "source_path": ".local/source_recovery_round2_2026-10-19/pfarena/official_code/code/prompts/multi_mutant_ranking_mutation.py",
+      "source_sha256": "4db6b6e95575cdb75317eab85761ecd093ae89a9658609cab1239759b07678e4",
+      "run_id": null,
+      "case_id": null,
+      "note": "Native task-goal excerpt. This setting supplies measurements for constituent single substitutions. No model dispatch shown."
+    },
+    {
+      "id": "P23",
+      "dataset": "Mol-Instructions — protein function",
+      "origin": "exact_published_case_instruction_excerpt",
+      "question_excerpt_sha256": "c659ea31f8010451f6d33acdaf231950ea795c3960a1697ee3d97551eced1554",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task228_protein_function_molinst_pro_test.json",
+      "source_path": "sources/biot5_data__tasks_plus__task228_protein_function_molinst_pro_test.json",
+      "source_sha256": "7a984a304f7764056e789470e16797a75c120c1d13143cd1eb03728f2512c744",
+      "run_id": null,
+      "case_id": null,
+      "note": "Verbatim opening clause of the first evaluated-export instruction; the remainder asks about localization and biological processes. Sequence input and reference answer omitted; original saved request not recovered."
+    },
+    {
+      "id": "P24",
+      "dataset": "Mol-Instructions — catalytic activity",
+      "origin": "exact_published_case_instruction",
+      "question_excerpt_sha256": "f3484c1d46de48e6d452127c4f9a0365f950f616635023c7d1234e8c5f2c7eb7",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task222_catalytic_activity_molinst_pro_test.json",
+      "source_path": "sources/biot5_data__tasks_plus__task222_catalytic_activity_molinst_pro_test.json",
+      "source_sha256": "8f53b17f74fcc3e0b32f1e68d8374405d70c1187ceb23db48665f19874e9d4e1",
+      "run_id": null,
+      "case_id": null,
+      "note": "Exact instruction field from the evaluated BioT5+ export; sequence input and reference answer omitted. No claim that this specific saved request was recovered."
+    },
+    {
+      "id": "P25",
+      "dataset": "Mol-Instructions — domains and motifs",
+      "origin": "exact_published_case_instruction",
+      "question_excerpt_sha256": "df56c3640dd01128a6e9ae9c2e9b5f0eb98c06fe53bffdee6175a4efa8ac717f",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task225_domain_motif_molinst_pro_test.json",
+      "source_path": "sources/biot5_data__tasks_plus__task225_domain_motif_molinst_pro_test.json",
+      "source_sha256": "b504bf077617661f855a2ad811e25edb1aeb7e98a8d636966c21e7baa02f6f46",
+      "run_id": null,
+      "case_id": null,
+      "note": "Exact instruction field from the evaluated BioT5+ export; sequence input and reference answer omitted. No claim that this specific saved request was recovered."
+    },
+    {
+      "id": "P26",
+      "dataset": "Mol-Instructions — general function",
+      "origin": "exact_published_case_instruction",
+      "question_excerpt_sha256": "128dc76897c74b33db47db63f77489aa3501627201b207d144dae9c5226df021",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task231_general_function_molinst_pro_test.json",
+      "source_path": "sources/biot5_data__tasks_plus__task231_general_function_molinst_pro_test.json",
+      "source_sha256": "eba4893a25e35a1467f67897402365aaf69fbdad9b1bf8abbc5c32723c6d04e6",
+      "run_id": null,
+      "case_id": null,
+      "note": "Exact instruction field from the evaluated BioT5+ export; sequence input and reference answer omitted. No claim that this specific saved request was recovered."
+    },
+    {
+      "id": "P27",
+      "dataset": "NatureLM — protein characteristics description",
+      "origin": "not_an_authored_question",
+      "question_excerpt_sha256": "3bbc87343922e4edd93c94a10e9128e442873acf2ac170ac7e35c00b020262fc",
+      "verbatim": false,
+      "source_url": "https://arxiv.org/abs/2502.07527",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "Explanatory statement, not a quoted dataset question."
+    },
+    {
+      "id": "P34",
+      "dataset": "MutaPLM iterative optimization evaluation",
+      "origin": "Exact released optimization objective; not a question-form item.",
+      "question_excerpt_sha256": "65efa629bf386bc2b427beafede3a83761e8dbf0fafd8ff67398b0ebb341c6c4",
+      "verbatim": true,
+      "source_url": "https://github.com/PharMolix/MutaPLM/blob/495815b2069419d19d9449a59070d0fb24b596d1/dataset/fitness_dataset.py#L11",
+      "source_path": ".local/source_acquisition_2026-10-19/mutadescribe_sources/source/mutaplm/dataset/fitness_dataset.py",
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "AMIE objective; the real input also contains the current protein and released function context. No executed Qwen request is claimed."
+    },
+    {
+      "id": "P35",
+      "dataset": "ProtST text-to-protein retrieval",
+      "origin": "Exact released retrieval query.",
+      "question_excerpt_sha256": "e6581b963914618b3d0222c7f4522e751419eb2ce12ff06613152c8f362c274a",
+      "verbatim": true,
+      "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_retrieval/t2p_prompt_go_mf.txt#L3",
+      "source_path": ".local/source_acquisition_2026-10-19/evaluators/source/protst/data/zero_shot_retrieval/t2p_prompt_go_mf.txt",
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": "source-query-3",
+      "note": "The third of five released retrieval queries; a database retrieval request rather than a question-answer item."
+    },
+    {
+      "id": "P37",
+      "dataset": "NatureLM unconditional protein generation",
+      "origin": "Exact published native input token; no native question.",
+      "question_excerpt_sha256": "087ff5914fcc3f3734f032f9f0d5de49c00b08eb91d773911471326e11513098",
+      "verbatim": true,
+      "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS1",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "NatureLM section 4.1 starts generation from this token only; no natural-language question is added."
+    },
+    {
+      "id": "P38",
+      "dataset": "NatureLM property-conditioned protein generation",
+      "origin": "Exact published example prompt.",
+      "question_excerpt_sha256": "01c5a87840744e9a6bf080bdbd5aae6b6ecbb6311106308d4d8de2248233273b",
+      "verbatim": true,
+      "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS2",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "NatureLM Example 4.1. This is the paper's example, not a saved local Qwen request."
+    },
+    {
+      "id": "P39",
+      "dataset": "NatureLM heme-binding generation case study",
+      "origin": "Exact published example prompt.",
+      "question_excerpt_sha256": "0648542d7aa22eb664ea562b4c4c48bb3ec5d2dbe1575d4d6938457efc8e4d79",
+      "verbatim": true,
+      "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS5",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "NatureLM Example 4.2. This is the paper's example, not an executed local request."
+    },
+    {
+      "id": "P40",
+      "dataset": "RAbD antibody-region redesign benchmark",
+      "origin": "Exact ending of the published instruction; sequence-bearing input omitted.",
+      "question_excerpt_sha256": "8c913d6ecce05d708521857c239b82a5efbc781e03d9199d4a85a93ec018919e",
+      "verbatim": true,
+      "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS3",
+      "source_path": null,
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "NatureLM section 4.3. The actual full instruction supplies the antigen and two antibody framework sequences before this exact phrase; no synthetic substitute is used."
+    },
+    {
+      "id": "P41",
+      "dataset": "Proteo-R1 structural design demonstrations",
+      "origin": "Exact released source prompt excerpt.",
+      "question_excerpt_sha256": "b7ec4942a1ccc0e454537cc0959982ddcd03065a8275cb37580309b67f7e4342",
+      "verbatim": true,
+      "source_url": "https://github.com/smiles724/Proteo-R1/blob/ffaa787bce5f30e4cb41e2de5d0b0daab0059243/proteor1/generate/inference/cdr_hidden_emit.py#L316",
+      "source_path": ".local/source_acquisition_2026-10-19/protocols/smiles724__Proteo-R1/files/proteor1/generate/inference/cdr_hidden_emit.py",
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "From build_input_text; actual input additionally contains the structural representation. No executed local request is claimed."
+    },
+    {
+      "id": "P42",
+      "dataset": "STRIDE GFP candidate-editing evaluation",
+      "origin": "Exact pinned upstream evaluation prompt excerpt.",
+      "question_excerpt_sha256": "231022ed4fbc9fc3abf0a49757f92c2c2af5f11f790e551459af2c8135f3fa48",
+      "verbatim": true,
+      "source_url": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/scripts/eval/infer_protein_vllm.py#L38",
+      "source_path": "scripts/prepare_stride_gfp_qualified_proposal.py",
+      "source_sha256": null,
+      "run_id": null,
+      "case_id": null,
+      "note": "From the pinned STRIDE build_prompt. The local qualified P42 recipe reuses this native prompt and adds a declared edit-condition constraint. Original saved request files are unavailable in this checkout, so this is not labelled a inspected saved request."
+    },
+    {
+      "id": "P43",
+      "dataset": "Drug-target interaction: BindingDB (DrugBAN split)",
+      "origin": "Exact released test-set Definition excerpt shared by all cases; molecule and protein inputs omitted.",
+      "question_excerpt_sha256": "1d1b71d8c22cf9b3e38342659877b8ea9f9f469c3d5c4f05d7501157838e3dfa",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/blob/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task18_bindingdb_drugban_dti_test.json",
+      "source_path": "artifacts/evaluation-assets.tar.gz.part0000 through part0007 :: sources/biot5_data__tasks_plus__task18_bindingdb_drugban_dti_test.json",
+      "source_sha256": "da330803ab95d96cc2947bff7c069293e6f616f736b7faf889499fbc615227b7",
+      "run_id": null,
+      "case_id": "18-fdfe48ffb39946b4a0cbd9cc776c0bca",
+      "note": "Verified directly from the pinned source JSON inside the existing local archive. Frozen local_dti_prepare.py constructs requests with this Definition. Original saved request is not available here; this is a source prompt excerpt."
+    },
+    {
+      "id": "P43",
+      "dataset": "Drug-target interaction: BioSNAP (DrugBAN split)",
+      "origin": "Exact released test-set Definition excerpt shared by all cases; molecule and protein inputs omitted.",
+      "question_excerpt_sha256": "1d1b71d8c22cf9b3e38342659877b8ea9f9f469c3d5c4f05d7501157838e3dfa",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/blob/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task21_biosnap_drugban_dti_test.json",
+      "source_path": "artifacts/evaluation-assets.tar.gz.part0000 through part0007 :: sources/biot5_data__tasks_plus__task21_biosnap_drugban_dti_test.json",
+      "source_sha256": "49f0cf5b06fa166e020bdf70df6d3454627deec191b0fe7eea1e06c0358ed37f",
+      "run_id": null,
+      "case_id": "21-1abceddd45a547dba64ad8329412bed2",
+      "note": "Verified directly from the pinned source JSON inside the existing local archive. Frozen local_dti_prepare.py constructs requests with this Definition. Original saved request is not available here; this is a source prompt excerpt."
+    },
+    {
+      "id": "P43",
+      "dataset": "Drug-target interaction: Human (DrugBAN split)",
+      "origin": "Exact released test-set Definition excerpt shared by all cases; molecule and protein inputs omitted.",
+      "question_excerpt_sha256": "1d1b71d8c22cf9b3e38342659877b8ea9f9f469c3d5c4f05d7501157838e3dfa",
+      "verbatim": true,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/blob/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task24_human_drugban_dti_test.json",
+      "source_path": "artifacts/evaluation-assets.tar.gz.part0000 through part0007 :: sources/biot5_data__tasks_plus__task24_human_drugban_dti_test.json",
+      "source_sha256": "9cbdadfb7854ff23476be5bb86a3cc939e23ee4747c49701f0d5305e8aa69f18",
+      "run_id": null,
+      "case_id": "24-c62485d1847d45078fbf0ea56cf77372",
+      "note": "Verified directly from the pinned source JSON inside the existing local archive. Frozen local_dti_prepare.py constructs requests with this Definition. Original saved request is not available here; this is a source prompt excerpt."
+    }
+  ],
+  "verified_question_policy": "Verbatim saved-request, released-dataset, or published-source excerpts. No native question or unavailable original prompt is explicitly labelled; no invented placeholder question."
 }
