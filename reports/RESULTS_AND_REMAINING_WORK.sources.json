@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_at_pacific": "2026-10-20T14:12:54.539073-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "45f095d281358e358531c0c8e99740afc226d63d247355d1206e264f312e695c",
+  "report_sha256": "ab2ad791b1c7cd9aeec9477d65ff9fd32ff6542122459f577f147fc15ce1f492",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
@@ -4590,7 +4590,7 @@
       }
     }
   },
-  "presentation_revision_at_pacific": "2026-10-20T14:29:44.135986-07:00",
+  "presentation_revision_at_pacific": "2026-10-20T15:09:59.450405-07:00",
   "presentation_selection": {
     "rule": "latest completed result per evaluation; matched archived Qwen baselines for GPT comparison; no best-score selection",
     "gpt_display_metric": "accuracy",
@@ -4599,10 +4599,2661 @@
     "detailed_audit_preserved_locally": ".local/catalog_execution_2026-10-20/markdown_report/internal_report_before_presentation.md"
   },
   "dataset_context_added_at_pacific": "2026-10-20T14:36:21.913656-07:00",
-  "question_content_scope": "verified_short_questions_or_instruction_excerpts_only",
+  "question_content_scope": "complete available saved or released example inputs in linked pages; missing original context is explicit",
   "question_reference_answers_included": false,
   "single_table_revision_at_pacific": "2026-10-20T14:54:14.298183-07:00",
   "verified_questions": [
+    {
+      "task_id": "P01",
+      "page_id": "P01",
+      "page_path": "reports/questions/P01.md",
+      "dataset": "DeepSol solubility — PEER",
+      "status": "complete_recovered_reviewed_source_input",
+      "complete_question_or_input": true,
+      "page_sha256": "19cc876463f3f58136d37c70612fe34c3eb20a0c14af7c31ebdffbcd00d7aee0",
+      "page_bytes": 1389,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task177_solubility_peer_test.json",
+      "case_id": "solubility:177-bfad88eb47e9410d993991df50ee8b0b",
+      "source_case_id": "177-bfad88eb47e9410d993991df50ee8b0b",
+      "source_path": "sources/biot5_data__tasks_plus__task177_solubility_peer_test.json",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task177_solubility_peer_test.json",
+      "source_sha256": "9969927c394040332bd9f00e4adc7d7d3e6e158efc548823c4e589079a93343f",
+      "review_path": "configs/local_catalog_p01_review.json",
+      "review_sha256": "41c14efe6916877cb2653e6d363c8d156ed481dcb0dc7cdade884aaa94117579",
+      "review_id_verified": true,
+      "reference_answers_included": false,
+      "source_input_sha256": "99ac84a974b96ecd31da1e7eb0abaa42f0a2ba6d76da68d557e108a6849962bd",
+      "display_input_sha256": "ab21e62b6769cf4bab9f6c277c8208fe7421830dd9fa46b4da385f510d609e22",
+      "id": "P01"
+    },
+    {
+      "task_id": "P02",
+      "page_id": "P02",
+      "page_path": "reports/questions/P02.md",
+      "dataset": "DeepLoc binary localization — PEER",
+      "status": "complete_recovered_reviewed_source_input",
+      "complete_question_or_input": true,
+      "page_sha256": "033e8421fbed4b747b7880e053199119766169ecd99fd1d810974d8b8abba49f",
+      "page_bytes": 1144,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task180_binloc_peer_test.json",
+      "case_id": "binary_localization:180-a5b14038a0704d50a5d16124a3b1ca77",
+      "source_case_id": "180-a5b14038a0704d50a5d16124a3b1ca77",
+      "source_path": "sources/biot5_data__tasks_plus__task180_binloc_peer_test.json",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task180_binloc_peer_test.json",
+      "source_sha256": "5d33982e7b7b3fe570cfdb5340844c82e233019f270b0fb60b42f1beec7a8097",
+      "review_path": "configs/local_catalog_p02_review.json",
+      "review_sha256": "8bdcd4f1e1b110a89a1279bfa0b63d15d21d5de0e2024deea107c1872eada3b6",
+      "review_id_verified": true,
+      "reference_answers_included": false,
+      "source_input_sha256": "70cc5d2eeae0c4dfe97972b65bd982af9644254909adb6a0fcd031800d404561",
+      "display_input_sha256": "737fd023bf96dc54f5e451eb8a91766f4dd612538040796dd7717677e24c04fb",
+      "id": "P02"
+    },
+    {
+      "task_id": "P03",
+      "page_id": "P03",
+      "page_path": "reports/questions/P03.md",
+      "dataset": "DeepLoc subcellular localization — PEER/ProtST",
+      "status": "complete_saved_request_text",
+      "complete_question_or_input": true,
+      "page_sha256": "5762eb2a4fff298d935b84c794dc6126a8a6801bbd6d327f5575df98a7f4cbbf",
+      "page_bytes": 2760,
+      "source_url": null,
+      "case_id": "subcellular_localization:test:1684",
+      "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16",
+      "source_path": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/requests/000e83b6472bb4750667db74e0a2df2ff75a2d2eeb6b961c779936efec2958a8.json",
+      "source_sha256": "57bcc24242bf09710cf362e183a59fb956b95237d626d17fcfba5809fb54dcce",
+      "message_count": 1,
+      "reference_answers_included": false,
+      "id": "P03"
+    },
+    {
+      "task_id": "P04",
+      "page_id": "P04",
+      "page_path": "reports/questions/P04.md",
+      "dataset": "Envision beta-lactamase activity — PEER",
+      "status": "complete_case_unavailable",
+      "complete_question_or_input": false,
+      "page_sha256": "c7d7d8810bbc3f83d70a1f27979f1ef1040f22ead769534261f3ef556ac1bfd4",
+      "page_bytes": 348,
+      "source_url": "https://arxiv.org/abs/2206.02096",
+      "reference_answers_included": false,
+      "id": "P04"
+    },
+    {
+      "task_id": "P05",
+      "page_id": "P05",
+      "page_path": "reports/questions/P05.md",
+      "dataset": "AAV fitness — FLIP",
+      "status": "complete_case_unavailable",
+      "complete_question_or_input": false,
+      "page_sha256": "e6472c8b7124a1dde1d63a34deadd9e31a33e9b494d6bdb92de817c0b31ee76e",
+      "page_bytes": 358,
+      "source_url": "https://www.biorxiv.org/content/10.1101/2021.11.09.467890v1",
+      "reference_answers_included": false,
+      "id": "P05"
+    },
+    {
+      "task_id": "P06",
+      "page_id": "P06",
+      "page_path": "reports/questions/P06.md",
+      "dataset": "Meltome thermostability — FLIP",
+      "status": "complete_saved_request_text",
+      "complete_question_or_input": true,
+      "page_sha256": "0b28f0330c9d2dd04525f0b940e4ce33903ed25cdea3a40908062856da492fa0",
+      "page_bytes": 1741,
+      "source_url": null,
+      "case_id": "human_cell:7114",
+      "run_id": "qwen38_27b_p06_full_test_nonthinking_regex256_2026-10-20_v1",
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/P06/runtime/benchmark/requests/00a4d3ad6a675b0ea58116cdbad8789a7463e518fbb99c49752792db9c44600a.json",
+      "source_sha256": "af68d2158c905acb677d04789c64a3bb5e587c39af6153c54f3682df2df46c7f",
+      "message_count": 1,
+      "reference_answers_included": false,
+      "id": "P06"
+    },
+    {
+      "task_id": "P07",
+      "page_id": "P07",
+      "page_path": "reports/questions/P07.md",
+      "dataset": "GFP fluorescence — TAPE",
+      "status": "complete_saved_request_text",
+      "complete_question_or_input": true,
+      "page_sha256": "105efc497c696ecad08efaeed5d886e5c5c9ec98271d348e3be3f374300bf96b",
+      "page_bytes": 768,
+      "source_url": null,
+      "case_id": "fluorescence:test:9091",
+      "run_id": "qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1",
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/P07/runtime/benchmark/requests/0000e5f4d1cee4ea760a792cd0f24649f7dbc03b7826b6b3e4b222868df7c245.json",
+      "source_sha256": "415b21b3146db11f78f043f5f361982f9940c78cb892b0647fb7699df659fb7e",
+      "message_count": 1,
+      "reference_answers_included": false,
+      "id": "P07"
+    },
+    {
+      "task_id": "P08",
+      "page_id": "P08",
+      "page_path": "reports/questions/P08.md",
+      "dataset": "Protein folding stability — TAPE",
+      "status": "complete_saved_request_text",
+      "complete_question_or_input": true,
+      "page_sha256": "6b9c7324a61c81eca877139bbceb6b99eaa31b0ee1564ca019b2c46fef301cd7",
+      "page_bytes": 631,
+      "source_url": null,
+      "case_id": "stability:test:7166",
+      "run_id": "qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1",
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/P08/runtime/benchmark/requests/000fb4466f4cb646f7bb0c3f05365bd85e8a2b4670074486f8d3a5b65ac80334.json",
+      "source_sha256": "37023275f83f1a95cf775cffd5bcb40c2d2863fd23e175139e863f1e8e7a04bb",
+      "message_count": 1,
+      "reference_answers_included": false,
+      "id": "P08"
+    },
+    {
+      "task_id": "P09",
+      "page_id": "P09",
+      "page_path": "reports/questions/P09.md",
+      "dataset": "Stability classification — NatureLM-style adaptation",
+      "status": "derived_score_no_separate_question",
+      "complete_question_or_input": false,
+      "page_sha256": "e3235ee4779a4908e160ff40c3db129e8091e80d7ac026f684325ca3971571f8",
+      "page_bytes": 417,
+      "source_url": "https://arxiv.org/abs/2502.07527",
+      "reference_answers_included": false,
+      "id": "P09"
+    },
+    {
+      "task_id": "P10",
+      "page_id": "P10",
+      "page_path": "reports/questions/P10.md",
+      "dataset": "Human protein interactions — PEER",
+      "status": "complete_recovered_reviewed_source_input",
+      "complete_question_or_input": true,
+      "page_sha256": "65889d1ff4ede3690c5effe5f7e0ccfba672cd98fe2dc1081dd94dfdb1e8d26b",
+      "page_bytes": 2465,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task174_human_ppi_peer_test.json",
+      "case_id": "human_ppi:174-1a6aea8a1520463a9352c536503ff4db",
+      "source_case_id": "174-1a6aea8a1520463a9352c536503ff4db",
+      "source_path": "sources/biot5_data__tasks_plus__task174_human_ppi_peer_test.json",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task174_human_ppi_peer_test.json",
+      "source_sha256": "3d3a5607140e88ddeab44da11b3d121fd7e8c986b031f1539ad79ddc9aec0a61",
+      "review_path": "configs/local_catalog_p10_review.json",
+      "review_sha256": "cd17f134f12bdbd0b2887254e7e345d1644e6ae2933ba94aafd343780cff88f0",
+      "review_id_verified": true,
+      "reference_answers_included": false,
+      "source_input_sha256": "8cfba2329eca59854bbc490fa03c26b24246ad973e26c32dc3aa18d5ce981235",
+      "display_input_sha256": "53296a69a40be99a86ded63c79bbff9269b59693ea04a357210634f3a848c739",
+      "id": "P10"
+    },
+    {
+      "task_id": "P11",
+      "page_id": "P11",
+      "page_path": "reports/questions/P11.md",
+      "dataset": "Yeast protein interactions — PEER",
+      "status": "complete_recovered_reviewed_source_input",
+      "complete_question_or_input": true,
+      "page_sha256": "fa533dee9149cb2d864f06e3f2f44e9fe2933a24abacfda2ed57986daf3ad204",
+      "page_bytes": 1300,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task171_yeast_ppi_peer_test.json",
+      "case_id": "yeast_ppi:171-6f3d8efb13e24193b011999a608bcc5d",
+      "source_case_id": "171-6f3d8efb13e24193b011999a608bcc5d",
+      "source_path": "sources/biot5_data__tasks_plus__task171_yeast_ppi_peer_test.json",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task171_yeast_ppi_peer_test.json",
+      "source_sha256": "f15a6e70cf25baed4e1252dd91bda85c9ee2bb3c47a18d65a7640319adba21a2",
+      "review_path": "configs/local_catalog_p11_review.json",
+      "review_sha256": "63267f2c5911aca115716d7b22cddcf1e5ed8f5ea6bb6a990ae2e24e63ebb73a",
+      "review_id_verified": true,
+      "reference_answers_included": false,
+      "source_input_sha256": "d015b62fe085488ac6b252c7e0df6c7a4b808ac78449a44a86b6a7d0b2d9b39b",
+      "display_input_sha256": "ae614d6ca920fcac577ffe6a8572e5931babd9bb9c1e4262d7cda1c9640af9d3",
+      "id": "P11"
+    },
+    {
+      "task_id": "P16",
+      "page_id": "P16",
+      "page_path": "reports/questions/P16.md",
+      "dataset": "Enzyme reaction classes — IEConv/ProtST",
+      "status": "complete_saved_request_text",
+      "complete_question_or_input": true,
+      "page_sha256": "37a30da87076183a514eb3b4eb20eef686e6bdd17fe9b129d15c8b589d83e873",
+      "page_bytes": 144793,
+      "source_url": null,
+      "case_id": "Reaction:test:714",
+      "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
+      "source_path": "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_000/requests/00220063db6c0802cd3ef8225e6cc3cc83c430a4404573564b1a91e13e4822c8.json",
+      "source_sha256": "1647359b2b4935003e38f3ddff247abb60cea79b89210799cce4395edc581d75",
+      "message_count": 1,
+      "reference_answers_included": false,
+      "id": "P16"
+    },
+    {
+      "task_id": "P17",
+      "page_id": "P17",
+      "page_path": "reports/questions/P17.md",
+      "dataset": "ProteinGym substitutions",
+      "status": "complete_case_unavailable",
+      "complete_question_or_input": false,
+      "page_sha256": "fbccca85a5286c5b585da67a41e40db758714f12ed717a99a543e5062bf01a71",
+      "page_bytes": 320,
+      "source_url": "https://arxiv.org/abs/2205.13760",
+      "reference_answers_included": false,
+      "id": "P17"
+    },
+    {
+      "task_id": "P19",
+      "page_id": "P19",
+      "page_path": "reports/questions/P19.md",
+      "dataset": "PFArena T1 — single-mutant generation",
+      "status": "complete_prepared_reviewed_input_not_dispatched",
+      "complete_question_or_input": true,
+      "page_sha256": "dd7d9f6247a9f6fa216ffcfe4c56326f7b22c025139ae08e3676b971c94ff725",
+      "page_bytes": 3476,
+      "source_url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/prompts/single_mutant_generation.py",
+      "case_id": "P19::HUMAN_DOMAINOME_O14529_PF02376_1036",
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/P19/benchmark_inputs.jsonl",
+      "source_sha256": "1c53285464a8e7b97bbd9a87cf1637572d5b67b57f1b43c38b25f758ce3554c6",
+      "review_path": ".local/catalog_execution_2026-10-20/tasks/P19/input_review.json",
+      "review_sha256": "6044d5b460d91a5111b340b71e3a3d66f0c028720b32485f570ade8bef2bbb4b",
+      "review_id_verified": true,
+      "reference_answers_included": false,
+      "id": "P19"
+    },
+    {
+      "task_id": "P21",
+      "page_id": "P21",
+      "page_path": "reports/questions/P21.md",
+      "dataset": "PFArena T3 — anchor-informed ranking",
+      "status": "source_instruction_excerpt_only",
+      "complete_question_or_input": false,
+      "page_sha256": "aa700be44da8b5fee6b71926b700dcad440ad32939ee39459c812180c0491424",
+      "page_bytes": 602,
+      "source_url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/prompts/multi_mutant_ranking_anchor.py",
+      "source_path": ".local/source_recovery_round2_2026-10-19/pfarena/official_code/code/prompts/multi_mutant_ranking_anchor.py",
+      "source_sha256": "b9b42655d35e83f41f91342f58f08b356121e371eb89b9646aad3cf2d54b4405",
+      "reference_answers_included": false,
+      "id": "P21"
+    },
+    {
+      "task_id": "P22",
+      "page_id": "P22",
+      "page_path": "reports/questions/P22.md",
+      "dataset": "PFArena T4 — single-mutant-informed ranking",
+      "status": "source_instruction_excerpt_only",
+      "complete_question_or_input": false,
+      "page_sha256": "5ea50631637298e652263182fd9e98f1a491df61c3656d2475f69eb905cb0708",
+      "page_bytes": 611,
+      "source_url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/prompts/multi_mutant_ranking_mutation.py",
+      "source_path": ".local/source_recovery_round2_2026-10-19/pfarena/official_code/code/prompts/multi_mutant_ranking_mutation.py",
+      "source_sha256": "4db6b6e95575cdb75317eab85761ecd093ae89a9658609cab1239759b07678e4",
+      "reference_answers_included": false,
+      "id": "P22"
+    },
+    {
+      "task_id": "P23",
+      "page_id": "P23",
+      "page_path": "reports/questions/P23.md",
+      "dataset": "Mol-Instructions — protein function",
+      "status": "complete_recovered_reviewed_source_input",
+      "complete_question_or_input": true,
+      "page_sha256": "2bde8874e0789ec8d1c55a70dafac860508985d78985c6c1d3ece44416340ef3",
+      "page_bytes": 938,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task228_protein_function_molinst_pro_test.json",
+      "case_id": "task228_protein_function_molinst_pro_test.json:0",
+      "source_case_id": "228-f6d5cbf5c7b94c5bb9dc5cad438b357f",
+      "source_path": "sources/biot5_data__tasks_plus__task228_protein_function_molinst_pro_test.json",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task228_protein_function_molinst_pro_test.json",
+      "source_sha256": "7a984a304f7764056e789470e16797a75c120c1d13143cd1eb03728f2512c744",
+      "review_path": "configs/local_description_p23_review.json",
+      "review_sha256": "7874d2c85d2ae9b45692c41e0845b531116bd48ff5790aa4868f273891018f99",
+      "review_id_verified": true,
+      "reference_answers_included": false,
+      "source_input_sha256": "3d0d37dcc0650f1f6371a890386f4bf69bd9c5a20204c285e56b54badd99a42e",
+      "display_input_sha256": "c964e75611d9f4d728bf1c180cf1ff0b1ea32c9064c80fe9336a02bb40b5c480",
+      "id": "P23"
+    },
+    {
+      "task_id": "P24",
+      "page_id": "P24",
+      "page_path": "reports/questions/P24.md",
+      "dataset": "Mol-Instructions — catalytic activity",
+      "status": "complete_recovered_reviewed_source_input",
+      "complete_question_or_input": true,
+      "page_sha256": "e693cd60c905456cd1e2318c2e2c7ca1255e251c879c621261278f069c8b5ea9",
+      "page_bytes": 1367,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task222_catalytic_activity_molinst_pro_test.json",
+      "case_id": "task222_catalytic_activity_molinst_pro_test.json:2",
+      "source_case_id": "222-6b9362c51d044d788ab41e6d3b12c902",
+      "source_path": "sources/biot5_data__tasks_plus__task222_catalytic_activity_molinst_pro_test.json",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task222_catalytic_activity_molinst_pro_test.json",
+      "source_sha256": "8f53b17f74fcc3e0b32f1e68d8374405d70c1187ceb23db48665f19874e9d4e1",
+      "review_path": "configs/local_description_p24_review.json",
+      "review_sha256": "7e81bc8f8f8c92a59f53a279ed03f45eb70e044f110ef82c24c31fe9d901e67d",
+      "review_id_verified": true,
+      "reference_answers_included": false,
+      "source_input_sha256": "f1c9b291b12c3479050a8e2f26e05fb38697aa2ec25a75b774c643758564a161",
+      "display_input_sha256": "9d02e601ff4498248f13571ee62572e1cdb38559b25eb6c38ee7e40c33b47d7f",
+      "id": "P24"
+    },
+    {
+      "task_id": "P25",
+      "page_id": "P25",
+      "page_path": "reports/questions/P25.md",
+      "dataset": "Mol-Instructions — domains and motifs",
+      "status": "complete_recovered_reviewed_source_input",
+      "complete_question_or_input": true,
+      "page_sha256": "d21f7664bc7a1ca66970165afb0b88cd3ed202331b2f26d5af8c14394e33f9da",
+      "page_bytes": 1379,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task225_domain_motif_molinst_pro_test.json",
+      "case_id": "task225_domain_motif_molinst_pro_test.json:11",
+      "source_case_id": "225-71a5b04f1b9d450f96bc223ad9ba0a48",
+      "source_path": "sources/biot5_data__tasks_plus__task225_domain_motif_molinst_pro_test.json",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task225_domain_motif_molinst_pro_test.json",
+      "source_sha256": "b504bf077617661f855a2ad811e25edb1aeb7e98a8d636966c21e7baa02f6f46",
+      "review_path": "configs/local_description_p25_review.json",
+      "review_sha256": "de30e69307c2fb82e011b7b5504aad5ff8ad478232f3a040969c8e7f9542c226",
+      "review_id_verified": true,
+      "reference_answers_included": false,
+      "source_input_sha256": "aca3d2c347a625cdecbc1388f3bcf5c0762122eb59cb8f0b69d0fa8fdfbc52a6",
+      "display_input_sha256": "847f370b1f5deb329402a6fa598954f64357100bef78532931d1da03cb30821e",
+      "id": "P25"
+    },
+    {
+      "task_id": "P26",
+      "page_id": "P26",
+      "page_path": "reports/questions/P26.md",
+      "dataset": "Mol-Instructions — general function",
+      "status": "complete_recovered_reviewed_source_input",
+      "complete_question_or_input": true,
+      "page_sha256": "935aedac16c60a015291346f05f15f23ec910f537543ed9f7d055240e8defe08",
+      "page_bytes": 870,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task231_general_function_molinst_pro_test.json",
+      "case_id": "task231_general_function_molinst_pro_test.json:4",
+      "source_case_id": "231-714a3553e81042b1b3b733b6d0086af0",
+      "source_path": "sources/biot5_data__tasks_plus__task231_general_function_molinst_pro_test.json",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task231_general_function_molinst_pro_test.json",
+      "source_sha256": "eba4893a25e35a1467f67897402365aaf69fbdad9b1bf8abbc5c32723c6d04e6",
+      "review_path": "configs/local_description_p26_review.json",
+      "review_sha256": "bbdda46ce5175f3c41950d085dd8c525eba1747369ab287b83e5f823bbfb0708",
+      "review_id_verified": true,
+      "reference_answers_included": false,
+      "source_input_sha256": "4e3670b98e770803684d9682a3a6a82e3abbd946dd0f5d180fb32f3998b9824b",
+      "display_input_sha256": "d367adb071f745e39824ea6bb8106e2785ef5f0fc103a80ee154d8804a7c9a03",
+      "id": "P26"
+    },
+    {
+      "task_id": "P27",
+      "page_id": "P27",
+      "page_path": "reports/questions/P27.md",
+      "dataset": "NatureLM — protein characteristics description",
+      "status": "complete_case_unavailable",
+      "complete_question_or_input": false,
+      "page_sha256": "ab9c12d0be1b86a8f4d930ec215b37d813fff6c1b5ba02bab12646044e48fc12",
+      "page_bytes": 307,
+      "source_url": "https://arxiv.org/abs/2502.07527",
+      "reference_answers_included": false,
+      "id": "P27"
+    },
+    {
+      "task_id": "P34",
+      "page_id": "P34",
+      "page_path": "reports/questions/P34.md",
+      "dataset": "MutaPLM iterative optimization evaluation",
+      "status": "source_instruction_excerpt_only",
+      "complete_question_or_input": false,
+      "page_sha256": "38e14d908fd84c085a742f343218584ab96aa45089163c91204c20efda7c3c79",
+      "page_bytes": 477,
+      "source_url": "https://github.com/PharMolix/MutaPLM/blob/495815b2069419d19d9449a59070d0fb24b596d1/dataset/fitness_dataset.py#L11",
+      "reference_answers_included": false,
+      "source_path": ".local/source_acquisition_2026-10-19/mutadescribe_sources/source/mutaplm/dataset/fitness_dataset.py",
+      "source_sha256": "93d0ec2608edbab48b2c8ead7db8f02c8033b1d24915db737263f0c149c3f5c2",
+      "id": "P34"
+    },
+    {
+      "task_id": "P35",
+      "page_id": "P35",
+      "page_path": "reports/questions/P35.md",
+      "dataset": "ProtST text-to-protein retrieval",
+      "status": "complete_native_source_query",
+      "complete_question_or_input": true,
+      "page_sha256": "fb397a672a6419c5803518f94f835f43973ec4d0607ad45e7c937d4e1b7ef8ce",
+      "page_bytes": 516,
+      "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_retrieval/t2p_prompt_go_mf.txt#L3",
+      "source_case_id": "source-query-3",
+      "reference_answers_included": false,
+      "source_path": ".local/source_acquisition_2026-10-19/evaluators/source/protst/data/zero_shot_retrieval/t2p_prompt_go_mf.txt",
+      "source_sha256": "39a4c730a73b63c01391ca575b1ef89725091974e423b74e8138af78cf41c81e",
+      "id": "P35"
+    },
+    {
+      "task_id": "P37",
+      "page_id": "P37",
+      "page_path": "reports/questions/P37.md",
+      "dataset": "NatureLM unconditional protein generation",
+      "status": "complete_native_published_input",
+      "complete_question_or_input": true,
+      "page_sha256": "d8afec9c2b596fab9f8dc7da70be20085a495f18c45616be0e17d22226cf3a65",
+      "page_bytes": 366,
+      "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS1",
+      "source_case_id": null,
+      "reference_answers_included": false,
+      "id": "P37"
+    },
+    {
+      "task_id": "P38",
+      "page_id": "P38",
+      "page_path": "reports/questions/P38.md",
+      "dataset": "NatureLM property-conditioned protein generation",
+      "status": "complete_native_published_input",
+      "complete_question_or_input": true,
+      "page_sha256": "4ed015f073cf86a82bd862afbcfa6af1cac4e114ec095d1ff6283c5767f3fa7b",
+      "page_bytes": 400,
+      "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS2",
+      "source_case_id": null,
+      "reference_answers_included": false,
+      "id": "P38"
+    },
+    {
+      "task_id": "P39",
+      "page_id": "P39",
+      "page_path": "reports/questions/P39.md",
+      "dataset": "NatureLM heme-binding generation case study",
+      "status": "complete_native_published_input",
+      "complete_question_or_input": true,
+      "page_sha256": "3af678cb5ac8b377f127fe146f68c4ede6abfefcbfc3f04ac611bf4e5ac6a3ea",
+      "page_bytes": 398,
+      "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS5",
+      "source_case_id": null,
+      "reference_answers_included": false,
+      "id": "P39"
+    },
+    {
+      "task_id": "P40",
+      "page_id": "P40",
+      "page_path": "reports/questions/P40.md",
+      "dataset": "RAbD antibody-region redesign benchmark",
+      "status": "source_instruction_excerpt_only",
+      "complete_question_or_input": false,
+      "page_sha256": "46f019b7635d77e193a49493b8c969ae8be38425fc11b1068da8daf583fb03ed",
+      "page_bytes": 406,
+      "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS3",
+      "reference_answers_included": false,
+      "id": "P40"
+    },
+    {
+      "task_id": "P41",
+      "page_id": "P41",
+      "page_path": "reports/questions/P41.md",
+      "dataset": "Proteo-R1 structural design demonstrations",
+      "status": "source_instruction_excerpt_only",
+      "complete_question_or_input": false,
+      "page_sha256": "4e0fe07e37cdbde4c7b031e6e67eb889a03eac1b3633f2d081516fc04bb63f8e",
+      "page_bytes": 576,
+      "source_url": "https://github.com/smiles724/Proteo-R1/blob/ffaa787bce5f30e4cb41e2de5d0b0daab0059243/proteor1/generate/inference/cdr_hidden_emit.py#L316",
+      "reference_answers_included": false,
+      "source_path": ".local/source_acquisition_2026-10-19/protocols/smiles724__Proteo-R1/files/proteor1/generate/inference/cdr_hidden_emit.py",
+      "source_sha256": "dc4122de484ba6fa4d213cbba9cee74475e7e509a1c5db6387f421f7e4388581",
+      "id": "P41"
+    },
+    {
+      "task_id": "P42",
+      "page_id": "P42",
+      "page_path": "reports/questions/P42.md",
+      "dataset": "STRIDE GFP candidate-editing evaluation",
+      "status": "source_instruction_excerpt_only",
+      "complete_question_or_input": false,
+      "page_sha256": "dbb07d7a65bff419632ad1b42775c4f056fc6699138dc56c799b24d6dc45f88b",
+      "page_bytes": 562,
+      "source_url": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/scripts/eval/infer_protein_vllm.py#L38",
+      "reference_answers_included": false,
+      "source_path": "scripts/prepare_stride_gfp_qualified_proposal.py",
+      "source_sha256": "e1d4994d601b13ef7ca14c79df27cbdb529879b99159a0262e2821331047ee5b",
+      "id": "P42"
+    },
+    {
+      "task_id": "P43",
+      "page_id": "P43_BindingDB",
+      "page_path": "reports/questions/P43_BindingDB.md",
+      "dataset": "Drug-target interaction: BindingDB (DrugBAN split)",
+      "status": "complete_original_public_dataset_input",
+      "complete_question_or_input": true,
+      "page_sha256": "6de7c3020e4945071daad760fc1366ab624a6e340871dfccbabf66035ba6b740",
+      "page_bytes": 1759,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/blob/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task18_bindingdb_drugban_dti_test.json",
+      "source_case_id": "18-fdfe48ffb39946b4a0cbd9cc776c0bca",
+      "source_sha256": "da330803ab95d96cc2947bff7c069293e6f616f736b7faf889499fbc615227b7",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task18_bindingdb_drugban_dti_test.json",
+      "reference_answers_included": false,
+      "old_case_review_receipt_recovered": false,
+      "source_input_sha256": "00f9f3e36b7ccf687993f1bec114c368575fd59541e07c17d4e41fd506962e28",
+      "display_input_sha256": "74ccffabff8c82a276b612961919a01b5d0372e038f69b96b60ed87a9d6ae662",
+      "id": "P43_BindingDB"
+    },
+    {
+      "task_id": "P43",
+      "page_id": "P43_BioSNAP",
+      "page_path": "reports/questions/P43_BioSNAP.md",
+      "dataset": "Drug-target interaction: BioSNAP (DrugBAN split)",
+      "status": "complete_original_public_dataset_input",
+      "complete_question_or_input": true,
+      "page_sha256": "eed0bdb39c4e032e26fd808e417172fe2fa6672f634e1c6d310dfaa69559baf6",
+      "page_bytes": 1561,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/blob/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task21_biosnap_drugban_dti_test.json",
+      "source_case_id": "21-1abceddd45a547dba64ad8329412bed2",
+      "source_sha256": "49f0cf5b06fa166e020bdf70df6d3454627deec191b0fe7eea1e06c0358ed37f",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task21_biosnap_drugban_dti_test.json",
+      "reference_answers_included": false,
+      "old_case_review_receipt_recovered": false,
+      "source_input_sha256": "8a4088ad8c09c96a816a3c510edfa1306ad13b87ac7762927c59b684a1d5a708",
+      "display_input_sha256": "5afce3481d899948a3e6975fed205bafd4b80d7d569639c243e80edefa56fe4d",
+      "id": "P43_BioSNAP"
+    },
+    {
+      "task_id": "P43",
+      "page_id": "P43_Human",
+      "page_path": "reports/questions/P43_Human.md",
+      "dataset": "Drug-target interaction: Human (DrugBAN split)",
+      "status": "complete_original_public_dataset_input",
+      "complete_question_or_input": true,
+      "page_sha256": "620e52234a6017155a5d8ccc41958df6d988dae2eb6a83be1946a2e03d55cd83",
+      "page_bytes": 1204,
+      "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/blob/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task24_human_drugban_dti_test.json",
+      "source_case_id": "24-c62485d1847d45078fbf0ea56cf77372",
+      "source_sha256": "9cbdadfb7854ff23476be5bb86a3cc939e23ee4747c49701f0d5305e8aa69f18",
+      "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task24_human_drugban_dti_test.json",
+      "reference_answers_included": false,
+      "old_case_review_receipt_recovered": false,
+      "source_input_sha256": "6eda718df985fd520d22455f6f23b585831f531cb3e613ce1f8bab2b8ff017ce",
+      "display_input_sha256": "fe8c586700d910ccb93ba30c5fbee5feaa521ba7d57245e913b407b8b7a8278c",
+      "id": "P43_Human"
+    },
+    {
+      "case_id": "4949fc05-5f78-4dd0-8d9c-3dbb6004740a",
+      "preview_question": "Which pathway(s) is primarily responsible for translation initiation of multitail mRNAs?",
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_litqa2_replay_2026-10-16/requests/05709e2e5d04ddecc96afc5828ea3f5c5497e523cfdbdff5132ada6bcb4a71de.json",
+      "source_sha256": "a08d9e9b1a4805f61474071259497c1883b1286f471c302c0dd2efc4bd0b9ef1",
+      "complete_input": true,
+      "assets": [
+        {
+          "path": "reports/questions/assets/B01_complete_prompt.txt",
+          "sha256": "5df1d1830d827f6a098f0189e402b24150852e6f1295bce9228a7805223f6419",
+          "kind": "complete_text_input",
+          "redistribution": "CC-BY-SA-4.0"
+        }
+      ],
+      "source_doi": "10.1038/s41587-024-02174-7",
+      "source_doi_supplied_to_solver": false,
+      "missing": [],
+      "id": "B01",
+      "page_path": "reports/questions/B01.md",
+      "page_sha256": "3eb9ee82abb6ede99a6be8cd11d18d9ccc60c8885f2ff58a4e861948326eca71",
+      "safe_publication": true
+    },
+    {
+      "case_id": "3c44bd92-e02a-4829-9156-b1df56be9174",
+      "preview_question": "Which of the following human genes is located at chr10q22 according to Ensembl Release 110?",
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/B02_input.json",
+      "source_sha256": "9389491051523d5f74cec1001415a410c3c79861322a8632ef6faa6e556fee40",
+      "complete_input": true,
+      "assets": [
+        {
+          "path": "reports/questions/assets/B02_complete_prompt.txt",
+          "sha256": "0e610e29afaabfca304fdf7454c11b04228c13f604dee7b78aa9181d6d907b5d",
+          "kind": "complete_text_input",
+          "redistribution": "CC-BY-SA-4.0"
+        }
+      ],
+      "source_doi": null,
+      "source_doi_supplied_to_solver": false,
+      "missing": [],
+      "id": "B02",
+      "page_path": "reports/questions/B02.md",
+      "page_sha256": "65aa5aed0f5f68fd36f896855fdd6cf1094dc438e0b32ed77820813a9e6ef091",
+      "safe_publication": true
+    },
+    {
+      "case_id": "30fce0db-9bb8-4a89-ae5c-78f665da41f6",
+      "preview_question": "Which organisation provided the second most frequent amount of colenterazine analogues?",
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/requests/233d18eec5829c279a6a8eec1e86296b4e225fe527444929cf3bf95df3b3e92b.json",
+      "source_sha256": "c2b07a7870a1d530c2e16b3f8ef8e0a4291e36c7587ac5853fa12dd64e8cfdad",
+      "complete_input": true,
+      "assets": [
+        {
+          "path": "reports/questions/assets/B03_complete_prompt.txt",
+          "sha256": "497b83749aa62b4cd3a6da3ea9ced603d2c718299779b1a4b5f248a952dcea47",
+          "kind": "complete_text_input",
+          "redistribution": "CC-BY-SA-4.0"
+        }
+      ],
+      "source_doi": "10.1038/s41586-023-05696-3",
+      "source_doi_supplied_to_solver": true,
+      "missing": [],
+      "id": "B03",
+      "page_path": "reports/questions/B03.md",
+      "page_sha256": "e68d4dec62105ded9f4516d2a1e14c47f42421db4695723a98836995dbd45c7d",
+      "safe_publication": true
+    },
+    {
+      "case_id": "3d5b84db-c3e2-4c3f-a359-ef502b968f9d",
+      "preview_question": "Where does the half waveplate occur relative to the SLM?",
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/requests/68a4c9545b85499d0036184e2d19a2f245411db7890c5c65e10b76bd846cc008.json",
+      "source_sha256": "e008d48d6288d60fb0384b6881fa917a95fa197458a6d0a27f7ccc6be8b260d2",
+      "complete_input": true,
+      "assets": [
+        {
+          "path": "reports/questions/assets/B04_complete_prompt.txt",
+          "sha256": "111187b7ce2d4a906fb8177ccd83790f054e44dd7dc5e60acb482d08690fae74",
+          "kind": "complete_text_input",
+          "redistribution": "CC-BY-SA-4.0"
+        },
+        {
+          "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0e7b/4724224/741c37a65b92/nihms745170f1.jpg",
+          "kind": "external_corresponding_source_figure",
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4724224/#F1",
+          "local_saved_input_image_sha256": "eda3d818cf48e1676bc6dbfb6cd432d26d938b27bd1d2a7f402d315a25730cca",
+          "locally_reuploaded": false
+        }
+      ],
+      "source_doi": "10.1016/j.neuron.2015.12.012",
+      "source_doi_supplied_to_solver": false,
+      "missing": [],
+      "image_preview_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0e7b/4724224/741c37a65b92/nihms745170f1.jpg",
+      "id": "B04",
+      "page_path": "reports/questions/B04.md",
+      "page_sha256": "fcf5394c237b8a66cb57c8d2a496f5a3618641006a02470b93b6a4baa3e41e01",
+      "safe_publication": true
+    },
+    {
+      "case_id": "5d3f8067-fe32-4abb-9646-276150413965",
+      "preview_question": "Which model shows the lowest MSE when chi1 = 300?",
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/requests/03347599650da332c163393327a395437cfe58c2b6f1bda16bdca9bce0011cc6.json",
+      "source_sha256": "e79a47d6b40c14ad7a9060583510de77eba25e20d313ae44b46d48d089e2c284",
+      "complete_input": true,
+      "assets": [
+        {
+          "path": "reports/questions/assets/B05_complete_prompt.txt",
+          "sha256": "03604d50b77ff4a62f4b4a02d91bd03ae58a1f15129f7d5a75ad224a44af5b0e",
+          "kind": "complete_text_input",
+          "redistribution": "CC-BY-SA-4.0"
+        }
+      ],
+      "source_doi": "10.1021/acs.jctc.1c00302",
+      "source_doi_supplied_to_solver": false,
+      "missing": [],
+      "table_transcribed_from_exact_image": true,
+      "original_input_image_sha256": "af89673b38bb3b84331a63111f23e56b09552d902c685bd78f13992d91977bb4",
+      "id": "B05",
+      "page_path": "reports/questions/B05.md",
+      "page_sha256": "012fe8528118228ffa635a14cee44dfcb7c6f4b37b4d5c655a2b487f8f258c37",
+      "safe_publication": true
+    },
+    {
+      "case_id": "944d8892-ff7a-402e-b6b1-2768872361e1",
+      "preview_question": "What is the percent GC of the DNA sequence TAAGTAGTGCTAGAGATGAACCCTACCGGTTTGGCACCCATTCTAGCATGCTAGATC? Round to the nearest integer.",
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/B07_input.json",
+      "source_sha256": "fb6ab7f4f8064b31bb895316d7e02322ef698e9d5b645e6ef82ccd473ad8068d",
+      "complete_input": true,
+      "assets": [
+        {
+          "path": "reports/questions/assets/B07_complete_prompt.txt",
+          "sha256": "b32abeec97ac2ddc30ac98760f6c0e5877a25ea413e49b8c9df59f8fe0858d98",
+          "kind": "complete_text_input",
+          "redistribution": "CC-BY-SA-4.0"
+        }
+      ],
+      "source_doi": null,
+      "source_doi_supplied_to_solver": false,
+      "missing": [],
+      "id": "B07",
+      "page_path": "reports/questions/B07.md",
+      "page_sha256": "0f7b995c75d86715e6a2e8d6d5f6ef7eac29c5a6990b72cbb9a61256bd745cba",
+      "safe_publication": true
+    },
+    {
+      "case_id": "24f6a29d-11b2-41ed-b1ac-c70a943e97d2",
+      "preview_question": "What element is present in the fragment?",
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/B08_input.json",
+      "source_sha256": "9636e8dc1b8f649f41ff196d84ebadc5d29499948db1b3cf65ac16d8d91c46c8",
+      "complete_input": true,
+      "assets": [
+        {
+          "path": "reports/questions/assets/B08_complete_prompt.txt",
+          "sha256": "d07931a03f89e5abf404d700d67a93f39165be2f6329aeacd8dedb9116b53fff",
+          "kind": "complete_text_input",
+          "redistribution": "CC-BY-SA-4.0"
+        }
+      ],
+      "source_doi": null,
+      "source_doi_supplied_to_solver": false,
+      "missing": [],
+      "id": "B08",
+      "page_path": "reports/questions/B08.md",
+      "page_sha256": "cc23c383aef3304a26b361e7b0668975df7be51c14626e9489e5bbd7b6db339e",
+      "safe_publication": true
+    },
+    {
+      "case_id": "V01:13",
+      "preview_question": "Is this an axial plane?",
+      "complete_input": false,
+      "source_doi": null,
+      "source_doi_supplied_to_solver": false,
+      "assets": [],
+      "missing": [
+        "Inline image not recovered; exact source image and original case identified."
+      ],
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/V01_release_private",
+      "source_sha256": "948b7156059b864cf72344fb10669233526b175c243e5a046d20d4201d297a95",
+      "source_image_name": "synpic54610.jpg",
+      "source_image_url": "https://medpix.nlm.nih.gov/case?id=48e1dd0e-8552-46ad-a354-5eb55be86de6",
+      "id": "V01",
+      "page_path": "reports/questions/V01.md",
+      "page_sha256": "c5b9aad11cd314bcbd425c115364cd83aa7625aa4efd265420fc731b66f95823",
+      "safe_publication": true
+    },
+    {
+      "case_id": "V02:11936",
+      "preview_question": "What is the main organ in the image?",
+      "complete_input": true,
+      "source_doi": null,
+      "source_doi_supplied_to_solver": false,
+      "assets": [
+        {
+          "path": "reports/questions/assets/V02_source.jpg",
+          "sha256": "cbca7fe963c4baab6f0af76f22d594aaa02481338cf332b88adb745c1cca07fd",
+          "kind": "exact_released_image",
+          "source_archive": "https://huggingface.co/datasets/BoKelvin/SLAKE/resolve/a9083ce6c34ac3ffb17671a605962924d8a8f9e9/imgs.zip",
+          "member": "imgs/xmlab102/source.jpg",
+          "license": "CC-BY-4.0",
+          "author_linked_release": "https://www.med-vqa.com/slake/"
+        }
+      ],
+      "missing": [],
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/V02_release_private",
+      "source_sha256": "6be8f7b4c5a46cdbc713a5210a25b6ed5aa1fd1574c83cefb4f998131f17c2c3",
+      "source_image_name": "xmlab102/source.jpg",
+      "id": "V02",
+      "page_path": "reports/questions/V02.md",
+      "page_sha256": "1eb1852311a0a2e446e398a46b9f4c7decc2384ecf367cd684c5c3f609c4891f",
+      "safe_publication": true,
+      "image_preview_url": "questions/assets/V02_source.jpg"
+    },
+    {
+      "case_id": "V03:hf_test:00052",
+      "preview_question": "what is expanded in the region of epiphysis?",
+      "complete_input": true,
+      "source_doi": null,
+      "source_doi_supplied_to_solver": false,
+      "assets": [],
+      "missing": [],
+      "id": "V03",
+      "page_path": "reports/questions/V03.md",
+      "page_sha256": "7a58e4f8bff13aaa6cfe47f50c5e63d125a6f3cdcc39ddbfa08c6ede0989b541",
+      "safe_publication": true,
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/v03_first.parquet",
+      "source_sha256": "533175be08e87b9ccf2fc06e2f82e58bb2e9bf2299a4a138cf5311f1d26ac157",
+      "source_image_sha256": "2b6ba5bc26193f00a58f8b7e6125d9037332cb7eead4520b5f120fc7ec3814a3",
+      "source_viewer_url": "https://huggingface.co/datasets/flaviagiammarino/path-vqa/viewer/default/test?row=52",
+      "selection_change": "Identical question text located in released mirror test row52 and matched to its own image; no unrelated image substituted."
+    },
+    {
+      "case_id": "synpic54082",
+      "preview_question": "what modality is shown?",
+      "complete_input": false,
+      "source_doi": null,
+      "source_doi_supplied_to_solver": false,
+      "assets": [],
+      "missing": [
+        "Inline image unavailable; matching image identified in official test archive."
+      ],
+      "source_image_name": "synpic54082.jpg",
+      "id": "V04",
+      "page_path": "reports/questions/V04.md",
+      "page_sha256": "bf0f67eb682b1f55eeceba594f62df874ab1afc43a276666854189157d620520",
+      "safe_publication": true
+    },
+    {
+      "case_id": "V05:clean2000:0000",
+      "preview_question": "What is the name of the medical imaging technique used in this case?",
+      "complete_input": true,
+      "source_doi": null,
+      "source_doi_supplied_to_solver": false,
+      "assets": [
+        {
+          "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ffc1/8415802/52a9fd4c2845/cureus-0013-00000017689-i01.jpg",
+          "kind": "external_corresponding_source_figure",
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8415802/#FIG1",
+          "source_image_name": "PMC8415802_FIG1.jpg",
+          "local_verification_sha256": "21bc24f2e6af9b881ab3e954a067fcda03e0759d5776a241e313b1fe80439a59",
+          "locally_reuploaded": false
+        }
+      ],
+      "missing": [],
+      "id": "V05",
+      "page_path": "reports/questions/V05.md",
+      "page_sha256": "516126bf9c17bcd38495a6dc02ba348077273689a40f1c071e199815ae07a4bf",
+      "safe_publication": true,
+      "image_preview_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ffc1/8415802/52a9fd4c2845/cureus-0013-00000017689-i01.jpg",
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/v05_clean.csv",
+      "source_sha256": "8523073108666b8f5231c3d40004a7b74a57381ea54ec9a3019edf1b33eab8f7",
+      "source_image_name": "PMC8415802_FIG1.jpg",
+      "selection_change": "Replaced previous paper-teaser question with first released clean-test case because its matched image is identifiable without answer overlays."
+    },
+    {
+      "case_id": "V07_slidevqa_test_00000",
+      "preview_question": "How much is the Trading Operating Profit in 2011?",
+      "complete_input": true,
+      "source_doi": null,
+      "source_doi_supplied_to_solver": false,
+      "assets": [],
+      "missing": [],
+      "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/source_acquisition_2026-10-19/vision/slidevqa/source/annotations/qa/test.jsonl",
+      "source_sha256": "889531a1f74ccd51c70e82e991879340aa5a750ee3422c66d31602208982c5c3",
+      "source_deck_url": "https://www.slideshare.net/Nestle_IR/20120220-fy-11roadshow",
+      "external_image_urls": [
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-1-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-2-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-3-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-4-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-5-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-6-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-7-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-8-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-9-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-10-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-11-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-12-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-13-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-14-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-15-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-16-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-17-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-18-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-19-1024.jpg",
+        "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-20-1024.jpg"
+      ],
+      "id": "V07",
+      "page_path": "reports/questions/V07.md",
+      "page_sha256": "60d75ac9e63f4d587d927a1428aa1a70795c0839eab407b2e4156910d761d702",
+      "safe_publication": true
+    }
+  ],
+  "verified_question_policy": "Verbatim saved-request, released-dataset, or published-source excerpts. No native question or unavailable original prompt is explicitly labelled; no invented placeholder question.",
+  "complete_question_revision_at_pacific": "2026-10-20T15:09:59.450405-07:00",
+  "published_model_references": {
+    "selection": "Highest model result for the stated metric in each cited paper, not a current global leaderboard. Different splits, training, inputs and metrics remain qualified.",
+    "records": [
+      {
+        "task_id": "P01",
+        "best_model": "BioT5",
+        "display": "BioT5: 74.65%",
+        "metric": "Accuracy (%)",
+        "value": 74.65,
+        "source_url": "https://arxiv.org/html/2402.17810v2",
+        "source_locator": "Table 6",
+        "comparability": "Single-task supervised BioT5; local Qwen is a zero-shot sequence-text baseline. Same PEER source split is required.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "reported_dispersion": 0.49
+      },
+      {
+        "task_id": "P02",
+        "best_model": "ProtST-ESM-1b",
+        "display": "ProtST-ESM-1b: 92.87%",
+        "metric": "Accuracy (%)",
+        "value": 92.87,
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 2, printed p.6",
+        "comparability": "Fixed protein encoder plus trained MLP head; not a zero-shot generative baseline. This is binary localization, not ten-class P03.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA"
+      },
+      {
+        "task_id": "P03",
+        "best_model": "ProtST-ESM-2",
+        "display": "ProtST-ESM-2: 83.39%",
+        "metric": "Accuracy (%)",
+        "value": 83.39,
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 2, printed p.6",
+        "comparability": "Fixed protein encoder plus trained MLP head; local Qwen/GPT are zero-shot text models.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "zero_shot_context": {
+          "model": "ProtST-ESM-1b",
+          "accuracy_percent": 43.49,
+          "source_locator": "Table 11, printed p.15",
+          "note": "Embedding similarity against label names; distinct from trained-head score."
+        }
+      },
+      {
+        "task_id": "P04",
+        "best_model": "ProtST-ESM-1b",
+        "display": "ProtST-ESM-1b: 0.895",
+        "metric": "Spearman correlation",
+        "value": 0.895,
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 2, printed p.6",
+        "comparability": "Full model fine-tuning on PEER beta-lactamase; no matching new local run is complete.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA"
+      },
+      {
+        "task_id": "P05",
+        "best_model": "ProtST-ESM-1b",
+        "display": "ProtST-ESM-1b: 0.850",
+        "metric": "Spearman correlation",
+        "value": 0.85,
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 2, printed p.6",
+        "comparability": "Full model fine-tuning on FLIP AAV two_vs_many; no matching new local run is complete.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA"
+      },
+      {
+        "task_id": "P06",
+        "best_model": "ProtST-ESM-2",
+        "display": "ProtST-ESM-2: 0.682",
+        "metric": "Spearman correlation",
+        "value": 0.682,
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 2, printed p.6",
+        "comparability": "Full model fine-tuning on FLIP Meltome human_cell; local Qwen is zero-shot.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA"
+      },
+      {
+        "task_id": "P07",
+        "best_model": [
+          "CNN",
+          "ProtST-ESM-1b",
+          "ProtST-ESM-2"
+        ],
+        "display": "CNN / ProtST-ESM-1b / ProtST-ESM-2: 0.682 (tie)",
+        "metric": "Spearman correlation",
+        "value": 0.682,
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 2, printed p.6",
+        "comparability": "CNN trained from scratch; both ProtST methods fully fine-tuned; tied at the paper's printed precision. Local Qwen is zero-shot on TAPE fluorescence.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA"
+      },
+      {
+        "task_id": "P08",
+        "best_model": "ProtST-ESM-2",
+        "display": "ProtST-ESM-2: 0.776",
+        "metric": "Spearman correlation",
+        "value": 0.776,
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 2, printed p.6",
+        "comparability": "Fixed protein encoder plus trained MLP head on TAPE stability; local Qwen is zero-shot.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA"
+      },
+      {
+        "task_id": "P09",
+        "best_model": "NatureLM (8x7B)",
+        "display": "NatureLM (8x7B): 72.3%",
+        "metric": "Accuracy (%)",
+        "value": 72.3,
+        "source_url": "https://arxiv.org/html/2502.07527v3",
+        "source_locator": "Table 20, Section 7.2",
+        "comparability": "Paper reports 0.723 accuracy, converted to 72.3%. Native binary-label mapping has not been independently recovered. Local P09 is rule-derived from P08 predictions and is not a verified replica of this binary task.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "printed_value": 0.723,
+        "comparison_status": "context_only_label_protocol_not_matched"
+      },
+      {
+        "task_id": "P10",
+        "best_model": "ESM-1B (linear probing)",
+        "display": "ESM-1B (linear probing): 88.06%",
+        "metric": "Accuracy (%)",
+        "value": 88.06,
+        "source_url": "https://arxiv.org/html/2402.17810v2",
+        "source_locator": "Table 6",
+        "comparability": "Trained linear probe on PEER human-PPI split; local Qwen is zero-shot. The NatureLM table lists 0.881 literature SOTA without naming the model in that row, so that rounded summary is not substituted.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "reported_dispersion": 0.24
+      },
+      {
+        "task_id": "P11",
+        "best_model": "BioT5+",
+        "display": "BioT5+: 66.16%",
+        "metric": "Accuracy (%)",
+        "value": 66.16,
+        "source_url": "https://arxiv.org/html/2402.17810v2",
+        "source_locator": "Table 6",
+        "comparability": "Supervised multitask model on PEER yeast PPI; local Qwen is zero-shot.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "reported_dispersion": 0.43
+      },
+      {
+        "task_id": "P16",
+        "best_model": "ProtST-ESM-1b",
+        "display": "ProtST-ESM-1b: 29.85% (label names)",
+        "metric": "Accuracy (%)",
+        "value": 29.85,
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 11, printed p.15",
+        "comparability": "Zero-shot embedding matching with the pre-training template and class names. Local Qwen uses full descriptions, so the closest prompt variant is 21.91%, not this name-only maximum.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "matched_description_variant_accuracy_percent": 21.91
+      },
+      {
+        "task_id": "P17",
+        "best_model": "ProtST-ESM-1b + GEMME",
+        "display": "ProtST-ESM-1b + GEMME: 0.464",
+        "metric": "UniProt-level mean Spearman correlation",
+        "value": 0.464,
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 13, printed p.16",
+        "comparability": "Hybrid PLM/alignment method on the original ProteinGym substitution snapshot. Modern expanded assay-only means or sequence-text adaptations are not a matching protocol.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "alternative_plm_only": {
+          "model": "ProtST-ESM-1b",
+          "value": 0.412,
+          "source_locator": "Table 12, printed p.16"
+        }
+      },
+      {
+        "task_id": "P19",
+        "best_model": {
+          "Recall@40": "VenusREM",
+          "NMS@40": "GPT-6 Astra"
+        },
+        "display": "VenusREM: Recall@40 0.0427; GPT-6 Astra: NMS@40 0.7966",
+        "metric": {
+          "Recall@40": "Recall@40",
+          "NMS@40": "NMS@40"
+        },
+        "value": {
+          "Recall@40": 0.0427,
+          "NMS@40": 0.7966
+        },
+        "source_url": "https://arxiv.org/html/2609.28921v1",
+        "source_locator": "Table 6",
+        "comparability": "Different metric winners across the full 123-assay task. The local prepared condition is a 34-assay reviewed subset; its eventual score cannot be equated to this macro-average.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "paper_assays": 123
+      },
+      {
+        "task_id": "P21",
+        "best_model": "Biomni + Claude Opus 5",
+        "display": "Biomni + Claude Opus 5: Spearman 0.4511",
+        "metric": "Spearman correlation",
+        "value": 0.4511,
+        "source_url": "https://arxiv.org/html/2609.28921v1",
+        "source_locator": "Table 8",
+        "comparability": "Tool-using agent; full 67-assay task with measured anchor context. Not a tool-free Qwen baseline.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "paper_assays": 67,
+        "other_metric_winners": {
+          "NDCG": {
+            "model": "Biomni + Claude Opus 5",
+            "value": 0.8985
+          },
+          "NMS@5": {
+            "model": "ProSST-2048",
+            "value": 0.862
+          },
+          "Recall@5": {
+            "model": "ProSST-2048",
+            "value": 0.3672
+          }
+        }
+      },
+      {
+        "task_id": "P22",
+        "best_model": "AMixKit + Claude Opus 5",
+        "display": "AMixKit + Claude Opus 5: Spearman 0.6462",
+        "metric": "Spearman correlation",
+        "value": 0.6462,
+        "source_url": "https://arxiv.org/html/2609.28921v1",
+        "source_locator": "Table 9",
+        "comparability": "Tool-using agent; full 29-assay task with permitted component single-mutant context. Not a tool-free Qwen baseline.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "paper_assays": 29,
+        "other_metric_winners": {
+          "NDCG": {
+            "model": "Biomni + GPT-6 Astra",
+            "value": 0.9347
+          },
+          "NMS@5": {
+            "model": "Biomni + GPT-6 Astra",
+            "value": 0.9145
+          },
+          "Recall@5": {
+            "model": "AMixKit + GPT-6 Astra",
+            "value": 0.4897
+          }
+        }
+      },
+      {
+        "task_id": "P23",
+        "best_model": "BioT5+",
+        "display": "BioT5+ leads Figure 2; exact value not tabulated",
+        "metric": "ROUGE-L",
+        "value": null,
+        "source_url": "https://arxiv.org/html/2402.17810v2",
+        "source_locator": "Figure 2; Section 4.2.1; Appendix G.2.1",
+        "comparability": "Supervised multitask model on Mol-Instructions protein test sets; local Qwen is zero-shot. Do not substitute Table 15: that is molecule description, not protein description.",
+        "value_status": "rank_verified_numeric_value_unavailable_in_primary_text",
+        "selection": "Paper text explicitly states BioT5+ surpasses all compared models on all four tasks; no exact score inferred from the radar chart.",
+        "precise_omission": "The primary paper provides a radar plot rather than a numerical table. The downloaded author source includes only a rendered molinst_protein_res.pdf, not raw plotted values. No exact numeric score recovered."
+      },
+      {
+        "task_id": "P24",
+        "best_model": "BioT5+",
+        "display": "BioT5+ leads Figure 2; exact value not tabulated",
+        "metric": "ROUGE-L",
+        "value": null,
+        "source_url": "https://arxiv.org/html/2402.17810v2",
+        "source_locator": "Figure 2; Section 4.2.1; Appendix G.2.1",
+        "comparability": "Supervised multitask model on Mol-Instructions protein test sets; local Qwen is zero-shot. Do not substitute Table 15: that is molecule description, not protein description.",
+        "value_status": "rank_verified_numeric_value_unavailable_in_primary_text",
+        "selection": "Paper text explicitly states BioT5+ surpasses all compared models on all four tasks; no exact score inferred from the radar chart.",
+        "precise_omission": "The primary paper provides a radar plot rather than a numerical table. The downloaded author source includes only a rendered molinst_protein_res.pdf, not raw plotted values. No exact numeric score recovered."
+      },
+      {
+        "task_id": "P25",
+        "best_model": "BioT5+",
+        "display": "BioT5+ leads Figure 2; exact value not tabulated",
+        "metric": "ROUGE-L",
+        "value": null,
+        "source_url": "https://arxiv.org/html/2402.17810v2",
+        "source_locator": "Figure 2; Section 4.2.1; Appendix G.2.1",
+        "comparability": "Supervised multitask model on Mol-Instructions protein test sets; local Qwen is zero-shot. Do not substitute Table 15: that is molecule description, not protein description.",
+        "value_status": "rank_verified_numeric_value_unavailable_in_primary_text",
+        "selection": "Paper text explicitly states BioT5+ surpasses all compared models on all four tasks; no exact score inferred from the radar chart.",
+        "precise_omission": "The primary paper provides a radar plot rather than a numerical table. The downloaded author source includes only a rendered molinst_protein_res.pdf, not raw plotted values. No exact numeric score recovered."
+      },
+      {
+        "task_id": "P26",
+        "best_model": "BioT5+",
+        "display": "BioT5+ leads Figure 2; exact value not tabulated",
+        "metric": "ROUGE-L",
+        "value": null,
+        "source_url": "https://arxiv.org/html/2402.17810v2",
+        "source_locator": "Figure 2; Section 4.2.1; Appendix G.2.1",
+        "comparability": "Supervised multitask model on Mol-Instructions protein test sets; local Qwen is zero-shot. Do not substitute Table 15: that is molecule description, not protein description.",
+        "value_status": "rank_verified_numeric_value_unavailable_in_primary_text",
+        "selection": "Paper text explicitly states BioT5+ surpasses all compared models on all four tasks; no exact score inferred from the radar chart.",
+        "precise_omission": "The primary paper provides a radar plot rather than a numerical table. The downloaded author source includes only a rendered molinst_protein_res.pdf, not raw plotted values. No exact numeric score recovered."
+      },
+      {
+        "task_id": "P27",
+        "best_model": "NatureLM (8x7B)",
+        "display": "NatureLM (8x7B): 0.585",
+        "metric": "ROUGE-L",
+        "value": 0.585,
+        "source_url": "https://arxiv.org/html/2502.07527v3",
+        "source_locator": "Table 11, Section 4.4",
+        "comparability": "Paper-specific temporal NCBI protein-description holdout; exact native cohort remains unavailable. An alternate local cohort would be a separate condition.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "largest printed value of this metric in the specified primary task table; not current SOTA",
+        "comparison_status": "context_only_exact_native_cohort_unavailable"
+      },
+      {
+        "task_id": "B01",
+        "recommended_display": "Llama-3-70B-Instruct: 35% accuracy",
+        "source_id": "LAB",
+        "source_url": "https://arxiv.org/html/2407.10362v1",
+        "source_locator": "Table 2, LitQA2 row",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "accuracy",
+            "model": "Meta-Llama-3-70B-Instruct",
+            "value": 35,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Original full public+private benchmark, three-run mean; our single-run reviewed public subset differs.",
+        "paper_test_cases": 248,
+        "our_test_cases": 197,
+        "alternative_later_paper": {
+          "source_id": "RYZE",
+          "locator": "Table 1",
+          "model": "BioVLM-8B",
+          "accuracy_percent": 65.5,
+          "note": "199 released public cases; training/synthesis uses benchmark feedback; not a matched untouched test comparison."
+        }
+      },
+      {
+        "task_id": "B02",
+        "recommended_display": "BioVLM-8B: 48.9% accuracy (later Ryze paper)",
+        "source_id": "RYZE",
+        "source_url": "https://arxiv.org/html/2606.00902v1",
+        "source_locator": "Table 1, DbQA row",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "accuracy",
+            "model": "BioVLM-8B",
+            "value": 48.9,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Later public-set study uses benchmark-feedback training; original LAB-Bench paper gives separate DbQA subtask rows, without one category accuracy.",
+        "original_paper_category_aggregate": "not reported as one category accuracy",
+        "paper_test_cases": 520
+      },
+      {
+        "task_id": "B03",
+        "recommended_display": "Llama-3-70B-Instruct: 20% accuracy",
+        "source_id": "LAB",
+        "source_url": "https://arxiv.org/html/2407.10362v1",
+        "source_locator": "Table 2, SuppQA row",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "accuracy",
+            "model": "Meta-Llama-3-70B-Instruct",
+            "value": 20,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Original full public+private benchmark, three-run mean; our single-run reviewed public subset differs.",
+        "paper_test_cases": 102,
+        "our_test_cases": 82,
+        "alternative_later_paper": {
+          "source_id": "RYZE",
+          "locator": "Table 1",
+          "model": "GPT-5.2",
+          "accuracy_percent": 48.8,
+          "note": "Later public-set experiment; different benchmark/model protocol."
+        }
+      },
+      {
+        "task_id": "B04",
+        "recommended_display": "Claude 3.5 Sonnet: 46% accuracy",
+        "source_id": "LAB",
+        "source_url": "https://arxiv.org/html/2407.10362v1",
+        "source_locator": "Table 2, FigQA row",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "accuracy",
+            "model": "claude-3-5-sonnet-20240620",
+            "value": 46,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Original full public+private benchmark, three-run mean; our single-run reviewed public subset differs.",
+        "alternative_later_paper": {
+          "source_id": "RYZE",
+          "locator": "Table 1",
+          "model": "GPT-5.2",
+          "accuracy_percent": 36.5
+        }
+      },
+      {
+        "task_id": "B05",
+        "recommended_display": "Claude 3.5 Sonnet: 83% accuracy",
+        "source_id": "LAB",
+        "source_url": "https://arxiv.org/html/2407.10362v1",
+        "source_locator": "Table 2, TableQA row",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "accuracy",
+            "model": "claude-3-5-sonnet-20240620",
+            "value": 83,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Original full public+private benchmark, three-run mean; our single-run reviewed public subset differs.",
+        "alternative_later_paper": {
+          "source_id": "RYZE",
+          "locator": "Table 1",
+          "model": "BioVLM-8B",
+          "accuracy_percent": 45.6
+        }
+      },
+      {
+        "task_id": "B07",
+        "recommended_display": "GPT-5.2: 47.0% accuracy (later Ryze paper)",
+        "source_id": "RYZE",
+        "source_url": "https://arxiv.org/html/2606.00902v1",
+        "source_locator": "Table 1, SeqQA row",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "accuracy",
+            "model": "GPT-5.2",
+            "value": 47.0,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Later public-set study; original LAB-Bench paper gives separate SeqQA subtask rows, without one category accuracy.",
+        "original_paper_category_aggregate": "not reported as one category accuracy",
+        "paper_test_cases": 600
+      },
+      {
+        "task_id": "B08",
+        "recommended_display": "Claude 3.5 Sonnet / GPT-4o: 28% accuracy (tie)",
+        "source_id": "LAB",
+        "source_url": "https://arxiv.org/html/2407.10362v1",
+        "source_locator": "Table 2, CloningScenarios row",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "accuracy",
+            "model": "claude-3-5-sonnet-20240620 / GPT-4o",
+            "value": 28,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Original full public+private benchmark, three-run mean; our single-run reviewed public subset differs.",
+        "paper_test_cases": 41,
+        "our_test_cases": 33,
+        "alternative_later_paper": {
+          "source_id": "RYZE",
+          "locator": "Table 1",
+          "model": "BioVLM-8B",
+          "accuracy_percent": 38.4,
+          "note": "Later benchmark-feedback training experiment; not a matched untouched test comparison."
+        }
+      },
+      {
+        "task_id": "V01",
+        "recommended_display": "Open: LLaVA-Med 7B 66.26%; closed: LLaVA-Med 7B 84.19%",
+        "source_id": "LLAVA",
+        "source_url": "https://arxiv.org/pdf/2306.00890",
+        "source_locator": "Table 4(b), CLIP 7B rows FT=9 and FT=15; Table 4(a) for closed result",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "open_token_recall",
+            "model": "LLaVA-Med CLIP 7B, 60K-IM, stage1=1/stage2=3/FT=9",
+            "value": 66.26,
+            "unit": "percent"
+          },
+          {
+            "metric": "closed_accuracy",
+            "model": "LLaVA-Med CLIP 7B, 60K-IM, stage1=1/stage2=3/FT=15",
+            "value": 84.19,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Dataset-fine-tuned models; different variants lead each metric. Open answers from prior classifiers are accuracy, not token recall, and excluded from the recall maximum.",
+        "paper_test_cases": 451,
+        "our_test_cases": 451,
+        "higher_other_metric_not_selected": [
+          {
+            "model": "Prefix T. Medical LM",
+            "value": 84.3,
+            "metric": "open_answer_classification_accuracy",
+            "reason": "Different metric from our token recall."
+          }
+        ]
+      },
+      {
+        "task_id": "V02",
+        "recommended_display": "Open: LLaVA-Med 7B 87.11%; closed: M2I2 91.10%",
+        "source_id": "LLAVA",
+        "source_url": "https://arxiv.org/pdf/2306.00890",
+        "source_locator": "Table 4(b), BioMedCLIP 7B FT=9; Table 4(a), M2I2 row",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "open_token_recall",
+            "model": "LLaVA-Med BioMedCLIP 7B, 60K-IM, stage1=1/stage2=3/FT=9",
+            "value": 87.11,
+            "unit": "percent"
+          },
+          {
+            "metric": "closed_accuracy",
+            "model": "M2I2",
+            "value": 91.1,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Dataset-fine-tuned models; different models lead the two metrics. Prior open-answer classification accuracy is excluded from the recall maximum.",
+        "paper_test_cases": 1061,
+        "our_test_cases": 1061
+      },
+      {
+        "task_id": "V03",
+        "recommended_display": "Open: LLaVA-Med 7B 39.60%; closed: LLaVA-Med 13B 92.39%",
+        "source_id": "LLAVA",
+        "source_url": "https://arxiv.org/pdf/2306.00890",
+        "source_locator": "Table 4(b), BioMedCLIP 7B FT=9 and CLIP 13B FT=9",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "open_token_recall",
+            "model": "LLaVA-Med BioMedCLIP 7B, 60K-IM, stage1=1/stage2=3/FT=9",
+            "value": 39.6,
+            "unit": "percent"
+          },
+          {
+            "metric": "closed_accuracy",
+            "model": "LLaVA-Med CLIP 13B, 60K-IM, stage1=1/stage2=3/FT=9",
+            "value": 92.39,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Dataset-fine-tuned models. Paper has 6,761 test questions; our released mirror has 6,719. Prior open-answer classification accuracy is excluded from the recall maximum.",
+        "paper_test_cases": 6761,
+        "our_test_cases": 6719,
+        "higher_other_metric_not_selected": [
+          {
+            "model": "Q2ATransformer",
+            "value": 54.85,
+            "metric": "open_answer_classification_accuracy",
+            "reason": "Different metric from our token recall."
+          }
+        ]
+      },
+      {
+        "task_id": "V04",
+        "recommended_display": "MedVInT-TE: 70.5% accuracy",
+        "source_id": "PMC",
+        "source_url": "https://arxiv.org/html/2305.10415v6",
+        "source_locator": "Table 2, VQA-2019 Overall column",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "overall_accuracy",
+            "model": "MedVInT-TE (PMC-VQA pretraining)",
+            "value": 70.5,
+            "unit": "percent",
+            "reported_interval": [
+              62.8,
+              78.2
+            ]
+          }
+        ],
+        "comparison_note": "Fine-tuned on target dataset; original paper accuracy versus our whole-final exact-match scoring is not established as identical.",
+        "paper_test_cases": 500,
+        "our_test_cases": 500
+      },
+      {
+        "task_id": "V05",
+        "recommended_display": "MedVInT-TD: 40.3% choice accuracy",
+        "source_id": "PMC",
+        "source_url": "https://arxiv.org/html/2305.10415v6",
+        "source_locator": "Table 3, MedVInT-TD, PMC-LLaMA, PMC-CLIP row",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "choice_accuracy",
+            "model": "MedVInT-TD / PMC-LLaMA / PMC-CLIP",
+            "value": 40.3,
+            "unit": "percent",
+            "reported_interval": [
+              37.2,
+              43.8
+            ]
+          }
+        ],
+        "comparison_note": "Highest image-based choice result; trained on PMC-VQA, while ours is zero-shot. Both use the 2,000-case manually reviewed set. Caption-oracle result is excluded from image-based model comparison.",
+        "paper_test_cases": 2000,
+        "our_test_cases": 2000,
+        "oracle_upper_bound": {
+          "model": "GPT-4-Oracle",
+          "choice_accuracy_percent": 89.3,
+          "privileged_input": "original figure captions",
+          "not_selected": true
+        }
+      },
+      {
+        "task_id": "V07",
+        "recommended_display": "Ryze pipeline: 66.48% SlideVQA accuracy",
+        "source_id": "RYZE",
+        "source_url": "https://arxiv.org/html/2606.00902v1",
+        "source_locator": "Table 3, Ours row / SlideVQA column",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "slidevqa_accuracy",
+            "model": "Ryze full OCR/document pipeline",
+            "value": 66.48,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Exact paper evaluation cohort/configuration is unavailable; our prepared 2,215-question condition is an adaptation.",
+        "other_datasets_same_table": {
+          "arxivqa_accuracy_percent": 73.12,
+          "chartqa_accuracy_percent": 75.8
+        }
+      },
+      {
+        "task_id": "P34",
+        "recommended_display": "MutaPLM: fitness curves; no tabulated aggregate",
+        "source_id": "MUTA",
+        "source_url": "https://arxiv.org/html/2410.22949v1",
+        "source_locator": "Figure 5; Section 4.3 / Appendix C.4",
+        "status": "curve_only_no_scalar",
+        "metrics": [],
+        "comparison_note": "Six landscapes and per-round curves; no single tabulated scalar to compare with the five-head available adaptation."
+      },
+      {
+        "task_id": "P35",
+        "recommended_display": "ProtST-ESM-1b: qualitative retrieval; no aggregate score",
+        "source_id": "PROTST",
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Section 4.4, Figure 4, Appendix D",
+        "status": "qualitative_no_scalar",
+        "metrics": [],
+        "comparison_note": "Selected retrieval and docking examples, not a fixed aggregate retrieval-accuracy scoreboard."
+      },
+      {
+        "task_id": "P37",
+        "recommended_display": "NatureLM-8×7B: pLDDT 75.9; diversity 0.989",
+        "source_id": "NATURE",
+        "source_url": "https://arxiv.org/html/2502.07527v3",
+        "source_locator": "Table 8",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "mean_omegafold_plddt",
+            "model": "NatureLM (8x7B)",
+            "value": 75.9,
+            "unit": "pLDDT"
+          },
+          {
+            "metric": "clusters_at_50pct_identity_per_generated_sequence",
+            "model": "NatureLM (8x7B)",
+            "value": 0.989,
+            "unit": "ratio"
+          }
+        ],
+        "comparison_note": "pLDDT is predicted and only measured for generated sequences shorter than 100 residues. Average length 318 is descriptive, not a score to maximize.",
+        "descriptive_statistics": {
+          "average_length": 318
+        }
+      },
+      {
+        "task_id": "P38",
+        "recommended_display": "NatureLM-8×7B: stability probability 0.655; 81.2% above 0.5",
+        "source_id": "NATURE",
+        "source_url": "https://arxiv.org/html/2502.07527v3",
+        "source_locator": "Table 9 (stability); Figure 12 (solubility)",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "mean_stability_oracle_probability",
+            "model": "NatureLM (8x7B)",
+            "value": 0.655,
+            "unit": "probability"
+          },
+          {
+            "metric": "fraction_stability_oracle_probability_above_0_5",
+            "model": "NatureLM (8x7B)",
+            "value": 81.2,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Native SFM-Protein stability proxy; solubility results are distribution plots without a tabulated comparable scalar. Available replacement evaluators are a different condition.",
+        "solubility_numeric_result": null
+      },
+      {
+        "task_id": "P39",
+        "recommended_display": "Qualitative case study; no aggregate score",
+        "source_id": "NATURE",
+        "source_url": "https://arxiv.org/html/2502.07527v3",
+        "source_locator": "Section 4.5; Figures S10–S12",
+        "status": "qualitative_no_scalar",
+        "metrics": [],
+        "comparison_note": "Selected generated candidates and predicted complexes; not a controlled scalar model comparison."
+      },
+      {
+        "task_id": "P40",
+        "recommended_display": "ABGNN: 39.6% amino-acid recovery",
+        "source_id": "NATURE",
+        "source_url": "https://arxiv.org/html/2502.07527v3",
+        "source_locator": "Table 10",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "amino_acid_recovery",
+            "model": "ABGNN",
+            "value": 39.6,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Best AAR in NatureLM Table 10 uses structural information; NatureLM and our planned text adapter use sequence input.",
+        "same_input_reference": {
+          "model": "NatureLM (8x7B)",
+          "amino_acid_recovery_percent": 37.6
+        },
+        "separate_paper_protocol": {
+          "source_id": "PROTEOR",
+          "locator": "Table 2",
+          "best_aar_model": "DGENet",
+          "best_aar_percent": 42.67,
+          "best_structural_model": "Proteo-R1",
+          "rmsd_angstrom": 2.46,
+          "dockq": 0.801,
+          "note": "Different structural pipeline; do not silently swap for NatureLM condition."
+        }
+      },
+      {
+        "task_id": "P41",
+        "recommended_display": "MFDesign: H3 loop RMSD 4.28 Å; interface improvement 59.16%",
+        "source_id": "PROTEOR",
+        "source_url": "https://arxiv.org/html/2605.02937v1",
+        "source_locator": "Table 1",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "cdr_h3_loop_rmsd",
+            "model": "MFDesign",
+            "value": 4.28,
+            "unit": "angstrom",
+            "direction": "lower"
+          },
+          {
+            "metric": "interface_improvement",
+            "model": "MFDesign",
+            "value": 59.16,
+            "unit": "percent"
+          }
+        ],
+        "comparison_note": "Best non-oracle model for these two headline metrics on the native all-CDR holdout; our released demonstrations are not the original holdout.",
+        "per_metric_best_non_oracle": {
+          "H1_RMSD": {
+            "model": "Proteo-R1",
+            "angstrom": 1.33
+          },
+          "H2_RMSD": {
+            "model": "Proteo-R1",
+            "angstrom": 1.13
+          },
+          "H3_RMSD": {
+            "model": "MFDesign",
+            "angstrom": 3.71
+          },
+          "L1_RMSD": {
+            "model": "AbX",
+            "angstrom": 0.76
+          },
+          "L2_RMSD": {
+            "model": "AbX",
+            "angstrom": 0.4
+          },
+          "L3_RMSD": {
+            "model": "AbX",
+            "angstrom": 1.3
+          },
+          "clash_in_percent": {
+            "model": "Proteo-R1",
+            "value": 0.5
+          },
+          "clash_out_percent": {
+            "model": "Proteo-R1",
+            "value": 0.14
+          },
+          "backbone_jsd": {
+            "model": "AbX",
+            "value": 0.2497
+          }
+        },
+        "oracle_excluded": {
+          "model": "Proteo-R1 + Oracle Anchor",
+          "h3_loop_rmsd_angstrom": 3.93,
+          "interface_improvement_percent": 62.25,
+          "reason": "Reference-derived oracle anchor."
+        }
+      },
+      {
+        "task_id": "P42",
+        "recommended_display": "STRIDE: 61% replace-only; 89% full-edit predicted success",
+        "source_id": "STRIDE",
+        "source_url": "https://arxiv.org/html/2603.03573v1",
+        "source_locator": "Table 4 (replace-only) and Table 3 (full-edit)",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "predicted_fluorescence_improvement_success_replace_only",
+            "model": "STRIDE",
+            "value": 61,
+            "unit": "percent",
+            "samples": 100
+          },
+          {
+            "metric": "predicted_fluorescence_improvement_success_full_edit",
+            "model": "STRIDE",
+            "value": 89,
+            "unit": "percent",
+            "samples": 100
+          }
+        ],
+        "comparison_note": "Paper uses a fluorescence predictor; ours reports qualified automated acceptance with a different endpoint/oracle condition. Neither is experimental fluorescence; not directly matched.",
+        "paper_table3_typo_note": "Success 89/100 but Unique denominator printed 78/79; do not correct silently or use the typo for success."
+      },
+      {
+        "task_id": "P43",
+        "recommended_display": "BioT5+: AUROC 0.964 ± 0.001",
+        "source_id": "BIOT5",
+        "source_url": "https://arxiv.org/html/2402.17810v2",
+        "source_locator": "Table 8, BindingDB column",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "auroc",
+            "model": "BioT5+",
+            "value": 0.964,
+            "unit": "unitless",
+            "std": 0.001
+          }
+        ],
+        "comparison_note": "Supervised task-trained model versus zero-shot Qwen. Table 8 does not report AUPRC; do not compare AUROC with our AUPRC.",
+        "dataset": "BindingDB",
+        "auprc_not_reported": true
+      },
+      {
+        "task_id": "P43",
+        "recommended_display": "BioT5+: AUROC 0.939 ± 0.001",
+        "source_id": "BIOT5",
+        "source_url": "https://arxiv.org/html/2402.17810v2",
+        "source_locator": "Table 8, BioSNAP column",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "auroc",
+            "model": "BioT5+",
+            "value": 0.939,
+            "unit": "unitless",
+            "std": 0.001
+          }
+        ],
+        "comparison_note": "Supervised task-trained model versus zero-shot Qwen. Table 8 does not report AUPRC; do not compare AUROC with our AUPRC.",
+        "dataset": "BioSNAP",
+        "auprc_not_reported": true
+      },
+      {
+        "task_id": "P43",
+        "recommended_display": "BioT5: AUROC 0.989 ± 0.001",
+        "source_id": "BIOT5",
+        "source_url": "https://arxiv.org/html/2402.17810v2",
+        "source_locator": "Table 8, Human column",
+        "status": "verified_numeric",
+        "metrics": [
+          {
+            "metric": "auroc",
+            "model": "BioT5",
+            "value": 0.989,
+            "unit": "unitless",
+            "std": 0.001
+          }
+        ],
+        "comparison_note": "Supervised task-trained model versus zero-shot Qwen. Table 8 does not report AUPRC; do not compare AUROC with our AUPRC.",
+        "dataset": "Human",
+        "auprc_not_reported": true
+      }
+    ]
+  },
+  "question_pages": {
+    "qa_vision": {
+      "prepared_at_pacific": "2026-10-20T15:08:58.782176-07:00",
+      "records": [
+        {
+          "case_id": "4949fc05-5f78-4dd0-8d9c-3dbb6004740a",
+          "preview_question": "Which pathway(s) is primarily responsible for translation initiation of multitail mRNAs?",
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_litqa2_replay_2026-10-16/requests/05709e2e5d04ddecc96afc5828ea3f5c5497e523cfdbdff5132ada6bcb4a71de.json",
+          "source_sha256": "a08d9e9b1a4805f61474071259497c1883b1286f471c302c0dd2efc4bd0b9ef1",
+          "complete_input": true,
+          "assets": [
+            {
+              "path": "reports/questions/assets/B01_complete_prompt.txt",
+              "sha256": "5df1d1830d827f6a098f0189e402b24150852e6f1295bce9228a7805223f6419",
+              "kind": "complete_text_input",
+              "redistribution": "CC-BY-SA-4.0"
+            }
+          ],
+          "source_doi": "10.1038/s41587-024-02174-7",
+          "source_doi_supplied_to_solver": false,
+          "missing": [],
+          "id": "B01",
+          "page_path": "reports/questions/B01.md",
+          "page_sha256": "3eb9ee82abb6ede99a6be8cd11d18d9ccc60c8885f2ff58a4e861948326eca71",
+          "safe_publication": true
+        },
+        {
+          "case_id": "3c44bd92-e02a-4829-9156-b1df56be9174",
+          "preview_question": "Which of the following human genes is located at chr10q22 according to Ensembl Release 110?",
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/B02_input.json",
+          "source_sha256": "9389491051523d5f74cec1001415a410c3c79861322a8632ef6faa6e556fee40",
+          "complete_input": true,
+          "assets": [
+            {
+              "path": "reports/questions/assets/B02_complete_prompt.txt",
+              "sha256": "0e610e29afaabfca304fdf7454c11b04228c13f604dee7b78aa9181d6d907b5d",
+              "kind": "complete_text_input",
+              "redistribution": "CC-BY-SA-4.0"
+            }
+          ],
+          "source_doi": null,
+          "source_doi_supplied_to_solver": false,
+          "missing": [],
+          "id": "B02",
+          "page_path": "reports/questions/B02.md",
+          "page_sha256": "65aa5aed0f5f68fd36f896855fdd6cf1094dc438e0b32ed77820813a9e6ef091",
+          "safe_publication": true
+        },
+        {
+          "case_id": "30fce0db-9bb8-4a89-ae5c-78f665da41f6",
+          "preview_question": "Which organisation provided the second most frequent amount of colenterazine analogues?",
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/requests/233d18eec5829c279a6a8eec1e86296b4e225fe527444929cf3bf95df3b3e92b.json",
+          "source_sha256": "c2b07a7870a1d530c2e16b3f8ef8e0a4291e36c7587ac5853fa12dd64e8cfdad",
+          "complete_input": true,
+          "assets": [
+            {
+              "path": "reports/questions/assets/B03_complete_prompt.txt",
+              "sha256": "497b83749aa62b4cd3a6da3ea9ced603d2c718299779b1a4b5f248a952dcea47",
+              "kind": "complete_text_input",
+              "redistribution": "CC-BY-SA-4.0"
+            }
+          ],
+          "source_doi": "10.1038/s41586-023-05696-3",
+          "source_doi_supplied_to_solver": true,
+          "missing": [],
+          "id": "B03",
+          "page_path": "reports/questions/B03.md",
+          "page_sha256": "e68d4dec62105ded9f4516d2a1e14c47f42421db4695723a98836995dbd45c7d",
+          "safe_publication": true
+        },
+        {
+          "case_id": "3d5b84db-c3e2-4c3f-a359-ef502b968f9d",
+          "preview_question": "Where does the half waveplate occur relative to the SLM?",
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/requests/68a4c9545b85499d0036184e2d19a2f245411db7890c5c65e10b76bd846cc008.json",
+          "source_sha256": "e008d48d6288d60fb0384b6881fa917a95fa197458a6d0a27f7ccc6be8b260d2",
+          "complete_input": true,
+          "assets": [
+            {
+              "path": "reports/questions/assets/B04_complete_prompt.txt",
+              "sha256": "111187b7ce2d4a906fb8177ccd83790f054e44dd7dc5e60acb482d08690fae74",
+              "kind": "complete_text_input",
+              "redistribution": "CC-BY-SA-4.0"
+            },
+            {
+              "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0e7b/4724224/741c37a65b92/nihms745170f1.jpg",
+              "kind": "external_corresponding_source_figure",
+              "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4724224/#F1",
+              "local_saved_input_image_sha256": "eda3d818cf48e1676bc6dbfb6cd432d26d938b27bd1d2a7f402d315a25730cca",
+              "locally_reuploaded": false
+            }
+          ],
+          "source_doi": "10.1016/j.neuron.2015.12.012",
+          "source_doi_supplied_to_solver": false,
+          "missing": [],
+          "image_preview_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0e7b/4724224/741c37a65b92/nihms745170f1.jpg",
+          "id": "B04",
+          "page_path": "reports/questions/B04.md",
+          "page_sha256": "fcf5394c237b8a66cb57c8d2a496f5a3618641006a02470b93b6a4baa3e41e01",
+          "safe_publication": true
+        },
+        {
+          "case_id": "5d3f8067-fe32-4abb-9646-276150413965",
+          "preview_question": "Which model shows the lowest MSE when chi1 = 300?",
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/requests/03347599650da332c163393327a395437cfe58c2b6f1bda16bdca9bce0011cc6.json",
+          "source_sha256": "e79a47d6b40c14ad7a9060583510de77eba25e20d313ae44b46d48d089e2c284",
+          "complete_input": true,
+          "assets": [
+            {
+              "path": "reports/questions/assets/B05_complete_prompt.txt",
+              "sha256": "03604d50b77ff4a62f4b4a02d91bd03ae58a1f15129f7d5a75ad224a44af5b0e",
+              "kind": "complete_text_input",
+              "redistribution": "CC-BY-SA-4.0"
+            }
+          ],
+          "source_doi": "10.1021/acs.jctc.1c00302",
+          "source_doi_supplied_to_solver": false,
+          "missing": [],
+          "table_transcribed_from_exact_image": true,
+          "original_input_image_sha256": "af89673b38bb3b84331a63111f23e56b09552d902c685bd78f13992d91977bb4",
+          "id": "B05",
+          "page_path": "reports/questions/B05.md",
+          "page_sha256": "012fe8528118228ffa635a14cee44dfcb7c6f4b37b4d5c655a2b487f8f258c37",
+          "safe_publication": true
+        },
+        {
+          "case_id": "944d8892-ff7a-402e-b6b1-2768872361e1",
+          "preview_question": "What is the percent GC of the DNA sequence TAAGTAGTGCTAGAGATGAACCCTACCGGTTTGGCACCCATTCTAGCATGCTAGATC? Round to the nearest integer.",
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/B07_input.json",
+          "source_sha256": "fb6ab7f4f8064b31bb895316d7e02322ef698e9d5b645e6ef82ccd473ad8068d",
+          "complete_input": true,
+          "assets": [
+            {
+              "path": "reports/questions/assets/B07_complete_prompt.txt",
+              "sha256": "b32abeec97ac2ddc30ac98760f6c0e5877a25ea413e49b8c9df59f8fe0858d98",
+              "kind": "complete_text_input",
+              "redistribution": "CC-BY-SA-4.0"
+            }
+          ],
+          "source_doi": null,
+          "source_doi_supplied_to_solver": false,
+          "missing": [],
+          "id": "B07",
+          "page_path": "reports/questions/B07.md",
+          "page_sha256": "0f7b995c75d86715e6a2e8d6d5f6ef7eac29c5a6990b72cbb9a61256bd745cba",
+          "safe_publication": true
+        },
+        {
+          "case_id": "24f6a29d-11b2-41ed-b1ac-c70a943e97d2",
+          "preview_question": "What element is present in the fragment?",
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/B08_input.json",
+          "source_sha256": "9636e8dc1b8f649f41ff196d84ebadc5d29499948db1b3cf65ac16d8d91c46c8",
+          "complete_input": true,
+          "assets": [
+            {
+              "path": "reports/questions/assets/B08_complete_prompt.txt",
+              "sha256": "d07931a03f89e5abf404d700d67a93f39165be2f6329aeacd8dedb9116b53fff",
+              "kind": "complete_text_input",
+              "redistribution": "CC-BY-SA-4.0"
+            }
+          ],
+          "source_doi": null,
+          "source_doi_supplied_to_solver": false,
+          "missing": [],
+          "id": "B08",
+          "page_path": "reports/questions/B08.md",
+          "page_sha256": "cc23c383aef3304a26b361e7b0668975df7be51c14626e9489e5bbd7b6db339e",
+          "safe_publication": true
+        },
+        {
+          "case_id": "V01:13",
+          "preview_question": "Is this an axial plane?",
+          "complete_input": false,
+          "source_doi": null,
+          "source_doi_supplied_to_solver": false,
+          "assets": [],
+          "missing": [
+            "Inline image not recovered; exact source image and original case identified."
+          ],
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/V01_release_private",
+          "source_sha256": "948b7156059b864cf72344fb10669233526b175c243e5a046d20d4201d297a95",
+          "source_image_name": "synpic54610.jpg",
+          "source_image_url": "https://medpix.nlm.nih.gov/case?id=48e1dd0e-8552-46ad-a354-5eb55be86de6",
+          "id": "V01",
+          "page_path": "reports/questions/V01.md",
+          "page_sha256": "c5b9aad11cd314bcbd425c115364cd83aa7625aa4efd265420fc731b66f95823",
+          "safe_publication": true
+        },
+        {
+          "case_id": "V02:11936",
+          "preview_question": "What is the main organ in the image?",
+          "complete_input": true,
+          "source_doi": null,
+          "source_doi_supplied_to_solver": false,
+          "assets": [
+            {
+              "path": "reports/questions/assets/V02_source.jpg",
+              "sha256": "cbca7fe963c4baab6f0af76f22d594aaa02481338cf332b88adb745c1cca07fd",
+              "kind": "exact_released_image",
+              "source_archive": "https://huggingface.co/datasets/BoKelvin/SLAKE/resolve/a9083ce6c34ac3ffb17671a605962924d8a8f9e9/imgs.zip",
+              "member": "imgs/xmlab102/source.jpg",
+              "license": "CC-BY-4.0",
+              "author_linked_release": "https://www.med-vqa.com/slake/"
+            }
+          ],
+          "missing": [],
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/V02_release_private",
+          "source_sha256": "6be8f7b4c5a46cdbc713a5210a25b6ed5aa1fd1574c83cefb4f998131f17c2c3",
+          "source_image_name": "xmlab102/source.jpg",
+          "id": "V02",
+          "page_path": "reports/questions/V02.md",
+          "page_sha256": "1eb1852311a0a2e446e398a46b9f4c7decc2384ecf367cd684c5c3f609c4891f",
+          "safe_publication": true,
+          "image_preview_url": "questions/assets/V02_source.jpg"
+        },
+        {
+          "case_id": "V03:hf_test:00052",
+          "preview_question": "what is expanded in the region of epiphysis?",
+          "complete_input": true,
+          "source_doi": null,
+          "source_doi_supplied_to_solver": false,
+          "assets": [],
+          "missing": [],
+          "id": "V03",
+          "page_path": "reports/questions/V03.md",
+          "page_sha256": "7a58e4f8bff13aaa6cfe47f50c5e63d125a6f3cdcc39ddbfa08c6ede0989b541",
+          "safe_publication": true,
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/v03_first.parquet",
+          "source_sha256": "533175be08e87b9ccf2fc06e2f82e58bb2e9bf2299a4a138cf5311f1d26ac157",
+          "source_image_sha256": "2b6ba5bc26193f00a58f8b7e6125d9037332cb7eead4520b5f120fc7ec3814a3",
+          "source_viewer_url": "https://huggingface.co/datasets/flaviagiammarino/path-vqa/viewer/default/test?row=52",
+          "selection_change": "Identical question text located in released mirror test row52 and matched to its own image; no unrelated image substituted."
+        },
+        {
+          "case_id": "synpic54082",
+          "preview_question": "what modality is shown?",
+          "complete_input": false,
+          "source_doi": null,
+          "source_doi_supplied_to_solver": false,
+          "assets": [],
+          "missing": [
+            "Inline image unavailable; matching image identified in official test archive."
+          ],
+          "source_image_name": "synpic54082.jpg",
+          "id": "V04",
+          "page_path": "reports/questions/V04.md",
+          "page_sha256": "bf0f67eb682b1f55eeceba594f62df874ab1afc43a276666854189157d620520",
+          "safe_publication": true
+        },
+        {
+          "case_id": "V05:clean2000:0000",
+          "preview_question": "What is the name of the medical imaging technique used in this case?",
+          "complete_input": true,
+          "source_doi": null,
+          "source_doi_supplied_to_solver": false,
+          "assets": [
+            {
+              "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ffc1/8415802/52a9fd4c2845/cureus-0013-00000017689-i01.jpg",
+              "kind": "external_corresponding_source_figure",
+              "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8415802/#FIG1",
+              "source_image_name": "PMC8415802_FIG1.jpg",
+              "local_verification_sha256": "21bc24f2e6af9b881ab3e954a067fcda03e0759d5776a241e313b1fe80439a59",
+              "locally_reuploaded": false
+            }
+          ],
+          "missing": [],
+          "id": "V05",
+          "page_path": "reports/questions/V05.md",
+          "page_sha256": "516126bf9c17bcd38495a6dc02ba348077273689a40f1c071e199815ae07a4bf",
+          "safe_publication": true,
+          "image_preview_url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ffc1/8415802/52a9fd4c2845/cureus-0013-00000017689-i01.jpg",
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/full_question_update/v05_clean.csv",
+          "source_sha256": "8523073108666b8f5231c3d40004a7b74a57381ea54ec9a3019edf1b33eab8f7",
+          "source_image_name": "PMC8415802_FIG1.jpg",
+          "selection_change": "Replaced previous paper-teaser question with first released clean-test case because its matched image is identifiable without answer overlays."
+        },
+        {
+          "case_id": "V07_slidevqa_test_00000",
+          "preview_question": "How much is the Trading Operating Profit in 2011?",
+          "complete_input": true,
+          "source_doi": null,
+          "source_doi_supplied_to_solver": false,
+          "assets": [],
+          "missing": [],
+          "source_file": "/dfs/scratch0/dongweij/bio-evaluation/.local/source_acquisition_2026-10-19/vision/slidevqa/source/annotations/qa/test.jsonl",
+          "source_sha256": "889531a1f74ccd51c70e82e991879340aa5a750ee3422c66d31602208982c5c3",
+          "source_deck_url": "https://www.slideshare.net/Nestle_IR/20120220-fy-11roadshow",
+          "external_image_urls": [
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-1-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-2-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-3-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-4-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-5-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-6-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-7-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-8-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-9-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-10-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-11-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-12-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-13-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-14-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-15-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-16-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-17-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-18-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-19-1024.jpg",
+            "https://image.slidesharecdn.com/2012-02-20fy11roadshow-120221022442-phpapp02/95/feb-20-2012-nestl-2011-fullyear-roadshow-presentation-20-1024.jpg"
+          ],
+          "id": "V07",
+          "page_path": "reports/questions/V07.md",
+          "page_sha256": "60d75ac9e63f4d587d927a1428aa1a70795c0839eab407b2e4156910d761d702",
+          "safe_publication": true
+        }
+      ],
+      "page_count": 13,
+      "new_inference_calls": 0,
+      "new_case_reviews": 0,
+      "notes": "Input-only pages; protected answers and canary metadata excluded. External source images are not reuploaded. Medical missing-image qualifications remain explicit."
+    },
+    "protein_and_generation": {
+      "created_at_pacific": "2026-10-20T15:05:23.650502-07:00",
+      "role": "presentation_question_pages_from_saved_or_reviewed_sources",
+      "new_inference_calls": 0,
+      "new_scoring_calls": 0,
+      "new_biological_case_reviews": 0,
+      "all_reference_answers_excluded": true,
+      "records": [
+        {
+          "task_id": "P01",
+          "page_id": "P01",
+          "page_path": "reports/questions/P01.md",
+          "dataset": "DeepSol solubility — PEER",
+          "status": "complete_recovered_reviewed_source_input",
+          "complete_question_or_input": true,
+          "page_sha256": "19cc876463f3f58136d37c70612fe34c3eb20a0c14af7c31ebdffbcd00d7aee0",
+          "page_bytes": 1389,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task177_solubility_peer_test.json",
+          "case_id": "solubility:177-bfad88eb47e9410d993991df50ee8b0b",
+          "source_case_id": "177-bfad88eb47e9410d993991df50ee8b0b",
+          "source_path": "sources/biot5_data__tasks_plus__task177_solubility_peer_test.json",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task177_solubility_peer_test.json",
+          "source_sha256": "9969927c394040332bd9f00e4adc7d7d3e6e158efc548823c4e589079a93343f",
+          "review_path": "configs/local_catalog_p01_review.json",
+          "review_sha256": "41c14efe6916877cb2653e6d363c8d156ed481dcb0dc7cdade884aaa94117579",
+          "review_id_verified": true,
+          "reference_answers_included": false,
+          "source_input_sha256": "99ac84a974b96ecd31da1e7eb0abaa42f0a2ba6d76da68d557e108a6849962bd",
+          "display_input_sha256": "ab21e62b6769cf4bab9f6c277c8208fe7421830dd9fa46b4da385f510d609e22"
+        },
+        {
+          "task_id": "P02",
+          "page_id": "P02",
+          "page_path": "reports/questions/P02.md",
+          "dataset": "DeepLoc binary localization — PEER",
+          "status": "complete_recovered_reviewed_source_input",
+          "complete_question_or_input": true,
+          "page_sha256": "033e8421fbed4b747b7880e053199119766169ecd99fd1d810974d8b8abba49f",
+          "page_bytes": 1144,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task180_binloc_peer_test.json",
+          "case_id": "binary_localization:180-a5b14038a0704d50a5d16124a3b1ca77",
+          "source_case_id": "180-a5b14038a0704d50a5d16124a3b1ca77",
+          "source_path": "sources/biot5_data__tasks_plus__task180_binloc_peer_test.json",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task180_binloc_peer_test.json",
+          "source_sha256": "5d33982e7b7b3fe570cfdb5340844c82e233019f270b0fb60b42f1beec7a8097",
+          "review_path": "configs/local_catalog_p02_review.json",
+          "review_sha256": "8bdcd4f1e1b110a89a1279bfa0b63d15d21d5de0e2024deea107c1872eada3b6",
+          "review_id_verified": true,
+          "reference_answers_included": false,
+          "source_input_sha256": "70cc5d2eeae0c4dfe97972b65bd982af9644254909adb6a0fcd031800d404561",
+          "display_input_sha256": "737fd023bf96dc54f5e451eb8a91766f4dd612538040796dd7717677e24c04fb"
+        },
+        {
+          "task_id": "P03",
+          "page_id": "P03",
+          "page_path": "reports/questions/P03.md",
+          "dataset": "DeepLoc subcellular localization — PEER/ProtST",
+          "status": "complete_saved_request_text",
+          "complete_question_or_input": true,
+          "page_sha256": "5762eb2a4fff298d935b84c794dc6126a8a6801bbd6d327f5575df98a7f4cbbf",
+          "page_bytes": 2760,
+          "source_url": null,
+          "case_id": "subcellular_localization:test:1684",
+          "run_id": "qwen38_27b_p03_full_test_slurm_2026-10-16",
+          "source_path": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/requests/000e83b6472bb4750667db74e0a2df2ff75a2d2eeb6b961c779936efec2958a8.json",
+          "source_sha256": "57bcc24242bf09710cf362e183a59fb956b95237d626d17fcfba5809fb54dcce",
+          "message_count": 1,
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P04",
+          "page_id": "P04",
+          "page_path": "reports/questions/P04.md",
+          "dataset": "Envision beta-lactamase activity — PEER",
+          "status": "complete_case_unavailable",
+          "complete_question_or_input": false,
+          "page_sha256": "c7d7d8810bbc3f83d70a1f27979f1ef1040f22ead769534261f3ef556ac1bfd4",
+          "page_bytes": 348,
+          "source_url": "https://arxiv.org/abs/2206.02096",
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P05",
+          "page_id": "P05",
+          "page_path": "reports/questions/P05.md",
+          "dataset": "AAV fitness — FLIP",
+          "status": "complete_case_unavailable",
+          "complete_question_or_input": false,
+          "page_sha256": "e6472c8b7124a1dde1d63a34deadd9e31a33e9b494d6bdb92de817c0b31ee76e",
+          "page_bytes": 358,
+          "source_url": "https://www.biorxiv.org/content/10.1101/2021.11.09.467890v1",
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P06",
+          "page_id": "P06",
+          "page_path": "reports/questions/P06.md",
+          "dataset": "Meltome thermostability — FLIP",
+          "status": "complete_saved_request_text",
+          "complete_question_or_input": true,
+          "page_sha256": "0b28f0330c9d2dd04525f0b940e4ce33903ed25cdea3a40908062856da492fa0",
+          "page_bytes": 1741,
+          "source_url": null,
+          "case_id": "human_cell:7114",
+          "run_id": "qwen38_27b_p06_full_test_nonthinking_regex256_2026-10-20_v1",
+          "source_path": ".local/catalog_execution_2026-10-20/tasks/P06/runtime/benchmark/requests/00a4d3ad6a675b0ea58116cdbad8789a7463e518fbb99c49752792db9c44600a.json",
+          "source_sha256": "af68d2158c905acb677d04789c64a3bb5e587c39af6153c54f3682df2df46c7f",
+          "message_count": 1,
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P07",
+          "page_id": "P07",
+          "page_path": "reports/questions/P07.md",
+          "dataset": "GFP fluorescence — TAPE",
+          "status": "complete_saved_request_text",
+          "complete_question_or_input": true,
+          "page_sha256": "105efc497c696ecad08efaeed5d886e5c5c9ec98271d348e3be3f374300bf96b",
+          "page_bytes": 768,
+          "source_url": null,
+          "case_id": "fluorescence:test:9091",
+          "run_id": "qwen38_27b_p07_full_test_nonthinking_scalar_2026-10-20_v1",
+          "source_path": ".local/catalog_execution_2026-10-20/tasks/P07/runtime/benchmark/requests/0000e5f4d1cee4ea760a792cd0f24649f7dbc03b7826b6b3e4b222868df7c245.json",
+          "source_sha256": "415b21b3146db11f78f043f5f361982f9940c78cb892b0647fb7699df659fb7e",
+          "message_count": 1,
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P08",
+          "page_id": "P08",
+          "page_path": "reports/questions/P08.md",
+          "dataset": "Protein folding stability — TAPE",
+          "status": "complete_saved_request_text",
+          "complete_question_or_input": true,
+          "page_sha256": "6b9c7324a61c81eca877139bbceb6b99eaa31b0ee1564ca019b2c46fef301cd7",
+          "page_bytes": 631,
+          "source_url": null,
+          "case_id": "stability:test:7166",
+          "run_id": "qwen38_27b_p08_full_test_nonthinking_structured_scalar_2026-10-20_v1",
+          "source_path": ".local/catalog_execution_2026-10-20/tasks/P08/runtime/benchmark/requests/000fb4466f4cb646f7bb0c3f05365bd85e8a2b4670074486f8d3a5b65ac80334.json",
+          "source_sha256": "37023275f83f1a95cf775cffd5bcb40c2d2863fd23e175139e863f1e8e7a04bb",
+          "message_count": 1,
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P09",
+          "page_id": "P09",
+          "page_path": "reports/questions/P09.md",
+          "dataset": "Stability classification — NatureLM-style adaptation",
+          "status": "derived_score_no_separate_question",
+          "complete_question_or_input": false,
+          "page_sha256": "e3235ee4779a4908e160ff40c3db129e8091e80d7ac026f684325ca3971571f8",
+          "page_bytes": 417,
+          "source_url": "https://arxiv.org/abs/2502.07527",
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P10",
+          "page_id": "P10",
+          "page_path": "reports/questions/P10.md",
+          "dataset": "Human protein interactions — PEER",
+          "status": "complete_recovered_reviewed_source_input",
+          "complete_question_or_input": true,
+          "page_sha256": "65889d1ff4ede3690c5effe5f7e0ccfba672cd98fe2dc1081dd94dfdb1e8d26b",
+          "page_bytes": 2465,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task174_human_ppi_peer_test.json",
+          "case_id": "human_ppi:174-1a6aea8a1520463a9352c536503ff4db",
+          "source_case_id": "174-1a6aea8a1520463a9352c536503ff4db",
+          "source_path": "sources/biot5_data__tasks_plus__task174_human_ppi_peer_test.json",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task174_human_ppi_peer_test.json",
+          "source_sha256": "3d3a5607140e88ddeab44da11b3d121fd7e8c986b031f1539ad79ddc9aec0a61",
+          "review_path": "configs/local_catalog_p10_review.json",
+          "review_sha256": "cd17f134f12bdbd0b2887254e7e345d1644e6ae2933ba94aafd343780cff88f0",
+          "review_id_verified": true,
+          "reference_answers_included": false,
+          "source_input_sha256": "8cfba2329eca59854bbc490fa03c26b24246ad973e26c32dc3aa18d5ce981235",
+          "display_input_sha256": "53296a69a40be99a86ded63c79bbff9269b59693ea04a357210634f3a848c739"
+        },
+        {
+          "task_id": "P11",
+          "page_id": "P11",
+          "page_path": "reports/questions/P11.md",
+          "dataset": "Yeast protein interactions — PEER",
+          "status": "complete_recovered_reviewed_source_input",
+          "complete_question_or_input": true,
+          "page_sha256": "fa533dee9149cb2d864f06e3f2f44e9fe2933a24abacfda2ed57986daf3ad204",
+          "page_bytes": 1300,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task171_yeast_ppi_peer_test.json",
+          "case_id": "yeast_ppi:171-6f3d8efb13e24193b011999a608bcc5d",
+          "source_case_id": "171-6f3d8efb13e24193b011999a608bcc5d",
+          "source_path": "sources/biot5_data__tasks_plus__task171_yeast_ppi_peer_test.json",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task171_yeast_ppi_peer_test.json",
+          "source_sha256": "f15a6e70cf25baed4e1252dd91bda85c9ee2bb3c47a18d65a7640319adba21a2",
+          "review_path": "configs/local_catalog_p11_review.json",
+          "review_sha256": "63267f2c5911aca115716d7b22cddcf1e5ed8f5ea6bb6a990ae2e24e63ebb73a",
+          "review_id_verified": true,
+          "reference_answers_included": false,
+          "source_input_sha256": "d015b62fe085488ac6b252c7e0df6c7a4b808ac78449a44a86b6a7d0b2d9b39b",
+          "display_input_sha256": "ae614d6ca920fcac577ffe6a8572e5931babd9bb9c1e4262d7cda1c9640af9d3"
+        },
+        {
+          "task_id": "P16",
+          "page_id": "P16",
+          "page_path": "reports/questions/P16.md",
+          "dataset": "Enzyme reaction classes — IEConv/ProtST",
+          "status": "complete_saved_request_text",
+          "complete_question_or_input": true,
+          "page_sha256": "37a30da87076183a514eb3b4eb20eef686e6bdd17fe9b129d15c8b589d83e873",
+          "page_bytes": 144793,
+          "source_url": null,
+          "case_id": "Reaction:test:714",
+          "run_id": "qwen38_27b_p16_slurm_replay_2026-10-16_shard_000",
+          "source_path": "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_shard_000/requests/00220063db6c0802cd3ef8225e6cc3cc83c430a4404573564b1a91e13e4822c8.json",
+          "source_sha256": "1647359b2b4935003e38f3ddff247abb60cea79b89210799cce4395edc581d75",
+          "message_count": 1,
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P17",
+          "page_id": "P17",
+          "page_path": "reports/questions/P17.md",
+          "dataset": "ProteinGym substitutions",
+          "status": "complete_case_unavailable",
+          "complete_question_or_input": false,
+          "page_sha256": "fbccca85a5286c5b585da67a41e40db758714f12ed717a99a543e5062bf01a71",
+          "page_bytes": 320,
+          "source_url": "https://arxiv.org/abs/2205.13760",
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P19",
+          "page_id": "P19",
+          "page_path": "reports/questions/P19.md",
+          "dataset": "PFArena T1 — single-mutant generation",
+          "status": "complete_prepared_reviewed_input_not_dispatched",
+          "complete_question_or_input": true,
+          "page_sha256": "dd7d9f6247a9f6fa216ffcfe4c56326f7b22c025139ae08e3676b971c94ff725",
+          "page_bytes": 3476,
+          "source_url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/prompts/single_mutant_generation.py",
+          "case_id": "P19::HUMAN_DOMAINOME_O14529_PF02376_1036",
+          "source_path": ".local/catalog_execution_2026-10-20/tasks/P19/benchmark_inputs.jsonl",
+          "source_sha256": "1c53285464a8e7b97bbd9a87cf1637572d5b67b57f1b43c38b25f758ce3554c6",
+          "review_path": ".local/catalog_execution_2026-10-20/tasks/P19/input_review.json",
+          "review_sha256": "6044d5b460d91a5111b340b71e3a3d66f0c028720b32485f570ade8bef2bbb4b",
+          "review_id_verified": true,
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P21",
+          "page_id": "P21",
+          "page_path": "reports/questions/P21.md",
+          "dataset": "PFArena T3 — anchor-informed ranking",
+          "status": "source_instruction_excerpt_only",
+          "complete_question_or_input": false,
+          "page_sha256": "aa700be44da8b5fee6b71926b700dcad440ad32939ee39459c812180c0491424",
+          "page_bytes": 602,
+          "source_url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/prompts/multi_mutant_ranking_anchor.py",
+          "source_path": ".local/source_recovery_round2_2026-10-19/pfarena/official_code/code/prompts/multi_mutant_ranking_anchor.py",
+          "source_sha256": "b9b42655d35e83f41f91342f58f08b356121e371eb89b9646aad3cf2d54b4405",
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P22",
+          "page_id": "P22",
+          "page_path": "reports/questions/P22.md",
+          "dataset": "PFArena T4 — single-mutant-informed ranking",
+          "status": "source_instruction_excerpt_only",
+          "complete_question_or_input": false,
+          "page_sha256": "5ea50631637298e652263182fd9e98f1a491df61c3656d2475f69eb905cb0708",
+          "page_bytes": 611,
+          "source_url": "https://raw.githubusercontent.com/AMix-Bio/PFArena/e8f8b3c404d39783a43eaa96ae461f313730114d/code/prompts/multi_mutant_ranking_mutation.py",
+          "source_path": ".local/source_recovery_round2_2026-10-19/pfarena/official_code/code/prompts/multi_mutant_ranking_mutation.py",
+          "source_sha256": "4db6b6e95575cdb75317eab85761ecd093ae89a9658609cab1239759b07678e4",
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P23",
+          "page_id": "P23",
+          "page_path": "reports/questions/P23.md",
+          "dataset": "Mol-Instructions — protein function",
+          "status": "complete_recovered_reviewed_source_input",
+          "complete_question_or_input": true,
+          "page_sha256": "2bde8874e0789ec8d1c55a70dafac860508985d78985c6c1d3ece44416340ef3",
+          "page_bytes": 938,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task228_protein_function_molinst_pro_test.json",
+          "case_id": "task228_protein_function_molinst_pro_test.json:0",
+          "source_case_id": "228-f6d5cbf5c7b94c5bb9dc5cad438b357f",
+          "source_path": "sources/biot5_data__tasks_plus__task228_protein_function_molinst_pro_test.json",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task228_protein_function_molinst_pro_test.json",
+          "source_sha256": "7a984a304f7764056e789470e16797a75c120c1d13143cd1eb03728f2512c744",
+          "review_path": "configs/local_description_p23_review.json",
+          "review_sha256": "7874d2c85d2ae9b45692c41e0845b531116bd48ff5790aa4868f273891018f99",
+          "review_id_verified": true,
+          "reference_answers_included": false,
+          "source_input_sha256": "3d0d37dcc0650f1f6371a890386f4bf69bd9c5a20204c285e56b54badd99a42e",
+          "display_input_sha256": "c964e75611d9f4d728bf1c180cf1ff0b1ea32c9064c80fe9336a02bb40b5c480"
+        },
+        {
+          "task_id": "P24",
+          "page_id": "P24",
+          "page_path": "reports/questions/P24.md",
+          "dataset": "Mol-Instructions — catalytic activity",
+          "status": "complete_recovered_reviewed_source_input",
+          "complete_question_or_input": true,
+          "page_sha256": "e693cd60c905456cd1e2318c2e2c7ca1255e251c879c621261278f069c8b5ea9",
+          "page_bytes": 1367,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task222_catalytic_activity_molinst_pro_test.json",
+          "case_id": "task222_catalytic_activity_molinst_pro_test.json:2",
+          "source_case_id": "222-6b9362c51d044d788ab41e6d3b12c902",
+          "source_path": "sources/biot5_data__tasks_plus__task222_catalytic_activity_molinst_pro_test.json",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task222_catalytic_activity_molinst_pro_test.json",
+          "source_sha256": "8f53b17f74fcc3e0b32f1e68d8374405d70c1187ceb23db48665f19874e9d4e1",
+          "review_path": "configs/local_description_p24_review.json",
+          "review_sha256": "7e81bc8f8f8c92a59f53a279ed03f45eb70e044f110ef82c24c31fe9d901e67d",
+          "review_id_verified": true,
+          "reference_answers_included": false,
+          "source_input_sha256": "f1c9b291b12c3479050a8e2f26e05fb38697aa2ec25a75b774c643758564a161",
+          "display_input_sha256": "9d02e601ff4498248f13571ee62572e1cdb38559b25eb6c38ee7e40c33b47d7f"
+        },
+        {
+          "task_id": "P25",
+          "page_id": "P25",
+          "page_path": "reports/questions/P25.md",
+          "dataset": "Mol-Instructions — domains and motifs",
+          "status": "complete_recovered_reviewed_source_input",
+          "complete_question_or_input": true,
+          "page_sha256": "d21f7664bc7a1ca66970165afb0b88cd3ed202331b2f26d5af8c14394e33f9da",
+          "page_bytes": 1379,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task225_domain_motif_molinst_pro_test.json",
+          "case_id": "task225_domain_motif_molinst_pro_test.json:11",
+          "source_case_id": "225-71a5b04f1b9d450f96bc223ad9ba0a48",
+          "source_path": "sources/biot5_data__tasks_plus__task225_domain_motif_molinst_pro_test.json",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task225_domain_motif_molinst_pro_test.json",
+          "source_sha256": "b504bf077617661f855a2ad811e25edb1aeb7e98a8d636966c21e7baa02f6f46",
+          "review_path": "configs/local_description_p25_review.json",
+          "review_sha256": "de30e69307c2fb82e011b7b5504aad5ff8ad478232f3a040969c8e7f9542c226",
+          "review_id_verified": true,
+          "reference_answers_included": false,
+          "source_input_sha256": "aca3d2c347a625cdecbc1388f3bcf5c0762122eb59cb8f0b69d0fa8fdfbc52a6",
+          "display_input_sha256": "847f370b1f5deb329402a6fa598954f64357100bef78532931d1da03cb30821e"
+        },
+        {
+          "task_id": "P26",
+          "page_id": "P26",
+          "page_path": "reports/questions/P26.md",
+          "dataset": "Mol-Instructions — general function",
+          "status": "complete_recovered_reviewed_source_input",
+          "complete_question_or_input": true,
+          "page_sha256": "935aedac16c60a015291346f05f15f23ec910f537543ed9f7d055240e8defe08",
+          "page_bytes": 870,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/resolve/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task231_general_function_molinst_pro_test.json",
+          "case_id": "task231_general_function_molinst_pro_test.json:4",
+          "source_case_id": "231-714a3553e81042b1b3b733b6d0086af0",
+          "source_path": "sources/biot5_data__tasks_plus__task231_general_function_molinst_pro_test.json",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task231_general_function_molinst_pro_test.json",
+          "source_sha256": "eba4893a25e35a1467f67897402365aaf69fbdad9b1bf8abbc5c32723c6d04e6",
+          "review_path": "configs/local_description_p26_review.json",
+          "review_sha256": "bbdda46ce5175f3c41950d085dd8c525eba1747369ab287b83e5f823bbfb0708",
+          "review_id_verified": true,
+          "reference_answers_included": false,
+          "source_input_sha256": "4e3670b98e770803684d9682a3a6a82e3abbd946dd0f5d180fb32f3998b9824b",
+          "display_input_sha256": "d367adb071f745e39824ea6bb8106e2785ef5f0fc103a80ee154d8804a7c9a03"
+        },
+        {
+          "task_id": "P27",
+          "page_id": "P27",
+          "page_path": "reports/questions/P27.md",
+          "dataset": "NatureLM — protein characteristics description",
+          "status": "complete_case_unavailable",
+          "complete_question_or_input": false,
+          "page_sha256": "ab9c12d0be1b86a8f4d930ec215b37d813fff6c1b5ba02bab12646044e48fc12",
+          "page_bytes": 307,
+          "source_url": "https://arxiv.org/abs/2502.07527",
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P34",
+          "page_id": "P34",
+          "page_path": "reports/questions/P34.md",
+          "dataset": "MutaPLM iterative optimization evaluation",
+          "status": "source_instruction_excerpt_only",
+          "complete_question_or_input": false,
+          "page_sha256": "38e14d908fd84c085a742f343218584ab96aa45089163c91204c20efda7c3c79",
+          "page_bytes": 477,
+          "source_url": "https://github.com/PharMolix/MutaPLM/blob/495815b2069419d19d9449a59070d0fb24b596d1/dataset/fitness_dataset.py#L11",
+          "reference_answers_included": false,
+          "source_path": ".local/source_acquisition_2026-10-19/mutadescribe_sources/source/mutaplm/dataset/fitness_dataset.py",
+          "source_sha256": "93d0ec2608edbab48b2c8ead7db8f02c8033b1d24915db737263f0c149c3f5c2"
+        },
+        {
+          "task_id": "P35",
+          "page_id": "P35",
+          "page_path": "reports/questions/P35.md",
+          "dataset": "ProtST text-to-protein retrieval",
+          "status": "complete_native_source_query",
+          "complete_question_or_input": true,
+          "page_sha256": "fb397a672a6419c5803518f94f835f43973ec4d0607ad45e7c937d4e1b7ef8ce",
+          "page_bytes": 516,
+          "source_url": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_retrieval/t2p_prompt_go_mf.txt#L3",
+          "source_case_id": "source-query-3",
+          "reference_answers_included": false,
+          "source_path": ".local/source_acquisition_2026-10-19/evaluators/source/protst/data/zero_shot_retrieval/t2p_prompt_go_mf.txt",
+          "source_sha256": "39a4c730a73b63c01391ca575b1ef89725091974e423b74e8138af78cf41c81e"
+        },
+        {
+          "task_id": "P37",
+          "page_id": "P37",
+          "page_path": "reports/questions/P37.md",
+          "dataset": "NatureLM unconditional protein generation",
+          "status": "complete_native_published_input",
+          "complete_question_or_input": true,
+          "page_sha256": "d8afec9c2b596fab9f8dc7da70be20085a495f18c45616be0e17d22226cf3a65",
+          "page_bytes": 366,
+          "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS1",
+          "source_case_id": null,
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P38",
+          "page_id": "P38",
+          "page_path": "reports/questions/P38.md",
+          "dataset": "NatureLM property-conditioned protein generation",
+          "status": "complete_native_published_input",
+          "complete_question_or_input": true,
+          "page_sha256": "4ed015f073cf86a82bd862afbcfa6af1cac4e114ec095d1ff6283c5767f3fa7b",
+          "page_bytes": 400,
+          "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS2",
+          "source_case_id": null,
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P39",
+          "page_id": "P39",
+          "page_path": "reports/questions/P39.md",
+          "dataset": "NatureLM heme-binding generation case study",
+          "status": "complete_native_published_input",
+          "complete_question_or_input": true,
+          "page_sha256": "3af678cb5ac8b377f127fe146f68c4ede6abfefcbfc3f04ac611bf4e5ac6a3ea",
+          "page_bytes": 398,
+          "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS5",
+          "source_case_id": null,
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P40",
+          "page_id": "P40",
+          "page_path": "reports/questions/P40.md",
+          "dataset": "RAbD antibody-region redesign benchmark",
+          "status": "source_instruction_excerpt_only",
+          "complete_question_or_input": false,
+          "page_sha256": "46f019b7635d77e193a49493b8c969ae8be38425fc11b1068da8daf583fb03ed",
+          "page_bytes": 406,
+          "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS3",
+          "reference_answers_included": false
+        },
+        {
+          "task_id": "P41",
+          "page_id": "P41",
+          "page_path": "reports/questions/P41.md",
+          "dataset": "Proteo-R1 structural design demonstrations",
+          "status": "source_instruction_excerpt_only",
+          "complete_question_or_input": false,
+          "page_sha256": "4e0fe07e37cdbde4c7b031e6e67eb889a03eac1b3633f2d081516fc04bb63f8e",
+          "page_bytes": 576,
+          "source_url": "https://github.com/smiles724/Proteo-R1/blob/ffaa787bce5f30e4cb41e2de5d0b0daab0059243/proteor1/generate/inference/cdr_hidden_emit.py#L316",
+          "reference_answers_included": false,
+          "source_path": ".local/source_acquisition_2026-10-19/protocols/smiles724__Proteo-R1/files/proteor1/generate/inference/cdr_hidden_emit.py",
+          "source_sha256": "dc4122de484ba6fa4d213cbba9cee74475e7e509a1c5db6387f421f7e4388581"
+        },
+        {
+          "task_id": "P42",
+          "page_id": "P42",
+          "page_path": "reports/questions/P42.md",
+          "dataset": "STRIDE GFP candidate-editing evaluation",
+          "status": "source_instruction_excerpt_only",
+          "complete_question_or_input": false,
+          "page_sha256": "dbb07d7a65bff419632ad1b42775c4f056fc6699138dc56c799b24d6dc45f88b",
+          "page_bytes": 562,
+          "source_url": "https://github.com/daiheng-zhang/STRIDE/blob/1e331e8c6d80677fcf446d84bb2de8811dfecc09/scripts/eval/infer_protein_vllm.py#L38",
+          "reference_answers_included": false,
+          "source_path": "scripts/prepare_stride_gfp_qualified_proposal.py",
+          "source_sha256": "e1d4994d601b13ef7ca14c79df27cbdb529879b99159a0262e2821331047ee5b"
+        },
+        {
+          "task_id": "P43",
+          "page_id": "P43_BindingDB",
+          "page_path": "reports/questions/P43_BindingDB.md",
+          "dataset": "Drug-target interaction: BindingDB (DrugBAN split)",
+          "status": "complete_original_public_dataset_input",
+          "complete_question_or_input": true,
+          "page_sha256": "6de7c3020e4945071daad760fc1366ab624a6e340871dfccbabf66035ba6b740",
+          "page_bytes": 1759,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/blob/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task18_bindingdb_drugban_dti_test.json",
+          "source_case_id": "18-fdfe48ffb39946b4a0cbd9cc776c0bca",
+          "source_sha256": "da330803ab95d96cc2947bff7c069293e6f616f736b7faf889499fbc615227b7",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task18_bindingdb_drugban_dti_test.json",
+          "reference_answers_included": false,
+          "old_case_review_receipt_recovered": false,
+          "source_input_sha256": "00f9f3e36b7ccf687993f1bec114c368575fd59541e07c17d4e41fd506962e28",
+          "display_input_sha256": "74ccffabff8c82a276b612961919a01b5d0372e038f69b96b60ed87a9d6ae662"
+        },
+        {
+          "task_id": "P43",
+          "page_id": "P43_BioSNAP",
+          "page_path": "reports/questions/P43_BioSNAP.md",
+          "dataset": "Drug-target interaction: BioSNAP (DrugBAN split)",
+          "status": "complete_original_public_dataset_input",
+          "complete_question_or_input": true,
+          "page_sha256": "eed0bdb39c4e032e26fd808e417172fe2fa6672f634e1c6d310dfaa69559baf6",
+          "page_bytes": 1561,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/blob/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task21_biosnap_drugban_dti_test.json",
+          "source_case_id": "21-1abceddd45a547dba64ad8329412bed2",
+          "source_sha256": "49f0cf5b06fa166e020bdf70df6d3454627deec191b0fe7eea1e06c0358ed37f",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task21_biosnap_drugban_dti_test.json",
+          "reference_answers_included": false,
+          "old_case_review_receipt_recovered": false,
+          "source_input_sha256": "8a4088ad8c09c96a816a3c510edfa1306ad13b87ac7762927c59b684a1d5a708",
+          "display_input_sha256": "5afce3481d899948a3e6975fed205bafd4b80d7d569639c243e80edefa56fe4d"
+        },
+        {
+          "task_id": "P43",
+          "page_id": "P43_Human",
+          "page_path": "reports/questions/P43_Human.md",
+          "dataset": "Drug-target interaction: Human (DrugBAN split)",
+          "status": "complete_original_public_dataset_input",
+          "complete_question_or_input": true,
+          "page_sha256": "620e52234a6017155a5d8ccc41958df6d988dae2eb6a83be1946a2e03d55cd83",
+          "page_bytes": 1204,
+          "source_url": "https://huggingface.co/datasets/QizhiPei/BioT5_finetune_dataset/blob/9f70da9e8f0df32e7e62846f7ad78a829b00c0fd/tasks_plus/task24_human_drugban_dti_test.json",
+          "source_case_id": "24-c62485d1847d45078fbf0ea56cf77372",
+          "source_sha256": "9cbdadfb7854ff23476be5bb86a3cc939e23ee4747c49701f0d5305e8aa69f18",
+          "source_cache_path": ".local/catalog_execution_2026-10-20/full_question_update/source_cache/biot5_data__tasks_plus__task24_human_drugban_dti_test.json",
+          "reference_answers_included": false,
+          "old_case_review_receipt_recovered": false,
+          "source_input_sha256": "6eda718df985fd520d22455f6f23b585831f531cb3e613ce1f8bab2b8ff017ce",
+          "display_input_sha256": "fe8c586700d910ccb93ba30c5fbee5feaa521ba7d57245e913b407b8b7a8278c"
+        }
+      ],
+      "summary": {
+        "page_count": 32,
+        "complete_question_or_input_count": 21
+      }
+    }
+  },
+  "previous_question_examples": [
     {
       "id": "B01",
       "dataset": "LAB-Bench: LitQA2",
@@ -5188,6 +7839,5 @@
       "case_id": "24-c62485d1847d45078fbf0ea56cf77372",
       "note": "Verified directly from the pinned source JSON inside the existing local archive. Frozen local_dti_prepare.py constructs requests with this Definition. Original saved request is not available here; this is a source prompt excerpt."
     }
-  ],
-  "verified_question_policy": "Verbatim saved-request, released-dataset, or published-source excerpts. No native question or unavailable original prompt is explicitly labelled; no invented placeholder question."
+  ]
 }
