@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_at_pacific": "2026-10-20T14:12:54.539073-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "a0ed3a294ffe4a66d42f5ce3d70acf412a15989f3eeec9deac782e9c074ecd74",
+  "report_sha256": "e257e0feb1632b620cf33633699587381c2d76e68c73d71d3e7c2195b23bacaa",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
@@ -4589,5 +4589,13 @@
         "verified_range_bytes": 11275562724
       }
     }
+  },
+  "presentation_revision_at_pacific": "2026-10-20T14:29:44.135986-07:00",
+  "presentation_selection": {
+    "rule": "latest completed result per evaluation; matched archived Qwen baselines for GPT comparison; no best-score selection",
+    "gpt_display_metric": "accuracy",
+    "description_display_metric": "ROUGE-L",
+    "old_undefined_runs_and_extraction_diagnostics_displayed": false,
+    "detailed_audit_preserved_locally": ".local/catalog_execution_2026-10-20/markdown_report/internal_report_before_presentation.md"
   }
 }
