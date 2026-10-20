@@ -23,6 +23,7 @@ RECOVERED_SUBSET_EVIDENCE = 'reports/RECOVERED_SUBSET_EVIDENCE_2026-10-19.json'
 P36_WHITESPACE = 'reports/P36_WHITESPACE_DIAGNOSTIC_2026-10-19.json'
 P08_SENSITIVITY = 'reports/P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.json'
 DEEPFRI_FAILURES = 'reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json'
+NEW_GENERATION_SCORES = 'reports/CATALOG_NEW_SCORES_2026-10-20.json'
 OUTPUT_JSON = 'reports/EVALUATION_DECISION_TABLE.json'
 OUTPUT_MD = 'reports/EVALUATION_DECISION_TABLE.md'
 ARCHIVE_IDS = {'N01', 'N02', 'N03', 'N04', 'N05', 'P28', 'P29'}
@@ -434,7 +435,33 @@ def apply_deepfri_analysis(rows, diagnostic):
             'are separate subset diagnostics; the older full-set zero reference is not a matched comparison.')
 
 
-def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagnostic=None, recovered_subset_evidence=None, p36_whitespace=None, p08_sensitivity=None, deepfri_analysis=None):
+def add_new_generation_scores(scores, document):
+    """Add independently sealed new conditions; never replace historical rows."""
+    result = copy.deepcopy(scores)
+    if document is None:
+        return result
+    if document.get('schema_version') != 1 or document.get('historical_artifacts_modified') is not False:
+        raise ValueError('Unsupported or historically mutating new-generation record')
+    for category in ('completed_rows', 'diagnostic_only_finished_runs'):
+        for row in document.get(category, []):
+            counts = row.get('counts') or {}
+            n = counts.get('planned')
+            if (row.get('new_complete_generation') is not True
+                    or row.get('full_benchmark_complete') is not True
+                    or type(n) is not int or n <= 0 or counts.get('completed') != n
+                    or any(not isinstance(row.get(key), str) or len(row[key]) != 64
+                           or any(c not in '0123456789abcdef' for c in row[key])
+                           for key in ('scores_sha256', 'prediction_lock_sha256', 'config_sha256'))):
+                raise ValueError('New generation lacks a complete sealed cohort identity')
+            if category == 'completed_rows' and (counts.get('parsed') != n
+                    or row.get('full_primary_metric_defined') is not True):
+                raise ValueError('Saved responses cannot promote an incomplete primary score')
+            result.setdefault(category, []).append(copy.deepcopy(row))
+    return result
+
+
+def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagnostic=None, recovered_subset_evidence=None, p36_whitespace=None, p08_sensitivity=None, deepfri_analysis=None, new_generation_scores=None):
+    scores = add_new_generation_scores(scores, new_generation_scores)
     excluded = set((scores.get('main_report_scope') or {}).get('excluded_task_ids', ARCHIVE_IDS))
     mapping = catalog_map(catalog, excluded)
     expected = scores.get('main_catalog_settings')
@@ -452,10 +479,14 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
             run_note = 'replay' if 'replay' in raw['run_id'] else 'original run'
             if raw.get('generation_budget_condition') == 'MIXED_BUDGET_4K16K_CONTINUATION':run_note = 'mixed 4K/16K continuation'
             if raw.get('scorer_recovery'):run_note = 'offline compatibility repair; ' + run_note
+            if raw.get('new_complete_generation'):run_note = 'new complete generation; ' + raw['protocol_description']
             for condition, label, metrics in conditions(raw):
                 source = raw.get('source_scores')
                 answer_rate = usable(raw, task)
                 evidence_status = evidence(task, raw, condition)
+                if raw.get('new_complete_generation'):
+                    evidence_status = {'category': 'Measured, new delivery condition' if raw.get('full_primary_metric_defined') else 'New generation; primary metric undefined',
+                        'detail': raw['interpretation'] + ' Historical generations and scores remain separate.'}
                 if task == 'P42':
                     answer_rate['display'] = 'Per-condition unavailable; ' + answer_rate['display'] + ' across both conditions'
                     answer_rate['definition'] += '; aggregate counts cover both candidate regimes'
@@ -464,7 +495,7 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
                 rows.append({'task_id': task, 'task': protocol.get('title') or raw.get('task_name') or group['task'],
                     'category': group['category'], 'dataset': raw.get('dataset') or raw.get('native_split') or protocol.get('title') or group['dataset'],
                     'condition': label + '; ' + run_note, 'condition_kind': condition, 'run_id': raw['run_id'],
-                    'result_type': 'offline_scorer_compatibility_repair' if raw.get('scorer_recovery') else ('original_or_replay' if condition == 'native' else 'offline_extraction_diagnostic'),
+                    'result_type': 'new_complete_generation' if raw.get('new_complete_generation') else ('offline_scorer_compatibility_repair' if raw.get('scorer_recovery') else ('original_or_replay' if condition == 'native' else 'offline_extraction_diagnostic')),
                     'protocol_variant': raw.get('protocol_variant'), 'input_protocol': INPUTS.get(task, group.get('inputInterface') or protocol.get('scientificQuestion') or 'Required input not specified in catalog'),
                     'output_budget': budget(raw), 'usable_answer_rate': answer_rate,
                     'native_score': copy.deepcopy(metrics) if condition == 'native' else None,
@@ -473,7 +504,8 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
                     'counts': copy.deepcopy(raw.get('counts') or {}), 'finish_reasons': copy.deepcopy(raw.get('finish_reasons') or {}),
                     'source_scores': source, 'source_score_sha256': raw.get('scores_sha256'), 'source_row_category': category,
                     'source_protocol_url': protocol.get('sourceUrl') or group.get('sourceUrl'),
-                    'case_scope': raw.get('case_scope'), 'native_metrics_recomputed': False})
+                    'case_scope': raw.get('case_scope'), 'native_metrics_recomputed': False,
+                    **({key: raw[key] for key in ('prediction_lock_sha256', 'config_sha256', 'full_benchmark_complete', 'full_primary_metric_defined', 'trajectory_archive') if key in raw} if raw.get('new_complete_generation') else {})})
     subset_rows = recovered_subset_rows(recovered_subset_evidence, mapping)
     rows.extend(subset_rows); observed.update(row['task_id'] for row in subset_rows)
     whitespace_row = p36_whitespace_condition(rows, p36_whitespace)
@@ -518,6 +550,7 @@ def build(scores, catalog, generated_at=None, source_hashes=None, reaction_diagn
     rows.sort(key=lambda r: (category_order[r['category']], r['task_id'], r['dataset'], r['run_id'] or '', r['condition']))
     return {'schema_version': 1, 'generated_at_pacific': generated_at or datetime.now(ZoneInfo('America/Los_Angeles')).isoformat(),
         'score_snapshot_at': scores.get('generated_at_utc'), 'catalog_snapshot_at': (catalog.get('meta') or {}).get('generatedAt'),
+        'new_generation_score_snapshot_at': (new_generation_scores or {}).get('generated_at_pacific'),
         'retained_setting_count': len(mapping), 'retained_setting_ids': sorted(mapping), 'excluded_setting_ids': sorted(excluded),
         'row_count': len(rows), 'rows': rows, 'source_sha256': source_hashes or {},
         'recovered_subset_setting_ids': sorted({row['task_id'] for row in subset_rows}),
@@ -569,10 +602,12 @@ def generate(root=ROOT):
         raw = (root / P08_SENSITIVITY).read_bytes();docs[P08_SENSITIVITY] = json.loads(raw);hashes[P08_SENSITIVITY] = hashlib.sha256(raw).hexdigest()
     if (root / DEEPFRI_FAILURES).is_file():
         raw = (root / DEEPFRI_FAILURES).read_bytes();docs[DEEPFRI_FAILURES] = json.loads(raw);hashes[DEEPFRI_FAILURES] = hashlib.sha256(raw).hexdigest()
+    if (root / NEW_GENERATION_SCORES).is_file():
+        raw = (root / NEW_GENERATION_SCORES).read_bytes();docs[NEW_GENERATION_SCORES] = json.loads(raw);hashes[NEW_GENERATION_SCORES] = hashlib.sha256(raw).hexdigest()
     result = build(docs[SCORES], docs[CATALOG], source_hashes=hashes,
         reaction_diagnostic=docs.get(REACTION_DIAGNOSTIC), recovered_subset_evidence=docs.get(RECOVERED_SUBSET_EVIDENCE),
         p36_whitespace=docs.get(P36_WHITESPACE), p08_sensitivity=docs.get(P08_SENSITIVITY),
-        deepfri_analysis=docs.get(DEEPFRI_FAILURES))
+        deepfri_analysis=docs.get(DEEPFRI_FAILURES), new_generation_scores=docs.get(NEW_GENERATION_SCORES))
     for name, content in [(OUTPUT_JSON, json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + '\n'), (OUTPUT_MD, render(result, root))]:
         path = root / name;path.parent.mkdir(parents=True, exist_ok=True);temporary = path.with_suffix(path.suffix + '.tmp');temporary.write_text(content);temporary.replace(path)
     return result

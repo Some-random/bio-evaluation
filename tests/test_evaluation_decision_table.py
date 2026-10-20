@@ -62,6 +62,31 @@ def whitespace_diagnostic():
 
 
 class DecisionTests(unittest.TestCase):
+    def test_new_generation_adds_condition_without_replacing_undefined_history(self):
+        old = row('P06', metrics={'spearman': None})
+        source = scores(['P06']);source['diagnostic_only_finished_runs'] = [old]
+        before = copy.deepcopy(source)
+        new = row('P06', run='new-whole-cohort', metrics={'spearman': .003},
+                  counts={'planned': 10, 'completed': 10, 'parsed': 10},
+                  new_complete_generation=True, full_benchmark_complete=True,
+                  full_primary_metric_defined=True, scores_sha256='a'*64,
+                  prediction_lock_sha256='b'*64, config_sha256='c'*64,
+                  protocol_description='nonthinking constrained scalar',
+                  interpretation='A separate zero-shot adaptation.')
+        document = {'schema_version': 1, 'historical_artifacts_modified': False,
+                    'completed_rows': [new]}
+        result = report.build(source, catalog(['P06']), new_generation_scores=document)
+        self.assertEqual(source, before)
+        self.assertEqual(result['row_count'], 2)
+        rows = {r['run_id']:r for r in result['rows']}
+        self.assertIsNone(rows['original']['native_score']['spearman'])
+        self.assertEqual(rows['new-whole-cohort']['native_score']['spearman'], .003)
+        self.assertEqual(rows['new-whole-cohort']['source_row_category'], 'completed_rows')
+        self.assertEqual(rows['new-whole-cohort']['result_type'], 'new_complete_generation')
+        new['counts']['parsed'] = 9
+        with self.assertRaisesRegex(ValueError, 'incomplete primary'):
+            report.build(source, catalog(['P06']), new_generation_scores=document)
+
     def test_matched_subset_annotation_preserves_native_score(self):
         native=row('P12',metrics={'auprc@micro':None,'f1_max':None,
             'PARSED_ONLY_DIAGNOSTIC':{'auprc@micro':.02,'f1_max':.1}})

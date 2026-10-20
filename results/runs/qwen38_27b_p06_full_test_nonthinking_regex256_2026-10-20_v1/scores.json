@@ -1,0 +1,30 @@
+{
+  "all_case_primary_available": true,
+  "config_sha256": "562973abaaef65a4bdf58d49cc877189f200cc25e025f5ad8b3bc1254a9f7183",
+  "counts": {
+    "attempted": 1366,
+    "empty_final": 0,
+    "reasoning_present": 0,
+    "refusal": 0,
+    "responses_saved": 1366,
+    "terminal": 1366,
+    "truncated": 0,
+    "valid_predictions": 1366
+  },
+  "failure_policy": "No invented numeric fill values, label-guided extraction or selective retry. Full primary requires every planned final to be finite and normally stopped.",
+  "historical_results_unchanged": true,
+  "interpretation": "Experimental human-cell thermal outcome prediction from complete sequences under a nonthinking constrained-decimal zero-shot adaptation. No specialist fitted head, biological mechanism or matched-training reproduction claim.",
+  "missing_or_invalid": 0,
+  "native_metric": "Spearman correlation",
+  "new_inference_calls_by_scorer": 0,
+  "planned": 1366,
+  "prediction_lock_sha256": "00c011351323ccf84de86444f7eafb2537a40e8b93c7923759148cd84d3968ed",
+  "protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_FLIP_HUMAN_CELL_NONTHINKING_REGEX256_20261020_V1",
+  "reference_sha256": "1c857bb6b72ff25f2b65f3c42d7b48e5d5c37993db4514969383a41b17298c2a",
+  "run_id": "qwen38_27b_p06_full_test_nonthinking_regex256_2026-10-20_v1",
+  "scored_at_pacific": "2026-10-20T01:21:16.825178-07:00",
+  "spearman": 0.0036802946251115526,
+  "spearman_parsed_only": null,
+  "task_id": "P06",
+  "undefined_constant_or_insufficient": false
+}

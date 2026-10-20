@@ -481,3 +481,36 @@ The prior 24-check suite remains sealed separately. Native resume skips any
 nonempty output CSV, including header-only files in artificial tests; do not
 count that as parsed prediction completion. No real-case preparation, runtime
 delivery, scoring, protocol change or dispatch approval follows from these checks.
+
+On October 20 Pacific time, after reviewing the exact remaining-task checklist,
+the user instructed using more subagents with each setting handled separately.
+For P06, P07, P08 and P12-P15, pursue separately named new generation runs after
+fixing delivery/schema problems and passing task-specific checks. Preserve all
+historical calls/results; this is not permission to selectively replace failures
+inside an old run. Use the pinned local Qwen baseline and stay within eight GPUs;
+this instruction does not authorize new paid/OpenAI benchmark inference.
+For other retained settings, verify availability and use the closest defensible
+available source/protocol as an explicitly named adaptation, recording each
+material difference for later discussion. Mark an exact condition unavailable
+only when the evidence establishes that its required artifacts are unavailable,
+not merely because implementation or review remains unfinished. New head
+training and replacement external judges remain held at the user's request.
+All biological holds, flagged requests, interrupted reviews, protected benchmark
+restrictions, reference isolation and no-bypass requirements remain in force.
+Continuing permissible independent P36 review is agent work; the previous
+first-64 review bound is not evidence that all remaining cases were rejected.
+
+During the October 20 per-setting work, the new P20 real-case preparation
+worker was interrupted by an automatic biological-risk check. The exact
+trigger was not returned. Preserve the task-local interruption receipt and
+do not retry, rephrase or reroute that action through P19 or another worker.
+This is not a finding that every PFArena assay is unsafe; independently
+reviewed ordinary P19 scope and unrelated protocol work remain separate.
+
+The later October 20 P36 extension review also received an automatic
+biological-risk interruption after its reported batch checkpoint. The exact
+trigger was not returned. Preserve completed batch evidence and all held
+items. Do not retry, rephrase or reroute that interrupted extension. This
+new interruption is distinct from the old deliberate first-64 preparation
+bound, which was not evidence of a provider stop. No whole-corpus approval
+or new P36 dispatch follows from the earlier review checkpoint.

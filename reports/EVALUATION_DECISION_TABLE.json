@@ -1,8 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-19T12:29:03.120190-07:00",
+  "generated_at_pacific": "2026-10-20T01:33:47.501028-07:00",
   "score_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
   "catalog_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
+  "new_generation_score_snapshot_at": "2026-10-20T01:33:13.475830-07:00",
   "retained_setting_count": 57,
   "retained_setting_ids": [
     "B01",
@@ -72,7 +73,7 @@
     "P28",
     "P29"
   ],
-  "row_count": 68,
+  "row_count": 69,
   "rows": [
     {
       "task_id": "P01",
@@ -292,6 +293,58 @@
       "case_scope": "FLIP AAV two_vs_many split.",
       "excluded_run_reasons": [],
       "native_metrics_recomputed": false
+    },
+    {
+      "task_id": "P06",
+      "task": "Thermostability — FLIP/Meltome",
+      "category": "Protein properties, interactions and developability",
+      "dataset": "Thermostability — FLIP/Meltome",
+      "condition": "Native declared score; new complete generation; nonthinking constrained scalar, 256 output tokens",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_p06_full_test_nonthinking_regex256_2026-10-20_v1",
+      "result_type": "new_complete_generation",
+      "protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_FLIP_HUMAN_CELL_NONTHINKING_REGEX256_20261020_V1",
+      "input_protocol": "Protein/variant sequence",
+      "output_budget": "256",
+      "usable_answer_rate": {
+        "value": 1.0,
+        "display": "1,366/1,366 (100.0%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
+      },
+      "native_score": {
+        "spearman": 0.0036802946251115526
+      },
+      "diagnostic_score": null,
+      "score_display": "spearman 0.0037",
+      "evidence": {
+        "category": "Measured, new delivery condition",
+        "detail": "Experimental human-cell thermal outcome prediction from complete sequences under a nonthinking constrained-decimal zero-shot adaptation. No specialist fitted head, biological mechanism or matched-training reproduction claim. Historical generations and scores remain separate."
+      },
+      "counts": {
+        "planned": 1366,
+        "completed": 1366,
+        "parsed": 1366,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
+      "finish_reasons": {
+        "length": 0,
+        "stop": 1366
+      },
+      "source_scores": "results/runs/qwen38_27b_p06_full_test_nonthinking_regex256_2026-10-20_v1/scores.json",
+      "source_score_sha256": "e0231f651a8c6f3fab2ef16cb4ce280c6b78a9b6ada0c216d95bcb698ff6e385",
+      "source_row_category": "completed_rows",
+      "source_protocol_url": "https://github.com/J-SNACKKB/FLIP",
+      "case_scope": "complete previously reviewed original test cohort; new independent condition",
+      "native_metrics_recomputed": false,
+      "prediction_lock_sha256": "00c011351323ccf84de86444f7eafb2537a40e8b93c7923759148cd84d3968ed",
+      "config_sha256": "562973abaaef65a4bdf58d49cc877189f200cc25e025f5ad8b3bc1254a9f7183",
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "trajectory_archive": {
+        "path": "results/trajectory_archives/qwen38_27b_p06_full_test_nonthinking_regex256_2026-10-20_v1.tar.gz",
+        "sha256": "9d281dec6c6cc4c59c1727ef519dcbf543d0dd9e2c403000f724f26fcbce5dbe"
+      }
     },
     {
       "task_id": "P06",
@@ -3214,7 +3267,8 @@
     "reports/RECOVERED_SUBSET_EVIDENCE_2026-10-19.json": "298ac2eb237558f335f34cb2246c4d354362d7bcb5ff555e685165a04e8cdaf3",
     "reports/P36_WHITESPACE_DIAGNOSTIC_2026-10-19.json": "aba51168710d868a45fb624d3ba0d6963a2fefe276dd323da7e645e845e2a491",
     "reports/P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.json": "d90d53cb0882b6e181734037b017f67c6253503ad32e719b570e945ea88c0e4d",
-    "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json": "32e201698766dc1ec75b734d766cb4cffb42a062abfcfe8f265d0e5990797572"
+    "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json": "32e201698766dc1ec75b734d766cb4cffb42a062abfcfe8f265d0e5990797572",
+    "reports/CATALOG_NEW_SCORES_2026-10-20.json": "a495bccd4c0d6f37711d0499250cd7ca619722633557581f5c648bce9259374d"
   },
   "recovered_subset_setting_ids": [
     "P36"
