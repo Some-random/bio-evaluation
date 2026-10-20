@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "observed_at_pacific": "2026-10-20T13:47:04.529312-07:00",
+  "timezone": "America/Los_Angeles",
+  "role": "read_only_runtime_health_observation_not_dispatch_or_scoring",
+  "source": {
+    "capture_method": "Read-only srun step inside existing job 243499; NVIDIA GPU query, GET /health, GET /v1/models and process-state inspection.",
+    "source_captured_at_pacific": "2026-10-20T13:47:04.529312-07:00",
+    "runtime_status_path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/status.json",
+    "server_identity_path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/server_identity.json"
+  },
+  "job_id": "243499",
+  "hostname": "ampere8.stanford.edu",
+  "server_pid": 1089239,
+  "server_process_state": "Ssl",
+  "engine_pid": 1089455,
+  "engine_process_state": "Rl",
+  "engine_cpu_percent": 134,
+  "endpoint": "http://127.0.0.1:8270/v1",
+  "health_get_path": "/health",
+  "health_http_status": 200,
+  "models_get_path": "/v1/models",
+  "models_http_status": 200,
+  "model_ids": ["Qwen/Qwen3.8-27B"],
+  "model_id_verified": true,
+  "gpu_query_exit_code": 0,
+  "gpu_count": 1,
+  "gpu_uuid": "GPU-556e7dcf-13d9-613d-1780-c3b0633aaa24",
+  "gpu_name": "NVIDIA A100-SXM4-80GB",
+  "gpu_utilization_percent": 100,
+  "gpu_memory_used_mib": 79189,
+  "gpu_memory_total_mib": 81920,
+  "gpu_temperature_celsius": 69,
+  "volatile_uncorrected_ecc_errors": 0,
+  "new_inference_calls": 0,
+  "new_gpu_allocations": 0,
+  "runtime_configuration_changed": false,
+  "conclusion": "At this observation the endpoint answered both read-only GETs, the expected server and engine were alive, and one A100 was busy with no observed ECC errors. The earlier HTTP/I/O stall is historical and is not evidence of a continuing endpoint block at 13:47 PDT.",
+  "prior_stalled_observation": {
+    "observed_at_pacific": "2026-10-20T13:15:23.100327-07:00",
+    "public_report_path": "reports/CATALOG_RUNTIME_IO_2026-10-20.json",
+    "original_local_receipt_path": "/tmp/bio_evaluation_runtime_health_20261020_1315.json",
+    "preserved_unchanged": true
+  },
+  "limitations": [
+    "A point-in-time health observation does not certify future endpoint health or completion of any benchmark.",
+    "No biological correctness, native score or throughput ETA is inferred from GPU utilization or HTTP health."
+  ]
+}

@@ -46,6 +46,8 @@ USER_HOLDS = {
 }
 PROVIDER_HOLDS = {"P18", "B06", "P20", "P30", "P31", "P32", "P36"}
 CONTINUATION_MANIFEST_SHA256 = "64b1f81dfa7a138458905736545ecb93f592c7cd85dc8528b6621ca125b260d4"
+BLOCKERS_PATH = "reports/CATALOG_BLOCKERS_2026-10-20.json"
+DEEPFRI_OUTPUT_DIMENSIONS = {"P12": 538, "P13": 1943, "P14": 489, "P15": 320}
 
 
 def load(path: Path):
@@ -79,6 +81,38 @@ def score_defined(data):
     if "auprc@micro" in metrics or "f1_max" in metrics:
         return all(isinstance(metrics.get(key), (int, float)) and not isinstance(metrics.get(key), bool) and math.isfinite(metrics[key]) for key in ("auprc@micro", "f1_max"))
     return any(isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value) for value in values)
+
+
+def explain_unfinished(row, reasons):
+    """Explain missing work separately from a task's execution category."""
+    if row["category"] == "done":
+        return {"why_not_done": None, "blocker_owner": None,
+                "finish_requirement": "A defined score for this declared condition is already retained.",
+                "next_deliverable": row["next_action"], "needs_user_decision": False}
+    task = row["task_id"]
+    if task in DEEPFRI_OUTPUT_DIMENSIONS and row["category"] in {"running", "queued"}:
+        dimension = DEEPFRI_OUTPUT_DIMENSIONS[task]
+        runtime = row.get("runtime") or {}
+        saved, planned = runtime.get("responses_saved"), runtime.get("planned")
+        if row["category"] == "running":
+            count = f"{saved:,}/{planned:,} responses saved in the unsealed progress record. " if type(saved) is int and type(planned) is int else ""
+            reason = count + f"Generation is still incomplete; each case requires {dimension:,} ordered confidence values. The three active task workers share one A100. Full-cohort scoring has not started."
+            deliverable = "Finish the untouched cases, seal all outcomes, then calculate the full-cohort native AP/Fmax scores."
+        else:
+            reason = f"Its exact benchmark grant is queued, but its worker has not started. The three-client runtime is occupied by P12, P13 and P14; this is our scheduling choice. Each P15 answer requires {dimension:,} confidence values."
+            deliverable = "Start the existing grant when a task-worker slot opens, then complete and score the fixed cohort."
+        return {"why_not_done": reason, "blocker_owner": "Agent scheduling / existing generation workers",
+                "finish_requirement": deliverable, "next_deliverable": deliverable,
+                "needs_user_decision": False}
+    if task in reasons:
+        item = reasons[task]
+        keys = ("why_not_done", "blocker_owner", "finish_requirement", "next_deliverable", "needs_user_decision")
+        if any(key not in item for key in keys) or not all(item[key] for key in keys[:-1]):
+            raise ValueError("Incomplete unfinished-work explanation: " + task)
+        return {key: item[key] for key in keys}
+    return {"why_not_done": row["status"], "blocker_owner": "Agent evidence reconciliation",
+            "finish_requirement": row["next_action"], "next_deliverable": row["next_action"],
+            "needs_user_decision": False}
 
 
 def task_queue_evidence(root, task, direct, now):
@@ -136,6 +170,8 @@ def build(root: Path):
     retained = table["retained_setting_ids"]
     assert len(retained) == len(set(retained)) == 57
     table_rows = table["rows"]
+    blocker_document = load(root / BLOCKERS_PATH) or {}
+    reasons = blocker_document.get("reasons", {})
     names = {r["task_id"]: r["task"] for r in table_rows}
     task_root = root / ".local/catalog_execution_2026-10-20/tasks"
     queue = root / ".local/catalog_execution_2026-10-20/runtime/queue"
@@ -311,6 +347,11 @@ def build(root: Path):
         else:
             raise AssertionError(f"Unclassified retained setting: {task}")
 
+        row.update(explain_unfinished(row, reasons))
+        if task in reasons and row["category"] != "done":
+            row["evidence_paths"].append(BLOCKERS_PATH)
+            row["evidence_paths"].extend(reasons[task].get("source_paths", []))
+            row["next_action"] = row["next_deliverable"]
         row["evidence_paths"] = list(dict.fromkeys(row["evidence_paths"]))
         for item in row["evidence_paths"]:
             evidence(item)
@@ -342,6 +383,7 @@ def build(root: Path):
         pool_fresh = pool_age is not None and -60 <= pool_age <= 180 and pool.get("stage") == "serving_task_queue"
     health_path = root / "reports/CATALOG_RUNTIME_IO_2026-10-20.json"
     operational_health = load(health_path)
+    current_health = load(root / "reports/CATALOG_RUNTIME_HEALTH_2026-10-20.json")
     result = {
         "schema_version": 1,
         "generated_at_pacific": now.isoformat(),
@@ -379,6 +421,8 @@ def build(root: Path):
         },
         "rows": rows,
         "operational_health_observation": operational_health,
+        "current_runtime_health_observation": current_health,
+        "unfinished_reason_source": BLOCKERS_PATH if blocker_document else None,
         "evidence": list(evidence_records.values()),
         "validation": {"exactly_57_rows": True, "no_duplicate_setting_ids": True, "exact_retained_id_set": True, "categories_mutually_exclusive": True, "counts_sum_to_57": True},
     }
@@ -396,7 +440,10 @@ def markdown(data):
     if breakdown:
         lines += ["", "Doable agent work includes " + ", ".join(f"{value} {key.replace('_', ' ')}" for key, value in breakdown.items()) + ". These tasks are not all in a live generation queue."]
     health = data.get("operational_health_observation")
-    if health:
+    current_health = data.get("current_runtime_health_observation")
+    if current_health and current_health.get("health_http_status") == 200 and current_health.get("models_http_status") == 200:
+        lines += ["", f"**Latest read-only health check ({current_health['observed_at_pacific']}):** both endpoint GETs returned HTTP 200; one A100 was busy. The earlier 1:14–1:15 PM filesystem/HTTP stall is historical. [Health evidence](CATALOG_RUNTIME_HEALTH_2026-10-20.json)."]
+    elif health:
         lines += ["", f"**Dated runtime health observation ({health['observed_at_pacific']}):** HTTP model/health checks timed out while multiple DFS readers and the server stalled in filesystem I/O. GPU activity did not establish healthy HTTP delivery. [Observation details](CATALOG_RUNTIME_IO_2026-10-20.json); current health requires a fresh check."]
     if data["freshness"].get("active_successor_job_ids"):
         lines += ["", "Current successor runtime job: " + ", ".join(data["freshness"]["active_successor_job_ids"]) + ". Old predecessor drain exits remain historical evidence."]
@@ -404,7 +451,12 @@ def markdown(data):
         lines += ["", f"**Stale aggregate metadata:** the old controller record is from {data['freshness']['controller_recorded_at_pacific']}. Direct per-task progress/completion/score evidence below takes precedence."]
     if data["freshness"]["supervisor_is_fresh"]:
         lines += ["", f"The existing controller was restarted under supervision around **12:31 PM PDT** after an `Errno 116` stale-file-handle crash. Its supervisor is fresh at {data['freshness']['supervisor_recorded_at_pacific']}; pool heartbeat fresh: **{data['freshness']['pool_is_fresh']}**. This does not create a new protocol or extra inference scope."]
-    lines += ["", "Exceptions for training and replacement judges remain user-held. Biological/provider holds are separate and cannot be cleared by a simple continuation instruction. Exact native unavailability is tracked separately from whether an available adaptation can proceed.", "", "## Every retained setting", "", "| ID | Setting | Status | Saved/planned | Next action / decision | Evidence |", "|---|---|---|---:|---|---|"]
+    preparation_count = sum(row["category"] == "agent_work" and row["substatus"] == "implementation_review_preparation" for row in data["rows"])
+    lines += ["", "Exceptions for training and replacement judges remain user-held. Biological/provider holds are separate. Exact native unavailability is tracked separately from whether an available adaptation can proceed.", "", "## Why the unfinished settings are unfinished", "", f"The {preparation_count} preparation/implementation settings need work we have not completed. Source acquisition and synthetic tests did not make those evaluations runnable or scored. Existing instructions cover the listed permissible preparation and labelled adaptations.", "", "| Setting | Concrete reason unfinished | Who owns the missing step | Next concrete deliverable |", "|---|---|---|---|"]
+    for row in data["rows"]:
+        if row["category"] != "done":
+            lines.append("| " + " | ".join(esc(value) for value in (row["task_id"] + " " + row["task_name"], row["why_not_done"], row["blocker_owner"], row["next_deliverable"])) + " |")
+    lines += ["", "Several original paper evaluations lack required released artifacts. An available qualitative demonstration or proxy can be prepared, but it cannot supply an invented native accuracy or reproduce an unreleased paper cohort. See the per-setting qualifications below.", "", "## Every retained setting", "", "| ID | Setting | Status | Saved/planned | Next action / decision | Evidence |", "|---|---|---|---:|---|---|"]
     for row in data["rows"]:
         runtime = row["runtime"]
         saved = f"{runtime['responses_saved']:,}/{runtime['planned']:,}" if runtime and isinstance(runtime.get("responses_saved"), int) and isinstance(runtime.get("planned"), int) else (f"Unknown/{row['prepared_benchmark_planned']:,}" if row.get("prepared_benchmark_planned") else "—")

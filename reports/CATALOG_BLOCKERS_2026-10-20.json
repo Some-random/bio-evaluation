@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "role": "explanation_metadata_not_dispatch_authorization",
+  "observed_at_pacific": "2026-10-20T13:51:00.598972-07:00",
+  "reasons": {
+    "B06": {
+      "why_not_done": "An independent ProtocolQA review was interrupted by an automatic biological-safety check. The exact trigger was not returned. The preserved candidate-review checkpoint does not authorize resuming that interrupted action or dispatching the full task.",
+      "blocker_owner": "Provider/scope restriction",
+      "finish_requirement": "Resolve the applicable interrupted-review restriction and establish a reviewed permitted case scope before a frozen local run and native scoring. Source availability alone does not remove the hold.",
+      "next_deliverable": "Preserve the interruption and existing review checkpoint; continue only separate permitted metadata work without retrying or rerouting the interrupted review.",
+      "needs_user_decision": false,
+      "source_paths": [
+        "AGENTS.md",
+        ".local/source_acquisition_2026-10-19/b06_review/review_interruption.json",
+        ".local/source_acquisition_2026-10-19/b06_review/review_receipt.json"
+      ]
+    },
+    "P04": {
+      "why_not_done": "The source archive is here, but we have not completed assay eligibility review or built an isolated test-input/reference manifest and frozen local scalar run for this task. Even the expected 520-row test count has only been taken from the publisher loader, not verified by an LMDB inventory.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Complete the assay eligibility decision; inventory the native test cohort; freeze isolated inputs/references, scalar delivery checks and native scoring; only then run and score the declared permitted cohort.",
+      "next_deliverable": "A documented eligibility disposition and exact LMDB test-cohort inventory; if eligible, a frozen isolated task input/reference manifest.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json",
+        ".local/catalog_execution_2026-10-20/tasks/P04/task.json"
+      ]
+    },
+    "P05": {
+      "why_not_done": "The exact FLIP two_vs_many files and the 50,776-row test inventory are already available. We have not completed the capsid-assay eligibility review or turned that split into separated solver inputs/targets, a frozen scalar configuration and a task-specific delivery check.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Complete assay eligibility review, then freeze the known native test split into isolated inputs/references and a validated local scalar run; preserve any resulting holds.",
+      "next_deliverable": "A source-grounded capsid-assay eligibility disposition and, if eligible, the complete frozen 50776-row native test input/reference split.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json",
+        ".local/catalog_execution_2026-10-20/tasks/P05/task.json"
+      ]
+    },
+    "P17": {
+      "why_not_done": "All 217 ProteinGym assay CSVs are in the acquired archive, but no reviewed allowed-assay roster or release-specific full prediction/scoring run has been frozen. The corpus includes held assays. A GFP-only preparation prototype exists, but it is not a completed all-assay pipeline and its expected prepared-data directory is absent in this workspace.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Define and review the permitted assay roster, prepare version-matched input/reference manifests, validate the prediction/scoring interface, then run and score the declared scope without hidden exclusions.",
+      "next_deliverable": "A reviewed permitted-assay roster and a hash-pinned preparation/scoring contract for an explicitly declared subset, without reviving held or interrupted scope.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json",
+        "scripts/prepare_proteingym_gfp.py",
+        ".local/catalog_execution_2026-10-20/tasks/P17/task.json"
+      ]
+    },
+    "P18": {
+      "why_not_done": "Original requests received confirmed bio_policy rejections, and a later separate GFP-only preparation also received an automatic biological-safety interruption. No provider clearance is recorded; the exact trigger of the later interruption is unknown. We cannot retry or route those actions through another model or task.",
+      "blocker_owner": "Provider/scope restriction",
+      "finish_requirement": "Resolve the provider/permitted-scope restriction and the native evaluation contract before any newly reviewed condition can run; previously rejected requests remain preserved and must not be silently retried.",
+      "next_deliverable": "Preserve rejection/appeal evidence and perform only separate permitted offline metadata analysis; keep the interrupted and flagged scope stopped.",
+      "needs_user_decision": false,
+      "source_paths": [
+        "AGENTS.md",
+        "reports/policy_warning_local_audit.json",
+        ".local/source_acquisition_2026-10-19/p18_gfp_candidate/review_interruption.json",
+        ".local/catalog_execution_2026-10-20/tasks/P18/task.json"
+      ]
+    },
+    "P19": {
+      "why_not_done": "The 34-assay reviewed subset, runner and scorer are prepared, 37 software checks passed, and the three synthetic prompts passed actual CPU tokenizer checks. We have not admitted the P19 runner to a frozen live runtime or made its three actual synthetic model-delivery calls. The in-memory 3/3 fixture result is not that live gate.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Adopt the already prepared P19 runtime entry prospectively; pass three actual synthetic model-delivery cases and seal them; then execute and score the separate 34-assay reviewed condition. Full native coverage separately needs review of 77 assays and resolution of 12 holds.",
+      "next_deliverable": "Adopt a prospective frozen P19 runtime admission and produce a real, sealed 3/3 synthetic delivery pass.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/catalog_execution_2026-10-20/tasks/P19/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P19/runtime_integration_preparation/cpu_tokenizer_step_receipt.json"
+      ]
+    },
+    "P20": {
+      "why_not_done": "The real-case preparation worker was interrupted by an automatic biological-risk check. The exact triggering case was not returned. Acquired source files do not authorize restarting that action, and no reviewed frozen benchmark run has been completed.",
+      "blocker_owner": "Provider/scope restriction",
+      "finish_requirement": "Resolve the interrupted-scope restriction, then establish a permitted reviewed cohort and frozen input/output/scoring contract before execution. Do not retry through P19 or another worker.",
+      "next_deliverable": "Preserve the interruption receipt and completed metadata; keep that real-case preparation action stopped without retry or rerouting.",
+      "needs_user_decision": false,
+      "source_paths": [
+        "AGENTS.md",
+        ".local/catalog_execution_2026-10-20/tasks/P20/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P20/review_interruption.json"
+      ]
+    },
+    "P21": {
+      "why_not_done": "The 67 native T3 target tables and source builders are available. We have not reviewed the real assay scopes or built model inputs containing each supplied measured anchor and candidate list while excluding hidden candidate measurements. No real task-specific ranking delivery panel or frozen local run is ready.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Review real T3 assay scopes, prepare isolated anchor/candidate input manifests, verify complete-ranking output delivery and freeze the local run/scorer before execution.",
+      "next_deliverable": "One reviewed real T3 input manifest with a reference-isolation audit and a synthetic full-ranking completeness test bound to its exact candidate contract.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/readiness_coverage_receipt.json",
+        ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/synthetic_csv_loading_checks/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P21/task.json"
+      ]
+    },
+    "P22": {
+      "why_not_done": "All 29 native T4 target/context pairs and source builders are available. We have not reviewed the real assay scopes or separated the supplied single-mutant measurements, which are allowed inputs, from the multi-mutant target measurements, which must stay scorer-only. No real-case ranking run or delivery gate has been prepared.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Review real T4 assay scopes, separate supplied component measurements from hidden combination targets, validate complete-ranking delivery and freeze the local run/scorer before execution.",
+      "next_deliverable": "One reviewed real T4 input manifest with a field-isolation audit and a synthetic full-ranking completeness test bound to the exact candidate contract.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/readiness_coverage_receipt.json",
+        ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P22/task.json"
+      ]
+    },
+    "P27": {
+      "why_not_done": "Exact native replication lacks the author's fixed NCBI test accession list, absolute temporal cutoff and matching annotation/reference snapshot. Those were not found in the audited releases. The user has already allowed a labelled available alternative, but we have not selected and frozen its cohort and reference preprocessing or implemented its run.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "For native replication obtain the original dated accession/cohort and annotation/reference artifacts. Otherwise finish a clearly named available adaptation with a fixed cohort, isolated references, declared differences and validated scoring; existing user authority permits that adaptation.",
+      "next_deliverable": "A frozen, source-grounded available-adaptation specification identifying exact cohort/reference preprocessing and material differences; retain native replication as unavailable.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/source_recovery_round2_2026-10-19/paper_artifacts/PUBLIC_SUMMARY.json",
+        "reports/catalog_description_preparation.json",
+        "AGENTS.md",
+        ".local/catalog_execution_2026-10-20/tasks/P27/task.json"
+      ]
+    },
+    "P30": {
+      "why_not_done": "The MutaDescribe source and evaluation files are acquired, but the standing biological/source-review hold has not been lifted. The earlier triggering case is not known. A permitted reviewed mutation explanation run and its complete native/adapted contract are not ready; this is not a missing-download problem.",
+      "blocker_owner": "Provider/scope restriction",
+      "finish_requirement": "Resolve the applicable review/scope restriction, establish the reviewed permitted cohort and exact task input/output/scoring contract, then validate delivery before any execution. Do not retry or reroute interrupted material.",
+      "next_deliverable": "Preserve the hold and source metadata; document the existing native contract and missing preparation without reopening the interrupted content review.",
+      "needs_user_decision": false,
+      "source_paths": [
+        "AGENTS.md",
+        ".local/catalog_execution_2026-10-20/tasks/P30/task.json",
+        ".local/source_acquisition_2026-10-19/mutadescribe_sources/schema_and_counts.json"
+      ]
+    },
+    "P31": {
+      "why_not_done": "The MutaDescribe source and evaluation files are acquired, but the standing biological/source-review hold has not been lifted. The earlier triggering case is not known. A permitted reviewed mutation engineering with supplied position run and its complete native/adapted contract are not ready; this is not a missing-download problem.",
+      "blocker_owner": "Provider/scope restriction",
+      "finish_requirement": "Resolve the applicable review/scope restriction, establish the reviewed permitted cohort and exact task input/output/scoring contract, then validate delivery before any execution. Do not retry or reroute interrupted material.",
+      "next_deliverable": "Preserve the hold and source metadata; document the existing native contract and missing preparation without reopening the interrupted content review.",
+      "needs_user_decision": false,
+      "source_paths": [
+        "AGENTS.md",
+        ".local/catalog_execution_2026-10-20/tasks/P31/task.json",
+        ".local/source_acquisition_2026-10-19/mutadescribe_sources/schema_and_counts.json"
+      ]
+    },
+    "P32": {
+      "why_not_done": "The MutaDescribe source and evaluation files are acquired, but the standing biological/source-review hold has not been lifted. The earlier triggering case is not known. A permitted reviewed mutation engineering without supplied position run and its complete native/adapted contract are not ready; this is not a missing-download problem.",
+      "blocker_owner": "Provider/scope restriction",
+      "finish_requirement": "Resolve the applicable review/scope restriction, establish the reviewed permitted cohort and exact task input/output/scoring contract, then validate delivery before any execution. Do not retry or reroute interrupted material.",
+      "next_deliverable": "Preserve the hold and source metadata; document the existing native contract and missing preparation without reopening the interrupted content review.",
+      "needs_user_decision": false,
+      "source_paths": [
+        "AGENTS.md",
+        ".local/catalog_execution_2026-10-20/tasks/P32/task.json",
+        ".local/source_acquisition_2026-10-19/mutadescribe_sources/schema_and_counts.json"
+      ]
+    },
+    "P33": {
+      "why_not_done": "No existing matching P33 regression head has been verified. The native route calls for fitting heads, and the user explicitly kept new head training on hold. Source and already-released-head audits can continue, but training cannot start under current instructions.",
+      "blocker_owner": "User-held exception",
+      "finish_requirement": "Find and verify already released matching heads and the native test contract, or receive an explicit change to the training hold before fitting the required heads.",
+      "next_deliverable": "A precise matching-head availability audit and native split/configuration record; leave training stopped.",
+      "needs_user_decision": true,
+      "source_paths": [
+        "AGENTS.md",
+        ".local/catalog_execution_2026-10-20/tasks/P33/task.json"
+      ]
+    },
+    "P34": {
+      "why_not_done": "The encoder and five existing evaluator heads are already available. We have not implemented the Qwen proposal adapter or the iterative optimization/scoring worker; the October 20 task directory still contains only its assignment record. The remaining work is agent implementation.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Implement and validate a separately named proposal/optimization condition using the existing heads, preserve held landscapes and all failures, then run the declared permitted cases and aggregate its frozen metrics without training new heads.",
+      "next_deliverable": "A tested proposal adapter and worker that binds the available encoder/heads to a frozen optimization and scoring contract.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/catalog_execution_2026-10-20/tasks/P34/task.json",
+        ".local/source_acquisition_2026-10-19/evaluators/status.json",
+        "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
+      ]
+    },
+    "P35": {
+      "why_not_done": "The checkpoint loads on CPU and 27 tests passed, but we have not produced the final retained/rejected corpus-ID inventory and order or run retrieval. The release supplies five example queries without relevance gold or an aggregate accuracy definition; producing rankings is possible, but reporting a native numeric accuracy is not currently defined.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Finish the declared corpus projection/retention audit and input scope review, validate the existing-checkpoint runtime, run the five fixed queries and archive complete scores/top20 rankings. A numeric benchmark accuracy additionally requires a source-grounded relevance/aggregation contract that is not in the release; do not invent it.",
+      "next_deliverable": "Run the existing dormant CPU corpus projector and produce a hash-pinned retained/rejected ID and ordering manifest.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/catalog_execution_2026-10-20/tasks/P35/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P35/readiness.json",
+        ".local/catalog_execution_2026-10-20/tasks/P35/cpu_checkpoint_load_receipt.json"
+      ]
+    },
+    "P36": {
+      "why_not_done": "There are two independent problems: the extended case review received an automatic biological-risk interruption with an unknown trigger, and the paper normalized Smith-Waterman alignment settings remain unrecovered. The 59 old responses cover only a partial subset; 188 new inputs are prepared but not generated, and 5,604 source cases remain unreviewed. Neither prepared inputs nor raw responses complete the benchmark.",
+      "blocker_owner": "Provider/scope restriction",
+      "finish_requirement": "Resolve the interrupted-review restriction and establish a permitted frozen cohort. For native paper scoring recover the exact alignment/normalization settings; otherwise use a separately declared available-code metric without claiming native biological design success. Then require valid generation closure and scoring for that declared scope.",
+      "next_deliverable": "Preserve the 59-response archive, 188-input checkpoint and all holds; recover or document alignment/source-metric metadata without restarting the interrupted extension.",
+      "needs_user_decision": false,
+      "source_paths": [
+        "AGENTS.md",
+        ".local/catalog_execution_2026-10-20/tasks/P36/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P36/review_interruption.json",
+        ".local/catalog_execution_2026-10-20/tasks/P36/review_summary_v2.json",
+        ".local/catalog_execution_2026-10-20/tasks/P36/native_artifact_availability.json"
+      ]
+    },
+    "P37": {
+      "why_not_done": "The matching OmegaFold2 weights are downloaded and 21 contract tests passed. We have not assembled or validated a compatible folding runtime: the inspected Python 3.12 environment lacks torch, Bio and omegafold. Exact native sampling/clustering remains unrecovered, but a labelled released-code adaptation is available.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Install or reuse an isolated compatible existing-model runtime, verify checkpoint loading and an independent delivery gate, then run and score the declared adaptation while preserving differences from native sampling and clustering.",
+      "next_deliverable": "A validated isolated folding environment and synthetic checkpoint/interface test; no additional user permission is needed for that preparation.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/catalog_execution_2026-10-20/tasks/P37/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P37/runtime_preflight.json",
+        ".local/catalog_execution_2026-10-20/tasks/P37/readiness.json",
+        ".local/catalog_execution_2026-10-20/tasks/P37/release2_acquisition_status.json"
+      ]
+    },
+    "P38": {
+      "why_not_done": "The NetSolP files and separate thermal head are available, but the NetSolP runtime input/output check has not been done. The publisher-available ProtT5 thermal encoder (11,275,562,724 bytes, about 11.28 GB) has not been downloaded. Exact original SFM property heads/reference cohort are unavailable in inspected releases; the prepared proxy conditions are different adaptations.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Acquire the available encoder, validate both existing-evaluator runtimes, freeze the separate proxy generation/delivery conditions and execute only their reviewed scopes; no replacement head training and no native-oracle equivalence claim.",
+      "next_deliverable": "A passing synthetic NetSolP runtime check and a verified download of the already identified ProtT5 encoder.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/catalog_execution_2026-10-20/tasks/P38/readiness.json",
+        ".local/catalog_execution_2026-10-20/tasks/P38/thermal_encoder_acquisition_plan.json",
+        ".local/catalog_execution_2026-10-20/tasks/P38/exact_condition_availability.json"
+      ]
+    },
+    "P39": {
+      "why_not_done": "Structural dependencies are acquired, but we have not written a prospective case-study configuration or a complex-predictor worker. The exact author cohort, selection procedure and scoring contract are unreleased, so there is no source-defined full-cohort binding accuracy to reproduce.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Freeze a reviewed, explicitly qualified case-study cohort and selection/evaluation contract, implement and validate its existing-predictor worker, then report the resulting structural/proxy evidence without inventing biological binding accuracy.",
+      "next_deliverable": "A concrete adaptation specification plus a tested complex-predictor worker interface; keep exact native replication marked unavailable.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/catalog_execution_2026-10-20/tasks/P39/task.json",
+        "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json",
+        ".local/source_recovery_round2_2026-10-19/structural/completion.json"
+      ]
+    },
+    "P40": {
+      "why_not_done": "All 60 current-structure mappings/masks and 13 synthetic checks are complete. We have not reviewed case eligibility or implemented the geometry-aware solver adapter that removes target residue identities and target coordinates. Available current structures are a qualified condition, not certified historical processed bytes.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Complete independent permitted-case review and target-isolated geometric input packaging, validate the solver/evaluator contract, then run and score the declared current-structure adaptation.",
+      "next_deliverable": "A reviewed case roster and tested solver input adapter that preserves permitted geometry without exposing target residues or coordinates.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/catalog_execution_2026-10-20/tasks/P40/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P40/validation.json",
+        ".local/catalog_execution_2026-10-20/tasks/P40/availability.json"
+      ]
+    },
+    "P41": {
+      "why_not_done": "All 16 checkpoint files, five vendor dependencies and 83 fixtures are acquired. We have not implemented a task-specific mask/preprocessing/scoring worker; the task directory still contains only its assignment record. The exact paper holdout cohort, canonical masks and aggregation are unreleased in inspected sources, while a labelled released-demo adaptation remains possible.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Build and validate the released-demo runtime with explicit input masks, target isolation and scoring, review its case scope and report the qualified adaptation. Exact native reproduction separately needs the unreleased cohort/mask/aggregation artifacts.",
+      "next_deliverable": "A tested mask/preprocessing/scorer adapter for the available released demonstrations, with its exact condition differences documented.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/catalog_execution_2026-10-20/tasks/P41/task.json",
+        ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json",
+        ".local/source_recovery_round2_2026-10-19/structural/completion.json",
+        "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json"
+      ]
+    },
+    "P44": {
+      "why_not_done": "The exact cohort, evidence bundle, rubric and original judge contract are not verified, and agent source recovery/preparation remains unfinished. The user also kept replacement external judges on hold; that hold does not excuse the remaining metadata recovery work.",
+      "blocker_owner": "User-held exception",
+      "finish_requirement": "Recover and freeze the cohort/evidence/rubric and permitted input scope, then obtain the original judging route or an explicit decision allowing a separately labelled replacement judge.",
+      "next_deliverable": "A concrete source-availability and cohort/rubric/evidence manifest; keep replacement judging stopped.",
+      "needs_user_decision": true,
+      "source_paths": [
+        "AGENTS.md",
+        ".local/catalog_execution_2026-10-20/tasks/P44/task.json",
+        "reports/catalog_bioreason_pro_preparation.json"
+      ]
+    },
+    "V06": {
+      "why_not_done": "All 50 images for 193 questions are acquired. The native GPT-4-0314 judging route has unresolved access, and the user kept replacement external judges on hold. Solver preparation is still possible, but it does not resolve the missing scoring route.",
+      "blocker_owner": "User-held exception",
+      "finish_requirement": "Complete reviewed solver delivery and obtain the original judging route, or receive an explicit decision permitting a separately labelled replacement-judge condition.",
+      "next_deliverable": "A solver-input/delivery preparation record and exact judge-availability note; make no replacement-judge calls.",
+      "needs_user_decision": true,
+      "source_paths": [
+        "AGENTS.md",
+        ".local/catalog_execution_2026-10-20/tasks/V06/task.json",
+        ".local/source_acquisition_2026-10-19/vision/v06/completion.json"
+      ]
+    },
+    "V07": {
+      "why_not_done": "All 8,000 images and 2,215 prepared cases are available, and materialization finished at 2:22 AM. We have not completed question/full-deck content review, actual 20-image processor expansion/context-fit testing or model delivery checks. The 1:40 AM readiness claim that copying was still running is stale.",
+      "blocker_owner": "Agent",
+      "finish_requirement": "Complete permitted case/deck review, verify actual processor expansion and context/output fit for all20pages, then pass the independent delivery gate and execute/score the explicitly mixed-image-source adaptation.",
+      "next_deliverable": "A case-review disposition file and a real processor/context-fit receipt, followed by the existing synthetic delivery panel.",
+      "needs_user_decision": false,
+      "source_paths": [
+        ".local/catalog_execution_2026-10-20/tasks/V07/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/V07/readiness.json",
+        ".local/catalog_execution_2026-10-20/tasks/V07/materialization_resume_20261020_v1/completion.json"
+      ]
+    }
+  }
+}
