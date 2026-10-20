@@ -1,6 +1,6 @@
 # Follow-up recovery of evaluation inputs and tools
 
-Snapshot: 2026-10-19T22:08:51.018066-07:00 (America/Los_Angeles).
+Snapshot: 2026-10-20T00:09:29.889731-07:00 (America/Los_Angeles).
 
 The initial bulk transfers were not the end of source recovery. This follow-up checked author histories, supplements, public original-image copies and tool dependencies. No new benchmark inference, training or model forwards were run.
 
@@ -46,6 +46,18 @@ For all four PFArena tasks, changing or removing scorer-only target/prior-output
 The separate T2–T4 ranking audit detects missing, duplicated, unknown, malformed and non-list outputs without coercion, repair or reference access. T1 is open generation and is outside the full-permutation rule. A synthetic example confirms the native parser can accept a partial list while the new audit flags its missing candidates; native metric semantics remain unchanged.
 
 [Audit helper](../scripts/pfarena_output_contract_checks.py) · [Synthetic tests](../tests/test_pfarena_output_contract_checks.py). Actual case preparation, review, runtime delivery and scored predictions remain unverified by these checks.
+
+## Synthetic CSV loading checks begun at midnight PDT, October 20
+
+A separate 16-test suite exercises selected hash-pinned upstream discovery, CSV loading and request-construction functions using temporary artificial files and an in-memory recording client. All tests pass with zero failures, errors or skips. No real dataset rows, API calls or benchmark scores are involved.
+
+The checks distinguish scorer-only target/reference/prior-output data from permitted candidate identifiers and T3/T4 conditioning. They include mutation/removal invariance and positive controls for legitimate context. The original 24-test construction/ranking suite remains separately sealed, and native source, prompts, parsers, metric formulas and execution permissions remain unchanged.
+
+A synthetic characterization also confirms that native discovery with force=False skips any nonempty output file, including a header-only CSV. This preserved resume behavior is not evidence of delivered or parsed predictions. No real outputs were inspected, replaced or retried by the check.
+
+These tests cover the selected synthetic loader paths. They do not certify real-case input review, the complete CLI/orchestration pipeline, tokenizer or endpoint behavior, output-budget reliability, or native benchmark readiness. Actual native input preparation remains incomplete and no dispatch is authorized by these checks.
+
+[Additional CSV-loading tests](../tests/test_pfarena_synthetic_csv_loading_checks.py).
 
 ## Source and publication boundaries
 

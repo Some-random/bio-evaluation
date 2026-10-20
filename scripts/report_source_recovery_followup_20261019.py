@@ -95,6 +95,18 @@ def main():
             assert hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() == expected
         data['synthetic_contract_checks'] = synthetic
         hashes[str(synthetic_path.relative_to(ROOT))] = hashlib.sha256(synthetic_path.read_bytes()).hexdigest()
+    csv_path = BASE / 'pfarena/native_preflight/synthetic_csv_loading_checks/PUBLIC_SUMMARY.json'
+    csv_checks = read(csv_path)
+    if csv_checks is not None:
+        assert csv_checks['tests_run'] == csv_checks['tests_passed']
+        assert not any(csv_checks[key] for key in ('tests_failed', 'tests_errored', 'tests_skipped'))
+        assert csv_checks['real_cases_checked'] == csv_checks['new_inference_calls'] == 0
+        assert csv_checks['native_input_preparation_complete'] is False
+        assert csv_checks['benchmark_dispatch_authorized'] is False
+        for rel, expected in csv_checks['source_file_sha256'].items():
+            assert hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() == expected
+        data['synthetic_csv_loading_checks'] = csv_checks
+        hashes[str(csv_path.relative_to(ROOT))] = hashlib.sha256(csv_path.read_bytes()).hexdigest()
     target = ROOT / 'reports/SOURCE_RECOVERY_FOLLOWUP_2026-10-19.json'
     target.write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
     structural = records['structural'].get('summary', {})
@@ -150,6 +162,13 @@ def main():
                   'For all four PFArena tasks, changing or removing scorer-only target/prior-output fields leaves the captured model payload byte-identical. Positive controls show that candidate order and legitimate T3/T4 conditioning still affect the prompt. This validates these synthetic construction paths, not real file loading or case-level input isolation.', '',
                   'The separate T2–T4 ranking audit detects missing, duplicated, unknown, malformed and non-list outputs without coercion, repair or reference access. T1 is open generation and is outside the full-permutation rule. A synthetic example confirms the native parser can accept a partial list while the new audit flags its missing candidates; native metric semantics remain unchanged.', '',
                   '[Audit helper](../scripts/pfarena_output_contract_checks.py) · [Synthetic tests](../tests/test_pfarena_output_contract_checks.py). Actual case preparation, review, runtime delivery and scored predictions remain unverified by these checks.', '']
+    if csv_checks is not None:
+        extra += ['## Synthetic CSV loading checks begun at midnight PDT, October 20', '',
+                  'A separate ' + str(csv_checks['tests_passed']) + '-test suite exercises selected hash-pinned upstream discovery, CSV loading and request-construction functions using temporary artificial files and an in-memory recording client. All tests pass with zero failures, errors or skips. No real dataset rows, API calls or benchmark scores are involved.', '',
+                  'The checks distinguish scorer-only target/reference/prior-output data from permitted candidate identifiers and T3/T4 conditioning. They include mutation/removal invariance and positive controls for legitimate context. The original 24-test construction/ranking suite remains separately sealed, and native source, prompts, parsers, metric formulas and execution permissions remain unchanged.', '',
+                  'A synthetic characterization also confirms that native discovery with force=False skips any nonempty output file, including a header-only CSV. This preserved resume behavior is not evidence of delivered or parsed predictions. No real outputs were inspected, replaced or retried by the check.', '',
+                  'These tests cover the selected synthetic loader paths. They do not certify real-case input review, the complete CLI/orchestration pipeline, tokenizer or endpoint behavior, output-budget reliability, or native benchmark readiness. Actual native input preparation remains incomplete and no dispatch is authorized by these checks.', '',
+                  '[Additional CSV-loading tests](../tests/test_pfarena_synthetic_csv_loading_checks.py).', '']
     boundary = lines.index('## Source and publication boundaries')
     lines[boundary:boundary] = extra
     (ROOT / 'reports/SOURCE_RECOVERY_FOLLOWUP_2026-10-19.md').write_text('\n'.join(lines) + '\n')

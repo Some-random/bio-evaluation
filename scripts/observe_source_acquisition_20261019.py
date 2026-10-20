@@ -40,6 +40,7 @@ SOURCES = {
     'round2_pfarena_native_preflight': '../source_recovery_round2_2026-10-19/pfarena/native_preflight/status.json',
     'round2_slidevqa_native_preflight': '../source_recovery_round2_2026-10-19/slidevqa/native_preflight/source_preflight.json',
     'round2_pfarena_synthetic_contract_checks': '../source_recovery_round2_2026-10-19/pfarena/native_preflight/synthetic_contract_checks/status.json',
+    'round2_pfarena_synthetic_csv_loading_checks': '../source_recovery_round2_2026-10-19/pfarena/native_preflight/synthetic_csv_loading_checks/status.json',
 }
 FIELDS = (
     'stage', 'state', 'status', 'role', 'pid', 'updated_at_pacific', 'finished_at_pacific',
@@ -93,7 +94,7 @@ FIELDS = (
     'source_ast_checks_passed', 'native_input_preparation_complete',
     'native_evaluation_readiness_certified',
     'strict_flag_is_not_full_ranking_delivery_validation',
-    'tests_passed', 'tests_run', 'tests_skipped', 'real_cases_checked',
+    'tests_passed', 'tests_run', 'tests_failed', 'tests_errored', 'tests_skipped', 'real_cases_checked',
     'synthetic_only', 'benchmark_dispatch_authorized',
 )
 

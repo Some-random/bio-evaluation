@@ -10,6 +10,7 @@
     ".local/source_recovery_round2_2026-10-19/pfarena/authenticated/completion_reconciliation.json": "7e0d0f53ee440a16b2c252195c82e53b81e1aaaa47bfe35209068b2bcf301097",
     ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/PUBLIC_SUMMARY.json": "80e887d178be8aebdd1bfc94862cb397643c4afe380af1c41f396f066e9be943",
     ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/synthetic_contract_checks/PUBLIC_SUMMARY.json": "789efa00b5a64c1722ba2946d04fbb0ed2f55a3698ff45a9b66be2cc6bd4246d",
+    ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/synthetic_csv_loading_checks/PUBLIC_SUMMARY.json": "4ac446ebc485dcecc3c6b12a894c7e708b65893dc5dc57af0d488575224b3346",
     ".local/source_recovery_round2_2026-10-19/pfarena/status.json": "e2766f04132c226cd66f15d335628ba84e41fb37bf61316bb3b05430e316e19c",
     ".local/source_recovery_round2_2026-10-19/rabd_imgt/PUBLIC_SUMMARY.json": "42515bac389276318ae3099774fecf9058a7260535427f757dda60acb890fefa",
     ".local/source_recovery_round2_2026-10-19/rabd_imgt/RECOVERY_SUMMARY.md": "061f7fc7e7b718aa6637f25a0dba1dbfecb7168f1605c2edbcc8132f13924a3b",
@@ -30,7 +31,7 @@
     ".local/source_recovery_round2_2026-10-19/structural/status.json": "061935506e94de8fd44c0be3c5b75ff3d8fb6565e2f881a9a1771209e746eac4"
   },
   "full_catalog_complete": false,
-  "generated_at_pacific": "2026-10-19T22:08:51.018066-07:00",
+  "generated_at_pacific": "2026-10-20T00:09:29.889731-07:00",
   "interpretation": "Reproduction code, live source renderings and reconstructed protocols are explicitly distinct from exact native paper artifacts.",
   "local_transport_validation": {
     "at_pacific": "2026-10-19T17:52:58.303806-07:00",
@@ -457,6 +458,260 @@
     "tests_skipped": 0,
     "training": false,
     "updated_at_pacific": "2026-10-19T22:07:18.694099-07:00",
+    "upstream_repository": "AMix-Bio/PFArena",
+    "upstream_revision": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+    "upstream_source_sha256": {
+      "llm/infer_api_mutation.py": "242a8a36503860ecd3ac9c2609516d07860b66be37cd7f9d7c983a400e9d6ad4",
+      "prompts/multi_mutant_ranking.py": "647afb6b6cc3138af1e127da581363bc8acccd21b2c2a132056a6d5b3590acc2",
+      "prompts/multi_mutant_ranking_anchor.py": "b9b42655d35e83f41f91342f58f08b356121e371eb89b9646aad3cf2d54b4405",
+      "prompts/multi_mutant_ranking_mutation.py": "4db6b6e95575cdb75317eab85761ecd093ae89a9658609cab1239759b07678e4",
+      "prompts/single_mutant_generation.py": "18457c36c4bfd565534783a98520343f02dff3dbed7636ba6c8e9b642266560f",
+      "router.py": "f1ce2e22dec4efdd6051706289c5e108b0f569c44bc71655c12844b91688ce18"
+    },
+    "upstream_tasks_checked": [
+      "T1",
+      "T2",
+      "T3",
+      "T4"
+    ]
+  },
+  "synthetic_csv_loading_checks": {
+    "benchmark_dispatch_authorized": false,
+    "exact_upstream_csv_functions_checked": [
+      "read_mutants",
+      "read_assay_contexts",
+      "relative_output_path",
+      "output_task_prefix",
+      "mutation_generation_relative_path",
+      "mutation_generation_output_path",
+      "read_candidate_assay_index",
+      "read_single_mutant_dms_scores",
+      "rank_assay_csv_path",
+      "discover_generation_tasks",
+      "discover_rank_tasks",
+      "discover_tasks"
+    ],
+    "finished_at_pacific": "2026-10-20T00:08:53.958729-07:00",
+    "held_review_retried": false,
+    "input_reference_invariance": [
+      {
+        "baseline_request_sha256": "019a3dc1c80d5e37f4d42e87475b36c8abc50157fd2206eddf3eb26af6511654",
+        "byte_invariance_passed": true,
+        "mutated_scorer_request_sha256": "019a3dc1c80d5e37f4d42e87475b36c8abc50157fd2206eddf3eb26af6511654",
+        "opened_paths_restricted_to_artificial_temp_directory": true,
+        "real_requests_sent": 0,
+        "removed_scorer_request_sha256": "019a3dc1c80d5e37f4d42e87475b36c8abc50157fd2206eddf3eb26af6511654",
+        "task_id": "T1",
+        "unindexed_scorer_csv_was_not_opened": true,
+        "upstream_functions_observed": [
+          "<genexpr>",
+          "build_prompt",
+          "context_from_assay_row",
+          "create_chat_completion",
+          "discover_generation_tasks",
+          "discover_tasks",
+          "mutation_generation_output_path",
+          "mutation_generation_relative_path",
+          "output_task_prefix"
+        ]
+      },
+      {
+        "baseline_request_sha256": "29ec6b62f7ea1fdb98bf6c766d56d98d09401f9092082a342f2cdf36b27cb42f",
+        "byte_invariance_passed": true,
+        "mutated_scorer_request_sha256": "29ec6b62f7ea1fdb98bf6c766d56d98d09401f9092082a342f2cdf36b27cb42f",
+        "opened_paths_restricted_to_artificial_temp_directory": true,
+        "real_requests_sent": 0,
+        "removed_scorer_request_sha256": "29ec6b62f7ea1fdb98bf6c766d56d98d09401f9092082a342f2cdf36b27cb42f",
+        "task_id": "T2",
+        "unindexed_scorer_csv_was_not_opened": true,
+        "upstream_functions_observed": [
+          "<genexpr>",
+          "build_prompt",
+          "context_from_assay_row",
+          "create_chat_completion",
+          "discover_rank_tasks",
+          "discover_tasks",
+          "output_task_prefix",
+          "rank_assay_csv_path",
+          "read_assay_contexts",
+          "read_candidate_assay_index",
+          "read_mutants",
+          "relative_output_path"
+        ]
+      },
+      {
+        "baseline_request_sha256": "2b00ad80c72a721338545c895acfa21c9f350d420b46af15e3bab2a71fd313b3",
+        "byte_invariance_passed": true,
+        "mutated_scorer_request_sha256": "2b00ad80c72a721338545c895acfa21c9f350d420b46af15e3bab2a71fd313b3",
+        "opened_paths_restricted_to_artificial_temp_directory": true,
+        "real_requests_sent": 0,
+        "removed_scorer_request_sha256": "2b00ad80c72a721338545c895acfa21c9f350d420b46af15e3bab2a71fd313b3",
+        "task_id": "T3",
+        "unindexed_scorer_csv_was_not_opened": true,
+        "upstream_functions_observed": [
+          "<genexpr>",
+          "build_prompt",
+          "context_from_assay_row",
+          "create_chat_completion",
+          "discover_rank_tasks",
+          "discover_tasks",
+          "output_task_prefix",
+          "rank_assay_csv_path",
+          "read_assay_contexts",
+          "read_candidate_assay_index",
+          "read_mutants",
+          "relative_output_path"
+        ]
+      },
+      {
+        "baseline_request_sha256": "d92250d9f512c386d834966e2ec3aa3a71aa2d38b37055d0421b14d813f06d56",
+        "byte_invariance_passed": true,
+        "mutated_scorer_request_sha256": "d92250d9f512c386d834966e2ec3aa3a71aa2d38b37055d0421b14d813f06d56",
+        "opened_paths_restricted_to_artificial_temp_directory": true,
+        "real_requests_sent": 0,
+        "removed_scorer_request_sha256": "d92250d9f512c386d834966e2ec3aa3a71aa2d38b37055d0421b14d813f06d56",
+        "task_id": "T4",
+        "unindexed_scorer_csv_was_not_opened": true,
+        "upstream_functions_observed": [
+          "<genexpr>",
+          "build_prompt",
+          "context_from_assay_row",
+          "create_chat_completion",
+          "discover_rank_tasks",
+          "discover_tasks",
+          "output_task_prefix",
+          "rank_assay_csv_path",
+          "read_assay_contexts",
+          "read_candidate_assay_index",
+          "read_mutants",
+          "read_single_mutant_dms_scores",
+          "relative_output_path"
+        ]
+      }
+    ],
+    "model_api_calls": 0,
+    "native_input_preparation_complete": false,
+    "native_parser_and_scorer_modified": false,
+    "native_resume_characterization": [
+      {
+        "delivery_or_scoring_success_established": false,
+        "finding": "All four native discovery paths skip any nonempty output file when force=False, including a header-only CSV.",
+        "scope": "Observed only on artificial files; no existing prediction or protocol was changed."
+      }
+    ],
+    "negative_check_scope": "Empty candidates, missing assay identity headers, absent T3 anchor fields and missing T4 component files fail through the native implementation. Native nonempty-output skipping is characterized without repair, retry or force changes.",
+    "network_calls": 0,
+    "new_downloads": false,
+    "new_inference_calls": 0,
+    "nonempty_output_is_not_prediction_completion": true,
+    "positive_control_scope": "Native T3 anchor and T4 supplied component scores remain legitimate visible conditioning. Altering those, candidate order or the supplied sequence changes request bytes. Multiple assay path-to-ID/context/candidate association is checked against an independent expected fixture mapping.",
+    "prior_24_check_suite_preserved": true,
+    "prior_suite_receipt_sha256": "789efa00b5a64c1722ba2946d04fbb0ed2f55a3698ff45a9b66be2cc6bd4246d",
+    "prior_suite_rerun": false,
+    "prior_suite_tests_passed": 24,
+    "real_cases_checked": 0,
+    "receipt_sha256": "878fb824bf27449fcd61e518d1ac92109adebdd1bee4340ab3cf38c6a94ff8a4",
+    "remaining_limitations": [
+      "Only selected source functions and artificial fixtures are tested; no real benchmark rows, real-case isolation/provenance, exact case review or full native preparation is certified.",
+      "No complete CLI/module startup, SDK or network transport, endpoint, tokenizer, output budget, biological correctness or scoring was run.",
+      "Upstream force=False skips nonempty existing outputs including header-only CSVs in these artificial tests; nonempty filenames are not proof of parsed or completed predictions. No actual archived run failure is inferred.",
+      "No native protocol, parser, scorer, resume behavior, retry policy or held-task authorization is changed."
+    ],
+    "scope": "Separate additional synthetic suite: exact hash-pinned upstream CSV discovery/loaders, native context and prompt construction, and actual create_chat_completion arguments through an in-memory recording client. Every CSV is an artificial temporary fixture; selected functions are extracted unchanged by AST while upstream API/CLI setup is not imported.",
+    "scorer_invariance_scope": "For T1-T4 with legitimate inputs frozen, mutating and removing artificial target scores, reference answers/explanations and prior-Qwen fields leaves canonical native request bytes unchanged. An unindexed scorer-only CSV is ignored. T1 does not open its scorer target table; T2-T4 read candidate IDs while ignoring target-score columns.",
+    "source_file_sha256": {
+      "scripts/pfarena_output_contract_checks.py": "b52dfb9ee73652ffd02c4f7e0622ec3a242200e7edd2ca34a20b0a1f8b0cc0fe",
+      "tests/test_pfarena_output_contract_checks.py": "a085b6a9b1ed9120a0c58bb2d4e4cbe5d160ac51da448fce297aab6f7eb8a9da",
+      "tests/test_pfarena_synthetic_csv_loading_checks.py": "fa6fa4fc0ad9fa1f9d147cae76f493a16fb7331cc65e67c2f2eceb511c242176"
+    },
+    "stage": "synthetic_csv_loading_checks_passed",
+    "started_at_pacific": "2026-10-20T00:08:53.333908-07:00",
+    "successful_subtests": 11,
+    "tests_errored": 0,
+    "tests_failed": 0,
+    "tests_passed": 16,
+    "tests_run": 16,
+    "tests_skipped": 0,
+    "training": false,
+    "updated_at_pacific": "2026-10-20T00:08:53.958729-07:00",
+    "upstream_hashes_match": true,
+    "upstream_line_evidence": {
+      "build_prompt": {
+        "end_line": 66,
+        "line": 50,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "context_from_assay_row": {
+        "end_line": 160,
+        "line": 151,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "create_chat_completion": {
+        "end_line": 80,
+        "line": 69,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "discover_generation_tasks": {
+        "end_line": 266,
+        "line": 236,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "discover_rank_tasks": {
+        "end_line": 313,
+        "line": 268,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "discover_tasks": {
+        "end_line": 320,
+        "line": 316,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "mutation_generation_output_path": {
+        "end_line": 206,
+        "line": 204,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "mutation_generation_relative_path": {
+        "end_line": 201,
+        "line": 197,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "output_task_prefix": {
+        "end_line": 194,
+        "line": 182,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "rank_assay_csv_path": {
+        "end_line": 233,
+        "line": 228,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "read_assay_contexts": {
+        "end_line": 174,
+        "line": 163,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "read_candidate_assay_index": {
+        "end_line": 215,
+        "line": 209,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "read_mutants": {
+        "end_line": 148,
+        "line": 142,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "read_single_mutant_dms_scores": {
+        "end_line": 225,
+        "line": 218,
+        "source": "llm/infer_api_mutation.py"
+      },
+      "relative_output_path": {
+        "end_line": 179,
+        "line": 177,
+        "source": "llm/infer_api_mutation.py"
+      }
+    },
     "upstream_repository": "AMix-Bio/PFArena",
     "upstream_revision": "e8f8b3c404d39783a43eaa96ae461f313730114d",
     "upstream_source_sha256": {

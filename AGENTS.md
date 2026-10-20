@@ -474,3 +474,10 @@ The separate T2-T4 ranking audit preserves native parsing/scoring and excludes
 open-generation T1. These checks validate no real cases, CSV loaders, endpoint
 or delivery budget and create no dispatch authorization. Keep actual native
 input preparation/readiness marked unfinished.
+
+At the midnight October 20 update, 16 additional synthetic CSV-loading checks
+passed through selected pinned native discovery/loaders and request builders.
+The prior 24-check suite remains sealed separately. Native resume skips any
+nonempty output CSV, including header-only files in artificial tests; do not
+count that as parsed prediction completion. No real-case preparation, runtime
+delivery, scoring, protocol change or dispatch approval follows from these checks.
