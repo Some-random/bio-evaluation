@@ -1,6 +1,6 @@
 # Follow-up recovery of evaluation inputs and tools
 
-Snapshot: 2026-10-19T20:06:35.472075-07:00 (America/Los_Angeles).
+Snapshot: 2026-10-19T22:05:30.312216-07:00 (America/Los_Angeles).
 
 The initial bulk transfers were not the end of source recovery. This follow-up checked author histories, supplements, public original-image copies and tool dependencies. No new benchmark inference, training or model forwards were run.
 
@@ -36,6 +36,16 @@ PFArena: T1 123, T2 74, T3 67, T4 29 = 293 task tables, with all pinned target p
 The direct LLM branch does not inherently require PLM or AlphaFold calls. The native strict scorer checks assay coverage and minimum top-k counts, but does not enforce a complete candidate permutation; missing ranking tails are assigned deterministic ranks. Strict scoring alone must not be described as full answer delivery. Native formulas remain unchanged, and no actual prediction coverage or score effect has been assessed.
 
 SlideVQA: verified 44300 ordered case-to-page links across 8000 page identities and 400 decks. An explicitly prospective condition using 7,700 originals plus 300 processed copies covers 2215/2215 questions with all 20 images, compared with 2,125 using only the first acquisition. Missing, duplicate, foreign and reordered page references are zero. This establishes input availability for that distinct encoding condition; it has not been adopted or dispatched and does not establish the paper's exact Ryze recipe.
+
+## Synthetic contract checks begun at 10 PM PDT
+
+A separate delivery-audit helper and 23 synthetic tests were added without modifying native prompts, parsers, scorers, original outputs or execution permissions. All 23 tests pass with no skipped native-builder checks in this environment. The tests execute exact hash-pinned upstream context, prompt and request builders through an in-memory recording client; no SDK setup or API transport is run.
+
+For all four PFArena tasks, changing or removing scorer-only target/prior-output fields leaves the captured model payload byte-identical. Positive controls show that candidate order and legitimate T3/T4 conditioning still affect the prompt. This validates these synthetic construction paths, not real file loading or case-level input isolation.
+
+The separate T2–T4 ranking audit detects missing, duplicated, unknown, malformed and non-list outputs without coercion, repair or reference access. T1 is open generation and is outside the full-permutation rule. A synthetic example confirms the native parser can accept a partial list while the new audit flags its missing candidates; native metric semantics remain unchanged.
+
+[Audit helper](../scripts/pfarena_output_contract_checks.py) · [Synthetic tests](../tests/test_pfarena_output_contract_checks.py). Actual case preparation, review, runtime delivery and scored predictions remain unverified by these checks.
 
 ## Source and publication boundaries
 

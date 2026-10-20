@@ -467,3 +467,10 @@ The prospective 7,700-original/300-processed image condition covers 2,215
 cases but remains unadopted. Native PFArena strict scoring does not enforce
 a full candidate-ranking permutation; report output completeness separately
 without changing native formulas. These preflights create no dispatch scope.
+
+At the 10 PM October 19 update, 23 synthetic-only PFArena contract checks
+passed using hash-pinned upstream pure builders and a recording client.
+The separate T2-T4 ranking audit preserves native parsing/scoring and excludes
+open-generation T1. These checks validate no real cases, CSV loaders, endpoint
+or delivery budget and create no dispatch authorization. Keep actual native
+input preparation/readiness marked unfinished.

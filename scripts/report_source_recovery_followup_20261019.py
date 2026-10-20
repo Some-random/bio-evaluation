@@ -86,6 +86,15 @@ def main():
             native_preflight[name] = receipt if name == 'pfarena' else {
                 k: v for k, v in receipt.items() if v is None or type(v) in (int, float, str, bool)}
     data['native_input_preflight'] = native_preflight
+    synthetic_path = BASE / 'pfarena/native_preflight/synthetic_contract_checks/PUBLIC_SUMMARY.json'
+    synthetic = read(synthetic_path)
+    if synthetic is not None:
+        assert synthetic['tests_run'] == synthetic['tests_passed']
+        assert not any(synthetic[key] for key in ('tests_failed', 'tests_errored', 'tests_skipped'))
+        for rel, expected in synthetic['source_file_sha256'].items():
+            assert hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() == expected
+        data['synthetic_contract_checks'] = synthetic
+        hashes[str(synthetic_path.relative_to(ROOT))] = hashlib.sha256(synthetic_path.read_bytes()).hexdigest()
     target = ROOT / 'reports/SOURCE_RECOVERY_FOLLOWUP_2026-10-19.json'
     target.write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
     structural = records['structural'].get('summary', {})
@@ -134,6 +143,13 @@ def main():
                   ' page identities and ' + str(vis['expected_deck_count']) + ' decks. An explicitly prospective condition using 7,700 originals plus 300 processed copies covers ' +
                   str(vis['prospective_questions_with_all20_images']) + '/' + str(vis['expected_question_count']) +
                   ' questions with all 20 images, compared with 2,125 using only the first acquisition. Missing, duplicate, foreign and reordered page references are zero. This establishes input availability for that distinct encoding condition; it has not been adopted or dispatched and does not establish the paper\'s exact Ryze recipe.', '']
+    if synthetic is not None:
+        test_count = str(synthetic['tests_passed'])
+        extra += ['## Synthetic contract checks begun at 10 PM PDT', '',
+                  'A separate delivery-audit helper and ' + test_count + ' synthetic tests were added without modifying native prompts, parsers, scorers, original outputs or execution permissions. All ' + test_count + ' tests pass with no skipped native-builder checks in this environment. The tests execute exact hash-pinned upstream context, prompt and request builders through an in-memory recording client; no SDK setup or API transport is run.', '',
+                  'For all four PFArena tasks, changing or removing scorer-only target/prior-output fields leaves the captured model payload byte-identical. Positive controls show that candidate order and legitimate T3/T4 conditioning still affect the prompt. This validates these synthetic construction paths, not real file loading or case-level input isolation.', '',
+                  'The separate T2–T4 ranking audit detects missing, duplicated, unknown, malformed and non-list outputs without coercion, repair or reference access. T1 is open generation and is outside the full-permutation rule. A synthetic example confirms the native parser can accept a partial list while the new audit flags its missing candidates; native metric semantics remain unchanged.', '',
+                  '[Audit helper](../scripts/pfarena_output_contract_checks.py) · [Synthetic tests](../tests/test_pfarena_output_contract_checks.py). Actual case preparation, review, runtime delivery and scored predictions remain unverified by these checks.', '']
     boundary = lines.index('## Source and publication boundaries')
     lines[boundary:boundary] = extra
     (ROOT / 'reports/SOURCE_RECOVERY_FOLLOWUP_2026-10-19.md').write_text('\n'.join(lines) + '\n')
