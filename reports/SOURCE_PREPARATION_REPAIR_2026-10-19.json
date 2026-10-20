@@ -1,0 +1,23 @@
+{
+  "created_at_pacific": "2026-10-19T17:41:13.434248-07:00",
+  "inference_calls": 0,
+  "original_source_unchanged": true,
+  "patch_sha256": "812a70b045b04bb9319eec793428a182dfc22be8d03f728e12d268c06f010992",
+  "production_data_reorganized": false,
+  "proposed_source_sha256": "1ec77171391acea35f184ae23b4677cb8f82d43b257ca57baddc648526d02ad8",
+  "public_patch_path": "scripts/source_preparation/ryze_arxiv_fanout_20261019.patch",
+  "repository": "https://github.com/Chivier/Ryze-Data",
+  "revision": "ea5c0de8fbb495abaab882f395f8e84d7e056019",
+  "scope": "Fan out identical image OCR to every question already mapped to that image. No source question, choice, reference, OCR content or sampling change.",
+  "source_path": "scripts/reorganize_glm_ocr.py",
+  "source_sha256": "7b114512872df52c595f1624a9282a6df945d09a011dfd60cf403a8cb80a9494",
+  "status": "isolated_source_preparation_patch_prepared_not_applied_to_original",
+  "synthetic_checks": {
+    "dry_run_writes_no_files": true,
+    "existing_outputs_preserved_on_repeat": true,
+    "old_created": 1,
+    "proposed_created": 2,
+    "same_ocr_bytes_for_both": true
+  },
+  "table3_comparability_certified": false
+}

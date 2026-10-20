@@ -429,3 +429,34 @@ name is unchanged. It now reports at even-numbered Pacific hours, with the next
 scheduled message at 6 PM PDT on October 19. This supersedes earlier hourly
 reporting instructions, does not stop ongoing work, and does not change any
 inference authorization, held cases or benchmark protocols.
+
+The user then explicitly requested continuing recovery of PFArena, missing
+SlideVQA images and paper-specific artifacts. Further source recovery is active
+under `.local/source_recovery_round2_2026-10-19/`; the existing source observer
+and two-hour progress schedule read its aggregate receipts. Check current
+workers before duplicating downloads. This authorizes ordinary author-release,
+history, supplement and public-reproduction searches and downloads, including
+missing evaluation-tool vendor assets; it does not authorize gate bypass,
+accepting access terms for the user, new inference, training, arbitrary native
+artifact substitutes, or retrying interrupted biological reviews. A 401 from
+PFArena is an external access requirement, while available source/code and
+other tasks should continue independently. Preserve the original acquisition
+receipts and distinguish exact original images from current author renderings.
+
+The follow-up recovery acquired all five missing Proteo-R1 vendor dependencies
+with full publisher SHA256 or multipart-ETag verification, plus 83 source/fixture
+files. Missing SlideVQA pages now have processed copies from a public academic
+corpus; preserve their distinct encoding condition and the original acquisition.
+The user enabled PFArena dataset access and supplied an existing private token
+file for authenticated acquisition. Read that credential only privately at
+runtime; do not copy it into this repository, logs or public artifacts. Current
+authenticated corpus progress belongs under the round-two PFArena receipts.
+This resolves an access prerequisite, not any inference/input-review hold.
+
+Authenticated PFArena acquisition is now terminal: all 772 pinned dataset
+files (1,825,005,675 bytes) passed publisher digests; previous 401 evidence is
+preserved. All 300 missing SlideVQA page identities have decoded processed
+copies, with image-encoding provenance kept separate. Read the round-two
+completion receipts and follow-up report before treating a download as pending.
+Exact native protocol/input compatibility and historical-byte identity remain
+separate checks; no new inference was performed by this recovery.

@@ -1,0 +1,67 @@
+--- a/scripts/reorganize_glm_ocr.py
++++ b/scripts/reorganize_glm_ocr.py
+@@ -44,12 +44,12 @@
+     mapping = json.loads(mapping_path.read_text(encoding="utf-8"))
+ 
+     # Build reverse map: arxiv_stem -> sample_id
+-    stem_to_sample: dict[str, str] = {}
++    stem_to_samples: dict[str, list[str]] = defaultdict(list)
+     for sample_id, entry in mapping.items():
+         original_image = entry.get("original_image", "")
+         stem = Path(original_image).stem  # e.g. "0904.0709_0"
+         if stem:
+-            stem_to_sample[stem] = sample_id
++            stem_to_samples[stem].append(sample_id)
+ 
+     stats = {
+         "created": 0,
+@@ -66,30 +66,29 @@
+ 
+     for src_path in source_files:
+         stem = src_path.stem
+-        if stem not in stem_to_sample:
++        if stem not in stem_to_samples:
+             stats["skipped_no_mapping"] += 1
+             continue
+ 
+-        sample_id = stem_to_sample[stem]
+-        target_dir = output_dir / sample_id
+-        target_file = target_dir / f"{sample_id}.md"
+-
+-        if target_file.exists():
+-            stats["skipped_exists"] += 1
+-            continue
+-
+-        if not dry_run:
+-            target_dir.mkdir(parents=True, exist_ok=True)
+-            try:
+-                content = src_path.read_text(encoding="utf-8")
+-            except UnicodeDecodeError:
+-                logger.warning("Cannot read %s as text, skipping", src_path.name)
+-                stats["errors"] += 1
++        for sample_id in stem_to_samples[stem]:
++            target_dir = output_dir / sample_id
++            target_file = target_dir / f"{sample_id}.md"
++
++            if target_file.exists():
++                stats["skipped_exists"] += 1
+                 continue
+-            target_file.write_text(content, encoding="utf-8")
+-
+-        stats["created"] += 1
+-
++
++            if not dry_run:
++                target_dir.mkdir(parents=True, exist_ok=True)
++                try:
++                    content = src_path.read_text(encoding="utf-8")
++                except UnicodeDecodeError:
++                    logger.warning("Cannot read %s as text, skipping", src_path.name)
++                    stats["errors"] += 1
++                    continue
++                target_file.write_text(content, encoding="utf-8")
++
++            stats["created"] += 1
+     return stats
+ 
+ 

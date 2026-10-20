@@ -31,6 +31,12 @@ SOURCES = {
     'slidevqa_process': 'vision/slidevqa/spool_watcher_status.json',
     'slidevqa_terminal': 'vision/slidevqa/spooled_archive_receipt.json',
     'source_publication_watcher': 'publication_watcher/status.json',
+    'round2_pfarena': '../source_recovery_round2_2026-10-19/pfarena/status.json',
+    'round2_slidevqa': '../source_recovery_round2_2026-10-19/slidevqa/status.json',
+    'round2_paper_artifacts': '../source_recovery_round2_2026-10-19/paper_artifacts/status.json',
+    'round2_structural_assets': '../source_recovery_round2_2026-10-19/structural/manifest.json',
+    'round2_rabd_imgt': '../source_recovery_round2_2026-10-19/rabd_imgt/status.json',
+    'round2_ryze_protocol': '../source_recovery_round2_2026-10-19/ryze_protocol/status.json',
 }
 FIELDS = (
     'stage', 'state', 'status', 'role', 'pid', 'updated_at_pacific', 'finished_at_pacific',
@@ -51,6 +57,26 @@ FIELDS = (
     'questions_with_all20_verified_images', 'observed_outcomes',
     'verified_image_hashes_revalidated', 'archive_bytes', 'commit_sha',
     'remote_bytes_verified',
+    'recovered_images', 'remaining_missing_images', 'verified_vendor_chunk_bytes',
+    'planned_vendor_bytes', 'planned_vendor_files', 'all_selected_files_verified',
+    'source_files_verified', 'failed_source_count', 'hf_access_status',
+    'current_source_rendering_images', 'original_name_native1024_images',
+    'historical_byte_verified_images', 'unrecovered_native1024_images',
+    'academic_alternate_rendering_images',
+    'academic_alternate_rendering_additional_page_identities',
+    'docrag_verified_images', 'docrag_failed_images',
+    'docrag_original_name_native1024_images',
+    'processed_native_dimension1024_images', 'native_resolution_page_identities_available',
+    'unrecovered_native1024_definition', 'recovered_images_definition',
+    'official_cif_structure_count', 'direct_legacy_chain_compatible_count',
+    'split_chain_cases_requiring_mapping_review',
+    'planned_missing_images', 'mixed_source_recovery_definition',
+    'planned_structures', 'verified_structures',
+    'native_mask_and_test_roster_definitions_recovered',
+    'exact_historical_numbered_structure_bytes_verified', 'exact_native_table3_ready',
+    'authenticated_dataset_complete', 'authenticated_dataset_verified_files',
+    'authenticated_dataset_planned_files', 'authenticated_dataset_verified_bytes',
+    'authenticated_dataset_failed_files',
 )
 
 
@@ -66,7 +92,9 @@ def snapshot():
               'training_by_observer': False, 'workers': [],
               'downloaded_assets_are_not_completed_benchmark_scores': True}
     for name, rel in SOURCES.items():
-        path = BASE / rel
+        path = (BASE / rel).resolve()
+        if not path.is_relative_to(ROOT):
+            raise ValueError('Acquisition receipt outside the project')
         item = {'name': name, 'source_path': str(path.relative_to(ROOT))}
         try:
             raw = path.read_bytes()
@@ -83,10 +111,14 @@ def snapshot():
                 done = [a for a in assets if a.get('state', a.get('status', '')).startswith('downloaded')]
                 item['summary']['observed_verified_file_count'] = len(done)
                 item['summary']['observed_verified_bytes'] = sum(a.get('bytes', 0) for a in done)
-            if name == 'evaluator_transfers':
+            if name in ('evaluator_transfers', 'round2_structural_assets'):
                 item['assets'] = [{key: a[key] for key in ('id', 'state', 'bytes', 'actual_bytes',
-                    'observed_transferred_bytes', 'recent_measured_bytes_per_second', 'publisher_digest_verified') if key in a}
+                    'observed_transferred_bytes', 'recent_measured_bytes_per_second', 'publisher_digest_verified',
+                    'expected_bytes', 'verified_chunk_bytes') if key in a}
                     for a in data.get('assets', [])]
+                if name == 'round2_structural_assets':
+                    item['summary']['verified_vendor_chunk_bytes'] = sum(a.get('verified_chunk_bytes', 0)
+                        for a in data.get('assets', []))
             pid = data.get('pid')
             if type(pid) is int:
                 item['process_exists'] = (Path('/proc') / str(pid)).exists()

@@ -1,0 +1,191 @@
+{
+  "evidence_receipt_sha256": {
+    ".local/source_recovery_round2_2026-10-19/paper_artifacts/PUBLIC_SUMMARY.json": "c548f672069a94f09354c7ef1e24098d8f64cd838a756e746b5384fd5849cde4",
+    ".local/source_recovery_round2_2026-10-19/paper_artifacts/PUBLIC_SUMMARY.md": "33317c1f991f304d5b283e01da8da32b702194b8431a6765ffc1584eaae1d7ac",
+    ".local/source_recovery_round2_2026-10-19/paper_artifacts/status.json": "c548f672069a94f09354c7ef1e24098d8f64cd838a756e746b5384fd5849cde4",
+    ".local/source_recovery_round2_2026-10-19/pfarena/PUBLIC_SUMMARY.json": "e2766f04132c226cd66f15d335628ba84e41fb37bf61316bb3b05430e316e19c",
+    ".local/source_recovery_round2_2026-10-19/pfarena/PUBLIC_SUMMARY.md": "4a66e8ef5f76675125c5350778d746279d04e9e162bb9b36cadcb73d8b67c6ad",
+    ".local/source_recovery_round2_2026-10-19/pfarena/RECOVERY_SUMMARY.md": "8b16a1bd59561d666f4e1351335e5e3c7afe6258600144755fbede9f5e3e8079",
+    ".local/source_recovery_round2_2026-10-19/pfarena/authenticated/completion.json": "fdcdc8741b1d4b3a4ade830574741f8a1dc46d044a8531c3bd85552c5eec9b18",
+    ".local/source_recovery_round2_2026-10-19/pfarena/authenticated/completion_reconciliation.json": "7e0d0f53ee440a16b2c252195c82e53b81e1aaaa47bfe35209068b2bcf301097",
+    ".local/source_recovery_round2_2026-10-19/pfarena/status.json": "e2766f04132c226cd66f15d335628ba84e41fb37bf61316bb3b05430e316e19c",
+    ".local/source_recovery_round2_2026-10-19/rabd_imgt/PUBLIC_SUMMARY.json": "42515bac389276318ae3099774fecf9058a7260535427f757dda60acb890fefa",
+    ".local/source_recovery_round2_2026-10-19/rabd_imgt/RECOVERY_SUMMARY.md": "061f7fc7e7b718aa6637f25a0dba1dbfecb7168f1605c2edbcc8132f13924a3b",
+    ".local/source_recovery_round2_2026-10-19/rabd_imgt/completion.json": "42515bac389276318ae3099774fecf9058a7260535427f757dda60acb890fefa",
+    ".local/source_recovery_round2_2026-10-19/rabd_imgt/status.json": "42515bac389276318ae3099774fecf9058a7260535427f757dda60acb890fefa",
+    ".local/source_recovery_round2_2026-10-19/ryze_protocol/PUBLIC_SUMMARY.json": "e66212ea3c69a30663b9c35cff4aa8865cb6749189a5ca84ee9fb36bd40ddeba",
+    ".local/source_recovery_round2_2026-10-19/ryze_protocol/PUBLIC_SUMMARY.md": "e6356607ea8418e1507e2920742c6ff785df3587a9375a6ccfc88a9636f310a6",
+    ".local/source_recovery_round2_2026-10-19/ryze_protocol/glm_arxiv_fanout_patch_receipt.json": "56e24acad5ab5eeafffe94b9830b4efd48f1b0d3359cef47ff6124d7e2e6ee15",
+    ".local/source_recovery_round2_2026-10-19/ryze_protocol/source_protocol_contract.json": "88c3ba1c42ffe8e3ed986e103528797c150cb1f1ba99922747f13248d883c974",
+    ".local/source_recovery_round2_2026-10-19/ryze_protocol/status.json": "e66212ea3c69a30663b9c35cff4aa8865cb6749189a5ca84ee9fb36bd40ddeba",
+    ".local/source_recovery_round2_2026-10-19/slidevqa/PUBLIC_SUMMARY.json": "d781b55028cd993f74916fa282c94446a479161c8ee09c3452ea9fa7218a6e66",
+    ".local/source_recovery_round2_2026-10-19/slidevqa/PUBLIC_SUMMARY.md": "90e30b93eb51dd25b1ccc3a97fd03ae7891cb21058b7369376c751a6b97e6b32",
+    ".local/source_recovery_round2_2026-10-19/slidevqa/completion.json": "0798b262e42119fb2215dc0cd41992cd680309ad4949d1f6614f9294347928c2",
+    ".local/source_recovery_round2_2026-10-19/slidevqa/status.json": "39e8aca99e340f1491e10a4ed1c8dc80bbb4a48a6bb8abdb61e2ede13cd04e03",
+    ".local/source_recovery_round2_2026-10-19/structural/completion.json": "308bf6672b8a05832031960fde5b836c5ebb505c5dbe2adbb19afc23a9699e2a",
+    ".local/source_recovery_round2_2026-10-19/structural/demo_fixture_validation.json": "6c7159bda64d42f7f0d81539cf5de705d1da3815995b5e9a310723cf88519a74",
+    ".local/source_recovery_round2_2026-10-19/structural/status.json": "061935506e94de8fd44c0be3c5b75ff3d8fb6565e2f881a9a1771209e746eac4"
+  },
+  "full_catalog_complete": false,
+  "generated_at_pacific": "2026-10-19T18:04:18.652416-07:00",
+  "interpretation": "Reproduction code, live source renderings and reconstructed protocols are explicitly distinct from exact native paper artifacts.",
+  "local_transport_validation": {
+    "at_pacific": "2026-10-19T17:52:58.303806-07:00",
+    "command": "python3 -m unittest discover -s tests -p test_recover_structural_assets_20261019.py -v",
+    "model_calls": 0,
+    "network_calls": 0,
+    "scope": "Range identity, response lengths, on-disk partial revalidation and completed-file reuse",
+    "source_sha256": {
+      "scripts/recover_structural_assets_20261019.py": "e64c2e1a9cd0ccf3ce9555e05982c45d7ddc2e46cb06183b23bbc8e1bd6960b9",
+      "tests/test_recover_structural_assets_20261019.py": "8b9e49a9516f3202ac937eaf5293aa6a2fbd20a692d487402d68dd1b6d3e1c84"
+    },
+    "status": "passed",
+    "tests": 7,
+    "training": false
+  },
+  "model_weights_published": false,
+  "new_inference_calls": 0,
+  "new_training": false,
+  "restricted_slidevqa_content_published": false,
+  "role": "aggregate_source_recovery_evidence_not_benchmark_results",
+  "verified_vendor_assets": [
+    {
+      "bytes": 427767290,
+      "id": "protenix_ccd_cif",
+      "publisher_multipart_etag_verified": true,
+      "publisher_sha256_verified": false,
+      "sha256": "7240b17369ccfbbcc86e2d02dc8c9db59f46c32e0420f58889c6c121c60bfef0",
+      "state": "downloaded_verified"
+    },
+    {
+      "bytes": 125903802,
+      "id": "protenix_ccd_rdkit",
+      "publisher_multipart_etag_verified": true,
+      "publisher_sha256_verified": false,
+      "sha256": "2d6caced2d26c62015115a1d0a50f4106755a300e0c2a2d2b5c101c9038dcbcd",
+      "state": "downloaded_verified"
+    },
+    {
+      "bytes": 11356246722,
+      "id": "esm2_ism",
+      "publisher_multipart_etag_verified": true,
+      "publisher_sha256_verified": false,
+      "sha256": "6dfa8d55fff3d25662b7bf4cbe536aa9cb6c9dd09c4d6ea8a4e8a11c8fb8779a",
+      "state": "downloaded_verified"
+    },
+    {
+      "bytes": 541640990,
+      "id": "protenix_mini",
+      "publisher_multipart_etag_verified": true,
+      "publisher_sha256_verified": false,
+      "sha256": "a90d3040cdb2c84430878ea724ad817698ee68cc8b12f802a91dac3b081521a2",
+      "state": "downloaded_verified"
+    },
+    {
+      "bytes": 345859128,
+      "id": "boltz_ccd",
+      "publisher_multipart_etag_verified": false,
+      "publisher_sha256_verified": true,
+      "sha256": "2d3b2f03a3c5665944adba51e33263511e51b21c9cd05d902f9c4b7c1e58d2f4",
+      "state": "downloaded_verified"
+    }
+  ],
+  "workers": {
+    "paper_artifacts": {
+      "available": true,
+      "source_path": ".local/source_recovery_round2_2026-10-19/paper_artifacts/status.json",
+      "summary": {
+        "downloaded_bytes": 22776793,
+        "downloaded_files": 75,
+        "new_inference_calls": 0,
+        "stage": "expanded_source_recovery_terminal_exact_artifact_gaps_remain",
+        "training": false,
+        "updated_at_pacific": "2026-10-19T17:34:11.258197-07:00"
+      }
+    },
+    "pfarena": {
+      "available": true,
+      "source_path": ".local/source_recovery_round2_2026-10-19/pfarena/status.json",
+      "summary": {
+        "authenticated_dataset_complete": true,
+        "authenticated_dataset_failed_files": 0,
+        "authenticated_dataset_planned_files": 772,
+        "authenticated_dataset_verified_bytes": 1825005675,
+        "authenticated_dataset_verified_files": 772,
+        "downloaded_bytes": 1829434728,
+        "downloaded_files": 1019,
+        "hf_access_status": 200,
+        "new_inference_calls": 0,
+        "stage": "authenticated_pinned_dataset_complete_verified",
+        "training": false,
+        "updated_at_pacific": "2026-10-19T17:55:42.666628-07:00"
+      }
+    },
+    "rabd_imgt": {
+      "available": true,
+      "source_path": ".local/source_recovery_round2_2026-10-19/rabd_imgt/status.json",
+      "summary": {
+        "downloaded_bytes": 28098087,
+        "downloaded_files": 122,
+        "new_inference_calls": 0,
+        "stage": "source_recovery_terminal_native_identity_qualifications_preserved",
+        "training": false,
+        "updated_at_pacific": "2026-10-19T18:02:05.441927-07:00"
+      }
+    },
+    "ryze_protocol": {
+      "available": true,
+      "source_path": ".local/source_recovery_round2_2026-10-19/ryze_protocol/status.json",
+      "summary": {
+        "downloaded_bytes": 3289824,
+        "downloaded_files": 26,
+        "exact_native_table3_ready": false,
+        "new_inference_calls": 0,
+        "stage": "source_protocol_recovery_terminal_precise_native_gaps_and_preparation_fix_recorded",
+        "training": false,
+        "updated_at_pacific": "2026-10-19T17:42:36.008196-07:00"
+      }
+    },
+    "slidevqa": {
+      "available": true,
+      "source_path": ".local/source_recovery_round2_2026-10-19/slidevqa/status.json",
+      "summary": {
+        "academic_alternate_rendering_images": 309,
+        "current_source_rendering_images": 40,
+        "failed_source_count": 16,
+        "historical_byte_verified_images": 0,
+        "model_calls": 0,
+        "native_resolution_page_identities_available": 300,
+        "original_name_native1024_images": 7,
+        "planned_missing_images": 300,
+        "processed_native_dimension1024_images": 300,
+        "recovered_images": 300,
+        "recovered_images_definition": "Distinct originally missing original deck/page identities with at least one decoded source copy. This is not a count of historically identical image bytes or benchmark-ready cases.",
+        "remaining_missing_images": 0,
+        "stage": "terminal_verified_source_copies_native_original_identity_qualified",
+        "unrecovered_native1024_definition": "293 pages lack a preservation-corroborated original-name copy. All300 have processed1024 copies; this field is not a remaining source-page download count.",
+        "unrecovered_native1024_images": 293,
+        "updated_at_pacific": "2026-10-19T17:53:58.362464-07:00"
+      }
+    },
+    "structural": {
+      "available": true,
+      "source_path": ".local/source_recovery_round2_2026-10-19/structural/status.json",
+      "summary": {
+        "all_selected_files_verified": true,
+        "downloaded_bytes": 12827882938,
+        "downloaded_files": 88,
+        "finished_at_pacific": "2026-10-19T17:52:31.840246-07:00",
+        "inference_calls": 0,
+        "pid": 2720797,
+        "planned_source_files": 83,
+        "planned_vendor_bytes": 12797417932,
+        "planned_vendor_files": 5,
+        "stage": "acquisition_terminal",
+        "training": false,
+        "updated_at_pacific": "2026-10-19T17:52:31.840320-07:00",
+        "verified_vendor_chunk_bytes": 12797417932
+      }
+    }
+  }
+}
