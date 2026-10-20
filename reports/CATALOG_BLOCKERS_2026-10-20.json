@@ -208,29 +208,34 @@
       ]
     },
     "P37": {
-      "why_not_done": "The matching OmegaFold2 weights are downloaded and 21 contract tests passed. We have not assembled or validated a compatible folding runtime: the inspected Python 3.12 environment lacks torch, Bio and omegafold. Exact native sampling/clustering remains unrecovered, but a labelled released-code adaptation is available.",
+      "why_not_done": "The isolated Python 3.10/Torch 1.12 runtime, source hashes, 21 contract tests, CPU checkpoint deserialization and all 3,252 tensor-schema checks now pass. Combined learned-weight binding, an actual folding delivery check, and the reviewed frozen benchmark handoff are still unperformed. Exact native sampling/clustering remains unrecovered.",
       "blocker_owner": "Agent",
-      "finish_requirement": "Install or reuse an isolated compatible existing-model runtime, verify checkpoint loading and an independent delivery gate, then run and score the declared adaptation while preserving differences from native sampling and clustering.",
-      "next_deliverable": "A validated isolated folding environment and synthetic checkpoint/interface test; no additional user permission is needed for that preparation.",
+      "finish_requirement": "Complete strict combined weight binding with checked memory headroom, validate actual folding delivery and permissible scope, then execute and score the frozen released-code adaptation while preserving native-protocol differences.",
+      "next_deliverable": "A strict combined model/weight-load receipt and an independent folding-delivery validation in an adequately sized isolated runtime.",
       "needs_user_decision": false,
       "source_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P37/status.json",
         ".local/catalog_execution_2026-10-20/tasks/P37/runtime_preflight.json",
         ".local/catalog_execution_2026-10-20/tasks/P37/readiness.json",
-        ".local/catalog_execution_2026-10-20/tasks/P37/release2_acquisition_status.json"
-      ]
+        ".local/catalog_execution_2026-10-20/tasks/P37/release2_acquisition_status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P37/runtime_preparation/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P37/runtime_preparation/cpu_validation.json"
+      ],
+      "observed_at_pacific": "2026-10-20T14:12:31.732426-07:00"
     },
     "P38": {
-      "why_not_done": "The NetSolP files and separate thermal head are available, but the NetSolP runtime input/output check has not been done. The publisher-available ProtT5 thermal encoder (11,275,562,724 bytes, about 11.28 GB) has not been downloaded. Exact original SFM property heads/reference cohort are unavailable in inspected releases; the prepared proxy conditions are different adaptations.",
+      "why_not_done": "All proxy evaluator assets are now acquired, including the complete ProtT5 encoder verified against its original publisher SHA at 14:10:53 PDT. Neither proxy evaluator has completed its actual synthetic input/output validation, and the generation/development handoffs remain unprepared. These proxy conditions are distinct from the unavailable original SFM condition.",
       "blocker_owner": "Agent",
-      "finish_requirement": "Acquire the available encoder, validate both existing-evaluator runtimes, freeze the separate proxy generation/delivery conditions and execute only their reviewed scopes; no replacement head training and no native-oracle equivalence claim.",
-      "next_deliverable": "A passing synthetic NetSolP runtime check and a verified download of the already identified ProtT5 encoder.",
+      "finish_requirement": "Assemble and validate the isolated NetSolP and thermal encoder/head runtimes, freeze separate generation/delivery conditions, review their permissible scope, pass actual delivery gates and run the complete declared proxy evaluations without new head training.",
+      "next_deliverable": "Working isolated NetSolP and thermal evaluator backends with recorded synthetic input/output validation.",
       "needs_user_decision": false,
       "source_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P38/readiness.json",
         ".local/catalog_execution_2026-10-20/tasks/P38/thermal_encoder_acquisition_plan.json",
-        ".local/catalog_execution_2026-10-20/tasks/P38/exact_condition_availability.json"
-      ]
+        ".local/catalog_execution_2026-10-20/tasks/P38/exact_condition_availability.json",
+        ".local/catalog_execution_2026-10-20/tasks/P38/thermal_encoder_acquisition/completion.json"
+      ],
+      "observed_at_pacific": "2026-10-20T14:12:31.732426-07:00"
     },
     "P39": {
       "why_not_done": "Structural dependencies are acquired, but we have not written a prospective case-study configuration or a complex-predictor worker. The exact author cohort, selection procedure and scoring contract are unreleased, so there is no source-defined full-cohort binding accuracy to reproduce.",
@@ -305,5 +310,6 @@
         ".local/catalog_execution_2026-10-20/tasks/V07/materialization_resume_20261020_v1/completion.json"
       ]
     }
-  }
+  },
+  "updated_at_pacific": "2026-10-20T14:12:31.732426-07:00"
 }

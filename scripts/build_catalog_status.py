@@ -433,7 +433,7 @@ def markdown(data):
     def esc(value):
         return str(value).replace("|", "\\|").replace("\n", " ")
 
-    lines = ["# Full retained catalog status", "", f"Observed **{data['generated_at_pacific']}** (America/Los_Angeles). Exactly **57 settings**, one row each.", "", "Done means a defined score for the declared evaluated condition. It does not imply matched-paper replication, complete original-paper scope, or good performance. Saved responses alone do not count as done.", "", "| Status | Count |", "|---|---:|"]
+    lines = ["# Full retained catalog status", "", f"Observed **{data['generated_at_pacific']}** (America/Los_Angeles). Exactly **57 settings**, one row each.", "", "Done means a defined score for the declared evaluated condition. It does not imply matched-paper replication, complete original-paper scope, or good performance. Saved responses alone do not count as done.", "", "[Qwen/GPT results and exact remaining-work checklists](RESULTS_AND_REMAINING_WORK.md).", "", "| Status | Count |", "|---|---:|"]
     for key, label in CATEGORIES.items():
         lines.append(f"| {label} | {data['counts'][key]} |")
     breakdown = data["agent_work_breakdown"]
