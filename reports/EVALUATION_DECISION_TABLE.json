@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-20T13:34:41.721473-07:00",
+  "generated_at_pacific": "2026-10-21T00:48:55.633957-07:00",
   "score_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
   "catalog_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
-  "new_generation_score_snapshot_at": "2026-10-20T13:34:29.492465-07:00",
+  "new_generation_score_snapshot_at": "2026-10-21T00:48:07.968956-07:00",
   "retained_setting_count": 57,
   "retained_setting_ids": [
     "B01",
@@ -73,7 +73,7 @@
     "P28",
     "P29"
   ],
-  "row_count": 71,
+  "row_count": 72,
   "rows": [
     {
       "task_id": "P01",
@@ -776,6 +776,59 @@
       "source_protocol_url": "https://github.com/DeepGraphLearning/PEER_Benchmark",
       "case_scope": "full_frozen_reviewed_case_set",
       "native_metrics_recomputed": false
+    },
+    {
+      "task_id": "P12",
+      "task": "Enzyme Commission labels — DeepFRI split",
+      "category": "Protein function, annotations and descriptions",
+      "dataset": "Enzyme Commission labels — DeepFRI split",
+      "condition": "Native declared score; new complete generation; nonthinking dense ordered three-decimal confidence vector, 16K budget",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1",
+      "result_type": "new_complete_generation",
+      "protocol_variant": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
+      "input_protocol": "Protein sequence → enzyme-label confidence scores; zero-shot",
+      "output_budget": "16,384",
+      "usable_answer_rate": {
+        "value": 1.0,
+        "display": "1,919/1,919 (100.0%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
+      },
+      "native_score": {
+        "auprc@micro": 0.004585898015648127,
+        "f1_max": 0.012619534507393837
+      },
+      "diagnostic_score": null,
+      "score_display": "auprc@micro 0.0046; f1_max 0.0126",
+      "evidence": {
+        "category": "Measured, new delivery condition",
+        "detail": "New nonthinking constrained dense 3-decimal confidence adaptation. Full released FASTA and fixed source-order EC vocabulary retained. Does not reproduce trained DeepFRI/ProtST heads, native first-550 PDB-modeled inputs, or unpublished author-retained IDs. EC descriptions are frozen ExPASy 02-Sep-2026 display names; probability calibration and mechanistic explanation are not validated. Historical sparse reasoning runs remain separate. Historical generations and scores remain separate."
+      },
+      "counts": {
+        "planned": 1919,
+        "completed": 1919,
+        "parsed": 1919,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
+      "finish_reasons": {
+        "length": 0,
+        "stop": 1919
+      },
+      "source_scores": "results/runs/qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1/scores.json",
+      "source_score_sha256": "03a01681d1ef58037a814c0b16edbf9c6632f03fc3d1f37671b020a538138852",
+      "source_row_category": "completed_rows",
+      "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
+      "case_scope": "Exact 1,919 released full FASTA test95 cases; independent official validation delivery panel",
+      "native_metrics_recomputed": false,
+      "prediction_lock_sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
+      "config_sha256": "fa96826c27befbf9889ac378696f9184cbe6754e05385df7e3739e3614b72a89",
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "trajectory_archive": {
+        "path": "results/trajectory_archives/qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1.tar.gz",
+        "sha256": "7efc5c56483a4539971796ba9d3422cafcdd56cbe2b20e3cc43b750b9bb1060f"
+      }
     },
     {
       "task_id": "P12",
@@ -3395,7 +3448,7 @@
     "reports/P36_WHITESPACE_DIAGNOSTIC_2026-10-19.json": "aba51168710d868a45fb624d3ba0d6963a2fefe276dd323da7e645e845e2a491",
     "reports/P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.json": "d90d53cb0882b6e181734037b017f67c6253503ad32e719b570e945ea88c0e4d",
     "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json": "32e201698766dc1ec75b734d766cb4cffb42a062abfcfe8f265d0e5990797572",
-    "reports/CATALOG_NEW_SCORES_2026-10-20.json": "6c6a316d82eeb0397c6f414090e2978eb568444a5a641e58e3e8461b018b50fe"
+    "reports/CATALOG_NEW_SCORES_2026-10-20.json": "e756b8e926ee421df2c33f1b89e24c769fde2c362b973be95f2cbc61665795bd"
   },
   "recovered_subset_setting_ids": [
     "P36"

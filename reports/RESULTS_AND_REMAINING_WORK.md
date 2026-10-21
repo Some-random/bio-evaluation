@@ -1,10 +1,10 @@
 # Biological Evaluation Results
 
-*October 20, 2026*
+*October 21, 2026*
 
-[Track the 15 preparation tasks](ENGINEERING_PROGRESS.md)
+[Track preparation and runtime progress](ENGINEERING_PROGRESS.md)
 
-Results are available for **28 of 57 evaluation settings**. The table also includes the **15 evaluations in preparation**, release years, real example questions, and published model results.
+Results are available for **29 of 57 evaluation settings**. The table also lists evaluations in preparation, release years, real example questions, and published model results.
 
 Evaluation names identify the benchmark or source paper and the task.
 
@@ -30,6 +30,7 @@ Each example links to its complete available prompt, choices and sequence or vis
 | NatureLM: Stability classification† | [2025](https://arxiv.org/abs/2502.07527) | Derived from protein stability predictions; no separate question was dispatched.<br>[Available input and missing context](questions/P09.md) | Accuracy | 53.29% | — | — | [NatureLM (8x7B): 72.3%](https://arxiv.org/html/2502.07527v3)<br>label mapping not matched. | — |
 | PEER: Human protein–protein interaction | [2022](https://arxiv.org/abs/2206.02096) | Released instruction: “If the given two human proteins (Protein_A and Protein_B) can interact with each other, indicate via "Yes".”<br>[Full question and input](questions/P10.md) | Accuracy | 50.21% | — | — | [ESM-1B (linear probing): 88.06%](https://arxiv.org/html/2402.17810v2)<br>trained head. | — |
 | PEER: Yeast protein–protein interaction | [2022](https://arxiv.org/abs/2206.02096) | Released instruction: “If the given two yeast proteins (Protein_A and Protein_B) can interact with each other, indicate via "Yes".”<br>[Full question and input](questions/P11.md) | Accuracy | 45.18% | — | — | [BioT5+: 66.16%](https://arxiv.org/html/2402.17810v2)<br>task-trained. | — |
+| DeepFRI / ProtST: Enzyme Commission classification | [2021](https://doi.org/10.1038/s41467-021-23303-9); ProtST [2023](https://proceedings.mlr.press/v202/xu23t.html) | “Predict Enzyme Commission reaction-class annotation for the protein from its complete amino acid sequence.”<br>[Full question, sequence and 538 EC descriptions](questions/P12.md) | AUPRC / Fmax | 0.0046 / 0.0126 | — | — | [ProtST-ESM-2: 0.898 / 0.878 (Table 3)](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf)<br>full-model supervised tuning; our full-FASTA text baseline differs. | — |
 | IEConv / ProtST: Enzyme reaction classification | [2020](https://arxiv.org/abs/2007.06252); ProtST [2023](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf) | “Predict which of the 384 original Reaction enzyme classes this complete amino-acid sequence belongs to.”<br>[Full question and input](questions/P16.md) | Accuracy | 0.16% | — | — | [ProtST-ESM-1b: 29.85% (label names)](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf)<br>different class descriptions. | — |
 | ProteinGym: Substitutions | [2022](https://arxiv.org/abs/2205.13760); expanded [2023](https://proceedings.neurips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf) | No native question; protein-variant-to-assay-score task.<br>[Available input and missing context](questions/P17.md) | — | — | — | — | [ProtST-ESM-1b + GEMME: 0.464](https://proceedings.mlr.press/v202/xu23t/xu23t.pdf)<br>Spearman; original assay set. | Finalize the eligible assay set and implement the complete per-assay prediction and scoring pipeline. |
 | PFArena: T1 single-mutant generation | [2026](https://arxiv.org/abs/2609.28921) | Source prompt: “predict the **top 40 single point mutations** (WTposMUT format)”<br>[Full question and input](questions/P19.md) | — | — | — | — | [VenusREM: Recall@40 0.0427; GPT-6 Astra: NMS@40 0.7966](https://arxiv.org/html/2609.28921v1)<br>full 123-assay set. | Connect the prepared 34-assay evaluator, pass end-to-end delivery checks, and run NMS@40 and Recall@40 scoring. |
@@ -59,6 +60,8 @@ Each example links to its complete available prompt, choices and sequence or vis
 | SlideVQA: Slide-deck question answering (Ryze) | [2023](https://arxiv.org/abs/2301.04883); Ryze [2026](https://arxiv.org/abs/2606.00902) | “How much is the Trading Operating Profit in 2011?”<br>[Full question and input](questions/V07.md) | — | — | — | — | [Ryze pipeline: 66.48% SlideVQA accuracy](https://arxiv.org/html/2606.00902v1)<br>original paper configuration. | Validate 20-image processing and context limits, complete case review, and run the prepared 2,215-case evaluation. |
 
 **Reading the scores:** “—” in a score column means no reported result; in “Work remaining” it means no further work for that reported result. The matched GPT comparisons use 197 LitQA2 cases, 82 SuppQA cases and 2,773 localization cases, with the archived Qwen 4K baseline. Unsuccessful responses remain in the denominator. For VQA-RAD, SLAKE and PathVQA, the paired values are open-answer token recall / closed-answer accuracy.
+
+**Enzyme Commission classification:** Qwen scored all 1,919 released test95 sequences using a fixed 538-label, three-decimal confidence output. The native AP/Fmax formulas are retained; this is a zero-shot full-sequence text adaptation, not reproduction of the trained ProtST model or the PDB-modeled input subset.
 
 **†** Stability classification is calculated from protein stability predictions, without a separate generation run. **‡** GFP candidate generation reports automated evaluator acceptance, not experimental fluorescence. Paper results based on predicted properties likewise do not establish experimental success.
 

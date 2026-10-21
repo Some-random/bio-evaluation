@@ -172,8 +172,8 @@ def export(archive=True):
             'generation': config['generation'], 'metrics': metrics,
             'source_scores': str(public_score.relative_to(ROOT)), 'scores_sha256': sha(public_score),
             'prediction_lock_sha256': sha(lock_path), 'config_sha256': sha(config_path),
-            'case_scope': 'complete previously reviewed original test cohort; new independent condition',
-            'interpretation': score.get('interpretation', 'Zero-shot full-sequence annotation adaptation; native metric formulas preserved. No matched trained-head or PDB/crop reproduction claim.')}
+            'case_scope': score.get('case_scope', 'complete previously reviewed original test cohort; new independent condition'),
+            'interpretation': score.get('interpretation') or score.get('paper_comparison') or 'Zero-shot full-sequence annotation adaptation; native metric formulas preserved. No matched trained-head or PDB/crop reproduction claim.'}
         if archive:
             path, digest = trajectory(folder, config['run_id'], read(lock_path), scanner)
             row['trajectory_archive'] = {'path': path, 'sha256': digest}

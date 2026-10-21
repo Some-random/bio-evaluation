@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-20T14:12:54.539073-07:00",
+  "generated_at_pacific": "2026-10-21T00:50:25.755161-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "4e54b86a9e8b77329ea185ee23f497c366a8fcf58a9be0314389c2eb50146c1d",
+  "report_sha256": "285f2359798a320d46933732421b932823907a82d70563109d636f7b24e322aa",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
   "raw_case_content_included": true,
   "qwen": {
     "additional_historical_score_source_checked_at_pacific": "2026-10-20T14:10:48.585467-07:00",
-    "defined_setting_count": 28,
+    "defined_setting_count": 29,
     "defined_setting_ids": [
       "B01",
       "B02",
@@ -27,6 +27,7 @@
       "P09",
       "P10",
       "P11",
+      "P12",
       "P16",
       "P23",
       "P24",
@@ -42,7 +43,7 @@
     ],
     "documentation_gap": "/data/rustfs1/dongweij/EXECUTION_EXAMPLES.md unavailable at read time; no execution or novel scientific interpretation performed",
     "earlier_undefined_scalar_condition_count": 3,
-    "generated_at_pacific": "2026-10-20T14:10:04.452420-07:00",
+    "generated_at_pacific": "2026-10-21T00:50:25.755161-07:00",
     "known_raw_output_recovery_gap_ids": [
       "P01",
       "V01",
@@ -55,7 +56,7 @@
     "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
     "new_inference_calls": 0,
     "new_scoring_attempts": 0,
-    "primary_condition_count": 35,
+    "primary_condition_count": 36,
     "public_source_audit": {
       "public_commit": "2aa34467e81cee20a7da9f4f4f85ab788c70e725",
       "repository": "Some-random/bio-evaluation",
@@ -3067,6 +3068,123 @@
           "display": "12,616/12,851 (98.2%)",
           "value": 0.9817134853318807
         }
+      },
+      {
+        "task_id": "P12",
+        "task": "Enzyme Commission labels — DeepFRI split",
+        "category": "Protein function, annotations and descriptions",
+        "dataset": "Enzyme Commission labels — DeepFRI split",
+        "condition": "Native declared score; new complete generation; nonthinking dense ordered three-decimal confidence vector, 16K budget",
+        "condition_kind": "native",
+        "run_id": "qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1",
+        "result_type": "new_complete_generation",
+        "protocol_variant": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
+        "input_protocol": "Protein sequence → enzyme-label confidence scores; zero-shot",
+        "output_budget": "16,384",
+        "usable_answer_rate": {
+          "value": 1.0,
+          "display": "1,919/1,919 (100.0%)",
+          "definition": "Native parser-valid outputs divided by all planned cases"
+        },
+        "native_score": {
+          "auprc@micro": 0.004585898015648127,
+          "f1_max": 0.012619534507393837
+        },
+        "diagnostic_score": null,
+        "score_display": "auprc@micro 0.0046; f1_max 0.0126",
+        "evidence": {
+          "category": "Measured, new delivery condition",
+          "detail": "New nonthinking constrained dense 3-decimal confidence adaptation. Full released FASTA and fixed source-order EC vocabulary retained. Does not reproduce trained DeepFRI/ProtST heads, native first-550 PDB-modeled inputs, or unpublished author-retained IDs. EC descriptions are frozen ExPASy 02-Sep-2026 display names; probability calibration and mechanistic explanation are not validated. Historical sparse reasoning runs remain separate. Historical generations and scores remain separate."
+        },
+        "counts": {
+          "planned": 1919,
+          "completed": 1919,
+          "parsed": 1919,
+          "invalid_outputs": 0,
+          "missing_or_failed_outputs": 0
+        },
+        "finish_reasons": {
+          "length": 0,
+          "stop": 1919
+        },
+        "source_scores": "results/runs/qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1/scores.json",
+        "source_score_sha256": "03a01681d1ef58037a814c0b16edbf9c6632f03fc3d1f37671b020a538138852",
+        "source_row_category": "completed_rows",
+        "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
+        "case_scope": "Exact 1,919 released full FASTA test95 cases; independent official validation delivery panel",
+        "native_metrics_recomputed": false,
+        "prediction_lock_sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
+        "config_sha256": "fa96826c27befbf9889ac378696f9184cbe6754e05385df7e3739e3614b72a89",
+        "full_benchmark_complete": true,
+        "full_primary_metric_defined": true,
+        "trajectory_archive": {
+          "path": "results/trajectory_archives/qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1.tar.gz",
+          "sha256": "7efc5c56483a4539971796ba9d3422cafcdd56cbe2b20e3cc43b750b9bb1060f"
+        },
+        "condition_id": "Q_P12_20261021",
+        "is_primary_table": true,
+        "classification": "native_formula_on_zero_shot_adapted_model",
+        "evidence_level": "score_bytes_verified",
+        "old_undefined_full_metric": false,
+        "raw_response_reverified_by_this_audit": false,
+        "score_source": {
+          "path": "results/runs/qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1/scores.json",
+          "local_present": true,
+          "local_sha256": "03a01681d1ef58037a814c0b16edbf9c6632f03fc3d1f37671b020a538138852",
+          "recorded_sha256": "03a01681d1ef58037a814c0b16edbf9c6632f03fc3d1f37671b020a538138852",
+          "local_hash_matches_recorded": true,
+          "remote_at_verified_commit": null,
+          "remote_hash_matches_recorded": null,
+          "note": "New P12 publication is recorded independently in its byte-verified publication receipt."
+        },
+        "new_score_export": {
+          "task_id": "P12",
+          "run_id": "qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1",
+          "protocol_variant": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
+          "protocol_description": "nonthinking dense ordered three-decimal confidence vector, 16K budget",
+          "new_complete_generation": true,
+          "full_benchmark_complete": true,
+          "full_primary_metric_defined": true,
+          "counts": {
+            "planned": 1919,
+            "completed": 1919,
+            "parsed": 1919,
+            "invalid_outputs": 0,
+            "missing_or_failed_outputs": 0
+          },
+          "finish_reasons": {
+            "length": 0,
+            "stop": 1919
+          },
+          "generation": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            },
+            "max_tokens": 16384,
+            "n": 1,
+            "seed": 42,
+            "structured_outputs": {
+              "regex": "\\{\"scores\":\\[(?:0(?:\\.[0-9]{1,3})?|1(?:\\.0{1,3})?)(?:,(?:0(?:\\.[0-9]{1,3})?|1(?:\\.0{1,3})?)){537}\\]\\}"
+            },
+            "temperature": 1.0,
+            "top_k": 20,
+            "top_p": 0.95
+          },
+          "metrics": {
+            "auprc@micro": 0.004585898015648127,
+            "f1_max": 0.012619534507393837
+          },
+          "source_scores": "results/runs/qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1/scores.json",
+          "scores_sha256": "03a01681d1ef58037a814c0b16edbf9c6632f03fc3d1f37671b020a538138852",
+          "prediction_lock_sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
+          "config_sha256": "fa96826c27befbf9889ac378696f9184cbe6754e05385df7e3739e3614b72a89",
+          "case_scope": "Exact 1,919 released full FASTA test95 cases; independent official validation delivery panel",
+          "interpretation": "New nonthinking constrained dense 3-decimal confidence adaptation. Full released FASTA and fixed source-order EC vocabulary retained. Does not reproduce trained DeepFRI/ProtST heads, native first-550 PDB-modeled inputs, or unpublished author-retained IDs. EC descriptions are frozen ExPASy 02-Sep-2026 display names; probability calibration and mechanistic explanation are not validated. Historical sparse reasoning runs remain separate.",
+          "trajectory_archive": {
+            "path": "results/trajectory_archives/qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1.tar.gz",
+            "sha256": "7efc5c56483a4539971796ba9d3422cafcdd56cbe2b20e3cc43b750b9bb1060f"
+          }
+        }
       }
     ],
     "references_read": false,
@@ -3077,7 +3195,7 @@
     "sources": [
       {
         "path": "reports/EVALUATION_DECISION_TABLE.json",
-        "sha256": "6f2b270e3b786c4490af6bb261456e425c594d265e06ae08fb9984ceaae22e77"
+        "sha256": "caa66004dce88d9383ec549523e7150683b8cbe47edc0712d20cdef2cade38f3"
       },
       {
         "path": "reports/RESULTS_AT_A_GLANCE.json",
@@ -3085,7 +3203,7 @@
       },
       {
         "path": "reports/CATALOG_NEW_SCORES_2026-10-20.json",
-        "sha256": "6c6a316d82eeb0397c6f414090e2978eb568444a5a641e58e3e8461b018b50fe"
+        "sha256": "e756b8e926ee421df2c33f1b89e24c769fde2c362b973be95f2cbc61665795bd"
       },
       {
         "path": "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json",
@@ -5472,6 +5590,23 @@
       "page_path": "reports/questions/V07.md",
       "page_sha256": "60d75ac9e63f4d587d927a1428aa1a70795c0839eab407b2e4156910d761d702",
       "safe_publication": true
+    },
+    {
+      "task_id": "P12",
+      "id": "P12",
+      "page_id": "P12",
+      "page_path": "reports/questions/P12.md",
+      "dataset": "DeepFRI enzyme classification test95 / ProtST",
+      "case_id": "3W4P-A",
+      "status": "complete_saved_evaluated_input",
+      "complete_question_or_input": true,
+      "page_sha256": "998066e100549a9e53c3f2033214d1727a17a8ed95f7b2a4b5beb252cbcc3dfc",
+      "page_bytes": 25575,
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/P12/runtime/benchmark/requests/0022b61c26d16035f9e1bbe2216ecc921241eb194d4e1d7772ff6ca613db67d7.json",
+      "source_sha256": "13d69d666488b2e9b29f85cd0716d4aa9ff39c2db53f0757bf00833034e0af96",
+      "prediction_lock_sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
+      "reference_answers_included": false,
+      "new_case_reviews": 0
     }
   ],
   "verified_question_policy": "Verbatim saved-request, released-dataset, or published-source excerpts. No native question or unavailable original prompt is explicitly labelled; no invented placeholder question.",
@@ -6387,6 +6522,22 @@
         "comparison_note": "Supervised task-trained model versus zero-shot Qwen. Table 8 does not report AUPRC; do not compare AUROC with our AUPRC.",
         "dataset": "Human",
         "auprc_not_reported": true
+      },
+      {
+        "task_id": "P12",
+        "best_model": "ProtST-ESM-2",
+        "display": "ProtST-ESM-2: AUPR 0.898; Fmax 0.878",
+        "metric": "AUPR / Fmax",
+        "values": {
+          "aupr": 0.898,
+          "fmax": 0.878
+        },
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 3, printed p.6",
+        "comparability": "Full-model supervised tuning; Qwen uses full released test95 FASTA text and fixed EC descriptions without a trained head. Native first-550 PDB-modeled inputs are not reproduced.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "Highest AUPR among main Table 3 task-comparison models; tied highest Fmax. Not a current leaderboard claim.",
+        "verified_at_pacific": "2026-10-21T00:50:25.755161-07:00"
       }
     ]
   },
@@ -7245,6 +7396,23 @@
           "old_case_review_receipt_recovered": false,
           "source_input_sha256": "6eda718df985fd520d22455f6f23b585831f531cb3e613ce1f8bab2b8ff017ce",
           "display_input_sha256": "fe8c586700d910ccb93ba30c5fbee5feaa521ba7d57245e913b407b8b7a8278c"
+        },
+        {
+          "task_id": "P12",
+          "id": "P12",
+          "page_id": "P12",
+          "page_path": "reports/questions/P12.md",
+          "dataset": "DeepFRI enzyme classification test95 / ProtST",
+          "case_id": "3W4P-A",
+          "status": "complete_saved_evaluated_input",
+          "complete_question_or_input": true,
+          "page_sha256": "998066e100549a9e53c3f2033214d1727a17a8ed95f7b2a4b5beb252cbcc3dfc",
+          "page_bytes": 25575,
+          "source_path": ".local/catalog_execution_2026-10-20/tasks/P12/runtime/benchmark/requests/0022b61c26d16035f9e1bbe2216ecc921241eb194d4e1d7772ff6ca613db67d7.json",
+          "source_sha256": "13d69d666488b2e9b29f85cd0716d4aa9ff39c2db53f0757bf00833034e0af96",
+          "prediction_lock_sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
+          "reference_answers_included": false,
+          "new_case_reviews": 0
         }
       ],
       "summary": {
@@ -7898,5 +8066,13 @@
   "presentation_links": {
     "preparation_tracker": "https://github.com/Some-random/bio-evaluation/blob/main/reports/ENGINEERING_PROGRESS.md"
   },
-  "website_deployment_reverted_at_pacific": "2026-10-20T21:48:13.214939-07:00"
+  "website_deployment_reverted_at_pacific": "2026-10-20T21:48:13.214939-07:00",
+  "p12_result_added_at_pacific": "2026-10-21T00:50:25.755161-07:00",
+  "p12_defined_score_source": {
+    "path": "results/runs/qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1/scores.json",
+    "sha256": "03a01681d1ef58037a814c0b16edbf9c6632f03fc3d1f37671b020a538138852",
+    "prediction_lock_sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
+    "new_inference_calls_by_reporting": 0,
+    "new_scoring_calls_by_reporting": 0
+  }
 }
