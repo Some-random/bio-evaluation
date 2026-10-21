@@ -1,12 +1,15 @@
 {
-  "schema_version": 1,
-  "generated_at_pacific": "2026-10-20T21:46:54.842534-07:00",
+  "schema_version": 2,
+  "generated_at_pacific": "2026-10-20T22:42:39.601251-07:00",
   "timezone": "America/Los_Angeles",
-  "scope": "15 preparation tasks; separate from benchmark generation and scores",
+  "scope": "Original 15 preparation tasks, two resumed judging tasks, and five separate 2026 benchmark additions",
+  "original_retained_catalog_denominator": 57,
+  "original_preparation_task_count": 15,
+  "task_count": 17,
+  "new_2026_benchmark_count": 5,
   "publication_target_interval_seconds": null,
-  "refresh_note": "Automatic publishing is stopped. This is a timestamped snapshot; check the task evidence timestamps.",
-  "worker_note": "Three assigned engineering workers plus the main agent; tasks are handled in queues, not 15 simultaneous subagents.",
-  "task_count": 15,
+  "refresh_note": "Manual timestamped Markdown snapshot; automatic publication and recurring messages remain stopped.",
+  "worker_note": "Three workers currently cover the five 2026 additions. Earlier rows record completed engineering milestones, not active model workers.",
   "tasks": [
     {
       "task_id": "P04",
@@ -113,10 +116,10 @@
       "agent": "/root/p37_runtime_work",
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
-      "latest_result": "Five released scoring heads loaded exactly; synthetic accounting checks passed. Encoder delivery remains untested.",
-      "progress": "6 synthetic checks passed",
-      "next_step": "Assemble the encoder/tokenizer, review starting cases and validate the proposal interface.",
-      "evidence_at_pacific": "2026-10-20T21:27:04.304900-07:00",
+      "latest_result": "The released encoder and all five existing heads are now assembled with exact checkpoint tensor bindings; no model forward has run.",
+      "progress": "536 encoder tensors; 10 tensors in each of five heads; artificial interface checks passed",
+      "next_step": "Validate evaluator delivery and the proposal interface, then prepare permitted starting cases and a frozen run.",
+      "evidence_at_pacific": "2026-10-20T22:10:27.669306-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true
     },
@@ -197,10 +200,10 @@
       "agent": "/root/p37_runtime_work",
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
-      "latest_result": "Released masking/index helpers passed synthetic checks; full paper holdout and scorer equivalence remain unverified.",
-      "progress": "13 synthetic checks passed",
-      "next_step": "Finish the numbering/CIF runtime, review released demonstrations and resolve the scoring configuration.",
-      "evidence_at_pacific": "2026-10-20T21:27:04.610069-07:00",
+      "latest_result": "Numbering and CIF runtime dependencies now pass artificial checks; real demonstration cases remain unprepared.",
+      "progress": "14 runtime assembly checks plus 13 earlier interface checks passed",
+      "next_step": "Validate permitted real demonstration inputs and geometric model delivery; resolve the declared scoring configuration.",
+      "evidence_at_pacific": "2026-10-20T22:13:34.361014-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true
     },
@@ -217,6 +220,95 @@
       "evidence_at_pacific": "2026-10-20T21:40:31.962957-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true
+    },
+    {
+      "task_id": "P44",
+      "evaluation": "BioReason-Pro: Explanation assessment",
+      "worker": "Preparation team",
+      "state": "Offline interface checks passed",
+      "latest_result": "8,630 ordered release IDs/schema verified; explanation judge interface passed 15 artificial checks. No explanation score produced.",
+      "progress": "No benchmark generation or judging yet",
+      "next_step": "Prepare admitted solver inputs and judge-only evidence; freeze the declared available judge, validate delivery and score sealed answers.",
+      "evidence_at_pacific": "2026-10-20T22:29:47.533203-07:00",
+      "benchmark_completed_by_this_preparation": false
+    },
+    {
+      "task_id": "V06",
+      "evaluation": "LLaVA-Med: Scientific-image question answering",
+      "worker": "Preparation team",
+      "state": "Offline interface checks passed",
+      "latest_result": "All 193 questions/50 images are available. Offline solver/judge interface passed 34 artificial checks and five CLI workflow steps.",
+      "progress": "No benchmark generation or judging yet",
+      "next_step": "Package real solver/judge inputs, freeze an available judge, validate delivery and score sealed answers.",
+      "evidence_at_pacific": "2026-10-20T22:30:52.023775-07:00",
+      "benchmark_completed_by_this_preparation": false
+    }
+  ],
+  "new_2026_benchmarks": [
+    {
+      "benchmark": "LABBench2",
+      "evaluation": "LABBench2 (2026)",
+      "worker": "LABBench2 worker",
+      "state": "Preparation started",
+      "latest_result": "Official harness and corrected release metadata pinned; real dataset access returned HTTP 403 with existing credentials.",
+      "progress": "Offline software preparation underway",
+      "next_step": "Complete offline contracts; obtain normal dataset access before preparing real questions and required paper/figure/table files.",
+      "evidence_at_pacific": "2026-10-20T22:40:50.176933-07:00",
+      "benchmark_completed_by_this_preparation": false,
+      "original_retained_catalog_member": false,
+      "status_sha256": "c2625c6c10f02f3f496e626c88fce06e54d45a203a2273207f1a8955fdd6e1ba"
+    },
+    {
+      "benchmark": "GeneBench-Pro",
+      "evaluation": "GeneBench-Pro (2026; public 10)",
+      "worker": "GeneBench-Pro worker",
+      "state": "Preparation started",
+      "latest_result": "Public package downloaded and verified: 80 files, 10 cases and 50 data artifacts. Native grading harness implemented.",
+      "progress": "Offline software preparation underway",
+      "next_step": "Finish offline harness validation and input isolation; validate an isolated coding-agent runtime. Public targets make this a reproducibility subset, not the hidden 129-case benchmark.",
+      "evidence_at_pacific": "2026-10-20T22:41:20.242374-07:00",
+      "benchmark_completed_by_this_preparation": false,
+      "original_retained_catalog_member": false,
+      "status_sha256": "24be0a375c2ac7926c578106e4b1921851bd009c8510d4b8f36d67e4b60383b3"
+    },
+    {
+      "benchmark": "scBench",
+      "evaluation": "scBench (2026; public 6)",
+      "worker": "2026 intake worker",
+      "state": "Preparation started",
+      "latest_result": "Official code and six public case configurations acquired; native grader passed 8 artificial checks. Full current 195-case suite is private.",
+      "progress": "8/8 artificial checks passed",
+      "next_step": "Verify Latch input-data access and volume; finish separated task packets and isolated coding-agent runtime.",
+      "evidence_at_pacific": "2026-10-20T22:40:42.930001-07:00",
+      "benchmark_completed_by_this_preparation": false,
+      "original_retained_catalog_member": false,
+      "status_sha256": "d16ad7ae35eb871ff7d23411e5b805e5ae24160995cfd173a9048e441c0fc372"
+    },
+    {
+      "benchmark": "BiomniBench-DA",
+      "evaluation": "BiomniBench-DA (2026; public 50)",
+      "worker": "2026 intake worker",
+      "state": "Preparation started",
+      "latest_result": "Existing access works: 201 harness/config files acquired. Ten artificial rubric parsing/arithmetic checks passed; no model judge called.",
+      "progress": "10/10 artificial checks passed",
+      "next_step": "Prepare input acquisition and runtime for the 50 public tasks; resolve the declared judge condition. Pinned configs require Gemini inference, and raw inputs total about 82.95 GB.",
+      "evidence_at_pacific": "2026-10-20T22:40:42.930001-07:00",
+      "benchmark_completed_by_this_preparation": false,
+      "original_retained_catalog_member": false,
+      "status_sha256": "d85fd5259503a257a6edc8f19a1766d3a78be2817129baf23e958525e7c8ea6c"
+    },
+    {
+      "benchmark": "BixBench3",
+      "evaluation": "BixBench3 (2026)",
+      "worker": "2026 intake worker",
+      "state": "Preparation started",
+      "latest_result": "Official harness acquired; 10 unchanged upstream artifact-grader tests passed. Real task-file access returned HTTP 403.",
+      "progress": "10/10 artificial checks passed",
+      "next_step": "Obtain normal dataset access and prepare a local isolated runtime. The standard runner uses billed GCP and an external model judge; neither has been started.",
+      "evidence_at_pacific": "2026-10-20T22:40:42.930001-07:00",
+      "benchmark_completed_by_this_preparation": false,
+      "original_retained_catalog_member": false,
+      "status_sha256": "dfc1ac4607180fdc8e365cf5a489ba6739aaec67259c31c694836eb564d6e571"
     }
   ]
 }
