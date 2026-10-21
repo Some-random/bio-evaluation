@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biological Evaluation Results &amp; Progress</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172c42;background:#f5f7fa;font-size:14px;--table-font:13px}
+*{box-sizing:border-box}body{margin:0}a{color:#1358a2;text-decoration-thickness:1px;text-underline-offset:2px}a:hover{color:#073664}
+.top{background:#132e48;color:#fff;padding:17px 22px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}.brand{font-size:17px;font-weight:700}.top nav{display:flex;gap:8px}.top a{color:#dceaff;padding:8px 14px;border-radius:6px;text-decoration:none}.top a[aria-current="page"]{background:#fff;color:#163754;font-weight:650}.top .github{margin-left:auto;font-size:13px}
+main{width:100%;padding:22px}h1{font-size:26px;line-height:1.2;margin:0 0 12px}p{line-height:1.55;margin:10px 0}h2{font-size:19px;margin-top:24px}.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:18px 0 12px}.toolbar input{width:320px;max-width:100%;padding:10px 12px;border:1px solid #b6c6d5;border-radius:6px;font:inherit;background:#fff}.toolbar button,.toolbar .download{font:inherit;padding:9px 12px;border:1px solid #bdcad6;border-radius:6px;background:#fff;color:#194a78;cursor:pointer}.toolbar label{display:flex;gap:8px;align-items:center}.count{color:#56697c;font-size:13px}.table-wrap{width:100%;overflow-x:auto;border:1px solid #cbd5df;border-radius:8px;background:#fff}
+table{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;font-size:var(--table-font);line-height:1.5}th,td{text-align:left!important;vertical-align:top;padding:12px 10px;overflow-wrap:anywhere;white-space:normal;border-bottom:1px solid #e0e6ed;border-right:1px solid #e7ecf1}th:last-child,td:last-child{border-right:0}th{position:sticky;top:0;background:#eaf0f6;color:#213e59;font-weight:700;z-index:1}tbody tr:nth-child(even){background:#f8fafc}tbody tr:hover{background:#eef5fc}tbody tr:last-child td{border-bottom:0}td:first-child{font-weight:650}#results th:nth-child(1){width:13%}#results th:nth-child(2){width:5%}#results th:nth-child(3){width:22%}#results th:nth-child(4){width:7%}#results th:nth-child(5),#results th:nth-child(6),#results th:nth-child(7){width:6%}#results th:nth-child(8){width:18%}#results th:nth-child(9){width:17%}
+#progress th:nth-child(1){width:16%}#progress th:nth-child(2){width:9%}#progress th:nth-child(3){width:13%}#progress th:nth-child(4){width:28%}#progress th:nth-child(5){width:26%}#progress th:nth-child(6){width:8%}.badge{display:inline-block;border-radius:5px;padding:3px 7px;font-size:12px;font-weight:600;background:#e9eef4;color:#384e65}.badge.active{background:#dceffd;color:#13588a}.small{font-size:12px;color:#53667a;font-weight:400}.progress-detail{margin-top:7px}.notice{background:#eaf2fa;border-left:3px solid #3777ac;padding:10px 14px}.stale{color:#9c4807;font-weight:650}.timestamp{font-variant-numeric:tabular-nums}.footer{color:#526679;font-size:12px;margin:24px 0 0}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(min-width:1100px){.table-wrap{overflow:visible}#results td:nth-child(5),#results td:nth-child(6),#results td:nth-child(7){font-variant-numeric:tabular-nums;font-weight:600}}
+@media(max-width:1099px){main{padding:16px}.top{padding:14px 16px}table{min-width:1080px}.top .github{margin-left:0}}
+@media print{.top,.toolbar{display:none}body{background:white}main{padding:0}table{font-size:9px}th,td{padding:5px}th{position:static}}
+</style>
+</head>
+<body>
+<header class="top"><span class="brand">Bio Evaluation</span><nav aria-label="Views"><a href="#results" data-tab="results">Results</a><a href="#progress" data-tab="progress">15-task progress</a></nav><a class="github" href="https://github.com/Some-random/bio-evaluation/blob/main/reports/RESULTS_AND_REMAINING_WORK.md">View Markdown on GitHub ↗</a></header>
+<main>
+<section id="results" aria-label="Evaluation results">
+<!-- RESULTS -->
+</section>
+<section id="progress" aria-label="Preparation progress" hidden>
+<h1>Progress of the 15 preparation tasks</h1>
+<p>Three assigned engineering workers plus the main agent handle these tasks in queues. A passed preparation check does not mean a benchmark is finished.</p>
+<p class="notice">Published snapshots target a 10-minute interval while the updater is running. Check each task’s evidence time below. This page does not connect to a live agent console.</p>
+<p id="snapshot-time" class="timestamp" aria-live="polite"></p>
+<div class="toolbar"><label class="sr-only" for="progress-search">Search preparation tasks</label><input id="progress-search" type="search" placeholder="Search task, worker or remaining work…"><span id="progress-count" class="count"></span><a class="download" href="https://github.com/Some-random/bio-evaluation/blob/main/reports/ENGINEERING_PROGRESS.md">Markdown tracker</a></div>
+<div class="table-wrap"><table><thead><tr><th>Evaluation</th><th>Assigned worker</th><th>State</th><th>Latest verified result / progress</th><th>What remains</th><th>Evidence time (PDT)</th></tr></thead><tbody id="progress-body"></tbody></table></div>
+</section>
+<p class="footer">Results and source questions are preserved from the <a href="https://github.com/Some-random/bio-evaluation/blob/main/reports/RESULTS_AND_REMAINING_WORK.md">published report</a>. Preparation progress is reported separately from benchmark scores. Times use America/Los_Angeles.</p>
+</main>
+<script>
+const initialProgress = /* INITIAL_PROGRESS */ null;
+let progressData = initialProgress;
+const results = document.getElementById('results');
+const table = results.querySelector('table');
+const tableWrap = document.createElement('div'); tableWrap.className='table-wrap'; table.before(tableWrap); tableWrap.append(table);
+const toolbar=document.createElement('div'); toolbar.className='toolbar';
+toolbar.innerHTML='<label class="sr-only" for="result-search">Search evaluations</label><input id="result-search" type="search" placeholder="Search evaluation, question or model…"><span id="result-count" class="count"></span><button type="button" id="font-smaller" aria-label="Smaller table text">A−</button><button type="button" id="font-larger" aria-label="Larger table text">A+</button><a class="download" href="results.csv" download>Download CSV</a>';
+tableWrap.before(toolbar);
+function filterRows(input, target, count){const q=input.value.trim().toLowerCase();let n=0;for(const row of target.rows){row.hidden=!row.textContent.toLowerCase().includes(q);if(!row.hidden)n++;}count.textContent=n+' / '+target.rows.length+' evaluations';}
+const resultSearch=document.getElementById('result-search');
+resultSearch.addEventListener('input',()=>filterRows(resultSearch,table.tBodies[0],document.getElementById('result-count')));
+filterRows(resultSearch,table.tBodies[0],document.getElementById('result-count'));
+let font=13; for(const [id,delta]of [['font-smaller',-1],['font-larger',1]])document.getElementById(id).onclick=()=>{font=Math.min(18,Math.max(11,font+delta));document.documentElement.style.setProperty('--table-font',font+'px');};
+function formatTime(iso){if(!iso)return 'Unavailable';const d=new Date(iso);return new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}).format(d);}
+function textCell(row,value,cls){const cell=row.insertCell();cell.textContent=value;if(cls)cell.className=cls;return cell;}
+function renderProgress(data){progressData=data;const body=document.getElementById('progress-body');body.replaceChildren();for(const task of data.tasks){const row=body.insertRow();const first=textCell(row,task.evaluation);const id=document.createElement('div');id.className='small';id.textContent=task.task_id;first.append(id);const worker=textCell(row,task.worker);worker.title=task.agent;const state=row.insertCell();const badge=document.createElement('span');badge.className='badge'+(task.active_cpu_work_verified?' active':'');badge.textContent=task.state;state.append(badge);const latest=textCell(row,task.latest_result);const detail=document.createElement('div');detail.className='small progress-detail';detail.textContent=task.progress;latest.append(detail);textCell(row,task.next_step);textCell(row,formatTime(task.evidence_at_pacific),'timestamp small');}updateSnapshotAge();filterRows(document.getElementById('progress-search'),body,document.getElementById('progress-count'));}
+function updateSnapshotAge(){const el=document.getElementById('snapshot-time');const age=Math.max(0,Math.floor((Date.now()-new Date(progressData.generated_at_pacific))/60000));el.textContent='Snapshot: '+formatTime(progressData.generated_at_pacific)+' · '+age+' minutes old';el.classList.toggle('stale',age>20);}
+document.getElementById('progress-search').addEventListener('input',()=>filterRows(document.getElementById('progress-search'),document.getElementById('progress-body'),document.getElementById('progress-count')));
+function showTab(){const selected=location.hash==='#progress'?'progress':'results';for(const id of ['results','progress'])document.getElementById(id).hidden=id!==selected;for(const a of document.querySelectorAll('[data-tab]')){if(a.dataset.tab===selected)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');}}
+window.addEventListener('hashchange',showTab);showTab();renderProgress(initialProgress);
+async function refresh(){try{const response=await fetch('progress.json?t='+Date.now(),{cache:'no-store'});if(response.ok){const data=await response.json();if(data.schema_version===1&&Array.isArray(data.tasks)&&data.tasks.length===15)renderProgress(data);}}catch(error){/* Keep the timestamped embedded snapshot if a refresh is unavailable. */}updateSnapshotAge();}
+setInterval(refresh,60000);refresh();
+</script>
+</body>
+</html>
