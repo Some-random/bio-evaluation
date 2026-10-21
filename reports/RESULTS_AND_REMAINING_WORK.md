@@ -2,7 +2,7 @@
 
 *October 20, 2026*
 
-[Full-width results table](https://some-random.github.io/bio-evaluation/) · [Track the 15 preparation tasks](https://some-random.github.io/bio-evaluation/#progress) · [Markdown tracker](ENGINEERING_PROGRESS.md)
+[Track the 15 preparation tasks](ENGINEERING_PROGRESS.md)
 
 Results are available for **28 of 57 evaluation settings**. The table also includes the **15 evaluations in preparation**, release years, real example questions, and published model results.
 

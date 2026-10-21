@@ -1,12 +1,12 @@
 # Progress of the 15 preparation tasks
 
-[Full-width progress tracker](https://some-random.github.io/bio-evaluation/#progress) · [Results table](https://some-random.github.io/bio-evaluation/)
+[Evaluation results](RESULTS_AND_REMAINING_WORK.md)
 
-Snapshot: **2026-10-20T21:43:50.068486-07:00** (America/Los_Angeles).
+Snapshot: **2026-10-20T21:46:54.842534-07:00** (America/Los_Angeles).
 
 Three assigned engineering workers plus the main agent; tasks are handled in queues, not 15 simultaneous subagents.
 
-Publication targets every 10 minutes while the local updater is running. Check the evidence timestamps; this is not a live agent-console connection.
+Automatic publishing is stopped. This table is a timestamped snapshot; check each task’s recorded time.
 
 **A preparation milestone is not a completed benchmark or a new benchmark score.**
 
@@ -20,7 +20,7 @@ Publication targets every 10 minutes while the local updater is running. Check t
 | PFArena: T4 single-mutant-informed ranking | Worker 3 | Preparation milestone passed | Native input builder, reference isolation and complete-ranking checks passed on artificial fixtures.<br>12 synthetic checks passed | Review permitted assays/context, prepare real inputs and pass tokenizer and ranking delivery checks. | 2026-10-20T21:26:44.342433-07:00 |
 | NatureLM: Protein description | Worker 1 | Preparation milestone passed | 2,633 alternative inputs packaged; this cohort overlaps P26 and does not add an independently completed setting.<br>9 synthetic checks passed | The recovered alternative overlaps P26; resolve an independent evaluation cohort before claiming new coverage. | 2026-10-20T21:27:10.631295-07:00 |
 | MutaPLM: Iterative protein optimization | Worker 2 | Preparation milestone passed | Five released scoring heads loaded exactly; synthetic accounting checks passed. Encoder delivery remains untested.<br>6 synthetic checks passed | Assemble the encoder/tokenizer, review starting cases and validate the proposal interface. | 2026-10-20T21:27:04.304900-07:00 |
-| ProtST: Text-to-protein retrieval | Worker 1 | Corpus projection finished; validation pending | CPU corpus projection finished; independent artifact checks are still pending. No retrieval predictions.<br>CPU job 244149: running | Finish artifact validation, then permitted-input review and retrieval delivery checks. | 2026-10-20T21:43:46.857788-07:00 |
+| ProtST: Text-to-protein retrieval | Worker 1 | Preparation milestone passed | Full source-order corpus projection and artifact checks completed on CPU; this is prepared data, not retrieval predictions.<br>36,635 candidates checked; 34,464 retained; 2,171 parser rejections | Complete permitted-input review and validate retrieval delivery. Numerical accuracy additionally needs relevance labels. | 2026-10-20T21:44:44.348780-07:00 |
 | NatureLM: Unconditional protein generation | Worker 2 | Preparation milestone passed | All 3,252 checkpoint tensors bound exactly; synthetic I/O checks passed. No folding forward was run.<br>8 synthetic checks passed | Validate actual folding delivery and complete permitted-input/development checks. | 2026-10-20T21:18:17.879722-07:00 |
 | NatureLM: Conditional protein generation | Worker 3 | Preparation milestone passed | Both alternative property evaluators passed CPU synthetic delivery; no benchmark generation.<br>4 synthetic evaluator forwards; no benchmark generation | Integrate the validated evaluators with reviewed generation and development delivery checks. | 2026-10-20T21:28:55.206767-07:00 |
 | NatureLM: Heme-binding protein design | Worker 1 | Preparation milestone passed | Source-based case packaging and synthetic interface checks passed; exact author cohort is unavailable.<br>15 synthetic checks passed | Resolve missing author-case details and validate an explicitly declared alternative case study; no measured binding score is available. | 2026-10-20T21:29:22.152695-07:00 |
