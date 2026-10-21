@@ -69,16 +69,16 @@
       ]
     },
     "P19": {
-      "why_not_done": "All 34 reviewed inputs and 3 artificial development inputs passed CPU tokenizer checks; runtime package remains disabled. This is preparation, not a completed evaluation. Integrate the separate runtime entry and pass actual development delivery before the reviewed subset can run.",
+      "why_not_done": "The separate runtime ran its three synthetic delivery checks. All three returned valid 40-item JSON but failed sequence-position consistency; one also repeated eight entries. The reference-free gate stopped execution before the fixed 34-case benchmark. This is a demonstrated model-output contract failure, not missing access or a user decision.",
       "blocker_owner": "Agent",
-      "finish_requirement": "Adopt the already prepared P19 runtime entry prospectively; pass three actual synthetic model-delivery cases and seal them; then execute and score the separate 34-assay reviewed condition. Full native coverage separately needs review of 77 assays and resolution of 12 holds.",
-      "next_deliverable": "Integrate the separate runtime entry and pass actual development delivery before the reviewed subset can run.",
+      "finish_requirement": "Preserve all failed development outputs. Prepare and CPU-test a separately named prospective schema with input-valid mutation IDs and uniqueness; review the full unchanged benchmark denominator before any new delivery condition. The full native 123-assay panel separately contains 77 unreviewed and 12 held assays.",
+      "next_deliverable": "Executable synthetic-tested candidate constraints and exact failure diagnosis; no replay or mutation of the original run.",
       "needs_user_decision": false,
       "source_paths": [
-        ".local/catalog_execution_2026-10-20/tasks/P19/status.json",
-        ".local/catalog_execution_2026-10-20/tasks/P19/runtime_integration_preparation/cpu_tokenizer_step_receipt.json"
+        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/development/completion.json",
+        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/status.json"
       ],
-      "observed_at_pacific": "2026-10-20T22:39:34.905496-07:00"
+      "observed_at_pacific": "2026-10-21T12:34:43.706039-07:00"
     },
     "P20": {
       "why_not_done": "The real-case preparation worker was interrupted by an automatic biological-risk check. The exact triggering case was not returned. Acquired source files do not authorize restarting that action, and no reviewed frozen benchmark run has been completed.",
@@ -317,18 +317,16 @@
       "observed_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     "V06": {
-      "why_not_done": "All 193 actual question/image inputs AND judge references admitted; 50 unchanged images; 193 API envelopes and all actual CPU processor checks passed. Connect the prepared 193-case package to a separate frozen solver/local-judge runtime; pass actual solver and judge delivery checks; generate all answers, seal them, obtain judgments and compute the score.",
-      "blocker_owner": "Agent",
-      "finish_requirement": "Validate the complete question/image join, sealed solver outputs, separate judge/reference packets and full-denominator aggregation under a declared available judging condition.",
-      "next_deliverable": "Connect the prepared 193-case package to a separate frozen solver/local-judge runtime; pass actual solver and judge delivery checks; generate all answers, seal them, obtain judgments and compute the score.",
+      "why_not_done": null,
+      "blocker_owner": null,
+      "finish_requirement": "Completed: all 193 questions scored under the declared local-Qwen judge; relative-quality score 63.453408997450445.",
+      "next_deliverable": "Preserve the published score and complete raw trajectories; no new generation is required for this condition.",
       "needs_user_decision": false,
       "source_paths": [
-        "AGENTS.md",
-        ".local/catalog_execution_2026-10-20/tasks/V06/task.json",
-        ".local/source_acquisition_2026-10-19/vision/v06/completion.json",
-        ".local/catalog_execution_2026-10-20/tasks/V06/status.json"
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/completion.json",
+        ".local/catalog_resume_2026-10-19/publication/catalog_v06_local_judge_full193_20261021_publication_receipt.json"
       ],
-      "observed_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "observed_at_pacific": "2026-10-21T12:34:43.706039-07:00"
     },
     "V07": {
       "why_not_done": "Full-dataset CPU image processing passed. Permitted-content review and actual model delivery remain. This is preparation, not a completed evaluation. Complete permitted-content review and separately admitted actual model delivery checks.",
@@ -344,5 +342,6 @@
       "observed_at_pacific": "2026-10-20T22:39:34.905496-07:00"
     }
   },
-  "updated_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+  "updated_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+  "generated_at_pacific": "2026-10-21T12:34:43.706039-07:00"
 }

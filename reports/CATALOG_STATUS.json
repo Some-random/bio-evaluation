@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+  "generated_at_pacific": "2026-10-21T12:45:22.928882-07:00",
   "timezone": "America/Los_Angeles",
   "role": "exhaustive_57_setting_evidence_tracker_not_dispatch_authorization",
   "retained_setting_count": 57,
   "counts": {
-    "done": 29,
+    "done": 30,
     "running": 3,
     "queued": 0,
-    "agent_work": 17,
+    "agent_work": 16,
     "user_held": 1,
     "provider_held": 7,
     "impossible": 0
@@ -17,14 +17,13 @@
     "done": "Done: defined score for the declared evaluated condition",
     "running": "Running generation",
     "queued": "Queued for generation in the frozen runtime",
-    "agent_work": "Doable agent work not finished",
+    "agent_work": "Unfinished agent work",
     "user_held": "Held at the user's request",
     "provider_held": "Biological/provider interruption or restriction",
     "impossible": "Whole setting established impossible"
   },
   "agent_work_breakdown": {
-    "implementation_review_preparation": 16,
-    "V06_terminal_or_stale_runtime_reconciliation": 1
+    "implementation_review_preparation": 16
   },
   "full_catalog_complete": false,
   "definitions": {
@@ -36,11 +35,11 @@
     "runtime": "Direct progress/completion contents are used; unsealed counts are lower bounds. Missing progress is unknown, not zero calls. No response filename counts used."
   },
   "freshness": {
-    "old_decision_table_generated_at_pacific": "2026-10-21T00:48:55.633957-07:00",
-    "controller_recorded_at_pacific": "2026-10-21T11:56:15.900857-07:00",
-    "controller_age_seconds": 9,
+    "old_decision_table_generated_at_pacific": "2026-10-21T12:30:01.060337-07:00",
+    "controller_recorded_at_pacific": "2026-10-21T12:45:21.015492-07:00",
+    "controller_age_seconds": 2,
     "controller_is_live_evidence_only_if_recent": true,
-    "pool_recorded_at_pacific": "2026-10-21T11:56:21.417842-07:00",
+    "pool_recorded_at_pacific": "2026-10-21T12:45:23.565499-07:00",
     "pool_source_path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/status.json",
     "active_successor_job_ids": [
       "243499"
@@ -51,7 +50,7 @@
       "P14_benchmark_continuation1",
       "P15_benchmark_continuation1"
     ],
-    "supervisor_recorded_at_pacific": "2026-10-21T11:56:18.285570-07:00",
+    "supervisor_recorded_at_pacific": "2026-10-21T12:45:24.959323-07:00",
     "supervisor_is_fresh": true,
     "supervisor_stage": "watching_exact_controller",
     "supervised_controller_pid": 3670546,
@@ -69,8 +68,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_litqa2_public_reviewed_2026-10-15/scores.json",
@@ -118,8 +117,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_b02_public_reviewed_2026-10-15/scores.json"
@@ -157,8 +156,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_b03_public_reviewed_2026-10-15/scores.json",
@@ -206,8 +205,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_b04_public_reviewed_2026-10-15/scores.json",
@@ -255,8 +254,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_b05_public_reviewed_2026-10-15/scores.json",
@@ -304,7 +303,7 @@
       "decision_needed": "Requires resolution of the applicable provider/scope restriction; a simple user continuation instruction does not remove it.",
       "exact_native_condition_availability": "Source availability is separate from this execution/review hold; no claim that the whole source corpus is prohibited or missing.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "AGENTS.md",
@@ -336,8 +335,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_b07_public_reviewed_2026-10-15/scores.json"
@@ -375,8 +374,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_b08_public_reviewed_2026-10-15/scores.json"
@@ -415,8 +414,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p01_original_test_2026-10-15/scores.json"
@@ -455,8 +454,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p02_original_test_2026-10-15/scores.json"
@@ -494,8 +493,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/scores.json"
@@ -533,7 +532,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Source archive acquired; assay eligibility and runtime preparation remain unfinished.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-19T15:30:33.064403-07:00",
       "evidence_paths": [
         ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json",
@@ -564,7 +563,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Released inputs available; eligibility review and execution preparation unfinished.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "reports/catalog_extended_preparation.json",
@@ -597,7 +596,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-20T01:19:39.611754-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P06/runtime/benchmark/completion.json",
@@ -619,7 +618,7 @@
         "refusals": 0,
         "prediction_lock_sha256": "00c011351323ccf84de86444f7eafb2537a40e8b93c7923759148cd84d3968ed",
         "recorded_at_pacific": "2026-10-20T01:19:39.611754-07:00",
-        "age_seconds_at_observation": 124605,
+        "age_seconds_at_observation": 127543,
         "sealed_complete": true,
         "unsealed_counts_are_lower_bounds": false
       },
@@ -652,7 +651,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-20T04:30:36.029996-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P07/runtime/benchmark/completion.json",
@@ -674,7 +673,7 @@
         "refusals": 0,
         "prediction_lock_sha256": "ec3d2afa15e432c48c6574856a1ce01e2a9fba4b1b39bf7705abb40efafdb5d1",
         "recorded_at_pacific": "2026-10-20T04:30:36.029996-07:00",
-        "age_seconds_at_observation": 113149,
+        "age_seconds_at_observation": 116087,
         "sealed_complete": true,
         "unsealed_counts_are_lower_bounds": false
       },
@@ -714,7 +713,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-20T02:50:38.638604-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P08/runtime/benchmark/completion.json",
@@ -736,7 +735,7 @@
         "refusals": 0,
         "prediction_lock_sha256": "c50d588eaf87b407f6a14e8bf133b8f8dbc4fad42db2ded9a360de75f19c38cc",
         "recorded_at_pacific": "2026-10-20T02:50:38.638604-07:00",
-        "age_seconds_at_observation": 119146,
+        "age_seconds_at_observation": 122084,
         "sealed_complete": true,
         "unsealed_counts_are_lower_bounds": false
       },
@@ -778,7 +777,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Original NatureLM binary conversion/test labels unavailable in inspected author releases. Completed declared >1.0 rule-derived adaptation reuses sealed P08 predictions.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-20T02:52:50.425198-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P09/scores.json",
@@ -829,8 +828,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p10_original_test_2026-10-15/scores.json"
@@ -868,8 +867,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p11_original_test_2026-10-15/scores.json"
@@ -907,7 +906,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-21T00:21:28.148477-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P12/runtime/benchmark/completion.json",
@@ -929,7 +928,7 @@
         "refusals": 0,
         "prediction_lock_sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
         "recorded_at_pacific": "2026-10-21T00:21:28.148477-07:00",
-        "age_seconds_at_observation": 41697,
+        "age_seconds_at_observation": 44635,
         "sealed_complete": true,
         "unsealed_counts_are_lower_bounds": false
       },
@@ -962,8 +961,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T11:55:11.700434-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:38:56.095539-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P13/runtime/benchmark/progress.json",
         ".local/catalog_execution_2026-10-20/continuation_v1/manifest.json",
@@ -978,10 +977,10 @@
       "runtime": {
         "run_id": "qwen38_27b_p13_dense_confidence_test_2026-10-20_v1",
         "planned": 3416,
-        "attempted_confirmed": 875,
-        "terminal": 872,
-        "responses_saved": 872,
-        "delivery_passed": 872,
+        "attempted_confirmed": 895,
+        "terminal": 892,
+        "responses_saved": 892,
+        "delivery_passed": 892,
         "transport_errors": 0,
         "http_errors": 0,
         "response_errors": 0,
@@ -989,8 +988,8 @@
         "empty_finals": 0,
         "refusals": 0,
         "prediction_lock_sha256": null,
-        "recorded_at_pacific": "2026-10-21T11:55:11.700434-07:00",
-        "age_seconds_at_observation": 73,
+        "recorded_at_pacific": "2026-10-21T12:38:56.095539-07:00",
+        "age_seconds_at_observation": 387,
         "sealed_complete": false,
         "unsealed_counts_are_lower_bounds": true,
         "active_job_id": "243499"
@@ -1000,7 +999,7 @@
       "scope_notes": [
         "Current verified successor job 243499; predecessor drain exits remain historical operational evidence."
       ],
-      "why_not_done": "872/3,416 responses saved in the unsealed progress record. Generation is still incomplete; each case requires 1,943 ordered confidence values. The three active task workers share one A100. Full-cohort scoring has not started.",
+      "why_not_done": "892/3,416 responses saved in the unsealed progress record. Generation is still incomplete; each case requires 1,943 ordered confidence values. The three active task workers share one A100. Full-cohort scoring has not started.",
       "blocker_owner": "Agent scheduling / existing generation workers",
       "finish_requirement": "Finish the untouched cases, seal all outcomes, then calculate the full-cohort native AP/Fmax scores.",
       "next_deliverable": "Finish the untouched cases, seal all outcomes, then calculate the full-cohort native AP/Fmax scores.",
@@ -1017,8 +1016,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T11:56:22.806056-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:44:57.172590-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P14/runtime/benchmark/progress.json",
         ".local/catalog_execution_2026-10-20/continuation_v1/manifest.json",
@@ -1033,10 +1032,10 @@
       "runtime": {
         "run_id": "qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1",
         "planned": 3416,
-        "attempted_confirmed": 3110,
-        "terminal": 3107,
-        "responses_saved": 3107,
-        "delivery_passed": 3107,
+        "attempted_confirmed": 3196,
+        "terminal": 3194,
+        "responses_saved": 3194,
+        "delivery_passed": 3194,
         "transport_errors": 0,
         "http_errors": 0,
         "response_errors": 0,
@@ -1044,8 +1043,8 @@
         "empty_finals": 0,
         "refusals": 0,
         "prediction_lock_sha256": null,
-        "recorded_at_pacific": "2026-10-21T11:56:22.806056-07:00",
-        "age_seconds_at_observation": 2,
+        "recorded_at_pacific": "2026-10-21T12:44:57.172590-07:00",
+        "age_seconds_at_observation": 26,
         "sealed_complete": false,
         "unsealed_counts_are_lower_bounds": true,
         "active_job_id": "243499"
@@ -1055,7 +1054,7 @@
       "scope_notes": [
         "Current verified successor job 243499; predecessor drain exits remain historical operational evidence."
       ],
-      "why_not_done": "3,107/3,416 responses saved in the unsealed progress record. Generation is still incomplete; each case requires 489 ordered confidence values. The three active task workers share one A100. Full-cohort scoring has not started.",
+      "why_not_done": "3,194/3,416 responses saved in the unsealed progress record. Generation is still incomplete; each case requires 489 ordered confidence values. The three active task workers share one A100. Full-cohort scoring has not started.",
       "blocker_owner": "Agent scheduling / existing generation workers",
       "finish_requirement": "Finish the untouched cases, seal all outcomes, then calculate the full-cohort native AP/Fmax scores.",
       "next_deliverable": "Finish the untouched cases, seal all outcomes, then calculate the full-cohort native AP/Fmax scores.",
@@ -1072,8 +1071,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Released test and native AP/Fmax scorer available; dense confidence-vector delivery is a separately frozen new condition.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T11:55:58.589197-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:45:21.785466-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P15/runtime/benchmark/progress.json",
         ".local/catalog_execution_2026-10-20/continuation_v1/manifest.json",
@@ -1088,10 +1087,10 @@
       "runtime": {
         "run_id": "qwen38_27b_p15_full_test_dense3dp_nonthinking16k_2026-10-20_v1",
         "planned": 3416,
-        "attempted_confirmed": 1888,
-        "terminal": 1887,
-        "responses_saved": 1887,
-        "delivery_passed": 1887,
+        "attempted_confirmed": 2025,
+        "terminal": 2023,
+        "responses_saved": 2023,
+        "delivery_passed": 2023,
         "transport_errors": 0,
         "http_errors": 0,
         "response_errors": 0,
@@ -1099,8 +1098,8 @@
         "empty_finals": 0,
         "refusals": 0,
         "prediction_lock_sha256": null,
-        "recorded_at_pacific": "2026-10-21T11:55:58.589197-07:00",
-        "age_seconds_at_observation": 26,
+        "recorded_at_pacific": "2026-10-21T12:45:21.785466-07:00",
+        "age_seconds_at_observation": 1,
         "sealed_complete": false,
         "unsealed_counts_are_lower_bounds": true,
         "active_job_id": "243499"
@@ -1110,7 +1109,7 @@
       "scope_notes": [
         "Current verified successor job 243499; predecessor drain exits remain historical operational evidence."
       ],
-      "why_not_done": "1,887/3,416 responses saved in the unsealed progress record. Generation is still incomplete; each case requires 320 ordered confidence values. The three active task workers share one A100. Full-cohort scoring has not started.",
+      "why_not_done": "2,023/3,416 responses saved in the unsealed progress record. Generation is still incomplete; each case requires 320 ordered confidence values. The three active task workers share one A100. Full-cohort scoring has not started.",
       "blocker_owner": "Agent scheduling / existing generation workers",
       "finish_requirement": "Finish the untouched cases, seal all outcomes, then calculate the full-cohort native AP/Fmax scores.",
       "next_deliverable": "Finish the untouched cases, seal all outcomes, then calculate the full-cohort native AP/Fmax scores.",
@@ -1127,8 +1126,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
@@ -1176,7 +1175,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "217 released assay CSVs acquired; reviewed execution scope remains unfinished.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-19T15:30:33.064403-07:00",
       "evidence_paths": [
         ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json",
@@ -1208,7 +1207,7 @@
       "decision_needed": "Requires resolution of the applicable provider/scope restriction; a simple user continuation instruction does not remove it.",
       "exact_native_condition_availability": "Source availability is separate from this execution/review hold; no claim that the whole source corpus is prohibited or missing.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "AGENTS.md",
@@ -1236,28 +1235,29 @@
       "category": "agent_work",
       "substatus": "implementation_review_preparation",
       "status": "Doable preparation/implementation remains unfinished; not in the live generation queue.",
-      "next_action": "Integrate the separate runtime entry and pass actual development delivery before the reviewed subset can run.",
+      "next_action": "Executable synthetic-tested candidate constraints and exact failure diagnosis; no replay or mutation of the original run.",
       "decision_needed": null,
-      "exact_native_condition_availability": "Required sources available; full coverage limited by unfinished review and existing case holds.",
+      "exact_native_condition_availability": "Independent runtime worked, but all three actual development rankings failed sequence-position validity. Full native coverage separately has 77 unreviewed and 12 held assays.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-20T01:29:20.970252-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": null,
       "evidence_paths": [
-        ".local/catalog_execution_2026-10-20/tasks/P19/readiness.json",
+        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/failure_closure.json",
         "reports/CATALOG_BLOCKERS_2026-10-20.json",
-        ".local/catalog_execution_2026-10-20/tasks/P19/status.json",
-        ".local/catalog_execution_2026-10-20/tasks/P19/runtime_integration_preparation/cpu_tokenizer_step_receipt.json"
+        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/development/completion.json",
+        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/status.json"
       ],
       "runtime": null,
       "prepared_benchmark_planned": null,
       "score": null,
       "scope_notes": [
-        "Already authorized agent work; an internal exact frozen grant is an engineering gate, not another broad user permission request."
+        "Already authorized agent work; an internal exact frozen grant is an engineering gate, not another broad user permission request.",
+        "Primary source has no embedded timestamp; this read verifies availability, not a fresh execution heartbeat."
       ],
-      "why_not_done": "All 34 reviewed inputs and 3 artificial development inputs passed CPU tokenizer checks; runtime package remains disabled. This is preparation, not a completed evaluation. Integrate the separate runtime entry and pass actual development delivery before the reviewed subset can run.",
+      "why_not_done": "The separate runtime ran its three synthetic delivery checks. All three returned valid 40-item JSON but failed sequence-position consistency; one also repeated eight entries. The reference-free gate stopped execution before the fixed 34-case benchmark. This is a demonstrated model-output contract failure, not missing access or a user decision.",
       "blocker_owner": "Agent",
-      "finish_requirement": "Adopt the already prepared P19 runtime entry prospectively; pass three actual synthetic model-delivery cases and seal them; then execute and score the separate 34-assay reviewed condition. Full native coverage separately needs review of 77 assays and resolution of 12 holds.",
-      "next_deliverable": "Integrate the separate runtime entry and pass actual development delivery before the reviewed subset can run.",
+      "finish_requirement": "Preserve all failed development outputs. Prepare and CPU-test a separately named prospective schema with input-valid mutation IDs and uniqueness; review the full unchanged benchmark denominator before any new delivery condition. The full native 123-assay panel separately contains 77 unreviewed and 12 held assays.",
+      "next_deliverable": "Executable synthetic-tested candidate constraints and exact failure diagnosis; no replay or mutation of the original run.",
       "needs_user_decision": false,
       "public_evidence_path": "reports/CATALOG_BLOCKERS_2026-10-20.json"
     },
@@ -1271,7 +1271,7 @@
       "decision_needed": "Requires resolution of the applicable provider/scope restriction; a simple user continuation instruction does not remove it.",
       "exact_native_condition_availability": "Source availability is separate from this execution/review hold; no claim that the whole source corpus is prohibited or missing.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "AGENTS.md",
@@ -1303,7 +1303,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Required source tables acquired; eligibility, input isolation and runtime integration unfinished.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-19T20:04:49.252852-07:00",
       "evidence_paths": [
         ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/status.json",
@@ -1336,7 +1336,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "All 29 context/target pairs acquired; eligibility, isolation and runtime integration unfinished.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-19T20:04:49.252852-07:00",
       "evidence_paths": [
         ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/status.json",
@@ -1368,8 +1368,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p23_description_full_parallel_2026-10-15/scores.json"
@@ -1407,8 +1407,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p24_description_full_parallel_2026-10-15/scores.json"
@@ -1446,8 +1446,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p25_description_full_parallel_2026-10-15/scores.json"
@@ -1485,8 +1485,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p26_description_full_parallel_2026-10-15/scores.json"
@@ -1524,7 +1524,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Exact native NCBI dates/accession manifest not found in audited author releases; labelled adaptation remains possible.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-19T17:34:11.258197-07:00",
       "evidence_paths": [
         ".local/source_recovery_round2_2026-10-19/paper_artifacts/PUBLIC_SUMMARY.json",
@@ -1557,7 +1557,7 @@
       "decision_needed": "Requires resolution of the applicable provider/scope restriction; a simple user continuation instruction does not remove it.",
       "exact_native_condition_availability": "Source availability is separate from this execution/review hold; no claim that the whole source corpus is prohibited or missing.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "AGENTS.md",
@@ -1589,7 +1589,7 @@
       "decision_needed": "Requires resolution of the applicable provider/scope restriction; a simple user continuation instruction does not remove it.",
       "exact_native_condition_availability": "Source availability is separate from this execution/review hold; no claim that the whole source corpus is prohibited or missing.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "AGENTS.md",
@@ -1621,7 +1621,7 @@
       "decision_needed": "Requires resolution of the applicable provider/scope restriction; a simple user continuation instruction does not remove it.",
       "exact_native_condition_availability": "Source availability is separate from this execution/review hold; no claim that the whole source corpus is prohibited or missing.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "AGENTS.md",
@@ -1653,7 +1653,7 @@
       "decision_needed": "New head training remains held. Search already released matching heads and prepare metadata; a different training scope requires a user decision.",
       "exact_native_condition_availability": "Required training/judge exception remains held; source or solver preparation does not itself complete the score.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "AGENTS.md",
@@ -1683,7 +1683,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Existing evaluator assets acquired; released-code algorithm and runtime implementation unfinished; no new training.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-19T16:14:54.476899-07:00",
       "evidence_paths": [
         "reports/SOURCE_ACQUISITION_PROGRESS_2026-10-19.json",
@@ -1714,14 +1714,15 @@
       "status": "Doable preparation/implementation remains unfinished; not in the live generation queue.",
       "next_action": "Complete permitted-input review and validate retrieval delivery. Numerical accuracy additionally needs relevance labels.",
       "decision_needed": null,
-      "exact_native_condition_availability": "Five released query rankings are feasible. The release provides no relevance gold or aggregate correctness metric; do not invent accuracy.",
+      "exact_native_condition_availability": "Executable native ProtST demo and nine neutral checks are complete; no pretrained forward has run. It is not a Qwen result. The release provides no relevance gold or aggregate accuracy metric.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-20T01:53:27.838459-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:38:26.534898-07:00",
       "evidence_paths": [
-        ".local/catalog_execution_2026-10-20/tasks/P35/readiness.json",
+        ".local/catalog_execution_2026-10-20/tasks/P35/delivery_v1/handoff_manifest.json",
         "reports/CATALOG_BLOCKERS_2026-10-20.json",
         ".local/catalog_execution_2026-10-20/tasks/P35/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P35/readiness.json",
         ".local/catalog_execution_2026-10-20/tasks/P35/cpu_checkpoint_load_receipt.json"
       ],
       "runtime": null,
@@ -1748,7 +1749,7 @@
       "decision_needed": "Requires resolution of the applicable provider/scope restriction; a simple user continuation instruction does not remove it.",
       "exact_native_condition_availability": "Source availability is separate from this execution/review hold; no claim that the whole source corpus is prohibited or missing.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "AGENTS.md",
@@ -1783,7 +1784,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Matching released-code evaluator assets acquired; exact native sampling and 50% clustering condition unavailable in inspected releases.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-20T14:04:36.134208-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P37/readiness.json",
@@ -1817,7 +1818,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Exact SFM property heads/reference cohort unavailable in inspected releases; distinct available proxy conditions prepared.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-20T21:29:41.682043-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P38/readiness.json",
@@ -1850,7 +1851,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Exact native cohort, selection manifest and scoring contract unreleased in inspected sources; qualitative adaptation remains possible.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json",
@@ -1883,7 +1884,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "60 current-structure mappings/masks prepared; exact historical processed bytes not certified; current-structure adaptation available.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-20T21:27:04.473898-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P40/status.json",
@@ -1914,7 +1915,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "Released checkpoints/vendor assets and demos acquired; exact SAbDab holdout, masks and full benchmark aggregation unavailable in inspected releases.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": null,
       "evidence_paths": [
         "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json",
@@ -1948,8 +1949,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_p42_gfp_qualified_two_regimes_2026-10-15/scores.json"
@@ -1996,8 +1997,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_dti_bindingdb_likelihood_2026-10-15/scores.json",
@@ -2055,7 +2056,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "User removed the BioReason-Pro judging hold; explanation assessment remains distinct from existing GO annotation scores. Exact paper judge/cohort equivalence still requires verification.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-20T22:24:23.234768-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/P44/task.json",
@@ -2087,8 +2088,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_v01_native_test_2026-10-15/scores.json"
@@ -2127,8 +2128,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_v02_native_test_2026-10-15/scores.json"
@@ -2167,8 +2168,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu/scores.json"
@@ -2207,8 +2208,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_v04_original_test500_2026-10-15/scores.json"
@@ -2247,8 +2248,8 @@
       "decision_needed": null,
       "exact_native_condition_availability": "A score for the declared evaluated scope does not establish matched-paper reproduction.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
       "evidence_paths": [
         "reports/EVALUATION_DECISION_TABLE.json",
         "results/runs/qwen38_27b_v05_pmcvqa_clean2000_td_2026-10-15/scores.json"
@@ -2298,32 +2299,46 @@
     {
       "task_id": "V06",
       "task_name": "LLaVA-Med visual conversation",
-      "category": "agent_work",
-      "substatus": "V06_terminal_or_stale_runtime_reconciliation",
-      "status": "V06's recorded stage is 'terminal_incomplete_primary_undefined'; it does not establish current running generation or a complete defined score.",
-      "next_action": "Inspect the existing V06 terminal/progress evidence and reconcile its full denominator; preserve stop rules and do not automatically retry.",
+      "category": "done",
+      "substatus": "defined_V06_untouched_judge_continuation_score",
+      "status": "Complete 193-case V06 local-judge score verified against the combined judge closure and unchanged source solver lock.",
+      "next_action": "Preserve the published local-judge/parser-repair score and original strict predecessor; no V06 generation remains.",
       "decision_needed": null,
-      "exact_native_condition_availability": "All 193 released cases; a declared local-Qwen judge replaces the original GPT-4-0314 judge, using the released mean per-case score-ratio formula.",
+      "exact_native_condition_availability": "All 193 released cases; declared local-Qwen judging and lossless outer-JSON-fence extraction retain the released mean per-case score-ratio formula. The original GPT-4-0314 judge is not reproduced.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
-      "evidence_recorded_at_pacific": "2026-10-21T02:16:41.888192-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
+      "evidence_recorded_at_pacific": "2026-10-21T12:28:26.526538-07:00",
       "evidence_paths": [
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/plan.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/root_admission.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/submission_receipt.json",
         ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/plan.json",
-        ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/root_admission.json",
-        ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/submission_receipt.json",
-        ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/status.json",
-        ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/server_identity.json",
-        ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/completion.json"
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/server_identity.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/completion.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/scores.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/judge_lock.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/source_prediction_lock.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/prediction_lock.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/judge_lock.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/judge_outcomes.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/real_input_preparation_v1/packets/manifest.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/predictions.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/judge_outcomes.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/judgements.json",
+        ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/terminal_receipt.json"
       ],
       "runtime": {
-        "run_id": "qwen38_27b_v06_solver_judge_uniform16k_2026-10-21_v1",
-        "active_job_id": "244391",
-        "recorded_at_pacific": "2026-10-21T02:16:41.888192-07:00",
-        "age_seconds_at_observation": 34783,
+        "run_id": "qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1",
+        "active_job_id": "244848",
+        "phase": "judge",
+        "recorded_at_pacific": "2026-10-21T12:28:26.526538-07:00",
+        "age_seconds_at_observation": 1016,
         "sealed_complete": true,
         "unsealed_counts_are_lower_bounds": false,
-        "phase": "judge",
-        "solver": {
+        "planned": 193,
+        "responses_saved": 193,
+        "judge": {
           "planned": 193,
           "attempted_with_observed_outcome": 193,
           "terminal_observed": 193,
@@ -2340,38 +2355,1503 @@
           "not_dispatched_after_stop": 0,
           "attempts_without_outcome_are_unknown_not_retryable": true
         },
-        "judge": {
-          "planned": 193,
-          "attempted_with_observed_outcome": 162,
-          "terminal_observed": 162,
-          "responses_saved": 162,
+        "new_judge": {
+          "planned": 31,
+          "attempted_with_observed_outcome": 31,
+          "terminal_observed": 31,
+          "responses_saved": 31,
           "transport_errors": 0,
           "http_errors": 0,
-          "response_errors": 1,
+          "response_errors": 0,
           "refusals": 0,
           "truncations": 0,
           "empty_finals": 0,
           "final_fields_not_observed_in_saved_response": 0,
           "reasoning_present": 0,
           "missing_finals_due_to_transport": 0,
-          "not_dispatched_after_stop": 31,
+          "not_dispatched_after_stop": 0,
           "attempts_without_outcome_are_unknown_not_retryable": true
         },
-        "planned": 193,
-        "responses_saved": 162,
-        "native_scoring_status": "not_started"
+        "source_solver_responses_reused": 193,
+        "source_judge_responses_reused": 162,
+        "native_scoring_status": "completed_verified_full193_local_judge_with_declared_parser_repair"
       },
       "prepared_benchmark_planned": 193,
-      "score": null,
+      "score": {
+        "condition": "LLAVA_MED_QA50_HUMAN_OR_DECLARED_LOCAL_JUDGE_ADAPTATION_V1",
+        "judge_declaration": {
+          "condition": "LLAVA_MED_QA50_HUMAN_OR_DECLARED_LOCAL_JUDGE_ADAPTATION_V1",
+          "kind": "local_model",
+          "identity": "Qwen/Qwen3.8-27B@1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0; BF16 TP1 uniform16K nonthinking local judge",
+          "rubric_sha256": "a489072006233d6084c54926a4c9f7722f664dc1fdaef694af535bb1c0dd37f4",
+          "model_configuration_sha256": "8ee8899797b6c1e2f0b4bf632ebe2db1e6b1b18702d0bcfc4fb342fa180313bb"
+        },
+        "score_meaning": "Relative judged answer quality; not clinical accuracy or exact original GPT-4-0314 reproduction",
+        "lock_sha256": "d1cfaf295ab927038053355c64685a605f6919fe9bbe67afda13b843473c516b",
+        "groups": {
+          "overall": {
+            "planned": 193,
+            "valid": 193,
+            "generation_failure_or_invalid_answer": 0,
+            "missing_judgement": 0,
+            "invalid_judgement": 0,
+            "complete": true,
+            "released_mean_case_ratio_score": 63.453408997450445,
+            "failure_zero_full_denominator_adaptation_score": 63.453408997450445,
+            "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+          },
+          "conversation": {
+            "planned": 143,
+            "valid": 143,
+            "generation_failure_or_invalid_answer": 0,
+            "missing_judgement": 0,
+            "invalid_judgement": 0,
+            "complete": true,
+            "released_mean_case_ratio_score": 61.560661560661565,
+            "failure_zero_full_denominator_adaptation_score": 61.560661560661565,
+            "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+          },
+          "detailed_description": {
+            "planned": 50,
+            "valid": 50,
+            "generation_failure_or_invalid_answer": 0,
+            "missing_judgement": 0,
+            "invalid_judgement": 0,
+            "complete": true,
+            "released_mean_case_ratio_score": 68.86666666666666,
+            "failure_zero_full_denominator_adaptation_score": 68.86666666666666,
+            "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+          },
+          "chest_xray": {
+            "planned": 37,
+            "valid": 37,
+            "generation_failure_or_invalid_answer": 0,
+            "missing_judgement": 0,
+            "invalid_judgement": 0,
+            "complete": true,
+            "released_mean_case_ratio_score": 107.08494208494209,
+            "failure_zero_full_denominator_adaptation_score": 107.08494208494209,
+            "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+          },
+          "mri": {
+            "planned": 38,
+            "valid": 38,
+            "generation_failure_or_invalid_answer": 0,
+            "missing_judgement": 0,
+            "invalid_judgement": 0,
+            "complete": true,
+            "released_mean_case_ratio_score": 45.730994152046776,
+            "failure_zero_full_denominator_adaptation_score": 45.730994152046776,
+            "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+          },
+          "histology": {
+            "planned": 44,
+            "valid": 44,
+            "generation_failure_or_invalid_answer": 0,
+            "missing_judgement": 0,
+            "invalid_judgement": 0,
+            "complete": true,
+            "released_mean_case_ratio_score": 66.63419913419914,
+            "failure_zero_full_denominator_adaptation_score": 66.63419913419914,
+            "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+          },
+          "gross": {
+            "planned": 34,
+            "valid": 34,
+            "generation_failure_or_invalid_answer": 0,
+            "missing_judgement": 0,
+            "invalid_judgement": 0,
+            "complete": true,
+            "released_mean_case_ratio_score": 57.02614379084967,
+            "failure_zero_full_denominator_adaptation_score": 57.02614379084967,
+            "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+          },
+          "ct_scan": {
+            "planned": 40,
+            "valid": 40,
+            "generation_failure_or_invalid_answer": 0,
+            "missing_judgement": 0,
+            "invalid_judgement": 0,
+            "complete": true,
+            "released_mean_case_ratio_score": 41.89484126984128,
+            "failure_zero_full_denominator_adaptation_score": 41.89484126984128,
+            "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+          }
+        },
+        "per_case_accounting": [
+          {
+            "question_id": 0,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 1,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.6
+          },
+          {
+            "question_id": 2,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 3,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.7777777777777778
+          },
+          {
+            "question_id": 4,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 5,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 6,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.7777777777777778
+          },
+          {
+            "question_id": 7,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 8,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.7777777777777778
+          },
+          {
+            "question_id": 9,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 10,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 11,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 12,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 13,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 14,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.2857142857142858
+          },
+          {
+            "question_id": 15,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 16,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.3
+          },
+          {
+            "question_id": 17,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 18,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 19,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 1.0
+          },
+          {
+            "question_id": 20,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 21,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 22,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 23,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.25
+          },
+          {
+            "question_id": 24,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 25,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.6
+          },
+          {
+            "question_id": 26,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 27,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 28,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.3333333333333333
+          },
+          {
+            "question_id": 29,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 30,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 31,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 32,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.6
+          },
+          {
+            "question_id": 33,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 34,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.25
+          },
+          {
+            "question_id": 35,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.9
+          },
+          {
+            "question_id": 36,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 1.1111111111111112
+          },
+          {
+            "question_id": 37,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.4444444444444444
+          },
+          {
+            "question_id": 38,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 39,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 40,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.5
+          },
+          {
+            "question_id": 41,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 42,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 43,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 44,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 45,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 46,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.8
+          },
+          {
+            "question_id": 47,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 48,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 49,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 1.1111111111111112
+          },
+          {
+            "question_id": 50,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 51,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.3333333333333333
+          },
+          {
+            "question_id": 52,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 53,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.5
+          },
+          {
+            "question_id": 54,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 55,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 56,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 57,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 58,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 1.1111111111111112
+          },
+          {
+            "question_id": 59,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.8888888888888888
+          },
+          {
+            "question_id": 60,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 61,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 62,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 63,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 1.25
+          },
+          {
+            "question_id": 64,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 65,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.4444444444444444
+          },
+          {
+            "question_id": 66,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 1.2857142857142858
+          },
+          {
+            "question_id": 67,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 68,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 69,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 70,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 71,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 72,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.8
+          },
+          {
+            "question_id": 73,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 74,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.4
+          },
+          {
+            "question_id": 75,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 76,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 77,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 78,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 79,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 80,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.25
+          },
+          {
+            "question_id": 81,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 82,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 83,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 84,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.875
+          },
+          {
+            "question_id": 85,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 86,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 87,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 88,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 89,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.6
+          },
+          {
+            "question_id": 90,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 91,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 92,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 93,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.9
+          },
+          {
+            "question_id": 94,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 95,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 96,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 97,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 98,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 99,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 100,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 101,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 102,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.3333333333333333
+          },
+          {
+            "question_id": 103,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.3
+          },
+          {
+            "question_id": 104,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 105,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 1.1111111111111112
+          },
+          {
+            "question_id": 106,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 107,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 108,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 1.2857142857142858
+          },
+          {
+            "question_id": 109,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 110,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 111,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 112,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.7
+          },
+          {
+            "question_id": 113,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 114,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.8
+          },
+          {
+            "question_id": 115,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.8888888888888888
+          },
+          {
+            "question_id": 116,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.2857142857142858
+          },
+          {
+            "question_id": 117,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.8888888888888888
+          },
+          {
+            "question_id": 118,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 4.5
+          },
+          {
+            "question_id": 119,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.7777777777777778
+          },
+          {
+            "question_id": 120,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1111111111111111
+          },
+          {
+            "question_id": 121,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 122,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 123,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.8888888888888888
+          },
+          {
+            "question_id": 124,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 125,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.7
+          },
+          {
+            "question_id": 126,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.4444444444444444
+          },
+          {
+            "question_id": 127,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.25
+          },
+          {
+            "question_id": 128,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 129,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.2
+          },
+          {
+            "question_id": 130,
+            "question_type": "conversation",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 131,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 132,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 133,
+            "question_type": "conversation",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 134,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.4444444444444444
+          },
+          {
+            "question_id": 135,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 136,
+            "question_type": "conversation",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 137,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.125
+          },
+          {
+            "question_id": 138,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 139,
+            "question_type": "conversation",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 1.1111111111111112
+          },
+          {
+            "question_id": 140,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.125
+          },
+          {
+            "question_id": 141,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.4444444444444444
+          },
+          {
+            "question_id": 142,
+            "question_type": "conversation",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.5
+          },
+          {
+            "question_id": 143,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.4444444444444444
+          },
+          {
+            "question_id": 144,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 145,
+            "question_type": "detailed_description",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 146,
+            "question_type": "detailed_description",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.4444444444444444
+          },
+          {
+            "question_id": 147,
+            "question_type": "detailed_description",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 148,
+            "question_type": "detailed_description",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.5
+          },
+          {
+            "question_id": 149,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 2.25
+          },
+          {
+            "question_id": 150,
+            "question_type": "detailed_description",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 151,
+            "question_type": "detailed_description",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.25
+          },
+          {
+            "question_id": 152,
+            "question_type": "detailed_description",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.3333333333333333
+          },
+          {
+            "question_id": 153,
+            "question_type": "detailed_description",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 154,
+            "question_type": "detailed_description",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.1111111111111111
+          },
+          {
+            "question_id": 155,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.4444444444444444
+          },
+          {
+            "question_id": 156,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 2.25
+          },
+          {
+            "question_id": 157,
+            "question_type": "detailed_description",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 2.25
+          },
+          {
+            "question_id": 158,
+            "question_type": "detailed_description",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 159,
+            "question_type": "detailed_description",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.16666666666666666
+          },
+          {
+            "question_id": 160,
+            "question_type": "detailed_description",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 161,
+            "question_type": "detailed_description",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.6666666666666666
+          },
+          {
+            "question_id": 162,
+            "question_type": "detailed_description",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 163,
+            "question_type": "detailed_description",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.4444444444444444
+          },
+          {
+            "question_id": 164,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 165,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 166,
+            "question_type": "detailed_description",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.25
+          },
+          {
+            "question_id": 167,
+            "question_type": "detailed_description",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 168,
+            "question_type": "detailed_description",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.1
+          },
+          {
+            "question_id": 169,
+            "question_type": "detailed_description",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 170,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.1111111111111111
+          },
+          {
+            "question_id": 171,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.4444444444444444
+          },
+          {
+            "question_id": 172,
+            "question_type": "detailed_description",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 173,
+            "question_type": "detailed_description",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 174,
+            "question_type": "detailed_description",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.1111111111111111
+          },
+          {
+            "question_id": 175,
+            "question_type": "detailed_description",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 176,
+            "question_type": "detailed_description",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1111111111111111
+          },
+          {
+            "question_id": 177,
+            "question_type": "detailed_description",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 178,
+            "question_type": "detailed_description",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.1111111111111111
+          },
+          {
+            "question_id": 179,
+            "question_type": "detailed_description",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 180,
+            "question_type": "detailed_description",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 181,
+            "question_type": "detailed_description",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.5
+          },
+          {
+            "question_id": 182,
+            "question_type": "detailed_description",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.5
+          },
+          {
+            "question_id": 183,
+            "question_type": "detailed_description",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 3.0
+          },
+          {
+            "question_id": 184,
+            "question_type": "detailed_description",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.3333333333333333
+          },
+          {
+            "question_id": 185,
+            "question_type": "detailed_description",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 0.2222222222222222
+          },
+          {
+            "question_id": 186,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.8888888888888888
+          },
+          {
+            "question_id": 187,
+            "question_type": "detailed_description",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 0.25
+          },
+          {
+            "question_id": 188,
+            "question_type": "detailed_description",
+            "domain": "ct_scan",
+            "state": "valid",
+            "ratio": 0.25
+          },
+          {
+            "question_id": 189,
+            "question_type": "detailed_description",
+            "domain": "mri",
+            "state": "valid",
+            "ratio": 3.0
+          },
+          {
+            "question_id": 190,
+            "question_type": "detailed_description",
+            "domain": "gross",
+            "state": "valid",
+            "ratio": 0.25
+          },
+          {
+            "question_id": 191,
+            "question_type": "detailed_description",
+            "domain": "histology",
+            "state": "valid",
+            "ratio": 0.1111111111111111
+          },
+          {
+            "question_id": 192,
+            "question_type": "detailed_description",
+            "domain": "chest_xray",
+            "state": "valid",
+            "ratio": 1.5
+          }
+        ],
+        "model_calls_by_this_adapter": 0,
+        "execution_condition": "V06_QWEN38_27B_UNIFORM16K_LOSSLESS_JSON_FENCE_UNTOUCHED31_CLOSURE_V1",
+        "parser_repair": {
+          "unchanged_strict_primary": true,
+          "accepted_wrapper": "One complete outer Markdown fence, optional json label, no surrounding prose or inner fences.",
+          "normalization": "Remove outer fence delimiters only; retain every interior character exactly.",
+          "field_identity_score_validation": "Use the original frozen parse_judge_output without modification.",
+          "fragment_extraction_or_value_repair": false,
+          "new_model_calls": 0
+        },
+        "source_strict_primary_undefined_preserved": true
+      },
       "scope_notes": [
-        "V1 job 244379 stopped at a package-version guard before model requests; its failed infrastructure evidence is preserved. V2 installs the pinned runtime independently, with unchanged 193 inputs and 16K solver/judge settings.",
-        "The user waived GPT-4-0314. This is a separately declared Qwen solver/local-Qwen judge adaptation; a teacher-comparison ratio is not clinical accuracy."
+        "The strict predecessor remains unchanged. The continuation reuses 193 solver answers and 162 saved judge replies, and permits only 31 untouched judge calls.",
+        "Single complete outer JSON fences are removed under a separately declared parser repair, with the original identity/numeric validation and mean per-case ratio formula; this local self-judge score is not clinical accuracy."
       ],
       "separate_local_execution_verified": true,
-      "why_not_done": "V06's recorded stage is 'terminal_incomplete_primary_undefined'; it does not establish current running generation or a complete defined score.",
-      "blocker_owner": "Existing isolated V06 worker",
-      "finish_requirement": "Inspect the existing V06 terminal/progress evidence and reconcile its full denominator; preserve stop rules and do not automatically retry.",
-      "next_deliverable": "Inspect the existing V06 terminal/progress evidence and reconcile its full denominator; preserve stop rules and do not automatically retry.",
+      "why_not_done": null,
+      "blocker_owner": null,
+      "finish_requirement": "A defined score for this declared condition is already retained.",
+      "next_deliverable": "Preserve the published local-judge/parser-repair score and original strict predecessor; no V06 generation remains.",
       "needs_user_decision": false,
       "public_evidence_path": "reports/CATALOG_STATUS.json"
     },
@@ -2385,7 +3865,7 @@
       "decision_needed": null,
       "exact_native_condition_availability": "All 8,000 page identities materialized/hash-verified; mixed original/processed image adaptation available; exact Table 3 condition unavailable.",
       "whole_setting_established_impossible": false,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00",
       "evidence_recorded_at_pacific": "2026-10-20T21:40:31.966494-07:00",
       "evidence_paths": [
         ".local/catalog_execution_2026-10-20/tasks/V07/status.json",
@@ -2458,1031 +3938,1122 @@
     {
       "path": "reports/EVALUATION_DECISION_TABLE.json",
       "available": true,
-      "sha256": "caa66004dce88d9383ec549523e7150683b8cbe47edc0712d20cdef2cade38f3",
-      "recorded_at_pacific": "2026-10-21T00:48:55.633957-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "e6b0451bceb8c46bca6ba17ee570fdd2e80ffb4f5f80e9e1dada9229a207a5ce",
+      "recorded_at_pacific": "2026-10-21T12:30:01.060337-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_litqa2_public_reviewed_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_litqa2_replay_2026-10-16/scores.json",
       "available": true,
       "sha256": "5b8d04effeec755cb0c0ba3de29dde6b47ce8a7b34a0743766ef4d40f6c4a4fb",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_b02_public_reviewed_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_b03_public_reviewed_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_b03_slurm_replay_2026-10-16/scores.json",
       "available": true,
       "sha256": "7aae5d9c7f24d75d42e341d7bd8d174fafc64aff054c6ee6ca6448e73df9e927",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_b04_public_reviewed_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_b04_slurm_replay_2026-10-16/scores.json",
       "available": true,
       "sha256": "a8a980724acc6f811f80f9e7ff5f9dd773d3704565da5d9bfd38c8152bf852b5",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_b05_public_reviewed_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_b05_slurm_replay_2026-10-16/scores.json",
       "available": true,
       "sha256": "1641758fe72f79d51392eeb1aa51c127d16d6e503b69d16cfe9a88c143e96968",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "AGENTS.md",
       "available": true,
       "sha256": "bf18639331ec633e280b679e3eb4108ea346882e856f6488b77a3e1227aedac2",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/B06/task.json",
       "available": true,
       "sha256": "a8ec07629e1b07a1d3830677af548471f713434c076c543188a916a9539fb4ae",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "reports/CATALOG_BLOCKERS_2026-10-20.json",
       "available": true,
-      "sha256": "f1f9f2d29ff40847a94fabbfc10215c7df0739b21ffd219db3802c043ac4e6c5",
+      "sha256": "60445f85d634b16de8c9d42e357b95e577352846a1a80dda2093628bea74db14",
       "recorded_at_pacific": "2026-10-20T23:31:49.749685-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_acquisition_2026-10-19/b06_review/review_interruption.json",
       "available": true,
       "sha256": "729068329203e9664ff2e28c21a1ff210c924b13a63e5ae1805de4ebf8652db2",
       "recorded_at_pacific": "2026-10-19T15:46:12.685605-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_acquisition_2026-10-19/b06_review/review_receipt.json",
       "available": true,
       "sha256": "5154930d53daf29bcef5a52d28327f3e47d65f567d17addbba49ccba3bcbae0c",
       "recorded_at_pacific": "2026-10-19T15:43:03.759892-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_b07_public_reviewed_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_b08_public_reviewed_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p01_original_test_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p02_original_test_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p03_full_test_slurm_2026-10-16/scores.json",
       "available": true,
       "sha256": "b2502d3ded2d81fc3f03c8260cd6d2db01dc5ae914e6d84e5ae6c81c18882e4a",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json",
       "available": true,
       "sha256": "82475704e041303676d8b24a470fba657b9a8383cfee763b53f71b75668a9ab0",
       "recorded_at_pacific": "2026-10-19T15:30:33.064403-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P04/task.json",
       "available": true,
       "sha256": "e0be47544f93a70ddcd7729eeed8ea5166aab9886b1e1e1b37007d4a592be213",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P04/status.json",
       "available": true,
       "sha256": "4be2b897043958c6dbc489783e13b8f21b46d4d949154f4c1f84eb0c97ce65a2",
       "recorded_at_pacific": "2026-10-20T21:32:00.713279-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "reports/catalog_extended_preparation.json",
       "available": true,
       "sha256": "bd4c73962402b137a72708f7a949fdbf1f0ccd28fa89d3c665f1a63f7c5ffa61",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P05/task.json",
       "available": true,
       "sha256": "9b57ca22413846c4833918f283de3eee246f92e167c780e1ac5e91d31ed2806c",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P05/status.json",
       "available": true,
       "sha256": "414931c186ccaf4608d786b9ec31a39d5f9c5cacc79f806c0aae9186f35ee9be",
       "recorded_at_pacific": "2026-10-20T21:21:32.492059-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P06/runtime/benchmark/completion.json",
       "available": true,
       "sha256": "a4ba99be19834ef6cfd6c88608b7aae591d82e6bbce2855c0d339a83da1117d6",
       "recorded_at_pacific": "2026-10-20T01:19:39.611754-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P06/runtime/benchmark/scores.json",
       "available": true,
       "sha256": "e0231f651a8c6f3fab2ef16cb4ce280c6b78a9b6ada0c216d95bcb698ff6e385",
       "recorded_at_pacific": "2026-10-20T01:21:16.825178-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P06/runtime/benchmark/prediction_lock.json",
       "available": true,
       "sha256": "00c011351323ccf84de86444f7eafb2537a40e8b93c7923759148cd84d3968ed",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P07/runtime/benchmark/completion.json",
       "available": true,
       "sha256": "ec9a2807aeb88a1e2fb374368c53f84930b1c771da4d740ea8f5974f624f306c",
       "recorded_at_pacific": "2026-10-20T04:30:36.029996-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P07/runtime/benchmark/scores.json",
       "available": true,
       "sha256": "f79fdcb9a294eb09e09cf8fe4642e04f7eb413f260cf22661054d596dc1416e3",
       "recorded_at_pacific": "2026-10-20T12:54:26.205675-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P07/runtime/benchmark/prediction_lock.json",
       "available": true,
       "sha256": "ec3d2afa15e432c48c6574856a1ce01e2a9fba4b1b39bf7705abb40efafdb5d1",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P08/runtime/benchmark/completion.json",
       "available": true,
       "sha256": "78fdced81d5ea022db0c37e416b26570431f0646c2ab59cc4e99f7d99aea4f0f",
       "recorded_at_pacific": "2026-10-20T02:50:38.638604-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P08/runtime/benchmark/scores.json",
       "available": true,
       "sha256": "83ff575019fb3f5305b6b9859edc17e7a4ada3787f3de23e5f7fbddc764da006",
       "recorded_at_pacific": "2026-10-20T13:05:00.562133-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P08/runtime/benchmark/prediction_lock.json",
       "available": true,
       "sha256": "c50d588eaf87b407f6a14e8bf133b8f8dbc4fad42db2ded9a360de75f19c38cc",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P09/scores.json",
       "available": true,
       "sha256": "6e03f9612f876d4b3f570b00c5937607d9bf0c9552eebc783b83238635a91f31",
       "recorded_at_pacific": "2026-10-20T02:52:50.425198-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p10_original_test_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p11_original_test_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P12/runtime/benchmark/completion.json",
       "available": true,
       "sha256": "a0d6b9d3fb3ff95a2869f30e6c97aae21c8bc417f587173ebf47fd05c4b8ac36",
       "recorded_at_pacific": "2026-10-21T00:21:28.148477-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P12/runtime/benchmark/scores.json",
       "available": true,
       "sha256": "03a01681d1ef58037a814c0b16edbf9c6632f03fc3d1f37671b020a538138852",
       "recorded_at_pacific": "2026-10-21T00:22:45.345147-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P12/runtime/benchmark/prediction_lock.json",
       "available": true,
       "sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P13/runtime/benchmark/progress.json",
       "available": true,
-      "sha256": "092a9c802d4053ec1775feba70dc65ecd764d19fe359ed26afece38c4efdfa99",
-      "recorded_at_pacific": "2026-10-21T11:55:11.700434-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "9985ff83d8b8a82b71d9c463d4b85d2567b356f214a3a66067615c84d2faea70",
+      "recorded_at_pacific": "2026-10-21T12:38:56.095539-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/manifest.json",
       "available": true,
       "sha256": "64b1f81dfa7a138458905736545ecb93f592c7cd85dc8528b6621ca125b260d4",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/submission_receipt.json",
       "available": true,
       "sha256": "fe73eb0027e881f5cf2f4577b8d196d4c610a0121af1ed27374705259073d873",
       "recorded_at_pacific": "2026-10-20T12:49:04.323471-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/status.json",
       "available": true,
-      "sha256": "64687810f70d91f2524209899e32c3b38d42ee683357369042cdf0d901ef5cee",
-      "recorded_at_pacific": "2026-10-21T11:56:21.417842-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "2f70b98d6ab0ee08c7366f5a4c032e2deb020a8dbd87547795e39d82723caed3",
+      "recorded_at_pacific": "2026-10-21T12:45:23.565499-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/server_identity.json",
       "available": true,
       "sha256": "fd09d98a5480e4433308fb63f4b91ab609b4236e0dd1d9526c8f1cfbc4a38f45",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/predecessor_terminal_receipt.json",
       "available": true,
       "sha256": "a58344f6f0bbf566cdbdeae86abfbe0f92878bf58569bf9d4190e1ce588f253d",
       "recorded_at_pacific": "2026-10-20T12:59:01.957994-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/P13_boundary.json",
       "available": true,
       "sha256": "8716c39f686b5606edde846bdf2d034db4874ff1ae48e2e6176b584d1958dad3",
       "recorded_at_pacific": "2026-10-20T13:00:50.145830-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/queue/P13_benchmark_continuation1.grant.json",
       "available": true,
       "sha256": "b4ef0da0acda952d10e8c7a23288412cc3a66a8ec136a065c24fe28523e67dae",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/queue/P13_benchmark_continuation1.started.json",
       "available": true,
       "sha256": "e4440854a4f26a4713ddb6b24053862fe6e0d5f00e602807fcc84f973dc23dd3",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P14/runtime/benchmark/progress.json",
       "available": true,
-      "sha256": "8617e692923f9624e3841b7085fd36d9b524693dacb42dacbd05da6456720e5d",
-      "recorded_at_pacific": "2026-10-21T11:56:22.806056-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "2f069efff8b036e5995780f0380806279cb8a8d8aa4962754e27b7bfc084dd18",
+      "recorded_at_pacific": "2026-10-21T12:44:57.172590-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/P14_boundary.json",
       "available": true,
       "sha256": "3bccfe2462c12d616b3d4dcd43ce116aabe9c51f9659d7dadcc7baf0a75dd0bf",
       "recorded_at_pacific": "2026-10-20T13:00:52.272411-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/queue/P14_benchmark_continuation1.grant.json",
       "available": true,
       "sha256": "6725cb9bb6ae1e84080d8c4d967bdc44b533ddb2a9063bbc4b4976277990662a",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/queue/P14_benchmark_continuation1.started.json",
       "available": true,
       "sha256": "a0c4f560c85e0a6ddc0234dfd3f53161d095870c835693a22dcaccadd719a2f2",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P15/runtime/benchmark/progress.json",
       "available": true,
-      "sha256": "95945e2972657d0d42e51cb11e68ffab03615fae042214b5cd2df5363823fcdb",
-      "recorded_at_pacific": "2026-10-21T11:55:58.589197-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "09379e489f5aacefae11dcfe15a8cc524442238b8b1649fc63c5529626aa9f36",
+      "recorded_at_pacific": "2026-10-21T12:45:21.785466-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/P15_boundary.json",
       "available": true,
       "sha256": "8971aa2a7037d836413712d9caf70700a70d5bbcc570814fa0bd79630ad76304",
       "recorded_at_pacific": "2026-10-20T13:00:52.491706-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/queue/P15_benchmark_continuation1.grant.json",
       "available": true,
       "sha256": "537e753c81541deb258923b23da4fbf86cbbe73a8ba45205794fb90f5c4f7e70",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/continuation_v1/runtime/queue/P15_benchmark_continuation1.started.json",
       "available": true,
       "sha256": "a941903e863d94cec4d5865ac3eadfb684b171e68e96c34ce42d63a52e9880f1",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p16_slurm_replay_2026-10-16_mixed_4k16k_scoring_v1/scores.json",
       "available": true,
       "sha256": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "reports/REACTION_EXTRACTION_DIAGNOSTIC_2026-10-19.json",
       "available": true,
       "sha256": "68d143a13641237c1141b4d47ecdda438f7f81711ffccc7a4cdd6069764f449b",
       "recorded_at_pacific": "2026-10-19T01:04:58.386400-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "scripts/prepare_proteingym_gfp.py",
       "available": true,
       "sha256": "316cbfe5ce3236ae7bc3e4f3abea4559318c0e80a569155e8d2e858368b65018",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P17/task.json",
       "available": true,
       "sha256": "9f5e5482124319309c4e8658b8dd30d442e823ffa3fee206660ab33389a58064",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P17/status.json",
       "available": true,
       "sha256": "41f875c1a1af13c9aa7fa6bac4949a37ab4c0fb43a8290c8f4778da959d81ce8",
       "recorded_at_pacific": "2026-10-20T21:24:50.517011-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P18/task.json",
       "available": true,
       "sha256": "342a68eb3dbceb2a5dabb7f1ebf07247e7f91afc215558591d37f6aa27d1d9f8",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "reports/policy_warning_local_audit.json",
       "available": true,
       "sha256": "62129b60dbfb96004965e9a8b8f650caabbd20f1bc149ddc8860bf78b626f7b1",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_acquisition_2026-10-19/p18_gfp_candidate/review_interruption.json",
       "available": true,
       "sha256": "a987a12319a209443c302d9029c16c81e84ee200bf5259d44ad883523b5eabac",
       "recorded_at_pacific": "2026-10-19T15:51:37.563955-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
-      "path": ".local/catalog_execution_2026-10-20/tasks/P19/readiness.json",
+      "path": ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/failure_closure.json",
       "available": true,
-      "sha256": "8ff9320c52fbd695718daef4371da83b826a0af24b4280ce16fff4d82c807e1f",
-      "recorded_at_pacific": "2026-10-20T01:29:20.970252-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "44bc0875d49ee2ea4e811a84a9d73363d1aadd4c58cc97fa6bcef293ed58d632",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
-      "path": ".local/catalog_execution_2026-10-20/tasks/P19/status.json",
+      "path": ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/development/completion.json",
       "available": true,
-      "sha256": "429e26ea13b2b1eea674570b514980bd2c96f53921d023dfa714529cabe4c70c",
-      "recorded_at_pacific": "2026-10-20T21:33:18.761657-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "c391284ba902437994b834bbf82e985e3cc7e02597eaad4a4782c0480cc72989",
+      "recorded_at_pacific": "2026-10-21T12:30:21.085554-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
-      "path": ".local/catalog_execution_2026-10-20/tasks/P19/runtime_integration_preparation/cpu_tokenizer_step_receipt.json",
+      "path": ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/status.json",
       "available": true,
-      "sha256": "aa7a640c37d89f7f91275197964fe43bb03ca4a995084159bcb4d11b9ba98da8",
-      "recorded_at_pacific": "2026-10-20T12:45:09.805247-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "23be462773b1ce4038d3162dc9adda1883a5f6e780024c8449d9fd8e8cd8e8ed",
+      "recorded_at_pacific": "2026-10-21T12:30:21.790593-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P20/task.json",
       "available": true,
       "sha256": "a52d90a3fec6abbc131d4191abc6fc5583ff0031452503ca3c9900afb512ba50",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P20/status.json",
       "available": true,
       "sha256": "b140250978ac683e6ee75375c6b45f5f2122d7bc9e55a801527215198ce6c7f7",
       "recorded_at_pacific": "2026-10-20T01:20:28.510325-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P20/review_interruption.json",
       "available": true,
       "sha256": "08c408117abb8b228823f51043a8be1b688f39114ec6ff230229bc9b7eda4552",
       "recorded_at_pacific": "2026-10-20T01:20:28.510325-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/status.json",
       "available": true,
       "sha256": "68d6db979b4f5abedbd91bf809977c063d2472cae4c59099cfab5d39ed1893e7",
       "recorded_at_pacific": "2026-10-19T20:04:49.252852-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/readiness_coverage_receipt.json",
       "available": true,
       "sha256": "94b823c9aab9b2593e0694c5842f70fc234744659791fbfbd2bd73964bafe516",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/synthetic_csv_loading_checks/status.json",
       "available": true,
       "sha256": "66c7fb7af42c4641cb882567602d61a83bf674de675b85fae27aa317f5c8e208",
       "recorded_at_pacific": "2026-10-20T00:08:53.958729-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P21/task.json",
       "available": true,
       "sha256": "d0cb0a6a19db02a952915ecbee49691732d6a725cc00b5fbbb791110c85fcc91",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P21/status.json",
       "available": true,
       "sha256": "37e53c320fdd425e41271eb093a8e889fc5a4c1173d3461d718a255c4eb883d7",
       "recorded_at_pacific": "2026-10-20T21:26:43.997047-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P22/task.json",
       "available": true,
       "sha256": "78917d071ff98ee5e0f7aed826a260efa56284460d3d7ff7532d9ffbd2b7be36",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P22/status.json",
       "available": true,
       "sha256": "7b174ae9a5f7b9324ca48bb6d745ba30b5d48ba8eb86ff7989b25ea2443b320d",
       "recorded_at_pacific": "2026-10-20T21:26:44.342433-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p23_description_full_parallel_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p24_description_full_parallel_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p25_description_full_parallel_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p26_description_full_parallel_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_recovery_round2_2026-10-19/paper_artifacts/PUBLIC_SUMMARY.json",
       "available": true,
       "sha256": "c548f672069a94f09354c7ef1e24098d8f64cd838a756e746b5384fd5849cde4",
       "recorded_at_pacific": "2026-10-19T17:34:11.258197-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "reports/catalog_description_preparation.json",
       "available": true,
       "sha256": "b040753e7fa10190001f4e1ac9049509d314aa147275ed3a036f6cf146ffe10e",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P27/task.json",
       "available": true,
       "sha256": "b2eb28e233e119c0272bada377400caf325022997a7ee88e966fd4dbe30262c6",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P27/status.json",
       "available": true,
       "sha256": "37365264a91141ed206dc2a8b09b7927bd755f2cb9e0fb7c6c7cb8b339dca132",
       "recorded_at_pacific": "2026-10-20T21:27:10.631295-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P30/task.json",
       "available": true,
       "sha256": "fa9211d1a5591e125504fd18ae752419ec0e3dfe627474e274009bca9a3a6de1",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_acquisition_2026-10-19/mutadescribe_sources/schema_and_counts.json",
       "available": true,
       "sha256": "bcddbcf70094df59ce46da9305a09f90feff062fad8a2405b7cfbbfad7d0f9dd",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "reports/mutadescribe_source_review_hold.json",
       "available": true,
       "sha256": "948ecef7bac16d61a77838e296fab4887657cdbf8bbbd8c91a8a132ab176dd82",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P31/task.json",
       "available": true,
       "sha256": "52afd90f93b29fdf53de3faab6856d3b9edf622a4e1ef3cafe37fdd9fc53e99e",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P32/task.json",
       "available": true,
       "sha256": "3e776c6b9c074f7381fa6b4f0fc01541114c2c0fd6d6a55b2df924eb8b485494",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P33/task.json",
       "available": true,
       "sha256": "5e4b1569e65839d12624665633b35dae439ebd43fb74cdc5795f8ec663008999",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "reports/SOURCE_ACQUISITION_PROGRESS_2026-10-19.json",
       "available": true,
       "sha256": "a2fc2415a3fb8a5691ed86996a4f2f1d5c0a6ad7b9644f7a477052afe6aaae96",
       "recorded_at_pacific": "2026-10-19T16:14:54.476899-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P34/task.json",
       "available": true,
       "sha256": "595b1c1ccaacf9e5c36bcad07cb95d1a4b848bf5ddf155b7f3bd234be1d520d7",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_acquisition_2026-10-19/evaluators/status.json",
       "available": true,
       "sha256": "69e7e3d0092c3cad95c4e32965dbf5dee9c1396fa5780a4d854ce64cc91ba777",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json",
       "available": true,
       "sha256": "c0f4a167767c2532fb870c0cf830afc6054ddc6efc21ab71feb8ed3babfb1d11",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P34/status.json",
       "available": true,
       "sha256": "ea0704e9ba5f17d265dba2d3f15252b1da54cb22003f7831d2ba28abfe56d5a7",
       "recorded_at_pacific": "2026-10-20T22:10:35.722051-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/P35/delivery_v1/handoff_manifest.json",
+      "available": true,
+      "sha256": "5ed9efe916db1f1a3086542990a9c96dea87f8c7f5792c98bfc8f5f0782f15eb",
+      "recorded_at_pacific": "2026-10-21T12:38:26.534898-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/P35/status.json",
+      "available": true,
+      "sha256": "91db22448006460426aff1bc02d41cd2eee367b8d3fcf8ca2838fa7e3bde2a9a",
+      "recorded_at_pacific": "2026-10-21T12:38:26.534898-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P35/readiness.json",
       "available": true,
       "sha256": "e09faff392e375b92b3bec3e3f34ffa24c4244ed1b64d1169c38999f5f6e8ab3",
       "recorded_at_pacific": "2026-10-20T01:53:27.838459-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
-    },
-    {
-      "path": ".local/catalog_execution_2026-10-20/tasks/P35/status.json",
-      "available": true,
-      "sha256": "1030246418140a36f2273a5d3e5be8be55178e7d3be1bbe628bf6eaa3469b4e4",
-      "recorded_at_pacific": "2026-10-20T21:44:44.401685-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P35/cpu_checkpoint_load_receipt.json",
       "available": true,
       "sha256": "47eee7484fa51d1fc190050a0fb50dc486577cb9576d065730ca8bb93526b501",
       "recorded_at_pacific": "2026-10-20T01:52:38.072081-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P36/task.json",
       "available": true,
       "sha256": "8e473e5c52172aa02bcbe63c39b0d377adce93a90fbbe411ae8a255b1accae1a",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P36/status.json",
       "available": true,
       "sha256": "85612074bc8e191c9ba00174fa72a6a4d1da76d3de7a74df55d568a0da234b53",
       "recorded_at_pacific": "2026-10-20T01:33:47.315361-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P36/review_summary_v2.json",
       "available": true,
       "sha256": "5492e32fdf7d18390600492d526a1af4571549b2ea1d04c3943cfacbdf66600e",
       "recorded_at_pacific": "2026-10-20T01:24:46.809559-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P36/review_interruption.json",
       "available": true,
       "sha256": "29d4055068697aee33659dc120e1a09287a60b891a6922367817f9cb0e4593e7",
       "recorded_at_pacific": "2026-10-20T01:29:01.126261-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P36/native_artifact_availability.json",
       "available": true,
       "sha256": "5e9b3eee645d777b86add04e2d58ec92ff9007c1a3591ce951cacc83cc1d5b47",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P37/readiness.json",
       "available": true,
       "sha256": "479ff504f062b8eb467352497149e82bb0ebd06f1b58842bfcb1443f07b38cb9",
       "recorded_at_pacific": "2026-10-20T14:04:36.134208-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P37/status.json",
       "available": true,
       "sha256": "c012207fe7583d41cd72f47230a0b2ed2ff573ff86cd816f2dc27902aaefe805",
       "recorded_at_pacific": "2026-10-20T21:18:17.879722-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P37/runtime_preflight.json",
       "available": true,
       "sha256": "8e38b1adb03cf3729c6ffc59c41c756a361d810dd206226954fb4f6d87b6845c",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P37/release2_acquisition_status.json",
       "available": true,
       "sha256": "657045d6e3954b2f4be146eabdc9ffda40f63737581165d3097bae75837db191",
       "recorded_at_pacific": "2026-10-20T01:52:26.305901-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P37/runtime_preparation/status.json",
       "available": true,
       "sha256": "46cbf30c7033b9d1dfb4aefd40739aa9593a89ef0f77e8dda0113179164abf1b",
       "recorded_at_pacific": "2026-10-20T14:04:46.379047-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P37/runtime_preparation/cpu_validation.json",
       "available": true,
       "sha256": "786ed5abc02f2c0535711fbd222fd36c37ebbe6d6f61bccf41f44a17d1d04190",
       "recorded_at_pacific": "2026-10-20T14:03:14.979837-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P38/readiness.json",
       "available": true,
       "sha256": "e0b0f6296ea04b6eba7b50a0f5cb44ea1acfaa263996f7631c72389fa753ac26",
       "recorded_at_pacific": "2026-10-20T21:29:41.682043-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P38/thermal_encoder_acquisition_plan.json",
       "available": true,
       "sha256": "11020d04af2ab2fe84ffe7c99a9fd6fce8ea9490cd1881d1ea1a332e6e1ac9d7",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P38/exact_condition_availability.json",
       "available": true,
       "sha256": "cf8b6421c3405ca95fbb00edee566b5779f28d1006ea46348f50e0e70c39c23b",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P38/thermal_encoder_acquisition/completion.json",
       "available": true,
       "sha256": "819754af8ba308569d93beb8be9abe5676c047e41c75ae8c4bd784ca58a1ff5f",
       "recorded_at_pacific": "2026-10-20T14:10:53.571426-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P38/status.json",
       "available": true,
       "sha256": "3d779660654b94d222833102027eecd19f05e2d08cfe0b45a0dc2626999ae9d3",
       "recorded_at_pacific": "2026-10-20T21:29:41.682043-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P39/task.json",
       "available": true,
       "sha256": "a419143806c925845d5284fb17e950206d113bdf0b6a8d5b2d6b8f4468ecb3af",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_recovery_round2_2026-10-19/structural/completion.json",
       "available": true,
       "sha256": "308bf6672b8a05832031960fde5b836c5ebb505c5dbe2adbb19afc23a9699e2a",
       "recorded_at_pacific": "2026-10-19T17:52:31.840320-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P39/status.json",
       "available": true,
       "sha256": "2f2b9abeb1afff806337a9694d72d2b4dce58bcba506a0bef4893a8dfa9dbf83",
       "recorded_at_pacific": "2026-10-20T21:29:22.182599-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P40/status.json",
       "available": true,
       "sha256": "e32327486c09584e620ee640ef85cf3b07bcc62b30f3432e3b6653613cb4e6c9",
       "recorded_at_pacific": "2026-10-20T21:27:04.473898-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P40/validation.json",
       "available": true,
       "sha256": "528b544ba5c6348b7e1f84181aa6b8b96f9b1b93f5a71fb5834a5f699311617b",
       "recorded_at_pacific": "2026-10-20T01:35:54.862027-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P40/availability.json",
       "available": true,
       "sha256": "a338d8acc36070b797d8553e367e9d8a3a5d5d63cc5093a29be3fd1210cf02c2",
       "recorded_at_pacific": "2026-10-20T01:35:54.862027-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P41/task.json",
       "available": true,
       "sha256": "4edf96b9cb9a6be5ee8a3301917c1810489e5a206ea0c57c5fbe87451c65d65c",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/source_acquisition_2026-10-19/proteor1_checkpoints/manifest.json",
       "available": true,
       "sha256": "0c740c4e04073918c754bf5418063f3087a55cbf52acf377669efd380bf89e3d",
       "recorded_at_pacific": "2026-10-19T15:45:50.118739-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P41/status.json",
       "available": true,
       "sha256": "b86bf49b40ebf57f39f27b0d36c811fae88f2cf346a2c39b06794e55d7f64a00",
       "recorded_at_pacific": "2026-10-20T22:13:34.361014-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_p42_gfp_qualified_two_regimes_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_dti_bindingdb_likelihood_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_dti_biosnap_likelihood_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_dti_human_likelihood_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P44/task.json",
       "available": true,
       "sha256": "e19aba5d28b27c90c8839d7af1d4b4b61ee323d60f3273e9ef27e609cfafe35c",
       "recorded_at_pacific": "2026-10-20T22:24:23.234768-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "reports/catalog_bioreason_pro_preparation.json",
       "available": true,
       "sha256": "756fcd18885b7933ddae75b3d57b9df893a14d3a5fa01924048ec670635b0c5b",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/P44/status.json",
       "available": true,
       "sha256": "39526e9f10973d3940e16ab7f70629692180ebc6b712cd29afb5e8d8c134938a",
       "recorded_at_pacific": "2026-10-20T23:17:58.617322-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_v01_native_test_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_v02_native_test_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_v03_full_publisher_mirror_2026-10-15_seven_gpu/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_v04_original_test500_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": "results/runs/qwen38_27b_v05_pmcvqa_clean2000_td_2026-10-15/scores.json",
       "available": false,
       "sha256": null,
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/plan.json",
+      "available": true,
+      "sha256": "ccb49cc18bdb2f52b88df0d4fb0f0f64260284e5eec6246038714983d9c54ee0",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/root_admission.json",
+      "available": true,
+      "sha256": "be078fb1193f31cb3884a9e5051dcc81bb9d7b53eded5956a1906bc5a842dafc",
+      "recorded_at_pacific": "2026-10-21T12:14:25.578980-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/submission_receipt.json",
+      "available": true,
+      "sha256": "c69f7acc49a24fb6819828fd3d35b4d298e251843628d179a271b17f6d3d564a",
+      "recorded_at_pacific": "2026-10-21T12:14:36.735457-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/plan.json",
       "available": true,
       "sha256": "bbb6ea7fc3993f92e86d18d646380aa486589ee7a0161b6d817452410a8b1de8",
       "recorded_at_pacific": null,
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
-      "path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/root_admission.json",
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/status.json",
       "available": true,
-      "sha256": "67e3b1276890bf798e11d469f442e7688004622f9a2004e2f651216e4aae30a1",
-      "recorded_at_pacific": "2026-10-21T00:37:13.103730-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "c9ffe662dcca52a9c728098bea95541c8691a5a27939024ca861098cffbb5d34",
+      "recorded_at_pacific": "2026-10-21T12:23:21.285947-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
-      "path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/submission_receipt.json",
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/server_identity.json",
       "available": true,
-      "sha256": "82d08b5dc7bf7467acae2b9d8f570a5a3d36f06b5854d1186355e3b121977153",
-      "recorded_at_pacific": "2026-10-21T00:37:28.486462-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "536a5066dab4153943fd725d22ec5350fa30287da2d8aa605b3f379184948efa",
+      "recorded_at_pacific": "2026-10-21T12:23:21.138081-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
-      "path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/status.json",
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/completion.json",
       "available": true,
-      "sha256": "5267b2c364365775d1a4d634aa0830618dce67c2c5b0deca52da3ba048567db9",
-      "recorded_at_pacific": "2026-10-21T00:46:48.191394-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "279431314d80161c25ed1fe78980cbdf4bcae560229075845273c94df9df1cd2",
+      "recorded_at_pacific": "2026-10-21T12:28:26.526538-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
-      "path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/server_identity.json",
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/scores.json",
       "available": true,
-      "sha256": "8a8a61f5e665dfd0737c03f3f44b4c0265320b48f5458a9fb25b7b2580186aed",
-      "recorded_at_pacific": "2026-10-21T00:46:47.786840-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "85893accdea08e5c9bafa17fe9da5845a1c3cb728722b781cdf41f546f22dd97",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
-      "path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/completion.json",
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/judge_lock.json",
       "available": true,
-      "sha256": "116eeafc316096590edb0097ad7452b35bb54f6b8a9d845e9b109d5b5b4f2c39",
-      "recorded_at_pacific": "2026-10-21T02:16:41.888192-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "sha256": "0a118867dc2998ebec5448576a11ca3e145ee100a439c3d937f6157cdad305b7",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/source_prediction_lock.json",
+      "available": true,
+      "sha256": "955cbb4b23025f14d7ed1370d2e15f6999d3cfafc4b76e3f17b308ee2386fc2a",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/prediction_lock.json",
+      "available": true,
+      "sha256": "955cbb4b23025f14d7ed1370d2e15f6999d3cfafc4b76e3f17b308ee2386fc2a",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/judge_lock.json",
+      "available": true,
+      "sha256": "29fa23ddbab133104b88bc26c26d2e7a45e1a8ed05036dc5a775da60d1e9b6d2",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/judge_outcomes.json",
+      "available": true,
+      "sha256": "1edeae8cc597889c03d187628cb5e924251a720103c74fb7113872a153761725",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/real_input_preparation_v1/packets/manifest.json",
+      "available": true,
+      "sha256": "2697c868411bc4952b0caaa45ec86c3e418425c564eb82e95d1e0241e3cb0f48",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/predictions.json",
+      "available": true,
+      "sha256": "8ef034eaf3512f7ac468ae9b444d07119ef1c654be056b5bf154a9460eb722c5",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/judge_outcomes.json",
+      "available": true,
+      "sha256": "7aef2f0708914633e272ffbb3c894034e722289e601c21ccfb94609e0a32cee0",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/run_v1/judgements.json",
+      "available": true,
+      "sha256": "adc0743a78f78645be2be078027a235877d7ac4fde431166903c52773bf0b4ab",
+      "recorded_at_pacific": null,
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
+    },
+    {
+      "path": ".local/catalog_execution_2026-10-20/tasks/V06/untouched_judge_continuation_v1/runtime/terminal_receipt.json",
+      "available": true,
+      "sha256": "a1e92aa1bac1c74dd37ee51db51df25a24d3677a318ba9e1d89ca0b67ad864ff",
+      "recorded_at_pacific": "2026-10-21T12:28:27.875440-07:00",
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/V07/status.json",
       "available": true,
       "sha256": "77c2cfcf683ece36ac67c12a0dbfd25a0659c2f03d8953956f89f744896428bd",
       "recorded_at_pacific": "2026-10-20T21:40:31.966494-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/V07/materialization_resume_20261020_v1/completion.json",
       "available": true,
       "sha256": "8e6784b87bc2f3f2ba3647bc7c625a86141786ce6d69726a7336e3abb3408a9a",
       "recorded_at_pacific": "2026-10-20T02:22:26.549798-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     },
     {
       "path": ".local/catalog_execution_2026-10-20/tasks/V07/readiness.json",
       "available": true,
       "sha256": "1899eccb92bf21edc179c689e59ba4af40d1974a1c73cb8a14ba0e27b03f438c",
       "recorded_at_pacific": "2026-10-20T01:40:33.373008-07:00",
-      "observed_at_pacific": "2026-10-21T11:56:24.746304-07:00"
+      "observed_at_pacific": "2026-10-21T12:45:22.928882-07:00"
     }
   ],
   "validation": {

@@ -16,22 +16,22 @@ CATEGORIES = {
     "done": "Done: defined score for the declared evaluated condition",
     "running": "Running generation",
     "queued": "Queued for generation in the frozen runtime",
-    "agent_work": "Doable agent work not finished",
+    "agent_work": "Unfinished agent work",
     "user_held": "Held at the user's request",
     "provider_held": "Biological/provider interruption or restriction",
     "impossible": "Whole setting established impossible",
 }
-SHORT_LABELS = {"done": "Done", "running": "Running", "queued": "Queued", "agent_work": "Agent work", "user_held": "User held", "provider_held": "Provider held", "impossible": "Impossible"}
+SHORT_LABELS = {"done": "Done", "running": "Running", "queued": "Queued", "agent_work": "Unfinished agent work", "user_held": "User held", "provider_held": "Provider held", "impossible": "Impossible"}
 AGENT_ACTIONS = {
     "P04": ("Inventory the acquired 520-case test LMDB, review assay eligibility, isolate targets and freeze a scalar delivery/scoring contract.", ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json", "Source archive acquired; assay eligibility and runtime preparation remain unfinished."),
     "P05": ("Review the available FLIP AAV assay scope, isolate test inputs/targets and freeze scalar delivery and scoring.", "reports/catalog_extended_preparation.json", "Released inputs available; eligibility review and execution preparation unfinished."),
     "P17": ("Review permissible assay scopes in the acquired ProteinGym release and implement a version-matched, full-denominator score adapter.", ".local/source_acquisition_2026-10-19/prediction_datasets/summary.json", "217 released assay CSVs acquired; reviewed execution scope remains unfinished."),
-    "P19": ("Integrate the prepared 34-assay subset into the central runtime and pass its three synthetic delivery checks; independently review the remaining 77 assays while preserving 12 holds.", ".local/catalog_execution_2026-10-20/tasks/P19/readiness.json", "Required sources available; full coverage limited by unfinished review and existing case holds."),
+    "P19": ("Preserve the three failed synthetic delivery outputs. Implement and CPU-test input-valid, unique ranking constraints as a separate prospective condition before any new delivery gate; the 34-case benchmark has not started.", ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/failure_closure.json", "Independent runtime worked, but all three actual development rankings failed sequence-position validity. Full native coverage separately has 77 unreviewed and 12 held assays."),
     "P21": ("Prepare permitted T3 anchor and candidate inputs from the 67 acquired tables, isolate target scores, and validate complete ranking delivery.", ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/status.json", "Required source tables acquired; eligibility, input isolation and runtime integration unfinished."),
     "P22": ("Prepare permitted T4 component-context and candidate inputs from the 29 acquired pairs, isolate target scores, and validate complete ranking delivery.", ".local/source_recovery_round2_2026-10-19/pfarena/native_preflight/status.json", "All 29 context/target pairs acquired; eligibility, isolation and runtime integration unfinished."),
     "P27": ("Freeze a defensible available protein-description adaptation with fixed cohort/reference preprocessing; retain exact temporal NatureLM condition as unavailable.", ".local/source_recovery_round2_2026-10-19/paper_artifacts/PUBLIC_SUMMARY.json", "Exact native NCBI dates/accession manifest not found in audited author releases; labelled adaptation remains possible."),
     "P34": ("Integrate the acquired encoder and five existing heads with the released optimization/scoring contract and explicit failure handling; preserve the held sixth landscape.", "reports/SOURCE_ACQUISITION_PROGRESS_2026-10-19.json", "Existing evaluator assets acquired; released-code algorithm and runtime implementation unfinished; no new training."),
-    "P35": ("Freeze the qualified corpus condition, run retained/rejected PDB accounting, review corpus scope and pass retrieval delivery checks using the acquired existing checkpoint.", ".local/catalog_execution_2026-10-20/tasks/P35/readiness.json", "Five released query rankings are feasible. The release provides no relevance gold or aggregate correctness metric; do not invent accuracy."),
+    "P35": ("Validate and freeze the native ProtST execution runtime, then run all five top-20 query rankings over the qualified 34,464-input corpus. The CPU runner is ready; the separate CUDA route needs compatibility checks.", ".local/catalog_execution_2026-10-20/tasks/P35/delivery_v1/handoff_manifest.json", "Executable native ProtST demo and nine neutral checks are complete; no pretrained forward has run. It is not a Qwen result. The release provides no relevance gold or aggregate accuracy metric."),
     "P37": ("Assemble and validate an isolated OmegaFold2 runtime/checkpoint, then pass an independent development gate for the declared released-code condition.", ".local/catalog_execution_2026-10-20/tasks/P37/readiness.json", "Matching released-code evaluator assets acquired; exact native sampling and 50% clustering condition unavailable in inspected releases."),
     "P38": ("Validate NetSolP-D runtime, acquire the available ProtT5 encoder for the separate thermal proxy, and freeze independent generation/delivery contracts without training heads.", ".local/catalog_execution_2026-10-20/tasks/P38/readiness.json", "Exact SFM property heads/reference cohort unavailable in inspected releases; distinct available proxy conditions prepared."),
     "P39": ("Freeze a clearly labelled available structural case-study condition and its complete selection/denominator contract using acquired evaluator assets; report proxy evidence without invented binding accuracy.", "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json", "Exact native cohort, selection manifest and scoring contract unreleased in inspected sources; qualitative adaptation remains possible."),
@@ -167,7 +167,182 @@ def task_queue_evidence(root, task, direct, now):
     return result
 
 
+def _v06_continuation_evidence(root, now):
+    """Prefer admitted untouched31 closure; reject inconsistent completion claims."""
+    task = root / ".local/catalog_execution_2026-10-20/tasks/V06"
+    base, source = task / "untouched_judge_continuation_v1", task / "local_execution_v2"
+    paths = {name: base / filename for name, filename in
+             (("plan", "plan.json"), ("admission", "root_admission.json"),
+              ("submission", "submission_receipt.json"))}
+    # An unadmitted preparation plan alone cannot supersede the strict run.
+    if not paths["admission"].exists() and not paths["submission"].exists() and not (base / "runtime/run_v1").exists():
+        return None
+    digest = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
+    canonical = lambda data: hashlib.sha256(json.dumps(data, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
+    result = {"category": "agent_work", "substatus": "V06_continuation_evidence_reconciliation",
+        "status": "V06 continuation evidence needs reconciliation; no complete score or current dispatch is established.",
+        "next_action": "Inspect preserved admission, identity, source and output-lock evidence; do not automatically retry.",
+        "runtime": None, "prepared_benchmark_planned": 193,
+        "separate_local_execution_verified": False, "evidence_paths": [],
+        "scope_notes": ["The strict predecessor remains unchanged. The continuation reuses 193 solver answers and 162 saved judge replies, and permits only 31 untouched judge calls.",
+                        "Single complete outer JSON fences are removed under a separately declared parser repair, with the original identity/numeric validation and mean per-case ratio formula; this local self-judge score is not clinical accuracy."]}
+
+    def require(condition):
+        if not condition:
+            raise ValueError("Inconsistent V06 continuation evidence")
+
+    def document(path):
+        require(path.is_file() and not path.is_symlink())
+        result["evidence_paths"].append(str(path.relative_to(root)))
+        return load(path)
+
+    def ordered(rows, count):
+        return (isinstance(rows, list) and len(rows) == count and
+                all(isinstance(row, dict) and type(row.get("question_id")) is int for row in rows) and
+                [row["question_id"] for row in rows] == list(range(count)))
+
+    try:
+        plan, admission, submission = (document(paths[key]) for key in ("plan", "admission", "submission"))
+        plan_sha, admission_sha = digest(paths["plan"]), digest(paths["admission"])
+        require(plan.get("task_id") == "V06" and plan.get("planned") == 193 and
+                plan.get("execution_scope") == "retained_V06_judge_untouched31_full193closure" and
+                plan.get("new_judge_planned") == 31 and plan.get("new_solver_calls_planned") == 0 and
+                plan.get("gpus_requested") == 1 and admission.get("admitted") is True and
+                admission.get("task_id") == "V06" and admission.get("plan_sha256") == plan_sha and
+                admission.get("gpu_count") == 1 and admission.get("project_gpu_ceiling") == 8 and
+                admission.get("scope") == "judge_untouched31_once_reuse_locked193solver_and162judge" and
+                submission.get("task_id") == "V06" and submission.get("returncode") == 0 and
+                submission.get("plan_sha256") == plan_sha and submission.get("admission_sha256") == admission_sha and
+                str(submission.get("job_id", "")).isdigit())
+        require(Path(plan["source_plan_path"]).resolve() == (source / "plan.json").resolve() and
+                plan["source_plan_sha256"] == digest(source / "plan.json") and
+                Path(plan["source_output_root"]).resolve() == (source / "runtime/run_v1").resolve() and
+                Path(plan["output_root"]).resolve() == (base / "runtime/run_v1").resolve())
+        source_plan = document(source / "plan.json")
+        require(plan.get("model_configuration") == source_plan.get("model_configuration") and
+                plan.get("judge_declaration") == source_plan.get("judge_declaration") and
+                plan.get("manifest") == source_plan.get("manifest") and
+                plan["model_configuration"].get("max_tokens") == 16384 and
+                plan["model_configuration"].get("chat_template_kwargs") == {"enable_thinking": False})
+        job = str(submission["job_id"])
+        result.update(category="queued", substatus="V06_continuation_submitted_no_dispatch_proof",
+            status=f"Independent V06 judge continuation job {job} was submitted; submission is not dispatch evidence.",
+            next_action="Let the existing admitted worker pass its own server and neutral judge gates, then finish only the 31 untouched judgements.",
+            separate_local_execution_verified=True)
+        runtime_path, folder = base / "runtime/status.json", base / "runtime/run_v1"
+        runtime = load(runtime_path) or {}
+        if runtime:
+            result["evidence_paths"].append(str(runtime_path.relative_to(root)))
+            if runtime.get("stage") == "stopped_for_review":
+                result.update(category="agent_work", substatus="V06_continuation_runtime_stopped_for_review",
+                    status="V06 continuation stopped for review; missing progress does not establish zero attempts.")
+            elif runtime.get("stage") == "starting_independent_V06_server":
+                age = age_seconds(timestamp(runtime), now)
+                if str(runtime.get("job_id")) != job or age is None or not -60 <= age <= 600:
+                    result.update(category="agent_work", substatus="V06_continuation_stale_startup",
+                        status="V06 continuation startup evidence is stale or mismatched; current attempts are unknown.")
+        completion_path, progress_path = folder / "completion.json", folder / "progress.json"
+        complete, progress = load(completion_path), load(progress_path)
+        direct = complete or progress
+        if not direct:
+            return result
+        identity = document(base / "runtime/server_identity.json")
+        require(str(identity.get("job_id")) == job and identity.get("plan_sha256") == plan_sha and
+                identity.get("admission_sha256") == admission_sha and identity.get("endpoint") == plan.get("endpoint"))
+        result["evidence_paths"].append(str((completion_path if complete else progress_path).relative_to(root)))
+        counts, new_counts = direct.get("judge"), direct.get("new_judge")
+        result["runtime"] = {"run_id": plan["run_id"], "active_job_id": job, "phase": "judge" if new_counts else "neutral_development",
+            "recorded_at_pacific": timestamp(direct), "age_seconds_at_observation": age_seconds(timestamp(direct), now),
+            "sealed_complete": complete is not None, "unsealed_counts_are_lower_bounds": complete is None,
+            "planned": 193, "responses_saved": counts.get("responses_saved") if counts else None,
+            "judge": counts, "new_judge": new_counts, "source_solver_responses_reused": 193,
+            "source_judge_responses_reused": 162, "native_scoring_status": direct.get("native_scoring_status", "not_started")}
+        age, owner_age = age_seconds(timestamp(direct), now), age_seconds(timestamp(runtime), now)
+        fresh_owner = (str(runtime.get("job_id")) == job and runtime.get("stage") == "serving_frozen_V06_protocol" and
+                       owner_age is not None and -60 <= owner_age <= 180)
+        if (not complete and direct.get("stage") == "untouched_judge_generation" and new_counts and
+                new_counts.get("attempted_with_observed_outcome", 0) > 0 and
+                ((age is not None and -60 <= age <= 600) or fresh_owner)):
+            result.update(category="running", substatus="V06_untouched_judge_continuation_live_evidence",
+                status=f"Direct V06 untouched-judge progress matches admitted job {job}; saved replies are not a completed score.")
+            return result
+        if not complete and direct.get("stage") == "neutral_judge_delivery_gates":
+            result.update(substatus="V06_continuation_development_only",
+                status="V06 continuation is checking neutral judge delivery; this is not benchmark dispatch or scoring.")
+            return result
+        result.update(category="agent_work", substatus="V06_continuation_lock_or_score_reconciliation",
+            status="V06 continuation is terminal or stale; full source/combined locks and a defined 193-case score need verification.")
+        if not complete or complete.get("benchmark_primary_defined") is not True:
+            return result
+        score_path, judge_path, source_lock_path = folder / "scores.json", folder / "judge_lock.json", folder / "source_prediction_lock.json"
+        score, judge, prediction_lock = (document(path) for path in (score_path, judge_path, source_lock_path))
+        original_folder = source / "runtime/run_v1"
+        original_lock = document(original_folder / "prediction_lock.json")
+        original_judge_lock = document(original_folder / "judge_lock.json")
+        original_outcomes = document(original_folder / "judge_outcomes.json")
+        manifest = document(Path(plan["manifest"]))
+        predictions = document(original_folder / "predictions.json")
+        outcomes, judgements = (document(folder / name) for name in ("judge_outcomes.json", "judgements.json"))
+        terminal = document(base / "runtime/terminal_receipt.json")
+        require(prediction_lock == original_lock and digest(source_lock_path) == digest(original_folder / "prediction_lock.json") and
+                prediction_lock.get("generation_closed") is True and prediction_lock.get("planned") == 193 and
+                prediction_lock.get("terminal_records") == 193 and ordered(manifest, 193) and ordered(predictions, 193) and
+                prediction_lock.get("manifest_sha256") == canonical(manifest) and
+                prediction_lock.get("predictions_sha256") == canonical(predictions) and
+                all(row.get("status") == "completed" and isinstance(row.get("text"), str) and row["text"].strip() for row in predictions))
+        require(original_judge_lock.get("closed") is True and original_judge_lock.get("planned") == 193 and
+                original_judge_lock.get("prediction_lock_sha256") == digest(original_folder / "prediction_lock.json") and
+                original_judge_lock.get("outcomes_sha256") == digest(original_folder / "judge_outcomes.json") and
+                original_judge_lock.get("judgements_sha256") == digest(original_folder / "judgements.json") and
+                ordered(original_outcomes, 193) and
+                all(row.get("status") == "not_dispatched_after_stop" for row in original_outcomes[162:]))
+        require(judge.get("closed") is True and judge.get("planned") == 193 and judge.get("reused_raw_responses") == 162 and
+                judge.get("execution_condition") == plan.get("condition") and
+                judge.get("source_prediction_lock_sha256") == digest(source_lock_path) and
+                judge.get("judge_declaration_sha256") == canonical(plan["judge_declaration"]) and
+                judge.get("outcomes_sha256") == digest(folder / "judge_outcomes.json") and
+                judge.get("judgements_sha256") == digest(folder / "judgements.json") and
+                ordered(outcomes, 193) and ordered(judgements, 193) and
+                all(row.get("status") == "completed" for row in outcomes) and
+                all(outcomes[index].get(key) == original_outcomes[index].get(key)
+                    for index in range(162) for key in ("request_sha256", "raw_response_sha256")))
+        ratios = []
+        for row in judgements:
+            require(set(row) == {"question_id", "reference_score", "candidate_score", "comment", "judge_declaration_sha256"} and
+                    row["judge_declaration_sha256"] == canonical(plan["judge_declaration"]) and
+                    isinstance(row["comment"], str) and bool(row["comment"].strip()))
+            values = [row["candidate_score"], row["reference_score"]]
+            require(all(type(value) in (int, float) and math.isfinite(value) and 1 <= value <= 10 for value in values))
+            ratios.append(float(values[0]) / float(values[1]))
+        overall = score.get("groups", {}).get("overall", {})
+        value = overall.get("released_mean_case_ratio_score")
+        require(score.get("execution_condition") == plan.get("condition") and score.get("judge_declaration") == plan.get("judge_declaration") and
+                score.get("lock_sha256") == canonical(prediction_lock) and overall.get("complete") is True and
+                overall.get("planned") == overall.get("valid") == 193 and
+                all(overall.get(key, 0) == 0 for key in ("generation_failure_or_invalid_answer", "missing_judgement", "invalid_judgement")) and
+                type(value) in (int, float) and math.isfinite(value) and value == 100 * sum(ratios) / 193 and
+                complete.get("released_mean_case_ratio_score") == value and
+                complete.get("execution_condition") == plan.get("condition") and complete.get("new_solver_calls") == 0 and
+                complete.get("source_solver_responses_reused") == 193 and complete.get("source_judge_responses_reused") == 162 and
+                counts.get("planned") == counts.get("responses_saved") == 193 and
+                new_counts.get("planned") == new_counts.get("attempted_with_observed_outcome") == new_counts.get("responses_saved") == 31 and
+                all(new_counts.get(key, 0) == 0 for key in ("transport_errors", "http_errors", "response_errors", "refusals", "truncations", "empty_finals", "not_dispatched_after_stop")) and
+                str(terminal.get("job_id")) == job and terminal.get("completion_sha256") == digest(completion_path) and terminal.get("completion") == complete)
+        result.update(category="done", substatus="defined_V06_untouched_judge_continuation_score",
+            status="Complete 193-case V06 local-judge score verified against the combined judge closure and unchanged source solver lock.",
+            next_action="Preserve the published local-judge/parser-repair score and original strict predecessor; no V06 generation remains.", score=score)
+        result["runtime"]["native_scoring_status"] = "completed_verified_full193_local_judge_with_declared_parser_repair"
+        return result
+    except (OSError, ValueError, TypeError, KeyError, AttributeError):
+        return result
+
+
 def v06_execution_evidence(root, now):
+    continuation = _v06_continuation_evidence(root, now)
+    return continuation if continuation is not None else _v06_strict_execution_evidence(root, now)
+
+
+def _v06_strict_execution_evidence(root, now):
     """Read the separately admitted worker; a submission is never dispatch proof."""
     base = root / ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2"
     paths = {"plan": base / "plan.json", "admission": base / "root_admission.json",
@@ -398,6 +573,9 @@ def build(root: Path):
             if task == "P09":
                 row["exact_native_condition_availability"] = "Original NatureLM binary conversion/test labels unavailable in inspected author releases. Completed declared >1.0 rule-derived adaptation reuses sealed P08 predictions."
                 row["scope_notes"].append("53.28768189245972% accuracy (6848/12851); no extra model generation; not native NatureLM label certification.")
+        elif task == "V06" and (v06 := v06_execution_evidence(root, now)):
+            row.update(v06)
+            row["exact_native_condition_availability"] = "All 193 released cases; declared local-Qwen judging and lossless outer-JSON-fence extraction retain the released mean per-case score-ratio formula. The original GPT-4-0314 judge is not reproduced."
         elif task in historic_done:
             originals = [r for r in table_rows if r["task_id"] == task and r.get("source_row_category") == "completed_rows"]
             row.update(category="done", substatus="retained_declared_score", status="Defined retained score for the declared evaluated condition.", next_action="Preserve existing scores and qualifications; no new generation is pending for this setting.")
@@ -434,9 +612,6 @@ def build(root: Path):
                 row["scope_notes"].append("No progress is not proof of zero requests. This queue classification uses the frozen grant and absence of a started record, not filename response counts.")
             else:
                 row.update(category="agent_work", substatus="runtime_observation_or_scoring_needed", status="Runtime evidence needs reconciliation; do not infer current running state from the old controller.", next_action="Inspect direct runner/process and seal evidence; resume only the existing authorized one-attempt queue or score a completed seal.")
-        elif task == "V06" and (v06 := v06_execution_evidence(root, now)):
-            row.update(v06)
-            row["exact_native_condition_availability"] = "All 193 released cases; a declared local-Qwen judge replaces the original GPT-4-0314 judge, using the released mean per-case score-ratio formula."
         elif task in AGENT_ACTIONS:
             action, source, availability = AGENT_ACTIONS[task]
             row.update(category="agent_work", substatus="implementation_review_preparation", status="Doable preparation/implementation remains unfinished; not in the live generation queue.", next_action=action, exact_native_condition_availability=availability)
@@ -561,7 +736,7 @@ def markdown(data):
         lines.append(f"| {label} | {data['counts'][key]} |")
     breakdown = data["agent_work_breakdown"]
     if breakdown:
-        lines += ["", "Doable agent work includes " + ", ".join(f"{value} {key.replace('_', ' ')}" for key, value in breakdown.items()) + ". These tasks are not all in a live generation queue."]
+        lines += ["", "Unfinished agent work includes " + ", ".join(f"{value} {key.replace('_', ' ')}" for key, value in breakdown.items()) + ". These tasks are not all in a live generation queue."]
     health = data.get("operational_health_observation")
     current_health = data.get("current_runtime_health_observation")
     if current_health and current_health.get("health_http_status") == 200 and current_health.get("models_http_status") == 200:
@@ -587,7 +762,7 @@ def markdown(data):
         evidence = row["public_evidence_path"]
         label = SHORT_LABELS[row["category"]]
         if row["substatus"] == "offline_scoring_repair":
-            label = "Agent work: scoring repair"
+            label = "Unfinished agent work: scoring repair"
         lines.append(f"| {row['task_id']} | {esc(row['task_name'])} | {esc(label)} | {saved} | {esc(row['next_action'])} | [{esc(Path(evidence).name)}](../{evidence}) |")
     lines += ["", "## Native-condition and scope qualifications", "", "| ID | Availability / material qualification |", "|---|---|"]
     for row in data["rows"]:

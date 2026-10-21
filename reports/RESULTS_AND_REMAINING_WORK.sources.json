@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_at_pacific": "2026-10-21T12:30:01.683308-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "0a97f3b5d3ddeec93c15544edb6d76f8a0fc36c268a17b4fc1a70ff309532ac4",
+  "report_sha256": "729ebc44b36b16eccf1eef9907715f1db57de50e787717b5ad1e86baacb9d148",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
@@ -4545,15 +4545,16 @@
       ]
     },
     "P19": {
-      "why_not_done": "The 34-assay reviewed subset, runner and scorer are prepared, 37 software checks passed, and the three synthetic prompts passed actual CPU tokenizer checks. We have not admitted the P19 runner to a frozen live runtime or made its three actual synthetic model-delivery calls. The in-memory 3/3 fixture result is not that live gate.",
+      "why_not_done": "The separate runtime ran its three synthetic delivery checks. All three returned valid 40-item JSON but failed sequence-position consistency; one also repeated eight entries. The reference-free gate stopped execution before the fixed 34-case benchmark. This is a demonstrated model-output contract failure, not missing access or a user decision.",
       "blocker_owner": "Agent",
-      "finish_requirement": "Adopt the already prepared P19 runtime entry prospectively; pass three actual synthetic model-delivery cases and seal them; then execute and score the separate 34-assay reviewed condition. Full native coverage separately needs review of 77 assays and resolution of 12 holds.",
-      "next_deliverable": "Adopt a prospective frozen P19 runtime admission and produce a real, sealed 3/3 synthetic delivery pass.",
+      "finish_requirement": "Preserve all failed development outputs. Prepare and CPU-test a separately named prospective schema with input-valid mutation IDs and uniqueness; review the full unchanged benchmark denominator before any new delivery condition. The full native 123-assay panel separately contains 77 unreviewed and 12 held assays.",
+      "next_deliverable": "Executable synthetic-tested candidate constraints and exact failure diagnosis; no replay or mutation of the original run.",
       "needs_user_decision": false,
       "source_paths": [
-        ".local/catalog_execution_2026-10-20/tasks/P19/status.json",
-        ".local/catalog_execution_2026-10-20/tasks/P19/runtime_integration_preparation/cpu_tokenizer_step_receipt.json"
-      ]
+        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/development/completion.json",
+        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/status.json"
+      ],
+      "observed_at_pacific": "2026-10-21T12:34:43.706039-07:00"
     },
     "P21": {
       "why_not_done": "The 67 native T3 target tables and source builders are available. We have not reviewed the real assay scopes or built model inputs containing each supplied measured anchor and candidate list while excluding hidden candidate measurements. No real task-specific ranking delivery panel or frozen local run is ready.",
@@ -8255,5 +8256,12 @@
     "sha256": "85893accdea08e5c9bafa17fe9da5845a1c3cb728722b781cdf41f546f22dd97",
     "judge_lock_sha256": "0a118867dc2998ebec5448576a11ca3e145ee100a439c3d937f6157cdad305b7",
     "new_model_calls_by_reporting": 0
+  },
+  "p19_development_failure_updated_at_pacific": "2026-10-21T12:37:10.547920-07:00",
+  "p19_development_failure_source": {
+    "path": ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/development/completion.json",
+    "sha256": "c391284ba902437994b834bbf82e985e3cc7e02597eaad4a4782c0480cc72989",
+    "development_only": true,
+    "benchmark_score_available": false
   }
 }
