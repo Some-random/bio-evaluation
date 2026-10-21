@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_pacific": "2026-10-20T22:42:39.601251-07:00",
+  "generated_at_pacific": "2026-10-20T23:31:49.749685-07:00",
   "timezone": "America/Los_Angeles",
   "scope": "Original 15 preparation tasks, two resumed judging tasks, and five separate 2026 benchmark additions",
   "original_retained_catalog_denominator": 57,
@@ -9,7 +9,7 @@
   "new_2026_benchmark_count": 5,
   "publication_target_interval_seconds": null,
   "refresh_note": "Manual timestamped Markdown snapshot; automatic publication and recurring messages remain stopped.",
-  "worker_note": "Three workers currently cover the five 2026 additions. Earlier rows record completed engineering milestones, not active model workers.",
+  "worker_note": "Timestamped preparation checklist. Ownership means responsibility, not a claim that every row has a live worker.",
   "tasks": [
     {
       "task_id": "P04",
@@ -20,10 +20,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "Input/reference separation and scalar output checks passed; native correlation fixtures checked.",
       "progress": "11 synthetic checks passed; 4 native-metric fixtures passed",
-      "next_step": "Complete permitted-input review and test-data preparation; freeze and validate the prediction run.",
+      "next_step": "Inspect actual test cases for permitted scope; extract the ordered protein inputs with targets kept separate; fix the prediction settings, check delivery, then run and score.",
       "evidence_at_pacific": "2026-10-20T21:32:00.713279-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P05",
@@ -34,10 +36,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "Input/reference separation and scalar output checks passed; historical archive/crop mismatch documented.",
       "progress": "11 synthetic checks passed",
-      "next_step": "Resolve the historical archive/crop comparison; complete permitted-input review and test preparation.",
+      "next_step": "Resolve the historical archive/sequence-crop difference; inspect actual assay scope; prepare the test inputs and hidden targets; validate scalar delivery and native correlation scoring.",
       "evidence_at_pacific": "2026-10-20T21:21:32.492059-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P17",
@@ -48,10 +52,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "All 217 archive/metadata entries matched; scoring and full-coverage checks passed.",
       "progress": "14 synthetic checks passed",
-      "next_step": "Finish the permitted assay roster and prepare separate inputs/references; validate the prediction run.",
+      "next_step": "Finish the explicit permitted/excluded list for 217 assays; prepare ordered sequence/candidate inputs with measured targets hidden; validate and execute per-assay scoring.",
       "evidence_at_pacific": "2026-10-20T21:24:50.517011-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P19",
@@ -62,10 +68,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "All 34 reviewed inputs and 3 artificial development inputs passed CPU tokenizer checks; runtime package remains disabled.",
       "progress": "See latest verified result",
-      "next_step": "Integrate the separate runtime entry and pass actual development delivery before the reviewed subset can run.",
+      "next_step": "Connect the prepared 34-assay package to a separate frozen local runtime; pass the three already-specified neutral model-delivery cases; then run and score that reviewed subset.",
       "evidence_at_pacific": "2026-10-20T21:25:52.054914-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P21",
@@ -76,10 +84,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "Native input builder, reference isolation and complete-ranking checks passed on artificial fixtures.",
       "progress": "12 synthetic checks passed",
-      "next_step": "Review permitted assays/context, prepare real inputs and pass tokenizer and ranking delivery checks.",
+      "next_step": "Inspect real assay/anchor context; package candidates and supplied anchor measurements while hiding target measurements; validate complete rankings and run the scorer.",
       "evidence_at_pacific": "2026-10-20T21:26:43.997047-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P22",
@@ -90,10 +100,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "Native input builder, reference isolation and complete-ranking checks passed on artificial fixtures.",
       "progress": "12 synthetic checks passed",
-      "next_step": "Review permitted assays/context, prepare real inputs and pass tokenizer and ranking delivery checks.",
+      "next_step": "Inspect real assay/context; package candidates and allowed single-mutant measurements while hiding combination targets; validate complete rankings and run the scorer.",
       "evidence_at_pacific": "2026-10-20T21:26:44.342433-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P27",
@@ -104,10 +116,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "2,633 alternative inputs packaged; this cohort overlaps P26 and does not add an independently completed setting.",
       "progress": "9 synthetic checks passed",
-      "next_step": "The recovered alternative overlaps P26; resolve an independent evaluation cohort before claiming new coverage.",
+      "next_step": "Recover the author accession list, dated annotation snapshot and ROUGE preprocessing, or establish an independent declared alternative. The existing 2,633-case package duplicates another completed evaluation.",
       "evidence_at_pacific": "2026-10-20T21:27:10.631295-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P34",
@@ -118,10 +132,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "The released encoder and all five existing heads are now assembled with exact checkpoint tensor bindings; no model forward has run.",
       "progress": "536 encoder tensors; 10 tensors in each of five heads; artificial interface checks passed",
-      "next_step": "Validate evaluator delivery and the proposal interface, then prepare permitted starting cases and a frozen run.",
+      "next_step": "Implement the Qwen proposal interface using the already-loaded encoder and five existing heads; prepare permitted starting cases; test a real evaluator forward and the full loop. No new heads are needed.",
       "evidence_at_pacific": "2026-10-20T22:10:27.669306-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P35",
@@ -132,10 +148,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "Full source-order corpus projection and artifact checks completed on CPU; this is prepared data, not retrieval predictions.",
       "progress": "36,635 candidates checked; 34,464 retained; 2,171 parser rejections",
-      "next_step": "Complete permitted-input review and validate retrieval delivery. Numerical accuracy additionally needs relevance labels.",
+      "next_step": "Check the retained corpus/query scope; test retrieval delivery and produce the five query rankings. An accuracy score additionally needs relevance labels, which the release does not supply.",
       "evidence_at_pacific": "2026-10-20T21:44:44.348780-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P37",
@@ -146,10 +164,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "All 3,252 checkpoint tensors bound exactly; synthetic I/O checks passed. No folding forward was run.",
       "progress": "8 synthetic checks passed",
-      "next_step": "Validate actual folding delivery and complete permitted-input/development checks.",
+      "next_step": "Test an actual folding-model forward, finish the Qwen generation wrapper and admitted generation scope, then run the fixed generation/folding condition. Weight loading is already done.",
       "evidence_at_pacific": "2026-10-20T21:18:17.879722-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P38",
@@ -160,10 +180,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "Both alternative property evaluators passed CPU synthetic delivery; no benchmark generation.",
       "progress": "4 synthetic evaluator forwards; no benchmark generation",
-      "next_step": "Integrate the validated evaluators with reviewed generation and development delivery checks.",
+      "next_step": "Fix the generation case allocation and settings, connect the already-tested property evaluators, validate delivery and run the declared proxy conditions.",
       "evidence_at_pacific": "2026-10-20T21:28:55.206767-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P39",
@@ -174,10 +196,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "Source-based case packaging and synthetic interface checks passed; exact author cohort is unavailable.",
       "progress": "15 synthetic checks passed",
-      "next_step": "Resolve missing author-case details and validate an explicitly declared alternative case study; no measured binding score is available.",
+      "next_step": "Assemble and test the complex-prediction runtime using acquired assets; define a reproducible case cohort and proxy acceptance rule. Exact author cases/settings and measured binding accuracy are unavailable.",
       "evidence_at_pacific": "2026-10-20T21:29:22.152695-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P40",
@@ -188,10 +212,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "Target-isolated structural packet and recovery-metric helper passed synthetic checks; real cases remain unprepared.",
       "progress": "14 synthetic checks passed",
-      "next_step": "Review real cases and validate structural input serialization and model delivery.",
+      "next_step": "Inspect the 60 real antigen/case scopes; build masked structural inputs that omit the target CDR; test the coordinate-to-text interface, context limits and actual delivery.",
       "evidence_at_pacific": "2026-10-20T21:27:04.473898-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P41",
@@ -202,10 +228,12 @@
       "active_cpu_work_verified": false,
       "latest_result": "Numbering and CIF runtime dependencies now pass artificial checks; real demonstration cases remain unprepared.",
       "progress": "14 runtime assembly checks plus 13 earlier interface checks passed",
-      "next_step": "Validate permitted real demonstration inputs and geometric model delivery; resolve the declared scoring configuration.",
+      "next_step": "Prepare permitted released demonstration cases; validate their real numbering/CIF conversion; connect proposals to geometric prediction and a declared scorer. The full paper holdout and exact paper scorer remain unavailable.",
       "evidence_at_pacific": "2026-10-20T22:13:34.361014-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "V07",
@@ -216,32 +244,38 @@
       "active_cpu_work_verified": false,
       "latest_result": "Full-dataset CPU image processing passed. Permitted-content review and actual model delivery remain.",
       "progress": "2,215 / 2,215 processor records; 20 images per case; processor records are not model outputs",
-      "next_step": "Complete permitted-content review and separately admitted actual model delivery checks.",
+      "next_step": "Inspect the 2,215 question/slide inputs for permitted scope; record exact inclusions/exclusions; test actual 20-image model delivery and run the declared available condition. Full CPU preprocessing is already done.",
       "evidence_at_pacific": "2026-10-20T21:40:31.962957-07:00",
       "benchmark_completed_by_this_preparation": false,
-      "engineering_status_available": true
+      "engineering_status_available": true,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "P44",
       "evaluation": "BioReason-Pro: Explanation assessment",
       "worker": "Preparation team",
       "state": "Offline interface checks passed",
-      "latest_result": "8,630 ordered release IDs/schema verified; explanation judge interface passed 15 artificial checks. No explanation score produced.",
+      "latest_result": "Twelve independently reviewed human full-sequence cases packaged with isolated evidence; tokenizer checks and eight workflow checks passed. This is an interface panel, not benchmark completion.",
       "progress": "No benchmark generation or judging yet",
-      "next_step": "Prepare admitted solver inputs and judge-only evidence; freeze the declared available judge, validate delivery and score sealed answers.",
-      "evidence_at_pacific": "2026-10-20T22:29:47.533203-07:00",
-      "benchmark_completed_by_this_preparation": false
+      "next_step": "Prepare the wider permitted cohort: only the 12-case human interface panel is packaged, and 8,618 source cases remain unreviewed. Test actual solver/local-judge delivery, then generate and judge the declared cohort.",
+      "evidence_at_pacific": "2026-10-20T23:17:58.617322-07:00",
+      "benchmark_completed_by_this_preparation": false,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "task_id": "V06",
       "evaluation": "LLaVA-Med: Scientific-image question answering",
       "worker": "Preparation team",
       "state": "Offline interface checks passed",
-      "latest_result": "All 193 questions/50 images are available. Offline solver/judge interface passed 34 artificial checks and five CLI workflow steps.",
+      "latest_result": "All 193 actual question/image inputs AND judge references admitted; 50 unchanged images; 193 API envelopes and all actual CPU processor checks passed.",
       "progress": "No benchmark generation or judging yet",
-      "next_step": "Package real solver/judge inputs, freeze an available judge, validate delivery and score sealed answers.",
-      "evidence_at_pacific": "2026-10-20T22:30:52.023775-07:00",
-      "benchmark_completed_by_this_preparation": false
+      "next_step": "Connect the prepared 193-case package to a separate frozen solver/local-judge runtime; pass actual solver and judge delivery checks; generate all answers, seal them, obtain judgments and compute the score.",
+      "evidence_at_pacific": "2026-10-20T23:24:18.402083-07:00",
+      "benchmark_completed_by_this_preparation": false,
+      "owner_of_remaining_work": "Evaluation agent",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     }
   ],
   "new_2026_benchmarks": [
@@ -250,65 +284,92 @@
       "evaluation": "LABBench2 (2026)",
       "worker": "LABBench2 worker",
       "state": "Preparation started",
-      "latest_result": "Official harness and corrected release metadata pinned; real dataset access returned HTTP 403 with existing credentials.",
+      "latest_result": "Official harness prepared; 19 artificial checks passed. Dataset file access is still denied.",
       "progress": "Offline software preparation underway",
-      "next_step": "Complete offline contracts; obtain normal dataset access before preparing real questions and required paper/figure/table files.",
+      "next_step": "After account access is granted, acquire the real questions and required attachments; verify unique cases; finish document/model transport and a declared judge condition.",
       "evidence_at_pacific": "2026-10-20T22:40:50.176933-07:00",
       "benchmark_completed_by_this_preparation": false,
       "original_retained_catalog_member": false,
-      "status_sha256": "c2625c6c10f02f3f496e626c88fce06e54d45a203a2273207f1a8955fdd6e1ba"
+      "status_sha256": "c2625c6c10f02f3f496e626c88fce06e54d45a203a2273207f1a8955fdd6e1ba",
+      "owner_of_remaining_work": "User: dataset agreement. Agent: all preparation/execution.",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "benchmark": "GeneBench-Pro",
       "evaluation": "GeneBench-Pro (2026; public 10)",
       "worker": "GeneBench-Pro worker",
       "state": "Preparation started",
-      "latest_result": "Public package downloaded and verified: 80 files, 10 cases and 50 data artifacts. Native grading harness implemented.",
+      "latest_result": "Public ten-case package acquired; grading interface and confined artificial workflow passed.",
       "progress": "Offline software preparation underway",
-      "next_step": "Finish offline harness validation and input isolation; validate an isolated coding-agent runtime. Public targets make this a reproducibility subset, not the hidden 129-case benchmark.",
+      "next_step": "Finish the model-to-Python tool loop, workspace storage limit, scientific dependencies and fixed run budgets; inspect the ten real task inputs; execute and grade the public subset.",
       "evidence_at_pacific": "2026-10-20T22:41:20.242374-07:00",
       "benchmark_completed_by_this_preparation": false,
       "original_retained_catalog_member": false,
-      "status_sha256": "24be0a375c2ac7926c578106e4b1921851bd009c8510d4b8f36d67e4b60383b3"
+      "status_sha256": "24be0a375c2ac7926c578106e4b1921851bd009c8510d4b8f36d67e4b60383b3",
+      "owner_of_remaining_work": "Agent; no new access request identified.",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "benchmark": "scBench",
       "evaluation": "scBench (2026; public 6)",
       "worker": "2026 intake worker",
       "state": "Preparation started",
-      "latest_result": "Official code and six public case configurations acquired; native grader passed 8 artificial checks. Full current 195-case suite is private.",
+      "latest_result": "Six public task definitions and native deterministic grader prepared.",
       "progress": "8/8 artificial checks passed",
-      "next_step": "Verify Latch input-data access and volume; finish separated task packets and isolated coding-agent runtime.",
+      "next_step": "Authenticate Latch and test the six data-node permissions; acquire their inputs; install required analysis tools; finish the model-to-analysis loop and run the six examples.",
       "evidence_at_pacific": "2026-10-20T22:40:42.930001-07:00",
       "benchmark_completed_by_this_preparation": false,
       "original_retained_catalog_member": false,
-      "status_sha256": "d16ad7ae35eb871ff7d23411e5b805e5ae24160995cfd173a9048e441c0fc372"
+      "status_sha256": "d16ad7ae35eb871ff7d23411e5b805e5ae24160995cfd173a9048e441c0fc372",
+      "owner_of_remaining_work": "User: Latch authentication/access. Agent: integration/execution.",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "benchmark": "BiomniBench-DA",
       "evaluation": "BiomniBench-DA (2026; public 50)",
       "worker": "2026 intake worker",
       "state": "Preparation started",
-      "latest_result": "Existing access works: 201 harness/config files acquired. Ten artificial rubric parsing/arithmetic checks passed; no model judge called.",
+      "latest_result": "All 50 instructions inspected; 23 complete input bundles/workspaces prepared; artificial confined analysis passed.",
       "progress": "10/10 artificial checks passed",
-      "next_step": "Prepare input acquisition and runtime for the 50 public tasks; resolve the declared judge condition. Pinned configs require Gemini inference, and raw inputs total about 82.95 GB.",
+      "next_step": "Acquire the remaining 27 input bundles; support native /app paths and required Python/R tools; use suitable CPU memory; fix tool/time/token budgets; prepare a declared judge condition and execute.",
       "evidence_at_pacific": "2026-10-20T22:40:42.930001-07:00",
       "benchmark_completed_by_this_preparation": false,
       "original_retained_catalog_member": false,
-      "status_sha256": "d85fd5259503a257a6edc8f19a1766d3a78be2817129baf23e958525e7c8ea6c"
+      "status_sha256": "d85fd5259503a257a6edc8f19a1766d3a78be2817129baf23e958525e7c8ea6c",
+      "owner_of_remaining_work": "Agent. Exact original external judge would require separately authorized paid calls.",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
     },
     {
       "benchmark": "BixBench3",
       "evaluation": "BixBench3 (2026)",
       "worker": "2026 intake worker",
       "state": "Preparation started",
-      "latest_result": "Official harness acquired; 10 unchanged upstream artifact-grader tests passed. Real task-file access returned HTTP 403.",
+      "latest_result": "Official harness and local artifact grader prepared; ten upstream grader tests passed. Dataset access denied.",
       "progress": "10/10 artificial checks passed",
-      "next_step": "Obtain normal dataset access and prepare a local isolated runtime. The standard runner uses billed GCP and an external model judge; neither has been started.",
+      "next_step": "After account access, acquire task inputs; prepare local compute/storage and analysis tools; integrate the agent; execute and grade artifacts. Treat any omitted GPT process assessment as a declared difference.",
       "evidence_at_pacific": "2026-10-20T22:40:42.930001-07:00",
       "benchmark_completed_by_this_preparation": false,
       "original_retained_catalog_member": false,
-      "status_sha256": "dfc1ac4607180fdc8e365cf5a489ba6739aaec67259c31c694836eb564d6e571"
+      "status_sha256": "dfc1ac4607180fdc8e365cf5a489ba6739aaec67259c31c694836eb564d6e571",
+      "owner_of_remaining_work": "User: dataset agreement. Agent: local execution plan; original paid-cloud runner is not authorized.",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+    }
+  ],
+  "exact_user_actions": [
+    {
+      "benchmark": "LABBench2",
+      "url": "https://huggingface.co/datasets/EdisonScientific/labbench2",
+      "action": "Sign in to the individual HF account owning the server credential; review and accept the dataset agreement if acceptable."
+    },
+    {
+      "benchmark": "BixBench3",
+      "url": "https://huggingface.co/datasets/EdisonScientific/BixBench3",
+      "action": "Review and accept this separate HF dataset agreement if acceptable."
+    },
+    {
+      "benchmark": "scBench",
+      "url": "https://docs.latch.bio/_modules/latch_cli/services/login.html",
+      "action": "Authenticate an authorized Latch account locally through the official browser login flow; agent then tests the six input-data permissions."
     }
   ]
 }
