@@ -183,6 +183,10 @@ def export(archive=True):
         'historical_artifacts_modified': False, 'new_inference_calls_by_exporter': 0,
         'completed_rows': completed, 'diagnostic_only_finished_runs': undefined,
         'derived_completed_rows': derived_p09(scanner)}
+    v06_spec = importlib.util.spec_from_file_location('catalog_v06_export', ROOT / 'scripts/export_v06_condition_20261021.py')
+    v06_export = importlib.util.module_from_spec(v06_spec)
+    v06_spec.loader.exec_module(v06_export)
+    document['completed_rows'].extend(v06_export.export_v06(scanner, archive))
     temporary = OUTPUT.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(document, indent=2, allow_nan=False) + '\n')
     temporary.replace(OUTPUT)

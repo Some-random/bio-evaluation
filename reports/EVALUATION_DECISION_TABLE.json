@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-21T00:48:55.633957-07:00",
+  "generated_at_pacific": "2026-10-21T12:30:01.060337-07:00",
   "score_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
   "catalog_snapshot_at": "2026-10-19T11:33:51.788767+00:00",
-  "new_generation_score_snapshot_at": "2026-10-21T00:48:07.968956-07:00",
+  "new_generation_score_snapshot_at": "2026-10-21T12:29:39.546553-07:00",
   "retained_setting_count": 57,
   "retained_setting_ids": [
     "B01",
@@ -3243,33 +3243,52 @@
       "task": "LLaVA-Med visual conversation",
       "category": "Biomedical visual evidence",
       "dataset": "LLaVA-Med visual conversation",
-      "condition": "Catalog contract; no verified scored condition",
-      "condition_kind": "unverified",
-      "run_id": null,
-      "protocol_variant": null,
+      "condition": "Native declared score; new complete generation; 193-case multimodal QA; declared Qwen local judge, uniform16K, lossless outer-JSON-fence parser repair",
+      "condition_kind": "native",
+      "run_id": "qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1",
+      "result_type": "new_complete_generation",
+      "protocol_variant": "V06_QWEN38_27B_UNIFORM16K_LOSSLESS_JSON_FENCE_UNTOUCHED31_CLOSURE_V1",
       "input_protocol": "Biomedical image and conversational questions",
-      "output_budget": "Not established",
+      "output_budget": "16,384",
       "usable_answer_rate": {
-        "value": null,
-        "display": "Not established",
-        "definition": "No verified full-run parse counts"
+        "value": 1.0,
+        "display": "193/193 (100.0%)",
+        "definition": "Native parser-valid outputs divided by all planned cases"
       },
-      "native_score": null,
+      "native_score": {
+        "relative_judged_answer_score_percent": 63.453408997450445
+      },
       "diagnostic_score": null,
-      "score_display": "No verified native score",
+      "score_display": "relative_judged_answer_score_percent 63.4534",
       "evidence": {
-        "category": "No verified result",
-        "detail": "Current aggregate metadata provides no completed score; this does not prove the task was never attempted."
+        "category": "Measured, new delivery condition",
+        "detail": "Relative answer-quality score with Qwen3.8-27B as solver and local self-judge. Original numeric rubric and mean candidate/reference ratio retained; declared single-outer-JSON-fence extraction applies to all193 judge replies. The strict predecessor remains unchanged. Historical GPT-4-0314 judging and clinical accuracy are not reproduced. Historical generations and scores remain separate."
       },
-      "counts": {},
-      "finish_reasons": {},
-      "source_scores": null,
-      "source_score_sha256": null,
-      "source_row_category": null,
+      "counts": {
+        "planned": 193,
+        "completed": 193,
+        "parsed": 193,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
+      "finish_reasons": {
+        "length": 0,
+        "stop": 193
+      },
+      "source_scores": "results/runs/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1/scores.json",
+      "source_score_sha256": "85893accdea08e5c9bafa17fe9da5845a1c3cb728722b781cdf41f546f22dd97",
+      "source_row_category": "completed_rows",
       "source_protocol_url": "https://github.com/microsoft/LLaVA-Med",
-      "case_scope": "Released qa50 evaluation files; 50-image setting. Use original/v1.5 code and model version consistently.",
-      "excluded_run_reasons": [],
-      "native_metrics_recomputed": false
+      "case_scope": "All193 released questions over50 images; current official article/filename image copies.",
+      "native_metrics_recomputed": false,
+      "prediction_lock_sha256": "955cbb4b23025f14d7ed1370d2e15f6999d3cfafc4b76e3f17b308ee2386fc2a",
+      "config_sha256": "ccb49cc18bdb2f52b88df0d4fb0f0f64260284e5eec6246038714983d9c54ee0",
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "trajectory_archive": {
+        "path": "results/trajectory_archives/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1.tar.gz",
+        "sha256": "69f4a1f3f438f8502aac919cf3ac602ef164b715c625b7d997a16417e8007be4"
+      }
     },
     {
       "task_id": "V07",
@@ -3448,7 +3467,7 @@
     "reports/P36_WHITESPACE_DIAGNOSTIC_2026-10-19.json": "aba51168710d868a45fb624d3ba0d6963a2fefe276dd323da7e645e845e2a491",
     "reports/P08_SENSITIVITY_DIAGNOSTIC_2026-10-19.json": "d90d53cb0882b6e181734037b017f67c6253503ad32e719b570e945ea88c0e4d",
     "reports/DEEPFRI_FAILURE_ANALYSIS_2026-10-19.json": "32e201698766dc1ec75b734d766cb4cffb42a062abfcfe8f265d0e5990797572",
-    "reports/CATALOG_NEW_SCORES_2026-10-20.json": "e756b8e926ee421df2c33f1b89e24c769fde2c362b973be95f2cbc61665795bd"
+    "reports/CATALOG_NEW_SCORES_2026-10-20.json": "befccf6504575db7760ce9a45eb239882166f5ee3514a14591d101570169f3b9"
   },
   "recovered_subset_setting_ids": [
     "P36"

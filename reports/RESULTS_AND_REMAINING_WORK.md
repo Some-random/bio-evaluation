@@ -4,7 +4,7 @@
 
 [Track preparation and runtime progress](ENGINEERING_PROGRESS.md)
 
-Results are available for **29 of 57 evaluation settings**. The table also lists evaluations in preparation, release years, real example questions, and published model results.
+Results are available for **30 of 57 evaluation settings**. The table also lists evaluations in preparation, release years, real example questions, and published model results.
 
 Evaluation names identify the benchmark or source paper and the task.
 
@@ -57,9 +57,12 @@ Each example links to its complete available prompt, choices and sequence or vis
 | PathVQA | [2020](https://arxiv.org/abs/2003.10286) | “what is expanded in the region of epiphysis?”<br>[Full question and input](questions/V03.md) | Open token recall / closed accuracy | 26.38% / 85.87% | — | — | [Open: LLaVA-Med 7B 39.60%; closed: LLaVA-Med 13B 92.39%](https://arxiv.org/pdf/2306.00890)<br>dataset-fine-tuned; different release. | — |
 | ImageCLEF-VQA 2019 | [2019](https://www.imageclef.org/2019/medical/vqa/) | “what modality is shown?”<br>[Available input and missing context](questions/V04.md) | Exact-match accuracy | 0.00% | — | — | [MedVInT-TE: 70.5% accuracy](https://arxiv.org/html/2305.10415v6)<br>dataset-fine-tuned; scoring differs. | — |
 | PMC-VQA | [2023](https://arxiv.org/abs/2305.10415) | “What is the name of the medical imaging technique used in this case?”<br>[Full question and input](questions/V05.md) | Final-character accuracy | 2.00% | — | — | [MedVInT-TD: 40.3% choice accuracy](https://arxiv.org/html/2305.10415v6)<br>dataset-fine-tuned. | — |
+| LLaVA-Med: Biomedical visual chat | [2023](https://arxiv.org/abs/2306.00890) | “What is the organ in the image?”<br>[Complete question and supplied figure](questions/V06.md) | Relative judged answer score | 63.45 | — | — | [LLaVA-Med 60K-IM: 50.2 (Table 1)](https://arxiv.org/pdf/2306.00890)<br>GPT-4 judge; our Qwen local self-judge differs. | — |
 | SlideVQA: Slide-deck question answering (Ryze) | [2023](https://arxiv.org/abs/2301.04883); Ryze [2026](https://arxiv.org/abs/2606.00902) | “How much is the Trading Operating Profit in 2011?”<br>[Full question and input](questions/V07.md) | — | — | — | — | [Ryze pipeline: 66.48% SlideVQA accuracy](https://arxiv.org/html/2606.00902v1)<br>original paper configuration. | Validate 20-image processing and context limits, complete case review, and run the prepared 2,215-case evaluation. |
 
 **Reading the scores:** “—” in a score column means no reported result; in “Work remaining” it means no further work for that reported result. The matched GPT comparisons use 197 LitQA2 cases, 82 SuppQA cases and 2,773 localization cases, with the archived Qwen 4K baseline. Unsuccessful responses remain in the denominator. For VQA-RAD, SLAKE and PathVQA, the paired values are open-answer token recall / closed-answer accuracy.
+
+**LLaVA-Med:** All 193 questions are scored with Qwen3.8-27B as both solver and declared local judge. The score is 100 × the mean candidate/reference rating ratio, not clinical accuracy. A lossless outer JSON-fence extraction is applied consistently to all judge replies; the earlier strict-parser run is preserved. The paper used GPT-4 judging, so its 50.2 result is not directly comparable.
 
 **Enzyme Commission classification:** Qwen scored all 1,919 released test95 sequences using a fixed 538-label, three-decimal confidence output. The native AP/Fmax formulas are retained; this is a zero-shot full-sequence text adaptation, not reproduction of the trained ProtST model or the PDB-modeled input subset.
 

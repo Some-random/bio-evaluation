@@ -1,0 +1,1466 @@
+{
+  "condition": "LLAVA_MED_QA50_HUMAN_OR_DECLARED_LOCAL_JUDGE_ADAPTATION_V1",
+  "judge_declaration": {
+    "condition": "LLAVA_MED_QA50_HUMAN_OR_DECLARED_LOCAL_JUDGE_ADAPTATION_V1",
+    "kind": "local_model",
+    "identity": "Qwen/Qwen3.8-27B@1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0; BF16 TP1 uniform16K nonthinking local judge",
+    "rubric_sha256": "a489072006233d6084c54926a4c9f7722f664dc1fdaef694af535bb1c0dd37f4",
+    "model_configuration_sha256": "8ee8899797b6c1e2f0b4bf632ebe2db1e6b1b18702d0bcfc4fb342fa180313bb"
+  },
+  "score_meaning": "Relative judged answer quality; not clinical accuracy or exact original GPT-4-0314 reproduction",
+  "lock_sha256": "d1cfaf295ab927038053355c64685a605f6919fe9bbe67afda13b843473c516b",
+  "groups": {
+    "overall": {
+      "planned": 193,
+      "valid": 193,
+      "generation_failure_or_invalid_answer": 0,
+      "missing_judgement": 0,
+      "invalid_judgement": 0,
+      "complete": true,
+      "released_mean_case_ratio_score": 63.453408997450445,
+      "failure_zero_full_denominator_adaptation_score": 63.453408997450445,
+      "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+    },
+    "conversation": {
+      "planned": 143,
+      "valid": 143,
+      "generation_failure_or_invalid_answer": 0,
+      "missing_judgement": 0,
+      "invalid_judgement": 0,
+      "complete": true,
+      "released_mean_case_ratio_score": 61.560661560661565,
+      "failure_zero_full_denominator_adaptation_score": 61.560661560661565,
+      "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+    },
+    "detailed_description": {
+      "planned": 50,
+      "valid": 50,
+      "generation_failure_or_invalid_answer": 0,
+      "missing_judgement": 0,
+      "invalid_judgement": 0,
+      "complete": true,
+      "released_mean_case_ratio_score": 68.86666666666666,
+      "failure_zero_full_denominator_adaptation_score": 68.86666666666666,
+      "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+    },
+    "chest_xray": {
+      "planned": 37,
+      "valid": 37,
+      "generation_failure_or_invalid_answer": 0,
+      "missing_judgement": 0,
+      "invalid_judgement": 0,
+      "complete": true,
+      "released_mean_case_ratio_score": 107.08494208494209,
+      "failure_zero_full_denominator_adaptation_score": 107.08494208494209,
+      "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+    },
+    "mri": {
+      "planned": 38,
+      "valid": 38,
+      "generation_failure_or_invalid_answer": 0,
+      "missing_judgement": 0,
+      "invalid_judgement": 0,
+      "complete": true,
+      "released_mean_case_ratio_score": 45.730994152046776,
+      "failure_zero_full_denominator_adaptation_score": 45.730994152046776,
+      "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+    },
+    "histology": {
+      "planned": 44,
+      "valid": 44,
+      "generation_failure_or_invalid_answer": 0,
+      "missing_judgement": 0,
+      "invalid_judgement": 0,
+      "complete": true,
+      "released_mean_case_ratio_score": 66.63419913419914,
+      "failure_zero_full_denominator_adaptation_score": 66.63419913419914,
+      "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+    },
+    "gross": {
+      "planned": 34,
+      "valid": 34,
+      "generation_failure_or_invalid_answer": 0,
+      "missing_judgement": 0,
+      "invalid_judgement": 0,
+      "complete": true,
+      "released_mean_case_ratio_score": 57.02614379084967,
+      "failure_zero_full_denominator_adaptation_score": 57.02614379084967,
+      "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+    },
+    "ct_scan": {
+      "planned": 40,
+      "valid": 40,
+      "generation_failure_or_invalid_answer": 0,
+      "missing_judgement": 0,
+      "invalid_judgement": 0,
+      "complete": true,
+      "released_mean_case_ratio_score": 41.89484126984128,
+      "failure_zero_full_denominator_adaptation_score": 41.89484126984128,
+      "failure_zero_policy": "Every missing/invalid generation or judgement contributes zero; this is an explicitly different incomplete-case accounting adaptation."
+    }
+  },
+  "per_case_accounting": [
+    {
+      "question_id": 0,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 1,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.6
+    },
+    {
+      "question_id": 2,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 3,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.7777777777777778
+    },
+    {
+      "question_id": 4,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 5,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 6,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.7777777777777778
+    },
+    {
+      "question_id": 7,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 8,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.7777777777777778
+    },
+    {
+      "question_id": 9,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 10,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 11,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 12,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 13,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 14,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.2857142857142858
+    },
+    {
+      "question_id": 15,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 16,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.3
+    },
+    {
+      "question_id": 17,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 18,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 19,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 1.0
+    },
+    {
+      "question_id": 20,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 21,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 22,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 23,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.25
+    },
+    {
+      "question_id": 24,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 25,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.6
+    },
+    {
+      "question_id": 26,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 27,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 28,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.3333333333333333
+    },
+    {
+      "question_id": 29,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 30,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 31,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 32,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.6
+    },
+    {
+      "question_id": 33,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 34,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.25
+    },
+    {
+      "question_id": 35,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.9
+    },
+    {
+      "question_id": 36,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 1.1111111111111112
+    },
+    {
+      "question_id": 37,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.4444444444444444
+    },
+    {
+      "question_id": 38,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 39,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 40,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.5
+    },
+    {
+      "question_id": 41,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 42,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 43,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 44,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 45,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 46,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.8
+    },
+    {
+      "question_id": 47,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 48,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 49,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 1.1111111111111112
+    },
+    {
+      "question_id": 50,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 51,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.3333333333333333
+    },
+    {
+      "question_id": 52,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 53,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.5
+    },
+    {
+      "question_id": 54,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 55,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 56,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 57,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 58,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 1.1111111111111112
+    },
+    {
+      "question_id": 59,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.8888888888888888
+    },
+    {
+      "question_id": 60,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 61,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 62,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 63,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 1.25
+    },
+    {
+      "question_id": 64,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 65,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.4444444444444444
+    },
+    {
+      "question_id": 66,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 1.2857142857142858
+    },
+    {
+      "question_id": 67,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 68,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 69,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 70,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 71,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 72,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.8
+    },
+    {
+      "question_id": 73,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 74,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.4
+    },
+    {
+      "question_id": 75,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 76,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 77,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 78,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 79,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 80,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.25
+    },
+    {
+      "question_id": 81,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 82,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 83,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 84,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.875
+    },
+    {
+      "question_id": 85,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 86,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 87,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 88,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 89,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.6
+    },
+    {
+      "question_id": 90,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 91,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 92,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 93,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.9
+    },
+    {
+      "question_id": 94,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 95,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 96,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 97,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 98,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 99,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 100,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 101,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 102,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.3333333333333333
+    },
+    {
+      "question_id": 103,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.3
+    },
+    {
+      "question_id": 104,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 105,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 1.1111111111111112
+    },
+    {
+      "question_id": 106,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 107,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 108,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 1.2857142857142858
+    },
+    {
+      "question_id": 109,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 110,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 111,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 112,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.7
+    },
+    {
+      "question_id": 113,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 114,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.8
+    },
+    {
+      "question_id": 115,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.8888888888888888
+    },
+    {
+      "question_id": 116,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.2857142857142858
+    },
+    {
+      "question_id": 117,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.8888888888888888
+    },
+    {
+      "question_id": 118,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 4.5
+    },
+    {
+      "question_id": 119,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.7777777777777778
+    },
+    {
+      "question_id": 120,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1111111111111111
+    },
+    {
+      "question_id": 121,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 122,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 123,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.8888888888888888
+    },
+    {
+      "question_id": 124,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 125,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.7
+    },
+    {
+      "question_id": 126,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.4444444444444444
+    },
+    {
+      "question_id": 127,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.25
+    },
+    {
+      "question_id": 128,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 129,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.2
+    },
+    {
+      "question_id": 130,
+      "question_type": "conversation",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 131,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 132,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 133,
+      "question_type": "conversation",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 134,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.4444444444444444
+    },
+    {
+      "question_id": 135,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 136,
+      "question_type": "conversation",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 137,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.125
+    },
+    {
+      "question_id": 138,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 139,
+      "question_type": "conversation",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 1.1111111111111112
+    },
+    {
+      "question_id": 140,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.125
+    },
+    {
+      "question_id": 141,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.4444444444444444
+    },
+    {
+      "question_id": 142,
+      "question_type": "conversation",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.5
+    },
+    {
+      "question_id": 143,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.4444444444444444
+    },
+    {
+      "question_id": 144,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 145,
+      "question_type": "detailed_description",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 146,
+      "question_type": "detailed_description",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.4444444444444444
+    },
+    {
+      "question_id": 147,
+      "question_type": "detailed_description",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 148,
+      "question_type": "detailed_description",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.5
+    },
+    {
+      "question_id": 149,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 2.25
+    },
+    {
+      "question_id": 150,
+      "question_type": "detailed_description",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 151,
+      "question_type": "detailed_description",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.25
+    },
+    {
+      "question_id": 152,
+      "question_type": "detailed_description",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.3333333333333333
+    },
+    {
+      "question_id": 153,
+      "question_type": "detailed_description",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 154,
+      "question_type": "detailed_description",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.1111111111111111
+    },
+    {
+      "question_id": 155,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.4444444444444444
+    },
+    {
+      "question_id": 156,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 2.25
+    },
+    {
+      "question_id": 157,
+      "question_type": "detailed_description",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 2.25
+    },
+    {
+      "question_id": 158,
+      "question_type": "detailed_description",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 159,
+      "question_type": "detailed_description",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.16666666666666666
+    },
+    {
+      "question_id": 160,
+      "question_type": "detailed_description",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 161,
+      "question_type": "detailed_description",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.6666666666666666
+    },
+    {
+      "question_id": 162,
+      "question_type": "detailed_description",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 163,
+      "question_type": "detailed_description",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.4444444444444444
+    },
+    {
+      "question_id": 164,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 165,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 166,
+      "question_type": "detailed_description",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.25
+    },
+    {
+      "question_id": 167,
+      "question_type": "detailed_description",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 168,
+      "question_type": "detailed_description",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.1
+    },
+    {
+      "question_id": 169,
+      "question_type": "detailed_description",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 170,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.1111111111111111
+    },
+    {
+      "question_id": 171,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.4444444444444444
+    },
+    {
+      "question_id": 172,
+      "question_type": "detailed_description",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 173,
+      "question_type": "detailed_description",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 174,
+      "question_type": "detailed_description",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.1111111111111111
+    },
+    {
+      "question_id": 175,
+      "question_type": "detailed_description",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 176,
+      "question_type": "detailed_description",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1111111111111111
+    },
+    {
+      "question_id": 177,
+      "question_type": "detailed_description",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 178,
+      "question_type": "detailed_description",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.1111111111111111
+    },
+    {
+      "question_id": 179,
+      "question_type": "detailed_description",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 180,
+      "question_type": "detailed_description",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 181,
+      "question_type": "detailed_description",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.5
+    },
+    {
+      "question_id": 182,
+      "question_type": "detailed_description",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.5
+    },
+    {
+      "question_id": 183,
+      "question_type": "detailed_description",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 3.0
+    },
+    {
+      "question_id": 184,
+      "question_type": "detailed_description",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.3333333333333333
+    },
+    {
+      "question_id": 185,
+      "question_type": "detailed_description",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 0.2222222222222222
+    },
+    {
+      "question_id": 186,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.8888888888888888
+    },
+    {
+      "question_id": 187,
+      "question_type": "detailed_description",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 0.25
+    },
+    {
+      "question_id": 188,
+      "question_type": "detailed_description",
+      "domain": "ct_scan",
+      "state": "valid",
+      "ratio": 0.25
+    },
+    {
+      "question_id": 189,
+      "question_type": "detailed_description",
+      "domain": "mri",
+      "state": "valid",
+      "ratio": 3.0
+    },
+    {
+      "question_id": 190,
+      "question_type": "detailed_description",
+      "domain": "gross",
+      "state": "valid",
+      "ratio": 0.25
+    },
+    {
+      "question_id": 191,
+      "question_type": "detailed_description",
+      "domain": "histology",
+      "state": "valid",
+      "ratio": 0.1111111111111111
+    },
+    {
+      "question_id": 192,
+      "question_type": "detailed_description",
+      "domain": "chest_xray",
+      "state": "valid",
+      "ratio": 1.5
+    }
+  ],
+  "model_calls_by_this_adapter": 0,
+  "execution_condition": "V06_QWEN38_27B_UNIFORM16K_LOSSLESS_JSON_FENCE_UNTOUCHED31_CLOSURE_V1",
+  "parser_repair": {
+    "unchanged_strict_primary": true,
+    "accepted_wrapper": "One complete outer Markdown fence, optional json label, no surrounding prose or inner fences.",
+    "normalization": "Remove outer fence delimiters only; retain every interior character exactly.",
+    "field_identity_score_validation": "Use the original frozen parse_judge_output without modification.",
+    "fragment_extraction_or_value_repair": false,
+    "new_model_calls": 0
+  },
+  "source_strict_primary_undefined_preserved": true
+}

@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-21T00:50:25.755161-07:00",
+  "generated_at_pacific": "2026-10-21T12:30:01.683308-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "285f2359798a320d46933732421b932823907a82d70563109d636f7b24e322aa",
+  "report_sha256": "0a97f3b5d3ddeec93c15544edb6d76f8a0fc36c268a17b4fc1a70ff309532ac4",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
   "raw_case_content_included": true,
   "qwen": {
     "additional_historical_score_source_checked_at_pacific": "2026-10-20T14:10:48.585467-07:00",
-    "defined_setting_count": 29,
+    "defined_setting_count": 30,
     "defined_setting_ids": [
       "B01",
       "B02",
@@ -39,7 +39,8 @@
       "V02",
       "V03",
       "V04",
-      "V05"
+      "V05",
+      "V06"
     ],
     "documentation_gap": "/data/rustfs1/dongweij/EXECUTION_EXAMPLES.md unavailable at read time; no execution or novel scientific interpretation performed",
     "earlier_undefined_scalar_condition_count": 3,
@@ -56,7 +57,7 @@
     "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
     "new_inference_calls": 0,
     "new_scoring_attempts": 0,
-    "primary_condition_count": 36,
+    "primary_condition_count": 37,
     "public_source_audit": {
       "public_commit": "2aa34467e81cee20a7da9f4f4f85ab788c70e725",
       "repository": "Some-random/bio-evaluation",
@@ -3185,6 +3186,124 @@
             "sha256": "7efc5c56483a4539971796ba9d3422cafcdd56cbe2b20e3cc43b750b9bb1060f"
           }
         }
+      },
+      {
+        "task_id": "V06",
+        "task": "LLaVA-Med visual conversation",
+        "category": "Biomedical visual evidence",
+        "dataset": "LLaVA-Med visual conversation",
+        "condition": "Native declared score; new complete generation; 193-case multimodal QA; declared Qwen local judge, uniform16K, lossless outer-JSON-fence parser repair",
+        "condition_kind": "native",
+        "run_id": "qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1",
+        "result_type": "new_complete_generation",
+        "protocol_variant": "V06_QWEN38_27B_UNIFORM16K_LOSSLESS_JSON_FENCE_UNTOUCHED31_CLOSURE_V1",
+        "input_protocol": "Biomedical image and conversational questions",
+        "output_budget": "16,384",
+        "usable_answer_rate": {
+          "value": 1.0,
+          "display": "193/193 (100.0%)",
+          "definition": "Native parser-valid outputs divided by all planned cases"
+        },
+        "native_score": {
+          "relative_judged_answer_score_percent": 63.453408997450445
+        },
+        "diagnostic_score": null,
+        "score_display": "relative_judged_answer_score_percent 63.4534",
+        "evidence": {
+          "category": "Measured, new delivery condition",
+          "detail": "Relative answer-quality score with Qwen3.8-27B as solver and local self-judge. Original numeric rubric and mean candidate/reference ratio retained; declared single-outer-JSON-fence extraction applies to all193 judge replies. The strict predecessor remains unchanged. Historical GPT-4-0314 judging and clinical accuracy are not reproduced. Historical generations and scores remain separate."
+        },
+        "counts": {
+          "planned": 193,
+          "completed": 193,
+          "parsed": 193,
+          "invalid_outputs": 0,
+          "missing_or_failed_outputs": 0
+        },
+        "finish_reasons": {
+          "length": 0,
+          "stop": 193
+        },
+        "source_scores": "results/runs/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1/scores.json",
+        "source_score_sha256": "85893accdea08e5c9bafa17fe9da5845a1c3cb728722b781cdf41f546f22dd97",
+        "source_row_category": "completed_rows",
+        "source_protocol_url": "https://github.com/microsoft/LLaVA-Med",
+        "case_scope": "All193 released questions over50 images; current official article/filename image copies.",
+        "native_metrics_recomputed": false,
+        "prediction_lock_sha256": "955cbb4b23025f14d7ed1370d2e15f6999d3cfafc4b76e3f17b308ee2386fc2a",
+        "config_sha256": "ccb49cc18bdb2f52b88df0d4fb0f0f64260284e5eec6246038714983d9c54ee0",
+        "full_benchmark_complete": true,
+        "full_primary_metric_defined": true,
+        "trajectory_archive": {
+          "path": "results/trajectory_archives/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1.tar.gz",
+          "sha256": "69f4a1f3f438f8502aac919cf3ac602ef164b715c625b7d997a16417e8007be4"
+        },
+        "condition_id": "Q_V06_20261021",
+        "is_primary_table": true,
+        "classification": "declared_local_self_judge_with_lossless_format_parser_repair",
+        "evidence_level": "full193_score_and_raw_response_bytes_verified",
+        "old_undefined_full_metric": false,
+        "raw_response_reverified_by_this_audit": true,
+        "new_score_export": {
+          "task_id": "V06",
+          "run_id": "qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1",
+          "protocol_variant": "V06_QWEN38_27B_UNIFORM16K_LOSSLESS_JSON_FENCE_UNTOUCHED31_CLOSURE_V1",
+          "protocol_description": "193-case multimodal QA; declared Qwen local judge, uniform16K, lossless outer-JSON-fence parser repair",
+          "new_complete_generation": true,
+          "full_benchmark_complete": true,
+          "full_primary_metric_defined": true,
+          "counts": {
+            "planned": 193,
+            "completed": 193,
+            "parsed": 193,
+            "invalid_outputs": 0,
+            "missing_or_failed_outputs": 0
+          },
+          "finish_reasons": {
+            "length": 0,
+            "stop": 193
+          },
+          "generation": {
+            "model": "Qwen/Qwen3.8-27B",
+            "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+            "temperature": 0,
+            "top_p": 1,
+            "max_tokens": 16384,
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            },
+            "max_context_tokens": 65536,
+            "configuration_status": "frozen_pending_separate_runtime_admission",
+            "endpoint": "http://127.0.0.1:8396/v1",
+            "automatic_dispatch": false
+          },
+          "metrics": {
+            "relative_judged_answer_score_percent": 63.453408997450445
+          },
+          "source_scores": "results/runs/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1/scores.json",
+          "scores_sha256": "85893accdea08e5c9bafa17fe9da5845a1c3cb728722b781cdf41f546f22dd97",
+          "prediction_lock_sha256": "955cbb4b23025f14d7ed1370d2e15f6999d3cfafc4b76e3f17b308ee2386fc2a",
+          "judge_lock_sha256": "0a118867dc2998ebec5448576a11ca3e145ee100a439c3d937f6157cdad305b7",
+          "config_sha256": "ccb49cc18bdb2f52b88df0d4fb0f0f64260284e5eec6246038714983d9c54ee0",
+          "source_solver_responses_reused": 193,
+          "source_judge_responses_reused": 162,
+          "new_judge_responses": 31,
+          "new_solver_calls_by_continuation": 0,
+          "case_scope": "All193 released questions over50 images; current official article/filename image copies.",
+          "interpretation": "Relative answer-quality score with Qwen3.8-27B as solver and local self-judge. Original numeric rubric and mean candidate/reference ratio retained; declared single-outer-JSON-fence extraction applies to all193 judge replies. The strict predecessor remains unchanged. Historical GPT-4-0314 judging and clinical accuracy are not reproduced.",
+          "trajectory_archive": {
+            "path": "results/trajectory_archives/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1.tar.gz",
+            "sha256": "69f4a1f3f438f8502aac919cf3ac602ef164b715c625b7d997a16417e8007be4"
+          }
+        },
+        "score_source": {
+          "path": "results/runs/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1/scores.json",
+          "local_present": true,
+          "local_sha256": "85893accdea08e5c9bafa17fe9da5845a1c3cb728722b781cdf41f546f22dd97",
+          "recorded_sha256": "85893accdea08e5c9bafa17fe9da5845a1c3cb728722b781cdf41f546f22dd97",
+          "local_hash_matches_recorded": true,
+          "note": "Separate V06 publication receipt records remote byte verification."
+        }
       }
     ],
     "references_read": false,
@@ -3195,7 +3314,7 @@
     "sources": [
       {
         "path": "reports/EVALUATION_DECISION_TABLE.json",
-        "sha256": "caa66004dce88d9383ec549523e7150683b8cbe47edc0712d20cdef2cade38f3"
+        "sha256": "e6b0451bceb8c46bca6ba17ee570fdd2e80ffb4f5f80e9e1dada9229a207a5ce"
       },
       {
         "path": "reports/RESULTS_AT_A_GLANCE.json",
@@ -3203,7 +3322,7 @@
       },
       {
         "path": "reports/CATALOG_NEW_SCORES_2026-10-20.json",
-        "sha256": "e756b8e926ee421df2c33f1b89e24c769fde2c362b973be95f2cbc61665795bd"
+        "sha256": "befccf6504575db7760ce9a45eb239882166f5ee3514a14591d101570169f3b9"
       },
       {
         "path": "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json",
@@ -5607,6 +5726,26 @@
       "prediction_lock_sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
       "reference_answers_included": false,
       "new_case_reviews": 0
+    },
+    {
+      "task_id": "V06",
+      "id": "V06",
+      "page_id": "V06",
+      "page_path": "reports/questions/V06.md",
+      "dataset": "LLaVA-Med biomedical visual chat,193 questions/50 images",
+      "case_id": 0,
+      "status": "complete_saved_evaluated_question_and_official_image_link",
+      "complete_question_or_input": true,
+      "page_sha256": "1cad6a0a1760df40c9b4805fe285d9ba1416968d68c49d30ff587edb2585186c",
+      "page_bytes": 771,
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/solver/000/request.json",
+      "source_sha256": "ad41f4fc82889be7c4a9d52aeebac0832d2937c356f6958b47985246e9eac162",
+      "prediction_lock_sha256": "955cbb4b23025f14d7ed1370d2e15f6999d3cfafc4b76e3f17b308ee2386fc2a",
+      "image_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC2629892.1/kjo-21-251-g003.jpg",
+      "evaluated_image_sha256": "903a40beff8ea363824b26ceb3f15ccff72ae8709bfdb02c2b21a1ee632f5e9d",
+      "image_bytes_published": false,
+      "reference_answers_included": false,
+      "new_case_reviews": 0
     }
   ],
   "verified_question_policy": "Verbatim saved-request, released-dataset, or published-source excerpts. No native question or unavailable original prompt is explicitly labelled; no invented placeholder question.",
@@ -6538,6 +6677,21 @@
         "value_status": "verified_primary_source_printed",
         "selection": "Highest AUPR among main Table 3 task-comparison models; tied highest Fmax. Not a current leaderboard claim.",
         "verified_at_pacific": "2026-10-21T00:50:25.755161-07:00"
+      },
+      {
+        "task_id": "V06",
+        "best_model": "LLaVA-Med 60K-IM",
+        "display": "LLaVA-Med 60K-IM:50.2",
+        "metric": "GPT-4-judged relative answer score",
+        "values": {
+          "overall": 50.2
+        },
+        "source_url": "https://arxiv.org/pdf/2306.00890",
+        "source_locator": "Table1, printed page6",
+        "value_status": "verified_primary_source_printed",
+        "selection": "Highest non-oracle overall model result in Table1; not a current leaderboard claim.",
+        "comparability": "Same193-question public evaluation, different judge: original GPT-4 versus our declared Qwen local self-judge. Historical original image byte identity unverified.",
+        "verified_at_pacific": "2026-10-21T12:30:01.683308-07:00"
       }
     ]
   },
@@ -6853,6 +7007,26 @@
           "page_path": "reports/questions/V07.md",
           "page_sha256": "60d75ac9e63f4d587d927a1428aa1a70795c0839eab407b2e4156910d761d702",
           "safe_publication": true
+        },
+        {
+          "task_id": "V06",
+          "id": "V06",
+          "page_id": "V06",
+          "page_path": "reports/questions/V06.md",
+          "dataset": "LLaVA-Med biomedical visual chat,193 questions/50 images",
+          "case_id": 0,
+          "status": "complete_saved_evaluated_question_and_official_image_link",
+          "complete_question_or_input": true,
+          "page_sha256": "1cad6a0a1760df40c9b4805fe285d9ba1416968d68c49d30ff587edb2585186c",
+          "page_bytes": 771,
+          "source_path": ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2/runtime/run_v1/solver/000/request.json",
+          "source_sha256": "ad41f4fc82889be7c4a9d52aeebac0832d2937c356f6958b47985246e9eac162",
+          "prediction_lock_sha256": "955cbb4b23025f14d7ed1370d2e15f6999d3cfafc4b76e3f17b308ee2386fc2a",
+          "image_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC2629892.1/kjo-21-251-g003.jpg",
+          "evaluated_image_sha256": "903a40beff8ea363824b26ceb3f15ccff72ae8709bfdb02c2b21a1ee632f5e9d",
+          "image_bytes_published": false,
+          "reference_answers_included": false,
+          "new_case_reviews": 0
         }
       ],
       "page_count": 13,
@@ -8074,5 +8248,12 @@
     "prediction_lock_sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
     "new_inference_calls_by_reporting": 0,
     "new_scoring_calls_by_reporting": 0
+  },
+  "v06_result_added_at_pacific": "2026-10-21T12:30:01.683308-07:00",
+  "v06_defined_score_source": {
+    "path": "results/runs/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1/scores.json",
+    "sha256": "85893accdea08e5c9bafa17fe9da5845a1c3cb728722b781cdf41f546f22dd97",
+    "judge_lock_sha256": "0a118867dc2998ebec5448576a11ca3e145ee100a439c3d937f6157cdad305b7",
+    "new_model_calls_by_reporting": 0
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-21T00:48:07.968956-07:00",
+  "generated_at_pacific": "2026-10-21T12:29:39.546553-07:00",
   "historical_artifacts_modified": false,
   "new_inference_calls_by_exporter": 0,
   "completed_rows": [
@@ -191,6 +191,58 @@
       "trajectory_archive": {
         "path": "results/trajectory_archives/qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1.tar.gz",
         "sha256": "7efc5c56483a4539971796ba9d3422cafcdd56cbe2b20e3cc43b750b9bb1060f"
+      }
+    },
+    {
+      "task_id": "V06",
+      "run_id": "qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1",
+      "protocol_variant": "V06_QWEN38_27B_UNIFORM16K_LOSSLESS_JSON_FENCE_UNTOUCHED31_CLOSURE_V1",
+      "protocol_description": "193-case multimodal QA; declared Qwen local judge, uniform16K, lossless outer-JSON-fence parser repair",
+      "new_complete_generation": true,
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "counts": {
+        "planned": 193,
+        "completed": 193,
+        "parsed": 193,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
+      "finish_reasons": {
+        "length": 0,
+        "stop": 193
+      },
+      "generation": {
+        "model": "Qwen/Qwen3.8-27B",
+        "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+        "temperature": 0,
+        "top_p": 1,
+        "max_tokens": 16384,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "max_context_tokens": 65536,
+        "configuration_status": "frozen_pending_separate_runtime_admission",
+        "endpoint": "http://127.0.0.1:8396/v1",
+        "automatic_dispatch": false
+      },
+      "metrics": {
+        "relative_judged_answer_score_percent": 63.453408997450445
+      },
+      "source_scores": "results/runs/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1/scores.json",
+      "scores_sha256": "85893accdea08e5c9bafa17fe9da5845a1c3cb728722b781cdf41f546f22dd97",
+      "prediction_lock_sha256": "955cbb4b23025f14d7ed1370d2e15f6999d3cfafc4b76e3f17b308ee2386fc2a",
+      "judge_lock_sha256": "0a118867dc2998ebec5448576a11ca3e145ee100a439c3d937f6157cdad305b7",
+      "config_sha256": "ccb49cc18bdb2f52b88df0d4fb0f0f64260284e5eec6246038714983d9c54ee0",
+      "source_solver_responses_reused": 193,
+      "source_judge_responses_reused": 162,
+      "new_judge_responses": 31,
+      "new_solver_calls_by_continuation": 0,
+      "case_scope": "All193 released questions over50 images; current official article/filename image copies.",
+      "interpretation": "Relative answer-quality score with Qwen3.8-27B as solver and local self-judge. Original numeric rubric and mean candidate/reference ratio retained; declared single-outer-JSON-fence extraction applies to all193 judge replies. The strict predecessor remains unchanged. Historical GPT-4-0314 judging and clinical accuracy are not reproduced.",
+      "trajectory_archive": {
+        "path": "results/trajectory_archives/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1.tar.gz",
+        "sha256": "69f4a1f3f438f8502aac919cf3ac602ef164b715c625b7d997a16417e8007be4"
       }
     }
   ],
