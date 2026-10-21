@@ -1,0 +1,61 @@
+{
+  "at_pacific": "2026-10-21T15:16:59.022022-07:00",
+  "case_scope": null,
+  "confidence_diagnostics": {
+    "all_zero_vectors": 2146,
+    "invalid_or_missing_vectors": 0,
+    "planned": 3416,
+    "score_based_case_filtering": false,
+    "unique_float32_confidences": 73,
+    "valid_vectors": 3416
+  },
+  "config_sha256": "aaa7d1fbdbcd3a1d1c2ed38026c542f44259659d3c1232f8c631ed44e9c48f2d",
+  "explanation_support_assessed": false,
+  "full_planned_primary_metrics_valid": true,
+  "invalid_or_missing": 0,
+  "metric_source_sha256": "760f376d4125ab2cc9332c9e83b944d4464da51aea577d75266d9247aca81776",
+  "metrics": {
+    "auprc@micro": 0.01925133541226387,
+    "f1_max": 0.12916181981563568
+  },
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "native_metric_policy": {
+    "all_case_primary_gate": "all planned outcomes must contain valid vectors; otherwise full primary metrics are null",
+    "case_order": "exact reviewed complete released test95 source order",
+    "class_order": "complete released annotation-header order",
+    "confidence_serialization": "model-supplied fixed-order dense numeric array, at most three decimal places",
+    "device": "cpu",
+    "dtype": "torch.float32 scores; torch.int64 binary targets",
+    "invalid_replacement_or_case_drop": false,
+    "native_functions": [
+      "area_under_prc",
+      "f1_max"
+    ],
+    "native_source_revision": "DeepGraphLearning/torchdrug@6066fbd82360abb5f270cba1eca560af01b8cc90",
+    "num_interop_threads": 1,
+    "num_threads": 1,
+    "score_propagation": "none; source target annotation closure retained",
+    "tie_order": "native torch.argsort defaults in recorded runtime; no gold-derived rearrangement"
+  },
+  "paper_comparison": null,
+  "parsed": 3416,
+  "planned": 3416,
+  "prediction_lock_sha256": "fb3be72e10153b3ea67ab30cfb05b0624a844b47c8a6ea906a955cd136f7a179",
+  "predictions_locked_before_reference_read": true,
+  "protocol_variant": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
+  "public_pretraining_exposure": "unknown",
+  "reference_sha256": "9ea2a7a6f19ea21b37ad46fdc12fd5fe8e330c5d3578cb35fe2aeed19b5a4b0e",
+  "reporting_protocol_kind": "adapted",
+  "run_id": "qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1",
+  "runtime": {
+    "device": "cpu",
+    "dtype": "float32",
+    "num_interop_threads": 1,
+    "num_threads": 1,
+    "python": "3.12.15",
+    "torch": "2.13.0+cu130"
+  },
+  "scorer_sha256": "b297106d0ec993bbf1ab56515f7579b0d8c49743cd2b8eab521579f6b2f973d8",
+  "task_id": "P14"
+}

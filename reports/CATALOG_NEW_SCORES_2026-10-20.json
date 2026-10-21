@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-21T12:29:39.546553-07:00",
+  "generated_at_pacific": "2026-10-21T15:31:30.026768-07:00",
   "historical_artifacts_modified": false,
   "new_inference_calls_by_exporter": 0,
   "completed_rows": [
@@ -243,6 +243,54 @@
       "trajectory_archive": {
         "path": "results/trajectory_archives/qwen38_27b_v06_judge_untouched31_json_fence_2026-10-21_v1.tar.gz",
         "sha256": "69f4a1f3f438f8502aac919cf3ac602ef164b715c625b7d997a16417e8007be4"
+      }
+    },
+    {
+      "task_id": "P14",
+      "run_id": "qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1",
+      "protocol_variant": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
+      "protocol_description": "nonthinking dense ordered three-decimal confidence vector, 16K budget",
+      "new_complete_generation": true,
+      "full_benchmark_complete": true,
+      "full_primary_metric_defined": true,
+      "counts": {
+        "planned": 3416,
+        "completed": 3416,
+        "parsed": 3416,
+        "invalid_outputs": 0,
+        "missing_or_failed_outputs": 0
+      },
+      "finish_reasons": {
+        "length": 0,
+        "stop": 3416
+      },
+      "generation": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "max_tokens": 16384,
+        "n": 1,
+        "seed": 42,
+        "structured_outputs": {
+          "regex": "\\{\"scores\":\\[(?:0(?:\\.[0-9]{1,3})?|1(?:\\.0{1,3})?)(?:,(?:0(?:\\.[0-9]{1,3})?|1(?:\\.0{1,3})?)){488}\\]\\}"
+        },
+        "temperature": 1.0,
+        "top_k": 20,
+        "top_p": 0.95
+      },
+      "metrics": {
+        "auprc@micro": 0.01925133541226387,
+        "f1_max": 0.12916181981563568
+      },
+      "source_scores": "results/runs/qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1/scores.json",
+      "scores_sha256": "7d966574ee9b84e8d9810fdcf6f0f9f7303967bb07eaeab14fb0b9892a4590d2",
+      "prediction_lock_sha256": "fb3be72e10153b3ea67ab30cfb05b0624a844b47c8a6ea906a955cd136f7a179",
+      "config_sha256": "aaa7d1fbdbcd3a1d1c2ed38026c542f44259659d3c1232f8c631ed44e9c48f2d",
+      "case_scope": "Complete released 3,416-case test95 full-FASTA molecular-function cohort; fixed 489 GO descriptions.",
+      "interpretation": "Zero-shot full-sequence annotation adaptation; native metric formulas preserved. No matched trained-head or PDB/crop reproduction claim.",
+      "trajectory_archive": {
+        "path": "results/trajectory_archives/qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1.tar.gz",
+        "sha256": "b2e11d5d138bb90d13a2ec4e3b23f27f7ddec5b1ae9e27b0c0739353803a8b46"
       }
     }
   ],

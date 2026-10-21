@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-21T12:30:01.683308-07:00",
+  "generated_at_pacific": "2026-10-21T15:31:54.513033-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "729ebc44b36b16eccf1eef9907715f1db57de50e787717b5ad1e86baacb9d148",
+  "report_sha256": "55c2af504251086c95f08490315ab96a15e75283dc314d847452a1e34987af31",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
   "raw_case_content_included": true,
   "qwen": {
     "additional_historical_score_source_checked_at_pacific": "2026-10-20T14:10:48.585467-07:00",
-    "defined_setting_count": 30,
+    "defined_setting_count": 31,
     "defined_setting_ids": [
       "B01",
       "B02",
@@ -28,6 +28,7 @@
       "P10",
       "P11",
       "P12",
+      "P14",
       "P16",
       "P23",
       "P24",
@@ -44,7 +45,7 @@
     ],
     "documentation_gap": "/data/rustfs1/dongweij/EXECUTION_EXAMPLES.md unavailable at read time; no execution or novel scientific interpretation performed",
     "earlier_undefined_scalar_condition_count": 3,
-    "generated_at_pacific": "2026-10-21T00:50:25.755161-07:00",
+    "generated_at_pacific": "2026-10-21T15:31:54.513033-07:00",
     "known_raw_output_recovery_gap_ids": [
       "P01",
       "V01",
@@ -57,7 +58,7 @@
     "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
     "new_inference_calls": 0,
     "new_scoring_attempts": 0,
-    "primary_condition_count": 37,
+    "primary_condition_count": 38,
     "public_source_audit": {
       "public_commit": "2aa34467e81cee20a7da9f4f4f85ab788c70e725",
       "repository": "Some-random/bio-evaluation",
@@ -3304,6 +3305,123 @@
           "local_hash_matches_recorded": true,
           "note": "Separate V06 publication receipt records remote byte verification."
         }
+      },
+      {
+        "task_id": "P14",
+        "task": "GO molecular function — DeepFRI split",
+        "category": "Protein function, annotations and descriptions",
+        "dataset": "GO molecular function — DeepFRI split",
+        "condition": "Native declared score; new complete generation; nonthinking dense ordered three-decimal confidence vector, 16K budget",
+        "condition_kind": "native",
+        "run_id": "qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1",
+        "result_type": "new_complete_generation",
+        "protocol_variant": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
+        "input_protocol": "Protein sequence → molecular-function confidence scores; zero-shot",
+        "output_budget": "16,384",
+        "usable_answer_rate": {
+          "value": 1.0,
+          "display": "3,416/3,416 (100.0%)",
+          "definition": "Native parser-valid outputs divided by all planned cases"
+        },
+        "native_score": {
+          "auprc@micro": 0.01925133541226387,
+          "f1_max": 0.12916181981563568
+        },
+        "diagnostic_score": null,
+        "score_display": "auprc@micro 0.0193; f1_max 0.1292",
+        "evidence": {
+          "category": "Measured, new delivery condition",
+          "detail": "Zero-shot full-sequence annotation adaptation; native metric formulas preserved. No matched trained-head or PDB/crop reproduction claim. Historical generations and scores remain separate."
+        },
+        "counts": {
+          "planned": 3416,
+          "completed": 3416,
+          "parsed": 3416,
+          "invalid_outputs": 0,
+          "missing_or_failed_outputs": 0
+        },
+        "finish_reasons": {
+          "length": 0,
+          "stop": 3416
+        },
+        "source_scores": "results/runs/qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1/scores.json",
+        "source_score_sha256": "7d966574ee9b84e8d9810fdcf6f0f9f7303967bb07eaeab14fb0b9892a4590d2",
+        "source_row_category": "completed_rows",
+        "source_protocol_url": "https://github.com/DeepGraphLearning/ProtST",
+        "case_scope": "Complete released 3,416-case test95 full-FASTA molecular-function cohort; fixed 489 GO descriptions.",
+        "native_metrics_recomputed": false,
+        "prediction_lock_sha256": "fb3be72e10153b3ea67ab30cfb05b0624a844b47c8a6ea906a955cd136f7a179",
+        "config_sha256": "aaa7d1fbdbcd3a1d1c2ed38026c542f44259659d3c1232f8c631ed44e9c48f2d",
+        "full_benchmark_complete": true,
+        "full_primary_metric_defined": true,
+        "trajectory_archive": {
+          "path": "results/trajectory_archives/qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1.tar.gz",
+          "sha256": "b2e11d5d138bb90d13a2ec4e3b23f27f7ddec5b1ae9e27b0c0739353803a8b46"
+        },
+        "condition_id": "Q_P14_20261021",
+        "is_primary_table": true,
+        "classification": "native_formula_on_zero_shot_adapted_model",
+        "evidence_level": "score_bytes_verified",
+        "old_undefined_full_metric": false,
+        "raw_response_reverified_by_this_audit": false,
+        "score_source": {
+          "path": "results/runs/qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1/scores.json",
+          "local_present": true,
+          "local_sha256": "7d966574ee9b84e8d9810fdcf6f0f9f7303967bb07eaeab14fb0b9892a4590d2",
+          "recorded_sha256": "7d966574ee9b84e8d9810fdcf6f0f9f7303967bb07eaeab14fb0b9892a4590d2",
+          "local_hash_matches_recorded": true,
+          "remote_at_verified_commit": null,
+          "remote_hash_matches_recorded": null,
+          "note": "Publication bytes are recorded independently in the P14 publication receipt."
+        },
+        "new_score_export": {
+          "task_id": "P14",
+          "run_id": "qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1",
+          "protocol_variant": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
+          "protocol_description": "nonthinking dense ordered three-decimal confidence vector, 16K budget",
+          "new_complete_generation": true,
+          "full_benchmark_complete": true,
+          "full_primary_metric_defined": true,
+          "counts": {
+            "planned": 3416,
+            "completed": 3416,
+            "parsed": 3416,
+            "invalid_outputs": 0,
+            "missing_or_failed_outputs": 0
+          },
+          "finish_reasons": {
+            "length": 0,
+            "stop": 3416
+          },
+          "generation": {
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            },
+            "max_tokens": 16384,
+            "n": 1,
+            "seed": 42,
+            "structured_outputs": {
+              "regex": "\\{\"scores\":\\[(?:0(?:\\.[0-9]{1,3})?|1(?:\\.0{1,3})?)(?:,(?:0(?:\\.[0-9]{1,3})?|1(?:\\.0{1,3})?)){488}\\]\\}"
+            },
+            "temperature": 1.0,
+            "top_k": 20,
+            "top_p": 0.95
+          },
+          "metrics": {
+            "auprc@micro": 0.01925133541226387,
+            "f1_max": 0.12916181981563568
+          },
+          "source_scores": "results/runs/qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1/scores.json",
+          "scores_sha256": "7d966574ee9b84e8d9810fdcf6f0f9f7303967bb07eaeab14fb0b9892a4590d2",
+          "prediction_lock_sha256": "fb3be72e10153b3ea67ab30cfb05b0624a844b47c8a6ea906a955cd136f7a179",
+          "config_sha256": "aaa7d1fbdbcd3a1d1c2ed38026c542f44259659d3c1232f8c631ed44e9c48f2d",
+          "case_scope": "Complete released 3,416-case test95 full-FASTA molecular-function cohort; fixed 489 GO descriptions.",
+          "interpretation": "Zero-shot full-sequence annotation adaptation; native metric formulas preserved. No matched trained-head or PDB/crop reproduction claim.",
+          "trajectory_archive": {
+            "path": "results/trajectory_archives/qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1.tar.gz",
+            "sha256": "b2e11d5d138bb90d13a2ec4e3b23f27f7ddec5b1ae9e27b0c0739353803a8b46"
+          }
+        }
       }
     ],
     "references_read": false,
@@ -3314,7 +3432,7 @@
     "sources": [
       {
         "path": "reports/EVALUATION_DECISION_TABLE.json",
-        "sha256": "e6b0451bceb8c46bca6ba17ee570fdd2e80ffb4f5f80e9e1dada9229a207a5ce"
+        "sha256": "3a79eab51872a104b0e30c05bc42872389d6de2a5618bd558aa62c1fa6620c7b"
       },
       {
         "path": "reports/RESULTS_AT_A_GLANCE.json",
@@ -3322,7 +3440,7 @@
       },
       {
         "path": "reports/CATALOG_NEW_SCORES_2026-10-20.json",
-        "sha256": "befccf6504575db7760ce9a45eb239882166f5ee3514a14591d101570169f3b9"
+        "sha256": "862261e230599311c83d5ff5b67b7d1f5c98156f96e5a6485390ca6e0edb1d22"
       },
       {
         "path": "reports/VERIFIED_RESULTS_SNAPSHOT_2026-10-16T042525.json",
@@ -5747,6 +5865,23 @@
       "image_bytes_published": false,
       "reference_answers_included": false,
       "new_case_reviews": 0
+    },
+    {
+      "task_id": "P14",
+      "id": "P14",
+      "page_id": "P14",
+      "page_path": "reports/questions/P14.md",
+      "dataset": "DeepFRI molecular-function annotation test95 / ProtST",
+      "case_id": "3ONG-B",
+      "status": "complete_saved_evaluated_input",
+      "complete_question_or_input": true,
+      "page_sha256": "158d0c2fb5329b1f0d634d9eb92e51a2a3aecb8b596380f51575a1b4b1ab90f8",
+      "page_bytes": 26061,
+      "source_path": ".local/catalog_execution_2026-10-20/tasks/P14/runtime/benchmark/requests/09ccb13489e612da8d770cdc14ce85258924e792a69903df69c76ee3d8feab3c.json",
+      "source_sha256": "e7d5316f0f5fd819249b4f1c938039c01776b238c8e03c1853463a5ce2a1c496",
+      "prediction_lock_sha256": "fb3be72e10153b3ea67ab30cfb05b0624a844b47c8a6ea906a955cd136f7a179",
+      "reference_answers_included": false,
+      "new_case_reviews": 0
     }
   ],
   "verified_question_policy": "Verbatim saved-request, released-dataset, or published-source excerpts. No native question or unavailable original prompt is explicitly labelled; no invented placeholder question.",
@@ -6693,6 +6828,22 @@
         "selection": "Highest non-oracle overall model result in Table1; not a current leaderboard claim.",
         "comparability": "Same193-question public evaluation, different judge: original GPT-4 versus our declared Qwen local self-judge. Historical original image byte identity unverified.",
         "verified_at_pacific": "2026-10-21T12:30:01.683308-07:00"
+      },
+      {
+        "task_id": "P14",
+        "best_model": "ProtST-ESM-2",
+        "display": "ProtST-ESM-2: AUPR 0.647; Fmax 0.668",
+        "metric": "AUPR / Fmax",
+        "values": {
+          "aupr": 0.647,
+          "fmax": 0.668
+        },
+        "source_url": "https://proceedings.mlr.press/v202/xu23t/xu23t.pdf",
+        "source_locator": "Table 3, printed p.6",
+        "comparability": "Full-model supervised tuning; Qwen uses complete released test95 FASTA text and fixed GO-MF descriptions without a trained head. Native PDB-modeled input subset is not reproduced.",
+        "value_status": "verified_primary_source_printed",
+        "selection": "Highest AUPR and Fmax among main Table 3 task-comparison models; not a current leaderboard claim.",
+        "verified_at_pacific": "2026-10-21T15:31:54.513033-07:00"
       }
     ]
   },
@@ -7588,6 +7739,23 @@
           "prediction_lock_sha256": "4f2b4709159c1d69b3545b0a08995ec6c6ede3cb9ec239dc2fa6bac37d7d6587",
           "reference_answers_included": false,
           "new_case_reviews": 0
+        },
+        {
+          "task_id": "P14",
+          "id": "P14",
+          "page_id": "P14",
+          "page_path": "reports/questions/P14.md",
+          "dataset": "DeepFRI molecular-function annotation test95 / ProtST",
+          "case_id": "3ONG-B",
+          "status": "complete_saved_evaluated_input",
+          "complete_question_or_input": true,
+          "page_sha256": "158d0c2fb5329b1f0d634d9eb92e51a2a3aecb8b596380f51575a1b4b1ab90f8",
+          "page_bytes": 26061,
+          "source_path": ".local/catalog_execution_2026-10-20/tasks/P14/runtime/benchmark/requests/09ccb13489e612da8d770cdc14ce85258924e792a69903df69c76ee3d8feab3c.json",
+          "source_sha256": "e7d5316f0f5fd819249b4f1c938039c01776b238c8e03c1853463a5ce2a1c496",
+          "prediction_lock_sha256": "fb3be72e10153b3ea67ab30cfb05b0624a844b47c8a6ea906a955cd136f7a179",
+          "reference_answers_included": false,
+          "new_case_reviews": 0
         }
       ],
       "summary": {
@@ -8263,5 +8431,13 @@
     "sha256": "c391284ba902437994b834bbf82e985e3cc7e02597eaad4a4782c0480cc72989",
     "development_only": true,
     "benchmark_score_available": false
+  },
+  "p14_result_added_at_pacific": "2026-10-21T15:31:54.513033-07:00",
+  "p14_defined_score_source": {
+    "path": "results/runs/qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1/scores.json",
+    "sha256": "7d966574ee9b84e8d9810fdcf6f0f9f7303967bb07eaeab14fb0b9892a4590d2",
+    "prediction_lock_sha256": "fb3be72e10153b3ea67ab30cfb05b0624a844b47c8a6ea906a955cd136f7a179",
+    "new_inference_calls_by_reporting": 0,
+    "new_scoring_calls_by_reporting": 0
   }
 }
