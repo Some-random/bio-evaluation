@@ -69,16 +69,16 @@
       ]
     },
     "P19": {
-      "why_not_done": "The separate runtime ran its three synthetic delivery checks. All three returned valid 40-item JSON but failed sequence-position consistency; one also repeated eight entries. The reference-free gate stopped execution before the fixed 34-case benchmark. This is a demonstrated model-output contract failure, not missing access or a user decision.",
-      "blocker_owner": "Agent",
-      "finish_requirement": "Preserve all failed development outputs. Prepare and CPU-test a separately named prospective schema with input-valid mutation IDs and uniqueness; review the full unchanged benchmark denominator before any new delivery condition. The full native 123-assay panel separately contains 77 unreviewed and 12 held assays.",
-      "next_deliverable": "Executable synthetic-tested candidate constraints and exact failure diagnosis; no replay or mutation of the original run.",
+      "why_not_done": "The corrected independently frozen worker passed all3 actual synthetic checks and is generating the34 reviewed mammalian-stability assays. These are partial-scope responses until closure/native scoring; the full123-assay panel still has77 unreviewed and12 held assays. Earlier development failures remain preserved.",
+      "blocker_owner": "Active evaluation agent",
+      "finish_requirement": "Complete and seal the unchanged34 reviewed assays; run the native scorer once and publish the qualified subset. Do not promote this to full123 coverage.",
+      "next_deliverable": "Sealed reviewed34 outcomes, once-only native score and complete source/raw trajectory bundle.",
       "needs_user_decision": false,
       "source_paths": [
-        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/development/completion.json",
-        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v1/runtime/status.json"
+        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v4/runtime/development/completion.json",
+        ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v4/runtime/benchmark/progress.json"
       ],
-      "observed_at_pacific": "2026-10-21T12:34:43.706039-07:00"
+      "observed_at_pacific": "2026-10-21T15:38:41.198574-07:00"
     },
     "P20": {
       "why_not_done": "The real-case preparation worker was interrupted by an automatic biological-risk check. The exact triggering case was not returned. Acquired source files do not authorize restarting that action, and no reviewed frozen benchmark run has been completed.",
@@ -203,17 +203,16 @@
       "observed_at_pacific": "2026-10-20T22:39:34.905496-07:00"
     },
     "P35": {
-      "why_not_done": "Full source-order corpus projection and artifact checks completed on CPU; this is prepared data, not retrieval predictions. This is preparation, not a completed evaluation. Complete permitted-input review and validate retrieval delivery. Numerical accuracy additionally needs relevance labels.",
-      "blocker_owner": "Agent",
-      "finish_requirement": "Finish the declared corpus projection/retention audit and input scope review, validate the existing-checkpoint runtime, run the five fixed queries and archive complete scores/top20 rankings. A numeric benchmark accuracy additionally requires a source-grounded relevance/aggregation contract that is not in the release; do not invent it.",
-      "next_deliverable": "Complete permitted-input review and validate retrieval delivery. Numerical accuracy additionally needs relevance labels.",
+      "why_not_done": "The independent native ProtST worker is allocated, passed actual A100/neutral CUDA checks and is verifying/loading the released checkpoint. No corpus/query delivery is inferred from startup. Source inputs and fixed five-query condition are frozen.",
+      "blocker_owner": "Active evaluation agent",
+      "finish_requirement": "Pass artificial model delivery, encode all34464 qualified source inputs and5 queries, then seal complete top20 rankings. No relevance gold or aggregate benchmark accuracy is released; this reference-model demonstration is not a Qwen score.",
+      "next_deliverable": "Verified artificial model delivery followed by full qualified native rankings and a checkpoint-free source/output bundle.",
       "needs_user_decision": false,
       "source_paths": [
-        ".local/catalog_execution_2026-10-20/tasks/P35/status.json",
-        ".local/catalog_execution_2026-10-20/tasks/P35/readiness.json",
-        ".local/catalog_execution_2026-10-20/tasks/P35/cpu_checkpoint_load_receipt.json"
+        ".local/catalog_execution_2026-10-20/tasks/P35/standalone_v2/runtime/control/worker_status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P35/standalone_v2/submission_receipt.json"
       ],
-      "observed_at_pacific": "2026-10-20T22:39:34.905496-07:00"
+      "observed_at_pacific": "2026-10-21T15:38:41.198574-07:00"
     },
     "P36": {
       "why_not_done": "There are two independent problems: the extended case review received an automatic biological-risk interruption with an unknown trigger, and the paper normalized Smith-Waterman alignment settings remain unrecovered. The 59 old responses cover only a partial subset; 188 new inputs are prepared but not generated, and 5,604 source cases remain unreviewed. Neither prepared inputs nor raw responses complete the benchmark.",
@@ -230,20 +229,16 @@
       ]
     },
     "P37": {
-      "why_not_done": "All 3,252 checkpoint tensors bound exactly; synthetic I/O checks passed. No folding forward was run. This is preparation, not a completed evaluation. Validate actual folding delivery and complete permitted-input/development checks.",
-      "blocker_owner": "Agent",
-      "finish_requirement": "Complete strict combined weight binding with checked memory headroom, validate actual folding delivery and permissible scope, then execute and score the frozen released-code adaptation while preserving native-protocol differences.",
-      "next_deliverable": "Validate actual folding delivery and complete permitted-input/development checks.",
+      "why_not_done": "The fully implemented standalone worker passed23 independent tests and is allocated with its isolated runtime assembling. Actual neutral folding, Qwen development,1000 generation slots and eligible folds must still complete; a job submission is not model delivery.",
+      "blocker_owner": "Active evaluation agent",
+      "finish_requirement": "Finish the frozen actual delivery gates and1000 once-only outcomes, then fold eligible sealed outputs and publish complete proxy scores. Exact NatureLM sampling/cohort/clustering equivalence and experimental validation are not claimed.",
+      "next_deliverable": "Actual neutral folding and Qwen development delivery, then sealed1000-slot generation and folding/scoring.",
       "needs_user_decision": false,
       "source_paths": [
-        ".local/catalog_execution_2026-10-20/tasks/P37/status.json",
-        ".local/catalog_execution_2026-10-20/tasks/P37/runtime_preflight.json",
-        ".local/catalog_execution_2026-10-20/tasks/P37/readiness.json",
-        ".local/catalog_execution_2026-10-20/tasks/P37/release2_acquisition_status.json",
-        ".local/catalog_execution_2026-10-20/tasks/P37/runtime_preparation/status.json",
-        ".local/catalog_execution_2026-10-20/tasks/P37/runtime_preparation/cpu_validation.json"
+        ".local/catalog_execution_2026-10-20/tasks/P37/available_execution_v1/runtime/status.json",
+        ".local/catalog_execution_2026-10-20/tasks/P37/available_execution_v1/submission_receipt.json"
       ],
-      "observed_at_pacific": "2026-10-20T22:39:34.905496-07:00"
+      "observed_at_pacific": "2026-10-21T15:38:41.198574-07:00"
     },
     "P38": {
       "why_not_done": "Both alternative property evaluators passed CPU synthetic delivery; no benchmark generation. This is preparation, not a completed evaluation. Integrate the validated evaluators with reviewed generation and development delivery checks.",
@@ -342,6 +337,6 @@
       "observed_at_pacific": "2026-10-20T22:39:34.905496-07:00"
     }
   },
-  "updated_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+  "updated_at_pacific": "2026-10-21T15:38:41.198574-07:00",
   "generated_at_pacific": "2026-10-21T12:34:43.706039-07:00"
 }

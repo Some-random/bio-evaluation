@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_pacific": "2026-10-21T12:39:29.370786-07:00",
+  "generated_at_pacific": "2026-10-21T15:38:55.639563-07:00",
   "timezone": "America/Los_Angeles",
   "scope": "Original 15 preparation tasks, two resumed judging tasks, and five separate 2026 benchmark additions",
   "original_retained_catalog_denominator": 57,
@@ -9,13 +9,13 @@
   "new_2026_benchmark_count": 5,
   "publication_target_interval_seconds": null,
   "refresh_note": "Manual timestamped Markdown snapshot; automatic publication and recurring messages remain stopped.",
-  "worker_note": "Timestamped preparation checklist. Ownership means responsibility, not a claim that every row has a live worker.",
+  "worker_note": "Three evaluation agents are active, one evaluation each. This session has three worker slots plus root. The other twelve original tasks have ordered lanes and will take the next free slot; they are not twelve additional running agents. Each owner continues through execution/scoring/publication or a precise terminal unavailable result.",
   "tasks": [
     {
       "task_id": "P04",
       "evaluation": "PEER: Beta-lactamase activity",
-      "worker": "Worker 3",
-      "agent": "/root/p38_runtime_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "Input/reference separation and scalar output checks passed; native correlation fixtures checked.",
@@ -24,14 +24,24 @@
       "evidence_at_pacific": "2026-10-20T21:32:00.713279-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P04",
+        "evaluation": "PEER: Beta-lactamase activity",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Inspect actual test cases for permitted scope; extract the ordered protein inputs with targets kept separate; fix the prediction settings, check delivery, then run and score.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_preparation_audit",
+        "lane_position": 5
+      }
     },
     {
       "task_id": "P05",
       "evaluation": "FLIP: AAV fitness",
-      "worker": "Worker 3",
-      "agent": "/root/p38_runtime_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "Input/reference separation and scalar output checks passed; historical archive/crop mismatch documented.",
@@ -40,14 +50,24 @@
       "evidence_at_pacific": "2026-10-20T21:21:32.492059-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P05",
+        "evaluation": "FLIP: AAV fitness",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Resolve the historical archive/sequence-crop difference; inspect actual assay scope; prepare the test inputs and hidden targets; validate scalar delivery and native correlation scoring.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_comparison_publication",
+        "lane_position": 5
+      }
     },
     {
       "task_id": "P17",
       "evaluation": "ProteinGym: Substitutions",
-      "worker": "Worker 3",
-      "agent": "/root/p38_runtime_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "All 217 archive/metadata entries matched; scoring and full-coverage checks passed.",
@@ -56,30 +76,55 @@
       "evidence_at_pacific": "2026-10-20T21:24:50.517011-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P17",
+        "evaluation": "ProteinGym: Substitutions",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Finish the explicit permitted/excluded list for 217 assays; prepare ordered sequence/candidate inputs with measured targets hidden; validate and execute per-assay scoring.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_preparation_audit",
+        "lane_position": 4
+      }
     },
     {
       "task_id": "P19",
       "evaluation": "PFArena: T1 single-mutant generation",
-      "worker": "Worker 1",
-      "agent": "/root/p35_corpus_work",
-      "state": "Actual development gate failed; benchmark stopped",
+      "worker": "Active evaluation owner",
+      "agent": "/root/update_preparation_audit",
+      "state": "Reviewed subset generation active; full panel unfinished",
       "active_cpu_work_verified": false,
-      "latest_result": "The independent Qwen runtime ran all three synthetic checks. All returned 40-item JSON, but 112/120 entries named a residue inconsistent with its sequence position; one response also repeated eight entries. No transport errors, truncations or empty finals. The gate stopped the worker before the 34-case benchmark.",
-      "progress": "3 / 3 development responses saved; 0 / 3 valid rankings; benchmark and native scoring did not start",
-      "next_step": "Keep the failed development outputs immutable. Prepare and test a separately declared schema that permits only valid sequence-position mutation IDs and unique entries; review it before any new delivery condition. Full 123-assay coverage separately has 77 unreviewed and 12 held assays.",
-      "evidence_at_pacific": "2026-10-21T12:30:21.085554-07:00",
+      "latest_result": "All three actual synthetic delivery checks passed. The separately frozen reviewed subset has 22/34 saved responses; direct unsealed counts are lower bounds. HTTP/transport/response errors, truncations and empty finals are reported in its task-local progress. Original failed development outputs remain preserved.",
+      "progress": "22/34 reviewed-subset responses saved; not a full 123-assay score",
+      "next_step": "Finish the unchanged 34 reviewed mammalian-stability assays, seal every outcome and run the native scorer once. The 77 unreviewed and 12 held assays remain outside this condition.",
+      "evidence_at_pacific": "2026-10-21T15:38:46.192521-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent; no access request for the user",
-      "next_step_verified_at_pacific": "2026-10-21T12:39:29.370786-07:00"
+      "owner_of_remaining_work": "Active owner: /root/update_preparation_audit",
+      "next_step_verified_at_pacific": "2026-10-21T15:38:55.639563-07:00",
+      "dedicated_assignment": {
+        "task_id": "P19",
+        "evaluation": "PFArena: T1 single-mutant generation",
+        "engineering_state": "assigned_active_worker",
+        "agent": "/root/update_preparation_audit",
+        "assignment": "Integrate tested input-valid unique-ranking decoder; execute the frozen reviewed subset and native scorer after exact runtime admission.",
+        "model_runtime_proven_by_assignment": false,
+        "job_id": "245216",
+        "runtime_state": "reviewed34_benchmark_generation_after_synthetic3_delivery_passed",
+        "admission_at_pacific": "2026-10-21T15:26:25.816506-07:00",
+        "assigned_worker_lane": "/root/update_preparation_audit",
+        "lane_position": 1,
+        "runtime_evidence_path": ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v4/runtime/status.json",
+        "scope": "34 reviewed mammalian stability assays; not full123"
+      }
     },
     {
       "task_id": "P21",
       "evaluation": "PFArena: T3 anchor-informed ranking",
-      "worker": "Worker 3",
-      "agent": "/root/p38_runtime_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "Native input builder, reference isolation and complete-ranking checks passed on artificial fixtures.",
@@ -88,14 +133,24 @@
       "evidence_at_pacific": "2026-10-20T21:26:43.997047-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P21",
+        "evaluation": "PFArena: T3 anchor-informed ranking",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Inspect real assay/anchor context; package candidates and supplied anchor measurements while hiding target measurements; validate complete rankings and run the scorer.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_preparation_audit",
+        "lane_position": 2
+      }
     },
     {
       "task_id": "P22",
       "evaluation": "PFArena: T4 single-mutant-informed ranking",
-      "worker": "Worker 3",
-      "agent": "/root/p38_runtime_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "Native input builder, reference isolation and complete-ranking checks passed on artificial fixtures.",
@@ -104,14 +159,24 @@
       "evidence_at_pacific": "2026-10-20T21:26:44.342433-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P22",
+        "evaluation": "PFArena: T4 single-mutant-informed ranking",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Inspect real assay/context; package candidates and allowed single-mutant measurements while hiding combination targets; validate complete rankings and run the scorer.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_preparation_audit",
+        "lane_position": 3
+      }
     },
     {
       "task_id": "P27",
       "evaluation": "NatureLM: Protein description",
-      "worker": "Worker 1",
-      "agent": "/root/p35_corpus_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "2,633 alternative inputs packaged; this cohort overlaps P26 and does not add an independently completed setting.",
@@ -120,14 +185,24 @@
       "evidence_at_pacific": "2026-10-20T21:27:10.631295-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P27",
+        "evaluation": "NatureLM: Protein description",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Recover the author accession list, dated annotation snapshot and ROUGE preprocessing, or establish an independent declared alternative. The existing 2,633-case package duplicates another completed evaluation.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/new_2026_benchmarks",
+        "lane_position": 2
+      }
     },
     {
       "task_id": "P34",
       "evaluation": "MutaPLM: Iterative protein optimization",
-      "worker": "Worker 2",
-      "agent": "/root/p37_runtime_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "The released encoder and all five existing heads are now assembled with exact checkpoint tensor bindings; no model forward has run.",
@@ -136,46 +211,86 @@
       "evidence_at_pacific": "2026-10-20T22:10:27.669306-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P34",
+        "evaluation": "MutaPLM: Iterative protein optimization",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Implement the Qwen proposal interface using the already-loaded encoder and five existing heads; prepare permitted starting cases; test a real evaluator forward and the full loop. No new heads are needed.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_comparison_publication",
+        "lane_position": 2
+      }
     },
     {
       "task_id": "P35",
       "evaluation": "ProtST: Text-to-protein retrieval",
-      "worker": "Worker 1",
-      "agent": "/root/p35_corpus_work",
-      "state": "Executable native demo prepared; model runtime not yet qualified",
+      "worker": "Active evaluation owner",
+      "agent": "/root/new_2026_benchmarks",
+      "state": "Standalone native ProtST worker active",
       "active_cpu_work_verified": false,
-      "latest_result": "The native ProtST runner and source preflight cover 34,464 qualified corpus inputs and five fixed top-20 queries; nine neutral checks passed. No pretrained model forward has run. The release has no relevance labels, so it cannot supply retrieval accuracy.",
-      "progress": "Executable five-query native ProtST demo; no Qwen result or benchmark accuracy",
-      "next_step": "Freeze and validate the native ProtST execution runtime: the available Torch 2.6 environment is CPU-only; the cached CUDA runtime has Torch 2.13 and needs explicit compatibility validation. Then admit and run all five query rankings under the declared qualified corpus.",
-      "evidence_at_pacific": "2026-10-21T12:38:26.534898-07:00",
+      "latest_result": "Actual one-GPU worker job 245221 is at hardware_then_artificial_delivery_gate_then_full_native_run. Hardware/neutral CUDA passed: True. Corpus/query delivery must be established by direct task progress; startup is not delivery.",
+      "progress": "34,464 qualified source inputs and five fixed queries planned; missing task progress is unknown",
+      "next_step": "Pass the artificial model-delivery gate, encode the full qualified corpus and five queries, then seal the five top-20 rankings. This is the released ProtST reference model, not Qwen; the release supplies no relevance-gold accuracy.",
+      "evidence_at_pacific": "2026-10-21T15:38:51.810910-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent; exact native accuracy is unavailable without relevance labels",
-      "next_step_verified_at_pacific": "2026-10-21T12:39:29.227364-07:00"
+      "owner_of_remaining_work": "Active owner: /root/new_2026_benchmarks",
+      "next_step_verified_at_pacific": "2026-10-21T12:39:29.227364-07:00",
+      "dedicated_assignment": {
+        "task_id": "P35",
+        "evaluation": "ProtST: Text-to-protein retrieval",
+        "engineering_state": "assigned_active_worker",
+        "agent": "/root/new_2026_benchmarks",
+        "assignment": "Finish the standalone native-ProtST worker; execute all five qualified query rankings after runtime admission. No relevance-gold accuracy exists.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/new_2026_benchmarks",
+        "lane_position": 1,
+        "job_id": "245221",
+        "runtime_state": "hardware_gate_passed_artificial_model_delivery_pending",
+        "runtime_evidence_path": ".local/catalog_execution_2026-10-20/tasks/P35/standalone_v2/runtime/control/worker_status.json",
+        "admission_at_pacific": "2026-10-21T15:32:18.183630-07:00",
+        "scope": "Released ProtST reference demonstration,34464 qualified corpus inputs/five queries; no native accuracy gold"
+      }
     },
     {
       "task_id": "P37",
       "evaluation": "NatureLM: Unconditional protein generation",
-      "worker": "Worker 2",
-      "agent": "/root/p37_runtime_work",
-      "state": "Preparation milestone passed",
+      "worker": "Active evaluation owner",
+      "agent": "/root/update_comparison_publication",
+      "state": "Exact standalone worker submitted; startup/delivery verification follows",
       "active_cpu_work_verified": false,
-      "latest_result": "All 3,252 checkpoint tensors bound exactly; synthetic I/O checks passed. No folding forward was run.",
-      "progress": "8 synthetic checks passed",
-      "next_step": "Test an actual folding-model forward, finish the Qwen generation wrapper and admitted generation scope, then run the fixed generation/folding condition. Weight loading is already done.",
-      "evidence_at_pacific": "2026-10-20T21:18:17.879722-07:00",
+      "latest_result": "Frozen worker job 245226 submitted after 23 independent CPU tests passed and all 41 source pins matched. Submission alone does not establish a model call. The previous timing-dependent drain fixture and queued-send guard were corrected before dispatch.",
+      "progress": "1,000 unconditional generation slots planned; no benchmark completion inferred from submission",
+      "next_step": "Verify actual neutral folding delivery, Qwen development delivery, all 1,000 once-only generation outcomes and eligible folds. Report declared format/diversity/folding-confidence proxies; no matched NatureLM or experimental claim.",
+      "evidence_at_pacific": "2026-10-21T15:36:16.108818-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Active owner: /root/update_comparison_publication",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P37",
+        "evaluation": "NatureLM: Unconditional protein generation",
+        "engineering_state": "assigned_active_worker",
+        "agent": "/root/update_comparison_publication",
+        "assignment": "Implement the available-condition generation/folding worker and scoring; then execute the frozen condition after runtime admission.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_comparison_publication",
+        "lane_position": 1,
+        "runtime_state": "allocation_started_runtime_assembly_before_delivery_gates",
+        "scope": "1000 unconditional generation slots plus declared folding proxies; final candidate not admitted",
+        "job_id": "245226",
+        "runtime_evidence_path": ".local/catalog_execution_2026-10-20/tasks/P37/available_execution_v1/runtime/status.json",
+        "admission_at_pacific": "2026-10-21T15:36:16.108818-07:00"
+      }
     },
     {
       "task_id": "P38",
       "evaluation": "NatureLM: Conditional protein generation",
-      "worker": "Worker 3",
-      "agent": "/root/p38_runtime_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "Both alternative property evaluators passed CPU synthetic delivery; no benchmark generation.",
@@ -184,14 +299,24 @@
       "evidence_at_pacific": "2026-10-20T21:28:55.206767-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P38",
+        "evaluation": "NatureLM: Conditional protein generation",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Fix the generation case allocation and settings, connect the already-tested property evaluators, validate delivery and run the declared proxy conditions.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_comparison_publication",
+        "lane_position": 3
+      }
     },
     {
       "task_id": "P39",
       "evaluation": "NatureLM: Heme-binding protein design",
-      "worker": "Worker 1",
-      "agent": "/root/p35_corpus_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "Source-based case packaging and synthetic interface checks passed; exact author cohort is unavailable.",
@@ -200,14 +325,24 @@
       "evidence_at_pacific": "2026-10-20T21:29:22.152695-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P39",
+        "evaluation": "NatureLM: Heme-binding protein design",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Assemble and test the complex-prediction runtime using acquired assets; define a reproducible case cohort and proxy acceptance rule. Exact author cases/settings and measured binding accuracy are unavailable.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/new_2026_benchmarks",
+        "lane_position": 3
+      }
     },
     {
       "task_id": "P40",
       "evaluation": "RAbD: Antibody CDR-H3 redesign",
-      "worker": "Worker 2",
-      "agent": "/root/p37_runtime_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "Target-isolated structural packet and recovery-metric helper passed synthetic checks; real cases remain unprepared.",
@@ -216,14 +351,24 @@
       "evidence_at_pacific": "2026-10-20T21:27:04.473898-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P40",
+        "evaluation": "RAbD: Antibody CDR-H3 redesign",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Inspect the 60 real antigen/case scopes; build masked structural inputs that omit the target CDR; test the coordinate-to-text interface, context limits and actual delivery.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/new_2026_benchmarks",
+        "lane_position": 4
+      }
     },
     {
       "task_id": "P41",
       "evaluation": "Proteo-R1: Structural design demonstration",
-      "worker": "Worker 2",
-      "agent": "/root/p37_runtime_work",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "Numbering and CIF runtime dependencies now pass artificial checks; real demonstration cases remain unprepared.",
@@ -232,14 +377,24 @@
       "evidence_at_pacific": "2026-10-20T22:13:34.361014-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "P41",
+        "evaluation": "Proteo-R1: Structural design demonstration",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Prepare permitted released demonstration cases; validate their real numbering/CIF conversion; connect proposals to geometric prediction and a declared scorer. The full paper holdout and exact paper scorer remain unavailable.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/new_2026_benchmarks",
+        "lane_position": 5
+      }
     },
     {
       "task_id": "V07",
       "evaluation": "SlideVQA: Slide-deck question answering (Ryze)",
-      "worker": "Main agent",
-      "agent": "/root",
+      "worker": "Waiting for worker slot",
+      "agent": null,
       "state": "Preparation milestone passed",
       "active_cpu_work_verified": false,
       "latest_result": "Full-dataset CPU image processing passed. Permitted-content review and actual model delivery remain.",
@@ -248,8 +403,18 @@
       "evidence_at_pacific": "2026-10-20T21:40:31.962957-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Evaluation agent",
-      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00"
+      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
+      "dedicated_assignment": {
+        "task_id": "V07",
+        "evaluation": "SlideVQA: Slide-deck question answering (Ryze)",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Inspect the 2,215 question/slide inputs for permitted scope; record exact inclusions/exclusions; test actual 20-image model delivery and run the declared available condition. Full CPU preprocessing is already done.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_comparison_publication",
+        "lane_position": 4
+      }
     },
     {
       "task_id": "P44",
@@ -275,7 +440,7 @@
       "evidence_at_pacific": "2026-10-21T12:28:26.526538-07:00",
       "benchmark_completed_by_this_preparation": true,
       "owner_of_remaining_work": "Completed",
-      "next_step_verified_at_pacific": "2026-10-21T12:39:29.370786-07:00"
+      "next_step_verified_at_pacific": "2026-10-21T15:38:55.639563-07:00"
     }
   ],
   "new_2026_benchmarks": [
@@ -378,5 +543,227 @@
   ],
   "deferred_by_user": [
     "scBench: required Latch access unavailable; no further credential requests"
-  ]
+  ],
+  "original_fifteen_assignment_queue": {
+    "at_pacific": "2026-10-21T15:38:41.198574-07:00",
+    "role": "engineering_ownership_and_pending_assignment_not_runtime_dispatch_evidence",
+    "original_fifteen_task_count": 15,
+    "worker_concurrency_limit": 3,
+    "root_coordination_slots": 1,
+    "resource_limit_GPUs": 8,
+    "one_evaluation_per_active_worker": true,
+    "ownership_until": "verified run/scoring/publication closure or evidence-based terminal unavailable condition; no preparation-only handoff counts as benchmark completion",
+    "root_responsibility": "Review exact runnable conditions promptly, admit permitted runtime within GPU ceiling, monitor/publish existing DeepFRI, and refill a worker slot after terminal closure.",
+    "task_order": [
+      "P19",
+      "P35",
+      "P37",
+      "V07",
+      "P34",
+      "P38",
+      "P21",
+      "P22",
+      "P17",
+      "P04",
+      "P05",
+      "P40",
+      "P41",
+      "P27",
+      "P39"
+    ],
+    "tasks": [
+      {
+        "task_id": "P19",
+        "evaluation": "PFArena: T1 single-mutant generation",
+        "engineering_state": "assigned_active_worker",
+        "agent": "/root/update_preparation_audit",
+        "assignment": "Integrate tested input-valid unique-ranking decoder; execute the frozen reviewed subset and native scorer after exact runtime admission.",
+        "model_runtime_proven_by_assignment": false,
+        "job_id": "245216",
+        "runtime_state": "reviewed34_benchmark_generation_after_synthetic3_delivery_passed",
+        "admission_at_pacific": "2026-10-21T15:26:25.816506-07:00",
+        "assigned_worker_lane": "/root/update_preparation_audit",
+        "lane_position": 1,
+        "runtime_evidence_path": ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v4/runtime/status.json",
+        "scope": "34 reviewed mammalian stability assays; not full123"
+      },
+      {
+        "task_id": "P35",
+        "evaluation": "ProtST: Text-to-protein retrieval",
+        "engineering_state": "assigned_active_worker",
+        "agent": "/root/new_2026_benchmarks",
+        "assignment": "Finish the standalone native-ProtST worker; execute all five qualified query rankings after runtime admission. No relevance-gold accuracy exists.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/new_2026_benchmarks",
+        "lane_position": 1,
+        "job_id": "245221",
+        "runtime_state": "hardware_gate_passed_artificial_model_delivery_pending",
+        "runtime_evidence_path": ".local/catalog_execution_2026-10-20/tasks/P35/standalone_v2/runtime/control/worker_status.json",
+        "admission_at_pacific": "2026-10-21T15:32:18.183630-07:00",
+        "scope": "Released ProtST reference demonstration,34464 qualified corpus inputs/five queries; no native accuracy gold"
+      },
+      {
+        "task_id": "P37",
+        "evaluation": "NatureLM: Unconditional protein generation",
+        "engineering_state": "assigned_active_worker",
+        "agent": "/root/update_comparison_publication",
+        "assignment": "Implement the available-condition generation/folding worker and scoring; then execute the frozen condition after runtime admission.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_comparison_publication",
+        "lane_position": 1,
+        "runtime_state": "allocation_started_runtime_assembly_before_delivery_gates",
+        "scope": "1000 unconditional generation slots plus declared folding proxies; final candidate not admitted",
+        "job_id": "245226",
+        "runtime_evidence_path": ".local/catalog_execution_2026-10-20/tasks/P37/available_execution_v1/runtime/status.json",
+        "admission_at_pacific": "2026-10-21T15:36:16.108818-07:00"
+      },
+      {
+        "task_id": "V07",
+        "evaluation": "SlideVQA: Slide-deck question answering (Ryze)",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Inspect the 2,215 question/slide inputs for permitted scope; record exact inclusions/exclusions; test actual 20-image model delivery and run the declared available condition. Full CPU preprocessing is already done.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_comparison_publication",
+        "lane_position": 4
+      },
+      {
+        "task_id": "P34",
+        "evaluation": "MutaPLM: Iterative protein optimization",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Implement the Qwen proposal interface using the already-loaded encoder and five existing heads; prepare permitted starting cases; test a real evaluator forward and the full loop. No new heads are needed.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_comparison_publication",
+        "lane_position": 2
+      },
+      {
+        "task_id": "P38",
+        "evaluation": "NatureLM: Conditional protein generation",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Fix the generation case allocation and settings, connect the already-tested property evaluators, validate delivery and run the declared proxy conditions.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_comparison_publication",
+        "lane_position": 3
+      },
+      {
+        "task_id": "P21",
+        "evaluation": "PFArena: T3 anchor-informed ranking",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Inspect real assay/anchor context; package candidates and supplied anchor measurements while hiding target measurements; validate complete rankings and run the scorer.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_preparation_audit",
+        "lane_position": 2
+      },
+      {
+        "task_id": "P22",
+        "evaluation": "PFArena: T4 single-mutant-informed ranking",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Inspect real assay/context; package candidates and allowed single-mutant measurements while hiding combination targets; validate complete rankings and run the scorer.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_preparation_audit",
+        "lane_position": 3
+      },
+      {
+        "task_id": "P17",
+        "evaluation": "ProteinGym: Substitutions",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Finish the explicit permitted/excluded list for 217 assays; prepare ordered sequence/candidate inputs with measured targets hidden; validate and execute per-assay scoring.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_preparation_audit",
+        "lane_position": 4
+      },
+      {
+        "task_id": "P04",
+        "evaluation": "PEER: Beta-lactamase activity",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Inspect actual test cases for permitted scope; extract the ordered protein inputs with targets kept separate; fix the prediction settings, check delivery, then run and score.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_preparation_audit",
+        "lane_position": 5
+      },
+      {
+        "task_id": "P05",
+        "evaluation": "FLIP: AAV fitness",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Resolve the historical archive/sequence-crop difference; inspect actual assay scope; prepare the test inputs and hidden targets; validate scalar delivery and native correlation scoring.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/update_comparison_publication",
+        "lane_position": 5
+      },
+      {
+        "task_id": "P40",
+        "evaluation": "RAbD: Antibody CDR-H3 redesign",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Inspect the 60 real antigen/case scopes; build masked structural inputs that omit the target CDR; test the coordinate-to-text interface, context limits and actual delivery.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/new_2026_benchmarks",
+        "lane_position": 4
+      },
+      {
+        "task_id": "P41",
+        "evaluation": "Proteo-R1: Structural design demonstration",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Prepare permitted released demonstration cases; validate their real numbering/CIF conversion; connect proposals to geometric prediction and a declared scorer. The full paper holdout and exact paper scorer remain unavailable.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/new_2026_benchmarks",
+        "lane_position": 5
+      },
+      {
+        "task_id": "P27",
+        "evaluation": "NatureLM: Protein description",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Recover the author accession list, dated annotation snapshot and ROUGE preprocessing, or establish an independent declared alternative. The existing 2,633-case package duplicates another completed evaluation.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/new_2026_benchmarks",
+        "lane_position": 2
+      },
+      {
+        "task_id": "P39",
+        "evaluation": "NatureLM: Heme-binding protein design",
+        "engineering_state": "pending_worker_slot",
+        "agent": null,
+        "assignment": "Assemble and test the complex-prediction runtime using acquired assets; define a reproducible case cohort and proxy acceptance rule. Exact author cases/settings and measured binding accuracy are unavailable.",
+        "model_runtime_proven_by_assignment": false,
+        "assigned_worker_lane": "/root/new_2026_benchmarks",
+        "lane_position": 3
+      }
+    ],
+    "model_calls_by_this_registry": 0,
+    "new_dispatch_authority_created": false,
+    "websites_or_recurring_schedules_created": false,
+    "worker_lanes": {
+      "/root/update_preparation_audit": [
+        "P19",
+        "P21",
+        "P22",
+        "P17",
+        "P04"
+      ],
+      "/root/new_2026_benchmarks": [
+        "P35",
+        "P27",
+        "P39",
+        "P40",
+        "P41"
+      ],
+      "/root/update_comparison_publication": [
+        "P37",
+        "P34",
+        "P38",
+        "V07",
+        "P05"
+      ]
+    },
+    "lane_policy": "One evaluation at a time per agent. Continue to the next assigned item after verified scoped execution/scoring/publication or evidence-based terminal unavailability, without waiting for another user prompt. A preparation handoff is not a terminal evaluation. Exact runtime admissions and resource audits remain necessary; biological holds remain unchanged."
+  }
 }
