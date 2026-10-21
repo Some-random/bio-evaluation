@@ -37,12 +37,12 @@ AGENT_ACTIONS = {
     "P39": ("Freeze a clearly labelled available structural case-study condition and its complete selection/denominator contract using acquired evaluator assets; report proxy evidence without invented binding accuracy.", "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json", "Exact native cohort, selection manifest and scoring contract unreleased in inspected sources; qualitative adaptation remains possible."),
     "P40": ("Independently review the 60 cases and implement a solver adapter that preserves permitted geometric context while hiding target residue identities and coordinates.", ".local/catalog_execution_2026-10-20/tasks/P40/status.json", "60 current-structure mappings/masks prepared; exact historical processed bytes not certified; current-structure adaptation available."),
     "P41": ("Assemble the available released-demo structural runtime and its masking/scoring adapter; document differences from the unreleased native holdout.", "reports/REMAINING_DESIGN_SOURCE_FEASIBILITY_2026-10-15.json", "Released checkpoints/vendor assets and demos acquired; exact SAbDab holdout, masks and full benchmark aggregation unavailable in inspected releases."),
+    "P44": ("Recover the explanation-assessment cohort and reference dossier, validate a separately named available judge/rubric adapter, then complete permitted local delivery and scoring.", ".local/catalog_execution_2026-10-20/tasks/P44/task.json", "User removed the BioReason-Pro judging hold; explanation assessment remains distinct from existing GO annotation scores. Exact paper judge/cohort equivalence still requires verification."),
+    "V06": ("Prepare the complete image/question cohort with isolated references, validate a declared available judge or human-score adapter and full-denominator aggregation, then complete permitted delivery and scoring.", ".local/catalog_execution_2026-10-20/tasks/V06/task.json", "User waived the original GPT-4-0314 requirement; a replacement judging condition may proceed with its differences explicit. This does not authorize new paid inference."),
     "V07": ("Review the 2,215 question/full-deck scopes, run actual processor expansion and 20-image context checks, then pass the independent delivery gate.", ".local/catalog_execution_2026-10-20/tasks/V07/status.json", "All 8,000 page identities materialized/hash-verified; mixed original/processed image adaptation available; exact Table 3 condition unavailable."),
 }
 USER_HOLDS = {
     "P33": "New head training remains held. Search already released matching heads and prepare metadata; a different training scope requires a user decision.",
-    "V06": "Replacement external judge remains held. Solver packaging can proceed; a scoring/judge choice requires a user decision.",
-    "P44": "Replacement external judge remains held. Prepare available evidence/rubric metadata; a scoring/judge choice requires a user decision.",
 }
 PROVIDER_HOLDS = {"P18", "B06", "P20", "P30", "P31", "P32", "P36"}
 CONTINUATION_MANIFEST_SHA256 = "64b1f81dfa7a138458905736545ecb93f592c7cd85dc8528b6621ca125b260d4"
@@ -90,6 +90,10 @@ def explain_unfinished(row, reasons):
                 "finish_requirement": "A defined score for this declared condition is already retained.",
                 "next_deliverable": row["next_action"], "needs_user_decision": False}
     task = row["task_id"]
+    if task == "V06" and row.get("separate_local_execution_verified"):
+        return {"why_not_done": row["status"], "blocker_owner": "Existing isolated V06 worker",
+                "finish_requirement": row["next_action"], "next_deliverable": row["next_action"],
+                "needs_user_decision": False}
     if task in DEEPFRI_OUTPUT_DIMENSIONS and row["category"] in {"running", "queued"}:
         dimension = DEEPFRI_OUTPUT_DIMENSIONS[task]
         runtime = row.get("runtime") or {}
@@ -99,7 +103,7 @@ def explain_unfinished(row, reasons):
             reason = count + f"Generation is still incomplete; each case requires {dimension:,} ordered confidence values. The three active task workers share one A100. Full-cohort scoring has not started."
             deliverable = "Finish the untouched cases, seal all outcomes, then calculate the full-cohort native AP/Fmax scores."
         else:
-            reason = f"Its exact benchmark grant is queued, but its worker has not started. The three-client runtime is occupied by P12, P13 and P14; this is our scheduling choice. Each P15 answer requires {dimension:,} confidence values."
+            reason = f"Its exact benchmark grant is queued, but its worker has not started. The existing three-client runtime starts the grant when a task-worker slot opens. Each answer requires {dimension:,} confidence values."
             deliverable = "Start the existing grant when a task-worker slot opens, then complete and score the fixed cohort."
         return {"why_not_done": reason, "blocker_owner": "Agent scheduling / existing generation workers",
                 "finish_requirement": deliverable, "next_deliverable": deliverable,
@@ -161,6 +165,115 @@ def task_queue_evidence(root, task, direct, now):
     except (OSError, ValueError, TypeError, KeyError):
         pass
     return result
+
+
+def v06_execution_evidence(root, now):
+    """Read the separately admitted worker; a submission is never dispatch proof."""
+    base = root / ".local/catalog_execution_2026-10-20/tasks/V06/local_execution_v2"
+    paths = {"plan": base / "plan.json", "admission": base / "root_admission.json",
+             "submission": base / "submission_receipt.json"}
+    digest = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
+    try:
+        if not all(p.is_file() and not p.is_symlink() for p in paths.values()):
+            return None
+        docs = {k: load(p) for k, p in paths.items()}
+        plan, admission, submission = (docs[k] for k in ("plan", "admission", "submission"))
+        plan_sha, admission_sha = digest(paths["plan"]), digest(paths["admission"])
+        if (plan.get("task_id") != "V06" or plan.get("planned") != 193
+                or admission.get("admitted") is not True or admission.get("task_id") != "V06"
+                or admission.get("plan_sha256") != plan_sha
+                or submission.get("plan_sha256") != plan_sha
+                or submission.get("admission_sha256") != admission_sha
+                or submission.get("task_id") != "V06" or submission.get("returncode") != 0
+                or not str(submission.get("job_id", "")).isdigit()):
+            return None
+        job = str(submission["job_id"])
+        result = {"category": "queued", "substatus": "separate_V06_submitted_no_dispatch_proof",
+                  "status": f"Independent V06 job {job} was submitted. No benchmark dispatch is established by the submission receipt.",
+                  "next_action": "Let the existing worker finish its pinned runtime/server checks and neutral delivery gates before the one-attempt 193-case solver and local-judge phases.",
+                  "runtime": None, "prepared_benchmark_planned": 193,
+                  "separate_local_execution_verified": True,
+                  "evidence_paths": [str(p.relative_to(root)) for p in paths.values()],
+                  "scope_notes": ["V1 job 244379 stopped at a package-version guard before model requests; its failed infrastructure evidence is preserved. V2 installs the pinned runtime independently, with unchanged 193 inputs and 16K solver/judge settings.",
+                                  "The user waived GPT-4-0314. This is a separately declared Qwen solver/local-Qwen judge adaptation; a teacher-comparison ratio is not clinical accuracy."]}
+        runtime_path = base / "runtime/status.json"
+        runtime = load(runtime_path) or {}
+        if runtime:
+            result["evidence_paths"].append(str(runtime_path.relative_to(root)))
+            if str(runtime.get("job_id")) == job and runtime.get("stage") == "starting_independent_V06_server":
+                age = age_seconds(timestamp(runtime), now)
+                if age is not None and -60 <= age <= 600:
+                    result["status"] = f"Independent V06 job {job} is starting its server; benchmark dispatch has not been established."
+                else:
+                    result.update(category="agent_work", substatus="V06_stale_startup_observation",
+                        status="V06's recorded server-startup state is stale; current runtime and benchmark attempts are unknown.",
+                        next_action="Inspect the existing job and runtime evidence before describing it as currently running; do not automatically retry.")
+            elif runtime.get("stage") == "stopped_for_review":
+                result.update(category="agent_work", substatus="V06_runtime_stopped_for_review",
+                    status="The independent V06 runtime stopped for review. Missing benchmark progress does not establish zero attempts.",
+                    next_action="Diagnose the preserved V06 stop evidence and reconcile any outputs; no automatic retry or protocol change.")
+        folder = base / "runtime/run_v1"
+        completion_path, progress_path = folder / "completion.json", folder / "progress.json"
+        complete, progress = load(completion_path), load(progress_path)
+        direct = complete or progress
+        if not direct:
+            return result
+        identity_path = base / "runtime/server_identity.json"
+        identity = load(identity_path) or {}
+        if (str(identity.get("job_id")) != job or identity.get("plan_sha256") != plan_sha
+                or identity.get("admission_sha256") != admission_sha
+                or identity.get("endpoint") != plan.get("endpoint")):
+            result.update(category="agent_work", substatus="V06_identity_reconciliation",
+                          status="V06 runtime records exist but do not match the admitted server identity; current dispatch counts are unverified.",
+                          next_action="Inspect the preserved V06 identity/progress mismatch before any continuation; no automatic retry.")
+            return result
+        result["evidence_paths"].extend(str(p.relative_to(root)) for p in
+            (identity_path, completion_path if complete else progress_path))
+        phase = "judge" if isinstance(direct.get("judge"), dict) else "solver"
+        counts = direct.get(phase)
+        result["runtime"] = {"run_id": plan["run_id"], "active_job_id": job,
+            "recorded_at_pacific": timestamp(direct), "age_seconds_at_observation": age_seconds(timestamp(direct), now),
+            "sealed_complete": complete is not None, "unsealed_counts_are_lower_bounds": complete is None,
+            "phase": phase if counts else "neutral_development", "solver": direct.get("solver"), "judge": direct.get("judge"),
+            "planned": 193, "responses_saved": counts.get("responses_saved") if counts else None,
+            "native_scoring_status": direct.get("native_scoring_status", "not_started")}
+        stage, age = direct.get("stage"), age_seconds(timestamp(direct), now)
+        runtime_age = age_seconds(timestamp(runtime), now)
+        fresh_owner = (str(runtime.get("job_id")) == job and runtime.get("stage") == "serving_frozen_V06_protocol"
+                       and runtime_age is not None and -60 <= runtime_age <= 180)
+        if stage in {"solver_generation", "local_judging"} and counts and counts.get("attempted_with_observed_outcome", 0) > 0 and ((age is not None and -60 <= age <= 600) or fresh_owner):
+            result.update(category="running", substatus="separate_V06_generation_live_evidence",
+                status=f"Direct V06 {phase} benchmark progress matches the admitted independent job {job}. Saved responses are not a completed benchmark score.",
+                next_action="Finish this existing one-attempt solver/judge cohort, preserve every failure and score only after both output locks close.")
+        elif stage == "neutral_delivery_gates":
+            result.update(substatus="separate_V06_development_only",
+                status="V06 is checking neutral development delivery on its independent server. This is not benchmark scoring or evidence of benchmark dispatch.")
+        else:
+            result.update(category="agent_work", substatus="V06_terminal_or_stale_runtime_reconciliation",
+                status=f"V06's recorded stage is {stage!r}; it does not establish current running generation or a complete defined score.",
+                next_action="Inspect the existing V06 terminal/progress evidence and reconcile its full denominator; preserve stop rules and do not automatically retry.")
+        if complete and complete.get("benchmark_primary_defined") is True:
+            score_path, lock_path, judge_path = folder / "scores.json", folder / "prediction_lock.json", folder / "judge_lock.json"
+            score, judge = load(score_path) or {}, load(judge_path) or {}
+            overall = score.get("groups", {}).get("overall", {})
+            value = overall.get("released_mean_case_ratio_score")
+            canonical_digest = lambda data: hashlib.sha256(json.dumps(data, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
+            locked = (all(p.is_file() for p in (score_path, lock_path, judge_path))
+                      and complete.get("prediction_lock_sealed") is True and complete.get("judge_outcome_lock_sealed") is True
+                      and judge.get("closed") is True and judge.get("planned") == 193
+                      and judge.get("prediction_lock_sha256") == digest(lock_path)
+                      and score.get("lock_sha256") == canonical_digest(load(lock_path))
+                      and score.get("judge_declaration") == plan.get("judge_declaration")
+                      and all((folder / name).is_file() and digest(folder / name) == judge.get(key)
+                              for name, key in (("judge_outcomes.json", "outcomes_sha256"), ("judgements.json", "judgements_sha256"))))
+            if locked and overall.get("complete") is True and overall.get("planned") == 193 and overall.get("valid") == 193 and type(value) in (int, float) and math.isfinite(value) and complete.get("released_mean_case_ratio_score") == value:
+                result.update(category="done", substatus="defined_separate_local_judge_score",
+                    status="Complete declared V06 local-judge condition scored with sealed solver and judge outputs.",
+                    next_action="Preserve and publish the separate local-judge score, raw outcomes and qualifications.", score=score)
+                result["evidence_paths"].extend(str(p.relative_to(root)) for p in (score_path, lock_path, judge_path))
+        return result
+    except (OSError, ValueError, TypeError, KeyError):
+        return None
 
 
 def build(root: Path):
@@ -321,6 +434,9 @@ def build(root: Path):
                 row["scope_notes"].append("No progress is not proof of zero requests. This queue classification uses the frozen grant and absence of a started record, not filename response counts.")
             else:
                 row.update(category="agent_work", substatus="runtime_observation_or_scoring_needed", status="Runtime evidence needs reconciliation; do not infer current running state from the old controller.", next_action="Inspect direct runner/process and seal evidence; resume only the existing authorized one-attempt queue or score a completed seal.")
+        elif task == "V06" and (v06 := v06_execution_evidence(root, now)):
+            row.update(v06)
+            row["exact_native_condition_availability"] = "All 193 released cases; a declared local-Qwen judge replaces the original GPT-4-0314 judge, using the released mean per-case score-ratio formula."
         elif task in AGENT_ACTIONS:
             action, source, availability = AGENT_ACTIONS[task]
             row.update(category="agent_work", substatus="implementation_review_preparation", status="Doable preparation/implementation remains unfinished; not in the live generation queue.", next_action=action, exact_native_condition_availability=availability)
@@ -348,7 +464,7 @@ def build(root: Path):
             raise AssertionError(f"Unclassified retained setting: {task}")
 
         row.update(explain_unfinished(row, reasons))
-        if task in reasons and row["category"] != "done":
+        if task in reasons and row["category"] != "done" and not row.get("separate_local_execution_verified"):
             row["evidence_paths"].append(BLOCKERS_PATH)
             row["evidence_paths"].extend(reasons[task].get("source_paths", []))
             row["next_action"] = row["next_deliverable"]
@@ -375,7 +491,7 @@ def build(root: Path):
     supervisor = load(supervisor_path) or {}
     supervisor_age = age_seconds(timestamp(supervisor), now)
     active_jobs = sorted({row["runtime"]["active_job_id"] for row in rows
-                          if row.get("runtime") and row["runtime"].get("active_job_id")})
+                          if row["task_id"] in DEEPFRI_OUTPUT_DIMENSIONS and row.get("runtime") and row["runtime"].get("active_job_id")})
     if active_jobs:
         pool_path = root / ".local/catalog_execution_2026-10-20/continuation_v1/runtime/status.json"
         pool = load(pool_path) or {}
@@ -384,6 +500,13 @@ def build(root: Path):
     health_path = root / "reports/CATALOG_RUNTIME_IO_2026-10-20.json"
     operational_health = load(health_path)
     current_health = load(root / "reports/CATALOG_RUNTIME_HEALTH_2026-10-20.json")
+    for new_health_path in sorted((root / ".local/catalog_execution_2026-10-20/continuation_v1/runtime").glob("health_*.json")):
+        fresh_health = load(new_health_path)
+        if fresh_health and (timestamp(fresh_health) or "") > (timestamp(current_health) or ""):
+            current_health = {**fresh_health, "source_path": str(new_health_path.relative_to(root)),
+                "model_id_verified": fresh_health.get("served_model_ids") == ["Qwen/Qwen3.8-27B"],
+                "gpu_health_known": bool(fresh_health.get("gpu_health_known", False)),
+                "gpu_health_note": fresh_health.get("gpu_observation_note", "Endpoint GET success does not establish current GPU hardware health.")}
     result = {
         "schema_version": 1,
         "generated_at_pacific": now.isoformat(),
@@ -442,7 +565,8 @@ def markdown(data):
     health = data.get("operational_health_observation")
     current_health = data.get("current_runtime_health_observation")
     if current_health and current_health.get("health_http_status") == 200 and current_health.get("models_http_status") == 200:
-        lines += ["", f"**Latest read-only health check ({current_health['observed_at_pacific']}):** both endpoint GETs returned HTTP 200; one A100 was busy. The earlier 1:14–1:15 PM filesystem/HTTP stall is historical. [Health evidence](CATALOG_RUNTIME_HEALTH_2026-10-20.json)."]
+        gpu_note = "Current GPU hardware health is not established by these HTTP checks." if current_health.get("gpu_health_known") is False else "The recorded single A100 observation was busy."
+        lines += ["", f"**Latest read-only health check ({current_health['observed_at_pacific']}):** both endpoint GETs returned HTTP 200. {gpu_note} These are point-in-time observations; the JSON tracker retains the source path and date."]
     elif health:
         lines += ["", f"**Dated runtime health observation ({health['observed_at_pacific']}):** HTTP model/health checks timed out while multiple DFS readers and the server stalled in filesystem I/O. GPU activity did not establish healthy HTTP delivery. [Observation details](CATALOG_RUNTIME_IO_2026-10-20.json); current health requires a fresh check."]
     if data["freshness"].get("active_successor_job_ids"):
@@ -452,7 +576,7 @@ def markdown(data):
     if data["freshness"]["supervisor_is_fresh"]:
         lines += ["", f"The existing controller was restarted under supervision around **12:31 PM PDT** after an `Errno 116` stale-file-handle crash. Its supervisor is fresh at {data['freshness']['supervisor_recorded_at_pacific']}; pool heartbeat fresh: **{data['freshness']['pool_is_fresh']}**. This does not create a new protocol or extra inference scope."]
     preparation_count = sum(row["category"] == "agent_work" and row["substatus"] == "implementation_review_preparation" for row in data["rows"])
-    lines += ["", "Exceptions for training and replacement judges remain user-held. Biological/provider holds are separate. Exact native unavailability is tracked separately from whether an available adaptation can proceed.", "", "## Why the unfinished settings are unfinished", "", f"The {preparation_count} preparation/implementation settings need work we have not completed. Source acquisition and synthetic tests did not make those evaluations runnable or scored. Existing instructions cover the listed permissible preparation and labelled adaptations.", "", "| Setting | Concrete reason unfinished | Who owns the missing step | Next concrete deliverable |", "|---|---|---|---|"]
+    lines += ["", "New head training remains user-held. The user removed the BioReason-Pro judging hold and waived LLaVA-Med's original GPT-4-0314 requirement; declared available judging conditions are agent work. Biological/provider holds are separate. Exact native unavailability is tracked separately from whether an available adaptation can proceed.", "", "## Why the unfinished settings are unfinished", "", f"The {preparation_count} preparation/implementation settings need work we have not completed. Source acquisition and synthetic tests did not make those evaluations runnable or scored. Existing instructions cover the listed permissible preparation and labelled adaptations.", "", "| Setting | Concrete reason unfinished | Who owns the missing step | Next concrete deliverable |", "|---|---|---|---|"]
     for row in data["rows"]:
         if row["category"] != "done":
             lines.append("| " + " | ".join(esc(value) for value in (row["task_id"] + " " + row["task_name"], row["why_not_done"], row["blocker_owner"], row["next_deliverable"])) + " |")
