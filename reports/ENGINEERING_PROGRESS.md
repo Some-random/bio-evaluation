@@ -1,18 +1,12 @@
 # Exactly what remains for evaluation
 
-Checked **2026-10-20T23:31:49.749685-07:00** (America/Los_Angeles).
+Checked **2026-10-20T23:55:19.248976-07:00** (America/Los_Angeles).
 
 [Results, release years and complete example questions](RESULTS_AND_REMAINING_WORK.md) · [Original 57-setting status](CATALOG_STATUS.md)
 
-The remaining external access actions are:
+**LABBench2 and BixBench3 access is resolved:** actual pinned-file requests returned HTTP200 and publisher hashes matched. **scBench is deferred** because the user cannot provide Latch access. No further credential action is requested.
 
-1. Review the [LABBench2 dataset agreement](https://huggingface.co/datasets/EdisonScientific/labbench2) using the HF account owning the credential already on this server.
-2. Review the separate [BixBench3 dataset agreement](https://huggingface.co/datasets/EdisonScientific/BixBench3) using that account.
-3. Authenticate an authorized Latch account locally through the [official browser login flow](https://docs.latch.bio/_modules/latch_cli/services/login.html). We must then test access to scBench's six released input-data nodes.
-
-The HF agreements share account information with the publisher; they require the account holder's consent. Do not paste credentials into chat. Dataset access remains unverified until a file request succeeds.
-
-All other steps below are agent work unless the owner column identifies an access requirement. A separate frozen local run is an implementation step; it does not mean another general instruction from the user is needed. Preparation checks are not benchmark scores.
+The remaining steps below belong to the evaluation agents. Ownership is not a claim that every row has a simultaneous live worker. Source downloads, prepared packets and artificial checks are not benchmark scores.
 
 | Evaluation | Already prepared | Exactly what remains | Owner |
 |---|---|---|---|
@@ -33,16 +27,16 @@ All other steps below are agent work unless the owner column identifies an acces
 | SlideVQA: Slide-deck question answering (Ryze) | Full-dataset CPU image processing passed. Permitted-content review and actual model delivery remain. | Inspect the 2,215 question/slide inputs for permitted scope; record exact inclusions/exclusions; test actual 20-image model delivery and run the declared available condition. Full CPU preprocessing is already done. | Evaluation agent |
 | BioReason-Pro: Explanation assessment | Twelve independently reviewed human full-sequence cases packaged with isolated evidence; tokenizer checks and eight workflow checks passed. This is an interface panel, not benchmark completion. | Prepare the wider permitted cohort: only the 12-case human interface panel is packaged, and 8,618 source cases remain unreviewed. Test actual solver/local-judge delivery, then generate and judge the declared cohort. | Evaluation agent |
 | LLaVA-Med: Scientific-image question answering | All 193 actual question/image inputs AND judge references admitted; 50 unchanged images; 193 API envelopes and all actual CPU processor checks passed. | Connect the prepared 193-case package to a separate frozen solver/local-judge runtime; pass actual solver and judge delivery checks; generate all answers, seal them, obtain judgments and compute the score. | Evaluation agent |
-| LABBench2 (2026) | Official harness prepared; 19 artificial checks passed. Dataset file access is still denied. | After account access is granted, acquire the real questions and required attachments; verify unique cases; finish document/model transport and a declared judge condition. | User: dataset agreement. Agent: all preparation/execution. |
-| GeneBench-Pro (2026; public 10) | Public ten-case package acquired; grading interface and confined artificial workflow passed. | Finish the model-to-Python tool loop, workspace storage limit, scientific dependencies and fixed run budgets; inspect the ten real task inputs; execute and grade the public subset. | Agent; no new access request identified. |
-| scBench (2026; public 6) | Six public task definitions and native deterministic grader prepared. | Authenticate Latch and test the six data-node permissions; acquire their inputs; install required analysis tools; finish the model-to-analysis loop and run the six examples. | User: Latch authentication/access. Agent: integration/execution. |
-| BiomniBench-DA (2026; public 50) | All 50 instructions inspected; 23 complete input bundles/workspaces prepared; artificial confined analysis passed. | Acquire the remaining 27 input bundles; support native /app paths and required Python/R tools; use suitable CPU memory; fix tool/time/token budgets; prepare a declared judge condition and execute. | Agent. Exact original external judge would require separately authorized paid calls. |
-| BixBench3 (2026) | Official harness and local artifact grader prepared; ten upstream grader tests passed. Dataset access denied. | After account access, acquire task inputs; prepare local compute/storage and analysis tools; integrate the agent; execute and grade artifacts. Treat any omitted GPT process assessment as a declared difference. | User: dataset agreement. Agent: local execution plan; original paid-cloud runner is not authorized. |
+| LABBench2 (2026) | Pinned-file access HTTP200 and publisher digest verified. Twelve ordinary-category parquets verified; real question/attachment preparation is underway. | Finish actual permitted question/document/image packets and the declared local solver/judge interface; validate delivery before benchmark execution. | Evaluation agent; dataset access is resolved. |
+| GeneBench-Pro (2026; public 10) | All ten real input packets are prepared. Confined Python and the recording-client coding loop pass artificial native-grader integration tests. | Finish the worker-portable environment and frozen local model/tool execution configuration; validate actual delivery, then execute and grade the public ten-case condition. | Agent; no new access request identified. |
+| scBench (2026; public 6) | Six public task definitions and native deterministic grader prepared. | Preserve the prepared six public examples. No further Latch access requests or attempts unless the user reopens this task. | Deferred; no action requested from user. |
+| BiomniBench-DA (2026; public 50) | All50instructions reviewed,23workspaces prepared. Persistent two-stream download is completing the pinned deduplicated37.07GB input cache; no model/judge calls. | Finish full input acquisition and materialization; validate shared scientific dependencies and Python/R compatibility on suitable CPU resources; finish the declared solver/judge runtime. | Evaluation agent. Original paid judge calls remain unauthorized. |
+| BixBench3 (2026) | 94 pinned release files and all 20 raw-data manifests verified. First full input bundle is downloading with size/digest and disk-space guards. | Finish bounded input staging, inspect actual task scopes, and prepare compatible local analysis tools and the model/scoring interface. Full raw inputs total about1.4TB and will not be cached all at once. | Evaluation agent; dataset access is resolved. |
 
-The existing DeepFRI EC/GO queue separately needs generation to finish and complete-output scoring; it runs without a new user instruction.
+The existing DeepFRI EC/GO queue separately needs generation to finish and complete-output scoring; it continues without a new user instruction.
 
-Biological restrictions still cover LAB-Bench ProtocolQA, PG-LLM ranking, PFArena T2, three MutaDescribe settings and extended BioT5+ design review. Previously rejected/interrupted actions remain stopped; an unknown trigger does not establish that every case in a dataset is prohibited. New low-N head training remains excluded at the user's request.
+Biological restrictions still cover LAB-Bench ProtocolQA, PG-LLM ranking, PFArena T2, three MutaDescribe settings and extended BioT5+ design review. Previously rejected/interrupted actions remain stopped; unknown triggers do not classify entire datasets as prohibited. New low-N head training remains excluded at the user's request.
 
-Original paid judging would require separate spending authorization: LABBench2 uses Claude Sonnet 4.5; the pinned Biomni configurations use Gemini 3.5 Flash. BixBench3 artifact grading is deterministic, while its standard runner also uses GPT-5.5 for process/network assessment and billed cloud compute. Local alternatives must retain explicit differences.
+The original paid judging/compute conditions remain distinct: LABBench2 uses Claude Sonnet4.5; pinned Biomni configs use Gemini3.5Flash; BixBench3 artifact grading is deterministic, while its standard runner also uses GPT5.5 for process/network assessment and billed cloud compute. No new paid calls or cloud resources have been started.
 
-The five 2026 additions do not change the original retained 57-setting denominator. This is a manual snapshot; automatic publication, websites and recurring messages remain stopped.
+The five 2026 additions do not change the original retained57-setting denominator. This is a manual snapshot; websites and recurring reports remain disabled.
