@@ -1,0 +1,63 @@
+{
+  "task_id": "P17",
+  "run_id": "qwen38_27b_p17_reviewed30_pointwise_stability_20261021_v2",
+  "condition": "PROTEINGYM_V13_REVIEWED_VERTEBRATE_DOMAIN_STABILITY_POINTWISE_QWEN_V1",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "dtype": "bfloat16",
+  "tensor_parallel_size": 1,
+  "generation": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 42,
+    "max_tokens": 16384,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "planned": 59581,
+  "attempted": 59581,
+  "responses_saved": 59581,
+  "delivered": 59581,
+  "reviewed_assays": 30,
+  "native_release_assays": 217,
+  "unadmitted_assays": 187,
+  "primary_metric": "native_Spearman",
+  "primary_metric_value": -0.014066666666666668,
+  "native_scoring_status": "completed_native_scored_reviewed_subset",
+  "full_native_benchmark_complete": false,
+  "complete_frozen_reviewed30_condition": true,
+  "artificial_exact_copy_gate_passed": true,
+  "prediction_lock_sha256": "f7c48bd0f35e132d5b89130555b873613f624d44f99eacb0ce07aca5d6e9b4d1",
+  "runtime_plan_sha256": "3443349b063a484c87f44fbf9c5091ae14536ebfe206b8fdbd4f8c53406eb5b6",
+  "native_archive_sha256": "3a83766254ac9ac9984ec25cb73c6e010ea4418f5e35f143933e6b6e6473b921",
+  "native_formula_sha256": "0002bc1b031c02dc2d67fde53da092c8fd301415645e8e83b425b4183570eba2",
+  "native_aggregation": "SciPy per-assay Spearman; source rounds assay metrics to3 decimals before per-UniProt/function aggregation. The30 selected assays have30 unique UniProt groups and one native Stability selection type. Undefined full-assay metrics stay explicit, not silently dropped.",
+  "declared_adaptations": [
+    "Pointwise uncalibrated scalar Qwen predictions from complete reference and complete variant sequence plus native substitutions; ProteinGym releases no native LLM prompt.",
+    "Fixed independently positive30 vertebrate isolated-domain stability assays with every native variant; not the full217-assay benchmark or historical ProtST/GEMME snapshot.",
+    "Compact finite numeric JSON serialization and three separate artificial exact-copy delivery gates; format validity is imposed, not a performance metric.",
+    "Strict full-cohort aggregate remains undefined if any planned assay is undefined, rather than silently dropping invalid/constant cases."
+  ],
+  "one_attempt_per_variant": true,
+  "native_scoring_attempts": 1,
+  "new_training": false,
+  "paid_model_calls": false,
+  "mechanism_reference_assessment": "unassessed",
+  "prior_public_benchmark_exposure": "unknown",
+  "paper_comparison": "Not a matched full217-assay or historical ProtST/GEMME replication; no directly comparable paper scalar established for this fixed30 subset.",
+  "preserved_predecessor": {
+    "job_id": "245776",
+    "failure_type": "PackageNotFoundError",
+    "missing_package": "scipy",
+    "model_dispatch": false,
+    "failure_closure_sha256": "09176a3badfe3cfc55e6657df9515fcdf5d6f3b24fe3edc5db832e47ac3f7f8c"
+  },
+  "allocation": {
+    "job_id": "245782",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "04:04:19",
+    "gpus": 1
+  }
+}
