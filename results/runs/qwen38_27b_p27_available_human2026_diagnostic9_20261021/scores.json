@@ -1,0 +1,24 @@
+{
+  "cases": 9,
+  "missing_as_empty": 0,
+  "metrics": {
+    "rouge1": 0.06386114949519439,
+    "rouge2": 0.0,
+    "rougeL": 0.046175678884248866,
+    "rougeLsum": 0.04790966563570327
+  },
+  "native_naturelm_score": false,
+  "at_pacific": "2026-10-21T17:56:34.647746-07:00",
+  "condition": "P27_AVAILABLE_UNIPROT_HUMAN_CURATED2026_FUNCTION_TEXT_V1",
+  "task_id": "P27",
+  "planned": 9,
+  "primary_metric": "rougeL",
+  "primary_metric_value": 0.046175678884248866,
+  "native_NatureLM_replication": false,
+  "paper_metric_comparison_valid": false,
+  "factual_correctness_assessed": false,
+  "prediction_lock_sha256": "8e2bfb14f4906f7b31f8cbd4d830efcd0ae20be4314a47d171d6ea9a9defb849",
+  "reference_sha256": "4f266500b3c8242c3bdf27fa0329f0f6ce29027ae88293aa2f2b1de31eb653a2",
+  "one_attempt_scoring": true,
+  "scope": "Nine independent reviewed-human curated2026 snapshot records; not original NatureLM temporal benchmark."
+}
