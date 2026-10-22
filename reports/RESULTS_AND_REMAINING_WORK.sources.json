@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_at_pacific": "2026-10-21T15:31:54.513033-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "a5da072d7f36b4a3a43404a0591c0d815aecd18a0695d08c202bbc50d2ea0841",
+  "report_sha256": "4b7cad4c572554a8df4ddb33906e8c75a54e4081e3dda2fc73b7884a2bf3dc9b",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
@@ -8464,5 +8464,17 @@
     "path": ".local/catalog_execution_2026-10-20/tasks/P19/results_document_audit_20261021.json",
     "sha256": "f618f8f4ac4019a9f938b2837c398f665e844ded782a0a1a00282371cd6f68e1"
   },
-  "qualified_partial_results_update_note": "See the independently checked recent result audit; separate P19/P21 additional cohorts remain unpooled. New local-judge, conditional-property and three-demo results are qualified in the main table."
+  "qualified_partial_results_update_note": "See the independently checked recent result audit; separate P19/P21 additional cohorts remain unpooled. New local-judge, conditional-property and three-demo results are qualified in the main table.",
+  "layout_updated_at_pacific": "2026-10-21T22:06:22.840126-07:00",
+  "presentation_layout": {
+    "columns": [
+      "Evaluation, year and question",
+      "Our results",
+      "Paper result"
+    ],
+    "rows": 46,
+    "all_previous_values_and_links_preserved": true,
+    "horizontal_scroll_reduction": "stacked labeled scores and wrapped long sequences",
+    "no_website_or_schedule_created": true
+  }
 }
