@@ -1,0 +1,16 @@
+{
+  "evaluation": "PFArena \u2014 single-mutant generation",
+  "scope": "Reviewed mammalian domain-stability subset:34/123 assays",
+  "model": "Qwen3.8-27B",
+  "Qwen_native_metrics": {
+    "NMS@40": 0.8537157459614935,
+    "Recall@40": 0.036029411764705886
+  },
+  "native_scoring_status": "completed_native_scored_reviewed_subset",
+  "GPT_models": "Not evaluated on this subset",
+  "full_native_benchmark_complete": false,
+  "full_catalog_complete": false,
+  "measurement_interpretation": "Retrospective native comparison with existing assay measurements; no experimental validation of proposals.",
+  "scores_sha256": "164eca59357577ad7602f9c7b3044250cfd6bf44ce20122c9553ac3646d7f884",
+  "benchmark_prediction_lock_sha256": "83507d7904460362e718d1cc9f55340035787541f914d6c27f9dec8999a07492"
+}

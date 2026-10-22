@@ -1,0 +1,539 @@
+{
+  "task_id": "P19",
+  "run_id": "qwen38_27b_p19_reviewed34_unique40_eos16k_2026-10-21_v4",
+  "archive_sha256": "181c0ce9fd84c7387468edccb252da80eac48f065e547db01d3584ca29da9b98",
+  "archive_bytes": 297003,
+  "benchmark_prediction_lock_sha256": "83507d7904460362e718d1cc9f55340035787541f914d6c27f9dec8999a07492",
+  "native_score_sha256": "164eca59357577ad7602f9c7b3044250cfd6bf44ce20122c9553ac3646d7f884",
+  "reviewed_assays": 34,
+  "native_panel_assays": 123,
+  "all_raw_model_request_response_bytes_preserved": true,
+  "files": {
+    "P19_reviewed34/RESULT_ROW.md": {
+      "bytes": 319,
+      "sha256": "59d79b49f8ee9664d26afeff10156d62da5f51e257892f527f3284fe06e8c26a"
+    },
+    "P19_reviewed34/benchmark_configuration.json": {
+      "bytes": 1500,
+      "sha256": "0d13147bc4f3bf383faa91e4300f977ff8b0616e42b43f1079db5072ba41d6d0"
+    },
+    "P19_reviewed34/benchmark_inputs.jsonl": {
+      "bytes": 106391,
+      "sha256": "1c53285464a8e7b97bbd9a87cf1637572d5b67b57f1b43c38b25f758ce3554c6"
+    },
+    "P19_reviewed34/development_configuration.json": {
+      "bytes": 1154,
+      "sha256": "b20b58b1848b1d82961a09b7870395a3c40608ad8bcf90c0efee176ad6f4f754"
+    },
+    "P19_reviewed34/development_inputs.jsonl": {
+      "bytes": 9400,
+      "sha256": "a843142044ccef3bc6613179c356fff76a990993086d154ef3eec3aef41fa22f"
+    },
+    "P19_reviewed34/execution_provenance.json": {
+      "bytes": 1680,
+      "sha256": "e3afb24456f3033d33a2c63dccd526a6902bd88b72d69adad6f23c50c368724e"
+    },
+    "P19_reviewed34/package_manifest.json": {
+      "bytes": 27930,
+      "sha256": "779caddb72854f7845f03b9a0861a4fe119b1ab4f93a470b2cb226576387d99d"
+    },
+    "P19_reviewed34/result_row.json": {
+      "bytes": 793,
+      "sha256": "3fdbc2980c3e6491518ed991c113be74f5d76273ae0c7484582cbbc9e92e8461"
+    },
+    "P19_reviewed34/scope.json": {
+      "bytes": 2007,
+      "sha256": "f291300235b7f664987f67e8f95e221d2fc9a5ce3b7a8c9ddc528f2eaa63845f"
+    },
+    "P19_reviewed34/scores.json": {
+      "bytes": 50347,
+      "sha256": "164eca59357577ad7602f9c7b3044250cfd6bf44ce20122c9553ac3646d7f884"
+    },
+    "P19_reviewed34/trajectories/benchmark/completion.json": {
+      "bytes": 1224,
+      "sha256": "f236063371a56e13fd1b549ddc7408ab689ab5522b9af25d05fe9a68385647f8"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/0281cab80c1d491aba294e0cda18011d5ae70b2c3ee83f8764fe0415df1be8a7.json": {
+      "bytes": 1478,
+      "sha256": "9ba66f07cc44f05540ec5ba79ba0168bb6dab01a4ab5c5ee73f540d8a2781590"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/067a6faf1e36d279577c432eb87cd949dffb7a8aaf059f712a857d0d5de9c473.json": {
+      "bytes": 1480,
+      "sha256": "f0090d8f2462a3afc99be9b119a4d637fc0105d893fb03c9370d3608db3cb2f5"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/0967b1c83554eb939ab276c5452144dea84011d7e04f81ae691b9147bfed34ee.json": {
+      "bytes": 1475,
+      "sha256": "834655de34797e59d5f4b368d87217094538f2ebb4938dce33194f41ef5ecf86"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/0bcc872de96367c46ec7b2355899183442445ee6447a5a9e1640109b9c750709.json": {
+      "bytes": 1483,
+      "sha256": "c6120d5b8074e01091c2260b57b64dba82e15d4eef88987e5d8ab22cfebf043f"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/144b9776fe56378c0dcb73d45132904ccea1a688e8c0552630239a6443bdf543.json": {
+      "bytes": 1479,
+      "sha256": "da3198ced5ed9d43a2f1d8cadc05301257c55f53c90ebc40f583df2ab4281ee6"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/1c3ed14dab444ad93ae360d5ac7f5b5b9ab88246a360eb51fc6abacf335f5b2b.json": {
+      "bytes": 1481,
+      "sha256": "1cc76fbc31e40d95509f5146b87721eb7b542736c4811302d4468cafee5c8009"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/1dbdd1c9f3264d0c9ed748929025bf326618b1cfcc744f7fe888b83422636a96.json": {
+      "bytes": 1485,
+      "sha256": "34186c7b043ff0c4a010068bd504d513ffe6285e4a5f2260bbc18fa95b60f2c5"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/274b829f4bd5e17c98862bc21031d628651b335272c5fce3b2409adb510692ee.json": {
+      "bytes": 1484,
+      "sha256": "1707f8625f25a2363b1ff89086b77e14ca9e50af02c0c0ef5df66441584bb183"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/422166aa7de148d582e89a88afe1955d474b0386954e09653679bc8c42979971.json": {
+      "bytes": 1481,
+      "sha256": "3a9bbed9c4f01e1087c38d9e46b1048d8f643259441373cc1aa98f0f121fb1b3"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/617fedfb7dc1c2b46723c2b97047dc0243c9105e8a2ce3329eb6fa09ae710472.json": {
+      "bytes": 1477,
+      "sha256": "f30b2f5980a0f7c782ccae72098670089160cd65a1b0bdbc60d4051d8b034e78"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/628e0fafdbd2cfeea332a01e568315978e4a2a0444b6a219312e0eb5addd1557.json": {
+      "bytes": 1476,
+      "sha256": "5fdf097598822821370404786d1d791a9c06ce8e1666e3c8611b8e669864dae5"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/642afb3a9408bb4c18ffff16a99bffd5e5cc52087251581fa7b3f383815d43dc.json": {
+      "bytes": 1485,
+      "sha256": "547347cade6672b578c2ead3854773f38aef65de9180036c521fe9fe91940d42"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/6ced57ffa9a323d8bee8092472e4c81a3e276d787c46e01737af89af5d99c190.json": {
+      "bytes": 1475,
+      "sha256": "60f77061c02040e48dc0cbdd3e1389d06ff9b642b0a918ae9a7ec1fc98f65af3"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/6e7d300dc358b717b4e5a05ac2ee2cbe81c6e74cf77473d7f52d69969db43fda.json": {
+      "bytes": 1478,
+      "sha256": "cdd73dd4d58fc57369bbd48209b2c2120069adb8de337932d8cf40bcebf1c3b0"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/794bb7dfc4976c0cc259d80bf16493b030d6f54c875f7b2d095278e5a434a705.json": {
+      "bytes": 1476,
+      "sha256": "f7390aeb11ee373fb625bebfbc2e7262802e6af3e0294f278b89c34cab148f83"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/7ed5ac0bd9c0f252e815ab196643285206a74ce8254f3664a2f5358db0d50ece.json": {
+      "bytes": 1471,
+      "sha256": "71f6089d19fc94414937baeba5c42344387c17c77a9c3906c0001210a0f8d91d"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/83ce8f74db7e03114c99637075ff03e6bcfe454b49184e354b56edf3f550f4fd.json": {
+      "bytes": 1466,
+      "sha256": "6370d13025fcfd5127b7e48456effe46f9c3e9744ab6eba211435d356331a842"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/84c936c2ced48237229b1080029bbae566c312954ab9c9c7f0ae5fd14d641a9d.json": {
+      "bytes": 1472,
+      "sha256": "918ecf53a9546861e2de836e863047a38448d46cf12141796bd771e8080c0848"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/8c762cf010be0c8f7a61a2cf6dd6c5c33a1145ef693114692ad488a03647f186.json": {
+      "bytes": 1444,
+      "sha256": "8a0c0926002532b98a970a016cfa2551715ed9e87bfecd994eef0371f85c642d"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/8fcd8f6d9aa21a6866183ad71b427208df6b5568573d806667ce5014bd3ce6b4.json": {
+      "bytes": 1472,
+      "sha256": "3d93c87df5b7db230f4d0f870bad43abd675346f74f169b7cee7bbe58c5c6903"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/98043ca2810e2dd1290ed7f3004064157b21ea773e2b846e3465f671a41ac6a7.json": {
+      "bytes": 1476,
+      "sha256": "996b7b31ffcc8c3d741368d2526c88b1659717e7c0c138885ed11c11d5a350cf"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/9b083837794e0ece481883858d832413d9a33873c7da32ab9aff705a61fb6d68.json": {
+      "bytes": 1477,
+      "sha256": "47628b396c3a9a492f6f840aef4c8f687b4d6fdab18a670e173c4c0f6126bfb6"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/9ffc409d90f4a6a3a6ca0f2ef765a3062bee72705c1a9a2809c9c7757e579628.json": {
+      "bytes": 1484,
+      "sha256": "948b82134782519ca296ca2e39b7301ff1cc33a9c4adb75ba350ab57aa663283"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/aab44957e4e0744d76b8c9bc5273a4f6954a6106699452d3e9447c507d81132f.json": {
+      "bytes": 1483,
+      "sha256": "7537de8243e232c578a86f5a7de4e27209b1c9050bbd1b82cdf1827409b99ac7"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/ad968d7c6d538d7df83703568d7f5e3bd24ca7e0710d6836a2c400d083159364.json": {
+      "bytes": 1483,
+      "sha256": "0341ccbba6ca8c0576cc979dd867812631a22286e5acfb08dac0fc5ff65a58ab"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/afb9d00590fa63cc397460d6c879d780d7290f1ee902d10c929481e43e64421c.json": {
+      "bytes": 1474,
+      "sha256": "2b03fa0b4191bda7dfdd164d621f9b37a5c31ced55d08157a60d37ecc2f5fe48"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/b31b1a17cee95cd2f991a59baec4d5c6d49c4fe7117594a7f5b6bc9fb79fd8cf.json": {
+      "bytes": 1475,
+      "sha256": "94099605930d4d6be068194413856c9e4383e80bdfcff525b613099ab8e7f062"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/b3406e25df8fcfd9c18c18c09a0d6afe1d7e2d617d3b9b6722a43cef89e0a5c2.json": {
+      "bytes": 1480,
+      "sha256": "93b0bda51de5d7dea28390978ae5f392e3f84e756d4585052eaf6f1034f135c6"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/b4c6231976f30fb47cf397cfa8fba36280d45cdb2b12291249dcf96ac6bc777c.json": {
+      "bytes": 1479,
+      "sha256": "fc6a8487de6c6928f8b81a08868727a260f1b05df505f9bb43e25b1a91324ba7"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/bb8f9c804955336516ce4cd6204b0e0ffe4d7ebf95ba0c0a97cd27ef1ae3102f.json": {
+      "bytes": 1482,
+      "sha256": "73cbb41508b4c033f69778ac33e14ca4263d819905863fcc904ff2d69888c850"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/be31ff33c5bdfc088828444b4c436eb4f1fcd0969d7cfbb22586ad13209f4174.json": {
+      "bytes": 1482,
+      "sha256": "b3f00c5de899846af52dbdfe12a6e9c26a7542690ca276dc9092752ca1529d49"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/c42f037773b5cf025a3bea1e610c817aeecc2f52d4e665eec742cdc976f68b53.json": {
+      "bytes": 1482,
+      "sha256": "c70e3ee24948756598956efc670bfa4d0ad6688ad749943682dfdf11e7121232"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/f51f365f985019d77f2e2e68634903b42f4b89ec234c890958fb70ca04336791.json": {
+      "bytes": 1476,
+      "sha256": "54fc8cac8978aacb7d3076d3a7bcbc418191baa77dd593c5273469c4ef7fc875"
+    },
+    "P19_reviewed34/trajectories/benchmark/outcomes/fc5348dd5975ac8fd6bad69d6a4e0bdc7b7fb65e2f6515d12f542a4837527dd4.json": {
+      "bytes": 1457,
+      "sha256": "c318456d109cfbf6a06a99780d5df9fe6f5b3fff392523e0fd9f392b440213f3"
+    },
+    "P19_reviewed34/trajectories/benchmark/prediction_lock.json": {
+      "bytes": 16144,
+      "sha256": "83507d7904460362e718d1cc9f55340035787541f914d6c27f9dec8999a07492"
+    },
+    "P19_reviewed34/trajectories/benchmark/progress.json": {
+      "bytes": 666,
+      "sha256": "527e0ea37816742a7c76fe02339a86b053f1ac379276305b081883c938945247"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/0281cab80c1d491aba294e0cda18011d5ae70b2c3ee83f8764fe0415df1be8a7.json": {
+      "bytes": 35598,
+      "sha256": "98a5d1bff76db13f19bf122bba398819741761394cb07666679294b4e4083b23"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/067a6faf1e36d279577c432eb87cd949dffb7a8aaf059f712a857d0d5de9c473.json": {
+      "bytes": 41478,
+      "sha256": "4966cb95fa996d055c182eb3c883983aadf37ca88006cad2579a4c7a7dff52c9"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/0967b1c83554eb939ab276c5452144dea84011d7e04f81ae691b9147bfed34ee.json": {
+      "bytes": 33078,
+      "sha256": "76fad7e12e2af8267b7d72f7f274f9c4b35e223763bca86da94b5fb33882d9df"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/0bcc872de96367c46ec7b2355899183442445ee6447a5a9e1640109b9c750709.json": {
+      "bytes": 36018,
+      "sha256": "c38902a797458a361f4ba4e28d5ae71e6e1742044dc1f413c1b908a0e1b1a3a8"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/144b9776fe56378c0dcb73d45132904ccea1a688e8c0552630239a6443bdf543.json": {
+      "bytes": 32658,
+      "sha256": "23c3715b889ee13a99f2530ad008ec9bbb9c70bd70acd67eeab4fcc72a625a10"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/1c3ed14dab444ad93ae360d5ac7f5b5b9ab88246a360eb51fc6abacf335f5b2b.json": {
+      "bytes": 38538,
+      "sha256": "4418d0e6d7c673dea1ea783cf242959e40b4b50bd6b7856ca9749c651fc8a6b7"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/1dbdd1c9f3264d0c9ed748929025bf326618b1cfcc744f7fe888b83422636a96.json": {
+      "bytes": 41058,
+      "sha256": "e7ab4056eed36f9cb3b88640492269d5b77d4c2558eaff0d403ab8fb58ab7b23"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/274b829f4bd5e17c98862bc21031d628651b335272c5fce3b2409adb510692ee.json": {
+      "bytes": 33498,
+      "sha256": "c5893c514cf76b064bf6696a39a352ec2e2041285badd94333e7d8f1fd25b1c5"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/422166aa7de148d582e89a88afe1955d474b0386954e09653679bc8c42979971.json": {
+      "bytes": 38958,
+      "sha256": "c4fc626ab8c47344a834e9e932bb4a90c6b4f496b893b989eec8df4ca66ee0dc"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/617fedfb7dc1c2b46723c2b97047dc0243c9105e8a2ce3329eb6fa09ae710472.json": {
+      "bytes": 37278,
+      "sha256": "898a619473deba606227620ac7504b04bdab939fe211633b6e4061a4892169bb"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/628e0fafdbd2cfeea332a01e568315978e4a2a0444b6a219312e0eb5addd1557.json": {
+      "bytes": 35598,
+      "sha256": "f7c1e9c8c75ffa106b0980bed45eda28d345b6c52bb36f85453e91f24b8c4dd5"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/642afb3a9408bb4c18ffff16a99bffd5e5cc52087251581fa7b3f383815d43dc.json": {
+      "bytes": 41478,
+      "sha256": "8865759c9346482b8ff25db20fc093d25541dcb2e05142ce677b25126072c84d"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/6ced57ffa9a323d8bee8092472e4c81a3e276d787c46e01737af89af5d99c190.json": {
+      "bytes": 37698,
+      "sha256": "875c156f653b0ea50ae5b78cd54c395af993665393283209ac2c16262c67d087"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/6e7d300dc358b717b4e5a05ac2ee2cbe81c6e74cf77473d7f52d69969db43fda.json": {
+      "bytes": 38538,
+      "sha256": "e64b829814708881e92c677973b74c6d367d3a604cc13b53a120bbcd3f870bd9"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/794bb7dfc4976c0cc259d80bf16493b030d6f54c875f7b2d095278e5a434a705.json": {
+      "bytes": 37698,
+      "sha256": "7188ed7caf30a949f289cababcd00a46f0fd6c5e9fa2d0dfe1064625b295f470"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/7ed5ac0bd9c0f252e815ab196643285206a74ce8254f3664a2f5358db0d50ece.json": {
+      "bytes": 33078,
+      "sha256": "e0e86295a9bdb7506b3a05c71d7200b31450fcdc5e1ae6c8933211a61535b917"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/83ce8f74db7e03114c99637075ff03e6bcfe454b49184e354b56edf3f550f4fd.json": {
+      "bytes": 36858,
+      "sha256": "e6c453c0d519a185e1e1bcb50d50170b425a5e6688a2aec9a866b6ebab664103"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/84c936c2ced48237229b1080029bbae566c312954ab9c9c7f0ae5fd14d641a9d.json": {
+      "bytes": 32658,
+      "sha256": "c86e8f48329f81b4208a0138228d13c76a177693264d1d0aade1eacfb9d4aca2"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/8c762cf010be0c8f7a61a2cf6dd6c5c33a1145ef693114692ad488a03647f186.json": {
+      "bytes": 36018,
+      "sha256": "ec366a38a5606bc5247f8cac3d73f481da3c48af2bbb285566df5982d5ec86f5"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/8fcd8f6d9aa21a6866183ad71b427208df6b5568573d806667ce5014bd3ce6b4.json": {
+      "bytes": 41058,
+      "sha256": "d306ef0245dabcdf9854875520a5e0c2bdc91cd41110e7ac6b712110228b57b4"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/98043ca2810e2dd1290ed7f3004064157b21ea773e2b846e3465f671a41ac6a7.json": {
+      "bytes": 40638,
+      "sha256": "146a7212a6d862df3959887b1f94b1a91007b5e2c601a388bbd605762d99b822"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/9b083837794e0ece481883858d832413d9a33873c7da32ab9aff705a61fb6d68.json": {
+      "bytes": 36018,
+      "sha256": "dd70c8bc0a80dd98e5d4cd3abcb2385dd8be47682c107b2021810e8a74c2416e"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/9ffc409d90f4a6a3a6ca0f2ef765a3062bee72705c1a9a2809c9c7757e579628.json": {
+      "bytes": 37698,
+      "sha256": "31d50a670ba63fbba287bf6b0a82eaf048b660049b63b9a08e4711104e7e7af1"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/aab44957e4e0744d76b8c9bc5273a4f6954a6106699452d3e9447c507d81132f.json": {
+      "bytes": 40218,
+      "sha256": "09484b842698ca26807dc77b1a2ec76901d8f6921bf04421461f77a296f6aff7"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/ad968d7c6d538d7df83703568d7f5e3bd24ca7e0710d6836a2c400d083159364.json": {
+      "bytes": 36018,
+      "sha256": "aa145dafbae1a303369abd3eace902b4734c26ccb2b257c93631a1e80d5acbf8"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/afb9d00590fa63cc397460d6c879d780d7290f1ee902d10c929481e43e64421c.json": {
+      "bytes": 36858,
+      "sha256": "043a7c3da5a47a2c6af12d1b251f0353bec5626875477755925016a117288b3b"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/b31b1a17cee95cd2f991a59baec4d5c6d49c4fe7117594a7f5b6bc9fb79fd8cf.json": {
+      "bytes": 41058,
+      "sha256": "39fda26feebe3592b61faad6c6dcc5074af3dda1e5bbe1851a60ace668849740"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/b3406e25df8fcfd9c18c18c09a0d6afe1d7e2d617d3b9b6722a43cef89e0a5c2.json": {
+      "bytes": 33498,
+      "sha256": "a6ac1d18742f2a6d3c3e6ab260def7b78504996756bd76ddea3c187baf394743"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/b4c6231976f30fb47cf397cfa8fba36280d45cdb2b12291249dcf96ac6bc777c.json": {
+      "bytes": 37698,
+      "sha256": "e876943914e0a5a1abe5cab9277dafae0b7f58b561b958f3ea88997a342b650e"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/bb8f9c804955336516ce4cd6204b0e0ffe4d7ebf95ba0c0a97cd27ef1ae3102f.json": {
+      "bytes": 39798,
+      "sha256": "401c9f8f01dabdbdd329183ba24bc54582699ca6975bdbb9733353e657085425"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/be31ff33c5bdfc088828444b4c436eb4f1fcd0969d7cfbb22586ad13209f4174.json": {
+      "bytes": 43998,
+      "sha256": "872c7870ee0e950f0689c386dadf7c0ef180d65ba8132482c0335bd42bfbf056"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/c42f037773b5cf025a3bea1e610c817aeecc2f52d4e665eec742cdc976f68b53.json": {
+      "bytes": 36438,
+      "sha256": "d8e4f9c1606bb71898bd7c539dedc2b9cafe8e78f85d87d8adf404d0b4f13dff"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/f51f365f985019d77f2e2e68634903b42f4b89ec234c890958fb70ca04336791.json": {
+      "bytes": 38118,
+      "sha256": "96b4054bd74dc5358173fd7042efb1c36ddff5db3445355c2458573331292980"
+    },
+    "P19_reviewed34/trajectories/benchmark/requests/fc5348dd5975ac8fd6bad69d6a4e0bdc7b7fb65e2f6515d12f542a4837527dd4.json": {
+      "bytes": 37698,
+      "sha256": "7d8efb230b4c92e493c4ea645cbb8fc10ebb1a04189da8e64deb0686f67757fe"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/0281cab80c1d491aba294e0cda18011d5ae70b2c3ee83f8764fe0415df1be8a7.json": {
+      "bytes": 1330,
+      "sha256": "dbc6c08bc808070efdc4bd50a55f580456120165495b8a3d31de34780d138add"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/067a6faf1e36d279577c432eb87cd949dffb7a8aaf059f712a857d0d5de9c473.json": {
+      "bytes": 1331,
+      "sha256": "718578cd6f5e88d18208fb74e7b46e7e7b97f14e24b3f165724c834adf916465"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/0967b1c83554eb939ab276c5452144dea84011d7e04f81ae691b9147bfed34ee.json": {
+      "bytes": 1327,
+      "sha256": "028d5fd2b7190340c0ac4864b4d4f9c1be9dae784cd6c97d9f6d8ab8f4254f86"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/0bcc872de96367c46ec7b2355899183442445ee6447a5a9e1640109b9c750709.json": {
+      "bytes": 1336,
+      "sha256": "e737e2aa0c35694e6f76c4b238b7b6839c2c52e922002773852b2f167ef3f585"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/144b9776fe56378c0dcb73d45132904ccea1a688e8c0552630239a6443bdf543.json": {
+      "bytes": 1331,
+      "sha256": "4328290b96d21ce28e8d498c7fa285c146af1ad8ab2c131dfc9f43da2d9ad533"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/1c3ed14dab444ad93ae360d5ac7f5b5b9ab88246a360eb51fc6abacf335f5b2b.json": {
+      "bytes": 1336,
+      "sha256": "692b530a446877fb2cb3bb8c045d5c179259115961a1ac60f1f0cb8c5b8d3a88"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/1dbdd1c9f3264d0c9ed748929025bf326618b1cfcc744f7fe888b83422636a96.json": {
+      "bytes": 1336,
+      "sha256": "1e4d245b0ad2600b2f74b9ff96652afd7036404f1dfc8561db02301a3339877f"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/274b829f4bd5e17c98862bc21031d628651b335272c5fce3b2409adb510692ee.json": {
+      "bytes": 1336,
+      "sha256": "ca5aca33c268bca36e7d0d46fcd33346041c77314ab3fa7afcd24b98f182ff73"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/422166aa7de148d582e89a88afe1955d474b0386954e09653679bc8c42979971.json": {
+      "bytes": 1334,
+      "sha256": "95995d5d3d9117858d0b2ceaaa8136feff099b94d620119bb73f232820c573f3"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/617fedfb7dc1c2b46723c2b97047dc0243c9105e8a2ce3329eb6fa09ae710472.json": {
+      "bytes": 1328,
+      "sha256": "59a88626e3143c7890dbc77f66cb2025cb6e8a11d802d7a3daa4b4d64ba8341a"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/628e0fafdbd2cfeea332a01e568315978e4a2a0444b6a219312e0eb5addd1557.json": {
+      "bytes": 1328,
+      "sha256": "c2f1e0b9700660654dfd6f248ac9b33e0fe703b499acbbb04a99be927ab31356"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/642afb3a9408bb4c18ffff16a99bffd5e5cc52087251581fa7b3f383815d43dc.json": {
+      "bytes": 1336,
+      "sha256": "5ec3aff45ac3826944e647d2d0944f2916cb8d104c5065c06f0be40ad72e35cf"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/6ced57ffa9a323d8bee8092472e4c81a3e276d787c46e01737af89af5d99c190.json": {
+      "bytes": 1328,
+      "sha256": "0a0b1a5bbec9505ccaadb15211d6b5eb729b2585950f7e5613e4192e1511b460"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/6e7d300dc358b717b4e5a05ac2ee2cbe81c6e74cf77473d7f52d69969db43fda.json": {
+      "bytes": 1332,
+      "sha256": "000b24fe6f16653d840c1a2d38711d923a648f301338d6b3d136246726a31f39"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/794bb7dfc4976c0cc259d80bf16493b030d6f54c875f7b2d095278e5a434a705.json": {
+      "bytes": 1329,
+      "sha256": "a0b3caa6992018a847bd01a162a3cc698f3c0a76e9433ac3ca5ff73023af9fe4"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/7ed5ac0bd9c0f252e815ab196643285206a74ce8254f3664a2f5358db0d50ece.json": {
+      "bytes": 1323,
+      "sha256": "6cca361f20370d6eb76a160f185ad620139e3a212277c147fa3b51a845780977"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/83ce8f74db7e03114c99637075ff03e6bcfe454b49184e354b56edf3f550f4fd.json": {
+      "bytes": 1320,
+      "sha256": "b7d46d21e78b0d3dfb4990a97369a9cf7eabcc31f823ff8f342189688740d9f5"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/84c936c2ced48237229b1080029bbae566c312954ab9c9c7f0ae5fd14d641a9d.json": {
+      "bytes": 1324,
+      "sha256": "31782641e16db4bdd8f0ae8f0358213a3263338576b3ad1e858c8fb7fb87ee6f"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/8c762cf010be0c8f7a61a2cf6dd6c5c33a1145ef693114692ad488a03647f186.json": {
+      "bytes": 1296,
+      "sha256": "fdae5e6be057edf6f581e2cdd78e55fda798295f93f2ee5549f4b4bb639ad434"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/8fcd8f6d9aa21a6866183ad71b427208df6b5568573d806667ce5014bd3ce6b4.json": {
+      "bytes": 1325,
+      "sha256": "f62922d92e751ad38e844cbca0447db51caa5fa35fc374667a5ad7b5e6055c69"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/98043ca2810e2dd1290ed7f3004064157b21ea773e2b846e3465f671a41ac6a7.json": {
+      "bytes": 1327,
+      "sha256": "8e698c3b645dfe38cb7446f3e2047a584e2f3a495d50d40214407a2083ca3208"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/9b083837794e0ece481883858d832413d9a33873c7da32ab9aff705a61fb6d68.json": {
+      "bytes": 1330,
+      "sha256": "f7664aff8707e9fdd1d4bb966678f208bfa47044adc3c36f983fe31bcfe39e33"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/9ffc409d90f4a6a3a6ca0f2ef765a3062bee72705c1a9a2809c9c7757e579628.json": {
+      "bytes": 1336,
+      "sha256": "e6cca41801c0a31db2b76ca3208e7fbd10ef78951eade3c8c22bff9e8752929a"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/aab44957e4e0744d76b8c9bc5273a4f6954a6106699452d3e9447c507d81132f.json": {
+      "bytes": 1336,
+      "sha256": "95ec9d89c37fe37c2317f6f1b2683e349a466ca5e6bd705e7244cd129fa3cf5c"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/ad968d7c6d538d7df83703568d7f5e3bd24ca7e0710d6836a2c400d083159364.json": {
+      "bytes": 1336,
+      "sha256": "0d7d540db2061f7634cb642a0d75e4404817cc71e2d3e7c2d64436f6b9bceac4"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/afb9d00590fa63cc397460d6c879d780d7290f1ee902d10c929481e43e64421c.json": {
+      "bytes": 1326,
+      "sha256": "708f8c24d7c9ec9e28e32d3d425e3a4e2920fea1f8bc7ede2840e1747854fb06"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/b31b1a17cee95cd2f991a59baec4d5c6d49c4fe7117594a7f5b6bc9fb79fd8cf.json": {
+      "bytes": 1328,
+      "sha256": "b629c2fae5d84d1f3fc6c89102ec14411f40861e466630dbe58b6f33de8a4a6e"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/b3406e25df8fcfd9c18c18c09a0d6afe1d7e2d617d3b9b6722a43cef89e0a5c2.json": {
+      "bytes": 1331,
+      "sha256": "ea5f6d4e9c23678043ade3fb6a72b8e99b32d83d40e913f956b35eac85569fc8"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/b4c6231976f30fb47cf397cfa8fba36280d45cdb2b12291249dcf96ac6bc777c.json": {
+      "bytes": 1333,
+      "sha256": "615c32ecaa6441829875ca6d6135379d7ad30e3b5ae90614c4312776acacebc5"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/bb8f9c804955336516ce4cd6204b0e0ffe4d7ebf95ba0c0a97cd27ef1ae3102f.json": {
+      "bytes": 1336,
+      "sha256": "8a003a2a5987437ee2b936ec6803a0bb0ed74338c968c5b73f1e9aedab84c6a4"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/be31ff33c5bdfc088828444b4c436eb4f1fcd0969d7cfbb22586ad13209f4174.json": {
+      "bytes": 1334,
+      "sha256": "9d908c6529008fbbf9a1bd860db7c818180ad94e94c83d39a257593c5987e617"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/c42f037773b5cf025a3bea1e610c817aeecc2f52d4e665eec742cdc976f68b53.json": {
+      "bytes": 1336,
+      "sha256": "6062efc067dff56eb9c3d26278c0aee92ef5e20d1c23580388515c5866e776d0"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/f51f365f985019d77f2e2e68634903b42f4b89ec234c890958fb70ca04336791.json": {
+      "bytes": 1328,
+      "sha256": "b058a2ebfaa9078e1df89d01f63ad7abfb683f80a6a7a8e00247029c5e3706ad"
+    },
+    "P19_reviewed34/trajectories/benchmark/responses/fc5348dd5975ac8fd6bad69d6a4e0bdc7b7fb65e2f6515d12f542a4837527dd4.json": {
+      "bytes": 1309,
+      "sha256": "b95417a4f04ca44282fafbec06d0f5e8e91d7a21c0139f933e55f3e1bd47a175"
+    },
+    "P19_reviewed34/trajectories/benchmark/run_manifest.json": {
+      "bytes": 19861,
+      "sha256": "2270edae2d5a66896a5dba668d66cf2a6d1749f02bb235b308a8ec85077da72a"
+    },
+    "P19_reviewed34/trajectories/benchmark/tokenizer_preflight.json": {
+      "bytes": 3585,
+      "sha256": "03f22066efdd16cdd3fab6a46d8d04e2a2569b40affbe963f3361018ada83dc4"
+    },
+    "P19_reviewed34/trajectories/development/completion.json": {
+      "bytes": 1210,
+      "sha256": "eaae93a6e6eda52f9b2afd352ea7b8c75949dcbc80ee83def6a1bacf8f20ae5f"
+    },
+    "P19_reviewed34/trajectories/development/outcomes/7596077b4ed2a4d2259faa83a37aa848404d054fdf993e25e8964193ec1070a3.json": {
+      "bytes": 1467,
+      "sha256": "77a789968c7b8cda88d37ba9baa03f48f5acc8b2db0c98b1afd9db3471f4461d"
+    },
+    "P19_reviewed34/trajectories/development/outcomes/7746e590df741d8bd9d17a7067a3ab74516e8ef6b940c256be8c6c8cb1d2d71d.json": {
+      "bytes": 1466,
+      "sha256": "12f245f0a0d035d59242e0c7f3bb86f1c7107f2b66a275ac08639caf477836c3"
+    },
+    "P19_reviewed34/trajectories/development/outcomes/c4e19b9fbb357649f833870107a133e6f7169e518bc87b0a92e14387b2fe3e55.json": {
+      "bytes": 1465,
+      "sha256": "3e1fd854710dd48a262393f67584627fe629099eadcf3588c36096881c1acd70"
+    },
+    "P19_reviewed34/trajectories/development/prediction_lock.json": {
+      "bytes": 1791,
+      "sha256": "c0415f08f86927086f31fce5a77734bbf9cb1a67ada6d900b549d2c7cdbb4496"
+    },
+    "P19_reviewed34/trajectories/development/progress.json": {
+      "bytes": 652,
+      "sha256": "05366f40c438968fb15b087dea29b67d5f557b3bef7a63792e62d935a281d9c7"
+    },
+    "P19_reviewed34/trajectories/development/requests/7596077b4ed2a4d2259faa83a37aa848404d054fdf993e25e8964193ec1070a3.json": {
+      "bytes": 45715,
+      "sha256": "4125a02d9580597321f8f99f5f4f17cf11ecf5ee50f1fc49c0fb1bd94545e2fd"
+    },
+    "P19_reviewed34/trajectories/development/requests/7746e590df741d8bd9d17a7067a3ab74516e8ef6b940c256be8c6c8cb1d2d71d.json": {
+      "bytes": 37295,
+      "sha256": "a379d11b24e59bb04b61438dfcedfe751a5d4a49e07cc2f7e064116e6b21a35b"
+    },
+    "P19_reviewed34/trajectories/development/requests/c4e19b9fbb357649f833870107a133e6f7169e518bc87b0a92e14387b2fe3e55.json": {
+      "bytes": 28895,
+      "sha256": "93afca7a31a938b115f0769b0b2b557513e4fe8b94b72e9f12b800b4a4b4cd4f"
+    },
+    "P19_reviewed34/trajectories/development/responses/7596077b4ed2a4d2259faa83a37aa848404d054fdf993e25e8964193ec1070a3.json": {
+      "bytes": 1332,
+      "sha256": "6bc2b727411d7422eb075be1d5c963cc74a671b96b061e949e31ff51d3cde2bd"
+    },
+    "P19_reviewed34/trajectories/development/responses/7746e590df741d8bd9d17a7067a3ab74516e8ef6b940c256be8c6c8cb1d2d71d.json": {
+      "bytes": 1331,
+      "sha256": "d98c427257723fe6fe34f26e9790e87cbe51cce04126470c835e7af735646a67"
+    },
+    "P19_reviewed34/trajectories/development/responses/c4e19b9fbb357649f833870107a133e6f7169e518bc87b0a92e14387b2fe3e55.json": {
+      "bytes": 1330,
+      "sha256": "499d806864441ec0c7bc38927b14dfee232fb1c92e6369327f2e3d97b2edf03d"
+    },
+    "P19_reviewed34/trajectories/development/run_manifest.json": {
+      "bytes": 8450,
+      "sha256": "e8e69e485b7c2f0a3924adc925bf64071a8ce232b09661513a56ca8992732e22"
+    },
+    "P19_reviewed34/trajectories/development/tokenizer_preflight.json": {
+      "bytes": 457,
+      "sha256": "1248d30331f46675809fb36086903087cf4eacc0e1d823e2549b850bcf62c0fe"
+    }
+  },
+  "protected_measurement_rows_or_held_cases_included": false,
+  "weights_environments_credentials_or_full_account_GPU_metadata_included": false
+}

@@ -1,0 +1,28 @@
+{
+  "job_id": "245216",
+  "Slurm_terminal_accounting": "245216|COMPLETED|0:0|00:15:03|billing=10,cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n245216.batch|COMPLETED|0:0|00:15:03|cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n245216.extern|COMPLETED|0:0|00:15:03|billing=10,cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n245216.0|CANCELLED|0:64|00:00:00|cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=512M,node=1\n245216.1|COMPLETED|0:0|00:00:01|cpu=1,gres/gpu:a100=1,gres/gpu=1,mem=512M,node=1\n",
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "dtype": "bfloat16",
+  "tensor_parallel_size": 1,
+  "uniform_output_tokens": 16384,
+  "context_limit": 65536,
+  "condition": "PFARENA_T1_INPUT_VALID_UNIQUE40_TERMINAL_EOS_IDEMPOTENT_V4",
+  "model_runner": "legacy_V1_explicit",
+  "custom_logits_processor": "p19_unique40_logits:P19Unique40LogitsProcessor",
+  "mandatory_plugin_import_sha256": "c175d8cb97648674669781e7dc4ce6282618c408586eae753a4c4bc3dd169793",
+  "packages": {
+    "vllm": "0.32.0",
+    "torch": "2.13.0",
+    "transformers": "5.17.0",
+    "triton": "3.7.1",
+    "flashinfer-python": "0.7.0.post1"
+  },
+  "plan_sha256": "de3f4c06cd13db6166d15b3b7a66371688f8b1cc4f01ec2d46bf19df54b291e8",
+  "root_admission_sha256": "708bebad3389f8ba12d7da9c48a39f6ab6e46c10e745bf3e02696414ed8afab1",
+  "native_scorer_sha256": "2227561681134b9137fe237540260701a43ee76299be6d4dbfef5941d50e79d9",
+  "native_prompt_and_scorer_unchanged": true,
+  "source_scope_sha256": "0a7a7664ecdcbff664ed0d4a63e1de2c7198784b556513fc00916ac18ea1cf24",
+  "native_measurement_CSV_files_packaged": false,
+  "model_weights_or_runtime_environment_packaged": false
+}
