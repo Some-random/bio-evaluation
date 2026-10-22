@@ -6,8 +6,11 @@ Updated **2026-10-21T21:57:40.700441-07:00** (America/Los_Angeles).
 
 This is the main work tracker: what remains, why, and who owns the next action. A scored subset can appear in the results document while its wider evaluation remains here. Preparation and saved responses do not count as benchmark scores.
 
+**Current priority: LiveProteinBench, sequence-only.** The official release is verified: 1,797 questions across 12 tasks. A dedicated owner is preparing the local Qwen run, with independent input and scoring review. This priority entry was updated at 2026-10-21T23:51:49.702035-07:00; other entries retain their stated observation times.
+
 | Evaluation | Status | Owner | Verified progress | Exactly what remains / blocker |
 |---|---|---|---|---|
+| LiveProteinBench — sequence-only (2025) | Priority: preparing local execution | LiveProteinBench owner | Official source pinned and verified: 1,797 questions across 12 tasks; input-only request packet prepared. | Complete independent case and implementation checks, freeze the local Qwen condition, then generate, score all outcomes and publish. Images are a separate condition. |
 | LAB-Bench / ProtocolQA | Held after interrupted review | Coordinator / provider restriction | ProtocolQA review checkpoint preserved. | Resolution of the interrupted scope; do not retry or reroute it. |
 | Beta-lactamase activity — PEER | Endpoint not admitted | Coordinator | Source and synthetic checks exist; native cases unexecuted. | Native task predicts antibiotic-resistance enzyme variant activity; this performance-prediction endpoint is not admitted. |
 | AAV variant fitness — FLIP | Endpoint held | Coordinator | Archive/source audit complete; source is available. | Native task predicts engineered viral-capsid packaging viability. Endpoint remains held; missing downloads are not the blocker. |
@@ -48,6 +51,7 @@ Worker details below were last reconciled at 2026-10-21T21:15:15.022082-07:00; t
 
 | Worker | Assigned role |
 |---|---|
+| /root/liveprotein_execution | LiveProteinBench sequence-only execution through scoring and publication |
 | /root/p17_execution | ProteinGym substitutions |
 | /root/p19_remaining_review | PFArena T1 single-mutant generation |
 | /root/p21_remaining_review | PFArena T3 anchor-informed ranking |

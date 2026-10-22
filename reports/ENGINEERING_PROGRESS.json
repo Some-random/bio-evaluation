@@ -2,13 +2,13 @@
   "schema_version": 2,
   "generated_at_pacific": "2026-10-21T17:52:38.365200-07:00",
   "timezone": "America/Los_Angeles",
-  "scope": "Original 15 preparation tasks, two resumed judging tasks, and five separate 2026 benchmark additions",
+  "scope": "Original retained work, five2026 benchmark preparations, and newly prioritized LiveProteinBench sequence-only execution",
   "original_retained_catalog_denominator": 57,
   "original_preparation_task_count": 15,
   "task_count": 17,
   "new_2026_benchmark_count": 5,
   "publication_target_interval_seconds": null,
-  "refresh_note": "Manual timestamped Markdown snapshot; automatic publication and recurring messages remain stopped.",
+  "refresh_note": "Manual timestamped snapshot; priority_evaluations has its own current evidence time. Other task entries retain their stated observation times. Automatic publication and recurring messages remain stopped.",
   "worker_note": "Three agents currently own PFArenaT3, the independent protein-description diagnostic and MutaPLM optimization. Completed scoped runs, remaining full-panel review and failed development conditions are listed separately. Independent peers review code and may perform bounded technical admissions under root delegation, so a closed coordinator turn alone no longer blocks the next authorized run. Websites and periodic messages remain disabled.",
   "tasks": [
     {
@@ -792,5 +792,26 @@
     "lane_policy": "One evaluation at a time per agent. Continue to the next assigned item after verified scoped execution/scoring/publication or evidence-based terminal unavailability, without waiting for another user prompt. A preparation handoff is not a terminal evaluation. Exact runtime admissions and resource audits remain necessary; biological holds remain unchanged.",
     "coordinator_idle_gate_removed": true,
     "independent_peer_admission_delegation": ".local/catalog_execution_2026-10-20/dedicated_execution_20261021/delegated_engineering_review.json"
-  }
+  },
+  "priority_evaluations": [
+    {
+      "benchmark": "LiveProteinBench",
+      "evaluation": "LiveProteinBench \u2014 sequence-only (2025)",
+      "worker": "/root/liveprotein_execution",
+      "state": "priority_local_execution_preparation",
+      "latest_result": "Official source pinned and verified; 1797 input-only request packets prepared. No benchmark dispatch established.",
+      "progress": "1797 released questions across12tasks; independent input and implementation reviews underway.",
+      "next_step": "Complete independent case/implementation checks, freeze exact local Qwen condition, then generate, seal and score once.",
+      "evidence_at_pacific": "2026-10-21T23:51:49.702035-07:00",
+      "benchmark_completed_by_this_preparation": false,
+      "original_retained_catalog_member": false,
+      "source_revision": "8b9710932511f816651fc1a7e8a1bc85c3c77767",
+      "source_manifest": ".local/new_benchmarks_2026_20261020/LiveProteinBench/source/manifest.json",
+      "source_manifest_sha256": "4e900a5cc31cd211fbfc92cc369a1a03868a0c50c98c608301c569a9b56a09ea",
+      "paid_inference_authorized": false,
+      "images_in_initial_condition": false
+    }
+  ],
+  "priority_updated_at_pacific": "2026-10-21T23:51:49.702035-07:00",
+  "additional_benchmark_count": 1
 }
