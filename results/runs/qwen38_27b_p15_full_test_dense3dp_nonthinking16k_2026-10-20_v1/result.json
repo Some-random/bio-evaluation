@@ -1,0 +1,25 @@
+{
+  "class_count": 320,
+  "comparison_limit": "Zero-shot full-FASTA text adaptation, not trained DeepFRI/ProtST representations or its PDB-modeled subset.",
+  "condition": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
+  "explanation_support_assessed": false,
+  "invalid_or_missing": 0,
+  "matched_ProtST_replication": false,
+  "metrics": {
+    "auprc@micro": 0.0370570570230484,
+    "f1_max": 0.07158192247152328
+  },
+  "model": "Qwen/Qwen3.8-27B",
+  "native_formula_preserved": true,
+  "new_inference_calls_by_packaging": 0,
+  "new_scoring_calls_by_packaging": 0,
+  "parsed": 3416,
+  "planned": 3416,
+  "prediction_lock_sha256": "5a302c36e8d8d09f0cdefbf792465ca853420a23ed4e7420e0ac53755de3b09c",
+  "public_pretraining_exposure": "unknown",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "run_id": "qwen38_27b_p15_full_test_dense3dp_nonthinking16k_2026-10-20_v1",
+  "score_sha256": "c382b322270d5c4a213d593ff44b050dc15952df1678d6f7b4db4a7810adbd5e",
+  "scoring_recovery": "Expired predecessor Slurm cache blocked launcher before native entry; root-reviewed launch-only repair ran the unchanged scorer once.",
+  "task_id": "P15"
+}
