@@ -1,0 +1,117 @@
+{
+  "task_id": "P39",
+  "title": "Heme-complex generation: one qualitative demonstration",
+  "condition": "P39_AVAILABLE_QWEN_SINGLE_HEME_CCD_PROTENIX_MINI_ISM_V1",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "planned_generated_cases": 1,
+  "responses_saved": 1,
+  "generated_cases": 1,
+  "sequence_length": 332,
+  "sequence_sha256": "e7bf323aa497b39b8bb65d03408d2b2eed50968c9e56840efe50f4dfd3f28de3",
+  "structures_saved": 5,
+  "predictor": "Protenix-mini-ISM v0.5.0",
+  "predictor_source_revision": "d60af043d0604757e1f4613181462ba683c80c1e",
+  "sampling": {
+    "seeds": [
+      101
+    ],
+    "samples": 5,
+    "diffusion_steps": 5,
+    "all_samples_retained": true,
+    "ranking_or_HemeList_selection": false
+  },
+  "primary_metric": null,
+  "native_NatureLM_replication": false,
+  "measured_binding_assessed": false,
+  "biological_function_validated": false,
+  "claims": "Predicted structure, confidence and geometric proximity only; no experimental binding or functional validation.",
+  "qualifications": [
+    "One newly declared generic heme-binding prompt and one generated outcome; original NatureLM prompt, selected cohort and denominator are unavailable.",
+    "Uses the acquired Proteo-R1 Protenix fork d60af043 and released mini-ISM v0.5.0, five samples/five diffusion steps/seed101, fp32 Torch kernels without MSA/templates; exact NatureLM predictor configuration is unavailable.",
+    "The whole canonical sequence must contain20\u2013512residues; no crop, repair, redesign, selection or retry is permitted. This declared interface is not the original paper sampling condition.",
+    "All five complexes are retained without HemeList, keyword, model-confidence or geometric selection.",
+    "Generation uses a compact JSON regex that preserves every20\u2013512residue canonical sequence while excluding formatting whitespace; this is a prospective delivery adaptation.",
+    "Confidence and heavy-atom proximity are computational observations only. No measured binding, functional validation, accuracy score or native-paper comparison is claimed."
+  ],
+  "plan_sha256": "05274a2ebe6d27ae701bca208e9d6a967a13fd0023c7c1e18ec77d149a1a29ab",
+  "generation_lock_sha256": "56b9d0e7d3d3256452bed0c7fe6b60189e57361c59f657a3e70b049eff31482e",
+  "predictor_lock_sha256": "4e64599dbd0649b0346d3e63abad4912ca1ea66c5dba7e19b8ddd445b5bc1386",
+  "observations": [
+    {
+      "sample_file": "P39_GENERATED_SINGLE_sample_0.cif",
+      "structure_sha256": "43421426ef9c940a58da27f737ad499102389e5b51986e74f91772fa5aadf569",
+      "sequence_length": 332,
+      "geometry": {
+        "evidence_type": "predicted_complex_geometry_diagnostic",
+        "minimum_heavy_atom_distance_angstrom": 0.6496493279071783,
+        "heavy_atom_contact_pairs": 427,
+        "ligand_heavy_atoms_with_contact": 40,
+        "diagnostic_contact_cutoff_angstrom": 4.0,
+        "binding_success": null,
+        "measured_affinity": null,
+        "claim": "Predicted spatial proximity only; no biological binding correctness or success rate."
+      }
+    },
+    {
+      "sample_file": "P39_GENERATED_SINGLE_sample_1.cif",
+      "structure_sha256": "cdb45798915eaa0e592aefbf7b3188632eb0be97951e51b1fe4ef14d677c1711",
+      "sequence_length": 332,
+      "geometry": {
+        "evidence_type": "predicted_complex_geometry_diagnostic",
+        "minimum_heavy_atom_distance_angstrom": 0.2695618225048531,
+        "heavy_atom_contact_pairs": 1002,
+        "ligand_heavy_atoms_with_contact": 43,
+        "diagnostic_contact_cutoff_angstrom": 4.0,
+        "binding_success": null,
+        "measured_affinity": null,
+        "claim": "Predicted spatial proximity only; no biological binding correctness or success rate."
+      }
+    },
+    {
+      "sample_file": "P39_GENERATED_SINGLE_sample_2.cif",
+      "structure_sha256": "05c1575f875d97d6de35332e246cbfa7e421e2c08b83431640d70f87f7e004db",
+      "sequence_length": 332,
+      "geometry": {
+        "evidence_type": "predicted_complex_geometry_diagnostic",
+        "minimum_heavy_atom_distance_angstrom": 0.06812302416459708,
+        "heavy_atom_contact_pairs": 342,
+        "ligand_heavy_atoms_with_contact": 42,
+        "diagnostic_contact_cutoff_angstrom": 4.0,
+        "binding_success": null,
+        "measured_affinity": null,
+        "claim": "Predicted spatial proximity only; no biological binding correctness or success rate."
+      }
+    },
+    {
+      "sample_file": "P39_GENERATED_SINGLE_sample_3.cif",
+      "structure_sha256": "3ecabd62cf0acb7fc88480032f08b18774e29ec097940d6577c5f758b9383427",
+      "sequence_length": 332,
+      "geometry": {
+        "evidence_type": "predicted_complex_geometry_diagnostic",
+        "minimum_heavy_atom_distance_angstrom": 0.7160856452049703,
+        "heavy_atom_contact_pairs": 421,
+        "ligand_heavy_atoms_with_contact": 43,
+        "diagnostic_contact_cutoff_angstrom": 4.0,
+        "binding_success": null,
+        "measured_affinity": null,
+        "claim": "Predicted spatial proximity only; no biological binding correctness or success rate."
+      }
+    },
+    {
+      "sample_file": "P39_GENERATED_SINGLE_sample_4.cif",
+      "structure_sha256": "af5111d1f380ff502e90f7e046a6ab3b6031c390c1c53b716e234df3e2647296",
+      "sequence_length": 332,
+      "geometry": {
+        "evidence_type": "predicted_complex_geometry_diagnostic",
+        "minimum_heavy_atom_distance_angstrom": 0.8187754076526211,
+        "heavy_atom_contact_pairs": 405,
+        "ligand_heavy_atoms_with_contact": 35,
+        "diagnostic_contact_cutoff_angstrom": 4.0,
+        "binding_success": null,
+        "measured_affinity": null,
+        "claim": "Predicted spatial proximity only; no biological binding correctness or success rate."
+      }
+    }
+  ]
+}
