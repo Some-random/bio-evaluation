@@ -1,0 +1,26 @@
+{
+  "admission_sha256": "1c78f946f11442b6768a28635ded24e88d18e088bd633762383842b0f9218e35",
+  "exact_Ryze_Table3_reproduction": false,
+  "plan_sha256": "eb15658808b93a2708bebe03a5d5ff25d5b042e39fe75ad37573c06990ad856f",
+  "private_prediction_lock_sha256": "fc2e552cda2bb243160a91dc7f76bd4780504be38dddf0549f5867f68608590e",
+  "private_scoring_attempt_sha256": "04c82c658829ed404418fe6ce53711380f1cd1fe3dc1d041e46bd3160b2ea5e1",
+  "raw_licensed_content_included": false,
+  "run_id": "qwen38_27b_slidevqa_test2215_full_deck_mixed_images_20261021_full_guard_v3",
+  "score_sha256": "abf6fb5bdb715465539326937aa6bfe8624884ac508e51ef4b3d921965810905",
+  "source_archive": {
+    "path": "results/protocol_artifacts/v07_slidevqa_available_full_guard_v3_source.tar.gz",
+    "sha256": "ab188af4150aacb0151cdcb9baa7a47cf858275cb998e1e61520bdf707741f56"
+  },
+  "source_denominator": 2215,
+  "task_id": "V07",
+  "upstream_source_exclusion": {
+    "evaluator_sha256": "604be8d606ec46664e36810b43cdb497880043a39c57a687a819abc30660acbb",
+    "evaluator_url": "https://github.com/nttmdlab-nlp/SlideVQA/blob/0d4168a935d60b0b218097205a02fb1133c8bead/evaluate.py",
+    "license_sha256": "8c3c4aa46e0c873f8cd8899e9a27fb420d91e10b02de8d8a2d61af10d6e00a88",
+    "license_url": "https://github.com/nttmdlab-nlp/SlideVQA/blob/0d4168a935d60b0b218097205a02fb1133c8bead/LICENSE",
+    "repository": "nttmdlab-nlp/SlideVQA",
+    "restriction_note": "Upstream evaluator source and license text are excluded from this public archive under the pinned source distribution restrictions. Consult the official source and its terms for any permitted access.",
+    "revision": "0d4168a935d60b0b218097205a02fb1133c8bead",
+    "upstream_evaluator_or_license_redistributed": false
+  }
+}
