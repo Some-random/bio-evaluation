@@ -1,0 +1,18 @@
+{
+  "evaluation": "PFArena \u2014 anchor-informed ranking",
+  "scope": "Reviewed mammalian domain-stability subset:8/67 assays",
+  "model": "Qwen3.8-27B",
+  "Qwen_native_metrics": {
+    "NDCG": 0.8748976812284484,
+    "NMS@5": 0.8716931854694374,
+    "Recall@5": 0.375,
+    "spearman": 0.23323719161603965
+  },
+  "native_scoring_status": "completed_native_scored_reviewed_subset",
+  "GPT_models": "Not evaluated on this subset",
+  "full_native_benchmark_complete": false,
+  "full_catalog_complete": false,
+  "measurement_interpretation": "Retrospective native comparison with existing assay measurements; no experimental validation of proposals.",
+  "scores_sha256": "791c19b540b4fb796427cd852c2d397e7b5b6749cfd5b1f6fc36c1d4ebbd41c5",
+  "benchmark_prediction_lock_sha256": "8e56453ce9bbf9f277ee71f5c790ffbab20f26f098fb465dde394ea16f59db02"
+}

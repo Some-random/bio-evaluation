@@ -1,0 +1,129 @@
+{
+  "task_id": "P21",
+  "run_id": "qwen38_27b_p21_reviewed8_full_permutation16k_2026-10-21_v1",
+  "archive_sha256": "11908c7f55539521cfb361fbf2d5d21270761940b66c896c0be127173fb1f1d4",
+  "archive_bytes": 80892,
+  "files": {
+    "execution/worker.py": {
+      "bytes": 18310,
+      "sha256": "16f2a5e39de754882db84b9ff860db5a568411ddf9e80b35c42973f7bc8055b9"
+    },
+    "execution/worker.sbatch": {
+      "bytes": 1056,
+      "sha256": "0c3c74b074296d4613a43dc105f7f63beecbc4c3c766c66d5269be8ee745e989"
+    },
+    "execution/protocol.py": {
+      "bytes": 3527,
+      "sha256": "fb0dd1d950969b3e9745083cdcfe7f41962320487317eed7c9667fe2da622977"
+    },
+    "execution/runner.py": {
+      "bytes": 20784,
+      "sha256": "e6568a0a88b2caac37c7a3229573f0eeefd5eeb909803cf596987f7cfe4d62a0"
+    },
+    "execution/permutation_core.py": {
+      "bytes": 10521,
+      "sha256": "b4fdedefe444f2b327f9002e65ac986cd3079066985e2c994aaa995aaad69816"
+    },
+    "execution/p21_permutation_logits.py": {
+      "bytes": 3397,
+      "sha256": "1f80ae128257b5d718b495e9733a34e448df8ff36510ac44de22e6114d7ed1d0"
+    },
+    "execution/input_contract.py": {
+      "bytes": 4396,
+      "sha256": "838faba6152458baf538b2055c8132f5b563f6b10c0b75e5d5c74589593ca260"
+    },
+    "execution/prepare_inputs.py": {
+      "bytes": 10472,
+      "sha256": "2d65f2900b642a8e2e2b8494fc2ba66bf4096b47a42f9b88f2cc4a9f9a3e36d7"
+    },
+    "execution/scorer.py": {
+      "bytes": 10740,
+      "sha256": "fa00edce9c874b0b00668a8fa3106dbcaa6e968f942c1fa51c6185f73ad32523"
+    },
+    "execution/bound_request.py": {
+      "bytes": 2684,
+      "sha256": "609f5cce64a48b3481c604b5ac8f029bf84b4aa66bc4984d994d8ac952abf76c"
+    },
+    "execution/freeze.py": {
+      "bytes": 11165,
+      "sha256": "737f748435b9a54221c6a47be13222abc07c01f622e35d5ea1a2ed2ec58e17e1"
+    },
+    "execution/prepare_publication.py": {
+      "bytes": 8346,
+      "sha256": "10f2cd6194b09f310308023b7f216f29a6b8ca723f59b75dbccdae62e8e281c0"
+    },
+    "execution/checkpoint_cpu_validation.py": {
+      "bytes": 9966,
+      "sha256": "25e6338aa50cf3336e9c4841f5b17bd8e9ae655225028e2f7636fd85988b84cd"
+    },
+    "execution/source_api_harness.py": {
+      "bytes": 2563,
+      "sha256": "6ee3f8eb65623bd577b4aa9b996d2752d55e6a906ea4b76be8b2bd47b3e78e91"
+    },
+    "execution/test_worker.py": {
+      "bytes": 8838,
+      "sha256": "75c3de556b9162d2bb4ac2ca83d5adfcc78be374591182c870dd93be1aeb8e43"
+    },
+    "execution/test_native_scoring.py": {
+      "bytes": 3509,
+      "sha256": "4528c37ec2c6d913b0bd22fd2177e6391649648de5028329fcb0838ce7c914a6"
+    },
+    "execution/test_contracts.py": {
+      "bytes": 6428,
+      "sha256": "0bee7e740a81a564116fb96fac25e1dfcf1e4f1ffc66ce68580d8892bf7e49b2"
+    },
+    "pinned_vllm032_API/vllm__v1__sample__logits_processor____init__.py": {
+      "bytes": 12784,
+      "sha256": "bc421904ee33d8ed787092b0456f6761fdec284d405e425a3acff97d7a70b81a"
+    },
+    "pinned_vllm032_API/vllm__entrypoints__openai__chat_completion__protocol.py": {
+      "bytes": 50714,
+      "sha256": "8744d5e2004b2d376e34cf17de51c919bca6d81b0cc8392da138db1ef05a7c61"
+    },
+    "pinned_vllm032_API/vllm__v1__sample__sampler.py": {
+      "bytes": 18160,
+      "sha256": "a67286eb78aac98185b6922ac33d8c754ca5ff9788d893965ba52f2b5a0e18d1"
+    },
+    "pinned_vllm032_API/vllm__v1__sample__logits_processor__builtin.py": {
+      "bytes": 15527,
+      "sha256": "dd563972a8dc6a068b43fe9048790db4d76f41e6e86b896b7f26692bf4455029"
+    },
+    "pinned_vllm032_API/vllm__v1__sample__logits_processor__interface.py": {
+      "bytes": 3408,
+      "sha256": "e150de82592133038999da5c8f0a9b3d2abfceecffa2ff19ea61bba89c41fdd9"
+    },
+    "pinned_vllm032_API/examples__features__logits_processor__custom_req.py": {
+      "bytes": 5461,
+      "sha256": "6809d210cadc51c5f14543768eef5e190e0cff522d6cee7d134a4ee768aff815"
+    },
+    "pinned_prefix_dependency/unique40_core.py": {
+      "bytes": 10488,
+      "sha256": "a3004666624152bd924b65f29baa22b211a6798f0c54d91c8dd9940bb043c090"
+    },
+    "pinned_prefix_dependency/p19_unique40_logits.py": {
+      "bytes": 3175,
+      "sha256": "75c140e02623d817aa1fe7e302f80f4fabbc72828b36f4890bc2a0abf83d4267"
+    },
+    "native_PFArena/full.py": {
+      "bytes": 32097,
+      "sha256": "035b34122c1015eab5fa9caa3b680452aba6730e41a523ecf0342461fdb8747f"
+    },
+    "native_PFArena/router.py": {
+      "bytes": 1627,
+      "sha256": "f1ce2e22dec4efdd6051706289c5e108b0f569c44bc71655c12844b91688ce18"
+    },
+    "native_PFArena/infer_api_mutation.py": {
+      "bytes": 18074,
+      "sha256": "242a8a36503860ecd3ac9c2609516d07860b66be37cd7f9d7c983a400e9d6ad4"
+    },
+    "native_PFArena/ranking_adapter.py": {
+      "bytes": 4496,
+      "sha256": "2bed8056656837c637a9a34f25fdce05b75b29ca874a8d3e0a5e3e5804914654"
+    }
+  },
+  "benchmark_prediction_lock_sha256": "8e56453ce9bbf9f277ee71f5c790ffbab20f26f098fb465dde394ea16f59db02",
+  "native_score_sha256": "791c19b540b4fb796427cd852c2d397e7b5b6749cfd5b1f6fc36c1d4ebbd41c5",
+  "exact_source_files_not_rewritten": true,
+  "private_GPU_accounting_helper_source_omitted": true,
+  "model_weights_environments_and_reference_tables_included": false
+}

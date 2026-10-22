@@ -1,0 +1,227 @@
+{
+  "task_id": "P21",
+  "run_id": "qwen38_27b_p21_reviewed8_full_permutation16k_2026-10-21_v1",
+  "archive_sha256": "2ce44a5f3eaf83643a916a82b27248cda1250091126c56e28fb611a0d378ca58",
+  "archive_bytes": 37190,
+  "benchmark_prediction_lock_sha256": "8e56453ce9bbf9f277ee71f5c790ffbab20f26f098fb465dde394ea16f59db02",
+  "native_score_sha256": "791c19b540b4fb796427cd852c2d397e7b5b6749cfd5b1f6fc36c1d4ebbd41c5",
+  "reviewed_assays": 8,
+  "native_panel_assays": 67,
+  "all_raw_model_request_response_bytes_preserved": true,
+  "files": {
+    "P21_reviewed8/RESULT_ROW.md": {
+      "bytes": 353,
+      "sha256": "62aa268e55b2cfe36adb263fd07bed43f18ecca2c9b35ede445f3322afd53450"
+    },
+    "P21_reviewed8/benchmark_configuration.json": {
+      "bytes": 1408,
+      "sha256": "63e2e8c4c1f17a799599abef74f6ee03f91dba22d84c39633f726529561ce617"
+    },
+    "P21_reviewed8/benchmark_inputs.jsonl": {
+      "bytes": 30315,
+      "sha256": "931573c9175493e604228d836e14ee1b11518c0455c35c210e7392523570eae5"
+    },
+    "P21_reviewed8/development_configuration.json": {
+      "bytes": 1333,
+      "sha256": "d75d82487251c9d6657eff66f7779251da3df78504eaed78f6566b0853f1a937"
+    },
+    "P21_reviewed8/development_inputs.jsonl": {
+      "bytes": 11252,
+      "sha256": "6370c4d78195d747608398b6ff759488f5d91a9a8b65c607ff008a392a5fb05c"
+    },
+    "P21_reviewed8/execution_provenance.json": {
+      "bytes": 1516,
+      "sha256": "c9c3ab78224d420ff104c07083885328a165ec8fb0a72b4e62c54d7b4defb7f7"
+    },
+    "P21_reviewed8/package_manifest.json": {
+      "bytes": 10546,
+      "sha256": "e25fdc9a47a4f97b2488b7bc0afc8e0591d269adf9c67a93e5a1e7835a377cd4"
+    },
+    "P21_reviewed8/result_row.json": {
+      "bytes": 842,
+      "sha256": "5501144da52959d9bcafb8cd7c979681d02da56042efc7363ff10ff37f368a82"
+    },
+    "P21_reviewed8/scope.json": {
+      "bytes": 959,
+      "sha256": "b1d9999a8cc13960409e2b48450472039d1f79aabb28adef663a4b7b9c3feaaa"
+    },
+    "P21_reviewed8/scores.json": {
+      "bytes": 10059,
+      "sha256": "791c19b540b4fb796427cd852c2d397e7b5b6749cfd5b1f6fc36c1d4ebbd41c5"
+    },
+    "P21_reviewed8/trajectories/benchmark/completion.json": {
+      "bytes": 1229,
+      "sha256": "e4254be969cb837a462b3ba134d1dd91c6f5e725a61b59cb940c6ba02b32c8b4"
+    },
+    "P21_reviewed8/trajectories/benchmark/outcomes/4aac432075103845a4ed361df79660970bcbd4e7c36cbf146e3ef43c9ca4283b.json": {
+      "bytes": 1025,
+      "sha256": "8f07f25d7b1763f2c0ae570d5496dedf0df589b3d910a997e7364f1d0fe7845b"
+    },
+    "P21_reviewed8/trajectories/benchmark/outcomes/5b079d5c5683a6915f1e5c52814fa18f9ba42f140db96fa7b522fcf635ba953a.json": {
+      "bytes": 1025,
+      "sha256": "447cf6a372518d7d64ff3f44ae3ef0c0b354a40887973aaa173fb9a6da18e5ef"
+    },
+    "P21_reviewed8/trajectories/benchmark/outcomes/85e60afa71d6a4d44d357bf1e98ae522b0bac989d693cbac9d0751608e1d3154.json": {
+      "bytes": 1024,
+      "sha256": "97bfd8f5a2be871ddf4c0afd6d731dfb8f2acf25f5f146c9dfb0e90d9628ff45"
+    },
+    "P21_reviewed8/trajectories/benchmark/outcomes/92f97d76e6183272a6e53cb79d26e5bd7fb4769a46bfb17a1bb02793c3b326a0.json": {
+      "bytes": 1025,
+      "sha256": "1ac7a6661fa9717081127f988450c3331dafb41e1868c91eb2e90a4d717bec84"
+    },
+    "P21_reviewed8/trajectories/benchmark/outcomes/946808fd43d89e1feafb32dd55ecfe29d9e2c9fceb9de8b86768c6897f87eabf.json": {
+      "bytes": 1025,
+      "sha256": "20bf3ae5323c5ae683fbb83eba00225045dd53f14577e5b94fe09098426a4f2d"
+    },
+    "P21_reviewed8/trajectories/benchmark/outcomes/b22045a8520ceac32b412bf3a662ee0d996e6950d286fbbf3e60f3e6c9f62ab6.json": {
+      "bytes": 1024,
+      "sha256": "cae6b892b9fee2e42938dccb7c084afe3cc95b0a42650b794b8a09aa559dddc4"
+    },
+    "P21_reviewed8/trajectories/benchmark/outcomes/c37f2321033cfa4543bc61a30ab94ee346693e26c1f0b9b6605a01e4e9a33e64.json": {
+      "bytes": 1024,
+      "sha256": "152062a20d6e39a19f6028529e5b895fbeb5459e271f96b03c4c0568271e7205"
+    },
+    "P21_reviewed8/trajectories/benchmark/outcomes/e02541641dfd2cac94bb8a6312fd072836a7b2a799b6cffe050fb6ada89df359.json": {
+      "bytes": 1025,
+      "sha256": "ded85a53276ed5c035ed3833a3879df0c0702be71da015a4e0f8db252121f866"
+    },
+    "P21_reviewed8/trajectories/benchmark/prediction_lock.json": {
+      "bytes": 4106,
+      "sha256": "8e56453ce9bbf9f277ee71f5c790ffbab20f26f098fb465dde394ea16f59db02"
+    },
+    "P21_reviewed8/trajectories/benchmark/progress.json": {
+      "bytes": 664,
+      "sha256": "dc4b8cfeddbee82b217e33bbfee429b9d1bb90f4fe419f8a0340621a27ec5a82"
+    },
+    "P21_reviewed8/trajectories/benchmark/requests/4aac432075103845a4ed361df79660970bcbd4e7c36cbf146e3ef43c9ca4283b.json": {
+      "bytes": 7099,
+      "sha256": "8b323473a468aec62ae73f54b348a7d7b66ec0715b2e988d6c8067af2bed04e5"
+    },
+    "P21_reviewed8/trajectories/benchmark/requests/5b079d5c5683a6915f1e5c52814fa18f9ba42f140db96fa7b522fcf635ba953a.json": {
+      "bytes": 6102,
+      "sha256": "db4484dbc7238072fcf1194a31993b8742e5c4def018791d45f12eb3d5e5160c"
+    },
+    "P21_reviewed8/trajectories/benchmark/requests/85e60afa71d6a4d44d357bf1e98ae522b0bac989d693cbac9d0751608e1d3154.json": {
+      "bytes": 5175,
+      "sha256": "8ad1b1680bb2aa5a487dd178357b07c8c104f7f88524ec8efd9e96fe951d9198"
+    },
+    "P21_reviewed8/trajectories/benchmark/requests/92f97d76e6183272a6e53cb79d26e5bd7fb4769a46bfb17a1bb02793c3b326a0.json": {
+      "bytes": 6995,
+      "sha256": "5b3224a4df9f7bc70bcd64d05766336c2088ecb9f6a2ffc4e33d95f186db4302"
+    },
+    "P21_reviewed8/trajectories/benchmark/requests/946808fd43d89e1feafb32dd55ecfe29d9e2c9fceb9de8b86768c6897f87eabf.json": {
+      "bytes": 6156,
+      "sha256": "61f3cac5a376603db358891ab849635341d9f245c02339ed7b743aab287f2d74"
+    },
+    "P21_reviewed8/trajectories/benchmark/requests/b22045a8520ceac32b412bf3a662ee0d996e6950d286fbbf3e60f3e6c9f62ab6.json": {
+      "bytes": 5170,
+      "sha256": "7e07655ab4d5665b416dc6bf8d3e62e36632822b9b4a324626c65c44c61c115e"
+    },
+    "P21_reviewed8/trajectories/benchmark/requests/c37f2321033cfa4543bc61a30ab94ee346693e26c1f0b9b6605a01e4e9a33e64.json": {
+      "bytes": 5168,
+      "sha256": "153eba61030baf8b6dc6d83ed54c64f8210d9bac3eb9da974a0f4889e4dfe01b"
+    },
+    "P21_reviewed8/trajectories/benchmark/requests/e02541641dfd2cac94bb8a6312fd072836a7b2a799b6cffe050fb6ada89df359.json": {
+      "bytes": 6041,
+      "sha256": "b1d4cd2a6ed76d0fd96a6085a8b3985ad588d484ab7c5b7ab20199ed7bbbaccb"
+    },
+    "P21_reviewed8/trajectories/benchmark/responses/4aac432075103845a4ed361df79660970bcbd4e7c36cbf146e3ef43c9ca4283b.json": {
+      "bytes": 1856,
+      "sha256": "eddb76d858d232afb7bfe7f388a3b6c4565e65fca5bc8865fd49a8f509e95a37"
+    },
+    "P21_reviewed8/trajectories/benchmark/responses/5b079d5c5683a6915f1e5c52814fa18f9ba42f140db96fa7b522fcf635ba953a.json": {
+      "bytes": 1478,
+      "sha256": "7fb85951a817cc20b464f36601ce53f76dab97feb0193cbded7f5963847c2f3f"
+    },
+    "P21_reviewed8/trajectories/benchmark/responses/85e60afa71d6a4d44d357bf1e98ae522b0bac989d693cbac9d0751608e1d3154.json": {
+      "bytes": 1116,
+      "sha256": "dfb584452f0984a1efb6d4cacc792af7142fca15b07e0eb1139c935d85d95229"
+    },
+    "P21_reviewed8/trajectories/benchmark/responses/92f97d76e6183272a6e53cb79d26e5bd7fb4769a46bfb17a1bb02793c3b326a0.json": {
+      "bytes": 1817,
+      "sha256": "0fbab57ad53a1bae06d2b030338e6f3873927b285203d8c5529cf029a7aa6c60"
+    },
+    "P21_reviewed8/trajectories/benchmark/responses/946808fd43d89e1feafb32dd55ecfe29d9e2c9fceb9de8b86768c6897f87eabf.json": {
+      "bytes": 1497,
+      "sha256": "c54d01ef3d13a814884610872e09bb98065c6340ea4803cf692db44df677c497"
+    },
+    "P21_reviewed8/trajectories/benchmark/responses/b22045a8520ceac32b412bf3a662ee0d996e6950d286fbbf3e60f3e6c9f62ab6.json": {
+      "bytes": 1116,
+      "sha256": "e2c500ee8e492cc68195f889d6fe0eace352d9ccddbd873ffbee7308bfd02df3"
+    },
+    "P21_reviewed8/trajectories/benchmark/responses/c37f2321033cfa4543bc61a30ab94ee346693e26c1f0b9b6605a01e4e9a33e64.json": {
+      "bytes": 1116,
+      "sha256": "30b9db5dffd9e1be4699536f41970fabd5cda0466e78e431d9a1d63b2495a5f4"
+    },
+    "P21_reviewed8/trajectories/benchmark/responses/e02541641dfd2cac94bb8a6312fd072836a7b2a799b6cffe050fb6ada89df359.json": {
+      "bytes": 1459,
+      "sha256": "3df5d22e32df416c6639f01763877ad5691447beacf67f46d4edb240ad25a37e"
+    },
+    "P21_reviewed8/trajectories/benchmark/run_manifest.json": {
+      "bytes": 11548,
+      "sha256": "d80a23fa5a127d55ba359f05801b1b845dabc1eb22ced4d5f9d1859ed59c0792"
+    },
+    "P21_reviewed8/trajectories/benchmark/tokenizer_preflight.json": {
+      "bytes": 1186,
+      "sha256": "27127ff247b480cc2234e950612a0530cdeb934ac00147f19ff62ac33df5f1de"
+    },
+    "P21_reviewed8/trajectories/development/completion.json": {
+      "bytes": 1221,
+      "sha256": "211c8ebb89f657db878c7ba9b5dcccf2cff04f518518bb57381707b6848983fc"
+    },
+    "P21_reviewed8/trajectories/development/outcomes/66e98c00f2ab9a762778fabedd2682686808089978127632c554e7c67c67c61e.json": {
+      "bytes": 989,
+      "sha256": "1c3353efa946711577dc4fb5f4f4b891ead6e3d544444a057d6e842a1eaf962d"
+    },
+    "P21_reviewed8/trajectories/development/outcomes/b136ecbc8ba2ef1c016b86f01eaaaddae632f0b457f58f3227462595dbc344b4.json": {
+      "bytes": 987,
+      "sha256": "214e55f76b77b44e1024749fcbf352777d78c0aa7786fd83d24fee3b1e852208"
+    },
+    "P21_reviewed8/trajectories/development/outcomes/faabb830cfcb3d0e20314cf6762e5312a9f3cae6f85f4c7d64d9962e5cca3da9.json": {
+      "bytes": 989,
+      "sha256": "a5648af86ff4a9650957f25c198f95eff880b4a3c0ff5e1a000b6b97aa213f24"
+    },
+    "P21_reviewed8/trajectories/development/prediction_lock.json": {
+      "bytes": 1791,
+      "sha256": "0eb748e0fef743ad7e31579340d28298a6e4cec39de592b963ab60dd87679a8a"
+    },
+    "P21_reviewed8/trajectories/development/progress.json": {
+      "bytes": 656,
+      "sha256": "dd6e1b55a503eb3311cbd15c3ee9b917404abda58a489d9e536a6f3a83cb7387"
+    },
+    "P21_reviewed8/trajectories/development/requests/66e98c00f2ab9a762778fabedd2682686808089978127632c554e7c67c67c61e.json": {
+      "bytes": 6911,
+      "sha256": "988e0955b82cae16fc0e5653bd4a50001349b27c46eee3f50982de915e76c386"
+    },
+    "P21_reviewed8/trajectories/development/requests/b136ecbc8ba2ef1c016b86f01eaaaddae632f0b457f58f3227462595dbc344b4.json": {
+      "bytes": 5098,
+      "sha256": "defbc895ca3781beabcde5d8af0ddede07eabfc7ebe689d4f70f0a235eb75e1c"
+    },
+    "P21_reviewed8/trajectories/development/requests/faabb830cfcb3d0e20314cf6762e5312a9f3cae6f85f4c7d64d9962e5cca3da9.json": {
+      "bytes": 6029,
+      "sha256": "28b031cba118260e1c89c020059804d9cd87f51654239be3f978db3e789355ff"
+    },
+    "P21_reviewed8/trajectories/development/responses/66e98c00f2ab9a762778fabedd2682686808089978127632c554e7c67c67c61e.json": {
+      "bytes": 1793,
+      "sha256": "3c098d96adeb079edabd70a861daeb16cb38ad6df7fc9a16f84d9e23e094a045"
+    },
+    "P21_reviewed8/trajectories/development/responses/b136ecbc8ba2ef1c016b86f01eaaaddae632f0b457f58f3227462595dbc344b4.json": {
+      "bytes": 1089,
+      "sha256": "1d6a57b28570ddf2ddf6b9c6b90e1fb633a555fbbad4144297198eb53c3d8576"
+    },
+    "P21_reviewed8/trajectories/development/responses/faabb830cfcb3d0e20314cf6762e5312a9f3cae6f85f4c7d64d9962e5cca3da9.json": {
+      "bytes": 1451,
+      "sha256": "f2d2781a3ea79d4ed2d1d2bb5ac64c13ee78b4242376033cc1b548c61801cbc3"
+    },
+    "P21_reviewed8/trajectories/development/run_manifest.json": {
+      "bytes": 9151,
+      "sha256": "44fc5630cd8a8c68106f15cecb7039a5c020886c1a7fef7e51d6f1705e27aecb"
+    },
+    "P21_reviewed8/trajectories/development/tokenizer_preflight.json": {
+      "bytes": 460,
+      "sha256": "2b4a6568f9585d62332894a293e0fd0d030bb370639a2d0cf3ff8a46fed204c4"
+    }
+  },
+  "protected_measurement_rows_or_held_cases_included": false,
+  "weights_environments_credentials_or_full_account_GPU_metadata_included": false
+}
