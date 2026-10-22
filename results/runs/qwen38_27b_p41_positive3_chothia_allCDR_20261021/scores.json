@@ -1,0 +1,44 @@
+{
+  "task_id": "P41",
+  "condition": "P41_RELEASED_POSITIVE3_CHOTHIA_ALLCDR_BACKBONE_TEXT_RECOVERY_V1",
+  "at_pacific": "2026-10-21T21:33:21.288908-07:00",
+  "plan_sha256": "8b0a593d4cb71d18ee1dff4cd88868fe8abc76ab2d556eb9ebe799b9c16f5cd3",
+  "planned": 3,
+  "prediction_lock_sha256": "633f41dfb41bc5244fc026f8702e4be201d7691aaf2dfc3e1cfeeee329bee4f1",
+  "primary_metric": "source_totalCDR_AAR",
+  "primary_metric_value": 0.13768115942028986,
+  "secondary_metric": "declared_macro_source_totalCDR_AAR",
+  "secondary_metric_value": 0.15534172804308227,
+  "native_full_holdout_equivalence": false,
+  "reference_access_after_complete_raw_seal": true,
+  "coordinate_metrics_available": false,
+  "binding_or_function_assessed": false,
+  "sole_scoring_attempt": true,
+  "native_paper_aggregation_verified": false,
+  "status": "source_totalCDR_AAR_scored_complete_positive3",
+  "source_per_case_metric": "Released writer.py calculate_aar total_accuracy over all masked positions; source H/L summaries unused.",
+  "declared_aggregation": "Equal-weight arithmetic mean over exactly all3 released positive demo cases; not verified as paper aggregation.",
+  "primary_aggregation": "Released total masked-position hit fraction pooled across all3 complete outputs; no verified paper-level aggregation equivalence.",
+  "total_correct_residues": 19,
+  "total_target_residues": 138,
+  "cases": [
+    {
+      "case_id": "8q7o",
+      "target_length": 23,
+      "correct_residues": 5,
+      "source_totalCDR_AAR": 0.21739130434782608
+    },
+    {
+      "case_id": "8slb",
+      "target_length": 61,
+      "correct_residues": 5,
+      "source_totalCDR_AAR": 0.08196721311475409
+    },
+    {
+      "case_id": "8tg9",
+      "target_length": 54,
+      "correct_residues": 9,
+      "source_totalCDR_AAR": 0.16666666666666666
+    }
+  ]
+}
