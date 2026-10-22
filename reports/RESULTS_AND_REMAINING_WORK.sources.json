@@ -384,7 +384,7 @@
           "parsed": 930,
           "planned": 1999
         },
-        "dataset": "Solubility — PEER",
+        "dataset": "Solubility \u2014 PEER",
         "diagnostic_score": null,
         "evidence": {
           "category": "Metric / extraction-limited",
@@ -395,7 +395,7 @@
           "length": 3,
           "stop": 1996
         },
-        "input_protocol": "Protein sequence → Yes/No; zero-shot",
+        "input_protocol": "Protein sequence \u2192 Yes/No; zero-shot",
         "is_primary_table": true,
         "native_score": {
           "accuracy": 0.24212106053026514,
@@ -428,7 +428,7 @@
           "remote_hash_matches_recorded": null,
           "remote_sha256": null
         },
-        "task": "Solubility — PEER",
+        "task": "Solubility \u2014 PEER",
         "task_id": "P01",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -450,7 +450,7 @@
           "parsed": 1496,
           "planned": 1749
         },
-        "dataset": "Binary localization — DeepLoc/PEER",
+        "dataset": "Binary localization \u2014 DeepLoc/PEER",
         "diagnostic_score": null,
         "evidence": {
           "category": "Measured with output loss",
@@ -461,7 +461,7 @@
           "length": 8,
           "stop": 1741
         },
-        "input_protocol": "Protein sequence → binary localization; zero-shot",
+        "input_protocol": "Protein sequence \u2192 binary localization; zero-shot",
         "is_primary_table": true,
         "native_score": {
           "accuracy": 0.27387078330474557,
@@ -494,7 +494,7 @@
           "remote_hash_matches_recorded": null,
           "remote_sha256": null
         },
-        "task": "Binary localization — DeepLoc/PEER",
+        "task": "Binary localization \u2014 DeepLoc/PEER",
         "task_id": "P02",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -516,7 +516,7 @@
           "parsed": 2722,
           "planned": 2773
         },
-        "dataset": "Subcellular localization — DeepLoc",
+        "dataset": "Subcellular localization \u2014 DeepLoc",
         "diagnostic_score": null,
         "display_condition": "Archived full-test run; 4,096 output tokens; released 2,773-case cohort",
         "evidence": {
@@ -528,7 +528,7 @@
           "length": 47,
           "stop": 2726
         },
-        "input_protocol": "Protein sequence → localization class; zero-shot",
+        "input_protocol": "Protein sequence \u2192 localization class; zero-shot",
         "is_primary_table": true,
         "native_score": {
           "accuracy": 0.2610890732059142,
@@ -556,7 +556,7 @@
           "remote_hash_matches_recorded": true,
           "remote_sha256": "b2502d3ded2d81fc3f03c8260cd6d2db01dc5ae914e6d84e5ae6c81c18882e4a"
         },
-        "task": "Subcellular localization — DeepLoc",
+        "task": "Subcellular localization \u2014 DeepLoc",
         "task_id": "P03",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -577,7 +577,7 @@
           "parsed": 1366,
           "planned": 1366
         },
-        "dataset": "Thermostability — FLIP/Meltome",
+        "dataset": "Thermostability \u2014 FLIP/Meltome",
         "diagnostic_score": null,
         "evidence": {
           "category": "Measured, new delivery condition",
@@ -657,7 +657,7 @@
           "remote_hash_matches_recorded": true,
           "remote_sha256": "e0231f651a8c6f3fab2ef16cb4ce280c6b78a9b6ada0c216d95bcb698ff6e385"
         },
-        "task": "Thermostability — FLIP/Meltome",
+        "task": "Thermostability \u2014 FLIP/Meltome",
         "task_id": "P06",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -678,7 +678,7 @@
           "parsed": 27217,
           "planned": 27217
         },
-        "dataset": "GFP fluorescence — TAPE",
+        "dataset": "GFP fluorescence \u2014 TAPE",
         "diagnostic_score": null,
         "evidence": {
           "category": "Measured, new delivery condition",
@@ -689,7 +689,7 @@
           "length": 0,
           "stop": 27217
         },
-        "input_protocol": "Protein sequence → fluorescence scalar; zero-shot",
+        "input_protocol": "Protein sequence \u2192 fluorescence scalar; zero-shot",
         "is_primary_table": true,
         "native_score": {
           "spearman": 0.029997720050903433
@@ -758,7 +758,7 @@
           "remote_hash_matches_recorded": true,
           "remote_sha256": "f79fdcb9a294eb09e09cf8fe4642e04f7eb413f260cf22661054d596dc1416e3"
         },
-        "task": "GFP fluorescence — TAPE",
+        "task": "GFP fluorescence \u2014 TAPE",
         "task_id": "P07",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -779,7 +779,7 @@
           "parsed": 12851,
           "planned": 12851
         },
-        "dataset": "Protein stability regression — TAPE",
+        "dataset": "Protein stability regression \u2014 TAPE",
         "diagnostic_score": null,
         "evidence": {
           "category": "Measured, new delivery condition",
@@ -790,7 +790,7 @@
           "length": 0,
           "stop": 12851
         },
-        "input_protocol": "Protein sequence → stability scalar; zero-shot",
+        "input_protocol": "Protein sequence \u2192 stability scalar; zero-shot",
         "is_primary_table": true,
         "native_score": {
           "spearman": 0.22698189017768255
@@ -859,7 +859,7 @@
           "remote_hash_matches_recorded": true,
           "remote_sha256": "83ff575019fb3f5305b6b9859edc17e7a4ada3787f3de23e5f7fbddc764da006"
         },
-        "task": "Protein stability regression — TAPE",
+        "task": "Protein stability regression \u2014 TAPE",
         "task_id": "P08",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -880,7 +880,7 @@
           "parsed": 12851,
           "planned": 12851
         },
-        "dataset": "Stability classification — NatureLM/PEER",
+        "dataset": "Stability classification \u2014 NatureLM/PEER",
         "diagnostic_score": null,
         "evidence": {
           "category": "Measured, declared rule-derived adaptation",
@@ -949,7 +949,7 @@
           "remote_hash_matches_recorded": true,
           "remote_sha256": "6e03f9612f876d4b3f570b00c5937607d9bf0c9552eebc783b83238635a91f31"
         },
-        "task": "Stability classification — NatureLM/PEER",
+        "task": "Stability classification \u2014 NatureLM/PEER",
         "task_id": "P09",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -971,7 +971,7 @@
           "parsed": 229,
           "planned": 237
         },
-        "dataset": "Human protein–protein interaction — PEER",
+        "dataset": "Human protein\u2013protein interaction \u2014 PEER",
         "diagnostic_score": null,
         "evidence": {
           "category": "Measured with output loss",
@@ -1015,7 +1015,7 @@
           "remote_hash_matches_recorded": null,
           "remote_sha256": null
         },
-        "task": "Human protein–protein interaction — PEER",
+        "task": "Human protein\u2013protein interaction \u2014 PEER",
         "task_id": "P10",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -1037,7 +1037,7 @@
           "parsed": 365,
           "planned": 394
         },
-        "dataset": "Yeast protein–protein interaction — PEER",
+        "dataset": "Yeast protein\u2013protein interaction \u2014 PEER",
         "diagnostic_score": null,
         "evidence": {
           "category": "Measured with output loss",
@@ -1080,7 +1080,7 @@
           "remote_hash_matches_recorded": null,
           "remote_sha256": null
         },
-        "task": "Yeast protein–protein interaction — PEER",
+        "task": "Yeast protein\u2013protein interaction \u2014 PEER",
         "task_id": "P11",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -1102,7 +1102,7 @@
           "parsed": 1120,
           "planned": 5651
         },
-        "dataset": "Reaction class — zero-/few-shot",
+        "dataset": "Reaction class \u2014 zero-/few-shot",
         "diagnostic_score": null,
         "evidence": {
           "category": "Weak result, qualified scope",
@@ -1113,7 +1113,7 @@
           "length": 3595,
           "stop": 2056
         },
-        "input_protocol": "Protein sequence + reaction descriptions → class ID; zero-shot",
+        "input_protocol": "Protein sequence + reaction descriptions \u2192 class ID; zero-shot",
         "is_primary_table": true,
         "native_score": {
           "accuracy": 0.0015926384710670677,
@@ -1125,7 +1125,7 @@
           "planned": 5651
         },
         "old_undefined_full_metric": false,
-        "output_budget": "4,096 × 4,419; 16,384 × 1,232 (mixed)",
+        "output_budget": "4,096 \u00d7 4,419; 16,384 \u00d7 1,232 (mixed)",
         "protocol_variant": "QWEN_ZERO_SHOT_REACTION_FULL_SEQUENCE_ALL384_FULL_SOURCE_DESCRIPTIONS__MIXED_BUDGET_4K16K_CONTINUATION",
         "raw_response_reverified_by_this_audit": false,
         "result_type": "original_or_replay",
@@ -1141,7 +1141,7 @@
           "remote_hash_matches_recorded": true,
           "remote_sha256": "024501321eb30797df29401b256007ab6992881a6670027cb5232cce72d5972b"
         },
-        "task": "Reaction class — zero-/few-shot",
+        "task": "Reaction class \u2014 zero-/few-shot",
         "task_id": "P16",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -1160,7 +1160,7 @@
           "parsed": 1970,
           "planned": 5651
         },
-        "dataset": "Reaction class — zero-/few-shot",
+        "dataset": "Reaction class \u2014 zero-/few-shot",
         "diagnostic_score": {
           "accuracy": 0.002123517961422757
         },
@@ -1173,11 +1173,11 @@
           "length": 3595,
           "stop": 2056
         },
-        "input_protocol": "Protein sequence + reaction descriptions → class ID; zero-shot",
+        "input_protocol": "Protein sequence + reaction descriptions \u2192 class ID; zero-shot",
         "is_primary_table": false,
         "native_score": null,
         "old_undefined_full_metric": false,
-        "output_budget": "4,096 × 4,419; 16,384 × 1,232 (mixed)",
+        "output_budget": "4,096 \u00d7 4,419; 16,384 \u00d7 1,232 (mixed)",
         "protocol_variant": "P16_NORMAL_STOP_TERMINAL_CLASS_DIAGNOSTIC_V1",
         "raw_response_reverified_by_this_audit": false,
         "result_type": "original_or_replay",
@@ -1193,7 +1193,7 @@
           "remote_hash_matches_recorded": true,
           "remote_sha256": "68d143a13641237c1141b4d47ecdda438f7f81711ffccc7a4cdd6069764f449b"
         },
-        "task": "Reaction class — zero-/few-shot",
+        "task": "Reaction class \u2014 zero-/few-shot",
         "task_id": "P16",
         "usable_answer_rate": {
           "definition": "Separate frozen-format diagnostic accepted outputs divided by the full original denominator",
@@ -2173,7 +2173,7 @@
           "length": 196,
           "stop": 4
         },
-        "input_protocol": "Reference protein → candidate JSON; zero-shot",
+        "input_protocol": "Reference protein \u2192 candidate JSON; zero-shot",
         "is_primary_table": true,
         "native_score": {
           "improved_sequence_uniqueness": null,
@@ -2236,7 +2236,7 @@
           "length": 196,
           "stop": 4
         },
-        "input_protocol": "Reference protein → candidate JSON; zero-shot",
+        "input_protocol": "Reference protein \u2192 candidate JSON; zero-shot",
         "is_primary_table": true,
         "native_score": {
           "improved_sequence_uniqueness": null,
@@ -2348,7 +2348,7 @@
           "parsed": 1060,
           "planned": 1061
         },
-        "dataset": "SLAKE — English",
+        "dataset": "SLAKE \u2014 English",
         "diagnostic_score": null,
         "evidence": {
           "category": "Metric / extraction-limited",
@@ -2387,7 +2387,7 @@
           "remote_hash_matches_recorded": null,
           "remote_sha256": null
         },
-        "task": "SLAKE — English",
+        "task": "SLAKE \u2014 English",
         "task_id": "V02",
         "usable_answer_rate": {
           "definition": "Nonempty final text does not establish valid extracted answers",
@@ -2726,7 +2726,7 @@
         "finish_reasons": {
           "length": 9840
         },
-        "input_protocol": "Molecule + protein → conditional Yes/No likelihood",
+        "input_protocol": "Molecule + protein \u2192 conditional Yes/No likelihood",
         "is_primary_table": true,
         "native_score": {
           "auprc": 0.41031521273083055,
@@ -2754,7 +2754,7 @@
           "remote_hash_matches_recorded": null,
           "remote_sha256": null
         },
-        "task": "Drug–target interaction — BioSNAP/Human/BindingDB",
+        "task": "Drug\u2013target interaction \u2014 BioSNAP/Human/BindingDB",
         "task_id": "P43",
         "usable_answer_rate": {
           "definition": "Valid one-token conditional-likelihood scores, not generated answers",
@@ -2786,7 +2786,7 @@
         "finish_reasons": {
           "length": 5493
         },
-        "input_protocol": "Molecule + protein → conditional Yes/No likelihood",
+        "input_protocol": "Molecule + protein \u2192 conditional Yes/No likelihood",
         "is_primary_table": true,
         "native_score": {
           "auprc": 0.5216604334511094,
@@ -2814,7 +2814,7 @@
           "remote_hash_matches_recorded": null,
           "remote_sha256": null
         },
-        "task": "Drug–target interaction — BioSNAP/Human/BindingDB",
+        "task": "Drug\u2013target interaction \u2014 BioSNAP/Human/BindingDB",
         "task_id": "P43",
         "usable_answer_rate": {
           "definition": "Valid one-token conditional-likelihood scores, not generated answers",
@@ -2846,7 +2846,7 @@
         "finish_reasons": {
           "length": 1200
         },
-        "input_protocol": "Molecule + protein → conditional Yes/No likelihood",
+        "input_protocol": "Molecule + protein \u2192 conditional Yes/No likelihood",
         "is_primary_table": true,
         "native_score": {
           "auprc": 0.4194264625175069,
@@ -2874,7 +2874,7 @@
           "remote_hash_matches_recorded": null,
           "remote_sha256": null
         },
-        "task": "Drug–target interaction — BioSNAP/Human/BindingDB",
+        "task": "Drug\u2013target interaction \u2014 BioSNAP/Human/BindingDB",
         "task_id": "P43",
         "usable_answer_rate": {
           "definition": "Valid one-token conditional-likelihood scores, not generated answers",
@@ -2896,7 +2896,7 @@
           "parsed": 1354,
           "planned": 1366
         },
-        "dataset": "Thermostability — FLIP/Meltome",
+        "dataset": "Thermostability \u2014 FLIP/Meltome",
         "diagnostic_score": null,
         "evidence": {
           "category": "Incomplete native metric",
@@ -2937,7 +2937,7 @@
           "remote_sha256": null,
           "remote_verified_commit": "2aa34467e81cee20a7da9f4f4f85ab788c70e725"
         },
-        "task": "Thermostability — FLIP/Meltome",
+        "task": "Thermostability \u2014 FLIP/Meltome",
         "task_id": "P06",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -2959,7 +2959,7 @@
           "parsed": 1382,
           "planned": 27217
         },
-        "dataset": "GFP fluorescence — TAPE",
+        "dataset": "GFP fluorescence \u2014 TAPE",
         "diagnostic_score": null,
         "evidence": {
           "category": "Delivery-limited",
@@ -2970,7 +2970,7 @@
           "length": 25741,
           "stop": 1476
         },
-        "input_protocol": "Protein sequence → fluorescence scalar; zero-shot",
+        "input_protocol": "Protein sequence \u2192 fluorescence scalar; zero-shot",
         "is_primary_table": false,
         "native_score": {
           "all_case_rule": "No invented prediction for failures. Full-test Spearman requires every output to parse; incomplete valid-only correlation is separately labeled.",
@@ -2983,7 +2983,7 @@
           "undefined_constant_or_insufficient": false
         },
         "old_undefined_full_metric": true,
-        "output_budget": "4,096 × 27,146; 16,384 × 71 (mixed)",
+        "output_budget": "4,096 \u00d7 27,146; 16,384 \u00d7 71 (mixed)",
         "protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_FLUORESCENCE_PYTORCH__MIXED_BUDGET_4K16K_CONTINUATION",
         "raw_response_reverified_by_this_audit": false,
         "result_type": "original_or_replay",
@@ -3000,7 +3000,7 @@
           "remote_sha256": "18979759cc43b82517e9933712274c6a82f33bb3b83eaae59b56ba6ac29710e6",
           "remote_verified_commit": "2aa34467e81cee20a7da9f4f4f85ab788c70e725"
         },
-        "task": "GFP fluorescence — TAPE",
+        "task": "GFP fluorescence \u2014 TAPE",
         "task_id": "P07",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -3022,7 +3022,7 @@
           "parsed": 12616,
           "planned": 12851
         },
-        "dataset": "Protein stability regression — TAPE",
+        "dataset": "Protein stability regression \u2014 TAPE",
         "diagnostic_score": null,
         "evidence": {
           "category": "Negative native-target rank agreement; full score undefined",
@@ -3033,7 +3033,7 @@
           "length": 8,
           "stop": 12843
         },
-        "input_protocol": "Protein sequence → stability scalar; zero-shot",
+        "input_protocol": "Protein sequence \u2192 stability scalar; zero-shot",
         "is_primary_table": false,
         "native_score": {
           "all_case_rule": "No invented prediction for failures. Full-test Spearman requires every output to parse; incomplete valid-only correlation is separately labeled.",
@@ -3046,7 +3046,7 @@
           "undefined_constant_or_insufficient": false
         },
         "old_undefined_full_metric": true,
-        "output_budget": "4,096 × 7,303; 16,384 × 5,548 (mixed)",
+        "output_budget": "4,096 \u00d7 7,303; 16,384 \u00d7 5,548 (mixed)",
         "protocol_variant": "QWEN_ZERO_SHOT_FULL_SEQUENCE_TAPE_STABILITY_PYTORCH__MIXED_BUDGET_4K16K_CONTINUATION",
         "raw_response_reverified_by_this_audit": false,
         "result_type": "original_or_replay",
@@ -3063,7 +3063,7 @@
           "remote_sha256": "53ad6a4142efefdfff140decfaeb16efee1f077ae3629788a57da1fd56f7404e",
           "remote_verified_commit": "2aa34467e81cee20a7da9f4f4f85ab788c70e725"
         },
-        "task": "Protein stability regression — TAPE",
+        "task": "Protein stability regression \u2014 TAPE",
         "task_id": "P08",
         "usable_answer_rate": {
           "definition": "Native parser-valid outputs divided by all planned cases",
@@ -3073,15 +3073,15 @@
       },
       {
         "task_id": "P12",
-        "task": "Enzyme Commission labels — DeepFRI split",
+        "task": "Enzyme Commission labels \u2014 DeepFRI split",
         "category": "Protein function, annotations and descriptions",
-        "dataset": "Enzyme Commission labels — DeepFRI split",
+        "dataset": "Enzyme Commission labels \u2014 DeepFRI split",
         "condition": "Native declared score; new complete generation; nonthinking dense ordered three-decimal confidence vector, 16K budget",
         "condition_kind": "native",
         "run_id": "qwen38_27b_p12_dense3dp_nonthinking16k_test_2026-10-20_v1",
         "result_type": "new_complete_generation",
         "protocol_variant": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
-        "input_protocol": "Protein sequence → enzyme-label confidence scores; zero-shot",
+        "input_protocol": "Protein sequence \u2192 enzyme-label confidence scores; zero-shot",
         "output_budget": "16,384",
         "usable_answer_rate": {
           "value": 1.0,
@@ -3308,15 +3308,15 @@
       },
       {
         "task_id": "P14",
-        "task": "GO molecular function — DeepFRI split",
+        "task": "GO molecular function \u2014 DeepFRI split",
         "category": "Protein function, annotations and descriptions",
-        "dataset": "GO molecular function — DeepFRI split",
+        "dataset": "GO molecular function \u2014 DeepFRI split",
         "condition": "Native declared score; new complete generation; nonthinking dense ordered three-decimal confidence vector, 16K budget",
         "condition_kind": "native",
         "run_id": "qwen38_27b_p14_full_test_dense3dp_nonthinking16k_2026-10-20_v1",
         "result_type": "new_complete_generation",
         "protocol_variant": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
-        "input_protocol": "Protein sequence → molecular-function confidence scores; zero-shot",
+        "input_protocol": "Protein sequence \u2192 molecular-function confidence scores; zero-shot",
         "output_budget": "16,384",
         "usable_answer_rate": {
           "value": 1.0,
@@ -4294,7 +4294,7 @@
           "reported_std": null,
           "run_count": 3,
           "source_id": "LAB",
-          "source_locator": "Appendix Tables 2–4",
+          "source_locator": "Appendix Tables 2\u20134",
           "source_url": "https://arxiv.org/html/2407.10362v1",
           "test_case_count": 248,
           "value_status": "published_rounded_as_printed"
@@ -4316,7 +4316,7 @@
           "reported_std": null,
           "run_count": 3,
           "source_id": "LAB",
-          "source_locator": "Appendix Tables 2–4",
+          "source_locator": "Appendix Tables 2\u20134",
           "source_url": "https://arxiv.org/html/2407.10362v1",
           "test_case_count": 102,
           "value_status": "published_rounded_as_printed"
@@ -4338,7 +4338,7 @@
           "reported_std": null,
           "run_count": 3,
           "source_id": "LAB",
-          "source_locator": "Appendix Tables 2–4",
+          "source_locator": "Appendix Tables 2\u20134",
           "source_url": "https://arxiv.org/html/2407.10362v1",
           "test_case_count": 226,
           "value_status": "published_rounded_as_printed"
@@ -4360,7 +4360,7 @@
           "reported_std": null,
           "run_count": 3,
           "source_id": "LAB",
-          "source_locator": "Appendix Tables 2–4",
+          "source_locator": "Appendix Tables 2\u20134",
           "source_url": "https://arxiv.org/html/2407.10362v1",
           "test_case_count": 305,
           "value_status": "published_rounded_as_printed"
@@ -4382,7 +4382,7 @@
           "reported_std": null,
           "run_count": 3,
           "source_id": "LAB",
-          "source_locator": "Appendix Tables 2–4",
+          "source_locator": "Appendix Tables 2\u20134",
           "source_url": "https://arxiv.org/html/2407.10362v1",
           "test_case_count": 41,
           "value_status": "published_rounded_as_printed"
@@ -4963,7 +4963,7 @@
       "task_id": "P01",
       "page_id": "P01",
       "page_path": "reports/questions/P01.md",
-      "dataset": "DeepSol solubility — PEER",
+      "dataset": "DeepSol solubility \u2014 PEER",
       "status": "complete_recovered_reviewed_source_input",
       "complete_question_or_input": true,
       "page_sha256": "19cc876463f3f58136d37c70612fe34c3eb20a0c14af7c31ebdffbcd00d7aee0",
@@ -4986,7 +4986,7 @@
       "task_id": "P02",
       "page_id": "P02",
       "page_path": "reports/questions/P02.md",
-      "dataset": "DeepLoc binary localization — PEER",
+      "dataset": "DeepLoc binary localization \u2014 PEER",
       "status": "complete_recovered_reviewed_source_input",
       "complete_question_or_input": true,
       "page_sha256": "033e8421fbed4b747b7880e053199119766169ecd99fd1d810974d8b8abba49f",
@@ -5009,7 +5009,7 @@
       "task_id": "P03",
       "page_id": "P03",
       "page_path": "reports/questions/P03.md",
-      "dataset": "DeepLoc subcellular localization — PEER/ProtST",
+      "dataset": "DeepLoc subcellular localization \u2014 PEER/ProtST",
       "status": "complete_saved_request_text",
       "complete_question_or_input": true,
       "page_sha256": "5762eb2a4fff298d935b84c794dc6126a8a6801bbd6d327f5575df98a7f4cbbf",
@@ -5027,7 +5027,7 @@
       "task_id": "P04",
       "page_id": "P04",
       "page_path": "reports/questions/P04.md",
-      "dataset": "Envision beta-lactamase activity — PEER",
+      "dataset": "Envision beta-lactamase activity \u2014 PEER",
       "status": "complete_case_unavailable",
       "complete_question_or_input": false,
       "page_sha256": "c7d7d8810bbc3f83d70a1f27979f1ef1040f22ead769534261f3ef556ac1bfd4",
@@ -5040,7 +5040,7 @@
       "task_id": "P05",
       "page_id": "P05",
       "page_path": "reports/questions/P05.md",
-      "dataset": "AAV fitness — FLIP",
+      "dataset": "AAV fitness \u2014 FLIP",
       "status": "complete_case_unavailable",
       "complete_question_or_input": false,
       "page_sha256": "e6472c8b7124a1dde1d63a34deadd9e31a33e9b494d6bdb92de817c0b31ee76e",
@@ -5053,7 +5053,7 @@
       "task_id": "P06",
       "page_id": "P06",
       "page_path": "reports/questions/P06.md",
-      "dataset": "Meltome thermostability — FLIP",
+      "dataset": "Meltome thermostability \u2014 FLIP",
       "status": "complete_saved_request_text",
       "complete_question_or_input": true,
       "page_sha256": "0b28f0330c9d2dd04525f0b940e4ce33903ed25cdea3a40908062856da492fa0",
@@ -5071,7 +5071,7 @@
       "task_id": "P07",
       "page_id": "P07",
       "page_path": "reports/questions/P07.md",
-      "dataset": "GFP fluorescence — TAPE",
+      "dataset": "GFP fluorescence \u2014 TAPE",
       "status": "complete_saved_request_text",
       "complete_question_or_input": true,
       "page_sha256": "105efc497c696ecad08efaeed5d886e5c5c9ec98271d348e3be3f374300bf96b",
@@ -5089,7 +5089,7 @@
       "task_id": "P08",
       "page_id": "P08",
       "page_path": "reports/questions/P08.md",
-      "dataset": "Protein folding stability — TAPE",
+      "dataset": "Protein folding stability \u2014 TAPE",
       "status": "complete_saved_request_text",
       "complete_question_or_input": true,
       "page_sha256": "6b9c7324a61c81eca877139bbceb6b99eaa31b0ee1564ca019b2c46fef301cd7",
@@ -5107,7 +5107,7 @@
       "task_id": "P09",
       "page_id": "P09",
       "page_path": "reports/questions/P09.md",
-      "dataset": "Stability classification — NatureLM-style adaptation",
+      "dataset": "Stability classification \u2014 NatureLM-style adaptation",
       "status": "derived_score_no_separate_question",
       "complete_question_or_input": false,
       "page_sha256": "e3235ee4779a4908e160ff40c3db129e8091e80d7ac026f684325ca3971571f8",
@@ -5120,7 +5120,7 @@
       "task_id": "P10",
       "page_id": "P10",
       "page_path": "reports/questions/P10.md",
-      "dataset": "Human protein interactions — PEER",
+      "dataset": "Human protein interactions \u2014 PEER",
       "status": "complete_recovered_reviewed_source_input",
       "complete_question_or_input": true,
       "page_sha256": "65889d1ff4ede3690c5effe5f7e0ccfba672cd98fe2dc1081dd94dfdb1e8d26b",
@@ -5143,7 +5143,7 @@
       "task_id": "P11",
       "page_id": "P11",
       "page_path": "reports/questions/P11.md",
-      "dataset": "Yeast protein interactions — PEER",
+      "dataset": "Yeast protein interactions \u2014 PEER",
       "status": "complete_recovered_reviewed_source_input",
       "complete_question_or_input": true,
       "page_sha256": "fa533dee9149cb2d864f06e3f2f44e9fe2933a24abacfda2ed57986daf3ad204",
@@ -5166,7 +5166,7 @@
       "task_id": "P16",
       "page_id": "P16",
       "page_path": "reports/questions/P16.md",
-      "dataset": "Enzyme reaction classes — IEConv/ProtST",
+      "dataset": "Enzyme reaction classes \u2014 IEConv/ProtST",
       "status": "complete_saved_request_text",
       "complete_question_or_input": true,
       "page_sha256": "37a30da87076183a514eb3b4eb20eef686e6bdd17fe9b129d15c8b589d83e873",
@@ -5197,7 +5197,7 @@
       "task_id": "P19",
       "page_id": "P19",
       "page_path": "reports/questions/P19.md",
-      "dataset": "PFArena T1 — single-mutant generation",
+      "dataset": "PFArena T1 \u2014 single-mutant generation",
       "status": "complete_prepared_reviewed_input_not_dispatched",
       "complete_question_or_input": true,
       "page_sha256": "dd7d9f6247a9f6fa216ffcfe4c56326f7b22c025139ae08e3676b971c94ff725",
@@ -5216,7 +5216,7 @@
       "task_id": "P21",
       "page_id": "P21",
       "page_path": "reports/questions/P21.md",
-      "dataset": "PFArena T3 — anchor-informed ranking",
+      "dataset": "PFArena T3 \u2014 anchor-informed ranking",
       "status": "source_instruction_excerpt_only",
       "complete_question_or_input": false,
       "page_sha256": "aa700be44da8b5fee6b71926b700dcad440ad32939ee39459c812180c0491424",
@@ -5231,7 +5231,7 @@
       "task_id": "P22",
       "page_id": "P22",
       "page_path": "reports/questions/P22.md",
-      "dataset": "PFArena T4 — single-mutant-informed ranking",
+      "dataset": "PFArena T4 \u2014 single-mutant-informed ranking",
       "status": "source_instruction_excerpt_only",
       "complete_question_or_input": false,
       "page_sha256": "5ea50631637298e652263182fd9e98f1a491df61c3656d2475f69eb905cb0708",
@@ -5246,7 +5246,7 @@
       "task_id": "P23",
       "page_id": "P23",
       "page_path": "reports/questions/P23.md",
-      "dataset": "Mol-Instructions — protein function",
+      "dataset": "Mol-Instructions \u2014 protein function",
       "status": "complete_recovered_reviewed_source_input",
       "complete_question_or_input": true,
       "page_sha256": "2bde8874e0789ec8d1c55a70dafac860508985d78985c6c1d3ece44416340ef3",
@@ -5269,7 +5269,7 @@
       "task_id": "P24",
       "page_id": "P24",
       "page_path": "reports/questions/P24.md",
-      "dataset": "Mol-Instructions — catalytic activity",
+      "dataset": "Mol-Instructions \u2014 catalytic activity",
       "status": "complete_recovered_reviewed_source_input",
       "complete_question_or_input": true,
       "page_sha256": "e693cd60c905456cd1e2318c2e2c7ca1255e251c879c621261278f069c8b5ea9",
@@ -5292,7 +5292,7 @@
       "task_id": "P25",
       "page_id": "P25",
       "page_path": "reports/questions/P25.md",
-      "dataset": "Mol-Instructions — domains and motifs",
+      "dataset": "Mol-Instructions \u2014 domains and motifs",
       "status": "complete_recovered_reviewed_source_input",
       "complete_question_or_input": true,
       "page_sha256": "d21f7664bc7a1ca66970165afb0b88cd3ed202331b2f26d5af8c14394e33f9da",
@@ -5315,7 +5315,7 @@
       "task_id": "P26",
       "page_id": "P26",
       "page_path": "reports/questions/P26.md",
-      "dataset": "Mol-Instructions — general function",
+      "dataset": "Mol-Instructions \u2014 general function",
       "status": "complete_recovered_reviewed_source_input",
       "complete_question_or_input": true,
       "page_sha256": "935aedac16c60a015291346f05f15f23ec910f537543ed9f7d055240e8defe08",
@@ -5338,7 +5338,7 @@
       "task_id": "P27",
       "page_id": "P27",
       "page_path": "reports/questions/P27.md",
-      "dataset": "NatureLM — protein characteristics description",
+      "dataset": "NatureLM \u2014 protein characteristics description",
       "status": "complete_case_unavailable",
       "complete_question_or_input": false,
       "page_sha256": "ab9c12d0be1b86a8f4d930ec215b37d813fff6c1b5ba02bab12646044e48fc12",
@@ -6555,7 +6555,7 @@
       },
       {
         "task_id": "P37",
-        "recommended_display": "NatureLM-8×7B: pLDDT 75.9; diversity 0.989",
+        "recommended_display": "NatureLM-8\u00d77B: pLDDT 75.9; diversity 0.989",
         "source_id": "NATURE",
         "source_url": "https://arxiv.org/html/2502.07527v3",
         "source_locator": "Table 8",
@@ -6581,7 +6581,7 @@
       },
       {
         "task_id": "P38",
-        "recommended_display": "NatureLM-8×7B: stability probability 0.655; 81.2% above 0.5",
+        "recommended_display": "NatureLM-8\u00d77B: stability probability 0.655; 81.2% above 0.5",
         "source_id": "NATURE",
         "source_url": "https://arxiv.org/html/2502.07527v3",
         "source_locator": "Table 9 (stability); Figure 12 (solubility)",
@@ -6608,7 +6608,7 @@
         "recommended_display": "Qualitative case study; no aggregate score",
         "source_id": "NATURE",
         "source_url": "https://arxiv.org/html/2502.07527v3",
-        "source_locator": "Section 4.5; Figures S10–S12",
+        "source_locator": "Section 4.5; Figures S10\u2013S12",
         "status": "qualitative_no_scalar",
         "metrics": [],
         "comparison_note": "Selected generated candidates and predicted complexes; not a controlled scalar model comparison."
@@ -6646,7 +6646,7 @@
       },
       {
         "task_id": "P41",
-        "recommended_display": "MFDesign: H3 loop RMSD 4.28 Å; interface improvement 59.16%",
+        "recommended_display": "MFDesign: H3 loop RMSD 4.28 \u00c5; interface improvement 59.16%",
         "source_id": "PROTEOR",
         "source_url": "https://arxiv.org/html/2605.02937v1",
         "source_locator": "Table 1",
@@ -6740,7 +6740,7 @@
       },
       {
         "task_id": "P43",
-        "recommended_display": "BioT5+: AUROC 0.964 ± 0.001",
+        "recommended_display": "BioT5+: AUROC 0.964 \u00b1 0.001",
         "source_id": "BIOT5",
         "source_url": "https://arxiv.org/html/2402.17810v2",
         "source_locator": "Table 8, BindingDB column",
@@ -6760,7 +6760,7 @@
       },
       {
         "task_id": "P43",
-        "recommended_display": "BioT5+: AUROC 0.939 ± 0.001",
+        "recommended_display": "BioT5+: AUROC 0.939 \u00b1 0.001",
         "source_id": "BIOT5",
         "source_url": "https://arxiv.org/html/2402.17810v2",
         "source_locator": "Table 8, BioSNAP column",
@@ -6780,7 +6780,7 @@
       },
       {
         "task_id": "P43",
-        "recommended_display": "BioT5: AUROC 0.989 ± 0.001",
+        "recommended_display": "BioT5: AUROC 0.989 \u00b1 0.001",
         "source_id": "BIOT5",
         "source_url": "https://arxiv.org/html/2402.17810v2",
         "source_locator": "Table 8, Human column",
@@ -7198,7 +7198,7 @@
           "task_id": "P01",
           "page_id": "P01",
           "page_path": "reports/questions/P01.md",
-          "dataset": "DeepSol solubility — PEER",
+          "dataset": "DeepSol solubility \u2014 PEER",
           "status": "complete_recovered_reviewed_source_input",
           "complete_question_or_input": true,
           "page_sha256": "19cc876463f3f58136d37c70612fe34c3eb20a0c14af7c31ebdffbcd00d7aee0",
@@ -7220,7 +7220,7 @@
           "task_id": "P02",
           "page_id": "P02",
           "page_path": "reports/questions/P02.md",
-          "dataset": "DeepLoc binary localization — PEER",
+          "dataset": "DeepLoc binary localization \u2014 PEER",
           "status": "complete_recovered_reviewed_source_input",
           "complete_question_or_input": true,
           "page_sha256": "033e8421fbed4b747b7880e053199119766169ecd99fd1d810974d8b8abba49f",
@@ -7242,7 +7242,7 @@
           "task_id": "P03",
           "page_id": "P03",
           "page_path": "reports/questions/P03.md",
-          "dataset": "DeepLoc subcellular localization — PEER/ProtST",
+          "dataset": "DeepLoc subcellular localization \u2014 PEER/ProtST",
           "status": "complete_saved_request_text",
           "complete_question_or_input": true,
           "page_sha256": "5762eb2a4fff298d935b84c794dc6126a8a6801bbd6d327f5575df98a7f4cbbf",
@@ -7259,7 +7259,7 @@
           "task_id": "P04",
           "page_id": "P04",
           "page_path": "reports/questions/P04.md",
-          "dataset": "Envision beta-lactamase activity — PEER",
+          "dataset": "Envision beta-lactamase activity \u2014 PEER",
           "status": "complete_case_unavailable",
           "complete_question_or_input": false,
           "page_sha256": "c7d7d8810bbc3f83d70a1f27979f1ef1040f22ead769534261f3ef556ac1bfd4",
@@ -7271,7 +7271,7 @@
           "task_id": "P05",
           "page_id": "P05",
           "page_path": "reports/questions/P05.md",
-          "dataset": "AAV fitness — FLIP",
+          "dataset": "AAV fitness \u2014 FLIP",
           "status": "complete_case_unavailable",
           "complete_question_or_input": false,
           "page_sha256": "e6472c8b7124a1dde1d63a34deadd9e31a33e9b494d6bdb92de817c0b31ee76e",
@@ -7283,7 +7283,7 @@
           "task_id": "P06",
           "page_id": "P06",
           "page_path": "reports/questions/P06.md",
-          "dataset": "Meltome thermostability — FLIP",
+          "dataset": "Meltome thermostability \u2014 FLIP",
           "status": "complete_saved_request_text",
           "complete_question_or_input": true,
           "page_sha256": "0b28f0330c9d2dd04525f0b940e4ce33903ed25cdea3a40908062856da492fa0",
@@ -7300,7 +7300,7 @@
           "task_id": "P07",
           "page_id": "P07",
           "page_path": "reports/questions/P07.md",
-          "dataset": "GFP fluorescence — TAPE",
+          "dataset": "GFP fluorescence \u2014 TAPE",
           "status": "complete_saved_request_text",
           "complete_question_or_input": true,
           "page_sha256": "105efc497c696ecad08efaeed5d886e5c5c9ec98271d348e3be3f374300bf96b",
@@ -7317,7 +7317,7 @@
           "task_id": "P08",
           "page_id": "P08",
           "page_path": "reports/questions/P08.md",
-          "dataset": "Protein folding stability — TAPE",
+          "dataset": "Protein folding stability \u2014 TAPE",
           "status": "complete_saved_request_text",
           "complete_question_or_input": true,
           "page_sha256": "6b9c7324a61c81eca877139bbceb6b99eaa31b0ee1564ca019b2c46fef301cd7",
@@ -7334,7 +7334,7 @@
           "task_id": "P09",
           "page_id": "P09",
           "page_path": "reports/questions/P09.md",
-          "dataset": "Stability classification — NatureLM-style adaptation",
+          "dataset": "Stability classification \u2014 NatureLM-style adaptation",
           "status": "derived_score_no_separate_question",
           "complete_question_or_input": false,
           "page_sha256": "e3235ee4779a4908e160ff40c3db129e8091e80d7ac026f684325ca3971571f8",
@@ -7346,7 +7346,7 @@
           "task_id": "P10",
           "page_id": "P10",
           "page_path": "reports/questions/P10.md",
-          "dataset": "Human protein interactions — PEER",
+          "dataset": "Human protein interactions \u2014 PEER",
           "status": "complete_recovered_reviewed_source_input",
           "complete_question_or_input": true,
           "page_sha256": "65889d1ff4ede3690c5effe5f7e0ccfba672cd98fe2dc1081dd94dfdb1e8d26b",
@@ -7368,7 +7368,7 @@
           "task_id": "P11",
           "page_id": "P11",
           "page_path": "reports/questions/P11.md",
-          "dataset": "Yeast protein interactions — PEER",
+          "dataset": "Yeast protein interactions \u2014 PEER",
           "status": "complete_recovered_reviewed_source_input",
           "complete_question_or_input": true,
           "page_sha256": "fa533dee9149cb2d864f06e3f2f44e9fe2933a24abacfda2ed57986daf3ad204",
@@ -7390,7 +7390,7 @@
           "task_id": "P16",
           "page_id": "P16",
           "page_path": "reports/questions/P16.md",
-          "dataset": "Enzyme reaction classes — IEConv/ProtST",
+          "dataset": "Enzyme reaction classes \u2014 IEConv/ProtST",
           "status": "complete_saved_request_text",
           "complete_question_or_input": true,
           "page_sha256": "37a30da87076183a514eb3b4eb20eef686e6bdd17fe9b129d15c8b589d83e873",
@@ -7419,7 +7419,7 @@
           "task_id": "P19",
           "page_id": "P19",
           "page_path": "reports/questions/P19.md",
-          "dataset": "PFArena T1 — single-mutant generation",
+          "dataset": "PFArena T1 \u2014 single-mutant generation",
           "status": "complete_prepared_reviewed_input_not_dispatched",
           "complete_question_or_input": true,
           "page_sha256": "dd7d9f6247a9f6fa216ffcfe4c56326f7b22c025139ae08e3676b971c94ff725",
@@ -7437,7 +7437,7 @@
           "task_id": "P21",
           "page_id": "P21",
           "page_path": "reports/questions/P21.md",
-          "dataset": "PFArena T3 — anchor-informed ranking",
+          "dataset": "PFArena T3 \u2014 anchor-informed ranking",
           "status": "source_instruction_excerpt_only",
           "complete_question_or_input": false,
           "page_sha256": "aa700be44da8b5fee6b71926b700dcad440ad32939ee39459c812180c0491424",
@@ -7451,7 +7451,7 @@
           "task_id": "P22",
           "page_id": "P22",
           "page_path": "reports/questions/P22.md",
-          "dataset": "PFArena T4 — single-mutant-informed ranking",
+          "dataset": "PFArena T4 \u2014 single-mutant-informed ranking",
           "status": "source_instruction_excerpt_only",
           "complete_question_or_input": false,
           "page_sha256": "5ea50631637298e652263182fd9e98f1a491df61c3656d2475f69eb905cb0708",
@@ -7465,7 +7465,7 @@
           "task_id": "P23",
           "page_id": "P23",
           "page_path": "reports/questions/P23.md",
-          "dataset": "Mol-Instructions — protein function",
+          "dataset": "Mol-Instructions \u2014 protein function",
           "status": "complete_recovered_reviewed_source_input",
           "complete_question_or_input": true,
           "page_sha256": "2bde8874e0789ec8d1c55a70dafac860508985d78985c6c1d3ece44416340ef3",
@@ -7487,7 +7487,7 @@
           "task_id": "P24",
           "page_id": "P24",
           "page_path": "reports/questions/P24.md",
-          "dataset": "Mol-Instructions — catalytic activity",
+          "dataset": "Mol-Instructions \u2014 catalytic activity",
           "status": "complete_recovered_reviewed_source_input",
           "complete_question_or_input": true,
           "page_sha256": "e693cd60c905456cd1e2318c2e2c7ca1255e251c879c621261278f069c8b5ea9",
@@ -7509,7 +7509,7 @@
           "task_id": "P25",
           "page_id": "P25",
           "page_path": "reports/questions/P25.md",
-          "dataset": "Mol-Instructions — domains and motifs",
+          "dataset": "Mol-Instructions \u2014 domains and motifs",
           "status": "complete_recovered_reviewed_source_input",
           "complete_question_or_input": true,
           "page_sha256": "d21f7664bc7a1ca66970165afb0b88cd3ed202331b2f26d5af8c14394e33f9da",
@@ -7531,7 +7531,7 @@
           "task_id": "P26",
           "page_id": "P26",
           "page_path": "reports/questions/P26.md",
-          "dataset": "Mol-Instructions — general function",
+          "dataset": "Mol-Instructions \u2014 general function",
           "status": "complete_recovered_reviewed_source_input",
           "complete_question_or_input": true,
           "page_sha256": "935aedac16c60a015291346f05f15f23ec910f537543ed9f7d055240e8defe08",
@@ -7553,7 +7553,7 @@
           "task_id": "P27",
           "page_id": "P27",
           "page_path": "reports/questions/P27.md",
-          "dataset": "NatureLM — protein characteristics description",
+          "dataset": "NatureLM \u2014 protein characteristics description",
           "status": "complete_case_unavailable",
           "complete_question_or_input": false,
           "page_sha256": "ab9c12d0be1b86a8f4d930ec215b37d813fff6c1b5ba02bab12646044e48fc12",
@@ -7936,7 +7936,7 @@
     },
     {
       "id": "P01",
-      "dataset": "DeepSol solubility — PEER",
+      "dataset": "DeepSol solubility \u2014 PEER",
       "origin": "exact_published_task_definition_excerpt",
       "question_excerpt_sha256": "22cfe490626298d3ca7b5eb312e4d3f31050ec516dbc515a169af812d53427aa",
       "verbatim": true,
@@ -7949,7 +7949,7 @@
     },
     {
       "id": "P02",
-      "dataset": "DeepLoc binary localization — PEER",
+      "dataset": "DeepLoc binary localization \u2014 PEER",
       "origin": "exact_published_task_definition_excerpt",
       "question_excerpt_sha256": "d2499d2ae9c31cc9c3468dea562ba30ab4e26ff11ed98ed2205146c0ecdfca36",
       "verbatim": true,
@@ -7962,7 +7962,7 @@
     },
     {
       "id": "P03",
-      "dataset": "DeepLoc subcellular localization — PEER/ProtST",
+      "dataset": "DeepLoc subcellular localization \u2014 PEER/ProtST",
       "origin": "exact_dispatched_instruction_excerpt",
       "question_excerpt_sha256": "ba307f4051a5a82a672beb696b2a84217538cc2e835bd4679410c9b96c9ea7dd",
       "verbatim": true,
@@ -7975,7 +7975,7 @@
     },
     {
       "id": "P04",
-      "dataset": "Envision beta-lactamase activity — PEER",
+      "dataset": "Envision beta-lactamase activity \u2014 PEER",
       "origin": "not_an_authored_question",
       "question_excerpt_sha256": "ce23c8fa6e432e1441c639b24a21662fc40d8fdfc992c79fcce172fa9344da20",
       "verbatim": false,
@@ -7988,7 +7988,7 @@
     },
     {
       "id": "P05",
-      "dataset": "AAV fitness — FLIP",
+      "dataset": "AAV fitness \u2014 FLIP",
       "origin": "not_an_authored_question",
       "question_excerpt_sha256": "912aff9e3e059308e8dd53925f3c52a964b42514195522b945b13e3054140537",
       "verbatim": false,
@@ -8001,7 +8001,7 @@
     },
     {
       "id": "P06",
-      "dataset": "Meltome thermostability — FLIP",
+      "dataset": "Meltome thermostability \u2014 FLIP",
       "origin": "exact_dispatched_instruction_excerpt",
       "question_excerpt_sha256": "d1dbc50a61358312d2a301bbb151ba072d10856c662cc2baac2edcb8e25055a5",
       "verbatim": true,
@@ -8014,7 +8014,7 @@
     },
     {
       "id": "P07",
-      "dataset": "GFP fluorescence — TAPE",
+      "dataset": "GFP fluorescence \u2014 TAPE",
       "origin": "exact_dispatched_instruction_excerpt",
       "question_excerpt_sha256": "5729eb184e5c1d1a7b81cbc6e8b7ba14c413e23b328bd280b64e6c85053080e2",
       "verbatim": true,
@@ -8027,7 +8027,7 @@
     },
     {
       "id": "P08",
-      "dataset": "Protein folding stability — TAPE",
+      "dataset": "Protein folding stability \u2014 TAPE",
       "origin": "exact_dispatched_instruction_excerpt",
       "question_excerpt_sha256": "41c634fa72f4a44cc225c1069289658d446e4c4af25de1e6dd9487a3fb5af28e",
       "verbatim": true,
@@ -8040,7 +8040,7 @@
     },
     {
       "id": "P09",
-      "dataset": "Stability classification — NatureLM-style adaptation",
+      "dataset": "Stability classification \u2014 NatureLM-style adaptation",
       "origin": "not_an_authored_question",
       "question_excerpt_sha256": "eb7a79df570b58d73d49d9a85ea7c42502b3238e59d03b7b279224ac9aa200a3",
       "verbatim": false,
@@ -8053,7 +8053,7 @@
     },
     {
       "id": "P10",
-      "dataset": "Human protein interactions — PEER",
+      "dataset": "Human protein interactions \u2014 PEER",
       "origin": "exact_published_task_definition_excerpt",
       "question_excerpt_sha256": "92e36bd17d78d01c165e5a75fff2108a23935b15a6e90c02e8d33d62e138bc6a",
       "verbatim": true,
@@ -8066,7 +8066,7 @@
     },
     {
       "id": "P11",
-      "dataset": "Yeast protein interactions — PEER",
+      "dataset": "Yeast protein interactions \u2014 PEER",
       "origin": "exact_published_task_definition_excerpt",
       "question_excerpt_sha256": "cac243ba184d42955307931a82faf6ee0b79a29d6998fb2e395b925617108aeb",
       "verbatim": true,
@@ -8079,7 +8079,7 @@
     },
     {
       "id": "P16",
-      "dataset": "Enzyme reaction classes — IEConv/ProtST",
+      "dataset": "Enzyme reaction classes \u2014 IEConv/ProtST",
       "origin": "exact_dispatched_instruction_excerpt",
       "question_excerpt_sha256": "a455fa4bf8ca3f757d75e8818beb2681acb2fc30cbdd032852c31367522c3293",
       "verbatim": true,
@@ -8105,7 +8105,7 @@
     },
     {
       "id": "P19",
-      "dataset": "PFArena T1 — single-mutant generation",
+      "dataset": "PFArena T1 \u2014 single-mutant generation",
       "origin": "exact_native_prompt_template_excerpt_not_dispatched",
       "question_excerpt_sha256": "c1d829aaa437ae8941ee47f5c2a17560ae01cef413b82bd2d2e8a4cb3064cd47",
       "verbatim": true,
@@ -8118,7 +8118,7 @@
     },
     {
       "id": "P21",
-      "dataset": "PFArena T3 — anchor-informed ranking",
+      "dataset": "PFArena T3 \u2014 anchor-informed ranking",
       "origin": "exact_native_prompt_template_excerpt_not_dispatched",
       "question_excerpt_sha256": "4faad28033802c0de7677b99ac2949e15a32086c86c005b71be1de845603f519",
       "verbatim": true,
@@ -8131,7 +8131,7 @@
     },
     {
       "id": "P22",
-      "dataset": "PFArena T4 — single-mutant-informed ranking",
+      "dataset": "PFArena T4 \u2014 single-mutant-informed ranking",
       "origin": "exact_native_prompt_template_excerpt_not_dispatched",
       "question_excerpt_sha256": "4faad28033802c0de7677b99ac2949e15a32086c86c005b71be1de845603f519",
       "verbatim": true,
@@ -8144,7 +8144,7 @@
     },
     {
       "id": "P23",
-      "dataset": "Mol-Instructions — protein function",
+      "dataset": "Mol-Instructions \u2014 protein function",
       "origin": "exact_published_case_instruction_excerpt",
       "question_excerpt_sha256": "c659ea31f8010451f6d33acdaf231950ea795c3960a1697ee3d97551eced1554",
       "verbatim": true,
@@ -8157,7 +8157,7 @@
     },
     {
       "id": "P24",
-      "dataset": "Mol-Instructions — catalytic activity",
+      "dataset": "Mol-Instructions \u2014 catalytic activity",
       "origin": "exact_published_case_instruction",
       "question_excerpt_sha256": "f3484c1d46de48e6d452127c4f9a0365f950f616635023c7d1234e8c5f2c7eb7",
       "verbatim": true,
@@ -8170,7 +8170,7 @@
     },
     {
       "id": "P25",
-      "dataset": "Mol-Instructions — domains and motifs",
+      "dataset": "Mol-Instructions \u2014 domains and motifs",
       "origin": "exact_published_case_instruction",
       "question_excerpt_sha256": "df56c3640dd01128a6e9ae9c2e9b5f0eb98c06fe53bffdee6175a4efa8ac717f",
       "verbatim": true,
@@ -8183,7 +8183,7 @@
     },
     {
       "id": "P26",
-      "dataset": "Mol-Instructions — general function",
+      "dataset": "Mol-Instructions \u2014 general function",
       "origin": "exact_published_case_instruction",
       "question_excerpt_sha256": "128dc76897c74b33db47db63f77489aa3501627201b207d144dae9c5226df021",
       "verbatim": true,
@@ -8196,7 +8196,7 @@
     },
     {
       "id": "P27",
-      "dataset": "NatureLM — protein characteristics description",
+      "dataset": "NatureLM \u2014 protein characteristics description",
       "origin": "not_an_authored_question",
       "question_excerpt_sha256": "3bbc87343922e4edd93c94a10e9128e442873acf2ac170ac7e35c00b020262fc",
       "verbatim": false,
@@ -8353,12 +8353,12 @@
   ],
   "presentation_names_updated_at_pacific": "2026-10-20T15:25:37.396885-07:00",
   "presentation_display_names": {
-    "Literature QA — LitQA2 (B01)": "LAB-Bench: LitQA2",
-    "Database QA — DbQA (B02)": "LAB-Bench: DbQA",
-    "Supplementary-information QA — SuppQA (B03)": "LAB-Bench: SuppQA",
-    "Figure QA — FigQA (B04)": "LAB-Bench: FigQA",
-    "Table QA — TableQA (B05)": "LAB-Bench: TableQA",
-    "Sequence QA — SeqQA (B07)": "LAB-Bench: SeqQA",
+    "Literature QA \u2014 LitQA2 (B01)": "LAB-Bench: LitQA2",
+    "Database QA \u2014 DbQA (B02)": "LAB-Bench: DbQA",
+    "Supplementary-information QA \u2014 SuppQA (B03)": "LAB-Bench: SuppQA",
+    "Figure QA \u2014 FigQA (B04)": "LAB-Bench: FigQA",
+    "Table QA \u2014 TableQA (B05)": "LAB-Bench: TableQA",
+    "Sequence QA \u2014 SeqQA (B07)": "LAB-Bench: SeqQA",
     "Cloning scenarios (B08)": "LAB-Bench: Cloning Scenarios",
     "Protein solubility (P01)": "PEER: Protein solubility (DeepSol)",
     "Binary protein localization (P02)": "PEER: Binary localization (DeepLoc)",
@@ -8368,9 +8368,9 @@
     "Thermostability (P06)": "FLIP: Thermostability (Meltome)",
     "GFP fluorescence (P07)": "TAPE: GFP fluorescence",
     "Protein stability (P08)": "TAPE: Protein stability",
-    "Stability classification (P09)†": "NatureLM: Stability classification†",
-    "Human protein interactions (P10)": "PEER: Human protein–protein interaction",
-    "Yeast protein interactions (P11)": "PEER: Yeast protein–protein interaction",
+    "Stability classification (P09)\u2020": "NatureLM: Stability classification\u2020",
+    "Human protein interactions (P10)": "PEER: Human protein\u2013protein interaction",
+    "Yeast protein interactions (P11)": "PEER: Yeast protein\u2013protein interaction",
     "Reaction classification (P16)": "IEConv / ProtST: Enzyme reaction classification",
     "ProteinGym substitutions (P17)": "ProteinGym: Substitutions",
     "PFArena T1 (P19)": "PFArena: T1 single-mutant generation",
@@ -8388,16 +8388,16 @@
     "Heme-binding case study (P39)": "NatureLM: Heme-binding protein design",
     "RAbD redesign (P40)": "RAbD: Antibody CDR-H3 redesign",
     "Structural design demonstration (P41)": "Proteo-R1: Structural design demonstration",
-    "GFP candidate generation (P42)‡": "STRIDE: GFP candidate generation‡",
-    "Drug–target interaction — BindingDB (P43)": "DrugBAN: Drug–target interaction (BindingDB)",
-    "Drug–target interaction — BioSNAP (P43)": "DrugBAN: Drug–target interaction (BioSNAP)",
-    "Drug–target interaction — Human (P43)": "DrugBAN: Drug–target interaction (Human)",
+    "GFP candidate generation (P42)\u2021": "STRIDE: GFP candidate generation\u2021",
+    "Drug\u2013target interaction \u2014 BindingDB (P43)": "DrugBAN: Drug\u2013target interaction (BindingDB)",
+    "Drug\u2013target interaction \u2014 BioSNAP (P43)": "DrugBAN: Drug\u2013target interaction (BioSNAP)",
+    "Drug\u2013target interaction \u2014 Human (P43)": "DrugBAN: Drug\u2013target interaction (Human)",
     "VQA-RAD (V01)": "VQA-RAD",
     "SLAKE English (V02)": "SLAKE: English",
     "PathVQA (V03)": "PathVQA",
     "ImageCLEF-VQA 2019 (V04)": "ImageCLEF-VQA 2019",
     "PMC-VQA (V05)": "PMC-VQA",
-    "Visual extraction — Ryze/SlideVQA (V07)": "SlideVQA: Slide-deck question answering (Ryze)"
+    "Visual extraction \u2014 Ryze/SlideVQA (V07)": "SlideVQA: Slide-deck question answering (Ryze)"
   },
   "benchmark_family_names_updated_at_pacific": "2026-10-20T15:30:50.289899-07:00",
   "benchmark_family_sources": [
@@ -8439,5 +8439,24 @@
     "prediction_lock_sha256": "fb3be72e10153b3ea67ab30cfb05b0624a844b47c8a6ea906a955cd136f7a179",
     "new_inference_calls_by_reporting": 0,
     "new_scoring_calls_by_reporting": 0
+  },
+  "latest_manual_reconciliation_at_pacific": "2026-10-21T17:52:37.899775-07:00",
+  "qualified_partial_results": {
+    "P19": {
+      "planned_assays": 34,
+      "native_panel_assays": 123,
+      "NMS@40": 0.8537157459614935,
+      "Recall@40": 0.036029411764705886,
+      "full_native_benchmark_complete": false,
+      "score_path": ".local/catalog_execution_2026-10-20/tasks/P19/standalone_execution_v4/runtime/benchmark/scores.json"
+    },
+    "P35": {
+      "native_reference_model": "ProtST_ESM1b",
+      "qualified_corpus_inputs": 34464,
+      "complete_query_rankings": 5,
+      "primary_correctness_metric": null,
+      "Qwen_result": false,
+      "published_commit": "5a79decb9c70d87451d9a2a76baf6ef6a6b8efd8"
+    }
   }
 }
