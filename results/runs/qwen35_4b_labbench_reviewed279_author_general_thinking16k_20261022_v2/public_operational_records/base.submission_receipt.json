@@ -1,0 +1,69 @@
+{
+  "stage": "submitted_not_model_dispatch_evidence",
+  "job_id": "247045",
+  "model_key": "base",
+  "plan_sha256": "9bebb13605b9eddb34f97ea89961e8eff1d2a0a91df7974be315a6e1ab889192",
+  "grant_sha256": "eecb00098ec96b2f8f9e1fc52edd4877792f5f2e8c4afe618d3fb6cc39886510",
+  "sbatch_invoked": true,
+  "returncode": 0,
+  "requested_gpu_count": 1,
+  "role": "allowlisted_public_submission_provenance",
+  "private_original_sha256": "eb2f6b4febfa193aabe5bf587481cfed2268a25314165239d6b072eb31b99c65",
+  "public_redaction_applied": true,
+  "unrelated_account_job_inventory_included": false,
+  "private_stdout_stderr_included": false,
+  "GPU_accounting": {
+    "project_GPU_ceiling": 8,
+    "project_requested_GPUs": 6
+  },
+  "actual_both_model_neutral_proof": {
+    "passed": true,
+    "receipt_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/recommended_sampling_v2/neutral_validation/receipt.json",
+    "receipt_sha256": "e58cdc304c76b24e5bc5a4ac5d5c63b4ad366f7cee1eca517045cf755c0a5bce",
+    "job_id": "247037",
+    "plan_sha256": "e106b7b8ca3529f6b748dabec79a7271b4e1a6d6ac75d633d782890ac31bc4ad",
+    "shared_contract_sha256": "00f42f82e48d9dbb4cebcf8c2a5c8631c45092e80a94a12af9b0b58cf451a83d",
+    "neutral_grant_sha256": "681dfa649d2e8ba14226d0cd381d6c9875a1c65adb2d9b252ec9b95b1e94b79d",
+    "models": {
+      "base": {
+        "completion": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/recommended_sampling_v2/neutral_validation/base/completion.json",
+        "completion_sha256": "685c4d71ec56207513a2d288df48faea5de6e4a1cf88932dabb2fe0255f9145d",
+        "model": "Qwen/Qwen3.5-4B-Base",
+        "revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+        "artifact_count": 9
+      },
+      "posttrained": {
+        "completion": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/recommended_sampling_v2/neutral_validation/posttrained/completion.json",
+        "completion_sha256": "30a540da384e12cdf7588b1490d25509f1d69c170a99150ddf9bf1620f48afa7",
+        "model": "Qwen/Qwen3.5-4B",
+        "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+        "artifact_count": 9
+      }
+    },
+    "synthetic_only": true,
+    "biological_dispatch_admitted_by_proof": false
+  },
+  "predecessors": {
+    "role": "fresh_original_terminal_and_output_locks_free",
+    "jobs": {
+      "246445": {
+        "job_id": "246445",
+        "state": "COMPLETED",
+        "exit_code": "0:0"
+      },
+      "246714": {
+        "job_id": "246714",
+        "state": "COMPLETED",
+        "exit_code": "0:0"
+      }
+    },
+    "held_old_output_locks": [
+      "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/runtime/base/worker.lock",
+      "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/runtime/base/run.lock",
+      "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/runtime/posttrained/worker.lock",
+      "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/runtime/posttrained/run.lock"
+    ],
+    "old_conditions_changed": false,
+    "old_submitted_jobs_repeated": false
+  }
+}

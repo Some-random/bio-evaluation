@@ -1,0 +1,17 @@
+{
+  "plan_sha256": "9bebb13605b9eddb34f97ea89961e8eff1d2a0a91df7974be315a6e1ab889192",
+  "at_pacific": "2026-10-22T14:17:51.596145-07:00",
+  "both_seals_verified_before_reference_read": true,
+  "seals": {
+    "base": {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/recommended_sampling_v2/runtime/base/prediction_lock.json",
+      "sha256": "25ff9adaa2d082205dd3bc69b4e636dee4ae55be18707e7a8a1d8195351ecb1e",
+      "case_count": 279
+    },
+    "posttrained": {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/recommended_sampling_v2/runtime/posttrained/prediction_lock.json",
+      "sha256": "04b892ba8f390650e4669f2d3670483e34d5201ca07dbbee3c78ae3610f2d665",
+      "case_count": 279
+    }
+  }
+}
