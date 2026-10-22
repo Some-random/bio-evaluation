@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_at_pacific": "2026-10-21T15:31:54.513033-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "d357982460532d01b969e6fe4935845c16700d6eb001b30c9bd80cd19a9b09f8",
+  "report_sha256": "fa9105a2ef8344b04d3f4a72d90b1f861e6da80c9a8ed983732de84e361016ac",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
@@ -8487,7 +8487,10 @@
     "rows": 46,
     "all_previous_values_and_links_preserved": true,
     "horizontal_scroll_reduction": "stacked labeled scores and wrapped long sequences",
-    "no_website_or_schedule_created": true
+    "no_website_or_schedule_created": true,
+    "section_separator_rows": 1,
+    "row_order": "Text evaluations first, followed by a separator row and Text + image evaluations; prior order retained within each group",
+    "all_prior_evaluation_rows_preserved_verbatim": true
   },
   "clarification_updated_at_pacific": "2026-10-21T22:30:20.156816-07:00",
   "input_modality": {
@@ -8688,5 +8691,6 @@
     "P41": "Qwen sequence recovery on three released examples, no Loop-RMSD/IMP evaluation",
     "PFArena": "Original and later disjoint completed cohorts remain separately scored",
     "ROUGE_L": "Text-overlap metric, not biological correctness"
-  }
+  },
+  "modality_order_updated_at_pacific": "2026-10-21T22:35:44.151316-07:00"
 }
