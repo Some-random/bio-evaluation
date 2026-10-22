@@ -1,0 +1,18 @@
+{
+  "evaluation": "PFArena \u2014 single-mutant-informed ranking",
+  "scope": "Reviewed vertebrate domain-stability subset:4/29 assays",
+  "model": "Qwen3.8-27B",
+  "Qwen_native_metrics": {
+    "NDCG": 0.8796074581537591,
+    "NMS@5": 0.8731816761082669,
+    "Recall@5": 0.15000000000000002,
+    "spearman": 0.16351589335243225
+  },
+  "native_scoring_status": "completed_native_scored_reviewed_subset",
+  "GPT_models": "Not evaluated on this subset",
+  "full_native_benchmark_complete": false,
+  "full_catalog_complete": false,
+  "measurement_interpretation": "Retrospective native comparison with existing assay measurements; no experimental validation of proposals.",
+  "scores_sha256": "56ce59d4869233f752622e4d2d5068ae709abf99a0f4bc7f163242b61cf8596f",
+  "benchmark_prediction_lock_sha256": "d8ff16cbb1b2556d5994c4581528ff96c922dc540935447d21c161b779f82b8b"
+}

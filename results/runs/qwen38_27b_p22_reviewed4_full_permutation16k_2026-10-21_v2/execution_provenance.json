@@ -1,0 +1,28 @@
+{
+  "job_id": "245731",
+  "Slurm_terminal_accounting": "245731|COMPLETED|0:0|00:10:23|billing=10,cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n245731.batch|COMPLETED|0:0|00:10:23|cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n245731.extern|COMPLETED|0:0|00:10:23|billing=10,cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n",
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "dtype": "bfloat16",
+  "tensor_parallel_size": 1,
+  "uniform_output_tokens": 16384,
+  "context_limit": 65536,
+  "condition": "PFARENA_T4_REVIEWED_VERTEBRATE_DOMAIN_CANONICAL_JSON_PERMUTATION_V2",
+  "model_runner": "legacy_V1_explicit",
+  "custom_logits_processor": "p22_permutation_logits:P22PermutationLogitsProcessor",
+  "mandatory_plugin_import_sha256": "9ae722092f53cab771b82a7af0574c27c9069aec8d5b72d2ee049e2123e79b6a",
+  "packages": {
+    "vllm": "0.32.0",
+    "torch": "2.13.0",
+    "transformers": "5.17.0",
+    "triton": "3.7.1",
+    "flashinfer-python": "0.7.0.post1"
+  },
+  "plan_sha256": "b6fb0d3dc08a011028815a668b408396954737b0d0501f33c4322752e3b00845",
+  "root_admission_sha256": "798645b6bb6df5309c2377222105daaa9d22d81addac2ef6388378c514bf1183",
+  "native_scorer_sha256": "0cd300e75b3398bee1cb39856af231b3c4a34e2943a8cb6dd8271937a60a9f73",
+  "native_prompt_and_scorer_unchanged": true,
+  "source_scope_sha256": "89070030e6c6de490d053bfe5b0735e4c5f483de2900b676399552a35fd6e8f6",
+  "native_measurement_CSV_files_packaged": false,
+  "model_weights_or_runtime_environment_packaged": false
+}

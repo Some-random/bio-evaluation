@@ -1,0 +1,18 @@
+{
+  "benchmark": "PFArena",
+  "task": "Single-mutant-informed ranking,reviewed vertebrate domain-stability subset",
+  "admitted_assays": 4,
+  "native_panel_assays": 29,
+  "remaining_assays_not_admitted_to_this_condition": 25,
+  "human_assays": 3,
+  "chicken_assays": 1,
+  "approved_case_ids": [
+    "P22::MEGASCALE_processed_dataset2_3_1F0M.pdb_protein_stability",
+    "P22::MEGASCALE_processed_dataset2_3_1O6X.pdb_protein_stability",
+    "P22::MEGASCALE_processed_dataset2_3_2ROT.pdb_protein_stability",
+    "P22::MEGASCALE_processed_dataset2_3_3DKM.pdb_protein_stability"
+  ],
+  "full_native_benchmark_complete": false,
+  "full_catalog_complete": false,
+  "no_new_head_training": true
+}
