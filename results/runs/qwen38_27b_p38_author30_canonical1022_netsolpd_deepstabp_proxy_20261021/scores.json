@@ -1,0 +1,64 @@
+{
+  "DeepSTABp": {
+    "assumed_measurement_context": "Lysate",
+    "condition": "P38_DEEPSTABP_TM37_LYSATE_PROXY_V1",
+    "delivered_only_mean_predicted_tm_c": 57.795222808982615,
+    "evaluable": 10,
+    "experimental_biological_validation": false,
+    "full_cohort_mean_predicted_tm_c": 57.795222808982615,
+    "hypothetical_growth_temperature_c": 37,
+    "invalid": 0,
+    "missing": 0,
+    "native_naturelm_metric": false,
+    "native_stability_class_probability": false,
+    "planned": 10
+  },
+  "NetSolP_D": {
+    "condition": "P38_NETSOLP_D_ECOLI_SOLUBILITY_PROXY_V1",
+    "evaluable": 20,
+    "experimental_biological_validation": false,
+    "full_condition_complete": true,
+    "invalid": 0,
+    "missing": 0,
+    "native_naturelm_metric": false,
+    "per_group": {
+      "insoluble": {
+        "all_planned_mean_lower_bound": 0.48477978347800843,
+        "all_planned_mean_upper_bound": 0.4847797834780085,
+        "delivered_only_mean_desired_proxy": 0.48477978347800843,
+        "evaluable": 10,
+        "full_group_mean_desired_proxy": 0.48477978347800843,
+        "invalid": 0,
+        "missing": 0,
+        "planned": 10
+      },
+      "soluble": {
+        "all_planned_mean_lower_bound": 0.5323689879718287,
+        "all_planned_mean_upper_bound": 0.5323689879718287,
+        "delivered_only_mean_desired_proxy": 0.5323689879718287,
+        "evaluable": 10,
+        "full_group_mean_desired_proxy": 0.5323689879718287,
+        "invalid": 0,
+        "missing": 0,
+        "planned": 10
+      }
+    },
+    "planned": 20,
+    "reference_comparison_available": false
+  },
+  "at_pacific": "2026-10-21T21:32:12.801831-07:00",
+  "declared_thermal_resource_ceiling": 1022,
+  "evaluator_attempts": 30,
+  "evaluator_errors": 0,
+  "evaluator_prediction_lock_sha256": "c2431f30c4618671e960405d40a94444df118a5f28cc868da89d3ba7b28768da",
+  "experimental_validation": false,
+  "full_proxy_condition_complete": true,
+  "generation_prediction_lock_sha256": "d17fd8d1565fcfd5abef1b0ba9eff0a563725c62e8da3f9d7ee2ae964dfb87f8",
+  "model_calls_by_aggregator": 0,
+  "native_NatureLM_score": false,
+  "not_evaluated": 0,
+  "planned": 30,
+  "sequence_truncation": false,
+  "successes": 30,
+  "terminal": 30
+}
