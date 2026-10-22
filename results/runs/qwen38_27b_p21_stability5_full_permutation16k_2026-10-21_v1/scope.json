@@ -1,0 +1,20 @@
+{
+  "benchmark": "PFArena",
+  "task": "Anchor-informed ranking,reviewed eukaryote domain-stability subset",
+  "admitted_assays": 5,
+  "native_panel_assays": 67,
+  "remaining_assays_outside_this_condition": 62,
+  "remaining_input_unreviewed": 54,
+  "completed8_immutable_excluded": 8,
+  "source_backgrounds": "Algal centrin, social amoeba MlcC, frog calmodulin and two chicken-spectrin-derived chimeric domains. Native fragments retained; not asserted complete unmodified PDB chains.",
+  "approved_case_ids": [
+    "P21::MEGASCALE_processed_dataset2_3_2AMI.pdb_protein_stability",
+    "P21::MEGASCALE_processed_dataset2_3_2KXD.pdb_protein_stability",
+    "P21::MEGASCALE_processed_dataset2_3_2M8U.pdb_protein_stability",
+    "P21::MEGASCALE_processed_dataset2_3_2ROT.pdb_protein_stability",
+    "P21::MEGASCALE_processed_dataset2_3_2RRT.pdb_protein_stability"
+  ],
+  "full_native_benchmark_complete": false,
+  "full_catalog_complete": false,
+  "no_new_head_training": true
+}

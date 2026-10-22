@@ -1,0 +1,28 @@
+{
+  "job_id": "245880",
+  "Slurm_terminal_accounting": "245880|COMPLETED|0:0|00:07:43|billing=10,cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n245880.batch|COMPLETED|0:0|00:07:43|cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n245880.extern|COMPLETED|0:0|00:07:43|billing=10,cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n",
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "dtype": "bfloat16",
+  "tensor_parallel_size": 1,
+  "uniform_output_tokens": 16384,
+  "context_limit": 65536,
+  "condition": "PFARENA_T3_REVIEWED_EUKARYOTE_DOMAIN_STABILITY5_FULL_PERMUTATION_V1",
+  "model_runner": "legacy_V1_explicit",
+  "custom_logits_processor": "p21_permutation_logits:P21PermutationLogitsProcessor",
+  "mandatory_plugin_import_sha256": "7b6f5e91b09381b17108f952b5899abe472fed4d5f6db4aee7e54d293f82897c",
+  "packages": {
+    "vllm": "0.32.0",
+    "torch": "2.13.0",
+    "transformers": "5.17.0",
+    "triton": "3.7.1",
+    "flashinfer-python": "0.7.0.post1"
+  },
+  "plan_sha256": "9c747e867094d237558ec3c0d566ed11d6fa79374048e30ca8b63715474b0a88",
+  "root_admission_sha256": "93759827d74150cab22057ad946f5578e2e48914087d921e2efffcc9bc6ac845",
+  "native_scorer_sha256": "1c76a2015c77c222cc389489a00755b6a2e38562d942d14cd13cdd13e1e21062",
+  "native_prompt_and_scorer_unchanged": true,
+  "source_scope_sha256": "8eeeda0e3e6569f09d877a7fad009d2de07485aa792a036649c424be3178fcc5",
+  "native_measurement_CSV_files_packaged": false,
+  "model_weights_or_runtime_environment_packaged": false
+}

@@ -1,0 +1,18 @@
+{
+  "evaluation": "PFArena \u2014 anchor-informed ranking",
+  "scope": "Reviewed eukaryote domain-stability subset:5/67 assays",
+  "model": "Qwen3.8-27B",
+  "Qwen_native_metrics": {
+    "NDCG": 0.8891257994265054,
+    "NMS@5": 0.8706677244393186,
+    "Recall@5": 0.4,
+    "spearman": 0.2411394390341758
+  },
+  "native_scoring_status": "completed_native_scored_reviewed_subset",
+  "GPT_models": "Not evaluated on this subset",
+  "full_native_benchmark_complete": false,
+  "full_catalog_complete": false,
+  "measurement_interpretation": "Retrospective native comparison with existing assay measurements; no experimental validation of proposals.",
+  "scores_sha256": "4acd7c8829f7af3cf6d1ac41f6a866459bbc68b6437a38d926096b862bf69fa5",
+  "benchmark_prediction_lock_sha256": "1d4f24c1c7f01994e1a3d088ca0285cad433bbc1338d8b5a1e8e7e1d11598723"
+}
