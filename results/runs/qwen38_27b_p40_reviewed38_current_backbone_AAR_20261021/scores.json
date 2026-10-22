@@ -1,0 +1,210 @@
+{
+  "task_id": "P40",
+  "condition": "P40_REVIEWED38_CURRENT_IMGT_MASKED_BACKBONE_TEXT_AAR_V1",
+  "at_pacific": "2026-10-21T20:17:25.517581-07:00",
+  "plan_sha256": "7c95da0711ef06c865ec48f0973bd37afaa9785339f6e8f46e50f823296f5db9",
+  "planned": 38,
+  "prediction_lock_sha256": "a1639d98a3569fae9e3cade38401604e10cef3dc7a94d832b28e3463ba1e6820",
+  "primary_metric": "native_macro_CDRH3_AAR",
+  "primary_metric_value": 0.16165800189345897,
+  "native_full60_or_historical_equivalence": false,
+  "reference_access_after_complete_raw_seal": true,
+  "scope": "Fixed independently reviewed38 current-structure cases, all retained; no favorable-case metric.",
+  "coordinate_metrics_available": false,
+  "binding_or_function_assessed": false,
+  "sole_scoring_attempt": true,
+  "status": "native_AAR_scored_complete_reviewed38",
+  "native_aggregation": "Equal-weight mean of all38 per-case positional hit fractions; MEAN generate.py eval_one AAR and rabd_test np.mean(aars).",
+  "cases": [
+    {
+      "case_id": "1a2y",
+      "target_length": 10,
+      "native_AAR": 0.3
+    },
+    {
+      "case_id": "1fe8",
+      "target_length": 9,
+      "native_AAR": 0.2222222222222222
+    },
+    {
+      "case_id": "1ic7",
+      "target_length": 7,
+      "native_AAR": 0.0
+    },
+    {
+      "case_id": "1iqd",
+      "target_length": 10,
+      "native_AAR": 0.2
+    },
+    {
+      "case_id": "1n8z",
+      "target_length": 13,
+      "native_AAR": 0.23076923076923078
+    },
+    {
+      "case_id": "1uj3",
+      "target_length": 10,
+      "native_AAR": 0.3
+    },
+    {
+      "case_id": "1w72",
+      "target_length": 15,
+      "native_AAR": 0.13333333333333333
+    },
+    {
+      "case_id": "2adf",
+      "target_length": 11,
+      "native_AAR": 0.36363636363636365
+    },
+    {
+      "case_id": "2b2x",
+      "target_length": 12,
+      "native_AAR": 0.0
+    },
+    {
+      "case_id": "2vxt",
+      "target_length": 6,
+      "native_AAR": 0.16666666666666666
+    },
+    {
+      "case_id": "2xwt",
+      "target_length": 12,
+      "native_AAR": 0.16666666666666666
+    },
+    {
+      "case_id": "3bn9",
+      "target_length": 9,
+      "native_AAR": 0.0
+    },
+    {
+      "case_id": "3cx5",
+      "target_length": 15,
+      "native_AAR": 0.13333333333333333
+    },
+    {
+      "case_id": "3ffd",
+      "target_length": 11,
+      "native_AAR": 0.18181818181818182
+    },
+    {
+      "case_id": "3h3b",
+      "target_length": 13,
+      "native_AAR": 0.15384615384615385
+    },
+    {
+      "case_id": "3hi6",
+      "target_length": 13,
+      "native_AAR": 0.07692307692307693
+    },
+    {
+      "case_id": "3k2u",
+      "target_length": 11,
+      "native_AAR": 0.0
+    },
+    {
+      "case_id": "3l95",
+      "target_length": 12,
+      "native_AAR": 0.25
+    },
+    {
+      "case_id": "3mxw",
+      "target_length": 12,
+      "native_AAR": 0.0
+    },
+    {
+      "case_id": "3nid",
+      "target_length": 12,
+      "native_AAR": 0.3333333333333333
+    },
+    {
+      "case_id": "3o2d",
+      "target_length": 15,
+      "native_AAR": 0.13333333333333333
+    },
+    {
+      "case_id": "3s35",
+      "target_length": 10,
+      "native_AAR": 0.1
+    },
+    {
+      "case_id": "4cmh",
+      "target_length": 13,
+      "native_AAR": 0.0
+    },
+    {
+      "case_id": "4dtg",
+      "target_length": 14,
+      "native_AAR": 0.21428571428571427
+    },
+    {
+      "case_id": "4ffv",
+      "target_length": 10,
+      "native_AAR": 0.2
+    },
+    {
+      "case_id": "4g6j",
+      "target_length": 11,
+      "native_AAR": 0.5454545454545454
+    },
+    {
+      "case_id": "4g6m",
+      "target_length": 12,
+      "native_AAR": 0.16666666666666666
+    },
+    {
+      "case_id": "4ki5",
+      "target_length": 15,
+      "native_AAR": 0.13333333333333333
+    },
+    {
+      "case_id": "4qci",
+      "target_length": 13,
+      "native_AAR": 0.0
+    },
+    {
+      "case_id": "5b8c",
+      "target_length": 13,
+      "native_AAR": 0.46153846153846156
+    },
+    {
+      "case_id": "5bv7",
+      "target_length": 19,
+      "native_AAR": 0.15789473684210525
+    },
+    {
+      "case_id": "5d93",
+      "target_length": 9,
+      "native_AAR": 0.0
+    },
+    {
+      "case_id": "5d96",
+      "target_length": 12,
+      "native_AAR": 0.08333333333333333
+    },
+    {
+      "case_id": "5ggs",
+      "target_length": 13,
+      "native_AAR": 0.38461538461538464
+    },
+    {
+      "case_id": "5hi4",
+      "target_length": 11,
+      "native_AAR": 0.0
+    },
+    {
+      "case_id": "5j13",
+      "target_length": 15,
+      "native_AAR": 0.13333333333333333
+    },
+    {
+      "case_id": "5l6y",
+      "target_length": 15,
+      "native_AAR": 0.13333333333333333
+    },
+    {
+      "case_id": "5mes",
+      "target_length": 12,
+      "native_AAR": 0.08333333333333333
+    }
+  ]
+}
