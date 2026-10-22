@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at_pacific": "2026-10-22T01:46:25.799655-07:00",
+  "generated_at_pacific": "2026-10-22T12:04:06.198599-07:00",
   "timezone": "America/Los_Angeles",
   "scope": "Retained evaluation work and matched Qwen3.5-4B/Base protein and text-QA comparison",
   "original_retained_catalog_denominator": 57,
@@ -8,7 +8,7 @@
   "task_count": 17,
   "new_2026_benchmark_count": 5,
   "publication_target_interval_seconds": null,
-  "refresh_note": "Manual timestamped snapshot; priority_evaluations has its own current evidence time. Other task entries retain their stated observation times. Automatic publication and recurring messages remain stopped.",
+  "refresh_note": "Comparison and current runtime rows refreshed from task-local evidence; historical task entries keep their source observation times. No recurring update schedule.",
   "worker_note": "Five comparison evaluation owners, shared runtime/acquisition, durable submission queue and independent reviewers. Website publication and recurring messages remain disabled.",
   "tasks": [
     {
@@ -270,17 +270,17 @@
     {
       "task_id": "P37",
       "evaluation": "NatureLM: Unconditional protein generation",
-      "worker": "Waiting for worker slot",
+      "worker": "Unconditional-generation owner",
       "agent": null,
-      "state": "Development gate failed; benchmark not dispatched",
+      "state": "Generating",
       "active_cpu_work_verified": false,
-      "latest_result": "The actual neutral folding gate passed. Qwen saved both development replies: one normal36-residue output and one truncated at16,384 output tokens without a parsed protein. The exact worker stopped before benchmark dispatch; no benchmark score exists.",
-      "progress": "2/2 development replies;1 truncation; no benchmark dispatch",
-      "next_step": "Preserve the failed condition. Complete a separately frozen delivery repair with independent review and actual development proof before any benchmark condition; this is still unfinished work.",
-      "evidence_at_pacific": "2026-10-21T15:55:59.642428-07:00",
+      "latest_result": "Bounded-format condition is generating; no benchmark score yet.",
+      "progress": "622/1000 saved; no recorded truncations, empty finals or transport errors",
+      "next_step": "Finish unchanged generation, eligible folding, native/proxy scoring and publication.",
+      "evidence_at_pacific": "2026-10-22T11:49:27.017952-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Delivery repair queued with protein-generation lane owner",
+      "owner_of_remaining_work": "Unconditional-generation owner",
       "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
       "dedicated_assignment": {
         "task_id": "P37",
@@ -406,17 +406,17 @@
     {
       "task_id": "V07",
       "evaluation": "SlideVQA: Slide-deck question answering (Ryze)",
-      "worker": "Waiting for worker slot",
-      "agent": null,
-      "state": "Preparation milestone passed",
+      "worker": "/root/v07_execution",
+      "agent": "/root/v07_execution",
+      "state": "Generating",
       "active_cpu_work_verified": false,
-      "latest_result": "Full-dataset CPU image processing passed. Permitted-content review and actual model delivery remain.",
-      "progress": "2,215 / 2,215 processor records; 20 images per case; processor records are not model outputs",
-      "next_step": "Inspect the 2,215 question/slide inputs for permitted scope; record exact inclusions/exclusions; test actual 20-image model delivery and run the declared available condition. Full CPU preprocessing is already done.",
-      "evidence_at_pacific": "2026-10-20T21:40:31.962957-07:00",
+      "latest_result": "Actual20image delivery passed; full2215condition generating.",
+      "progress": "1896/2215 terminal;1890valid;6truncatedempty;0HTTP/transport",
+      "next_step": "Finish frozen once-only generation, seal, native scoring and narrow publication.",
+      "evidence_at_pacific": "2026-10-22T11:56:12.318550-07:00",
       "benchmark_completed_by_this_preparation": false,
       "engineering_status_available": true,
-      "owner_of_remaining_work": "Queued for an available worker; not currently running",
+      "owner_of_remaining_work": "/root/v07_execution",
       "next_step_verified_at_pacific": "2026-10-20T23:31:49.749685-07:00",
       "dedicated_assignment": {
         "task_id": "V07",
@@ -798,11 +798,11 @@
       "benchmark": "LiveProteinBench",
       "evaluation": "LiveProteinBench \u2014 sequence-only (2025)",
       "worker": "/root/liveprotein_execution",
-      "state": "separate_delivery_repair_submitted_pending_resources",
-      "latest_result": "Old thinking run stopped with16saved outcomes and15truncated empty finals; no score. New full1736 no-hidden-thinking delivery repair is submitted.",
-      "progress": "Job246368 pending resources;1736 planned,61excluded. Prior16savedoutcomes preserved in old condition.",
-      "next_step": "Pass actual neutral gate and generate the full separate repaired condition, then score once.",
-      "evidence_at_pacific": "2026-10-22T01:46:25.799655-07:00",
+      "state": "benchmark_generation_running_unsealed",
+      "latest_result": "No native score yet; original thinking failure remains preserved separately.",
+      "progress": "1142/1736 saved;1027parsed;79truncations;0transport/HTTP/empty-final errors",
+      "next_step": "Finish unchanged once-only generation, seal all outcomes, score once and publish.",
+      "evidence_at_pacific": "2026-10-22T11:54:14.474957-07:00",
       "benchmark_completed_by_this_preparation": false,
       "original_retained_catalog_member": false,
       "source_revision": "8b9710932511f816651fc1a7e8a1bc85c3c77767",
@@ -811,13 +811,13 @@
       "paid_inference_authorized": false,
       "images_in_initial_condition": false,
       "job_id": "246368",
-      "slurm_state": "PENDING",
-      "scheduler_reason": "Resources",
+      "slurm_state": "RUNNING",
+      "scheduler_reason": null,
       "approved_case_count": 1736,
       "source_case_count": 1797,
       "unadmitted_case_count": 61,
       "source_task_count": 12,
-      "benchmark_model_dispatch_verified": false,
+      "benchmark_model_dispatch_verified": true,
       "plan_sha256": "5e04aa817909a89cc99f581cac728ff4573be16a73c9e1b4068344b2cfed75ac",
       "grant_sha256": "cbb9cedd7e59dab6ecbb9ce6d5220df11a0d960b3f3979b8cbe07ffdc31b6681"
     }
@@ -825,14 +825,14 @@
   "priority_updated_at_pacific": "2026-10-22T01:46:25.799655-07:00",
   "additional_benchmark_count": 1,
   "model_comparison": {
-    "updated_at_pacific": "2026-10-22T01:54:39.182215-07:00",
+    "updated_at_pacific": "2026-10-22T11:58:32.540032-07:00",
     "models": [
       "Qwen/Qwen3.5-4B",
       "Qwen/Qwen3.5-4B-Base"
     ],
     "solver_inputs_per_model": 48763,
     "solver_inputs_both_models": 97526,
-    "stage": "neutral_and_classification_GPU_jobs_submitted_other_reviewed_lanes_queued_for_admission",
+    "stage": "LABBench_scored_future_dispatch_paused_severe_16K_exhaustion",
     "runtime_counts": null,
     "scope_sha256": "b3d22d85f46a05a8357b5e49f186f22fbd1b8648577006c00da25f52fab8c6e9",
     "shared_contract_sha256": "ac901e2191304fa9fa2190226a1f8018bb276dbfef84d29550892e28a30cb461",
@@ -848,13 +848,59 @@
     },
     "original_57_setting_denominator_unchanged": true,
     "neutral_validation_job_id": "246419",
-    "neutral_validation_state": "PENDING",
+    "neutral_validation_state": "COMPLETED_passed_34_synthetic_checks",
     "classification_job_ids": {
       "base": "246420",
       "posttrained": "246421"
     },
-    "classification_state": "PENDING_dependency",
+    "classification_state": "request_creation_drain_in_progress",
     "classification_dependency": "afterok:246419",
-    "benchmark_runtime_counts": null
+    "benchmark_runtime_counts": null,
+    "labbench": {
+      "scored_at_pacific": "2026-10-22T09:31:31.614592-07:00",
+      "saved_per_model": 279,
+      "planned_per_model": 279,
+      "base": {
+        "LitQA2_correct": 44,
+        "LitQA2_total": 197,
+        "SuppQA_correct": 10,
+        "SuppQA_total": 82,
+        "truncations": 10,
+        "empty_finals": 10
+      },
+      "posttrained": {
+        "LitQA2_correct": 29,
+        "LitQA2_total": 197,
+        "SuppQA_correct": 14,
+        "SuppQA_total": 82,
+        "truncations": 121,
+        "empty_finals": 124
+      },
+      "score_sha256": "5c2d04f240f5ee1604c6c7502507a32b70aa06255cf6a18600121b7f191ec33f"
+    },
+    "future_dispatch_paused_for_delivery_diagnosis": true,
+    "no_new_condition_dispatched": true,
+    "future_sampling_repair": {
+      "state": "recipe_adopted_preparing_independent_neutral_gate_not_benchmark_dispatch",
+      "decision_sha256": "a988b8972658cb27d4c0b0d9557da32ddf17d22e134cf4c1b69702f50af5a65f",
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 20,
+      "presence_penalty": 1.5,
+      "output_tokens": 16384,
+      "same_both_models": true
+    }
+  },
+  "offline_scoring_recovery": {
+    "P15": {
+      "stage": "scored_terminal",
+      "parsed": 3416,
+      "planned": 3416,
+      "invalid": 0,
+      "auprc_micro": 0.0370570570230484,
+      "fmax": 0.07158192247152328,
+      "score_sha256": "c382b322270d5c4a213d593ff44b050dc15952df1678d6f7b4db4a7810adbd5e",
+      "generation_unchanged": true
+    }
   }
 }
