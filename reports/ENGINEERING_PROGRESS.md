@@ -1,44 +1,80 @@
-# Evaluation workers and handoffs
+# Remaining evaluation work
 
-Checked **2026-10-21T21:15:15.022082-07:00** (America/Los_Angeles). This is a manual coordination snapshot.
+Updated **2026-10-21T21:57:40.700441-07:00** (America/Los_Angeles).
 
-[Results, release years and complete example questions](RESULTS_AND_REMAINING_WORK.md) · [Original catalog](CATALOG_STATUS.md) · [Worker snapshot JSON](WORKER_ACTIVITY.json)
+[Evaluation results, release years and complete questions](RESULTS_AND_REMAINING_WORK.md)
 
-**Capacity: 16 worker agents plus one coordinator. GPU ceiling: eight.** Review helpers use worker slots; an active thread is not proof of model inference.
+This is the main work tracker: what remains, why, and who owns the next action. A scored subset can appear in the results document while its wider evaluation remains here. Preparation and saved responses do not count as benchmark scores.
 
-When a worker finishes a bounded deliverable, the coordinator checks it and either continues that evaluation or explicitly hands the worker another task. A finished review, CPU package or agent turn is not a finished benchmark. Job submission, generation, scoring and publication are separate stages.
-
-| Evaluation / role | Worker | Current stage | Last verified deliverable | Next action / blocker |
+| Evaluation | Status | Owner | Verified progress | Exactly what remains / blocker |
 |---|---|---|---|---|
-| ProteinGym substitutions | /root/p17_execution | Generating | More than 10,000 of 59,581 responses delivered at 21:03 PDT; no score yet. | Owner monitors exact job 245782; CPU packaging waits for terminal output. |
-| PFArena T1 single-mutant generation | /root/p19_remaining_review | Independent admission | Prior 34 scored; separate nine-case plan adopted; final plan and CPU checks ready. | Roster-valid independent admission, then actual delivery; held 12 and other 67 stay excluded. |
-| PFArena T3 anchor-informed ranking | /root/p21_remaining_review | Submitted | Prior eight scored; separate five-case plan adopted and peer-admitted; job 245880 submitted. | Three artificial delivery checks before five real calls; owner retains scoring/publication. |
-| PFArena T4 single-mutant-informed ranking | /root/p22_remaining_review | Stopped after interruption | Prior four-case result preserved. Additional eight-case preparation encountered a biological-risk interruption. | Preserve checkpoints; no retry, reroute, further extension review or dispatch. Exact trigger unknown. |
-| NatureLM unconditional generation | /root/p37_delivery | Generating | Job 245811: 12 of 1,000 responses saved at 21:10 PDT; unsealed, not a benchmark score. | Finish unchanged generation and declared folding/scoring; owner retains publication. |
-| NatureLM conditional generation | /root/p38_generation | Offline scoring repair | All 30 generations sealed; zero observed delivery errors/truncations. A metadata filename collision stopped the worker before benchmark proxy scoring. | Independently review a CPU-only scoring continuation over the same sealed outputs; no regeneration. |
-| Proteo-R1 structural demonstration | /root/p41_structure | Waiting for GPU allocation | Three-case full-backbone adaptation adopted and independently admitted; job 245881 submitted. | Actual 131K one-GPU memory and neutral delivery gates before three cases; no model delivery claimed. |
-| BioReason-Pro explanations | /root/p44_explanation | Waiting for GPU allocation | Reviewed 12-case local solver/judge condition adopted and admitted; job 245877 pending. | Four artificial delivery checks, then 12-case solver/judge workflow. This cannot close the 8,630-case release. |
-| SlideVQA | /root/v07_execution | Preparing and reviewing | All 400 decks have OCR/contact aids; actual full-deck review and backend schema compatibility work continue. | Finish exact input eligibility and supported-schema CPU gate; model delivery remains unproven. |
-| BiomniBench-DA | /root/new2026_biomni | CPU preparation | All 50 workspaces available; hard workspace quota and confined R prototype work on neutral fixtures. | CPU validation, task-method compatibility and independent exact-code review. No new-suite inference authority. |
-| BixBench3 | /root/new2026_bixbench | CPU preparation | Dedicated owner attached; additive portable harness/scorer and resource-budget work underway. | Independent reviewer checks exact adapter and recording tests. No model calls. |
-| GeneBench-Pro | /root/v07_execution/v07_runtime_audit | CPU preparation | Worker handed off the completed V07 guard audit and recorded GeneBench ownership. | Make the scientific environment portable; freeze once-only recording/scorer harness. No model calls. |
-| LABBench2 | /root/new2026_labbench2 | Preparation complete; worker reassigned | All 1,211 requests audited; 36 neutral checks independently passed; completion sealed. | New-suite dispatch authority and actual 128K/52-image/local-judge delivery remain. Worker now reviews Biomni code. |
-| Independent review coordination | /root/independent_review | Reviewing | Own SlideVQA deck partition plus exact implementation reviews; does not own every evaluation run. | Seal bounded review receipts and coordinate non-overlapping partitions. |
-| BixBench3 independent technical review | /root/independent_review/v07_question_prefilter_b | Reviewing | Finished 50 complete SlideVQA decks / 242 cases; handed off that receipt. | Now reviews BixBench3 adapter/harness; identified neutral cleanup and import-order defects. |
-| PFArena T1 independent technical review | /root/p19_remaining_review/metadata_provenance_audit/stability9_peer_check | Reviewing | P19 nine-case code/synthetic preflight passed 47 tests; P22 review stopped separately. | Review exact P19 freeze under existing scope; no P22 continuation. |
-| PFArena T3 / SlideVQA independent review | /root/p05_scope | Reviewing | Finished FLIP scope audit and Proteo-R1 input review; then admitted exact PFArena T3 five-case plan. | Now resumes assigned SlideVQA decks 030–049; prior 000–024 receipts retained and overlap reconciled. |
+| LAB-Bench / ProtocolQA | Held after interrupted review | Coordinator / provider restriction | ProtocolQA review checkpoint preserved. | Resolution of the interrupted scope; do not retry or reroute it. |
+| Beta-lactamase activity — PEER | Endpoint not admitted | Coordinator | Source and synthetic checks exist; native cases unexecuted. | Native task predicts antibiotic-resistance enzyme variant activity; this performance-prediction endpoint is not admitted. |
+| AAV variant fitness — FLIP | Endpoint held | Coordinator | Archive/source audit complete; source is available. | Native task predicts engineered viral-capsid packaging viability. Endpoint remains held; missing downloads are not the blocker. |
+| GO biological process — DeepFRI split | Generating | Coordinator / existing DeepFRI worker | 1,168/3,416 responses saved at 21:26 PDT. | Finish unchanged generation, seal all outcomes, then native AP/Fmax scoring. |
+| GO cellular component — DeepFRI split | Generation complete; scoring pending | Coordinator / existing DeepFRI worker | 3,416/3,416 responses saved and terminal; no score artifact at check. | Run the existing once-only native scorer after its runtime/scoring gate; then publish. |
+| ProteinGym DMS substitution benchmark | Generating | ProteinGym owner | 25,279/59,581 outputs delivered at 21:54 PDT for the reviewed 30-assay condition. | Finish outputs, native scoring and publication; remaining assays require separate eligibility/input work. |
+| PG-LLM / ProteinGym-LLM ranking | Held after rejected/interrupted work | Coordinator / provider restriction | Prior rejected traffic and review evidence preserved. | Applicable scope/provider resolution; no retries, relabeling or rerouting. |
+| PFArena T1: single-mutant generation | 43 assays scored; full panel unfinished | PFArena T1 owner | 34 original and nine additional assays scored and published as separate conditions. | 67 assays remain unadmitted; 12 held and one outside this condition. Two further input proposals need a separate scientific decision. |
+| PFArena T2: measurement-free multi-mutant ranking | Held after interrupted preparation | Coordinator / provider restriction | Preparation checkpoint preserved. | Resolve the interrupted scope before continuation; exact trigger is unknown. |
+| PFArena T3: anchor-informed ranking | 13 assays scored; full panel unfinished | PFArena T3 owner | Eight original and five additional assays scored and published separately. | 54/67 assays remain input-unreviewed; prepare and independently review permitted inputs before another condition. |
+| PFArena T4: single-mutant-informed ranking | Four scored; extension stopped | Coordinator / stopped extension | Four-assay V2 result preserved; new eight-assay preparation encountered a biological-risk interruption. | Preserve checkpoints; no retry or reroute of the interrupted extension. Do not infer the exact trigger. |
+| NatureLM protein description | Independent cohort finished; native holdout unavailable | Coordinator / source recovery | Independent nine-record description result published. | Exact original accessions, dated annotation snapshot and ROUGE preprocessing are needed for native paper reproduction. |
+| MutaDescribe mutation explanation | Held after interrupted review | Coordinator / provider restriction | MutaDescribe source files are available. | The interrupted biological-content review remains stopped; file availability does not resolve it. |
+| MutaDescribe mutation engineering — position supplied | Held after interrupted review | Coordinator / provider restriction | MutaDescribe source files are available. | Same interrupted-review boundary; do not reopen through another worker or setting. |
+| MutaDescribe mutation engineering — position unknown | Held after interrupted review | Coordinator / provider restriction | MutaDescribe source files are available. | Same interrupted-review boundary; no native run is currently admitted. |
+| MutaPLM low-N fitness regression | Excluded by user: no new head training | Coordinator | Existing-head/source audit only. | A released matching head and exact split would be needed; no new head training will be undertaken. |
+| MutaPLM iterative sequence optimization | Five landscapes finished; sixth held | Coordinator / retained hold | Five-landscape surrogate result published. | No execution remains for the five-landscape condition. The held sixth is excluded from a full six-landscape claim. |
+| BioT5+ description-guided protein design | Partial archive; extension held | Coordinator / provider restriction | 59 archived responses preserved; no full benchmark score. | Preserve interrupted review; recover permitted alignment/native-metric metadata without restarting the extension. |
+| NatureLM unconditional generation | Generating | Unconditional-generation owner | 35/1,000 outcomes saved at the latest owner observation; unsealed. | Finish generation, eligible folding, scoring, final audit and publication. Separate one-time publication mechanism still needs coordinator review. |
+| NatureLM stability/solubility-conditioned generation | Available condition complete; native equivalence unavailable | Coordinator / source recovery | All 30 generations and substitute proxy scores published. | No execution remains for this condition. Native cohort/evaluator and matched controls are unavailable; short strings limit biological interpretation. |
+| NatureLM heme-binding case study | Qualitative case finished; native evaluation unavailable | Coordinator / source recovery | One sequence and five predicted complexes published, all with severe clashes. | Original author cases/settings and binding measurements are required for a native binding score; no further declared run is pending. |
+| RAbD CDR-H3 redesign | 38/60 cases scored | Coordinator / remaining input review | Current-coordinate backbone adaptation published. | 22 cases remain outside the evaluated condition; scope review and historical coordinate/protocol provenance are separate remaining requirements. |
+| Proteo-R1 all-CDR SAbDab holdout | Released demonstrations finished; paper holdout unavailable | Coordinator / source recovery | All three demonstrations scored and published; GPU released. | Exact paper holdout and structural Loop-RMSD/IMP scorer remain unavailable. No execution remains for the adopted three-case condition. |
+| BioReason-Pro explanation assessment | 12 cases scored; full release unfinished | BioReason-Pro owner / coordinator | Reviewed 12-case local solver/judge result published. | 8,618 source cases remain unreviewed; wider permitted inputs need independent review and a frozen condition. Exact native judging differs. |
+| Ryze extraction component tests | Model delivery passed; input review unfinished | SlideVQA owner / independent reviewers | Four actual 20-image delivery probes passed; first 200 decks cover 1,047 input-reviewed cases. | Review remaining 200 decks /1,168 cases, reconcile global holds and flagged context, freeze/admit the full condition, then generate and score. |
+| LABBench2 (2026) | CPU preparation complete | Coordinator / LABBench2 lane | All 1,211 inputs audited; 36 independent checks; isolated package sealed. | New-suite dispatch authority and actual 128K/52-image/local-judge delivery gates before any benchmark run. |
+| GeneBench-Pro (2026; public 10) | CPU preparation complete | Coordinator / GeneBench-Pro lane | Portable environment and concurrent once-only recording/scorer harness independently accepted; no real analysis/model calls. | New-suite dispatch authority and actual model/tool delivery; then the declared public-ten run and native grading. |
+| BiomniBench-DA (2026; public 50) | Finishing CPU runtime validation | BiomniBench-DA owner | 410 source objects and 50 workspaces verified; Python/R confinement prepared. | Seal final repaired R environment and CPU checks; then independent runtime acceptance. New-suite inference/judge dispatch is not authorized. |
+| BixBench3 (2026) | Restricted CPU preparation complete | Coordinator / BixBench3 lane | Recording/scoring/quota guards accepted. Original validation44/45; separate R script-file validation passed. | Review remaining 19 cases; enforce R file-only execution; validate real-case storage/resources and obtain new-suite dispatch authority. |
+| scBench (2026; public six) | Deferred by user | Deferred | Public task definitions and deterministic grader preserved. | Required Latch access is unavailable; no further credential request or attempt is pending. |
 
-**Recent worker handoffs**
+<details>
+<summary>Worker assignments and recent handoffs</summary>
 
-- `/root/p05_scope`: FLIP metadata/scope audit, then Proteo-R1 input audit, then PFArena T3 technical admission → SlideVQA exact deck partition (accepted).
-- `/root/independent_review/v07_question_prefilter_b`: SlideVQA 50-deck full-content review / 242 cases → BixBench3 independent technical review (accepted).
-- `/root/v07_execution/v07_runtime_audit`: V07 bounded runtime/scorer guard audit → GeneBench-Pro portable CPU/recording preparation (ownership recorded).
-- `/root/new2026_labbench2`: LABBench2 authorized CPU preparation → BiomniBench-DA independent technical review (accepted).
-- `/root/p19_remaining_review`: Nine-case input/provenance review milestone → Own separate nine-case execution preparation through closure (continued ownership).
-- `/root/p22_remaining_review`: No normal completion: biological-risk interruption → No retry or handoff of the interrupted action (stopped).
+Capacity is 16 workers plus the coordinator; at most eight project GPUs may be requested. A worker finishing a bounded review or CPU package is explicitly reassigned or continues its evaluation. Thread names may retain an earlier task name.
 
-The existing DeepFRI GPU queue is monitored separately by the coordinator. Qualified subset and demonstration results remain distinct from full native evaluations. See the results table for scores; this page tracks who does the work.
+Worker details below were last reconciled at 2026-10-21T21:15:15.022082-07:00; the evaluation table above supersedes older task stages.
 
-LABBench2 and BixBench3 access is resolved. scBench remains deferred. New head training and paid/OpenAI benchmark calls remain excluded. Websites and recurring conversation updates remain disabled.
+| Worker | Assigned role |
+|---|---|
+| /root/p17_execution | ProteinGym substitutions |
+| /root/p19_remaining_review | PFArena T1 single-mutant generation |
+| /root/p21_remaining_review | PFArena T3 anchor-informed ranking |
+| /root/p22_remaining_review | Stopped after biological-risk interruption; no reassignment of interrupted action |
+| /root/p37_delivery | NatureLM unconditional generation |
+| /root/p38_generation | NatureLM conditional generation |
+| /root/p41_structure | Proteo-R1 structural demonstration |
+| /root/p44_explanation | BioReason-Pro explanations |
+| /root/v07_execution | SlideVQA |
+| /root/new2026_biomni | BiomniBench-DA |
+| /root/new2026_bixbench | BixBench3 |
+| /root/v07_execution/v07_runtime_audit | GeneBench-Pro |
+| /root/new2026_labbench2 | LABBench2 |
+| /root/independent_review | Independent review coordination |
+| /root/independent_review/v07_question_prefilter_b | BixBench3 independent technical review |
+| /root/p19_remaining_review/metadata_provenance_audit/stability9_peer_check | PFArena T1 independent technical review |
+| /root/p05_scope | PFArena T3 / SlideVQA independent review |
 
-This snapshot replaces the obsolete three-worker queue. It does not automatically refresh after every message; its timestamp identifies the last reconciliation. Task-local immutable run/score artifacts remain the execution record.
+Recent handoffs:
+
+- `/root/p05_scope`: FLIP metadata/scope audit, then Proteo-R1 input audit, then PFArena T3 technical admission → SlideVQA exact deck partition.
+- `/root/independent_review/v07_question_prefilter_b`: SlideVQA 50-deck full-content review / 242 cases → BixBench3 independent technical review.
+- `/root/v07_execution/v07_runtime_audit`: V07 bounded runtime/scorer guard audit → GeneBench-Pro portable CPU/recording preparation.
+- `/root/new2026_labbench2`: LABBench2 authorized CPU preparation → BiomniBench-DA independent technical review.
+- `/root/p19_remaining_review`: Nine-case input/provenance review milestone → Own separate nine-case execution preparation through closure.
+- `/root/p22_remaining_review`: No normal completion: biological-risk interruption → No retry or handoff of the interrupted action.
+
+</details>
+
+Snapshot only; websites and recurring updates remain disabled. Existing biological holds, no-new-head-training and no-paid/OpenAI-benchmark-call restrictions remain. Technical run reports, source records and trajectories support these two main documents.

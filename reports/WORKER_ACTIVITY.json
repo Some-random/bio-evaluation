@@ -167,5 +167,252 @@
     }
   ],
   "other_existing_work": "The frozen DeepFRI queue remains separately monitored by root; existing completed/qualified results remain in the results table. No full-catalog completion count is inferred from this roster.",
-  "deferred": "scBench stays deferred for unavailable Latch access; no new head training or paid/OpenAI benchmark calls."
+  "deferred": "scBench stays deferred for unavailable Latch access; no new head training or paid/OpenAI benchmark calls.",
+  "evaluation_work_checked_at_pacific": "2026-10-21T21:57:40.700441-07:00",
+  "remaining_evaluations": [
+    {
+      "task_id": "B06",
+      "evaluation": "LAB-Bench / ProtocolQA",
+      "status": "Held after interrupted review",
+      "owner": "Coordinator / provider restriction",
+      "verified_progress": "ProtocolQA review checkpoint preserved.",
+      "remaining": "Resolution of the interrupted scope; do not retry or reroute it."
+    },
+    {
+      "task_id": "P04",
+      "evaluation": "Beta-lactamase activity \u2014 PEER",
+      "status": "Endpoint not admitted",
+      "owner": "Coordinator",
+      "verified_progress": "Source and synthetic checks exist; native cases unexecuted.",
+      "remaining": "Native task predicts antibiotic-resistance enzyme variant activity; this performance-prediction endpoint is not admitted."
+    },
+    {
+      "task_id": "P05",
+      "evaluation": "AAV variant fitness \u2014 FLIP",
+      "status": "Endpoint held",
+      "owner": "Coordinator",
+      "verified_progress": "Archive/source audit complete; source is available.",
+      "remaining": "Native task predicts engineered viral-capsid packaging viability. Endpoint remains held; missing downloads are not the blocker."
+    },
+    {
+      "task_id": "P13",
+      "evaluation": "GO biological process \u2014 DeepFRI split",
+      "status": "Generating",
+      "owner": "Coordinator / existing DeepFRI worker",
+      "verified_progress": "1,168/3,416 responses saved at 21:26 PDT.",
+      "remaining": "Finish unchanged generation, seal all outcomes, then native AP/Fmax scoring."
+    },
+    {
+      "task_id": "P15",
+      "evaluation": "GO cellular component \u2014 DeepFRI split",
+      "status": "Generation complete; scoring pending",
+      "owner": "Coordinator / existing DeepFRI worker",
+      "verified_progress": "3,416/3,416 responses saved and terminal; no score artifact at check.",
+      "remaining": "Run the existing once-only native scorer after its runtime/scoring gate; then publish."
+    },
+    {
+      "task_id": "P17",
+      "evaluation": "ProteinGym DMS substitution benchmark",
+      "status": "Generating",
+      "owner": "ProteinGym owner",
+      "verified_progress": "25,279/59,581 outputs delivered at 21:54 PDT for the reviewed 30-assay condition.",
+      "remaining": "Finish outputs, native scoring and publication; remaining assays require separate eligibility/input work."
+    },
+    {
+      "task_id": "P18",
+      "evaluation": "PG-LLM / ProteinGym-LLM ranking",
+      "status": "Held after rejected/interrupted work",
+      "owner": "Coordinator / provider restriction",
+      "verified_progress": "Prior rejected traffic and review evidence preserved.",
+      "remaining": "Applicable scope/provider resolution; no retries, relabeling or rerouting."
+    },
+    {
+      "task_id": "P19",
+      "evaluation": "PFArena T1: single-mutant generation",
+      "status": "43 assays scored; full panel unfinished",
+      "owner": "PFArena T1 owner",
+      "verified_progress": "34 original and nine additional assays scored and published as separate conditions.",
+      "remaining": "67 assays remain unadmitted; 12 held and one outside this condition. Two further input proposals need a separate scientific decision."
+    },
+    {
+      "task_id": "P20",
+      "evaluation": "PFArena T2: measurement-free multi-mutant ranking",
+      "status": "Held after interrupted preparation",
+      "owner": "Coordinator / provider restriction",
+      "verified_progress": "Preparation checkpoint preserved.",
+      "remaining": "Resolve the interrupted scope before continuation; exact trigger is unknown."
+    },
+    {
+      "task_id": "P21",
+      "evaluation": "PFArena T3: anchor-informed ranking",
+      "status": "13 assays scored; full panel unfinished",
+      "owner": "PFArena T3 owner",
+      "verified_progress": "Eight original and five additional assays scored and published separately.",
+      "remaining": "54/67 assays remain input-unreviewed; prepare and independently review permitted inputs before another condition."
+    },
+    {
+      "task_id": "P22",
+      "evaluation": "PFArena T4: single-mutant-informed ranking",
+      "status": "Four scored; extension stopped",
+      "owner": "Coordinator / stopped extension",
+      "verified_progress": "Four-assay V2 result preserved; new eight-assay preparation encountered a biological-risk interruption.",
+      "remaining": "Preserve checkpoints; no retry or reroute of the interrupted extension. Do not infer the exact trigger."
+    },
+    {
+      "task_id": "P27",
+      "evaluation": "NatureLM protein description",
+      "status": "Independent cohort finished; native holdout unavailable",
+      "owner": "Coordinator / source recovery",
+      "verified_progress": "Independent nine-record description result published.",
+      "remaining": "Exact original accessions, dated annotation snapshot and ROUGE preprocessing are needed for native paper reproduction."
+    },
+    {
+      "task_id": "P30",
+      "evaluation": "MutaDescribe mutation explanation",
+      "status": "Held after interrupted review",
+      "owner": "Coordinator / provider restriction",
+      "verified_progress": "MutaDescribe source files are available.",
+      "remaining": "The interrupted biological-content review remains stopped; file availability does not resolve it."
+    },
+    {
+      "task_id": "P31",
+      "evaluation": "MutaDescribe mutation engineering \u2014 position supplied",
+      "status": "Held after interrupted review",
+      "owner": "Coordinator / provider restriction",
+      "verified_progress": "MutaDescribe source files are available.",
+      "remaining": "Same interrupted-review boundary; do not reopen through another worker or setting."
+    },
+    {
+      "task_id": "P32",
+      "evaluation": "MutaDescribe mutation engineering \u2014 position unknown",
+      "status": "Held after interrupted review",
+      "owner": "Coordinator / provider restriction",
+      "verified_progress": "MutaDescribe source files are available.",
+      "remaining": "Same interrupted-review boundary; no native run is currently admitted."
+    },
+    {
+      "task_id": "P33",
+      "evaluation": "MutaPLM low-N fitness regression",
+      "status": "Excluded by user: no new head training",
+      "owner": "Coordinator",
+      "verified_progress": "Existing-head/source audit only.",
+      "remaining": "A released matching head and exact split would be needed; no new head training will be undertaken."
+    },
+    {
+      "task_id": "P34",
+      "evaluation": "MutaPLM iterative sequence optimization",
+      "status": "Five landscapes finished; sixth held",
+      "owner": "Coordinator / retained hold",
+      "verified_progress": "Five-landscape surrogate result published.",
+      "remaining": "No execution remains for the five-landscape condition. The held sixth is excluded from a full six-landscape claim."
+    },
+    {
+      "task_id": "P36",
+      "evaluation": "BioT5+ description-guided protein design",
+      "status": "Partial archive; extension held",
+      "owner": "Coordinator / provider restriction",
+      "verified_progress": "59 archived responses preserved; no full benchmark score.",
+      "remaining": "Preserve interrupted review; recover permitted alignment/native-metric metadata without restarting the extension."
+    },
+    {
+      "task_id": "P37",
+      "evaluation": "NatureLM unconditional generation",
+      "status": "Generating",
+      "owner": "Unconditional-generation owner",
+      "verified_progress": "35/1,000 outcomes saved at the latest owner observation; unsealed.",
+      "remaining": "Finish generation, eligible folding, scoring, final audit and publication. Separate one-time publication mechanism still needs coordinator review."
+    },
+    {
+      "task_id": "P38",
+      "evaluation": "NatureLM stability/solubility-conditioned generation",
+      "status": "Available condition complete; native equivalence unavailable",
+      "owner": "Coordinator / source recovery",
+      "verified_progress": "All 30 generations and substitute proxy scores published.",
+      "remaining": "No execution remains for this condition. Native cohort/evaluator and matched controls are unavailable; short strings limit biological interpretation."
+    },
+    {
+      "task_id": "P39",
+      "evaluation": "NatureLM heme-binding case study",
+      "status": "Qualitative case finished; native evaluation unavailable",
+      "owner": "Coordinator / source recovery",
+      "verified_progress": "One sequence and five predicted complexes published, all with severe clashes.",
+      "remaining": "Original author cases/settings and binding measurements are required for a native binding score; no further declared run is pending."
+    },
+    {
+      "task_id": "P40",
+      "evaluation": "RAbD CDR-H3 redesign",
+      "status": "38/60 cases scored",
+      "owner": "Coordinator / remaining input review",
+      "verified_progress": "Current-coordinate backbone adaptation published.",
+      "remaining": "22 cases remain outside the evaluated condition; scope review and historical coordinate/protocol provenance are separate remaining requirements."
+    },
+    {
+      "task_id": "P41",
+      "evaluation": "Proteo-R1 all-CDR SAbDab holdout",
+      "status": "Released demonstrations finished; paper holdout unavailable",
+      "owner": "Coordinator / source recovery",
+      "verified_progress": "All three demonstrations scored and published; GPU released.",
+      "remaining": "Exact paper holdout and structural Loop-RMSD/IMP scorer remain unavailable. No execution remains for the adopted three-case condition."
+    },
+    {
+      "task_id": "P44",
+      "evaluation": "BioReason-Pro explanation assessment",
+      "status": "12 cases scored; full release unfinished",
+      "owner": "BioReason-Pro owner / coordinator",
+      "verified_progress": "Reviewed 12-case local solver/judge result published.",
+      "remaining": "8,618 source cases remain unreviewed; wider permitted inputs need independent review and a frozen condition. Exact native judging differs."
+    },
+    {
+      "task_id": "V07",
+      "evaluation": "Ryze extraction component tests",
+      "status": "Model delivery passed; input review unfinished",
+      "owner": "SlideVQA owner / independent reviewers",
+      "verified_progress": "Four actual 20-image delivery probes passed; first 200 decks cover 1,047 input-reviewed cases.",
+      "remaining": "Review remaining 200 decks /1,168 cases, reconcile global holds and flagged context, freeze/admit the full condition, then generate and score."
+    },
+    {
+      "task_id": "LABBench2",
+      "evaluation": "LABBench2 (2026)",
+      "status": "CPU preparation complete",
+      "owner": "Coordinator / LABBench2 lane",
+      "verified_progress": "All 1,211 inputs audited; 36 independent checks; isolated package sealed.",
+      "remaining": "New-suite dispatch authority and actual 128K/52-image/local-judge delivery gates before any benchmark run."
+    },
+    {
+      "task_id": "GeneBench-Pro",
+      "evaluation": "GeneBench-Pro (2026; public 10)",
+      "status": "CPU preparation complete",
+      "owner": "Coordinator / GeneBench-Pro lane",
+      "verified_progress": "Portable environment and concurrent once-only recording/scorer harness independently accepted; no real analysis/model calls.",
+      "remaining": "New-suite dispatch authority and actual model/tool delivery; then the declared public-ten run and native grading."
+    },
+    {
+      "task_id": "BiomniBench-DA",
+      "evaluation": "BiomniBench-DA (2026; public 50)",
+      "status": "Finishing CPU runtime validation",
+      "owner": "BiomniBench-DA owner",
+      "verified_progress": "410 source objects and 50 workspaces verified; Python/R confinement prepared.",
+      "remaining": "Seal final repaired R environment and CPU checks; then independent runtime acceptance. New-suite inference/judge dispatch is not authorized."
+    },
+    {
+      "task_id": "BixBench3",
+      "evaluation": "BixBench3 (2026)",
+      "status": "Restricted CPU preparation complete",
+      "owner": "Coordinator / BixBench3 lane",
+      "verified_progress": "Recording/scoring/quota guards accepted. Original validation44/45; separate R script-file validation passed.",
+      "remaining": "Review remaining 19 cases; enforce R file-only execution; validate real-case storage/resources and obtain new-suite dispatch authority."
+    },
+    {
+      "task_id": "scBench",
+      "evaluation": "scBench (2026; public six)",
+      "status": "Deferred by user",
+      "owner": "Deferred",
+      "verified_progress": "Public task definitions and deterministic grader preserved.",
+      "remaining": "Required Latch access is unavailable; no further credential request or attempt is pending."
+    }
+  ],
+  "primary_documents": {
+    "results": "reports/RESULTS_AND_REMAINING_WORK.md",
+    "remaining_work": "reports/ENGINEERING_PROGRESS.md"
+  }
 }

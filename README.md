@@ -1,13 +1,7 @@
 # Biological evaluations
 
-**Review the completed work:** [Results, findings, methodology and audit evidence](reports/COMPLETED_WORK_REVIEW.md).
-
-## [All tasks and results](reports/EVALUATION_OVERVIEW.md)
-
-**Model: Qwen3.8-27B.** The overview starts with 31 task families in 8 categories, then one correct answer and one simple question with a substantial tool workflow. Dataset details remain in collapsible categories.
-
-- [More worked examples, complete saved reasoning and tool workflows](reports/WORKED_EXAMPLES.md)
-- [External models actually used in the papers](reports/PUBLISHED_TOOL_USE_EXAMPLES.md)
+1. **[Evaluation results](reports/RESULTS_AND_REMAINING_WORK.md)** — completed results, Qwen/GPT comparisons, release years and real complete question/input links.
+2. **[Remaining evaluation work](reports/ENGINEERING_PROGRESS.md)** — unfinished evaluations, exact blockers, owners, progress and worker handoffs.
 
 <details>
 <summary>Source data and technical records</summary>
