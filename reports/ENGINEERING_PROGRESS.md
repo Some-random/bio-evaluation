@@ -6,11 +6,11 @@ Updated **2026-10-21T21:57:40.700441-07:00** (America/Los_Angeles).
 
 This is the main work tracker: what remains, why, and who owns the next action. A scored subset can appear in the results document while its wider evaluation remains here. Preparation and saved responses do not count as benchmark scores.
 
-**Current priority: LiveProteinBench, sequence-only.** The official release is verified: 1,797 questions across 12 tasks. A dedicated owner is preparing the local Qwen run, with independent input and scoring review. This priority entry was updated at 2026-10-21T23:51:49.702035-07:00; other entries retain their stated observation times.
+**Current priority: LiveProteinBench, sequence-only.** Slurm job 246204 is submitted and waiting for scheduler priority. Its fixed local Qwen condition covers 1,736 reviewed questions across all 12 tasks; 61 of the 1,797 source questions remain outside this run. Model dispatch is not yet verified. This entry was updated at 2026-10-22T00:00:29.726817-07:00; other entries retain their stated observation times.
 
 | Evaluation | Status | Owner | Verified progress | Exactly what remains / blocker |
 |---|---|---|---|---|
-| LiveProteinBench — sequence-only (2025) | Priority: preparing local execution | LiveProteinBench owner | Official source pinned and verified: 1,797 questions across 12 tasks; input-only request packet prepared. | Complete independent case and implementation checks, freeze the local Qwen condition, then generate, score all outcomes and publish. Images are a separate condition. |
+| LiveProteinBench — sequence-only (2025) | GPU job submitted; waiting for scheduler | LiveProteinBench owner | Job 246204: fixed local Qwen condition for 1,736 reviewed questions across 12 tasks; source, input and implementation checks complete. | Start the allocated worker, pass neutral model delivery, generate and score the reviewed cohort. 61 source questions remain unadmitted; no full 1,797-case result is claimed. |
 | LAB-Bench / ProtocolQA | Held after interrupted review | Coordinator / provider restriction | ProtocolQA review checkpoint preserved. | Resolution of the interrupted scope; do not retry or reroute it. |
 | Beta-lactamase activity — PEER | Endpoint not admitted | Coordinator | Source and synthetic checks exist; native cases unexecuted. | Native task predicts antibiotic-resistance enzyme variant activity; this performance-prediction endpoint is not admitted. |
 | AAV variant fitness — FLIP | Endpoint held | Coordinator | Archive/source audit complete; source is available. | Native task predicts engineered viral-capsid packaging viability. Endpoint remains held; missing downloads are not the blocker. |
