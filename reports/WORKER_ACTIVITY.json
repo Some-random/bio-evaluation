@@ -1,0 +1,171 @@
+{
+  "checked_at_pacific": "2026-10-21T21:15:15.022082-07:00",
+  "role": "manual_worker_assignment_and_handoff_snapshot_not_live_benchmark_counts",
+  "worker_capacity": 16,
+  "root_coordinators": 1,
+  "project_GPU_ceiling": 8,
+  "periodic_updates_enabled": false,
+  "website_publication_enabled": false,
+  "completion_semantics": "An agent turn ending completes its assigned deliverable, not necessarily its evaluation. Root verifies and explicitly assigns continuation or a new task. Independent peers handle bounded technical reviews.",
+  "workers": [
+    {
+      "evaluation": "ProteinGym substitutions",
+      "agent": "/root/p17_execution",
+      "stage": "Generating",
+      "last_verified_deliverable": "More than 10,000 of 59,581 responses delivered at 21:03 PDT; no score yet.",
+      "next_action": "Owner monitors exact job 245782; CPU packaging waits for terminal output."
+    },
+    {
+      "evaluation": "PFArena T1 single-mutant generation",
+      "agent": "/root/p19_remaining_review",
+      "stage": "Independent admission",
+      "last_verified_deliverable": "Prior 34 scored; separate nine-case plan adopted; final plan and CPU checks ready.",
+      "next_action": "Roster-valid independent admission, then actual delivery; held 12 and other 67 stay excluded."
+    },
+    {
+      "evaluation": "PFArena T3 anchor-informed ranking",
+      "agent": "/root/p21_remaining_review",
+      "stage": "Submitted",
+      "last_verified_deliverable": "Prior eight scored; separate five-case plan adopted and peer-admitted; job 245880 submitted.",
+      "next_action": "Three artificial delivery checks before five real calls; owner retains scoring/publication."
+    },
+    {
+      "evaluation": "PFArena T4 single-mutant-informed ranking",
+      "agent": "/root/p22_remaining_review",
+      "stage": "Stopped after interruption",
+      "last_verified_deliverable": "Prior four-case result preserved. Additional eight-case preparation encountered a biological-risk interruption.",
+      "next_action": "Preserve checkpoints; no retry, reroute, further extension review or dispatch. Exact trigger unknown."
+    },
+    {
+      "evaluation": "NatureLM unconditional generation",
+      "agent": "/root/p37_delivery",
+      "stage": "Generating",
+      "last_verified_deliverable": "Job 245811: 12 of 1,000 responses saved at 21:10 PDT; unsealed, not a benchmark score.",
+      "next_action": "Finish unchanged generation and declared folding/scoring; owner retains publication."
+    },
+    {
+      "evaluation": "NatureLM conditional generation",
+      "agent": "/root/p38_generation",
+      "stage": "Offline scoring repair",
+      "last_verified_deliverable": "All 30 generations sealed; zero observed delivery errors/truncations. A metadata filename collision stopped the worker before benchmark proxy scoring.",
+      "next_action": "Independently review a CPU-only scoring continuation over the same sealed outputs; no regeneration."
+    },
+    {
+      "evaluation": "Proteo-R1 structural demonstration",
+      "agent": "/root/p41_structure",
+      "stage": "Waiting for GPU allocation",
+      "last_verified_deliverable": "Three-case full-backbone adaptation adopted and independently admitted; job 245881 submitted.",
+      "next_action": "Actual 131K one-GPU memory and neutral delivery gates before three cases; no model delivery claimed."
+    },
+    {
+      "evaluation": "BioReason-Pro explanations",
+      "agent": "/root/p44_explanation",
+      "stage": "Waiting for GPU allocation",
+      "last_verified_deliverable": "Reviewed 12-case local solver/judge condition adopted and admitted; job 245877 pending.",
+      "next_action": "Four artificial delivery checks, then 12-case solver/judge workflow. This cannot close the 8,630-case release."
+    },
+    {
+      "evaluation": "SlideVQA",
+      "agent": "/root/v07_execution",
+      "stage": "Preparing and reviewing",
+      "last_verified_deliverable": "All 400 decks have OCR/contact aids; actual full-deck review and backend schema compatibility work continue.",
+      "next_action": "Finish exact input eligibility and supported-schema CPU gate; model delivery remains unproven."
+    },
+    {
+      "evaluation": "BiomniBench-DA",
+      "agent": "/root/new2026_biomni",
+      "stage": "CPU preparation",
+      "last_verified_deliverable": "All 50 workspaces available; hard workspace quota and confined R prototype work on neutral fixtures.",
+      "next_action": "CPU validation, task-method compatibility and independent exact-code review. No new-suite inference authority."
+    },
+    {
+      "evaluation": "BixBench3",
+      "agent": "/root/new2026_bixbench",
+      "stage": "CPU preparation",
+      "last_verified_deliverable": "Dedicated owner attached; additive portable harness/scorer and resource-budget work underway.",
+      "next_action": "Independent reviewer checks exact adapter and recording tests. No model calls."
+    },
+    {
+      "evaluation": "GeneBench-Pro",
+      "agent": "/root/v07_execution/v07_runtime_audit",
+      "stage": "CPU preparation",
+      "last_verified_deliverable": "Worker handed off the completed V07 guard audit and recorded GeneBench ownership.",
+      "next_action": "Make the scientific environment portable; freeze once-only recording/scorer harness. No model calls."
+    },
+    {
+      "evaluation": "LABBench2",
+      "agent": "/root/new2026_labbench2",
+      "stage": "Preparation complete; worker reassigned",
+      "last_verified_deliverable": "All 1,211 requests audited; 36 neutral checks independently passed; completion sealed.",
+      "next_action": "New-suite dispatch authority and actual 128K/52-image/local-judge delivery remain. Worker now reviews Biomni code."
+    },
+    {
+      "evaluation": "Independent review coordination",
+      "agent": "/root/independent_review",
+      "stage": "Reviewing",
+      "last_verified_deliverable": "Own SlideVQA deck partition plus exact implementation reviews; does not own every evaluation run.",
+      "next_action": "Seal bounded review receipts and coordinate non-overlapping partitions."
+    },
+    {
+      "evaluation": "BixBench3 independent technical review",
+      "agent": "/root/independent_review/v07_question_prefilter_b",
+      "stage": "Reviewing",
+      "last_verified_deliverable": "Finished 50 complete SlideVQA decks / 242 cases; handed off that receipt.",
+      "next_action": "Now reviews BixBench3 adapter/harness; identified neutral cleanup and import-order defects."
+    },
+    {
+      "evaluation": "PFArena T1 independent technical review",
+      "agent": "/root/p19_remaining_review/metadata_provenance_audit/stability9_peer_check",
+      "stage": "Reviewing",
+      "last_verified_deliverable": "P19 nine-case code/synthetic preflight passed 47 tests; P22 review stopped separately.",
+      "next_action": "Review exact P19 freeze under existing scope; no P22 continuation."
+    },
+    {
+      "evaluation": "PFArena T3 / SlideVQA independent review",
+      "agent": "/root/p05_scope",
+      "stage": "Reviewing",
+      "last_verified_deliverable": "Finished FLIP scope audit and Proteo-R1 input review; then admitted exact PFArena T3 five-case plan.",
+      "next_action": "Now resumes assigned SlideVQA decks 030\u2013049; prior 000\u2013024 receipts retained and overlap reconciled."
+    }
+  ],
+  "handoffs": [
+    {
+      "worker": "/root/p05_scope",
+      "finished": "FLIP metadata/scope audit, then Proteo-R1 input audit, then PFArena T3 technical admission",
+      "next": "SlideVQA exact deck partition",
+      "status": "accepted"
+    },
+    {
+      "worker": "/root/independent_review/v07_question_prefilter_b",
+      "finished": "SlideVQA 50-deck full-content review / 242 cases",
+      "next": "BixBench3 independent technical review",
+      "status": "accepted"
+    },
+    {
+      "worker": "/root/v07_execution/v07_runtime_audit",
+      "finished": "V07 bounded runtime/scorer guard audit",
+      "next": "GeneBench-Pro portable CPU/recording preparation",
+      "status": "ownership recorded"
+    },
+    {
+      "worker": "/root/new2026_labbench2",
+      "finished": "LABBench2 authorized CPU preparation",
+      "next": "BiomniBench-DA independent technical review",
+      "status": "accepted"
+    },
+    {
+      "worker": "/root/p19_remaining_review",
+      "finished": "Nine-case input/provenance review milestone",
+      "next": "Own separate nine-case execution preparation through closure",
+      "status": "continued ownership"
+    },
+    {
+      "worker": "/root/p22_remaining_review",
+      "finished": "No normal completion: biological-risk interruption",
+      "next": "No retry or handoff of the interrupted action",
+      "status": "stopped"
+    }
+  ],
+  "other_existing_work": "The frozen DeepFRI queue remains separately monitored by root; existing completed/qualified results remain in the results table. No full-catalog completion count is inferred from this roster.",
+  "deferred": "scBench stays deferred for unavailable Latch access; no new head training or paid/OpenAI benchmark calls."
+}
