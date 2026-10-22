@@ -1,0 +1,523 @@
+{
+  "condition_id": "MUTAPLM_QWEN_PARENT_POOL_UNIQUE20_CANONICAL_ACTIONS_V1",
+  "full_primary_metric_defined": true,
+  "planned_landscapes": 5,
+  "runs_per_landscape": 20,
+  "rounds_per_run": 10,
+  "candidates_per_round": 20,
+  "planned_round_requests": 1000,
+  "planned_candidate_scores": 20000,
+  "planned_initial_scores": 100,
+  "generation_completion": {
+    "planned": 1000,
+    "attempted_confirmed": 1000,
+    "terminal": 1000,
+    "responses_saved": 1000,
+    "not_dispatched": 0,
+    "delivered": 1000,
+    "transport_errors": 0,
+    "http_errors": 0,
+    "client_or_guard_errors": 0,
+    "response_errors": 0,
+    "truncations": 0,
+    "empty_finals": 0,
+    "final_status_unknown": 0,
+    "refusals": 0,
+    "evaluator_errors": 0,
+    "evaluator_values_saved": 20100,
+    "at_pacific": "2026-10-21T20:24:47.252287-07:00",
+    "condition_id": "MUTAPLM_QWEN_PARENT_POOL_UNIQUE20_CANONICAL_ACTIONS_V1",
+    "development_delivery_only": false,
+    "all_delivered": true,
+    "stopped_reason": null,
+    "prediction_lock_sha256": "099cad812550c7f95dff1cedf7ff367e444e0695242a5778b509bf43c67ac502"
+  },
+  "landscapes": {
+    "AMIE": {
+      "starting_fitness": [
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967,
+        -2.789580821990967
+      ],
+      "native_round_curves": [
+        {
+          "round": 1,
+          "native_best_fitness_mean": -2.5176610946655273,
+          "native_best_fitness_population_variance": 0.03048851320442054,
+          "native_candidate_mean_fitness": -2.9931039845943452,
+          "native_printed_average_curve_variance": 0.03048851320442054
+        },
+        {
+          "round": 2,
+          "native_best_fitness_mean": -2.475100976228714,
+          "native_best_fitness_population_variance": 0.03634822248716642,
+          "native_candidate_mean_fitness": -3.097569872438908,
+          "native_printed_average_curve_variance": 0.03634822248716642
+        },
+        {
+          "round": 3,
+          "native_best_fitness_mean": -2.4261359751224516,
+          "native_best_fitness_population_variance": 0.032335980565911304,
+          "native_candidate_mean_fitness": -3.258365367949009,
+          "native_printed_average_curve_variance": 0.032335980565911304
+        },
+        {
+          "round": 4,
+          "native_best_fitness_mean": -2.39703511595726,
+          "native_best_fitness_population_variance": 0.030292442332382274,
+          "native_candidate_mean_fitness": -3.4207327336072924,
+          "native_printed_average_curve_variance": 0.030292442332382274
+        },
+        {
+          "round": 5,
+          "native_best_fitness_mean": -2.3759906888008118,
+          "native_best_fitness_population_variance": 0.039798791168420423,
+          "native_candidate_mean_fitness": -3.5705157533288,
+          "native_printed_average_curve_variance": 0.039798791168420423
+        },
+        {
+          "round": 6,
+          "native_best_fitness_mean": -2.3417040348052978,
+          "native_best_fitness_population_variance": 0.0468023629765591,
+          "native_candidate_mean_fitness": -3.6850002774596216,
+          "native_printed_average_curve_variance": 0.0468023629765591
+        },
+        {
+          "round": 7,
+          "native_best_fitness_mean": -2.337251102924347,
+          "native_best_fitness_population_variance": 0.04755708049049204,
+          "native_candidate_mean_fitness": -3.8476101613044738,
+          "native_printed_average_curve_variance": 0.04755708049049204
+        },
+        {
+          "round": 8,
+          "native_best_fitness_mean": -2.3357162356376646,
+          "native_best_fitness_population_variance": 0.04801180184617365,
+          "native_candidate_mean_fitness": -4.058045841157436,
+          "native_printed_average_curve_variance": 0.04801180184617365
+        },
+        {
+          "round": 9,
+          "native_best_fitness_mean": -2.329450535774231,
+          "native_best_fitness_population_variance": 0.048564829514685076,
+          "native_candidate_mean_fitness": -4.22263289809227,
+          "native_printed_average_curve_variance": 0.048564829514685076
+        },
+        {
+          "round": 10,
+          "native_best_fitness_mean": -2.329450535774231,
+          "native_best_fitness_population_variance": 0.048564829514685076,
+          "native_candidate_mean_fitness": -4.397034509778023,
+          "native_printed_average_curve_variance": 0.048564829514685076
+        }
+      ]
+    },
+    "avGFP": {
+      "starting_fitness": [
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385,
+        1.2981226444244385
+      ],
+      "native_round_curves": [
+        {
+          "round": 1,
+          "native_best_fitness_mean": 1.5301299333572387,
+          "native_best_fitness_population_variance": 0.19064361735304458,
+          "native_candidate_mean_fitness": 1.3225351586937903,
+          "native_printed_average_curve_variance": 0.19064361735304458
+        },
+        {
+          "round": 2,
+          "native_best_fitness_mean": 1.571665072441101,
+          "native_best_fitness_population_variance": 0.18169058040868094,
+          "native_candidate_mean_fitness": 1.3300700828433036,
+          "native_printed_average_curve_variance": 0.18169058040868094
+        },
+        {
+          "round": 3,
+          "native_best_fitness_mean": 1.6104356586933135,
+          "native_best_fitness_population_variance": 0.177126775881252,
+          "native_candidate_mean_fitness": 1.3269298720359801,
+          "native_printed_average_curve_variance": 0.177126775881252
+        },
+        {
+          "round": 4,
+          "native_best_fitness_mean": 1.7043142318725586,
+          "native_best_fitness_population_variance": 0.26852035175917166,
+          "native_candidate_mean_fitness": 1.3362777778506278,
+          "native_printed_average_curve_variance": 0.26852035175917166
+        },
+        {
+          "round": 5,
+          "native_best_fitness_mean": 1.7191513419151305,
+          "native_best_fitness_population_variance": 0.2626474144723689,
+          "native_candidate_mean_fitness": 1.3332151401042938,
+          "native_printed_average_curve_variance": 0.2626474144723689
+        },
+        {
+          "round": 6,
+          "native_best_fitness_mean": 1.7309138536453248,
+          "native_best_fitness_population_variance": 0.2598793879750312,
+          "native_candidate_mean_fitness": 1.335191352367401,
+          "native_printed_average_curve_variance": 0.2598793879750312
+        },
+        {
+          "round": 7,
+          "native_best_fitness_mean": 1.778708130121231,
+          "native_best_fitness_population_variance": 0.2684919981358048,
+          "native_candidate_mean_fitness": 1.3388744097948073,
+          "native_printed_average_curve_variance": 0.2684919981358048
+        },
+        {
+          "round": 8,
+          "native_best_fitness_mean": 1.799807357788086,
+          "native_best_fitness_population_variance": 0.26137201829490864,
+          "native_candidate_mean_fitness": 1.3460484406352042,
+          "native_printed_average_curve_variance": 0.26137201829490864
+        },
+        {
+          "round": 9,
+          "native_best_fitness_mean": 1.8205893218517304,
+          "native_best_fitness_population_variance": 0.2585282164429206,
+          "native_candidate_mean_fitness": 1.3346315971016884,
+          "native_printed_average_curve_variance": 0.2585282164429206
+        },
+        {
+          "round": 10,
+          "native_best_fitness_mean": 1.8256464004516602,
+          "native_best_fitness_population_variance": 0.25595315751207864,
+          "native_candidate_mean_fitness": 1.330608414709568,
+          "native_printed_average_curve_variance": 0.25595315751207864
+        }
+      ]
+    },
+    "E4B": {
+      "starting_fitness": [
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408,
+        -2.130920886993408
+      ],
+      "native_round_curves": [
+        {
+          "round": 1,
+          "native_best_fitness_mean": -2.000414478778839,
+          "native_best_fitness_population_variance": 0.0031957417255382837,
+          "native_candidate_mean_fitness": -2.0949083918333056,
+          "native_printed_average_curve_variance": 0.0031957417255382837
+        },
+        {
+          "round": 2,
+          "native_best_fitness_mean": -1.9169892132282258,
+          "native_best_fitness_population_variance": 0.0027219219072456367,
+          "native_candidate_mean_fitness": -2.065093470513821,
+          "native_printed_average_curve_variance": 0.0027219219072456367
+        },
+        {
+          "round": 3,
+          "native_best_fitness_mean": -1.8539412558078765,
+          "native_best_fitness_population_variance": 0.0033499310732160482,
+          "native_candidate_mean_fitness": -2.0340126022696494,
+          "native_printed_average_curve_variance": 0.0033499310732160482
+        },
+        {
+          "round": 4,
+          "native_best_fitness_mean": -1.8161546409130096,
+          "native_best_fitness_population_variance": 0.005037560736636628,
+          "native_candidate_mean_fitness": -2.012139952778816,
+          "native_printed_average_curve_variance": 0.005037560736636628
+        },
+        {
+          "round": 5,
+          "native_best_fitness_mean": -1.7988023579120636,
+          "native_best_fitness_population_variance": 0.005655604895166668,
+          "native_candidate_mean_fitness": -1.996198564171791,
+          "native_printed_average_curve_variance": 0.005655604895166668
+        },
+        {
+          "round": 6,
+          "native_best_fitness_mean": -1.7884775459766389,
+          "native_best_fitness_population_variance": 0.005697631271633661,
+          "native_candidate_mean_fitness": -1.9838161036372184,
+          "native_printed_average_curve_variance": 0.005697631271633661
+        },
+        {
+          "round": 7,
+          "native_best_fitness_mean": -1.7621561586856842,
+          "native_best_fitness_population_variance": 0.005900956212471264,
+          "native_candidate_mean_fitness": -1.9490090224146843,
+          "native_printed_average_curve_variance": 0.005900956212471264
+        },
+        {
+          "round": 8,
+          "native_best_fitness_mean": -1.7378314077854156,
+          "native_best_fitness_population_variance": 0.005384505277391547,
+          "native_candidate_mean_fitness": -1.9305631196498871,
+          "native_printed_average_curve_variance": 0.005384505277391547
+        },
+        {
+          "round": 9,
+          "native_best_fitness_mean": -1.7103692710399627,
+          "native_best_fitness_population_variance": 0.006977506100208011,
+          "native_candidate_mean_fitness": -1.9208070215582849,
+          "native_printed_average_curve_variance": 0.006977506100208011
+        },
+        {
+          "round": 10,
+          "native_best_fitness_mean": -1.7013690054416657,
+          "native_best_fitness_population_variance": 0.007273470826068653,
+          "native_candidate_mean_fitness": -1.9060136699676513,
+          "native_printed_average_curve_variance": 0.007273470826068653
+        }
+      ]
+    },
+    "LGK": {
+      "starting_fitness": [
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809,
+        -1.2598662376403809
+      ],
+      "native_round_curves": [
+        {
+          "round": 1,
+          "native_best_fitness_mean": -0.7860219478607178,
+          "native_best_fitness_population_variance": 0.19111402330150576,
+          "native_candidate_mean_fitness": -1.3567965389043093,
+          "native_printed_average_curve_variance": 0.19111402330150576
+        },
+        {
+          "round": 2,
+          "native_best_fitness_mean": -0.7210312070325017,
+          "native_best_fitness_population_variance": 0.17067801720777256,
+          "native_candidate_mean_fitness": -1.4566088446415961,
+          "native_printed_average_curve_variance": 0.17067801720777256
+        },
+        {
+          "round": 3,
+          "native_best_fitness_mean": -0.65597841758281,
+          "native_best_fitness_population_variance": 0.1708840906764341,
+          "native_candidate_mean_fitness": -1.613236250234768,
+          "native_printed_average_curve_variance": 0.1708840906764341
+        },
+        {
+          "round": 4,
+          "native_best_fitness_mean": -0.6227244660258293,
+          "native_best_fitness_population_variance": 0.17169615405781105,
+          "native_candidate_mean_fitness": -1.7840696850977837,
+          "native_printed_average_curve_variance": 0.17169615405781105
+        },
+        {
+          "round": 5,
+          "native_best_fitness_mean": -0.5734116204082966,
+          "native_best_fitness_population_variance": 0.17339417060069864,
+          "native_candidate_mean_fitness": -1.9417958200909198,
+          "native_printed_average_curve_variance": 0.17339417060069864
+        },
+        {
+          "round": 6,
+          "native_best_fitness_mean": -0.557384304702282,
+          "native_best_fitness_population_variance": 0.16312700853388745,
+          "native_candidate_mean_fitness": -2.08019691423513,
+          "native_printed_average_curve_variance": 0.16312700853388745
+        },
+        {
+          "round": 7,
+          "native_best_fitness_mean": -0.5075592264533043,
+          "native_best_fitness_population_variance": 0.13486521536734633,
+          "native_candidate_mean_fitness": -2.240883671240881,
+          "native_printed_average_curve_variance": 0.13486521536734633
+        },
+        {
+          "round": 8,
+          "native_best_fitness_mean": -0.5047356054186821,
+          "native_best_fitness_population_variance": 0.13330055311345582,
+          "native_candidate_mean_fitness": -2.382434461740777,
+          "native_printed_average_curve_variance": 0.13330055311345582
+        },
+        {
+          "round": 9,
+          "native_best_fitness_mean": -0.5047356054186821,
+          "native_best_fitness_population_variance": 0.13330055311345582,
+          "native_candidate_mean_fitness": -2.49078371941112,
+          "native_printed_average_curve_variance": 0.13330055311345582
+        },
+        {
+          "round": 10,
+          "native_best_fitness_mean": -0.5047356054186821,
+          "native_best_fitness_population_variance": 0.13330055311345582,
+          "native_candidate_mean_fitness": -2.6622978429030626,
+          "native_printed_average_curve_variance": 0.13330055311345582
+        }
+      ]
+    },
+    "UBE2I": {
+      "starting_fitness": [
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813,
+        -0.262121319770813
+      ],
+      "native_round_curves": [
+        {
+          "round": 1,
+          "native_best_fitness_mean": -0.1613786831498146,
+          "native_best_fitness_population_variance": 0.0030395004477242115,
+          "native_candidate_mean_fitness": -0.24106019597500564,
+          "native_printed_average_curve_variance": 0.0030395004477242115
+        },
+        {
+          "round": 2,
+          "native_best_fitness_mean": -0.1394965473562479,
+          "native_best_fitness_population_variance": 0.00465793793287958,
+          "native_candidate_mean_fitness": -0.22660537268733605,
+          "native_printed_average_curve_variance": 0.00465793793287958
+        },
+        {
+          "round": 3,
+          "native_best_fitness_mean": -0.065028279973194,
+          "native_best_fitness_population_variance": 0.03345456908205424,
+          "native_candidate_mean_fitness": -0.20688808711711318,
+          "native_printed_average_curve_variance": 0.03345456908205424
+        },
+        {
+          "round": 4,
+          "native_best_fitness_mean": -0.045838869316503404,
+          "native_best_fitness_population_variance": 0.030544455544021146,
+          "native_candidate_mean_fitness": -0.19035356926498934,
+          "native_printed_average_curve_variance": 0.030544455544021146
+        },
+        {
+          "round": 5,
+          "native_best_fitness_mean": -0.016143287112936378,
+          "native_best_fitness_population_variance": 0.027646744039482484,
+          "native_candidate_mean_fitness": -0.1741000350099057,
+          "native_printed_average_curve_variance": 0.027646744039482484
+        },
+        {
+          "round": 6,
+          "native_best_fitness_mean": 0.007958598295226693,
+          "native_best_fitness_population_variance": 0.025723978788492703,
+          "native_candidate_mean_fitness": -0.1528700907435268,
+          "native_printed_average_curve_variance": 0.025723978788492703
+        },
+        {
+          "round": 7,
+          "native_best_fitness_mean": 0.04093723041005433,
+          "native_best_fitness_population_variance": 0.023826237218138736,
+          "native_candidate_mean_fitness": -0.1336858429131098,
+          "native_printed_average_curve_variance": 0.023826237218138736
+        },
+        {
+          "round": 8,
+          "native_best_fitness_mean": 0.07030987655743956,
+          "native_best_fitness_population_variance": 0.022789592430883885,
+          "native_candidate_mean_fitness": -0.12340289380634203,
+          "native_printed_average_curve_variance": 0.022789592430883885
+        },
+        {
+          "round": 9,
+          "native_best_fitness_mean": 0.11314955144189298,
+          "native_best_fitness_population_variance": 0.020123045079279898,
+          "native_candidate_mean_fitness": -0.10367065524449572,
+          "native_printed_average_curve_variance": 0.020123045079279898
+        },
+        {
+          "round": 10,
+          "native_best_fitness_mean": 0.13483923631720246,
+          "native_best_fitness_population_variance": 0.019372587495882783,
+          "native_candidate_mean_fitness": -0.08841669030720369,
+          "native_printed_average_curve_variance": 0.019372587495882783
+        }
+      ]
+    }
+  },
+  "metric_qualification": "Released learned surrogate fitness only; not experimental activity or matched native MutaPLM proposal distribution.",
+  "prediction_lock_sha256": "099cad812550c7f95dff1cedf7ff367e444e0695242a5778b509bf43c67ac502",
+  "at_pacific": "2026-10-21T20:24:54.684748-07:00",
+  "plan_sha256": "23cff4ce746e110645cc94b60803100aac1a6364de938a8b9eda2b6ec23ba919",
+  "neutral_evaluator_gate_sha256": "33f6f98510aa3376c92fd4a0e7df158e89ff5c7bffe484fb8f14b00ee9d3abed",
+  "development_prediction_lock_sha256": "5aab97bc18d260d8da7de9b5a0a130a92c47b0fbcc9689367c337befd7ef833d"
+}
