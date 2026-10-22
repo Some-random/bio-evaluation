@@ -1,26 +1,26 @@
 # Remaining evaluation work
 
-Updated **2026-10-22T12:04:06.198599-07:00** (America/Los_Angeles).
+Updated **2026-10-22T16:09:11.458998-07:00** (America/Los_Angeles).
 
 [Evaluation results, release years and complete questions](RESULTS_AND_REMAINING_WORK.md)
 
 This is the main work tracker: what remains, why, and who owns the next action. A scored subset can appear in the results document while its wider evaluation remains here. Preparation and saved responses do not count as benchmark scores.
 
-**Current comparison: Qwen3.5-4B versus Qwen3.5-4B-Base on protein tasks and text QA.** LAB-Bench LitQA2 and SuppQA are complete and scored for both models (279 questions each). The 34 artificial runtime checks passed, but actual benchmark delivery revealed extensive 16K output exhaustion, especially for the post-trained model. Future queue submissions are paused; affected classification and LABBench2 workers are being drained between batches while current calls and all outputs are preserved. A separate author-recommended sampling correction is adopted for preparation, with actual task-shaped artificial validation and independent review required before any new full-cohort dispatch. No replacement condition or selective retry has been dispatched. The 4B LiveProteinBench and scalar-property jobs have not been submitted. The separate Qwen3.8-27B runs continue. This is a dated snapshot; task-local monitors provide newer runtime evidence. Other rows retain their stated observation times.
+**Current comparison: Qwen3.5-4B versus Qwen3.5-4B-Base on protein tasks and text QA.** The corrected LAB-Bench pair is fully scored and published; both models scored 22.34% on LitQA2, and Base/post-trained scored 9.76%/19.51% on SuppQA. SlideVQA and GO cellular component also have completed scores and publications; they are in the results document. LiveProteinBench, classification and LABBench2 have the distinct live states below. Property runs are ready and waiting for resource capacity. These are observed states, not completion estimates.
+
+For the original 57, the previously reported “11 partial” category contains **five wider-coverage tasks** (ProteinGym, PFArena T1/T3, RAbD and BioReason-Pro), **five completed smaller studies with missing original benchmark data or metrics** (protein description, ProtST retrieval, conditional generation, heme binding and Proteo-R1), and **MutaPLM optimization with five landscapes finished and the sixth held**. These are not 11 active jobs. The other 11 stopped/excluded settings have their distinct reasons below; three MutaDescribe settings share one interruption.
 
 | Evaluation | Status | Owner | Verified progress | Exactly what remains / blocker |
 |---|---|---|---|---|
-| LiveProteinBench — 4B / Base comparison | Admitted; dispatch paused | LiveProteinBench owner / coordinator | 1,736 reviewed questions/model; both original queue requests have zero submission attempts and no job IDs. | Resolve the shared 16K delivery failure before releasing this cohort; preserve the admitted original condition and separately review any prospective repair. |
-| PEER solubility and localization — 4B / Base | Draining after delivery failure | Classification delivery owner | At 11:55 PDT localization: Base 1,008/2,773 saved, 863 truncated empty finals; post-trained 576/2,773 saved, all 576 truncated empty. No transport errors. Solubility has not been reached by either sequential worker. | Allow active batches to finish; stop new requests, retain every attempt, diagnose sampling/template behavior using neutral inputs and freeze any prospective repair separately. No native score yet. |
-| Meltome, TAPE stability and GFP fluorescence — 4B / Base | Admitted; dispatch paused | Protein properties owner / coordinator | 41,434 fixed inputs/model: 1,366 Meltome, 12,851 stability and 27,217 GFP. Both requests have zero submission attempts and no job IDs. | Resolve shared delivery failure before launching these large cohorts. No benchmark response counts or scores exist for these lanes. |
-| LAB-Bench LitQA2 and SuppQA — 4B / Base | Complete and scored | LAB-Bench owner | Both 279/279 sealed. LitQA2 accuracy: Base 22.34%, post-trained 14.72%; SuppQA: 12.20%, 17.07%. Base 10 truncations; post-trained 121 truncations and 124 empty finals. | Publish independently reviewed source, native scores and complete trajectories; finished results are in the results document. Original jobs 246445/246714 completed. |
-| LABBench2 BASIC text QA — 4B / Base | Draining after delivery failure | LABBench2 owner | At 11:56 PDT Base 416/542 saved, 59 truncated; post-trained at least 256/542 terminal raw outcomes, 243 truncated. No transport/HTTP errors. Both original jobs had started. | Finish active batches and stop new requests. No complete solver seals or judge score yet. Preserve author BASIC question-only inputs and the declared fixed local judge for any independently frozen continuation. |
-| LiveProteinBench — Qwen3.8-27B sequence-only | Generating | LiveProteinBench owner | At 11:54 PDT 1,142/1,736 saved, 1,027 parsed, 79 truncations, no transport/HTTP/empty-final errors. Job 246368 running. | Finish this separate nonthinking sequence-only condition, seal all outcomes, score once and publish; 61 source cases remain excluded. |
-| LAB-Bench / ProtocolQA | Held after interrupted review | Coordinator / provider restriction | ProtocolQA review checkpoint preserved. | Resolution of the interrupted scope; do not retry or reroute it. |
-| Beta-lactamase activity — PEER | Endpoint not admitted | Coordinator | Source and synthetic checks exist; native cases unexecuted. | Native task predicts antibiotic-resistance enzyme variant activity; this performance-prediction endpoint is not admitted. |
-| AAV variant fitness — FLIP | Endpoint held | Coordinator | Archive/source audit complete; source is available. | Native task predicts engineered viral-capsid packaging viability. Endpoint remains held; missing downloads are not the blocker. |
-| GO biological process — DeepFRI split | Generating | Existing DeepFRI worker / coordinator | At 11:50 PDT 1,696/3,416 saved; no recorded delivery errors or truncations. Existing successor job 243499 running. | Finish unchanged generation, seal all outcomes and run native AP/Fmax scoring. |
-| GO cellular component — DeepFRI split | Complete and scored | Coordinator / independent reviewer | All 3,416 parsed; native AUPRC 0.03705706, Fmax 0.07158192. No delivery failures. | Publish source, complete trajectories and native scores. The launch-only scoring repair is complete; original failure log preserved. |
+| LiveProteinBench — 4B / Base comparison | Base generating; post-trained stopped at delivery gate | LiveProteinBench owner | At 16:06 PDT Base job 247294: 246/1,736 saved; 104 truncated empty finals; no HTTP/transport errors. Post-trained job 247319 ended after one of three artificial checks exhausted 16K tokens; no benchmark calls or score. | Base continues to full seal, once-only score and publication. Preserve the post-trained gate failure; no retry is admitted. |
+| PEER solubility and localization — 4B / Base | Corrected sampling condition generating | Classification delivery owner | At 16:03 PDT localization: Base job 247043 320/2,773 saved, 37 truncated empty finals; post-trained job 247044 320/2,773, 54 truncated empty finals. No HTTP/transport errors. Solubility follows in each sequential worker; no current count observed. | Finish the frozen cohorts, preserve every attempt, seal and score once. A separate 32K validation proposal exists but has not run or changed these jobs. |
+| Meltome, TAPE stability and GFP fluorescence — 4B / Base | Ready; waiting for GPU capacity | Protein properties owner / queue owner | 41,434 fixed inputs/model: 1,366 Meltome, 12,851 stability and 27,217 GFP. Both queue requests have zero submission attempts and no job IDs at 16:07 PDT. | No engineering admission remains. Existing queue submits only when fresh conservative accounting permits it. At 16:08 PDT all eight counted GPUs belong to running evaluation jobs; the briefly counted two-GPU job in another workspace has left the outstanding inventory. |
+| LABBench2 BASIC text QA — 4B / Base | Corrected sampling condition generating | LABBench2 owner | At 16:06 PDT Base job 247289: 528/542 saved, five truncated empty finals; post-trained job 247392: 208/542, two truncations and six empty finals. No HTTP/transport errors; neither full seal exists yet. | Finish both 542-question solver runs, seal them, then run the declared fixed local judge and publish. No partial judged score. |
+| LiveProteinBench — Qwen3.8-27B sequence-only | Generating final question type | LiveProteinBench owner | At 16:00 PDT 1,605/1,736 terminal; 1,609 confirmed attempts, four open. Eleven of 12 task types have finished generation. 118 truncations; no HTTP/transport/empty-final errors. | Finish the remaining transmembrane questions, seal all outcomes, score once and publish. The source has 1,797 questions; 61 remain excluded from this reviewed condition. |
+| LAB-Bench / ProtocolQA | Stopped after automatic review interruption | Coordinator | Completed review checkpoints preserved; exact later trigger unknown. | The recorded interrupted review remains stopped; no retry or reroute. This does not establish that all ProtocolQA cases are prohibited. |
+| Beta-lactamase activity — PEER | Local endpoint exclusion | Coordinator | Source and synthetic checks exist; the boundary receipt explicitly records no provider interruption and no user hold. | Resistance-enzyme variant-performance prediction is outside the admitted local scope. Missing data is not the blocker. |
+| AAV variant fitness — FLIP | Local endpoint exclusion | Coordinator | Archive/source audit complete; source is available. | Engineered viral-capsid packaging-viability prediction remains outside admitted scope. This is not a missing-download or recorded provider-interruption problem. |
+| GO biological process — DeepFRI split | Generating under unchanged continuation | Existing DeepFRI owner | At 16:03 PDT 1,840/3,416 saved; 1,844 terminal includes four preserved unknown outcomes from predecessor timeout. Successor job 247052 is running; endpoint 200, A100 100%, ECC zero at 16:06. | Finish untouched cases and seal the complete denominator; invoke the native scorer once. Four ambiguous prior attempts remain invalid, so the frozen all-valid primary-score gate cannot yield a defined full score. No selective retries. |
 | ProteinGym DMS substitution benchmark | Reviewed 30-assay condition scored and published | ProteinGym owner | 59,581/59,581 outputs; native mean Spearman −0.01406667 across 30/217 assays. Report and complete trajectories are published and byte-verified. | The other 187 assays remain unadmitted; no full 217-assay completion is claimed. |
 | PG-LLM / ProteinGym-LLM ranking | Held after rejected/interrupted work | Coordinator / provider restriction | Prior rejected traffic and review evidence preserved. | Applicable scope/provider resolution; no retries, relabeling or rerouting. |
 | PFArena T1: single-mutant generation | 43 assays scored; full panel unfinished | PFArena T1 owner | 34 original and nine additional assays scored and published as separate conditions. | 67 assays remain unadmitted; 12 held and one outside this condition. Two further input proposals need a separate scientific decision. |
@@ -28,19 +28,18 @@ This is the main work tracker: what remains, why, and who owns the next action. 
 | PFArena T3: anchor-informed ranking | 13 assays scored; full panel unfinished | PFArena T3 owner | Eight original and five additional assays scored and published separately. | 54/67 assays remain input-unreviewed; prepare and independently review permitted inputs before another condition. |
 | PFArena T4: single-mutant-informed ranking | Four scored; extension stopped | Coordinator / stopped extension | Four-assay V2 result preserved; new eight-assay preparation encountered a biological-risk interruption. | Preserve checkpoints; no retry or reroute of the interrupted extension. Do not infer the exact trigger. |
 | NatureLM protein description | Independent cohort finished; native holdout unavailable | Coordinator / source recovery | Independent nine-record description result published. | Exact original accessions, dated annotation snapshot and ROUGE preprocessing are needed for native paper reproduction. |
-| MutaDescribe mutation explanation | Held after interrupted review | Coordinator / provider restriction | MutaDescribe source files are available. | The interrupted biological-content review remains stopped; file availability does not resolve it. |
-| MutaDescribe mutation engineering — position supplied | Held after interrupted review | Coordinator / provider restriction | MutaDescribe source files are available. | Same interrupted-review boundary; do not reopen through another worker or setting. |
-| MutaDescribe mutation engineering — position unknown | Held after interrupted review | Coordinator / provider restriction | MutaDescribe source files are available. | Same interrupted-review boundary; no native run is currently admitted. |
+| MutaDescribe mutation explanation | Shared automatic source-review interruption | Coordinator | Source/evaluation files are available. One mixed descriptive/engineering review was interrupted; exact trigger unknown. | Preserve that stopped review. The shared interruption is not evidence that every descriptive case is prohibited. |
+| MutaDescribe mutation engineering — position supplied | Same shared review interruption | Coordinator | Inherits the single MutaDescribe source-review hold; no separate case-specific rejection recorded. | Do not reopen the interrupted action through another worker or setting. Source access is not the blocker. |
+| MutaDescribe mutation engineering — position unknown | Same shared review interruption | Coordinator | Inherits the single MutaDescribe source-review hold; no separate case-specific rejection recorded. | Preserve the interrupted scope; no native run is currently admitted. |
 | MutaPLM low-N fitness regression | Excluded by user: no new head training | Coordinator | Existing-head/source audit only. | A released matching head and exact split would be needed; no new head training will be undertaken. |
 | MutaPLM iterative sequence optimization | Five landscapes finished; sixth held | Coordinator / retained hold | Five-landscape surrogate result published. | No execution remains for the five-landscape condition. The held sixth is excluded from a full six-landscape claim. |
 | BioT5+ description-guided protein design | Partial archive; extension held | Coordinator / provider restriction | 59 archived responses preserved; no full benchmark score. | Preserve interrupted review; recover permitted alignment/native-metric metadata without restarting the extension. |
-| NatureLM unconditional generation | Generating | Unconditional-generation owner | At 11:49 PDT 622/1,000 outcomes saved; no recorded truncations, empty finals or transport errors. | Finish unchanged generation, eligible folding, scoring, final audit and publication. |
+| NatureLM unconditional generation | Generating | Unconditional-generation owner | At 16:01 PDT 829/1,000 outcomes saved; no reported HTTP/transport, format, truncation or empty-final errors. Counts are unsealed lower bounds. | Finish generation, perform eligible folding, score the fixed condition and publish. Generation alone is not the final evaluation. |
 | NatureLM stability/solubility-conditioned generation | Available condition complete; native equivalence unavailable | Coordinator / source recovery | All 30 generations and substitute proxy scores published. | No execution remains for this condition. Native cohort/evaluator and matched controls are unavailable; short strings limit biological interpretation. |
 | NatureLM heme-binding case study | Qualitative case finished; native evaluation unavailable | Coordinator / source recovery | One sequence and five predicted complexes published, all with severe clashes. | Original author cases/settings and binding measurements are required for a native binding score; no further declared run is pending. |
 | RAbD CDR-H3 redesign | 38/60 cases scored | Coordinator / remaining input review | Current-coordinate backbone adaptation published. | 22 cases remain outside the evaluated condition; scope review and historical coordinate/protocol provenance are separate remaining requirements. |
 | Proteo-R1 all-CDR SAbDab holdout | Released demonstrations finished; paper holdout unavailable | Coordinator / source recovery | All three demonstrations scored and published; GPU released. | Exact paper holdout and structural Loop-RMSD/IMP scorer remain unavailable. No execution remains for the adopted three-case condition. |
 | BioReason-Pro explanation assessment | 12 cases scored; full release unfinished | BioReason-Pro owner / coordinator | Reviewed 12-case local solver/judge result published. | 8,618 source cases remain unreviewed; wider permitted inputs need independent review and a frozen condition. Exact native judging differs. |
-| SlideVQA full-deck question answering | Generating | SlideVQA owner | At 11:56 PDT 1,896/2,215 saved; 1,890 valid, six preserved truncated empty finals. No transport/HTTP errors. Job 245973 running. | Finish all 2,215 once-only outcomes, seal, run native scoring and publish. Original historical image-encoding qualifications remain. |
 | LABBench2 — remaining modalities and conditions (2026) | Preparation only beyond selected BASIC text QA | LABBench2 owner | The selected 542-case BASIC text comparison is tracked above. The wider package includes additional inputs and image/tool conditions. | Wider multimodal or tool conditions require separate scope and actual delivery checks; they are not part of the current matched text-only dispatch. |
 | GeneBench-Pro (2026; public 10) | CPU preparation complete | Coordinator / GeneBench-Pro lane | Portable environment and concurrent once-only recording/scorer harness independently accepted; no real analysis/model calls. | New-suite dispatch authority and actual model/tool delivery; then the declared public-ten run and native grading. |
 | BiomniBench-DA (2026; public 50) | Finishing CPU runtime validation | BiomniBench-DA owner | 410 source objects and 50 workspaces verified; Python/R confinement prepared. | Seal final repaired R environment and CPU checks; then independent runtime acceptance. New-suite inference/judge dispatch is not authorized. |
@@ -48,42 +47,23 @@ This is the main work tracker: what remains, why, and who owns the next action. 
 | scBench (2026; public six) | Deferred by user | Deferred | Public task definitions and deterministic grader preserved. | Required Latch access is unavailable; no further credential request or attempt is pending. |
 
 <details>
-<summary>Worker assignments and recent handoffs</summary>
+<summary>Current ownership and completion handoffs</summary>
 
-Capacity is 16 workers plus the coordinator; at most eight project GPUs may be requested. A worker finishing a bounded review or CPU package is explicitly reassigned or continues its evaluation. Thread names may retain an earlier task name.
+The session supports 16 workers plus the coordinator. Task owners keep their lanes through a full prediction seal, scoring and reviewed publication; root integrates verified results into the main table. A completed bounded review is not an evaluation completion.
 
-Worker details below were last reconciled at 2026-10-21T21:15:15.022082-07:00; the evaluation table above supersedes older task stages.
-
-| Worker | Assigned role |
+| Owner | Current responsibility |
 |---|---|
-| /root/liveprotein_execution | LiveProteinBench sequence-only execution through scoring and publication |
-| /root/p17_execution | ProteinGym substitutions |
-| /root/p19_remaining_review | PFArena T1 single-mutant generation |
-| /root/p21_remaining_review | PFArena T3 anchor-informed ranking |
-| /root/p22_remaining_review | Stopped after biological-risk interruption; no reassignment of interrupted action |
-| /root/p37_delivery | NatureLM unconditional generation |
-| /root/p38_generation | NatureLM conditional generation |
-| /root/p41_structure | Proteo-R1 structural demonstration |
-| /root/p44_explanation | BioReason-Pro explanations |
-| /root/v07_execution | SlideVQA |
-| /root/new2026_biomni | BiomniBench-DA |
-| /root/new2026_bixbench | BixBench3 |
-| /root/v07_execution/v07_runtime_audit | GeneBench-Pro |
-| /root/new2026_labbench2 | LABBench2 |
-| /root/independent_review | Independent review coordination |
-| /root/independent_review/v07_question_prefilter_b | BixBench3 independent technical review |
-| /root/p19_remaining_review/metadata_provenance_audit/stability9_peer_check | PFArena T1 independent technical review |
-| /root/p05_scope | PFArena T3 / SlideVQA independent review |
+| LiveProteinBench owner | 27B and Base runs through score/publication; preserve failed post-trained gate. |
+| Classification delivery owner | Matched localization and solubility runs; separate length validation proposal. |
+| LABBench2 owner | Finish both solver cohorts, then fixed local judging and publication. |
+| Protein properties owner | Ready scalar cohorts; existing capacity-controlled queue. |
+| DeepFRI owner | Unchanged biological-process continuation, complete accounting and once-only scoring. |
+| Unconditional-generation owner | Generation followed by eligible folding and final scoring. |
+| PFArena/queue owner | Remaining permitted coverage metadata and healthy capacity-controlled queue. |
+| Independent reviewer | Exact result/publication review; no reopening interrupted content. |
+| Coordinator | Publish completed results in the two main documents; resolve actionable internal handoffs. |
 
-Recent handoffs:
-
-- `/root/p05_scope`: FLIP metadata/scope audit, then Proteo-R1 input audit, then PFArena T3 technical admission → SlideVQA exact deck partition.
-- `/root/independent_review/v07_question_prefilter_b`: SlideVQA 50-deck full-content review / 242 cases → BixBench3 independent technical review.
-- `/root/v07_execution/v07_runtime_audit`: V07 bounded runtime/scorer guard audit → GeneBench-Pro portable CPU/recording preparation.
-- `/root/new2026_labbench2`: LABBench2 authorized CPU preparation → BiomniBench-DA independent technical review.
-- `/root/p19_remaining_review`: Nine-case input/provenance review milestone → Own separate nine-case execution preparation through closure.
-- `/root/p22_remaining_review`: No normal completion: biological-risk interruption → No retry or handoff of the interrupted action.
-
+Original owner names and older handoffs remain in task-local records; they are not claims that every historical thread is currently running.
 </details>
 
 Snapshot only; websites and recurring updates remain disabled. Existing biological holds, no-new-head-training and no-paid/OpenAI-benchmark-call restrictions remain. Technical run reports, source records and trajectories support these two main documents.
