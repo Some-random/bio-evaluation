@@ -1,0 +1,113 @@
+{
+  "role": "frozen_scientific_protocol_and_native_scoring_source",
+  "scientific_plan_sha256": "9926c00d14115a2cfad32b2680f93ef9080c105829ebbbf6292ccdd4e15b4c3f",
+  "archive_sha256": "62a37a98fa383ba86b32078363bde64a4bceddee7500e9198e509bcc9cf2f432",
+  "members": {
+    "engineering_delegation.json": {
+      "sha256": "911aeef756cd8d4bd851b30a076bd79062a5f7c2b66b389f64f33596bd8694fb",
+      "bytes": 2939
+    },
+    "labbench/cpu_validation_v4.json": {
+      "sha256": "4b02ad86b0022037bed08732be1d69deb1b091dd7c0e3678bc9219ff28e6177a",
+      "bytes": 3408
+    },
+    "labbench/driver.py": {
+      "sha256": "158296cc6912bf3afab2f511cb4114d54db851e0727bafae6bf35f9a5481a5a8",
+      "bytes": 11966
+    },
+    "labbench/independent_final_review_v3.json": {
+      "sha256": "8274138a4b66fb7fb097e7d2aeec58a8de4d8a95e2c1ebfedb3d4b8c5ee62fd9",
+      "bytes": 9491
+    },
+    "labbench/independent_grant_v3.json": {
+      "sha256": "36e9b1b2f8f7b9c77b582e694d4fdcc248e0a21e8f1c6ae6de3b652c0dfa2dd3",
+      "bytes": 2261
+    },
+    "labbench/independent_preparation_review.json": {
+      "sha256": "88cb3b00f6b980fc9f6273df446bf666229b23c97c19439d1cac475b267da570",
+      "bytes": 6759
+    },
+    "labbench/input_manifest.json": {
+      "sha256": "17636f094abf07da47430120c952393ac0db3369f0bce499738435a3efba8906",
+      "bytes": 3672
+    },
+    "labbench/native_scoring_v2.py": {
+      "sha256": "379a6fb42badfce0d0d4f599deb05859d19ceb0b2248199a57b8d9e7e25dc5b4",
+      "bytes": 4627
+    },
+    "labbench/neutral_proof.py": {
+      "sha256": "d8cff60ae2e83c12d9615a0ca7b112a9e4101e46c1a64cb187ee3d97ad65db69",
+      "bytes": 6742
+    },
+    "labbench/plan_v3.json": {
+      "sha256": "9926c00d14115a2cfad32b2680f93ef9080c105829ebbbf6292ccdd4e15b4c3f",
+      "bytes": 15265
+    },
+    "labbench/score.py": {
+      "sha256": "c6a363b92e786e67bb3f5ab6ee882f4ecfc54c7fe5661d6eed2f11eb86bce141",
+      "bytes": 10073
+    },
+    "labbench/submit.py": {
+      "sha256": "5226528fb9f7a3597d2bada9a49442928cbd1e1641737b9008f3bf6751ba18c1",
+      "bytes": 3156
+    },
+    "labbench/submit_after_neutral.py": {
+      "sha256": "bcac7da7bca7be5dda2c03b732ec224056eff4529192a6791640b2b78cb218b4",
+      "bytes": 1498
+    },
+    "labbench/test_driver.py": {
+      "sha256": "f32d51a1a92951d3e8383b0b31f859319a3d637eef9fcba16e9b21f944665ee3",
+      "bytes": 7959
+    },
+    "labbench/test_native_scoring_v2.py": {
+      "sha256": "c23ddb8d524a31fb9e5dfb73c1fb78f8de057e4ee1e8f0500ea401e10432eaa0",
+      "bytes": 2834
+    },
+    "labbench/test_neutral_proof.py": {
+      "sha256": "82a0b4f1334aae5db875d1aafcc48519baafd0e801fcb14b5c42561b37f4aa2f",
+      "bytes": 7151
+    },
+    "labbench/test_submit_after_neutral.py": {
+      "sha256": "1b6455eed480f0f72e5a3c96a01cf0b0d7832b4cd29e45750bcc348319e0315b",
+      "bytes": 1428
+    },
+    "labbench/worker.py": {
+      "sha256": "6eb97f0c0390bcb641d2e4032a590b9f80880a701b8a43ad979de6c3472c7a15",
+      "bytes": 6019
+    },
+    "labbench/worker.sbatch": {
+      "sha256": "09e6fac54965e9af06487caf64b82ac339546aad402262ac9fc63454298c405e",
+      "bytes": 707
+    },
+    "neutral_validation/plan.json": {
+      "sha256": "a4859c4870601c813ed5a47be6850b524af822c94bfe09204cd93d0ab2b81a57",
+      "bytes": 3473
+    },
+    "neutral_validation/receipt.json": {
+      "sha256": "4be2c745d45f42bc92c6a7fe916bfa2897732a43160b8dfa8d36d854dba9faa9",
+      "bytes": 1165
+    },
+    "root_scope.json": {
+      "sha256": "b3d22d85f46a05a8357b5e49f186f22fbd1b8648577006c00da25f52fab8c6e9",
+      "bytes": 4344
+    },
+    "shared_contract.json": {
+      "sha256": "ac901e2191304fa9fa2190226a1f8018bb276dbfef84d29550892e28a30cb461",
+      "bytes": 10798
+    },
+    "shared_contract_adoption.json": {
+      "sha256": "0b6210358ef93060ae0e6ad0368cda59a718b4e3d1bcb1cf266c14680e57a5f8",
+      "bytes": 1104
+    },
+    "shared_runtime.py": {
+      "sha256": "257f02be8392a1adbfa759e829e588166aa228d5a6a82c20c9db6f38ef48e381",
+      "bytes": 11034
+    }
+  },
+  "member_count": 25,
+  "scorer_reference_values_included": false,
+  "model_weights_included": false,
+  "credentials_included": false,
+  "runtime_archives_included": false,
+  "obsolete_ops_successor_included": false
+}

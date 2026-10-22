@@ -1,0 +1,135 @@
+{
+  "at_pacific": "2026-10-22T09:31:31.614592-07:00",
+  "stage": "scored_terminal",
+  "plan_sha256": "9926c00d14115a2cfad32b2680f93ef9080c105829ebbbf6292ccdd4e15b4c3f",
+  "condition": "native_public_COT_closed_book_reviewed279_qwen35_matched_thinking_raw16k_v1",
+  "prediction_seals": {
+    "base": {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/runtime/base/prediction_lock.json",
+      "sha256": "fb42fd97548b137ede04bf23a7979a00032a1bb0408f9a492026c362b28fbc6d",
+      "case_count": 279
+    },
+    "posttrained": {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/runtime/posttrained/prediction_lock.json",
+      "sha256": "c5ac9ec9eaa723757cd5f4a7597b80d43726ec259e03857fe5903fb76ca88cd1",
+      "case_count": 279
+    }
+  },
+  "models": {
+    "base": {
+      "model": "Qwen/Qwen3.5-4B-Base",
+      "revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+      "per_task": {
+        "B01": {
+          "metrics": {
+            "accuracy": 0.2233502538071066,
+            "precision": 0.22797927461139897,
+            "coverage": 0.9796954314720813,
+            "n_total": 197,
+            "n_correct": 44,
+            "n_sure": 193
+          },
+          "diagnostics": {
+            "parsed": 115,
+            "empty_final": 9,
+            "truncated": 9,
+            "transport_error": 0,
+            "http_error": 0,
+            "response_error": 9,
+            "not_dispatched": 0,
+            "refusal": 0,
+            "invalid_outputs": 82
+          },
+          "explanation_correctness_assessed": false
+        },
+        "B03": {
+          "metrics": {
+            "accuracy": 0.12195121951219512,
+            "precision": 0.13333333333333333,
+            "coverage": 0.9146341463414634,
+            "n_total": 82,
+            "n_correct": 10,
+            "n_sure": 75
+          },
+          "diagnostics": {
+            "parsed": 44,
+            "empty_final": 1,
+            "truncated": 1,
+            "transport_error": 0,
+            "http_error": 0,
+            "response_error": 1,
+            "not_dispatched": 0,
+            "refusal": 0,
+            "invalid_outputs": 38
+          },
+          "explanation_correctness_assessed": false
+        }
+      },
+      "all_case_denominators_preserved": true,
+      "optional_llm_fallback_used": false
+    },
+    "posttrained": {
+      "model": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "per_task": {
+        "B01": {
+          "metrics": {
+            "accuracy": 0.14720812182741116,
+            "precision": 0.15025906735751296,
+            "coverage": 0.9796954314720813,
+            "n_total": 197,
+            "n_correct": 29,
+            "n_sure": 193
+          },
+          "diagnostics": {
+            "parsed": 86,
+            "empty_final": 97,
+            "truncated": 94,
+            "transport_error": 0,
+            "http_error": 0,
+            "response_error": 97,
+            "not_dispatched": 0,
+            "refusal": 0,
+            "invalid_outputs": 111
+          },
+          "explanation_correctness_assessed": false
+        },
+        "B03": {
+          "metrics": {
+            "accuracy": 0.17073170731707318,
+            "precision": 0.17721518987341772,
+            "coverage": 0.9634146341463414,
+            "n_total": 82,
+            "n_correct": 14,
+            "n_sure": 79
+          },
+          "diagnostics": {
+            "parsed": 42,
+            "empty_final": 27,
+            "truncated": 27,
+            "transport_error": 0,
+            "http_error": 0,
+            "response_error": 27,
+            "not_dispatched": 0,
+            "refusal": 0,
+            "invalid_outputs": 40
+          },
+          "explanation_correctness_assessed": false
+        }
+      },
+      "all_case_denominators_preserved": true,
+      "optional_llm_fallback_used": false
+    }
+  },
+  "reference_access_only_after_both_seals_verified": true,
+  "native_metrics": [
+    "accuracy",
+    "precision",
+    "coverage"
+  ],
+  "all_case_denominators_preserved": true,
+  "optional_llm_extraction_used": false,
+  "biological_explanation_correctness_assessed": false,
+  "pretraining_exposure": "unknown",
+  "scope": "B01 reviewed197/199 plus B03 public82/82; closed-book without retrieval"
+}

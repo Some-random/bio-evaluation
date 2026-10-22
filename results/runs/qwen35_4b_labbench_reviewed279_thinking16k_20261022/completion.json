@@ -1,0 +1,17 @@
+{
+  "stage": "scored_terminal",
+  "plan_sha256": "9926c00d14115a2cfad32b2680f93ef9080c105829ebbbf6292ccdd4e15b4c3f",
+  "scores_sha256": "5c2d04f240f5ee1604c6c7502507a32b70aa06255cf6a18600121b7f191ec33f",
+  "both_prediction_seals": {
+    "base": {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/runtime/base/prediction_lock.json",
+      "sha256": "fb42fd97548b137ede04bf23a7979a00032a1bb0408f9a492026c362b28fbc6d",
+      "case_count": 279
+    },
+    "posttrained": {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/runtime/posttrained/prediction_lock.json",
+      "sha256": "c5ac9ec9eaa723757cd5f4a7597b80d43726ec259e03857fe5903fb76ca88cd1",
+      "case_count": 279
+    }
+  }
+}

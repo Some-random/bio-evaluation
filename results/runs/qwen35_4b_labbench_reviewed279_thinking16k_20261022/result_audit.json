@@ -1,0 +1,152 @@
+{
+  "role": "read_only_original_paired_LAB_Bench_sealed_result_audit",
+  "passed": true,
+  "at_pacific": "2026-10-22T11:56:30.380960-07:00",
+  "plan_sha256": "9926c00d14115a2cfad32b2680f93ef9080c105829ebbbf6292ccdd4e15b4c3f",
+  "grant_sha256": "36e9b1b2f8f7b9c77b582e694d4fdcc248e0a21e8f1c6ae6de3b652c0dfa2dd3",
+  "scores_sha256": "5c2d04f240f5ee1604c6c7502507a32b70aa06255cf6a18600121b7f191ec33f",
+  "scoring_completed_at_pacific": "2026-10-22T09:31:31.614592-07:00",
+  "prediction_seals": {
+    "base": {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/runtime/base/prediction_lock.json",
+      "sha256": "fb42fd97548b137ede04bf23a7979a00032a1bb0408f9a492026c362b28fbc6d",
+      "case_count": 279
+    },
+    "posttrained": {
+      "path": "/dfs/scratch0/dongweij/bio-evaluation/.local/qwen35_4b_comparison_20261022/labbench/runtime/posttrained/prediction_lock.json",
+      "sha256": "c5ac9ec9eaa723757cd5f4a7597b80d43726ec259e03857fe5903fb76ca88cd1",
+      "case_count": 279
+    }
+  },
+  "models": {
+    "base": {
+      "name": "Qwen/Qwen3.5-4B-Base",
+      "revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+      "job_id": "246445",
+      "responses_saved": 279,
+      "planned": 279,
+      "truncations": 10,
+      "empty_finals": 10,
+      "response_errors": 10,
+      "transport_errors": 0,
+      "http_errors": 0,
+      "runtime_exceptions": 0,
+      "refusals": 0,
+      "finished_at_pacific": "2026-10-22T08:07:35.945727-07:00",
+      "completion_sha256": "a7145a117bc6a97745bc91a5a2ef6a7a22db043fae06d3d7a6c86735310db4a9",
+      "per_case_scores_sha256": "a53a5da4806d7567f84b8b74e7d1d6c3c2f3de2c9a607969606c188de4748460",
+      "tasks": {
+        "B01": {
+          "metrics": {
+            "accuracy": 0.2233502538071066,
+            "precision": 0.22797927461139897,
+            "coverage": 0.9796954314720813,
+            "n_total": 197,
+            "n_correct": 44,
+            "n_sure": 193
+          },
+          "diagnostics": {
+            "parsed": 115,
+            "empty_final": 9,
+            "truncated": 9,
+            "transport_error": 0,
+            "http_error": 0,
+            "response_error": 9,
+            "not_dispatched": 0,
+            "refusal": 0,
+            "invalid_outputs": 82
+          }
+        },
+        "B03": {
+          "metrics": {
+            "accuracy": 0.12195121951219512,
+            "precision": 0.13333333333333333,
+            "coverage": 0.9146341463414634,
+            "n_total": 82,
+            "n_correct": 10,
+            "n_sure": 75
+          },
+          "diagnostics": {
+            "parsed": 44,
+            "empty_final": 1,
+            "truncated": 1,
+            "transport_error": 0,
+            "http_error": 0,
+            "response_error": 1,
+            "not_dispatched": 0,
+            "refusal": 0,
+            "invalid_outputs": 38
+          }
+        }
+      }
+    },
+    "posttrained": {
+      "name": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "job_id": "246714",
+      "responses_saved": 279,
+      "planned": 279,
+      "truncations": 121,
+      "empty_finals": 124,
+      "response_errors": 124,
+      "transport_errors": 0,
+      "http_errors": 0,
+      "runtime_exceptions": 0,
+      "refusals": 0,
+      "finished_at_pacific": "2026-10-22T09:31:27.790407-07:00",
+      "completion_sha256": "ef2128ff8d001d92cd04fac217f4278e11f30c2c0d89a0528af3a00388efaf5f",
+      "per_case_scores_sha256": "0a82439ef6e9335ee6a898c429fca5f3760375601c5ecbd7c0a2bbcf6d4434cc",
+      "tasks": {
+        "B01": {
+          "metrics": {
+            "accuracy": 0.14720812182741116,
+            "precision": 0.15025906735751296,
+            "coverage": 0.9796954314720813,
+            "n_total": 197,
+            "n_correct": 29,
+            "n_sure": 193
+          },
+          "diagnostics": {
+            "parsed": 86,
+            "empty_final": 97,
+            "truncated": 94,
+            "transport_error": 0,
+            "http_error": 0,
+            "response_error": 97,
+            "not_dispatched": 0,
+            "refusal": 0,
+            "invalid_outputs": 111
+          }
+        },
+        "B03": {
+          "metrics": {
+            "accuracy": 0.17073170731707318,
+            "precision": 0.17721518987341772,
+            "coverage": 0.9634146341463414,
+            "n_total": 82,
+            "n_correct": 14,
+            "n_sure": 79
+          },
+          "diagnostics": {
+            "parsed": 42,
+            "empty_final": 27,
+            "truncated": 27,
+            "transport_error": 0,
+            "http_error": 0,
+            "response_error": 27,
+            "not_dispatched": 0,
+            "refusal": 0,
+            "invalid_outputs": 40
+          }
+        }
+      }
+    }
+  },
+  "full_native_denominators_preserved": true,
+  "native_scoring_reexecuted": false,
+  "scorer_reference_rows_read_by_auditor": false,
+  "new_inference_calls": 0,
+  "model_forwards": 0,
+  "old_ops_successor_used": false,
+  "historical_catalog_denominator_changed": false
+}
