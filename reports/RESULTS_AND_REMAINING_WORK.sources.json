@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_at_pacific": "2026-10-21T15:31:54.513033-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "4b7cad4c572554a8df4ddb33906e8c75a54e4081e3dda2fc73b7884a2bf3dc9b",
+  "report_sha256": "d357982460532d01b969e6fe4935845c16700d6eb001b30c9bd80cd19a9b09f8",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
@@ -5333,13 +5333,17 @@
       "page_id": "P27",
       "page_path": "reports/questions/P27.md",
       "dataset": "NatureLM \u2014 protein characteristics description",
-      "status": "complete_case_unavailable",
+      "status": "executed_adaptation_inputs_linked_original_full_benchmark_unavailable",
       "complete_question_or_input": false,
-      "page_sha256": "ab9c12d0be1b86a8f4d930ec215b37d813fff6c1b5ba02bab12646044e48fc12",
-      "page_bytes": 307,
+      "page_sha256": "dd6e518346add7bd07c77b7d3e0e6135b3fec88196315e8ad1ea1306d0b00077",
+      "page_bytes": 700,
       "source_url": "https://arxiv.org/abs/2502.07527",
       "reference_answers_included": false,
-      "id": "P27"
+      "id": "P27",
+      "complete_question_or_input_scope": "original full benchmark; executed adaptation availability recorded separately",
+      "executed_adaptation_input_available": true,
+      "original_full_benchmark_input_available": false,
+      "current_page_note": "Linked questions are the actual independent nine-protein exploratory run. Original NatureLM temporal test inputs were not recovered."
     },
     {
       "task_id": "P34",
@@ -5419,28 +5423,36 @@
       "page_id": "P40",
       "page_path": "reports/questions/P40.md",
       "dataset": "RAbD antibody-region redesign benchmark",
-      "status": "source_instruction_excerpt_only",
+      "status": "executed_adaptation_inputs_linked_original_full_benchmark_unavailable",
       "complete_question_or_input": false,
-      "page_sha256": "46f019b7635d77e193a49493b8c969ae8be38425fc11b1068da8daf583fb03ed",
-      "page_bytes": 406,
+      "page_sha256": "e857a043632708e16580ff606dc9213b42dfd50e51b4fe9a714b17b63bdcf57b",
+      "page_bytes": 664,
       "source_url": "https://arxiv.org/html/2502.07527v3#S4.SS3",
       "reference_answers_included": false,
-      "id": "P40"
+      "id": "P40",
+      "complete_question_or_input_scope": "original full benchmark; executed adaptation availability recorded separately",
+      "executed_adaptation_input_available": true,
+      "original_full_benchmark_input_available": false,
+      "current_page_note": "Linked trajectory contains actual 38-case current-structure adaptation inputs. Exact historical NatureLM/MEAN input files were not recovered."
     },
     {
       "task_id": "P41",
       "page_id": "P41",
       "page_path": "reports/questions/P41.md",
       "dataset": "Proteo-R1 structural design demonstrations",
-      "status": "source_instruction_excerpt_only",
+      "status": "executed_adaptation_inputs_linked_original_full_benchmark_unavailable",
       "complete_question_or_input": false,
-      "page_sha256": "4e0fe07e37cdbde4c7b031e6e67eb889a03eac1b3633f2d081516fc04bb63f8e",
-      "page_bytes": 576,
+      "page_sha256": "0ea6462ef80f6630ce2521d69e4ab2304e9a7762b978ec796f0f3d5fb3f9e5f3",
+      "page_bytes": 959,
       "source_url": "https://github.com/smiles724/Proteo-R1/blob/ffaa787bce5f30e4cb41e2de5d0b0daab0059243/proteor1/generate/inference/cdr_hidden_emit.py#L316",
       "reference_answers_included": false,
       "source_path": ".local/source_acquisition_2026-10-19/protocols/smiles724__Proteo-R1/files/proteor1/generate/inference/cdr_hidden_emit.py",
       "source_sha256": "dc4122de484ba6fa4d213cbba9cee74475e7e509a1c5db6387f421f7e4388581",
-      "id": "P41"
+      "id": "P41",
+      "complete_question_or_input_scope": "original full benchmark; executed adaptation availability recorded separately",
+      "executed_adaptation_input_available": true,
+      "original_full_benchmark_input_available": false,
+      "current_page_note": "Linked trajectory contains actual three-demo sequence-recovery inputs. Exact full-paper test cohort and structural evaluation contract were not recovered."
     },
     {
       "task_id": "P42",
@@ -8476,5 +8488,205 @@
     "all_previous_values_and_links_preserved": true,
     "horizontal_scroll_reduction": "stacked labeled scores and wrapped long sequences",
     "no_website_or_schedule_created": true
+  },
+  "clarification_updated_at_pacific": "2026-10-21T22:30:20.156816-07:00",
+  "input_modality": {
+    "definition": "Solver-facing input; sequences, SMILES, tables and numerical coordinates may be serialized as text.",
+    "rows": [
+      {
+        "task_id": "B01",
+        "modality": "Text"
+      },
+      {
+        "task_id": "B02",
+        "modality": "Text"
+      },
+      {
+        "task_id": "B03",
+        "modality": "Text"
+      },
+      {
+        "task_id": "B04",
+        "modality": "Text + image"
+      },
+      {
+        "task_id": "B05",
+        "modality": "Text + image"
+      },
+      {
+        "task_id": "B07",
+        "modality": "Text"
+      },
+      {
+        "task_id": "B08",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P01",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P02",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P03",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P06",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P07",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P08",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P09",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P10",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P11",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P12",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P14",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P16",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P19",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P19",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P21",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P21",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P22",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P23",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P24",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P25",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P26",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P27",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P34",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P35",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P38",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P39",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P40",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P41",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P42",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P43",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P43",
+        "modality": "Text"
+      },
+      {
+        "task_id": "P43",
+        "modality": "Text"
+      },
+      {
+        "task_id": "V01",
+        "modality": "Text + image"
+      },
+      {
+        "task_id": "V02",
+        "modality": "Text + image"
+      },
+      {
+        "task_id": "V03",
+        "modality": "Text + image"
+      },
+      {
+        "task_id": "V04",
+        "modality": "Text + image"
+      },
+      {
+        "task_id": "V05",
+        "modality": "Text + image"
+      },
+      {
+        "task_id": "V06",
+        "modality": "Text + image"
+      },
+      {
+        "task_id": "P44",
+        "modality": "Text"
+      }
+    ],
+    "independent_audit": ".local/results_modality_20261021/row_modality_audit.json",
+    "audit_sha256": "ea1be830487583ea866fbfa78ee54fd162740d60613fad39e94ef684922191cf",
+    "historical_V01_V05_delivery_not_reverified": true
+  },
+  "clarified_reporting": {
+    "year_roles_explicit": true,
+    "P27": "Exploratory nine-protein text-overlap check, no native NatureLM numerical comparison",
+    "P41": "Qwen sequence recovery on three released examples, no Loop-RMSD/IMP evaluation",
+    "PFArena": "Original and later disjoint completed cohorts remain separately scored",
+    "ROUGE_L": "Text-overlap metric, not biological correctness"
   }
 }

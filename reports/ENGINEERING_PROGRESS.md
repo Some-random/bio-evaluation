@@ -78,3 +78,5 @@ Recent handoffs:
 </details>
 
 Snapshot only; websites and recurring updates remain disabled. Existing biological holds, no-new-head-training and no-paid/OpenAI-benchmark-call restrictions remain. Technical run reports, source records and trajectories support these two main documents.
+
+**Reading the PFArena results:** The 34- and 9-assay T1 rows are two completed, disjoint subsets of the same 123-assay benchmark (43 evaluated; 80 unevaluated). The eight- and five-assay T3 rows likewise cover 13 of 67 assays. Separate scores preserve each fixed cohort; they are not a pooled benchmark score. These completed subset jobs are terminal; further assay review is unfinished.
