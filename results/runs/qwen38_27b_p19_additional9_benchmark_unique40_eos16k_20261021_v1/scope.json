@@ -1,0 +1,25 @@
+{
+  "benchmark": "PFArena",
+  "task": "Single-mutant generation,separate additional human domain-stability subset",
+  "admitted_assays": 9,
+  "native_panel_assays": 123,
+  "held_assays_excluded": 12,
+  "unadmitted_assays_excluded": 67,
+  "previously_scored_assays_excluded": 34,
+  "outside_current_condition_excluded": 1,
+  "human_assays": 9,
+  "approved_case_ids": [
+    "P19::HUMAN_DOMAINOME_A0A2R8Y422_PF00240_2",
+    "P19::MAVEDB_urn_mavedb_00000692-a-1",
+    "P19::MAVEDB_urn_mavedb_00000694-a-1",
+    "P19::MAVEDB_urn_mavedb_00000749-a-1",
+    "P19::MAVEDB_urn_mavedb_00000751-a-1",
+    "P19::MAVEDB_urn_mavedb_00000864-a-1",
+    "P19::MAVEDB_urn_mavedb_00000865-a-1",
+    "P19::MAVEDB_urn_mavedb_00001002-a-1",
+    "P19::MAVEDB_urn_mavedb_00001087-a-1"
+  ],
+  "full_native_benchmark_complete": false,
+  "full_catalog_complete": false,
+  "no_new_head_training": true
+}

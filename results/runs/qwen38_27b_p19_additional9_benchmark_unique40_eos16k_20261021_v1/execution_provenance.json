@@ -1,0 +1,36 @@
+{
+  "job_id": "245901",
+  "Slurm_terminal_accounting": "245901|COMPLETED|0:0|00:08:18|billing=10,cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n245901.batch|COMPLETED|0:0|00:08:18|cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n245901.extern|COMPLETED|0:0|00:08:19|billing=10,cpu=10,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1\n",
+  "model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "dtype": "bfloat16",
+  "tensor_parallel_size": 1,
+  "uniform_output_tokens": 16384,
+  "context_limit": 65536,
+  "condition": "PFARENA_T1_ADDITIONAL_HUMAN_DOMAIN_STABILITY9_NATIVE_FIELDS_LOCAL_UNIQUE40_V1",
+  "model_runner": "legacy_V1_explicit",
+  "custom_logits_processor": "p19_unique40_logits:P19Unique40LogitsProcessor",
+  "mandatory_plugin_import_sha256": "c4d70f1ba87d4df627215c81a6bab5841dc92f7740329f6d83e5d28e0ba80e93",
+  "packages": {
+    "vllm": "0.32.0",
+    "torch": "2.13.0",
+    "transformers": "5.17.0",
+    "triton": "3.7.1",
+    "flashinfer-python": "0.7.0.post1"
+  },
+  "plan_sha256": "c95c0989d77dcb9db76a1e0b981f48f65b7a5e61644244e522b4f3677a4090e2",
+  "independent_technical_admission_sha256": "a321778eba6e7749de781cecc7572a4ad7284dd628ebbb5a94cd584318bfc232",
+  "root_scientific_adoption_sha256": "dc6ab4268412728c300ab4a5b3108dee7331ea7d394a6d4f372aa7d8ca3fb94e",
+  "nine_only_scorer_wrapper_sha256": "a7dfc3f4e8a3889cc5a2af9c6d75a25eb9ce050cac40a498debde5d81c3e3043",
+  "native_metric_source_sha256": "035b34122c1015eab5fa9caa3b680452aba6730e41a523ecf0342461fdb8747f",
+  "native_prompts_and_native_metric_functions_unchanged": true,
+  "separate_nine_only_scorer_wrapper": true,
+  "source_scope_sha256": "b4a024178de1bb8dc7c4d1607213fe6fae19372c52465807d088c1779c92917d",
+  "native_measurement_CSV_files_packaged": false,
+  "model_weights_or_runtime_environment_packaged": false,
+  "scope_qualifications": [
+    "Eight MaveDB native primary_task_class fields say binding while native fitness/readout and publisher descriptions specify stability; all native fields and prompts were retained.",
+    "A0A2R8Y422 is an inactive historical human RPS27AP5 entry; the native 70-residue fragment matches archived UniSave version26 from residue2.",
+    "Results are a separately admitted nine-assay retrospective condition, not a full123 score or experimental validation."
+  ]
+}
