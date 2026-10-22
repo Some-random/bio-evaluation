@@ -1,0 +1,66 @@
+{
+  "at_pacific": "2026-10-21T16:37:27.911532-07:00",
+  "role": "sealed_complete_native_ranked_delivery_not_benchmark_score",
+  "condition": "P35_NATIVE_PROTST_RELEASED5Q_RDKIT_CUDA213_FP32_V1",
+  "model_identity": "ProtST_ESM1b_PubMedBERT_released_joint_checkpoint",
+  "qualified_input_count": 34464,
+  "planned_fixed_queries": 5,
+  "complete_query_rankings": 5,
+  "topk": 20,
+  "native_primary_metric": null,
+  "relevance_gold_available": false,
+  "Qwen_result": false,
+  "full_historical_graph_or_cohort_equivalence_claimed": false,
+  "artifacts": [
+    {
+      "name": "protein_features.pt",
+      "bytes": 71134781,
+      "sha256": "a14e06a93c0afd43d55a62f02850be1e14bd62c8e6744adb1d4cfb5714ce3f02"
+    },
+    {
+      "name": "native_scores.pt",
+      "bytes": 1241811,
+      "sha256": "a054d61277a233dc4b4531e605dcdf93fe1cff660d2bd9bbf5df7e60b0e8675e"
+    },
+    {
+      "name": "rankings.jsonl",
+      "bytes": 16053,
+      "sha256": "004172d204591ee750705f12e4528a0eaad9a887d07fb0e5c98ccac501269dea"
+    },
+    {
+      "name": "native_rankings.tsv",
+      "bytes": 4650,
+      "sha256": "729bbf0175617f15502ccfeb35f169ca121f47e168216e333cd33b34ee4d63b7"
+    },
+    {
+      "name": "completion.json",
+      "bytes": 1627,
+      "sha256": "e48e9058a5b32f1041b5fbc7792f07a7a1728ad0b5cee834a9bda6ce308fc49b"
+    },
+    {
+      "name": "runtime_identity.json",
+      "bytes": 975,
+      "sha256": "02ee8e3ebc47228d996d1efdb95dbd4147221a40c92278d80a96856dcef6b425"
+    },
+    {
+      "name": "CUDA_runtime_identity.json",
+      "bytes": 1196,
+      "sha256": "a2d853f21edd4b68e3087399e9b74c18fc7f692c533ed2da5edd1d96a069b2c0"
+    },
+    {
+      "name": "GPU_project_audit_summary.json",
+      "bytes": 460,
+      "sha256": "591ba4c4ad5cf9480eb2dbd49949ac76b8a0f3fd61c776123ba93d6e3eaa2ff8"
+    },
+    {
+      "name": "output_validation.json",
+      "bytes": 484,
+      "sha256": "16f6f0c9e98f6783909b268c281022965cea094a1eec85bdb531fa02c2f2a7ff"
+    },
+    {
+      "name": "scoring_status.json",
+      "bytes": 411,
+      "sha256": "b336229f66201eed5a4051f94ab540d5bad35e191cb036c40c7f4636b467826a"
+    }
+  ]
+}

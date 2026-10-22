@@ -1,0 +1,31 @@
+{
+  "at_pacific": "2026-10-21T16:38:30.757255-07:00",
+  "stage": "independent_real_output_candidate_archive_verified",
+  "archive_sha256": "b53a4da927c95ee80a2a78e0390ecbf40d0a6ee97ccd7607f9e747b48ae86d61",
+  "archive_bytes": 66943535,
+  "allowed_regular_members": [
+    "CUDA_runtime_identity.json",
+    "GPU_project_audit_summary.json",
+    "README.md",
+    "completion.json",
+    "manifest.json",
+    "native_rankings.tsv",
+    "native_scores.pt",
+    "output_validation.json",
+    "prediction_lock.json",
+    "protein_features.pt",
+    "rankings.jsonl",
+    "runtime_identity.json",
+    "scoring_status.json"
+  ],
+  "all_locked_member_hashes_verified": true,
+  "checkpoint_or_credentials_included": false,
+  "model_calls": 0,
+  "GPU_use": false,
+  "public_upload_performed": false,
+  "qualified_inputs": 34464,
+  "fixed_queries": 5,
+  "topk": 20,
+  "primary_metric": null,
+  "Qwen_result": false
+}

@@ -1,0 +1,33 @@
+{
+  "benchmark": "ProtST: text-to-protein retrieval",
+  "release_year": 2023,
+  "model": "Released ProtST-ESM1b/PubMedBERT joint checkpoint",
+  "Qwen_result": false,
+  "fixed_queries": 5,
+  "rankings_delivered": 5,
+  "topk": 20,
+  "qualified_corpus_inputs": 34464,
+  "source_candidates": 36635,
+  "explicit_parser_rejections": 2171,
+  "primary_metric": null,
+  "primary_metric_status": "Not applicable: no released query relevance gold or aggregate metric.",
+  "biological_correctness_assessed": false,
+  "corpus_qualification": "RDKit consumed-residue projection; full historical TorchDrug graph/cohort or numerical rank equivalence is not claimed.",
+  "precision": "float32",
+  "TF32_allowed": false,
+  "native_encoding_limit": 1022,
+  "torch": "2.13.0+cu130",
+  "CUDA_build": "13.0",
+  "checkpoint_reference": {
+    "url": "https://protsl.s3.us-east-2.amazonaws.com/checkpoints/protst_esm1b.pth",
+    "sha256": "c972afbf81cfcf978403b35a3b55c3cf6c82776fb6b629583bdc04c587c91b62",
+    "weights_included": false
+  },
+  "paper": "https://arxiv.org/abs/2301.12040",
+  "source_revision": "db53a76ed2430eb66dd9c8134ace99fd60980fb3",
+  "released_query_source": "https://github.com/DeepGraphLearning/ProtST/blob/db53a76ed2430eb66dd9c8134ace99fd60980fb3/data/zero_shot_retrieval/t2p_prompt_go_mf.txt",
+  "prediction_lock_sha256": "aa0ae791edf2c31565262534c96e5fef0ea9ce66e62b10862486a708190bcc45",
+  "bundle_sha256": "b53a4da927c95ee80a2a78e0390ecbf40d0a6ee97ccd7607f9e747b48ae86d61",
+  "full_account_operational_metadata_included": false,
+  "public_upload_performed": false
+}
