@@ -24,25 +24,24 @@ Checked **October 23, 2026** (America/Los_Angeles).
 
 **Our LABBench2 evaluation is a separate, closed-book text condition:** 542 reviewed questions from LitQA3, TrialQA, DbQA2, PatentQA and SuppQA2, with no browsing or other solver tools. It should be compared with Anthropic's tool-enabled results only with that difference stated. Its unfinished generation/judging work is tracked in the [work document](ENGINEERING_PROGRESS.md).
 
-## LiveProteinBench: GPT, Claude and our Qwen results
+## LiveProteinBench results
 
-LiveProteinBench was released in **December 2025**. It tests 12 protein-property and function tasks using multiple-choice questions. The authors publish both sequence-only and sequence + structure-image results. [Benchmark paper](https://arxiv.org/html/2512.22257v1#S3), [official repository](https://github.com/Rongdingyi/LiveProteinBench).
+LiveProteinBench was released in **December 2025** and tests 12 protein-property and function tasks. Its paper evaluated earlier GPT and Claude models; we extended the evaluation with newer Qwen models and GPT-6 Luna. The results below use **text inputs, including protein sequences**, without structure images. [Benchmark paper](https://arxiv.org/html/2512.22257v1#S3).
 
-**Our runs use the same 1,736-question reviewed sequence-only subset, retaining 61 exclusions from the source's 1,797 questions.** The paper's results use its larger cohort. Both are shown below in separate columns so their scores cannot be mistaken for a matched comparison.
+| Model | Accuracy |
+|---|---:|
+| [**GPT-6 Luna**](LIVEPROTEINBENCH_GPT6_LUNA_HIGH32K_RESULT.md) | **65.32%** |
+| GPT-5 † | 60.49% |
+| OpenAI o3 † | 56.04% |
+| Claude 3.7 Sonnet † | 51.47% |
+| GPT-4o † | 38.39% |
+| [**Qwen3.8-27B**](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md) | **34.56%** |
+| [**Qwen3.5-4B — thinking off**](LIVEPROTEINBENCH_QWEN35_4B_POSTTRAINED_EXISTING_OUTPUTS.md) | **33.35%** |
+| [**Qwen3.5-4B-Base — thinking, 16K limit**](LIVEPROTEINBENCH_QWEN35_4B_BASE_AUTHOR_SAMPLING_V2_RESULT.md) | **13.88%** |
+| **Qwen3.5-4B — thinking, 32K limit** | In progress; final score pending |
 
-| Model | Our sequence-only evaluation<br>1,736 questions | Published LiveProteinBench paper<br>1,797 questions |
-|---|---|---|
-| **GPT-6 Luna** | **65.32%** — 1,134 correct.<br>High reasoning; 32,768-token output limit. [Result](LIVEPROTEINBENCH_GPT6_LUNA_HIGH32K_RESULT.md) | Not reported in this paper. |
-| **Qwen3.8-27B** | **34.56%** — 600 correct.<br>BF16; hidden thinking off, visible explanation requested; 10,240-token output limit. [Result](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md) | Not reported in this paper. |
-| **GPT-5** | Not run in this project. | **Sequence only: 60.49%**<br>Sequence + structure images: 60.65%. |
-| **OpenAI o3** | Not run in this project. | **Sequence only: 56.04%**<br>Sequence + structure images: 56.48%. |
-| **Claude 3.7 Sonnet** | Not run in this project. | **Sequence only: 51.47%**<br>Sequence + structure images: 47.58%. |
-| **GPT-4o** | Not run in this project. | **Sequence only: 38.39%**<br>Sequence + structure images: 36.45%. |
+† Reported by the [LiveProteinBench paper, Table 5](https://arxiv.org/html/2512.22257v1#A4.T5). The other completed scores are our additional evaluations.
 
-Published GPT/Claude values are taken from the paper's **Table 5, “w/o structure” and “w structure” rows**, using its reported AVG accuracy. They were measured by the benchmark authors. We have not established that OpenAI or Anthropic themselves use LiveProteinBench. [Exact result table](https://arxiv.org/html/2512.22257v1#A4.T5), [paper cohort sizes](https://arxiv.org/html/2512.22257v1#S3.T1).
+The paper uses 1,797 questions; our additional runs use a reviewed subset of 1,736. Inference settings differ between runs; full details are linked from the model names.
 
-Our scores are pooled answer accuracy over all 1,736 questions, with invalid answers counted wrong. We use a declared local answer extractor because no upstream answer extractor was available at protocol freeze. Luna had one invalid answer; Qwen27B had 173 invalid answers and 132 truncations, reported separately. The older Qwen run can credit a truncated response when its saved answer is unambiguous; Luna's scoring treats truncation as invalid. The models also use different reasoning settings and budgets, so these runs do not isolate a thinking-mode effect. [Luna result and scoring details](LIVEPROTEINBENCH_GPT6_LUNA_HIGH32K_RESULT.md), [Qwen result and scoring details](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md).
-
-**Luna's complete questions, protein inputs, visible answers/explanations and reference choices are available on GitHub:** [browse all 1,736 responses](LIVEPROTEINBENCH_GPT6_LUNA_EXPLANATIONS.md). The benchmark scores the selected answers; it does not independently validate those explanations.
-
-For evaluating a model directly from protein inputs without tool use, our sequence-only LiveProteinBench condition matches that aim. Tool-enabled bioinformatics benchmarks additionally measure the model's ability to operate an analysis environment.
+[Browse Luna's complete questions, protein inputs, answers and visible explanations](LIVEPROTEINBENCH_GPT6_LUNA_EXPLANATIONS.md). Accuracy scores the answers, not the scientific validity of the explanations.
