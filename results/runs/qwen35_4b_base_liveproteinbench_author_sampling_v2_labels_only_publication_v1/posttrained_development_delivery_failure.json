@@ -1,0 +1,32 @@
+{
+  "availability_scope": "This author-sampling-v2 condition only; separate completed Post baselines are outside this excerpt.",
+  "benchmark": "LiveProteinBench",
+  "benchmark_accuracy": null,
+  "benchmark_dispatch_entered": false,
+  "benchmark_disposition": "The Post author-sampling-v2 artificial development gate failed before benchmark dispatch; this condition has no benchmark accuracy.",
+  "benchmark_result_available": false,
+  "biological_correctness_scored": false,
+  "condition": "sequence_only_qwen35_4b_posttrained_author_sampling_v2",
+  "content_omitted": true,
+  "development_delivery_counts": {
+    "attempted_confirmed": 3,
+    "empty_finals": 1,
+    "http_errors": 0,
+    "invalid_outputs": 1,
+    "missing_closing_think": 1,
+    "parsed": 2,
+    "planned": 3,
+    "refusals": 0,
+    "response_errors": 0,
+    "responses_saved": 3,
+    "terminal": 3,
+    "transport_errors": 0,
+    "truncations": 1
+  },
+  "excerpt_is_aggregate_only": true,
+  "gate_passed": false,
+  "model_name": "Qwen/Qwen3.5-4B",
+  "omission_reason": "All free-form generated text, token arrays and upstream/native input payloads are omitted; original local bytes and scoring remain unchanged.",
+  "phase": "artificial_development_delivery_gate",
+  "private_failure_summary_sha256": "35111e490a1148c898b58382d68f589d33250ad566b891f258830bade3747698"
+}
