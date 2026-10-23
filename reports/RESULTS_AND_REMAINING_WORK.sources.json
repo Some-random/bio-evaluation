@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_at_pacific": "2026-10-21T15:31:54.513033-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "7fe930c2d26861565b472350f9b4b5db221f96e837da38ddc504aa30afc49079",
+  "report_sha256": "e5acd1bef87c1f3840331470e5d90fe6e02be96d7e68936f6315133711987e4c",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
@@ -8714,5 +8714,149 @@
     "new_model_calls": 0,
     "new_scoring_calls": 0
   },
-  "remaining_work_historical_snapshot_note": "remaining_work and earlier qwen count fields retain historical observations; use the dated ENGINEERING_PROGRESS.md and current_completed_result_integration for this reconciliation."
+  "remaining_work_historical_snapshot_note": "remaining_work and earlier qwen count fields retain historical observations; use the dated ENGINEERING_PROGRESS.md and current_completed_result_integration for this reconciliation.",
+  "lpb_completion_integration": {
+    "version": 1,
+    "at_pacific": "2026-10-22T18:25:03.494413-07:00",
+    "status": "complete_scored_reviewed_and_narrowly_published",
+    "model": "Qwen/Qwen3.8-27B",
+    "publication_id": "qwen38_27b_liveproteinbench_sequence_only_no_hidden_thinking_delivery_repair_20261022_v1_own_output_publication_v4",
+    "planned": 1736,
+    "correct": 600,
+    "accuracy": 0.3456221198156682,
+    "release_year": 2025,
+    "pinned_source_year": 2026,
+    "source_case_count": 1797,
+    "reviewed_case_count": 1736,
+    "excluded_case_count": 61,
+    "original_retained_catalog_settings_unchanged": 57,
+    "full_source_benchmark_complete": false,
+    "official_source": "https://github.com/Rongdingyi/LiveProteinBench/tree/8b9710932511f816651fc1a7e8a1bc85c3c77767",
+    "complete_official_inputs": "https://github.com/Rongdingyi/LiveProteinBench/tree/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset",
+    "final_answer_extraction": "prospectively frozen local extractor; official parser not released",
+    "paper_reference": {
+      "url": "https://arxiv.org/html/2512.22257v1",
+      "paper_comparison_sha256": "4957988bb7ad3f45e3b0d13e2be394b111925b8e3e4849640de239ad290fd5b0",
+      "GPT5_sequence_only_printed_AVG_percent": "60.49",
+      "Qwen3_32B_sequence_only_printed_AVG_percent": "40.23",
+      "full_paper_cohort": 1797,
+      "matched_current_cohort": false
+    },
+    "result_url": "https://github.com/Some-random/bio-evaluation/blob/bf89ad724ee6ad63264b173608a3c41f3df82059/reports/LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md",
+    "per_task_score_url": "https://github.com/Some-random/bio-evaluation/blob/bf89ad724ee6ad63264b173608a3c41f3df82059/results/runs/qwen38_27b_liveproteinbench_sequence_only_no_hidden_thinking_delivery_repair_20261022_v1_own_output_publication_v4/scores.json",
+    "verified_completion": {
+      "scores_sha256": "772d9abc5c0bada889dc7fd4444b71ab3d56db67562d7e5a46bac9297bc65afb",
+      "prediction_lock_sha256": "293b2fcaad4c2e587bf6f539cf2d40bb92c585b54e73ab185689e8ac4c6d2ac0",
+      "publication_manifest_sha256": "fc51a9b44ea10a1f94bc6e1fc139fd92d8701e8ed12a6399e63e32ecbf8c842b",
+      "publication_receipt_sha256": "8797b432f532fefe1ba6c441919a5277a6bf6eaca7de7b179907dbaa11af8fdd",
+      "planned": 1736,
+      "plan_sha256": "5e04aa817909a89cc99f581cac728ff4573be16a73c9e1b4068344b2cfed75ac",
+      "delegation_sha256": "8a4a4cc569a3559ed2c20ac92c1dfac5646b051de8f68c0059802da0e003484e",
+      "paper_comparison_sha256": "4957988bb7ad3f45e3b0d13e2be394b111925b8e3e4849640de239ad290fd5b0",
+      "official_source_commit": "8b9710932511f816651fc1a7e8a1bc85c3c77767",
+      "correct": 600,
+      "accuracy": 0.3456221198156682,
+      "at_pacific": "2026-10-22T18:25:03.494413-07:00",
+      "per_task": {
+        "EC_number": {
+          "planned": 200,
+          "correct": 57,
+          "accuracy": 0.285,
+          "parsed": 164,
+          "invalid": 36
+        },
+        "GO_biological_process": {
+          "planned": 187,
+          "correct": 63,
+          "accuracy": 0.33689839572192515,
+          "parsed": 167,
+          "invalid": 20
+        },
+        "GO_cellular_component": {
+          "planned": 196,
+          "correct": 102,
+          "accuracy": 0.5204081632653061,
+          "parsed": 183,
+          "invalid": 13
+        },
+        "GO_molecular_function": {
+          "planned": 192,
+          "correct": 53,
+          "accuracy": 0.2760416666666667,
+          "parsed": 177,
+          "invalid": 15
+        },
+        "active_site": {
+          "planned": 136,
+          "correct": 76,
+          "accuracy": 0.5588235294117647,
+          "parsed": 122,
+          "invalid": 14
+        },
+        "catalytic_activity": {
+          "planned": 187,
+          "correct": 51,
+          "accuracy": 0.2727272727272727,
+          "parsed": 174,
+          "invalid": 13
+        },
+        "cofactor": {
+          "planned": 184,
+          "correct": 58,
+          "accuracy": 0.31521739130434784,
+          "parsed": 166,
+          "invalid": 18
+        },
+        "motif_position": {
+          "planned": 49,
+          "correct": 16,
+          "accuracy": 0.32653061224489793,
+          "parsed": 38,
+          "invalid": 11
+        },
+        "pathway": {
+          "planned": 187,
+          "correct": 29,
+          "accuracy": 0.15508021390374332,
+          "parsed": 180,
+          "invalid": 7
+        },
+        "ph": {
+          "planned": 48,
+          "correct": 4,
+          "accuracy": 0.08333333333333333,
+          "parsed": 38,
+          "invalid": 10
+        },
+        "temperature": {
+          "planned": 37,
+          "correct": 6,
+          "accuracy": 0.16216216216216217,
+          "parsed": 36,
+          "invalid": 1
+        },
+        "transmembrane": {
+          "planned": 133,
+          "correct": 85,
+          "accuracy": 0.6390977443609023,
+          "parsed": 118,
+          "invalid": 15
+        }
+      },
+      "narrow_publication_commit_sha": "bf89ad724ee6ad63264b173608a3c41f3df82059",
+      "complete_scored": true,
+      "narrow_publication_verified": true,
+      "independent_narrow_review_verified": true
+    },
+    "input_document_sha256": {
+      "reports/ENGINEERING_PROGRESS.md": "bc78318d70b4e133ae9cfceccdf15a30671152118c07f765fce097c07df80b57",
+      "reports/RESULTS_AND_REMAINING_WORK.md": "7fe930c2d26861565b472350f9b4b5db221f96e837da38ddc504aa30afc49079",
+      "reports/RESULTS_AND_REMAINING_WORK.sources.json": "eccd2236546e44bf8748e1851c6ffab17aff6a1fa3bd75eba147bef9e3f9032d"
+    },
+    "report_sha256": "e5acd1bef87c1f3840331470e5d90fe6e02be96d7e68936f6315133711987e4c",
+    "engineering_progress_sha256": "99a61cf7a612268b15895668b375d742a29cc3e3442d55ef0ffbc03b3e5d697b",
+    "unrelated_source_fields_preserved": true,
+    "new_inference_calls": 0,
+    "new_scoring_calls": 0
+  }
 }
