@@ -1,0 +1,138 @@
+{
+  "condition": "LABBENCH2_BASIC542_CLOSED_BOOK_QWEN35_PAIR_AUTHOR_GENERAL_THINKING_RAW16K_V2",
+  "judge": {
+    "invalid_judgments": 1,
+    "job_id": "247701",
+    "name": "Qwen/Qwen3.8-27B",
+    "real_judgments": 1053,
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "synthetic_judgments": 2
+  },
+  "judge_plan_sha256": "84ae3f028a56fd9b2e99bb22765533e4b1d64d5f314ad8e7e24eaa0d519ea9a0",
+  "models": {
+    "base": {
+      "delivery": {
+        "claim_batches": 34,
+        "completed": 537,
+        "empty_final": 5,
+        "planned": 542,
+        "raw_batches": 34,
+        "response_error": 5,
+        "saved": 542,
+        "truncated": 5
+      },
+      "job_id": "247289",
+      "metrics": {
+        "dbqa2": {
+          "accuracy": 0.012048192771084338,
+          "correct": 1,
+          "prior_excluded": 3,
+          "selected_denominator": 83,
+          "selected_reviewed_cases": 83,
+          "source_configuration_rows": 86
+        },
+        "litqa3": {
+          "accuracy": 0.11688311688311688,
+          "correct": 18,
+          "prior_excluded": 14,
+          "selected_denominator": 154,
+          "selected_reviewed_cases": 154,
+          "source_configuration_rows": 168
+        },
+        "patentqa": {
+          "accuracy": 0.09433962264150944,
+          "correct": 10,
+          "prior_excluded": 15,
+          "selected_denominator": 106,
+          "selected_reviewed_cases": 106,
+          "source_configuration_rows": 121
+        },
+        "suppqa2": {
+          "accuracy": 0.012658227848101266,
+          "correct": 1,
+          "prior_excluded": 46,
+          "selected_denominator": 79,
+          "selected_reviewed_cases": 79,
+          "source_configuration_rows": 125
+        },
+        "trialqa": {
+          "accuracy": 0.125,
+          "correct": 15,
+          "prior_excluded": 0,
+          "selected_denominator": 120,
+          "selected_reviewed_cases": 120,
+          "source_configuration_rows": 120
+        }
+      },
+      "name": "Qwen/Qwen3.5-4B-Base",
+      "revision": "1001bb4d826a52d1f399e183466143f4da7b741b"
+    },
+    "posttrained": {
+      "delivery": {
+        "claim_batches": 34,
+        "completed": 516,
+        "empty_final": 26,
+        "planned": 542,
+        "raw_batches": 34,
+        "response_error": 26,
+        "saved": 542,
+        "truncated": 9
+      },
+      "job_id": "247392",
+      "metrics": {
+        "dbqa2": {
+          "accuracy": 0.03614457831325301,
+          "correct": 3,
+          "prior_excluded": 3,
+          "selected_denominator": 83,
+          "selected_reviewed_cases": 83,
+          "source_configuration_rows": 86
+        },
+        "litqa3": {
+          "accuracy": 0.09740259740259741,
+          "correct": 15,
+          "prior_excluded": 14,
+          "selected_denominator": 154,
+          "selected_reviewed_cases": 154,
+          "source_configuration_rows": 168
+        },
+        "patentqa": {
+          "accuracy": 0.10377358490566038,
+          "correct": 11,
+          "prior_excluded": 15,
+          "selected_denominator": 106,
+          "selected_reviewed_cases": 106,
+          "source_configuration_rows": 121
+        },
+        "suppqa2": {
+          "accuracy": 0.06329113924050633,
+          "correct": 5,
+          "prior_excluded": 46,
+          "selected_denominator": 79,
+          "selected_reviewed_cases": 79,
+          "source_configuration_rows": 125
+        },
+        "trialqa": {
+          "accuracy": 0.125,
+          "correct": 15,
+          "prior_excluded": 0,
+          "selected_denominator": 120,
+          "selected_reviewed_cases": 120,
+          "source_configuration_rows": 120
+        }
+      },
+      "name": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+    }
+  },
+  "plan_sha256": "f8d9adac4e097f4fb1863331717ae5426589a42a0c4c3a9f39cdb94936afd310",
+  "schema_version": 1,
+  "scores_sha256": "44032da0f500dcf818254ec720a2d9bcadb0337d9f18feb654e238472f612f17",
+  "scoring_seal_sha256": "b33f048c183e0b88a0b62bc835a1b6e3eab6ec2d2feb453223241dce76b854f7",
+  "shared_contract_sha256": "00f42f82e48d9dbb4cebcf8c2a5c8631c45092e80a94a12af9b0b58cf451a83d",
+  "solver_seal_sha256": {
+    "base": "75635a3d56a8d91214d5b2ff7577c88eefdf85efafc5e07a280b0ba78168e246",
+    "posttrained": "245f823be68c07fd3faf874c8ff1ccad72a3a930b120ccbc44fa85fc4b231363"
+  },
+  "summary_sha256": "09b1b609bd7d730e31f509ab8adea5e69d3c1e09d6b796a0277d89033b71960a"
+}

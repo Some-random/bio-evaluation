@@ -1,0 +1,114 @@
+{
+  "admitted_prepared_ordinary_packets": 1211,
+  "attribution": "Edison Scientific, LABBench2",
+  "author_basic_harness_max_output_tokens": 64000,
+  "author_code": "https://github.com/EdisonScientific/labbench2/tree/a490cd40379edd603fb8b6b6d3fe47ebb0712e8d",
+  "benchmark": "LABBench2",
+  "closed_book": true,
+  "condition": "LABBENCH2_BASIC542_CLOSED_BOOK_QWEN35_PAIR_AUTHOR_GENERAL_THINKING_RAW16K_V2",
+  "dataset": "https://huggingface.co/datasets/EdisonScientific/labbench2",
+  "enable_thinking": true,
+  "explanation_support_independently_validated": false,
+  "figure_table_question_only_rows_excluded": 174,
+  "five_category_source_rows": 620,
+  "full_release_configuration_rows": 1912,
+  "hf_revision": "3678e7e38748477d0606407468db9cd7e2f2e667",
+  "historical_interrupted_conditions_included_in_scores": false,
+  "images": false,
+  "input_questions_references_claims_raw_answers_rationales_exported": false,
+  "judge": {
+    "batch_size": 2,
+    "context_limit": 65536,
+    "declared_adaptations": [
+      "Fixed local Qwen3.8-27B instead of native Claude.",
+      "Original rubric text preserved in user message; separate system JSON-format instruction replaces provider structured-output interface.",
+      "Unconstrained raw decoding; malformed/truncated/unknown-finish judgment is retained and scores zero."
+    ],
+    "dtype": "bfloat16",
+    "enable_thinking": false,
+    "generation": {
+      "ignore_eos": false,
+      "include_stop_str_in_output": true,
+      "max_tokens": 2048,
+      "n": 1,
+      "seed": 42,
+      "skip_special_tokens": false,
+      "spaces_between_special_tokens": false,
+      "stop_token_ids": [
+        248044,
+        248046
+      ],
+      "temperature": 0.0,
+      "top_k": -1,
+      "top_p": 1.0
+    },
+    "model": "Qwen/Qwen3.8-27B",
+    "native_author_judge": "anthropic:claude-sonnet-4-5",
+    "native_judge_identity_equivalent": false,
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+  },
+  "models": {
+    "base": {
+      "dtype": "bfloat16",
+      "name": "Qwen/Qwen3.5-4B-Base",
+      "revision": "1001bb4d826a52d1f399e183466143f4da7b741b"
+    },
+    "posttrained": {
+      "dtype": "bfloat16",
+      "name": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+    }
+  },
+  "native_accuracy_arithmetic_preserved": true,
+  "ordinary_candidate_configuration_rows": 1373,
+  "paid_calls": false,
+  "paper": "https://arxiv.org/html/2604.09554v2",
+  "prior_excluded_rows": 78,
+  "public_pretraining_exposure": "unknown",
+  "publisher_license_metadata": "CC-BY-SA-4.0",
+  "recipe_qualification": "Post-trained card general-thinking recipe applied identically to both; no separate Base recommendation claimed. Output cap 16384 is below the author 32768 recommendation.",
+  "release_counts_include_alternate_conditions_not_unique_underlying_questions": true,
+  "release_year": 2026,
+  "retrieved_or_attached_evidence": false,
+  "scientific_plan_sha256": "f8d9adac4e097f4fb1863331717ae5426589a42a0c4c3a9f39cdb94936afd310",
+  "selected_cases_per_model": 542,
+  "selected_per_category": {
+    "dbqa2": 83,
+    "litqa3": 154,
+    "patentqa": 106,
+    "suppqa2": 79,
+    "trialqa": 120
+  },
+  "solver_context_limit": 65536,
+  "solver_generation": {
+    "add_special_tokens": false,
+    "frequency_penalty": 0.0,
+    "ignore_eos": false,
+    "include_stop_str_in_output": true,
+    "max_tokens": 16384,
+    "min_p": 0.0,
+    "n": 1,
+    "presence_penalty": 1.5,
+    "repetition_penalty": 1.0,
+    "return_token_ids": true,
+    "seed": 42,
+    "skip_special_tokens": false,
+    "spaces_between_special_tokens": false,
+    "stop_token_ids": [
+      248044,
+      248046
+    ],
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "source_condition": "author BASIC no-tool question-only",
+  "source_per_category": {
+    "dbqa2": 86,
+    "litqa3": 168,
+    "patentqa": 121,
+    "suppqa2": 125,
+    "trialqa": 120
+  },
+  "tools": false
+}
