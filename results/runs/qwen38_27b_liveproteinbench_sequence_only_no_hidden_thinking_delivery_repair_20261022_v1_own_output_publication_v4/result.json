@@ -1,0 +1,167 @@
+{
+  "benchmark": "LiveProteinBench",
+  "declared_differences": [
+    "Reviewed1736of1797 sequence-only cohort;61 unadmitted",
+    "Prospectively fixed local final-choice parser; published paper parser unavailable"
+  ],
+  "evaluated_cases": 1736,
+  "evaluated_task_counts": {
+    "EC_number": 200,
+    "GO_biological_process": 187,
+    "GO_cellular_component": 196,
+    "GO_molecular_function": 192,
+    "active_site": 136,
+    "catalytic_activity": 187,
+    "cofactor": 184,
+    "motif_position": 49,
+    "pathway": 187,
+    "ph": 48,
+    "temperature": 37,
+    "transmembrane": 133
+  },
+  "explanation_correctness_scored": false,
+  "full_source_benchmark_complete": false,
+  "generation": {
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "max_tokens": 10240,
+    "seed": 42,
+    "temperature": 0.2
+  },
+  "generation_counts": {
+    "attempted_confirmed": 1736,
+    "empty_finals": 0,
+    "http_errors": 0,
+    "not_dispatched": 0,
+    "parsed": 1563,
+    "planned": 1736,
+    "refusals": 0,
+    "response_errors": 0,
+    "responses_saved": 1736,
+    "role": "derived_public_delivery_summary",
+    "terminal": 1736,
+    "transport_errors": 0,
+    "truncations": 132
+  },
+  "macro_task_accuracy": 0.32761004042519354,
+  "micro_accuracy": 0.3456221198156682,
+  "modality": "Text (protein sequence)",
+  "model": {
+    "dtype": "bfloat16",
+    "name": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+  },
+  "native_GO_question_text_omission_preserved": true,
+  "paper": "https://arxiv.org/abs/2512.22257",
+  "paper_comparison_same_cohort": false,
+  "paper_year": 2025,
+  "per_task": {
+    "EC_number": {
+      "accuracy": 0.285,
+      "correct": 57,
+      "invalid": 36,
+      "parsed": 164,
+      "planned": 200
+    },
+    "GO_biological_process": {
+      "accuracy": 0.33689839572192515,
+      "correct": 63,
+      "invalid": 20,
+      "parsed": 167,
+      "planned": 187
+    },
+    "GO_cellular_component": {
+      "accuracy": 0.5204081632653061,
+      "correct": 102,
+      "invalid": 13,
+      "parsed": 183,
+      "planned": 196
+    },
+    "GO_molecular_function": {
+      "accuracy": 0.2760416666666667,
+      "correct": 53,
+      "invalid": 15,
+      "parsed": 177,
+      "planned": 192
+    },
+    "active_site": {
+      "accuracy": 0.5588235294117647,
+      "correct": 76,
+      "invalid": 14,
+      "parsed": 122,
+      "planned": 136
+    },
+    "catalytic_activity": {
+      "accuracy": 0.2727272727272727,
+      "correct": 51,
+      "invalid": 13,
+      "parsed": 174,
+      "planned": 187
+    },
+    "cofactor": {
+      "accuracy": 0.31521739130434784,
+      "correct": 58,
+      "invalid": 18,
+      "parsed": 166,
+      "planned": 184
+    },
+    "motif_position": {
+      "accuracy": 0.32653061224489793,
+      "correct": 16,
+      "invalid": 11,
+      "parsed": 38,
+      "planned": 49
+    },
+    "pathway": {
+      "accuracy": 0.15508021390374332,
+      "correct": 29,
+      "invalid": 7,
+      "parsed": 180,
+      "planned": 187
+    },
+    "ph": {
+      "accuracy": 0.08333333333333333,
+      "correct": 4,
+      "invalid": 10,
+      "parsed": 38,
+      "planned": 48
+    },
+    "temperature": {
+      "accuracy": 0.16216216216216217,
+      "correct": 6,
+      "invalid": 1,
+      "parsed": 36,
+      "planned": 37
+    },
+    "transmembrane": {
+      "accuracy": 0.6390977443609023,
+      "correct": 85,
+      "invalid": 15,
+      "parsed": 118,
+      "planned": 133
+    }
+  },
+  "plan_sha256": "5e04aa817909a89cc99f581cac728ff4573be16a73c9e1b4068344b2cfed75ac",
+  "reviewed_condition_complete": true,
+  "run_id": "qwen38_27b_liveproteinbench_sequence_only_no_hidden_thinking_delivery_repair_20261022_v1",
+  "source": "https://github.com/Rongdingyi/LiveProteinBench/tree/8b9710932511f816651fc1a7e8a1bc85c3c77767",
+  "source_case_count": 1797,
+  "source_code_year": 2026,
+  "source_revision": "8b9710932511f816651fc1a7e8a1bc85c3c77767",
+  "source_task_counts": {
+    "EC_number": 200,
+    "GO_biological_process": 193,
+    "GO_cellular_component": 196,
+    "GO_molecular_function": 195,
+    "active_site": 146,
+    "catalytic_activity": 200,
+    "cofactor": 186,
+    "motif_position": 52,
+    "pathway": 200,
+    "ph": 54,
+    "temperature": 41,
+    "transmembrane": 134
+  },
+  "unadmitted_cases": 61
+}

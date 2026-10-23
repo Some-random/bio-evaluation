@@ -1,0 +1,106 @@
+{
+  "benchmark": "LiveProteinBench",
+  "full_source_benchmark_complete": false,
+  "macro_task_accuracy": 0.32761004042519354,
+  "metric": "four_choice_accuracy",
+  "micro_accuracy": 0.3456221198156682,
+  "model": {
+    "dtype": "bfloat16",
+    "name": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+  },
+  "native_score_sha256": "772d9abc5c0bada889dc7fd4444b71ab3d56db67562d7e5a46bac9297bc65afb",
+  "per_task": {
+    "EC_number": {
+      "accuracy": 0.285,
+      "correct": 57,
+      "invalid": 36,
+      "parsed": 164,
+      "planned": 200
+    },
+    "GO_biological_process": {
+      "accuracy": 0.33689839572192515,
+      "correct": 63,
+      "invalid": 20,
+      "parsed": 167,
+      "planned": 187
+    },
+    "GO_cellular_component": {
+      "accuracy": 0.5204081632653061,
+      "correct": 102,
+      "invalid": 13,
+      "parsed": 183,
+      "planned": 196
+    },
+    "GO_molecular_function": {
+      "accuracy": 0.2760416666666667,
+      "correct": 53,
+      "invalid": 15,
+      "parsed": 177,
+      "planned": 192
+    },
+    "active_site": {
+      "accuracy": 0.5588235294117647,
+      "correct": 76,
+      "invalid": 14,
+      "parsed": 122,
+      "planned": 136
+    },
+    "catalytic_activity": {
+      "accuracy": 0.2727272727272727,
+      "correct": 51,
+      "invalid": 13,
+      "parsed": 174,
+      "planned": 187
+    },
+    "cofactor": {
+      "accuracy": 0.31521739130434784,
+      "correct": 58,
+      "invalid": 18,
+      "parsed": 166,
+      "planned": 184
+    },
+    "motif_position": {
+      "accuracy": 0.32653061224489793,
+      "correct": 16,
+      "invalid": 11,
+      "parsed": 38,
+      "planned": 49
+    },
+    "pathway": {
+      "accuracy": 0.15508021390374332,
+      "correct": 29,
+      "invalid": 7,
+      "parsed": 180,
+      "planned": 187
+    },
+    "ph": {
+      "accuracy": 0.08333333333333333,
+      "correct": 4,
+      "invalid": 10,
+      "parsed": 38,
+      "planned": 48
+    },
+    "temperature": {
+      "accuracy": 0.16216216216216217,
+      "correct": 6,
+      "invalid": 1,
+      "parsed": 36,
+      "planned": 37
+    },
+    "transmembrane": {
+      "accuracy": 0.6390977443609023,
+      "correct": 85,
+      "invalid": 15,
+      "parsed": 118,
+      "planned": 133
+    }
+  },
+  "planned": 1736,
+  "reference_answers_or_per_case_correctness_included": false,
+  "role": "derived_public_native_score_summary",
+  "run_id": "qwen38_27b_liveproteinbench_sequence_only_no_hidden_thinking_delivery_repair_20261022_v1",
+  "scorer": "LPB_EXPLICIT_FINAL_ANSWER_V2",
+  "source_case_count": 1797,
+  "unadmitted_cases": 61
+}
