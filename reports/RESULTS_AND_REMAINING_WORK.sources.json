@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at_pacific": "2026-10-21T15:31:54.513033-07:00",
+  "generated_at_pacific": "2026-10-22T20:18:49.631051-07:00",
   "report_path": "reports/RESULTS_AND_REMAINING_WORK.md",
-  "report_sha256": "e5acd1bef87c1f3840331470e5d90fe6e02be96d7e68936f6315133711987e4c",
+  "report_sha256": "422f6922cf4c53315722ec35f2185f45f8901a1c3ad66e66e641b281d4a149ce",
   "role": "metrics_and_documentation_evidence_not_dispatch_authorization",
   "new_inference_calls": 0,
   "new_scoring_calls": 0,
@@ -8712,7 +8712,202 @@
     "runtime_snapshot_path": ".local/qwen35_4b_comparison_20261022/queue/runtime_snapshot_20261022T2307.json",
     "runtime_snapshot_sha256": "00db7c84747f60b2425f04346edc1644c277cd3cd820873382080c2a3662e56f",
     "new_model_calls": 0,
-    "new_scoring_calls": 0
+    "new_scoring_calls": 0,
+    "labbench2_basic542_qwen35_pair": {
+      "at_pacific": "2026-10-22T20:18:49.631051-07:00",
+      "benchmark": "LABBench2",
+      "release_year": 2026,
+      "condition": "LABBENCH2_BASIC542_CLOSED_BOOK_QWEN35_PAIR_AUTHOR_GENERAL_THINKING_RAW16K_V2",
+      "scientific_plan_sha256": "f8d9adac4e097f4fb1863331717ae5426589a42a0c4c3a9f39cdb94936afd310",
+      "scores_sha256": "44032da0f500dcf818254ec720a2d9bcadb0337d9f18feb654e238472f612f17",
+      "selected_cases_per_model": 542,
+      "five_category_source_rows": 620,
+      "prior_excluded_rows": 78,
+      "full_release_configuration_rows": 1912,
+      "release_configuration_rows_include_alternate_conditions": true,
+      "input_source": "https://huggingface.co/datasets/EdisonScientific/labbench2/tree/3678e7e38748477d0606407468db9cd7e2f2e667",
+      "author_code": "https://github.com/EdisonScientific/labbench2/tree/a490cd40379edd603fb8b6b6d3fe47ebb0712e8d",
+      "paper": "https://arxiv.org/html/2604.09554v2",
+      "paper_matching_score_status": "unverified for this selected 542-case/local-judge condition",
+      "models": {
+        "base": {
+          "dtype": "bfloat16",
+          "name": "Qwen/Qwen3.5-4B-Base",
+          "revision": "1001bb4d826a52d1f399e183466143f4da7b741b"
+        },
+        "posttrained": {
+          "dtype": "bfloat16",
+          "name": "Qwen/Qwen3.5-4B",
+          "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+        }
+      },
+      "per_category_native_accuracy": {
+        "base": {
+          "dbqa2": {
+            "selected_denominator": 83,
+            "correct": 1,
+            "accuracy": 0.012048192771084338,
+            "source_configuration_rows": 86,
+            "selected_reviewed_cases": 83,
+            "prior_excluded": 3
+          },
+          "litqa3": {
+            "selected_denominator": 154,
+            "correct": 18,
+            "accuracy": 0.11688311688311688,
+            "source_configuration_rows": 168,
+            "selected_reviewed_cases": 154,
+            "prior_excluded": 14
+          },
+          "patentqa": {
+            "selected_denominator": 106,
+            "correct": 10,
+            "accuracy": 0.09433962264150944,
+            "source_configuration_rows": 121,
+            "selected_reviewed_cases": 106,
+            "prior_excluded": 15
+          },
+          "suppqa2": {
+            "selected_denominator": 79,
+            "correct": 1,
+            "accuracy": 0.012658227848101266,
+            "source_configuration_rows": 125,
+            "selected_reviewed_cases": 79,
+            "prior_excluded": 46
+          },
+          "trialqa": {
+            "selected_denominator": 120,
+            "correct": 15,
+            "accuracy": 0.125,
+            "source_configuration_rows": 120,
+            "selected_reviewed_cases": 120,
+            "prior_excluded": 0
+          }
+        },
+        "posttrained": {
+          "dbqa2": {
+            "selected_denominator": 83,
+            "correct": 3,
+            "accuracy": 0.03614457831325301,
+            "source_configuration_rows": 86,
+            "selected_reviewed_cases": 83,
+            "prior_excluded": 3
+          },
+          "litqa3": {
+            "selected_denominator": 154,
+            "correct": 15,
+            "accuracy": 0.09740259740259741,
+            "source_configuration_rows": 168,
+            "selected_reviewed_cases": 154,
+            "prior_excluded": 14
+          },
+          "patentqa": {
+            "selected_denominator": 106,
+            "correct": 11,
+            "accuracy": 0.10377358490566038,
+            "source_configuration_rows": 121,
+            "selected_reviewed_cases": 106,
+            "prior_excluded": 15
+          },
+          "suppqa2": {
+            "selected_denominator": 79,
+            "correct": 5,
+            "accuracy": 0.06329113924050633,
+            "source_configuration_rows": 125,
+            "selected_reviewed_cases": 79,
+            "prior_excluded": 46
+          },
+          "trialqa": {
+            "selected_denominator": 120,
+            "correct": 15,
+            "accuracy": 0.125,
+            "source_configuration_rows": 120,
+            "selected_reviewed_cases": 120,
+            "prior_excluded": 0
+          }
+        }
+      },
+      "pooled_selected_accuracy_descriptive": {
+        "base": {
+          "correct": 45,
+          "denominator": 542,
+          "accuracy": 0.08302583025830258
+        },
+        "posttrained": {
+          "correct": 49,
+          "denominator": 542,
+          "accuracy": 0.09040590405904059
+        }
+      },
+      "fixed_judge": {
+        "batch_size": 2,
+        "context_limit": 65536,
+        "declared_adaptations": [
+          "Fixed local Qwen3.8-27B instead of native Claude.",
+          "Original rubric text preserved in user message; separate system JSON-format instruction replaces provider structured-output interface.",
+          "Unconstrained raw decoding; malformed/truncated/unknown-finish judgment is retained and scores zero."
+        ],
+        "dtype": "bfloat16",
+        "enable_thinking": false,
+        "generation": {
+          "ignore_eos": false,
+          "include_stop_str_in_output": true,
+          "max_tokens": 2048,
+          "n": 1,
+          "seed": 42,
+          "skip_special_tokens": false,
+          "spaces_between_special_tokens": false,
+          "stop_token_ids": [
+            248044,
+            248046
+          ],
+          "temperature": 0.0,
+          "top_k": -1,
+          "top_p": 1.0
+        },
+        "model": "Qwen/Qwen3.8-27B",
+        "native_author_judge": "anthropic:claude-sonnet-4-5",
+        "native_judge_identity_equivalent": false,
+        "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+      },
+      "native_Claude_equivalence_claimed": false,
+      "solver_output_budget": 16384,
+      "budget_qualification": "Below post-trained card32768 recommendation and released BASIC64000 cap; same declared author general-thinking sampler applied to both.",
+      "closed_book": true,
+      "tools_or_images_or_retrieved_evidence": false,
+      "invalid_solver_finals": {
+        "base": 5,
+        "posttrained": 26
+      },
+      "invalid_judge_responses_scored_zero": 1,
+      "final_native_score_rows": 1084,
+      "eligible_actual_judgments": 1053,
+      "judge_artificial_control_calls": 2,
+      "native_score_reason_counts": {
+        "native_rubric_local_judge": 1052,
+        "candidate_error": 31,
+        "judge_error": 1
+      },
+      "explanation_support_independently_validated": false,
+      "public_pretraining_exposure": "unknown",
+      "public_numeric_report": "reports/QWEN35_4B_LABBENCH2_BASIC542_RESULTS_2026-10-22.md",
+      "public_protocol": "results/runs/qwen35_4b_labbench2_basic542_author_general_thinking16k_20261022_v2/protocol.json",
+      "public_per_case_scores": "results/runs/qwen35_4b_labbench2_basic542_author_general_thinking16k_20261022_v2/per_case_scores.json",
+      "narrow_publication": {
+        "commit_sha": "92a5024ea2bbedf7903a2bbac23b069da4e31d6b",
+        "remote_bytes_verified": true,
+        "receipt_sha256": "06767f56e044d337c0894bb9db373fb959ae52f689ac92127f78a4c608e774ad",
+        "paths_sha256": {
+          "reports/QWEN35_4B_LABBENCH2_BASIC542_RESULTS_2026-10-22.json": "d81f7491917c26c77f2733b4f15e77917405997448e9bf47a485d6cfd6838e58",
+          "reports/QWEN35_4B_LABBENCH2_BASIC542_RESULTS_2026-10-22.md": "b1387b996cf8773d30ed1672d9272ddf80eb57297d57ba6a57ed7cfa89a37cda",
+          "results/runs/qwen35_4b_labbench2_basic542_author_general_thinking16k_20261022_v2/README.md": "994f64d02858488dce68f52b9a2fbfab34cfc80270310b2910821f8046c188cc",
+          "results/runs/qwen35_4b_labbench2_basic542_author_general_thinking16k_20261022_v2/completion.json": "f97c9fd080340ab50a872401bf3d3e83c88d8f6889c4f8ce6f6f7ee8efd2762d",
+          "results/runs/qwen35_4b_labbench2_basic542_author_general_thinking16k_20261022_v2/per_case_scores.json": "279a2dceca4547c884b962e12caa420ab0279d7d5819c6ea7e3551d1c517dce7",
+          "results/runs/qwen35_4b_labbench2_basic542_author_general_thinking16k_20261022_v2/protocol.json": "04de7d55799e43eafe717f2814c0a44080cd014443b631a94a14cd96aefe27ad"
+        }
+      },
+      "new_model_or_scoring_calls_by_document_update": 0
+    }
   },
   "remaining_work_historical_snapshot_note": "remaining_work and earlier qwen count fields retain historical observations; use the dated ENGINEERING_PROGRESS.md and current_completed_result_integration for this reconciliation.",
   "lpb_completion_integration": {
