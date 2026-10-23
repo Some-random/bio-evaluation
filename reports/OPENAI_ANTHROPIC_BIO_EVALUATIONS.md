@@ -47,3 +47,184 @@ LiveProteinBench was released in **December 2025** and tests 12 protein-property
 The paper uses 1,797 questions; our completed project runs use a reviewed subset of 1,736. Inference settings differ between runs; full details for our project runs are linked from the model names.
 
 [Browse Luna's complete questions, protein inputs, answers and visible explanations](LIVEPROTEINBENCH_GPT6_LUNA_EXPLANATIONS.md). Accuracy scores the answers, not the scientific validity of the explanations.
+
+## Three real LiveProteinBench examples
+
+These are actual questions from the released dataset, with all four choices and complete protein sequences. The original task wording is shown below; the full model instruction is expandable. Sequence line breaks are added only for readability.
+
+### 1. Cofactor prediction
+
+**Case:** `cofactor_0133` · [Official question data](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/cofactor.json) · [Saved Luna answer](https://github.com/Some-random/bio-evaluation/blob/59c9ea984d418945c96331f25c99fd60a56c6cfe/reports/liveproteinbench_gpt6_luna_explanations/cofactor.md?plain=1#L3083)
+
+**Question — original task wording:**
+
+<blockquote>The current task is about Predicting Protein Cofactor, which is to identify the specific cofactor required for a given protein's catalytic activity. A cofactor is a non-protein chemical compound or metallic ion that is essential for an enzyme's function. Based on the provided protein sequence, you will need to determine which of the multiple-choice options is the correct cofactor..</blockquote>
+
+<details>
+<summary>Complete protein sequence (912 amino acids)</summary>
+
+```text
+MGRDARRLPLLPFLLLLLAAAAGVAESATDAEAIHDLARSVPALGWDGDNVCGFEGVTCE
+RGGAGKVTELNLADRGLSGTLPDSLSSLTSLTALQLQGNALTGAVPSLARMGSLARLALD
+GNAFTSLPPDFLHGLTSLQYLTMENLPLPPWPVPDAIANCSSLDTFSASNASISGPFPAV
+LATLVSLRNLRLSYNNLTGGLPPELSSLIAMESLQLNNQRSDDKLSGPIDVIASMKSLKL
+LWIQSNKFTGPIPDLNGTQLEAFNVRDNMLTGVVPPSLTGLMSLKNVSLSNNNFQGPKPA
+FAAIPGQDEDSGNGFCLNTPGPCSPLTTTLLQVAEGFGYPYELAKTWKGNDPCSPAWVGI
+VCTSSDVSMINLSRKNLSGRISPALANLTRLARLDLSNNNLTGVIPDVLTTLPSLTVLNV
+ANNRLTGEVPKFKPSVNVLAQGNLFGQSSGSSGGGGGSDGDSSSSDSAGGGKSKPNTGMI
+IGIIVAVIILFACIALLVHHRKKKNVEKFRPVSTKTSPAESEMMKIQVVGANGISNGSSA
+FPTELYSHVSAANSSNISELFESHGMQLSVEVLLKATNNFSEDCILGRGGFGVVFKGNLN
+GKLVAVKRCDSGTMGTKGQEEFLAEIDVLRKVRHRHLVALLGYCTHGNERLLVYEYMSGG
+TLREHLCDLQQSGFIPLTWTQRMTIALDVARGIEYLHGLAQETFIHRDLKPSNILLDQDL
+RAKVSDFGLVKLAKDTDKSLMTRIAGTFGYLAPEYATTGKVTTKVDVYAYGVILMEMITG
+RKVLDDSLPDDETHLVTIFRRNILDKEKFRKFVDPTLELSAEGWTSLLEVADLARHCTAR
+EPYQRPDMCHCVNRLSSLVDQWKPTNIDEDDYEGETSEMGLHQQLEKWRCDDFTISDSDT
+FGSFNVPRKYNG
+```
+
+</details>
+
+**Choices:**
+
+- **A.** Ca(2+)
+- **B.** Mn(2+)
+- **C.** [2Fe-2S] cluster
+- **D.** pantetheine 4'-phosphate
+
+**Reference answer:** **B** — Mn(2+).
+
+**Luna’s recorded choice:** **B** — correct.
+
+<details>
+<summary>Full original model instruction</summary>
+
+<pre>You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Predicting Protein Cofactor, which is to identify the specific cofactor required for a given protein's catalytic activity. A cofactor is a non-protein chemical compound or metallic ion that is essential for an enzyme's function. Based on the provided protein sequence, you will need to determine which of the multiple-choice options is the correct cofactor.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+</pre>
+
+</details>
+
+### 2. Optimal pH prediction
+
+**Case:** `ph_0052` · [Official question data](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/ph.json) · [Saved Luna answer](https://github.com/Some-random/bio-evaluation/blob/59c9ea984d418945c96331f25c99fd60a56c6cfe/reports/liveproteinbench_gpt6_luna_explanations/ph.md?plain=1#L1104)
+
+**Question — original task wording:**
+
+<blockquote>The current task is about Protein Optimal pH Prediction, which is to predict the optimal pH for a protein's activity. The optimal pH is the specific pH at which an enzyme exhibits its maximum catalytic rate. This property is critically dependent on the ionization states of amino acid residues, especially those in the active site. Based on the provided protein sequence, which dictates these properties, you must predict the pH range in which the enzyme functions most effectively..</blockquote>
+
+<details>
+<summary>Complete protein sequence (221 amino acids)</summary>
+
+```text
+MVSFTTLLTAVATAVSAVTASPLEALKRGIQPGTGVHDGYFYSFWTDGRGYVDFNNGPRG
+SYRVSWSNVNNWVGGKGWNPGPPRRIAYNGTWNNWNVNSYLALYGWTTNPLVEYYIVEAY
+GSYNPSSGAARLGTIEDDGGVYDIYRTRRINQPSIIGTASFDQYWSVRRQKRVGGTIDTG
+KHFDEWRRQGNLQLGAWNYMIMATEGYQSSGSAEIEVRSLD
+```
+
+</details>
+
+**Choices:**
+
+- **A.** 4.9
+- **B.** 7.6
+- **C.** 5.2
+- **D.** 7.0
+
+**Reference answer:** **D** — 7.0.
+
+**Luna’s recorded choice:** **C** — incorrect.
+
+<details>
+<summary>Full original model instruction</summary>
+
+<pre>You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Protein Optimal pH Prediction, which is to predict the optimal pH for a protein's activity. The optimal pH is the specific pH at which an enzyme exhibits its maximum catalytic rate. This property is critically dependent on the ionization states of amino acid residues, especially those in the active site. Based on the provided protein sequence, which dictates these properties, you must predict the pH range in which the enzyme functions most effectively.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+</pre>
+
+</details>
+
+### 3. Transmembrane region prediction
+
+**Case:** `transmembrane_0081` · [Official question data](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/transmembrane.json) · [Saved Luna answer](https://github.com/Some-random/bio-evaluation/blob/59c9ea984d418945c96331f25c99fd60a56c6cfe/reports/liveproteinbench_gpt6_luna_explanations/transmembrane.md?plain=1#L1910)
+
+**Question — original task wording:**
+
+<blockquote>The current task is about Transmembrane Region Prediction, which is to predict a region of the protein that spans across a cell membrane. These transmembrane domains are typically hydrophobic alpha-helices that anchor the protein within the lipid bilayer or form channels. Based on the provided amino acid sequence, you must select the option that correctly identifies the start and end positions of a segment that crosses the membrane..</blockquote>
+
+<details>
+<summary>Complete protein sequence (96 amino acids)</summary>
+
+```text
+MNVPTAPTPNKHLNIPDLRFEKVFKKALHRELAPSSSLSRKAGVITKVVVRDVLLMPLLQ
+SFVLSLALMGVKEWLSYIRLKGRTLGDRIRQRLFPI
+```
+
+</details>
+
+**Choices:**
+
+- **A.** 53..72
+- **B.** 53..71
+- **C.** 53..71; 395..420
+- **D.** 4..24; 81..101; 116..136; 158..178; 181..201; 228..248; 271..291; 309..329
+
+**Reference answer:** **B** — 53..71.
+
+**Luna’s recorded choice:** **B** — correct.
+
+<details>
+<summary>Full original model instruction</summary>
+
+<pre>You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Transmembrane Region Prediction, which is to predict a region of the protein that spans across a cell membrane. These transmembrane domains are typically hydrophobic alpha-helices that anchor the protein within the lipid bilayer or form channels. Based on the provided amino acid sequence, you must select the option that correctly identifies the start and end positions of a segment that crosses the membrane.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+</pre>
+
+</details>
+
+Examples: Copyright © 2026 LiveProteinBench contributors (Rong and colleagues), reproduced under [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). Protein sequence resource: [UniProt](https://www.uniprot.org/help/license). Only presentation formatting was added; question wording, choices, reference answers and sequence residues are unchanged.
