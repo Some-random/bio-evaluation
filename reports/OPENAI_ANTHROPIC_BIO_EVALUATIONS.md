@@ -26,7 +26,7 @@ Checked **October 23, 2026** (America/Los_Angeles).
 
 ## LiveProteinBench results
 
-LiveProteinBench was released in **December 2025** and tests 12 protein-property and function tasks. Its paper evaluated earlier GPT and Claude models; we extended the evaluation with newer Qwen models and GPT-6 Luna. The results below use **text inputs, including protein sequences**, without structure images. [Benchmark paper](https://arxiv.org/html/2512.22257v1#S3).
+LiveProteinBench was released in **December 2025** and tests 12 protein-property and function tasks. Its paper evaluated earlier GPT and Claude models; we extended the evaluation with newer Qwen models and GPT-6 Luna. The paper results and our project runs below use **text inputs, including protein sequences**, without structure images. [Benchmark paper](https://arxiv.org/html/2512.22257v1#S3).
 
 | Model | Accuracy |
 |---|---:|
@@ -34,14 +34,16 @@ LiveProteinBench was released in **December 2025** and tests 12 protein-property
 | GPT-5 † | 60.49% |
 | OpenAI o3 † | 56.04% |
 | Claude 3.7 Sonnet † | 51.47% |
+| **Qwen3.5-4B fine-tuned ‡** | **41.3%** |
 | GPT-4o † | 38.39% |
 | [**Qwen3.8-27B**](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md) | **34.56%** |
 | [**Qwen3.5-4B — thinking off**](LIVEPROTEINBENCH_QWEN35_4B_POSTTRAINED_EXISTING_OUTPUTS.md) | **33.35%** |
-| [**Qwen3.5-4B-Base — thinking, 16K limit**](LIVEPROTEINBENCH_QWEN35_4B_BASE_AUTHOR_SAMPLING_V2_RESULT.md) | **13.88%** |
 | **Qwen3.5-4B — thinking, 32K limit** | In progress; final score pending |
 
-† Reported by the [LiveProteinBench paper, Table 5](https://arxiv.org/html/2512.22257v1#A4.T5). The other completed scores are our additional evaluations.
+† Reported by the [LiveProteinBench paper, Table 5](https://arxiv.org/html/2512.22257v1#A4.T5).
 
-The paper uses 1,797 questions; our additional runs use a reviewed subset of 1,736. Inference settings differ between runs; full details are linked from the model names.
+‡ Separately provided fine-tuned model result, reported by the user. Its evaluation cohort and settings were not specified.
+
+The paper uses 1,797 questions; our completed project runs use a reviewed subset of 1,736. Inference settings differ between runs; full details for our project runs are linked from the model names.
 
 [Browse Luna's complete questions, protein inputs, answers and visible explanations](LIVEPROTEINBENCH_GPT6_LUNA_EXPLANATIONS.md). Accuracy scores the answers, not the scientific validity of the explanations.
