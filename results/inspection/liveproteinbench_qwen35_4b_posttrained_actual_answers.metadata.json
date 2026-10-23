@@ -1,0 +1,105 @@
+{
+  "title": "Qwen3.5-4B: all 1,736 saved LiveProteinBench benchmark answers",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "SFT_adapter": null,
+  "condition": "prospective_direct_answer_non_thinking_greedy_v1",
+  "weights": "NF4",
+  "compute": "FP16",
+  "residual_embedding_norm_head": "FP32",
+  "enable_thinking": false,
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 16,
+    "eos_token_id": [
+      248044,
+      248046
+    ],
+    "use_cache": true
+  },
+  "official_cases": 1797,
+  "exported_cases": 1736,
+  "excluded_cases": 61,
+  "correct": 579,
+  "micro_accuracy": 0.33352534562211983,
+  "task_macro_accuracy": 0.31269377596850595,
+  "per_task": {
+    "EC_number": {
+      "n": 200,
+      "correct": 75
+    },
+    "GO_biological_process": {
+      "n": 187,
+      "correct": 50
+    },
+    "GO_cellular_component": {
+      "n": 196,
+      "correct": 95
+    },
+    "GO_molecular_function": {
+      "n": 192,
+      "correct": 77
+    },
+    "active_site": {
+      "n": 136,
+      "correct": 34
+    },
+    "catalytic_activity": {
+      "n": 187,
+      "correct": 58
+    },
+    "cofactor": {
+      "n": 184,
+      "correct": 66
+    },
+    "motif_position": {
+      "n": 49,
+      "correct": 13
+    },
+    "pathway": {
+      "n": 187,
+      "correct": 39
+    },
+    "ph": {
+      "n": 48,
+      "correct": 13
+    },
+    "temperature": {
+      "n": 37,
+      "correct": 6
+    },
+    "transmembrane": {
+      "n": 133,
+      "correct": 53
+    }
+  },
+  "all_outputs_single_letter_then_native_EOS": true,
+  "generated_explanations_present": false,
+  "input_template_note": "The native template includes an empty thinking block when thinking is disabled.",
+  "native_template_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+  "input_file_sha256": "4f16e63a748a536a936f6b35540915354c187fb44aecc5cb3b71a615c484103c",
+  "reference_file_sha256": "dab5185104e5ee504cbd96a3c978761530ecaf95dce7c9c6ad1c4f02bfd41bf7",
+  "prediction_seal_sha256": "ead108e9f98ab215ce94f7fd04b92a083048112a646f0e441727abd78f6aa774",
+  "evaluator_sha256": "088e5237e48d3c926ca157a0b4b421909ba3e547d0d5be3ff0cd69f9fc9ce7ca",
+  "source_license_review_sha256": "a57f691abbb1c24ec39b379be4109f6e2e5e716a54675675daa3c1f65fd60bca",
+  "source": {
+    "dataset_revision": "8428f64e33d53330f7745376d9c45de2d2c37eaf",
+    "dataset_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/README.md",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "copyright": "Copyright (c) 2026 LiveProteinBench contributors",
+    "paper_url": "https://arxiv.org/abs/2512.22257",
+    "uniprot_attribution": "https://www.uniprot.org/help/license"
+  },
+  "changes": "Reviewed 1736/1797 sequence-only subset; direct-answer system instruction; saved model outputs and source answers appended; visual wrapping only in Markdown.",
+  "export_checks": {
+    "sealed_files": 5208,
+    "original_message_hash_matches": 1736,
+    "adapted_message_hash_matches": 1736,
+    "rendered_prompt_hash_matches": 1736,
+    "source_sequence_and_four_choices_matches": 1736,
+    "source_ground_truth_matches": 1736
+  },
+  "new_inference_calls": 0,
+  "score_reconciliation_only": true
+}
