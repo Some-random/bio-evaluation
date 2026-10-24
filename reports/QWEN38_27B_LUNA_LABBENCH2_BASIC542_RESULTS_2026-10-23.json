@@ -1,0 +1,120 @@
+{
+  "benchmark": "LABBench2",
+  "closed_book": true,
+  "condition": "LABBENCH2_BASIC542_QWEN38_LUNA_FIXED_LOCAL27B_JUDGE_V1",
+  "excluded_cases": 78,
+  "explanation_support_independently_validated": false,
+  "fixed_judge": "Qwen/Qwen3.8-27B",
+  "fixed_judge_plan_sha256": "84ae3f028a56fd9b2e99bb22765533e4b1d64d5f314ad8e7e24eaa0d519ea9a0",
+  "judge_output_tokens": 2048,
+  "judge_temperature": 0,
+  "judge_thinking": false,
+  "metrics": {
+    "gpt6_luna": {
+      "dbqa2": {
+        "accuracy": 0.08433734939759036,
+        "correct": 7,
+        "prior_excluded": 3,
+        "selected_denominator": 83,
+        "selected_reviewed_cases": 83,
+        "source_configuration_rows": 86
+      },
+      "litqa3": {
+        "accuracy": 0.16233766233766234,
+        "correct": 25,
+        "prior_excluded": 14,
+        "selected_denominator": 154,
+        "selected_reviewed_cases": 154,
+        "source_configuration_rows": 168
+      },
+      "patentqa": {
+        "accuracy": 0.2169811320754717,
+        "correct": 23,
+        "prior_excluded": 15,
+        "selected_denominator": 106,
+        "selected_reviewed_cases": 106,
+        "source_configuration_rows": 121
+      },
+      "suppqa2": {
+        "accuracy": 0.06329113924050633,
+        "correct": 5,
+        "prior_excluded": 46,
+        "selected_denominator": 79,
+        "selected_reviewed_cases": 79,
+        "source_configuration_rows": 125
+      },
+      "trialqa": {
+        "accuracy": 0.2916666666666667,
+        "correct": 35,
+        "prior_excluded": 0,
+        "selected_denominator": 120,
+        "selected_reviewed_cases": 120,
+        "source_configuration_rows": 120
+      }
+    },
+    "qwen38_27b": {
+      "dbqa2": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "prior_excluded": 3,
+        "selected_denominator": 83,
+        "selected_reviewed_cases": 83,
+        "source_configuration_rows": 86
+      },
+      "litqa3": {
+        "accuracy": 0.08441558441558442,
+        "correct": 13,
+        "prior_excluded": 14,
+        "selected_denominator": 154,
+        "selected_reviewed_cases": 154,
+        "source_configuration_rows": 168
+      },
+      "patentqa": {
+        "accuracy": 0.10377358490566038,
+        "correct": 11,
+        "prior_excluded": 15,
+        "selected_denominator": 106,
+        "selected_reviewed_cases": 106,
+        "source_configuration_rows": 121
+      },
+      "suppqa2": {
+        "accuracy": 0.0379746835443038,
+        "correct": 3,
+        "prior_excluded": 46,
+        "selected_denominator": 79,
+        "selected_reviewed_cases": 79,
+        "source_configuration_rows": 125
+      },
+      "trialqa": {
+        "accuracy": 0.15,
+        "correct": 18,
+        "prior_excluded": 0,
+        "selected_denominator": 120,
+        "selected_reviewed_cases": 120,
+        "source_configuration_rows": 120
+      }
+    }
+  },
+  "native_Claude_judge_used": false,
+  "prior_public_exposure": "unknown",
+  "release_year": 2026,
+  "same_model_grading_for": "qwen38_27b",
+  "selected_cases_per_model": 542,
+  "selected_category_source_cases": 620,
+  "totals": {
+    "gpt6_luna": {
+      "accuracy": 0.1752767527675277,
+      "correct": 95,
+      "denominator": 542,
+      "invalid": 0,
+      "truncated": 0
+    },
+    "qwen38_27b": {
+      "accuracy": 0.08302583025830258,
+      "correct": 45,
+      "denominator": 542,
+      "invalid": 313,
+      "truncated": 312
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "joint_judge_plan_sha256": "a03184c6662dbfd5a6ae4f194475973684bc02e818a78744e709fc211ca24aea",
+  "judge_generation": {
+    "ignore_eos": false,
+    "include_stop_str_in_output": true,
+    "max_tokens": 2048,
+    "n": 1,
+    "seed": 42,
+    "skip_special_tokens": false,
+    "spaces_between_special_tokens": false,
+    "stop_token_ids": [
+      248044,
+      248046
+    ],
+    "temperature": 0.0,
+    "top_k": -1,
+    "top_p": 1.0
+  },
+  "judge_thinking": false,
+  "luna_max_output_tokens": 16384,
+  "luna_operational_handoff_plan_sha256": "82f91edd0bde3ba4ded3d6a74b75950a5d2e3d5481fd04c6abe965db6fa95455",
+  "luna_plan_sha256": "f575b876269d375f0fe9f1ef31da15056ab5297120b1f0c29bb9e576c8306a62",
+  "luna_reasoning_effort": "high",
+  "luna_solver_model": "gpt-6-luna",
+  "luna_source_boundary_sha256": "afdf557072b72c0a0badf0c61ab806474e521f12fb0445573dc331a7c7d8dd38",
+  "native_judge_plan_sha256": "84ae3f028a56fd9b2e99bb22765533e4b1d64d5f314ad8e7e24eaa0d519ea9a0",
+  "no_input_reference_or_raw_text_export": true,
+  "question_cohort_sha256": "c4f59c497ff72e003caf1d58a1360f8d7c21c5df7f22de150afda8e166c18e22",
+  "qwen_scientific_parent_plan_sha256": "9c748ab903bb7d7b96b4bc0f26427d44a9b6098b0b68841a6bc3644ec7bcefd7",
+  "qwen_solver_dtype": "bfloat16",
+  "qwen_solver_generation": {
+    "add_special_tokens": false,
+    "frequency_penalty": 0.0,
+    "ignore_eos": false,
+    "include_stop_str_in_output": true,
+    "max_tokens": 16384,
+    "min_p": 0.0,
+    "n": 1,
+    "presence_penalty": 1.5,
+    "repetition_penalty": 1.0,
+    "return_token_ids": true,
+    "seed": 42,
+    "skip_special_tokens": false,
+    "spaces_between_special_tokens": false,
+    "stop_token_ids": [
+      248044,
+      248046
+    ],
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "qwen_solver_model": "Qwen/Qwen3.8-27B",
+  "qwen_solver_thinking": true,
+  "scoring_seal_sha256": "c9a0af96e925053451aec13e605fc06f597b2ae97d5fa11b6ddbe58bfea38fe9",
+  "solver_plan_sha256": "8531a25b84282155f1fe723a1a4635fc49081473d3cea0d9dfc74e0a44f92368",
+  "solver_seals": {
+    "gpt6_luna": {
+      "completion_sha256": "8c4cd709888fadaa72f55b6b2144777289fc07b219be90d3f3528a5eeb197435",
+      "seal_sha256": "6210468b76c7c3d1b16e997a5f50b79f3fb4beb59a0ddd264d710bd2d7670a76"
+    },
+    "qwen38_27b": {
+      "completion_sha256": "cb0050a76bb2825a4e89082bc81c6548f45dc27d6e8c6d40e1f8f739b55db1b0",
+      "seal_sha256": "151a11644c77a11ed8a6788ab986d4d971d8391b878b245e9a641a63a2f250fe"
+    }
+  }
+}
