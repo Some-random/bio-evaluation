@@ -1,0 +1,30 @@
+{
+  "benchmark_prediction_lock_sha256": "6b35c632acffc595b20a1efe2aa00ba28617d1933c9ff85eac6bfd23e09f203a",
+  "delivery_passed": 2,
+  "evaluation": "PFArena single-mutant generation",
+  "full_native_benchmark_complete": false,
+  "measurement_interpretation": "Retrospective native comparison against existing assay measurements; no experimental validation.",
+  "model": "Qwen3.8-27B",
+  "native_metrics": {
+    "NMS@40": 0.8759601688031643,
+    "Recall@40": 0.025
+  },
+  "native_panel_assays": 123,
+  "native_quality": {
+    "assays_below_budget": 0,
+    "assays_with_incomplete_candidate_ranking": 0,
+    "mean_duplicate_predictions_within_budget": 0.0,
+    "mean_illegal_predictions_within_budget": 2.0,
+    "missing_assays": 0,
+    "total_duplicate_ground_truth_mutants_collapsed": 0,
+    "total_invalid_ground_truth_mutant_rows": 0,
+    "total_invalid_ground_truth_score_rows": 0,
+    "unknown_assays": 0
+  },
+  "native_scoring_status": "completed_native_scored_reviewed_subset",
+  "planned_assays": 2,
+  "qualification": "Native mean_illegal_predictions_within_budget is 2.0; duplicate/missing/incomplete counts are 0. Technical delivery is distinct from native prediction quality.",
+  "raw_response_count": 2,
+  "scope": "Separate reviewed human SOD1 activity subset: 2/123 assays",
+  "scores_sha256": "4944ee26c4a82471ae1b6a6e02262a43ef83bb04177589f953a3777145445093"
+}

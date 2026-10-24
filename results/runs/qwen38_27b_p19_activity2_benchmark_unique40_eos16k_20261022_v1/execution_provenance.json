@@ -1,0 +1,39 @@
+{
+  "automatic_retries": false,
+  "benchmark_cases": 2,
+  "completed_at_pacific": "2026-10-24T12:46:03-07:00",
+  "condition": "PFARENA_T1_ADDITIONAL_HUMAN_SOD1_ACTIVITY2_NATIVE_FIELDS_LOCAL_UNIQUE40_V1",
+  "development_cases": 3,
+  "dtype": "bfloat16",
+  "generation": {
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "max_tokens": 16384,
+    "n": 1,
+    "seed": 42,
+    "structured_outputs": {
+      "per_case_input_valid_enum_and_mandatory_unique40_prefix_mask": "PFARENA_T1_INPUT_VALID_UNIQUE40_TERMINAL_EOS_IDEMPOTENT_V4"
+    },
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "independent_native_terminal_review_sha256": "3ed7dbe0ae236632199f20482dab73bd98145d8576edd1de190d58420ab8b50b",
+  "independent_restore_admission_sha256": "5aa61f5f82b40db798e2d5607d89545f08d43dc327260400b457a78c686a9c87",
+  "job_id": "249549",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "model_weights_environments_credentials_or_caches_packaged": false,
+  "native_metric_functions_unchanged": true,
+  "original_engineering_admission_sha256": "4b988276c2cff3e306c495d3ad5d3a0a141bb04ee26c4a9822f9f69bbe027e3e",
+  "plan_sha256": "6c97fc69b4864f9f2fd17ba688bfce39548b094781ffbdc25d5daf4544b85d84",
+  "protected_measurement_rows_or_private_GPU_audits_packaged": false,
+  "root_authorization_sha256": "bbd274fe26c087b408f4e6e7e799d142341baeed06dd75cc713ba4a923840c46",
+  "root_release_sha256": "e10a2ac75bd4c67734fd2f6c6776411d0721a0af8877e2e00324ea0b9f2a32fa",
+  "scoring_attempts": 1,
+  "shared_resource_binding_sha256": "cb881370f7dac295d7d153f72baddcbf604c0fce0cc651ee82c557e5efcad6f9",
+  "slurm_exit_code": "0:0",
+  "slurm_state": "COMPLETED",
+  "tensor_parallel_size": 1
+}
