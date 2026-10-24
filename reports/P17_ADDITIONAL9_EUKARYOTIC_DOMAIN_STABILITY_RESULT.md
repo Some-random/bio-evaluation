@@ -1,0 +1,15 @@
+# ProteinGym additional nine eukaryotic domain-stability assays
+
+Qwen3.8-27B saved **16,000/16,000** outputs, with **16,000** valid scalar predictions across the fixed nine-assay condition. Native Spearman: **-0.04333333** (completed_native_scored_reviewed_subset). Confirmed attempts: 16,000; not dispatched: 0. All planned variants remain in the denominator.
+
+This is a separate addition to the earlier completed 30 assays. Their outputs and metrics remain unchanged; no pooled 39-assay score is claimed. The other 178 ProteinGym assays remain outside these two conditions. This does not complete the full 217-assay benchmark.
+
+The declared pointwise text adaptation supplies full reference and variant sequences, native substitution identities and the isolated-domain stability objective. Temperature 0, seed 42, thinking disabled, 16,384 output-token ceiling, pinned original BF16 Qwen3.8-27B, one TP1 GPU. Three artificial exact-copy HTTP checks passed before biological dispatch. No training or paid model calls occurred.
+
+The native formula rounds each per-assay Spearman to three decimals, then averages by UniProt and selection type. All nine primary assay metrics must be defined. Missing or invalid predictions keep the whole-cohort primary metric undefined without opening reference measurements; constant predictions can also make the metric undefined. The worker stops creating new requests after a fatal delivery error, drains outstanding calls and never retries an attempted variant. Protected measurements remain outside solver requests and this public archive. A numerical score does not validate explanations or establish contamination-free evaluation.
+
+Own server stopped and actual allocation **249560** completed successfully before packaging. The complete sealed condition received one native scoring attempt. An independently admitted resource-accounting amendment changed only allocation accounting and startup provenance; the scientific plan, inputs, generation and scoring remain fixed. The archive contains the actual amended worker source and a small resource-provenance projection, while full account audits, external-job proofs and private resource manifests stay local. The archive contains every actual original request, raw response and outcome, permitted input records, exact source and selected execution receipts; saved outputs are not silently equated with 16,000 completed predictions.
+
+[Native scoring source](https://github.com/OATML-Markslab/ProteinGym/blob/1f8de974dead8ff7501eff087b725d14a965e9f9/proteingym/performance_DMS_benchmarks.py). [Scores](../results/runs/qwen38_27b_p17_additional9_eukaryotic_stability_20261022_v1/scores.json), [result](../results/runs/qwen38_27b_p17_additional9_eukaryotic_stability_20261022_v1/result.json), [sealed trajectories/source archive](../results/trajectory_archives/qwen38_27b_p17_additional9_eukaryotic_stability_20261022_v1.tar.gz), [member hashes](../results/trajectory_archives/qwen38_27b_p17_additional9_eukaryotic_stability_20261022_v1.manifest.json).
+
+The archive retains the full upstream ProteinGym MIT license and copyright notice with the exact native metric source.

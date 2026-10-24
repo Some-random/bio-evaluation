@@ -1,0 +1,98 @@
+{
+  "native_scoring_status": "completed_native_scored_reviewed_subset",
+  "primary_native_Spearman": -0.043333333333333335,
+  "references_opened": true,
+  "planned_variants": 16000,
+  "planned_assays": 9,
+  "per_assay": [
+    {
+      "DMS_id": "BBC1_YEAST_Tsuboyama_2023_1TG0",
+      "UniProt_ID": "BBC1_YEAST",
+      "planned_variants": 2069,
+      "native_per_assay_Spearman_unrounded": -0.08311956785568696,
+      "native_per_assay_Spearman_source_rounded": -0.083
+    },
+    {
+      "DMS_id": "CATR_CHLRE_Tsuboyama_2023_2AMI",
+      "UniProt_ID": "CATR_CHLRE",
+      "planned_variants": 1903,
+      "native_per_assay_Spearman_unrounded": -0.10738388714390298,
+      "native_per_assay_Spearman_source_rounded": -0.107
+    },
+    {
+      "DMS_id": "CUE1_YEAST_Tsuboyama_2023_2MYX",
+      "UniProt_ID": "CUE1_YEAST",
+      "planned_variants": 1580,
+      "native_per_assay_Spearman_unrounded": -0.002890131217678113,
+      "native_per_assay_Spearman_source_rounded": -0.003
+    },
+    {
+      "DMS_id": "MBD11_ARATH_Tsuboyama_2023_6ACV",
+      "UniProt_ID": "MBD11_ARATH",
+      "planned_variants": 2116,
+      "native_per_assay_Spearman_unrounded": -0.22159164821472147,
+      "native_per_assay_Spearman_source_rounded": -0.222
+    },
+    {
+      "DMS_id": "MYO3_YEAST_Tsuboyama_2023_2BTT",
+      "UniProt_ID": "MYO3_YEAST",
+      "planned_variants": 3297,
+      "native_per_assay_Spearman_unrounded": -0.11307749639909105,
+      "native_per_assay_Spearman_source_rounded": -0.113
+    },
+    {
+      "DMS_id": "RAD_ANTMA_Tsuboyama_2023_2CJJ",
+      "UniProt_ID": "RAD_ANTMA",
+      "planned_variants": 912,
+      "native_per_assay_Spearman_unrounded": 0.02308576115483025,
+      "native_per_assay_Spearman_source_rounded": 0.023
+    },
+    {
+      "DMS_id": "RCD1_ARATH_Tsuboyama_2023_5OAO",
+      "UniProt_ID": "RCD1_ARATH",
+      "planned_variants": 1261,
+      "native_per_assay_Spearman_unrounded": 0.0396700802439948,
+      "native_per_assay_Spearman_source_rounded": 0.04
+    },
+    {
+      "DMS_id": "SR43C_ARATH_Tsuboyama_2023_2N88",
+      "UniProt_ID": "SR43C_ARATH",
+      "planned_variants": 1583,
+      "native_per_assay_Spearman_unrounded": 0.0655299648877502,
+      "native_per_assay_Spearman_source_rounded": 0.066
+    },
+    {
+      "DMS_id": "THO1_YEAST_Tsuboyama_2023_2WQG",
+      "UniProt_ID": "THO1_YEAST",
+      "planned_variants": 1279,
+      "native_per_assay_Spearman_unrounded": 0.009082421000946696,
+      "native_per_assay_Spearman_source_rounded": 0.009
+    }
+  ],
+  "per_UniProt_mean_Spearman": {
+    "BBC1_YEAST": -0.083,
+    "CATR_CHLRE": -0.107,
+    "CUE1_YEAST": -0.003,
+    "MBD11_ARATH": -0.222,
+    "MYO3_YEAST": -0.113,
+    "RAD_ANTMA": 0.023,
+    "RCD1_ARATH": 0.04,
+    "SR43C_ARATH": 0.066,
+    "THO1_YEAST": 0.009
+  },
+  "native_selection_types": [
+    "Stability"
+  ],
+  "undefined_assays": [],
+  "strict_full_cohort_defined": true,
+  "native_aggregation": "Pinned per-assay Spearman rounded3 -> per-UniProt mean -> Stability selection-type mean -> final mean; all planned assays must be defined, no silent NaN dropping.",
+  "task_id": "P17",
+  "condition": "PROTEINGYM_V13_ADDITIONAL9_EUKARYOTIC_DOMAIN_STABILITY_POINTWISE_QWEN_V1",
+  "native_release_assays": 217,
+  "reviewed_assays": 9,
+  "full_native_benchmark_complete": false,
+  "prediction_lock_sha256": "61adbce5c5af3e638a6ab8f8d55e94f86a389b85c3ebd8b16ad4d77f870d8f72",
+  "source_native_formula_sha256": "0002bc1b031c02dc2d67fde53da092c8fd301415645e8e83b425b4183570eba2",
+  "no_new_training": true,
+  "no_native_LLM_prompt_or_historical_ProtST_replication": true
+}
