@@ -1,0 +1,189 @@
+{
+  "benchmark_score": false,
+  "biological_correctness_assessed": false,
+  "condition": "QWEN35_MATCHED_NONTHINKING_REGEX256_OFFICIAL_VALIDATION_DELIVERY_20261022_V3",
+  "development_pair_complete": true,
+  "grant_sha256": "d9173ef9d95d94b0dabf5b7b07b97a0b08a19292ce25ed7357cb02f694afad75",
+  "job_id": "249553",
+  "models": {
+    "base": [
+      {
+        "benchmark_score": false,
+        "biological_correctness_assessed": false,
+        "claimed_files_without_verified_response": 0,
+        "count_scope": "terminal preserved artifacts",
+        "dispatch_count_note": "Request filenames and missing progress are not model-call counts.",
+        "empty_finals": 0,
+        "format_error_records": 0,
+        "native_finite_scalars": 16,
+        "numeric_delivery_distribution": {
+          "biological_correctness_assessed": false,
+          "distinct_values": 1,
+          "finite_count": 16,
+          "maximum": 73.0,
+          "minimum": 73.0
+        },
+        "planned_development_cases": 16,
+        "request_creation_or_dispatch_count": null,
+        "request_files_observed": 16,
+        "saved_responses_verified": 16,
+        "task_complete": true,
+        "task_id": "P06",
+        "truncations": 0
+      },
+      {
+        "benchmark_score": false,
+        "biological_correctness_assessed": false,
+        "claimed_files_without_verified_response": 0,
+        "count_scope": "terminal preserved artifacts",
+        "dispatch_count_note": "Request filenames and missing progress are not model-call counts.",
+        "empty_finals": 0,
+        "format_error_records": 0,
+        "native_finite_scalars": 12,
+        "numeric_delivery_distribution": {
+          "biological_correctness_assessed": false,
+          "distinct_values": 1,
+          "finite_count": 12,
+          "maximum": -3.2,
+          "minimum": -3.2
+        },
+        "planned_development_cases": 12,
+        "request_creation_or_dispatch_count": null,
+        "request_files_observed": 12,
+        "saved_responses_verified": 12,
+        "task_complete": true,
+        "task_id": "P08",
+        "truncations": 0
+      },
+      {
+        "benchmark_score": false,
+        "biological_correctness_assessed": false,
+        "claimed_files_without_verified_response": 0,
+        "count_scope": "terminal preserved artifacts",
+        "dispatch_count_note": "Request filenames and missing progress are not model-call counts.",
+        "empty_finals": 0,
+        "format_error_records": 0,
+        "native_finite_scalars": 64,
+        "numeric_delivery_distribution": {
+          "biological_correctness_assessed": false,
+          "distinct_values": 1,
+          "finite_count": 64,
+          "maximum": 7.25,
+          "minimum": 7.25
+        },
+        "planned_development_cases": 64,
+        "request_creation_or_dispatch_count": null,
+        "request_files_observed": 64,
+        "saved_responses_verified": 64,
+        "task_complete": true,
+        "task_id": "P07",
+        "truncations": 0
+      }
+    ],
+    "posttrained": [
+      {
+        "benchmark_score": false,
+        "biological_correctness_assessed": false,
+        "claimed_files_without_verified_response": 0,
+        "count_scope": "terminal preserved artifacts",
+        "dispatch_count_note": "Request filenames and missing progress are not model-call counts.",
+        "empty_finals": 0,
+        "format_error_records": 0,
+        "native_finite_scalars": 16,
+        "numeric_delivery_distribution": {
+          "biological_correctness_assessed": false,
+          "distinct_values": 1,
+          "finite_count": 16,
+          "maximum": 73.0,
+          "minimum": 73.0
+        },
+        "planned_development_cases": 16,
+        "request_creation_or_dispatch_count": null,
+        "request_files_observed": 16,
+        "saved_responses_verified": 16,
+        "task_complete": true,
+        "task_id": "P06",
+        "truncations": 0
+      },
+      {
+        "benchmark_score": false,
+        "biological_correctness_assessed": false,
+        "claimed_files_without_verified_response": 0,
+        "count_scope": "terminal preserved artifacts",
+        "dispatch_count_note": "Request filenames and missing progress are not model-call counts.",
+        "empty_finals": 0,
+        "format_error_records": 0,
+        "native_finite_scalars": 12,
+        "numeric_delivery_distribution": {
+          "biological_correctness_assessed": false,
+          "distinct_values": 2,
+          "finite_count": 12,
+          "maximum": -1.24,
+          "minimum": -1.27
+        },
+        "planned_development_cases": 12,
+        "request_creation_or_dispatch_count": null,
+        "request_files_observed": 12,
+        "saved_responses_verified": 12,
+        "task_complete": true,
+        "task_id": "P08",
+        "truncations": 0
+      },
+      {
+        "benchmark_score": false,
+        "biological_correctness_assessed": false,
+        "claimed_files_without_verified_response": 0,
+        "count_scope": "terminal preserved artifacts",
+        "dispatch_count_note": "Request filenames and missing progress are not model-call counts.",
+        "empty_finals": 0,
+        "format_error_records": 0,
+        "native_finite_scalars": 64,
+        "numeric_delivery_distribution": {
+          "biological_correctness_assessed": false,
+          "distinct_values": 1,
+          "finite_count": 64,
+          "maximum": -3.57,
+          "minimum": -3.57
+        },
+        "planned_development_cases": 64,
+        "request_creation_or_dispatch_count": null,
+        "request_files_observed": 64,
+        "saved_responses_verified": 64,
+        "task_complete": true,
+        "task_id": "P07",
+        "truncations": 0
+      }
+    ]
+  },
+  "operational_config_sha256": "34bf3cecbc60b5cf6693d0e5e911fed5c552d98d898c0bfab166ba4cc7708d09",
+  "plan_sha256": "c60fe0c5277950bd4c3a94b232880a455da247521b98439b58cb53a0cdf00dd4",
+  "planned_development_outcomes": 184,
+  "prior_Base24_separate_condition": {
+    "benchmark_score": false,
+    "biological_correctness_assessed": false,
+    "condition": "QWEN35_MATCHED_AUTHOR_GENERAL_THINKING_RAW16K_FULL_SEQUENCE_PROPERTY_20261022_V2",
+    "empty_finals": 7,
+    "full_benchmark_complete": false,
+    "model": "Qwen/Qwen3.5-4B-Base",
+    "native_finite_scalars": 13,
+    "normal_stopped_non_scalars": 4,
+    "numeric_delivery_distribution": {
+      "biological_correctness_assessed": false,
+      "distinct_values": 10,
+      "finite_count": 13,
+      "maximum": 72.0,
+      "minimum": 40.0
+    },
+    "planned_original_task": 1366,
+    "preservation_note": "Separate earlier thinking16K condition stopped after 24 saved outcomes.",
+    "saved_partial_outcomes": 24,
+    "task_id": "P06",
+    "truncations": 7
+  },
+  "reference_values_inspected_or_scored": false,
+  "root_authorization_sha256": "bbd274fe26c087b408f4e6e7e799d142341baeed06dd75cc713ba4a923840c46",
+  "root_scope_adoption_sha256": "be50fcf7b041aa262ce84ba0f1e7c9d083c0232d0b7f9352edb081fd8d254470",
+  "saved_development_outcomes_verified": 184,
+  "terminal_partial_failure": false,
+  "unknown_unclosed_model_attempts_are_not_zero": true
+}
