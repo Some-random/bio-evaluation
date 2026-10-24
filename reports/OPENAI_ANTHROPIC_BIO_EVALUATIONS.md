@@ -38,7 +38,7 @@ LiveProteinBench was released in **December 2025** and tests 12 protein-property
 | GPT-4o † | 38.39% |
 | [**Qwen3.8-27B**](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md) | **34.56%** |
 | [**Qwen3.5-4B — thinking off**](LIVEPROTEINBENCH_QWEN35_4B_POSTTRAINED_EXISTING_OUTPUTS.md) | **33.35%** |
-| **Qwen3.5-4B — thinking, 32K limit** | In progress; final score pending |
+| [**Qwen3.5-4B — thinking, 32K limit**](LIVEPROTEINBENCH_QWEN35_4B_POST_NATIVE_THINKING32K_V3_RESULT.md) | **28.92%** |
 
 † Reported by the [LiveProteinBench paper, Table 5](https://arxiv.org/html/2512.22257v1#A4.T5).
 
