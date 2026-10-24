@@ -1,0 +1,173 @@
+{
+  "allocation_handoff": {
+    "continuation_grant_sha256": "5d48c8da26333cf8250da988852f8ae57b1e8e2909ce21d2a631069ca5ea8ce0",
+    "continuation_plan_sha256": "adbed0c0ee27673249f6b2a33daaf9482b33123495b72216bdaa14b9bb27daa0",
+    "historical_attempts_preserved": 1338,
+    "new_unique_attempts": 398,
+    "preserved_segment_counts": [
+      932,
+      406
+    ],
+    "root_continuation_authority_sha256": "27e969ee696a493ba45b264f6445506d8176eef0ffb7a3e46a7e8d8756052aa1"
+  },
+  "benchmark": "LiveProteinBench",
+  "condition": "prospective_posttrained_native_LPB_thinking32k",
+  "content_omitted": true,
+  "explanation_correctness_scored": false,
+  "export_policy": "generated-choice-and-delivery-metadata-only-v1",
+  "full_source_benchmark_complete": false,
+  "generation": {
+    "add_special_tokens": false,
+    "frequency_penalty": 0.0,
+    "ignore_eos": false,
+    "include_stop_str_in_output": true,
+    "max_tokens": 32768,
+    "min_p": 0.0,
+    "n": 1,
+    "presence_penalty": 1.5,
+    "repetition_penalty": 1.0,
+    "return_token_ids": true,
+    "seed": 42,
+    "skip_special_tokens": false,
+    "spaces_between_special_tokens": false,
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "generation_counts": {
+    "all_attempts_terminal": true,
+    "all_planned_attempted": true,
+    "attempted_confirmed": 1736,
+    "empty_finals": 22,
+    "http_errors": 0,
+    "invalid_outputs": 22,
+    "missing_closing_think": 22,
+    "not_dispatched": 0,
+    "parsed": 1587,
+    "planned": 1736,
+    "refusals": 0,
+    "response_errors": 2,
+    "responses_saved": 1736,
+    "terminal": 1736,
+    "transport_errors": 0,
+    "truncations": 22
+  },
+  "invalids_count_as_incorrect": true,
+  "local_prediction_lock_sha256": "79b4bce2dec5ead12feaaccfed4921779b97272abd4268f5f69cb59117ee58c5",
+  "macro_task_accuracy": 0.2859109699633053,
+  "metric": "four_choice_accuracy",
+  "micro_accuracy": 0.2891705069124424,
+  "modality": "Text (protein sequence)",
+  "model": {
+    "dtype": "bfloat16",
+    "name": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "model_key": "posttrained",
+  "official_source": "https://github.com/Rongdingyi/LiveProteinBench/tree/8b9710932511f816651fc1a7e8a1bc85c3c77767",
+  "omission_reason": "All free-form generated text, token arrays and upstream/native input payloads are omitted; original local bytes and scoring remain unchanged.",
+  "original_local_inputs_requests_outputs_and_scoring_unchanged": true,
+  "paper": "https://arxiv.org/abs/2512.22257",
+  "per_task": {
+    "EC_number": {
+      "accuracy": 0.265,
+      "correct": 53,
+      "invalid": 20,
+      "parsed": 180,
+      "planned": 200
+    },
+    "GO_biological_process": {
+      "accuracy": 0.2994652406417112,
+      "correct": 56,
+      "invalid": 13,
+      "parsed": 174,
+      "planned": 187
+    },
+    "GO_cellular_component": {
+      "accuracy": 0.23979591836734693,
+      "correct": 47,
+      "invalid": 10,
+      "parsed": 186,
+      "planned": 196
+    },
+    "GO_molecular_function": {
+      "accuracy": 0.265625,
+      "correct": 51,
+      "invalid": 18,
+      "parsed": 174,
+      "planned": 192
+    },
+    "active_site": {
+      "accuracy": 0.40441176470588236,
+      "correct": 55,
+      "invalid": 16,
+      "parsed": 120,
+      "planned": 136
+    },
+    "catalytic_activity": {
+      "accuracy": 0.2994652406417112,
+      "correct": 56,
+      "invalid": 14,
+      "parsed": 173,
+      "planned": 187
+    },
+    "cofactor": {
+      "accuracy": 0.27717391304347827,
+      "correct": 51,
+      "invalid": 19,
+      "parsed": 165,
+      "planned": 184
+    },
+    "motif_position": {
+      "accuracy": 0.24489795918367346,
+      "correct": 12,
+      "invalid": 5,
+      "parsed": 44,
+      "planned": 49
+    },
+    "pathway": {
+      "accuracy": 0.1443850267379679,
+      "correct": 27,
+      "invalid": 12,
+      "parsed": 175,
+      "planned": 187
+    },
+    "ph": {
+      "accuracy": 0.2916666666666667,
+      "correct": 14,
+      "invalid": 6,
+      "parsed": 42,
+      "planned": 48
+    },
+    "temperature": {
+      "accuracy": 0.13513513513513514,
+      "correct": 5,
+      "invalid": 3,
+      "parsed": 34,
+      "planned": 37
+    },
+    "transmembrane": {
+      "accuracy": 0.5639097744360902,
+      "correct": 75,
+      "invalid": 13,
+      "parsed": 120,
+      "planned": 133
+    }
+  },
+  "planned": 1736,
+  "publication_id": "qwen35_4b_posttrained_liveproteinbench_native_thinking32k_v3_complete_1736_publication_v3",
+  "reference_sha256": "dab5185104e5ee504cbd96a3c978761530ecaf95dce7c9c6ad1c4f02bfd41bf7",
+  "release_year": 2025,
+  "reviewed_condition_complete": true,
+  "run_id": "qwen35_4b_posttrained_lpb_native_thinking32k_20261022_v3",
+  "scorer": "LPB_EXPLICIT_FINAL_ANSWER_V2",
+  "separate_from_Base16K": true,
+  "source_case_count": 1797,
+  "source_revision": "8b9710932511f816651fc1a7e8a1bc85c3c77767",
+  "stop_token_id_array_omitted": true,
+  "stop_token_ids_sha256": "a3a407bcbdb848fb5d4c1bc4653a33d6be40f30a6c2abd651d3e06607c662ca9",
+  "thinking": true,
+  "truncations_invalid": true,
+  "unadmitted_cases": 61,
+  "upstream_released_parser": false
+}

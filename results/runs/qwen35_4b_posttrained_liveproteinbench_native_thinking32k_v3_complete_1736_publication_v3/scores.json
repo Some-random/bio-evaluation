@@ -1,0 +1,128 @@
+{
+  "benchmark": "LiveProteinBench",
+  "explanation_correctness_scored": false,
+  "full_source_benchmark_complete": false,
+  "generation_counts": {
+    "all_attempts_terminal": true,
+    "all_planned_attempted": true,
+    "attempted_confirmed": 1736,
+    "empty_finals": 22,
+    "http_errors": 0,
+    "invalid_outputs": 22,
+    "missing_closing_think": 22,
+    "not_dispatched": 0,
+    "parsed": 1587,
+    "planned": 1736,
+    "refusals": 0,
+    "response_errors": 2,
+    "responses_saved": 1736,
+    "terminal": 1736,
+    "transport_errors": 0,
+    "truncations": 22
+  },
+  "invalids_count_as_incorrect": true,
+  "local_prediction_lock_sha256": "79b4bce2dec5ead12feaaccfed4921779b97272abd4268f5f69cb59117ee58c5",
+  "macro_task_accuracy": 0.2859109699633053,
+  "metric": "four_choice_accuracy",
+  "micro_accuracy": 0.2891705069124424,
+  "model": {
+    "dtype": "bfloat16",
+    "name": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "model_key": "posttrained",
+  "per_task": {
+    "EC_number": {
+      "accuracy": 0.265,
+      "correct": 53,
+      "invalid": 20,
+      "parsed": 180,
+      "planned": 200
+    },
+    "GO_biological_process": {
+      "accuracy": 0.2994652406417112,
+      "correct": 56,
+      "invalid": 13,
+      "parsed": 174,
+      "planned": 187
+    },
+    "GO_cellular_component": {
+      "accuracy": 0.23979591836734693,
+      "correct": 47,
+      "invalid": 10,
+      "parsed": 186,
+      "planned": 196
+    },
+    "GO_molecular_function": {
+      "accuracy": 0.265625,
+      "correct": 51,
+      "invalid": 18,
+      "parsed": 174,
+      "planned": 192
+    },
+    "active_site": {
+      "accuracy": 0.40441176470588236,
+      "correct": 55,
+      "invalid": 16,
+      "parsed": 120,
+      "planned": 136
+    },
+    "catalytic_activity": {
+      "accuracy": 0.2994652406417112,
+      "correct": 56,
+      "invalid": 14,
+      "parsed": 173,
+      "planned": 187
+    },
+    "cofactor": {
+      "accuracy": 0.27717391304347827,
+      "correct": 51,
+      "invalid": 19,
+      "parsed": 165,
+      "planned": 184
+    },
+    "motif_position": {
+      "accuracy": 0.24489795918367346,
+      "correct": 12,
+      "invalid": 5,
+      "parsed": 44,
+      "planned": 49
+    },
+    "pathway": {
+      "accuracy": 0.1443850267379679,
+      "correct": 27,
+      "invalid": 12,
+      "parsed": 175,
+      "planned": 187
+    },
+    "ph": {
+      "accuracy": 0.2916666666666667,
+      "correct": 14,
+      "invalid": 6,
+      "parsed": 42,
+      "planned": 48
+    },
+    "temperature": {
+      "accuracy": 0.13513513513513514,
+      "correct": 5,
+      "invalid": 3,
+      "parsed": 34,
+      "planned": 37
+    },
+    "transmembrane": {
+      "accuracy": 0.5639097744360902,
+      "correct": 75,
+      "invalid": 13,
+      "parsed": 120,
+      "planned": 133
+    }
+  },
+  "planned": 1736,
+  "publication_id": "qwen35_4b_posttrained_liveproteinbench_native_thinking32k_v3_complete_1736_publication_v3",
+  "reference_sha256": "dab5185104e5ee504cbd96a3c978761530ecaf95dce7c9c6ad1c4f02bfd41bf7",
+  "run_id": "qwen35_4b_posttrained_lpb_native_thinking32k_20261022_v3",
+  "scorer": "LPB_EXPLICIT_FINAL_ANSWER_V2",
+  "source_case_count": 1797,
+  "unadmitted_cases": 61,
+  "upstream_released_parser": false
+}
