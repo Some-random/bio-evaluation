@@ -1,0 +1,60 @@
+{
+  "at_pacific": "2026-10-25T00:25:06.351912-07:00",
+  "case_scope": "exact reviewed released test95 full FASTA, source order, 3416 cases",
+  "confidence_diagnostics": {
+    "all_zero_vectors": 2871,
+    "invalid_or_missing_vectors": 4,
+    "planned": 3416,
+    "score_based_case_filtering": false,
+    "valid_vectors": 3412
+  },
+  "config_sha256": "d3915c12cb72599cd5c2a0737bfa3fd72c0705fe4819e688ebd5493adede80dc",
+  "explanation_support_assessed": false,
+  "full_planned_primary_metrics_valid": false,
+  "invalid_or_missing": 4,
+  "metric_source_sha256": "760f376d4125ab2cc9332c9e83b944d4464da51aea577d75266d9247aca81776",
+  "metrics": {
+    "auprc@micro": null,
+    "f1_max": null
+  },
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "native_metric_policy": {
+    "all_case_primary_gate": "all planned outcomes must contain valid vectors; otherwise full primary metrics are null",
+    "case_order": "exact reviewed complete released test95 source order",
+    "class_order": "complete released annotation-header order",
+    "confidence_serialization": "model-supplied fixed-order dense numeric array, at most three decimal places",
+    "device": "cpu",
+    "dtype": "torch.float32 scores; torch.int64 binary targets",
+    "invalid_replacement_or_case_drop": false,
+    "native_functions": [
+      "area_under_prc",
+      "f1_max"
+    ],
+    "native_source_revision": "DeepGraphLearning/torchdrug@6066fbd82360abb5f270cba1eca560af01b8cc90",
+    "num_interop_threads": 1,
+    "num_threads": 1,
+    "score_propagation": "none; source target annotation closure retained",
+    "tie_order": "native torch.argsort defaults in recorded runtime; no gold-derived rearrangement"
+  },
+  "paper_comparison": "Prospective Qwen zero-shot complete FASTA dense3dp nonthinking adaptation; exact source-global BP1943 classes and nativeAP/Fmax formulas; not matched training or original PDB/cropped input setting.",
+  "parsed": 3412,
+  "planned": 3416,
+  "prediction_lock_sha256": "b8b332d304374c59d4997e60a575431929c934f296d54b5c26442d7608d57d31",
+  "predictions_locked_before_reference_read": true,
+  "protocol_variant": "QWEN_DENSE_ORDERED_CONFIDENCE_3DP_NONTHINKING_16K_DEEPFRI_TEST95_V1",
+  "public_pretraining_exposure": "unknown",
+  "reference_sha256": "9fa3ca3c827ff47e5cbf80c988e1154e4dd4164fa512ec2d873e4f7121e1b452",
+  "reporting_protocol_kind": "adapted",
+  "run_id": "qwen38_27b_p13_dense_confidence_test_2026-10-20_v1",
+  "runtime": {
+    "device": "cpu",
+    "dtype": "float32",
+    "num_interop_threads": 1,
+    "num_threads": 1,
+    "python": "3.12.15",
+    "torch": "2.13.0+cu130"
+  },
+  "scorer_sha256": "b297106d0ec993bbf1ab56515f7579b0d8c49743cd2b8eab521579f6b2f973d8",
+  "task_id": "P13"
+}

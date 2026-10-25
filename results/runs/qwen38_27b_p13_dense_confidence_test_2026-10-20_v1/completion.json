@@ -1,0 +1,41 @@
+{
+  "all_passed": false,
+  "ambiguous_attempts": 4,
+  "at_pacific": "2026-10-24T23:30:50.387842-07:00",
+  "attempted_confirmed": 3416,
+  "biological_correctness_assessed": false,
+  "config_sha256": "d3915c12cb72599cd5c2a0737bfa3fd72c0705fe4819e688ebd5493adede80dc",
+  "delivery_passed": 3412,
+  "delivery_passed_all": false,
+  "empty_finals": 0,
+  "generation": {
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "max_tokens": 16384,
+    "n": 1,
+    "seed": 42,
+    "structured_outputs": {
+      "regex": "\\{\"scores\":\\[(?:0(?:\\.[0-9]{1,3})?|1(?:\\.0{1,3})?)(?:,(?:0(?:\\.[0-9]{1,3})?|1(?:\\.0{1,3})?)){1942}\\]\\}"
+    },
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "http_errors": 0,
+  "not_dispatched": 0,
+  "phase": "benchmark_generation",
+  "planned": 3416,
+  "prediction_lock_sha256": "b8b332d304374c59d4997e60a575431929c934f296d54b5c26442d7608d57d31",
+  "reasoning_present": 0,
+  "refusals": 0,
+  "response_errors": 0,
+  "responses_saved": 3412,
+  "run_id": "qwen38_27b_p13_dense_confidence_test_2026-10-20_v1",
+  "status": "terminal_complete_cohort",
+  "task_id": "P13",
+  "terminal": 3416,
+  "transport_errors": 0,
+  "transport_or_response_errors": 0,
+  "truncations": 0
+}
