@@ -1,0 +1,121 @@
+{
+  "biological_measurement_inference": "Scores compare proposals to pre-existing assay measurements; no experimental validation of generated proposals.",
+  "condition": "PFARENA_T1_HUMAN_PARKIN1_NATIVE_FIELDS_LOCAL_UNIQUE40_V1",
+  "configuration_sha256": "4ad2bf8e6c02f3fee3c3c50e20fc5cbf5b363eae6500bb6bb1a374f09d6ee8ab",
+  "delivery_audits": [
+    {
+      "case_id": "P19::MAVEDB_urn_mavedb_00001274-a-1",
+      "delivered_count": 40,
+      "delivery_passed": true,
+      "errors": [],
+      "ranking": [
+        "E300D",
+        "N295D",
+        "D346E",
+        "N356D",
+        "N356Q",
+        "E300Q",
+        "N295Q",
+        "D346N",
+        "E404D",
+        "E404Q",
+        "E426D",
+        "E426Q",
+        "E452D",
+        "E452Q",
+        "E16D",
+        "E16Q",
+        "E207D",
+        "E207Q",
+        "E207N",
+        "E300N",
+        "E300A",
+        "N295A",
+        "D346A",
+        "N356A",
+        "E404A",
+        "E426A",
+        "E452A",
+        "E16A",
+        "E207A",
+        "E452N",
+        "E404N",
+        "E426N",
+        "D346Q",
+        "E452G",
+        "E404G",
+        "E426G",
+        "E16G",
+        "E207G",
+        "N295G",
+        "N356G"
+      ]
+    }
+  ],
+  "empty_finals": 0,
+  "full_native_benchmark_complete": false,
+  "missing_query_random_fallback_enabled": false,
+  "native_metrics": {
+    "NMS@40": 0.8540306433310825,
+    "Recall@40": 0.025
+  },
+  "native_panel_assays": 123,
+  "native_scoring_status": "completed_native_scored_reviewed_subset",
+  "native_summary": {
+    "ground_truth_dir": "frozen_Parkin1_assay_reference_view",
+    "metrics": {
+      "NMS@40": 0.8540306433310825,
+      "Recall@40": 0.025
+    },
+    "num_assays": 1,
+    "num_queries": 1,
+    "predictions_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/tasks/P19/parkin1_execution_preparation_20261026_v2/runtime/benchmark",
+    "problem_assays": {
+      "assays_below_budget": {},
+      "assays_with_incomplete_candidate_ranking": {},
+      "missing_assays": [],
+      "unknown_assays": []
+    },
+    "quality": {
+      "assays_below_budget": 0,
+      "assays_with_incomplete_candidate_ranking": 0,
+      "mean_duplicate_predictions_within_budget": 0.0,
+      "mean_illegal_predictions_within_budget": 0.0,
+      "missing_assays": 0,
+      "total_duplicate_ground_truth_mutants_collapsed": 0,
+      "total_invalid_ground_truth_mutant_rows": 0,
+      "total_invalid_ground_truth_score_rows": 0,
+      "unknown_assays": 0
+    },
+    "setting": "T1_single_mutant_generation",
+    "strict": true
+  },
+  "per_assay": [
+    {
+      "NMS@40": 0.8540306433310825,
+      "Recall@40": 0.025,
+      "assay": "MAVEDB_urn_mavedb_00001274-a-1",
+      "duplicate_ground_truth_mutants_collapsed": 0,
+      "duplicate_predictions_within_budget": 0,
+      "illegal_predictions_within_budget": 0,
+      "invalid_ground_truth_mutant_rows": 0,
+      "invalid_ground_truth_score_rows": 0,
+      "num_duplicate_predictions": 0,
+      "num_ground_truth_mutants": 8750,
+      "num_illegal_predictions": 0,
+      "num_predictions": 40,
+      "num_selected": 40,
+      "num_unique_legal_selected": 40,
+      "raw_ground_truth_rows": 8750
+    }
+  ],
+  "planned_assays": 1,
+  "prediction_lock_sha256": "52ad025815390d4cd0003fa2e775f07b1cfa24f72eb85aed36350d0972e142a8",
+  "reference_rows_opened": true,
+  "scored_at_pacific": "2026-10-26T11:50:25.716888-07:00",
+  "scorer_manifest_sha256": "7271674b5c15874f88b3ad1b87361c70256154f68c9b722112ee11e96a5a780a",
+  "strict_delivery_passed": 1,
+  "task_id": "P19",
+  "transport_or_response_errors": 0,
+  "truncations": 0
+}

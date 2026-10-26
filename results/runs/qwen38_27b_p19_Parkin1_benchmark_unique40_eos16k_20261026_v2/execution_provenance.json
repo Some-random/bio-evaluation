@@ -1,0 +1,65 @@
+{
+  "MaveDB_URN": "urn:mavedb:00001274-a-1",
+  "automatic_retries": false,
+  "completed_at_pacific": "2026-10-26T11:50:25.948302-07:00",
+  "condition": "PFARENA_T1_HUMAN_PARKIN1_NATIVE_FIELDS_LOCAL_UNIQUE40_V1",
+  "dtype": "bfloat16",
+  "generation": {
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "max_tokens": 16384,
+    "n": 1,
+    "seed": 42,
+    "structured_outputs": {
+      "per_case_input_valid_enum_and_mandatory_unique40_prefix_mask": "PFARENA_T1_INPUT_VALID_UNIQUE40_TERMINAL_EOS_IDEMPOTENT_V4"
+    },
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "independent_native_terminal_review_sha256": "7ccd05e97098111e62b1e605970362d2b9ca27fde702854c447b5adaab2c5025",
+  "independent_runtime_admission_sha256": "4e9d260c35c01806390295f913d1706ef2300d49b9cf47f184e42410af50a575",
+  "job_id": "252978",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "native_metric_functions_unchanged": true,
+  "native_source_commit": "e8f8b3c404d39783a43eaa96ae461f313730114d",
+  "plan_sha256": "fef6a158b80ca969edffed05a9807fb380e4e5b0bfd74fd8238e9b4ed989e422",
+  "prior_failed_allocation_preserved": "252850; independently verified zero scientific dispatch",
+  "protected_measurement_rows_reference_rankings_or_upstream_prompt_source_redistributed": false,
+  "response_provenance": {
+    "benchmark": {
+      "complete_inputs_and_request_bytes_retained_locally": true,
+      "input_and_request_bytes_redistributed": false,
+      "planned": 1,
+      "prediction_lock_sha256": "52ad025815390d4cd0003fa2e775f07b1cfa24f72eb85aed36350d0972e142a8",
+      "response_files_sha256": {
+        "responses/d6b4104c00385bd9e82c699e1248bba117c1a5d38ff044552582e4f9cc2d83b2.json": "d651723d764ee0280c0d5679a38409f535920640d9ccd6a995908a587373ea90"
+      },
+      "responses_saved": 1,
+      "terminal": 1
+    },
+    "development": {
+      "complete_inputs_and_request_bytes_retained_locally": true,
+      "input_and_request_bytes_redistributed": false,
+      "planned": 3,
+      "prediction_lock_sha256": "5cc59fd7ed3da74898024f43805107222ddf8f55022761bdfdb11369e1174c96",
+      "response_files_sha256": {
+        "responses/203580906682623f392115408400a6bd2ea629958f127701cee48cfc3ab45c3b.json": "4027370fd0015cb39dd045784fe349f8244a94d92ce16d24b95379f20e5a7b1e",
+        "responses/34d682ec24d665f7fea3c6558e8e225f5e6fac52034b4142bbe4bf86502c4c4f.json": "f8ce5e0075fcf32bf0286778cb75e9a7213569958c98f773c60d4d269f071b63",
+        "responses/bc6f6a165c6c4921847e9bffc2d043a450223a863f592c260634665789699093.json": "ed63db51bee8164502e0d13a4c5c237b92fa764dbc18c5c11fd5dc0de885b65b"
+      },
+      "responses_saved": 3,
+      "terminal": 3
+    }
+  },
+  "root_authorization_sha256": "8a9e8ffd8e78e4dd8dd919496a335bb81bbf9c5d581cdcec06bd44642c2e9a3a",
+  "scoring_attempts": 1,
+  "source_dataset_revision": "5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+  "source_metadata_license": "CC0-1.0",
+  "source_objective_packet_sha256": "efe9e4fa019d4d95f288327247330661be3571bcdf6958c891bdb05b19448d23",
+  "source_provenance_note": "The 2026 mitophagy-paper link is bibliographic inference; publisher publication arrays were empty.",
+  "tensor_parallel_size": 1,
+  "weights_environments_credentials_or_full_account_metadata_packaged": false
+}

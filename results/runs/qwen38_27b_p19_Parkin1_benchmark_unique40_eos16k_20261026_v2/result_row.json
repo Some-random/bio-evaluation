@@ -1,0 +1,30 @@
+{
+  "benchmark_prediction_lock_sha256": "52ad025815390d4cd0003fa2e775f07b1cfa24f72eb85aed36350d0972e142a8",
+  "delivery_passed": 1,
+  "empty_finals": 0,
+  "evaluation": "PFArena single-mutant generation",
+  "full_native_benchmark_complete": false,
+  "model": "Qwen3.8-27B",
+  "native_metrics": {
+    "NMS@40": 0.8540306433310825,
+    "Recall@40": 0.025
+  },
+  "native_panel_assays": 123,
+  "native_quality": {
+    "assays_below_budget": 0,
+    "assays_with_incomplete_candidate_ranking": 0,
+    "mean_duplicate_predictions_within_budget": 0.0,
+    "mean_illegal_predictions_within_budget": 0.0,
+    "missing_assays": 0,
+    "total_duplicate_ground_truth_mutants_collapsed": 0,
+    "total_invalid_ground_truth_mutant_rows": 0,
+    "total_invalid_ground_truth_score_rows": 0,
+    "unknown_assays": 0
+  },
+  "native_scoring_status": "completed_native_scored_reviewed_subset",
+  "planned_assays": 1,
+  "scope": "Separate human Parkin assay: 1/123 assays",
+  "scores_sha256": "590343d917c3f853b710757e37d982f762ad60bf84cdc9de0be26651adaf6fc3",
+  "transport_or_response_errors": 0,
+  "truncations": 0
+}
