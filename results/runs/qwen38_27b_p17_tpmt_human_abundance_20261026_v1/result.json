@@ -1,0 +1,100 @@
+{
+  "allowed_assay_ids": [
+    "TPMT_HUMAN_Matreyek_2018"
+  ],
+  "artificial_exact_copy_gate_passed": true,
+  "attempted": 3648,
+  "comparison": "Prospective pointwise text adaptation; no native ProteinGym LLM prompt or matched historical ProtST replication. No comparison scalar or pooled40/217 claim.",
+  "condition": "PROTEINGYM_V13_TPMT_HUMAN_ABUNDANCE_POINTWISE_QWEN_V1",
+  "context_limit": 65536,
+  "delivered": 3648,
+  "delivery_errors": {
+    "empty_finals": 0,
+    "http_errors": 0,
+    "refusals": 0,
+    "response_errors": 0,
+    "server_errors": 0,
+    "transport_errors": 0,
+    "truncations": 0,
+    "unknown_finals": 0
+  },
+  "dtype": "bfloat16",
+  "full_native_benchmark_complete": false,
+  "generation": {
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "max_tokens": 16384,
+    "seed": 42,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "mechanism_reference_assessment": "unassessed",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "native_coarse_selection_type": "Expression",
+  "native_denominator": 3648,
+  "native_release_assays": 217,
+  "native_scoring_attempts": 1,
+  "native_scoring_status": "completed_native_scored_exact_singleton",
+  "new_training": false,
+  "no_old30_or_separate9_pooling": true,
+  "not_dispatched": 0,
+  "objective": "human intracellular protein abundance/FACS",
+  "one_attempt_per_native_variant": true,
+  "operational_provenance": {
+    "actual_allocation": {
+      "batch_exit": "0:0",
+      "device": "NVIDIA A100-SXM4-80GB",
+      "elapsed": "00:36:09",
+      "gpus": 1,
+      "main_exit": "0:0",
+      "main_state": "COMPLETED",
+      "owned_server_stopped": true,
+      "precision": "BF16",
+      "tensor_parallel_size": 1
+    },
+    "actual_operational_plan_sha256": "146c83fe703c99a21e9df427967dd55cb76ebcfe16edcc223da231cadbf2e4f0",
+    "exact_source_file_sha256": {
+      "check_installed_API.py": "85a6ef42119b71d39c9962361582b87175fed92bb7cca14a89df69d1bf83b917",
+      "input_contract.py": "7ed516791be7121b93ca1b7a0ffc80ec51d5aeef7ce06faa28a0b0dd61254c0e",
+      "native_performance_DMS_benchmarks.py": "0002bc1b031c02dc2d67fde53da092c8fd301415645e8e83b425b4183570eba2",
+      "protocol.py": "3c75ac8d1193e1a555a636af261b45838f31be728da2abfd2d1b9ac96b808b49",
+      "runner.py": "74ee74967ed42235a5acbb23a9685151ee593879a8179029717bc1bac4d9a06d",
+      "scorer.py": "e4f532c9178b91cafd59061f472f67a07a81db716cdbeb3cc35e1352f6735a98",
+      "singleton_metric_contract.py": "01d541243b0628ec9134d05b4177ad7aff21fc2f89506d7d76cb6ff2aa574ae1",
+      "worker.py": "dcca5da826120f76105d30f2b1ed13c71d368e50c5ad1c2858895662698637da"
+    },
+    "full_account_external_job_proofs_private_paths_UIDs_hostnames_PIDs_GPU_UUIDs_included": false,
+    "input_file_sha256": "831366ffdadc92b9f3ea42429c83dbabda890f08cd8cc912295e07710f178668",
+    "input_rows": 3648,
+    "observer_step_qualification": "Separate read-only metadata observation steps produced derived exit0:64; main and batch completed0:0. One failed observation has a recorded CPU-binding diagnostic; the first exact cause was not retained. Successful observations only read owned PID/health/NVML of the existing allocation; no benchmark completion requests or extra GPU allocation.",
+    "original_full_seal_review_sha256": "cf5d91a9e4abb95bfabdde05e5467a667d621147536f8397705cfeab6eb0987d",
+    "prior_technical_allocation": {
+      "failed_before_server_or_model_or_native_attempts": true,
+      "positive_zero_dispatch_review_sha256": "6fd9f1d70eff41010d843e09685228c6555b430978127ec627bbb450a6eddc19",
+      "repair": "Explicit local /tmp root; all parent/UID/mode/symlink guards preserved."
+    },
+    "reference_length": 245,
+    "role": "public_scope_projection_of_private_verified_provenance",
+    "scientific_adoption_sha256": "93d7b17180c73873c811e028c9359a65c729289d3aa7a9de6a6bf2dd4fd40ea8",
+    "sole_protected_target_reader_claim_sha256": "a97027dd456071c80670c796b3209796dca79e2dfb733a8c055de3755d69d1d9",
+    "sole_scoring_claim_sha256": "affb445d46bcf44ac34a7e1347e078b0e157283b18d7553d9981840ba78ba921",
+    "source_archive_member": "DMS_ProteinGym_substitutions/TPMT_HUMAN_Matreyek_2018.csv",
+    "source_archive_sha256": "3a83766254ac9ac9984ec25cb73c6e010ea4418f5e35f143933e6b6e6473b921",
+    "target_values_persisted": false
+  },
+  "paid_model_calls": false,
+  "planned": 3648,
+  "prediction_lock_sha256": "ad895219d380caba49967efa8514ac3233fabcb4376ed11119fdbffb9a8f1de5",
+  "primary_metric": "native_Spearman",
+  "primary_metric_value": -0.075,
+  "prior_public_benchmark_exposure": "unknown",
+  "protected_target_reader_attempts": 1,
+  "responses_saved": 3648,
+  "reviewed_assays": 1,
+  "run_id": "qwen38_27b_p17_tpmt_human_abundance_20261026_v1",
+  "target_values_persisted": false,
+  "task_id": "P17",
+  "tensor_parallel_size": 1
+}
