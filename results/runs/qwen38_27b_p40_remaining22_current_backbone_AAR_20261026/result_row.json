@@ -1,0 +1,60 @@
+{
+  "task_id": "P40",
+  "run_id": "qwen38_27b_p40_remaining22_current_backbone_AAR_20261026",
+  "condition": "P40_REMAINING22_CURRENT_IMGT_MASKED_BACKBONE_TEXT_AAR_V1",
+  "model": "Qwen/Qwen3.8-27B",
+  "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "planned": 22,
+  "delivered": 22,
+  "primary_metric": "native_macro_CDRH3_AAR",
+  "primary_metric_value": 0.10058051722490224,
+  "primary_metric_percent": 10.058051722490225,
+  "native_aggregation": "Equal-case mean of 22 exact positional recovery fractions",
+  "raw_score_sha256": "ec07141a3935493a4d43c893f53eb3d605b659b95568ee132316450bbbe9d26d",
+  "prediction_lock_sha256": "78838d618474c3631882501128751e3bd86183598aed469b565e2527d673aed1",
+  "generation_counts": {
+    "planned": 22,
+    "attempted_confirmed": 22,
+    "responses_saved": 22,
+    "delivery_passed": 22,
+    "not_dispatched": 0,
+    "observed_empty_finals": 0,
+    "unknown_finals": 0,
+    "transport_errors": 0,
+    "http_errors": 0,
+    "server_errors": 0,
+    "response_errors": 0,
+    "truncation": 0,
+    "refusal": 0,
+    "reasoning_present": 0,
+    "tool_calls_present": 0
+  },
+  "two_artificial_exact_copy_controls_passed": true,
+  "one_attempt_per_case": true,
+  "generation": {
+    "temperature": 0,
+    "top_p": 1,
+    "seed": 42,
+    "max_tokens": 16384,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "native_full60_or_historical_equivalence": false,
+  "coordinate_metrics_available": false,
+  "binding_or_function_assessed": false,
+  "original38_modified": false,
+  "pooled_full60_metric": false,
+  "scientific_differences": [
+    "Independently reviewed remaining22 of original60 source entries; old38 is a disjoint previously completed condition; no scores pooled.",
+    "Current official SAbDab IMGT coordinates are not certified historical processed MEAN bytes or graph equivalence.",
+    "Qwen consumes losslessly compact JSON backbone context, not a trained MEAN coordinate graph.",
+    "Target amino-acid identities and all target atom coordinates are withheld; input carries fixed CDRH3 length.",
+    "Native source48-nearest antigen context indices are reused; these indices were computed from the experimental complex, including native target context, as in the released preparation.",
+    "Only sequence recovery is scored; no generated-coordinate RMSD, TMscore, likelihood or functional-binding result is claimed.",
+    "One prospective local-Qwen output per fixed case; no selective retry or trained head.",
+    "Current public benchmark pretraining exposure is unknown; no contamination-free or explanation-support claim."
+  ],
+  "trajectory_archive_path": "results/trajectory_archives/qwen38_27b_p40_remaining22_current_backbone_AAR_20261026.tar.gz",
+  "trajectory_archive_sha256": "c9b00648c3d4d91eb98c6919cff3c3681af6b9491732b453ffca6436b8e3d6d9"
+}
