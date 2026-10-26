@@ -1,0 +1,129 @@
+{
+  "task_id": "P44",
+  "condition": "BIOREASON_PRO_P44_HUMAN_RANKS77_140_LOCAL_SELF_JUDGE_UNIFORM16K_PROSPECTIVE_V1",
+  "run_id": "qwen38_27b_p44_human_ranks77_140_explanation_uniform16k_20261026_v1",
+  "at_utc": "2026-10-26T20:34:49.055462+00:00",
+  "condition_status": "terminal_incomplete_primary_undefined",
+  "planned": 64,
+  "source_human_ranks_inclusive": [
+    77,
+    140
+  ],
+  "ordered_case_ids_sha256": "e008c29996b18a53b2219f57ece0daccafac9f191c2966983e96bfd0dcc43580",
+  "source_released_denominator": 8630,
+  "prior_completed_separate_immutable": 76,
+  "other_source_cases_outside_condition": 8490,
+  "model_configuration": {
+    "automatic_dispatch": false,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "configuration_status": "frozen_pending_exact_engineering_and_runtime_admission",
+    "endpoint": "http://127.0.0.1:8494/v1",
+    "max_context_tokens": 65536,
+    "max_tokens": 16384,
+    "model": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "temperature": 0,
+    "top_p": 1
+  },
+  "dtype": "bfloat16",
+  "tensor_parallel_size": 1,
+  "solver": {
+    "planned": 64,
+    "attempted_with_observed_outcome": 64,
+    "responses_saved": 64,
+    "completed": 63,
+    "transport_errors": 0,
+    "response_errors": 0,
+    "refusals": 0,
+    "truncations": 1,
+    "empty_finals": 0,
+    "reasoning_present": 0,
+    "not_dispatched_after_stop": 0,
+    "not_applicable_solver_failure": 0,
+    "attempts_without_outcome_are_unknown_not_retryable": true
+  },
+  "judge": {
+    "planned": 64,
+    "attempted_with_observed_outcome": 63,
+    "responses_saved": 63,
+    "completed": 63,
+    "transport_errors": 0,
+    "response_errors": 0,
+    "refusals": 0,
+    "truncations": 0,
+    "empty_finals": 0,
+    "reasoning_present": 0,
+    "not_dispatched_after_stop": 0,
+    "not_applicable_solver_failure": 1,
+    "attempts_without_outcome_are_unknown_not_retryable": true
+  },
+  "neutral_delivery_gate": {
+    "solver_calls": 2,
+    "judge_calls": 2,
+    "artificial_only": true
+  },
+  "local_axis_macro_score": null,
+  "per_axis_score": null,
+  "valid_judgments": 63,
+  "terminal_failures_and_missing": {
+    "missing": 0,
+    "transport_error": 0,
+    "invalid": 1
+  },
+  "valid_only_diagnostics": {
+    "axis_macro": 6.856096127857101,
+    "pooled_case_axis": 6.854838709677419,
+    "case_macro": 6.85079365079365,
+    "per_axis": {
+      "molecular_function": 6.360655737704918,
+      "biological_process": 6.112903225806452,
+      "cellular_component": 7.918032786885246,
+      "specificity": 8.142857142857142,
+      "reliability": 5.746031746031746
+    }
+  },
+  "per_axis_scored_case_count": {
+    "molecular_function": 61,
+    "biological_process": 62,
+    "cellular_component": 61,
+    "specificity": 63,
+    "reliability": 63
+  },
+  "per_axis_evidence_absent_count": {
+    "molecular_function": 2,
+    "biological_process": 1,
+    "cellular_component": 2
+  },
+  "primary_defined_only_with_full64_valid": true,
+  "native_GPT5_1_or_author_cohort_aggregation_reproduced": false,
+  "same_checkpoint_self_judging_bias": true,
+  "independent_human_calibration": false,
+  "biological_truth_validation": false,
+  "prior76_results_pooled_or_modified": false,
+  "main_docs_or_shared_aggregate_modified": false,
+  "material_differences": [
+    "Separately adopted fixed source-order human ranks77-140; old12+64 immutable and unpooled; other8490 unchanged.",
+    "Pinned local Qwen replaces native GPT-5.1; scores are not numerically interchangeable with the paper.",
+    "Same checkpoint solver and judge creates self-judging bias; no independent human validation.",
+    "Per-axis rubric reconstructed from recovered official indexed C.3, preserving specificity utility distinct from reliability; original author API payload/schema bytes unavailable.",
+    "Raw full sequences plus released predictor context replace native trained ESM3/GOgraph representations.",
+    "Prospective16K nonthinking outputs for both stages differ from native judge512 tokens and prior proposed4K/2K.",
+    "Judge dossier includes scorer-only protein names from the exact reviewed source rows as C.3 specifies; solver still excludes names.",
+    "Source annotation discrepancies, missing evidence and InterPro coordinates beyond released sequence lengths are retained without correction; predictor annotations are fallible supplied inputs.",
+    "Known-attempt scan is bounded to preserved P44 intent metadata/aliases; no global zero-attempt proof is claimed.",
+    "Preserve three empty InterPro and twenty empty PPI inputs, native annotation types and all64 denominator.",
+    "The actual complete candidate is tokenized only after the complete solver seal and before each judge intent."
+  ],
+  "plan_sha256": "84a87c913269017b08c9d68ff0ee0084d55f418aabca831bdf8ce63711ce9cbd",
+  "score_sha256": "9fa318910e1dd8c8be64e800e9fd52f5b445b4c8de6c58592d36d3f6b3c1eb62",
+  "prediction_lock_sha256": "c15a176cceafd8bf2d62f85d4ac84b1d28ace89815b0fb7d7a149f28ebbb04f3",
+  "judge_lock_sha256": "f0ef530592d0ccead03cdf3840a94ff845d0737bccc7deab66c30bcf723e3e2d",
+  "export_manifest_sha256": "274133b46377c48047da81146cdb8ed681717f9a25a854c56384e49d16d25b91",
+  "runtime_admission_sha256": "7e30a04373535bbd993b545b99a85630a85e7a22671cec707539c88f79ecf394",
+  "root_scientific_adoption_sha256": "4da60a5bc838a8d4cdb34a5a7d1255bc19fd30456c7c33c52711e439205c1a43",
+  "trajectory_archive": "results/trajectories/qwen38_27b_p44_human_ranks77_140_explanation_uniform16k_20261026_v1.tar.gz",
+  "trajectory_manifest": "results/trajectories/qwen38_27b_p44_human_ranks77_140_explanation_uniform16k_20261026_v1.tar.manifest.json",
+  "source_metadata_sha256": "c53441cbdb308404c27df800f8debbf4556ce512b8488e28e962e2573a1aebfe"
+}
