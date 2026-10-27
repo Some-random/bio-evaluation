@@ -1,0 +1,28 @@
+{
+  "allowed_result_claim": "Ranking agreement for this separately adopted single assay under the declared constrained output condition.",
+  "condition": "PFARENA_T3_HIS7_YEAST_POKUSAEVA2019_NATIVE100_FULL_PERMUTATION_QWEN27B_V1",
+  "evaluation_unit": "one assay with 100 supplied candidates",
+  "exposure_caveat": "Prior model exposure to this public source is unknown.",
+  "full_native67_complete": false,
+  "modality": "complete reference sequence, native assay context and candidate mutation identifiers",
+  "model": "Qwen/Qwen3.8-27B",
+  "native_candidates": 100,
+  "native_metrics": {
+    "NDCG": 0.9508879563883433,
+    "NMS@5": 0.7758285039714674,
+    "Recall@5": 0.0,
+    "spearman": 0.1534011136638388
+  },
+  "native_panel_assays": 67,
+  "old24_and_FULL3_not_pooled": true,
+  "planned_assays": 1,
+  "primary_metric": "native_spearman",
+  "primary_metric_value": 0.1534011136638388,
+  "reference_evidence_type": "existing growth/fitness measurements used only after the complete raw outcome seal",
+  "setting": "PFArena T3: separate HIS7 native100 ranking",
+  "task_demands": "Predict a complete candidate ranking for the source assay objective, conditioned on the legitimate supplied anchor.",
+  "task_id": "P21",
+  "trajectory_publication": "Native inputs and complete ranking are retained privately; redistribution rights for the full candidate set have not been established.",
+  "underlying_assay_year": 2019,
+  "year": 2026
+}

@@ -1,0 +1,21 @@
+{
+  "automatic_retry": false,
+  "condition": "PFARENA_T3_HIS7_YEAST_POKUSAEVA2019_NATIVE100_FULL_PERMUTATION_QWEN27B_V1",
+  "full_native67_complete": false,
+  "missing_query_random_fallback_enabled": false,
+  "native_candidates": 100,
+  "native_metrics": {
+    "NDCG": 0.9508879563883433,
+    "NMS@5": 0.7758285039714674,
+    "Recall@5": 0.0,
+    "spearman": 0.1534011136638388
+  },
+  "native_panel_assays": 67,
+  "native_scoring_status": "completed_native_scored_separate_HIS7100",
+  "old24_and_FULL3_not_pooled": true,
+  "original_private_score_sha256": "625c2cf0addd89fa3dbe42af70dc94442b9ab8786841c656649b55d78e21f105",
+  "planned_assays": 1,
+  "private_prediction_lock_sha256": "4c0b0d9e8f35af0a80a1e2d76fb93ee3f35b6b3653af2d21fb2a967ecf485fcd",
+  "projection": "aggregate fields only; original score and raw evidence retained privately",
+  "task_id": "P21"
+}
