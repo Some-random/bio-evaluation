@@ -1,0 +1,95 @@
+{
+  "automatic_retries": false,
+  "condition": "PFARENA_T1_FULL2_CDKN2A_FLAB_NATIVE_LITERAL_INDEX_UNIQUE40_V1",
+  "delivery_validity_and_measured_target_membership": {
+    "assessed": true,
+    "per_assay": [
+      {
+        "NMS@40": 0.6145948097241266,
+        "Recall@40": 0.0,
+        "all_selected_ids_outside_released_target_set": false,
+        "case_id": "P19::CDKN2A_elife_95347_supp4_supp6",
+        "illegal_predictions_within_budget": 0,
+        "literal_native_delivery_passed": true,
+        "num_selected": 40,
+        "num_unique_legal_selected": 40
+      },
+      {
+        "NMS@40": 0.0,
+        "Recall@40": 0.0,
+        "all_selected_ids_outside_released_target_set": true,
+        "case_id": "P19::FLAB_binding_koenig2017mutational_kd_g6",
+        "illegal_predictions_within_budget": 40,
+        "literal_native_delivery_passed": true,
+        "num_selected": 40,
+        "num_unique_legal_selected": 0
+      }
+    ],
+    "qualification": "Literal-native delivery validity and released measured-target membership are distinct. Absent measured IDs retain unchanged native penalties; no cause, coordinate repair, reference cleanup, target filtering or retry is inferred."
+  },
+  "generation": {
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "max_tokens": 16384,
+    "n": 1,
+    "seed": 42,
+    "structured_outputs": {
+      "per_case_literal_native_enum_and_mandatory_unique40_prefix_mask": "PFARENA_T1_LITERAL_NATIVE_DECLARED_INDEX_UNIQUE40_V1"
+    },
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "independent_actual_completion_review_sha256": "97dff6e48bd309b1be63adb4f0d8e8f31d4430bcd68afc8b8d6d78c42f88a4ad",
+  "independent_runtime_admission_sha256": "e32f7bffae22ac09a5375bd76a1babc4ffe091e53050309c267f3e777f9ce74e",
+  "job_id": "253988",
+  "model": "Qwen/Qwen3.8-27B",
+  "native_metrics_original_unchanged": true,
+  "plan_sha256": "fb030aae8f954ab62004b1ffc9ed687e9f5bc312d8c69e65988a8efc28748548",
+  "precision": "BF16",
+  "protected_measurements_reference_rankings_upstream_prompt_or_source_bytes_redistributed": false,
+  "response_provenance": {
+    "benchmark": {
+      "complete_inputs_and_requests_retained_locally": true,
+      "inputs_or_requests_redistributed": false,
+      "original_assistant_response_bytes": {
+        "responses/905c99d7815f15c37b653e9fe2e1e689e2bc3e014d61fb4eaf3e3fd9b7b3569f.raw.json": "62c5b1aa5489131e033672fd03c18d3926d8592545cda9b764b80f6d03143400",
+        "responses/aee4ffa06b2237535707256d1e36048001fca3d649dd7c2dff79e5202366b266.raw.json": "ffe83b585b0c78fb2935517abed382115f56431c1cc0249e04eef04912670eed"
+      },
+      "planned": 2,
+      "prediction_lock_sha256": "d7b784a0e6329d76b7eaef7cd43f0b6c9b1eaa7938112f880667c15a329324a1",
+      "private_HTTP_error_body_hashes": {},
+      "responses_saved": 2,
+      "terminal": 2
+    },
+    "development": {
+      "complete_inputs_and_requests_retained_locally": true,
+      "inputs_or_requests_redistributed": false,
+      "original_assistant_response_bytes": {
+        "responses/61d100c60c752a55206bf7b21c90479fe87b9e98ba5e588c94f3856d803a3cf6.raw.json": "f1d300a82f639a2e0e22645154ed86c5e2efff865aae1909af5d04ef8fd7ed0b",
+        "responses/7d8af7ffd993e8c19c189eeeac4637ecac7ec7cae9f7ff18ca84be24278b83cc.raw.json": "e75d7f2a4eabe005f4ce66cdcc9bc21457d4df02d517f4ee117f9ef2e10a2688",
+        "responses/e69a97c8377d6672a29bd50094a9d6df58584952945ce179befc41191cc49f19.raw.json": "65f9c425616321d7d4a6b7715d0d151578f5b3c5de7069dfc46a17506854dc7e"
+      },
+      "planned": 3,
+      "prediction_lock_sha256": "3ad8429a43c8da2752cce69270f0dcc6173cfe0c20fe0692113a68bdd88cdb53",
+      "private_HTTP_error_body_hashes": {},
+      "responses_saved": 3,
+      "terminal": 3
+    }
+  },
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "root_authorization_sha256": "b6486ff787eb051353b634a8cf64d5f6dd511cba23a37fe6b8691db5b7d6d9cc",
+  "scoring_attempts": 1,
+  "source_dataset_revision": "5be3973dd45a9d7d33572f016be18f8ef941f2ff",
+  "tensor_parallel_size": 1,
+  "terminal_allocation_receipt_sha256": "e2da83d4398c71a0b5b622308adad11bd3005684cb076554ade308f388d2741a",
+  "upstream_attribution": {
+    "benchmark": "PFArena",
+    "native_metric_source": "evaluation/full.py",
+    "native_metric_source_sha256": "035b34122c1015eab5fa9caa3b680452aba6730e41a523ecf0342461fdb8747f",
+    "native_router_sha256": "f1ce2e22dec4efdd6051706289c5e108b0f569c44bc71655c12844b91688ce18",
+    "upstream_input_template_code_or_target_rows_redistributed": false
+  },
+  "weights_environments_credentials_or_full_account_metadata_packaged": false
+}

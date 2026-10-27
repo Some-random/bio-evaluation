@@ -1,0 +1,125 @@
+{
+  "ambiguous_attempts": 0,
+  "attempted_confirmed": 2,
+  "biological_measurement_inference": "Comparison with existing released measurements, not experimental validation of generated variants.",
+  "case_ids": [
+    "P19::CDKN2A_elife_95347_supp4_supp6",
+    "P19::FLAB_binding_koenig2017mutational_kd_g6"
+  ],
+  "condition": "PFARENA_T1_FULL2_CDKN2A_FLAB_NATIVE_LITERAL_INDEX_UNIQUE40_V1",
+  "configuration_sha256": "0936775f3534e6ef0811700548f1b962931113bacee698278f4521ed2d9fe699",
+  "delivery_audits": [
+    {
+      "case_id": "P19::CDKN2A_elife_95347_supp4_supp6",
+      "delivery_passed": true
+    },
+    {
+      "case_id": "P19::FLAB_binding_koenig2017mutational_kd_g6",
+      "delivery_passed": true
+    }
+  ],
+  "empty_finals": 0,
+  "engineering_admission_sha256": "e32f7bffae22ac09a5375bd76a1babc4ffe091e53050309c267f3e777f9ce74e",
+  "full_native_benchmark_complete": false,
+  "http_errors": 0,
+  "missing_query_random_fallback_enabled": false,
+  "native123_partition_snapshot_at_adoption": {
+    "FULL2_is_prospective_within64_not_new_completed_coverage": true,
+    "completed_separate_conditions": 46,
+    "held": 12,
+    "outside_prior_execution_scope": 1,
+    "pending_metadata_scope": 64,
+    "preserved_stops_within64": 5
+  },
+  "native_metrics": {
+    "NMS@40": 0.3072974048620633,
+    "Recall@40": 0.0
+  },
+  "native_panel_assays": 123,
+  "native_scoring_status": "completed_native_scored_reviewed_FULL2",
+  "native_summary": {
+    "ground_truth_dir": "exact_private_FULL2_native_target_view",
+    "metrics": {
+      "NMS@40": 0.3072974048620633,
+      "Recall@40": 0.0
+    },
+    "num_assays": 2,
+    "num_queries": 2,
+    "predictions_path": "/dfs/scratch0/dongweij/bio-evaluation/.local/catalog_execution_2026-10-20/tasks/P19/first2_execution_preparation_20261026_v2/runtime/benchmark",
+    "problem_assays": {
+      "assays_below_budget": {},
+      "assays_with_incomplete_candidate_ranking": {},
+      "missing_assays": [],
+      "unknown_assays": []
+    },
+    "quality": {
+      "assays_below_budget": 0,
+      "assays_with_incomplete_candidate_ranking": 0,
+      "mean_duplicate_predictions_within_budget": 0.0,
+      "mean_illegal_predictions_within_budget": 20.0,
+      "missing_assays": 0,
+      "total_duplicate_ground_truth_mutants_collapsed": 0,
+      "total_invalid_ground_truth_mutant_rows": 0,
+      "total_invalid_ground_truth_score_rows": 0,
+      "unknown_assays": 0
+    },
+    "setting": "T1_single_mutant_generation",
+    "strict": true
+  },
+  "no_score_polarity_inversion": true,
+  "not_dispatched": 0,
+  "per_assay": [
+    {
+      "NMS@40": 0.6145948097241266,
+      "Recall@40": 0.0,
+      "assay": "CDKN2A_elife_95347_supp4_supp6",
+      "duplicate_ground_truth_mutants_collapsed": 0,
+      "duplicate_predictions_within_budget": 0,
+      "illegal_predictions_within_budget": 0,
+      "invalid_ground_truth_mutant_rows": 0,
+      "invalid_ground_truth_score_rows": 0,
+      "num_duplicate_predictions": 0,
+      "num_ground_truth_mutants": 2964,
+      "num_illegal_predictions": 0,
+      "num_predictions": 40,
+      "num_selected": 40,
+      "num_unique_legal_selected": 40,
+      "raw_ground_truth_rows": 2964
+    },
+    {
+      "NMS@40": 0.0,
+      "Recall@40": 0.0,
+      "assay": "FLAB_binding_koenig2017mutational_kd_g6",
+      "duplicate_ground_truth_mutants_collapsed": 0,
+      "duplicate_predictions_within_budget": 0,
+      "illegal_predictions_within_budget": 40,
+      "invalid_ground_truth_mutant_rows": 0,
+      "invalid_ground_truth_score_rows": 0,
+      "num_duplicate_predictions": 0,
+      "num_ground_truth_mutants": 4275,
+      "num_illegal_predictions": 40,
+      "num_predictions": 40,
+      "num_selected": 40,
+      "num_unique_legal_selected": 0,
+      "raw_ground_truth_rows": 4275
+    }
+  ],
+  "plan_sha256": "fb030aae8f954ab62004b1ffc9ed687e9f5bc312d8c69e65988a8efc28748548",
+  "planned_assays": 2,
+  "prediction_lock_sha256": "d7b784a0e6329d76b7eaef7cd43f0b6c9b1eaa7938112f880667c15a329324a1",
+  "protected_view_receipt_sha256": "70132b9f08937fa36deab43e7d5b48d9bad0566280ff73f67e36af1baa975d35",
+  "reference_rows_opened": true,
+  "refusals": 0,
+  "response_errors": 0,
+  "responses_saved": 2,
+  "scores_pooled": false,
+  "source_objective_qualifications": {
+    "CDKN2A": "Retained positive human P42771/native156 reference. Native activity_function/organismal_or_cellular_fitness/growth_or_selection_proxy is preserved; exact construct/host/readout direction/normalization/paper equivalence is not invented from title or identity.",
+    "FLAb": "Blank native UniProt and generic binding/binding_proxy remain unchanged. Whole raw/native string229 vs declared228 is preserved using literal native indexing, no cleanup or coordinate repair. Existing Fv/G6.31/VEGF/SPR metadata is not injected or treated as an exact native construct/host/direction/normalization match.",
+    "both": "Actual full-input/source/isolation review permits prospective protocol preparation only. No claims of biological correctness, paper-equivalent experimental validation, contamination freedom or experimental outcomes follow."
+  },
+  "strict_delivery_passed": 2,
+  "task_id": "P19",
+  "transport_errors": 0,
+  "truncations": 0
+}

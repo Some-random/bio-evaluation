@@ -1,0 +1,63 @@
+{
+  "FLAb_declared_length": 228,
+  "FLAb_raw_native_characters": 229,
+  "admitted_assays": 2,
+  "benchmark": "PFArena",
+  "case_ids": [
+    "P19::CDKN2A_elife_95347_supp4_supp6",
+    "P19::FLAB_binding_koenig2017mutational_kd_g6"
+  ],
+  "delivery_validity_and_measured_target_membership": {
+    "assessed": true,
+    "per_assay": [
+      {
+        "NMS@40": 0.6145948097241266,
+        "Recall@40": 0.0,
+        "all_selected_ids_outside_released_target_set": false,
+        "case_id": "P19::CDKN2A_elife_95347_supp4_supp6",
+        "illegal_predictions_within_budget": 0,
+        "literal_native_delivery_passed": true,
+        "num_selected": 40,
+        "num_unique_legal_selected": 40
+      },
+      {
+        "NMS@40": 0.0,
+        "Recall@40": 0.0,
+        "all_selected_ids_outside_released_target_set": true,
+        "case_id": "P19::FLAB_binding_koenig2017mutational_kd_g6",
+        "illegal_predictions_within_budget": 40,
+        "literal_native_delivery_passed": true,
+        "num_selected": 40,
+        "num_unique_legal_selected": 0
+      }
+    ],
+    "qualification": "Literal-native delivery validity and released measured-target membership are distinct. Absent measured IDs retain unchanged native penalties; no cause, coordinate repair, reference cleanup, target filtering or retry is inferred."
+  },
+  "full_catalog_complete": false,
+  "full_native_benchmark_complete": false,
+  "global_unregistered_alias_or_attempt_guarantee": false,
+  "held_interrupted_and_unknown_trigger_boundaries_preserved": true,
+  "native123_partition_snapshot_at_adoption": {
+    "FULL2_is_prospective_within64_not_new_completed_coverage": true,
+    "completed_separate_conditions": 46,
+    "held": 12,
+    "outside_prior_execution_scope": 1,
+    "pending_metadata_scope": 64,
+    "preserved_stops_within64": 5
+  },
+  "native_panel_assays": 123,
+  "no_context_enrichment_reference_cleanup_reindex_or_polarity_inversion": true,
+  "previous_separate_assay_conditions": [
+    34,
+    9,
+    2,
+    1
+  ],
+  "scores_pooled": false,
+  "source_objective_qualifications": {
+    "CDKN2A": "Retained positive human P42771/native156 reference. Native activity_function/organismal_or_cellular_fitness/growth_or_selection_proxy is preserved; exact construct/host/readout direction/normalization/paper equivalence is not invented from title or identity.",
+    "FLAb": "Blank native UniProt and generic binding/binding_proxy remain unchanged. Whole raw/native string229 vs declared228 is preserved using literal native indexing, no cleanup or coordinate repair. Existing Fv/G6.31/VEGF/SPR metadata is not injected or treated as an exact native construct/host/direction/normalization match.",
+    "both": "Actual full-input/source/isolation review permits prospective protocol preparation only. No claims of biological correctness, paper-equivalent experimental validation, contamination freedom or experimental outcomes follow."
+  },
+  "task": "Single-mutant generation, separate exact native CDKN2A and Koenig FLAb condition"
+}

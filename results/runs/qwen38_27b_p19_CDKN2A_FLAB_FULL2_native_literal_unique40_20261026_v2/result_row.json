@@ -1,0 +1,56 @@
+{
+  "ambiguous_attempts": 0,
+  "benchmark_prediction_lock_sha256": "d7b784a0e6329d76b7eaef7cd43f0b6c9b1eaa7938112f880667c15a329324a1",
+  "delivery_validity_and_measured_target_membership": {
+    "assessed": true,
+    "per_assay": [
+      {
+        "NMS@40": 0.6145948097241266,
+        "Recall@40": 0.0,
+        "all_selected_ids_outside_released_target_set": false,
+        "case_id": "P19::CDKN2A_elife_95347_supp4_supp6",
+        "illegal_predictions_within_budget": 0,
+        "literal_native_delivery_passed": true,
+        "num_selected": 40,
+        "num_unique_legal_selected": 40
+      },
+      {
+        "NMS@40": 0.0,
+        "Recall@40": 0.0,
+        "all_selected_ids_outside_released_target_set": true,
+        "case_id": "P19::FLAB_binding_koenig2017mutational_kd_g6",
+        "illegal_predictions_within_budget": 40,
+        "literal_native_delivery_passed": true,
+        "num_selected": 40,
+        "num_unique_legal_selected": 0
+      }
+    ],
+    "qualification": "Literal-native delivery validity and released measured-target membership are distinct. Absent measured IDs retain unchanged native penalties; no cause, coordinate repair, reference cleanup, target filtering or retry is inferred."
+  },
+  "empty_finals": 0,
+  "evaluation": "PFArena single-mutant generation",
+  "full_native_benchmark_complete": false,
+  "http_errors": 0,
+  "model": "Qwen3.8-27B",
+  "native_metrics": {
+    "NMS@40": 0.3072974048620633,
+    "Recall@40": 0.0
+  },
+  "native_panel_assays": 123,
+  "native_scoring_status": "completed_native_scored_reviewed_FULL2",
+  "not_dispatched": 0,
+  "planned_assays": 2,
+  "refusals": 0,
+  "response_errors": 0,
+  "scope": "Separate exact CDKN2A and Koenig FLAb native assays: 2/123",
+  "scores_pooled": false,
+  "scores_sha256": "c690d08a4759f25bfb7405758939b40aa8a624184ce23e7e307ac60b6c48d020",
+  "source_objective_qualifications": {
+    "CDKN2A": "Retained positive human P42771/native156 reference. Native activity_function/organismal_or_cellular_fitness/growth_or_selection_proxy is preserved; exact construct/host/readout direction/normalization/paper equivalence is not invented from title or identity.",
+    "FLAb": "Blank native UniProt and generic binding/binding_proxy remain unchanged. Whole raw/native string229 vs declared228 is preserved using literal native indexing, no cleanup or coordinate repair. Existing Fv/G6.31/VEGF/SPR metadata is not injected or treated as an exact native construct/host/direction/normalization match.",
+    "both": "Actual full-input/source/isolation review permits prospective protocol preparation only. No claims of biological correctness, paper-equivalent experimental validation, contamination freedom or experimental outcomes follow."
+  },
+  "strict_delivery_passed": 2,
+  "transport_errors": 0,
+  "truncations": 0
+}
