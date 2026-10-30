@@ -173,8 +173,6 @@ Let's final.
 
 ## The model’s final answer
 
-The task is to predict the optimal pH for a protein's activity. By definition, optimal pH is an experimentally measured property: it depends on the protonation states of residues that participate in catalysis or substrate binding and on the protein's overall environment. Therefore, a protein sequence alone cannot rigorously determine the exact experimental pH optimum. The sequence can be used only for indirect, cautious inference based on general biological principles.
-
 Looking at the sequence, the N-terminal region contains a hydrophobic segment followed by a more polar, charged region. This pattern is consistent with a soluble protein that may have a signal-like N-terminal segment, but it does not by itself prove lysosomal, acidic, or alkalophilic function. There is no strong sequence-only evidence for an enzyme that must function at strongly acidic pH, such as pH 3.6.
 
 When choosing among the given options:
