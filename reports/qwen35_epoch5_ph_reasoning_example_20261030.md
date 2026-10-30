@@ -1,6 +1,6 @@
 # Epoch 5: a model thinking through a biology question
 
-This is a response from **Qwen3.5-4B after epoch 5** of fine-tuning, reasoning trajectory generated from **nvidia/Qwen3.8-Flash-Next-NVFP4**, a 125B in total and 6B activated model, on a question from the **LiveProteinBench evaluation set**. The model was given a protein sequence and asked to select the optimal pH for its activity. A lower pH is more acidic; a higher pH is more alkaline.
+This is a response from **Qwen3.5-4B after epoch 5** of fine-tuning, reasoning trajectory generated from **nvidia/Qwen3.8-Flash-Next-NVFP4**, a model with 125B in total and 6B activation, on a question from the **LiveProteinBench evaluation set**. The model was given a protein sequence and asked to select the optimal pH for its activity. A lower pH is more acidic; a higher pH is more alkaline.
 
 ## Question
 
