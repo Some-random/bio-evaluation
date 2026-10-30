@@ -34,7 +34,7 @@ LiveProteinBench was released in **December 2025** and tests 12 protein-property
 | GPT-5 † | 60.49% |
 | OpenAI o3 † | 56.04% |
 | Claude 3.7 Sonnet † | 51.47% |
-| **Qwen3.5-4B fine-tuned with Qwen3.8-Flash-Next NVFP4 Distilled** | **43.5% **|
+| **Qwen3.5-4B fine-tuned with Qwen3.8-Flash-Next NVFP4 Distilled** | **43.5%**|
 | **Qwen3.5-4B fine-tuned ‡** | **41.3%** |
 | GPT-4o † | 38.39% |
 | [**Qwen3.8-27B**](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md) | **34.56%** |
