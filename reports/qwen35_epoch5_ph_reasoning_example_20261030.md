@@ -15,8 +15,6 @@ The model chose **B: 6.5–8.5**, which matches the saved benchmark answer. Its 
 
 ## The model’s thinking
 
-The text below is the saved thinking. At one point the model repeats the input protein sequence; that repetition is replaced with a short note for readability. The original prompt and unedited thinking are available at the bottom.
-
 We need answer user's request. Need produce final answer with reasoning and answer. Task: Protein Optimal pH Prediction. We must analyze protein sequence and choices. Need be careful not invent protein identity, sequence motifs, residue functions, measurements, or evidence. But can use general knowledge. We are given only sequence and choices. Need choose correct answer? We might not have enough data. Need evaluate each multiple-choice option. Need maybe state uncertainty? The instruction: If question and general scientific knowledge do not justify answer, acknowledge limitation rather than inventing derivation. But here expected answer likely B? Need ensure reasoning doesn't overclaim. We can say from sequence alone cannot confidently assign pH; sequence-based pH prediction unreliable. Among options, general pH of enzymes in cytosol/nucleus ~7, etc. Need maybe choose B? But need not claim. We can use available knowledge: protein sequence includes many charged residues? Let's inspect sequence.
 
 Sequence: [Protein sequence repeated by the model, omitted here for readability.]
