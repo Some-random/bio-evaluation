@@ -1,0 +1,82 @@
+{
+  "case_outcome_and_request_hashes_verified": 1736,
+  "case_pages": 1736,
+  "cases": 1736,
+  "checkpoint_step": 325,
+  "correct": 376,
+  "decisions_sha256": "2138ea557f397383118c7133cf03e2c717452c99ff2ae353e1b6ad796ad0296a",
+  "hit_32768": 156,
+  "input_sha256": "4f16e63a748a536a936f6b35540915354c187fb44aecc5cb3b71a615c484103c",
+  "note": "All outputs are rendered directly from sealed raw_text; source request and outcome hashes were checked.",
+  "output_cap": 32768,
+  "per_task": {
+    "EC_number": {
+      "cases": 200,
+      "correct": 55,
+      "hit_32768": 7
+    },
+    "GO_biological_process": {
+      "cases": 187,
+      "correct": 38,
+      "hit_32768": 4
+    },
+    "GO_cellular_component": {
+      "cases": 196,
+      "correct": 50,
+      "hit_32768": 3
+    },
+    "GO_molecular_function": {
+      "cases": 192,
+      "correct": 44,
+      "hit_32768": 6
+    },
+    "active_site": {
+      "cases": 136,
+      "correct": 16,
+      "hit_32768": 38
+    },
+    "catalytic_activity": {
+      "cases": 187,
+      "correct": 36,
+      "hit_32768": 10
+    },
+    "cofactor": {
+      "cases": 184,
+      "correct": 47,
+      "hit_32768": 7
+    },
+    "motif_position": {
+      "cases": 49,
+      "correct": 8,
+      "hit_32768": 17
+    },
+    "pathway": {
+      "cases": 187,
+      "correct": 30,
+      "hit_32768": 5
+    },
+    "ph": {
+      "cases": 48,
+      "correct": 9,
+      "hit_32768": 2
+    },
+    "temperature": {
+      "cases": 37,
+      "correct": 10,
+      "hit_32768": 3
+    },
+    "transmembrane": {
+      "cases": 133,
+      "correct": 33,
+      "hit_32768": 54
+    }
+  },
+  "prediction_seal_sha256": "50915b31c033aa1ae0bfdfc8e7a5c01c36ac7bc59930ef300cfeff723034d0dc",
+  "reference_answers_opened_for_generation": false,
+  "reference_sha256": "dab5185104e5ee504cbd96a3c978761530ecaf95dce7c9c6ad1c4f02bfd41bf7",
+  "scorer": "existing supplementary v5 parser; benchmark previously observed",
+  "started_sha256": "0b66bafd4485643e80770bdf91b18e7d7ed682e5f3d39f0fa1d1a7deb7448ef7",
+  "status": "passed",
+  "summary_sha256": "e5b4ad860370d21b3e069759af61dec1b6f20eb2381979f1d416d02ca4ed7bd3",
+  "valid_answers": 1562
+}

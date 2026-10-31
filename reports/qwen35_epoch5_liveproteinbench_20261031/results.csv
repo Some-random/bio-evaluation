@@ -1,0 +1,1737 @@
+case_id,task,result,scored_model_choice,benchmark_answer,output_tokens,hit_32768,finish_reason,case_file
+EC_number_0000,EC_number,Incorrect,A,C,24447,False,stop,cases/EC_number/EC_number_0000.md
+EC_number_0001,EC_number,Incorrect,D,C,16551,False,stop,cases/EC_number/EC_number_0001.md
+EC_number_0002,EC_number,No parsed answer,,C,26875,False,stop,cases/EC_number/EC_number_0002.md
+EC_number_0003,EC_number,Correct,B,B,17585,False,stop,cases/EC_number/EC_number_0003.md
+EC_number_0004,EC_number,Incorrect,B,C,8749,False,stop,cases/EC_number/EC_number_0004.md
+EC_number_0005,EC_number,Incorrect,C,A,18235,False,stop,cases/EC_number/EC_number_0005.md
+EC_number_0006,EC_number,Incorrect,A,B,8571,False,stop,cases/EC_number/EC_number_0006.md
+EC_number_0007,EC_number,Correct,D,D,9355,False,stop,cases/EC_number/EC_number_0007.md
+EC_number_0008,EC_number,Incorrect,D,A,14800,False,stop,cases/EC_number/EC_number_0008.md
+EC_number_0009,EC_number,Incorrect,B,A,12196,False,stop,cases/EC_number/EC_number_0009.md
+EC_number_0010,EC_number,Correct,A,A,16714,False,stop,cases/EC_number/EC_number_0010.md
+EC_number_0011,EC_number,Correct,A,A,11150,False,stop,cases/EC_number/EC_number_0011.md
+EC_number_0012,EC_number,Incorrect,A,D,18799,False,stop,cases/EC_number/EC_number_0012.md
+EC_number_0013,EC_number,Correct,D,D,17631,False,stop,cases/EC_number/EC_number_0013.md
+EC_number_0014,EC_number,Incorrect,A,D,14792,False,stop,cases/EC_number/EC_number_0014.md
+EC_number_0015,EC_number,Incorrect,D,B,13069,False,stop,cases/EC_number/EC_number_0015.md
+EC_number_0016,EC_number,Incorrect,B,C,13955,False,stop,cases/EC_number/EC_number_0016.md
+EC_number_0017,EC_number,Correct,A,A,16981,False,stop,cases/EC_number/EC_number_0017.md
+EC_number_0018,EC_number,No parsed answer,,C,32768,True,length,cases/EC_number/EC_number_0018.md
+EC_number_0019,EC_number,Incorrect,C,B,19211,False,stop,cases/EC_number/EC_number_0019.md
+EC_number_0020,EC_number,Incorrect,D,A,17572,False,stop,cases/EC_number/EC_number_0020.md
+EC_number_0021,EC_number,Correct,D,D,12106,False,stop,cases/EC_number/EC_number_0021.md
+EC_number_0022,EC_number,Correct,D,D,15829,False,stop,cases/EC_number/EC_number_0022.md
+EC_number_0023,EC_number,Incorrect,C,B,16971,False,stop,cases/EC_number/EC_number_0023.md
+EC_number_0024,EC_number,Correct,D,D,15514,False,stop,cases/EC_number/EC_number_0024.md
+EC_number_0025,EC_number,Correct,D,D,13760,False,stop,cases/EC_number/EC_number_0025.md
+EC_number_0026,EC_number,Correct,D,D,24569,False,stop,cases/EC_number/EC_number_0026.md
+EC_number_0027,EC_number,Incorrect,A,B,17459,False,stop,cases/EC_number/EC_number_0027.md
+EC_number_0028,EC_number,Correct,A,A,12755,False,stop,cases/EC_number/EC_number_0028.md
+EC_number_0029,EC_number,Incorrect,B,A,25744,False,stop,cases/EC_number/EC_number_0029.md
+EC_number_0030,EC_number,Incorrect,A,D,18709,False,stop,cases/EC_number/EC_number_0030.md
+EC_number_0031,EC_number,Incorrect,A,B,31236,False,stop,cases/EC_number/EC_number_0031.md
+EC_number_0032,EC_number,No parsed answer,,D,32768,True,length,cases/EC_number/EC_number_0032.md
+EC_number_0033,EC_number,Incorrect,A,C,13566,False,stop,cases/EC_number/EC_number_0033.md
+EC_number_0034,EC_number,Correct,A,A,15780,False,stop,cases/EC_number/EC_number_0034.md
+EC_number_0035,EC_number,Incorrect,D,C,18284,False,stop,cases/EC_number/EC_number_0035.md
+EC_number_0036,EC_number,Incorrect,B,A,31767,False,stop,cases/EC_number/EC_number_0036.md
+EC_number_0037,EC_number,Incorrect,B,A,24229,False,stop,cases/EC_number/EC_number_0037.md
+EC_number_0038,EC_number,Incorrect,D,C,13305,False,stop,cases/EC_number/EC_number_0038.md
+EC_number_0039,EC_number,Incorrect,A,C,13910,False,stop,cases/EC_number/EC_number_0039.md
+EC_number_0040,EC_number,Correct,B,B,12918,False,stop,cases/EC_number/EC_number_0040.md
+EC_number_0041,EC_number,Incorrect,C,D,16365,False,stop,cases/EC_number/EC_number_0041.md
+EC_number_0042,EC_number,Incorrect,A,B,24503,False,stop,cases/EC_number/EC_number_0042.md
+EC_number_0043,EC_number,Correct,D,D,15205,False,stop,cases/EC_number/EC_number_0043.md
+EC_number_0044,EC_number,Incorrect,D,B,13095,False,stop,cases/EC_number/EC_number_0044.md
+EC_number_0045,EC_number,Incorrect,A,C,10263,False,stop,cases/EC_number/EC_number_0045.md
+EC_number_0046,EC_number,Correct,C,C,20599,False,stop,cases/EC_number/EC_number_0046.md
+EC_number_0047,EC_number,Incorrect,A,C,14537,False,stop,cases/EC_number/EC_number_0047.md
+EC_number_0048,EC_number,Incorrect,A,B,25455,False,stop,cases/EC_number/EC_number_0048.md
+EC_number_0049,EC_number,Incorrect,D,C,10295,False,stop,cases/EC_number/EC_number_0049.md
+EC_number_0050,EC_number,Incorrect,A,B,23838,False,stop,cases/EC_number/EC_number_0050.md
+EC_number_0051,EC_number,Incorrect,A,B,17797,False,stop,cases/EC_number/EC_number_0051.md
+EC_number_0052,EC_number,Incorrect,C,D,14192,False,stop,cases/EC_number/EC_number_0052.md
+EC_number_0053,EC_number,Correct,A,A,8828,False,stop,cases/EC_number/EC_number_0053.md
+EC_number_0054,EC_number,Incorrect,D,B,12664,False,stop,cases/EC_number/EC_number_0054.md
+EC_number_0055,EC_number,Incorrect,A,D,19696,False,stop,cases/EC_number/EC_number_0055.md
+EC_number_0056,EC_number,Incorrect,C,A,15312,False,stop,cases/EC_number/EC_number_0056.md
+EC_number_0057,EC_number,Incorrect,A,D,18780,False,stop,cases/EC_number/EC_number_0057.md
+EC_number_0058,EC_number,Correct,A,A,17639,False,stop,cases/EC_number/EC_number_0058.md
+EC_number_0059,EC_number,Correct,A,A,9655,False,stop,cases/EC_number/EC_number_0059.md
+EC_number_0060,EC_number,Correct,D,D,13079,False,stop,cases/EC_number/EC_number_0060.md
+EC_number_0061,EC_number,Incorrect,A,B,18791,False,stop,cases/EC_number/EC_number_0061.md
+EC_number_0062,EC_number,Incorrect,A,C,26564,False,stop,cases/EC_number/EC_number_0062.md
+EC_number_0063,EC_number,No parsed answer,,D,32768,True,length,cases/EC_number/EC_number_0063.md
+EC_number_0064,EC_number,Correct,D,D,18006,False,stop,cases/EC_number/EC_number_0064.md
+EC_number_0065,EC_number,Correct,D,D,19071,False,stop,cases/EC_number/EC_number_0065.md
+EC_number_0066,EC_number,Incorrect,B,D,13340,False,stop,cases/EC_number/EC_number_0066.md
+EC_number_0067,EC_number,Incorrect,A,C,19223,False,stop,cases/EC_number/EC_number_0067.md
+EC_number_0068,EC_number,Incorrect,C,A,15527,False,stop,cases/EC_number/EC_number_0068.md
+EC_number_0069,EC_number,Incorrect,A,B,16006,False,stop,cases/EC_number/EC_number_0069.md
+EC_number_0070,EC_number,No parsed answer,,A,32768,True,length,cases/EC_number/EC_number_0070.md
+EC_number_0071,EC_number,Incorrect,A,C,19301,False,stop,cases/EC_number/EC_number_0071.md
+EC_number_0072,EC_number,Incorrect,C,A,10151,False,stop,cases/EC_number/EC_number_0072.md
+EC_number_0073,EC_number,Incorrect,A,C,16034,False,stop,cases/EC_number/EC_number_0073.md
+EC_number_0074,EC_number,Correct,B,B,17098,False,stop,cases/EC_number/EC_number_0074.md
+EC_number_0075,EC_number,Incorrect,A,D,12887,False,stop,cases/EC_number/EC_number_0075.md
+EC_number_0076,EC_number,Incorrect,D,C,11705,False,stop,cases/EC_number/EC_number_0076.md
+EC_number_0077,EC_number,Correct,B,B,19622,False,stop,cases/EC_number/EC_number_0077.md
+EC_number_0078,EC_number,Incorrect,A,B,31103,False,stop,cases/EC_number/EC_number_0078.md
+EC_number_0079,EC_number,Incorrect,A,C,16968,False,stop,cases/EC_number/EC_number_0079.md
+EC_number_0080,EC_number,Correct,B,B,20187,False,stop,cases/EC_number/EC_number_0080.md
+EC_number_0081,EC_number,Incorrect,D,B,20611,False,stop,cases/EC_number/EC_number_0081.md
+EC_number_0082,EC_number,Incorrect,A,B,26852,False,stop,cases/EC_number/EC_number_0082.md
+EC_number_0083,EC_number,Correct,B,B,12416,False,stop,cases/EC_number/EC_number_0083.md
+EC_number_0084,EC_number,Incorrect,D,C,13013,False,stop,cases/EC_number/EC_number_0084.md
+EC_number_0085,EC_number,Incorrect,D,C,10820,False,stop,cases/EC_number/EC_number_0085.md
+EC_number_0086,EC_number,Incorrect,A,B,30440,False,stop,cases/EC_number/EC_number_0086.md
+EC_number_0087,EC_number,Incorrect,A,D,18572,False,stop,cases/EC_number/EC_number_0087.md
+EC_number_0088,EC_number,Incorrect,D,C,9450,False,stop,cases/EC_number/EC_number_0088.md
+EC_number_0089,EC_number,Incorrect,B,A,17931,False,stop,cases/EC_number/EC_number_0089.md
+EC_number_0090,EC_number,Incorrect,A,C,16438,False,stop,cases/EC_number/EC_number_0090.md
+EC_number_0091,EC_number,Correct,A,A,11415,False,stop,cases/EC_number/EC_number_0091.md
+EC_number_0092,EC_number,Incorrect,A,B,11132,False,stop,cases/EC_number/EC_number_0092.md
+EC_number_0093,EC_number,Incorrect,D,A,21653,False,stop,cases/EC_number/EC_number_0093.md
+EC_number_0094,EC_number,Incorrect,A,C,13266,False,stop,cases/EC_number/EC_number_0094.md
+EC_number_0095,EC_number,Incorrect,D,B,16279,False,stop,cases/EC_number/EC_number_0095.md
+EC_number_0096,EC_number,Incorrect,D,A,21264,False,stop,cases/EC_number/EC_number_0096.md
+EC_number_0097,EC_number,No parsed answer,,A,32768,True,length,cases/EC_number/EC_number_0097.md
+EC_number_0098,EC_number,Incorrect,B,A,9071,False,stop,cases/EC_number/EC_number_0098.md
+EC_number_0099,EC_number,Correct,D,D,28550,False,stop,cases/EC_number/EC_number_0099.md
+EC_number_0100,EC_number,Incorrect,D,C,10736,False,stop,cases/EC_number/EC_number_0100.md
+EC_number_0101,EC_number,Incorrect,A,B,13088,False,stop,cases/EC_number/EC_number_0101.md
+EC_number_0102,EC_number,Incorrect,C,D,23740,False,stop,cases/EC_number/EC_number_0102.md
+EC_number_0103,EC_number,Incorrect,A,C,13938,False,stop,cases/EC_number/EC_number_0103.md
+EC_number_0104,EC_number,Correct,B,B,12769,False,stop,cases/EC_number/EC_number_0104.md
+EC_number_0105,EC_number,Incorrect,A,D,14105,False,stop,cases/EC_number/EC_number_0105.md
+EC_number_0106,EC_number,Correct,B,B,12090,False,stop,cases/EC_number/EC_number_0106.md
+EC_number_0107,EC_number,Incorrect,A,B,8622,False,stop,cases/EC_number/EC_number_0107.md
+EC_number_0108,EC_number,Incorrect,A,B,10219,False,stop,cases/EC_number/EC_number_0108.md
+EC_number_0109,EC_number,Correct,A,A,14000,False,stop,cases/EC_number/EC_number_0109.md
+EC_number_0110,EC_number,Incorrect,A,D,11682,False,stop,cases/EC_number/EC_number_0110.md
+EC_number_0111,EC_number,Incorrect,A,B,9173,False,stop,cases/EC_number/EC_number_0111.md
+EC_number_0112,EC_number,Incorrect,D,B,15699,False,stop,cases/EC_number/EC_number_0112.md
+EC_number_0113,EC_number,Correct,A,A,11668,False,stop,cases/EC_number/EC_number_0113.md
+EC_number_0114,EC_number,Incorrect,D,A,15182,False,stop,cases/EC_number/EC_number_0114.md
+EC_number_0115,EC_number,Incorrect,A,D,28569,False,stop,cases/EC_number/EC_number_0115.md
+EC_number_0116,EC_number,Correct,A,A,25866,False,stop,cases/EC_number/EC_number_0116.md
+EC_number_0117,EC_number,Incorrect,A,B,8413,False,stop,cases/EC_number/EC_number_0117.md
+EC_number_0118,EC_number,Incorrect,A,B,29205,False,stop,cases/EC_number/EC_number_0118.md
+EC_number_0119,EC_number,Incorrect,B,C,13239,False,stop,cases/EC_number/EC_number_0119.md
+EC_number_0120,EC_number,Correct,C,C,18943,False,stop,cases/EC_number/EC_number_0120.md
+EC_number_0121,EC_number,Incorrect,B,A,18256,False,stop,cases/EC_number/EC_number_0121.md
+EC_number_0122,EC_number,Correct,A,A,19172,False,stop,cases/EC_number/EC_number_0122.md
+EC_number_0123,EC_number,Incorrect,D,A,21632,False,stop,cases/EC_number/EC_number_0123.md
+EC_number_0124,EC_number,Correct,A,A,26922,False,stop,cases/EC_number/EC_number_0124.md
+EC_number_0125,EC_number,Correct,B,B,17107,False,stop,cases/EC_number/EC_number_0125.md
+EC_number_0126,EC_number,Incorrect,B,A,19759,False,stop,cases/EC_number/EC_number_0126.md
+EC_number_0127,EC_number,No parsed answer,,D,32768,True,length,cases/EC_number/EC_number_0127.md
+EC_number_0128,EC_number,Incorrect,A,D,15557,False,stop,cases/EC_number/EC_number_0128.md
+EC_number_0129,EC_number,Correct,C,C,25233,False,stop,cases/EC_number/EC_number_0129.md
+EC_number_0130,EC_number,Incorrect,D,B,15400,False,stop,cases/EC_number/EC_number_0130.md
+EC_number_0131,EC_number,Incorrect,A,C,26961,False,stop,cases/EC_number/EC_number_0131.md
+EC_number_0132,EC_number,Incorrect,A,C,16019,False,stop,cases/EC_number/EC_number_0132.md
+EC_number_0133,EC_number,No parsed answer,,C,16150,False,stop,cases/EC_number/EC_number_0133.md
+EC_number_0134,EC_number,Incorrect,B,C,26521,False,stop,cases/EC_number/EC_number_0134.md
+EC_number_0135,EC_number,Incorrect,A,C,14417,False,stop,cases/EC_number/EC_number_0135.md
+EC_number_0136,EC_number,Incorrect,A,D,20114,False,stop,cases/EC_number/EC_number_0136.md
+EC_number_0137,EC_number,Incorrect,A,C,17976,False,stop,cases/EC_number/EC_number_0137.md
+EC_number_0138,EC_number,Correct,D,D,27834,False,stop,cases/EC_number/EC_number_0138.md
+EC_number_0139,EC_number,Incorrect,D,B,20151,False,stop,cases/EC_number/EC_number_0139.md
+EC_number_0140,EC_number,Incorrect,C,D,18027,False,stop,cases/EC_number/EC_number_0140.md
+EC_number_0141,EC_number,Incorrect,C,D,13017,False,stop,cases/EC_number/EC_number_0141.md
+EC_number_0142,EC_number,Incorrect,A,C,23367,False,stop,cases/EC_number/EC_number_0142.md
+EC_number_0143,EC_number,Correct,C,C,15650,False,stop,cases/EC_number/EC_number_0143.md
+EC_number_0144,EC_number,Incorrect,A,D,19939,False,stop,cases/EC_number/EC_number_0144.md
+EC_number_0145,EC_number,Incorrect,A,C,29629,False,stop,cases/EC_number/EC_number_0145.md
+EC_number_0146,EC_number,Incorrect,B,A,18636,False,stop,cases/EC_number/EC_number_0146.md
+EC_number_0147,EC_number,Incorrect,D,A,10965,False,stop,cases/EC_number/EC_number_0147.md
+EC_number_0148,EC_number,Correct,A,A,24122,False,stop,cases/EC_number/EC_number_0148.md
+EC_number_0149,EC_number,Correct,C,C,19506,False,stop,cases/EC_number/EC_number_0149.md
+EC_number_0150,EC_number,Incorrect,A,D,20582,False,stop,cases/EC_number/EC_number_0150.md
+EC_number_0151,EC_number,Incorrect,B,D,15043,False,stop,cases/EC_number/EC_number_0151.md
+EC_number_0152,EC_number,Incorrect,B,D,14540,False,stop,cases/EC_number/EC_number_0152.md
+EC_number_0153,EC_number,Correct,D,D,17055,False,stop,cases/EC_number/EC_number_0153.md
+EC_number_0154,EC_number,Incorrect,A,C,22914,False,stop,cases/EC_number/EC_number_0154.md
+EC_number_0155,EC_number,Correct,D,D,10707,False,stop,cases/EC_number/EC_number_0155.md
+EC_number_0156,EC_number,Incorrect,C,B,16580,False,stop,cases/EC_number/EC_number_0156.md
+EC_number_0157,EC_number,Incorrect,A,B,16435,False,stop,cases/EC_number/EC_number_0157.md
+EC_number_0158,EC_number,Incorrect,B,A,18608,False,stop,cases/EC_number/EC_number_0158.md
+EC_number_0159,EC_number,Incorrect,A,C,19318,False,stop,cases/EC_number/EC_number_0159.md
+EC_number_0160,EC_number,Incorrect,A,B,16975,False,stop,cases/EC_number/EC_number_0160.md
+EC_number_0161,EC_number,No parsed answer,,D,32768,True,length,cases/EC_number/EC_number_0161.md
+EC_number_0162,EC_number,Correct,A,A,21962,False,stop,cases/EC_number/EC_number_0162.md
+EC_number_0163,EC_number,Correct,C,C,28171,False,stop,cases/EC_number/EC_number_0163.md
+EC_number_0164,EC_number,Incorrect,D,A,17935,False,stop,cases/EC_number/EC_number_0164.md
+EC_number_0165,EC_number,Incorrect,A,C,23408,False,stop,cases/EC_number/EC_number_0165.md
+EC_number_0166,EC_number,Incorrect,A,B,22392,False,stop,cases/EC_number/EC_number_0166.md
+EC_number_0167,EC_number,Correct,A,A,13750,False,stop,cases/EC_number/EC_number_0167.md
+EC_number_0168,EC_number,Incorrect,D,C,21055,False,stop,cases/EC_number/EC_number_0168.md
+EC_number_0169,EC_number,Correct,A,A,10908,False,stop,cases/EC_number/EC_number_0169.md
+EC_number_0170,EC_number,Correct,B,B,20697,False,stop,cases/EC_number/EC_number_0170.md
+EC_number_0171,EC_number,Incorrect,C,B,13574,False,stop,cases/EC_number/EC_number_0171.md
+EC_number_0172,EC_number,Incorrect,B,A,18766,False,stop,cases/EC_number/EC_number_0172.md
+EC_number_0173,EC_number,Incorrect,A,C,17118,False,stop,cases/EC_number/EC_number_0173.md
+EC_number_0174,EC_number,Incorrect,D,A,10775,False,stop,cases/EC_number/EC_number_0174.md
+EC_number_0175,EC_number,Incorrect,A,C,24915,False,stop,cases/EC_number/EC_number_0175.md
+EC_number_0176,EC_number,Incorrect,C,A,11851,False,stop,cases/EC_number/EC_number_0176.md
+EC_number_0177,EC_number,Correct,D,D,28389,False,stop,cases/EC_number/EC_number_0177.md
+EC_number_0178,EC_number,Incorrect,C,A,13335,False,stop,cases/EC_number/EC_number_0178.md
+EC_number_0179,EC_number,Incorrect,A,B,12231,False,stop,cases/EC_number/EC_number_0179.md
+EC_number_0180,EC_number,Incorrect,B,A,8405,False,stop,cases/EC_number/EC_number_0180.md
+EC_number_0181,EC_number,Incorrect,B,D,8994,False,stop,cases/EC_number/EC_number_0181.md
+EC_number_0182,EC_number,Correct,C,C,14591,False,stop,cases/EC_number/EC_number_0182.md
+EC_number_0183,EC_number,Correct,B,B,21563,False,stop,cases/EC_number/EC_number_0183.md
+EC_number_0184,EC_number,Incorrect,B,C,13724,False,stop,cases/EC_number/EC_number_0184.md
+EC_number_0185,EC_number,Incorrect,B,D,17107,False,stop,cases/EC_number/EC_number_0185.md
+EC_number_0186,EC_number,Incorrect,A,D,15744,False,stop,cases/EC_number/EC_number_0186.md
+EC_number_0187,EC_number,Incorrect,C,B,10954,False,stop,cases/EC_number/EC_number_0187.md
+EC_number_0188,EC_number,Incorrect,B,A,11582,False,stop,cases/EC_number/EC_number_0188.md
+EC_number_0189,EC_number,Incorrect,C,B,8250,False,stop,cases/EC_number/EC_number_0189.md
+EC_number_0190,EC_number,Incorrect,B,A,20598,False,stop,cases/EC_number/EC_number_0190.md
+EC_number_0191,EC_number,Incorrect,A,C,20513,False,stop,cases/EC_number/EC_number_0191.md
+EC_number_0192,EC_number,Incorrect,D,A,16652,False,stop,cases/EC_number/EC_number_0192.md
+EC_number_0193,EC_number,Incorrect,D,A,11316,False,stop,cases/EC_number/EC_number_0193.md
+EC_number_0194,EC_number,Incorrect,A,B,8695,False,stop,cases/EC_number/EC_number_0194.md
+EC_number_0195,EC_number,Correct,A,A,31418,False,stop,cases/EC_number/EC_number_0195.md
+EC_number_0196,EC_number,Correct,D,D,13104,False,stop,cases/EC_number/EC_number_0196.md
+EC_number_0197,EC_number,Incorrect,D,A,12144,False,stop,cases/EC_number/EC_number_0197.md
+EC_number_0198,EC_number,Incorrect,B,D,15065,False,stop,cases/EC_number/EC_number_0198.md
+EC_number_0199,EC_number,Correct,A,A,20752,False,stop,cases/EC_number/EC_number_0199.md
+GO_biological_process_0000,GO_biological_process,Incorrect,B,A,7576,False,stop,cases/GO_biological_process/GO_biological_process_0000.md
+GO_biological_process_0001,GO_biological_process,Incorrect,D,B,7964,False,stop,cases/GO_biological_process/GO_biological_process_0001.md
+GO_biological_process_0002,GO_biological_process,Incorrect,A,C,4063,False,stop,cases/GO_biological_process/GO_biological_process_0002.md
+GO_biological_process_0003,GO_biological_process,Incorrect,A,B,19483,False,stop,cases/GO_biological_process/GO_biological_process_0003.md
+GO_biological_process_0004,GO_biological_process,Correct,A,A,13508,False,stop,cases/GO_biological_process/GO_biological_process_0004.md
+GO_biological_process_0005,GO_biological_process,Incorrect,A,B,15875,False,stop,cases/GO_biological_process/GO_biological_process_0005.md
+GO_biological_process_0006,GO_biological_process,Incorrect,D,A,23642,False,stop,cases/GO_biological_process/GO_biological_process_0006.md
+GO_biological_process_0007,GO_biological_process,Incorrect,D,C,10636,False,stop,cases/GO_biological_process/GO_biological_process_0007.md
+GO_biological_process_0008,GO_biological_process,Correct,A,A,14138,False,stop,cases/GO_biological_process/GO_biological_process_0008.md
+GO_biological_process_0009,GO_biological_process,Incorrect,A,B,6749,False,stop,cases/GO_biological_process/GO_biological_process_0009.md
+GO_biological_process_0010,GO_biological_process,Incorrect,C,B,8226,False,stop,cases/GO_biological_process/GO_biological_process_0010.md
+GO_biological_process_0011,GO_biological_process,No parsed answer,,C,32768,True,length,cases/GO_biological_process/GO_biological_process_0011.md
+GO_biological_process_0012,GO_biological_process,Incorrect,A,C,7793,False,stop,cases/GO_biological_process/GO_biological_process_0012.md
+GO_biological_process_0013,GO_biological_process,Incorrect,B,A,6315,False,stop,cases/GO_biological_process/GO_biological_process_0013.md
+GO_biological_process_0014,GO_biological_process,Incorrect,A,C,12153,False,stop,cases/GO_biological_process/GO_biological_process_0014.md
+GO_biological_process_0015,GO_biological_process,Correct,A,A,10227,False,stop,cases/GO_biological_process/GO_biological_process_0015.md
+GO_biological_process_0016,GO_biological_process,Incorrect,A,D,7801,False,stop,cases/GO_biological_process/GO_biological_process_0016.md
+GO_biological_process_0017,GO_biological_process,Incorrect,D,B,17557,False,stop,cases/GO_biological_process/GO_biological_process_0017.md
+GO_biological_process_0018,GO_biological_process,Incorrect,D,C,10563,False,stop,cases/GO_biological_process/GO_biological_process_0018.md
+GO_biological_process_0019,GO_biological_process,Correct,A,A,8969,False,stop,cases/GO_biological_process/GO_biological_process_0019.md
+GO_biological_process_0020,GO_biological_process,Incorrect,B,D,5390,False,stop,cases/GO_biological_process/GO_biological_process_0020.md
+GO_biological_process_0021,GO_biological_process,Incorrect,C,D,10165,False,stop,cases/GO_biological_process/GO_biological_process_0021.md
+GO_biological_process_0022,GO_biological_process,Incorrect,B,A,13118,False,stop,cases/GO_biological_process/GO_biological_process_0022.md
+GO_biological_process_0023,GO_biological_process,Incorrect,A,B,13423,False,stop,cases/GO_biological_process/GO_biological_process_0023.md
+GO_biological_process_0024,GO_biological_process,Correct,D,D,8357,False,stop,cases/GO_biological_process/GO_biological_process_0024.md
+GO_biological_process_0025,GO_biological_process,Incorrect,A,B,6025,False,stop,cases/GO_biological_process/GO_biological_process_0025.md
+GO_biological_process_0026,GO_biological_process,Incorrect,D,B,20157,False,stop,cases/GO_biological_process/GO_biological_process_0026.md
+GO_biological_process_0027,GO_biological_process,Incorrect,B,D,16439,False,stop,cases/GO_biological_process/GO_biological_process_0027.md
+GO_biological_process_0028,GO_biological_process,Incorrect,A,B,6146,False,stop,cases/GO_biological_process/GO_biological_process_0028.md
+GO_biological_process_0029,GO_biological_process,Incorrect,A,D,15706,False,stop,cases/GO_biological_process/GO_biological_process_0029.md
+GO_biological_process_0030,GO_biological_process,Correct,D,D,5908,False,stop,cases/GO_biological_process/GO_biological_process_0030.md
+GO_biological_process_0031,GO_biological_process,Correct,C,C,6234,False,stop,cases/GO_biological_process/GO_biological_process_0031.md
+GO_biological_process_0032,GO_biological_process,Incorrect,A,D,9941,False,stop,cases/GO_biological_process/GO_biological_process_0032.md
+GO_biological_process_0033,GO_biological_process,Incorrect,A,D,12721,False,stop,cases/GO_biological_process/GO_biological_process_0033.md
+GO_biological_process_0034,GO_biological_process,Correct,A,A,6544,False,stop,cases/GO_biological_process/GO_biological_process_0034.md
+GO_biological_process_0035,GO_biological_process,Incorrect,C,D,4273,False,stop,cases/GO_biological_process/GO_biological_process_0035.md
+GO_biological_process_0036,GO_biological_process,Incorrect,A,B,10383,False,stop,cases/GO_biological_process/GO_biological_process_0036.md
+GO_biological_process_0037,GO_biological_process,Incorrect,A,B,6274,False,stop,cases/GO_biological_process/GO_biological_process_0037.md
+GO_biological_process_0038,GO_biological_process,Incorrect,B,D,12504,False,stop,cases/GO_biological_process/GO_biological_process_0038.md
+GO_biological_process_0039,GO_biological_process,Incorrect,A,D,6810,False,stop,cases/GO_biological_process/GO_biological_process_0039.md
+GO_biological_process_0040,GO_biological_process,Correct,A,A,11781,False,stop,cases/GO_biological_process/GO_biological_process_0040.md
+GO_biological_process_0041,GO_biological_process,Correct,D,D,18479,False,stop,cases/GO_biological_process/GO_biological_process_0041.md
+GO_biological_process_0042,GO_biological_process,Correct,D,D,5016,False,stop,cases/GO_biological_process/GO_biological_process_0042.md
+GO_biological_process_0043,GO_biological_process,Incorrect,A,C,6430,False,stop,cases/GO_biological_process/GO_biological_process_0043.md
+GO_biological_process_0044,GO_biological_process,Correct,B,B,12364,False,stop,cases/GO_biological_process/GO_biological_process_0044.md
+GO_biological_process_0045,GO_biological_process,Incorrect,C,A,7246,False,stop,cases/GO_biological_process/GO_biological_process_0045.md
+GO_biological_process_0046,GO_biological_process,Correct,A,A,12405,False,stop,cases/GO_biological_process/GO_biological_process_0046.md
+GO_biological_process_0047,GO_biological_process,Incorrect,B,A,10610,False,stop,cases/GO_biological_process/GO_biological_process_0047.md
+GO_biological_process_0048,GO_biological_process,Correct,A,A,10227,False,stop,cases/GO_biological_process/GO_biological_process_0048.md
+GO_biological_process_0049,GO_biological_process,Incorrect,A,D,23559,False,stop,cases/GO_biological_process/GO_biological_process_0049.md
+GO_biological_process_0050,GO_biological_process,Correct,A,A,19740,False,stop,cases/GO_biological_process/GO_biological_process_0050.md
+GO_biological_process_0051,GO_biological_process,Incorrect,B,D,9368,False,stop,cases/GO_biological_process/GO_biological_process_0051.md
+GO_biological_process_0052,GO_biological_process,Incorrect,A,D,10447,False,stop,cases/GO_biological_process/GO_biological_process_0052.md
+GO_biological_process_0053,GO_biological_process,No parsed answer,,B,32768,True,length,cases/GO_biological_process/GO_biological_process_0053.md
+GO_biological_process_0054,GO_biological_process,Incorrect,A,C,24724,False,stop,cases/GO_biological_process/GO_biological_process_0054.md
+GO_biological_process_0055,GO_biological_process,Incorrect,A,D,6702,False,stop,cases/GO_biological_process/GO_biological_process_0055.md
+GO_biological_process_0056,GO_biological_process,Incorrect,A,D,11848,False,stop,cases/GO_biological_process/GO_biological_process_0056.md
+GO_biological_process_0057,GO_biological_process,Incorrect,C,D,9986,False,stop,cases/GO_biological_process/GO_biological_process_0057.md
+GO_biological_process_0058,GO_biological_process,Incorrect,D,B,13697,False,stop,cases/GO_biological_process/GO_biological_process_0058.md
+GO_biological_process_0059,GO_biological_process,Incorrect,B,C,13001,False,stop,cases/GO_biological_process/GO_biological_process_0059.md
+GO_biological_process_0060,GO_biological_process,Incorrect,C,D,10441,False,stop,cases/GO_biological_process/GO_biological_process_0060.md
+GO_biological_process_0061,GO_biological_process,Incorrect,A,B,6314,False,stop,cases/GO_biological_process/GO_biological_process_0061.md
+GO_biological_process_0063,GO_biological_process,Incorrect,C,B,14815,False,stop,cases/GO_biological_process/GO_biological_process_0063.md
+GO_biological_process_0064,GO_biological_process,Incorrect,B,D,16369,False,stop,cases/GO_biological_process/GO_biological_process_0064.md
+GO_biological_process_0066,GO_biological_process,Incorrect,A,B,28717,False,stop,cases/GO_biological_process/GO_biological_process_0066.md
+GO_biological_process_0067,GO_biological_process,Incorrect,A,D,19501,False,stop,cases/GO_biological_process/GO_biological_process_0067.md
+GO_biological_process_0068,GO_biological_process,Incorrect,B,C,7272,False,stop,cases/GO_biological_process/GO_biological_process_0068.md
+GO_biological_process_0069,GO_biological_process,No parsed answer,,C,12951,False,stop,cases/GO_biological_process/GO_biological_process_0069.md
+GO_biological_process_0070,GO_biological_process,Incorrect,A,C,19307,False,stop,cases/GO_biological_process/GO_biological_process_0070.md
+GO_biological_process_0071,GO_biological_process,Correct,B,B,22495,False,stop,cases/GO_biological_process/GO_biological_process_0071.md
+GO_biological_process_0072,GO_biological_process,Incorrect,D,C,14298,False,stop,cases/GO_biological_process/GO_biological_process_0072.md
+GO_biological_process_0073,GO_biological_process,Incorrect,B,D,4689,False,stop,cases/GO_biological_process/GO_biological_process_0073.md
+GO_biological_process_0074,GO_biological_process,Incorrect,A,D,7203,False,stop,cases/GO_biological_process/GO_biological_process_0074.md
+GO_biological_process_0075,GO_biological_process,Incorrect,A,B,10622,False,stop,cases/GO_biological_process/GO_biological_process_0075.md
+GO_biological_process_0076,GO_biological_process,Incorrect,C,B,6774,False,stop,cases/GO_biological_process/GO_biological_process_0076.md
+GO_biological_process_0077,GO_biological_process,Incorrect,C,D,4881,False,stop,cases/GO_biological_process/GO_biological_process_0077.md
+GO_biological_process_0078,GO_biological_process,Incorrect,A,C,8541,False,stop,cases/GO_biological_process/GO_biological_process_0078.md
+GO_biological_process_0079,GO_biological_process,Incorrect,D,A,7703,False,stop,cases/GO_biological_process/GO_biological_process_0079.md
+GO_biological_process_0080,GO_biological_process,Incorrect,A,C,8512,False,stop,cases/GO_biological_process/GO_biological_process_0080.md
+GO_biological_process_0081,GO_biological_process,Incorrect,A,D,7780,False,stop,cases/GO_biological_process/GO_biological_process_0081.md
+GO_biological_process_0082,GO_biological_process,Incorrect,A,B,19125,False,stop,cases/GO_biological_process/GO_biological_process_0082.md
+GO_biological_process_0083,GO_biological_process,Incorrect,D,B,8669,False,stop,cases/GO_biological_process/GO_biological_process_0083.md
+GO_biological_process_0084,GO_biological_process,Correct,A,A,8691,False,stop,cases/GO_biological_process/GO_biological_process_0084.md
+GO_biological_process_0085,GO_biological_process,Incorrect,C,A,8453,False,stop,cases/GO_biological_process/GO_biological_process_0085.md
+GO_biological_process_0086,GO_biological_process,Correct,D,D,18732,False,stop,cases/GO_biological_process/GO_biological_process_0086.md
+GO_biological_process_0087,GO_biological_process,Incorrect,C,D,11569,False,stop,cases/GO_biological_process/GO_biological_process_0087.md
+GO_biological_process_0088,GO_biological_process,Incorrect,C,A,17093,False,stop,cases/GO_biological_process/GO_biological_process_0088.md
+GO_biological_process_0089,GO_biological_process,Incorrect,A,C,6467,False,stop,cases/GO_biological_process/GO_biological_process_0089.md
+GO_biological_process_0091,GO_biological_process,Incorrect,C,B,7870,False,stop,cases/GO_biological_process/GO_biological_process_0091.md
+GO_biological_process_0092,GO_biological_process,Incorrect,A,C,6257,False,stop,cases/GO_biological_process/GO_biological_process_0092.md
+GO_biological_process_0093,GO_biological_process,Incorrect,A,D,7795,False,stop,cases/GO_biological_process/GO_biological_process_0093.md
+GO_biological_process_0094,GO_biological_process,Incorrect,A,D,6745,False,stop,cases/GO_biological_process/GO_biological_process_0094.md
+GO_biological_process_0095,GO_biological_process,Incorrect,B,D,7026,False,stop,cases/GO_biological_process/GO_biological_process_0095.md
+GO_biological_process_0096,GO_biological_process,Incorrect,D,A,7407,False,stop,cases/GO_biological_process/GO_biological_process_0096.md
+GO_biological_process_0097,GO_biological_process,Incorrect,A,D,6455,False,stop,cases/GO_biological_process/GO_biological_process_0097.md
+GO_biological_process_0098,GO_biological_process,Correct,C,C,7984,False,stop,cases/GO_biological_process/GO_biological_process_0098.md
+GO_biological_process_0099,GO_biological_process,Incorrect,D,A,19563,False,stop,cases/GO_biological_process/GO_biological_process_0099.md
+GO_biological_process_0100,GO_biological_process,Incorrect,A,D,5812,False,stop,cases/GO_biological_process/GO_biological_process_0100.md
+GO_biological_process_0101,GO_biological_process,Incorrect,C,B,10066,False,stop,cases/GO_biological_process/GO_biological_process_0101.md
+GO_biological_process_0102,GO_biological_process,Incorrect,A,B,19630,False,stop,cases/GO_biological_process/GO_biological_process_0102.md
+GO_biological_process_0103,GO_biological_process,Incorrect,A,C,10981,False,stop,cases/GO_biological_process/GO_biological_process_0103.md
+GO_biological_process_0104,GO_biological_process,Correct,A,A,7839,False,stop,cases/GO_biological_process/GO_biological_process_0104.md
+GO_biological_process_0105,GO_biological_process,Incorrect,B,A,6533,False,stop,cases/GO_biological_process/GO_biological_process_0105.md
+GO_biological_process_0106,GO_biological_process,Incorrect,B,C,9243,False,stop,cases/GO_biological_process/GO_biological_process_0106.md
+GO_biological_process_0107,GO_biological_process,Incorrect,D,A,7189,False,stop,cases/GO_biological_process/GO_biological_process_0107.md
+GO_biological_process_0108,GO_biological_process,Incorrect,A,C,7865,False,stop,cases/GO_biological_process/GO_biological_process_0108.md
+GO_biological_process_0109,GO_biological_process,Incorrect,B,A,14946,False,stop,cases/GO_biological_process/GO_biological_process_0109.md
+GO_biological_process_0110,GO_biological_process,Incorrect,A,D,8537,False,stop,cases/GO_biological_process/GO_biological_process_0110.md
+GO_biological_process_0111,GO_biological_process,Incorrect,A,C,5342,False,stop,cases/GO_biological_process/GO_biological_process_0111.md
+GO_biological_process_0112,GO_biological_process,Incorrect,A,B,14111,False,stop,cases/GO_biological_process/GO_biological_process_0112.md
+GO_biological_process_0113,GO_biological_process,Incorrect,A,C,4585,False,stop,cases/GO_biological_process/GO_biological_process_0113.md
+GO_biological_process_0114,GO_biological_process,Incorrect,A,B,8483,False,stop,cases/GO_biological_process/GO_biological_process_0114.md
+GO_biological_process_0115,GO_biological_process,Incorrect,C,D,13767,False,stop,cases/GO_biological_process/GO_biological_process_0115.md
+GO_biological_process_0116,GO_biological_process,Incorrect,A,D,8009,False,stop,cases/GO_biological_process/GO_biological_process_0116.md
+GO_biological_process_0117,GO_biological_process,No parsed answer,,B,32768,True,length,cases/GO_biological_process/GO_biological_process_0117.md
+GO_biological_process_0118,GO_biological_process,Correct,D,D,8492,False,stop,cases/GO_biological_process/GO_biological_process_0118.md
+GO_biological_process_0120,GO_biological_process,Incorrect,C,A,18061,False,stop,cases/GO_biological_process/GO_biological_process_0120.md
+GO_biological_process_0121,GO_biological_process,Correct,A,A,6228,False,stop,cases/GO_biological_process/GO_biological_process_0121.md
+GO_biological_process_0122,GO_biological_process,Incorrect,D,C,9386,False,stop,cases/GO_biological_process/GO_biological_process_0122.md
+GO_biological_process_0123,GO_biological_process,Incorrect,D,A,9028,False,stop,cases/GO_biological_process/GO_biological_process_0123.md
+GO_biological_process_0124,GO_biological_process,Correct,A,A,4956,False,stop,cases/GO_biological_process/GO_biological_process_0124.md
+GO_biological_process_0125,GO_biological_process,Correct,D,D,8345,False,stop,cases/GO_biological_process/GO_biological_process_0125.md
+GO_biological_process_0126,GO_biological_process,Incorrect,C,B,10146,False,stop,cases/GO_biological_process/GO_biological_process_0126.md
+GO_biological_process_0127,GO_biological_process,Incorrect,A,D,6575,False,stop,cases/GO_biological_process/GO_biological_process_0127.md
+GO_biological_process_0128,GO_biological_process,Incorrect,D,C,17239,False,stop,cases/GO_biological_process/GO_biological_process_0128.md
+GO_biological_process_0129,GO_biological_process,Incorrect,A,B,18342,False,stop,cases/GO_biological_process/GO_biological_process_0129.md
+GO_biological_process_0130,GO_biological_process,Incorrect,A,B,8295,False,stop,cases/GO_biological_process/GO_biological_process_0130.md
+GO_biological_process_0131,GO_biological_process,Incorrect,A,C,10792,False,stop,cases/GO_biological_process/GO_biological_process_0131.md
+GO_biological_process_0132,GO_biological_process,Incorrect,B,C,15630,False,stop,cases/GO_biological_process/GO_biological_process_0132.md
+GO_biological_process_0133,GO_biological_process,Incorrect,A,D,6808,False,stop,cases/GO_biological_process/GO_biological_process_0133.md
+GO_biological_process_0134,GO_biological_process,Incorrect,C,D,10674,False,stop,cases/GO_biological_process/GO_biological_process_0134.md
+GO_biological_process_0135,GO_biological_process,Incorrect,A,D,13525,False,stop,cases/GO_biological_process/GO_biological_process_0135.md
+GO_biological_process_0136,GO_biological_process,Correct,D,D,5962,False,stop,cases/GO_biological_process/GO_biological_process_0136.md
+GO_biological_process_0137,GO_biological_process,Incorrect,A,C,26209,False,stop,cases/GO_biological_process/GO_biological_process_0137.md
+GO_biological_process_0138,GO_biological_process,Incorrect,A,C,9194,False,stop,cases/GO_biological_process/GO_biological_process_0138.md
+GO_biological_process_0139,GO_biological_process,Incorrect,B,A,5235,False,stop,cases/GO_biological_process/GO_biological_process_0139.md
+GO_biological_process_0140,GO_biological_process,Correct,A,A,5119,False,stop,cases/GO_biological_process/GO_biological_process_0140.md
+GO_biological_process_0141,GO_biological_process,Incorrect,A,D,12811,False,stop,cases/GO_biological_process/GO_biological_process_0141.md
+GO_biological_process_0142,GO_biological_process,Correct,A,A,8006,False,stop,cases/GO_biological_process/GO_biological_process_0142.md
+GO_biological_process_0143,GO_biological_process,Incorrect,C,A,8285,False,stop,cases/GO_biological_process/GO_biological_process_0143.md
+GO_biological_process_0144,GO_biological_process,Incorrect,A,C,10898,False,stop,cases/GO_biological_process/GO_biological_process_0144.md
+GO_biological_process_0145,GO_biological_process,No parsed answer,,A,32768,True,length,cases/GO_biological_process/GO_biological_process_0145.md
+GO_biological_process_0146,GO_biological_process,Incorrect,A,D,6994,False,stop,cases/GO_biological_process/GO_biological_process_0146.md
+GO_biological_process_0147,GO_biological_process,Incorrect,B,C,8469,False,stop,cases/GO_biological_process/GO_biological_process_0147.md
+GO_biological_process_0149,GO_biological_process,Correct,A,A,6409,False,stop,cases/GO_biological_process/GO_biological_process_0149.md
+GO_biological_process_0150,GO_biological_process,Incorrect,D,B,5649,False,stop,cases/GO_biological_process/GO_biological_process_0150.md
+GO_biological_process_0151,GO_biological_process,Incorrect,B,D,17006,False,stop,cases/GO_biological_process/GO_biological_process_0151.md
+GO_biological_process_0152,GO_biological_process,Incorrect,A,D,8066,False,stop,cases/GO_biological_process/GO_biological_process_0152.md
+GO_biological_process_0153,GO_biological_process,Incorrect,D,B,7756,False,stop,cases/GO_biological_process/GO_biological_process_0153.md
+GO_biological_process_0154,GO_biological_process,Correct,A,A,11497,False,stop,cases/GO_biological_process/GO_biological_process_0154.md
+GO_biological_process_0155,GO_biological_process,Incorrect,D,B,9223,False,stop,cases/GO_biological_process/GO_biological_process_0155.md
+GO_biological_process_0156,GO_biological_process,Incorrect,A,B,7960,False,stop,cases/GO_biological_process/GO_biological_process_0156.md
+GO_biological_process_0157,GO_biological_process,Incorrect,A,B,10407,False,stop,cases/GO_biological_process/GO_biological_process_0157.md
+GO_biological_process_0158,GO_biological_process,Incorrect,A,B,4406,False,stop,cases/GO_biological_process/GO_biological_process_0158.md
+GO_biological_process_0159,GO_biological_process,Correct,D,D,4824,False,stop,cases/GO_biological_process/GO_biological_process_0159.md
+GO_biological_process_0160,GO_biological_process,Correct,A,A,6810,False,stop,cases/GO_biological_process/GO_biological_process_0160.md
+GO_biological_process_0161,GO_biological_process,Incorrect,D,B,11817,False,stop,cases/GO_biological_process/GO_biological_process_0161.md
+GO_biological_process_0162,GO_biological_process,Incorrect,B,D,4669,False,stop,cases/GO_biological_process/GO_biological_process_0162.md
+GO_biological_process_0163,GO_biological_process,Incorrect,A,D,10453,False,stop,cases/GO_biological_process/GO_biological_process_0163.md
+GO_biological_process_0164,GO_biological_process,No parsed answer,,A,11854,False,stop,cases/GO_biological_process/GO_biological_process_0164.md
+GO_biological_process_0165,GO_biological_process,Correct,C,C,4622,False,stop,cases/GO_biological_process/GO_biological_process_0165.md
+GO_biological_process_0166,GO_biological_process,Incorrect,B,C,4598,False,stop,cases/GO_biological_process/GO_biological_process_0166.md
+GO_biological_process_0167,GO_biological_process,Incorrect,A,C,7233,False,stop,cases/GO_biological_process/GO_biological_process_0167.md
+GO_biological_process_0168,GO_biological_process,Incorrect,B,C,10258,False,stop,cases/GO_biological_process/GO_biological_process_0168.md
+GO_biological_process_0169,GO_biological_process,Correct,A,A,5471,False,stop,cases/GO_biological_process/GO_biological_process_0169.md
+GO_biological_process_0170,GO_biological_process,Incorrect,D,C,12583,False,stop,cases/GO_biological_process/GO_biological_process_0170.md
+GO_biological_process_0171,GO_biological_process,Correct,A,A,9162,False,stop,cases/GO_biological_process/GO_biological_process_0171.md
+GO_biological_process_0172,GO_biological_process,Incorrect,D,C,6797,False,stop,cases/GO_biological_process/GO_biological_process_0172.md
+GO_biological_process_0173,GO_biological_process,Incorrect,C,B,12700,False,stop,cases/GO_biological_process/GO_biological_process_0173.md
+GO_biological_process_0174,GO_biological_process,Incorrect,C,D,7739,False,stop,cases/GO_biological_process/GO_biological_process_0174.md
+GO_biological_process_0175,GO_biological_process,Incorrect,B,A,9318,False,stop,cases/GO_biological_process/GO_biological_process_0175.md
+GO_biological_process_0176,GO_biological_process,Incorrect,A,C,11925,False,stop,cases/GO_biological_process/GO_biological_process_0176.md
+GO_biological_process_0177,GO_biological_process,Incorrect,A,B,8492,False,stop,cases/GO_biological_process/GO_biological_process_0177.md
+GO_biological_process_0178,GO_biological_process,Correct,A,A,5966,False,stop,cases/GO_biological_process/GO_biological_process_0178.md
+GO_biological_process_0179,GO_biological_process,Incorrect,A,D,13143,False,stop,cases/GO_biological_process/GO_biological_process_0179.md
+GO_biological_process_0180,GO_biological_process,Incorrect,A,C,10482,False,stop,cases/GO_biological_process/GO_biological_process_0180.md
+GO_biological_process_0181,GO_biological_process,Incorrect,A,C,7482,False,stop,cases/GO_biological_process/GO_biological_process_0181.md
+GO_biological_process_0182,GO_biological_process,Correct,A,A,14476,False,stop,cases/GO_biological_process/GO_biological_process_0182.md
+GO_biological_process_0183,GO_biological_process,Incorrect,B,D,6513,False,stop,cases/GO_biological_process/GO_biological_process_0183.md
+GO_biological_process_0184,GO_biological_process,Incorrect,C,A,6355,False,stop,cases/GO_biological_process/GO_biological_process_0184.md
+GO_biological_process_0185,GO_biological_process,Incorrect,B,C,6631,False,stop,cases/GO_biological_process/GO_biological_process_0185.md
+GO_biological_process_0187,GO_biological_process,Incorrect,B,D,9755,False,stop,cases/GO_biological_process/GO_biological_process_0187.md
+GO_biological_process_0188,GO_biological_process,Incorrect,D,A,13892,False,stop,cases/GO_biological_process/GO_biological_process_0188.md
+GO_biological_process_0189,GO_biological_process,Correct,C,C,12813,False,stop,cases/GO_biological_process/GO_biological_process_0189.md
+GO_biological_process_0190,GO_biological_process,Incorrect,C,A,11650,False,stop,cases/GO_biological_process/GO_biological_process_0190.md
+GO_biological_process_0191,GO_biological_process,Incorrect,C,D,6378,False,stop,cases/GO_biological_process/GO_biological_process_0191.md
+GO_biological_process_0192,GO_biological_process,Correct,C,C,13972,False,stop,cases/GO_biological_process/GO_biological_process_0192.md
+GO_cellular_component_0000,GO_cellular_component,Incorrect,A,C,8895,False,stop,cases/GO_cellular_component/GO_cellular_component_0000.md
+GO_cellular_component_0001,GO_cellular_component,Incorrect,C,B,9221,False,stop,cases/GO_cellular_component/GO_cellular_component_0001.md
+GO_cellular_component_0002,GO_cellular_component,Incorrect,C,D,9831,False,stop,cases/GO_cellular_component/GO_cellular_component_0002.md
+GO_cellular_component_0003,GO_cellular_component,Incorrect,D,A,11193,False,stop,cases/GO_cellular_component/GO_cellular_component_0003.md
+GO_cellular_component_0004,GO_cellular_component,Incorrect,A,D,15501,False,stop,cases/GO_cellular_component/GO_cellular_component_0004.md
+GO_cellular_component_0005,GO_cellular_component,Incorrect,A,B,8823,False,stop,cases/GO_cellular_component/GO_cellular_component_0005.md
+GO_cellular_component_0006,GO_cellular_component,Correct,D,D,6006,False,stop,cases/GO_cellular_component/GO_cellular_component_0006.md
+GO_cellular_component_0007,GO_cellular_component,Correct,B,B,8127,False,stop,cases/GO_cellular_component/GO_cellular_component_0007.md
+GO_cellular_component_0008,GO_cellular_component,Incorrect,D,C,12036,False,stop,cases/GO_cellular_component/GO_cellular_component_0008.md
+GO_cellular_component_0009,GO_cellular_component,Correct,C,C,8220,False,stop,cases/GO_cellular_component/GO_cellular_component_0009.md
+GO_cellular_component_0010,GO_cellular_component,Correct,D,D,10125,False,stop,cases/GO_cellular_component/GO_cellular_component_0010.md
+GO_cellular_component_0011,GO_cellular_component,Correct,A,A,13141,False,stop,cases/GO_cellular_component/GO_cellular_component_0011.md
+GO_cellular_component_0012,GO_cellular_component,Incorrect,B,A,7150,False,stop,cases/GO_cellular_component/GO_cellular_component_0012.md
+GO_cellular_component_0013,GO_cellular_component,Incorrect,A,C,5354,False,stop,cases/GO_cellular_component/GO_cellular_component_0013.md
+GO_cellular_component_0014,GO_cellular_component,Incorrect,A,B,7187,False,stop,cases/GO_cellular_component/GO_cellular_component_0014.md
+GO_cellular_component_0015,GO_cellular_component,Incorrect,A,C,12901,False,stop,cases/GO_cellular_component/GO_cellular_component_0015.md
+GO_cellular_component_0016,GO_cellular_component,Incorrect,B,D,10146,False,stop,cases/GO_cellular_component/GO_cellular_component_0016.md
+GO_cellular_component_0017,GO_cellular_component,Correct,A,A,5302,False,stop,cases/GO_cellular_component/GO_cellular_component_0017.md
+GO_cellular_component_0018,GO_cellular_component,Incorrect,A,C,7009,False,stop,cases/GO_cellular_component/GO_cellular_component_0018.md
+GO_cellular_component_0019,GO_cellular_component,Incorrect,A,D,7918,False,stop,cases/GO_cellular_component/GO_cellular_component_0019.md
+GO_cellular_component_0020,GO_cellular_component,Incorrect,A,C,16760,False,stop,cases/GO_cellular_component/GO_cellular_component_0020.md
+GO_cellular_component_0021,GO_cellular_component,Incorrect,A,D,7553,False,stop,cases/GO_cellular_component/GO_cellular_component_0021.md
+GO_cellular_component_0022,GO_cellular_component,Incorrect,D,B,4833,False,stop,cases/GO_cellular_component/GO_cellular_component_0022.md
+GO_cellular_component_0023,GO_cellular_component,Correct,D,D,12763,False,stop,cases/GO_cellular_component/GO_cellular_component_0023.md
+GO_cellular_component_0024,GO_cellular_component,No parsed answer,,A,32768,True,length,cases/GO_cellular_component/GO_cellular_component_0024.md
+GO_cellular_component_0025,GO_cellular_component,Correct,D,D,10141,False,stop,cases/GO_cellular_component/GO_cellular_component_0025.md
+GO_cellular_component_0026,GO_cellular_component,Incorrect,A,C,9547,False,stop,cases/GO_cellular_component/GO_cellular_component_0026.md
+GO_cellular_component_0027,GO_cellular_component,Incorrect,A,C,11861,False,stop,cases/GO_cellular_component/GO_cellular_component_0027.md
+GO_cellular_component_0028,GO_cellular_component,Incorrect,C,D,8107,False,stop,cases/GO_cellular_component/GO_cellular_component_0028.md
+GO_cellular_component_0029,GO_cellular_component,Correct,A,A,12139,False,stop,cases/GO_cellular_component/GO_cellular_component_0029.md
+GO_cellular_component_0030,GO_cellular_component,Correct,B,B,11667,False,stop,cases/GO_cellular_component/GO_cellular_component_0030.md
+GO_cellular_component_0031,GO_cellular_component,Incorrect,A,C,7350,False,stop,cases/GO_cellular_component/GO_cellular_component_0031.md
+GO_cellular_component_0032,GO_cellular_component,Incorrect,B,C,12125,False,stop,cases/GO_cellular_component/GO_cellular_component_0032.md
+GO_cellular_component_0033,GO_cellular_component,Incorrect,D,B,7027,False,stop,cases/GO_cellular_component/GO_cellular_component_0033.md
+GO_cellular_component_0034,GO_cellular_component,Correct,B,B,8606,False,stop,cases/GO_cellular_component/GO_cellular_component_0034.md
+GO_cellular_component_0035,GO_cellular_component,Correct,A,A,7893,False,stop,cases/GO_cellular_component/GO_cellular_component_0035.md
+GO_cellular_component_0036,GO_cellular_component,Incorrect,A,B,14168,False,stop,cases/GO_cellular_component/GO_cellular_component_0036.md
+GO_cellular_component_0037,GO_cellular_component,Correct,B,B,8061,False,stop,cases/GO_cellular_component/GO_cellular_component_0037.md
+GO_cellular_component_0038,GO_cellular_component,Incorrect,A,B,8231,False,stop,cases/GO_cellular_component/GO_cellular_component_0038.md
+GO_cellular_component_0039,GO_cellular_component,Incorrect,D,B,8666,False,stop,cases/GO_cellular_component/GO_cellular_component_0039.md
+GO_cellular_component_0040,GO_cellular_component,Incorrect,A,C,10800,False,stop,cases/GO_cellular_component/GO_cellular_component_0040.md
+GO_cellular_component_0041,GO_cellular_component,Incorrect,B,C,7226,False,stop,cases/GO_cellular_component/GO_cellular_component_0041.md
+GO_cellular_component_0042,GO_cellular_component,Incorrect,C,B,12209,False,stop,cases/GO_cellular_component/GO_cellular_component_0042.md
+GO_cellular_component_0043,GO_cellular_component,Correct,C,C,6672,False,stop,cases/GO_cellular_component/GO_cellular_component_0043.md
+GO_cellular_component_0044,GO_cellular_component,Incorrect,A,C,5864,False,stop,cases/GO_cellular_component/GO_cellular_component_0044.md
+GO_cellular_component_0045,GO_cellular_component,Incorrect,B,C,7953,False,stop,cases/GO_cellular_component/GO_cellular_component_0045.md
+GO_cellular_component_0046,GO_cellular_component,Incorrect,A,D,9786,False,stop,cases/GO_cellular_component/GO_cellular_component_0046.md
+GO_cellular_component_0047,GO_cellular_component,No parsed answer,,A,32768,True,length,cases/GO_cellular_component/GO_cellular_component_0047.md
+GO_cellular_component_0048,GO_cellular_component,Incorrect,B,D,9687,False,stop,cases/GO_cellular_component/GO_cellular_component_0048.md
+GO_cellular_component_0049,GO_cellular_component,Incorrect,A,C,8772,False,stop,cases/GO_cellular_component/GO_cellular_component_0049.md
+GO_cellular_component_0050,GO_cellular_component,Incorrect,A,D,13428,False,stop,cases/GO_cellular_component/GO_cellular_component_0050.md
+GO_cellular_component_0051,GO_cellular_component,Incorrect,B,A,16235,False,stop,cases/GO_cellular_component/GO_cellular_component_0051.md
+GO_cellular_component_0052,GO_cellular_component,Incorrect,D,A,8605,False,stop,cases/GO_cellular_component/GO_cellular_component_0052.md
+GO_cellular_component_0053,GO_cellular_component,Incorrect,B,D,10001,False,stop,cases/GO_cellular_component/GO_cellular_component_0053.md
+GO_cellular_component_0054,GO_cellular_component,Correct,B,B,23583,False,stop,cases/GO_cellular_component/GO_cellular_component_0054.md
+GO_cellular_component_0055,GO_cellular_component,Incorrect,B,C,10385,False,stop,cases/GO_cellular_component/GO_cellular_component_0055.md
+GO_cellular_component_0056,GO_cellular_component,Incorrect,B,A,9760,False,stop,cases/GO_cellular_component/GO_cellular_component_0056.md
+GO_cellular_component_0057,GO_cellular_component,Correct,B,B,12243,False,stop,cases/GO_cellular_component/GO_cellular_component_0057.md
+GO_cellular_component_0058,GO_cellular_component,Incorrect,A,B,6785,False,stop,cases/GO_cellular_component/GO_cellular_component_0058.md
+GO_cellular_component_0059,GO_cellular_component,Correct,D,D,7868,False,stop,cases/GO_cellular_component/GO_cellular_component_0059.md
+GO_cellular_component_0060,GO_cellular_component,Correct,A,A,6690,False,stop,cases/GO_cellular_component/GO_cellular_component_0060.md
+GO_cellular_component_0061,GO_cellular_component,Incorrect,A,C,7840,False,stop,cases/GO_cellular_component/GO_cellular_component_0061.md
+GO_cellular_component_0062,GO_cellular_component,Incorrect,A,C,7061,False,stop,cases/GO_cellular_component/GO_cellular_component_0062.md
+GO_cellular_component_0063,GO_cellular_component,Incorrect,C,B,9512,False,stop,cases/GO_cellular_component/GO_cellular_component_0063.md
+GO_cellular_component_0064,GO_cellular_component,Incorrect,B,C,10467,False,stop,cases/GO_cellular_component/GO_cellular_component_0064.md
+GO_cellular_component_0065,GO_cellular_component,Incorrect,D,A,9129,False,stop,cases/GO_cellular_component/GO_cellular_component_0065.md
+GO_cellular_component_0066,GO_cellular_component,Incorrect,B,D,16382,False,stop,cases/GO_cellular_component/GO_cellular_component_0066.md
+GO_cellular_component_0067,GO_cellular_component,Incorrect,A,C,20953,False,stop,cases/GO_cellular_component/GO_cellular_component_0067.md
+GO_cellular_component_0068,GO_cellular_component,Incorrect,D,A,7691,False,stop,cases/GO_cellular_component/GO_cellular_component_0068.md
+GO_cellular_component_0069,GO_cellular_component,Incorrect,A,D,4951,False,stop,cases/GO_cellular_component/GO_cellular_component_0069.md
+GO_cellular_component_0070,GO_cellular_component,Incorrect,D,B,10215,False,stop,cases/GO_cellular_component/GO_cellular_component_0070.md
+GO_cellular_component_0071,GO_cellular_component,Incorrect,A,B,9188,False,stop,cases/GO_cellular_component/GO_cellular_component_0071.md
+GO_cellular_component_0072,GO_cellular_component,Correct,D,D,7924,False,stop,cases/GO_cellular_component/GO_cellular_component_0072.md
+GO_cellular_component_0073,GO_cellular_component,Incorrect,B,A,9841,False,stop,cases/GO_cellular_component/GO_cellular_component_0073.md
+GO_cellular_component_0074,GO_cellular_component,Incorrect,C,D,15934,False,stop,cases/GO_cellular_component/GO_cellular_component_0074.md
+GO_cellular_component_0075,GO_cellular_component,Correct,C,C,7185,False,stop,cases/GO_cellular_component/GO_cellular_component_0075.md
+GO_cellular_component_0076,GO_cellular_component,Incorrect,D,C,8134,False,stop,cases/GO_cellular_component/GO_cellular_component_0076.md
+GO_cellular_component_0077,GO_cellular_component,Incorrect,A,B,4236,False,stop,cases/GO_cellular_component/GO_cellular_component_0077.md
+GO_cellular_component_0078,GO_cellular_component,Incorrect,A,B,7675,False,stop,cases/GO_cellular_component/GO_cellular_component_0078.md
+GO_cellular_component_0079,GO_cellular_component,Incorrect,B,A,8108,False,stop,cases/GO_cellular_component/GO_cellular_component_0079.md
+GO_cellular_component_0080,GO_cellular_component,Incorrect,A,C,7534,False,stop,cases/GO_cellular_component/GO_cellular_component_0080.md
+GO_cellular_component_0081,GO_cellular_component,Incorrect,D,C,14535,False,stop,cases/GO_cellular_component/GO_cellular_component_0081.md
+GO_cellular_component_0082,GO_cellular_component,Correct,D,D,7465,False,stop,cases/GO_cellular_component/GO_cellular_component_0082.md
+GO_cellular_component_0083,GO_cellular_component,Incorrect,D,C,8575,False,stop,cases/GO_cellular_component/GO_cellular_component_0083.md
+GO_cellular_component_0084,GO_cellular_component,Correct,A,A,6832,False,stop,cases/GO_cellular_component/GO_cellular_component_0084.md
+GO_cellular_component_0085,GO_cellular_component,Incorrect,A,C,4816,False,stop,cases/GO_cellular_component/GO_cellular_component_0085.md
+GO_cellular_component_0086,GO_cellular_component,Correct,A,A,7182,False,stop,cases/GO_cellular_component/GO_cellular_component_0086.md
+GO_cellular_component_0087,GO_cellular_component,Incorrect,A,C,13771,False,stop,cases/GO_cellular_component/GO_cellular_component_0087.md
+GO_cellular_component_0088,GO_cellular_component,Incorrect,C,D,10687,False,stop,cases/GO_cellular_component/GO_cellular_component_0088.md
+GO_cellular_component_0089,GO_cellular_component,Incorrect,C,D,10746,False,stop,cases/GO_cellular_component/GO_cellular_component_0089.md
+GO_cellular_component_0090,GO_cellular_component,Correct,A,A,18471,False,stop,cases/GO_cellular_component/GO_cellular_component_0090.md
+GO_cellular_component_0091,GO_cellular_component,Correct,B,B,14372,False,stop,cases/GO_cellular_component/GO_cellular_component_0091.md
+GO_cellular_component_0092,GO_cellular_component,Incorrect,D,C,17912,False,stop,cases/GO_cellular_component/GO_cellular_component_0092.md
+GO_cellular_component_0093,GO_cellular_component,Correct,B,B,13161,False,stop,cases/GO_cellular_component/GO_cellular_component_0093.md
+GO_cellular_component_0094,GO_cellular_component,Correct,B,B,15423,False,stop,cases/GO_cellular_component/GO_cellular_component_0094.md
+GO_cellular_component_0095,GO_cellular_component,Incorrect,A,C,12874,False,stop,cases/GO_cellular_component/GO_cellular_component_0095.md
+GO_cellular_component_0096,GO_cellular_component,Incorrect,D,B,12211,False,stop,cases/GO_cellular_component/GO_cellular_component_0096.md
+GO_cellular_component_0097,GO_cellular_component,Correct,A,A,11955,False,stop,cases/GO_cellular_component/GO_cellular_component_0097.md
+GO_cellular_component_0098,GO_cellular_component,Incorrect,C,A,13856,False,stop,cases/GO_cellular_component/GO_cellular_component_0098.md
+GO_cellular_component_0099,GO_cellular_component,Correct,D,D,7485,False,stop,cases/GO_cellular_component/GO_cellular_component_0099.md
+GO_cellular_component_0100,GO_cellular_component,Incorrect,D,B,10337,False,stop,cases/GO_cellular_component/GO_cellular_component_0100.md
+GO_cellular_component_0101,GO_cellular_component,Correct,C,C,6736,False,stop,cases/GO_cellular_component/GO_cellular_component_0101.md
+GO_cellular_component_0102,GO_cellular_component,Incorrect,A,B,9366,False,stop,cases/GO_cellular_component/GO_cellular_component_0102.md
+GO_cellular_component_0103,GO_cellular_component,Incorrect,A,C,7043,False,stop,cases/GO_cellular_component/GO_cellular_component_0103.md
+GO_cellular_component_0104,GO_cellular_component,Incorrect,A,C,11014,False,stop,cases/GO_cellular_component/GO_cellular_component_0104.md
+GO_cellular_component_0105,GO_cellular_component,Correct,C,C,5082,False,stop,cases/GO_cellular_component/GO_cellular_component_0105.md
+GO_cellular_component_0106,GO_cellular_component,Correct,B,B,5790,False,stop,cases/GO_cellular_component/GO_cellular_component_0106.md
+GO_cellular_component_0107,GO_cellular_component,Incorrect,A,B,9703,False,stop,cases/GO_cellular_component/GO_cellular_component_0107.md
+GO_cellular_component_0108,GO_cellular_component,Incorrect,A,D,9864,False,stop,cases/GO_cellular_component/GO_cellular_component_0108.md
+GO_cellular_component_0109,GO_cellular_component,Incorrect,A,C,11118,False,stop,cases/GO_cellular_component/GO_cellular_component_0109.md
+GO_cellular_component_0110,GO_cellular_component,Correct,D,D,12018,False,stop,cases/GO_cellular_component/GO_cellular_component_0110.md
+GO_cellular_component_0111,GO_cellular_component,Incorrect,B,C,6715,False,stop,cases/GO_cellular_component/GO_cellular_component_0111.md
+GO_cellular_component_0112,GO_cellular_component,Incorrect,A,D,12852,False,stop,cases/GO_cellular_component/GO_cellular_component_0112.md
+GO_cellular_component_0113,GO_cellular_component,Incorrect,A,D,11767,False,stop,cases/GO_cellular_component/GO_cellular_component_0113.md
+GO_cellular_component_0114,GO_cellular_component,Incorrect,A,B,15535,False,stop,cases/GO_cellular_component/GO_cellular_component_0114.md
+GO_cellular_component_0115,GO_cellular_component,Incorrect,D,B,16218,False,stop,cases/GO_cellular_component/GO_cellular_component_0115.md
+GO_cellular_component_0116,GO_cellular_component,Correct,A,A,15404,False,stop,cases/GO_cellular_component/GO_cellular_component_0116.md
+GO_cellular_component_0117,GO_cellular_component,Incorrect,A,B,9051,False,stop,cases/GO_cellular_component/GO_cellular_component_0117.md
+GO_cellular_component_0118,GO_cellular_component,Incorrect,D,C,7028,False,stop,cases/GO_cellular_component/GO_cellular_component_0118.md
+GO_cellular_component_0119,GO_cellular_component,Correct,A,A,6786,False,stop,cases/GO_cellular_component/GO_cellular_component_0119.md
+GO_cellular_component_0120,GO_cellular_component,Incorrect,A,D,4777,False,stop,cases/GO_cellular_component/GO_cellular_component_0120.md
+GO_cellular_component_0121,GO_cellular_component,Incorrect,A,B,8016,False,stop,cases/GO_cellular_component/GO_cellular_component_0121.md
+GO_cellular_component_0122,GO_cellular_component,Incorrect,B,C,6359,False,stop,cases/GO_cellular_component/GO_cellular_component_0122.md
+GO_cellular_component_0123,GO_cellular_component,Incorrect,C,A,15671,False,stop,cases/GO_cellular_component/GO_cellular_component_0123.md
+GO_cellular_component_0124,GO_cellular_component,Incorrect,B,C,11537,False,stop,cases/GO_cellular_component/GO_cellular_component_0124.md
+GO_cellular_component_0125,GO_cellular_component,Incorrect,D,B,16524,False,stop,cases/GO_cellular_component/GO_cellular_component_0125.md
+GO_cellular_component_0126,GO_cellular_component,Incorrect,D,C,14690,False,stop,cases/GO_cellular_component/GO_cellular_component_0126.md
+GO_cellular_component_0127,GO_cellular_component,Incorrect,C,B,5047,False,stop,cases/GO_cellular_component/GO_cellular_component_0127.md
+GO_cellular_component_0128,GO_cellular_component,Correct,A,A,5673,False,stop,cases/GO_cellular_component/GO_cellular_component_0128.md
+GO_cellular_component_0129,GO_cellular_component,Incorrect,A,C,7209,False,stop,cases/GO_cellular_component/GO_cellular_component_0129.md
+GO_cellular_component_0130,GO_cellular_component,Incorrect,B,D,16229,False,stop,cases/GO_cellular_component/GO_cellular_component_0130.md
+GO_cellular_component_0131,GO_cellular_component,Incorrect,D,C,5136,False,stop,cases/GO_cellular_component/GO_cellular_component_0131.md
+GO_cellular_component_0132,GO_cellular_component,Correct,B,B,18670,False,stop,cases/GO_cellular_component/GO_cellular_component_0132.md
+GO_cellular_component_0133,GO_cellular_component,Correct,A,A,6496,False,stop,cases/GO_cellular_component/GO_cellular_component_0133.md
+GO_cellular_component_0134,GO_cellular_component,Incorrect,B,C,5317,False,stop,cases/GO_cellular_component/GO_cellular_component_0134.md
+GO_cellular_component_0135,GO_cellular_component,Incorrect,A,D,5590,False,stop,cases/GO_cellular_component/GO_cellular_component_0135.md
+GO_cellular_component_0136,GO_cellular_component,Incorrect,B,C,8878,False,stop,cases/GO_cellular_component/GO_cellular_component_0136.md
+GO_cellular_component_0137,GO_cellular_component,Incorrect,D,C,3645,False,stop,cases/GO_cellular_component/GO_cellular_component_0137.md
+GO_cellular_component_0138,GO_cellular_component,Incorrect,B,D,12436,False,stop,cases/GO_cellular_component/GO_cellular_component_0138.md
+GO_cellular_component_0139,GO_cellular_component,Incorrect,C,D,12434,False,stop,cases/GO_cellular_component/GO_cellular_component_0139.md
+GO_cellular_component_0140,GO_cellular_component,Incorrect,A,D,8472,False,stop,cases/GO_cellular_component/GO_cellular_component_0140.md
+GO_cellular_component_0141,GO_cellular_component,Incorrect,B,C,4830,False,stop,cases/GO_cellular_component/GO_cellular_component_0141.md
+GO_cellular_component_0142,GO_cellular_component,Incorrect,A,D,9795,False,stop,cases/GO_cellular_component/GO_cellular_component_0142.md
+GO_cellular_component_0143,GO_cellular_component,Incorrect,D,C,23386,False,stop,cases/GO_cellular_component/GO_cellular_component_0143.md
+GO_cellular_component_0144,GO_cellular_component,Correct,B,B,9343,False,stop,cases/GO_cellular_component/GO_cellular_component_0144.md
+GO_cellular_component_0145,GO_cellular_component,Correct,A,A,7226,False,stop,cases/GO_cellular_component/GO_cellular_component_0145.md
+GO_cellular_component_0146,GO_cellular_component,Incorrect,A,C,8634,False,stop,cases/GO_cellular_component/GO_cellular_component_0146.md
+GO_cellular_component_0147,GO_cellular_component,Correct,A,A,12080,False,stop,cases/GO_cellular_component/GO_cellular_component_0147.md
+GO_cellular_component_0148,GO_cellular_component,Correct,D,D,15114,False,stop,cases/GO_cellular_component/GO_cellular_component_0148.md
+GO_cellular_component_0149,GO_cellular_component,Incorrect,A,D,17349,False,stop,cases/GO_cellular_component/GO_cellular_component_0149.md
+GO_cellular_component_0150,GO_cellular_component,Incorrect,A,B,9025,False,stop,cases/GO_cellular_component/GO_cellular_component_0150.md
+GO_cellular_component_0151,GO_cellular_component,Incorrect,A,C,7026,False,stop,cases/GO_cellular_component/GO_cellular_component_0151.md
+GO_cellular_component_0152,GO_cellular_component,Incorrect,D,A,7991,False,stop,cases/GO_cellular_component/GO_cellular_component_0152.md
+GO_cellular_component_0153,GO_cellular_component,Incorrect,A,C,11800,False,stop,cases/GO_cellular_component/GO_cellular_component_0153.md
+GO_cellular_component_0154,GO_cellular_component,Incorrect,C,D,13736,False,stop,cases/GO_cellular_component/GO_cellular_component_0154.md
+GO_cellular_component_0155,GO_cellular_component,Incorrect,D,C,10530,False,stop,cases/GO_cellular_component/GO_cellular_component_0155.md
+GO_cellular_component_0156,GO_cellular_component,Incorrect,D,C,12688,False,stop,cases/GO_cellular_component/GO_cellular_component_0156.md
+GO_cellular_component_0157,GO_cellular_component,Incorrect,A,C,10807,False,stop,cases/GO_cellular_component/GO_cellular_component_0157.md
+GO_cellular_component_0158,GO_cellular_component,Correct,C,C,5587,False,stop,cases/GO_cellular_component/GO_cellular_component_0158.md
+GO_cellular_component_0159,GO_cellular_component,Incorrect,A,D,10583,False,stop,cases/GO_cellular_component/GO_cellular_component_0159.md
+GO_cellular_component_0160,GO_cellular_component,No parsed answer,,D,32768,True,length,cases/GO_cellular_component/GO_cellular_component_0160.md
+GO_cellular_component_0161,GO_cellular_component,Incorrect,A,D,7577,False,stop,cases/GO_cellular_component/GO_cellular_component_0161.md
+GO_cellular_component_0162,GO_cellular_component,Incorrect,A,C,8466,False,stop,cases/GO_cellular_component/GO_cellular_component_0162.md
+GO_cellular_component_0163,GO_cellular_component,Incorrect,A,B,17815,False,stop,cases/GO_cellular_component/GO_cellular_component_0163.md
+GO_cellular_component_0164,GO_cellular_component,Incorrect,B,C,8603,False,stop,cases/GO_cellular_component/GO_cellular_component_0164.md
+GO_cellular_component_0165,GO_cellular_component,Incorrect,B,D,8057,False,stop,cases/GO_cellular_component/GO_cellular_component_0165.md
+GO_cellular_component_0166,GO_cellular_component,Correct,D,D,8833,False,stop,cases/GO_cellular_component/GO_cellular_component_0166.md
+GO_cellular_component_0167,GO_cellular_component,Correct,D,D,6000,False,stop,cases/GO_cellular_component/GO_cellular_component_0167.md
+GO_cellular_component_0168,GO_cellular_component,Incorrect,A,D,8403,False,stop,cases/GO_cellular_component/GO_cellular_component_0168.md
+GO_cellular_component_0169,GO_cellular_component,Incorrect,B,C,9186,False,stop,cases/GO_cellular_component/GO_cellular_component_0169.md
+GO_cellular_component_0170,GO_cellular_component,Incorrect,A,D,10430,False,stop,cases/GO_cellular_component/GO_cellular_component_0170.md
+GO_cellular_component_0171,GO_cellular_component,Incorrect,A,C,4767,False,stop,cases/GO_cellular_component/GO_cellular_component_0171.md
+GO_cellular_component_0172,GO_cellular_component,Incorrect,A,B,7191,False,stop,cases/GO_cellular_component/GO_cellular_component_0172.md
+GO_cellular_component_0173,GO_cellular_component,Correct,D,D,15956,False,stop,cases/GO_cellular_component/GO_cellular_component_0173.md
+GO_cellular_component_0174,GO_cellular_component,Incorrect,B,A,8180,False,stop,cases/GO_cellular_component/GO_cellular_component_0174.md
+GO_cellular_component_0175,GO_cellular_component,Incorrect,A,C,5634,False,stop,cases/GO_cellular_component/GO_cellular_component_0175.md
+GO_cellular_component_0176,GO_cellular_component,Correct,D,D,8312,False,stop,cases/GO_cellular_component/GO_cellular_component_0176.md
+GO_cellular_component_0177,GO_cellular_component,Incorrect,C,B,6233,False,stop,cases/GO_cellular_component/GO_cellular_component_0177.md
+GO_cellular_component_0178,GO_cellular_component,Correct,D,D,10188,False,stop,cases/GO_cellular_component/GO_cellular_component_0178.md
+GO_cellular_component_0179,GO_cellular_component,Incorrect,A,C,18547,False,stop,cases/GO_cellular_component/GO_cellular_component_0179.md
+GO_cellular_component_0180,GO_cellular_component,Correct,C,C,8120,False,stop,cases/GO_cellular_component/GO_cellular_component_0180.md
+GO_cellular_component_0181,GO_cellular_component,Incorrect,B,D,14589,False,stop,cases/GO_cellular_component/GO_cellular_component_0181.md
+GO_cellular_component_0182,GO_cellular_component,Incorrect,A,C,6686,False,stop,cases/GO_cellular_component/GO_cellular_component_0182.md
+GO_cellular_component_0183,GO_cellular_component,Incorrect,B,C,6918,False,stop,cases/GO_cellular_component/GO_cellular_component_0183.md
+GO_cellular_component_0184,GO_cellular_component,Incorrect,A,C,12781,False,stop,cases/GO_cellular_component/GO_cellular_component_0184.md
+GO_cellular_component_0185,GO_cellular_component,Correct,B,B,7965,False,stop,cases/GO_cellular_component/GO_cellular_component_0185.md
+GO_cellular_component_0186,GO_cellular_component,Incorrect,A,C,7411,False,stop,cases/GO_cellular_component/GO_cellular_component_0186.md
+GO_cellular_component_0187,GO_cellular_component,Incorrect,A,B,7876,False,stop,cases/GO_cellular_component/GO_cellular_component_0187.md
+GO_cellular_component_0188,GO_cellular_component,Incorrect,A,B,12400,False,stop,cases/GO_cellular_component/GO_cellular_component_0188.md
+GO_cellular_component_0189,GO_cellular_component,Incorrect,C,D,10236,False,stop,cases/GO_cellular_component/GO_cellular_component_0189.md
+GO_cellular_component_0190,GO_cellular_component,Incorrect,A,D,15346,False,stop,cases/GO_cellular_component/GO_cellular_component_0190.md
+GO_cellular_component_0191,GO_cellular_component,Incorrect,A,C,16732,False,stop,cases/GO_cellular_component/GO_cellular_component_0191.md
+GO_cellular_component_0192,GO_cellular_component,Incorrect,A,D,11594,False,stop,cases/GO_cellular_component/GO_cellular_component_0192.md
+GO_cellular_component_0193,GO_cellular_component,Incorrect,A,B,10522,False,stop,cases/GO_cellular_component/GO_cellular_component_0193.md
+GO_cellular_component_0194,GO_cellular_component,Incorrect,B,C,5910,False,stop,cases/GO_cellular_component/GO_cellular_component_0194.md
+GO_cellular_component_0195,GO_cellular_component,Incorrect,A,B,17409,False,stop,cases/GO_cellular_component/GO_cellular_component_0195.md
+GO_molecular_function_0000,GO_molecular_function,Incorrect,C,D,6482,False,stop,cases/GO_molecular_function/GO_molecular_function_0000.md
+GO_molecular_function_0001,GO_molecular_function,Incorrect,D,C,11322,False,stop,cases/GO_molecular_function/GO_molecular_function_0001.md
+GO_molecular_function_0002,GO_molecular_function,Incorrect,A,B,12233,False,stop,cases/GO_molecular_function/GO_molecular_function_0002.md
+GO_molecular_function_0003,GO_molecular_function,Correct,A,A,10388,False,stop,cases/GO_molecular_function/GO_molecular_function_0003.md
+GO_molecular_function_0004,GO_molecular_function,Incorrect,C,D,8878,False,stop,cases/GO_molecular_function/GO_molecular_function_0004.md
+GO_molecular_function_0005,GO_molecular_function,Incorrect,D,A,14949,False,stop,cases/GO_molecular_function/GO_molecular_function_0005.md
+GO_molecular_function_0006,GO_molecular_function,Correct,C,C,11892,False,stop,cases/GO_molecular_function/GO_molecular_function_0006.md
+GO_molecular_function_0007,GO_molecular_function,Incorrect,A,D,14315,False,stop,cases/GO_molecular_function/GO_molecular_function_0007.md
+GO_molecular_function_0008,GO_molecular_function,Incorrect,A,D,14009,False,stop,cases/GO_molecular_function/GO_molecular_function_0008.md
+GO_molecular_function_0009,GO_molecular_function,Correct,A,A,9713,False,stop,cases/GO_molecular_function/GO_molecular_function_0009.md
+GO_molecular_function_0010,GO_molecular_function,Incorrect,A,B,5621,False,stop,cases/GO_molecular_function/GO_molecular_function_0010.md
+GO_molecular_function_0011,GO_molecular_function,Correct,D,D,10905,False,stop,cases/GO_molecular_function/GO_molecular_function_0011.md
+GO_molecular_function_0012,GO_molecular_function,Correct,B,B,8674,False,stop,cases/GO_molecular_function/GO_molecular_function_0012.md
+GO_molecular_function_0013,GO_molecular_function,Incorrect,B,A,11980,False,stop,cases/GO_molecular_function/GO_molecular_function_0013.md
+GO_molecular_function_0014,GO_molecular_function,Incorrect,C,D,6646,False,stop,cases/GO_molecular_function/GO_molecular_function_0014.md
+GO_molecular_function_0015,GO_molecular_function,Incorrect,C,A,25394,False,stop,cases/GO_molecular_function/GO_molecular_function_0015.md
+GO_molecular_function_0016,GO_molecular_function,Incorrect,B,D,8527,False,stop,cases/GO_molecular_function/GO_molecular_function_0016.md
+GO_molecular_function_0017,GO_molecular_function,Correct,D,D,12146,False,stop,cases/GO_molecular_function/GO_molecular_function_0017.md
+GO_molecular_function_0018,GO_molecular_function,Correct,A,A,9953,False,stop,cases/GO_molecular_function/GO_molecular_function_0018.md
+GO_molecular_function_0019,GO_molecular_function,Incorrect,B,C,9761,False,stop,cases/GO_molecular_function/GO_molecular_function_0019.md
+GO_molecular_function_0020,GO_molecular_function,Incorrect,B,C,7617,False,stop,cases/GO_molecular_function/GO_molecular_function_0020.md
+GO_molecular_function_0021,GO_molecular_function,Incorrect,B,A,14681,False,stop,cases/GO_molecular_function/GO_molecular_function_0021.md
+GO_molecular_function_0022,GO_molecular_function,Incorrect,A,D,7490,False,stop,cases/GO_molecular_function/GO_molecular_function_0022.md
+GO_molecular_function_0023,GO_molecular_function,Incorrect,C,D,10485,False,stop,cases/GO_molecular_function/GO_molecular_function_0023.md
+GO_molecular_function_0024,GO_molecular_function,Incorrect,A,C,6082,False,stop,cases/GO_molecular_function/GO_molecular_function_0024.md
+GO_molecular_function_0025,GO_molecular_function,Correct,D,D,12673,False,stop,cases/GO_molecular_function/GO_molecular_function_0025.md
+GO_molecular_function_0026,GO_molecular_function,Incorrect,A,D,6036,False,stop,cases/GO_molecular_function/GO_molecular_function_0026.md
+GO_molecular_function_0027,GO_molecular_function,Incorrect,A,C,12857,False,stop,cases/GO_molecular_function/GO_molecular_function_0027.md
+GO_molecular_function_0028,GO_molecular_function,Incorrect,B,C,16261,False,stop,cases/GO_molecular_function/GO_molecular_function_0028.md
+GO_molecular_function_0029,GO_molecular_function,Incorrect,B,A,8607,False,stop,cases/GO_molecular_function/GO_molecular_function_0029.md
+GO_molecular_function_0030,GO_molecular_function,Incorrect,A,D,13129,False,stop,cases/GO_molecular_function/GO_molecular_function_0030.md
+GO_molecular_function_0031,GO_molecular_function,Incorrect,A,C,30687,False,stop,cases/GO_molecular_function/GO_molecular_function_0031.md
+GO_molecular_function_0032,GO_molecular_function,Incorrect,A,C,7272,False,stop,cases/GO_molecular_function/GO_molecular_function_0032.md
+GO_molecular_function_0033,GO_molecular_function,Incorrect,A,B,8695,False,stop,cases/GO_molecular_function/GO_molecular_function_0033.md
+GO_molecular_function_0034,GO_molecular_function,Incorrect,A,D,10339,False,stop,cases/GO_molecular_function/GO_molecular_function_0034.md
+GO_molecular_function_0035,GO_molecular_function,No parsed answer,,D,16349,False,stop,cases/GO_molecular_function/GO_molecular_function_0035.md
+GO_molecular_function_0036,GO_molecular_function,Incorrect,A,C,8098,False,stop,cases/GO_molecular_function/GO_molecular_function_0036.md
+GO_molecular_function_0037,GO_molecular_function,Incorrect,D,A,18722,False,stop,cases/GO_molecular_function/GO_molecular_function_0037.md
+GO_molecular_function_0038,GO_molecular_function,Incorrect,D,C,12519,False,stop,cases/GO_molecular_function/GO_molecular_function_0038.md
+GO_molecular_function_0039,GO_molecular_function,Incorrect,B,A,8801,False,stop,cases/GO_molecular_function/GO_molecular_function_0039.md
+GO_molecular_function_0040,GO_molecular_function,Incorrect,A,C,10251,False,stop,cases/GO_molecular_function/GO_molecular_function_0040.md
+GO_molecular_function_0041,GO_molecular_function,Correct,A,A,9545,False,stop,cases/GO_molecular_function/GO_molecular_function_0041.md
+GO_molecular_function_0042,GO_molecular_function,Incorrect,D,A,11489,False,stop,cases/GO_molecular_function/GO_molecular_function_0042.md
+GO_molecular_function_0043,GO_molecular_function,Incorrect,C,B,11069,False,stop,cases/GO_molecular_function/GO_molecular_function_0043.md
+GO_molecular_function_0044,GO_molecular_function,Incorrect,A,B,7493,False,stop,cases/GO_molecular_function/GO_molecular_function_0044.md
+GO_molecular_function_0045,GO_molecular_function,Incorrect,A,D,6986,False,stop,cases/GO_molecular_function/GO_molecular_function_0045.md
+GO_molecular_function_0046,GO_molecular_function,Incorrect,D,B,9432,False,stop,cases/GO_molecular_function/GO_molecular_function_0046.md
+GO_molecular_function_0047,GO_molecular_function,Correct,B,B,14382,False,stop,cases/GO_molecular_function/GO_molecular_function_0047.md
+GO_molecular_function_0048,GO_molecular_function,Correct,C,C,9756,False,stop,cases/GO_molecular_function/GO_molecular_function_0048.md
+GO_molecular_function_0049,GO_molecular_function,Incorrect,A,D,8756,False,stop,cases/GO_molecular_function/GO_molecular_function_0049.md
+GO_molecular_function_0050,GO_molecular_function,Correct,D,D,10988,False,stop,cases/GO_molecular_function/GO_molecular_function_0050.md
+GO_molecular_function_0051,GO_molecular_function,No parsed answer,,A,32768,True,length,cases/GO_molecular_function/GO_molecular_function_0051.md
+GO_molecular_function_0052,GO_molecular_function,Incorrect,A,B,10541,False,stop,cases/GO_molecular_function/GO_molecular_function_0052.md
+GO_molecular_function_0053,GO_molecular_function,Incorrect,D,B,22616,False,stop,cases/GO_molecular_function/GO_molecular_function_0053.md
+GO_molecular_function_0054,GO_molecular_function,Correct,B,B,4935,False,stop,cases/GO_molecular_function/GO_molecular_function_0054.md
+GO_molecular_function_0055,GO_molecular_function,Incorrect,B,D,25895,False,stop,cases/GO_molecular_function/GO_molecular_function_0055.md
+GO_molecular_function_0056,GO_molecular_function,Correct,D,D,8050,False,stop,cases/GO_molecular_function/GO_molecular_function_0056.md
+GO_molecular_function_0057,GO_molecular_function,Incorrect,A,C,13138,False,stop,cases/GO_molecular_function/GO_molecular_function_0057.md
+GO_molecular_function_0058,GO_molecular_function,Incorrect,A,B,19662,False,stop,cases/GO_molecular_function/GO_molecular_function_0058.md
+GO_molecular_function_0059,GO_molecular_function,Incorrect,B,C,21187,False,stop,cases/GO_molecular_function/GO_molecular_function_0059.md
+GO_molecular_function_0060,GO_molecular_function,Incorrect,A,B,9551,False,stop,cases/GO_molecular_function/GO_molecular_function_0060.md
+GO_molecular_function_0061,GO_molecular_function,Incorrect,C,D,10697,False,stop,cases/GO_molecular_function/GO_molecular_function_0061.md
+GO_molecular_function_0062,GO_molecular_function,Incorrect,C,A,11889,False,stop,cases/GO_molecular_function/GO_molecular_function_0062.md
+GO_molecular_function_0063,GO_molecular_function,No parsed answer,,D,32768,True,length,cases/GO_molecular_function/GO_molecular_function_0063.md
+GO_molecular_function_0064,GO_molecular_function,Incorrect,C,A,7719,False,stop,cases/GO_molecular_function/GO_molecular_function_0064.md
+GO_molecular_function_0065,GO_molecular_function,Incorrect,A,C,15468,False,stop,cases/GO_molecular_function/GO_molecular_function_0065.md
+GO_molecular_function_0066,GO_molecular_function,Incorrect,D,B,14037,False,stop,cases/GO_molecular_function/GO_molecular_function_0066.md
+GO_molecular_function_0067,GO_molecular_function,Incorrect,D,A,18728,False,stop,cases/GO_molecular_function/GO_molecular_function_0067.md
+GO_molecular_function_0068,GO_molecular_function,Incorrect,A,D,7947,False,stop,cases/GO_molecular_function/GO_molecular_function_0068.md
+GO_molecular_function_0069,GO_molecular_function,Incorrect,D,B,8292,False,stop,cases/GO_molecular_function/GO_molecular_function_0069.md
+GO_molecular_function_0070,GO_molecular_function,Correct,A,A,7838,False,stop,cases/GO_molecular_function/GO_molecular_function_0070.md
+GO_molecular_function_0071,GO_molecular_function,No parsed answer,,C,32768,True,length,cases/GO_molecular_function/GO_molecular_function_0071.md
+GO_molecular_function_0072,GO_molecular_function,Correct,D,D,5390,False,stop,cases/GO_molecular_function/GO_molecular_function_0072.md
+GO_molecular_function_0073,GO_molecular_function,Incorrect,B,A,4234,False,stop,cases/GO_molecular_function/GO_molecular_function_0073.md
+GO_molecular_function_0074,GO_molecular_function,Incorrect,B,C,7312,False,stop,cases/GO_molecular_function/GO_molecular_function_0074.md
+GO_molecular_function_0075,GO_molecular_function,Incorrect,C,D,14477,False,stop,cases/GO_molecular_function/GO_molecular_function_0075.md
+GO_molecular_function_0076,GO_molecular_function,Incorrect,C,A,13201,False,stop,cases/GO_molecular_function/GO_molecular_function_0076.md
+GO_molecular_function_0077,GO_molecular_function,Correct,A,A,17479,False,stop,cases/GO_molecular_function/GO_molecular_function_0077.md
+GO_molecular_function_0078,GO_molecular_function,Incorrect,B,A,16593,False,stop,cases/GO_molecular_function/GO_molecular_function_0078.md
+GO_molecular_function_0079,GO_molecular_function,Correct,B,B,8709,False,stop,cases/GO_molecular_function/GO_molecular_function_0079.md
+GO_molecular_function_0080,GO_molecular_function,Correct,A,A,22990,False,stop,cases/GO_molecular_function/GO_molecular_function_0080.md
+GO_molecular_function_0081,GO_molecular_function,Incorrect,A,B,11292,False,stop,cases/GO_molecular_function/GO_molecular_function_0081.md
+GO_molecular_function_0082,GO_molecular_function,Incorrect,C,A,9458,False,stop,cases/GO_molecular_function/GO_molecular_function_0082.md
+GO_molecular_function_0083,GO_molecular_function,Incorrect,B,D,9295,False,stop,cases/GO_molecular_function/GO_molecular_function_0083.md
+GO_molecular_function_0084,GO_molecular_function,Correct,A,A,8303,False,stop,cases/GO_molecular_function/GO_molecular_function_0084.md
+GO_molecular_function_0085,GO_molecular_function,Correct,B,B,7553,False,stop,cases/GO_molecular_function/GO_molecular_function_0085.md
+GO_molecular_function_0086,GO_molecular_function,Incorrect,D,C,9797,False,stop,cases/GO_molecular_function/GO_molecular_function_0086.md
+GO_molecular_function_0087,GO_molecular_function,Incorrect,A,B,4655,False,stop,cases/GO_molecular_function/GO_molecular_function_0087.md
+GO_molecular_function_0088,GO_molecular_function,Incorrect,B,D,10586,False,stop,cases/GO_molecular_function/GO_molecular_function_0088.md
+GO_molecular_function_0089,GO_molecular_function,Incorrect,A,C,12845,False,stop,cases/GO_molecular_function/GO_molecular_function_0089.md
+GO_molecular_function_0090,GO_molecular_function,Correct,D,D,11177,False,stop,cases/GO_molecular_function/GO_molecular_function_0090.md
+GO_molecular_function_0091,GO_molecular_function,Incorrect,A,D,16206,False,stop,cases/GO_molecular_function/GO_molecular_function_0091.md
+GO_molecular_function_0092,GO_molecular_function,Correct,A,A,12574,False,stop,cases/GO_molecular_function/GO_molecular_function_0092.md
+GO_molecular_function_0093,GO_molecular_function,Incorrect,B,A,13883,False,stop,cases/GO_molecular_function/GO_molecular_function_0093.md
+GO_molecular_function_0094,GO_molecular_function,Correct,B,B,6120,False,stop,cases/GO_molecular_function/GO_molecular_function_0094.md
+GO_molecular_function_0095,GO_molecular_function,Incorrect,A,D,19418,False,stop,cases/GO_molecular_function/GO_molecular_function_0095.md
+GO_molecular_function_0096,GO_molecular_function,Incorrect,D,B,10791,False,stop,cases/GO_molecular_function/GO_molecular_function_0096.md
+GO_molecular_function_0097,GO_molecular_function,Incorrect,A,B,13661,False,stop,cases/GO_molecular_function/GO_molecular_function_0097.md
+GO_molecular_function_0098,GO_molecular_function,Incorrect,B,A,8313,False,stop,cases/GO_molecular_function/GO_molecular_function_0098.md
+GO_molecular_function_0099,GO_molecular_function,Incorrect,A,B,6706,False,stop,cases/GO_molecular_function/GO_molecular_function_0099.md
+GO_molecular_function_0100,GO_molecular_function,Incorrect,B,C,10024,False,stop,cases/GO_molecular_function/GO_molecular_function_0100.md
+GO_molecular_function_0101,GO_molecular_function,No parsed answer,,A,32768,True,length,cases/GO_molecular_function/GO_molecular_function_0101.md
+GO_molecular_function_0102,GO_molecular_function,Incorrect,B,C,8074,False,stop,cases/GO_molecular_function/GO_molecular_function_0102.md
+GO_molecular_function_0103,GO_molecular_function,Incorrect,A,B,11693,False,stop,cases/GO_molecular_function/GO_molecular_function_0103.md
+GO_molecular_function_0104,GO_molecular_function,Correct,A,A,6912,False,stop,cases/GO_molecular_function/GO_molecular_function_0104.md
+GO_molecular_function_0105,GO_molecular_function,Incorrect,A,D,15463,False,stop,cases/GO_molecular_function/GO_molecular_function_0105.md
+GO_molecular_function_0106,GO_molecular_function,Incorrect,C,A,7239,False,stop,cases/GO_molecular_function/GO_molecular_function_0106.md
+GO_molecular_function_0107,GO_molecular_function,Incorrect,A,D,18594,False,stop,cases/GO_molecular_function/GO_molecular_function_0107.md
+GO_molecular_function_0108,GO_molecular_function,Incorrect,B,C,12907,False,stop,cases/GO_molecular_function/GO_molecular_function_0108.md
+GO_molecular_function_0109,GO_molecular_function,Correct,D,D,12103,False,stop,cases/GO_molecular_function/GO_molecular_function_0109.md
+GO_molecular_function_0110,GO_molecular_function,Incorrect,A,D,12583,False,stop,cases/GO_molecular_function/GO_molecular_function_0110.md
+GO_molecular_function_0111,GO_molecular_function,Incorrect,C,D,6490,False,stop,cases/GO_molecular_function/GO_molecular_function_0111.md
+GO_molecular_function_0112,GO_molecular_function,Incorrect,A,B,8242,False,stop,cases/GO_molecular_function/GO_molecular_function_0112.md
+GO_molecular_function_0113,GO_molecular_function,Correct,D,D,11264,False,stop,cases/GO_molecular_function/GO_molecular_function_0113.md
+GO_molecular_function_0114,GO_molecular_function,Correct,D,D,17714,False,stop,cases/GO_molecular_function/GO_molecular_function_0114.md
+GO_molecular_function_0115,GO_molecular_function,Correct,B,B,11048,False,stop,cases/GO_molecular_function/GO_molecular_function_0115.md
+GO_molecular_function_0116,GO_molecular_function,Incorrect,D,C,6015,False,stop,cases/GO_molecular_function/GO_molecular_function_0116.md
+GO_molecular_function_0117,GO_molecular_function,Incorrect,D,A,8768,False,stop,cases/GO_molecular_function/GO_molecular_function_0117.md
+GO_molecular_function_0118,GO_molecular_function,Incorrect,A,C,16456,False,stop,cases/GO_molecular_function/GO_molecular_function_0118.md
+GO_molecular_function_0119,GO_molecular_function,Incorrect,D,C,11033,False,stop,cases/GO_molecular_function/GO_molecular_function_0119.md
+GO_molecular_function_0120,GO_molecular_function,Correct,B,B,8983,False,stop,cases/GO_molecular_function/GO_molecular_function_0120.md
+GO_molecular_function_0121,GO_molecular_function,Incorrect,A,B,21233,False,stop,cases/GO_molecular_function/GO_molecular_function_0121.md
+GO_molecular_function_0122,GO_molecular_function,Correct,A,A,13604,False,stop,cases/GO_molecular_function/GO_molecular_function_0122.md
+GO_molecular_function_0123,GO_molecular_function,Incorrect,A,D,8327,False,stop,cases/GO_molecular_function/GO_molecular_function_0123.md
+GO_molecular_function_0124,GO_molecular_function,Incorrect,D,B,8028,False,stop,cases/GO_molecular_function/GO_molecular_function_0124.md
+GO_molecular_function_0125,GO_molecular_function,Incorrect,B,C,9070,False,stop,cases/GO_molecular_function/GO_molecular_function_0125.md
+GO_molecular_function_0126,GO_molecular_function,Incorrect,D,A,21571,False,stop,cases/GO_molecular_function/GO_molecular_function_0126.md
+GO_molecular_function_0127,GO_molecular_function,Incorrect,D,C,9502,False,stop,cases/GO_molecular_function/GO_molecular_function_0127.md
+GO_molecular_function_0128,GO_molecular_function,Incorrect,A,D,9332,False,stop,cases/GO_molecular_function/GO_molecular_function_0128.md
+GO_molecular_function_0129,GO_molecular_function,Incorrect,B,C,4209,False,stop,cases/GO_molecular_function/GO_molecular_function_0129.md
+GO_molecular_function_0130,GO_molecular_function,Incorrect,A,D,11424,False,stop,cases/GO_molecular_function/GO_molecular_function_0130.md
+GO_molecular_function_0131,GO_molecular_function,Correct,C,C,9655,False,stop,cases/GO_molecular_function/GO_molecular_function_0131.md
+GO_molecular_function_0132,GO_molecular_function,Incorrect,A,D,7832,False,stop,cases/GO_molecular_function/GO_molecular_function_0132.md
+GO_molecular_function_0133,GO_molecular_function,Incorrect,A,B,7209,False,stop,cases/GO_molecular_function/GO_molecular_function_0133.md
+GO_molecular_function_0134,GO_molecular_function,Incorrect,D,B,5834,False,stop,cases/GO_molecular_function/GO_molecular_function_0134.md
+GO_molecular_function_0135,GO_molecular_function,Incorrect,A,C,9722,False,stop,cases/GO_molecular_function/GO_molecular_function_0135.md
+GO_molecular_function_0136,GO_molecular_function,Incorrect,A,C,7484,False,stop,cases/GO_molecular_function/GO_molecular_function_0136.md
+GO_molecular_function_0137,GO_molecular_function,Incorrect,B,D,9882,False,stop,cases/GO_molecular_function/GO_molecular_function_0137.md
+GO_molecular_function_0138,GO_molecular_function,Incorrect,C,B,10132,False,stop,cases/GO_molecular_function/GO_molecular_function_0138.md
+GO_molecular_function_0139,GO_molecular_function,Incorrect,A,D,7777,False,stop,cases/GO_molecular_function/GO_molecular_function_0139.md
+GO_molecular_function_0140,GO_molecular_function,Incorrect,B,D,6379,False,stop,cases/GO_molecular_function/GO_molecular_function_0140.md
+GO_molecular_function_0141,GO_molecular_function,Correct,C,C,11637,False,stop,cases/GO_molecular_function/GO_molecular_function_0141.md
+GO_molecular_function_0142,GO_molecular_function,Incorrect,C,B,7023,False,stop,cases/GO_molecular_function/GO_molecular_function_0142.md
+GO_molecular_function_0143,GO_molecular_function,Incorrect,B,C,13344,False,stop,cases/GO_molecular_function/GO_molecular_function_0143.md
+GO_molecular_function_0144,GO_molecular_function,Incorrect,A,D,6786,False,stop,cases/GO_molecular_function/GO_molecular_function_0144.md
+GO_molecular_function_0145,GO_molecular_function,Incorrect,A,B,8021,False,stop,cases/GO_molecular_function/GO_molecular_function_0145.md
+GO_molecular_function_0146,GO_molecular_function,Incorrect,A,D,15067,False,stop,cases/GO_molecular_function/GO_molecular_function_0146.md
+GO_molecular_function_0147,GO_molecular_function,Incorrect,A,D,11582,False,stop,cases/GO_molecular_function/GO_molecular_function_0147.md
+GO_molecular_function_0148,GO_molecular_function,Correct,A,A,7238,False,stop,cases/GO_molecular_function/GO_molecular_function_0148.md
+GO_molecular_function_0150,GO_molecular_function,Incorrect,A,B,12651,False,stop,cases/GO_molecular_function/GO_molecular_function_0150.md
+GO_molecular_function_0151,GO_molecular_function,Incorrect,D,A,12581,False,stop,cases/GO_molecular_function/GO_molecular_function_0151.md
+GO_molecular_function_0152,GO_molecular_function,Incorrect,A,C,15762,False,stop,cases/GO_molecular_function/GO_molecular_function_0152.md
+GO_molecular_function_0153,GO_molecular_function,Incorrect,B,C,14602,False,stop,cases/GO_molecular_function/GO_molecular_function_0153.md
+GO_molecular_function_0154,GO_molecular_function,No parsed answer,,D,32768,True,length,cases/GO_molecular_function/GO_molecular_function_0154.md
+GO_molecular_function_0155,GO_molecular_function,Incorrect,B,D,6689,False,stop,cases/GO_molecular_function/GO_molecular_function_0155.md
+GO_molecular_function_0156,GO_molecular_function,Correct,D,D,5287,False,stop,cases/GO_molecular_function/GO_molecular_function_0156.md
+GO_molecular_function_0157,GO_molecular_function,Incorrect,D,C,9945,False,stop,cases/GO_molecular_function/GO_molecular_function_0157.md
+GO_molecular_function_0158,GO_molecular_function,Correct,A,A,18871,False,stop,cases/GO_molecular_function/GO_molecular_function_0158.md
+GO_molecular_function_0159,GO_molecular_function,Incorrect,A,B,10332,False,stop,cases/GO_molecular_function/GO_molecular_function_0159.md
+GO_molecular_function_0160,GO_molecular_function,Incorrect,B,A,9652,False,stop,cases/GO_molecular_function/GO_molecular_function_0160.md
+GO_molecular_function_0161,GO_molecular_function,Incorrect,D,A,5630,False,stop,cases/GO_molecular_function/GO_molecular_function_0161.md
+GO_molecular_function_0162,GO_molecular_function,Incorrect,A,B,7390,False,stop,cases/GO_molecular_function/GO_molecular_function_0162.md
+GO_molecular_function_0163,GO_molecular_function,Incorrect,C,B,12789,False,stop,cases/GO_molecular_function/GO_molecular_function_0163.md
+GO_molecular_function_0164,GO_molecular_function,Incorrect,A,D,5956,False,stop,cases/GO_molecular_function/GO_molecular_function_0164.md
+GO_molecular_function_0165,GO_molecular_function,Incorrect,A,B,6683,False,stop,cases/GO_molecular_function/GO_molecular_function_0165.md
+GO_molecular_function_0167,GO_molecular_function,Incorrect,A,B,11619,False,stop,cases/GO_molecular_function/GO_molecular_function_0167.md
+GO_molecular_function_0168,GO_molecular_function,Correct,D,D,8530,False,stop,cases/GO_molecular_function/GO_molecular_function_0168.md
+GO_molecular_function_0169,GO_molecular_function,Correct,B,B,17278,False,stop,cases/GO_molecular_function/GO_molecular_function_0169.md
+GO_molecular_function_0170,GO_molecular_function,Incorrect,D,B,14777,False,stop,cases/GO_molecular_function/GO_molecular_function_0170.md
+GO_molecular_function_0171,GO_molecular_function,Correct,A,A,25930,False,stop,cases/GO_molecular_function/GO_molecular_function_0171.md
+GO_molecular_function_0172,GO_molecular_function,Correct,C,C,7145,False,stop,cases/GO_molecular_function/GO_molecular_function_0172.md
+GO_molecular_function_0173,GO_molecular_function,Incorrect,C,B,9184,False,stop,cases/GO_molecular_function/GO_molecular_function_0173.md
+GO_molecular_function_0174,GO_molecular_function,Incorrect,D,B,7199,False,stop,cases/GO_molecular_function/GO_molecular_function_0174.md
+GO_molecular_function_0175,GO_molecular_function,Correct,B,B,8207,False,stop,cases/GO_molecular_function/GO_molecular_function_0175.md
+GO_molecular_function_0176,GO_molecular_function,Incorrect,D,A,18110,False,stop,cases/GO_molecular_function/GO_molecular_function_0176.md
+GO_molecular_function_0177,GO_molecular_function,Incorrect,A,B,11017,False,stop,cases/GO_molecular_function/GO_molecular_function_0177.md
+GO_molecular_function_0178,GO_molecular_function,Incorrect,D,C,10543,False,stop,cases/GO_molecular_function/GO_molecular_function_0178.md
+GO_molecular_function_0179,GO_molecular_function,Incorrect,C,A,18332,False,stop,cases/GO_molecular_function/GO_molecular_function_0179.md
+GO_molecular_function_0180,GO_molecular_function,Incorrect,D,B,21011,False,stop,cases/GO_molecular_function/GO_molecular_function_0180.md
+GO_molecular_function_0181,GO_molecular_function,Incorrect,C,B,6006,False,stop,cases/GO_molecular_function/GO_molecular_function_0181.md
+GO_molecular_function_0182,GO_molecular_function,Incorrect,C,D,6676,False,stop,cases/GO_molecular_function/GO_molecular_function_0182.md
+GO_molecular_function_0183,GO_molecular_function,Incorrect,A,C,13124,False,stop,cases/GO_molecular_function/GO_molecular_function_0183.md
+GO_molecular_function_0184,GO_molecular_function,Incorrect,D,A,16166,False,stop,cases/GO_molecular_function/GO_molecular_function_0184.md
+GO_molecular_function_0185,GO_molecular_function,Incorrect,A,C,15270,False,stop,cases/GO_molecular_function/GO_molecular_function_0185.md
+GO_molecular_function_0186,GO_molecular_function,Incorrect,D,A,8823,False,stop,cases/GO_molecular_function/GO_molecular_function_0186.md
+GO_molecular_function_0187,GO_molecular_function,Correct,A,A,5034,False,stop,cases/GO_molecular_function/GO_molecular_function_0187.md
+GO_molecular_function_0188,GO_molecular_function,Correct,D,D,7508,False,stop,cases/GO_molecular_function/GO_molecular_function_0188.md
+GO_molecular_function_0189,GO_molecular_function,No parsed answer,,D,32768,True,length,cases/GO_molecular_function/GO_molecular_function_0189.md
+GO_molecular_function_0190,GO_molecular_function,Incorrect,A,D,6591,False,stop,cases/GO_molecular_function/GO_molecular_function_0190.md
+GO_molecular_function_0192,GO_molecular_function,Correct,C,C,9060,False,stop,cases/GO_molecular_function/GO_molecular_function_0192.md
+GO_molecular_function_0193,GO_molecular_function,Incorrect,D,A,9753,False,stop,cases/GO_molecular_function/GO_molecular_function_0193.md
+GO_molecular_function_0194,GO_molecular_function,Incorrect,A,D,8544,False,stop,cases/GO_molecular_function/GO_molecular_function_0194.md
+active_site_0000,active_site,Incorrect,B,C,30601,False,stop,cases/active_site/active_site_0000.md
+active_site_0001,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0001.md
+active_site_0002,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0002.md
+active_site_0003,active_site,Incorrect,D,C,32109,False,stop,cases/active_site/active_site_0003.md
+active_site_0004,active_site,Incorrect,C,B,12610,False,stop,cases/active_site/active_site_0004.md
+active_site_0005,active_site,No parsed answer,,C,32768,True,length,cases/active_site/active_site_0005.md
+active_site_0006,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0006.md
+active_site_0007,active_site,Correct,D,D,22773,False,stop,cases/active_site/active_site_0007.md
+active_site_0008,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0008.md
+active_site_0009,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0009.md
+active_site_0010,active_site,No parsed answer,,C,32768,True,length,cases/active_site/active_site_0010.md
+active_site_0011,active_site,No parsed answer,,C,32768,True,length,cases/active_site/active_site_0011.md
+active_site_0012,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0012.md
+active_site_0013,active_site,Incorrect,A,B,10654,False,stop,cases/active_site/active_site_0013.md
+active_site_0014,active_site,Incorrect,A,B,13378,False,stop,cases/active_site/active_site_0014.md
+active_site_0015,active_site,No parsed answer,,B,32768,True,length,cases/active_site/active_site_0015.md
+active_site_0016,active_site,Incorrect,A,B,12644,False,stop,cases/active_site/active_site_0016.md
+active_site_0017,active_site,Correct,D,D,8421,False,stop,cases/active_site/active_site_0017.md
+active_site_0018,active_site,Correct,C,C,6428,False,stop,cases/active_site/active_site_0018.md
+active_site_0019,active_site,Incorrect,D,C,31054,False,stop,cases/active_site/active_site_0019.md
+active_site_0020,active_site,Incorrect,C,D,21362,False,stop,cases/active_site/active_site_0020.md
+active_site_0021,active_site,Incorrect,D,A,31456,False,stop,cases/active_site/active_site_0021.md
+active_site_0022,active_site,Incorrect,A,B,8959,False,stop,cases/active_site/active_site_0022.md
+active_site_0023,active_site,No parsed answer,,B,32768,True,length,cases/active_site/active_site_0023.md
+active_site_0024,active_site,Incorrect,A,D,16075,False,stop,cases/active_site/active_site_0024.md
+active_site_0025,active_site,Incorrect,D,B,11941,False,stop,cases/active_site/active_site_0025.md
+active_site_0026,active_site,Incorrect,B,C,22443,False,stop,cases/active_site/active_site_0026.md
+active_site_0027,active_site,Incorrect,A,B,20781,False,stop,cases/active_site/active_site_0027.md
+active_site_0028,active_site,Incorrect,B,C,26120,False,stop,cases/active_site/active_site_0028.md
+active_site_0029,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0029.md
+active_site_0030,active_site,Incorrect,D,A,22709,False,stop,cases/active_site/active_site_0030.md
+active_site_0031,active_site,Incorrect,A,C,24919,False,stop,cases/active_site/active_site_0031.md
+active_site_0032,active_site,Incorrect,B,C,28853,False,stop,cases/active_site/active_site_0032.md
+active_site_0033,active_site,Incorrect,A,C,16827,False,stop,cases/active_site/active_site_0033.md
+active_site_0034,active_site,Incorrect,A,C,12528,False,stop,cases/active_site/active_site_0034.md
+active_site_0035,active_site,Correct,A,A,3144,False,stop,cases/active_site/active_site_0035.md
+active_site_0036,active_site,Correct,B,B,21157,False,stop,cases/active_site/active_site_0036.md
+active_site_0037,active_site,Incorrect,D,B,19371,False,stop,cases/active_site/active_site_0037.md
+active_site_0038,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0038.md
+active_site_0039,active_site,Incorrect,A,D,24924,False,stop,cases/active_site/active_site_0039.md
+active_site_0040,active_site,Incorrect,A,C,16484,False,stop,cases/active_site/active_site_0040.md
+active_site_0041,active_site,Incorrect,A,D,10832,False,stop,cases/active_site/active_site_0041.md
+active_site_0042,active_site,Incorrect,C,D,19230,False,stop,cases/active_site/active_site_0042.md
+active_site_0047,active_site,No parsed answer,,C,32768,True,length,cases/active_site/active_site_0047.md
+active_site_0048,active_site,Incorrect,D,C,32441,False,stop,cases/active_site/active_site_0048.md
+active_site_0049,active_site,Incorrect,D,B,28109,False,stop,cases/active_site/active_site_0049.md
+active_site_0050,active_site,Incorrect,D,B,31233,False,stop,cases/active_site/active_site_0050.md
+active_site_0051,active_site,Incorrect,B,A,7179,False,stop,cases/active_site/active_site_0051.md
+active_site_0052,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0052.md
+active_site_0053,active_site,Incorrect,B,D,8839,False,stop,cases/active_site/active_site_0053.md
+active_site_0054,active_site,Incorrect,A,C,22053,False,stop,cases/active_site/active_site_0054.md
+active_site_0055,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0055.md
+active_site_0056,active_site,Incorrect,A,D,27052,False,stop,cases/active_site/active_site_0056.md
+active_site_0057,active_site,Incorrect,A,B,14099,False,stop,cases/active_site/active_site_0057.md
+active_site_0058,active_site,Correct,D,D,28967,False,stop,cases/active_site/active_site_0058.md
+active_site_0059,active_site,No parsed answer,,B,32768,True,length,cases/active_site/active_site_0059.md
+active_site_0060,active_site,Incorrect,D,B,9623,False,stop,cases/active_site/active_site_0060.md
+active_site_0061,active_site,Incorrect,D,B,17448,False,stop,cases/active_site/active_site_0061.md
+active_site_0062,active_site,Incorrect,C,D,22409,False,stop,cases/active_site/active_site_0062.md
+active_site_0063,active_site,Correct,D,D,28601,False,stop,cases/active_site/active_site_0063.md
+active_site_0064,active_site,No parsed answer,,B,32768,True,length,cases/active_site/active_site_0064.md
+active_site_0065,active_site,Incorrect,A,C,11074,False,stop,cases/active_site/active_site_0065.md
+active_site_0066,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0066.md
+active_site_0067,active_site,Correct,D,D,27863,False,stop,cases/active_site/active_site_0067.md
+active_site_0068,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0068.md
+active_site_0069,active_site,Incorrect,A,B,29412,False,stop,cases/active_site/active_site_0069.md
+active_site_0070,active_site,Incorrect,D,B,21072,False,stop,cases/active_site/active_site_0070.md
+active_site_0071,active_site,Incorrect,D,C,24067,False,stop,cases/active_site/active_site_0071.md
+active_site_0072,active_site,Incorrect,B,C,7755,False,stop,cases/active_site/active_site_0072.md
+active_site_0073,active_site,Incorrect,A,C,12759,False,stop,cases/active_site/active_site_0073.md
+active_site_0074,active_site,Incorrect,D,C,23504,False,stop,cases/active_site/active_site_0074.md
+active_site_0075,active_site,Incorrect,B,C,11200,False,stop,cases/active_site/active_site_0075.md
+active_site_0077,active_site,Incorrect,A,B,30361,False,stop,cases/active_site/active_site_0077.md
+active_site_0078,active_site,Incorrect,A,B,16962,False,stop,cases/active_site/active_site_0078.md
+active_site_0079,active_site,Incorrect,D,C,23623,False,stop,cases/active_site/active_site_0079.md
+active_site_0080,active_site,Incorrect,C,D,17618,False,stop,cases/active_site/active_site_0080.md
+active_site_0081,active_site,No parsed answer,,B,32768,True,length,cases/active_site/active_site_0081.md
+active_site_0082,active_site,No parsed answer,,C,32768,True,length,cases/active_site/active_site_0082.md
+active_site_0083,active_site,Incorrect,C,D,18282,False,stop,cases/active_site/active_site_0083.md
+active_site_0084,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0084.md
+active_site_0085,active_site,Incorrect,A,C,9627,False,stop,cases/active_site/active_site_0085.md
+active_site_0086,active_site,Correct,D,D,19240,False,stop,cases/active_site/active_site_0086.md
+active_site_0087,active_site,Incorrect,A,D,17028,False,stop,cases/active_site/active_site_0087.md
+active_site_0088,active_site,Incorrect,C,A,17355,False,stop,cases/active_site/active_site_0088.md
+active_site_0089,active_site,Correct,A,A,31056,False,stop,cases/active_site/active_site_0089.md
+active_site_0090,active_site,Incorrect,D,B,12582,False,stop,cases/active_site/active_site_0090.md
+active_site_0091,active_site,Incorrect,A,C,20893,False,stop,cases/active_site/active_site_0091.md
+active_site_0092,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0092.md
+active_site_0093,active_site,No parsed answer,,C,32768,True,length,cases/active_site/active_site_0093.md
+active_site_0094,active_site,Incorrect,A,D,12749,False,stop,cases/active_site/active_site_0094.md
+active_site_0095,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0095.md
+active_site_0096,active_site,Incorrect,D,C,14230,False,stop,cases/active_site/active_site_0096.md
+active_site_0097,active_site,Incorrect,D,B,18144,False,stop,cases/active_site/active_site_0097.md
+active_site_0098,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0098.md
+active_site_0099,active_site,Incorrect,A,B,11853,False,stop,cases/active_site/active_site_0099.md
+active_site_0100,active_site,No parsed answer,,A,12847,False,stop,cases/active_site/active_site_0100.md
+active_site_0101,active_site,Incorrect,D,A,29499,False,stop,cases/active_site/active_site_0101.md
+active_site_0102,active_site,Incorrect,A,B,26252,False,stop,cases/active_site/active_site_0102.md
+active_site_0106,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0106.md
+active_site_0107,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0107.md
+active_site_0108,active_site,Incorrect,D,A,29442,False,stop,cases/active_site/active_site_0108.md
+active_site_0109,active_site,Incorrect,C,A,19181,False,stop,cases/active_site/active_site_0109.md
+active_site_0110,active_site,Incorrect,D,A,19037,False,stop,cases/active_site/active_site_0110.md
+active_site_0111,active_site,No parsed answer,,B,32768,True,length,cases/active_site/active_site_0111.md
+active_site_0112,active_site,Incorrect,D,C,27472,False,stop,cases/active_site/active_site_0112.md
+active_site_0113,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0113.md
+active_site_0114,active_site,No parsed answer,,C,32768,True,length,cases/active_site/active_site_0114.md
+active_site_0115,active_site,Incorrect,D,C,29060,False,stop,cases/active_site/active_site_0115.md
+active_site_0116,active_site,Incorrect,D,A,24777,False,stop,cases/active_site/active_site_0116.md
+active_site_0117,active_site,Incorrect,A,C,16178,False,stop,cases/active_site/active_site_0117.md
+active_site_0118,active_site,No parsed answer,,C,32768,True,length,cases/active_site/active_site_0118.md
+active_site_0119,active_site,Incorrect,C,B,16301,False,stop,cases/active_site/active_site_0119.md
+active_site_0120,active_site,Incorrect,C,B,24942,False,stop,cases/active_site/active_site_0120.md
+active_site_0121,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0121.md
+active_site_0122,active_site,Incorrect,C,B,20040,False,stop,cases/active_site/active_site_0122.md
+active_site_0123,active_site,Correct,A,A,28163,False,stop,cases/active_site/active_site_0123.md
+active_site_0124,active_site,Correct,B,B,28338,False,stop,cases/active_site/active_site_0124.md
+active_site_0125,active_site,Incorrect,B,A,28053,False,stop,cases/active_site/active_site_0125.md
+active_site_0127,active_site,Incorrect,A,C,32334,False,stop,cases/active_site/active_site_0127.md
+active_site_0128,active_site,No parsed answer,,B,32768,True,length,cases/active_site/active_site_0128.md
+active_site_0129,active_site,Incorrect,A,D,24680,False,stop,cases/active_site/active_site_0129.md
+active_site_0130,active_site,Correct,A,A,29449,False,stop,cases/active_site/active_site_0130.md
+active_site_0131,active_site,Correct,C,C,10254,False,stop,cases/active_site/active_site_0131.md
+active_site_0132,active_site,Incorrect,D,B,16060,False,stop,cases/active_site/active_site_0132.md
+active_site_0133,active_site,Incorrect,A,B,23933,False,stop,cases/active_site/active_site_0133.md
+active_site_0135,active_site,Incorrect,C,D,11363,False,stop,cases/active_site/active_site_0135.md
+active_site_0136,active_site,Incorrect,A,D,16735,False,stop,cases/active_site/active_site_0136.md
+active_site_0137,active_site,Correct,B,B,23945,False,stop,cases/active_site/active_site_0137.md
+active_site_0138,active_site,No parsed answer,,A,32768,True,length,cases/active_site/active_site_0138.md
+active_site_0139,active_site,No parsed answer,,D,32768,True,length,cases/active_site/active_site_0139.md
+active_site_0140,active_site,Incorrect,A,B,25803,False,stop,cases/active_site/active_site_0140.md
+active_site_0141,active_site,No parsed answer,,C,32768,True,length,cases/active_site/active_site_0141.md
+active_site_0142,active_site,Incorrect,D,B,12256,False,stop,cases/active_site/active_site_0142.md
+active_site_0143,active_site,Incorrect,A,C,9493,False,stop,cases/active_site/active_site_0143.md
+active_site_0144,active_site,Incorrect,A,B,27682,False,stop,cases/active_site/active_site_0144.md
+active_site_0145,active_site,Correct,B,B,15221,False,stop,cases/active_site/active_site_0145.md
+catalytic_activity_0000,catalytic_activity,Incorrect,A,D,6972,False,stop,cases/catalytic_activity/catalytic_activity_0000.md
+catalytic_activity_0001,catalytic_activity,Incorrect,A,C,6646,False,stop,cases/catalytic_activity/catalytic_activity_0001.md
+catalytic_activity_0002,catalytic_activity,No parsed answer,,D,32768,True,length,cases/catalytic_activity/catalytic_activity_0002.md
+catalytic_activity_0003,catalytic_activity,Correct,A,A,15371,False,stop,cases/catalytic_activity/catalytic_activity_0003.md
+catalytic_activity_0005,catalytic_activity,Incorrect,A,B,14708,False,stop,cases/catalytic_activity/catalytic_activity_0005.md
+catalytic_activity_0006,catalytic_activity,Incorrect,A,B,9761,False,stop,cases/catalytic_activity/catalytic_activity_0006.md
+catalytic_activity_0007,catalytic_activity,Incorrect,A,D,10291,False,stop,cases/catalytic_activity/catalytic_activity_0007.md
+catalytic_activity_0008,catalytic_activity,Correct,A,A,12117,False,stop,cases/catalytic_activity/catalytic_activity_0008.md
+catalytic_activity_0009,catalytic_activity,Incorrect,A,C,15644,False,stop,cases/catalytic_activity/catalytic_activity_0009.md
+catalytic_activity_0011,catalytic_activity,Incorrect,A,B,10945,False,stop,cases/catalytic_activity/catalytic_activity_0011.md
+catalytic_activity_0013,catalytic_activity,No parsed answer,,D,32768,True,length,cases/catalytic_activity/catalytic_activity_0013.md
+catalytic_activity_0014,catalytic_activity,Correct,A,A,8155,False,stop,cases/catalytic_activity/catalytic_activity_0014.md
+catalytic_activity_0016,catalytic_activity,Incorrect,D,A,8386,False,stop,cases/catalytic_activity/catalytic_activity_0016.md
+catalytic_activity_0017,catalytic_activity,Incorrect,A,D,12650,False,stop,cases/catalytic_activity/catalytic_activity_0017.md
+catalytic_activity_0019,catalytic_activity,Incorrect,A,D,18965,False,stop,cases/catalytic_activity/catalytic_activity_0019.md
+catalytic_activity_0020,catalytic_activity,Incorrect,C,A,11401,False,stop,cases/catalytic_activity/catalytic_activity_0020.md
+catalytic_activity_0021,catalytic_activity,Correct,A,A,16138,False,stop,cases/catalytic_activity/catalytic_activity_0021.md
+catalytic_activity_0022,catalytic_activity,Incorrect,D,A,14249,False,stop,cases/catalytic_activity/catalytic_activity_0022.md
+catalytic_activity_0024,catalytic_activity,Incorrect,A,B,6152,False,stop,cases/catalytic_activity/catalytic_activity_0024.md
+catalytic_activity_0025,catalytic_activity,Incorrect,D,B,17053,False,stop,cases/catalytic_activity/catalytic_activity_0025.md
+catalytic_activity_0026,catalytic_activity,Incorrect,A,D,8792,False,stop,cases/catalytic_activity/catalytic_activity_0026.md
+catalytic_activity_0027,catalytic_activity,Incorrect,A,C,10877,False,stop,cases/catalytic_activity/catalytic_activity_0027.md
+catalytic_activity_0028,catalytic_activity,Correct,A,A,11694,False,stop,cases/catalytic_activity/catalytic_activity_0028.md
+catalytic_activity_0029,catalytic_activity,Incorrect,A,B,9504,False,stop,cases/catalytic_activity/catalytic_activity_0029.md
+catalytic_activity_0030,catalytic_activity,No parsed answer,,C,32768,True,length,cases/catalytic_activity/catalytic_activity_0030.md
+catalytic_activity_0031,catalytic_activity,Incorrect,A,D,14596,False,stop,cases/catalytic_activity/catalytic_activity_0031.md
+catalytic_activity_0032,catalytic_activity,Incorrect,C,B,10226,False,stop,cases/catalytic_activity/catalytic_activity_0032.md
+catalytic_activity_0033,catalytic_activity,Incorrect,A,B,13597,False,stop,cases/catalytic_activity/catalytic_activity_0033.md
+catalytic_activity_0034,catalytic_activity,Incorrect,B,D,17722,False,stop,cases/catalytic_activity/catalytic_activity_0034.md
+catalytic_activity_0035,catalytic_activity,Incorrect,D,C,13765,False,stop,cases/catalytic_activity/catalytic_activity_0035.md
+catalytic_activity_0036,catalytic_activity,Incorrect,A,C,13459,False,stop,cases/catalytic_activity/catalytic_activity_0036.md
+catalytic_activity_0037,catalytic_activity,Correct,A,A,9113,False,stop,cases/catalytic_activity/catalytic_activity_0037.md
+catalytic_activity_0038,catalytic_activity,Correct,C,C,22397,False,stop,cases/catalytic_activity/catalytic_activity_0038.md
+catalytic_activity_0039,catalytic_activity,Incorrect,B,A,13979,False,stop,cases/catalytic_activity/catalytic_activity_0039.md
+catalytic_activity_0040,catalytic_activity,Incorrect,A,B,15372,False,stop,cases/catalytic_activity/catalytic_activity_0040.md
+catalytic_activity_0041,catalytic_activity,Incorrect,D,C,10778,False,stop,cases/catalytic_activity/catalytic_activity_0041.md
+catalytic_activity_0042,catalytic_activity,Correct,A,A,10726,False,stop,cases/catalytic_activity/catalytic_activity_0042.md
+catalytic_activity_0043,catalytic_activity,Incorrect,B,C,8779,False,stop,cases/catalytic_activity/catalytic_activity_0043.md
+catalytic_activity_0044,catalytic_activity,Correct,A,A,20337,False,stop,cases/catalytic_activity/catalytic_activity_0044.md
+catalytic_activity_0045,catalytic_activity,Incorrect,D,A,14978,False,stop,cases/catalytic_activity/catalytic_activity_0045.md
+catalytic_activity_0046,catalytic_activity,Incorrect,A,B,11775,False,stop,cases/catalytic_activity/catalytic_activity_0046.md
+catalytic_activity_0047,catalytic_activity,Incorrect,A,B,20738,False,stop,cases/catalytic_activity/catalytic_activity_0047.md
+catalytic_activity_0048,catalytic_activity,Incorrect,A,C,15140,False,stop,cases/catalytic_activity/catalytic_activity_0048.md
+catalytic_activity_0049,catalytic_activity,No parsed answer,,D,32768,True,length,cases/catalytic_activity/catalytic_activity_0049.md
+catalytic_activity_0050,catalytic_activity,No parsed answer,,D,32768,True,length,cases/catalytic_activity/catalytic_activity_0050.md
+catalytic_activity_0051,catalytic_activity,Incorrect,D,A,12498,False,stop,cases/catalytic_activity/catalytic_activity_0051.md
+catalytic_activity_0053,catalytic_activity,Incorrect,D,B,9306,False,stop,cases/catalytic_activity/catalytic_activity_0053.md
+catalytic_activity_0054,catalytic_activity,Correct,A,A,9670,False,stop,cases/catalytic_activity/catalytic_activity_0054.md
+catalytic_activity_0055,catalytic_activity,Correct,A,A,21947,False,stop,cases/catalytic_activity/catalytic_activity_0055.md
+catalytic_activity_0056,catalytic_activity,Incorrect,B,D,11030,False,stop,cases/catalytic_activity/catalytic_activity_0056.md
+catalytic_activity_0057,catalytic_activity,Incorrect,A,B,9333,False,stop,cases/catalytic_activity/catalytic_activity_0057.md
+catalytic_activity_0058,catalytic_activity,Incorrect,D,B,6443,False,stop,cases/catalytic_activity/catalytic_activity_0058.md
+catalytic_activity_0059,catalytic_activity,Incorrect,C,D,19617,False,stop,cases/catalytic_activity/catalytic_activity_0059.md
+catalytic_activity_0060,catalytic_activity,Incorrect,A,D,13148,False,stop,cases/catalytic_activity/catalytic_activity_0060.md
+catalytic_activity_0061,catalytic_activity,Incorrect,B,A,13125,False,stop,cases/catalytic_activity/catalytic_activity_0061.md
+catalytic_activity_0062,catalytic_activity,Incorrect,A,D,15502,False,stop,cases/catalytic_activity/catalytic_activity_0062.md
+catalytic_activity_0063,catalytic_activity,Incorrect,D,B,26109,False,stop,cases/catalytic_activity/catalytic_activity_0063.md
+catalytic_activity_0064,catalytic_activity,Incorrect,D,A,11615,False,stop,cases/catalytic_activity/catalytic_activity_0064.md
+catalytic_activity_0065,catalytic_activity,Correct,A,A,11106,False,stop,cases/catalytic_activity/catalytic_activity_0065.md
+catalytic_activity_0066,catalytic_activity,Incorrect,B,D,20344,False,stop,cases/catalytic_activity/catalytic_activity_0066.md
+catalytic_activity_0067,catalytic_activity,Incorrect,A,C,14976,False,stop,cases/catalytic_activity/catalytic_activity_0067.md
+catalytic_activity_0068,catalytic_activity,Incorrect,A,B,13156,False,stop,cases/catalytic_activity/catalytic_activity_0068.md
+catalytic_activity_0069,catalytic_activity,Incorrect,D,A,10957,False,stop,cases/catalytic_activity/catalytic_activity_0069.md
+catalytic_activity_0070,catalytic_activity,Incorrect,A,C,26733,False,stop,cases/catalytic_activity/catalytic_activity_0070.md
+catalytic_activity_0071,catalytic_activity,No parsed answer,,A,32768,True,length,cases/catalytic_activity/catalytic_activity_0071.md
+catalytic_activity_0072,catalytic_activity,Incorrect,A,B,10281,False,stop,cases/catalytic_activity/catalytic_activity_0072.md
+catalytic_activity_0073,catalytic_activity,Incorrect,A,B,11129,False,stop,cases/catalytic_activity/catalytic_activity_0073.md
+catalytic_activity_0074,catalytic_activity,Incorrect,A,B,12638,False,stop,cases/catalytic_activity/catalytic_activity_0074.md
+catalytic_activity_0075,catalytic_activity,Correct,A,A,5329,False,stop,cases/catalytic_activity/catalytic_activity_0075.md
+catalytic_activity_0076,catalytic_activity,Incorrect,B,D,10023,False,stop,cases/catalytic_activity/catalytic_activity_0076.md
+catalytic_activity_0077,catalytic_activity,Correct,A,A,9909,False,stop,cases/catalytic_activity/catalytic_activity_0077.md
+catalytic_activity_0078,catalytic_activity,Incorrect,A,B,7800,False,stop,cases/catalytic_activity/catalytic_activity_0078.md
+catalytic_activity_0079,catalytic_activity,Incorrect,A,B,16037,False,stop,cases/catalytic_activity/catalytic_activity_0079.md
+catalytic_activity_0081,catalytic_activity,Incorrect,A,C,10792,False,stop,cases/catalytic_activity/catalytic_activity_0081.md
+catalytic_activity_0082,catalytic_activity,Incorrect,D,C,9103,False,stop,cases/catalytic_activity/catalytic_activity_0082.md
+catalytic_activity_0084,catalytic_activity,Incorrect,A,B,13722,False,stop,cases/catalytic_activity/catalytic_activity_0084.md
+catalytic_activity_0085,catalytic_activity,Incorrect,A,D,11534,False,stop,cases/catalytic_activity/catalytic_activity_0085.md
+catalytic_activity_0086,catalytic_activity,Correct,A,A,29346,False,stop,cases/catalytic_activity/catalytic_activity_0086.md
+catalytic_activity_0087,catalytic_activity,Incorrect,C,D,17306,False,stop,cases/catalytic_activity/catalytic_activity_0087.md
+catalytic_activity_0088,catalytic_activity,Incorrect,D,B,15545,False,stop,cases/catalytic_activity/catalytic_activity_0088.md
+catalytic_activity_0089,catalytic_activity,Incorrect,A,B,15756,False,stop,cases/catalytic_activity/catalytic_activity_0089.md
+catalytic_activity_0090,catalytic_activity,Correct,D,D,10111,False,stop,cases/catalytic_activity/catalytic_activity_0090.md
+catalytic_activity_0091,catalytic_activity,Incorrect,A,C,9492,False,stop,cases/catalytic_activity/catalytic_activity_0091.md
+catalytic_activity_0092,catalytic_activity,Incorrect,B,C,12613,False,stop,cases/catalytic_activity/catalytic_activity_0092.md
+catalytic_activity_0093,catalytic_activity,Incorrect,C,A,16869,False,stop,cases/catalytic_activity/catalytic_activity_0093.md
+catalytic_activity_0094,catalytic_activity,Incorrect,A,B,7417,False,stop,cases/catalytic_activity/catalytic_activity_0094.md
+catalytic_activity_0095,catalytic_activity,Correct,A,A,15893,False,stop,cases/catalytic_activity/catalytic_activity_0095.md
+catalytic_activity_0096,catalytic_activity,Correct,B,B,14261,False,stop,cases/catalytic_activity/catalytic_activity_0096.md
+catalytic_activity_0097,catalytic_activity,Incorrect,A,D,13451,False,stop,cases/catalytic_activity/catalytic_activity_0097.md
+catalytic_activity_0098,catalytic_activity,Incorrect,A,C,15607,False,stop,cases/catalytic_activity/catalytic_activity_0098.md
+catalytic_activity_0099,catalytic_activity,Incorrect,D,A,8651,False,stop,cases/catalytic_activity/catalytic_activity_0099.md
+catalytic_activity_0100,catalytic_activity,Incorrect,C,B,18616,False,stop,cases/catalytic_activity/catalytic_activity_0100.md
+catalytic_activity_0101,catalytic_activity,Incorrect,A,C,10191,False,stop,cases/catalytic_activity/catalytic_activity_0101.md
+catalytic_activity_0103,catalytic_activity,Incorrect,D,C,12332,False,stop,cases/catalytic_activity/catalytic_activity_0103.md
+catalytic_activity_0104,catalytic_activity,Correct,A,A,11971,False,stop,cases/catalytic_activity/catalytic_activity_0104.md
+catalytic_activity_0105,catalytic_activity,Incorrect,D,A,18166,False,stop,cases/catalytic_activity/catalytic_activity_0105.md
+catalytic_activity_0106,catalytic_activity,No parsed answer,,D,32768,True,length,cases/catalytic_activity/catalytic_activity_0106.md
+catalytic_activity_0108,catalytic_activity,Incorrect,D,A,13712,False,stop,cases/catalytic_activity/catalytic_activity_0108.md
+catalytic_activity_0109,catalytic_activity,Incorrect,A,C,15710,False,stop,cases/catalytic_activity/catalytic_activity_0109.md
+catalytic_activity_0110,catalytic_activity,Incorrect,B,C,6700,False,stop,cases/catalytic_activity/catalytic_activity_0110.md
+catalytic_activity_0111,catalytic_activity,Incorrect,A,C,11257,False,stop,cases/catalytic_activity/catalytic_activity_0111.md
+catalytic_activity_0112,catalytic_activity,Incorrect,A,B,20848,False,stop,cases/catalytic_activity/catalytic_activity_0112.md
+catalytic_activity_0113,catalytic_activity,Incorrect,A,B,10348,False,stop,cases/catalytic_activity/catalytic_activity_0113.md
+catalytic_activity_0114,catalytic_activity,Incorrect,A,B,13818,False,stop,cases/catalytic_activity/catalytic_activity_0114.md
+catalytic_activity_0115,catalytic_activity,Incorrect,A,C,10502,False,stop,cases/catalytic_activity/catalytic_activity_0115.md
+catalytic_activity_0116,catalytic_activity,Incorrect,A,C,12566,False,stop,cases/catalytic_activity/catalytic_activity_0116.md
+catalytic_activity_0117,catalytic_activity,Correct,A,A,13088,False,stop,cases/catalytic_activity/catalytic_activity_0117.md
+catalytic_activity_0118,catalytic_activity,Incorrect,B,A,17986,False,stop,cases/catalytic_activity/catalytic_activity_0118.md
+catalytic_activity_0119,catalytic_activity,Correct,D,D,22470,False,stop,cases/catalytic_activity/catalytic_activity_0119.md
+catalytic_activity_0120,catalytic_activity,Correct,A,A,17293,False,stop,cases/catalytic_activity/catalytic_activity_0120.md
+catalytic_activity_0121,catalytic_activity,Incorrect,A,C,11574,False,stop,cases/catalytic_activity/catalytic_activity_0121.md
+catalytic_activity_0122,catalytic_activity,Correct,A,A,11997,False,stop,cases/catalytic_activity/catalytic_activity_0122.md
+catalytic_activity_0123,catalytic_activity,No parsed answer,,A,13449,False,stop,cases/catalytic_activity/catalytic_activity_0123.md
+catalytic_activity_0124,catalytic_activity,Incorrect,A,C,12695,False,stop,cases/catalytic_activity/catalytic_activity_0124.md
+catalytic_activity_0125,catalytic_activity,Correct,A,A,9280,False,stop,cases/catalytic_activity/catalytic_activity_0125.md
+catalytic_activity_0127,catalytic_activity,Correct,C,C,15480,False,stop,cases/catalytic_activity/catalytic_activity_0127.md
+catalytic_activity_0128,catalytic_activity,Correct,A,A,8846,False,stop,cases/catalytic_activity/catalytic_activity_0128.md
+catalytic_activity_0129,catalytic_activity,Correct,B,B,11976,False,stop,cases/catalytic_activity/catalytic_activity_0129.md
+catalytic_activity_0130,catalytic_activity,Incorrect,D,A,10327,False,stop,cases/catalytic_activity/catalytic_activity_0130.md
+catalytic_activity_0131,catalytic_activity,Incorrect,B,D,12529,False,stop,cases/catalytic_activity/catalytic_activity_0131.md
+catalytic_activity_0132,catalytic_activity,No parsed answer,,A,32768,True,length,cases/catalytic_activity/catalytic_activity_0132.md
+catalytic_activity_0133,catalytic_activity,Incorrect,D,B,7517,False,stop,cases/catalytic_activity/catalytic_activity_0133.md
+catalytic_activity_0134,catalytic_activity,Incorrect,A,B,5768,False,stop,cases/catalytic_activity/catalytic_activity_0134.md
+catalytic_activity_0135,catalytic_activity,Incorrect,A,B,8283,False,stop,cases/catalytic_activity/catalytic_activity_0135.md
+catalytic_activity_0136,catalytic_activity,Incorrect,D,B,6301,False,stop,cases/catalytic_activity/catalytic_activity_0136.md
+catalytic_activity_0137,catalytic_activity,Incorrect,D,C,5329,False,stop,cases/catalytic_activity/catalytic_activity_0137.md
+catalytic_activity_0138,catalytic_activity,Incorrect,A,B,13838,False,stop,cases/catalytic_activity/catalytic_activity_0138.md
+catalytic_activity_0139,catalytic_activity,Incorrect,A,B,16691,False,stop,cases/catalytic_activity/catalytic_activity_0139.md
+catalytic_activity_0140,catalytic_activity,Incorrect,D,B,16076,False,stop,cases/catalytic_activity/catalytic_activity_0140.md
+catalytic_activity_0141,catalytic_activity,Incorrect,D,B,15405,False,stop,cases/catalytic_activity/catalytic_activity_0141.md
+catalytic_activity_0142,catalytic_activity,Incorrect,A,B,15544,False,stop,cases/catalytic_activity/catalytic_activity_0142.md
+catalytic_activity_0143,catalytic_activity,Incorrect,A,C,11667,False,stop,cases/catalytic_activity/catalytic_activity_0143.md
+catalytic_activity_0144,catalytic_activity,Incorrect,A,B,14698,False,stop,cases/catalytic_activity/catalytic_activity_0144.md
+catalytic_activity_0145,catalytic_activity,Correct,D,D,21093,False,stop,cases/catalytic_activity/catalytic_activity_0145.md
+catalytic_activity_0146,catalytic_activity,Correct,D,D,13147,False,stop,cases/catalytic_activity/catalytic_activity_0146.md
+catalytic_activity_0147,catalytic_activity,Incorrect,D,A,10190,False,stop,cases/catalytic_activity/catalytic_activity_0147.md
+catalytic_activity_0148,catalytic_activity,No parsed answer,,D,32768,True,length,cases/catalytic_activity/catalytic_activity_0148.md
+catalytic_activity_0149,catalytic_activity,Incorrect,A,D,9790,False,stop,cases/catalytic_activity/catalytic_activity_0149.md
+catalytic_activity_0150,catalytic_activity,Incorrect,B,D,14848,False,stop,cases/catalytic_activity/catalytic_activity_0150.md
+catalytic_activity_0151,catalytic_activity,Incorrect,D,A,7078,False,stop,cases/catalytic_activity/catalytic_activity_0151.md
+catalytic_activity_0152,catalytic_activity,Correct,B,B,19181,False,stop,cases/catalytic_activity/catalytic_activity_0152.md
+catalytic_activity_0153,catalytic_activity,Incorrect,C,A,13240,False,stop,cases/catalytic_activity/catalytic_activity_0153.md
+catalytic_activity_0154,catalytic_activity,Incorrect,A,B,11203,False,stop,cases/catalytic_activity/catalytic_activity_0154.md
+catalytic_activity_0155,catalytic_activity,Incorrect,B,C,8308,False,stop,cases/catalytic_activity/catalytic_activity_0155.md
+catalytic_activity_0156,catalytic_activity,Incorrect,D,C,15501,False,stop,cases/catalytic_activity/catalytic_activity_0156.md
+catalytic_activity_0157,catalytic_activity,Incorrect,A,B,11066,False,stop,cases/catalytic_activity/catalytic_activity_0157.md
+catalytic_activity_0158,catalytic_activity,Incorrect,B,C,18648,False,stop,cases/catalytic_activity/catalytic_activity_0158.md
+catalytic_activity_0159,catalytic_activity,Incorrect,B,D,3922,False,stop,cases/catalytic_activity/catalytic_activity_0159.md
+catalytic_activity_0160,catalytic_activity,Incorrect,A,C,9808,False,stop,cases/catalytic_activity/catalytic_activity_0160.md
+catalytic_activity_0161,catalytic_activity,Incorrect,A,C,23827,False,stop,cases/catalytic_activity/catalytic_activity_0161.md
+catalytic_activity_0162,catalytic_activity,No parsed answer,,C,16716,False,stop,cases/catalytic_activity/catalytic_activity_0162.md
+catalytic_activity_0163,catalytic_activity,Incorrect,B,C,7732,False,stop,cases/catalytic_activity/catalytic_activity_0163.md
+catalytic_activity_0164,catalytic_activity,Incorrect,D,B,13125,False,stop,cases/catalytic_activity/catalytic_activity_0164.md
+catalytic_activity_0165,catalytic_activity,Incorrect,A,B,11725,False,stop,cases/catalytic_activity/catalytic_activity_0165.md
+catalytic_activity_0166,catalytic_activity,Incorrect,C,D,12118,False,stop,cases/catalytic_activity/catalytic_activity_0166.md
+catalytic_activity_0167,catalytic_activity,Incorrect,D,A,32381,False,stop,cases/catalytic_activity/catalytic_activity_0167.md
+catalytic_activity_0168,catalytic_activity,Incorrect,D,A,7680,False,stop,cases/catalytic_activity/catalytic_activity_0168.md
+catalytic_activity_0169,catalytic_activity,Incorrect,A,C,7496,False,stop,cases/catalytic_activity/catalytic_activity_0169.md
+catalytic_activity_0170,catalytic_activity,Incorrect,B,D,14318,False,stop,cases/catalytic_activity/catalytic_activity_0170.md
+catalytic_activity_0171,catalytic_activity,Correct,C,C,11883,False,stop,cases/catalytic_activity/catalytic_activity_0171.md
+catalytic_activity_0172,catalytic_activity,Incorrect,C,D,9178,False,stop,cases/catalytic_activity/catalytic_activity_0172.md
+catalytic_activity_0173,catalytic_activity,Correct,A,A,8969,False,stop,cases/catalytic_activity/catalytic_activity_0173.md
+catalytic_activity_0174,catalytic_activity,Incorrect,D,B,13456,False,stop,cases/catalytic_activity/catalytic_activity_0174.md
+catalytic_activity_0175,catalytic_activity,Incorrect,A,D,17561,False,stop,cases/catalytic_activity/catalytic_activity_0175.md
+catalytic_activity_0176,catalytic_activity,No parsed answer,,B,32768,True,length,cases/catalytic_activity/catalytic_activity_0176.md
+catalytic_activity_0177,catalytic_activity,Incorrect,C,B,22275,False,stop,cases/catalytic_activity/catalytic_activity_0177.md
+catalytic_activity_0178,catalytic_activity,Correct,A,A,18293,False,stop,cases/catalytic_activity/catalytic_activity_0178.md
+catalytic_activity_0179,catalytic_activity,Incorrect,A,B,22587,False,stop,cases/catalytic_activity/catalytic_activity_0179.md
+catalytic_activity_0180,catalytic_activity,Incorrect,C,D,20612,False,stop,cases/catalytic_activity/catalytic_activity_0180.md
+catalytic_activity_0181,catalytic_activity,Incorrect,A,D,19501,False,stop,cases/catalytic_activity/catalytic_activity_0181.md
+catalytic_activity_0182,catalytic_activity,Incorrect,A,D,21335,False,stop,cases/catalytic_activity/catalytic_activity_0182.md
+catalytic_activity_0183,catalytic_activity,Correct,A,A,5488,False,stop,cases/catalytic_activity/catalytic_activity_0183.md
+catalytic_activity_0184,catalytic_activity,Incorrect,C,D,8061,False,stop,cases/catalytic_activity/catalytic_activity_0184.md
+catalytic_activity_0185,catalytic_activity,Incorrect,A,D,11479,False,stop,cases/catalytic_activity/catalytic_activity_0185.md
+catalytic_activity_0186,catalytic_activity,Incorrect,A,D,6714,False,stop,cases/catalytic_activity/catalytic_activity_0186.md
+catalytic_activity_0187,catalytic_activity,Incorrect,D,B,12586,False,stop,cases/catalytic_activity/catalytic_activity_0187.md
+catalytic_activity_0188,catalytic_activity,Incorrect,C,D,11070,False,stop,cases/catalytic_activity/catalytic_activity_0188.md
+catalytic_activity_0189,catalytic_activity,Correct,A,A,9097,False,stop,cases/catalytic_activity/catalytic_activity_0189.md
+catalytic_activity_0190,catalytic_activity,Incorrect,A,D,24269,False,stop,cases/catalytic_activity/catalytic_activity_0190.md
+catalytic_activity_0191,catalytic_activity,Incorrect,A,D,8318,False,stop,cases/catalytic_activity/catalytic_activity_0191.md
+catalytic_activity_0192,catalytic_activity,Incorrect,A,C,11536,False,stop,cases/catalytic_activity/catalytic_activity_0192.md
+catalytic_activity_0193,catalytic_activity,Incorrect,A,D,12144,False,stop,cases/catalytic_activity/catalytic_activity_0193.md
+catalytic_activity_0194,catalytic_activity,Incorrect,D,A,19258,False,stop,cases/catalytic_activity/catalytic_activity_0194.md
+catalytic_activity_0195,catalytic_activity,Incorrect,C,D,4672,False,stop,cases/catalytic_activity/catalytic_activity_0195.md
+catalytic_activity_0196,catalytic_activity,Incorrect,B,C,14759,False,stop,cases/catalytic_activity/catalytic_activity_0196.md
+catalytic_activity_0197,catalytic_activity,Incorrect,A,C,14021,False,stop,cases/catalytic_activity/catalytic_activity_0197.md
+catalytic_activity_0199,catalytic_activity,Correct,A,A,13044,False,stop,cases/catalytic_activity/catalytic_activity_0199.md
+cofactor_0000,cofactor,Incorrect,A,C,13721,False,stop,cases/cofactor/cofactor_0000.md
+cofactor_0001,cofactor,Incorrect,C,D,7557,False,stop,cases/cofactor/cofactor_0001.md
+cofactor_0002,cofactor,Incorrect,D,C,9711,False,stop,cases/cofactor/cofactor_0002.md
+cofactor_0003,cofactor,Incorrect,A,B,10993,False,stop,cases/cofactor/cofactor_0003.md
+cofactor_0004,cofactor,Incorrect,D,B,14332,False,stop,cases/cofactor/cofactor_0004.md
+cofactor_0005,cofactor,Incorrect,D,B,7868,False,stop,cases/cofactor/cofactor_0005.md
+cofactor_0006,cofactor,Incorrect,B,A,8425,False,stop,cases/cofactor/cofactor_0006.md
+cofactor_0007,cofactor,Incorrect,C,B,10287,False,stop,cases/cofactor/cofactor_0007.md
+cofactor_0008,cofactor,Incorrect,A,D,12708,False,stop,cases/cofactor/cofactor_0008.md
+cofactor_0009,cofactor,Correct,C,C,3163,False,stop,cases/cofactor/cofactor_0009.md
+cofactor_0010,cofactor,Incorrect,A,C,8666,False,stop,cases/cofactor/cofactor_0010.md
+cofactor_0011,cofactor,Incorrect,B,A,17701,False,stop,cases/cofactor/cofactor_0011.md
+cofactor_0012,cofactor,Incorrect,A,B,5731,False,stop,cases/cofactor/cofactor_0012.md
+cofactor_0013,cofactor,Incorrect,A,C,7327,False,stop,cases/cofactor/cofactor_0013.md
+cofactor_0014,cofactor,Correct,D,D,20707,False,stop,cases/cofactor/cofactor_0014.md
+cofactor_0015,cofactor,Incorrect,A,C,11949,False,stop,cases/cofactor/cofactor_0015.md
+cofactor_0016,cofactor,Correct,C,C,7986,False,stop,cases/cofactor/cofactor_0016.md
+cofactor_0017,cofactor,Incorrect,D,A,6500,False,stop,cases/cofactor/cofactor_0017.md
+cofactor_0018,cofactor,Correct,A,A,10424,False,stop,cases/cofactor/cofactor_0018.md
+cofactor_0019,cofactor,Incorrect,C,B,23260,False,stop,cases/cofactor/cofactor_0019.md
+cofactor_0020,cofactor,Correct,D,D,16063,False,stop,cases/cofactor/cofactor_0020.md
+cofactor_0021,cofactor,Incorrect,A,B,11118,False,stop,cases/cofactor/cofactor_0021.md
+cofactor_0022,cofactor,Incorrect,A,D,16304,False,stop,cases/cofactor/cofactor_0022.md
+cofactor_0023,cofactor,Correct,A,A,7981,False,stop,cases/cofactor/cofactor_0023.md
+cofactor_0024,cofactor,Incorrect,A,D,18900,False,stop,cases/cofactor/cofactor_0024.md
+cofactor_0025,cofactor,Incorrect,D,C,9451,False,stop,cases/cofactor/cofactor_0025.md
+cofactor_0026,cofactor,Incorrect,C,A,8566,False,stop,cases/cofactor/cofactor_0026.md
+cofactor_0027,cofactor,Incorrect,A,D,7080,False,stop,cases/cofactor/cofactor_0027.md
+cofactor_0028,cofactor,Incorrect,D,C,7765,False,stop,cases/cofactor/cofactor_0028.md
+cofactor_0029,cofactor,Incorrect,A,B,7799,False,stop,cases/cofactor/cofactor_0029.md
+cofactor_0030,cofactor,Incorrect,D,A,9436,False,stop,cases/cofactor/cofactor_0030.md
+cofactor_0031,cofactor,Correct,D,D,24817,False,stop,cases/cofactor/cofactor_0031.md
+cofactor_0032,cofactor,Correct,A,A,20841,False,stop,cases/cofactor/cofactor_0032.md
+cofactor_0033,cofactor,Incorrect,A,D,10461,False,stop,cases/cofactor/cofactor_0033.md
+cofactor_0034,cofactor,Incorrect,A,B,11475,False,stop,cases/cofactor/cofactor_0034.md
+cofactor_0035,cofactor,Incorrect,B,A,18906,False,stop,cases/cofactor/cofactor_0035.md
+cofactor_0036,cofactor,Correct,A,A,4515,False,stop,cases/cofactor/cofactor_0036.md
+cofactor_0037,cofactor,No parsed answer,,B,32768,True,length,cases/cofactor/cofactor_0037.md
+cofactor_0038,cofactor,Incorrect,A,B,16902,False,stop,cases/cofactor/cofactor_0038.md
+cofactor_0039,cofactor,Incorrect,A,D,14272,False,stop,cases/cofactor/cofactor_0039.md
+cofactor_0040,cofactor,Incorrect,D,A,6797,False,stop,cases/cofactor/cofactor_0040.md
+cofactor_0041,cofactor,Incorrect,D,B,9070,False,stop,cases/cofactor/cofactor_0041.md
+cofactor_0042,cofactor,Incorrect,B,A,12431,False,stop,cases/cofactor/cofactor_0042.md
+cofactor_0043,cofactor,Incorrect,D,C,6810,False,stop,cases/cofactor/cofactor_0043.md
+cofactor_0044,cofactor,Incorrect,D,A,7767,False,stop,cases/cofactor/cofactor_0044.md
+cofactor_0045,cofactor,Correct,C,C,6333,False,stop,cases/cofactor/cofactor_0045.md
+cofactor_0046,cofactor,Correct,A,A,7934,False,stop,cases/cofactor/cofactor_0046.md
+cofactor_0047,cofactor,Incorrect,C,A,8091,False,stop,cases/cofactor/cofactor_0047.md
+cofactor_0048,cofactor,Incorrect,D,B,15140,False,stop,cases/cofactor/cofactor_0048.md
+cofactor_0049,cofactor,Incorrect,B,C,16539,False,stop,cases/cofactor/cofactor_0049.md
+cofactor_0050,cofactor,Incorrect,D,B,9612,False,stop,cases/cofactor/cofactor_0050.md
+cofactor_0051,cofactor,Incorrect,C,A,19899,False,stop,cases/cofactor/cofactor_0051.md
+cofactor_0052,cofactor,Incorrect,A,B,10184,False,stop,cases/cofactor/cofactor_0052.md
+cofactor_0053,cofactor,Incorrect,A,D,30842,False,stop,cases/cofactor/cofactor_0053.md
+cofactor_0054,cofactor,No parsed answer,,C,32768,True,length,cases/cofactor/cofactor_0054.md
+cofactor_0055,cofactor,Incorrect,D,C,13742,False,stop,cases/cofactor/cofactor_0055.md
+cofactor_0056,cofactor,Incorrect,A,C,7569,False,stop,cases/cofactor/cofactor_0056.md
+cofactor_0057,cofactor,Incorrect,A,B,10328,False,stop,cases/cofactor/cofactor_0057.md
+cofactor_0058,cofactor,Incorrect,D,B,9273,False,stop,cases/cofactor/cofactor_0058.md
+cofactor_0059,cofactor,Incorrect,D,C,12576,False,stop,cases/cofactor/cofactor_0059.md
+cofactor_0060,cofactor,No parsed answer,,B,32768,True,length,cases/cofactor/cofactor_0060.md
+cofactor_0061,cofactor,Correct,D,D,21980,False,stop,cases/cofactor/cofactor_0061.md
+cofactor_0062,cofactor,Incorrect,D,C,11516,False,stop,cases/cofactor/cofactor_0062.md
+cofactor_0063,cofactor,Incorrect,D,B,11618,False,stop,cases/cofactor/cofactor_0063.md
+cofactor_0064,cofactor,Incorrect,D,B,15414,False,stop,cases/cofactor/cofactor_0064.md
+cofactor_0065,cofactor,No parsed answer,,A,32768,True,length,cases/cofactor/cofactor_0065.md
+cofactor_0066,cofactor,Incorrect,C,A,22909,False,stop,cases/cofactor/cofactor_0066.md
+cofactor_0067,cofactor,Correct,B,B,5031,False,stop,cases/cofactor/cofactor_0067.md
+cofactor_0068,cofactor,Incorrect,D,B,12323,False,stop,cases/cofactor/cofactor_0068.md
+cofactor_0069,cofactor,Correct,A,A,9605,False,stop,cases/cofactor/cofactor_0069.md
+cofactor_0070,cofactor,Incorrect,B,D,9460,False,stop,cases/cofactor/cofactor_0070.md
+cofactor_0071,cofactor,Incorrect,B,D,13240,False,stop,cases/cofactor/cofactor_0071.md
+cofactor_0072,cofactor,Incorrect,D,B,22654,False,stop,cases/cofactor/cofactor_0072.md
+cofactor_0073,cofactor,Correct,D,D,7964,False,stop,cases/cofactor/cofactor_0073.md
+cofactor_0074,cofactor,Incorrect,B,D,7399,False,stop,cases/cofactor/cofactor_0074.md
+cofactor_0075,cofactor,Incorrect,D,B,14371,False,stop,cases/cofactor/cofactor_0075.md
+cofactor_0076,cofactor,No parsed answer,,B,32768,True,length,cases/cofactor/cofactor_0076.md
+cofactor_0077,cofactor,Incorrect,A,D,30145,False,stop,cases/cofactor/cofactor_0077.md
+cofactor_0078,cofactor,Incorrect,A,D,17324,False,stop,cases/cofactor/cofactor_0078.md
+cofactor_0080,cofactor,Incorrect,B,C,5850,False,stop,cases/cofactor/cofactor_0080.md
+cofactor_0081,cofactor,Incorrect,A,D,11044,False,stop,cases/cofactor/cofactor_0081.md
+cofactor_0082,cofactor,Incorrect,D,B,7999,False,stop,cases/cofactor/cofactor_0082.md
+cofactor_0083,cofactor,Incorrect,B,C,8993,False,stop,cases/cofactor/cofactor_0083.md
+cofactor_0084,cofactor,Incorrect,C,D,18228,False,stop,cases/cofactor/cofactor_0084.md
+cofactor_0085,cofactor,Incorrect,A,D,16524,False,stop,cases/cofactor/cofactor_0085.md
+cofactor_0086,cofactor,Incorrect,B,A,9399,False,stop,cases/cofactor/cofactor_0086.md
+cofactor_0087,cofactor,Incorrect,A,D,11962,False,stop,cases/cofactor/cofactor_0087.md
+cofactor_0088,cofactor,Correct,A,A,20262,False,stop,cases/cofactor/cofactor_0088.md
+cofactor_0089,cofactor,Incorrect,D,C,19133,False,stop,cases/cofactor/cofactor_0089.md
+cofactor_0090,cofactor,Incorrect,A,D,8822,False,stop,cases/cofactor/cofactor_0090.md
+cofactor_0091,cofactor,Correct,D,D,12275,False,stop,cases/cofactor/cofactor_0091.md
+cofactor_0092,cofactor,Correct,D,D,7010,False,stop,cases/cofactor/cofactor_0092.md
+cofactor_0093,cofactor,No parsed answer,,C,32768,True,length,cases/cofactor/cofactor_0093.md
+cofactor_0094,cofactor,Correct,A,A,22440,False,stop,cases/cofactor/cofactor_0094.md
+cofactor_0095,cofactor,Incorrect,D,A,8949,False,stop,cases/cofactor/cofactor_0095.md
+cofactor_0096,cofactor,Correct,B,B,6487,False,stop,cases/cofactor/cofactor_0096.md
+cofactor_0097,cofactor,Incorrect,B,A,7050,False,stop,cases/cofactor/cofactor_0097.md
+cofactor_0098,cofactor,Correct,A,A,10992,False,stop,cases/cofactor/cofactor_0098.md
+cofactor_0099,cofactor,Correct,B,B,9762,False,stop,cases/cofactor/cofactor_0099.md
+cofactor_0100,cofactor,Incorrect,D,B,6896,False,stop,cases/cofactor/cofactor_0100.md
+cofactor_0101,cofactor,Incorrect,B,C,9395,False,stop,cases/cofactor/cofactor_0101.md
+cofactor_0102,cofactor,Incorrect,B,A,20068,False,stop,cases/cofactor/cofactor_0102.md
+cofactor_0103,cofactor,Incorrect,C,D,5360,False,stop,cases/cofactor/cofactor_0103.md
+cofactor_0104,cofactor,Incorrect,D,A,16659,False,stop,cases/cofactor/cofactor_0104.md
+cofactor_0105,cofactor,Incorrect,A,C,9494,False,stop,cases/cofactor/cofactor_0105.md
+cofactor_0106,cofactor,Correct,A,A,15006,False,stop,cases/cofactor/cofactor_0106.md
+cofactor_0107,cofactor,Incorrect,A,D,7517,False,stop,cases/cofactor/cofactor_0107.md
+cofactor_0108,cofactor,Incorrect,A,C,7948,False,stop,cases/cofactor/cofactor_0108.md
+cofactor_0109,cofactor,Incorrect,D,B,9187,False,stop,cases/cofactor/cofactor_0109.md
+cofactor_0110,cofactor,Correct,A,A,13518,False,stop,cases/cofactor/cofactor_0110.md
+cofactor_0111,cofactor,Incorrect,A,D,13354,False,stop,cases/cofactor/cofactor_0111.md
+cofactor_0112,cofactor,Correct,B,B,11254,False,stop,cases/cofactor/cofactor_0112.md
+cofactor_0113,cofactor,Incorrect,A,B,8515,False,stop,cases/cofactor/cofactor_0113.md
+cofactor_0114,cofactor,Incorrect,A,B,8487,False,stop,cases/cofactor/cofactor_0114.md
+cofactor_0115,cofactor,Correct,A,A,6598,False,stop,cases/cofactor/cofactor_0115.md
+cofactor_0116,cofactor,Incorrect,A,C,22590,False,stop,cases/cofactor/cofactor_0116.md
+cofactor_0117,cofactor,Incorrect,C,B,9396,False,stop,cases/cofactor/cofactor_0117.md
+cofactor_0118,cofactor,Incorrect,A,B,14411,False,stop,cases/cofactor/cofactor_0118.md
+cofactor_0119,cofactor,Correct,D,D,9266,False,stop,cases/cofactor/cofactor_0119.md
+cofactor_0120,cofactor,Incorrect,C,D,20021,False,stop,cases/cofactor/cofactor_0120.md
+cofactor_0121,cofactor,Incorrect,D,A,10370,False,stop,cases/cofactor/cofactor_0121.md
+cofactor_0122,cofactor,Incorrect,D,A,8608,False,stop,cases/cofactor/cofactor_0122.md
+cofactor_0123,cofactor,Incorrect,A,D,9732,False,stop,cases/cofactor/cofactor_0123.md
+cofactor_0124,cofactor,Incorrect,D,A,11466,False,stop,cases/cofactor/cofactor_0124.md
+cofactor_0125,cofactor,Incorrect,D,B,7641,False,stop,cases/cofactor/cofactor_0125.md
+cofactor_0126,cofactor,Incorrect,A,D,8263,False,stop,cases/cofactor/cofactor_0126.md
+cofactor_0127,cofactor,Correct,D,D,15850,False,stop,cases/cofactor/cofactor_0127.md
+cofactor_0128,cofactor,Incorrect,C,A,9390,False,stop,cases/cofactor/cofactor_0128.md
+cofactor_0129,cofactor,Correct,A,A,9689,False,stop,cases/cofactor/cofactor_0129.md
+cofactor_0130,cofactor,Incorrect,D,C,15477,False,stop,cases/cofactor/cofactor_0130.md
+cofactor_0131,cofactor,Incorrect,D,B,15925,False,stop,cases/cofactor/cofactor_0131.md
+cofactor_0132,cofactor,Correct,C,C,16237,False,stop,cases/cofactor/cofactor_0132.md
+cofactor_0133,cofactor,Correct,B,B,7338,False,stop,cases/cofactor/cofactor_0133.md
+cofactor_0134,cofactor,Correct,C,C,19610,False,stop,cases/cofactor/cofactor_0134.md
+cofactor_0135,cofactor,No parsed answer,,D,32768,True,length,cases/cofactor/cofactor_0135.md
+cofactor_0136,cofactor,Incorrect,A,B,10985,False,stop,cases/cofactor/cofactor_0136.md
+cofactor_0137,cofactor,Correct,D,D,14548,False,stop,cases/cofactor/cofactor_0137.md
+cofactor_0138,cofactor,Correct,A,A,6018,False,stop,cases/cofactor/cofactor_0138.md
+cofactor_0139,cofactor,Incorrect,A,D,11473,False,stop,cases/cofactor/cofactor_0139.md
+cofactor_0140,cofactor,Incorrect,D,A,5807,False,stop,cases/cofactor/cofactor_0140.md
+cofactor_0141,cofactor,Correct,A,A,10759,False,stop,cases/cofactor/cofactor_0141.md
+cofactor_0142,cofactor,Incorrect,B,A,28976,False,stop,cases/cofactor/cofactor_0142.md
+cofactor_0143,cofactor,Correct,A,A,21729,False,stop,cases/cofactor/cofactor_0143.md
+cofactor_0144,cofactor,Incorrect,B,A,8729,False,stop,cases/cofactor/cofactor_0144.md
+cofactor_0146,cofactor,Incorrect,C,B,13467,False,stop,cases/cofactor/cofactor_0146.md
+cofactor_0147,cofactor,Correct,C,C,10239,False,stop,cases/cofactor/cofactor_0147.md
+cofactor_0148,cofactor,Incorrect,A,B,16180,False,stop,cases/cofactor/cofactor_0148.md
+cofactor_0149,cofactor,Correct,A,A,5192,False,stop,cases/cofactor/cofactor_0149.md
+cofactor_0150,cofactor,Incorrect,D,C,13284,False,stop,cases/cofactor/cofactor_0150.md
+cofactor_0151,cofactor,Incorrect,A,B,14884,False,stop,cases/cofactor/cofactor_0151.md
+cofactor_0152,cofactor,Incorrect,D,B,8876,False,stop,cases/cofactor/cofactor_0152.md
+cofactor_0153,cofactor,Incorrect,A,D,8202,False,stop,cases/cofactor/cofactor_0153.md
+cofactor_0154,cofactor,Incorrect,A,C,17750,False,stop,cases/cofactor/cofactor_0154.md
+cofactor_0155,cofactor,Correct,C,C,10559,False,stop,cases/cofactor/cofactor_0155.md
+cofactor_0156,cofactor,Incorrect,A,C,10321,False,stop,cases/cofactor/cofactor_0156.md
+cofactor_0157,cofactor,Correct,C,C,9246,False,stop,cases/cofactor/cofactor_0157.md
+cofactor_0158,cofactor,Incorrect,A,D,9140,False,stop,cases/cofactor/cofactor_0158.md
+cofactor_0159,cofactor,Incorrect,A,C,6118,False,stop,cases/cofactor/cofactor_0159.md
+cofactor_0160,cofactor,Incorrect,D,C,14625,False,stop,cases/cofactor/cofactor_0160.md
+cofactor_0161,cofactor,Incorrect,A,B,9357,False,stop,cases/cofactor/cofactor_0161.md
+cofactor_0162,cofactor,Correct,B,B,11958,False,stop,cases/cofactor/cofactor_0162.md
+cofactor_0163,cofactor,Correct,A,A,8685,False,stop,cases/cofactor/cofactor_0163.md
+cofactor_0164,cofactor,Incorrect,D,B,17273,False,stop,cases/cofactor/cofactor_0164.md
+cofactor_0165,cofactor,Incorrect,B,A,11120,False,stop,cases/cofactor/cofactor_0165.md
+cofactor_0166,cofactor,Correct,C,C,7342,False,stop,cases/cofactor/cofactor_0166.md
+cofactor_0167,cofactor,Correct,D,D,10843,False,stop,cases/cofactor/cofactor_0167.md
+cofactor_0168,cofactor,Incorrect,D,A,5828,False,stop,cases/cofactor/cofactor_0168.md
+cofactor_0169,cofactor,Incorrect,A,B,8428,False,stop,cases/cofactor/cofactor_0169.md
+cofactor_0170,cofactor,Incorrect,B,A,20735,False,stop,cases/cofactor/cofactor_0170.md
+cofactor_0171,cofactor,Incorrect,D,B,6467,False,stop,cases/cofactor/cofactor_0171.md
+cofactor_0172,cofactor,Incorrect,A,B,10910,False,stop,cases/cofactor/cofactor_0172.md
+cofactor_0173,cofactor,Incorrect,B,C,12257,False,stop,cases/cofactor/cofactor_0173.md
+cofactor_0174,cofactor,Incorrect,B,A,8541,False,stop,cases/cofactor/cofactor_0174.md
+cofactor_0175,cofactor,Correct,A,A,12742,False,stop,cases/cofactor/cofactor_0175.md
+cofactor_0176,cofactor,Correct,D,D,9267,False,stop,cases/cofactor/cofactor_0176.md
+cofactor_0177,cofactor,Incorrect,A,B,10022,False,stop,cases/cofactor/cofactor_0177.md
+cofactor_0178,cofactor,Incorrect,A,C,6986,False,stop,cases/cofactor/cofactor_0178.md
+cofactor_0179,cofactor,Correct,A,A,15778,False,stop,cases/cofactor/cofactor_0179.md
+cofactor_0180,cofactor,Incorrect,A,C,10760,False,stop,cases/cofactor/cofactor_0180.md
+cofactor_0181,cofactor,Incorrect,D,B,11471,False,stop,cases/cofactor/cofactor_0181.md
+cofactor_0182,cofactor,No parsed answer,,B,21564,False,stop,cases/cofactor/cofactor_0182.md
+cofactor_0183,cofactor,Incorrect,B,D,6189,False,stop,cases/cofactor/cofactor_0183.md
+cofactor_0184,cofactor,Incorrect,D,B,27539,False,stop,cases/cofactor/cofactor_0184.md
+cofactor_0185,cofactor,Incorrect,A,B,7617,False,stop,cases/cofactor/cofactor_0185.md
+motif_position_0000,motif_position,No parsed answer,,D,32768,True,length,cases/motif_position/motif_position_0000.md
+motif_position_0001,motif_position,Incorrect,C,D,14701,False,stop,cases/motif_position/motif_position_0001.md
+motif_position_0002,motif_position,Incorrect,C,B,24729,False,stop,cases/motif_position/motif_position_0002.md
+motif_position_0004,motif_position,No parsed answer,,D,32768,True,length,cases/motif_position/motif_position_0004.md
+motif_position_0005,motif_position,No parsed answer,,D,32768,True,length,cases/motif_position/motif_position_0005.md
+motif_position_0008,motif_position,No parsed answer,,C,32768,True,length,cases/motif_position/motif_position_0008.md
+motif_position_0009,motif_position,Incorrect,C,D,23440,False,stop,cases/motif_position/motif_position_0009.md
+motif_position_0010,motif_position,No parsed answer,,B,32768,True,length,cases/motif_position/motif_position_0010.md
+motif_position_0011,motif_position,Incorrect,B,A,20929,False,stop,cases/motif_position/motif_position_0011.md
+motif_position_0012,motif_position,Incorrect,A,B,24587,False,stop,cases/motif_position/motif_position_0012.md
+motif_position_0013,motif_position,No parsed answer,,B,32768,True,length,cases/motif_position/motif_position_0013.md
+motif_position_0014,motif_position,No parsed answer,,D,32768,True,length,cases/motif_position/motif_position_0014.md
+motif_position_0015,motif_position,Incorrect,C,D,15807,False,stop,cases/motif_position/motif_position_0015.md
+motif_position_0016,motif_position,Incorrect,B,D,12194,False,stop,cases/motif_position/motif_position_0016.md
+motif_position_0017,motif_position,Correct,B,B,22848,False,stop,cases/motif_position/motif_position_0017.md
+motif_position_0018,motif_position,Incorrect,C,B,25343,False,stop,cases/motif_position/motif_position_0018.md
+motif_position_0019,motif_position,No parsed answer,,C,32768,True,length,cases/motif_position/motif_position_0019.md
+motif_position_0020,motif_position,No parsed answer,,D,32768,True,length,cases/motif_position/motif_position_0020.md
+motif_position_0021,motif_position,Incorrect,A,C,23969,False,stop,cases/motif_position/motif_position_0021.md
+motif_position_0022,motif_position,Correct,C,C,15051,False,stop,cases/motif_position/motif_position_0022.md
+motif_position_0023,motif_position,Incorrect,A,B,32355,False,stop,cases/motif_position/motif_position_0023.md
+motif_position_0024,motif_position,Correct,B,B,24108,False,stop,cases/motif_position/motif_position_0024.md
+motif_position_0025,motif_position,Correct,C,C,17193,False,stop,cases/motif_position/motif_position_0025.md
+motif_position_0026,motif_position,No parsed answer,,D,32768,True,length,cases/motif_position/motif_position_0026.md
+motif_position_0027,motif_position,Incorrect,B,C,16417,False,stop,cases/motif_position/motif_position_0027.md
+motif_position_0028,motif_position,No parsed answer,,C,32768,True,length,cases/motif_position/motif_position_0028.md
+motif_position_0029,motif_position,Correct,A,A,20169,False,stop,cases/motif_position/motif_position_0029.md
+motif_position_0030,motif_position,Incorrect,A,D,26114,False,stop,cases/motif_position/motif_position_0030.md
+motif_position_0031,motif_position,No parsed answer,,D,32768,True,length,cases/motif_position/motif_position_0031.md
+motif_position_0032,motif_position,Incorrect,D,A,20569,False,stop,cases/motif_position/motif_position_0032.md
+motif_position_0033,motif_position,No parsed answer,,D,32768,True,length,cases/motif_position/motif_position_0033.md
+motif_position_0034,motif_position,No parsed answer,,C,32768,True,length,cases/motif_position/motif_position_0034.md
+motif_position_0035,motif_position,Incorrect,C,A,18031,False,stop,cases/motif_position/motif_position_0035.md
+motif_position_0036,motif_position,Correct,D,D,22624,False,stop,cases/motif_position/motif_position_0036.md
+motif_position_0037,motif_position,Incorrect,D,A,7441,False,stop,cases/motif_position/motif_position_0037.md
+motif_position_0038,motif_position,Incorrect,B,A,18317,False,stop,cases/motif_position/motif_position_0038.md
+motif_position_0039,motif_position,Incorrect,A,B,26754,False,stop,cases/motif_position/motif_position_0039.md
+motif_position_0040,motif_position,Correct,A,A,25519,False,stop,cases/motif_position/motif_position_0040.md
+motif_position_0041,motif_position,Incorrect,C,B,27245,False,stop,cases/motif_position/motif_position_0041.md
+motif_position_0042,motif_position,No parsed answer,,D,20058,False,stop,cases/motif_position/motif_position_0042.md
+motif_position_0043,motif_position,Incorrect,B,D,18753,False,stop,cases/motif_position/motif_position_0043.md
+motif_position_0044,motif_position,Incorrect,A,C,21881,False,stop,cases/motif_position/motif_position_0044.md
+motif_position_0045,motif_position,Incorrect,C,A,23702,False,stop,cases/motif_position/motif_position_0045.md
+motif_position_0046,motif_position,Correct,C,C,21069,False,stop,cases/motif_position/motif_position_0046.md
+motif_position_0047,motif_position,No parsed answer,,D,32768,True,length,cases/motif_position/motif_position_0047.md
+motif_position_0048,motif_position,No parsed answer,,C,32768,True,length,cases/motif_position/motif_position_0048.md
+motif_position_0049,motif_position,Incorrect,B,A,21830,False,stop,cases/motif_position/motif_position_0049.md
+motif_position_0050,motif_position,Incorrect,D,A,24417,False,stop,cases/motif_position/motif_position_0050.md
+motif_position_0051,motif_position,No parsed answer,,B,32768,True,length,cases/motif_position/motif_position_0051.md
+pathway_0000,pathway,Incorrect,D,A,11601,False,stop,cases/pathway/pathway_0000.md
+pathway_0001,pathway,Correct,C,C,13196,False,stop,cases/pathway/pathway_0001.md
+pathway_0002,pathway,Incorrect,A,B,7368,False,stop,cases/pathway/pathway_0002.md
+pathway_0003,pathway,Incorrect,D,B,13362,False,stop,cases/pathway/pathway_0003.md
+pathway_0005,pathway,Incorrect,A,D,11364,False,stop,cases/pathway/pathway_0005.md
+pathway_0006,pathway,Incorrect,A,C,15018,False,stop,cases/pathway/pathway_0006.md
+pathway_0007,pathway,Correct,C,C,15993,False,stop,cases/pathway/pathway_0007.md
+pathway_0008,pathway,Incorrect,A,C,22619,False,stop,cases/pathway/pathway_0008.md
+pathway_0009,pathway,Incorrect,C,A,15084,False,stop,cases/pathway/pathway_0009.md
+pathway_0010,pathway,No parsed answer,,B,7751,False,stop,cases/pathway/pathway_0010.md
+pathway_0011,pathway,Incorrect,C,B,13867,False,stop,cases/pathway/pathway_0011.md
+pathway_0012,pathway,Correct,C,C,13322,False,stop,cases/pathway/pathway_0012.md
+pathway_0013,pathway,No parsed answer,,C,8589,False,stop,cases/pathway/pathway_0013.md
+pathway_0014,pathway,Incorrect,A,B,10121,False,stop,cases/pathway/pathway_0014.md
+pathway_0015,pathway,Incorrect,A,B,14509,False,stop,cases/pathway/pathway_0015.md
+pathway_0016,pathway,Incorrect,D,C,7811,False,stop,cases/pathway/pathway_0016.md
+pathway_0017,pathway,Incorrect,A,C,10366,False,stop,cases/pathway/pathway_0017.md
+pathway_0018,pathway,Incorrect,D,C,10768,False,stop,cases/pathway/pathway_0018.md
+pathway_0019,pathway,Incorrect,C,B,7696,False,stop,cases/pathway/pathway_0019.md
+pathway_0020,pathway,Incorrect,A,D,5667,False,stop,cases/pathway/pathway_0020.md
+pathway_0021,pathway,Incorrect,D,A,18875,False,stop,cases/pathway/pathway_0021.md
+pathway_0022,pathway,Incorrect,D,B,14584,False,stop,cases/pathway/pathway_0022.md
+pathway_0023,pathway,Correct,C,C,9830,False,stop,cases/pathway/pathway_0023.md
+pathway_0024,pathway,Incorrect,B,C,8009,False,stop,cases/pathway/pathway_0024.md
+pathway_0025,pathway,Incorrect,C,B,13019,False,stop,cases/pathway/pathway_0025.md
+pathway_0026,pathway,Incorrect,D,A,7880,False,stop,cases/pathway/pathway_0026.md
+pathway_0027,pathway,Incorrect,B,A,8878,False,stop,cases/pathway/pathway_0027.md
+pathway_0028,pathway,Incorrect,D,C,11413,False,stop,cases/pathway/pathway_0028.md
+pathway_0029,pathway,Correct,D,D,7423,False,stop,cases/pathway/pathway_0029.md
+pathway_0030,pathway,Incorrect,A,C,11871,False,stop,cases/pathway/pathway_0030.md
+pathway_0031,pathway,Incorrect,D,C,16316,False,stop,cases/pathway/pathway_0031.md
+pathway_0032,pathway,Incorrect,A,C,10403,False,stop,cases/pathway/pathway_0032.md
+pathway_0033,pathway,Incorrect,A,B,22410,False,stop,cases/pathway/pathway_0033.md
+pathway_0035,pathway,Incorrect,A,D,13876,False,stop,cases/pathway/pathway_0035.md
+pathway_0036,pathway,Incorrect,D,B,15412,False,stop,cases/pathway/pathway_0036.md
+pathway_0037,pathway,Incorrect,C,B,11297,False,stop,cases/pathway/pathway_0037.md
+pathway_0038,pathway,Incorrect,D,A,18820,False,stop,cases/pathway/pathway_0038.md
+pathway_0039,pathway,Incorrect,D,A,12683,False,stop,cases/pathway/pathway_0039.md
+pathway_0040,pathway,Incorrect,A,D,20301,False,stop,cases/pathway/pathway_0040.md
+pathway_0041,pathway,Incorrect,D,B,13108,False,stop,cases/pathway/pathway_0041.md
+pathway_0042,pathway,Incorrect,D,B,10638,False,stop,cases/pathway/pathway_0042.md
+pathway_0043,pathway,Correct,A,A,12169,False,stop,cases/pathway/pathway_0043.md
+pathway_0044,pathway,Incorrect,A,D,9517,False,stop,cases/pathway/pathway_0044.md
+pathway_0045,pathway,Incorrect,D,B,11899,False,stop,cases/pathway/pathway_0045.md
+pathway_0046,pathway,Incorrect,B,C,6493,False,stop,cases/pathway/pathway_0046.md
+pathway_0047,pathway,Incorrect,C,D,20379,False,stop,cases/pathway/pathway_0047.md
+pathway_0048,pathway,Incorrect,A,C,10878,False,stop,cases/pathway/pathway_0048.md
+pathway_0049,pathway,Incorrect,A,C,10166,False,stop,cases/pathway/pathway_0049.md
+pathway_0051,pathway,Incorrect,A,C,9681,False,stop,cases/pathway/pathway_0051.md
+pathway_0052,pathway,Incorrect,A,D,10357,False,stop,cases/pathway/pathway_0052.md
+pathway_0053,pathway,Incorrect,C,A,5854,False,stop,cases/pathway/pathway_0053.md
+pathway_0054,pathway,Incorrect,A,C,9861,False,stop,cases/pathway/pathway_0054.md
+pathway_0055,pathway,Incorrect,A,D,13647,False,stop,cases/pathway/pathway_0055.md
+pathway_0056,pathway,Correct,B,B,22429,False,stop,cases/pathway/pathway_0056.md
+pathway_0057,pathway,Incorrect,D,A,11284,False,stop,cases/pathway/pathway_0057.md
+pathway_0058,pathway,Incorrect,B,C,11896,False,stop,cases/pathway/pathway_0058.md
+pathway_0059,pathway,Incorrect,C,A,8591,False,stop,cases/pathway/pathway_0059.md
+pathway_0061,pathway,Incorrect,C,D,8691,False,stop,cases/pathway/pathway_0061.md
+pathway_0062,pathway,Correct,D,D,7824,False,stop,cases/pathway/pathway_0062.md
+pathway_0063,pathway,Incorrect,B,C,7945,False,stop,cases/pathway/pathway_0063.md
+pathway_0064,pathway,Correct,B,B,7692,False,stop,cases/pathway/pathway_0064.md
+pathway_0065,pathway,Incorrect,C,B,7591,False,stop,cases/pathway/pathway_0065.md
+pathway_0066,pathway,Incorrect,B,D,12053,False,stop,cases/pathway/pathway_0066.md
+pathway_0067,pathway,Incorrect,D,A,10741,False,stop,cases/pathway/pathway_0067.md
+pathway_0068,pathway,Incorrect,B,D,6379,False,stop,cases/pathway/pathway_0068.md
+pathway_0069,pathway,Incorrect,A,C,11901,False,stop,cases/pathway/pathway_0069.md
+pathway_0070,pathway,Incorrect,C,B,16318,False,stop,cases/pathway/pathway_0070.md
+pathway_0071,pathway,Incorrect,A,B,11963,False,stop,cases/pathway/pathway_0071.md
+pathway_0072,pathway,Incorrect,D,C,6783,False,stop,cases/pathway/pathway_0072.md
+pathway_0073,pathway,Incorrect,A,D,12466,False,stop,cases/pathway/pathway_0073.md
+pathway_0074,pathway,No parsed answer,,D,32768,True,length,cases/pathway/pathway_0074.md
+pathway_0075,pathway,Correct,D,D,8115,False,stop,cases/pathway/pathway_0075.md
+pathway_0076,pathway,Incorrect,A,D,11784,False,stop,cases/pathway/pathway_0076.md
+pathway_0078,pathway,Incorrect,D,B,13990,False,stop,cases/pathway/pathway_0078.md
+pathway_0079,pathway,Incorrect,A,D,9788,False,stop,cases/pathway/pathway_0079.md
+pathway_0080,pathway,Incorrect,C,A,10609,False,stop,cases/pathway/pathway_0080.md
+pathway_0081,pathway,Correct,A,A,21452,False,stop,cases/pathway/pathway_0081.md
+pathway_0082,pathway,Incorrect,C,A,12543,False,stop,cases/pathway/pathway_0082.md
+pathway_0083,pathway,Incorrect,A,B,10301,False,stop,cases/pathway/pathway_0083.md
+pathway_0084,pathway,No parsed answer,,C,32768,True,length,cases/pathway/pathway_0084.md
+pathway_0085,pathway,Incorrect,D,C,9211,False,stop,cases/pathway/pathway_0085.md
+pathway_0086,pathway,Incorrect,C,A,6458,False,stop,cases/pathway/pathway_0086.md
+pathway_0087,pathway,Correct,C,C,9414,False,stop,cases/pathway/pathway_0087.md
+pathway_0088,pathway,Correct,D,D,13863,False,stop,cases/pathway/pathway_0088.md
+pathway_0089,pathway,Incorrect,A,B,9635,False,stop,cases/pathway/pathway_0089.md
+pathway_0090,pathway,Correct,C,C,15909,False,stop,cases/pathway/pathway_0090.md
+pathway_0091,pathway,Incorrect,D,B,8778,False,stop,cases/pathway/pathway_0091.md
+pathway_0092,pathway,Incorrect,D,C,18600,False,stop,cases/pathway/pathway_0092.md
+pathway_0093,pathway,Correct,A,A,8991,False,stop,cases/pathway/pathway_0093.md
+pathway_0094,pathway,Incorrect,D,A,13565,False,stop,cases/pathway/pathway_0094.md
+pathway_0095,pathway,Incorrect,D,B,18946,False,stop,cases/pathway/pathway_0095.md
+pathway_0096,pathway,Incorrect,D,B,8851,False,stop,cases/pathway/pathway_0096.md
+pathway_0097,pathway,Correct,D,D,8392,False,stop,cases/pathway/pathway_0097.md
+pathway_0098,pathway,Correct,A,A,6950,False,stop,cases/pathway/pathway_0098.md
+pathway_0099,pathway,Correct,A,A,10571,False,stop,cases/pathway/pathway_0099.md
+pathway_0100,pathway,Incorrect,C,A,13640,False,stop,cases/pathway/pathway_0100.md
+pathway_0101,pathway,Correct,B,B,13835,False,stop,cases/pathway/pathway_0101.md
+pathway_0102,pathway,Incorrect,D,C,13632,False,stop,cases/pathway/pathway_0102.md
+pathway_0103,pathway,Correct,A,A,10671,False,stop,cases/pathway/pathway_0103.md
+pathway_0104,pathway,Incorrect,D,B,6602,False,stop,cases/pathway/pathway_0104.md
+pathway_0106,pathway,Correct,D,D,6127,False,stop,cases/pathway/pathway_0106.md
+pathway_0107,pathway,Incorrect,D,A,13487,False,stop,cases/pathway/pathway_0107.md
+pathway_0108,pathway,Incorrect,D,A,8487,False,stop,cases/pathway/pathway_0108.md
+pathway_0109,pathway,Incorrect,B,D,18774,False,stop,cases/pathway/pathway_0109.md
+pathway_0110,pathway,Incorrect,D,C,16163,False,stop,cases/pathway/pathway_0110.md
+pathway_0111,pathway,Incorrect,D,C,18040,False,stop,cases/pathway/pathway_0111.md
+pathway_0112,pathway,Incorrect,D,A,11566,False,stop,cases/pathway/pathway_0112.md
+pathway_0114,pathway,Incorrect,C,B,29670,False,stop,cases/pathway/pathway_0114.md
+pathway_0115,pathway,Incorrect,D,C,13378,False,stop,cases/pathway/pathway_0115.md
+pathway_0117,pathway,Correct,B,B,9626,False,stop,cases/pathway/pathway_0117.md
+pathway_0118,pathway,Incorrect,A,D,10081,False,stop,cases/pathway/pathway_0118.md
+pathway_0119,pathway,Incorrect,A,C,10682,False,stop,cases/pathway/pathway_0119.md
+pathway_0120,pathway,Incorrect,A,C,11006,False,stop,cases/pathway/pathway_0120.md
+pathway_0121,pathway,Incorrect,B,C,20291,False,stop,cases/pathway/pathway_0121.md
+pathway_0122,pathway,Incorrect,C,A,14523,False,stop,cases/pathway/pathway_0122.md
+pathway_0123,pathway,Incorrect,A,D,8434,False,stop,cases/pathway/pathway_0123.md
+pathway_0124,pathway,Incorrect,C,D,25132,False,stop,cases/pathway/pathway_0124.md
+pathway_0125,pathway,Incorrect,A,B,11872,False,stop,cases/pathway/pathway_0125.md
+pathway_0126,pathway,Incorrect,D,A,14266,False,stop,cases/pathway/pathway_0126.md
+pathway_0127,pathway,Correct,C,C,9576,False,stop,cases/pathway/pathway_0127.md
+pathway_0128,pathway,Incorrect,C,D,11277,False,stop,cases/pathway/pathway_0128.md
+pathway_0129,pathway,Incorrect,A,D,11026,False,stop,cases/pathway/pathway_0129.md
+pathway_0130,pathway,Incorrect,D,C,10927,False,stop,cases/pathway/pathway_0130.md
+pathway_0131,pathway,Incorrect,D,B,8393,False,stop,cases/pathway/pathway_0131.md
+pathway_0132,pathway,Correct,A,A,8756,False,stop,cases/pathway/pathway_0132.md
+pathway_0133,pathway,No parsed answer,,A,8697,False,stop,cases/pathway/pathway_0133.md
+pathway_0134,pathway,Incorrect,C,A,9735,False,stop,cases/pathway/pathway_0134.md
+pathway_0135,pathway,Incorrect,C,B,8094,False,stop,cases/pathway/pathway_0135.md
+pathway_0136,pathway,Incorrect,D,B,10425,False,stop,cases/pathway/pathway_0136.md
+pathway_0138,pathway,Correct,D,D,12892,False,stop,cases/pathway/pathway_0138.md
+pathway_0139,pathway,Incorrect,C,A,13653,False,stop,cases/pathway/pathway_0139.md
+pathway_0140,pathway,Incorrect,B,C,8388,False,stop,cases/pathway/pathway_0140.md
+pathway_0141,pathway,Incorrect,B,A,5893,False,stop,cases/pathway/pathway_0141.md
+pathway_0142,pathway,Incorrect,D,A,15451,False,stop,cases/pathway/pathway_0142.md
+pathway_0143,pathway,Incorrect,B,A,7618,False,stop,cases/pathway/pathway_0143.md
+pathway_0144,pathway,Incorrect,B,C,12986,False,stop,cases/pathway/pathway_0144.md
+pathway_0145,pathway,Incorrect,B,C,10980,False,stop,cases/pathway/pathway_0145.md
+pathway_0146,pathway,Incorrect,A,B,15275,False,stop,cases/pathway/pathway_0146.md
+pathway_0147,pathway,No parsed answer,,A,32768,True,length,cases/pathway/pathway_0147.md
+pathway_0148,pathway,Incorrect,D,C,7926,False,stop,cases/pathway/pathway_0148.md
+pathway_0149,pathway,Incorrect,A,D,15997,False,stop,cases/pathway/pathway_0149.md
+pathway_0150,pathway,Correct,B,B,6763,False,stop,cases/pathway/pathway_0150.md
+pathway_0151,pathway,Incorrect,A,B,5435,False,stop,cases/pathway/pathway_0151.md
+pathway_0152,pathway,No parsed answer,,C,32768,True,length,cases/pathway/pathway_0152.md
+pathway_0153,pathway,Incorrect,C,A,14604,False,stop,cases/pathway/pathway_0153.md
+pathway_0154,pathway,Correct,A,A,9225,False,stop,cases/pathway/pathway_0154.md
+pathway_0155,pathway,Correct,B,B,7517,False,stop,cases/pathway/pathway_0155.md
+pathway_0157,pathway,Incorrect,D,B,10188,False,stop,cases/pathway/pathway_0157.md
+pathway_0158,pathway,Incorrect,B,C,21568,False,stop,cases/pathway/pathway_0158.md
+pathway_0159,pathway,Incorrect,C,A,10004,False,stop,cases/pathway/pathway_0159.md
+pathway_0160,pathway,Incorrect,B,A,17093,False,stop,cases/pathway/pathway_0160.md
+pathway_0161,pathway,No parsed answer,,B,17019,False,stop,cases/pathway/pathway_0161.md
+pathway_0162,pathway,Incorrect,D,B,6398,False,stop,cases/pathway/pathway_0162.md
+pathway_0164,pathway,Incorrect,D,C,10502,False,stop,cases/pathway/pathway_0164.md
+pathway_0165,pathway,Incorrect,A,C,8034,False,stop,cases/pathway/pathway_0165.md
+pathway_0166,pathway,Incorrect,A,D,8777,False,stop,cases/pathway/pathway_0166.md
+pathway_0167,pathway,Incorrect,B,A,16235,False,stop,cases/pathway/pathway_0167.md
+pathway_0168,pathway,Correct,D,D,10759,False,stop,cases/pathway/pathway_0168.md
+pathway_0169,pathway,Incorrect,D,B,10664,False,stop,cases/pathway/pathway_0169.md
+pathway_0171,pathway,Incorrect,C,B,11536,False,stop,cases/pathway/pathway_0171.md
+pathway_0172,pathway,Incorrect,D,A,11550,False,stop,cases/pathway/pathway_0172.md
+pathway_0173,pathway,Incorrect,D,B,14769,False,stop,cases/pathway/pathway_0173.md
+pathway_0174,pathway,Incorrect,B,A,5870,False,stop,cases/pathway/pathway_0174.md
+pathway_0175,pathway,Correct,A,A,8336,False,stop,cases/pathway/pathway_0175.md
+pathway_0176,pathway,Incorrect,A,D,11019,False,stop,cases/pathway/pathway_0176.md
+pathway_0177,pathway,Incorrect,D,B,23401,False,stop,cases/pathway/pathway_0177.md
+pathway_0178,pathway,Incorrect,C,D,11735,False,stop,cases/pathway/pathway_0178.md
+pathway_0179,pathway,Incorrect,B,C,8227,False,stop,cases/pathway/pathway_0179.md
+pathway_0180,pathway,Incorrect,A,B,17585,False,stop,cases/pathway/pathway_0180.md
+pathway_0181,pathway,Incorrect,A,D,9101,False,stop,cases/pathway/pathway_0181.md
+pathway_0182,pathway,Incorrect,C,A,9199,False,stop,cases/pathway/pathway_0182.md
+pathway_0183,pathway,Incorrect,A,C,5205,False,stop,cases/pathway/pathway_0183.md
+pathway_0184,pathway,Incorrect,A,D,11879,False,stop,cases/pathway/pathway_0184.md
+pathway_0185,pathway,Incorrect,A,D,7998,False,stop,cases/pathway/pathway_0185.md
+pathway_0186,pathway,Incorrect,B,D,6617,False,stop,cases/pathway/pathway_0186.md
+pathway_0187,pathway,Incorrect,A,D,18212,False,stop,cases/pathway/pathway_0187.md
+pathway_0188,pathway,Incorrect,C,B,9839,False,stop,cases/pathway/pathway_0188.md
+pathway_0189,pathway,Incorrect,D,A,4953,False,stop,cases/pathway/pathway_0189.md
+pathway_0191,pathway,Incorrect,A,D,20428,False,stop,cases/pathway/pathway_0191.md
+pathway_0192,pathway,Incorrect,D,B,11632,False,stop,cases/pathway/pathway_0192.md
+pathway_0193,pathway,Incorrect,A,C,14813,False,stop,cases/pathway/pathway_0193.md
+pathway_0194,pathway,Incorrect,C,B,13865,False,stop,cases/pathway/pathway_0194.md
+pathway_0195,pathway,No parsed answer,,C,32768,True,length,cases/pathway/pathway_0195.md
+pathway_0196,pathway,Incorrect,C,D,6073,False,stop,cases/pathway/pathway_0196.md
+pathway_0197,pathway,Incorrect,A,C,6168,False,stop,cases/pathway/pathway_0197.md
+pathway_0198,pathway,Incorrect,A,C,6318,False,stop,cases/pathway/pathway_0198.md
+pathway_0199,pathway,Incorrect,D,A,16945,False,stop,cases/pathway/pathway_0199.md
+ph_0000,ph,Incorrect,B,A,3195,False,stop,cases/ph/ph_0000.md
+ph_0001,ph,Incorrect,C,D,8555,False,stop,cases/ph/ph_0001.md
+ph_0002,ph,Incorrect,A,D,11061,False,stop,cases/ph/ph_0002.md
+ph_0003,ph,Incorrect,C,D,7475,False,stop,cases/ph/ph_0003.md
+ph_0004,ph,Correct,B,B,9105,False,stop,cases/ph/ph_0004.md
+ph_0006,ph,Incorrect,C,A,10187,False,stop,cases/ph/ph_0006.md
+ph_0007,ph,Incorrect,B,D,18096,False,stop,cases/ph/ph_0007.md
+ph_0008,ph,Incorrect,D,B,9740,False,stop,cases/ph/ph_0008.md
+ph_0009,ph,Incorrect,A,B,7790,False,stop,cases/ph/ph_0009.md
+ph_0010,ph,Incorrect,B,A,10031,False,stop,cases/ph/ph_0010.md
+ph_0011,ph,Incorrect,D,A,6994,False,stop,cases/ph/ph_0011.md
+ph_0012,ph,Incorrect,A,C,18839,False,stop,cases/ph/ph_0012.md
+ph_0013,ph,Correct,B,B,10727,False,stop,cases/ph/ph_0013.md
+ph_0014,ph,Incorrect,A,B,6676,False,stop,cases/ph/ph_0014.md
+ph_0015,ph,Incorrect,C,B,6839,False,stop,cases/ph/ph_0015.md
+ph_0016,ph,Incorrect,C,A,15999,False,stop,cases/ph/ph_0016.md
+ph_0017,ph,Incorrect,B,A,6907,False,stop,cases/ph/ph_0017.md
+ph_0018,ph,Incorrect,D,C,5438,False,stop,cases/ph/ph_0018.md
+ph_0022,ph,Incorrect,A,D,9468,False,stop,cases/ph/ph_0022.md
+ph_0023,ph,Incorrect,C,A,7558,False,stop,cases/ph/ph_0023.md
+ph_0024,ph,No parsed answer,,D,13756,False,stop,cases/ph/ph_0024.md
+ph_0025,ph,Correct,B,B,6554,False,stop,cases/ph/ph_0025.md
+ph_0026,ph,No parsed answer,,B,32768,True,length,cases/ph/ph_0026.md
+ph_0027,ph,Incorrect,C,A,7850,False,stop,cases/ph/ph_0027.md
+ph_0028,ph,Incorrect,B,C,11137,False,stop,cases/ph/ph_0028.md
+ph_0029,ph,Correct,D,D,12071,False,stop,cases/ph/ph_0029.md
+ph_0030,ph,Incorrect,C,D,9433,False,stop,cases/ph/ph_0030.md
+ph_0032,ph,No parsed answer,,D,32768,True,length,cases/ph/ph_0032.md
+ph_0033,ph,Incorrect,D,A,7146,False,stop,cases/ph/ph_0033.md
+ph_0034,ph,Incorrect,D,B,4704,False,stop,cases/ph/ph_0034.md
+ph_0035,ph,Incorrect,D,C,14176,False,stop,cases/ph/ph_0035.md
+ph_0036,ph,Incorrect,D,B,31414,False,stop,cases/ph/ph_0036.md
+ph_0037,ph,Incorrect,B,A,6129,False,stop,cases/ph/ph_0037.md
+ph_0038,ph,Incorrect,C,D,8650,False,stop,cases/ph/ph_0038.md
+ph_0039,ph,Correct,C,C,11469,False,stop,cases/ph/ph_0039.md
+ph_0040,ph,Correct,D,D,13945,False,stop,cases/ph/ph_0040.md
+ph_0041,ph,Incorrect,B,D,14940,False,stop,cases/ph/ph_0041.md
+ph_0042,ph,No parsed answer,,B,5930,False,stop,cases/ph/ph_0042.md
+ph_0043,ph,Correct,D,D,23652,False,stop,cases/ph/ph_0043.md
+ph_0045,ph,Incorrect,B,D,8492,False,stop,cases/ph/ph_0045.md
+ph_0046,ph,Incorrect,C,A,8769,False,stop,cases/ph/ph_0046.md
+ph_0047,ph,Incorrect,B,D,8824,False,stop,cases/ph/ph_0047.md
+ph_0048,ph,Incorrect,D,A,16254,False,stop,cases/ph/ph_0048.md
+ph_0049,ph,Correct,D,D,8585,False,stop,cases/ph/ph_0049.md
+ph_0050,ph,Incorrect,C,A,7685,False,stop,cases/ph/ph_0050.md
+ph_0051,ph,Correct,B,B,17544,False,stop,cases/ph/ph_0051.md
+ph_0052,ph,Incorrect,B,D,12158,False,stop,cases/ph/ph_0052.md
+ph_0053,ph,Incorrect,D,A,28579,False,stop,cases/ph/ph_0053.md
+temperature_0000,temperature,Incorrect,D,A,5027,False,stop,cases/temperature/temperature_0000.md
+temperature_0001,temperature,Incorrect,A,C,9354,False,stop,cases/temperature/temperature_0001.md
+temperature_0002,temperature,Incorrect,C,B,7321,False,stop,cases/temperature/temperature_0002.md
+temperature_0003,temperature,Incorrect,A,B,4924,False,stop,cases/temperature/temperature_0003.md
+temperature_0004,temperature,No parsed answer,,C,32768,True,length,cases/temperature/temperature_0004.md
+temperature_0005,temperature,No parsed answer,,A,32768,True,length,cases/temperature/temperature_0005.md
+temperature_0006,temperature,Incorrect,C,B,30673,False,stop,cases/temperature/temperature_0006.md
+temperature_0007,temperature,Incorrect,D,B,8621,False,stop,cases/temperature/temperature_0007.md
+temperature_0008,temperature,Incorrect,B,A,22888,False,stop,cases/temperature/temperature_0008.md
+temperature_0009,temperature,Incorrect,A,C,14263,False,stop,cases/temperature/temperature_0009.md
+temperature_0010,temperature,Incorrect,A,B,15411,False,stop,cases/temperature/temperature_0010.md
+temperature_0011,temperature,Incorrect,A,C,24364,False,stop,cases/temperature/temperature_0011.md
+temperature_0012,temperature,Incorrect,B,D,9772,False,stop,cases/temperature/temperature_0012.md
+temperature_0013,temperature,Incorrect,A,C,7270,False,stop,cases/temperature/temperature_0013.md
+temperature_0017,temperature,Correct,C,C,12132,False,stop,cases/temperature/temperature_0017.md
+temperature_0018,temperature,Incorrect,B,A,9608,False,stop,cases/temperature/temperature_0018.md
+temperature_0019,temperature,No parsed answer,,A,32768,True,length,cases/temperature/temperature_0019.md
+temperature_0020,temperature,Correct,D,D,23467,False,stop,cases/temperature/temperature_0020.md
+temperature_0021,temperature,Correct,A,A,10295,False,stop,cases/temperature/temperature_0021.md
+temperature_0023,temperature,Incorrect,C,A,9415,False,stop,cases/temperature/temperature_0023.md
+temperature_0024,temperature,Incorrect,A,C,9852,False,stop,cases/temperature/temperature_0024.md
+temperature_0025,temperature,Correct,D,D,20940,False,stop,cases/temperature/temperature_0025.md
+temperature_0026,temperature,Incorrect,A,C,15885,False,stop,cases/temperature/temperature_0026.md
+temperature_0027,temperature,Correct,D,D,13358,False,stop,cases/temperature/temperature_0027.md
+temperature_0028,temperature,Incorrect,A,B,9004,False,stop,cases/temperature/temperature_0028.md
+temperature_0029,temperature,Incorrect,D,C,8601,False,stop,cases/temperature/temperature_0029.md
+temperature_0030,temperature,Incorrect,D,C,9297,False,stop,cases/temperature/temperature_0030.md
+temperature_0031,temperature,Correct,A,A,15633,False,stop,cases/temperature/temperature_0031.md
+temperature_0032,temperature,Correct,A,A,10531,False,stop,cases/temperature/temperature_0032.md
+temperature_0033,temperature,Correct,B,B,4069,False,stop,cases/temperature/temperature_0033.md
+temperature_0034,temperature,Incorrect,D,C,8749,False,stop,cases/temperature/temperature_0034.md
+temperature_0035,temperature,Incorrect,A,B,17851,False,stop,cases/temperature/temperature_0035.md
+temperature_0036,temperature,Correct,A,A,13603,False,stop,cases/temperature/temperature_0036.md
+temperature_0037,temperature,Incorrect,D,B,7029,False,stop,cases/temperature/temperature_0037.md
+temperature_0038,temperature,Incorrect,A,C,7277,False,stop,cases/temperature/temperature_0038.md
+temperature_0039,temperature,Correct,D,D,18412,False,stop,cases/temperature/temperature_0039.md
+temperature_0040,temperature,Incorrect,D,B,8538,False,stop,cases/temperature/temperature_0040.md
+transmembrane_0000,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0000.md
+transmembrane_0001,transmembrane,Incorrect,A,C,25848,False,stop,cases/transmembrane/transmembrane_0001.md
+transmembrane_0002,transmembrane,Correct,B,B,21816,False,stop,cases/transmembrane/transmembrane_0002.md
+transmembrane_0003,transmembrane,Incorrect,A,D,19405,False,stop,cases/transmembrane/transmembrane_0003.md
+transmembrane_0004,transmembrane,Incorrect,C,B,29379,False,stop,cases/transmembrane/transmembrane_0004.md
+transmembrane_0005,transmembrane,No parsed answer,,C,32768,True,length,cases/transmembrane/transmembrane_0005.md
+transmembrane_0006,transmembrane,Correct,A,A,31101,False,stop,cases/transmembrane/transmembrane_0006.md
+transmembrane_0007,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0007.md
+transmembrane_0008,transmembrane,No parsed answer,,A,32768,True,length,cases/transmembrane/transmembrane_0008.md
+transmembrane_0009,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0009.md
+transmembrane_0010,transmembrane,Correct,D,D,9684,False,stop,cases/transmembrane/transmembrane_0010.md
+transmembrane_0011,transmembrane,Incorrect,A,B,12728,False,stop,cases/transmembrane/transmembrane_0011.md
+transmembrane_0012,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0012.md
+transmembrane_0013,transmembrane,No parsed answer,,C,32768,True,length,cases/transmembrane/transmembrane_0013.md
+transmembrane_0014,transmembrane,Incorrect,D,A,24119,False,stop,cases/transmembrane/transmembrane_0014.md
+transmembrane_0015,transmembrane,Incorrect,A,D,14537,False,stop,cases/transmembrane/transmembrane_0015.md
+transmembrane_0016,transmembrane,Correct,A,A,23701,False,stop,cases/transmembrane/transmembrane_0016.md
+transmembrane_0017,transmembrane,No parsed answer,,C,32768,True,length,cases/transmembrane/transmembrane_0017.md
+transmembrane_0018,transmembrane,Incorrect,C,B,24326,False,stop,cases/transmembrane/transmembrane_0018.md
+transmembrane_0019,transmembrane,No parsed answer,,C,32768,True,length,cases/transmembrane/transmembrane_0019.md
+transmembrane_0020,transmembrane,Incorrect,A,D,27823,False,stop,cases/transmembrane/transmembrane_0020.md
+transmembrane_0021,transmembrane,Correct,B,B,19039,False,stop,cases/transmembrane/transmembrane_0021.md
+transmembrane_0022,transmembrane,Correct,B,B,21926,False,stop,cases/transmembrane/transmembrane_0022.md
+transmembrane_0023,transmembrane,Incorrect,A,C,26227,False,stop,cases/transmembrane/transmembrane_0023.md
+transmembrane_0024,transmembrane,Incorrect,A,D,19644,False,stop,cases/transmembrane/transmembrane_0024.md
+transmembrane_0025,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0025.md
+transmembrane_0026,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0026.md
+transmembrane_0027,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0027.md
+transmembrane_0028,transmembrane,No parsed answer,,C,32768,True,length,cases/transmembrane/transmembrane_0028.md
+transmembrane_0029,transmembrane,Incorrect,B,C,22490,False,stop,cases/transmembrane/transmembrane_0029.md
+transmembrane_0030,transmembrane,Correct,D,D,28639,False,stop,cases/transmembrane/transmembrane_0030.md
+transmembrane_0031,transmembrane,Correct,C,C,14885,False,stop,cases/transmembrane/transmembrane_0031.md
+transmembrane_0032,transmembrane,Incorrect,B,C,25945,False,stop,cases/transmembrane/transmembrane_0032.md
+transmembrane_0033,transmembrane,Correct,A,A,21641,False,stop,cases/transmembrane/transmembrane_0033.md
+transmembrane_0034,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0034.md
+transmembrane_0035,transmembrane,No parsed answer,,A,32768,True,length,cases/transmembrane/transmembrane_0035.md
+transmembrane_0036,transmembrane,Incorrect,A,C,28746,False,stop,cases/transmembrane/transmembrane_0036.md
+transmembrane_0037,transmembrane,Correct,A,A,8765,False,stop,cases/transmembrane/transmembrane_0037.md
+transmembrane_0038,transmembrane,Correct,C,C,23264,False,stop,cases/transmembrane/transmembrane_0038.md
+transmembrane_0039,transmembrane,Correct,D,D,7656,False,stop,cases/transmembrane/transmembrane_0039.md
+transmembrane_0040,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0040.md
+transmembrane_0041,transmembrane,Correct,A,A,32619,False,stop,cases/transmembrane/transmembrane_0041.md
+transmembrane_0042,transmembrane,Incorrect,C,B,20131,False,stop,cases/transmembrane/transmembrane_0042.md
+transmembrane_0043,transmembrane,Incorrect,C,A,25931,False,stop,cases/transmembrane/transmembrane_0043.md
+transmembrane_0044,transmembrane,Incorrect,C,D,14186,False,stop,cases/transmembrane/transmembrane_0044.md
+transmembrane_0045,transmembrane,Incorrect,D,C,24543,False,stop,cases/transmembrane/transmembrane_0045.md
+transmembrane_0046,transmembrane,No parsed answer,,C,32768,True,length,cases/transmembrane/transmembrane_0046.md
+transmembrane_0047,transmembrane,Incorrect,A,B,14287,False,stop,cases/transmembrane/transmembrane_0047.md
+transmembrane_0048,transmembrane,No parsed answer,,D,18951,False,stop,cases/transmembrane/transmembrane_0048.md
+transmembrane_0049,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0049.md
+transmembrane_0050,transmembrane,No parsed answer,,A,32768,True,length,cases/transmembrane/transmembrane_0050.md
+transmembrane_0051,transmembrane,Incorrect,A,C,14179,False,stop,cases/transmembrane/transmembrane_0051.md
+transmembrane_0052,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0052.md
+transmembrane_0053,transmembrane,Correct,D,D,28265,False,stop,cases/transmembrane/transmembrane_0053.md
+transmembrane_0054,transmembrane,Incorrect,A,D,25991,False,stop,cases/transmembrane/transmembrane_0054.md
+transmembrane_0055,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0055.md
+transmembrane_0056,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0056.md
+transmembrane_0057,transmembrane,Correct,B,B,11076,False,stop,cases/transmembrane/transmembrane_0057.md
+transmembrane_0058,transmembrane,Incorrect,A,D,28401,False,stop,cases/transmembrane/transmembrane_0058.md
+transmembrane_0059,transmembrane,Incorrect,D,B,20472,False,stop,cases/transmembrane/transmembrane_0059.md
+transmembrane_0060,transmembrane,Correct,A,A,14251,False,stop,cases/transmembrane/transmembrane_0060.md
+transmembrane_0061,transmembrane,Incorrect,A,D,16209,False,stop,cases/transmembrane/transmembrane_0061.md
+transmembrane_0062,transmembrane,No parsed answer,,A,29206,False,stop,cases/transmembrane/transmembrane_0062.md
+transmembrane_0063,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0063.md
+transmembrane_0064,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0064.md
+transmembrane_0065,transmembrane,Correct,A,A,22581,False,stop,cases/transmembrane/transmembrane_0065.md
+transmembrane_0066,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0066.md
+transmembrane_0067,transmembrane,Correct,A,A,25999,False,stop,cases/transmembrane/transmembrane_0067.md
+transmembrane_0068,transmembrane,No parsed answer,,C,32768,True,length,cases/transmembrane/transmembrane_0068.md
+transmembrane_0069,transmembrane,No parsed answer,,A,32768,True,length,cases/transmembrane/transmembrane_0069.md
+transmembrane_0070,transmembrane,Incorrect,A,D,20030,False,stop,cases/transmembrane/transmembrane_0070.md
+transmembrane_0071,transmembrane,Correct,A,A,10812,False,stop,cases/transmembrane/transmembrane_0071.md
+transmembrane_0072,transmembrane,Correct,C,C,17197,False,stop,cases/transmembrane/transmembrane_0072.md
+transmembrane_0073,transmembrane,Correct,A,A,11896,False,stop,cases/transmembrane/transmembrane_0073.md
+transmembrane_0074,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0074.md
+transmembrane_0075,transmembrane,Incorrect,A,D,20335,False,stop,cases/transmembrane/transmembrane_0075.md
+transmembrane_0076,transmembrane,Incorrect,A,C,32672,False,stop,cases/transmembrane/transmembrane_0076.md
+transmembrane_0077,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0077.md
+transmembrane_0078,transmembrane,Incorrect,B,D,17248,False,stop,cases/transmembrane/transmembrane_0078.md
+transmembrane_0079,transmembrane,Correct,D,D,25421,False,stop,cases/transmembrane/transmembrane_0079.md
+transmembrane_0080,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0080.md
+transmembrane_0081,transmembrane,Incorrect,D,B,12116,False,stop,cases/transmembrane/transmembrane_0081.md
+transmembrane_0082,transmembrane,Correct,A,A,6485,False,stop,cases/transmembrane/transmembrane_0082.md
+transmembrane_0083,transmembrane,Incorrect,D,C,10935,False,stop,cases/transmembrane/transmembrane_0083.md
+transmembrane_0084,transmembrane,Incorrect,A,B,15820,False,stop,cases/transmembrane/transmembrane_0084.md
+transmembrane_0085,transmembrane,Correct,C,C,24874,False,stop,cases/transmembrane/transmembrane_0085.md
+transmembrane_0086,transmembrane,Incorrect,C,D,16052,False,stop,cases/transmembrane/transmembrane_0086.md
+transmembrane_0087,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0087.md
+transmembrane_0088,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0088.md
+transmembrane_0089,transmembrane,No parsed answer,,C,32768,True,length,cases/transmembrane/transmembrane_0089.md
+transmembrane_0090,transmembrane,Incorrect,A,D,28653,False,stop,cases/transmembrane/transmembrane_0090.md
+transmembrane_0091,transmembrane,Correct,A,A,24754,False,stop,cases/transmembrane/transmembrane_0091.md
+transmembrane_0092,transmembrane,Correct,D,D,32089,False,stop,cases/transmembrane/transmembrane_0092.md
+transmembrane_0093,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0093.md
+transmembrane_0094,transmembrane,Correct,A,A,20915,False,stop,cases/transmembrane/transmembrane_0094.md
+transmembrane_0096,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0096.md
+transmembrane_0097,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0097.md
+transmembrane_0098,transmembrane,Incorrect,A,D,17823,False,stop,cases/transmembrane/transmembrane_0098.md
+transmembrane_0099,transmembrane,Incorrect,C,D,29823,False,stop,cases/transmembrane/transmembrane_0099.md
+transmembrane_0100,transmembrane,Incorrect,A,C,22590,False,stop,cases/transmembrane/transmembrane_0100.md
+transmembrane_0101,transmembrane,Incorrect,C,A,27116,False,stop,cases/transmembrane/transmembrane_0101.md
+transmembrane_0102,transmembrane,Incorrect,A,D,20126,False,stop,cases/transmembrane/transmembrane_0102.md
+transmembrane_0103,transmembrane,Incorrect,D,C,25873,False,stop,cases/transmembrane/transmembrane_0103.md
+transmembrane_0104,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0104.md
+transmembrane_0105,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0105.md
+transmembrane_0106,transmembrane,No parsed answer,,C,32768,True,length,cases/transmembrane/transmembrane_0106.md
+transmembrane_0107,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0107.md
+transmembrane_0108,transmembrane,Incorrect,A,D,26538,False,stop,cases/transmembrane/transmembrane_0108.md
+transmembrane_0109,transmembrane,Correct,D,D,30794,False,stop,cases/transmembrane/transmembrane_0109.md
+transmembrane_0110,transmembrane,Correct,A,A,28916,False,stop,cases/transmembrane/transmembrane_0110.md
+transmembrane_0111,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0111.md
+transmembrane_0112,transmembrane,Incorrect,B,C,25901,False,stop,cases/transmembrane/transmembrane_0112.md
+transmembrane_0113,transmembrane,No parsed answer,,A,32768,True,length,cases/transmembrane/transmembrane_0113.md
+transmembrane_0114,transmembrane,Incorrect,A,B,9066,False,stop,cases/transmembrane/transmembrane_0114.md
+transmembrane_0115,transmembrane,Correct,A,A,29691,False,stop,cases/transmembrane/transmembrane_0115.md
+transmembrane_0116,transmembrane,Incorrect,A,C,18508,False,stop,cases/transmembrane/transmembrane_0116.md
+transmembrane_0117,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0117.md
+transmembrane_0118,transmembrane,No parsed answer,,A,32768,True,length,cases/transmembrane/transmembrane_0118.md
+transmembrane_0119,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0119.md
+transmembrane_0120,transmembrane,No parsed answer,,C,32768,True,length,cases/transmembrane/transmembrane_0120.md
+transmembrane_0121,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0121.md
+transmembrane_0122,transmembrane,No parsed answer,,D,32768,True,length,cases/transmembrane/transmembrane_0122.md
+transmembrane_0123,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0123.md
+transmembrane_0124,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0124.md
+transmembrane_0125,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0125.md
+transmembrane_0126,transmembrane,Incorrect,A,D,19582,False,stop,cases/transmembrane/transmembrane_0126.md
+transmembrane_0127,transmembrane,No parsed answer,,A,32768,True,length,cases/transmembrane/transmembrane_0127.md
+transmembrane_0128,transmembrane,No parsed answer,,B,32768,True,length,cases/transmembrane/transmembrane_0128.md
+transmembrane_0129,transmembrane,No parsed answer,,A,32768,True,length,cases/transmembrane/transmembrane_0129.md
+transmembrane_0130,transmembrane,Correct,D,D,21152,False,stop,cases/transmembrane/transmembrane_0130.md
+transmembrane_0131,transmembrane,Correct,D,D,28553,False,stop,cases/transmembrane/transmembrane_0131.md
+transmembrane_0132,transmembrane,Correct,B,B,13830,False,stop,cases/transmembrane/transmembrane_0132.md
+transmembrane_0133,transmembrane,Incorrect,D,B,32181,False,stop,cases/transmembrane/transmembrane_0133.md
