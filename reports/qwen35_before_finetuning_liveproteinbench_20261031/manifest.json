@@ -1,0 +1,100 @@
+{
+  "additional_adapter": null,
+  "arm": "baseline",
+  "case_outcome_and_request_hashes_verified": 1736,
+  "case_pages": 1736,
+  "cases": 1736,
+  "comparison_sha256": "0471f3cdb743ac814989f6e1e5132c1e40552048b184ef9ea4694f8e4e36d9ab",
+  "correct": 524,
+  "hit_32768": 21,
+  "input_sha256": "4f16e63a748a536a936f6b35540915354c187fb44aecc5cb3b71a615c484103c",
+  "model": "Qwen/Qwen3.5-4B",
+  "note": "Outputs are rendered directly from sealed raw_text exactly once; request and outcome hashes were checked.",
+  "paired_predictions_sha256": "e4fdba4af2cf36028f922caee92b7c09e7567ecd0fdccaa5ca070c0313d819a3",
+  "per_task": {
+    "EC_number": {
+      "cases": 200,
+      "correct": 56,
+      "hit_32768": 0
+    },
+    "GO_biological_process": {
+      "cases": 187,
+      "correct": 64,
+      "hit_32768": 0
+    },
+    "GO_cellular_component": {
+      "cases": 196,
+      "correct": 51,
+      "hit_32768": 2
+    },
+    "GO_molecular_function": {
+      "cases": 192,
+      "correct": 53,
+      "hit_32768": 4
+    },
+    "active_site": {
+      "cases": 136,
+      "correct": 63,
+      "hit_32768": 2
+    },
+    "catalytic_activity": {
+      "cases": 187,
+      "correct": 61,
+      "hit_32768": 1
+    },
+    "cofactor": {
+      "cases": 184,
+      "correct": 50,
+      "hit_32768": 4
+    },
+    "motif_position": {
+      "cases": 49,
+      "correct": 10,
+      "hit_32768": 1
+    },
+    "pathway": {
+      "cases": 187,
+      "correct": 33,
+      "hit_32768": 2
+    },
+    "ph": {
+      "cases": 48,
+      "correct": 11,
+      "hit_32768": 0
+    },
+    "temperature": {
+      "cases": 37,
+      "correct": 5,
+      "hit_32768": 0
+    },
+    "transmembrane": {
+      "cases": 133,
+      "correct": 67,
+      "hit_32768": 5
+    }
+  },
+  "prediction_seal_sha256": "682183c36ee41c89659903eedb2ae4b4b3670ad55f9b6d795a882b361e9f6357",
+  "reference_answers_opened_for_generation": false,
+  "reference_sha256": "dab5185104e5ee504cbd96a3c978761530ecaf95dce7c9c6ad1c4f02bfd41bf7",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "sampling_parameters": {
+    "do_sample": true,
+    "eos_token_id": [
+      248044,
+      248046
+    ],
+    "max_new_tokens": 32768,
+    "min_p": 0.0,
+    "presence_penalty": 1.5,
+    "repetition_penalty": 1.0,
+    "seed_policy": "sha256_42_colon_case_id_first32_mod_2pow31minus1",
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95,
+    "use_cache": true
+  },
+  "scorer": "existing supplementary v5 parser",
+  "started_sha256": "8529741e4d73ff5a5388de6e38568185c05e9a13db8e21b8e9e3c5b0691279e0",
+  "status": "passed",
+  "valid_answers": 1708
+}
