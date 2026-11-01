@@ -2,9 +2,9 @@
 
 The 36 selected questions below were each answered once by **NVIDIA Qwen3.8-Flash-Next-NVFP4** using `low` thinking. Open a question to see its original input, the complete saved thinking, and the final response separately.
 
-All 36 responses finished naturally. Mean thinking length: **3,289 tokens**; mean final-response length: **403 tokens**. Final-response length includes the explanation after native thinking. The longest thinking trace contained 17,047 tokens.
+All 36 requests returned final-response text, and the server recorded `stop` for each. Some responses lack a clear final choice or stop mid-sentence. Mean thinking length: **3,289 tokens**; mean final-response length: **403 tokens**. Final-response length includes the explanation after native thinking. The longest thinking trace contained 17,047 tokens.
 
-No reference answers or source annotations were given to the model. The answers and reasoning have not been checked for correctness. These are 36 selected questions, not a full-benchmark accuracy result.
+No reference answers or source annotations were given to the model during generation. Agreement with a benchmark answer does not establish that the reasoning is correct. These are 36 selected questions, not a full-benchmark accuracy result.
 
 [Compare with the `xhigh` responses to the same 36 questions](../flashnext_xhigh_long_context_liveproteinbench_20261101/README.md).
 

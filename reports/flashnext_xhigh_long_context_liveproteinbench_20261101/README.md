@@ -2,9 +2,9 @@
 
 The 36 selected questions below were each answered once by **NVIDIA Qwen3.8-Flash-Next-NVFP4** using `xhigh` thinking. Open a question to see its original input, the complete saved thinking, and the final response separately.
 
-All 36 responses finished naturally. Mean thinking length: **24,267 tokens**; mean final-response length: **248 tokens**. Final-response length includes the explanation after native thinking. Ten thinking traces exceeded 32,768 tokens; the longest contained 62,800 thinking tokens.
+All 36 requests returned final-response text, and the server recorded `stop` for each. Mean thinking length: **24,267 tokens**; mean final-response length: **248 tokens**. Final-response length includes the explanation after native thinking. Ten thinking traces exceeded 32,768 tokens; the longest contained 62,800 thinking tokens.
 
-No reference answers or source annotations were given to the model. The answers and reasoning have not been checked for correctness. These are 36 selected questions, not a full-benchmark accuracy result.
+No reference answers or source annotations were given to the model during generation. Agreement with a benchmark answer does not establish that the reasoning is correct. These are 36 selected questions, not a full-benchmark accuracy result.
 
 | # | Question | Thinking tokens | Final-response tokens |
 |---:|---|---:|---:|
