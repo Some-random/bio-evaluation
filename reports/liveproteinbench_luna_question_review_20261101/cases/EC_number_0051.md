@@ -1,0 +1,229 @@
+# EC_number_0051
+
+[All 1,736 questions](../README.md) · [Method and limits](../METHOD.md) · [Source credits](../THIRD_PARTY_NOTICES.md)
+
+**Task:** `EC_number`  
+**Author expected answer:** **B** — 2.1.1.27
+
+| Expected-answer support | Reasoning versus lookup | Review status |
+|---|---|---|
+| supported | lookup-dependent | format-valid AI review |
+
+These labels are Luna’s original judgments. Source support and reasoning from the original input are separate questions. The benchmark key and original score are unchanged.
+
+## Complete original question
+
+The sequence and choices below are the complete original user message, in their original order.
+
+```text
+[Protein Sequence]
+MGNEEAFTFALAMATGSFANMVLRAVVELDVFEIMKRAGPGTHLSAAEIAAHLPTKNPDANAMLDRMLRVLAGYEVLSCSNRSLPNGQVERLYGLSPVSQFFTKSEDGASLAPLCLLNQDKVYWESWYHLKDAVLDGGIAFNRAHNLTLYEYAGIDDRFNKVFNDGMSGCSTTIMKKMVENYKGFEGVSTLVDVAGGIGKNLNMIISKYPTIKGINFDLPHVIKDAPRCRGVENIGGDMFISVPQGDAIFIKWICCDWNDEHCLKFLKNCYAALPDHGKVILYEFIFPKASETSYAARVILNIDAVTLATVVGGRIRTEAEFEALAKGAGFEGFKMAYSTSEVDAVMEFLKKK
+
+[Multiple Choices]
+A. 2.1.1.395
+B. 2.1.1.27
+C. 2.3.1.319
+D. 5.1.1.24
+```
+
+<details>
+<summary>Original system instructions, verbatim</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Enzyme Commission (EC) Number Prediction, which is to predict the complete 4-digit Enzyme Commission (EC) number for a given protein. The EC number is a numerical classification that categorizes enzymes based on the chemical reactions they catalyze. You should select the most accurate EC number from the provided options based on the protein's sequence.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## Luna’s full visible review
+
+### Expected-answer support: supported
+
+> The exact 353-aa sequence matches the UniProt entry for peyote N-methyltransferase. That entry assigns EC 2.1.1.27 and links the activity to PubMed evidence code ECO:0000269; the archived entry also reports the reaction of tyramine with S-adenosyl-L-methionine. This supports choice B, while preserving that the benchmark’s original source snapshot is unknown.
+
+Cited evidence: [C1](#evidence-c1), [C4](#evidence-c4), [C7](#evidence-c7), [H2](#evidence-h2), [H6](#evidence-h6).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence may suggest a SAM-dependent methyltransferase, which is consistent with methyl-transfer options, but that broad inference does not identify the substrate or exact methylation reaction needed to distinguish the complete EC number.
+
+**Missing item-specific fact**
+
+> The protein-specific catalytic activity—here, N-methylation of tyramine and related phenethylamines—and its associated EC assignment.
+
+**Reason**
+
+> The sequence and choices do not supply the enzyme’s substrate or experimental activity. Selecting the exact EC requires a protein-specific annotation or functional fact, not merely recognition of a general sequence motif.
+
+### Question ambiguity
+
+**Multiple defensible options named by Luna:** none.
+
+> The supplied evidence supports B as the annotated EC for the sequence-matched protein; no other listed option is supported as its EC number.
+
+### Important caveats
+
+- The evidence is reviewer-only and was not available in the original question.
+- The evidence includes a PubMed-linked experimental evidence code, but the primary study was not independently retrieved or evaluated here.
+- The actual author source snapshot is unknown, although the sequence matches both the current and archived UniProt records.
+
+<details>
+<summary>Saved visible review as JSON</summary>
+
+```json
+{
+  "case_id": "EC_number_0051",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The exact 353-aa sequence matches the UniProt entry for peyote N-methyltransferase. That entry assigns EC 2.1.1.27 and links the activity to PubMed evidence code ECO:0000269; the archived entry also reports the reaction of tyramine with S-adenosyl-L-methionine. This supports choice B, while preserving that the benchmark’s original source snapshot is unknown.",
+    "evidence_ids": [
+      "C1",
+      "C4",
+      "C7",
+      "H2",
+      "H6"
+    ]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence may suggest a SAM-dependent methyltransferase, which is consistent with methyl-transfer options, but that broad inference does not identify the substrate or exact methylation reaction needed to distinguish the complete EC number.",
+    "missing_item_specific_fact": "The protein-specific catalytic activity—here, N-methylation of tyramine and related phenethylamines—and its associated EC assignment.",
+    "reason": "The sequence and choices do not supply the enzyme’s substrate or experimental activity. Selecting the exact EC requires a protein-specific annotation or functional fact, not merely recognition of a general sequence motif."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The supplied evidence supports B as the annotated EC for the sequence-matched protein; no other listed option is supported as its EC number."
+  },
+  "important_caveats": [
+    "The evidence is reviewer-only and was not available in the original question.",
+    "The evidence includes a PubMed-linked experimental evidence code, but the primary study was not independently retrieved or evaluated here.",
+    "The actual author source snapshot is unknown, although the sequence matches both the current and archived UniProt records."
+  ]
+}
+```
+
+</details>
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Reviewer-only source evidence
+
+**This source material was supplied only to the reviewer. It was absent from the original evaluated question.** An exact-sequence database match can support a key without establishing that the question can be answered by reasoning from its original input.
+
+**Accession:** `A0AA51VIL5`; identity was recovered from dataset image-path metadata and was absent from the evaluated model input.  
+**Sequence applicability:** historical matched; current matched.  
+**Historical cutoff:** 2026-05-07; selected entry version 10. The exact author source snapshot remains unknown.
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0AA51VIL5.json)  
+**Locator:** `/primaryAccession`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:26:19.727496+00:00.  
+
+```json
+"A0AA51VIL5"
+```
+
+Source SHA-256: `963ca8f6d2aaca7f8a6e322ef5ff232476097d3fd58ca4bf3478362516330c70`.
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0AA51VIL5.json)  
+**Locator:** `/proteinDescription`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:26:19.727496+00:00.  
+
+```json
+{"alternativeNames":[{"fullName":{"evidences":[{"evidenceCode":"ECO:0000303","id":"37675639","source":"PubMed"}],"value":"O-methyltransferase 3"},"shortNames":[{"evidences":[{"evidenceCode":"ECO:0000303","id":"37675639","source":"PubMed"}],"value":"LwOMT3"}]}],"recommendedName":{"ecNumbers":[{"evidences":[{"evidenceCode":"ECO:0000255","id":"PRU01020","source":"PROSITE-ProRule"},{"evidenceCode":"ECO:0000269","id":"37675639","source":"PubMed"}],"value":"2.1.1.27"}],"fullName":{"evidences":[{"evidenceCode":"ECO:0000303","id":"37675639","source":"PubMed"}],"value":"N-methyltransferase"},"shortNames":[{"evidences":[{"evidenceCode":"ECO:0000303","id":"37675639","source":"PubMed"}],"value":"LwNMT"}]}}
+```
+
+Source SHA-256: `963ca8f6d2aaca7f8a6e322ef5ff232476097d3fd58ca4bf3478362516330c70`.
+
+### Evidence C7
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0AA51VIL5.json)  
+**Locator:** `/comments/3`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:26:19.727496+00:00.  
+
+```json
+{"commentType":"CATALYTIC ACTIVITY","physiologicalReactions":[{"directionType":"left-to-right","evidences":[{"evidenceCode":"ECO:0000269","id":"37675639","source":"PubMed"}],"reactionCrossReference":{"database":"Rhea","id":"RHEA:14866"}}],"reaction":{"ecNumber":"2.1.1.27","evidences":[{"evidenceCode":"ECO:0000269","id":"37675639","source":"PubMed"}],"name":"tyramine + S-adenosyl-L-methionine = N-methyltyramine + S-adenosyl-L-homocysteine + H(+)","reactionCrossReferences":[{"database":"Rhea","id":"RHEA:14865"},{"database":"ChEBI","id":"CHEBI:15378"},{"database":"ChEBI","id":"CHEBI:57856"},{"database":"ChEBI","id":"CHEBI:58155"},{"database":"ChEBI","id":"CHEBI:59789"},{"database":"ChEBI","id":"CHEBI:327995"}]}}
+```
+
+Source SHA-256: `963ca8f6d2aaca7f8a6e322ef5ff232476097d3fd58ca4bf3478362516330c70`.
+
+### Evidence H2
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0AA51VIL5?format=txt&versions=10)  
+**Locator:** `lines 6-10`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 10 / 1.  
+**Retrieved:** 2026-11-02T04:26:22.219060+00:00.  
+
+```text
+DE   RecName: Full=N-methyltransferase {ECO:0000303|PubMed:37675639};
+DE            Short=LwNMT {ECO:0000303|PubMed:37675639};
+DE            EC=2.1.1.27 {ECO:0000255|PROSITE-ProRule:PRU01020, ECO:0000269|PubMed:37675639};
+DE   AltName: Full=O-methyltransferase 3 {ECO:0000303|PubMed:37675639};
+DE            Short=LwOMT3 {ECO:0000303|PubMed:37675639};
+```
+
+Source SHA-256: `69c40863ae76ff5400002524808d001fc829f5326ea095f02e4c5b528c954b0f`.
+
+### Evidence H6
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0AA51VIL5?format=txt&versions=10)  
+**Locator:** `lines 50-57`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 10 / 1.  
+**Retrieved:** 2026-11-02T04:26:22.219060+00:00.  
+
+```text
+CC   -!- CATALYTIC ACTIVITY:
+CC       Reaction=tyramine + S-adenosyl-L-methionine = N-methyltyramine + S-
+CC         adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:14865,
+CC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:58155,
+CC         ChEBI:CHEBI:59789, ChEBI:CHEBI:327995; EC=2.1.1.27;
+CC         Evidence={ECO:0000269|PubMed:37675639};
+CC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:14866;
+CC         Evidence={ECO:0000269|PubMed:37675639};
+```
+
+Source SHA-256: `69c40863ae76ff5400002524808d001fc829f5326ea095f02e4c5b528c954b0f`.
+
+---
+
+Question and key: [LiveProteinBench source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/EC_number.json) (zero-based source row 51). Benchmark content © 2026 LiveProteinBench contributors, [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). Cited UniProt / Gene Ontology excerpts retain their own attribution; see [source credits](../THIRD_PARTY_NOTICES.md).

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-11-01",
+  "model": "gpt-6-luna",
+  "scope": "first-stage author-key support and reasoning-versus-lookup review",
+  "admitted_questions": 1736,
+  "original_source_questions": 1797,
+  "earlier_exclusions_preserved": 61,
+  "review_status_counts": {
+    "valid_review": 1735,
+    "invalid_review": 1
+  },
+  "valid_expected_answer_label_counts": {
+    "supported": 1690,
+    "contradicted": 31,
+    "uncertain": 14
+  },
+  "valid_reasoning_lookup_label_counts": {
+    "reasoning-supported": 442,
+    "lookup-dependent": 1292,
+    "uncertain": 1
+  },
+  "project_source_note_records": 45,
+  "source_checked_contradicted_claims": 31,
+  "qwen_question_reviews_available": 0,
+  "original_benchmark_keys_changed": false,
+  "original_benchmark_scores_changed": false,
+  "github_source_revision": "8b9710932511f816651fc1a7e8a1bc85c3c77767",
+  "github_source_url": "https://github.com/Rongdingyi/LiveProteinBench/tree/8b9710932511f816651fc1a7e8a1bc85c3c77767",
+  "huggingface_dataset_revision": "8428f64e33d53330f7745376d9c45de2d2c37eaf",
+  "huggingface_dataset_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/tree/8428f64e33d53330f7745376d9c45de2d2c37eaf",
+  "input_artifact_sha256": {
+    "packets.jsonl": "19e97d3770cea7faadab526430a7791f01a2b05a5016cee76c8d99a7f32c4e14",
+    "source_verification_notes.jsonl": "a1ea2b2e8869385e812d5f41cea3e2526c3212c37877c345eb0d81b34be90408",
+    "source_verification_addendum_39.jsonl": "f30364b159da414a00251ba9b78ec604a9b2999e6e5a26011308b89bef2d8fa4",
+    "source_verification_invalid_review_note.json": "f8578b0cb3d79dd04fad693107a709a4f60c8f1e446f0ff4e397761c430904a0",
+    "source_verification_summary_full1736.json": "3503dd4661dd0291efcf7e366a0e47c41f3ca89f7611660d38eeac1b397245be"
+  },
+  "frozen_model_inputs_sha256": "4f16e63a748a536a936f6b35540915354c187fb44aecc5cb3b71a615c484103c",
+  "frozen_references_sha256": "dab5185104e5ee504cbd96a3c978761530ecaf95dce7c9c6ad1c4f02bfd41bf7",
+  "reviewer_system_prompt_sha256": "e78bc52e87f4e9a6abb27d392456e08d203acb6473b27d75de163102fa6464f2",
+  "reviewer_user_template_sha256": "0588e24c834775ca6a2bb296de6fae9474fe03ea11883733d489fcf4fdd4f0bc",
+  "export_renderer_sha256": "05ee3ff585c6473f9b5ed7f7c2dd898eda1a38bc0336126bd30fc70d39e0a284",
+  "question_text_retained": "complete original system and user messages; full sequence and original ordered choices",
+  "saved_visible_review_fields_retained": true,
+  "invalid_citation_status_preserved": true,
+  "source_excerpt_policy": "only cited official excerpts, not full downloaded source cache",
+  "private_metadata_policy": "explicit content allowlists; no raw API identifiers, headers, internal reasoning, credentials, local paths, or server addresses"
+}

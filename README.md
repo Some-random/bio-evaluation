@@ -6,6 +6,7 @@
 <details>
 <summary>Source data and technical records</summary>
 
+- [LiveProteinBench: every question and Luna’s answer-support / lookup-dependence review](reports/liveproteinbench_luna_question_review_20261101/README.md)
 - [Run artifacts and trajectories](results/runs)
 - [Machine-readable task and result snapshot](reports/TASK_HIERARCHY_DATA.json)
 - [Task ID crosswalk](reports/TASK_COVERAGE_MAP.csv)
