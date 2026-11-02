@@ -1,0 +1,451 @@
+# GO_molecular_function_0031
+
+[All questions and paired results](../README.md) · [Method](../METHOD.md) · [Source credits](../THIRD_PARTY_NOTICES.md)
+
+**Task:** `GO_molecular_function`  
+**Author expected answer:** **C** — diaminopimelate epimerase activity
+
+| Reviewer | Expected-answer support | Reasoning / lookup | Validity |
+|---|---|---|---|
+| GPT-6 Luna | contradicted | lookup-dependent | valid_review |
+| Qwen3.8-Flash-Next-NVFP4 | contradicted | lookup-dependent | valid_review |
+
+**Paired comparison:** key agree; reasoning agree. Agreement is not proof of correctness. These are separate AI judgments, with no forced consensus or changed key.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MDGKVQVLDFIKINPAGNITILIDNFDIYDKNIPKLSEEIMKETNLYAEQVGFIKEKHLQMMGGEFCGNASRSFASLLAFRDKDFSEQKNYSITCSGESEVLDVDVRTDGAKNKFLAKIKMPKFISLEEISIDEYKLGLVRFSGISHFIFNIKENKETSFENIIDLVKKYLSNEDYSAFGIMFFDKDNLSMKPYVYVKELESGIYENSCASGTTALGYYLKKYKNLDRAKVVQPNGWLEYIIENDEMYIDGPVEIVAEGKVYI
+
+[Multiple Choices]
+A. potassium channel regulator activity
+B. structural constituent of nuclear pore
+C. diaminopimelate epimerase activity
+D. actin filament binding
+```
+
+<details>
+<summary>Original system instructions, verbatim</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Gene Ontology (GO) Molecular Function Prediction, which is to predict the fundamental activity of a protein at the molecular level, as defined by the Gene Ontology (GO) 'Molecular Function' branch. This describes the elemental tasks a protein performs, such as catalysis, transport, or binding to specific molecules. Based on the protein's amino acid sequence, you are to select the option that best describes its primary molecular function.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## GPT-6 Luna
+
+**Saved status:** `valid_review`.
+
+### Expected-answer support: contradicted
+
+> The sequence-matched record identifies the protein as a histidine racemase and reports the experimentally supported reaction L-histidine = D-histidine. That does not support diaminopimelate epimerase activity, which concerns a different substrate and reaction.
+
+Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence is a soluble bacterial-sized protein, which makes the channel-regulator and nuclear-pore choices less plausible, but those broad clues do not establish diaminopimelate epimerase activity or distinguish its substrate specificity.
+
+
+**Missing item-specific fact**
+
+> The protein-specific catalytic identity and substrate specificity are needed; the supplied choices omit the supported histidine-racemase activity.
+
+
+**Reason**
+
+> The input gives no annotation or experimental result identifying the enzyme's substrate. Recognizing a generic enzyme-like sequence would not justify the precise activity in choice C, and the sequence does not provide a clear argument for any listed option.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The evidence supports histidine racemase activity, which is not among the choices. Choice C is related in broad enzyme class but names a distinct reaction; none of the listed options is supported as the protein's specific molecular function.
+
+
+### Important caveats
+
+- The annotation evidence is sequence-matched and cites experimental evidence for histidine racemase activity; the actual author source snapshot is unknown.
+- Reviewer-only annotations establish the expected-answer check but were not supplied to the evaluated model.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence is a soluble bacterial-sized protein, which makes the channel-regulator and nuclear-pore choices less plausible, but those broad clues do not establish diaminopimelate epimerase activity or distinguish its substrate specificity.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The protein-specific catalytic identity and substrate specificity are needed; the supplied choices omit the supported histidine-racemase activity.",
+    "reason": "The input gives no annotation or experimental result identifying the enzyme's substrate. Recognizing a generic enzyme-like sequence would not justify the precise activity in choice C, and the sequence does not provide a clear argument for any listed option."
+  },
+  "case_id": "GO_molecular_function_0031",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C1",
+      "C4",
+      "C5",
+      "C6",
+      "H3",
+      "H4"
+    ],
+    "judgment": "contradicted",
+    "reason": "The sequence-matched record identifies the protein as a histidine racemase and reports the experimentally supported reaction L-histidine = D-histidine. That does not support diaminopimelate epimerase activity, which concerns a different substrate and reaction."
+  },
+  "important_caveats": [
+    "The annotation evidence is sequence-matched and cites experimental evidence for histidine racemase activity; the actual author source snapshot is unknown.",
+    "Reviewer-only annotations establish the expected-answer check but were not supplied to the evaluated model."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The evidence supports histidine racemase activity, which is not among the choices. Choice C is related in broad enzyme class but names a distinct reaction; none of the listed options is supported as the protein's specific molecular function."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "GO_molecular_function_0031",
+  "expected_answer_check": {
+    "judgment": "contradicted",
+    "reason": "The sequence-matched record identifies the protein as a histidine racemase and reports the experimentally supported reaction L-histidine = D-histidine. That does not support diaminopimelate epimerase activity, which concerns a different substrate and reaction.",
+    "evidence_ids": ["C1", "C4", "C5", "C6", "H3", "H4"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence is a soluble bacterial-sized protein, which makes the channel-regulator and nuclear-pore choices less plausible, but those broad clues do not establish diaminopimelate epimerase activity or distinguish its substrate specificity.",
+    "missing_item_specific_fact": "The protein-specific catalytic identity and substrate specificity are needed; the supplied choices omit the supported histidine-racemase activity.",
+    "reason": "The input gives no annotation or experimental result identifying the enzyme's substrate. Recognizing a generic enzyme-like sequence would not justify the precise activity in choice C, and the sequence does not provide a clear argument for any listed option."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The evidence supports histidine racemase activity, which is not among the choices. Choice C is related in broad enzyme class but names a distinct reaction; none of the listed options is supported as the protein's specific molecular function."
+  },
+  "important_caveats": [
+    "The annotation evidence is sequence-matched and cites experimental evidence for histidine racemase activity; the actual author source snapshot is unknown.",
+    "Reviewer-only annotations establish the expected-answer check but were not supplied to the evaluated model."
+  ]
+}
+```
+
+</details>
+
+## Qwen3.8-Flash-Next-NVFP4
+
+**Saved status:** `valid_review`.
+
+### Expected-answer support: contradicted
+
+> The sequence matches UniProt D5RFM4 (263 AA, SHA256 match confirmed). The protein is experimentally characterized (ECO:0000269, PubMed:39424140) as a cofactor-independent HISTIDINE racemase (EC 5.1.1.24) catalyzing L-histidine ↔ D-histidine. Its GO annotation is GO:0047661 (amino-acid racemase activity). Option C, diaminopimelate epimerase activity (GO:0008837, EC 5.1.1.7), specifies the reaction LL-2,6-diaminopimelate ↔ meso-2,6-diaminopimelate — a different substrate and different EC number. While GO:0008837 is a child of GO:0047661, the protein does not act on DAP; no evidence supports DAP epimerase activity. The expected answer misidentifies the specific substrate.
+
+Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H3](#evidence-h3), [H4](#evidence-h4), [GO1](#evidence-go1).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> A model could eliminate B (nuclear pore — impossible in a bacterium lacking a nucleus), D (actin filament binding — atypical for a bacterium), and A (potassium channel regulator — eukaryotic membrane protein context) as implausible for a 263-residue bacterial protein. This leaves C as the only remaining option. However, this elimination relies on organism-level reasoning, not sequence-specific analysis, and leads to a factually incorrect answer (the true function is histidine racemase, not DAP epimerase). Distinguishing histidine racemase from DAP epimerase — both ~263 AA cysteine-dependent amino-acid racemases — requires knowledge of the specific active-site geometry, substrate-binding residues, or homology to structurally characterized DAP epimerases, none of which is inferable from the raw sequence alone.
+
+
+**Missing item-specific fact**
+
+> The specific substrate identity (histidine vs. DAP) and the exact catalytic mechanism/active-site architecture that distinguishes EC 5.1.1.24 from EC 5.1.1.7. The correct GO term (amino-acid racemase activity, GO:0047661, or a hypothetical histidine-racemase-specific term) is not offered among the options.
+
+
+**Reason**
+
+> The sequence contains two cysteines (consistent with both histidine racemase and DAP epimerase mechanisms) but provides no sequence-specific signature that uniquely identifies DAP epimerase over histidine racemase. Selecting C depends on knowing the database annotation or structural classification of this particular protein, not on generalizable sequence reasoning. Moreover, C is not actually correct for this protein.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> No option correctly describes the protein's experimentally determined function (histidine racemase / amino-acid racemase activity). Among the four choices, C is the only one in the correct enzyme superfamily (amino-acid racemase, GO:0047661), making it the 'least wrong' by elimination of organismally implausible options. However, C specifies the wrong substrate and reaction, so no option is truly defensible as correct.
+
+
+### Important caveats
+
+- The protein was first public in Swiss-Prot on 2025-04-09 with histidine racemase annotation (based on a 2024 paper). Before Swiss-Prot review, the TrEMBL entry (from 2010) may have carried a different computational annotation, possibly DAP epimerase by homology. The benchmark question may have been constructed from such an older, now-superseded annotation.
+- The expected answer C shares the parent GO term (GO:0047661, amino-acid racemase activity) with the true annotation, but GO:0008837 (diaminopimelate epimerase) is a specific child term with a defined reaction that does not match the protein's actual catalytic activity.
+- The reviewer-only evidence confirms the sequence match but the evaluated model had no access to the UniProt annotation, PubMed reference, or organism metadata.
+- The benchmark sequence SHA256 matches both the current entry and the historical version 32, confirming the protein identity is stable across annotation updates.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "A model could eliminate B (nuclear pore — impossible in a bacterium lacking a nucleus), D (actin filament binding — atypical for a bacterium), and A (potassium channel regulator — eukaryotic membrane protein context) as implausible for a 263-residue bacterial protein. This leaves C as the only remaining option. However, this elimination relies on organism-level reasoning, not sequence-specific analysis, and leads to a factually incorrect answer (the true function is histidine racemase, not DAP epimerase). Distinguishing histidine racemase from DAP epimerase — both ~263 AA cysteine-dependent amino-acid racemases — requires knowledge of the specific active-site geometry, substrate-binding residues, or homology to structurally characterized DAP epimerases, none of which is inferable from the raw sequence alone.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The specific substrate identity (histidine vs. DAP) and the exact catalytic mechanism/active-site architecture that distinguishes EC 5.1.1.24 from EC 5.1.1.7. The correct GO term (amino-acid racemase activity, GO:0047661, or a hypothetical histidine-racemase-specific term) is not offered among the options.",
+    "reason": "The sequence contains two cysteines (consistent with both histidine racemase and DAP epimerase mechanisms) but provides no sequence-specific signature that uniquely identifies DAP epimerase over histidine racemase. Selecting C depends on knowing the database annotation or structural classification of this particular protein, not on generalizable sequence reasoning. Moreover, C is not actually correct for this protein."
+  },
+  "case_id": "GO_molecular_function_0031",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "H3",
+      "H4",
+      "GO1"
+    ],
+    "judgment": "contradicted",
+    "reason": "The sequence matches UniProt D5RFM4 (263 AA, SHA256 match confirmed). The protein is experimentally characterized (ECO:0000269, PubMed:39424140) as a cofactor-independent HISTIDINE racemase (EC 5.1.1.24) catalyzing L-histidine ↔ D-histidine. Its GO annotation is GO:0047661 (amino-acid racemase activity). Option C, diaminopimelate epimerase activity (GO:0008837, EC 5.1.1.7), specifies the reaction LL-2,6-diaminopimelate ↔ meso-2,6-diaminopimelate — a different substrate and different EC number. While GO:0008837 is a child of GO:0047661, the protein does not act on DAP; no evidence supports DAP epimerase activity. The expected answer misidentifies the specific substrate."
+  },
+  "important_caveats": [
+    "The protein was first public in Swiss-Prot on 2025-04-09 with histidine racemase annotation (based on a 2024 paper). Before Swiss-Prot review, the TrEMBL entry (from 2010) may have carried a different computational annotation, possibly DAP epimerase by homology. The benchmark question may have been constructed from such an older, now-superseded annotation.",
+    "The expected answer C shares the parent GO term (GO:0047661, amino-acid racemase activity) with the true annotation, but GO:0008837 (diaminopimelate epimerase) is a specific child term with a defined reaction that does not match the protein's actual catalytic activity.",
+    "The reviewer-only evidence confirms the sequence match but the evaluated model had no access to the UniProt annotation, PubMed reference, or organism metadata.",
+    "The benchmark sequence SHA256 matches both the current entry and the historical version 32, confirming the protein identity is stable across annotation updates."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "No option correctly describes the protein's experimentally determined function (histidine racemase / amino-acid racemase activity). Among the four choices, C is the only one in the correct enzyme superfamily (amino-acid racemase, GO:0047661), making it the 'least wrong' by elimination of organismally implausible options. However, C specifies the wrong substrate and reaction, so no option is truly defensible as correct."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "GO_molecular_function_0031",
+  "expected_answer_check": {
+    "judgment": "contradicted",
+    "reason": "The sequence matches UniProt D5RFM4 (263 AA, SHA256 match confirmed). The protein is experimentally characterized (ECO:0000269, PubMed:39424140) as a cofactor-independent HISTIDINE racemase (EC 5.1.1.24) catalyzing L-histidine ↔ D-histidine. Its GO annotation is GO:0047661 (amino-acid racemase activity). Option C, diaminopimelate epimerase activity (GO:0008837, EC 5.1.1.7), specifies the reaction LL-2,6-diaminopimelate ↔ meso-2,6-diaminopimelate — a different substrate and different EC number. While GO:0008837 is a child of GO:0047661, the protein does not act on DAP; no evidence supports DAP epimerase activity. The expected answer misidentifies the specific substrate.",
+    "evidence_ids": ["C4", "C5", "C6", "C7", "H3", "H4", "GO1"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "A model could eliminate B (nuclear pore — impossible in a bacterium lacking a nucleus), D (actin filament binding — atypical for a bacterium), and A (potassium channel regulator — eukaryotic membrane protein context) as implausible for a 263-residue bacterial protein. This leaves C as the only remaining option. However, this elimination relies on organism-level reasoning, not sequence-specific analysis, and leads to a factually incorrect answer (the true function is histidine racemase, not DAP epimerase). Distinguishing histidine racemase from DAP epimerase — both ~263 AA cysteine-dependent amino-acid racemases — requires knowledge of the specific active-site geometry, substrate-binding residues, or homology to structurally characterized DAP epimerases, none of which is inferable from the raw sequence alone.",
+    "missing_item_specific_fact": "The specific substrate identity (histidine vs. DAP) and the exact catalytic mechanism/active-site architecture that distinguishes EC 5.1.1.24 from EC 5.1.1.7. The correct GO term (amino-acid racemase activity, GO:0047661, or a hypothetical histidine-racemase-specific term) is not offered among the options.",
+    "reason": "The sequence contains two cysteines (consistent with both histidine racemase and DAP epimerase mechanisms) but provides no sequence-specific signature that uniquely identifies DAP epimerase over histidine racemase. Selecting C depends on knowing the database annotation or structural classification of this particular protein, not on generalizable sequence reasoning. Moreover, C is not actually correct for this protein."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "No option correctly describes the protein's experimentally determined function (histidine racemase / amino-acid racemase activity). Among the four choices, C is the only one in the correct enzyme superfamily (amino-acid racemase, GO:0047661), making it the 'least wrong' by elimination of organismally implausible options. However, C specifies the wrong substrate and reaction, so no option is truly defensible as correct."
+  },
+  "important_caveats": [
+    "The protein was first public in Swiss-Prot on 2025-04-09 with histidine racemase annotation (based on a 2024 paper). Before Swiss-Prot review, the TrEMBL entry (from 2010) may have carried a different computational annotation, possibly DAP epimerase by homology. The benchmark question may have been constructed from such an older, now-superseded annotation.",
+    "The expected answer C shares the parent GO term (GO:0047661, amino-acid racemase activity) with the true annotation, but GO:0008837 (diaminopimelate epimerase) is a specific child term with a defined reaction that does not match the protein's actual catalytic activity.",
+    "The reviewer-only evidence confirms the sequence match but the evaluated model had no access to the UniProt annotation, PubMed reference, or organism metadata.",
+    "The benchmark sequence SHA256 matches both the current entry and the historical version 32, confirming the protein identity is stable across annotation updates."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of Luna’s review
+
+The notes below were prepared for specific claims in the Luna review. They are not independent validation of Qwen’s claims, expert adjudication, or replacement verdicts.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+### Source check 1
+
+**Check:** `reaction_substrate_difference_traced`.
+
+> C4-C6/H3-H4 identify histidine racemase and L-histidine to D-histidine with ECO:0000269, a different substrate from diaminopimelate epimerase.
+
+**Remaining uncertainty:** The difference is traceable; absence of a second substrate activity is not itself demonstrated by the provided excerpt.
+
+Evidence checked: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
+
+## Reviewer-only source evidence
+
+**Both reviewers received this source evidence separately from the original question. It was not available to the original evaluated model.** Source support and reasoning from the original sequence/choices are distinct assessments.
+
+**Accession:** `D5RFM4` (recovered from dataset image-path metadata, not original question text).  
+**Sequence applicability:** historical matched; current matched.  
+**Historical cutoff:** 2026-05-07; archived entry version 32. Exact author snapshot unknown.
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+- Ontology names and EXACT synonyms match options mechanically; no answer-support judgment is made.
+- Only is_a and part_of edges are used in supplied graph paths; all qualifiers and obsolete/replaced_by tags remain in literal source blocks.
+- The ontology is newer than the benchmark repository commit; the exact author ontology snapshot is unknown.
+- No matching term or path does not establish that an option is false.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/D5RFM4.json)  
+**Locator:** `/primaryAccession`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:27:49.723120+00:00.  
+
+```json
+"D5RFM4"
+```
+
+Source SHA-256: `9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd`.
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/D5RFM4.json)  
+**Locator:** `/proteinDescription`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:27:49.723120+00:00.  
+
+```json
+{"recommendedName":{"ecNumbers":[{"evidences":[{"evidenceCode":"ECO:0000269","id":"39424140","source":"PubMed"}],"value":"5.1.1.24"}],"fullName":{"evidences":[{"evidenceCode":"ECO:0000303","id":"39424140","source":"PubMed"}],"value":"Histidine racemase"}}}
+```
+
+Source SHA-256: `9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd`.
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/D5RFM4.json)  
+**Locator:** `/comments/0`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:27:49.723120+00:00.  
+
+```json
+{"commentType":"FUNCTION","texts":[{"evidences":[{"evidenceCode":"ECO:0000269","id":"39424140","source":"PubMed"}],"value":"Cofactor-independent isomerase that catalyzes the reversible conversion of L-histidine to D-histidine (PubMed:39424140). May play a role in growth of F.nucleatum (PubMed:39424140)"}]}
+```
+
+Source SHA-256: `9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd`.
+
+### Evidence C6
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/D5RFM4.json)  
+**Locator:** `/comments/1`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:27:49.723120+00:00.  
+
+```json
+{"commentType":"CATALYTIC ACTIVITY","reaction":{"ecNumber":"5.1.1.24","evidences":[{"evidenceCode":"ECO:0000269","id":"39424140","source":"PubMed"}],"name":"L-histidine = D-histidine","reactionCrossReferences":[{"database":"Rhea","id":"RHEA:59188"},{"database":"ChEBI","id":"CHEBI:57595"},{"database":"ChEBI","id":"CHEBI:142967"}]}}
+```
+
+Source SHA-256: `9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd`.
+
+### Evidence C7
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/D5RFM4.json)  
+**Locator:** `/uniProtKBCrossReferences/4`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:27:49.723120+00:00.  
+
+```json
+{"database":"GO","id":"GO:0047661","properties":[{"key":"GoTerm","value":"F:amino-acid racemase activity"},{"key":"GoEvidenceType","value":"IEA:RHEA"}]}
+```
+
+Source SHA-256: `9d534f1baac31e4cc070d3002eca79de8e3da489ec484522b9820ff39ad10ecd`.
+
+### Evidence H3
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/D5RFM4?format=txt&versions=32)  
+**Locator:** `lines 38-41`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 32 / 1.  
+**Retrieved:** 2026-11-02T04:27:51.450216+00:00.  
+
+```text
+CC   -!- FUNCTION: Cofactor-independent isomerase that catalyzes the reversible
+CC       conversion of L-histidine to D-histidine (PubMed:39424140). May play a
+CC       role in growth of F.nucleatum (PubMed:39424140).
+CC       {ECO:0000269|PubMed:39424140}.
+```
+
+Source SHA-256: `b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc`.
+
+### Evidence H4
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/D5RFM4?format=txt&versions=32)  
+**Locator:** `lines 42-45`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 32 / 1.  
+**Retrieved:** 2026-11-02T04:27:51.450216+00:00.  
+
+```text
+CC   -!- CATALYTIC ACTIVITY:
+CC       Reaction=L-histidine = D-histidine; Xref=Rhea:RHEA:59188,
+CC         ChEBI:CHEBI:57595, ChEBI:CHEBI:142967; EC=5.1.1.24;
+CC         Evidence={ECO:0000269|PubMed:39424140};
+```
+
+Source SHA-256: `b43d619ca52111b53572f98986c14dc86b988a025a0364b36dd5b2547453e3cc`.
+
+### Evidence GO1
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)  
+**Locator:** `lines 88813-88826`  
+**Scope:** current ontology; exact historical benchmark ontology unknown.  
+**Retrieved:** 2026-11-01T07:04:24.975173+00:00.  
+
+```text
+[Term]
+id: GO:0008837
+name: diaminopimelate epimerase activity
+namespace: molecular_function
+def: "Catalysis of the reaction: LL-2,6-diaminopimelate = meso-2,6-diaminopimelate." [EC:5.1.1.7, RHEA:15393]
+synonym: "LL-2,6-diaminoheptanedioate 2-epimerase activity" RELATED [EC:5.1.1.7]
+xref: EC:5.1.1.7
+xref: KEGG_REACTION:R02735
+xref: MetaCyc:DIAMINOPIMEPIM-RXN
+xref: RHEA:15393
+is_a: GO:0047661 ! amino-acid racemase activity
+property_value: skos:exactMatch EC:5.1.1.7
+property_value: skos:exactMatch RHEA:15393
+
+```
+
+Source SHA-256: `b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc`.
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/GO_molecular_function.json), zero-based source row 31. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). UniProt and Gene Ontology credits are retained in [source notices](../THIRD_PARTY_NOTICES.md).

@@ -1,0 +1,415 @@
+# GO_molecular_function_0083
+
+[All questions and paired results](../README.md) · [Method](../METHOD.md) · [Source credits](../THIRD_PARTY_NOTICES.md)
+
+**Task:** `GO_molecular_function`  
+**Author expected answer:** **D** — hydrolase activity, hydrolyzing O-glycosyl compounds
+
+| Reviewer | Expected-answer support | Reasoning / lookup | Validity |
+|---|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent | valid_review |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | valid_review |
+
+**Paired comparison:** key agree; reasoning differ. Agreement is not proof of correctness. These are separate AI judgments, with no forced consensus or changed key.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MMLPLLAVSAFASLGAAQTYTSCNPTNSLKTWSLSTDFTQGSSDGWTAISGNVTYGSNGAEFTINKRYDAPTLETNFYIFFGEVEVVMRAANGTGIVSSIVMESDDLDEIDWECTGTDTTQIQTNYFGKGNTTTYDRAIWETVSSPQDEFHTYKVVWTAAAITWYIDGTAVRTLEYADAVDGKNYPQTPMVVKLGIWAGGDPSNSEGTIEWAGGETDYDEVPFTMYVKSVNIINYNPAASYNYTDKTGSYTSIVASNSTTGSGIHSSNSVSVFAPSSSTSTFTSSRALIATASTYPASVQTSSSGVVSLSSSSASSSSAAASSTSGSASAVFTGAAVTNLPSFFFTVFFALAIALAF
+
+[Multiple Choices]
+A. DNA-binding transcription repressor activity, RNA polymerase II-specific
+B. vinorine hydroxylase activity
+C. misfolded protein binding
+D. hydrolase activity, hydrolyzing O-glycosyl compounds
+```
+
+<details>
+<summary>Original system instructions, verbatim</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Gene Ontology (GO) Molecular Function Prediction, which is to predict the fundamental activity of a protein at the molecular level, as defined by the Gene Ontology (GO) 'Molecular Function' branch. This describes the elemental tasks a protein performs, such as catalysis, transport, or binding to specific molecules. Based on the protein's amino acid sequence, you are to select the option that best describes its primary molecular function.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## GPT-6 Luna
+
+**Saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The sequence-matched UniProt record describes Crh1 as a dual chitinase/transglycosylase and reports chitinase activity. Chitinase hydrolysis of chitin is a type of O-glycosyl-compound hydrolysis, so option D is supported. The protein also has a transglycosylase activity not captured by that option.
+
+Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [GO2](#evidence-go2), [GO3](#evidence-go3), [GO4](#evidence-go4).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The N-terminal signal peptide and C-terminal hydrophobic region are consistent with a secreted or membrane-associated fungal protein, but do not establish that its activity is glycoside hydrolysis rather than another activity.
+
+
+**Missing item-specific fact**
+
+> The sequence-specific identification of this protein as Crh1, with chitinase/transglycosylase activity.
+
+
+**Reason**
+
+> The sequence provides broad localization clues, but no sufficiently decisive supplied evidence for the particular molecular function in D. Identifying the relevant enzymatic activity depends on protein-specific annotation or equivalent family/function knowledge.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> D is the only option that covers the supported chitinase hydrolysis activity; the reported additional transglycosylase activity does not make another listed option defensible.
+
+
+### Important caveats
+
+- The supporting protein-function annotation cites experimental evidence, while the catalytic-activity annotation is curator-inferred from a cited publication.
+- The current and retrieved historical UniProt records match the supplied sequence, but the author's exact source snapshot is unknown.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The N-terminal signal peptide and C-terminal hydrophobic region are consistent with a secreted or membrane-associated fungal protein, but do not establish that its activity is glycoside hydrolysis rather than another activity.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The sequence-specific identification of this protein as Crh1, with chitinase/transglycosylase activity.",
+    "reason": "The sequence provides broad localization clues, but no sufficiently decisive supplied evidence for the particular molecular function in D. Identifying the relevant enzymatic activity depends on protein-specific annotation or equivalent family/function knowledge."
+  },
+  "case_id": "GO_molecular_function_0083",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "C6",
+      "GO2",
+      "GO3",
+      "GO4"
+    ],
+    "judgment": "supported",
+    "reason": "The sequence-matched UniProt record describes Crh1 as a dual chitinase/transglycosylase and reports chitinase activity. Chitinase hydrolysis of chitin is a type of O-glycosyl-compound hydrolysis, so option D is supported. The protein also has a transglycosylase activity not captured by that option."
+  },
+  "important_caveats": [
+    "The supporting protein-function annotation cites experimental evidence, while the catalytic-activity annotation is curator-inferred from a cited publication.",
+    "The current and retrieved historical UniProt records match the supplied sequence, but the author's exact source snapshot is unknown."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "D is the only option that covers the supported chitinase hydrolysis activity; the reported additional transglycosylase activity does not make another listed option defensible."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "GO_molecular_function_0083",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The sequence-matched UniProt record describes Crh1 as a dual chitinase/transglycosylase and reports chitinase activity. Chitinase hydrolysis of chitin is a type of O-glycosyl-compound hydrolysis, so option D is supported. The protein also has a transglycosylase activity not captured by that option.",
+    "evidence_ids": ["C5", "C6", "GO2", "GO3", "GO4"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The N-terminal signal peptide and C-terminal hydrophobic region are consistent with a secreted or membrane-associated fungal protein, but do not establish that its activity is glycoside hydrolysis rather than another activity.",
+    "missing_item_specific_fact": "The sequence-specific identification of this protein as Crh1, with chitinase/transglycosylase activity.",
+    "reason": "The sequence provides broad localization clues, but no sufficiently decisive supplied evidence for the particular molecular function in D. Identifying the relevant enzymatic activity depends on protein-specific annotation or equivalent family/function knowledge."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "D is the only option that covers the supported chitinase hydrolysis activity; the reported additional transglycosylase activity does not make another listed option defensible."
+  },
+  "important_caveats": [
+    "The supporting protein-function annotation cites experimental evidence, while the catalytic-activity annotation is curator-inferred from a cited publication.",
+    "The current and retrieved historical UniProt records match the supplied sequence, but the author's exact source snapshot is unknown."
+  ]
+}
+```
+
+</details>
+
+## Qwen3.8-Flash-Next-NVFP4
+
+**Saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The protein (Q4WD22, Crh-like protein 1 from Aspergillus fumigatus) is annotated with EC 3.2.1.14 (chitinase) and GO:0008843 (endochitinase activity). The GO ontology confirms GO:0008843 → GO:0004568 (chitinase activity) → GO:0004553 (hydrolase activity, hydrolyzing O-glycosyl compounds) via is_a edges. GO:0004553 is a valid ancestor term encompassing this protein's catalytic activity. The EC:3.2.1.- cross-reference in GO:0004553 explicitly covers EC 3.2.1.14. The chitinase activity annotation carries ECO:0000305 (inferred by similarity) and the transglycosylase activity has ECO:0000269 (direct assay evidence). While the most specific annotation is endochitinase activity, the parent term GO:0004553 is factually correct.
+
+Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [GO2](#evidence-go2), [GO3](#evidence-go3), [GO4](#evidence-go4).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence reveals a clear architecture: N-terminal signal peptide (MMLPLLAVSAFASLGAAQ) indicating a secreted/membrane-targeted protein, a central catalytic domain with motifs characteristic of glycosyl hydrolase families (e.g., GTDTTQ, DGTAVRT patterns), and a C-terminal transmembrane helix (FFFTVFFALAIALAF). This architecture eliminates: (A) DNA-binding transcription repressors are nuclear proteins with DNA-binding domains (zinc fingers, bHLH, etc.) and lack signal peptides/TM regions; (B) vinorine hydroxylase is a cytochrome P450 requiring a heme-binding motif (FGxGxRxCxG) and is typically 400-600 aa with no signal peptide/TM; (C) misfolded protein binding is associated with cytoplasmic/nuclear chaperones (HSPs, HSP70/HSP90) lacking signal peptides and TM anchors. The remaining option D (glycosyl hydrolase) is the only one consistent with a secreted, membrane-anchored enzyme bearing catalytic-domain motifs of a glycosyl hydrolase family.
+
+
+**Missing item-specific fact**
+
+> None strictly required. Recognition of specific GH-family sequence signatures adds confidence but is not essential; the overall architecture (signal peptide + catalytic domain + TM anchor) combined with elimination of the other three options through general cell biology provides meaningful discrimination.
+
+
+**Reason**
+
+> The question provides sufficient structural and contextual information in the sequence to distinguish the answer through general biological reasoning. The signal peptide and TM region are detectable features that eliminate nuclear transcription factors (A) and cytoplasmic chaperones (C). The absence of P450 heme-binding motifs eliminates B. The catalytic domain architecture is consistent with a glycosyl hydrolase, making D the only viable option.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> Options A, B, and C are clearly incompatible with the observed protein architecture (secreted/membrane-targeted enzyme). No other option is defensible given the sequence features.
+
+
+### Important caveats
+
+- The most specific UniProt annotation is GO:0008843 (endochitinase activity), not GO:0004553 directly; the expected answer is an ancestor term in the GO hierarchy.
+- The protein also possesses transglycosylase activity (EC 2.4.-.-), a transferase function, so 'primary' molecular function could be debated; however, the chitinase (hydrolase) activity is the more prominently annotated catalytic function.
+- The GO annotation for endochitinase activity carries evidence code IEA:UniProtKB-EC (inferred from electronic annotation), not direct experimental GO annotation, though the underlying EC assignment has experimental support (ECO:0000269, PubMed:30971696).
+- The sequence does not contain an obvious canonical GH18 'DXXDXDXE' catalytic motif in a straightforward reading, making motif-based identification somewhat less trivial than for well-characterized model chitinases.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence reveals a clear architecture: N-terminal signal peptide (MMLPLLAVSAFASLGAAQ) indicating a secreted/membrane-targeted protein, a central catalytic domain with motifs characteristic of glycosyl hydrolase families (e.g., GTDTTQ, DGTAVRT patterns), and a C-terminal transmembrane helix (FFFTVFFALAIALAF). This architecture eliminates: (A) DNA-binding transcription repressors are nuclear proteins with DNA-binding domains (zinc fingers, bHLH, etc.) and lack signal peptides/TM regions; (B) vinorine hydroxylase is a cytochrome P450 requiring a heme-binding motif (FGxGxRxCxG) and is typically 400-600 aa with no signal peptide/TM; (C) misfolded protein binding is associated with cytoplasmic/nuclear chaperones (HSPs, HSP70/HSP90) lacking signal peptides and TM anchors. The remaining option D (glycosyl hydrolase) is the only one consistent with a secreted, membrane-anchored enzyme bearing catalytic-domain motifs of a glycosyl hydrolase family.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "None strictly required. Recognition of specific GH-family sequence signatures adds confidence but is not essential; the overall architecture (signal peptide + catalytic domain + TM anchor) combined with elimination of the other three options through general cell biology provides meaningful discrimination.",
+    "reason": "The question provides sufficient structural and contextual information in the sequence to distinguish the answer through general biological reasoning. The signal peptide and TM region are detectable features that eliminate nuclear transcription factors (A) and cytoplasmic chaperones (C). The absence of P450 heme-binding motifs eliminates B. The catalytic domain architecture is consistent with a glycosyl hydrolase, making D the only viable option."
+  },
+  "case_id": "GO_molecular_function_0083",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "GO2",
+      "GO3",
+      "GO4"
+    ],
+    "judgment": "supported",
+    "reason": "The protein (Q4WD22, Crh-like protein 1 from Aspergillus fumigatus) is annotated with EC 3.2.1.14 (chitinase) and GO:0008843 (endochitinase activity). The GO ontology confirms GO:0008843 → GO:0004568 (chitinase activity) → GO:0004553 (hydrolase activity, hydrolyzing O-glycosyl compounds) via is_a edges. GO:0004553 is a valid ancestor term encompassing this protein's catalytic activity. The EC:3.2.1.- cross-reference in GO:0004553 explicitly covers EC 3.2.1.14. The chitinase activity annotation carries ECO:0000305 (inferred by similarity) and the transglycosylase activity has ECO:0000269 (direct assay evidence). While the most specific annotation is endochitinase activity, the parent term GO:0004553 is factually correct."
+  },
+  "important_caveats": [
+    "The most specific UniProt annotation is GO:0008843 (endochitinase activity), not GO:0004553 directly; the expected answer is an ancestor term in the GO hierarchy.",
+    "The protein also possesses transglycosylase activity (EC 2.4.-.-), a transferase function, so 'primary' molecular function could be debated; however, the chitinase (hydrolase) activity is the more prominently annotated catalytic function.",
+    "The GO annotation for endochitinase activity carries evidence code IEA:UniProtKB-EC (inferred from electronic annotation), not direct experimental GO annotation, though the underlying EC assignment has experimental support (ECO:0000269, PubMed:30971696).",
+    "The sequence does not contain an obvious canonical GH18 'DXXDXDXE' catalytic motif in a straightforward reading, making motif-based identification somewhat less trivial than for well-characterized model chitinases."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "Options A, B, and C are clearly incompatible with the observed protein architecture (secreted/membrane-targeted enzyme). No other option is defensible given the sequence features."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{"case_id":"GO_molecular_function_0083","expected_answer_check":{"judgment":"supported","reason":"The protein (Q4WD22, Crh-like protein 1 from Aspergillus fumigatus) is annotated with EC 3.2.1.14 (chitinase) and GO:0008843 (endochitinase activity). The GO ontology confirms GO:0008843 → GO:0004568 (chitinase activity) → GO:0004553 (hydrolase activity, hydrolyzing O-glycosyl compounds) via is_a edges. GO:0004553 is a valid ancestor term encompassing this protein's catalytic activity. The EC:3.2.1.- cross-reference in GO:0004553 explicitly covers EC 3.2.1.14. The chitinase activity annotation carries ECO:0000305 (inferred by similarity) and the transglycosylase activity has ECO:0000269 (direct assay evidence). While the most specific annotation is endochitinase activity, the parent term GO:0004553 is factually correct.","evidence_ids":["C4","C5","C6","C7","GO2","GO3","GO4"]},"answerability_check":{"judgment":"reasoning_supported","discriminating_biological_argument":"The sequence reveals a clear architecture: N-terminal signal peptide (MMLPLLAVSAFASLGAAQ) indicating a secreted/membrane-targeted protein, a central catalytic domain with motifs characteristic of glycosyl hydrolase families (e.g., GTDTTQ, DGTAVRT patterns), and a C-terminal transmembrane helix (FFFTVFFALAIALAF). This architecture eliminates: (A) DNA-binding transcription repressors are nuclear proteins with DNA-binding domains (zinc fingers, bHLH, etc.) and lack signal peptides/TM regions; (B) vinorine hydroxylase is a cytochrome P450 requiring a heme-binding motif (FGxGxRxCxG) and is typically 400-600 aa with no signal peptide/TM; (C) misfolded protein binding is associated with cytoplasmic/nuclear chaperones (HSPs, HSP70/HSP90) lacking signal peptides and TM anchors. The remaining option D (glycosyl hydrolase) is the only one consistent with a secreted, membrane-anchored enzyme bearing catalytic-domain motifs of a glycosyl hydrolase family.","missing_item_specific_fact":"None strictly required. Recognition of specific GH-family sequence signatures adds confidence but is not essential; the overall architecture (signal peptide + catalytic domain + TM anchor) combined with elimination of the other three options through general cell biology provides meaningful discrimination.","reason":"The question provides sufficient structural and contextual information in the sequence to distinguish the answer through general biological reasoning. The signal peptide and TM region are detectable features that eliminate nuclear transcription factors (A) and cytoplasmic chaperones (C). The absence of P450 heme-binding motifs eliminates B. The catalytic domain architecture is consistent with a glycosyl hydrolase, making D the only viable option."},"question_ambiguity":{"multiple_defensible_options":[],"reason":"Options A, B, and C are clearly incompatible with the observed protein architecture (secreted/membrane-targeted enzyme). No other option is defensible given the sequence features."},"important_caveats":["The most specific UniProt annotation is GO:0008843 (endochitinase activity), not GO:0004553 directly; the expected answer is an ancestor term in the GO hierarchy.","The protein also possesses transglycosylase activity (EC 2.4.-.-), a transferase function, so 'primary' molecular function could be debated; however, the chitinase (hydrolase) activity is the more prominently annotated catalytic function.","The GO annotation for endochitinase activity carries evidence code IEA:UniProtKB-EC (inferred from electronic annotation), not direct experimental GO annotation, though the underlying EC assignment has experimental support (ECO:0000269, PubMed:30971696).","The sequence does not contain an obvious canonical GH18 'DXXDXDXE' catalytic motif in a straightforward reading, making motif-based identification somewhat less trivial than for well-characterized model chitinases."]}
+```
+
+</details>
+
+## Existing project source checks of Luna’s review
+
+The notes below were prepared for specific claims in the Luna review. They are not independent validation of Qwen’s claims, expert adjudication, or replacement verdicts.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Reviewer-only source evidence
+
+**Both reviewers received this source evidence separately from the original question. It was not available to the original evaluated model.** Source support and reasoning from the original sequence/choices are distinct assessments.
+
+**Accession:** `Q4WD22` (recovered from dataset image-path metadata, not original question text).  
+**Sequence applicability:** historical matched; current matched.  
+**Historical cutoff:** 2026-05-07; archived entry version 107. Exact author snapshot unknown.
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+- Ontology names and EXACT synonyms match options mechanically; no answer-support judgment is made.
+- Only is_a and part_of edges are used in supplied graph paths; all qualifiers and obsolete/replaced_by tags remain in literal source blocks.
+- The ontology is newer than the benchmark repository commit; the exact author ontology snapshot is unknown.
+- No matching term or path does not establish that an option is false.
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q4WD22.json)  
+**Locator:** `/proteinDescription`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-01T06:25:21.374081+00:00.  
+
+```json
+{"flag":"Precursor","includes":[{"recommendedName":{"ecNumbers":[{"evidences":[{"evidenceCode":"ECO:0000305","id":"30971696","source":"PubMed"}],"value":"3.2.1.14"}],"fullName":{"evidences":[{"evidenceCode":"ECO:0000303","id":"30971696","source":"PubMed"}],"value":"Chitinase crh1"}}},{"recommendedName":{"ecNumbers":[{"evidences":[{"evidenceCode":"ECO:0000269","id":"30971696","source":"PubMed"}],"value":"2.4.-.-"}],"fullName":{"evidences":[{"evidenceCode":"ECO:0000303","id":"30971696","source":"PubMed"}],"value":"Chitin transglycosylase crh1"}}}],"recommendedName":{"fullName":{"evidences":[{"evidenceCode":"ECO:0000303","id":"30971696","source":"PubMed"}],"value":"Crh-like protein 1"}}}
+```
+
+Source SHA-256: `2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00`.
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q4WD22.json)  
+**Locator:** `/comments/0`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-01T06:25:21.374081+00:00.  
+
+```json
+{"commentType":"FUNCTION","texts":[{"evidences":[{"evidenceCode":"ECO:0000269","id":"30971696","source":"PubMed"}],"value":"Dual chitinase/transglycosylase that plays a role in cell wall architecture (PubMed:30971696). Chitinase and transglycosylase activities are coupled (PubMed:30971696). Required for the polysaccharide cross-linking at the septa and the cell wall (PubMed:30971696). More specifically, transfers chitin to 1,6-beta-glucan in the cell wall (PubMed:30971696)"}]}
+```
+
+Source SHA-256: `2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00`.
+
+### Evidence C6
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q4WD22.json)  
+**Locator:** `/comments/1`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-01T06:25:21.374081+00:00.  
+
+```json
+{"commentType":"CATALYTIC ACTIVITY","reaction":{"ecNumber":"3.2.1.14","evidences":[{"evidenceCode":"ECO:0000305","id":"30971696","source":"PubMed"}],"name":"Random endo-hydrolysis of N-acetyl-beta-D-glucosaminide (1->4)-beta-linkages in chitin and chitodextrins."}}
+```
+
+Source SHA-256: `2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00`.
+
+### Evidence C7
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q4WD22.json)  
+**Locator:** `/uniProtKBCrossReferences/13`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-01T06:25:21.374081+00:00.  
+
+```json
+{"database":"GO","id":"GO:0008843","properties":[{"key":"GoTerm","value":"F:endochitinase activity"},{"key":"GoEvidenceType","value":"IEA:UniProtKB-EC"}]}
+```
+
+Source SHA-256: `2b5098e0eef6293d750026739a991df11b8ed9fc88d7ba6c46a2dddd8788bf00`.
+
+### Evidence GO2
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)  
+**Locator:** `lines 44250-44263`  
+**Scope:** current ontology; exact historical benchmark ontology unknown.  
+**Retrieved:** 2026-11-01T07:04:24.975173+00:00.  
+
+```text
+[Term]
+id: GO:0004553
+name: hydrolase activity, hydrolyzing O-glycosyl compounds
+namespace: molecular_function
+alt_id: GO:0016800
+def: "Catalysis of the hydrolysis of any O-glycosyl bond." [GOC:mah]
+synonym: "O-glucosyl hydrolase activity" EXACT []
+xref: EC:3.2.1.-
+xref: Reactome:R-HSA-5694563 "ABHD10 hydrolyses MPAG"
+xref: Reactome:R-HSA-6786652 "CHIT1 hydrolyses CHIT to 3xADGP"
+xref: Reactome:R-HSA-9661820 "Bacterial GUSB hydrolyses BDG to BIL"
+is_a: GO:0016798 ! hydrolase activity, acting on glycosyl bonds
+property_value: skos:exactMatch EC:3.2.1.-
+
+```
+
+Source SHA-256: `b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc`.
+
+### Evidence GO3
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)  
+**Locator:** `lines 44534-44541`  
+**Scope:** current ontology; exact historical benchmark ontology unknown.  
+**Retrieved:** 2026-11-01T07:04:24.975173+00:00.  
+
+```text
+[Term]
+id: GO:0004568
+name: chitinase activity
+namespace: molecular_function
+def: "Catalysis of the hydrolysis of (1->4)-beta linkages of N-acetyl-D-glucosamine (GlcNAc) polymers of chitin and chitodextrins." [GOC:bf, GOC:kah, GOC:pde, PMID:11468293]
+xref: Reactome:R-HSA-6786421 "CHIA hydrolyses chitin"
+is_a: GO:0004553 ! hydrolase activity, hydrolyzing O-glycosyl compounds
+
+```
+
+Source SHA-256: `b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc`.
+
+### Evidence GO4
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)  
+**Locator:** `lines 88913-88926`  
+**Scope:** current ontology; exact historical benchmark ontology unknown.  
+**Retrieved:** 2026-11-01T07:04:24.975173+00:00.  
+
+```text
+[Term]
+id: GO:0008843
+name: endochitinase activity
+namespace: molecular_function
+def: "Catalysis of the hydrolysis of nonterminal (1->4)-beta linkages of N-acetyl-D-glucosamine (GlcNAc) polymers of chitin and chitodextrins. Typically, endochitinases cleave randomly within the chitin chain." [EC:3.2.1.14, GOC:bf, GOC:kah, GOC:pde, PMID:11468293]
+synonym: "1,4-beta-poly-N-acetylglucosaminidase" EXACT [EC:3.2.1.14]
+synonym: "chitinase" EXACT [EC:3.2.1.14]
+synonym: "chitodextrinase" EXACT [EC:3.2.1.14]
+synonym: "poly-beta-glucosaminidase" EXACT [EC:3.2.1.14]
+xref: EC:3.2.1.14
+xref: MetaCyc:3.2.1.14-RXN
+is_a: GO:0004568 ! chitinase activity
+property_value: skos:exactMatch EC:3.2.1.14
+
+```
+
+Source SHA-256: `b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc`.
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/GO_molecular_function.json), zero-based source row 83. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). UniProt and Gene Ontology credits are retained in [source notices](../THIRD_PARTY_NOTICES.md).

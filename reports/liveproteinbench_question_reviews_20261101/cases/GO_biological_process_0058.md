@@ -1,0 +1,413 @@
+# GO_biological_process_0058
+
+[All questions and paired results](../README.md) · [Method](../METHOD.md) · [Source credits](../THIRD_PARTY_NOTICES.md)
+
+**Task:** `GO_biological_process`  
+**Author expected answer:** **B** — positive regulation of transcription by RNA polymerase II
+
+| Reviewer | Expected-answer support | Reasoning / lookup | Validity |
+|---|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent | valid_review |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | valid_review |
+
+**Paired comparison:** key agree; reasoning differ. Agreement is not proof of correctness. These are separate AI judgments, with no forced consensus or changed key.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MGRGRVELKRIENKINRQVTFSKRRNGLLKKAYELSVLCEAEVALIIFSSRGKLYEFGSAGITKTLERYQRCCLNPQDNCGERETQSWYQEVSKLKAKFEALQRTQRHLLGEDLGALSVKELQNLEKQLEGALAQARQRKTQIMMEQMEELRRKERHLGDVNKQLKIKVSLELSSFEGEGQGVPFPWSNCNASLDEAGSSTFHVHHSQSNHMDCDLPDPVLQIGYHQYMAADGASGSRNMAVESNIIHGWGL
+
+[Multiple Choices]
+A. photoreceptor cell maintenance
+B. positive regulation of transcription by RNA polymerase II
+C. regulation of monoatomic ion transmembrane transport
+D. Rho-activating G protein-coupled receptor signaling pathway
+```
+
+<details>
+<summary>Original system instructions, verbatim</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Gene Ontology (GO) Biological Process Prediction, which is to predict the primary biological process a given protein participates in, as defined by the Gene Ontology (GO) 'Biological Process' branch. A biological process is a series of molecular events that accomplishes a larger biological program, such as cell division or signal transduction. Based on the provided protein sequence, you must select the option that best describes the overall biological objective to which the protein contributes.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## GPT-6 Luna
+
+**Saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The supplied sequence matches the annotated tomato AGL6 protein. Its record assigns positive regulation of transcription by RNA polymerase II to this protein, but that GO assignment is computational (IEA:InterPro); the cited functional description calls it a probable transcription factor and discusses fruit development, rather than directly establishing this exact positive-regulation term experimentally.
+
+Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [C7](#evidence-c7), [H3](#evidence-h3), [H5](#evidence-h5).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The N-terminal MADS-box-like region provides a sequence-based reason to suspect a transcription factor, favoring B over the membrane-transport and GPCR choices. It does not establish that this protein positively regulates Pol II transcription, rather than regulating it in another way.
+
+
+**Missing item-specific fact**
+
+> That this particular protein is associated with positive regulation of Pol II transcription; the supplied sequence does not specify the direction or biological-process annotation.
+
+
+**Reason**
+
+> Choosing B at the broad level is biologically plausible from the sequence, but distinguishing the exact positive-regulation process relies on protein-specific functional knowledge or annotation not supplied in the question.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> B is the only option broadly consistent with a MADS-box transcription factor. The sequence alone does not establish the positive-regulation qualifier, but the other listed choices are not comparably supported.
+
+
+### Important caveats
+
+- The cited functional record describes AGL6 as a probable transcription factor involved in fruit development; that is not direct experimental confirmation of the exact GO term.
+- The exact positive-regulation GO assignment is computational, and the author's historical annotation snapshot is unknown.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The N-terminal MADS-box-like region provides a sequence-based reason to suspect a transcription factor, favoring B over the membrane-transport and GPCR choices. It does not establish that this protein positively regulates Pol II transcription, rather than regulating it in another way.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "That this particular protein is associated with positive regulation of Pol II transcription; the supplied sequence does not specify the direction or biological-process annotation.",
+    "reason": "Choosing B at the broad level is biologically plausible from the sequence, but distinguishing the exact positive-regulation process relies on protein-specific functional knowledge or annotation not supplied in the question."
+  },
+  "case_id": "GO_biological_process_0058",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C1",
+      "C5",
+      "C7",
+      "H3",
+      "H5"
+    ],
+    "judgment": "supported",
+    "reason": "The supplied sequence matches the annotated tomato AGL6 protein. Its record assigns positive regulation of transcription by RNA polymerase II to this protein, but that GO assignment is computational (IEA:InterPro); the cited functional description calls it a probable transcription factor and discusses fruit development, rather than directly establishing this exact positive-regulation term experimentally."
+  },
+  "important_caveats": [
+    "The cited functional record describes AGL6 as a probable transcription factor involved in fruit development; that is not direct experimental confirmation of the exact GO term.",
+    "The exact positive-regulation GO assignment is computational, and the author's historical annotation snapshot is unknown."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "B is the only option broadly consistent with a MADS-box transcription factor. The sequence alone does not establish the positive-regulation qualifier, but the other listed choices are not comparably supported."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "GO_biological_process_0058",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The supplied sequence matches the annotated tomato AGL6 protein. Its record assigns positive regulation of transcription by RNA polymerase II to this protein, but that GO assignment is computational (IEA:InterPro); the cited functional description calls it a probable transcription factor and discusses fruit development, rather than directly establishing this exact positive-regulation term experimentally.",
+    "evidence_ids": ["C1", "C5", "C7", "H3", "H5"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The N-terminal MADS-box-like region provides a sequence-based reason to suspect a transcription factor, favoring B over the membrane-transport and GPCR choices. It does not establish that this protein positively regulates Pol II transcription, rather than regulating it in another way.",
+    "missing_item_specific_fact": "That this particular protein is associated with positive regulation of Pol II transcription; the supplied sequence does not specify the direction or biological-process annotation.",
+    "reason": "Choosing B at the broad level is biologically plausible from the sequence, but distinguishing the exact positive-regulation process relies on protein-specific functional knowledge or annotation not supplied in the question."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "B is the only option broadly consistent with a MADS-box transcription factor. The sequence alone does not establish the positive-regulation qualifier, but the other listed choices are not comparably supported."
+  },
+  "important_caveats": [
+    "The cited functional record describes AGL6 as a probable transcription factor involved in fruit development; that is not direct experimental confirmation of the exact GO term.",
+    "The exact positive-regulation GO assignment is computational, and the author's historical annotation snapshot is unknown."
+  ]
+}
+```
+
+</details>
+
+## Qwen3.8-Flash-Next-NVFP4
+
+**Saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The protein is identified as SlAGAMOUS-LIKE 6 (SlAGL6), a MADS-box transcription factor from tomato (experimental evidence ECO:0000269|PubMed:27862876). UniProt annotates GO:0045944 'positive regulation of transcription by RNA polymerase II' with IEA:InterPro evidence (computational inference from domain match). The protein's role as a transcription factor is experimentally confirmed; the 'positive' qualifier is a computational inference from InterPro. The broader term GO:0006357 'regulation of transcription by RNA polymerase II' is also annotated (IBA:GO_Central). The expected answer B is present in the annotation and consistent with the protein's confirmed function as a transcription factor.
+
+Citations as saved: [C5](#evidence-c5), [C7](#evidence-c7), [C8](#evidence-c8), [H3](#evidence-h3), [H5](#evidence-h5), [H6](#evidence-h6).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence contains a highly conserved MADS-box DNA-binding domain signature (residues ~15-70: 'KRRNGLLKKAYELSVLCEAEVALIIFSSRGKLYEFGSAGITKTLERYQRCC'), which is a hallmark of the MADS-box family of transcription factors. General biological knowledge establishes that MADS-box proteins are sequence-specific DNA-binding transcription factors that regulate RNA polymerase II transcription. Among the four options, only B (positive regulation of transcription by RNA polymerase II) is consistent with a transcription factor. Option A (photoreceptor cell maintenance) is an animal retina-specific process irrelevant to a plant protein. Option C (regulation of monoatomic ion transmembrane transport) requires ion channel/transporter structural features absent from this sequence. Option D (Rho-activating GPCR signaling) requires a 7-transmembrane GPCR architecture, which is absent. The elimination of A, C, and D and the positive selection of B follow from domain recognition and general biological reasoning.
+
+
+**Missing item-specific fact**
+
+> The 'positive' qualifier (as opposed to general 'regulation') is a computational inference from InterPro rather than a directly experimentally determined directionality, but among the given choices B is the only transcription-related option, making the positive/negative distinction moot for selection.
+
+
+**Reason**
+
+> Recognizing the MADS-box domain from sequence and connecting it to transcription-factor function is general biological knowledge, not memorization of a specific database entry. The elimination of the three distractors relies on general structural/biological reasoning (no GPCR topology, no ion-channel motifs, plant organism excludes animal photoreceptor maintenance).
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The three distractors (A, C, D) describe processes with no structural or functional basis in a 252-aa plant MADS-box protein. Only option B aligns with the protein's domain architecture and biological role. No ambiguity among choices.
+
+
+### Important caveats
+
+- The GO:0045944 annotation carries IEA:InterPro evidence (computational inference from domain match), not direct experimental evidence for the 'positive' directionality.
+- The protein's transcription-factor role is experimentally supported (PubMed:27862876), but the specific GO term assignment is computational.
+- The MADS-box domain recognition from raw sequence is a well-established pattern in molecular biology; this is general domain knowledge rather than item-specific lookup.
+- The 'positive' qualifier is inferred from InterPro annotation of MADS-box proteins as transcriptional activators; a more conservative annotation would be GO:0006357 (regulation of transcription by RNA polymerase II), which is also present but not offered as a choice.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence contains a highly conserved MADS-box DNA-binding domain signature (residues ~15-70: 'KRRNGLLKKAYELSVLCEAEVALIIFSSRGKLYEFGSAGITKTLERYQRCC'), which is a hallmark of the MADS-box family of transcription factors. General biological knowledge establishes that MADS-box proteins are sequence-specific DNA-binding transcription factors that regulate RNA polymerase II transcription. Among the four options, only B (positive regulation of transcription by RNA polymerase II) is consistent with a transcription factor. Option A (photoreceptor cell maintenance) is an animal retina-specific process irrelevant to a plant protein. Option C (regulation of monoatomic ion transmembrane transport) requires ion channel/transporter structural features absent from this sequence. Option D (Rho-activating GPCR signaling) requires a 7-transmembrane GPCR architecture, which is absent. The elimination of A, C, and D and the positive selection of B follow from domain recognition and general biological reasoning.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "The 'positive' qualifier (as opposed to general 'regulation') is a computational inference from InterPro rather than a directly experimentally determined directionality, but among the given choices B is the only transcription-related option, making the positive/negative distinction moot for selection.",
+    "reason": "Recognizing the MADS-box domain from sequence and connecting it to transcription-factor function is general biological knowledge, not memorization of a specific database entry. The elimination of the three distractors relies on general structural/biological reasoning (no GPCR topology, no ion-channel motifs, plant organism excludes animal photoreceptor maintenance)."
+  },
+  "case_id": "GO_biological_process_0058",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "C7",
+      "C8",
+      "H3",
+      "H5",
+      "H6"
+    ],
+    "judgment": "supported",
+    "reason": "The protein is identified as SlAGAMOUS-LIKE 6 (SlAGL6), a MADS-box transcription factor from tomato (experimental evidence ECO:0000269|PubMed:27862876). UniProt annotates GO:0045944 'positive regulation of transcription by RNA polymerase II' with IEA:InterPro evidence (computational inference from domain match). The protein's role as a transcription factor is experimentally confirmed; the 'positive' qualifier is a computational inference from InterPro. The broader term GO:0006357 'regulation of transcription by RNA polymerase II' is also annotated (IBA:GO_Central). The expected answer B is present in the annotation and consistent with the protein's confirmed function as a transcription factor."
+  },
+  "important_caveats": [
+    "The GO:0045944 annotation carries IEA:InterPro evidence (computational inference from domain match), not direct experimental evidence for the 'positive' directionality.",
+    "The protein's transcription-factor role is experimentally supported (PubMed:27862876), but the specific GO term assignment is computational.",
+    "The MADS-box domain recognition from raw sequence is a well-established pattern in molecular biology; this is general domain knowledge rather than item-specific lookup.",
+    "The 'positive' qualifier is inferred from InterPro annotation of MADS-box proteins as transcriptional activators; a more conservative annotation would be GO:0006357 (regulation of transcription by RNA polymerase II), which is also present but not offered as a choice."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The three distractors (A, C, D) describe processes with no structural or functional basis in a 252-aa plant MADS-box protein. Only option B aligns with the protein's domain architecture and biological role. No ambiguity among choices."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "GO_biological_process_0058",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The protein is identified as SlAGAMOUS-LIKE 6 (SlAGL6), a MADS-box transcription factor from tomato (experimental evidence ECO:0000269|PubMed:27862876). UniProt annotates GO:0045944 'positive regulation of transcription by RNA polymerase II' with IEA:InterPro evidence (computational inference from domain match). The protein's role as a transcription factor is experimentally confirmed; the 'positive' qualifier is a computational inference from InterPro. The broader term GO:0006357 'regulation of transcription by RNA polymerase II' is also annotated (IBA:GO_Central). The expected answer B is present in the annotation and consistent with the protein's confirmed function as a transcription factor.",
+    "evidence_ids": ["C5", "C7", "C8", "H3", "H5", "H6"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The sequence contains a highly conserved MADS-box DNA-binding domain signature (residues ~15-70: 'KRRNGLLKKAYELSVLCEAEVALIIFSSRGKLYEFGSAGITKTLERYQRCC'), which is a hallmark of the MADS-box family of transcription factors. General biological knowledge establishes that MADS-box proteins are sequence-specific DNA-binding transcription factors that regulate RNA polymerase II transcription. Among the four options, only B (positive regulation of transcription by RNA polymerase II) is consistent with a transcription factor. Option A (photoreceptor cell maintenance) is an animal retina-specific process irrelevant to a plant protein. Option C (regulation of monoatomic ion transmembrane transport) requires ion channel/transporter structural features absent from this sequence. Option D (Rho-activating GPCR signaling) requires a 7-transmembrane GPCR architecture, which is absent. The elimination of A, C, and D and the positive selection of B follow from domain recognition and general biological reasoning.",
+    "missing_item_specific_fact": "The 'positive' qualifier (as opposed to general 'regulation') is a computational inference from InterPro rather than a directly experimentally determined directionality, but among the given choices B is the only transcription-related option, making the positive/negative distinction moot for selection.",
+    "reason": "Recognizing the MADS-box domain from sequence and connecting it to transcription-factor function is general biological knowledge, not memorization of a specific database entry. The elimination of the three distractors relies on general structural/biological reasoning (no GPCR topology, no ion-channel motifs, plant organism excludes animal photoreceptor maintenance)."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The three distractors (A, C, D) describe processes with no structural or functional basis in a 252-aa plant MADS-box protein. Only option B aligns with the protein's domain architecture and biological role. No ambiguity among choices."
+  },
+  "important_caveats": [
+    "The GO:0045944 annotation carries IEA:InterPro evidence (computational inference from domain match), not direct experimental evidence for the 'positive' directionality.",
+    "The protein's transcription-factor role is experimentally supported (PubMed:27862876), but the specific GO term assignment is computational.",
+    "The MADS-box domain recognition from raw sequence is a well-established pattern in molecular biology; this is general domain knowledge rather than item-specific lookup.",
+    "The 'positive' qualifier is inferred from InterPro annotation of MADS-box proteins as transcriptional activators; a more conservative annotation would be GO:0006357 (regulation of transcription by RNA polymerase II), which is also present but not offered as a choice."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of Luna’s review
+
+The notes below were prepared for specific claims in the Luna review. They are not independent validation of Qwen’s claims, expert adjudication, or replacement verdicts.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Reviewer-only source evidence
+
+**Both reviewers received this source evidence separately from the original question. It was not available to the original evaluated model.** Source support and reasoning from the original sequence/choices are distinct assessments.
+
+**Accession:** `A0A3Q7EKL1` (recovered from dataset image-path metadata, not original question text).  
+**Sequence applicability:** historical matched; current matched.  
+**Historical cutoff:** 2026-05-07; archived entry version 29. Exact author snapshot unknown.
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+- Ontology names and EXACT synonyms match options mechanically; no answer-support judgment is made.
+- Only is_a and part_of edges are used in supplied graph paths; all qualifiers and obsolete/replaced_by tags remain in literal source blocks.
+- The ontology is newer than the benchmark repository commit; the exact author ontology snapshot is unknown.
+- No matching term or path does not establish that an option is false.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json)  
+**Locator:** `/primaryAccession`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-01T06:24:46.176115+00:00.  
+
+```json
+"A0A3Q7EKL1"
+```
+
+Source SHA-256: `968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772`.
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json)  
+**Locator:** `/comments/0`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-01T06:24:46.176115+00:00.  
+
+```json
+{"commentType":"FUNCTION","texts":[{"evidences":[{"evidenceCode":"ECO:0000269","id":"27862876","source":"PubMed"}],"value":"Probable transcription factor involved in fruit development (PubMed:27862876). Key regulator of the transition between the state of 'ovary arrest' imposed towards anthesis and the fertilization-triggered fruit set (PubMed:27862876)"}]}
+```
+
+Source SHA-256: `968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772`.
+
+### Evidence C7
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json)  
+**Locator:** `/uniProtKBCrossReferences/19`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-01T06:24:46.176115+00:00.  
+
+```json
+{"database":"GO","id":"GO:0045944","properties":[{"key":"GoTerm","value":"P:positive regulation of transcription by RNA polymerase II"},{"key":"GoEvidenceType","value":"IEA:InterPro"}]}
+```
+
+Source SHA-256: `968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772`.
+
+### Evidence C8
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A3Q7EKL1.json)  
+**Locator:** `/uniProtKBCrossReferences/20`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-01T06:24:46.176115+00:00.  
+
+```json
+{"database":"GO","id":"GO:0006357","properties":[{"key":"GoTerm","value":"P:regulation of transcription by RNA polymerase II"},{"key":"GoEvidenceType","value":"IBA:GO_Central"}]}
+```
+
+Source SHA-256: `968c9f1e7c8265d3d3bf281be722c993bf9d7db209be227dbefd9c2977d8c772`.
+
+### Evidence H3
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29)  
+**Locator:** `lines 44-47`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 29 / 1.  
+**Retrieved:** 2026-11-01T06:27:28.559166+00:00.  
+
+```text
+CC   -!- FUNCTION: Probable transcription factor involved in fruit development
+CC       (PubMed:27862876). Key regulator of the transition between the state of
+CC       'ovary arrest' imposed towards anthesis and the fertilization-triggered
+CC       fruit set (PubMed:27862876). {ECO:0000269|PubMed:27862876}.
+```
+
+Source SHA-256: `668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865`.
+
+### Evidence H5
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29)  
+**Locator:** `lines 90-90`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 29 / 1.  
+**Retrieved:** 2026-11-01T06:27:28.559166+00:00.  
+
+```text
+DR   GO; GO:0045944; P:positive regulation of transcription by RNA polymerase II; IEA:InterPro.
+```
+
+Source SHA-256: `668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865`.
+
+### Evidence H6
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A3Q7EKL1?format=txt&versions=29)  
+**Locator:** `lines 91-91`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 29 / 1.  
+**Retrieved:** 2026-11-01T06:27:28.559166+00:00.  
+
+```text
+DR   GO; GO:0006357; P:regulation of transcription by RNA polymerase II; IBA:GO_Central.
+```
+
+Source SHA-256: `668c0b30ffc7a02a3e256e6d7ded8f15a13a298f7e0b356420b05e10ca138865`.
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/GO_biological_process.json), zero-based source row 58. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). UniProt and Gene Ontology credits are retained in [source notices](../THIRD_PARTY_NOTICES.md).

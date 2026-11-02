@@ -1,0 +1,420 @@
+# GO_cellular_component_0045
+
+[All questions and paired results](../README.md) · [Method](../METHOD.md) · [Source credits](../THIRD_PARTY_NOTICES.md)
+
+**Task:** `GO_cellular_component`  
+**Author expected answer:** **C** — plasma membrane
+
+| Reviewer | Expected-answer support | Reasoning / lookup | Validity |
+|---|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent | valid_review |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | valid_review |
+
+**Paired comparison:** key agree; reasoning differ. Agreement is not proof of correctness. These are separate AI judgments, with no forced consensus or changed key.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MNTQPTRAIETSGLVKVYNGTRAVDGLDLDVPAGLVYGILGPNGAGKSTTIRMLATLLRPDGGTARVFGHDVTSEPDTVRRRISVTGQYASVDEGLTGTENLVMMGRLQGYSWARARERAAELIDGFGLGDARDRLLKTYSGGMRRRLDIAASIVVTPDLLFLDEPTTGLDPRSRNQVWDIVRALVDAGTTVLLTTQYLDEADQLADRIAVIDHGRVIAEGTTGELKSSLGSNVLRLRLHDAQSRAEAERLLSAELGVTIHRDSDPTALSARIDDPRQGMRALAELSRTQLEVRSFSLGQSSLDEVFLALTGHPADDRSTEEAAEEEKVA
+
+[Multiple Choices]
+A. membrane
+B. phosphopantothenoylcysteine decarboxylase complex
+C. plasma membrane
+D. axon
+```
+
+<details>
+<summary>Original system instructions, verbatim</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Gene Ontology (GO) Cellular Component Prediction, which is to predict the primary Cellular Component where a protein is located, according to the Gene Ontology (GO) framework. A protein's location within a cell (e.g., Nucleus, Mitochondria, Cytoplasm) is critical for its function and is often determined by specific targeting signals in its amino acid sequence. Based on the provided sequence, you must identify the most likely compartment where the protein resides.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## GPT-6 Luna
+
+**Saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The exact sequence matches a UniProt entry annotated to the plasma membrane. Its cell-membrane localization is transferred by similarity, and the GO plasma-membrane annotation is computational/inferred rather than direct experimental evidence.
+
+Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence has an ABC-type P-loop ATPase signature and lacks an obvious transmembrane segment, which is consistent with a peripheral ATP-binding component associated with a membrane transporter. That supports membrane association, but does not establish this protein's specific localization.
+
+
+**Missing item-specific fact**
+
+> The protein-specific membrane-localization assignment, which the supplied evidence shows is transferred by similarity to another protein.
+
+
+**Reason**
+
+> Sequence-based reasoning can suggest a membrane-associated transporter component, but the specific plasma-membrane assignment depends on protein-specific annotation or external homolog information; recognizing the sequence would be lookup or memorization.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "C"
+]
+```
+
+> Plasma membrane is a type of membrane, and the supplied annotation also calls the location cell membrane. C is the more specific choice, but A is also broadly true unless the question explicitly requires the most specific GO term.
+
+
+### Important caveats
+
+- The sequence matches the annotated record, but the cited localization evidence is similarity-based, not direct experimental localization evidence.
+- The exact source snapshot used by the question author is unknown.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence has an ABC-type P-loop ATPase signature and lacks an obvious transmembrane segment, which is consistent with a peripheral ATP-binding component associated with a membrane transporter. That supports membrane association, but does not establish this protein's specific localization.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The protein-specific membrane-localization assignment, which the supplied evidence shows is transferred by similarity to another protein.",
+    "reason": "Sequence-based reasoning can suggest a membrane-associated transporter component, but the specific plasma-membrane assignment depends on protein-specific annotation or external homolog information; recognizing the sequence would be lookup or memorization."
+  },
+  "case_id": "GO_cellular_component_0045",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "C6",
+      "H3",
+      "H4"
+    ],
+    "judgment": "supported",
+    "reason": "The exact sequence matches a UniProt entry annotated to the plasma membrane. Its cell-membrane localization is transferred by similarity, and the GO plasma-membrane annotation is computational/inferred rather than direct experimental evidence."
+  },
+  "important_caveats": [
+    "The sequence matches the annotated record, but the cited localization evidence is similarity-based, not direct experimental localization evidence.",
+    "The exact source snapshot used by the question author is unknown."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "C"
+    ],
+    "reason": "Plasma membrane is a type of membrane, and the supplied annotation also calls the location cell membrane. C is the more specific choice, but A is also broadly true unless the question explicitly requires the most specific GO term."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "GO_cellular_component_0045",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The exact sequence matches a UniProt entry annotated to the plasma membrane. Its cell-membrane localization is transferred by similarity, and the GO plasma-membrane annotation is computational/inferred rather than direct experimental evidence.",
+    "evidence_ids": ["C5", "C6", "H3", "H4"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence has an ABC-type P-loop ATPase signature and lacks an obvious transmembrane segment, which is consistent with a peripheral ATP-binding component associated with a membrane transporter. That supports membrane association, but does not establish this protein's specific localization.",
+    "missing_item_specific_fact": "The protein-specific membrane-localization assignment, which the supplied evidence shows is transferred by similarity to another protein.",
+    "reason": "Sequence-based reasoning can suggest a membrane-associated transporter component, but the specific plasma-membrane assignment depends on protein-specific annotation or external homolog information; recognizing the sequence would be lookup or memorization."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "C"],
+    "reason": "Plasma membrane is a type of membrane, and the supplied annotation also calls the location cell membrane. C is the more specific choice, but A is also broadly true unless the question explicitly requires the most specific GO term."
+  },
+  "important_caveats": [
+    "The sequence matches the annotated record, but the cited localization evidence is similarity-based, not direct experimental localization evidence.",
+    "The exact source snapshot used by the question author is unknown."
+  ]
+}
+```
+
+</details>
+
+## Qwen3.8-Flash-Next-NVFP4
+
+**Saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> UniProt entry P0DXG8 annotates the protein's subcellular location as 'Cell membrane; Peripheral membrane protein; Cytoplasmic side' (evidence ECO:0000250, inferred from similarity to P32010). The corresponding GO annotation is GO:0005886 (plasma membrane), confirmed by both the JSON cross-reference (C6) and the flat-file DR line (H4). GO:0005886 has 'cell membrane' as an EXACT synonym (GO1). The protein is an ABC transporter ATP-binding protein (EC 7.6.2.2, DrrA1) involved in daunorubicin efflux in Streptomyces coeruleorubidus, consistent with membrane association. The annotation is computational (ISS/IEA), not direct experimental, but it is the database record supporting choice C.
+
+Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [H3](#evidence-h3), [H4](#evidence-h4), [GO1](#evidence-go1).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence contains a canonical Walker A motif (GPNGAGKST), identifying it as an ATP-binding protein. Combined with the overall domain architecture suggestive of an ABC transporter ATPase, general knowledge places it as membrane-associated. Since the organism is a bacterium (Streptomyces), the only membrane is the plasma membrane (cell membrane). Options B (a CoA-biosynthesis cytoplasmic complex) and D (a neuronal axon, impossible in bacteria) are eliminated by basic biology. Between A (membrane, GO:0016020) and C (plasma membrane, GO:0005886): for a prokaryote the sole membrane IS the plasma membrane, and GO:0005886 is the more specific term (is_a GO:0016020), making C the primary annotation.
+
+
+**Missing item-specific fact**
+
+> None critical. Precise identification as an ABC transporter (vs. other Walker A proteins) adds confidence but is not strictly necessary: bacterial context + elimination of B/D + specificity of 'plasma membrane' over generic 'membrane' suffices.
+
+
+**Reason**
+
+> A model can identify the Walker A motif, reason that ATP-binding proteins of this architecture in bacteria are membrane-associated, eliminate axon (eukaryotic neuron) and the CoA complex (unrelated cytoplasmic complex), and then choose the more specific 'plasma membrane' over the broad parent 'membrane' because bacteria possess only one membrane. This is general biological reasoning, not a lookup of a specific database entry.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> While GO:0005886 (plasma membrane) is_a GO:0016020 (membrane), the question asks for the 'primary Cellular Component,' which in GO annotation convention means the most specific term. For a bacterium, 'plasma membrane' is the precise and correct specific annotation; 'membrane' is an overly broad parent. B and D are clearly inapplicable. No genuine ambiguity remains.
+
+
+### Important caveats
+
+- The GO annotation is IEA/ISS (inferred from electronic annotation / sequence similarity to P32010), not direct experimental localization evidence.
+- The protein is a peripheral membrane protein (cytoplasmic side), not an integral membrane protein; it associates with the membrane via interaction with transmembrane ABC transporter components rather than spanning the bilayer itself.
+- The Walker A motif alone does not uniquely identify ABC transporters; additional domain context and bacterial membrane biology support the inference.
+- The UniProt entry was first public 2025-02-05; the benchmark construction date is unknown, but sequence match is confirmed across available versions.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence contains a canonical Walker A motif (GPNGAGKST), identifying it as an ATP-binding protein. Combined with the overall domain architecture suggestive of an ABC transporter ATPase, general knowledge places it as membrane-associated. Since the organism is a bacterium (Streptomyces), the only membrane is the plasma membrane (cell membrane). Options B (a CoA-biosynthesis cytoplasmic complex) and D (a neuronal axon, impossible in bacteria) are eliminated by basic biology. Between A (membrane, GO:0016020) and C (plasma membrane, GO:0005886): for a prokaryote the sole membrane IS the plasma membrane, and GO:0005886 is the more specific term (is_a GO:0016020), making C the primary annotation.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "None critical. Precise identification as an ABC transporter (vs. other Walker A proteins) adds confidence but is not strictly necessary: bacterial context + elimination of B/D + specificity of 'plasma membrane' over generic 'membrane' suffices.",
+    "reason": "A model can identify the Walker A motif, reason that ATP-binding proteins of this architecture in bacteria are membrane-associated, eliminate axon (eukaryotic neuron) and the CoA complex (unrelated cytoplasmic complex), and then choose the more specific 'plasma membrane' over the broad parent 'membrane' because bacteria possess only one membrane. This is general biological reasoning, not a lookup of a specific database entry."
+  },
+  "case_id": "GO_cellular_component_0045",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "C6",
+      "H3",
+      "H4",
+      "GO1"
+    ],
+    "judgment": "supported",
+    "reason": "UniProt entry P0DXG8 annotates the protein's subcellular location as 'Cell membrane; Peripheral membrane protein; Cytoplasmic side' (evidence ECO:0000250, inferred from similarity to P32010). The corresponding GO annotation is GO:0005886 (plasma membrane), confirmed by both the JSON cross-reference (C6) and the flat-file DR line (H4). GO:0005886 has 'cell membrane' as an EXACT synonym (GO1). The protein is an ABC transporter ATP-binding protein (EC 7.6.2.2, DrrA1) involved in daunorubicin efflux in Streptomyces coeruleorubidus, consistent with membrane association. The annotation is computational (ISS/IEA), not direct experimental, but it is the database record supporting choice C."
+  },
+  "important_caveats": [
+    "The GO annotation is IEA/ISS (inferred from electronic annotation / sequence similarity to P32010), not direct experimental localization evidence.",
+    "The protein is a peripheral membrane protein (cytoplasmic side), not an integral membrane protein; it associates with the membrane via interaction with transmembrane ABC transporter components rather than spanning the bilayer itself.",
+    "The Walker A motif alone does not uniquely identify ABC transporters; additional domain context and bacterial membrane biology support the inference.",
+    "The UniProt entry was first public 2025-02-05; the benchmark construction date is unknown, but sequence match is confirmed across available versions."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "While GO:0005886 (plasma membrane) is_a GO:0016020 (membrane), the question asks for the 'primary Cellular Component,' which in GO annotation convention means the most specific term. For a bacterium, 'plasma membrane' is the precise and correct specific annotation; 'membrane' is an overly broad parent. B and D are clearly inapplicable. No genuine ambiguity remains."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "GO_cellular_component_0045",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "UniProt entry P0DXG8 annotates the protein's subcellular location as 'Cell membrane; Peripheral membrane protein; Cytoplasmic side' (evidence ECO:0000250, inferred from similarity to P32010). The corresponding GO annotation is GO:0005886 (plasma membrane), confirmed by both the JSON cross-reference (C6) and the flat-file DR line (H4). GO:0005886 has 'cell membrane' as an EXACT synonym (GO1). The protein is an ABC transporter ATP-binding protein (EC 7.6.2.2, DrrA1) involved in daunorubicin efflux in Streptomyces coeruleorubidus, consistent with membrane association. The annotation is computational (ISS/IEA), not direct experimental, but it is the database record supporting choice C.",
+    "evidence_ids": ["C5", "C6", "H3", "H4", "GO1"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The sequence contains a canonical Walker A motif (GPNGAGKST), identifying it as an ATP-binding protein. Combined with the overall domain architecture suggestive of an ABC transporter ATPase, general knowledge places it as membrane-associated. Since the organism is a bacterium (Streptomyces), the only membrane is the plasma membrane (cell membrane). Options B (a CoA-biosynthesis cytoplasmic complex) and D (a neuronal axon, impossible in bacteria) are eliminated by basic biology. Between A (membrane, GO:0016020) and C (plasma membrane, GO:0005886): for a prokaryote the sole membrane IS the plasma membrane, and GO:0005886 is the more specific term (is_a GO:0016020), making C the primary annotation.",
+    "missing_item_specific_fact": "None critical. Precise identification as an ABC transporter (vs. other Walker A proteins) adds confidence but is not strictly necessary: bacterial context + elimination of B/D + specificity of 'plasma membrane' over generic 'membrane' suffices.",
+    "reason": "A model can identify the Walker A motif, reason that ATP-binding proteins of this architecture in bacteria are membrane-associated, eliminate axon (eukaryotic neuron) and the CoA complex (unrelated cytoplasmic complex), and then choose the more specific 'plasma membrane' over the broad parent 'membrane' because bacteria possess only one membrane. This is general biological reasoning, not a lookup of a specific database entry."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "While GO:0005886 (plasma membrane) is_a GO:0016020 (membrane), the question asks for the 'primary Cellular Component,' which in GO annotation convention means the most specific term. For a bacterium, 'plasma membrane' is the precise and correct specific annotation; 'membrane' is an overly broad parent. B and D are clearly inapplicable. No genuine ambiguity remains."
+  },
+  "important_caveats": [
+    "The GO annotation is IEA/ISS (inferred from electronic annotation / sequence similarity to P32010), not direct experimental localization evidence.",
+    "The protein is a peripheral membrane protein (cytoplasmic side), not an integral membrane protein; it associates with the membrane via interaction with transmembrane ABC transporter components rather than spanning the bilayer itself.",
+    "The Walker A motif alone does not uniquely identify ABC transporters; additional domain context and bacterial membrane biology support the inference.",
+    "The UniProt entry was first public 2025-02-05; the benchmark construction date is unknown, but sequence match is confirmed across available versions."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of Luna’s review
+
+The notes below were prepared for specific claims in the Luna review. They are not independent validation of Qwen’s claims, expert adjudication, or replacement verdicts.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Reviewer-only source evidence
+
+**Both reviewers received this source evidence separately from the original question. It was not available to the original evaluated model.** Source support and reasoning from the original sequence/choices are distinct assessments.
+
+**Accession:** `P0DXG8` (recovered from dataset image-path metadata, not original question text).  
+**Sequence applicability:** historical matched; current matched.  
+**Historical cutoff:** 2026-05-07; archived entry version 4. Exact author snapshot unknown.
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+- Ontology names and EXACT synonyms match options mechanically; no answer-support judgment is made.
+- Only is_a and part_of edges are used in supplied graph paths; all qualifiers and obsolete/replaced_by tags remain in literal source blocks.
+- The ontology is newer than the benchmark repository commit; the exact author ontology snapshot is unknown.
+- No matching term or path does not establish that an option is false.
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/P0DXG8.json)  
+**Locator:** `/comments/3`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:29:26.942110+00:00.  
+
+```json
+{"commentType":"SUBCELLULAR LOCATION","subcellularLocations":[{"location":{"evidences":[{"evidenceCode":"ECO:0000250","id":"P32010","source":"UniProtKB"}],"id":"SL-0039","value":"Cell membrane"},"orientation":{"evidences":[{"evidenceCode":"ECO:0000250","id":"P32010","source":"UniProtKB"}],"id":"SL-9910","value":"Cytoplasmic side"},"topology":{"evidences":[{"evidenceCode":"ECO:0000250","id":"P32010","source":"UniProtKB"}],"id":"SL-9903","value":"Peripheral membrane protein"}}]}
+```
+
+Source SHA-256: `0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5`.
+
+### Evidence C6
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/P0DXG8.json)  
+**Locator:** `/uniProtKBCrossReferences/6`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:29:26.942110+00:00.  
+
+```json
+{"database":"GO","id":"GO:0005886","properties":[{"key":"GoTerm","value":"C:plasma membrane"},{"key":"GoEvidenceType","value":"ISS:UniProtKB"}]}
+```
+
+Source SHA-256: `0e5348463258976e6d6f9f2134ee55b830704023f416fa44d5c29fba2af0d8f5`.
+
+### Evidence H3
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/P0DXG8?format=txt&versions=4)  
+**Locator:** `lines 42-44`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 4 / 1.  
+**Retrieved:** 2026-11-02T04:29:29.046585+00:00.  
+
+```text
+CC   -!- SUBCELLULAR LOCATION: Cell membrane {ECO:0000250|UniProtKB:P32010};
+CC       Peripheral membrane protein {ECO:0000250|UniProtKB:P32010}; Cytoplasmic
+CC       side {ECO:0000250|UniProtKB:P32010}.
+```
+
+Source SHA-256: `f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111`.
+
+### Evidence H4
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/P0DXG8?format=txt&versions=4)  
+**Locator:** `lines 65-65`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 4 / 1.  
+**Retrieved:** 2026-11-02T04:29:29.046585+00:00.  
+
+```text
+DR   GO; GO:0005886; C:plasma membrane; IEA:UniProtKB-SubCell.
+```
+
+Source SHA-256: `f95705e32d82541861abe2d430aded67e4107ac1e85c235ef22767620ec1e111`.
+
+### Evidence GO1
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)  
+**Locator:** `lines 60420-60454`  
+**Scope:** current ontology; exact historical benchmark ontology unknown.  
+**Retrieved:** 2026-11-01T07:04:24.975173+00:00.  
+
+```text
+[Term]
+id: GO:0005886
+name: plasma membrane
+namespace: cellular_component
+alt_id: GO:0005887
+alt_id: GO:0005904
+def: "The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." [ISBN:0716731363]
+subset: goslim_agr
+subset: goslim_candida
+subset: goslim_chembl
+subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_mouse
+subset: goslim_plant
+subset: goslim_plant_ribbon
+subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
+subset: goslim_yeast
+synonym: "bacterial inner membrane" NARROW []
+synonym: "cell membrane" EXACT []
+synonym: "cellular membrane" EXACT [NIF_Subcellular:sao6433132645]
+synonym: "cytoplasmic membrane" EXACT []
+synonym: "inner endospore membrane" NARROW []
+synonym: "integral component of plasma membrane" NARROW []
+synonym: "integral to plasma membrane" NARROW []
+synonym: "juxtamembrane" BROAD []
+synonym: "plasma membrane lipid bilayer" NARROW [GOC:mah]
+synonym: "plasmalemma" EXACT []
+xref: NIF_Subcellular:sao1663586795
+xref: Wikipedia:Cell_membrane
+is_a: GO:0016020 ! membrane
+relationship: part_of GO:0071944 ! cell periphery
+
+```
+
+Source SHA-256: `b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc`.
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/GO_cellular_component.json), zero-based source row 45. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). UniProt and Gene Ontology credits are retained in [source notices](../THIRD_PARTY_NOTICES.md).

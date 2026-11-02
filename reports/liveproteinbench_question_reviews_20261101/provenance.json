@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-11-01",
+  "final": true,
+  "planned_questions": 1736,
+  "packets_sha256": "19e97d3770cea7faadab526430a7791f01a2b05a5016cee76c8d99a7f32c4e14",
+  "original_model_inputs_sha256": "4f16e63a748a536a936f6b35540915354c187fb44aecc5cb3b71a615c484103c",
+  "original_references_sha256": "dab5185104e5ee504cbd96a3c978761530ecaf95dce7c9c6ad1c4f02bfd41bf7",
+  "published_luna_only_manifest_sha256": "2c09525f172692592193eff5314cb330c02afa4e8f13e038fabadd64a5ae42a4",
+  "published_luna_only_reviews_jsonl_sha256": "4e35e25ca96514369c3854a9717d5e9f0d13badef0e9d561b402607ccd7db508",
+  "published_luna_only_preserved_unchanged": true,
+  "renderer_sha256": "ea06e85d7d1851c75a08b3b56a77ebd09fb9f07263ab216c5310195bc0126e05",
+  "reviewer_system_prompt_sha256": "e78bc52e87f4e9a6abb27d392456e08d203acb6473b27d75de163102fa6464f2",
+  "reviewer_user_template_sha256": "0588e24c834775ca6a2bb296de6fae9474fe03ea11883733d489fcf4fdd4f0bc",
+  "per_model_record_bindings": {
+    "luna": "bfa0ebc2e81368df8dac0ece9dd4f839812c4d4969b7ff47d3d68b552d2fd157",
+    "qwen": "5bba97a0a8e1ec1487cf9a37631ac076f9411aa8cbcc9ee01f1f0aa42868f1f8"
+  },
+  "completion_audit_sha256": "f6941e58bbe802f1db70eeda33a373326d7022ce5d0f5926e2e573cb1ae32911",
+  "completion_audit_public_scope": {
+    "audit_passed": true,
+    "planned_cases": 1736,
+    "terminal_records": 1736,
+    "exact_frozen_case_scope": true,
+    "pending_cases": 0,
+    "packets_sha256": "19e97d3770cea7faadab526430a7791f01a2b05a5016cee76c8d99a7f32c4e14",
+    "status_counts": {
+      "invalid_review": 61,
+      "valid_review": 1675
+    }
+  },
+  "execution_counts": {
+    "qwen": {
+      "attempted_records": 1736,
+      "terminal_records": 1736,
+      "status_counts": {
+        "invalid_review": 61,
+        "valid_review": 1675
+      },
+      "http_status_counts": {
+        "200": 1736
+      },
+      "native_finish_reason_counts": {
+        "length": 13,
+        "stop": 1723
+      },
+      "length_finish_count": 13,
+      "extraction_exception_counts": {
+        "ValueError:Qwen final content is not text": 12
+      },
+      "validation_diagnostic_counts": {
+        "answerability_check:missing_item_specific_fact_must_be_text": 5,
+        "expected_answer_check:invalid_evidence_ids": 1,
+        "incomplete_or_non_native_termination": 1,
+        "invalid_json:Unterminated string starting at: line 5 column 15 (char 110)": 1,
+        "question_ambiguity:invalid_option_ids": 42
+      },
+      "length_finished_invalid_records": 13,
+      "diagnostic_categories_overlap": true
+    },
+    "luna": {
+      "attempted_records": 1736,
+      "terminal_records": 1736,
+      "provider_status_counts": {
+        "completed": 1736
+      },
+      "incomplete_reason_counts": {},
+      "max_output_tokens_incomplete_count": 0,
+      "records_with_unknown_output_cap_status": 0,
+      "basis": "existing saved Responses termination metadata; not inferred from review validity"
+    }
+  },
+  "joint_valid_aggregation_only": true,
+  "original_benchmark_score_unchanged": true,
+  "private_metadata_policy": "explicit content allowlists; only saved visible review/final text; no provider internal reasoning or private runtime metadata",
+  "source_credit_provenance": {
+    "packets.jsonl": "19e97d3770cea7faadab526430a7791f01a2b05a5016cee76c8d99a7f32c4e14",
+    "source_verification_notes.jsonl": "a1ea2b2e8869385e812d5f41cea3e2526c3212c37877c345eb0d81b34be90408",
+    "source_verification_addendum_39.jsonl": "f30364b159da414a00251ba9b78ec604a9b2999e6e5a26011308b89bef2d8fa4",
+    "source_verification_invalid_review_note.json": "f8578b0cb3d79dd04fad693107a709a4f60c8f1e446f0ff4e397761c430904a0",
+    "source_verification_summary_full1736.json": "3503dd4661dd0291efcf7e366a0e47c41f3ca89f7611660d38eeac1b397245be"
+  }
+}

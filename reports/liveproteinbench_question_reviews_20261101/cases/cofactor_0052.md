@@ -1,0 +1,377 @@
+# cofactor_0052
+
+[All questions and paired results](../README.md) · [Method](../METHOD.md) · [Source credits](../THIRD_PARTY_NOTICES.md)
+
+**Task:** `cofactor`  
+**Author expected answer:** **B** — Zn(2+)
+
+| Reviewer | Expected-answer support | Reasoning / lookup | Validity |
+|---|---|---|---|
+| GPT-6 Luna | supported | lookup-dependent | valid_review |
+| Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | valid_review |
+
+**Paired comparison:** key agree; reasoning differ. Agreement is not proof of correctness. These are separate AI judgments, with no forced consensus or changed key.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MAGESTQVDLSVKAIGWGAKDASGILHPIKFSRRTPGERDVKIRVLYCGVCNFDMEMVRNKWGFTRYPYVFGHETAGEVVEVGSKVQKFKVGDKVAVGCMVGSCGKCYNCENGMENYCPEPNMADGSVYREQGERSYGGCSNVMVVDEKFVLRWPENLPQDTGVPLLCAGVVVYSPMKYMGLDKPGKHIGVFGLGGLGSVAVKFIKAFGGKATVISTSRRKEKEAIEEHGADAFVVNSDTEQLQALAGTMDGVVDTTPGGRTPMSLMLNLLKFDGSLILVGAPETLFELPVQPLILGRRKIIGSSTGGLKEYQEMLDFAAKHNILCDTEVIGIDYLSTAMERIKNLDVKYRFAIDIGNTLKYEE
+
+[Multiple Choices]
+A. [2Fe-2S] cluster
+B. Zn(2+)
+C. Co(2+)
+D. Mn(2+)
+```
+
+<details>
+<summary>Original system instructions, verbatim</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Predicting Protein Cofactor, which is to identify the specific cofactor required for a given protein's catalytic activity. A cofactor is a non-protein chemical compound or metallic ion that is essential for an enzyme's function. Based on the provided protein sequence, you will need to determine which of the multiple-choice options is the correct cofactor.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## GPT-6 Luna
+
+**Saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The sequence matches the UniProt entry for geissoschizine synthase, whose zinc cofactor annotation specifies two Zn(2+) ions per subunit. The annotation is transferred by similarity from UniProtKB:P06525, so it supports the key by inference rather than demonstrating zinc binding experimentally for this exact protein.
+
+Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H4](#evidence-h4).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence may suggest a dehydrogenase-family protein and contains cysteines, but those clues alone do not establish which listed metal is required.
+
+
+**Missing item-specific fact**
+
+> The protein's identity and family-specific cofactor assignment, or direct evidence of its metal requirement, are not supplied in the question.
+
+
+**Reason**
+
+> Choosing zinc depends on recognizing the protein or obtaining its cofactor annotation; the reviewer-only sequence match and database annotation were not available to the evaluated model.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The evidence supports zinc as the intended answer; the other choices are not supported by the supplied sequence alone.
+
+
+### Important caveats
+
+- The zinc annotation is based on similarity to another protein, not independently verified experimental evidence for this exact sequence.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence may suggest a dehydrogenase-family protein and contains cysteines, but those clues alone do not establish which listed metal is required.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The protein's identity and family-specific cofactor assignment, or direct evidence of its metal requirement, are not supplied in the question.",
+    "reason": "Choosing zinc depends on recognizing the protein or obtaining its cofactor annotation; the reviewer-only sequence match and database annotation were not available to the evaluated model."
+  },
+  "case_id": "cofactor_0052",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C1",
+      "C4",
+      "C5",
+      "H4"
+    ],
+    "judgment": "supported",
+    "reason": "The sequence matches the UniProt entry for geissoschizine synthase, whose zinc cofactor annotation specifies two Zn(2+) ions per subunit. The annotation is transferred by similarity from UniProtKB:P06525, so it supports the key by inference rather than demonstrating zinc binding experimentally for this exact protein."
+  },
+  "important_caveats": [
+    "The zinc annotation is based on similarity to another protein, not independently verified experimental evidence for this exact sequence."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The evidence supports zinc as the intended answer; the other choices are not supported by the supplied sequence alone."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "cofactor_0052",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The sequence matches the UniProt entry for geissoschizine synthase, whose zinc cofactor annotation specifies two Zn(2+) ions per subunit. The annotation is transferred by similarity from UniProtKB:P06525, so it supports the key by inference rather than demonstrating zinc binding experimentally for this exact protein.",
+    "evidence_ids": ["C1", "C4", "C5", "H4"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence may suggest a dehydrogenase-family protein and contains cysteines, but those clues alone do not establish which listed metal is required.",
+    "missing_item_specific_fact": "The protein's identity and family-specific cofactor assignment, or direct evidence of its metal requirement, are not supplied in the question.",
+    "reason": "Choosing zinc depends on recognizing the protein or obtaining its cofactor annotation; the reviewer-only sequence match and database annotation were not available to the evaluated model."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The evidence supports zinc as the intended answer; the other choices are not supported by the supplied sequence alone."
+  },
+  "important_caveats": [
+    "The zinc annotation is based on similarity to another protein, not independently verified experimental evidence for this exact sequence."
+  ]
+}
+```
+
+</details>
+
+## Qwen3.8-Flash-Next-NVFP4
+
+**Saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The UniProt entry A0A9E7LUR3 annotates Zn(2+) as the cofactor, stating 'Binds 2 Zn(2+) ions per subunit' (C5, H4). The sequence matches the benchmark exactly. However, the evidence code is ECO:0000250 (similarity), transferred from horse liver alcohol dehydrogenase (P06525), not a direct experimental determination on this specific geissoschizine synthase. The protein's alternative name 'Alcohol dehydrogenase GS' and its ADH-superfamily fold features (Rossmann motif GLGSVAVK, GAPET nucleotide-binding motif, cysteine-rich regions) are consistent with the canonical Zn(2+) cofactor of the ADH superfamily. The annotation is a computational inference by similarity, but the ADH-superfamily Zn dependence is well-established biochemistry.
+
+Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [H2](#evidence-h2).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence contains hallmark features of the alcohol dehydrogenase/reductase (ADH/R) superfamily: a canonical Rossmann-fold NAD(P)-binding motif (GLGSVAVK), a secondary nucleotide-binding motif (GAPET), a ~364-residue length typical of ADH monomers, and multiple cysteine-rich stretches (e.g., CGVCNFDMEM, GCMVGSCGKCYNC) consistent with zinc-coordination sites. The ADH superfamily is one of the best-characterized enzyme families in biochemistry, and Zn(2+) is its defining catalytic cofactor (typically two Zn ions per subunit, one catalytic and one structural). A biochemist recognizing the ADH fold could reasonably infer Zn(2+) over &#91;2Fe-2S&#93; (which requires a distinct Cys cluster pattern in ferredoxin-type proteins), Co(2+) (characteristic of corrinoid-dependent mutases and some diol dehydratases), or Mn(2+) (typical of superoxide dismutases and certain glycosyltransferases). The cysteine density and spacing in the sequence are more consistent with Zn tetrahedral coordination than with Fe-S cluster assembly motifs.
+
+
+**Missing item-specific fact**
+
+> The protein is actually EC 1.3.1.36 (geissoschizine synthase), a terpene indole alkaloid biosynthesis enzyme, not a classical alcohol dehydrogenase. The Zn annotation is transferred by similarity from horse liver ADH (P06525) rather than experimentally confirmed for this specific enzyme. Direct experimental cofactor determination for geissoschizine synthase would strengthen the answer, but the ADH-fold reasoning provides a defensible general-knowledge pathway.
+
+
+**Reason**
+
+> The ADH-superfamily sequence signatures (Rossmann motif, catalytic Cys/His patterns, overall fold architecture) are recognizable from the raw sequence and map to well-established general knowledge about Zn dependence in this superfamily. This constitutes a concrete biological argument rather than pure memorization of a database entry. The reasoning is indirect (fold-based family assignment → family-typical cofactor) but is standard practice in enzymology.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The four distractors (Fe-S cluster, Co, Mn) are mechanistically and structurally inconsistent with the ADH-like fold features present in the sequence. No other option is defensible given the recognizable Rossmann fold, ADH-typical cysteine spacing, and absence of motifs characteristic of Fe-S proteins, corrinoid enzymes, or Mn-dependent oxidoreductases.
+
+
+### Important caveats
+
+- The Zn(2+) annotation carries evidence code ECO:0000250 (similarity transfer from P06525, horse liver ADH), not direct experimental evidence for geissoschizine synthase itself. The actual catalytic mechanism of EC 1.3.1.36 may differ from classical ADH chemistry.
+- The protein's primary name is 'Geissoschizine synthase' (EC 1.3.1.36); 'Alcohol dehydrogenase GS' is an alternative name reflecting fold similarity, not necessarily classical ADH function.
+- The UniProt entry was first released in 2025-06-18 (Swiss-Prot 2026_01); the benchmark's construction date is unknown, so the annotation may not have existed when the question was authored.
+- The reviewer identified the accession via dataset image-path metadata, not from the model input; the model saw only the raw sequence and four choices.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence contains hallmark features of the alcohol dehydrogenase/reductase (ADH/R) superfamily: a canonical Rossmann-fold NAD(P)-binding motif (GLGSVAVK), a secondary nucleotide-binding motif (GAPET), a ~364-residue length typical of ADH monomers, and multiple cysteine-rich stretches (e.g., CGVCNFDMEM, GCMVGSCGKCYNC) consistent with zinc-coordination sites. The ADH superfamily is one of the best-characterized enzyme families in biochemistry, and Zn(2+) is its defining catalytic cofactor (typically two Zn ions per subunit, one catalytic and one structural). A biochemist recognizing the ADH fold could reasonably infer Zn(2+) over [2Fe-2S] (which requires a distinct Cys cluster pattern in ferredoxin-type proteins), Co(2+) (characteristic of corrinoid-dependent mutases and some diol dehydratases), or Mn(2+) (typical of superoxide dismutases and certain glycosyltransferases). The cysteine density and spacing in the sequence are more consistent with Zn tetrahedral coordination than with Fe-S cluster assembly motifs.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "The protein is actually EC 1.3.1.36 (geissoschizine synthase), a terpene indole alkaloid biosynthesis enzyme, not a classical alcohol dehydrogenase. The Zn annotation is transferred by similarity from horse liver ADH (P06525) rather than experimentally confirmed for this specific enzyme. Direct experimental cofactor determination for geissoschizine synthase would strengthen the answer, but the ADH-fold reasoning provides a defensible general-knowledge pathway.",
+    "reason": "The ADH-superfamily sequence signatures (Rossmann motif, catalytic Cys/His patterns, overall fold architecture) are recognizable from the raw sequence and map to well-established general knowledge about Zn dependence in this superfamily. This constitutes a concrete biological argument rather than pure memorization of a database entry. The reasoning is indirect (fold-based family assignment → family-typical cofactor) but is standard practice in enzymology."
+  },
+  "case_id": "cofactor_0052",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "H4",
+      "C4",
+      "H2"
+    ],
+    "judgment": "supported",
+    "reason": "The UniProt entry A0A9E7LUR3 annotates Zn(2+) as the cofactor, stating 'Binds 2 Zn(2+) ions per subunit' (C5, H4). The sequence matches the benchmark exactly. However, the evidence code is ECO:0000250 (similarity), transferred from horse liver alcohol dehydrogenase (P06525), not a direct experimental determination on this specific geissoschizine synthase. The protein's alternative name 'Alcohol dehydrogenase GS' and its ADH-superfamily fold features (Rossmann motif GLGSVAVK, GAPET nucleotide-binding motif, cysteine-rich regions) are consistent with the canonical Zn(2+) cofactor of the ADH superfamily. The annotation is a computational inference by similarity, but the ADH-superfamily Zn dependence is well-established biochemistry."
+  },
+  "important_caveats": [
+    "The Zn(2+) annotation carries evidence code ECO:0000250 (similarity transfer from P06525, horse liver ADH), not direct experimental evidence for geissoschizine synthase itself. The actual catalytic mechanism of EC 1.3.1.36 may differ from classical ADH chemistry.",
+    "The protein's primary name is 'Geissoschizine synthase' (EC 1.3.1.36); 'Alcohol dehydrogenase GS' is an alternative name reflecting fold similarity, not necessarily classical ADH function.",
+    "The UniProt entry was first released in 2025-06-18 (Swiss-Prot 2026_01); the benchmark's construction date is unknown, so the annotation may not have existed when the question was authored.",
+    "The reviewer identified the accession via dataset image-path metadata, not from the model input; the model saw only the raw sequence and four choices."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The four distractors (Fe-S cluster, Co, Mn) are mechanistically and structurally inconsistent with the ADH-like fold features present in the sequence. No other option is defensible given the recognizable Rossmann fold, ADH-typical cysteine spacing, and absence of motifs characteristic of Fe-S proteins, corrinoid enzymes, or Mn-dependent oxidoreductases."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "cofactor_0052",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The UniProt entry A0A9E7LUR3 annotates Zn(2+) as the cofactor, stating 'Binds 2 Zn(2+) ions per subunit' (C5, H4). The sequence matches the benchmark exactly. However, the evidence code is ECO:0000250 (similarity), transferred from horse liver alcohol dehydrogenase (P06525), not a direct experimental determination on this specific geissoschizine synthase. The protein's alternative name 'Alcohol dehydrogenase GS' and its ADH-superfamily fold features (Rossmann motif GLGSVAVK, GAPET nucleotide-binding motif, cysteine-rich regions) are consistent with the canonical Zn(2+) cofactor of the ADH superfamily. The annotation is a computational inference by similarity, but the ADH-superfamily Zn dependence is well-established biochemistry.",
+    "evidence_ids": ["C5", "H4", "C4", "H2"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The sequence contains hallmark features of the alcohol dehydrogenase/reductase (ADH/R) superfamily: a canonical Rossmann-fold NAD(P)-binding motif (GLGSVAVK), a secondary nucleotide-binding motif (GAPET), a ~364-residue length typical of ADH monomers, and multiple cysteine-rich stretches (e.g., CGVCNFDMEM, GCMVGSCGKCYNC) consistent with zinc-coordination sites. The ADH superfamily is one of the best-characterized enzyme families in biochemistry, and Zn(2+) is its defining catalytic cofactor (typically two Zn ions per subunit, one catalytic and one structural). A biochemist recognizing the ADH fold could reasonably infer Zn(2+) over [2Fe-2S] (which requires a distinct Cys cluster pattern in ferredoxin-type proteins), Co(2+) (characteristic of corrinoid-dependent mutases and some diol dehydratases), or Mn(2+) (typical of superoxide dismutases and certain glycosyltransferases). The cysteine density and spacing in the sequence are more consistent with Zn tetrahedral coordination than with Fe-S cluster assembly motifs.",
+    "missing_item_specific_fact": "The protein is actually EC 1.3.1.36 (geissoschizine synthase), a terpene indole alkaloid biosynthesis enzyme, not a classical alcohol dehydrogenase. The Zn annotation is transferred by similarity from horse liver ADH (P06525) rather than experimentally confirmed for this specific enzyme. Direct experimental cofactor determination for geissoschizine synthase would strengthen the answer, but the ADH-fold reasoning provides a defensible general-knowledge pathway.",
+    "reason": "The ADH-superfamily sequence signatures (Rossmann motif, catalytic Cys/His patterns, overall fold architecture) are recognizable from the raw sequence and map to well-established general knowledge about Zn dependence in this superfamily. This constitutes a concrete biological argument rather than pure memorization of a database entry. The reasoning is indirect (fold-based family assignment → family-typical cofactor) but is standard practice in enzymology."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The four distractors (Fe-S cluster, Co, Mn) are mechanistically and structurally inconsistent with the ADH-like fold features present in the sequence. No other option is defensible given the recognizable Rossmann fold, ADH-typical cysteine spacing, and absence of motifs characteristic of Fe-S proteins, corrinoid enzymes, or Mn-dependent oxidoreductases."
+  },
+  "important_caveats": [
+    "The Zn(2+) annotation carries evidence code ECO:0000250 (similarity transfer from P06525, horse liver ADH), not direct experimental evidence for geissoschizine synthase itself. The actual catalytic mechanism of EC 1.3.1.36 may differ from classical ADH chemistry.",
+    "The protein's primary name is 'Geissoschizine synthase' (EC 1.3.1.36); 'Alcohol dehydrogenase GS' is an alternative name reflecting fold similarity, not necessarily classical ADH function.",
+    "The UniProt entry was first released in 2025-06-18 (Swiss-Prot 2026_01); the benchmark's construction date is unknown, so the annotation may not have existed when the question was authored.",
+    "The reviewer identified the accession via dataset image-path metadata, not from the model input; the model saw only the raw sequence and four choices."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of Luna’s review
+
+The notes below were prepared for specific claims in the Luna review. They are not independent validation of Qwen’s claims, expert adjudication, or replacement verdicts.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Reviewer-only source evidence
+
+**Both reviewers received this source evidence separately from the original question. It was not available to the original evaluated model.** Source support and reasoning from the original sequence/choices are distinct assessments.
+
+**Accession:** `A0A9E7LUR3` (recovered from dataset image-path metadata, not original question text).  
+**Sequence applicability:** historical matched; current matched.  
+**Historical cutoff:** 2026-05-07; archived entry version 12. Exact author snapshot unknown.
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json)  
+**Locator:** `/primaryAccession`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:26:11.087134+00:00.  
+
+```json
+"A0A9E7LUR3"
+```
+
+Source SHA-256: `a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05`.
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json)  
+**Locator:** `/proteinDescription`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:26:11.087134+00:00.  
+
+```json
+{"alternativeNames":[{"fullName":{"evidences":[{"evidenceCode":"ECO:0000305"}],"value":"Alcohol dehydrogenase GS"}}],"recommendedName":{"ecNumbers":[{"evidences":[{"evidenceCode":"ECO:0000269","id":"36349266","source":"PubMed"}],"value":"1.3.1.36"}],"fullName":{"evidences":[{"evidenceCode":"ECO:0000303","id":"36349266","source":"PubMed"}],"value":"Geissoschizine synthase"},"shortNames":[{"evidences":[{"evidenceCode":"ECO:0000303","id":"36349266","source":"PubMed"}],"value":"AsGS"}]}}
+```
+
+Source SHA-256: `a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05`.
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A9E7LUR3.json)  
+**Locator:** `/comments/4`  
+**Scope:** current snapshot; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Retrieved:** 2026-11-02T04:26:11.087134+00:00.  
+
+```json
+{"cofactors":[{"cofactorCrossReference":{"database":"ChEBI","id":"CHEBI:29105"},"evidences":[{"evidenceCode":"ECO:0000250","id":"P06525","source":"UniProtKB"}],"name":"Zn(2+)"}],"commentType":"COFACTOR","note":{"texts":[{"evidences":[{"evidenceCode":"ECO:0000250","id":"P06525","source":"UniProtKB"}],"value":"Binds 2 Zn(2+) ions per subunit."}]}}
+```
+
+Source SHA-256: `a882b68fd7c14ca824ffd0394e9d4ac0db53220bba86949cf217c54345aecd05`.
+
+### Evidence H2
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A9E7LUR3?format=txt&versions=12)  
+**Locator:** `lines 6-9`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 12 / 1.  
+**Retrieved:** 2026-11-02T04:26:15.563182+00:00.  
+
+```text
+DE   RecName: Full=Geissoschizine synthase {ECO:0000303|PubMed:36349266};
+DE            Short=AsGS {ECO:0000303|PubMed:36349266};
+DE            EC=1.3.1.36 {ECO:0000269|PubMed:36349266};
+DE   AltName: Full=Alcohol dehydrogenase GS {ECO:0000305};
+```
+
+Source SHA-256: `77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e`.
+
+### Evidence H4
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A9E7LUR3?format=txt&versions=12)  
+**Locator:** `lines 50-53`  
+**Scope:** record released no later than 2026-05-07; actual author source snapshot unknown.  
+**Sequence comparison:** matched.  
+**Entry / sequence version:** 12 / 1.  
+**Retrieved:** 2026-11-02T04:26:15.563182+00:00.  
+
+```text
+CC   -!- COFACTOR:
+CC       Name=Zn(2+); Xref=ChEBI:CHEBI:29105;
+CC         Evidence={ECO:0000250|UniProtKB:P06525};
+CC       Note=Binds 2 Zn(2+) ions per subunit. {ECO:0000250|UniProtKB:P06525};
+```
+
+Source SHA-256: `77ff10b42c5078be81b8aafcc4ef858dbdc2d041d1fd54a8a90b0dd20ac0ec4e`.
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/cofactor.json), zero-based source row 52. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). UniProt and Gene Ontology credits are retained in [source notices](../THIRD_PARTY_NOTICES.md).
