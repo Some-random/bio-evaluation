@@ -1,0 +1,718 @@
+# transmembrane_0081: before and after transfer clarification
+
+[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/transmembrane_0081.txt)
+
+**Task:** `transmembrane`  
+**Author key, unchanged:** **B** — 53..71
+
+| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
+|---|---|---|---|---|
+| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
+| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
+| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+
+**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MNVPTAPTPNKHLNIPDLRFEKVFKKALHRELAPSSSLSRKAGVITKVVVRDVLLMPLLQSFVLSLALMGVKEWLSYIRLKGRTLGDRIRQRLFPI
+
+[Multiple Choices]
+A. 53..72
+B. 53..71
+C. 53..71; 395..420
+D. 4..24; 81..101; 116..136; 158..178; 181..201; 228..248; 271..291; 309..329
+```
+
+<details>
+<summary>Complete original system instructions</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Transmembrane Region Prediction, which is to predict a region of the protein that spans across a cell membrane. These transmembrane domains are typically hydrophobic alpha-helices that anchor the protein within the lipid bilayer or form channels. Based on the provided amino acid sequence, you must select the option that correctly identifies the start and end positions of a segment that crosses the membrane.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## Four saved visible reviews
+
+## Before: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The exact-matched UniProt record annotates residues 53–71 as a helical transmembrane region. The historical record gives the same coordinates. This supports B as an annotation, although the evidence code indicates computational evidence rather than an experimental measurement.
+
+Citations as saved: [C5](#evidence-c5), [H2](#evidence-h2).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence has a hydrophobic stretch consistent with a transmembrane helix around residues 53–72, which distinguishes that region from the out-of-range coordinates in other choices.
+
+
+**Missing item-specific fact**
+
+> The exact annotated endpoint, 71 rather than 72, is not established by the supplied sequence or general biological reasoning.
+
+
+**Reason**
+
+> Sequence features support a membrane-spanning region in this neighborhood, but do not meaningfully distinguish the one-residue endpoint difference between A and B. Choosing the precise annotation requires an item-specific boundary assignment.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "B"
+]
+```
+
+> Both 53–71 and 53–72 are plausible boundaries for the hydrophobic segment from the sequence alone; the input gives no basis for resolving that one-residue difference.
+
+
+### Important caveats
+
+- The supporting database annotation is computational (ECO:0000255), not evidence of experimental validation.
+- The sequence match is exact, but the author's source snapshot is unknown.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence has a hydrophobic stretch consistent with a transmembrane helix around residues 53–72, which distinguishes that region from the out-of-range coordinates in other choices.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The exact annotated endpoint, 71 rather than 72, is not established by the supplied sequence or general biological reasoning.",
+    "reason": "Sequence features support a membrane-spanning region in this neighborhood, but do not meaningfully distinguish the one-residue endpoint difference between A and B. Choosing the precise annotation requires an item-specific boundary assignment."
+  },
+  "case_id": "transmembrane_0081",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "H2"
+    ],
+    "judgment": "supported",
+    "reason": "The exact-matched UniProt record annotates residues 53–71 as a helical transmembrane region. The historical record gives the same coordinates. This supports B as an annotation, although the evidence code indicates computational evidence rather than an experimental measurement."
+  },
+  "important_caveats": [
+    "The supporting database annotation is computational (ECO:0000255), not evidence of experimental validation.",
+    "The sequence match is exact, but the author's source snapshot is unknown."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "B"
+    ],
+    "reason": "Both 53–71 and 53–72 are plausible boundaries for the hydrophobic segment from the sequence alone; the input gives no basis for resolving that one-residue difference."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "transmembrane_0081",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The exact-matched UniProt record annotates residues 53–71 as a helical transmembrane region. The historical record gives the same coordinates. This supports B as an annotation, although the evidence code indicates computational evidence rather than an experimental measurement.",
+    "evidence_ids": ["C5", "H2"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence has a hydrophobic stretch consistent with a transmembrane helix around residues 53–72, which distinguishes that region from the out-of-range coordinates in other choices.",
+    "missing_item_specific_fact": "The exact annotated endpoint, 71 rather than 72, is not established by the supplied sequence or general biological reasoning.",
+    "reason": "Sequence features support a membrane-spanning region in this neighborhood, but do not meaningfully distinguish the one-residue endpoint difference between A and B. Choosing the precise annotation requires an item-specific boundary assignment."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "B"],
+    "reason": "Both 53–71 and 53–72 are plausible boundaries for the hydrophobic segment from the sequence alone; the input gives no basis for resolving that one-residue difference."
+  },
+  "important_caveats": [
+    "The supporting database annotation is computational (ECO:0000255), not evidence of experimental validation.",
+    "The sequence match is exact, but the author's source snapshot is unknown."
+  ]
+}
+```
+
+</details>
+
+## Before: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> UniProt annotation (P9WEJ4, features/1 and historical flat-file) explicitly annotates a single transmembrane helix at positions 53..71 (ECO:0000255, similarity-based). The sequence at positions 53-71 (VLLMPLLQSFVLSLALMGV) is a predominantly hydrophobic stretch consistent with a TM helix. Choice A (53..72) adds K72, a charged lysine atypical for a TM helix. Choice C references position 395..420, impossible in a 96-aa protein. Choice D lists eight TM segments at positions exceeding 96 aa, also impossible. The annotation matches B exactly.
+
+Citations as saved: [C5](#evidence-c5), [H2](#evidence-h2).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> Choices C and D reference residue positions (395..420; up to 329) far exceeding the 96-amino-acid protein length, eliminating them by simple arithmetic. Between A (53..72) and B (53..71), the hydrophobic core VLLMPLLQSFVLSLALMGV spans positions 53-71; position 72 is lysine (K), a charged residue whose inclusion in a transmembrane helix is biologically disfavored. General knowledge of TM helix composition (predominantly hydrophobic, exclusion of strongly charged residues from the hydrophobic core) allows a model to prefer 53..71 over 53..72.
+
+
+**Missing item-specific fact**
+
+> None critical. The exact boundary (53 vs 54, 71 vs 72) is algorithm-dependent, but the charged-residue argument at position 72 provides a defensible biological rationale to prefer B over A.
+
+
+**Reason**
+
+> The question provides the full 96-aa sequence, making C and D trivially eliminable. The A-vs-B distinction is resolvable by noting that K72 is a charged lysine inappropriate for a TM helix core, a general principle of membrane-protein biophysics. No protein-specific experimental measurement or memorized annotation is strictly required.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> C and D are physically impossible for a 96-aa protein. Between A and B, the inclusion of a charged lysine (K72) in the TM helix is biologically disfavored, making B the more defensible choice. No other option is scientifically tenable.
+
+
+### Important caveats
+
+- The UniProt annotation uses evidence code ECO:0000255 (similarity), indicating a computational/similarity-based prediction rather than experimental determination (e.g., crystallography or cross-linking).
+- The protein is annotated as 'Uncharacterized protein YFR035W-A,' so the TM annotation rests on prediction rather than functional validation.
+- The exact TM boundary (53 vs 54, 71 vs 72) is inherently fuzzy; the single-residue difference between A and B is at the margin of algorithmic precision, though the charged-residue argument tips the balance toward B.
+- The reviewer-only UniProt accession (P9WEJ4) was not provided to the evaluated model; the model must work solely from the 96-aa sequence and the four choices.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "Choices C and D reference residue positions (395..420; up to 329) far exceeding the 96-amino-acid protein length, eliminating them by simple arithmetic. Between A (53..72) and B (53..71), the hydrophobic core VLLMPLLQSFVLSLALMGV spans positions 53-71; position 72 is lysine (K), a charged residue whose inclusion in a transmembrane helix is biologically disfavored. General knowledge of TM helix composition (predominantly hydrophobic, exclusion of strongly charged residues from the hydrophobic core) allows a model to prefer 53..71 over 53..72.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "None critical. The exact boundary (53 vs 54, 71 vs 72) is algorithm-dependent, but the charged-residue argument at position 72 provides a defensible biological rationale to prefer B over A.",
+    "reason": "The question provides the full 96-aa sequence, making C and D trivially eliminable. The A-vs-B distinction is resolvable by noting that K72 is a charged lysine inappropriate for a TM helix core, a general principle of membrane-protein biophysics. No protein-specific experimental measurement or memorized annotation is strictly required."
+  },
+  "case_id": "transmembrane_0081",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "H2"
+    ],
+    "judgment": "supported",
+    "reason": "UniProt annotation (P9WEJ4, features/1 and historical flat-file) explicitly annotates a single transmembrane helix at positions 53..71 (ECO:0000255, similarity-based). The sequence at positions 53-71 (VLLMPLLQSFVLSLALMGV) is a predominantly hydrophobic stretch consistent with a TM helix. Choice A (53..72) adds K72, a charged lysine atypical for a TM helix. Choice C references position 395..420, impossible in a 96-aa protein. Choice D lists eight TM segments at positions exceeding 96 aa, also impossible. The annotation matches B exactly."
+  },
+  "important_caveats": [
+    "The UniProt annotation uses evidence code ECO:0000255 (similarity), indicating a computational/similarity-based prediction rather than experimental determination (e.g., crystallography or cross-linking).",
+    "The protein is annotated as 'Uncharacterized protein YFR035W-A,' so the TM annotation rests on prediction rather than functional validation.",
+    "The exact TM boundary (53 vs 54, 71 vs 72) is inherently fuzzy; the single-residue difference between A and B is at the margin of algorithmic precision, though the charged-residue argument tips the balance toward B.",
+    "The reviewer-only UniProt accession (P9WEJ4) was not provided to the evaluated model; the model must work solely from the 96-aa sequence and the four choices."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "C and D are physically impossible for a 96-aa protein. Between A and B, the inclusion of a charged lysine (K72) in the TM helix is biologically disfavored, making B the more defensible choice. No other option is scientifically tenable."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "transmembrane_0081",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "UniProt annotation (P9WEJ4, features/1 and historical flat-file) explicitly annotates a single transmembrane helix at positions 53..71 (ECO:0000255, similarity-based). The sequence at positions 53-71 (VLLMPLLQSFVLSLALMGV) is a predominantly hydrophobic stretch consistent with a TM helix. Choice A (53..72) adds K72, a charged lysine atypical for a TM helix. Choice C references position 395..420, impossible in a 96-aa protein. Choice D lists eight TM segments at positions exceeding 96 aa, also impossible. The annotation matches B exactly.",
+    "evidence_ids": ["C5", "H2"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "Choices C and D reference residue positions (395..420; up to 329) far exceeding the 96-amino-acid protein length, eliminating them by simple arithmetic. Between A (53..72) and B (53..71), the hydrophobic core VLLMPLLQSFVLSLALMGV spans positions 53-71; position 72 is lysine (K), a charged residue whose inclusion in a transmembrane helix is biologically disfavored. General knowledge of TM helix composition (predominantly hydrophobic, exclusion of strongly charged residues from the hydrophobic core) allows a model to prefer 53..71 over 53..72.",
+    "missing_item_specific_fact": "None critical. The exact boundary (53 vs 54, 71 vs 72) is algorithm-dependent, but the charged-residue argument at position 72 provides a defensible biological rationale to prefer B over A.",
+    "reason": "The question provides the full 96-aa sequence, making C and D trivially eliminable. The A-vs-B distinction is resolvable by noting that K72 is a charged lysine inappropriate for a TM helix core, a general principle of membrane-protein biophysics. No protein-specific experimental measurement or memorized annotation is strictly required."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "C and D are physically impossible for a 96-aa protein. Between A and B, the inclusion of a charged lysine (K72) in the TM helix is biologically disfavored, making B the more defensible choice. No other option is scientifically tenable."
+  },
+  "important_caveats": [
+    "The UniProt annotation uses evidence code ECO:0000255 (similarity), indicating a computational/similarity-based prediction rather than experimental determination (e.g., crystallography or cross-linking).",
+    "The protein is annotated as 'Uncharacterized protein YFR035W-A,' so the TM annotation rests on prediction rather than functional validation.",
+    "The exact TM boundary (53 vs 54, 71 vs 72) is inherently fuzzy; the single-residue difference between A and B is at the margin of algorithmic precision, though the charged-residue argument tips the balance toward B.",
+    "The reviewer-only UniProt accession (P9WEJ4) was not provided to the evaluated model; the model must work solely from the 96-aa sequence and the four choices."
+  ]
+}
+```
+
+</details>
+
+## After: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The sequence-matched UniProt annotation places a helical transmembrane region at 53..71. This is a computational annotation (ECO:0000255), not experimental evidence.
+
+Citations as saved: [H2](#evidence-h2).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> Residues 53..71 form a strongly hydrophobic stretch, while residue 72 is lysine, a plausible charged boundary marker. This makes B a credible choice over the much longer alternatives and favors it over A, which includes the lysine.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> The sequence itself supports a membrane-spanning hydrophobic helix and gives a transferable basis for locating its likely boundary. The precise endpoint remains less certain than the existence of the helix.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "B"
+]
+```
+
+> The options differ only by whether the boundary lysine at 72 is included. Given ordinary uncertainty in defining transmembrane-region endpoints, either interval could describe a segment that spans the membrane, although B is better supported as the hydrophobic core.
+
+
+### Important caveats
+
+- The supplied evidence supports a computationally annotated feature; it does not establish experimental validation.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "Residues 53..71 form a strongly hydrophobic stretch, while residue 72 is lysine, a plausible charged boundary marker. This makes B a credible choice over the much longer alternatives and favors it over A, which includes the lysine.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "The sequence itself supports a membrane-spanning hydrophobic helix and gives a transferable basis for locating its likely boundary. The precise endpoint remains less certain than the existence of the helix."
+  },
+  "case_id": "transmembrane_0081",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "H2"
+    ],
+    "judgment": "supported",
+    "reason": "The sequence-matched UniProt annotation places a helical transmembrane region at 53..71. This is a computational annotation (ECO:0000255), not experimental evidence."
+  },
+  "important_caveats": [
+    "The supplied evidence supports a computationally annotated feature; it does not establish experimental validation."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "B"
+    ],
+    "reason": "The options differ only by whether the boundary lysine at 72 is included. Given ordinary uncertainty in defining transmembrane-region endpoints, either interval could describe a segment that spans the membrane, although B is better supported as the hydrophobic core."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "transmembrane_0081",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The sequence-matched UniProt annotation places a helical transmembrane region at 53..71. This is a computational annotation (ECO:0000255), not experimental evidence.",
+    "evidence_ids": ["H2"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "Residues 53..71 form a strongly hydrophobic stretch, while residue 72 is lysine, a plausible charged boundary marker. This makes B a credible choice over the much longer alternatives and favors it over A, which includes the lysine.",
+    "missing_item_specific_fact": "",
+    "reason": "The sequence itself supports a membrane-spanning hydrophobic helix and gives a transferable basis for locating its likely boundary. The precise endpoint remains less certain than the existence of the helix."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "B"],
+    "reason": "The options differ only by whether the boundary lysine at 72 is included. Given ordinary uncertainty in defining transmembrane-region endpoints, either interval could describe a segment that spans the membrane, although B is better supported as the hydrophobic core."
+  },
+  "important_caveats": [
+    "The supplied evidence supports a computationally annotated feature; it does not establish experimental validation."
+  ]
+}
+```
+
+</details>
+
+## After: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The UniProt annotation (evidence C5, H2) records a single transmembrane helix at 53..71 with evidence code ECO:0000255 (inferred from similarity / ProRule computational annotation). The sequence at positions 53-71 (VLLMPLLQSFVLSLALMGV) is predominantly hydrophobic and 19 residues long, consistent with a single-pass TM helix. Position 72 is Lys (K), a charged residue that would be energetically unfavorable in the lipid bilayer core, supporting its exclusion. The annotation is computational rather than experimental, but the sequence itself independently supports the 53..71 boundary.
+
+Citations as saved: [C5](#evidence-c5), [H2](#evidence-h2).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The protein is only 96 residues long, immediately eliminating options C (which references positions 395-420) and D (which lists eight TM segments spanning well beyond 96 residues). Between A (53..72) and B (53..71), the critical distinction is position 72: Lysine (K), a positively charged residue. A well-established principle in membrane protein biology is that charged residues (K, R, D, E) are excluded from the hydrophobic core of transmembrane helices because their burial in the lipid bilayer is energetically prohibitive. The hydrophobic stretch VLLMPLLQSFVLSLALMGV (positions 53-71) naturally terminates at V(71), and K(72) marks the transition to the cytosolic/extramembrane region. Standard TM helix prediction conventions (as in ProRule, TMHMM, Phobius) exclude such flanking charged residues from the helix definition. This is a transferable principle applicable to all single-pass TM proteins, not specific to this protein.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> The distinction between A and B rests on the universally recognized rule that charged residues are excluded from TM helix cores, combined with reading the sequence to identify K at position 72. Options C and D are eliminated by the protein's total length (96 aa). No protein-specific annotation or memorization is needed.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> While A and B differ by only one residue, the presence of a charged Lysine at position 72 provides a clear and standard biological rationale for excluding it from the TM helix. No other option is defensible: C and D reference positions beyond the 96-residue protein length.
+
+
+### Important caveats
+
+- The UniProt annotation uses evidence code ECO:0000255 (inferred from similarity / ProRule), meaning the TM assignment is computational rather than experimentally validated.
+- The protein is annotated as 'Uncharacterized protein YFR035W-A' from S. cerevisiae; its function and membrane topology have not been experimentally confirmed.
+- The distinction between 53..71 and 53..72 is a one-residue boundary judgment; some prediction tools might include or exclude the flanking K depending on their scoring thresholds, though the standard convention excludes it.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The protein is only 96 residues long, immediately eliminating options C (which references positions 395-420) and D (which lists eight TM segments spanning well beyond 96 residues). Between A (53..72) and B (53..71), the critical distinction is position 72: Lysine (K), a positively charged residue. A well-established principle in membrane protein biology is that charged residues (K, R, D, E) are excluded from the hydrophobic core of transmembrane helices because their burial in the lipid bilayer is energetically prohibitive. The hydrophobic stretch VLLMPLLQSFVLSLALMGV (positions 53-71) naturally terminates at V(71), and K(72) marks the transition to the cytosolic/extramembrane region. Standard TM helix prediction conventions (as in ProRule, TMHMM, Phobius) exclude such flanking charged residues from the helix definition. This is a transferable principle applicable to all single-pass TM proteins, not specific to this protein.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "The distinction between A and B rests on the universally recognized rule that charged residues are excluded from TM helix cores, combined with reading the sequence to identify K at position 72. Options C and D are eliminated by the protein's total length (96 aa). No protein-specific annotation or memorization is needed."
+  },
+  "case_id": "transmembrane_0081",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "H2"
+    ],
+    "judgment": "supported",
+    "reason": "The UniProt annotation (evidence C5, H2) records a single transmembrane helix at 53..71 with evidence code ECO:0000255 (inferred from similarity / ProRule computational annotation). The sequence at positions 53-71 (VLLMPLLQSFVLSLALMGV) is predominantly hydrophobic and 19 residues long, consistent with a single-pass TM helix. Position 72 is Lys (K), a charged residue that would be energetically unfavorable in the lipid bilayer core, supporting its exclusion. The annotation is computational rather than experimental, but the sequence itself independently supports the 53..71 boundary."
+  },
+  "important_caveats": [
+    "The UniProt annotation uses evidence code ECO:0000255 (inferred from similarity / ProRule), meaning the TM assignment is computational rather than experimentally validated.",
+    "The protein is annotated as 'Uncharacterized protein YFR035W-A' from S. cerevisiae; its function and membrane topology have not been experimentally confirmed.",
+    "The distinction between 53..71 and 53..72 is a one-residue boundary judgment; some prediction tools might include or exclude the flanking K depending on their scoring thresholds, though the standard convention excludes it."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "While A and B differ by only one residue, the presence of a charged Lysine at position 72 provides a clear and standard biological rationale for excluding it from the TM helix. No other option is defensible: C and D reference positions beyond the 96-residue protein length."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "transmembrane_0081",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The UniProt annotation (evidence C5, H2) records a single transmembrane helix at 53..71 with evidence code ECO:0000255 (inferred from similarity / ProRule computational annotation). The sequence at positions 53-71 (VLLMPLLQSFVLSLALMGV) is predominantly hydrophobic and 19 residues long, consistent with a single-pass TM helix. Position 72 is Lys (K), a charged residue that would be energetically unfavorable in the lipid bilayer core, supporting its exclusion. The annotation is computational rather than experimental, but the sequence itself independently supports the 53..71 boundary.",
+    "evidence_ids": ["C5", "H2"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The protein is only 96 residues long, immediately eliminating options C (which references positions 395-420) and D (which lists eight TM segments spanning well beyond 96 residues). Between A (53..72) and B (53..71), the critical distinction is position 72: Lysine (K), a positively charged residue. A well-established principle in membrane protein biology is that charged residues (K, R, D, E) are excluded from the hydrophobic core of transmembrane helices because their burial in the lipid bilayer is energetically prohibitive. The hydrophobic stretch VLLMPLLQSFVLSLALMGV (positions 53-71) naturally terminates at V(71), and K(72) marks the transition to the cytosolic/extramembrane region. Standard TM helix prediction conventions (as in ProRule, TMHMM, Phobius) exclude such flanking charged residues from the helix definition. This is a transferable principle applicable to all single-pass TM proteins, not specific to this protein.",
+    "missing_item_specific_fact": "",
+    "reason": "The distinction between A and B rests on the universally recognized rule that charged residues are excluded from TM helix cores, combined with reading the sequence to identify K at position 72. Options C and D are eliminated by the protein's total length (96 aa). No protein-specific annotation or memorization is needed."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "While A and B differ by only one residue, the presence of a charged Lysine at position 72 provides a clear and standard biological rationale for excluding it from the TM helix. No other option is defensible: C and D reference positions beyond the 96-residue protein length."
+  },
+  "important_caveats": [
+    "The UniProt annotation uses evidence code ECO:0000255 (inferred from similarity / ProRule), meaning the TM assignment is computational rather than experimentally validated.",
+    "The protein is annotated as 'Uncharacterized protein YFR035W-A' from S. cerevisiae; its function and membrane topology have not been experimentally confirmed.",
+    "The distinction between 53..71 and 53..72 is a one-residue boundary judgment; some prediction tools might include or exclude the flanking K depending on their scoring thresholds, though the standard convention excludes it."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of the old Luna review only
+
+These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Complete reviewer-only evidence and qualifications
+
+All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+
+**Applicability metadata, unchanged:**
+
+```json
+{
+  "requested_accession": "P9WEJ4",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "benchmark_sequence_sha256": "af9deaca53f1b7ad13d02bb00fcd3d88f84d31a2a38d6646a9176bba432113f6",
+  "benchmark_sequence_length": 96,
+  "current_status": "retrieved",
+  "current_sequence_comparison": "matched",
+  "current_entry_audit": {
+    "entryVersion": 5,
+    "firstPublicDate": "2025-02-05",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2025-02-05",
+    "sequenceVersion": 1
+  },
+  "current_uniprot_release": "2026_03",
+  "current_record_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "current_source_sequence_sha256": "af9deaca53f1b7ad13d02bb00fcd3d88f84d31a2a38d6646a9176bba432113f6",
+  "current_source_sequence_length": 96,
+  "historical_status": "retrieved",
+  "historical_cutoff_date": "2026-05-07",
+  "historical_sequence_comparison": "matched",
+  "selected_historical_entry_version": 4,
+  "selected_historical_version": {
+    "accession": "P9WEJ4",
+    "database": "Swiss-Prot",
+    "entryVersion": 4,
+    "firstRelease": "2026_01/2026_01",
+    "firstReleaseDate": "28-Jan-2026",
+    "lastRelease": "2026_01/2026_01",
+    "lastReleaseDate": "28-Jan-2026",
+    "name": "YF035_YEAST",
+    "sequenceVersion": 1
+  },
+  "selected_historical_record_sha256": "620602a41d8671c8701df46a7d19236b30cfbea35740e43343f9e3862130e866",
+  "selected_historical_source_sequence_sha256": "af9deaca53f1b7ad13d02bb00fcd3d88f84d31a2a38d6646a9176bba432113f6",
+  "selected_historical_source_sequence_length": 96,
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 4,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "actual_author_source_snapshot": "unknown",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+}
+```
+
+**Qualifications, unchanged:**
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/P9WEJ4.json)
+
+```json
+{
+  "evidence_id": "C1",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json",
+  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
+  "json_pointer": "/primaryAccession",
+  "excerpt": "\"P9WEJ4\"",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C2
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/P9WEJ4.json)
+
+```json
+{
+  "evidence_id": "C2",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json",
+  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
+  "json_pointer": "/entryAudit",
+  "excerpt": "{\"entryVersion\":5,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C3
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/P9WEJ4.json)
+
+```json
+{
+  "evidence_id": "C3",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json",
+  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
+  "json_pointer": "/organism",
+  "excerpt": "{\"commonName\":\"Baker's yeast\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Saccharomycotina\",\"Saccharomycetes\",\"Saccharomycetales\",\"Saccharomycetaceae\",\"Saccharomyces\"],\"scientificName\":\"Saccharomyces cerevisiae (strain ATCC 204508 / S288c)\",\"taxonId\":559292}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/P9WEJ4.json)
+
+```json
+{
+  "evidence_id": "C4",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json",
+  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
+  "json_pointer": "/proteinDescription",
+  "excerpt": "{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Uncharacterized protein YFR035W-A\"}}}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/P9WEJ4.json)
+
+```json
+{
+  "evidence_id": "C5",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/P9WEJ4.json",
+  "source_sha256": "334d652c31aa94671f71985d47556af600c64ebfe50ff82f67cec6a6220cb69c",
+  "retrieved_utc": "2026-11-02T04:30:19.580713+00:00",
+  "json_pointer": "/features/1",
+  "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":71},\"start\":{\"modifier\":\"EXACT\",\"value\":53}},\"type\":\"Transmembrane\"}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H1
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/P9WEJ4?format=txt&versions=4)
+
+```json
+{
+  "evidence_id": "H1",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/P9WEJ4?format=txt&versions=4",
+  "source_sha256": "620602a41d8671c8701df46a7d19236b30cfbea35740e43343f9e3862130e866",
+  "retrieved_utc": "2026-11-02T04:30:21.235682+00:00",
+  "source_locator": "lines 1-11",
+  "excerpt": "ID   YF035_YEAST             Reviewed;          96 AA.\nAC   P9WEJ4; A0AAT9JB48;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   28-JAN-2026, entry version 4.\nDE   RecName: Full=Uncharacterized protein YFR035W-A {ECO:0000305};\nGN   OrderedLocusNames=YFR035W-A {ECO:0000312|SGD:S000350095};\nOS   Saccharomyces cerevisiae (strain ATCC 204508 / S288c) (Baker's yeast).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Saccharomycotina; Saccharomycetes;\nOC   Saccharomycetales; Saccharomycetaceae; Saccharomyces.\nOX   NCBI_TaxID=559292;\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 4,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H2
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/P9WEJ4?format=txt&versions=4)
+
+```json
+{
+  "evidence_id": "H2",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/P9WEJ4?format=txt&versions=4",
+  "source_sha256": "620602a41d8671c8701df46a7d19236b30cfbea35740e43343f9e3862130e866",
+  "retrieved_utc": "2026-11-02T04:30:21.235682+00:00",
+  "source_locator": "lines 71-73",
+  "excerpt": "FT   TRANSMEM        53..71\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 4,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/transmembrane.json), zero-based source row 81. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). [Source credits](../THIRD_PARTY_NOTICES.md).

@@ -1,0 +1,764 @@
+# transmembrane_0096: before and after transfer clarification
+
+[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/transmembrane_0096.txt)
+
+**Task:** `transmembrane`  
+**Author key, unchanged:** **D** — 510..528
+
+| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
+|---|---|---|---|---|
+| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
+| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
+| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+
+**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MTFNGRFRATLRGINIRNASMTSLSLTGSHAQKQTVLGSTPGALGTIPTVALNGVNPLPRYRHNLLFGTLSFGDRWDRIQRRLAVLGRASTGNVVVPFSDSADAFRRMWESVDSASDSVLWQTYICKDDFVGQKTVKKLEEAHRRGCKTELLYDCGGNITGRRRLVGDLKKSGANVIEHRPMWEHFFPYFLRGMKWELSPGIRNHRKILIVDNKLGFCGGLNIGDEYCGTSEGGNGRFRDTHCVVMGPAVMHMREVYEDTKAPKPWKWSLARWRQIASATMNLRYLEGMNVKHDYLEPTTTFVRQGGGVYLRRQMERAERSTVRMMERMRWKRQRERLNRCLLTLAKNLREGQGLVFKAATGKGDDVATTDAGSKRNNEVSHGQWKLMKRRIDEYRQRAIKNAEESFFRRLRVVNPSMRLLEDTSPVAEAEAYGQAHAAVTQVLSCNPHSRDWSIPYAFWQVSKFVHQRLWVTTPYYMPHRKLMRALQLAARRGVDVRILAGSNRTTDPWFMWYASNYITGMLMASGVRVYEYKGGQVMHAKTVVADSIWTSIGSYNWDMMSNKNMEICVCHLDHNLALTMEKQFLDDMNVSEEVNYEEYQRRSLWLRFSSWFFYTALRIAEKFTFRTFWDPDLSSEID
+
+[Multiple Choices]
+A. 514..533
+B. 1250..1269
+C. 510..528; 680..699
+D. 510..528
+```
+
+<details>
+<summary>Complete original system instructions</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Transmembrane Region Prediction, which is to predict a region of the protein that spans across a cell membrane. These transmembrane domains are typically hydrophobic alpha-helices that anchor the protein within the lipid bilayer or form channels. Based on the provided amino acid sequence, you must select the option that correctly identifies the start and end positions of a segment that crosses the membrane.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## Four saved visible reviews
+
+## Before: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The exact input sequence matches the UniProt record, which annotates residues 510..528 as a helical transmembrane region. The historical record available by the stated cutoff has the same annotation. This supports D as a database annotation, but the evidence code is computational; it is not direct experimental confirmation.
+
+Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H3](#evidence-h3).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence may help identify a candidate membrane-spanning hydrophobic segment, but it does not establish the precise annotated endpoints over the strongly overlapping alternative interval.
+
+
+**Missing item-specific fact**
+
+> The protein-specific transmembrane-region annotation or equivalent experimental/topological evidence specifying the segment boundaries.
+
+
+**Reason**
+
+> Choosing the exact 510..528 interval rather than a shifted, overlapping interval requires a protein-specific boundary assignment absent from the input. The reviewer-only annotation supports the key but was not supplied to the evaluated model.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "D"
+]
+```
+
+> A (514..533) substantially overlaps the annotated 510..528 segment and could identify the same membrane-spanning region under less exact boundary conventions. The sequence and wording do not define how boundaries should be assigned. B is beyond the 639-residue sequence; C includes an out-of-range segment.
+
+
+### Important caveats
+
+- The annotation is computational (ECO:0000255), not direct experimental evidence.
+- The sequence matches both the current record and the retrieved historical record, but the author's exact source snapshot is unknown.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence may help identify a candidate membrane-spanning hydrophobic segment, but it does not establish the precise annotated endpoints over the strongly overlapping alternative interval.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The protein-specific transmembrane-region annotation or equivalent experimental/topological evidence specifying the segment boundaries.",
+    "reason": "Choosing the exact 510..528 interval rather than a shifted, overlapping interval requires a protein-specific boundary assignment absent from the input. The reviewer-only annotation supports the key but was not supplied to the evaluated model."
+  },
+  "case_id": "transmembrane_0096",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C1",
+      "C5",
+      "H3"
+    ],
+    "judgment": "supported",
+    "reason": "The exact input sequence matches the UniProt record, which annotates residues 510..528 as a helical transmembrane region. The historical record available by the stated cutoff has the same annotation. This supports D as a database annotation, but the evidence code is computational; it is not direct experimental confirmation."
+  },
+  "important_caveats": [
+    "The annotation is computational (ECO:0000255), not direct experimental evidence.",
+    "The sequence matches both the current record and the retrieved historical record, but the author's exact source snapshot is unknown."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "D"
+    ],
+    "reason": "A (514..533) substantially overlaps the annotated 510..528 segment and could identify the same membrane-spanning region under less exact boundary conventions. The sequence and wording do not define how boundaries should be assigned. B is beyond the 639-residue sequence; C includes an out-of-range segment."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "transmembrane_0096",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The exact input sequence matches the UniProt record, which annotates residues 510..528 as a helical transmembrane region. The historical record available by the stated cutoff has the same annotation. This supports D as a database annotation, but the evidence code is computational; it is not direct experimental confirmation.",
+    "evidence_ids": ["C1", "C5", "H3"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence may help identify a candidate membrane-spanning hydrophobic segment, but it does not establish the precise annotated endpoints over the strongly overlapping alternative interval.",
+    "missing_item_specific_fact": "The protein-specific transmembrane-region annotation or equivalent experimental/topological evidence specifying the segment boundaries.",
+    "reason": "Choosing the exact 510..528 interval rather than a shifted, overlapping interval requires a protein-specific boundary assignment absent from the input. The reviewer-only annotation supports the key but was not supplied to the evaluated model."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "D"],
+    "reason": "A (514..533) substantially overlaps the annotated 510..528 segment and could identify the same membrane-spanning region under less exact boundary conventions. The sequence and wording do not define how boundaries should be assigned. B is beyond the 639-residue sequence; C includes an out-of-range segment."
+  },
+  "important_caveats": [
+    "The annotation is computational (ECO:0000255), not direct experimental evidence.",
+    "The sequence matches both the current record and the retrieved historical record, but the author's exact source snapshot is unknown."
+  ]
+}
+```
+
+</details>
+
+## Before: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> UniProt Q584D1 (Cardiolipin synthetase, Trypanosoma brucei) annotates a single transmembrane helical segment at positions 510..528 (evidence C5, H3). The benchmark sequence matches the UniProt sequence (639 AA, SHA256 matched). Choice B (1250..1269) and the second segment of C (680..699) are beyond the protein length and thus impossible. Choice A (514..533) does not match the annotation. The expected answer D (510..528) is exactly the UniProt-annotated TM region. However, the evidence code is ECO:0000255 (inferred from electronic annotation), meaning this is a computational prediction rather than experimental evidence.
+
+Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3), [C1](#evidence-c1), [C4](#evidence-c4).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> Choices B (1250..1269) and C (includes 680..699) are trivially eliminated because the protein is only 639 residues. Between A (514..533) and D (510..528): the 510..528 segment begins with strongly hydrophobic residues (W510, F511, M512, W513) consistent with a TM helix N-terminal boundary, while 514..533 begins with polar residues (Y514, A515, S516, N517). More critically, 514..533 extends to include charged residues R529 and E532 within the putative TM segment; charged/polar residues are strongly disfavored in the hydrophobic core of a transmembrane alpha-helix. The 510..528 segment terminates at hydrophobic V528, whereas 514..533 continues through R, V, Y, E, Y. These boundary properties provide a concrete biological argument favoring D over A.
+
+
+**Missing item-specific fact**
+
+> The exact boundary determination (510 vs 514, 528 vs 533) ultimately rests on a computational prediction (ECO:0000255). The region 510-528 is not a textbook hydrophobic TM helix (it contains S, N, Y, T, G, A residues), so precise boundary assignment would normally require a TM prediction algorithm. However, the charged-residue exclusion argument provides a defensible biological rationale.
+
+
+**Reason**
+
+> Elimination of B and C requires only checking sequence length. The A-vs-D distinction is supported by the biological principle that TM helices exclude charged residues from their hydrophobic core and typically begin with hydrophobic residues. The 514..533 window includes R529 and E532, which are incompatible with a standard TM helix. This provides a concrete, general-knowledge-based argument, though the region is atypical and the annotation is computational rather than experimental.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> B and C are definitively excluded by sequence length. Between A and D, the charged-residue argument (R529, E532 in A) provides a clear biological reason to prefer D. While the region is not a classic TM helix, the presence of charged residues within the TM segment is a well-established disqualifier, making A less defensible than D.
+
+
+### Important caveats
+
+- The UniProt TM annotation uses evidence code ECO:0000255 (inferred from electronic annotation), meaning it is a computational prediction, not experimental validation.
+- The annotated region 510..528 (WFMWYASNYITGMLMASGV) is atypical for a TM helix, containing multiple polar residues (Y, S, N, T, G, A). A human expert might question whether this truly spans the membrane.
+- The protein is a cardiolipin synthetase (EC 2.7.8.-) in Trypanosoma brucei; membrane topology for this enzyme was characterized in Serricchio & Buetikofer 2012 (PubMed:22451910), but the specific TM boundary annotation remains computational.
+- The distinction between 510..528 and 514..533 is only 4 residues at each end; without a prediction tool, the exact boundaries are difficult to assign with certainty, though the charged-residue argument provides a reasonable discriminator.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "Choices B (1250..1269) and C (includes 680..699) are trivially eliminated because the protein is only 639 residues. Between A (514..533) and D (510..528): the 510..528 segment begins with strongly hydrophobic residues (W510, F511, M512, W513) consistent with a TM helix N-terminal boundary, while 514..533 begins with polar residues (Y514, A515, S516, N517). More critically, 514..533 extends to include charged residues R529 and E532 within the putative TM segment; charged/polar residues are strongly disfavored in the hydrophobic core of a transmembrane alpha-helix. The 510..528 segment terminates at hydrophobic V528, whereas 514..533 continues through R, V, Y, E, Y. These boundary properties provide a concrete biological argument favoring D over A.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "The exact boundary determination (510 vs 514, 528 vs 533) ultimately rests on a computational prediction (ECO:0000255). The region 510-528 is not a textbook hydrophobic TM helix (it contains S, N, Y, T, G, A residues), so precise boundary assignment would normally require a TM prediction algorithm. However, the charged-residue exclusion argument provides a defensible biological rationale.",
+    "reason": "Elimination of B and C requires only checking sequence length. The A-vs-D distinction is supported by the biological principle that TM helices exclude charged residues from their hydrophobic core and typically begin with hydrophobic residues. The 514..533 window includes R529 and E532, which are incompatible with a standard TM helix. This provides a concrete, general-knowledge-based argument, though the region is atypical and the annotation is computational rather than experimental."
+  },
+  "case_id": "transmembrane_0096",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "H3",
+      "C1",
+      "C4"
+    ],
+    "judgment": "supported",
+    "reason": "UniProt Q584D1 (Cardiolipin synthetase, Trypanosoma brucei) annotates a single transmembrane helical segment at positions 510..528 (evidence C5, H3). The benchmark sequence matches the UniProt sequence (639 AA, SHA256 matched). Choice B (1250..1269) and the second segment of C (680..699) are beyond the protein length and thus impossible. Choice A (514..533) does not match the annotation. The expected answer D (510..528) is exactly the UniProt-annotated TM region. However, the evidence code is ECO:0000255 (inferred from electronic annotation), meaning this is a computational prediction rather than experimental evidence."
+  },
+  "important_caveats": [
+    "The UniProt TM annotation uses evidence code ECO:0000255 (inferred from electronic annotation), meaning it is a computational prediction, not experimental validation.",
+    "The annotated region 510..528 (WFMWYASNYITGMLMASGV) is atypical for a TM helix, containing multiple polar residues (Y, S, N, T, G, A). A human expert might question whether this truly spans the membrane.",
+    "The protein is a cardiolipin synthetase (EC 2.7.8.-) in Trypanosoma brucei; membrane topology for this enzyme was characterized in Serricchio & Buetikofer 2012 (PubMed:22451910), but the specific TM boundary annotation remains computational.",
+    "The distinction between 510..528 and 514..533 is only 4 residues at each end; without a prediction tool, the exact boundaries are difficult to assign with certainty, though the charged-residue argument provides a reasonable discriminator."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "B and C are definitively excluded by sequence length. Between A and D, the charged-residue argument (R529, E532 in A) provides a clear biological reason to prefer D. While the region is not a classic TM helix, the presence of charged residues within the TM segment is a well-established disqualifier, making A less defensible than D."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "transmembrane_0096",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "UniProt Q584D1 (Cardiolipin synthetase, Trypanosoma brucei) annotates a single transmembrane helical segment at positions 510..528 (evidence C5, H3). The benchmark sequence matches the UniProt sequence (639 AA, SHA256 matched). Choice B (1250..1269) and the second segment of C (680..699) are beyond the protein length and thus impossible. Choice A (514..533) does not match the annotation. The expected answer D (510..528) is exactly the UniProt-annotated TM region. However, the evidence code is ECO:0000255 (inferred from electronic annotation), meaning this is a computational prediction rather than experimental evidence.",
+    "evidence_ids": ["C5", "H3", "C1", "C4"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "Choices B (1250..1269) and C (includes 680..699) are trivially eliminated because the protein is only 639 residues. Between A (514..533) and D (510..528): the 510..528 segment begins with strongly hydrophobic residues (W510, F511, M512, W513) consistent with a TM helix N-terminal boundary, while 514..533 begins with polar residues (Y514, A515, S516, N517). More critically, 514..533 extends to include charged residues R529 and E532 within the putative TM segment; charged/polar residues are strongly disfavored in the hydrophobic core of a transmembrane alpha-helix. The 510..528 segment terminates at hydrophobic V528, whereas 514..533 continues through R, V, Y, E, Y. These boundary properties provide a concrete biological argument favoring D over A.",
+    "missing_item_specific_fact": "The exact boundary determination (510 vs 514, 528 vs 533) ultimately rests on a computational prediction (ECO:0000255). The region 510-528 is not a textbook hydrophobic TM helix (it contains S, N, Y, T, G, A residues), so precise boundary assignment would normally require a TM prediction algorithm. However, the charged-residue exclusion argument provides a defensible biological rationale.",
+    "reason": "Elimination of B and C requires only checking sequence length. The A-vs-D distinction is supported by the biological principle that TM helices exclude charged residues from their hydrophobic core and typically begin with hydrophobic residues. The 514..533 window includes R529 and E532, which are incompatible with a standard TM helix. This provides a concrete, general-knowledge-based argument, though the region is atypical and the annotation is computational rather than experimental."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "B and C are definitively excluded by sequence length. Between A and D, the charged-residue argument (R529, E532 in A) provides a clear biological reason to prefer D. While the region is not a classic TM helix, the presence of charged residues within the TM segment is a well-established disqualifier, making A less defensible than D."
+  },
+  "important_caveats": [
+    "The UniProt TM annotation uses evidence code ECO:0000255 (inferred from electronic annotation), meaning it is a computational prediction, not experimental validation.",
+    "The annotated region 510..528 (WFMWYASNYITGMLMASGV) is atypical for a TM helix, containing multiple polar residues (Y, S, N, T, G, A). A human expert might question whether this truly spans the membrane.",
+    "The protein is a cardiolipin synthetase (EC 2.7.8.-) in Trypanosoma brucei; membrane topology for this enzyme was characterized in Serricchio & Buetikofer 2012 (PubMed:22451910), but the specific TM boundary annotation remains computational.",
+    "The distinction between 510..528 and 514..533 is only 4 residues at each end; without a prediction tool, the exact boundaries are difficult to assign with certainty, though the charged-residue argument provides a reasonable discriminator."
+  ]
+}
+```
+
+</details>
+
+## After: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The sequence-matched historical UniProt record annotates residues 510–528 as a helical transmembrane region. Its ECO:0000255 evidence indicates a computational annotation, not direct experimental confirmation.
+
+Citations as saved: [H3](#evidence-h3).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> Sequence hydropathy can point to the putative membrane helix and distinguish its location from the out-of-range alternatives, but options A and D overlap substantially and describe the same candidate helix.
+
+
+**Missing item-specific fact**
+
+> The exact annotated boundary of the transmembrane segment—whether it is 510–528 rather than 514–533—is not established by the original input.
+
+
+**Reason**
+
+> Transferable sequence-based reasoning supports a membrane-spanning region in this vicinity, but does not meaningfully resolve the precise boundaries between A and D. Selecting the keyed interval requires the target-specific boundary annotation.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "D"
+]
+```
+
+> Both intervals overlap most of the same putative helix, and the task asks for a segment that crosses the membrane rather than a database's exact annotated boundaries. The supplied sequence does not clearly rule out the shifted interval.
+
+
+### Important caveats
+
+- The reviewer-only annotation supports D but is computational and does not establish experimental membrane topology.
+- Choice B is outside the supplied sequence length; choice C includes an out-of-range segment.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "Sequence hydropathy can point to the putative membrane helix and distinguish its location from the out-of-range alternatives, but options A and D overlap substantially and describe the same candidate helix.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The exact annotated boundary of the transmembrane segment—whether it is 510–528 rather than 514–533—is not established by the original input.",
+    "reason": "Transferable sequence-based reasoning supports a membrane-spanning region in this vicinity, but does not meaningfully resolve the precise boundaries between A and D. Selecting the keyed interval requires the target-specific boundary annotation."
+  },
+  "case_id": "transmembrane_0096",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "H3"
+    ],
+    "judgment": "supported",
+    "reason": "The sequence-matched historical UniProt record annotates residues 510–528 as a helical transmembrane region. Its ECO:0000255 evidence indicates a computational annotation, not direct experimental confirmation."
+  },
+  "important_caveats": [
+    "The reviewer-only annotation supports D but is computational and does not establish experimental membrane topology.",
+    "Choice B is outside the supplied sequence length; choice C includes an out-of-range segment."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "D"
+    ],
+    "reason": "Both intervals overlap most of the same putative helix, and the task asks for a segment that crosses the membrane rather than a database's exact annotated boundaries. The supplied sequence does not clearly rule out the shifted interval."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "transmembrane_0096",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The sequence-matched historical UniProt record annotates residues 510–528 as a helical transmembrane region. Its ECO:0000255 evidence indicates a computational annotation, not direct experimental confirmation.",
+    "evidence_ids": ["H3"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "Sequence hydropathy can point to the putative membrane helix and distinguish its location from the out-of-range alternatives, but options A and D overlap substantially and describe the same candidate helix.",
+    "missing_item_specific_fact": "The exact annotated boundary of the transmembrane segment—whether it is 510–528 rather than 514–533—is not established by the original input.",
+    "reason": "Transferable sequence-based reasoning supports a membrane-spanning region in this vicinity, but does not meaningfully resolve the precise boundaries between A and D. Selecting the keyed interval requires the target-specific boundary annotation."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "D"],
+    "reason": "Both intervals overlap most of the same putative helix, and the task asks for a segment that crosses the membrane rather than a database's exact annotated boundaries. The supplied sequence does not clearly rule out the shifted interval."
+  },
+  "important_caveats": [
+    "The reviewer-only annotation supports D but is computational and does not establish experimental membrane topology.",
+    "Choice B is outside the supplied sequence length; choice C includes an out-of-range segment."
+  ]
+}
+```
+
+</details>
+
+## After: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The UniProt entry for Q584D1 (Trypanosoma brucei cardiolipin synthetase, 639 AA) annotates a single transmembrane helical region at 510..528 (evidence C5, H3). The evidence code is ECO:0000255 (inferred by similarity), indicating a computational prediction rather than direct experimental determination, but the annotation directly matches the expected answer D. The sequence length of 639 AA confirms that options B (1250..1269) and C (680..699) reference positions beyond the protein, and the annotated region 510..528 matches D exactly.
+
+Citations as saved: [C5](#evidence-c5), [H3](#evidence-h3).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> Options B (1250..1269) and C (510..528; 680..699) can be eliminated immediately because the protein is only 639 residues long, making positions 1250 and 680 impossible. The remaining choice is between A (514..533) and D (510..528). Extracting the actual residues: D (510-528) = WFMWYASNYITGMLMASGV, which begins with the strongly hydrophobic W-F-M-W motif, a classic transmembrane helix anchor. A (514-533) = YASNYITGMLMASGVRVYEYK, which begins with polar residues (Y-A-S-N-Y) and ends with charged residues (E-Y-K), features highly inconsistent with a lipid-embedded alpha-helix. General knowledge of TM helix composition (hydrophobic core of ~19-25 residues, avoidance of charged residues within the bilayer) and the recognition that W, F, M, W form a canonical hydrophobic anchor at the membrane interface favor D. The protein is annotated as a cardiolipin synthase (EC 2.7.8.-), a membrane-associated enzyme, consistent with a single TM anchor.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> A knowledgeable model can eliminate B and C by simple length check (639 AA), then use hydrophobicity analysis and general TM helix composition principles to distinguish D from A. The WFMWY motif at position 510-513 is a well-known hydrophobic anchor pattern, while option A's terminal charged residues (E, K) are incompatible with a transmembrane segment. This is a defensible transferable inference from general membrane-protein biology.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> Options B and C are unambiguously invalid because they reference residue positions beyond the 639-residue protein. Between A and D, the hydrophobicity profile clearly favors D: the WFMWY start and absence of terminal charges make D a more plausible TM helix than A, which starts with polar residues and ends with charged residues. While both regions have some mixed hydrophobicity, the charged-residue content at the boundaries of A is a strong disqualifier for a TM segment.
+
+
+### Important caveats
+
+- The UniProt TM annotation (510..528) carries evidence code ECO:0000255 (inferred by similarity), meaning it is a computational prediction rather than an experimentally determined boundary. The exact start/end positions may differ by a few residues in reality.
+- The protein is a bacterial-type cardiolipin synthase in a eukaryotic organism (Trypanosoma brucei), which is an unusual evolutionary context. The single TM region is consistent with the membrane-anchoring role of this enzyme.
+- The distinction between options A and D, while reasonable, involves a borderline hydrophobicity assessment; the WFMWY motif strongly favors D, but a model without careful hydrophobicity analysis might hesitate.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "Options B (1250..1269) and C (510..528; 680..699) can be eliminated immediately because the protein is only 639 residues long, making positions 1250 and 680 impossible. The remaining choice is between A (514..533) and D (510..528). Extracting the actual residues: D (510-528) = WFMWYASNYITGMLMASGV, which begins with the strongly hydrophobic W-F-M-W motif, a classic transmembrane helix anchor. A (514-533) = YASNYITGMLMASGVRVYEYK, which begins with polar residues (Y-A-S-N-Y) and ends with charged residues (E-Y-K), features highly inconsistent with a lipid-embedded alpha-helix. General knowledge of TM helix composition (hydrophobic core of ~19-25 residues, avoidance of charged residues within the bilayer) and the recognition that W, F, M, W form a canonical hydrophobic anchor at the membrane interface favor D. The protein is annotated as a cardiolipin synthase (EC 2.7.8.-), a membrane-associated enzyme, consistent with a single TM anchor.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "A knowledgeable model can eliminate B and C by simple length check (639 AA), then use hydrophobicity analysis and general TM helix composition principles to distinguish D from A. The WFMWY motif at position 510-513 is a well-known hydrophobic anchor pattern, while option A's terminal charged residues (E, K) are incompatible with a transmembrane segment. This is a defensible transferable inference from general membrane-protein biology."
+  },
+  "case_id": "transmembrane_0096",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "H3"
+    ],
+    "judgment": "supported",
+    "reason": "The UniProt entry for Q584D1 (Trypanosoma brucei cardiolipin synthetase, 639 AA) annotates a single transmembrane helical region at 510..528 (evidence C5, H3). The evidence code is ECO:0000255 (inferred by similarity), indicating a computational prediction rather than direct experimental determination, but the annotation directly matches the expected answer D. The sequence length of 639 AA confirms that options B (1250..1269) and C (680..699) reference positions beyond the protein, and the annotated region 510..528 matches D exactly."
+  },
+  "important_caveats": [
+    "The UniProt TM annotation (510..528) carries evidence code ECO:0000255 (inferred by similarity), meaning it is a computational prediction rather than an experimentally determined boundary. The exact start/end positions may differ by a few residues in reality.",
+    "The protein is a bacterial-type cardiolipin synthase in a eukaryotic organism (Trypanosoma brucei), which is an unusual evolutionary context. The single TM region is consistent with the membrane-anchoring role of this enzyme.",
+    "The distinction between options A and D, while reasonable, involves a borderline hydrophobicity assessment; the WFMWY motif strongly favors D, but a model without careful hydrophobicity analysis might hesitate."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "Options B and C are unambiguously invalid because they reference residue positions beyond the 639-residue protein. Between A and D, the hydrophobicity profile clearly favors D: the WFMWY start and absence of terminal charges make D a more plausible TM helix than A, which starts with polar residues and ends with charged residues. While both regions have some mixed hydrophobicity, the charged-residue content at the boundaries of A is a strong disqualifier for a TM segment."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "transmembrane_0096",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The UniProt entry for Q584D1 (Trypanosoma brucei cardiolipin synthetase, 639 AA) annotates a single transmembrane helical region at 510..528 (evidence C5, H3). The evidence code is ECO:0000255 (inferred by similarity), indicating a computational prediction rather than direct experimental determination, but the annotation directly matches the expected answer D. The sequence length of 639 AA confirms that options B (1250..1269) and C (680..699) reference positions beyond the protein, and the annotated region 510..528 matches D exactly.",
+    "evidence_ids": ["C5", "H3"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "Options B (1250..1269) and C (510..528; 680..699) can be eliminated immediately because the protein is only 639 residues long, making positions 1250 and 680 impossible. The remaining choice is between A (514..533) and D (510..528). Extracting the actual residues: D (510-528) = WFMWYASNYITGMLMASGV, which begins with the strongly hydrophobic W-F-M-W motif, a classic transmembrane helix anchor. A (514-533) = YASNYITGMLMASGVRVYEYK, which begins with polar residues (Y-A-S-N-Y) and ends with charged residues (E-Y-K), features highly inconsistent with a lipid-embedded alpha-helix. General knowledge of TM helix composition (hydrophobic core of ~19-25 residues, avoidance of charged residues within the bilayer) and the recognition that W, F, M, W form a canonical hydrophobic anchor at the membrane interface favor D. The protein is annotated as a cardiolipin synthase (EC 2.7.8.-), a membrane-associated enzyme, consistent with a single TM anchor.",
+    "missing_item_specific_fact": "",
+    "reason": "A knowledgeable model can eliminate B and C by simple length check (639 AA), then use hydrophobicity analysis and general TM helix composition principles to distinguish D from A. The WFMWY motif at position 510-513 is a well-known hydrophobic anchor pattern, while option A's terminal charged residues (E, K) are incompatible with a transmembrane segment. This is a defensible transferable inference from general membrane-protein biology."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "Options B and C are unambiguously invalid because they reference residue positions beyond the 639-residue protein. Between A and D, the hydrophobicity profile clearly favors D: the WFMWY start and absence of terminal charges make D a more plausible TM helix than A, which starts with polar residues and ends with charged residues. While both regions have some mixed hydrophobicity, the charged-residue content at the boundaries of A is a strong disqualifier for a TM segment."
+  },
+  "important_caveats": [
+    "The UniProt TM annotation (510..528) carries evidence code ECO:0000255 (inferred by similarity), meaning it is a computational prediction rather than an experimentally determined boundary. The exact start/end positions may differ by a few residues in reality.",
+    "The protein is a bacterial-type cardiolipin synthase in a eukaryotic organism (Trypanosoma brucei), which is an unusual evolutionary context. The single TM region is consistent with the membrane-anchoring role of this enzyme.",
+    "The distinction between options A and D, while reasonable, involves a borderline hydrophobicity assessment; the WFMWY motif strongly favors D, but a model without careful hydrophobicity analysis might hesitate."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of the old Luna review only
+
+These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Complete reviewer-only evidence and qualifications
+
+All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+
+**Applicability metadata, unchanged:**
+
+```json
+{
+  "requested_accession": "Q584D1",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "benchmark_sequence_sha256": "d1770a01906c887a932e40fe30f046ec16ec07c879d4a17024149479b46e4405",
+  "benchmark_sequence_length": 639,
+  "current_status": "retrieved",
+  "current_sequence_comparison": "matched",
+  "current_entry_audit": {
+    "entryVersion": 104,
+    "firstPublicDate": "2025-02-05",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2005-05-10",
+    "sequenceVersion": 1
+  },
+  "current_uniprot_release": "2026_03",
+  "current_record_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "current_source_sequence_sha256": "d1770a01906c887a932e40fe30f046ec16ec07c879d4a17024149479b46e4405",
+  "current_source_sequence_length": 639,
+  "historical_status": "retrieved",
+  "historical_cutoff_date": "2026-05-07",
+  "historical_sequence_comparison": "matched",
+  "selected_historical_entry_version": 102,
+  "selected_historical_version": {
+    "accession": "Q584D1",
+    "database": "Swiss-Prot",
+    "entryVersion": 102,
+    "firstRelease": "2026_01/2026_01",
+    "firstReleaseDate": "28-Jan-2026",
+    "lastRelease": "2026_01/2026_01",
+    "lastReleaseDate": "28-Jan-2026",
+    "name": "CLS_TRYB2",
+    "sequenceVersion": 1
+  },
+  "selected_historical_record_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "selected_historical_source_sequence_sha256": "d1770a01906c887a932e40fe30f046ec16ec07c879d4a17024149479b46e4405",
+  "selected_historical_source_sequence_length": 639,
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 102,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "actual_author_source_snapshot": "unknown",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+}
+```
+
+**Qualifications, unchanged:**
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q584D1.json)
+
+```json
+{
+  "evidence_id": "C1",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "json_pointer": "/primaryAccession",
+  "excerpt": "\"Q584D1\"",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C2
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q584D1.json)
+
+```json
+{
+  "evidence_id": "C2",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "json_pointer": "/entryAudit",
+  "excerpt": "{\"entryVersion\":104,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2005-05-10\",\"sequenceVersion\":1}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C3
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q584D1.json)
+
+```json
+{
+  "evidence_id": "C3",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "json_pointer": "/organism",
+  "excerpt": "{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000008524\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Discoba\",\"Euglenozoa\",\"Kinetoplastea\",\"Metakinetoplastina\",\"Trypanosomatida\",\"Trypanosomatidae\",\"Trypanosoma\"],\"scientificName\":\"Trypanosoma brucei brucei (strain 927/4 GUTat10.1)\",\"taxonId\":185431}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q584D1.json)
+
+```json
+{
+  "evidence_id": "C4",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "json_pointer": "/proteinDescription",
+  "excerpt": "{\"flag\":\"Precursor\",\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"22451910\",\"source\":\"PubMed\"}],\"value\":\"2.7.8.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Cardiolipin synthetase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"CL synthase\"}]}}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q584D1.json)
+
+```json
+{
+  "evidence_id": "C5",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "json_pointer": "/features/2",
+  "excerpt": "{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":528},\"start\":{\"modifier\":\"EXACT\",\"value\":510}},\"type\":\"Transmembrane\"}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C6
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q584D1.json)
+
+```json
+{
+  "evidence_id": "C6",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q584D1.json",
+  "source_sha256": "06023be9a8f72ee85cb75383e10f4d8299d2a2508914f86a1650f4b851ae4215",
+  "retrieved_utc": "2026-11-02T04:31:01.049114+00:00",
+  "json_pointer": "/references/3",
+  "excerpt": "{\"citation\":{\"authors\":[\"Serricchio M.\",\"Buetikofer P.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22451910\"},{\"database\":\"DOI\",\"id\":\"10.1073/pnas.1121528109\"}],\"citationType\":\"journal article\",\"firstPage\":\"E954\",\"id\":\"22451910\",\"journal\":\"Proc. Natl. Acad. Sci. U.S.A.\",\"lastPage\":\"E961\",\"publicationDate\":\"2012\",\"title\":\"An essential bacterial-type cardiolipin synthase mediates cardiolipin formation in a eukaryote.\",\"volume\":\"109\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"SUBUNIT\",\"SUBCELLULAR LOCATION\",\"DISRUPTION PHENOTYPE\"]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H1
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102)
+
+```json
+{
+  "evidence_id": "H1",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102",
+  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
+  "source_locator": "lines 1-16",
+  "excerpt": "ID   CLS_TRYB2               Reviewed;         639 AA.\nAC   Q584D1; D6XFJ2;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   10-MAY-2005, sequence version 1.\nDT   28-JAN-2026, entry version 102.\nDE   RecName: Full=Cardiolipin synthetase {ECO:0000305};\nDE            Short=CL synthase {ECO:0000305};\nDE            EC=2.7.8.- {ECO:0000305|PubMed:22451910};\nDE   Flags: Precursor;\nGN   Name=CLS {ECO:0000303|PubMed:22451910};\nGN   ORFNames=Tb04.1H19.1130 {ECO:0000312|EMBL:AAZ10847.1},\nGN   Tb927.4.2560 {ECO:0000312|EMBL:AAX79074.1};\nOS   Trypanosoma brucei brucei (strain 927/4 GUTat10.1).\nOC   Eukaryota; Discoba; Euglenozoa; Kinetoplastea; Metakinetoplastina;\nOC   Trypanosomatida; Trypanosomatidae; Trypanosoma.\nOX   NCBI_TaxID=185431 {ECO:0000312|Proteomes:UP000008524};\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 102,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H2
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102)
+
+```json
+{
+  "evidence_id": "H2",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102",
+  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
+  "source_locator": "lines 65-72",
+  "excerpt": "RN   [4] {ECO:0000305}\nRP   FUNCTION, CATALYTIC ACTIVITY, SUBUNIT, SUBCELLULAR LOCATION, AND DISRUPTION\nRP   PHENOTYPE.\nRX   PubMed=22451910; DOI=10.1073/pnas.1121528109;\nRA   Serricchio M., Buetikofer P.;\nRT   \"An essential bacterial-type cardiolipin synthase mediates cardiolipin\nRT   formation in a eukaryote.\";\nRL   Proc. Natl. Acad. Sci. U.S.A. 109:E954-E961(2012).\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 102,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H3
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102)
+
+```json
+{
+  "evidence_id": "H3",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/Q584D1?format=txt&versions=102",
+  "source_sha256": "88350d8820a0e6e2b3dbf458c2c3fbc779b40be576a352499efaf57465c08841",
+  "retrieved_utc": "2026-11-02T04:31:03.966233+00:00",
+  "source_locator": "lines 162-164",
+  "excerpt": "FT   TRANSMEM        510..528\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 102,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/transmembrane.json), zero-based source row 96. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). [Source credits](../THIRD_PARTY_NOTICES.md).

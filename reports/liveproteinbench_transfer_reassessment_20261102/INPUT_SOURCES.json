@@ -1,0 +1,126 @@
+{
+  "selected_examples": 1328,
+  "source_rows_subset": "Exact source_row_index values in selection.jsonl; no shuffle or sampling.",
+  "sources": [
+    {
+      "task_id": "EC_number",
+      "selected_examples": 176,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/EC_number.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/EC_number.json",
+      "source_file": {
+        "bytes": 199767,
+        "sha256": "4c49b4fcd255c0603f79e579bd58e9e24f9b54736d2c47217e125c643d168ff8"
+      }
+    },
+    {
+      "task_id": "GO_biological_process",
+      "selected_examples": 162,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/GO_biological_process.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/GO_biological_process.json",
+      "source_file": {
+        "bytes": 241985,
+        "sha256": "ff7f9db20916f636300769701e912883ce4dd1ffb7f928573919b7060fbbbe4e"
+      }
+    },
+    {
+      "task_id": "GO_cellular_component",
+      "selected_examples": 138,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/GO_cellular_component.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/GO_cellular_component.json",
+      "source_file": {
+        "bytes": 216794,
+        "sha256": "7ef79bc15aa4f263b04c158ec23d5f46929849dda159c6244a33560d418d638d"
+      }
+    },
+    {
+      "task_id": "GO_molecular_function",
+      "selected_examples": 128,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/GO_molecular_function.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/GO_molecular_function.json",
+      "source_file": {
+        "bytes": 230681,
+        "sha256": "b0271ae5eda3ff90ca16a8bcc02b15c92e29aa000d73d4cbcc0066bb9c00d927"
+      }
+    },
+    {
+      "task_id": "active_site",
+      "selected_examples": 97,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/active_site.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/active_site.json",
+      "source_file": {
+        "bytes": 166617,
+        "sha256": "c1ac5c722c8778a83839fa9b502f1bf3b548ad31f48d6569ac71fa972a77ac81"
+      }
+    },
+    {
+      "task_id": "catalytic_activity",
+      "selected_examples": 131,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/catalytic_activity.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/catalytic_activity.json",
+      "source_file": {
+        "bytes": 285322,
+        "sha256": "c948592b466f9eeaf42f7cc9debb580fb947c8de9aca3a77d33a61aa0b929771"
+      }
+    },
+    {
+      "task_id": "cofactor",
+      "selected_examples": 108,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/cofactor.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/cofactor.json",
+      "source_file": {
+        "bytes": 195698,
+        "sha256": "a947d369bf4669169122e9a8fe81df743d7125f4e876ce4df6e1f3a82e4ff1e1"
+      }
+    },
+    {
+      "task_id": "motif_position",
+      "selected_examples": 30,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/motif_position.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/motif_position.json",
+      "source_file": {
+        "bytes": 54592,
+        "sha256": "5cddec664d4ccf34acc9b2b95dc5eeefebd1da843469162a1e12617038d8161e"
+      }
+    },
+    {
+      "task_id": "pathway",
+      "selected_examples": 176,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/pathway.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/pathway.json",
+      "source_file": {
+        "bytes": 218322,
+        "sha256": "1eee02f8414806c137a4992eb6c0d66becd9da3dfc729fcec1dcf234db41436d"
+      }
+    },
+    {
+      "task_id": "ph",
+      "selected_examples": 48,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/ph.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/ph.json",
+      "source_file": {
+        "bytes": 49168,
+        "sha256": "4647717c2dfe3730007cb25a44c13e563f2339c1e18ce9749a59763c79aea90e"
+      }
+    },
+    {
+      "task_id": "temperature",
+      "selected_examples": 37,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/temperature.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/temperature.json",
+      "source_file": {
+        "bytes": 36690,
+        "sha256": "4be72e2edea6503469686c235e9069027c06f6642f6d7c6f3127494396c3d9d4"
+      }
+    },
+    {
+      "task_id": "transmembrane",
+      "selected_examples": 97,
+      "original_source_url": "https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/transmembrane.json",
+      "huggingface_source_url": "https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LiveProteinBench/QA/transmembrane.json",
+      "source_file": {
+        "bytes": 167351,
+        "sha256": "b58c17f0bee3525962e807694b51197f08fbb3e08598b0ba13d4b094cfc6e9e0"
+      }
+    }
+  ]
+}

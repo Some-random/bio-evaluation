@@ -1,0 +1,156 @@
+{
+  "luna": {
+    "dispatch_manifest_sha256": "8790b7995508c26c239ef30721764a069ca9854bc92867e6243dd6556252ddeb",
+    "common": {
+      "max_concurrency_per_model": 128,
+      "batch_size": 1,
+      "socket_timeout_seconds": 1800,
+      "automatic_retries": false,
+      "attempts_per_case": 1,
+      "tools": false,
+      "pilot": false
+    },
+    "model": {
+      "model": "gpt-6-luna",
+      "reasoning": {
+        "effort": "medium"
+      },
+      "max_output_tokens": 16384,
+      "output_limit_includes_reasoning": true,
+      "service_tier": "default",
+      "store": false,
+      "sampling_seed_penalty_options": "omitted",
+      "reasoning_mode": "omitted; documented provider default standard",
+      "provider_revision_precision_hardware": "unknown",
+      "budget_ceiling_usd": null,
+      "native_stopping": true,
+      "extra_developer_messages": false
+    },
+    "input_token_gate": {
+      "ceiling": 49152,
+      "context": 65536,
+      "luna_method": "estimated conservative canonical messages UTF8 byte length + 2048; not exact provider tokenizer count",
+      "luna_exact_provider_tokenizer_count_available": false,
+      "qwen_method": "actual cached tokenizer native chat template, add_generation_prompt=True, enable_thinking=True, reasoning_effort=medium",
+      "truncation": false
+    },
+    "separate_thinking_token_limit": null,
+    "separate_final_answer_token_limit": null,
+    "rate_pacing": {
+      "initial_max_in_flight": 1,
+      "maximum_in_flight": 128,
+      "ramp": "double active limit after each successful response with headers, cap128",
+      "initial_rpm": 1000,
+      "initial_tpm": 1600000,
+      "observed_limit_fraction": 0.8,
+      "rolling_window_seconds": 60,
+      "reservation": "full input estimate/count + 16384 output; no refund within60s",
+      "retry_after": "pace only unattempted cases; never replay failed requests"
+    }
+  },
+  "qwen": {
+    "dispatch_manifest_sha256": "e33662f47f40f0f9e11381c5205bb86b9da928e9d4ad309ee005666159d40c83",
+    "common": {
+      "max_concurrency_per_model": 128,
+      "batch_size": 1,
+      "socket_timeout_seconds": 1800,
+      "automatic_retries": false,
+      "attempts_per_case": 1,
+      "tools": false,
+      "pilot": false
+    },
+    "model": {
+      "model": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "revision": "fc694b54fb0174e0913e6adf86691ef85a4ead47",
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "repetition_penalty": 1.0,
+      "seed": 42,
+      "max_tokens": 16384,
+      "stream": false,
+      "chat_template_kwargs": {
+        "enable_thinking": true,
+        "reasoning_effort": "medium"
+      },
+      "native_stopping": true,
+      "response_format": "omitted; no injected JSON schema",
+      "transformers_tokenizer_version": "5.19.0",
+      "omitted_request_options_effective_defaults": {
+        "ignore_eos": false,
+        "include_reasoning": true,
+        "min_tokens": 0,
+        "n": 1,
+        "skip_special_tokens": true,
+        "stop": [],
+        "stop_token_ids": [],
+        "thinking_token_budget": null,
+        "tool_choice": "none",
+        "tools": null,
+        "truncate_prompt_tokens": null
+      },
+      "stop_tokens_note": "model generation-config EOS IDs remain active; no custom request stop strings or IDs",
+      "output_limit_includes_reasoning": true
+    },
+    "input_token_gate": {
+      "ceiling": 49152,
+      "context": 65536,
+      "luna_method": "estimated conservative canonical messages UTF8 byte length + 2048; not exact provider tokenizer count",
+      "luna_exact_provider_tokenizer_count_available": false,
+      "qwen_method": "actual cached tokenizer native chat template, add_generation_prompt=True, enable_thinking=True, reasoning_effort=medium",
+      "truncation": false
+    },
+    "separate_thinking_token_limit": null,
+    "separate_final_answer_token_limit": null,
+    "rate_pacing": {
+      "initial_max_in_flight": 1,
+      "maximum_in_flight": 128,
+      "ramp": "double active limit after each successful response with headers, cap128",
+      "initial_rpm": 1000,
+      "initial_tpm": 1600000,
+      "observed_limit_fraction": 0.8,
+      "rolling_window_seconds": 60,
+      "reservation": "full input estimate/count + 16384 output; no refund within60s",
+      "retry_after": "pace only unattempted cases; never replay failed requests"
+    },
+    "runtime": {
+      "versions": {
+        "vllm": "0.32.0rc1.dev100+g77154ca61.cu129",
+        "torch": "2.13.0+cu129",
+        "transformers": "5.19.0"
+      },
+      "model": {
+        "id": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+        "revision": "fc694b54fb0174e0913e6adf86691ef85a4ead47",
+        "weights": "NVFP4",
+        "compute": "bfloat16"
+      },
+      "server": {
+        "hardware": "A100",
+        "tp": 2,
+        "max_model_len": 65536,
+        "max_num_seqs": 512,
+        "max_num_batched_tokens": 16384,
+        "gpu_memory_utilization": 0.9,
+        "cpu_offload": true,
+        "reasoning_parser": "qwen3"
+      },
+      "scheduler": {
+        "partition": "il",
+        "qos": "il",
+        "gres": "gpu:a100:2",
+        "nodes": 1,
+        "ntasks": 1,
+        "cpus_per_task": 8,
+        "mem_per_gpu": "96G",
+        "total_memory": "192G",
+        "time": "24:00:00",
+        "requeue": false,
+        "priority": "Slurm default dynamic priority; no explicit nice/priority override"
+      }
+    }
+  }
+}

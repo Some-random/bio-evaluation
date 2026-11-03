@@ -6,6 +6,7 @@
 <details>
 <summary>Source data and technical records</summary>
 
+- [LiveProteinBench: transfer-knowledge reassessment and before/after reviews](reports/liveproteinbench_transfer_reassessment_20261102/README.md)
 - [LiveProteinBench: every question with Qwen and Luna’s reviews](reports/liveproteinbench_question_reviews_20261101/README.md)
 - [Run artifacts and trajectories](results/runs)
 - [Machine-readable task and result snapshot](reports/TASK_HIERARCHY_DATA.json)

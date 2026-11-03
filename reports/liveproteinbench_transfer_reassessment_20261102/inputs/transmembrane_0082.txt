@@ -1,0 +1,45 @@
+Case ID: transmembrane_0082
+Task: transmembrane
+
+<original_system_message>
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Transmembrane Region Prediction, which is to predict a region of the protein that spans across a cell membrane. These transmembrane domains are typically hydrophobic alpha-helices that anchor the protein within the lipid bilayer or form channels. Based on the provided amino acid sequence, you must select the option that correctly identifies the start and end positions of a segment that crosses the membrane.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+
+</original_system_message>
+
+<original_user_message>
+[Protein Sequence]
+MAVYSYYPIDMVLLAHLIGIIYLIIILGTLVMLFS
+
+[Multiple Choices]
+A. 14..34
+B. 14..34; 385..410
+C. 16..34
+D. 29..49; 60..80; 117..137; 158..178; 179..199
+</original_user_message>
+
+<author_expected_answer>
+Choice: A
+Text: 14..34
+</author_expected_answer>
+
+<reviewer_only_evidence>
+{"annotation_excerpts":[{"evidence_id":"C1","excerpt":"\"P9WEJ6\"","excerpt_format":"canonical JSON value at JSON pointer","json_pointer":"/primaryAccession","retrieved_utc":"2026-11-01T06:25:18.932651+00:00","sequence_comparison":"matched","source":"UniProtKB current entry","source_scope":"current snapshot; actual author source snapshot unknown","source_sha256":"93a966297fce68bace2aba191c1ce96de572405f36dcec82cd2e1abd71c74475","url":"https://rest.uniprot.org/uniprotkb/P9WEJ6.json"},{"evidence_id":"C2","excerpt":"{\"entryVersion\":5,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2025-02-05\",\"sequenceVersion\":1}","excerpt_format":"canonical JSON value at JSON pointer","json_pointer":"/entryAudit","retrieved_utc":"2026-11-01T06:25:18.932651+00:00","sequence_comparison":"matched","source":"UniProtKB current entry","source_scope":"current snapshot; actual author source snapshot unknown","source_sha256":"93a966297fce68bace2aba191c1ce96de572405f36dcec82cd2e1abd71c74475","url":"https://rest.uniprot.org/uniprotkb/P9WEJ6.json"},{"evidence_id":"C3","excerpt":"{\"commonName\":\"Baker's yeast\",\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Saccharomycotina\",\"Saccharomycetes\",\"Saccharomycetales\",\"Saccharomycetaceae\",\"Saccharomyces\"],\"scientificName\":\"Saccharomyces cerevisiae (strain ATCC 204508 / S288c)\",\"taxonId\":559292}","excerpt_format":"canonical JSON value at JSON pointer","json_pointer":"/organism","retrieved_utc":"2026-11-01T06:25:18.932651+00:00","sequence_comparison":"matched","source":"UniProtKB current entry","source_scope":"current snapshot; actual author source snapshot unknown","source_sha256":"93a966297fce68bace2aba191c1ce96de572405f36dcec82cd2e1abd71c74475","url":"https://rest.uniprot.org/uniprotkb/P9WEJ6.json"},{"evidence_id":"C4","excerpt":"{\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Uncharacterized protein YGR016C-A\"}}}","excerpt_format":"canonical JSON value at JSON pointer","json_pointer":"/proteinDescription","retrieved_utc":"2026-11-01T06:25:18.932651+00:00","sequence_comparison":"matched","source":"UniProtKB current entry","source_scope":"current snapshot; actual author source snapshot unknown","source_sha256":"93a966297fce68bace2aba191c1ce96de572405f36dcec82cd2e1abd71c74475","url":"https://rest.uniprot.org/uniprotkb/P9WEJ6.json"},{"evidence_id":"C5","excerpt":"{\"description\":\"Helical\",\"evidences\":[{\"evidenceCode\":\"ECO:0000255\"}],\"location\":{\"end\":{\"modifier\":\"EXACT\",\"value\":34},\"start\":{\"modifier\":\"EXACT\",\"value\":14}},\"type\":\"Transmembrane\"}","excerpt_format":"canonical JSON value at JSON pointer","json_pointer":"/features/1","retrieved_utc":"2026-11-01T06:25:18.932651+00:00","sequence_comparison":"matched","source":"UniProtKB current entry","source_scope":"current snapshot; actual author source snapshot unknown","source_sha256":"93a966297fce68bace2aba191c1ce96de572405f36dcec82cd2e1abd71c74475","url":"https://rest.uniprot.org/uniprotkb/P9WEJ6.json"},{"entry_version":3,"evidence_id":"H1","excerpt":"ID   YG106_YEAST             Reviewed;          35 AA.\nAC   P9WEJ6; A0AAT9JHZ2;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   05-FEB-2025, sequence version 1.\nDT   28-JAN-2026, entry version 3.\nDE   RecName: Full=Uncharacterized protein YGR016C-A {ECO:0000305};\nGN   OrderedLocusNames=YGR016C-A {ECO:0000312|SGD:S000350096};\nOS   Saccharomyces cerevisiae (strain ATCC 204508 / S288c) (Baker's yeast).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Saccharomycotina; Saccharomycetes;\nOC   Saccharomycetales; Saccharomycetaceae; Saccharomyces.\nOX   NCBI_TaxID=559292;\n","excerpt_format":"literal contiguous UniProt flat-file lines","retrieved_utc":"2026-11-01T06:28:28.375865+00:00","sequence_comparison":"matched","sequence_version":1,"source":"UniSave archived UniProt entry","source_locator":"lines 1-11","source_scope":"record released no later than 2026-05-07; actual author source snapshot unknown","source_sha256":"2b9116a361e289851a454b5ec0e6b4749004d2d6afc18e6ac189e5457a8359fd","url":"https://rest.uniprot.org/unisave/P9WEJ6?format=txt&versions=3"},{"entry_version":3,"evidence_id":"H2","excerpt":"FT   TRANSMEM        14..34\nFT                   /note=\"Helical\"\nFT                   /evidence=\"ECO:0000255\"\n","excerpt_format":"literal contiguous UniProt flat-file lines","retrieved_utc":"2026-11-01T06:28:28.375865+00:00","sequence_comparison":"matched","sequence_version":1,"source":"UniSave archived UniProt entry","source_locator":"lines 96-98","source_scope":"record released no later than 2026-05-07; actual author source snapshot unknown","source_sha256":"2b9116a361e289851a454b5ec0e6b4749004d2d6afc18e6ac189e5457a8359fd","url":"https://rest.uniprot.org/unisave/P9WEJ6?format=txt&versions=3"}],"limitations":["All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.","UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.","The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.","Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated."],"source_applicability":{"actual_author_source_snapshot":"unknown","benchmark_sequence_length":35,"benchmark_sequence_sha256":"a035dc17cc8d8343ff023a58adb1ee754d1f6dda5c4f10ec9f1ea3e3d82f3cf0","current_entry_audit":{"entryVersion":5,"firstPublicDate":"2025-02-05","lastAnnotationUpdateDate":"2026-09-02","lastSequenceUpdateDate":"2025-02-05","sequenceVersion":1},"current_record_sha256":"93a966297fce68bace2aba191c1ce96de572405f36dcec82cd2e1abd71c74475","current_sequence_comparison":"matched","current_source_sequence_length":35,"current_source_sequence_sha256":"a035dc17cc8d8343ff023a58adb1ee754d1f6dda5c4f10ec9f1ea3e3d82f3cf0","current_status":"retrieved","current_uniprot_release":"2026_03","historical_cutoff_date":"2026-05-07","historical_sequence_comparison":"matched","historical_sequence_versions_checked":[{"entry_version":3,"exact_sequence_comparison":"matched","sequence_version":1}],"historical_status":"retrieved","identity_origin":"reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input","latest_at_cutoff_sequence_comparison":"matched","numbering":"Canonical entry coordinates; construct or isoform numbering is not assumed.","requested_accession":"P9WEJ6","selected_historical_entry_version":3,"selected_historical_record_sha256":"2b9116a361e289851a454b5ec0e6b4749004d2d6afc18e6ac189e5457a8359fd","selected_historical_source_sequence_length":35,"selected_historical_source_sequence_sha256":"a035dc17cc8d8343ff023a58adb1ee754d1f6dda5c4f10ec9f1ea3e3d82f3cf0","selected_historical_version":{"accession":"P9WEJ6","database":"Swiss-Prot","entryVersion":3,"firstRelease":"2026_01/2026_01","firstReleaseDate":"28-Jan-2026","lastRelease":"2026_01/2026_01","lastReleaseDate":"28-Jan-2026","name":"YG106_YEAST","sequenceVersion":1}}}
+
+Evidence availability: source retrieval and sequence-match limitations are stated above; absent fields are not proof of falsehood.
+</reviewer_only_evidence>

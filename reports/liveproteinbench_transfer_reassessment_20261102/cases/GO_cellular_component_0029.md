@@ -1,0 +1,928 @@
+# GO_cellular_component_0029: before and after transfer clarification
+
+[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_cellular_component_0029.txt)
+
+**Task:** `GO_cellular_component`  
+**Author key, unchanged:** **A** — cytosol
+
+| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
+|---|---|---|---|---|
+| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
+| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
+| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+
+**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MNEALDDIDRILVRELAADGRATLSELATRAGLSVSAVQSRVRRLESRGVVQGYSARINPEAVGHLLSAFVAITPLDPSQPDDAPARLEHIEEVESCYSVAGEESYVLLVRVASARALEDLLQRIRTTANVRTRSTIILNTFYSDRQHIP
+
+[Multiple Choices]
+A. cytosol
+B. chloroplast
+C. cytoplasm
+D. recycling endosome membrane
+```
+
+<details>
+<summary>Complete original system instructions</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Gene Ontology (GO) Cellular Component Prediction, which is to predict the primary Cellular Component where a protein is located, according to the Gene Ontology (GO) framework. A protein's location within a cell (e.g., Nucleus, Mitochondria, Cytoplasm) is critical for its function and is often determined by specific targeting signals in its amino acid sequence. Based on the provided sequence, you must identify the most likely compartment where the protein resides.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## Four saved visible reviews
+
+## Before: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The exact sequence matches a UniProt entry annotated to cytosol (GO:0005829) with IBA evidence, a computational, phylogenetically inferred annotation rather than direct experimental localization evidence. This supports the key as an annotation, without establishing that it was experimentally measured.
+
+Citations as saved: [C5](#evidence-c5), [H5](#evidence-h5).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence is consistent with a soluble protein and offers no obvious membrane-spanning or organelle-targeting signal, which can favor an intracellular soluble location over the membrane and chloroplast distractors. It does not, however, distinguish the specific GO label cytosol from the broader cytoplasm label.
+
+
+**Missing item-specific fact**
+
+> A protein-specific localization annotation or other evidence resolving which cellular-component term is intended; the input does not provide it.
+
+
+**Reason**
+
+> The sequence may support a general soluble intracellular prediction, but the decisive distinction between the nested cytosol and cytoplasm choices is not established by that inference. Selecting the keyed term depends on the protein-specific annotation.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "C"
+]
+```
+
+> Cytosol is part of the cytoplasm, so both labels can describe a soluble intracellular protein. The question gives no criterion for choosing the narrower term over the broader one.
+
+
+### Important caveats
+
+- The sequence match and UniProt annotation support the key, but the cited IBA evidence is computational, not direct experimental localization evidence.
+- The reviewer-only source identity and annotation were not supplied to the evaluated model.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence is consistent with a soluble protein and offers no obvious membrane-spanning or organelle-targeting signal, which can favor an intracellular soluble location over the membrane and chloroplast distractors. It does not, however, distinguish the specific GO label cytosol from the broader cytoplasm label.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "A protein-specific localization annotation or other evidence resolving which cellular-component term is intended; the input does not provide it.",
+    "reason": "The sequence may support a general soluble intracellular prediction, but the decisive distinction between the nested cytosol and cytoplasm choices is not established by that inference. Selecting the keyed term depends on the protein-specific annotation."
+  },
+  "case_id": "GO_cellular_component_0029",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "H5"
+    ],
+    "judgment": "supported",
+    "reason": "The exact sequence matches a UniProt entry annotated to cytosol (GO:0005829) with IBA evidence, a computational, phylogenetically inferred annotation rather than direct experimental localization evidence. This supports the key as an annotation, without establishing that it was experimentally measured."
+  },
+  "important_caveats": [
+    "The sequence match and UniProt annotation support the key, but the cited IBA evidence is computational, not direct experimental localization evidence.",
+    "The reviewer-only source identity and annotation were not supplied to the evaluated model."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "C"
+    ],
+    "reason": "Cytosol is part of the cytoplasm, so both labels can describe a soluble intracellular protein. The question gives no criterion for choosing the narrower term over the broader one."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "GO_cellular_component_0029",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The exact sequence matches a UniProt entry annotated to cytosol (GO:0005829) with IBA evidence, a computational, phylogenetically inferred annotation rather than direct experimental localization evidence. This supports the key as an annotation, without establishing that it was experimentally measured.",
+    "evidence_ids": ["C5", "H5"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence is consistent with a soluble protein and offers no obvious membrane-spanning or organelle-targeting signal, which can favor an intracellular soluble location over the membrane and chloroplast distractors. It does not, however, distinguish the specific GO label cytosol from the broader cytoplasm label.",
+    "missing_item_specific_fact": "A protein-specific localization annotation or other evidence resolving which cellular-component term is intended; the input does not provide it.",
+    "reason": "The sequence may support a general soluble intracellular prediction, but the decisive distinction between the nested cytosol and cytoplasm choices is not established by that inference. Selecting the keyed term depends on the protein-specific annotation."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "C"],
+    "reason": "Cytosol is part of the cytoplasm, so both labels can describe a soluble intracellular protein. The question gives no criterion for choosing the narrower term over the broader one."
+  },
+  "important_caveats": [
+    "The sequence match and UniProt annotation support the key, but the cited IBA evidence is computational, not direct experimental localization evidence.",
+    "The reviewer-only source identity and annotation were not supplied to the evaluated model."
+  ]
+}
+```
+
+</details>
+
+## Before: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The UniProt entry (I6YBQ3, LRPA_MYCTU) annotates GO:0005829 (cytosol) with evidence code IBA:GO_Central (C5, H5). The protein is an HTH-type transcriptional regulator (LrpA / feast-famine regulatory protein) from Mycobacterium tuberculosis, a bacterium. Crystal structures (2IVM, 2VBW–2VC1, 2QZ8) confirm it is a soluble DNA-binding protein with cofactor-binding domains, consistent with cytosolic localization. The IBA evidence code indicates computational inference rather than direct experimental measurement, but the biological context (soluble bacterial transcription factor functioning in the aqueous phase to bind genomic DNA) strongly supports the cytosol annotation. Options B (chloroplast) and D (recycling endosome membrane) are inapplicable to a bacterium.
+
+Citations as saved: [C5](#evidence-c5), [C4](#evidence-c4), [C7](#evidence-c7), [H5](#evidence-h5), [H3](#evidence-h3), [H4](#evidence-h4), [GO2](#evidence-go2).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The protein is a 150-residue HTH-type transcriptional regulator from a bacterium (M. tuberculosis). Bacteria lack chloroplasts and endosomes, immediately eliminating B and D. The sequence contains no transmembrane helices, signal peptides, or organelle-targeting motifs; it is a soluble DNA-binding protein confirmed by multiple crystal structures. In GO, cytosol (GO:0005829) is defined as the part of the cytoplasm excluding organelles and is the appropriate term for soluble proteins functioning in the aqueous phase. A soluble bacterial transcription factor that binds genomic DNA in the nucleoid region resides in the cytosol, not merely the broader 'cytoplasm' (GO:0005737), which includes membrane-bound structures. This reasoning distinguishes A from C without requiring the specific UniProt annotation.
+
+
+**Missing item-specific fact**
+
+> None critical. The IBA evidence code means the specific 'cytosol' label was propagated computationally rather than measured, but the biological argument (soluble, no targeting signals, DNA-binding transcription factor) independently supports cytosol over cytoplasm.
+
+
+**Reason**
+
+> Eliminating B and D requires only knowing the organism is a bacterium. Distinguishing A (cytosol) from C (cytoplasm) relies on the general GO convention that soluble proteins are annotated to cytosol (the organelle-free aqueous fraction) rather than the broader cytoplasm. This is a defensible biological/ontological reasoning step applicable to any soluble protein, not a protein-specific lookup.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "C"
+]
+```
+
+> In the GO ontology, cytosol is a child of cytoplasm (cytosol part_of cytoplasm). For a soluble bacterial protein, 'cytoplasm' (C) is not biologically incorrect—it is simply less specific than 'cytosol' (A). A model selecting C could argue it is the broader, equally valid compartment. However, the question asks for the 'primary' cellular component, and for a soluble protein with no association to organelles or membranes, 'cytosol' is the more precise and conventionally preferred GO annotation, making A the better answer. B and D are unambiguously wrong for a bacterium.
+
+
+### Important caveats
+
+- The GO annotation uses IBA:GO_Central (Inferred by Biological Aspect of Ancestor), a graph-based computational inference, not direct experimental localization data. No subcellular fractionation or microscopy experiment is cited for this protein's localization.
+- The UniProt accession (I6YBQ3) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must reason from the sequence alone.
+- The protein was integrated into Swiss-Prot only on 2025-02-05 (entry version 81 at review time; version 79 at historical cutoff). The author's source snapshot date is unknown, but the sequence and annotation are consistent across versions checked.
+- The cytosol-vs-cytoplasm distinction, while resolvable by GO convention, is a fine-grained ontological point that some biologists treat as interchangeable in casual usage.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The protein is a 150-residue HTH-type transcriptional regulator from a bacterium (M. tuberculosis). Bacteria lack chloroplasts and endosomes, immediately eliminating B and D. The sequence contains no transmembrane helices, signal peptides, or organelle-targeting motifs; it is a soluble DNA-binding protein confirmed by multiple crystal structures. In GO, cytosol (GO:0005829) is defined as the part of the cytoplasm excluding organelles and is the appropriate term for soluble proteins functioning in the aqueous phase. A soluble bacterial transcription factor that binds genomic DNA in the nucleoid region resides in the cytosol, not merely the broader 'cytoplasm' (GO:0005737), which includes membrane-bound structures. This reasoning distinguishes A from C without requiring the specific UniProt annotation.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "None critical. The IBA evidence code means the specific 'cytosol' label was propagated computationally rather than measured, but the biological argument (soluble, no targeting signals, DNA-binding transcription factor) independently supports cytosol over cytoplasm.",
+    "reason": "Eliminating B and D requires only knowing the organism is a bacterium. Distinguishing A (cytosol) from C (cytoplasm) relies on the general GO convention that soluble proteins are annotated to cytosol (the organelle-free aqueous fraction) rather than the broader cytoplasm. This is a defensible biological/ontological reasoning step applicable to any soluble protein, not a protein-specific lookup."
+  },
+  "case_id": "GO_cellular_component_0029",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "C4",
+      "C7",
+      "H5",
+      "H3",
+      "H4",
+      "GO2"
+    ],
+    "judgment": "supported",
+    "reason": "The UniProt entry (I6YBQ3, LRPA_MYCTU) annotates GO:0005829 (cytosol) with evidence code IBA:GO_Central (C5, H5). The protein is an HTH-type transcriptional regulator (LrpA / feast-famine regulatory protein) from Mycobacterium tuberculosis, a bacterium. Crystal structures (2IVM, 2VBW–2VC1, 2QZ8) confirm it is a soluble DNA-binding protein with cofactor-binding domains, consistent with cytosolic localization. The IBA evidence code indicates computational inference rather than direct experimental measurement, but the biological context (soluble bacterial transcription factor functioning in the aqueous phase to bind genomic DNA) strongly supports the cytosol annotation. Options B (chloroplast) and D (recycling endosome membrane) are inapplicable to a bacterium."
+  },
+  "important_caveats": [
+    "The GO annotation uses IBA:GO_Central (Inferred by Biological Aspect of Ancestor), a graph-based computational inference, not direct experimental localization data. No subcellular fractionation or microscopy experiment is cited for this protein's localization.",
+    "The UniProt accession (I6YBQ3) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must reason from the sequence alone.",
+    "The protein was integrated into Swiss-Prot only on 2025-02-05 (entry version 81 at review time; version 79 at historical cutoff). The author's source snapshot date is unknown, but the sequence and annotation are consistent across versions checked.",
+    "The cytosol-vs-cytoplasm distinction, while resolvable by GO convention, is a fine-grained ontological point that some biologists treat as interchangeable in casual usage."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "C"
+    ],
+    "reason": "In the GO ontology, cytosol is a child of cytoplasm (cytosol part_of cytoplasm). For a soluble bacterial protein, 'cytoplasm' (C) is not biologically incorrect—it is simply less specific than 'cytosol' (A). A model selecting C could argue it is the broader, equally valid compartment. However, the question asks for the 'primary' cellular component, and for a soluble protein with no association to organelles or membranes, 'cytosol' is the more precise and conventionally preferred GO annotation, making A the better answer. B and D are unambiguously wrong for a bacterium."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "GO_cellular_component_0029",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The UniProt entry (I6YBQ3, LRPA_MYCTU) annotates GO:0005829 (cytosol) with evidence code IBA:GO_Central (C5, H5). The protein is an HTH-type transcriptional regulator (LrpA / feast-famine regulatory protein) from Mycobacterium tuberculosis, a bacterium. Crystal structures (2IVM, 2VBW–2VC1, 2QZ8) confirm it is a soluble DNA-binding protein with cofactor-binding domains, consistent with cytosolic localization. The IBA evidence code indicates computational inference rather than direct experimental measurement, but the biological context (soluble bacterial transcription factor functioning in the aqueous phase to bind genomic DNA) strongly supports the cytosol annotation. Options B (chloroplast) and D (recycling endosome membrane) are inapplicable to a bacterium.",
+    "evidence_ids": ["C5", "C4", "C7", "H5", "H3", "H4", "GO2"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The protein is a 150-residue HTH-type transcriptional regulator from a bacterium (M. tuberculosis). Bacteria lack chloroplasts and endosomes, immediately eliminating B and D. The sequence contains no transmembrane helices, signal peptides, or organelle-targeting motifs; it is a soluble DNA-binding protein confirmed by multiple crystal structures. In GO, cytosol (GO:0005829) is defined as the part of the cytoplasm excluding organelles and is the appropriate term for soluble proteins functioning in the aqueous phase. A soluble bacterial transcription factor that binds genomic DNA in the nucleoid region resides in the cytosol, not merely the broader 'cytoplasm' (GO:0005737), which includes membrane-bound structures. This reasoning distinguishes A from C without requiring the specific UniProt annotation.",
+    "missing_item_specific_fact": "None critical. The IBA evidence code means the specific 'cytosol' label was propagated computationally rather than measured, but the biological argument (soluble, no targeting signals, DNA-binding transcription factor) independently supports cytosol over cytoplasm.",
+    "reason": "Eliminating B and D requires only knowing the organism is a bacterium. Distinguishing A (cytosol) from C (cytoplasm) relies on the general GO convention that soluble proteins are annotated to cytosol (the organelle-free aqueous fraction) rather than the broader cytoplasm. This is a defensible biological/ontological reasoning step applicable to any soluble protein, not a protein-specific lookup."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "C"],
+    "reason": "In the GO ontology, cytosol is a child of cytoplasm (cytosol part_of cytoplasm). For a soluble bacterial protein, 'cytoplasm' (C) is not biologically incorrect—it is simply less specific than 'cytosol' (A). A model selecting C could argue it is the broader, equally valid compartment. However, the question asks for the 'primary' cellular component, and for a soluble protein with no association to organelles or membranes, 'cytosol' is the more precise and conventionally preferred GO annotation, making A the better answer. B and D are unambiguously wrong for a bacterium."
+  },
+  "important_caveats": [
+    "The GO annotation uses IBA:GO_Central (Inferred by Biological Aspect of Ancestor), a graph-based computational inference, not direct experimental localization data. No subcellular fractionation or microscopy experiment is cited for this protein's localization.",
+    "The UniProt accession (I6YBQ3) was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model. The model must reason from the sequence alone.",
+    "The protein was integrated into Swiss-Prot only on 2025-02-05 (entry version 81 at review time; version 79 at historical cutoff). The author's source snapshot date is unknown, but the sequence and annotation are consistent across versions checked.",
+    "The cytosol-vs-cytoplasm distinction, while resolvable by GO convention, is a fine-grained ontological point that some biologists treat as interchangeable in casual usage."
+  ]
+}
+```
+
+</details>
+
+## After: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The sequence-matched UniProt record annotates this protein to cytosol with IBA evidence, a computational inference rather than direct experimental localization evidence. Its annotated role as a transcriptional regulator is consistent with a soluble cytosolic protein. The GO ontology places cytosol within cytoplasm, so the annotation supports A while also making C a broader, compatible location.
+
+Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H5](#evidence-h5), [GO1](#evidence-go1), [GO2](#evidence-go2).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence is short and lacks a convincing transmembrane segment or organelle-targeting signal; its helix-rich pattern is compatible with a soluble DNA-binding regulator. Transferable knowledge about soluble transcriptional regulators supports a cytosolic location, distinguishing A/C from chloroplast and recycling endosome membrane. Cytosol is the more specific of A and C.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> A meaningful family/sequence-level inference supports a soluble cytosolic location without needing the exact protein's database record. The inference does not make the broader cytoplasm option biologically false.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "C"
+]
+```
+
+> Cytosol is part of the cytoplasm, so both terms can describe the location of a cytosolic protein. A is the more specific choice and matches the database annotation, but the question does not explicitly require the most specific GO term.
+
+
+### Important caveats
+
+- The supplied evidence is a computational IBA annotation, not direct experimental localization evidence.
+- The reviewer-only source identifies and matches the sequence to the annotated protein; that identity was not provided as an input to the evaluated model.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence is short and lacks a convincing transmembrane segment or organelle-targeting signal; its helix-rich pattern is compatible with a soluble DNA-binding regulator. Transferable knowledge about soluble transcriptional regulators supports a cytosolic location, distinguishing A/C from chloroplast and recycling endosome membrane. Cytosol is the more specific of A and C.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "A meaningful family/sequence-level inference supports a soluble cytosolic location without needing the exact protein's database record. The inference does not make the broader cytoplasm option biologically false."
+  },
+  "case_id": "GO_cellular_component_0029",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C4",
+      "C5",
+      "H5",
+      "GO1",
+      "GO2"
+    ],
+    "judgment": "supported",
+    "reason": "The sequence-matched UniProt record annotates this protein to cytosol with IBA evidence, a computational inference rather than direct experimental localization evidence. Its annotated role as a transcriptional regulator is consistent with a soluble cytosolic protein. The GO ontology places cytosol within cytoplasm, so the annotation supports A while also making C a broader, compatible location."
+  },
+  "important_caveats": [
+    "The supplied evidence is a computational IBA annotation, not direct experimental localization evidence.",
+    "The reviewer-only source identifies and matches the sequence to the annotated protein; that identity was not provided as an input to the evaluated model."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "C"
+    ],
+    "reason": "Cytosol is part of the cytoplasm, so both terms can describe the location of a cytosolic protein. A is the more specific choice and matches the database annotation, but the question does not explicitly require the most specific GO term."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "GO_cellular_component_0029",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The sequence-matched UniProt record annotates this protein to cytosol with IBA evidence, a computational inference rather than direct experimental localization evidence. Its annotated role as a transcriptional regulator is consistent with a soluble cytosolic protein. The GO ontology places cytosol within cytoplasm, so the annotation supports A while also making C a broader, compatible location.",
+    "evidence_ids": ["C4", "C5", "H5", "GO1", "GO2"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The sequence is short and lacks a convincing transmembrane segment or organelle-targeting signal; its helix-rich pattern is compatible with a soluble DNA-binding regulator. Transferable knowledge about soluble transcriptional regulators supports a cytosolic location, distinguishing A/C from chloroplast and recycling endosome membrane. Cytosol is the more specific of A and C.",
+    "missing_item_specific_fact": "",
+    "reason": "A meaningful family/sequence-level inference supports a soluble cytosolic location without needing the exact protein's database record. The inference does not make the broader cytoplasm option biologically false."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "C"],
+    "reason": "Cytosol is part of the cytoplasm, so both terms can describe the location of a cytosolic protein. A is the more specific choice and matches the database annotation, but the question does not explicitly require the most specific GO term."
+  },
+  "important_caveats": [
+    "The supplied evidence is a computational IBA annotation, not direct experimental localization evidence.",
+    "The reviewer-only source identifies and matches the sequence to the annotated protein; that identity was not provided as an input to the evaluated model."
+  ]
+}
+```
+
+</details>
+
+## After: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The UniProt entry (I6YBQ3) annotates this protein with GO:0005829 (cytosol) via IBA:GO_Central (evidence C5, H5). The protein is an HTH-type transcriptional regulator (LrpA/Frp family) from Mycobacterium tuberculosis. Bacterial transcriptional regulators function in the cytosol where they access the nucleoid DNA. The sequence contains a C-terminal HTH motif (RTRSTIILNTFYSDRQHIP) consistent with DNA binding, and no targeting signals for other compartments. The annotation is computational (IBA) rather than direct experimental, but it is consistent with the well-established biology of Lrp/Frp-family transcriptional regulators being cytosolic.
+
+Citations as saved: [C5](#evidence-c5), [H5](#evidence-h5), [C4](#evidence-c4), [C7](#evidence-c7).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The C-terminal region (RTRSTIILNTFYSDRQHIP) contains a helix-turn-helix (HTH) DNA-binding motif characteristic of transcriptional regulators. The N-terminal hydrophobic stretches form a ligand-binding domain typical of the Lrp/Frp (Feast/Famine Regulatory Protein) family. Bacterial transcriptional regulators of this family operate in the cytosol to access the nucleoid. This eliminates chloroplast (no transit peptide, no photosynthetic features) and recycling endosome membrane (no transmembrane domains, no eukaryotic endosomal targeting signals, and the protein is clearly bacterial). Between cytosol and cytoplasm: bacterial transcription factors are conventionally annotated as 'cytosol' (the soluble aqueous phase containing the nucleoid) rather than the broader 'cytoplasm' term, a pattern observed across many bacterial DNA-binding proteins in GO databases. The HTH motif and small size (~150 aa) are strong family-level signals that this is a soluble, cytosolic regulator.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> A knowledgeable model can identify the HTH motif as a transcription-factor signature, recognize the Lrp/Frp family architecture, and use the well-established principle that bacterial transcriptional regulators reside in the cytosol. The elimination of chloroplast and recycling endosome membrane is straightforward from the absence of targeting signals and the presence of a DNA-binding domain. The A-vs-C distinction is subtle but supported by the pattern that bacterial DNA-binding proteins are preferentially annotated as 'cytosol' in GO.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "C"
+]
+```
+
+> In bacteria, which lack membrane-bound organelles, 'cytosol' (GO:0005829, part_of cytoplasm) and 'cytoplasm' (GO:0005737) are nearly synonymous in biological meaning. A bacterial transcription factor is in both. The annotation specifically uses 'cytosol,' and there is a defensible convention favoring the more specific term for soluble proteins, but a model could reasonably argue for 'cytoplasm' as well. This is a mild ambiguity rather than a fatal flaw, since 'cytosol' is the more precise and annotated term.
+
+
+### Important caveats
+
+- The GO cytosol annotation uses evidence code IBA:GO_Central (computational inference from GO_Central), not direct experimental localization data.
+- The A (cytosol) vs C (cytoplasm) distinction is biologically minimal for a bacterium lacking organelles; the annotation convention favors 'cytosol' for soluble proteins.
+- The protein's bacterial origin is inferred from sequence features (no eukaryotic targeting signals, HTH architecture typical of bacterial regulators) rather than stated in the input.
+- The reviewer-only evidence identifies the organism as M. tuberculosis, but this was not provided to the evaluated model.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The C-terminal region (RTRSTIILNTFYSDRQHIP) contains a helix-turn-helix (HTH) DNA-binding motif characteristic of transcriptional regulators. The N-terminal hydrophobic stretches form a ligand-binding domain typical of the Lrp/Frp (Feast/Famine Regulatory Protein) family. Bacterial transcriptional regulators of this family operate in the cytosol to access the nucleoid. This eliminates chloroplast (no transit peptide, no photosynthetic features) and recycling endosome membrane (no transmembrane domains, no eukaryotic endosomal targeting signals, and the protein is clearly bacterial). Between cytosol and cytoplasm: bacterial transcription factors are conventionally annotated as 'cytosol' (the soluble aqueous phase containing the nucleoid) rather than the broader 'cytoplasm' term, a pattern observed across many bacterial DNA-binding proteins in GO databases. The HTH motif and small size (~150 aa) are strong family-level signals that this is a soluble, cytosolic regulator.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "A knowledgeable model can identify the HTH motif as a transcription-factor signature, recognize the Lrp/Frp family architecture, and use the well-established principle that bacterial transcriptional regulators reside in the cytosol. The elimination of chloroplast and recycling endosome membrane is straightforward from the absence of targeting signals and the presence of a DNA-binding domain. The A-vs-C distinction is subtle but supported by the pattern that bacterial DNA-binding proteins are preferentially annotated as 'cytosol' in GO."
+  },
+  "case_id": "GO_cellular_component_0029",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "H5",
+      "C4",
+      "C7"
+    ],
+    "judgment": "supported",
+    "reason": "The UniProt entry (I6YBQ3) annotates this protein with GO:0005829 (cytosol) via IBA:GO_Central (evidence C5, H5). The protein is an HTH-type transcriptional regulator (LrpA/Frp family) from Mycobacterium tuberculosis. Bacterial transcriptional regulators function in the cytosol where they access the nucleoid DNA. The sequence contains a C-terminal HTH motif (RTRSTIILNTFYSDRQHIP) consistent with DNA binding, and no targeting signals for other compartments. The annotation is computational (IBA) rather than direct experimental, but it is consistent with the well-established biology of Lrp/Frp-family transcriptional regulators being cytosolic."
+  },
+  "important_caveats": [
+    "The GO cytosol annotation uses evidence code IBA:GO_Central (computational inference from GO_Central), not direct experimental localization data.",
+    "The A (cytosol) vs C (cytoplasm) distinction is biologically minimal for a bacterium lacking organelles; the annotation convention favors 'cytosol' for soluble proteins.",
+    "The protein's bacterial origin is inferred from sequence features (no eukaryotic targeting signals, HTH architecture typical of bacterial regulators) rather than stated in the input.",
+    "The reviewer-only evidence identifies the organism as M. tuberculosis, but this was not provided to the evaluated model."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "C"
+    ],
+    "reason": "In bacteria, which lack membrane-bound organelles, 'cytosol' (GO:0005829, part_of cytoplasm) and 'cytoplasm' (GO:0005737) are nearly synonymous in biological meaning. A bacterial transcription factor is in both. The annotation specifically uses 'cytosol,' and there is a defensible convention favoring the more specific term for soluble proteins, but a model could reasonably argue for 'cytoplasm' as well. This is a mild ambiguity rather than a fatal flaw, since 'cytosol' is the more precise and annotated term."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "GO_cellular_component_0029",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The UniProt entry (I6YBQ3) annotates this protein with GO:0005829 (cytosol) via IBA:GO_Central (evidence C5, H5). The protein is an HTH-type transcriptional regulator (LrpA/Frp family) from Mycobacterium tuberculosis. Bacterial transcriptional regulators function in the cytosol where they access the nucleoid DNA. The sequence contains a C-terminal HTH motif (RTRSTIILNTFYSDRQHIP) consistent with DNA binding, and no targeting signals for other compartments. The annotation is computational (IBA) rather than direct experimental, but it is consistent with the well-established biology of Lrp/Frp-family transcriptional regulators being cytosolic.",
+    "evidence_ids": ["C5", "H5", "C4", "C7"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The C-terminal region (RTRSTIILNTFYSDRQHIP) contains a helix-turn-helix (HTH) DNA-binding motif characteristic of transcriptional regulators. The N-terminal hydrophobic stretches form a ligand-binding domain typical of the Lrp/Frp (Feast/Famine Regulatory Protein) family. Bacterial transcriptional regulators of this family operate in the cytosol to access the nucleoid. This eliminates chloroplast (no transit peptide, no photosynthetic features) and recycling endosome membrane (no transmembrane domains, no eukaryotic endosomal targeting signals, and the protein is clearly bacterial). Between cytosol and cytoplasm: bacterial transcription factors are conventionally annotated as 'cytosol' (the soluble aqueous phase containing the nucleoid) rather than the broader 'cytoplasm' term, a pattern observed across many bacterial DNA-binding proteins in GO databases. The HTH motif and small size (~150 aa) are strong family-level signals that this is a soluble, cytosolic regulator.",
+    "missing_item_specific_fact": "",
+    "reason": "A knowledgeable model can identify the HTH motif as a transcription-factor signature, recognize the Lrp/Frp family architecture, and use the well-established principle that bacterial transcriptional regulators reside in the cytosol. The elimination of chloroplast and recycling endosome membrane is straightforward from the absence of targeting signals and the presence of a DNA-binding domain. The A-vs-C distinction is subtle but supported by the pattern that bacterial DNA-binding proteins are preferentially annotated as 'cytosol' in GO."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "C"],
+    "reason": "In bacteria, which lack membrane-bound organelles, 'cytosol' (GO:0005829, part_of cytoplasm) and 'cytoplasm' (GO:0005737) are nearly synonymous in biological meaning. A bacterial transcription factor is in both. The annotation specifically uses 'cytosol,' and there is a defensible convention favoring the more specific term for soluble proteins, but a model could reasonably argue for 'cytoplasm' as well. This is a mild ambiguity rather than a fatal flaw, since 'cytosol' is the more precise and annotated term."
+  },
+  "important_caveats": [
+    "The GO cytosol annotation uses evidence code IBA:GO_Central (computational inference from GO_Central), not direct experimental localization data.",
+    "The A (cytosol) vs C (cytoplasm) distinction is biologically minimal for a bacterium lacking organelles; the annotation convention favors 'cytosol' for soluble proteins.",
+    "The protein's bacterial origin is inferred from sequence features (no eukaryotic targeting signals, HTH architecture typical of bacterial regulators) rather than stated in the input.",
+    "The reviewer-only evidence identifies the organism as M. tuberculosis, but this was not provided to the evaluated model."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of the old Luna review only
+
+These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Complete reviewer-only evidence and qualifications
+
+All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+
+**Applicability metadata, unchanged:**
+
+```json
+{
+  "requested_accession": "I6YBQ3",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "benchmark_sequence_sha256": "7c3cca14a3dc0a5c969dbabf92bf71698cbfd3cd6cb67d3adcbc553da785682e",
+  "benchmark_sequence_length": 150,
+  "current_status": "retrieved",
+  "current_sequence_comparison": "matched",
+  "current_entry_audit": {
+    "entryVersion": 81,
+    "firstPublicDate": "2025-02-05",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2012-10-03",
+    "sequenceVersion": 1
+  },
+  "current_uniprot_release": "2026_03",
+  "current_record_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "current_source_sequence_sha256": "7c3cca14a3dc0a5c969dbabf92bf71698cbfd3cd6cb67d3adcbc553da785682e",
+  "current_source_sequence_length": 150,
+  "historical_status": "retrieved",
+  "historical_cutoff_date": "2026-05-07",
+  "historical_sequence_comparison": "matched",
+  "selected_historical_entry_version": 79,
+  "selected_historical_version": {
+    "accession": "I6YBQ3",
+    "database": "Swiss-Prot",
+    "entryVersion": 79,
+    "firstRelease": "2026_01/2026_01",
+    "firstReleaseDate": "28-Jan-2026",
+    "lastRelease": "2026_01/2026_01",
+    "lastReleaseDate": "28-Jan-2026",
+    "name": "LRPA_MYCTU",
+    "sequenceVersion": 1
+  },
+  "selected_historical_record_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "selected_historical_source_sequence_sha256": "7c3cca14a3dc0a5c969dbabf92bf71698cbfd3cd6cb67d3adcbc553da785682e",
+  "selected_historical_source_sequence_length": 150,
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 79,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "actual_author_source_snapshot": "unknown",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+}
+```
+
+**Qualifications, unchanged:**
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+- Ontology names and EXACT synonyms match options mechanically; no answer-support judgment is made.
+- Only is_a and part_of edges are used in supplied graph paths; all qualifiers and obsolete/replaced_by tags remain in literal source blocks.
+- The ontology is newer than the benchmark repository commit; the exact author ontology snapshot is unknown.
+- No matching term or path does not establish that an option is false.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/I6YBQ3.json)
+
+```json
+{
+  "evidence_id": "C1",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "json_pointer": "/primaryAccession",
+  "excerpt": "\"I6YBQ3\"",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C2
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/I6YBQ3.json)
+
+```json
+{
+  "evidence_id": "C2",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "json_pointer": "/entryAudit",
+  "excerpt": "{\"entryVersion\":81,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2012-10-03\",\"sequenceVersion\":1}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C3
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/I6YBQ3.json)
+
+```json
+{
+  "evidence_id": "C3",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "json_pointer": "/organism",
+  "excerpt": "{\"lineage\":[\"Bacteria\",\"Bacillati\",\"Actinomycetota\",\"Actinomycetes\",\"Mycobacteriales\",\"Mycobacteriaceae\",\"Mycobacterium\",\"Mycobacterium tuberculosis complex\"],\"scientificName\":\"Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)\",\"taxonId\":83332}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/I6YBQ3.json)
+
+```json
+{
+  "evidence_id": "C4",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "json_pointer": "/proteinDescription",
+  "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17962306\",\"source\":\"PubMed\"}],\"value\":\"Feast/famine regulatory protein Rv3291c\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"17962306\",\"source\":\"PubMed\"}],\"value\":\"MtbLrp\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"26789099\",\"source\":\"PubMed\"}],\"value\":\"MtbLrpA\"}}],\"recommendedName\":{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"HTH-type transcriptional regulator LrpA\"}}}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/I6YBQ3.json)
+
+```json
+{
+  "evidence_id": "C5",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "json_pointer": "/uniProtKBCrossReferences/42",
+  "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0005829\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"C:cytosol\"},{\"key\":\"GoEvidenceType\",\"value\":\"IBA:GO_Central\"}]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C6
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/I6YBQ3.json)
+
+```json
+{
+  "evidence_id": "C6",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "json_pointer": "/references/5",
+  "excerpt": "{\"citation\":{\"authors\":[\"Song N.\",\"Cui Y.\",\"Li Z.\",\"Chen L.\",\"Liu S.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"26789099\"},{\"database\":\"DOI\",\"id\":\"10.1089/dna.2015.3040\"}],\"citationType\":\"journal article\",\"firstPage\":\"167\",\"id\":\"26789099\",\"journal\":\"DNA Cell Biol.\",\"lastPage\":\"176\",\"publicationDate\":\"2016\",\"title\":\"New Targets and Cofactors for the Transcription Factor LrpA from Mycobacterium tuberculosis.\",\"volume\":\"35\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"H37Rv\"}],\"referenceNumber\":6,\"referencePositions\":[\"FUNCTION\",\"ACTIVITY REGULATION\"]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C7
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/I6YBQ3.json)
+
+```json
+{
+  "evidence_id": "C7",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/I6YBQ3.json",
+  "source_sha256": "3978e04c41379d89d9a497b2d685cf726895877f193db390290b68c748badf35",
+  "retrieved_utc": "2026-11-01T06:25:10.289633+00:00",
+  "json_pointer": "/references/6",
+  "excerpt": "{\"citation\":{\"authors\":[\"Shrivastava T.\",\"Ramachandran R.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"17962306\"},{\"database\":\"DOI\",\"id\":\"10.1093/nar/gkm850\"}],\"citationType\":\"journal article\",\"firstPage\":\"7324\",\"id\":\"17962306\",\"journal\":\"Nucleic Acids Res.\",\"lastPage\":\"7335\",\"publicationDate\":\"2007\",\"title\":\"Mechanistic insights from the crystal structures of a feast/famine regulatory protein from Mycobacterium tuberculosis H37Rv.\",\"volume\":\"35\"},\"evidences\":[{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2IVM\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VBW\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VBX\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VBY\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VBZ\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VC0\",\"source\":\"PDB\"},{\"evidenceCode\":\"ECO:0007744\",\"id\":\"2VC1\",\"source\":\"PDB\"}],\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"H37Rv\"}],\"referenceNumber\":7,\"referencePositions\":[\"X-RAY CRYSTALLOGRAPHY (2.20 ANGSTROMS) OF APOPROTEIN AND IN COMPLEXES WITH HISTIDINE; LEUCINE; METHIONINE; PHENYLALANINE; TRYPTOPHAN AND TYROSINE\",\"ACTIVITY REGULATION\",\"SUBUNIT\",\"DOMAIN\"]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H1
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79)
+
+```json
+{
+  "evidence_id": "H1",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79",
+  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
+  "source_locator": "lines 1-15",
+  "excerpt": "ID   LRPA_MYCTU              Reviewed;         150 AA.\nAC   I6YBQ3;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   03-OCT-2012, sequence version 1.\nDT   28-JAN-2026, entry version 79.\nDE   RecName: Full=HTH-type transcriptional regulator LrpA {ECO:0000305};\nDE   AltName: Full=Feast/famine regulatory protein Rv3291c {ECO:0000303|PubMed:17962306};\nDE   AltName: Full=MtbLrp {ECO:0000303|PubMed:17962306};\nDE   AltName: Full=MtbLrpA {ECO:0000303|PubMed:26789099};\nGN   Name=lrpA {ECO:0000303|PubMed:18042675};\nGN   OrderedLocusNames=Rv3291c {ECO:0000312|EMBL:CCP46110.1};\nOS   Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv).\nOC   Bacteria; Bacillati; Actinomycetota; Actinomycetes; Mycobacteriales;\nOC   Mycobacteriaceae; Mycobacterium; Mycobacterium tuberculosis complex.\nOX   NCBI_TaxID=83332;\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 79,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H2
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79)
+
+```json
+{
+  "evidence_id": "H2",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79",
+  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
+  "source_locator": "lines 67-74",
+  "excerpt": "RN   [6]\nRP   FUNCTION, AND ACTIVITY REGULATION.\nRC   STRAIN=H37Rv;\nRX   PubMed=26789099; DOI=10.1089/dna.2015.3040;\nRA   Song N., Cui Y., Li Z., Chen L., Liu S.;\nRT   \"New Targets and Cofactors for the Transcription Factor LrpA from\nRT   Mycobacterium tuberculosis.\";\nRL   DNA Cell Biol. 35:167-176(2016).\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 79,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H3
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79)
+
+```json
+{
+  "evidence_id": "H3",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79",
+  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
+  "source_locator": "lines 75-84",
+  "excerpt": "RN   [7] {ECO:0007744|PDB:2IVM, ECO:0007744|PDB:2VBW, ECO:0007744|PDB:2VBX, ECO:0007744|PDB:2VBY, ECO:0007744|PDB:2VBZ, ECO:0007744|PDB:2VC0, ECO:0007744|PDB:2VC1}\nRP   X-RAY CRYSTALLOGRAPHY (2.20 ANGSTROMS) OF APOPROTEIN AND IN COMPLEXES WITH\nRP   HISTIDINE; LEUCINE; METHIONINE; PHENYLALANINE; TRYPTOPHAN AND TYROSINE,\nRP   ACTIVITY REGULATION, SUBUNIT, AND DOMAIN.\nRC   STRAIN=H37Rv;\nRX   PubMed=17962306; DOI=10.1093/nar/gkm850;\nRA   Shrivastava T., Ramachandran R.;\nRT   \"Mechanistic insights from the crystal structures of a feast/famine\nRT   regulatory protein from Mycobacterium tuberculosis H37Rv.\";\nRL   Nucleic Acids Res. 35:7324-7335(2007).\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 79,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H4
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79)
+
+```json
+{
+  "evidence_id": "H4",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79",
+  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
+  "source_locator": "lines 85-93",
+  "excerpt": "RN   [8] {ECO:0007744|PDB:2QZ8}\nRP   X-RAY CRYSTALLOGRAPHY (2.16 ANGSTROMS) OF 5-150 OF MUTANT MET-108,\nRP   FUNCTION, DNA-BINDING, ACTIVITY REGULATION, SUBUNIT, AND DOMAIN.\nRC   STRAIN=H37Rv;\nRX   PubMed=18042675; DOI=10.1110/ps.073192208;\nRA   Reddy M.C., Gokulan K., Jacobs W.R., Ioerger T.R., Sacchettini J.C.;\nRT   \"Crystal structure of Mycobacterium tuberculosis LrpA, a leucine-responsive\nRT   global regulator associated with starvation response.\";\nRL   Protein Sci. 17:159-170(2008).\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 79,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H5
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79)
+
+```json
+{
+  "evidence_id": "H5",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/I6YBQ3?format=txt&versions=79",
+  "source_sha256": "0d8bb5d3f126c254cc07f1a917b843bb272ed6b3990eb34e792e13bcb3ee45b0",
+  "retrieved_utc": "2026-11-01T06:28:11.636802+00:00",
+  "source_locator": "lines 193-193",
+  "excerpt": "DR   GO; GO:0005829; C:cytosol; IBA:GO_Central.\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 79,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence GO1
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)
+
+```json
+{
+  "evidence_id": "GO1",
+  "source": "Gene Ontology current ontology",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo",
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source_locator": "lines 58957-58974",
+  "excerpt": "[Term]\nid: GO:0005737\nname: cytoplasm\nnamespace: cellular_component\ndef: \"The contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures.\" [ISBN:0198547684]\nsubset: goslim_candida\nsubset: goslim_chembl\nsubset: goslim_metagenomics\nsubset: goslim_pir\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nsubset: goslim_prokaryote\nsubset: goslim_prokaryote_ribbon\nsubset: goslim_yeast\nxref: Wikipedia:Cytoplasm\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005622 ! intracellular anatomical structure\n\n",
+  "excerpt_format": "literal contiguous OBO lines",
+  "source_scope": "current ontology; exact historical benchmark ontology unknown",
+  "go_id": "GO:0005737"
+}
+```
+
+### Evidence GO2
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)
+
+```json
+{
+  "evidence_id": "GO2",
+  "source": "Gene Ontology current ontology",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo",
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source_locator": "lines 59936-59953",
+  "excerpt": "[Term]\nid: GO:0005829\nname: cytosol\nnamespace: cellular_component\ndef: \"The part of the cytoplasm that does not contain organelles but which does contain other particulate matter, such as protein complexes.\" [GOC:hjd, GOC:jl]\nsubset: goslim_agr\nsubset: goslim_chembl\nsubset: goslim_drosophila\nsubset: goslim_euk_cellular_processes_ribbon\nsubset: goslim_flybase_ribbon\nsubset: goslim_generic\nsubset: goslim_mouse\nsubset: goslim_plant\nxref: NIF_Subcellular:sao101633890\nxref: Wikipedia:Cytosol\nis_a: GO:0110165 ! cellular anatomical structure\nrelationship: part_of GO:0005737 ! cytoplasm\n\n",
+  "excerpt_format": "literal contiguous OBO lines",
+  "source_scope": "current ontology; exact historical benchmark ontology unknown",
+  "go_id": "GO:0005829"
+}
+```
+
+### Evidence GO3
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)
+
+```json
+{
+  "evidence_id": "GO3",
+  "source": "Gene Ontology current ontology",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo",
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source_locator": "lines 97029-97038",
+  "excerpt": "[Term]\nid: GO:0009507\nname: chloroplast\nnamespace: cellular_component\ndef: \"A chlorophyll-containing plastid with thylakoids organized into grana and frets, or stroma thylakoids, and embedded in a stroma.\" [ISBN:0471245208]\nsubset: goslim_plant\nsubset: goslim_plant_ribbon\nxref: Wikipedia:Chloroplast\nis_a: GO:0009536 ! plastid\n\n",
+  "excerpt_format": "literal contiguous OBO lines",
+  "source_scope": "current ontology; exact historical benchmark ontology unknown",
+  "go_id": "GO:0009507"
+}
+```
+
+### Evidence GO4
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)
+
+```json
+{
+  "evidence_id": "GO4",
+  "source": "Gene Ontology current ontology",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo",
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source_locator": "lines 342824-342831",
+  "excerpt": "[Term]\nid: GO:0055038\nname: recycling endosome membrane\nnamespace: cellular_component\ndef: \"The lipid bilayer surrounding a recycling endosome.\" [GOC:jid, GOC:rph, PMID:10930469, PMID:15601896, PMID:16246101]\nis_a: GO:0010008 ! endosome membrane\nrelationship: part_of GO:0055037 ! recycling endosome\n\n",
+  "excerpt_format": "literal contiguous OBO lines",
+  "source_scope": "current ontology; exact historical benchmark ontology unknown",
+  "go_id": "GO:0055038"
+}
+```
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/GO_cellular_component.json), zero-based source row 29. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). [Source credits](../THIRD_PARTY_NOTICES.md).

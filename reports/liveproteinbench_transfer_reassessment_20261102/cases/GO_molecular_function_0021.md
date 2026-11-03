@@ -1,0 +1,960 @@
+# GO_molecular_function_0021: before and after transfer clarification
+
+[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/GO_molecular_function_0021.txt)
+
+**Task:** `GO_molecular_function`  
+**Author key, unchanged:** **A** — riboflavin reductase (NADPH) activity
+
+| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
+|---|---|---|---|---|
+| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
+| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
+| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+
+**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MKADVFDPRALREAFGAFPTAVTVITASDPAGRPVGFTANSFTSVSLDPPLLLVCVAKTARDYSTMTAAEHFAINILSEAQKDVSIKFARPLEDRFAAVDWARAPNGCPIFAQVAAWFECSMHDVIEAGDHVMMVGRVTAFKSSGLNGLGYARGGYFAPSVAAKANSSAAGGEIGAVAVLERHAALFPLGDQNLSLPRYSAAGGDPAKTLASQLERSGLSVHDWLSLLDL
+
+[Multiple Choices]
+A. riboflavin reductase (NADPH) activity
+B. fucokinase activity
+C. class I DNA-(apurinic or apyrimidinic site) endonuclease activity
+D. histone H3K18 acetyltransferase activity
+```
+
+<details>
+<summary>Complete original system instructions</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Gene Ontology (GO) Molecular Function Prediction, which is to predict the fundamental activity of a protein at the molecular level, as defined by the Gene Ontology (GO) 'Molecular Function' branch. This describes the elemental tasks a protein performs, such as catalysis, transport, or binding to specific molecules. Based on the protein's amino acid sequence, you are to select the option that best describes its primary molecular function.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## Four saved visible reviews
+
+## Before: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The exact sequence matches a historical UniProt record that assigns option A, but the GO assignment is computational (IEA:TreeGrafter), not direct experimental validation. The record describes Stc3 as a stachydrine-catabolism reductase subunit and says NAD(P)H electron transfer is probable, which does not independently establish riboflavin reductase catalysis.
+
+Citations as saved: [H6](#evidence-h6), [C7](#evidence-c7), [H4](#evidence-h4).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence is compatible with a soluble enzyme, but the supplied sequence and choices do not provide a distinctive basis for inferring this specific riboflavin-reductase activity over other functions.
+
+
+**Missing item-specific fact**
+
+> The protein-specific GO assignment or functional characterization linking this exact sequence to riboflavin reductase activity.
+
+
+**Reason**
+
+> Selecting A depends on an item-specific annotation or remembered protein identity; the sequence alone does not establish the precise molecular function.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The matched record assigns A, and the alternatives describe distinct activities with no evidence here supporting them. However, the support for A is computational rather than direct experimental confirmation.
+
+
+### Important caveats
+
+- The historical and current records match the supplied sequence.
+- The record's Stc3 function is associated with stachydrine catabolism; its proposed NAD(P)H electron-transfer role is qualified as probable.
+- The GO term assignment should not be treated as experimental proof of the specific activity.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence is compatible with a soluble enzyme, but the supplied sequence and choices do not provide a distinctive basis for inferring this specific riboflavin-reductase activity over other functions.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The protein-specific GO assignment or functional characterization linking this exact sequence to riboflavin reductase activity.",
+    "reason": "Selecting A depends on an item-specific annotation or remembered protein identity; the sequence alone does not establish the precise molecular function."
+  },
+  "case_id": "GO_molecular_function_0021",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "H6",
+      "C7",
+      "H4"
+    ],
+    "judgment": "supported",
+    "reason": "The exact sequence matches a historical UniProt record that assigns option A, but the GO assignment is computational (IEA:TreeGrafter), not direct experimental validation. The record describes Stc3 as a stachydrine-catabolism reductase subunit and says NAD(P)H electron transfer is probable, which does not independently establish riboflavin reductase catalysis."
+  },
+  "important_caveats": [
+    "The historical and current records match the supplied sequence.",
+    "The record's Stc3 function is associated with stachydrine catabolism; its proposed NAD(P)H electron-transfer role is qualified as probable.",
+    "The GO term assignment should not be treated as experimental proof of the specific activity."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The matched record assigns A, and the alternatives describe distinct activities with no evidence here supporting them. However, the support for A is computational rather than direct experimental confirmation."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "GO_molecular_function_0021",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The exact sequence matches a historical UniProt record that assigns option A, but the GO assignment is computational (IEA:TreeGrafter), not direct experimental validation. The record describes Stc3 as a stachydrine-catabolism reductase subunit and says NAD(P)H electron transfer is probable, which does not independently establish riboflavin reductase catalysis.",
+    "evidence_ids": ["H6", "C7", "H4"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence is compatible with a soluble enzyme, but the supplied sequence and choices do not provide a distinctive basis for inferring this specific riboflavin-reductase activity over other functions.",
+    "missing_item_specific_fact": "The protein-specific GO assignment or functional characterization linking this exact sequence to riboflavin reductase activity.",
+    "reason": "Selecting A depends on an item-specific annotation or remembered protein identity; the sequence alone does not establish the precise molecular function."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The matched record assigns A, and the alternatives describe distinct activities with no evidence here supporting them. However, the support for A is computational rather than direct experimental confirmation."
+  },
+  "important_caveats": [
+    "The historical and current records match the supplied sequence.",
+    "The record's Stc3 function is associated with stachydrine catabolism; its proposed NAD(P)H electron-transfer role is qualified as probable.",
+    "The GO term assignment should not be treated as experimental proof of the specific activity."
+  ]
+}
+```
+
+</details>
+
+## Before: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The GO annotation GO:0042602 (riboflavin reductase (NADPH) activity) is present on UniProt entry Q92ZP7 (evidence_id C7/H6), matching the benchmark sequence exactly. However, the evidence code is IEA:TreeGrafter (computational inference), not experimental. The experimentally supported function (ECO:0000269, PubMed:10689197 and 22224443) describes this protein as a reductase transferring electrons from NAD(P)H to a Rieske-type oxygenase (Stc2) in stachydrine catabolism, with EC 1.5.1.- (generic). The riboflavin reductase annotation is a reasonable computational inference given FMN binding (GO:0010181, IEA:InterPro) and NAD(P)H electron-transfer role, but it is not directly experimentally demonstrated for this specific protein.
+
+Citations as saved: [C7](#evidence-c7), [H6](#evidence-h6), [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [GO1](#evidence-go1).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> Weak reasoning exists: the 230-AA bacterial protein size is inconsistent with histone acetyltransferase (D, eukaryotic GNAT-domain enzyme) and somewhat atypical for fucokinase (B, usually ~300+ AA with P-loop motifs). Small size and bacterial origin are loosely consistent with flavin reductases (A). However, distinguishing A from B or C with confidence requires recognizing specific FMN-binding motifs (e.g., the GxGxxG-like flavin-binding loops) versus kinase or AP-endonuclease motifs, which is not clearly extractable from the provided sequence by general reasoning alone.
+
+
+**Missing item-specific fact**
+
+> The experimentally determined function of this protein is stachydrine N-demethylase electron-transfer subunit (EC 1.5.1.-), not specifically riboflavin reductase (EC 1.5.1.30). The riboflavin reductase annotation is an IEA:TreeGrafter computational prediction. Identifying the correct option depends on knowing this specific annotation rather than deriving it from sequence motifs.
+
+
+**Reason**
+
+> The expected answer corresponds to a computational GO annotation (IEA:TreeGrafter) that approximates but does not precisely match the experimentally verified function. From the 230-aa sequence alone, general biological reasoning can eliminate D (eukaryotic histone modifier) with high confidence and perhaps C, but the A-vs-B distinction relies on recognizing specific flavin-reductase sequence signatures or recalling this protein's database annotation. The true experimental function (stachydrine demethylase electron transfer) matches none of the four options exactly, further indicating the answer depends on a specific annotation rather than derivable reasoning.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> While the experimental function (stachydrine demethylase electron transfer, EC 1.5.1.-) does not perfectly match any option, the four choices are sufficiently distinct (flavin reductase, kinase, DNA repair lyase, histone acetyltransferase) that only A is in the correct enzyme superfamily (oxidoreductase acting on CH-NH group, EC 1.5.x). The other three belong to entirely different EC classes (2.7.x, 4.2.x, and transferase). Thus A is the only defensible choice among the four, even if the precise GO term is a computational approximation.
+
+
+### Important caveats
+
+- The GO:0042602 annotation carries evidence code IEA:TreeGrafter (computational), not experimental evidence. The experimentally supported function is stachydrine demethylase electron transfer, not riboflavin reductase per se.
+- The EC number is 1.5.1.- (generic), not 1.5.1.30 (riboflavin reductase), indicating the specific substrate is not experimentally confirmed as riboflavin/FMN in isolation.
+- The protein's true role is as an electron-transfer subunit within a multi-enzyme Rieske-type oxygenase complex, which is broader than the riboflavin reductase term implies.
+- The GO term GO:0042602 includes synonyms such as 'NADPH-FMN reductase activity' and 'NADPH-specific FMN reductase activity' that are closer to the protein's actual electron-transfer function.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "Weak reasoning exists: the 230-AA bacterial protein size is inconsistent with histone acetyltransferase (D, eukaryotic GNAT-domain enzyme) and somewhat atypical for fucokinase (B, usually ~300+ AA with P-loop motifs). Small size and bacterial origin are loosely consistent with flavin reductases (A). However, distinguishing A from B or C with confidence requires recognizing specific FMN-binding motifs (e.g., the GxGxxG-like flavin-binding loops) versus kinase or AP-endonuclease motifs, which is not clearly extractable from the provided sequence by general reasoning alone.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The experimentally determined function of this protein is stachydrine N-demethylase electron-transfer subunit (EC 1.5.1.-), not specifically riboflavin reductase (EC 1.5.1.30). The riboflavin reductase annotation is an IEA:TreeGrafter computational prediction. Identifying the correct option depends on knowing this specific annotation rather than deriving it from sequence motifs.",
+    "reason": "The expected answer corresponds to a computational GO annotation (IEA:TreeGrafter) that approximates but does not precisely match the experimentally verified function. From the 230-aa sequence alone, general biological reasoning can eliminate D (eukaryotic histone modifier) with high confidence and perhaps C, but the A-vs-B distinction relies on recognizing specific flavin-reductase sequence signatures or recalling this protein's database annotation. The true experimental function (stachydrine demethylase electron transfer) matches none of the four options exactly, further indicating the answer depends on a specific annotation rather than derivable reasoning."
+  },
+  "case_id": "GO_molecular_function_0021",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C7",
+      "H6",
+      "C5",
+      "H4",
+      "C4",
+      "GO1"
+    ],
+    "judgment": "supported",
+    "reason": "The GO annotation GO:0042602 (riboflavin reductase (NADPH) activity) is present on UniProt entry Q92ZP7 (evidence_id C7/H6), matching the benchmark sequence exactly. However, the evidence code is IEA:TreeGrafter (computational inference), not experimental. The experimentally supported function (ECO:0000269, PubMed:10689197 and 22224443) describes this protein as a reductase transferring electrons from NAD(P)H to a Rieske-type oxygenase (Stc2) in stachydrine catabolism, with EC 1.5.1.- (generic). The riboflavin reductase annotation is a reasonable computational inference given FMN binding (GO:0010181, IEA:InterPro) and NAD(P)H electron-transfer role, but it is not directly experimentally demonstrated for this specific protein."
+  },
+  "important_caveats": [
+    "The GO:0042602 annotation carries evidence code IEA:TreeGrafter (computational), not experimental evidence. The experimentally supported function is stachydrine demethylase electron transfer, not riboflavin reductase per se.",
+    "The EC number is 1.5.1.- (generic), not 1.5.1.30 (riboflavin reductase), indicating the specific substrate is not experimentally confirmed as riboflavin/FMN in isolation.",
+    "The protein's true role is as an electron-transfer subunit within a multi-enzyme Rieske-type oxygenase complex, which is broader than the riboflavin reductase term implies.",
+    "The GO term GO:0042602 includes synonyms such as 'NADPH-FMN reductase activity' and 'NADPH-specific FMN reductase activity' that are closer to the protein's actual electron-transfer function."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "While the experimental function (stachydrine demethylase electron transfer, EC 1.5.1.-) does not perfectly match any option, the four choices are sufficiently distinct (flavin reductase, kinase, DNA repair lyase, histone acetyltransferase) that only A is in the correct enzyme superfamily (oxidoreductase acting on CH-NH group, EC 1.5.x). The other three belong to entirely different EC classes (2.7.x, 4.2.x, and transferase). Thus A is the only defensible choice among the four, even if the precise GO term is a computational approximation."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "GO_molecular_function_0021",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The GO annotation GO:0042602 (riboflavin reductase (NADPH) activity) is present on UniProt entry Q92ZP7 (evidence_id C7/H6), matching the benchmark sequence exactly. However, the evidence code is IEA:TreeGrafter (computational inference), not experimental. The experimentally supported function (ECO:0000269, PubMed:10689197 and 22224443) describes this protein as a reductase transferring electrons from NAD(P)H to a Rieske-type oxygenase (Stc2) in stachydrine catabolism, with EC 1.5.1.- (generic). The riboflavin reductase annotation is a reasonable computational inference given FMN binding (GO:0010181, IEA:InterPro) and NAD(P)H electron-transfer role, but it is not directly experimentally demonstrated for this specific protein.",
+    "evidence_ids": ["C7", "H6", "C5", "H4", "C4", "GO1"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "Weak reasoning exists: the 230-AA bacterial protein size is inconsistent with histone acetyltransferase (D, eukaryotic GNAT-domain enzyme) and somewhat atypical for fucokinase (B, usually ~300+ AA with P-loop motifs). Small size and bacterial origin are loosely consistent with flavin reductases (A). However, distinguishing A from B or C with confidence requires recognizing specific FMN-binding motifs (e.g., the GxGxxG-like flavin-binding loops) versus kinase or AP-endonuclease motifs, which is not clearly extractable from the provided sequence by general reasoning alone.",
+    "missing_item_specific_fact": "The experimentally determined function of this protein is stachydrine N-demethylase electron-transfer subunit (EC 1.5.1.-), not specifically riboflavin reductase (EC 1.5.1.30). The riboflavin reductase annotation is an IEA:TreeGrafter computational prediction. Identifying the correct option depends on knowing this specific annotation rather than deriving it from sequence motifs.",
+    "reason": "The expected answer corresponds to a computational GO annotation (IEA:TreeGrafter) that approximates but does not precisely match the experimentally verified function. From the 230-aa sequence alone, general biological reasoning can eliminate D (eukaryotic histone modifier) with high confidence and perhaps C, but the A-vs-B distinction relies on recognizing specific flavin-reductase sequence signatures or recalling this protein's database annotation. The true experimental function (stachydrine demethylase electron transfer) matches none of the four options exactly, further indicating the answer depends on a specific annotation rather than derivable reasoning."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "While the experimental function (stachydrine demethylase electron transfer, EC 1.5.1.-) does not perfectly match any option, the four choices are sufficiently distinct (flavin reductase, kinase, DNA repair lyase, histone acetyltransferase) that only A is in the correct enzyme superfamily (oxidoreductase acting on CH-NH group, EC 1.5.x). The other three belong to entirely different EC classes (2.7.x, 4.2.x, and transferase). Thus A is the only defensible choice among the four, even if the precise GO term is a computational approximation."
+  },
+  "important_caveats": [
+    "The GO:0042602 annotation carries evidence code IEA:TreeGrafter (computational), not experimental evidence. The experimentally supported function is stachydrine demethylase electron transfer, not riboflavin reductase per se.",
+    "The EC number is 1.5.1.- (generic), not 1.5.1.30 (riboflavin reductase), indicating the specific substrate is not experimentally confirmed as riboflavin/FMN in isolation.",
+    "The protein's true role is as an electron-transfer subunit within a multi-enzyme Rieske-type oxygenase complex, which is broader than the riboflavin reductase term implies.",
+    "The GO term GO:0042602 includes synonyms such as 'NADPH-FMN reductase activity' and 'NADPH-specific FMN reductase activity' that are closer to the protein's actual electron-transfer function."
+  ]
+}
+```
+
+</details>
+
+## After: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The sequence-matched UniProt record assigns option A by computational IEA:TreeGrafter annotation (C7). The record also describes a reductase subunit involved in NAD(P)H-to-enzyme electron transfer and reports FMN binding, which is consistent with a flavin-reductase function (C5, C6). The exact riboflavin-reduction activity is not shown as directly experimentally established in these excerpts.
+
+Citations as saved: [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The 230-aa sequence is consistent with a compact, soluble bacterial flavin/NAD(P)H oxidoreductase-type protein. Transferable recognition of that enzyme class makes the redox/flavin option A substantially more plausible than fucokinase, an AP-site DNA lyase, or a histone-specific acetyltransferase; the alternatives imply quite different substrate and enzyme classes.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> A family-level flavin-reductase inference can distinguish the offered choices without knowing this protein's database record. The sequence alone may not establish the precise riboflavin substrate or reaction, so the inference is stronger for choosing among these alternatives than for proving the full GO annotation.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The sequence and transferable enzyme-class inference favor A; none of the other options is comparably plausible from the supplied input.
+
+
+### Important caveats
+
+- The exact riboflavin reductase activity is computationally annotated in the supplied record; the cited functional description supports a broader NAD(P)H-dependent electron-transfer role, not necessarily direct riboflavin reduction.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The 230-aa sequence is consistent with a compact, soluble bacterial flavin/NAD(P)H oxidoreductase-type protein. Transferable recognition of that enzyme class makes the redox/flavin option A substantially more plausible than fucokinase, an AP-site DNA lyase, or a histone-specific acetyltransferase; the alternatives imply quite different substrate and enzyme classes.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "A family-level flavin-reductase inference can distinguish the offered choices without knowing this protein's database record. The sequence alone may not establish the precise riboflavin substrate or reaction, so the inference is stronger for choosing among these alternatives than for proving the full GO annotation."
+  },
+  "case_id": "GO_molecular_function_0021",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "C6",
+      "C7"
+    ],
+    "judgment": "supported",
+    "reason": "The sequence-matched UniProt record assigns option A by computational IEA:TreeGrafter annotation (C7). The record also describes a reductase subunit involved in NAD(P)H-to-enzyme electron transfer and reports FMN binding, which is consistent with a flavin-reductase function (C5, C6). The exact riboflavin-reduction activity is not shown as directly experimentally established in these excerpts."
+  },
+  "important_caveats": [
+    "The exact riboflavin reductase activity is computationally annotated in the supplied record; the cited functional description supports a broader NAD(P)H-dependent electron-transfer role, not necessarily direct riboflavin reduction."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The sequence and transferable enzyme-class inference favor A; none of the other options is comparably plausible from the supplied input."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "GO_molecular_function_0021",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The sequence-matched UniProt record assigns option A by computational IEA:TreeGrafter annotation (C7). The record also describes a reductase subunit involved in NAD(P)H-to-enzyme electron transfer and reports FMN binding, which is consistent with a flavin-reductase function (C5, C6). The exact riboflavin-reduction activity is not shown as directly experimentally established in these excerpts.",
+    "evidence_ids": ["C5", "C6", "C7"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The 230-aa sequence is consistent with a compact, soluble bacterial flavin/NAD(P)H oxidoreductase-type protein. Transferable recognition of that enzyme class makes the redox/flavin option A substantially more plausible than fucokinase, an AP-site DNA lyase, or a histone-specific acetyltransferase; the alternatives imply quite different substrate and enzyme classes.",
+    "missing_item_specific_fact": "",
+    "reason": "A family-level flavin-reductase inference can distinguish the offered choices without knowing this protein's database record. The sequence alone may not establish the precise riboflavin substrate or reaction, so the inference is stronger for choosing among these alternatives than for proving the full GO annotation."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The sequence and transferable enzyme-class inference favor A; none of the other options is comparably plausible from the supplied input."
+  },
+  "important_caveats": [
+    "The exact riboflavin reductase activity is computationally annotated in the supplied record; the cited functional description supports a broader NAD(P)H-dependent electron-transfer role, not necessarily direct riboflavin reduction."
+  ]
+}
+```
+
+</details>
+
+## After: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The UniProt entry Q92ZP7 annotates GO:0042602 (riboflavin reductase (NADPH) activity) with evidence code IEA:TreeGrafter (C7, H6). While this is a computational annotation rather than direct experimental evidence, the protein's experimentally supported function (PubMed:10689197, PubMed:22224443) is as a reductase subunit that transfers electrons from NAD(P)H to a catalytic partner, with EC 1.5.1.- classification placing it in the same EC family as EC 1.5.1.30 (riboflavin reductase). The FMN-binding annotation (GO:0010181, IEA:InterPro) is also consistent. The annotation is computationally transferred but biochemically consistent with the protein's demonstrated NAD(P)H-dependent reductase activity involving a flavin cofactor.
+
+Citations as saved: [C7](#evidence-c7), [H6](#evidence-h6), [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [C6](#evidence-c6).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> Several transferable biological inferences distinguish option A from B, C, and D: (1) The protein is clearly bacterial (sequence composition, no signal peptides typical of eukaryotic proteins, no histone-like motifs). Option D (histone H3K18 acetyltransferase) requires a eukaryotic histone substrate, which bacteria lack entirely—this eliminates D. (2) The sequence (~230 aa) lacks the Walker A/B or P-loop kinase motifs characteristic of fucokinase (option B, EC 2.7.1.52), making a kinase assignment implausible. (3) The sequence lacks the conserved catalytic residues (e.g., the DEDD or HhH-GPD motifs) of class I AP endonucleases (option C). (4) The sequence length, composition, and presence of motifs like 'IGAVAV' near the C-terminus are consistent with small flavoprotein reductases (120–250 aa, FMN-binding Rossmann-like or β-barrel folds) that use NADPH. Among the four choices, only A (riboflavin reductase (NADPH) activity, EC 1.5.1.30) describes a small NADPH-dependent flavin reductase, matching the sequence's apparent fold class and cofactor usage. A knowledgeable model recognizing bacterial flavin reductase family features could select A over the three structurally and mechanistically incompatible alternatives.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> The bacterial origin eliminates the eukaryotic histone acetyltransferase (D). The absence of kinase motifs disfavors fucokinase (B). The absence of AP endonuclease catalytic features disfavors C. The small size, flavin-binding-like motifs, and NADPH-reductase character of the sequence are most consistent with option A. This constitutes a concrete, transferable inference from general protein-family knowledge without requiring recall of this specific protein's database entry.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The bacterial context definitively eliminates D (histone acetyltransferase). The absence of kinase and nuclease motifs makes B and C implausible. Option A is the only flavin reductase among the choices and is the sole option consistent with the sequence's apparent fold class and cofactor usage. No other option is defensible given the sequence features.
+
+
+### Important caveats
+
+- The GO:0042602 annotation is IEA:TreeGrafter (computational), not experimentally verified for this specific protein. The experimental evidence supports a reductase role in stachydrine catabolism electron transfer, which is broadly consistent with but not identical to canonical riboflavin reductase activity.
+- The protein's physiological role is as a reductase subunit in a Rieske-type oxygenase complex (transferring electrons to Stc2), not in riboflavin metabolism per se. The GO annotation captures the chemical activity (NADPH-dependent flavin reduction) rather than the physiological pathway.
+- The reviewer-only evidence confirms sequence match to Q92ZP7 but the model was not given organism or accession information; reasoning must rely on sequence-intrinsic features and general biological knowledge.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "Several transferable biological inferences distinguish option A from B, C, and D: (1) The protein is clearly bacterial (sequence composition, no signal peptides typical of eukaryotic proteins, no histone-like motifs). Option D (histone H3K18 acetyltransferase) requires a eukaryotic histone substrate, which bacteria lack entirely—this eliminates D. (2) The sequence (~230 aa) lacks the Walker A/B or P-loop kinase motifs characteristic of fucokinase (option B, EC 2.7.1.52), making a kinase assignment implausible. (3) The sequence lacks the conserved catalytic residues (e.g., the DEDD or HhH-GPD motifs) of class I AP endonucleases (option C). (4) The sequence length, composition, and presence of motifs like 'IGAVAV' near the C-terminus are consistent with small flavoprotein reductases (120–250 aa, FMN-binding Rossmann-like or β-barrel folds) that use NADPH. Among the four choices, only A (riboflavin reductase (NADPH) activity, EC 1.5.1.30) describes a small NADPH-dependent flavin reductase, matching the sequence's apparent fold class and cofactor usage. A knowledgeable model recognizing bacterial flavin reductase family features could select A over the three structurally and mechanistically incompatible alternatives.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "The bacterial origin eliminates the eukaryotic histone acetyltransferase (D). The absence of kinase motifs disfavors fucokinase (B). The absence of AP endonuclease catalytic features disfavors C. The small size, flavin-binding-like motifs, and NADPH-reductase character of the sequence are most consistent with option A. This constitutes a concrete, transferable inference from general protein-family knowledge without requiring recall of this specific protein's database entry."
+  },
+  "case_id": "GO_molecular_function_0021",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C7",
+      "H6",
+      "C5",
+      "H4",
+      "C4",
+      "C6"
+    ],
+    "judgment": "supported",
+    "reason": "The UniProt entry Q92ZP7 annotates GO:0042602 (riboflavin reductase (NADPH) activity) with evidence code IEA:TreeGrafter (C7, H6). While this is a computational annotation rather than direct experimental evidence, the protein's experimentally supported function (PubMed:10689197, PubMed:22224443) is as a reductase subunit that transfers electrons from NAD(P)H to a catalytic partner, with EC 1.5.1.- classification placing it in the same EC family as EC 1.5.1.30 (riboflavin reductase). The FMN-binding annotation (GO:0010181, IEA:InterPro) is also consistent. The annotation is computationally transferred but biochemically consistent with the protein's demonstrated NAD(P)H-dependent reductase activity involving a flavin cofactor."
+  },
+  "important_caveats": [
+    "The GO:0042602 annotation is IEA:TreeGrafter (computational), not experimentally verified for this specific protein. The experimental evidence supports a reductase role in stachydrine catabolism electron transfer, which is broadly consistent with but not identical to canonical riboflavin reductase activity.",
+    "The protein's physiological role is as a reductase subunit in a Rieske-type oxygenase complex (transferring electrons to Stc2), not in riboflavin metabolism per se. The GO annotation captures the chemical activity (NADPH-dependent flavin reduction) rather than the physiological pathway.",
+    "The reviewer-only evidence confirms sequence match to Q92ZP7 but the model was not given organism or accession information; reasoning must rely on sequence-intrinsic features and general biological knowledge."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The bacterial context definitively eliminates D (histone acetyltransferase). The absence of kinase and nuclease motifs makes B and C implausible. Option A is the only flavin reductase among the choices and is the sole option consistent with the sequence's apparent fold class and cofactor usage. No other option is defensible given the sequence features."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "GO_molecular_function_0021",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The UniProt entry Q92ZP7 annotates GO:0042602 (riboflavin reductase (NADPH) activity) with evidence code IEA:TreeGrafter (C7, H6). While this is a computational annotation rather than direct experimental evidence, the protein's experimentally supported function (PubMed:10689197, PubMed:22224443) is as a reductase subunit that transfers electrons from NAD(P)H to a catalytic partner, with EC 1.5.1.- classification placing it in the same EC family as EC 1.5.1.30 (riboflavin reductase). The FMN-binding annotation (GO:0010181, IEA:InterPro) is also consistent. The annotation is computationally transferred but biochemically consistent with the protein's demonstrated NAD(P)H-dependent reductase activity involving a flavin cofactor.",
+    "evidence_ids": ["C7", "H6", "C5", "H4", "C4", "C6"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "Several transferable biological inferences distinguish option A from B, C, and D: (1) The protein is clearly bacterial (sequence composition, no signal peptides typical of eukaryotic proteins, no histone-like motifs). Option D (histone H3K18 acetyltransferase) requires a eukaryotic histone substrate, which bacteria lack entirely—this eliminates D. (2) The sequence (~230 aa) lacks the Walker A/B or P-loop kinase motifs characteristic of fucokinase (option B, EC 2.7.1.52), making a kinase assignment implausible. (3) The sequence lacks the conserved catalytic residues (e.g., the DEDD or HhH-GPD motifs) of class I AP endonucleases (option C). (4) The sequence length, composition, and presence of motifs like 'IGAVAV' near the C-terminus are consistent with small flavoprotein reductases (120–250 aa, FMN-binding Rossmann-like or β-barrel folds) that use NADPH. Among the four choices, only A (riboflavin reductase (NADPH) activity, EC 1.5.1.30) describes a small NADPH-dependent flavin reductase, matching the sequence's apparent fold class and cofactor usage. A knowledgeable model recognizing bacterial flavin reductase family features could select A over the three structurally and mechanistically incompatible alternatives.",
+    "missing_item_specific_fact": "",
+    "reason": "The bacterial origin eliminates the eukaryotic histone acetyltransferase (D). The absence of kinase motifs disfavors fucokinase (B). The absence of AP endonuclease catalytic features disfavors C. The small size, flavin-binding-like motifs, and NADPH-reductase character of the sequence are most consistent with option A. This constitutes a concrete, transferable inference from general protein-family knowledge without requiring recall of this specific protein's database entry."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The bacterial context definitively eliminates D (histone acetyltransferase). The absence of kinase and nuclease motifs makes B and C implausible. Option A is the only flavin reductase among the choices and is the sole option consistent with the sequence's apparent fold class and cofactor usage. No other option is defensible given the sequence features."
+  },
+  "important_caveats": [
+    "The GO:0042602 annotation is IEA:TreeGrafter (computational), not experimentally verified for this specific protein. The experimental evidence supports a reductase role in stachydrine catabolism electron transfer, which is broadly consistent with but not identical to canonical riboflavin reductase activity.",
+    "The protein's physiological role is as a reductase subunit in a Rieske-type oxygenase complex (transferring electrons to Stc2), not in riboflavin metabolism per se. The GO annotation captures the chemical activity (NADPH-dependent flavin reduction) rather than the physiological pathway.",
+    "The reviewer-only evidence confirms sequence match to Q92ZP7 but the model was not given organism or accession information; reasoning must rely on sequence-intrinsic features and general biological knowledge."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of the old Luna review only
+
+These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Complete reviewer-only evidence and qualifications
+
+All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+
+**Applicability metadata, unchanged:**
+
+```json
+{
+  "requested_accession": "Q92ZP7",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "benchmark_sequence_sha256": "33ec4d7da588febed1686015cdd9573f9ed88a688c8c27b62ff0b8a608df3a01",
+  "benchmark_sequence_length": 230,
+  "current_status": "retrieved",
+  "current_sequence_comparison": "matched",
+  "current_entry_audit": {
+    "entryVersion": 105,
+    "firstPublicDate": "2025-04-09",
+    "lastAnnotationUpdateDate": "2026-01-28",
+    "lastSequenceUpdateDate": "2001-12-01",
+    "sequenceVersion": 1
+  },
+  "current_uniprot_release": "2026_03",
+  "current_record_sha256": "4ec6a47ccea73964177beeee14c9f04560387c431404c54ea6f974146c062395",
+  "current_source_sequence_sha256": "33ec4d7da588febed1686015cdd9573f9ed88a688c8c27b62ff0b8a608df3a01",
+  "current_source_sequence_length": 230,
+  "historical_status": "retrieved",
+  "historical_cutoff_date": "2026-05-07",
+  "historical_sequence_comparison": "matched",
+  "selected_historical_entry_version": 105,
+  "selected_historical_version": {
+    "accession": "Q92ZP7",
+    "database": "Swiss-Prot",
+    "entryVersion": 105,
+    "firstRelease": "2026_01/2026_01",
+    "firstReleaseDate": "28-Jan-2026",
+    "lastRelease": "2026_03/2026_03",
+    "lastReleaseDate": "02-Sep-2026",
+    "name": "STC3_RHIME",
+    "sequenceVersion": 1
+  },
+  "selected_historical_record_sha256": "a263da48ab6f77836342eb683b45ac54f75f86bcb5d144c7b1ba29c3e116fd50",
+  "selected_historical_source_sequence_sha256": "33ec4d7da588febed1686015cdd9573f9ed88a688c8c27b62ff0b8a608df3a01",
+  "selected_historical_source_sequence_length": 230,
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 105,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "actual_author_source_snapshot": "unknown",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+}
+```
+
+**Qualifications, unchanged:**
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+- Ontology names and EXACT synonyms match options mechanically; no answer-support judgment is made.
+- Only is_a and part_of edges are used in supplied graph paths; all qualifiers and obsolete/replaced_by tags remain in literal source blocks.
+- The ontology is newer than the benchmark repository commit; the exact author ontology snapshot is unknown.
+- No matching term or path does not establish that an option is false.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q92ZP7.json)
+
+```json
+{
+  "evidence_id": "C1",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q92ZP7.json",
+  "source_sha256": "4ec6a47ccea73964177beeee14c9f04560387c431404c54ea6f974146c062395",
+  "retrieved_utc": "2026-11-02T04:32:32.319062+00:00",
+  "json_pointer": "/primaryAccession",
+  "excerpt": "\"Q92ZP7\"",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C2
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q92ZP7.json)
+
+```json
+{
+  "evidence_id": "C2",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q92ZP7.json",
+  "source_sha256": "4ec6a47ccea73964177beeee14c9f04560387c431404c54ea6f974146c062395",
+  "retrieved_utc": "2026-11-02T04:32:32.319062+00:00",
+  "json_pointer": "/entryAudit",
+  "excerpt": "{\"entryVersion\":105,\"firstPublicDate\":\"2025-04-09\",\"lastAnnotationUpdateDate\":\"2026-01-28\",\"lastSequenceUpdateDate\":\"2001-12-01\",\"sequenceVersion\":1}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C3
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q92ZP7.json)
+
+```json
+{
+  "evidence_id": "C3",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q92ZP7.json",
+  "source_sha256": "4ec6a47ccea73964177beeee14c9f04560387c431404c54ea6f974146c062395",
+  "retrieved_utc": "2026-11-02T04:32:32.319062+00:00",
+  "json_pointer": "/organism",
+  "excerpt": "{\"commonName\":\"Ensifer meliloti\",\"lineage\":[\"Bacteria\",\"Pseudomonadati\",\"Pseudomonadota\",\"Alphaproteobacteria\",\"Hyphomicrobiales\",\"Rhizobiaceae\",\"Sinorhizobium/Ensifer group\",\"Sinorhizobium\"],\"scientificName\":\"Rhizobium meliloti (strain 1021)\",\"synonyms\":[\"Sinorhizobium meliloti\"],\"taxonId\":266834}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q92ZP7.json)
+
+```json
+{
+  "evidence_id": "C4",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q92ZP7.json",
+  "source_sha256": "4ec6a47ccea73964177beeee14c9f04560387c431404c54ea6f974146c062395",
+  "retrieved_utc": "2026-11-02T04:32:32.319062+00:00",
+  "json_pointer": "/proteinDescription",
+  "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\",\"id\":\"10689197\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"22224443\",\"source\":\"PubMed\"}],\"value\":\"1.5.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000305\"}],\"value\":\"Stachydrine N-demethylase reductase subunit Stc3\"}}}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q92ZP7.json)
+
+```json
+{
+  "evidence_id": "C5",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q92ZP7.json",
+  "source_sha256": "4ec6a47ccea73964177beeee14c9f04560387c431404c54ea6f974146c062395",
+  "retrieved_utc": "2026-11-02T04:32:32.319062+00:00",
+  "json_pointer": "/comments/0",
+  "excerpt": "{\"commentType\":\"FUNCTION\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"10689197\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"22224443\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"10689197\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000305\",\"id\":\"22224443\",\"source\":\"PubMed\"}],\"value\":\"Reductase involved in the catabolism of stachydrine (L-proline betaine), a source of carbon and nitrogen (PubMed:10689197). Part of a Rieske-type oxygenase system that catalyzes the demethylation of stachydrine to produce N-methyl-L-proline (monomethylproline) (PubMed:22224443). This subunit is probably involved in the transfer of electrons from NAD(P)H to the catalytic subunit Stc2 (Probable)\"}]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C6
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q92ZP7.json)
+
+```json
+{
+  "evidence_id": "C6",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q92ZP7.json",
+  "source_sha256": "4ec6a47ccea73964177beeee14c9f04560387c431404c54ea6f974146c062395",
+  "retrieved_utc": "2026-11-02T04:32:32.319062+00:00",
+  "json_pointer": "/uniProtKBCrossReferences/12",
+  "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0010181\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:FMN binding\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:InterPro\"}]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C7
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q92ZP7.json)
+
+```json
+{
+  "evidence_id": "C7",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q92ZP7.json",
+  "source_sha256": "4ec6a47ccea73964177beeee14c9f04560387c431404c54ea6f974146c062395",
+  "retrieved_utc": "2026-11-02T04:32:32.319062+00:00",
+  "json_pointer": "/uniProtKBCrossReferences/13",
+  "excerpt": "{\"database\":\"GO\",\"id\":\"GO:0042602\",\"properties\":[{\"key\":\"GoTerm\",\"value\":\"F:riboflavin reductase (NADPH) activity\"},{\"key\":\"GoEvidenceType\",\"value\":\"IEA:TreeGrafter\"}]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C8
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q92ZP7.json)
+
+```json
+{
+  "evidence_id": "C8",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q92ZP7.json",
+  "source_sha256": "4ec6a47ccea73964177beeee14c9f04560387c431404c54ea6f974146c062395",
+  "retrieved_utc": "2026-11-02T04:32:32.319062+00:00",
+  "json_pointer": "/references/2",
+  "excerpt": "{\"citation\":{\"authors\":[\"Burnet M.W.\",\"Goldmann A.\",\"Message B.\",\"Drong R.\",\"El Amrani A.\",\"Loreau O.\",\"Slightom J.\",\"Tepfer D.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"10689197\"},{\"database\":\"DOI\",\"id\":\"10.1016/s0378-1119(99)00554-5\"}],\"citationType\":\"journal article\",\"firstPage\":\"151\",\"id\":\"10689197\",\"journal\":\"Gene\",\"lastPage\":\"161\",\"publicationDate\":\"2000\",\"title\":\"The stachydrine catabolism region in Sinorhizobium meliloti encodes a multi-enzyme complex similar to the xenobiotic degrading systems in other bacteria.\",\"volume\":\"244\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"Sm2011 / Rm2011 / 2011\"}],\"referenceNumber\":3,\"referencePositions\":[\"FUNCTION\"]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C9
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/Q92ZP7.json)
+
+```json
+{
+  "evidence_id": "C9",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/Q92ZP7.json",
+  "source_sha256": "4ec6a47ccea73964177beeee14c9f04560387c431404c54ea6f974146c062395",
+  "retrieved_utc": "2026-11-02T04:32:32.319062+00:00",
+  "json_pointer": "/references/3",
+  "excerpt": "{\"citation\":{\"authors\":[\"Daughtry K.D.\",\"Xiao Y.\",\"Stoner-Ma D.\",\"Cho E.\",\"Orville A.M.\",\"Liu P.\",\"Allen K.N.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"22224443\"},{\"database\":\"DOI\",\"id\":\"10.1021/ja2111898\"}],\"citationType\":\"journal article\",\"firstPage\":\"2823\",\"id\":\"22224443\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"2834\",\"publicationDate\":\"2012\",\"title\":\"Quaternary ammonium oxidative demethylation: X-ray crystallographic, resonance Raman, and UV-visible spectroscopic analysis of a Rieske-type demethylase.\",\"volume\":\"134\"},\"referenceComments\":[{\"type\":\"STRAIN\",\"value\":\"1021\"}],\"referenceNumber\":4,\"referencePositions\":[\"FUNCTION\"]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H1
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105)
+
+```json
+{
+  "evidence_id": "H1",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105",
+  "source_sha256": "a263da48ab6f77836342eb683b45ac54f75f86bcb5d144c7b1ba29c3e116fd50",
+  "retrieved_utc": "2026-11-02T04:32:34.355639+00:00",
+  "source_locator": "lines 1-16",
+  "excerpt": "ID   STC3_RHIME              Reviewed;         230 AA.\nAC   Q92ZP7;\nDT   09-APR-2025, integrated into UniProtKB/Swiss-Prot.\nDT   01-DEC-2001, sequence version 1.\nDT   28-JAN-2026, entry version 105.\nDE   RecName: Full=Stachydrine N-demethylase reductase subunit Stc3 {ECO:0000305};\nDE            EC=1.5.1.- {ECO:0000305|PubMed:10689197, ECO:0000305|PubMed:22224443};\nGN   Name=stc3 {ECO:0000303|PubMed:10689197};\nGN   OrderedLocusNames=RA0402 {ECO:0000305};\nGN   ORFNames=SMa0753 {ECO:0000312|EMBL:AAK65060.1};\nOS   Rhizobium meliloti (strain 1021) (Ensifer meliloti) (Sinorhizobium\nOS   meliloti).\nOG   Plasmid pSymA (megaplasmid 1).\nOC   Bacteria; Pseudomonadati; Pseudomonadota; Alphaproteobacteria;\nOC   Hyphomicrobiales; Rhizobiaceae; Sinorhizobium/Ensifer group; Sinorhizobium.\nOX   NCBI_TaxID=266834;\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 105,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H2
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105)
+
+```json
+{
+  "evidence_id": "H2",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105",
+  "source_sha256": "a263da48ab6f77836342eb683b45ac54f75f86bcb5d144c7b1ba29c3e116fd50",
+  "retrieved_utc": "2026-11-02T04:32:34.355639+00:00",
+  "source_locator": "lines 45-54",
+  "excerpt": "RN   [3]\nRP   FUNCTION.\nRC   STRAIN=Sm2011 / Rm2011 / 2011;\nRX   PubMed=10689197; DOI=10.1016/s0378-1119(99)00554-5;\nRA   Burnet M.W., Goldmann A., Message B., Drong R., El Amrani A., Loreau O.,\nRA   Slightom J., Tepfer D.;\nRT   \"The stachydrine catabolism region in Sinorhizobium meliloti encodes a\nRT   multi-enzyme complex similar to the xenobiotic degrading systems in other\nRT   bacteria.\";\nRL   Gene 244:151-161(2000).\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 105,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H3
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105)
+
+```json
+{
+  "evidence_id": "H3",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105",
+  "source_sha256": "a263da48ab6f77836342eb683b45ac54f75f86bcb5d144c7b1ba29c3e116fd50",
+  "retrieved_utc": "2026-11-02T04:32:34.355639+00:00",
+  "source_locator": "lines 55-64",
+  "excerpt": "RN   [4]\nRP   FUNCTION.\nRC   STRAIN=1021;\nRX   PubMed=22224443; DOI=10.1021/ja2111898;\nRA   Daughtry K.D., Xiao Y., Stoner-Ma D., Cho E., Orville A.M., Liu P.,\nRA   Allen K.N.;\nRT   \"Quaternary ammonium oxidative demethylation: X-ray crystallographic,\nRT   resonance Raman, and UV-visible spectroscopic analysis of a Rieske-type\nRT   demethylase.\";\nRL   J. Am. Chem. Soc. 134:2823-2834(2012).\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 105,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H4
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105)
+
+```json
+{
+  "evidence_id": "H4",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105",
+  "source_sha256": "a263da48ab6f77836342eb683b45ac54f75f86bcb5d144c7b1ba29c3e116fd50",
+  "retrieved_utc": "2026-11-02T04:32:34.355639+00:00",
+  "source_locator": "lines 65-72",
+  "excerpt": "CC   -!- FUNCTION: Reductase involved in the catabolism of stachydrine (L-\nCC       proline betaine), a source of carbon and nitrogen (PubMed:10689197).\nCC       Part of a Rieske-type oxygenase system that catalyzes the demethylation\nCC       of stachydrine to produce N-methyl-L-proline (monomethylproline)\nCC       (PubMed:22224443). This subunit is probably involved in the transfer of\nCC       electrons from NAD(P)H to the catalytic subunit Stc2 (Probable).\nCC       {ECO:0000269|PubMed:10689197, ECO:0000269|PubMed:22224443,\nCC       ECO:0000305|PubMed:10689197, ECO:0000305|PubMed:22224443}.\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 105,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H5
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105)
+
+```json
+{
+  "evidence_id": "H5",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105",
+  "source_sha256": "a263da48ab6f77836342eb683b45ac54f75f86bcb5d144c7b1ba29c3e116fd50",
+  "retrieved_utc": "2026-11-02T04:32:34.355639+00:00",
+  "source_locator": "lines 94-94",
+  "excerpt": "DR   GO; GO:0010181; F:FMN binding; IEA:InterPro.\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 105,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H6
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105)
+
+```json
+{
+  "evidence_id": "H6",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/Q92ZP7?format=txt&versions=105",
+  "source_sha256": "a263da48ab6f77836342eb683b45ac54f75f86bcb5d144c7b1ba29c3e116fd50",
+  "retrieved_utc": "2026-11-02T04:32:34.355639+00:00",
+  "source_locator": "lines 95-95",
+  "excerpt": "DR   GO; GO:0042602; F:riboflavin reductase (NADPH) activity; IEA:TreeGrafter.\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 105,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence GO1
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)
+
+```json
+{
+  "evidence_id": "GO1",
+  "source": "Gene Ontology current ontology",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo",
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source_locator": "lines 239050-239075",
+  "excerpt": "[Term]\nid: GO:0042602\nname: riboflavin reductase (NADPH) activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: reduced riboflavin + NADP+ = riboflavin + NADPH + 2 H+.\" [RHEA:19377]\nsynonym: \"flavin reductase activity\" RELATED [EC:1.5.1.30]\nsynonym: \"FMN reductase (NADPH) activity\" RELATED [EC:1.5.1.30]\nsynonym: \"NADPH dehydrogenase (riboflavin) activity\" RELATED [EC:1.5.1.30]\nsynonym: \"NADPH-dependent FMN reductase activity\" RELATED [EC:1.5.1.30]\nsynonym: \"NADPH-FMN reductase activity\" RELATED [EC:1.5.1.30]\nsynonym: \"NADPH-riboflavin oxidoreductase activity\" EXACT []\nsynonym: \"NADPH-riboflavin reductase activity\" RELATED [EC:1.5.1.30]\nsynonym: \"NADPH-specific FMN reductase activity\" RELATED [EC:1.5.1.30]\nsynonym: \"NADPH:riboflavin oxidoreductase activity\" RELATED [EC:1.5.1.30]\nsynonym: \"reduced-riboflavin:NADP+ oxidoreductase activity\" RELATED [EC:1.5.1.30]\nsynonym: \"riboflavin mononucleotide (reduced nicotinamide adenine dinucleotide phosphate) reductase activity\" RELATED [EC:1.5.1.30]\nsynonym: \"riboflavin mononucleotide reductase activity\" BROAD [EC:1.5.1.30]\nsynonym: \"riboflavine mononucleotide reductase activity\" BROAD [EC:1.5.1.30]\nxref: EC:1.5.1.30\nxref: KEGG_REACTION:R05707\nxref: MetaCyc:NADPH-DEHYDROGENASE-FLAVIN-RXN\nxref: RHEA:19377\nis_a: GO:0052875 ! riboflavin reductase [NAD(P)H] activity\nproperty_value: skos:exactMatch EC:1.5.1.30\nproperty_value: skos:exactMatch RHEA:19377\n\n",
+  "excerpt_format": "literal contiguous OBO lines",
+  "source_scope": "current ontology; exact historical benchmark ontology unknown",
+  "go_id": "GO:0042602"
+}
+```
+
+### Evidence GO2
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)
+
+```json
+{
+  "evidence_id": "GO2",
+  "source": "Gene Ontology current ontology",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo",
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source_locator": "lines 253315-253327",
+  "excerpt": "[Term]\nid: GO:0043993\nname: histone H3K18 acetyltransferase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: acetyl-CoA + histone H3 L-lysine (position 18) = CoA + histone H3 N6-acetyl-L-lysine (position 18).\" [PMID:18552846]\ncomment: Comment: Note that the residue position corresponds to the canonical human H3 histone (UniProtKB:P84243); this residue is conserved across all eukaryotes. Residue 1 is the first residue following removal of the initiating Methionine (Met). Note that each histone is encoded by multiple genes, and sequences may vary across different genes within an organism.\nsynonym: \"histone acetylase activity (H3-K18 specific)\" EXACT []\nsynonym: \"histone acetyltransferase activity (H3-K18 specific)\" EXACT []\nsynonym: \"histone H3-K18 acetyltransferase activity\" EXACT []\nsynonym: \"histone lysine N-acetyltransferase activity (H3-K18 specific)\" EXACT []\nis_a: GO:0010484 ! histone H3 acetyltransferase activity\nproperty_value: skos:broadMatch RHEA:21992\n\n",
+  "excerpt_format": "literal contiguous OBO lines",
+  "source_scope": "current ontology; exact historical benchmark ontology unknown",
+  "go_id": "GO:0043993"
+}
+```
+
+### Evidence GO3
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)
+
+```json
+{
+  "evidence_id": "GO3",
+  "source": "Gene Ontology current ontology",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo",
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source_locator": "lines 311181-311201",
+  "excerpt": "[Term]\nid: GO:0050201\nname: fucokinase activity\nnamespace: molecular_function\ndef: \"Catalysis of the reaction: L-fucose + ATP = beta-L-fucose 1-phosphate + ADP + 2 H+.\" [EC:2.7.1.52, RHEA:13241]\nsynonym: \"ATP:6-deoxy-L-galactose 1-phosphotransferase activity\" RELATED [EC:2.7.1.52]\nsynonym: \"ATP:beta-L-fucose 1-phosphotransferase activity\" RELATED [EC:2.7.1.52]\nsynonym: \"fucokinase (phosphorylating) activity\" RELATED [EC:2.7.1.52]\nsynonym: \"fucose kinase activity\" RELATED [EC:2.7.1.52]\nsynonym: \"L-fucokinase activity\" RELATED [EC:2.7.1.52]\nsynonym: \"L-fucose kinase activity\" RELATED [EC:2.7.1.52]\nxref: EC:2.7.1.52\nxref: KEGG_REACTION:R03161\nxref: MetaCyc:FUCOKINASE-RXN\nxref: Reactome:R-HSA-6787540 \"FCSK phosphorylates beta-Fuc to Fuc1P\"\nxref: RHEA:13241\nis_a: GO:0016301 ! kinase activity\nis_a: GO:0016773 ! phosphotransferase activity, alcohol group as acceptor\nproperty_value: skos:exactMatch EC:2.7.1.52\nproperty_value: skos:exactMatch RHEA:13241\n\n",
+  "excerpt_format": "literal contiguous OBO lines",
+  "source_scope": "current ontology; exact historical benchmark ontology unknown",
+  "go_id": "GO:0050201"
+}
+```
+
+### Evidence GO4
+
+[Gene Ontology current ontology](https://current.geneontology.org/ontology/go-basic.obo)
+
+```json
+{
+  "evidence_id": "GO4",
+  "source": "Gene Ontology current ontology",
+  "url": "https://current.geneontology.org/ontology/go-basic.obo",
+  "source_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+  "retrieved_utc": "2026-11-01T07:04:24.975173+00:00",
+  "source_locator": "lines 437042-437062",
+  "excerpt": "[Term]\nid: GO:0140078\nname: class I DNA-(apurinic or apyrimidinic site) endonuclease activity\nnamespace: molecular_function\ndef: \"Catalysis of the cleavage of an AP site 3' of the baseless site by a beta-lyase mechanism, leaving an unsaturated aldehyde, termed a 3'-(4-hydroxy-5-phospho-2-pentenal) residue, and a 5'-phosphate.\" [PMID:1698278, RHEA:66592]\nsynonym: \"AP endonuclease class I activity\" RELATED []\nsynonym: \"AP lyase activity\" RELATED []\nsynonym: \"AP site-DNA 5'-phosphomonoester-lyase activity\" EXACT []\nsynonym: \"class I AP endonuclease activity\" RELATED []\nsynonym: \"class I DNA-(apurinic or apyrimidinic site) lyase activity\" EXACT []\nsynonym: \"DNA-(apurinic or apyrimidinic site) 5'-phosphomonoester-lyase activity\" EXACT []\nsynonym: \"DNA-(apurinic or apyrimidinic site) lyase activity\" EXACT []\nxref: EC:4.2.99.18\nxref: MetaCyc:4.2.99.18-RXN\nxref: RHEA:66592\nxref: Wikipedia:AP_endonuclease\nis_a: GO:0003906 ! DNA-(apurinic or apyrimidinic site) endonuclease activity\nis_a: GO:0016835 ! carbon-oxygen lyase activity\nproperty_value: skos:exactMatch EC:4.2.99.18\nproperty_value: skos:exactMatch RHEA:66592\n\n",
+  "excerpt_format": "literal contiguous OBO lines",
+  "source_scope": "current ontology; exact historical benchmark ontology unknown",
+  "go_id": "GO:0140078"
+}
+```
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/GO_molecular_function.json), zero-based source row 21. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). [Source credits](../THIRD_PARTY_NOTICES.md).

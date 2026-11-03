@@ -1,0 +1,798 @@
+# catalytic_activity_0051: before and after transfer clarification
+
+[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0051.txt)
+
+**Task:** `catalytic_activity`  
+**Author key, unchanged:** **A** — desmethylrestrictinol + S-adenosyl-L-methionine = restrictinol + S-adenosyl-L-homocysteine + H(+)
+
+| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
+|---|---|---|---|---|
+| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
+| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| after | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
+| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+
+**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MSLQPTATEVGTMYDQYTSLLTDVMAGFIHVGYWDDPEREDTIEVATERLTREIGERLSSVRGQRILDVGCGTGKSAVQIATAHDVHITGITVSNHQIELAQSQYESNTKAGQVNFLFANAMDLPFADASFDGAYAIESLVHMDDRRTALTNIARVLRPGSRLAIADLFLDAGCPNPEVLARFHELFQVPPMPSGDDLKALLHQTGFKVIEFTDIRDTSGLSANF
+
+[Multiple Choices]
+A. desmethylrestrictinol + S-adenosyl-L-methionine = restrictinol + S-adenosyl-L-homocysteine + H(+)
+B. 3-hydroxy-4,5-dimethoxyphenethylamine + S-adenosyl-L-methionine = mescaline + S-adenosyl-L-homocysteine + H(+)
+C. GTP + H2O = GDP + phosphate + H(+)
+D. luteothin + 4 reduced [2Fe-2S]-[ferredoxin] + 2 O2 + 4 H(+) = aureothin + 4 oxidized [2Fe-2S]-[ferredoxin] + 3 H2O
+```
+
+<details>
+<summary>Complete original system instructions</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Enzymatic Reaction Prediction, which is to identify the specific chemical reaction catalyzed by a given enzyme. This involves understanding the enzyme's function based on its amino acid sequence and then selecting the correct transformation of substrates into products from a list of possible reactions.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## Four saved visible reviews
+
+## Before: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The exact input sequence matches the UniProt entry whose catalytic-activity annotation gives reaction A and cites PubMed evidence code ECO:0000269. The same reaction is present in the archived entry, so this is not merely a current annotation added after the historical cutoff. The evidence supports the key, though the primary paper was not independently reviewed here.
+
+Citations as saved: [C1](#evidence-c1), [C5](#evidence-c5), [H4](#evidence-h4).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence may permit a broad inference of an enzyme class, but that would not establish its specific substrate or distinguish the two SAM-dependent methylation reactions in A and B.
+
+
+**Missing item-specific fact**
+
+> The enzyme's experimentally characterized substrate specificity—specifically, that it methylates desmethylrestrictinol to form restrictinol—is not supplied in the question.
+
+
+**Reason**
+
+> Selecting A requires a protein-specific functional annotation or experimental result absent from the sequence and choices; recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the supplied input.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "B"
+]
+```
+
+> Both A and B describe SAM-dependent methylation. The supplied sequence and context do not provide a defensible basis to distinguish their substrate specificities, even though reviewer-only evidence supports A.
+
+
+### Important caveats
+
+- The source annotation is sequence-matched and cites experimental evidence, but the cited primary study was not independently validated in this review.
+- Reviewer-only database evidence supports the expected answer but was not available to the evaluated model.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence may permit a broad inference of an enzyme class, but that would not establish its specific substrate or distinguish the two SAM-dependent methylation reactions in A and B.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The enzyme's experimentally characterized substrate specificity—specifically, that it methylates desmethylrestrictinol to form restrictinol—is not supplied in the question.",
+    "reason": "Selecting A requires a protein-specific functional annotation or experimental result absent from the sequence and choices; recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the supplied input."
+  },
+  "case_id": "catalytic_activity_0051",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C1",
+      "C5",
+      "H4"
+    ],
+    "judgment": "supported",
+    "reason": "The exact input sequence matches the UniProt entry whose catalytic-activity annotation gives reaction A and cites PubMed evidence code ECO:0000269. The same reaction is present in the archived entry, so this is not merely a current annotation added after the historical cutoff. The evidence supports the key, though the primary paper was not independently reviewed here."
+  },
+  "important_caveats": [
+    "The source annotation is sequence-matched and cites experimental evidence, but the cited primary study was not independently validated in this review.",
+    "Reviewer-only database evidence supports the expected answer but was not available to the evaluated model."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "B"
+    ],
+    "reason": "Both A and B describe SAM-dependent methylation. The supplied sequence and context do not provide a defensible basis to distinguish their substrate specificities, even though reviewer-only evidence supports A."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "catalytic_activity_0051",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The exact input sequence matches the UniProt entry whose catalytic-activity annotation gives reaction A and cites PubMed evidence code ECO:0000269. The same reaction is present in the archived entry, so this is not merely a current annotation added after the historical cutoff. The evidence supports the key, though the primary paper was not independently reviewed here.",
+    "evidence_ids": ["C1", "C5", "H4"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence may permit a broad inference of an enzyme class, but that would not establish its specific substrate or distinguish the two SAM-dependent methylation reactions in A and B.",
+    "missing_item_specific_fact": "The enzyme's experimentally characterized substrate specificity—specifically, that it methylates desmethylrestrictinol to form restrictinol—is not supplied in the question.",
+    "reason": "Selecting A requires a protein-specific functional annotation or experimental result absent from the sequence and choices; recognizing the exact sequence from memory would be lookup or memorization, not reasoning from the supplied input."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "B"],
+    "reason": "Both A and B describe SAM-dependent methylation. The supplied sequence and context do not provide a defensible basis to distinguish their substrate specificities, even though reviewer-only evidence supports A."
+  },
+  "important_caveats": [
+    "The source annotation is sequence-matched and cites experimental evidence, but the cited primary study was not independently validated in this review.",
+    "Reviewer-only database evidence supports the expected answer but was not available to the evaluated model."
+  ]
+}
+```
+
+</details>
+
+## Before: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The supplied sequence (225 aa) matches UniProt entry A0A0L1JF88 (RSTN1_ASPN3) exactly. The entry is annotated as 'O-methyltransferase rstn1' (EC 2.1.1.-) with the catalytic activity explicitly stated as 'desmethylrestrictinol + S-adenosyl-L-methionine = restrictinol + S-adenosyl-L-homocysteine + H(+)' under evidence code ECO:0000269 (inferred from direct assay, PubMed:33857369, Liu et al. JACS 2021). This is experimental evidence, not mere computational inference. Both the current and historical (v23) entries confirm the same reaction. The expected answer Choice A matches this annotation verbatim.
+
+Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H1](#evidence-h1), [H2](#evidence-h2), [H4](#evidence-h4).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence contains a GCGTGKSA motif characteristic of SAM-binding methyltransferases, which allows elimination of Choice C (GTPase, no GTP-binding P-loop) and Choice D (ferredoxin-dependent P450, no heme-binding FGAGPRPCG motif). However, both remaining choices A and B are SAM-dependent methyltransferase reactions. Distinguishing an O-methyltransferase acting on desmethylrestrictinol (A) from an N-methyltransferase acting on 3-hydroxy-4,5-dimethoxyphenethylamine (B) requires knowledge of the specific active-site architecture and substrate-binding pocket, which cannot be reliably inferred from the primary sequence alone through general biological reasoning.
+
+
+**Missing item-specific fact**
+
+> The specific substrate identity (desmethylrestrictinol vs. 3-hydroxy-4,5-dimethoxyphenethylamine) and the regiochemistry of methylation (O- vs. N-methylation) are protein-specific facts derived from experimental characterization (Liu et al. 2021) and database annotation. No general sequence feature in the provided 225-aa sequence distinguishes these two methyltransferase substrates.
+
+
+**Reason**
+
+> While the SAM-binding motif narrows the answer to a methyltransferase (eliminating C and D), the final choice between A and B depends entirely on knowing the specific biosynthetic pathway (restricticin) and substrate of this particular protein. This is an item-specific annotation fact, not derivable from general biological principles applied to the sequence.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "B"
+]
+```
+
+> Both A and B describe SAM-dependent methyltransferase reactions. The GCGTGK motif in the sequence supports a methyltransferase classification but does not specify O- vs. N-methylation or identify the particular substrate. Without database lookup or prior knowledge of the restricticin biosynthetic pathway, a knowledgeable model could reasonably select B as well.
+
+
+### Important caveats
+
+- The annotation evidence code ECO:0000269 indicates experimental (direct assay) support from Liu et al. 2021 (JACS), not computational prediction, strengthening the expected-answer check.
+- The identity origin note states the accession was inferred from dataset image-path metadata, not from the evaluated model input; the model receives only the raw sequence.
+- The entry was first public in Swiss-Prot on 2025-02-05; depending on the author's data-construction date, this annotation may or may not have been available to the model's training data.
+- The EC number is listed as 2.1.1.- (unassigned subclass), meaning the specific methyltransferase sub-class is not yet formally assigned, further underscoring the lookup dependence.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence contains a GCGTGKSA motif characteristic of SAM-binding methyltransferases, which allows elimination of Choice C (GTPase, no GTP-binding P-loop) and Choice D (ferredoxin-dependent P450, no heme-binding FGAGPRPCG motif). However, both remaining choices A and B are SAM-dependent methyltransferase reactions. Distinguishing an O-methyltransferase acting on desmethylrestrictinol (A) from an N-methyltransferase acting on 3-hydroxy-4,5-dimethoxyphenethylamine (B) requires knowledge of the specific active-site architecture and substrate-binding pocket, which cannot be reliably inferred from the primary sequence alone through general biological reasoning.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The specific substrate identity (desmethylrestrictinol vs. 3-hydroxy-4,5-dimethoxyphenethylamine) and the regiochemistry of methylation (O- vs. N-methylation) are protein-specific facts derived from experimental characterization (Liu et al. 2021) and database annotation. No general sequence feature in the provided 225-aa sequence distinguishes these two methyltransferase substrates.",
+    "reason": "While the SAM-binding motif narrows the answer to a methyltransferase (eliminating C and D), the final choice between A and B depends entirely on knowing the specific biosynthetic pathway (restricticin) and substrate of this particular protein. This is an item-specific annotation fact, not derivable from general biological principles applied to the sequence."
+  },
+  "case_id": "catalytic_activity_0051",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C1",
+      "C4",
+      "C5",
+      "H1",
+      "H2",
+      "H4"
+    ],
+    "judgment": "supported",
+    "reason": "The supplied sequence (225 aa) matches UniProt entry A0A0L1JF88 (RSTN1_ASPN3) exactly. The entry is annotated as 'O-methyltransferase rstn1' (EC 2.1.1.-) with the catalytic activity explicitly stated as 'desmethylrestrictinol + S-adenosyl-L-methionine = restrictinol + S-adenosyl-L-homocysteine + H(+)' under evidence code ECO:0000269 (inferred from direct assay, PubMed:33857369, Liu et al. JACS 2021). This is experimental evidence, not mere computational inference. Both the current and historical (v23) entries confirm the same reaction. The expected answer Choice A matches this annotation verbatim."
+  },
+  "important_caveats": [
+    "The annotation evidence code ECO:0000269 indicates experimental (direct assay) support from Liu et al. 2021 (JACS), not computational prediction, strengthening the expected-answer check.",
+    "The identity origin note states the accession was inferred from dataset image-path metadata, not from the evaluated model input; the model receives only the raw sequence.",
+    "The entry was first public in Swiss-Prot on 2025-02-05; depending on the author's data-construction date, this annotation may or may not have been available to the model's training data.",
+    "The EC number is listed as 2.1.1.- (unassigned subclass), meaning the specific methyltransferase sub-class is not yet formally assigned, further underscoring the lookup dependence."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "B"
+    ],
+    "reason": "Both A and B describe SAM-dependent methyltransferase reactions. The GCGTGK motif in the sequence supports a methyltransferase classification but does not specify O- vs. N-methylation or identify the particular substrate. Without database lookup or prior knowledge of the restricticin biosynthetic pathway, a knowledgeable model could reasonably select B as well."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "catalytic_activity_0051",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The supplied sequence (225 aa) matches UniProt entry A0A0L1JF88 (RSTN1_ASPN3) exactly. The entry is annotated as 'O-methyltransferase rstn1' (EC 2.1.1.-) with the catalytic activity explicitly stated as 'desmethylrestrictinol + S-adenosyl-L-methionine = restrictinol + S-adenosyl-L-homocysteine + H(+)' under evidence code ECO:0000269 (inferred from direct assay, PubMed:33857369, Liu et al. JACS 2021). This is experimental evidence, not mere computational inference. Both the current and historical (v23) entries confirm the same reaction. The expected answer Choice A matches this annotation verbatim.",
+    "evidence_ids": ["C1", "C4", "C5", "H1", "H2", "H4"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence contains a GCGTGKSA motif characteristic of SAM-binding methyltransferases, which allows elimination of Choice C (GTPase, no GTP-binding P-loop) and Choice D (ferredoxin-dependent P450, no heme-binding FGAGPRPCG motif). However, both remaining choices A and B are SAM-dependent methyltransferase reactions. Distinguishing an O-methyltransferase acting on desmethylrestrictinol (A) from an N-methyltransferase acting on 3-hydroxy-4,5-dimethoxyphenethylamine (B) requires knowledge of the specific active-site architecture and substrate-binding pocket, which cannot be reliably inferred from the primary sequence alone through general biological reasoning.",
+    "missing_item_specific_fact": "The specific substrate identity (desmethylrestrictinol vs. 3-hydroxy-4,5-dimethoxyphenethylamine) and the regiochemistry of methylation (O- vs. N-methylation) are protein-specific facts derived from experimental characterization (Liu et al. 2021) and database annotation. No general sequence feature in the provided 225-aa sequence distinguishes these two methyltransferase substrates.",
+    "reason": "While the SAM-binding motif narrows the answer to a methyltransferase (eliminating C and D), the final choice between A and B depends entirely on knowing the specific biosynthetic pathway (restricticin) and substrate of this particular protein. This is an item-specific annotation fact, not derivable from general biological principles applied to the sequence."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "B"],
+    "reason": "Both A and B describe SAM-dependent methyltransferase reactions. The GCGTGK motif in the sequence supports a methyltransferase classification but does not specify O- vs. N-methylation or identify the particular substrate. Without database lookup or prior knowledge of the restricticin biosynthetic pathway, a knowledgeable model could reasonably select B as well."
+  },
+  "important_caveats": [
+    "The annotation evidence code ECO:0000269 indicates experimental (direct assay) support from Liu et al. 2021 (JACS), not computational prediction, strengthening the expected-answer check.",
+    "The identity origin note states the accession was inferred from dataset image-path metadata, not from the evaluated model input; the model receives only the raw sequence.",
+    "The entry was first public in Swiss-Prot on 2025-02-05; depending on the author's data-construction date, this annotation may or may not have been available to the model's training data.",
+    "The EC number is listed as 2.1.1.- (unassigned subclass), meaning the specific methyltransferase sub-class is not yet formally assigned, further underscoring the lookup dependence."
+  ]
+}
+```
+
+</details>
+
+## After: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The sequence matches the archived UniProt record, which assigns this protein the desmethylrestrictinol methylation reaction and attributes it to experimental evidence in the cited publication. The primary paper was not independently reviewed here.
+
+Citations as saved: [H4](#evidence-h4).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence contains a plausible SAM-dependent methyltransferase motif, which supports a methyl-transfer activity and makes A and B more plausible than the GTP hydrolysis or ferredoxin-dependent oxidation choices. But both A and B are SAM-dependent O-methylations; that broad enzyme-family inference does not identify the substrate.
+
+
+**Missing item-specific fact**
+
+> Whether this particular enzyme methylates desmethylrestrictinol rather than 3-hydroxy-4,5-dimethoxyphenethylamine.
+
+
+**Reason**
+
+> Transferable knowledge meaningfully narrows the choices to methyltransferase reactions, but distinguishing A from B requires substrate-specificity information not established by the sequence features apparent here.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[
+  "A",
+  "B"
+]
+```
+
+> From the supplied sequence and choices, both are plausible SAM-dependent O-methylation reactions. The input does not distinguish their substrates, although only one is supported as this protein's recorded activity.
+
+
+### Important caveats
+
+- The database record's experimental evidence attribution supports the key, but the cited primary study was not independently assessed.
+- The exact source snapshot used by the benchmark author is unknown.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence contains a plausible SAM-dependent methyltransferase motif, which supports a methyl-transfer activity and makes A and B more plausible than the GTP hydrolysis or ferredoxin-dependent oxidation choices. But both A and B are SAM-dependent O-methylations; that broad enzyme-family inference does not identify the substrate.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "Whether this particular enzyme methylates desmethylrestrictinol rather than 3-hydroxy-4,5-dimethoxyphenethylamine.",
+    "reason": "Transferable knowledge meaningfully narrows the choices to methyltransferase reactions, but distinguishing A from B requires substrate-specificity information not established by the sequence features apparent here."
+  },
+  "case_id": "catalytic_activity_0051",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "H4"
+    ],
+    "judgment": "supported",
+    "reason": "The sequence matches the archived UniProt record, which assigns this protein the desmethylrestrictinol methylation reaction and attributes it to experimental evidence in the cited publication. The primary paper was not independently reviewed here."
+  },
+  "important_caveats": [
+    "The database record's experimental evidence attribution supports the key, but the cited primary study was not independently assessed.",
+    "The exact source snapshot used by the benchmark author is unknown."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [
+      "A",
+      "B"
+    ],
+    "reason": "From the supplied sequence and choices, both are plausible SAM-dependent O-methylation reactions. The input does not distinguish their substrates, although only one is supported as this protein's recorded activity."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "catalytic_activity_0051",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The sequence matches the archived UniProt record, which assigns this protein the desmethylrestrictinol methylation reaction and attributes it to experimental evidence in the cited publication. The primary paper was not independently reviewed here.",
+    "evidence_ids": ["H4"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence contains a plausible SAM-dependent methyltransferase motif, which supports a methyl-transfer activity and makes A and B more plausible than the GTP hydrolysis or ferredoxin-dependent oxidation choices. But both A and B are SAM-dependent O-methylations; that broad enzyme-family inference does not identify the substrate.",
+    "missing_item_specific_fact": "Whether this particular enzyme methylates desmethylrestrictinol rather than 3-hydroxy-4,5-dimethoxyphenethylamine.",
+    "reason": "Transferable knowledge meaningfully narrows the choices to methyltransferase reactions, but distinguishing A from B requires substrate-specificity information not established by the sequence features apparent here."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": ["A", "B"],
+    "reason": "From the supplied sequence and choices, both are plausible SAM-dependent O-methylation reactions. The input does not distinguish their substrates, although only one is supported as this protein's recorded activity."
+  },
+  "important_caveats": [
+    "The database record's experimental evidence attribution supports the key, but the cited primary study was not independently assessed.",
+    "The exact source snapshot used by the benchmark author is unknown."
+  ]
+}
+```
+
+</details>
+
+## After: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The UniProt entry A0A0L1JF88 (RSTN1_ASPN3) records the catalytic activity 'desmethylrestrictinol + S-adenosyl-L-methionine = restrictinol + S-adenosyl-L-homocysteine + H(+)' with experimental evidence (ECO:0000269, PubMed:33857369). The sequence is confirmed to match the benchmark input (225 aa, SHA256 match). This exactly corresponds to choice A.
+
+Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4), [C4](#evidence-c4), [H2](#evidence-h2).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence contains the classic GxGxG SAM-binding motif (GCGTGKSAV) within a compact ~225-residue Rossmann-like fold, immediately identifying it as a Class I methyltransferase and eliminating C (GTPase, which requires P-loop GXXXXGK&#91;S/T&#93;, NKxD, and DxxG motifs in a distinct G-domain architecture) and D (ferredoxin-dependent oxidoreductase, which requires Rieske-type &#91;2Fe-2S&#93; binding motifs and oxidoreductase-specific residues absent here). Between A and B, both are O-methyltransferases, but transferable family knowledge distinguishes them: (1) The 225-aa size is characteristic of small fungal natural-product pathway MTases, whereas plant catechol-O-methyltransferases involved in mescaline biosynthesis (COMT-like) are typically ~270-400 aa with a Mg2+-binding site and a distinct catechol-binding pocket architecture. (2) The sequence lacks the conserved Mg2+-coordinating residues (Asp, Asn, Glu triad) and the specific substrate-binding arrangement of COMT-like enzymes. (3) The overall sequence topology and the GCGTGKSAV motif placement are more consistent with fungal polyketide-pathway O-MTases than with plant phenylethanolamine OMTs. These family-level features provide a probabilistic but meaningful basis for selecting A over B.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> A model can use the GxGxG SAM-binding motif to identify the protein as a methyltransferase (eliminating C and D), then use size, absence of COMT-specific Mg2+ binding features, and overall architecture to favor a fungal natural-product O-MTase (A) over a plant catechol-O-MTase (B). This is transferable knowledge about MTase subfamilies and does not require knowing this exact protein's database annotation.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> While A and B share the same reaction type (O-methylation with SAM), the sequence features (small size, absence of COMT Mg2+ site, fungal-type MTase architecture) provide a meaningful probabilistic basis to favor A. C and D are clearly eliminable by fold and motif analysis. No two options are equally supported by the sequence.
+
+
+### Important caveats
+
+- The distinction between A and B relies on probabilistic family-level inference (size, absence of COMT features) rather than a definitive substrate-binding pocket prediction.
+- The specific substrate name 'desmethylrestrictinol' is not derivable from sequence alone; the reasoning identifies the protein as a natural-product O-MTase rather than a COMT, making A the more likely choice among the offered options.
+- The experimental evidence (ECO:0000269) confirms the annotation but was not available to the evaluated model.
+- The protein is from Aspergillus nomiae (fungal), but organism identity was not provided in the original input; the reasoning uses sequence-derived family features instead.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence contains the classic GxGxG SAM-binding motif (GCGTGKSAV) within a compact ~225-residue Rossmann-like fold, immediately identifying it as a Class I methyltransferase and eliminating C (GTPase, which requires P-loop GXXXXGK[S/T], NKxD, and DxxG motifs in a distinct G-domain architecture) and D (ferredoxin-dependent oxidoreductase, which requires Rieske-type [2Fe-2S] binding motifs and oxidoreductase-specific residues absent here). Between A and B, both are O-methyltransferases, but transferable family knowledge distinguishes them: (1) The 225-aa size is characteristic of small fungal natural-product pathway MTases, whereas plant catechol-O-methyltransferases involved in mescaline biosynthesis (COMT-like) are typically ~270-400 aa with a Mg2+-binding site and a distinct catechol-binding pocket architecture. (2) The sequence lacks the conserved Mg2+-coordinating residues (Asp, Asn, Glu triad) and the specific substrate-binding arrangement of COMT-like enzymes. (3) The overall sequence topology and the GCGTGKSAV motif placement are more consistent with fungal polyketide-pathway O-MTases than with plant phenylethanolamine OMTs. These family-level features provide a probabilistic but meaningful basis for selecting A over B.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "A model can use the GxGxG SAM-binding motif to identify the protein as a methyltransferase (eliminating C and D), then use size, absence of COMT-specific Mg2+ binding features, and overall architecture to favor a fungal natural-product O-MTase (A) over a plant catechol-O-MTase (B). This is transferable knowledge about MTase subfamilies and does not require knowing this exact protein's database annotation."
+  },
+  "case_id": "catalytic_activity_0051",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "H4",
+      "C4",
+      "H2"
+    ],
+    "judgment": "supported",
+    "reason": "The UniProt entry A0A0L1JF88 (RSTN1_ASPN3) records the catalytic activity 'desmethylrestrictinol + S-adenosyl-L-methionine = restrictinol + S-adenosyl-L-homocysteine + H(+)' with experimental evidence (ECO:0000269, PubMed:33857369). The sequence is confirmed to match the benchmark input (225 aa, SHA256 match). This exactly corresponds to choice A."
+  },
+  "important_caveats": [
+    "The distinction between A and B relies on probabilistic family-level inference (size, absence of COMT features) rather than a definitive substrate-binding pocket prediction.",
+    "The specific substrate name 'desmethylrestrictinol' is not derivable from sequence alone; the reasoning identifies the protein as a natural-product O-MTase rather than a COMT, making A the more likely choice among the offered options.",
+    "The experimental evidence (ECO:0000269) confirms the annotation but was not available to the evaluated model.",
+    "The protein is from Aspergillus nomiae (fungal), but organism identity was not provided in the original input; the reasoning uses sequence-derived family features instead."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "While A and B share the same reaction type (O-methylation with SAM), the sequence features (small size, absence of COMT Mg2+ site, fungal-type MTase architecture) provide a meaningful probabilistic basis to favor A. C and D are clearly eliminable by fold and motif analysis. No two options are equally supported by the sequence."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "catalytic_activity_0051",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The UniProt entry A0A0L1JF88 (RSTN1_ASPN3) records the catalytic activity 'desmethylrestrictinol + S-adenosyl-L-methionine = restrictinol + S-adenosyl-L-homocysteine + H(+)' with experimental evidence (ECO:0000269, PubMed:33857369). The sequence is confirmed to match the benchmark input (225 aa, SHA256 match). This exactly corresponds to choice A.",
+    "evidence_ids": ["C5", "H4", "C4", "H2"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The sequence contains the classic GxGxG SAM-binding motif (GCGTGKSAV) within a compact ~225-residue Rossmann-like fold, immediately identifying it as a Class I methyltransferase and eliminating C (GTPase, which requires P-loop GXXXXGK[S/T], NKxD, and DxxG motifs in a distinct G-domain architecture) and D (ferredoxin-dependent oxidoreductase, which requires Rieske-type [2Fe-2S] binding motifs and oxidoreductase-specific residues absent here). Between A and B, both are O-methyltransferases, but transferable family knowledge distinguishes them: (1) The 225-aa size is characteristic of small fungal natural-product pathway MTases, whereas plant catechol-O-methyltransferases involved in mescaline biosynthesis (COMT-like) are typically ~270-400 aa with a Mg2+-binding site and a distinct catechol-binding pocket architecture. (2) The sequence lacks the conserved Mg2+-coordinating residues (Asp, Asn, Glu triad) and the specific substrate-binding arrangement of COMT-like enzymes. (3) The overall sequence topology and the GCGTGKSAV motif placement are more consistent with fungal polyketide-pathway O-MTases than with plant phenylethanolamine OMTs. These family-level features provide a probabilistic but meaningful basis for selecting A over B.",
+    "missing_item_specific_fact": "",
+    "reason": "A model can use the GxGxG SAM-binding motif to identify the protein as a methyltransferase (eliminating C and D), then use size, absence of COMT-specific Mg2+ binding features, and overall architecture to favor a fungal natural-product O-MTase (A) over a plant catechol-O-MTase (B). This is transferable knowledge about MTase subfamilies and does not require knowing this exact protein's database annotation."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "While A and B share the same reaction type (O-methylation with SAM), the sequence features (small size, absence of COMT Mg2+ site, fungal-type MTase architecture) provide a meaningful probabilistic basis to favor A. C and D are clearly eliminable by fold and motif analysis. No two options are equally supported by the sequence."
+  },
+  "important_caveats": [
+    "The distinction between A and B relies on probabilistic family-level inference (size, absence of COMT features) rather than a definitive substrate-binding pocket prediction.",
+    "The specific substrate name 'desmethylrestrictinol' is not derivable from sequence alone; the reasoning identifies the protein as a natural-product O-MTase rather than a COMT, making A the more likely choice among the offered options.",
+    "The experimental evidence (ECO:0000269) confirms the annotation but was not available to the evaluated model.",
+    "The protein is from Aspergillus nomiae (fungal), but organism identity was not provided in the original input; the reasoning uses sequence-derived family features instead."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of the old Luna review only
+
+These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Complete reviewer-only evidence and qualifications
+
+All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+
+**Applicability metadata, unchanged:**
+
+```json
+{
+  "requested_accession": "A0A0L1JF88",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "benchmark_sequence_sha256": "c81f547e718f545a528716fcbb0efd66301f895b7a6e7743da00b44566669860",
+  "benchmark_sequence_length": 225,
+  "current_status": "retrieved",
+  "current_sequence_comparison": "matched",
+  "current_entry_audit": {
+    "entryVersion": 25,
+    "firstPublicDate": "2025-02-05",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2015-11-11",
+    "sequenceVersion": 1
+  },
+  "current_uniprot_release": "2026_03",
+  "current_record_sha256": "dda8c813658a8c709826544ad5ddbd2ae972d7bfe23bb0ae87e41d05627a6d20",
+  "current_source_sequence_sha256": "c81f547e718f545a528716fcbb0efd66301f895b7a6e7743da00b44566669860",
+  "current_source_sequence_length": 225,
+  "historical_status": "retrieved",
+  "historical_cutoff_date": "2026-05-07",
+  "historical_sequence_comparison": "matched",
+  "selected_historical_entry_version": 23,
+  "selected_historical_version": {
+    "accession": "A0A0L1JF88",
+    "database": "Swiss-Prot",
+    "entryVersion": 23,
+    "firstRelease": "2026_01/2026_01",
+    "firstReleaseDate": "28-Jan-2026",
+    "lastRelease": "2026_01/2026_01",
+    "lastReleaseDate": "28-Jan-2026",
+    "name": "RSTN1_ASPN3",
+    "sequenceVersion": 1
+  },
+  "selected_historical_record_sha256": "79e66fc3e8c4ef26bf02567903ff65dcc83c5c855359b04ab315caa7a97c6612",
+  "selected_historical_source_sequence_sha256": "c81f547e718f545a528716fcbb0efd66301f895b7a6e7743da00b44566669860",
+  "selected_historical_source_sequence_length": 225,
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 23,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "actual_author_source_snapshot": "unknown",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+}
+```
+
+**Qualifications, unchanged:**
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json)
+
+```json
+{
+  "evidence_id": "C1",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json",
+  "source_sha256": "dda8c813658a8c709826544ad5ddbd2ae972d7bfe23bb0ae87e41d05627a6d20",
+  "retrieved_utc": "2026-11-02T04:24:15.624587+00:00",
+  "json_pointer": "/primaryAccession",
+  "excerpt": "\"A0A0L1JF88\"",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C2
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json)
+
+```json
+{
+  "evidence_id": "C2",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json",
+  "source_sha256": "dda8c813658a8c709826544ad5ddbd2ae972d7bfe23bb0ae87e41d05627a6d20",
+  "retrieved_utc": "2026-11-02T04:24:15.624587+00:00",
+  "json_pointer": "/entryAudit",
+  "excerpt": "{\"entryVersion\":25,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2015-11-11\",\"sequenceVersion\":1}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C3
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json)
+
+```json
+{
+  "evidence_id": "C3",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json",
+  "source_sha256": "dda8c813658a8c709826544ad5ddbd2ae972d7bfe23bb0ae87e41d05627a6d20",
+  "retrieved_utc": "2026-11-02T04:24:15.624587+00:00",
+  "json_pointer": "/organism",
+  "excerpt": "{\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Pezizomycotina\",\"Eurotiomycetes\",\"Eurotiomycetidae\",\"Eurotiales\",\"Aspergillaceae\",\"Aspergillus\",\"Circumdati\"],\"scientificName\":\"Aspergillus nomiae NRRL (strain ATCC 15546 / NRRL 13137 / CBS 260.88 / M93)\",\"taxonId\":1509407}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json)
+
+```json
+{
+  "evidence_id": "C4",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json",
+  "source_sha256": "dda8c813658a8c709826544ad5ddbd2ae972d7bfe23bb0ae87e41d05627a6d20",
+  "retrieved_utc": "2026-11-02T04:24:15.624587+00:00",
+  "json_pointer": "/proteinDescription",
+  "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"value\":\"Restricticin biosynthesis cluster protein 1\"}}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"value\":\"2.1.1.-\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"value\":\"O-methyltransferase rstn1\"}}}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json)
+
+```json
+{
+  "evidence_id": "C5",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json",
+  "source_sha256": "dda8c813658a8c709826544ad5ddbd2ae972d7bfe23bb0ae87e41d05627a6d20",
+  "retrieved_utc": "2026-11-02T04:24:15.624587+00:00",
+  "json_pointer": "/comments/1",
+  "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:81532\"}}],\"reaction\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"33857369\",\"source\":\"PubMed\"}],\"name\":\"desmethylrestrictinol + S-adenosyl-L-methionine = restrictinol + S-adenosyl-L-homocysteine + H(+)\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:81531\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:15378\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57856\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:59789\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231922\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:231923\"}]}}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C6
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json)
+
+```json
+{
+  "evidence_id": "C6",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A0L1JF88.json",
+  "source_sha256": "dda8c813658a8c709826544ad5ddbd2ae972d7bfe23bb0ae87e41d05627a6d20",
+  "retrieved_utc": "2026-11-02T04:24:15.624587+00:00",
+  "json_pointer": "/references/1",
+  "excerpt": "{\"citation\":{\"authors\":[\"Liu N.\",\"Abramyan E.D.\",\"Cheng W.\",\"Perlatti B.\",\"Harvey C.J.B.\",\"Bills G.F.\",\"Tang Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"33857369\"},{\"database\":\"DOI\",\"id\":\"10.1021/jacs.1c01516\"}],\"citationType\":\"journal article\",\"firstPage\":\"6043\",\"id\":\"33857369\",\"journal\":\"J. Am. Chem. Soc.\",\"lastPage\":\"6047\",\"publicationDate\":\"2021\",\"title\":\"Targeted genome mining reveals the biosynthetic gene clusters of natural product CYP51 inhibitors.\",\"volume\":\"143\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"PATHWAY\"]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H1
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A0L1JF88?format=txt&versions=23)
+
+```json
+{
+  "evidence_id": "H1",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A0L1JF88?format=txt&versions=23",
+  "source_sha256": "79e66fc3e8c4ef26bf02567903ff65dcc83c5c855359b04ab315caa7a97c6612",
+  "retrieved_utc": "2026-11-02T04:24:17.437797+00:00",
+  "source_locator": "lines 1-15",
+  "excerpt": "ID   RSTN1_ASPN3             Reviewed;         225 AA.\nAC   A0A0L1JF88;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   11-NOV-2015, sequence version 1.\nDT   28-JAN-2026, entry version 23.\nDE   RecName: Full=O-methyltransferase rstn1 {ECO:0000303|PubMed:33857369};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:33857369};\nDE   AltName: Full=Restricticin biosynthesis cluster protein 1 {ECO:0000303|PubMed:33857369};\nGN   Name=rstn1 {ECO:0000303|PubMed:33857369}; ORFNames=ANOM_001442;\nOS   Aspergillus nomiae NRRL (strain ATCC 15546 / NRRL 13137 / CBS 260.88 /\nOS   M93).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina; Eurotiomycetes;\nOC   Eurotiomycetidae; Eurotiales; Aspergillaceae; Aspergillus;\nOC   Aspergillus subgen. Circumdati.\nOX   NCBI_TaxID=1509407;\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 23,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H2
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A0L1JF88?format=txt&versions=23)
+
+```json
+{
+  "evidence_id": "H2",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A0L1JF88?format=txt&versions=23",
+  "source_sha256": "79e66fc3e8c4ef26bf02567903ff65dcc83c5c855359b04ab315caa7a97c6612",
+  "retrieved_utc": "2026-11-02T04:24:17.437797+00:00",
+  "source_locator": "lines 6-8",
+  "excerpt": "DE   RecName: Full=O-methyltransferase rstn1 {ECO:0000303|PubMed:33857369};\nDE            EC=2.1.1.- {ECO:0000269|PubMed:33857369};\nDE   AltName: Full=Restricticin biosynthesis cluster protein 1 {ECO:0000303|PubMed:33857369};\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 23,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H3
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A0L1JF88?format=txt&versions=23)
+
+```json
+{
+  "evidence_id": "H3",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A0L1JF88?format=txt&versions=23",
+  "source_sha256": "79e66fc3e8c4ef26bf02567903ff65dcc83c5c855359b04ab315caa7a97c6612",
+  "retrieved_utc": "2026-11-02T04:24:17.437797+00:00",
+  "source_locator": "lines 24-31",
+  "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, AND PATHWAY.\nRX   PubMed=33857369; DOI=10.1021/jacs.1c01516;\nRA   Liu N., Abramyan E.D., Cheng W., Perlatti B., Harvey C.J.B., Bills G.F.,\nRA   Tang Y.;\nRT   \"Targeted genome mining reveals the biosynthetic gene clusters of natural\nRT   product CYP51 inhibitors.\";\nRL   J. Am. Chem. Soc. 143:6043-6047(2021).\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 23,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H4
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A0L1JF88?format=txt&versions=23)
+
+```json
+{
+  "evidence_id": "H4",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A0L1JF88?format=txt&versions=23",
+  "source_sha256": "79e66fc3e8c4ef26bf02567903ff65dcc83c5c855359b04ab315caa7a97c6612",
+  "retrieved_utc": "2026-11-02T04:24:17.437797+00:00",
+  "source_locator": "lines 49-56",
+  "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=desmethylrestrictinol + S-adenosyl-L-methionine = restrictinol\nCC         + S-adenosyl-L-homocysteine + H(+); Xref=Rhea:RHEA:81531,\nCC         ChEBI:CHEBI:15378, ChEBI:CHEBI:57856, ChEBI:CHEBI:59789,\nCC         ChEBI:CHEBI:231922, ChEBI:CHEBI:231923;\nCC         Evidence={ECO:0000269|PubMed:33857369};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:81532;\nCC         Evidence={ECO:0000269|PubMed:33857369};\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 23,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/catalytic_activity.json), zero-based source row 51. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). [Source credits](../THIRD_PARTY_NOTICES.md).

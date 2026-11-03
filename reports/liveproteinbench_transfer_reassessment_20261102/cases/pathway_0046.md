@@ -1,0 +1,800 @@
+# pathway_0046: before and after transfer clarification
+
+[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/pathway_0046.txt)
+
+**Task:** `pathway`  
+**Author key, unchanged:** **C** — Alkaloid biosynthesis
+
+| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
+|---|---|---|---|---|
+| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
+| before | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
+| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+
+**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MDLLQILLAIAGLLAILLLQKQWRTKTSPGAKAGRKLPPEPAGAWPVIGHLHKLGGPNPIYRNLAEWSDKYGPVMTLKLGMQNAVVVSDREAIKECFTTNDKALADRPPSSIGLHLGFNYAAIGAAPYGPYWRDMRKLVLLEVLSSRRLEMLRNVRISEIGTSIKELYSNIIRSSGGSGPAKVVISHWIEQLTLNYILRTIAGRRFSDDSSKDAQYVKGVINDFMYFAGQFVVSDVIPIPLLRWLDPQGHLKGMKRVAKEVDTMCEAWIQEHVQRRMREKPGPGQEQDFIDVLLNNRDVMRKAQEEIDNHVGKERWVDETDLKHLVYLQAIVKEGLRLYPPGPLGAPHRAIEDCQVGGYFIPKGTQLLVNVWKLHRDPRVWSEPEKFMPERFLTRQAEVDVFGHHFELLPFGSGRRACPGITFAVQVMHLTVARLLQGFDMTTPSNLPVDMTEGPGVTMPKAHPVEVLMMPRLPSALYEP
+
+[Multiple Choices]
+A. Bacterial outer membrane biogenesis
+B. coenzyme A biosynthesis
+C. Alkaloid biosynthesis
+D. fatty acid beta-oxidation. .
+```
+
+<details>
+<summary>Complete original system instructions</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Protein Pathway Prediction, which is to predict the primary metabolic or signaling pathway in which a given protein functions. Biological pathways are series of chemical reactions occurring within a cell that are essential for life. Based on the protein's amino acid sequence, you should identify the most relevant pathway from the given options.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## Four saved visible reviews
+
+## Before: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The supplied sequence exactly matches the UniProt entry for vinorine hydroxylase, whose annotated pathway is alkaloid biosynthesis, including ajmaline biosynthesis. The pathway annotation cites experimental evidence (ECO:0000269).
+
+Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [H4](#evidence-h4).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence has features consistent with a microsomal cytochrome P450, which makes bacterial outer membrane biogenesis less plausible. But P450 identity alone does not establish that this particular enzyme acts in alkaloid biosynthesis rather than another pathway.
+
+
+**Missing item-specific fact**
+
+> The enzyme's identity and experimentally established role as vinorine hydroxylase in alkaloid/ajmaline biosynthesis.
+
+
+**Reason**
+
+> The supplied sequence and choices do not provide the substrate or organism context needed to assign this P450 to a specific metabolic pathway. Distinguishing the keyed pathway requires protein-specific annotation or prior knowledge.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The evidence supports the keyed pathway for the exact sequence; none of the other choices is comparably supported.
+
+
+### Important caveats
+
+- The cited UniProt pathway annotation is linked to experimental evidence, but the primary papers were not independently reviewed here.
+- The author's exact source snapshot is unknown; the sequence matches both the current and retrieved historical UniProt records.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence has features consistent with a microsomal cytochrome P450, which makes bacterial outer membrane biogenesis less plausible. But P450 identity alone does not establish that this particular enzyme acts in alkaloid biosynthesis rather than another pathway.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The enzyme's identity and experimentally established role as vinorine hydroxylase in alkaloid/ajmaline biosynthesis.",
+    "reason": "The supplied sequence and choices do not provide the substrate or organism context needed to assign this P450 to a specific metabolic pathway. Distinguishing the keyed pathway requires protein-specific annotation or prior knowledge."
+  },
+  "case_id": "pathway_0046",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C4",
+      "C5",
+      "C6",
+      "H4"
+    ],
+    "judgment": "supported",
+    "reason": "The supplied sequence exactly matches the UniProt entry for vinorine hydroxylase, whose annotated pathway is alkaloid biosynthesis, including ajmaline biosynthesis. The pathway annotation cites experimental evidence (ECO:0000269)."
+  },
+  "important_caveats": [
+    "The cited UniProt pathway annotation is linked to experimental evidence, but the primary papers were not independently reviewed here.",
+    "The author's exact source snapshot is unknown; the sequence matches both the current and retrieved historical UniProt records."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The evidence supports the keyed pathway for the exact sequence; none of the other choices is comparably supported."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "pathway_0046",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The supplied sequence exactly matches the UniProt entry for vinorine hydroxylase, whose annotated pathway is alkaloid biosynthesis, including ajmaline biosynthesis. The pathway annotation cites experimental evidence (ECO:0000269).",
+    "evidence_ids": ["C4", "C5", "C6", "H4"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence has features consistent with a microsomal cytochrome P450, which makes bacterial outer membrane biogenesis less plausible. But P450 identity alone does not establish that this particular enzyme acts in alkaloid biosynthesis rather than another pathway.",
+    "missing_item_specific_fact": "The enzyme's identity and experimentally established role as vinorine hydroxylase in alkaloid/ajmaline biosynthesis.",
+    "reason": "The supplied sequence and choices do not provide the substrate or organism context needed to assign this P450 to a specific metabolic pathway. Distinguishing the keyed pathway requires protein-specific annotation or prior knowledge."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The evidence supports the keyed pathway for the exact sequence; none of the other choices is comparably supported."
+  },
+  "important_caveats": [
+    "The cited UniProt pathway annotation is linked to experimental evidence, but the primary papers were not independently reviewed here.",
+    "The author's exact source snapshot is unknown; the sequence matches both the current and retrieved historical UniProt records."
+  ]
+}
+```
+
+</details>
+
+## Before: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> UniProt entry A0A218NGS0 (Vinorine hydroxylase / CYP82S18 from Rauvolfia serpentina) is annotated with pathway 'Alkaloid biosynthesis; ajmaline biosynthesis' supported by experimental evidence (ECO:0000269) from two independent publications (PubMed:28654178, PubMed:38212296). The sequence matches exactly (480 AA, SHA256 confirmed). The protein is a cytochrome P450 that catalyzes vinorine hydroxylation, a committed step in ajmaline (monoterpene indole alkaloid) biosynthesis.
+
+Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6), [C7](#evidence-c7), [H1](#evidence-h1), [H2](#evidence-h2), [H3](#evidence-h3), [H4](#evidence-h4).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence contains a recognizable P450 heme-binding motif (FGSGRRACPG matching FxxGxxxCxG at ~residue 370) and an N-terminal signal peptide (MDLLQILLAIAGLLAILLLQ), identifying it as an ER-targeted cytochrome P450. General biological knowledge eliminates: (A) bacterial outer membrane biogenesis — irrelevant for a eukaryotic P450 with a signal peptide; (B) coenzyme A biosynthesis — does not involve P450 enzymes; (D) fatty acid beta-oxidation — a mitochondrial/peroxisomal process using acyl-CoA dehydrogenases, hydratases, and thiolases, not P450s. Alkaloid biosynthesis (C) is a well-established P450-dependent secondary metabolic pathway in plants, making it the only option consistent with a plant cytochrome P450.
+
+
+**Missing item-specific fact**
+
+> None strictly required for elimination among the four given choices. However, distinguishing 'alkaloid biosynthesis' from other P450-dependent plant secondary pathways (e.g., terpenoid, flavonoid biosynthesis) would require substrate or gene-family knowledge not derivable from sequence alone; this is mitigated by the fact that no such alternative P450 pathway appears among the options.
+
+
+**Reason**
+
+> The P450 heme-binding motif is extractable from the sequence, and the three distractors are eliminable through general knowledge that P450s do not participate in bacterial membrane assembly, CoA synthesis, or beta-oxidation. The remaining option (alkaloid biosynthesis) is a canonical P450 pathway in plants. Reasoning from sequence features plus pathway biochemistry is sufficient to select C among the four choices.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> Options A, B, and D are clearly incompatible with a cytochrome P450 enzyme. Only C (alkaloid biosynthesis) is a recognized P450-dependent pathway among the choices. No ambiguity among the given options.
+
+
+### Important caveats
+
+- The specific identification as 'alkaloid biosynthesis' (rather than, e.g., terpenoid or phenylpropanoid biosynthesis, which are also P450-dependent) relies on the elimination of non-P450 pathways among the four options rather than on sequence-specific substrate recognition.
+- The UniProt annotation is Swiss-Prot reviewed with experimental evidence (ECO:0000269) from two independent studies, providing strong support for the pathway assignment.
+- The P450 heme-binding motif FxxGxxxCxG is identifiable but somewhat degenerate in this sequence (FGSGRRACPG); recognition requires familiarity with P450 structural biology.
+- The N-terminal hydrophobic stretch is consistent with an ER signal peptide typical of plant microsomal P450s, further supporting eukaryotic (not bacterial) origin.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence contains a recognizable P450 heme-binding motif (FGSGRRACPG matching FxxGxxxCxG at ~residue 370) and an N-terminal signal peptide (MDLLQILLAIAGLLAILLLQ), identifying it as an ER-targeted cytochrome P450. General biological knowledge eliminates: (A) bacterial outer membrane biogenesis — irrelevant for a eukaryotic P450 with a signal peptide; (B) coenzyme A biosynthesis — does not involve P450 enzymes; (D) fatty acid beta-oxidation — a mitochondrial/peroxisomal process using acyl-CoA dehydrogenases, hydratases, and thiolases, not P450s. Alkaloid biosynthesis (C) is a well-established P450-dependent secondary metabolic pathway in plants, making it the only option consistent with a plant cytochrome P450.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "None strictly required for elimination among the four given choices. However, distinguishing 'alkaloid biosynthesis' from other P450-dependent plant secondary pathways (e.g., terpenoid, flavonoid biosynthesis) would require substrate or gene-family knowledge not derivable from sequence alone; this is mitigated by the fact that no such alternative P450 pathway appears among the options.",
+    "reason": "The P450 heme-binding motif is extractable from the sequence, and the three distractors are eliminable through general knowledge that P450s do not participate in bacterial membrane assembly, CoA synthesis, or beta-oxidation. The remaining option (alkaloid biosynthesis) is a canonical P450 pathway in plants. Reasoning from sequence features plus pathway biochemistry is sufficient to select C among the four choices."
+  },
+  "case_id": "pathway_0046",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C1",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ],
+    "judgment": "supported",
+    "reason": "UniProt entry A0A218NGS0 (Vinorine hydroxylase / CYP82S18 from Rauvolfia serpentina) is annotated with pathway 'Alkaloid biosynthesis; ajmaline biosynthesis' supported by experimental evidence (ECO:0000269) from two independent publications (PubMed:28654178, PubMed:38212296). The sequence matches exactly (480 AA, SHA256 confirmed). The protein is a cytochrome P450 that catalyzes vinorine hydroxylation, a committed step in ajmaline (monoterpene indole alkaloid) biosynthesis."
+  },
+  "important_caveats": [
+    "The specific identification as 'alkaloid biosynthesis' (rather than, e.g., terpenoid or phenylpropanoid biosynthesis, which are also P450-dependent) relies on the elimination of non-P450 pathways among the four options rather than on sequence-specific substrate recognition.",
+    "The UniProt annotation is Swiss-Prot reviewed with experimental evidence (ECO:0000269) from two independent studies, providing strong support for the pathway assignment.",
+    "The P450 heme-binding motif FxxGxxxCxG is identifiable but somewhat degenerate in this sequence (FGSGRRACPG); recognition requires familiarity with P450 structural biology.",
+    "The N-terminal hydrophobic stretch is consistent with an ER signal peptide typical of plant microsomal P450s, further supporting eukaryotic (not bacterial) origin."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "Options A, B, and D are clearly incompatible with a cytochrome P450 enzyme. Only C (alkaloid biosynthesis) is a recognized P450-dependent pathway among the choices. No ambiguity among the given options."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "pathway_0046",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "UniProt entry A0A218NGS0 (Vinorine hydroxylase / CYP82S18 from Rauvolfia serpentina) is annotated with pathway 'Alkaloid biosynthesis; ajmaline biosynthesis' supported by experimental evidence (ECO:0000269) from two independent publications (PubMed:28654178, PubMed:38212296). The sequence matches exactly (480 AA, SHA256 confirmed). The protein is a cytochrome P450 that catalyzes vinorine hydroxylation, a committed step in ajmaline (monoterpene indole alkaloid) biosynthesis.",
+    "evidence_ids": ["C1", "C4", "C5", "C6", "C7", "H1", "H2", "H3", "H4"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The sequence contains a recognizable P450 heme-binding motif (FGSGRRACPG matching FxxGxxxCxG at ~residue 370) and an N-terminal signal peptide (MDLLQILLAIAGLLAILLLQ), identifying it as an ER-targeted cytochrome P450. General biological knowledge eliminates: (A) bacterial outer membrane biogenesis — irrelevant for a eukaryotic P450 with a signal peptide; (B) coenzyme A biosynthesis — does not involve P450 enzymes; (D) fatty acid beta-oxidation — a mitochondrial/peroxisomal process using acyl-CoA dehydrogenases, hydratases, and thiolases, not P450s. Alkaloid biosynthesis (C) is a well-established P450-dependent secondary metabolic pathway in plants, making it the only option consistent with a plant cytochrome P450.",
+    "missing_item_specific_fact": "None strictly required for elimination among the four given choices. However, distinguishing 'alkaloid biosynthesis' from other P450-dependent plant secondary pathways (e.g., terpenoid, flavonoid biosynthesis) would require substrate or gene-family knowledge not derivable from sequence alone; this is mitigated by the fact that no such alternative P450 pathway appears among the options.",
+    "reason": "The P450 heme-binding motif is extractable from the sequence, and the three distractors are eliminable through general knowledge that P450s do not participate in bacterial membrane assembly, CoA synthesis, or beta-oxidation. The remaining option (alkaloid biosynthesis) is a canonical P450 pathway in plants. Reasoning from sequence features plus pathway biochemistry is sufficient to select C among the four choices."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "Options A, B, and D are clearly incompatible with a cytochrome P450 enzyme. Only C (alkaloid biosynthesis) is a recognized P450-dependent pathway among the choices. No ambiguity among the given options."
+  },
+  "important_caveats": [
+    "The specific identification as 'alkaloid biosynthesis' (rather than, e.g., terpenoid or phenylpropanoid biosynthesis, which are also P450-dependent) relies on the elimination of non-P450 pathways among the four options rather than on sequence-specific substrate recognition.",
+    "The UniProt annotation is Swiss-Prot reviewed with experimental evidence (ECO:0000269) from two independent studies, providing strong support for the pathway assignment.",
+    "The P450 heme-binding motif FxxGxxxCxG is identifiable but somewhat degenerate in this sequence (FGSGRRACPG); recognition requires familiarity with P450 structural biology.",
+    "The N-terminal hydrophobic stretch is consistent with an ER signal peptide typical of plant microsomal P450s, further supporting eukaryotic (not bacterial) origin."
+  ]
+}
+```
+
+</details>
+
+## After: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The matched UniProt entry names the protein as vinorine hydroxylase and annotates it to alkaloid and ajmaline biosynthesis, citing evidence coded as experimental. This supports choice C for the supplied sequence.
+
+Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [C6](#evidence-c6).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence has a hydrophobic N-terminal segment consistent with a microsomal membrane anchor and a conserved P450 heme-binding motif (FxxGxxxCxG), supporting a cytochrome P450 enzyme. Transferable knowledge that plant P450s commonly catalyze oxidative steps in specialized-metabolite biosynthesis makes alkaloid biosynthesis the strongest offered choice; the other options are associated with substantially different enzyme systems.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> The sequence and family-level inference meaningfully favor C among these alternatives without requiring recall of this exact protein's annotation. The specific substrate and pathway assignment are not certain from the sequence alone, but the alternatives make the P450-based inference discriminating.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The sequence does not prove an alkaloid pathway assignment by itself, but the offered alternatives do not provide another comparably plausible pathway for a plant-like microsomal P450.
+
+
+### Important caveats
+
+- The pathway annotation is supported by cited experimental evidence in the matched database entry; it is not a direct measurement included in the question.
+- P450 family membership alone does not uniquely identify substrate or pathway.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence has a hydrophobic N-terminal segment consistent with a microsomal membrane anchor and a conserved P450 heme-binding motif (FxxGxxxCxG), supporting a cytochrome P450 enzyme. Transferable knowledge that plant P450s commonly catalyze oxidative steps in specialized-metabolite biosynthesis makes alkaloid biosynthesis the strongest offered choice; the other options are associated with substantially different enzyme systems.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "The sequence and family-level inference meaningfully favor C among these alternatives without requiring recall of this exact protein's annotation. The specific substrate and pathway assignment are not certain from the sequence alone, but the alternatives make the P450-based inference discriminating."
+  },
+  "case_id": "pathway_0046",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C4",
+      "C5",
+      "C6"
+    ],
+    "judgment": "supported",
+    "reason": "The matched UniProt entry names the protein as vinorine hydroxylase and annotates it to alkaloid and ajmaline biosynthesis, citing evidence coded as experimental. This supports choice C for the supplied sequence."
+  },
+  "important_caveats": [
+    "The pathway annotation is supported by cited experimental evidence in the matched database entry; it is not a direct measurement included in the question.",
+    "P450 family membership alone does not uniquely identify substrate or pathway."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The sequence does not prove an alkaloid pathway assignment by itself, but the offered alternatives do not provide another comparably plausible pathway for a plant-like microsomal P450."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "pathway_0046",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The matched UniProt entry names the protein as vinorine hydroxylase and annotates it to alkaloid and ajmaline biosynthesis, citing evidence coded as experimental. This supports choice C for the supplied sequence.",
+    "evidence_ids": ["C4", "C5", "C6"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The sequence has a hydrophobic N-terminal segment consistent with a microsomal membrane anchor and a conserved P450 heme-binding motif (FxxGxxxCxG), supporting a cytochrome P450 enzyme. Transferable knowledge that plant P450s commonly catalyze oxidative steps in specialized-metabolite biosynthesis makes alkaloid biosynthesis the strongest offered choice; the other options are associated with substantially different enzyme systems.",
+    "missing_item_specific_fact": "",
+    "reason": "The sequence and family-level inference meaningfully favor C among these alternatives without requiring recall of this exact protein's annotation. The specific substrate and pathway assignment are not certain from the sequence alone, but the alternatives make the P450-based inference discriminating."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The sequence does not prove an alkaloid pathway assignment by itself, but the offered alternatives do not provide another comparably plausible pathway for a plant-like microsomal P450."
+  },
+  "important_caveats": [
+    "The pathway annotation is supported by cited experimental evidence in the matched database entry; it is not a direct measurement included in the question.",
+    "P450 family membership alone does not uniquely identify substrate or pathway."
+  ]
+}
+```
+
+</details>
+
+## After: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The UniProt entry for this exact sequence (A0A218NGS0, Vinorine hydroxylase / CYP5437 / CYP82S18 from Rauvolfia serpentina) explicitly annotates the pathway as 'Alkaloid biosynthesis; ajmaline biosynthesis' with experimental evidence codes (ECO:0000269, PubMed:28654178 and PubMed:38212296). The expected answer C (Alkaloid biosynthesis) is directly and experimentally supported.
+
+Citations as saved: [C5](#evidence-c5), [H4](#evidence-h4).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence contains the canonical cytochrome P450 heme-binding motif (FGSGRRACPG, matching the FxxGxxxCxG signature) near the C-terminus, and an N-terminal ER-targeting signal peptide (MDLLQILLAIAGLLAILLLQKQWRTKTSPGAKAGRKLPPEPAGAWPVI…), yielding a ~480-aa plant-type CYP450. Transferable knowledge from other plant proteins establishes that plant microsomal CYP450s are overwhelmingly involved in secondary metabolite biosynthesis (alkaloids, terpenoids, phenylpropanoids), not in primary lipid or cofactor pathways. In particular, the CYP82 and CYP5437 subfamilies, recognized across multiple plant species (Catharanthus, Rauvolfia, Nicotiana), are well-characterized alkaloid-biosynthesis P450s. Among the four offered choices: (A) bacterial outer membrane biogenesis is excluded by the eukaryotic signal peptide and CYP450 domain; (B) coenzyme A biosynthesis involves small acyl-CoA synthetases and phosphopantetheinyl transferases, not CYP450s; (D) fatty acid beta-oxidation occurs in peroxisomes/mitochondria via acyl-CoA dehydrogenases and thiolases, not via ER-anchored CYP450s. The combination of CYP450 domain recognition, plant-type ER targeting, and the well-known family-level association of plant CYP82/CYP5437-type P450s with alkaloid biosynthesis meaningfully distinguishes option C from the alternatives.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> A knowledgeable model can identify the CYP450 heme-binding motif from the sequence, recognize the plant-type ER signal peptide, and apply the well-established pattern that plant microsomal CYP450s (especially CYP82/CYP5437-family members across multiple species) function in alkaloid biosynthesis. This family-level transfer from other plant CYP450s is sufficient to select C over the clearly incompatible alternatives without needing the specific UniProt annotation for this exact protein.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The four options span fundamentally different biological contexts (bacterial membrane, cofactor synthesis, alkaloid biosynthesis, fatty acid oxidation). The CYP450 domain and plant ER targeting make options A, B, and D strongly incompatible, leaving C as the only plausible pathway for a plant microsomal P450 involved in secondary metabolism.
+
+
+### Important caveats
+
+- The reviewer-only evidence confirms the protein is Vinorine hydroxylase (CYP5437/CYP82S18) from Rauvolfia serpentina, experimentally characterized in ajmaline biosynthesis, but this specific identity was not available to the evaluated model.
+- The CYP82/CYP5437 family association with alkaloid biosynthesis is well-supported across multiple plant species and constitutes legitimate transferable knowledge, not target-specific memorization.
+- The sequence match to the UniProt entry is exact (SHA-256 confirmed), and the annotation is backed by two experimental publications.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence contains the canonical cytochrome P450 heme-binding motif (FGSGRRACPG, matching the FxxGxxxCxG signature) near the C-terminus, and an N-terminal ER-targeting signal peptide (MDLLQILLAIAGLLAILLLQKQWRTKTSPGAKAGRKLPPEPAGAWPVI…), yielding a ~480-aa plant-type CYP450. Transferable knowledge from other plant proteins establishes that plant microsomal CYP450s are overwhelmingly involved in secondary metabolite biosynthesis (alkaloids, terpenoids, phenylpropanoids), not in primary lipid or cofactor pathways. In particular, the CYP82 and CYP5437 subfamilies, recognized across multiple plant species (Catharanthus, Rauvolfia, Nicotiana), are well-characterized alkaloid-biosynthesis P450s. Among the four offered choices: (A) bacterial outer membrane biogenesis is excluded by the eukaryotic signal peptide and CYP450 domain; (B) coenzyme A biosynthesis involves small acyl-CoA synthetases and phosphopantetheinyl transferases, not CYP450s; (D) fatty acid beta-oxidation occurs in peroxisomes/mitochondria via acyl-CoA dehydrogenases and thiolases, not via ER-anchored CYP450s. The combination of CYP450 domain recognition, plant-type ER targeting, and the well-known family-level association of plant CYP82/CYP5437-type P450s with alkaloid biosynthesis meaningfully distinguishes option C from the alternatives.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "A knowledgeable model can identify the CYP450 heme-binding motif from the sequence, recognize the plant-type ER signal peptide, and apply the well-established pattern that plant microsomal CYP450s (especially CYP82/CYP5437-family members across multiple species) function in alkaloid biosynthesis. This family-level transfer from other plant CYP450s is sufficient to select C over the clearly incompatible alternatives without needing the specific UniProt annotation for this exact protein."
+  },
+  "case_id": "pathway_0046",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C5",
+      "H4"
+    ],
+    "judgment": "supported",
+    "reason": "The UniProt entry for this exact sequence (A0A218NGS0, Vinorine hydroxylase / CYP5437 / CYP82S18 from Rauvolfia serpentina) explicitly annotates the pathway as 'Alkaloid biosynthesis; ajmaline biosynthesis' with experimental evidence codes (ECO:0000269, PubMed:28654178 and PubMed:38212296). The expected answer C (Alkaloid biosynthesis) is directly and experimentally supported."
+  },
+  "important_caveats": [
+    "The reviewer-only evidence confirms the protein is Vinorine hydroxylase (CYP5437/CYP82S18) from Rauvolfia serpentina, experimentally characterized in ajmaline biosynthesis, but this specific identity was not available to the evaluated model.",
+    "The CYP82/CYP5437 family association with alkaloid biosynthesis is well-supported across multiple plant species and constitutes legitimate transferable knowledge, not target-specific memorization.",
+    "The sequence match to the UniProt entry is exact (SHA-256 confirmed), and the annotation is backed by two experimental publications."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The four options span fundamentally different biological contexts (bacterial membrane, cofactor synthesis, alkaloid biosynthesis, fatty acid oxidation). The CYP450 domain and plant ER targeting make options A, B, and D strongly incompatible, leaving C as the only plausible pathway for a plant microsomal P450 involved in secondary metabolism."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "pathway_0046",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The UniProt entry for this exact sequence (A0A218NGS0, Vinorine hydroxylase / CYP5437 / CYP82S18 from Rauvolfia serpentina) explicitly annotates the pathway as 'Alkaloid biosynthesis; ajmaline biosynthesis' with experimental evidence codes (ECO:0000269, PubMed:28654178 and PubMed:38212296). The expected answer C (Alkaloid biosynthesis) is directly and experimentally supported.",
+    "evidence_ids": ["C5", "H4"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The sequence contains the canonical cytochrome P450 heme-binding motif (FGSGRRACPG, matching the FxxGxxxCxG signature) near the C-terminus, and an N-terminal ER-targeting signal peptide (MDLLQILLAIAGLLAILLLQKQWRTKTSPGAKAGRKLPPEPAGAWPVI…), yielding a ~480-aa plant-type CYP450. Transferable knowledge from other plant proteins establishes that plant microsomal CYP450s are overwhelmingly involved in secondary metabolite biosynthesis (alkaloids, terpenoids, phenylpropanoids), not in primary lipid or cofactor pathways. In particular, the CYP82 and CYP5437 subfamilies, recognized across multiple plant species (Catharanthus, Rauvolfia, Nicotiana), are well-characterized alkaloid-biosynthesis P450s. Among the four offered choices: (A) bacterial outer membrane biogenesis is excluded by the eukaryotic signal peptide and CYP450 domain; (B) coenzyme A biosynthesis involves small acyl-CoA synthetases and phosphopantetheinyl transferases, not CYP450s; (D) fatty acid beta-oxidation occurs in peroxisomes/mitochondria via acyl-CoA dehydrogenases and thiolases, not via ER-anchored CYP450s. The combination of CYP450 domain recognition, plant-type ER targeting, and the well-known family-level association of plant CYP82/CYP5437-type P450s with alkaloid biosynthesis meaningfully distinguishes option C from the alternatives.",
+    "missing_item_specific_fact": "",
+    "reason": "A knowledgeable model can identify the CYP450 heme-binding motif from the sequence, recognize the plant-type ER signal peptide, and apply the well-established pattern that plant microsomal CYP450s (especially CYP82/CYP5437-family members across multiple species) function in alkaloid biosynthesis. This family-level transfer from other plant CYP450s is sufficient to select C over the clearly incompatible alternatives without needing the specific UniProt annotation for this exact protein."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The four options span fundamentally different biological contexts (bacterial membrane, cofactor synthesis, alkaloid biosynthesis, fatty acid oxidation). The CYP450 domain and plant ER targeting make options A, B, and D strongly incompatible, leaving C as the only plausible pathway for a plant microsomal P450 involved in secondary metabolism."
+  },
+  "important_caveats": [
+    "The reviewer-only evidence confirms the protein is Vinorine hydroxylase (CYP5437/CYP82S18) from Rauvolfia serpentina, experimentally characterized in ajmaline biosynthesis, but this specific identity was not available to the evaluated model.",
+    "The CYP82/CYP5437 family association with alkaloid biosynthesis is well-supported across multiple plant species and constitutes legitimate transferable knowledge, not target-specific memorization.",
+    "The sequence match to the UniProt entry is exact (SHA-256 confirmed), and the annotation is backed by two experimental publications."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of the old Luna review only
+
+These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Complete reviewer-only evidence and qualifications
+
+All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+
+**Applicability metadata, unchanged:**
+
+```json
+{
+  "requested_accession": "A0A218NGS0",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "benchmark_sequence_sha256": "df32080a6e9de3721d39ca92db4a6f289633e69df676d9b2fd35529c70abf20c",
+  "benchmark_sequence_length": 480,
+  "current_status": "retrieved",
+  "current_sequence_comparison": "matched",
+  "current_entry_audit": {
+    "entryVersion": 27,
+    "firstPublicDate": "2025-06-18",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2017-09-27",
+    "sequenceVersion": 1
+  },
+  "current_uniprot_release": "2026_03",
+  "current_record_sha256": "3344314f4da5addc19db5cda9ea0987bc724f5d222433aee0a5e8af38bc94b40",
+  "current_source_sequence_sha256": "df32080a6e9de3721d39ca92db4a6f289633e69df676d9b2fd35529c70abf20c",
+  "current_source_sequence_length": 480,
+  "historical_status": "retrieved",
+  "historical_cutoff_date": "2026-05-07",
+  "historical_sequence_comparison": "matched",
+  "selected_historical_entry_version": 26,
+  "selected_historical_version": {
+    "accession": "A0A218NGS0",
+    "database": "Swiss-Prot",
+    "entryVersion": 26,
+    "firstRelease": "2026_01/2026_01",
+    "firstReleaseDate": "28-Jan-2026",
+    "lastRelease": "2026_01/2026_01",
+    "lastReleaseDate": "28-Jan-2026",
+    "name": "VINHY_RAUSE",
+    "sequenceVersion": 1
+  },
+  "selected_historical_record_sha256": "48cff725e5a58f4e22b3c3036b7c75532fc0df2b16678a21392e3db27ec7ea5f",
+  "selected_historical_source_sequence_sha256": "df32080a6e9de3721d39ca92db4a6f289633e69df676d9b2fd35529c70abf20c",
+  "selected_historical_source_sequence_length": 480,
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 26,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "actual_author_source_snapshot": "unknown",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+}
+```
+
+**Qualifications, unchanged:**
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A218NGS0.json)
+
+```json
+{
+  "evidence_id": "C1",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A218NGS0.json",
+  "source_sha256": "3344314f4da5addc19db5cda9ea0987bc724f5d222433aee0a5e8af38bc94b40",
+  "retrieved_utc": "2026-11-01T06:24:42.234878+00:00",
+  "json_pointer": "/primaryAccession",
+  "excerpt": "\"A0A218NGS0\"",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C2
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A218NGS0.json)
+
+```json
+{
+  "evidence_id": "C2",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A218NGS0.json",
+  "source_sha256": "3344314f4da5addc19db5cda9ea0987bc724f5d222433aee0a5e8af38bc94b40",
+  "retrieved_utc": "2026-11-01T06:24:42.234878+00:00",
+  "json_pointer": "/entryAudit",
+  "excerpt": "{\"entryVersion\":27,\"firstPublicDate\":\"2025-06-18\",\"lastAnnotationUpdateDate\":\"2026-06-10\",\"lastSequenceUpdateDate\":\"2017-09-27\",\"sequenceVersion\":1}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C3
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A218NGS0.json)
+
+```json
+{
+  "evidence_id": "C3",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A218NGS0.json",
+  "source_sha256": "3344314f4da5addc19db5cda9ea0987bc724f5d222433aee0a5e8af38bc94b40",
+  "retrieved_utc": "2026-11-01T06:24:42.234878+00:00",
+  "json_pointer": "/organism",
+  "excerpt": "{\"commonName\":\"Serpentine wood\",\"lineage\":[\"Eukaryota\",\"Viridiplantae\",\"Streptophyta\",\"Embryophyta\",\"Tracheophyta\",\"Spermatophyta\",\"Magnoliopsida\",\"eudicotyledons\",\"Gunneridae\",\"Pentapetalae\",\"asterids\",\"lamiids\",\"Gentianales\",\"Apocynaceae\",\"Rauvolfioideae\",\"Vinceae\",\"Rauvolfiinae\",\"Rauvolfia\"],\"scientificName\":\"Rauvolfia serpentina\",\"synonyms\":[\"Ophioxylon serpentinum\"],\"taxonId\":4060}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A218NGS0.json)
+
+```json
+{
+  "evidence_id": "C4",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A218NGS0.json",
+  "source_sha256": "3344314f4da5addc19db5cda9ea0987bc724f5d222433aee0a5e8af38bc94b40",
+  "retrieved_utc": "2026-11-01T06:24:42.234878+00:00",
+  "json_pointer": "/proteinDescription",
+  "excerpt": "{\"alternativeNames\":[{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ASG81458.1\",\"source\":\"EMBL\"}],\"value\":\"Cytochrome P450 5437\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ASG81458.1\",\"source\":\"EMBL\"}],\"value\":\"RsCYP5437\"}]},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28654178\",\"source\":\"PubMed\"}],\"value\":\"Cytochrome P450 82S18\"}},{\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28654178\",\"source\":\"PubMed\"}],\"value\":\"Perakine synthase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28654178\",\"source\":\"PubMed\"}],\"value\":\"Vomilenine isomerase\"}]}],\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28654178\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38212296\",\"source\":\"PubMed\"}],\"value\":\"1.14.14.104\"}],\"fullName\":{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"28654178\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38212296\",\"source\":\"PubMed\"}],\"value\":\"Vinorine hydroxylase\"},\"shortNames\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000303\",\"id\":\"38212296\",\"source\":\"PubMed\"}],\"value\":\"RsVH\"}]}}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A218NGS0.json)
+
+```json
+{
+  "evidence_id": "C5",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A218NGS0.json",
+  "source_sha256": "3344314f4da5addc19db5cda9ea0987bc724f5d222433aee0a5e8af38bc94b40",
+  "retrieved_utc": "2026-11-01T06:24:42.234878+00:00",
+  "json_pointer": "/comments/5",
+  "excerpt": "{\"commentType\":\"PATHWAY\",\"texts\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000269\",\"id\":\"28654178\",\"source\":\"PubMed\"},{\"evidenceCode\":\"ECO:0000269\",\"id\":\"38212296\",\"source\":\"PubMed\"}],\"value\":\"Alkaloid biosynthesis; ajmaline biosynthesis\"}]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C6
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A218NGS0.json)
+
+```json
+{
+  "evidence_id": "C6",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A218NGS0.json",
+  "source_sha256": "3344314f4da5addc19db5cda9ea0987bc724f5d222433aee0a5e8af38bc94b40",
+  "retrieved_utc": "2026-11-01T06:24:42.234878+00:00",
+  "json_pointer": "/references/0",
+  "excerpt": "{\"citation\":{\"authors\":[\"Dang T.T.\",\"Franke J.\",\"Tatsis E.\",\"O'Connor S.E.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"28654178\"},{\"database\":\"DOI\",\"id\":\"10.1002/anie.201705010\"}],\"citationType\":\"journal article\",\"firstPage\":\"9440\",\"id\":\"28654178\",\"journal\":\"Angew. Chem. Int. Ed.\",\"lastPage\":\"9444\",\"publicationDate\":\"2017\",\"title\":\"Dual catalytic activity of a cytochrome P450 controls bifurcation at a metabolic branch point of alkaloid biosynthesis in Rauwolfia serpentina.\",\"volume\":\"56\"},\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"ASG81458.1\",\"source\":\"EMBL\"}],\"referenceNumber\":1,\"referencePositions\":[\"NUCLEOTIDE SEQUENCE [MRNA]\",\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"BIOPHYSICOCHEMICAL PROPERTIES\",\"TISSUE SPECIFICITY\"]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C7
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A218NGS0.json)
+
+```json
+{
+  "evidence_id": "C7",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A218NGS0.json",
+  "source_sha256": "3344314f4da5addc19db5cda9ea0987bc724f5d222433aee0a5e8af38bc94b40",
+  "retrieved_utc": "2026-11-01T06:24:42.234878+00:00",
+  "json_pointer": "/references/1",
+  "excerpt": "{\"citation\":{\"authors\":[\"Guo J.\",\"Gao D.\",\"Lian J.\",\"Qu Y.\"],\"citationCrossReferences\":[{\"database\":\"PubMed\",\"id\":\"38212296\"},{\"database\":\"DOI\",\"id\":\"10.1038/s41467-024-44797-z\"}],\"citationType\":\"journal article\",\"firstPage\":\"457\",\"id\":\"38212296\",\"journal\":\"Nat. Commun.\",\"lastPage\":\"457\",\"publicationDate\":\"2024\",\"title\":\"De novo biosynthesis of antiarrhythmic alkaloid ajmaline.\",\"volume\":\"15\"},\"referenceNumber\":2,\"referencePositions\":[\"FUNCTION\",\"CATALYTIC ACTIVITY\",\"PATHWAY\",\"TISSUE SPECIFICITY\",\"BIOTECHNOLOGY\"]}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H1
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A218NGS0?format=txt&versions=26)
+
+```json
+{
+  "evidence_id": "H1",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A218NGS0?format=txt&versions=26",
+  "source_sha256": "48cff725e5a58f4e22b3c3036b7c75532fc0df2b16678a21392e3db27ec7ea5f",
+  "retrieved_utc": "2026-11-01T06:27:24.367833+00:00",
+  "source_locator": "lines 1-22",
+  "excerpt": "ID   VINHY_RAUSE             Reviewed;         480 AA.\nAC   A0A218NGS0;\nDT   18-JUN-2025, integrated into UniProtKB/Swiss-Prot.\nDT   27-SEP-2017, sequence version 1.\nDT   28-JAN-2026, entry version 26.\nDE   RecName: Full=Vinorine hydroxylase {ECO:0000303|PubMed:28654178, ECO:0000303|PubMed:38212296};\nDE            Short=RsVH {ECO:0000303|PubMed:38212296};\nDE            EC=1.14.14.104 {ECO:0000269|PubMed:28654178, ECO:0000269|PubMed:38212296};\nDE   AltName: Full=Cytochrome P450 5437 {ECO:0000312|EMBL:ASG81458.1};\nDE            Short=RsCYP5437 {ECO:0000312|EMBL:ASG81458.1};\nDE   AltName: Full=Cytochrome P450 82S18 {ECO:0000303|PubMed:28654178};\nDE   AltName: Full=Perakine synthase {ECO:0000303|PubMed:28654178};\nDE            Short=Vomilenine isomerase {ECO:0000303|PubMed:28654178};\nGN   Name=VH {ECO:0000303|PubMed:28654178, ECO:0000303|PubMed:38212296};\nGN   Synonyms=CYP5437 {ECO:0000312|EMBL:ASG81458.1},\nGN   CYP82S18 {ECO:0000303|PubMed:28654178};\nOS   Rauvolfia serpentina (Serpentine wood) (Ophioxylon serpentinum).\nOC   Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;\nOC   Spermatophyta; Magnoliopsida; eudicotyledons; Gunneridae; Pentapetalae;\nOC   asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae; Vinceae;\nOC   Rauvolfiinae; Rauvolfia.\nOX   NCBI_TaxID=4060;\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 26,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H2
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A218NGS0?format=txt&versions=26)
+
+```json
+{
+  "evidence_id": "H2",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A218NGS0?format=txt&versions=26",
+  "source_sha256": "48cff725e5a58f4e22b3c3036b7c75532fc0df2b16678a21392e3db27ec7ea5f",
+  "retrieved_utc": "2026-11-01T06:27:24.367833+00:00",
+  "source_locator": "lines 23-30",
+  "excerpt": "RN   [1] {ECO:0000312|EMBL:ASG81458.1}\nRP   NUCLEOTIDE SEQUENCE [MRNA], FUNCTION, CATALYTIC ACTIVITY, PATHWAY,\nRP   BIOPHYSICOCHEMICAL PROPERTIES, AND TISSUE SPECIFICITY.\nRX   PubMed=28654178; DOI=10.1002/anie.201705010;\nRA   Dang T.T., Franke J., Tatsis E., O'Connor S.E.;\nRT   \"Dual catalytic activity of a cytochrome P450 controls bifurcation at a\nRT   metabolic branch point of alkaloid biosynthesis in Rauwolfia serpentina.\";\nRL   Angew. Chem. Int. Ed. 56:9440-9444(2017).\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 26,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H3
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A218NGS0?format=txt&versions=26)
+
+```json
+{
+  "evidence_id": "H3",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A218NGS0?format=txt&versions=26",
+  "source_sha256": "48cff725e5a58f4e22b3c3036b7c75532fc0df2b16678a21392e3db27ec7ea5f",
+  "retrieved_utc": "2026-11-01T06:27:24.367833+00:00",
+  "source_locator": "lines 31-37",
+  "excerpt": "RN   [2]\nRP   FUNCTION, CATALYTIC ACTIVITY, PATHWAY, TISSUE SPECIFICITY, AND\nRP   BIOTECHNOLOGY.\nRX   PubMed=38212296; DOI=10.1038/s41467-024-44797-z;\nRA   Guo J., Gao D., Lian J., Qu Y.;\nRT   \"De novo biosynthesis of antiarrhythmic alkaloid ajmaline.\";\nRL   Nat. Commun. 15:457-457(2024).\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 26,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H4
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A218NGS0?format=txt&versions=26)
+
+```json
+{
+  "evidence_id": "H4",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A218NGS0?format=txt&versions=26",
+  "source_sha256": "48cff725e5a58f4e22b3c3036b7c75532fc0df2b16678a21392e3db27ec7ea5f",
+  "retrieved_utc": "2026-11-01T06:27:24.367833+00:00",
+  "source_locator": "lines 78-79",
+  "excerpt": "CC   -!- PATHWAY: Alkaloid biosynthesis; ajmaline biosynthesis.\nCC       {ECO:0000269|PubMed:28654178, ECO:0000269|PubMed:38212296}.\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 26,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/pathway.json), zero-based source row 46. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). [Source credits](../THIRD_PARTY_NOTICES.md).

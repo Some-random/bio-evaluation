@@ -1,0 +1,735 @@
+# catalytic_activity_0046: before and after transfer clarification
+
+[All 1,328 cases](../README.md) · [Method](../METHOD.md) · [Summary](../SUMMARY.md) · [Exact reviewer user message](../inputs/catalytic_activity_0046.txt)
+
+**Task:** `catalytic_activity`  
+**Author key, unchanged:** **B** — L-aspartate + ATP = 4-phospho-L-aspartate + ADP
+
+| Round | Reviewer | Key support | Transfer / lookup | Output usability (canonical status) |
+|---|---|---|---|---|
+| before | GPT-6 Luna | supported | lookup-dependent | usable output (valid_review) |
+| before | Qwen3.8-Flash-Next-NVFP4 | supported | lookup-dependent | usable output (valid_review) |
+| after | GPT-6 Luna | supported | reasoning-supported | usable output (valid_review) |
+| after | Qwen3.8-Flash-Next-NVFP4 | supported | reasoning-supported | usable output (valid_review) |
+
+**Usable output means format-valid review, not reasoning-supported or biologically correct.** A usable output can classify the question as reasoning-supported, lookup-dependent or uncertain. An output error is a problem with the saved model response; it does not count a defective benchmark question or wrong key. Each saved review is retained in full below. Labels from output errors are displayed as saved and excluded from label statistics. The author key and reviewer evidence were visible to reviewers; this is a review of answerability and key support, not a benchmark-solving score.
+
+## Complete original question
+
+```text
+[Protein Sequence]
+MSQSPTNVPRSYNSVLDLKLASPTNSASGATGGWIVQKFGGTSVGKFPENIVDNIVKVYSQTNRVAVVCSARSSQTKSEGTTSRLLRSADLAENDKDYQPLLNAIEEDHVTNAERIQSEEIKQELIKDTKQEIEHVRELLHACQIIGEISPRSLDSIMAVGEKLSCLFMTALMKDHGLNAVYINLQDVIPLSYDFQKGFDDSFYQFLSQEIGKRVLQCDKEREGEEDVIPVLTGYFGVVPGGLLNGVGRGYTDLCAALAAVALQADELQIWKEVDGIFTADPRKVPNARLLDSVTPEEAAELTYYGSEVIHPFTMEQVIRAKIPIRIKNVENPTGKGTIIYPDNIGRRGEATPPHPPAAFEQLAMSSLLQRKRSATAITAKQDIVVINIHSNKKTLSHGFLAHVFTTLDKYKLVVDLISTSEVHVSMALSIQSDQESQLKHALVDLRKMGTVDVTKKMTIVSLVGKQMVNFIGIAGNMFKVLADEKINIEMISQGANEINISAVINEKDTIRALKSIHAKLLEGGSAIGDSSAVDTRLEALKLS
+
+[Multiple Choices]
+A. 2 oxidized [4Fe-4S]-[ferredoxin] + taurine + H2O = aminoacetaldehyde + 2 reduced [4Fe-4S]-[ferredoxin] + sulfite + 3 H(+)
+B. L-aspartate + ATP = 4-phospho-L-aspartate + ADP
+C. (2R)-3-phosphoglycerate + ATP = (2R)-3-phospho-glyceroyl phosphate + ADP
+D. 3 malonyl-CoA + acetyl-CoA + 2 S-adenosyl-L-methionine = 3,5-dimethylorsellinate + 2 S-adenosyl-L-homocysteine + 3 CO2 + 4 CoA
+```
+
+<details>
+<summary>Complete original system instructions</summary>
+
+```text
+You are an excellent scientist. Analyze the provided protein-related task carefully and choose the correct answer from the multiple-choice options.
+
+The current task is about Enzymatic Reaction Prediction, which is to identify the specific chemical reaction catalyzed by a given enzyme. This involves understanding the enzyme's function based on its amino acid sequence and then selecting the correct transformation of substrates into products from a list of possible reactions.. The inputs provided by the user for this task include:
+
+* Protein Sequence: The amino acid sequence of the protein.
+* Multiple Choices: Candidate answers for the protein-related question.
+
+Please think step-by-step about this problem:
+1. Analyze the protein sequence carefully.
+2. Consider the biological context and function.
+3. Evaluate each multiple-choice option.
+4. Provide your reasoning process.
+5. Finally, give your answer.
+
+Provide your response in the following format:
+1. reasoning: [Your detailed reasoning here]
+2. answer: Your final answer, which should be "A", "B", "C" or "D".
+```
+
+</details>
+
+## Four saved visible reviews
+
+## Before: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The sequence-matched UniProt entry annotates the protein as aspartokinase and gives the reaction in choice B. The annotation is transferred by similarity from UniProtKB:P10869 (ECO:0000250), rather than shown here as direct experimental evidence for this exact protein.
+
+Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H3](#evidence-h3).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> The sequence is compatible with a kinase, and its length may disfavor some alternatives, but those broad features do not establish the substrate or distinguish aspartokinase activity in B from the other ATP-dependent kinase activity in C.
+
+
+**Missing item-specific fact**
+
+> The protein-specific assignment to aspartokinase, or equivalent evidence identifying its enzyme family and substrate specificity, is not supplied in the question.
+
+
+**Reason**
+
+> Choosing B requires identifying this particular sequence as an aspartokinase; that identity and its reaction are provided by the reviewer-only database annotation, not by a decisive general biological argument in the prompt.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The supplied evidence supports B for the matched protein. The sequence-only prompt does not make another option equally well supported, though it lacks enough explicit information to establish B by general reasoning alone.
+
+
+### Important caveats
+
+- The current and historical UniProt records match the supplied sequence, but the author’s exact source snapshot is unknown.
+- The cited catalytic-activity annotation is supported by similarity evidence to P10869; the supplied evidence does not independently establish experimental validation for this Candida albicans protein.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence is compatible with a kinase, and its length may disfavor some alternatives, but those broad features do not establish the substrate or distinguish aspartokinase activity in B from the other ATP-dependent kinase activity in C.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The protein-specific assignment to aspartokinase, or equivalent evidence identifying its enzyme family and substrate specificity, is not supplied in the question.",
+    "reason": "Choosing B requires identifying this particular sequence as an aspartokinase; that identity and its reaction are provided by the reviewer-only database annotation, not by a decisive general biological argument in the prompt."
+  },
+  "case_id": "catalytic_activity_0046",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C1",
+      "C4",
+      "C5",
+      "H3"
+    ],
+    "judgment": "supported",
+    "reason": "The sequence-matched UniProt entry annotates the protein as aspartokinase and gives the reaction in choice B. The annotation is transferred by similarity from UniProtKB:P10869 (ECO:0000250), rather than shown here as direct experimental evidence for this exact protein."
+  },
+  "important_caveats": [
+    "The current and historical UniProt records match the supplied sequence, but the author’s exact source snapshot is unknown.",
+    "The cited catalytic-activity annotation is supported by similarity evidence to P10869; the supplied evidence does not independently establish experimental validation for this Candida albicans protein."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The supplied evidence supports B for the matched protein. The sequence-only prompt does not make another option equally well supported, though it lacks enough explicit information to establish B by general reasoning alone."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "catalytic_activity_0046",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The sequence-matched UniProt entry annotates the protein as aspartokinase and gives the reaction in choice B. The annotation is transferred by similarity from UniProtKB:P10869 (ECO:0000250), rather than shown here as direct experimental evidence for this exact protein.",
+    "evidence_ids": ["C1", "C4", "C5", "H3"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "The sequence is compatible with a kinase, and its length may disfavor some alternatives, but those broad features do not establish the substrate or distinguish aspartokinase activity in B from the other ATP-dependent kinase activity in C.",
+    "missing_item_specific_fact": "The protein-specific assignment to aspartokinase, or equivalent evidence identifying its enzyme family and substrate specificity, is not supplied in the question.",
+    "reason": "Choosing B requires identifying this particular sequence as an aspartokinase; that identity and its reaction are provided by the reviewer-only database annotation, not by a decisive general biological argument in the prompt."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The supplied evidence supports B for the matched protein. The sequence-only prompt does not make another option equally well supported, though it lacks enough explicit information to establish B by general reasoning alone."
+  },
+  "important_caveats": [
+    "The current and historical UniProt records match the supplied sequence, but the author’s exact source snapshot is unknown.",
+    "The cited catalytic-activity annotation is supported by similarity evidence to P10869; the supplied evidence does not independently establish experimental validation for this Candida albicans protein."
+  ]
+}
+```
+
+</details>
+
+## Before: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The sequence (544 aa) matches UniProt entry A0A1D8PMB8 (AK_CANAL, Candida albicans aspartokinase, EC 2.7.2.4) with exact sequence comparison. The entry's catalytic activity annotation reads 'L-aspartate + ATP = 4-phospho-L-aspartate + ADP', which is identical to Choice B. The annotation carries evidence code ECO:0000250 (similarity-based transfer from P10869, the S. cerevisiae aspartokinase), so it is a computational/similarity annotation rather than direct experimental measurement on this Candida protein, but it is a well-supported and consistent assignment.
+
+Citations as saved: [C1](#evidence-c1), [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3).
+
+### Reasoning versus lookup: lookup-dependent
+
+**Discriminating biological argument**
+
+> Choices A (radical-SAM taurine dioxygenase) and D (polyketide synthase/methyltransferase) can be eliminated by general reasoning: the sequence lacks radical-SAM CX3CX2C motifs and does not resemble a type I PKS. The sequence contains nucleotide-binding-like motifs (e.g., 'GGTSVGK', 'GKGTIIYPDNIGRR') suggesting a kinase, which narrows to B or C. However, distinguishing aspartokinase (amino acid kinase superfamily) from phosphoglycerate kinase (P-loop kinase family) from a raw 544-aa string requires recognizing family-specific fold signatures or the exact sequence. The 544-aa length is consistent with fungal aspartokinases (S. cerevisiae AK is also 544 aa) and longer than typical phosphoglycerate kinases (~417 aa), but this is a weak heuristic, not a definitive structural argument.
+
+
+**Missing item-specific fact**
+
+> The specific sequence motifs and domain architecture unique to the amino acid kinase superfamily (aspartokinase) versus the P-loop kinase family (phosphoglycerate kinase), or recognition of this exact Candida albicans HOM3/AK sequence, is needed to confidently choose B over C.
+
+
+**Reason**
+
+> General kinase motif recognition narrows the field to B vs C, but the final discrimination between aspartokinase and phosphoglycerate kinase depends on item-specific knowledge of family-specific sequence signatures or direct sequence identification, not on a self-contained biological argument derivable from the raw sequence alone.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> Choices A and D are clearly non-kinase reactions and can be eliminated. Between B and C, the sequence length (544 aa) and the absence of the canonical PGK-specific motifs (e.g., the highly conserved 'DxxxxGK' P-loop of PGK) mildly favor B, but neither choice is strictly ambiguous given the correct annotation. No two choices are equally defensible.
+
+
+### Important caveats
+
+- The aspartokinase annotation is based on similarity transfer (ECO:0000250 from P10869), not direct experimental characterization of the Candida albicans protein.
+- The UniProt accession was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.
+- The sequence length heuristic (544 aa ≈ fungal AK vs ~417 aa PGK) provides only a weak, non-quantitative hint and should not be treated as a rigorous discriminator.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "Choices A (radical-SAM taurine dioxygenase) and D (polyketide synthase/methyltransferase) can be eliminated by general reasoning: the sequence lacks radical-SAM CX3CX2C motifs and does not resemble a type I PKS. The sequence contains nucleotide-binding-like motifs (e.g., 'GGTSVGK', 'GKGTIIYPDNIGRR') suggesting a kinase, which narrows to B or C. However, distinguishing aspartokinase (amino acid kinase superfamily) from phosphoglycerate kinase (P-loop kinase family) from a raw 544-aa string requires recognizing family-specific fold signatures or the exact sequence. The 544-aa length is consistent with fungal aspartokinases (S. cerevisiae AK is also 544 aa) and longer than typical phosphoglycerate kinases (~417 aa), but this is a weak heuristic, not a definitive structural argument.",
+    "judgment": "lookup_or_memorization_dependent",
+    "missing_item_specific_fact": "The specific sequence motifs and domain architecture unique to the amino acid kinase superfamily (aspartokinase) versus the P-loop kinase family (phosphoglycerate kinase), or recognition of this exact Candida albicans HOM3/AK sequence, is needed to confidently choose B over C.",
+    "reason": "General kinase motif recognition narrows the field to B vs C, but the final discrimination between aspartokinase and phosphoglycerate kinase depends on item-specific knowledge of family-specific sequence signatures or direct sequence identification, not on a self-contained biological argument derivable from the raw sequence alone."
+  },
+  "case_id": "catalytic_activity_0046",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C1",
+      "C4",
+      "C5",
+      "H2",
+      "H3"
+    ],
+    "judgment": "supported",
+    "reason": "The sequence (544 aa) matches UniProt entry A0A1D8PMB8 (AK_CANAL, Candida albicans aspartokinase, EC 2.7.2.4) with exact sequence comparison. The entry's catalytic activity annotation reads 'L-aspartate + ATP = 4-phospho-L-aspartate + ADP', which is identical to Choice B. The annotation carries evidence code ECO:0000250 (similarity-based transfer from P10869, the S. cerevisiae aspartokinase), so it is a computational/similarity annotation rather than direct experimental measurement on this Candida protein, but it is a well-supported and consistent assignment."
+  },
+  "important_caveats": [
+    "The aspartokinase annotation is based on similarity transfer (ECO:0000250 from P10869), not direct experimental characterization of the Candida albicans protein.",
+    "The UniProt accession was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.",
+    "The sequence length heuristic (544 aa ≈ fungal AK vs ~417 aa PGK) provides only a weak, non-quantitative hint and should not be treated as a rigorous discriminator."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "Choices A and D are clearly non-kinase reactions and can be eliminated. Between B and C, the sequence length (544 aa) and the absence of the canonical PGK-specific motifs (e.g., the highly conserved 'DxxxxGK' P-loop of PGK) mildly favor B, but neither choice is strictly ambiguous given the correct annotation. No two choices are equally defensible."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "catalytic_activity_0046",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The sequence (544 aa) matches UniProt entry A0A1D8PMB8 (AK_CANAL, Candida albicans aspartokinase, EC 2.7.2.4) with exact sequence comparison. The entry's catalytic activity annotation reads 'L-aspartate + ATP = 4-phospho-L-aspartate + ADP', which is identical to Choice B. The annotation carries evidence code ECO:0000250 (similarity-based transfer from P10869, the S. cerevisiae aspartokinase), so it is a computational/similarity annotation rather than direct experimental measurement on this Candida protein, but it is a well-supported and consistent assignment.",
+    "evidence_ids": ["C1", "C4", "C5", "H2", "H3"]
+  },
+  "answerability_check": {
+    "judgment": "lookup_or_memorization_dependent",
+    "discriminating_biological_argument": "Choices A (radical-SAM taurine dioxygenase) and D (polyketide synthase/methyltransferase) can be eliminated by general reasoning: the sequence lacks radical-SAM CX3CX2C motifs and does not resemble a type I PKS. The sequence contains nucleotide-binding-like motifs (e.g., 'GGTSVGK', 'GKGTIIYPDNIGRR') suggesting a kinase, which narrows to B or C. However, distinguishing aspartokinase (amino acid kinase superfamily) from phosphoglycerate kinase (P-loop kinase family) from a raw 544-aa string requires recognizing family-specific fold signatures or the exact sequence. The 544-aa length is consistent with fungal aspartokinases (S. cerevisiae AK is also 544 aa) and longer than typical phosphoglycerate kinases (~417 aa), but this is a weak heuristic, not a definitive structural argument.",
+    "missing_item_specific_fact": "The specific sequence motifs and domain architecture unique to the amino acid kinase superfamily (aspartokinase) versus the P-loop kinase family (phosphoglycerate kinase), or recognition of this exact Candida albicans HOM3/AK sequence, is needed to confidently choose B over C.",
+    "reason": "General kinase motif recognition narrows the field to B vs C, but the final discrimination between aspartokinase and phosphoglycerate kinase depends on item-specific knowledge of family-specific sequence signatures or direct sequence identification, not on a self-contained biological argument derivable from the raw sequence alone."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "Choices A and D are clearly non-kinase reactions and can be eliminated. Between B and C, the sequence length (544 aa) and the absence of the canonical PGK-specific motifs (e.g., the highly conserved 'DxxxxGK' P-loop of PGK) mildly favor B, but neither choice is strictly ambiguous given the correct annotation. No two choices are equally defensible."
+  },
+  "important_caveats": [
+    "The aspartokinase annotation is based on similarity transfer (ECO:0000250 from P10869), not direct experimental characterization of the Candida albicans protein.",
+    "The UniProt accession was inferred by the reviewer from dataset metadata; it was not provided to the evaluated model.",
+    "The sequence length heuristic (544 aa ≈ fungal AK vs ~417 aa PGK) provides only a weak, non-quantitative hint and should not be treated as a rigorous discriminator."
+  ]
+}
+```
+
+</details>
+
+## After: GPT-6 Luna
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The exact sequence matches the archived UniProt record annotated as aspartokinase, with the reaction in choice B. The annotation is explicitly based on similarity evidence from another UniProt protein (ECO:0000250), so it supports the key as a transferred annotation, not as independent experimental evidence for this exact protein.
+
+Citations as saved: [H2](#evidence-h2), [H3](#evidence-h3).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence is consistent with the aspartokinase family: a knowledgeable model can use family-level sequence homology and conserved kinase features to identify an enzyme acting in aspartate metabolism. That distinguishes the aspartate phosphorylation in B from the unrelated taurine oxidation in A and polyketide synthesis in D, and from the distinct phosphoglycerate kinase reaction in C. This is a transferable family inference, not a claim that the sequence alone proves the precise reaction experimentally.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> Family recognition and homolog-based inference provide a meaningful basis for choosing B among these alternatives. The exact protein's database annotation is not necessary to make that distinction.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The options describe distinct reactions, and the aspartokinase-family inference specifically favors B.
+
+
+### Important caveats
+
+- The reviewer-only record matches the supplied sequence, but its catalytic-activity annotation is transferred by similarity rather than shown here to be experimentally measured for this exact protein.
+- The original input provides no organism or protein name; the transferable inference rests on the sequence and family-level knowledge.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence is consistent with the aspartokinase family: a knowledgeable model can use family-level sequence homology and conserved kinase features to identify an enzyme acting in aspartate metabolism. That distinguishes the aspartate phosphorylation in B from the unrelated taurine oxidation in A and polyketide synthesis in D, and from the distinct phosphoglycerate kinase reaction in C. This is a transferable family inference, not a claim that the sequence alone proves the precise reaction experimentally.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "Family recognition and homolog-based inference provide a meaningful basis for choosing B among these alternatives. The exact protein's database annotation is not necessary to make that distinction."
+  },
+  "case_id": "catalytic_activity_0046",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "H2",
+      "H3"
+    ],
+    "judgment": "supported",
+    "reason": "The exact sequence matches the archived UniProt record annotated as aspartokinase, with the reaction in choice B. The annotation is explicitly based on similarity evidence from another UniProt protein (ECO:0000250), so it supports the key as a transferred annotation, not as independent experimental evidence for this exact protein."
+  },
+  "important_caveats": [
+    "The reviewer-only record matches the supplied sequence, but its catalytic-activity annotation is transferred by similarity rather than shown here to be experimentally measured for this exact protein.",
+    "The original input provides no organism or protein name; the transferable inference rests on the sequence and family-level knowledge."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The options describe distinct reactions, and the aspartokinase-family inference specifically favors B."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+{
+  "case_id": "catalytic_activity_0046",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The exact sequence matches the archived UniProt record annotated as aspartokinase, with the reaction in choice B. The annotation is explicitly based on similarity evidence from another UniProt protein (ECO:0000250), so it supports the key as a transferred annotation, not as independent experimental evidence for this exact protein.",
+    "evidence_ids": ["H2", "H3"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The sequence is consistent with the aspartokinase family: a knowledgeable model can use family-level sequence homology and conserved kinase features to identify an enzyme acting in aspartate metabolism. That distinguishes the aspartate phosphorylation in B from the unrelated taurine oxidation in A and polyketide synthesis in D, and from the distinct phosphoglycerate kinase reaction in C. This is a transferable family inference, not a claim that the sequence alone proves the precise reaction experimentally.",
+    "missing_item_specific_fact": "",
+    "reason": "Family recognition and homolog-based inference provide a meaningful basis for choosing B among these alternatives. The exact protein's database annotation is not necessary to make that distinction."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The options describe distinct reactions, and the aspartokinase-family inference specifically favors B."
+  },
+  "important_caveats": [
+    "The reviewer-only record matches the supplied sequence, but its catalytic-activity annotation is transferred by similarity rather than shown here to be experimentally measured for this exact protein.",
+    "The original input provides no organism or protein name; the transferable inference rests on the sequence and family-level knowledge."
+  ]
+}
+```
+
+</details>
+
+## After: Qwen3.8-Flash-Next-NVFP4
+
+**Output usability:** usable output: format-valid review.
+**Canonical saved status:** `valid_review`.
+
+### Expected-answer support: supported
+
+> The UniProt annotation (both current entry version 41 and archived version 39) identifies this 544-aa sequence as Aspartokinase (EC 2.7.2.4) with the exact catalytic reaction 'L-aspartate + ATP = 4-phospho-L-aspartate + ADP' (RHEA:23776), matching option B verbatim. The sequence SHA256 matches the benchmark input exactly. The annotation evidence code is ECO:0000250 (inferred by similarity from P10869, the S. cerevisiae aspartokinase), so the assignment is a well-supported computational transfer rather than direct experimental characterization of this specific Candida albicans protein, but it is consistent with the sequence family and the reaction is well-established for the family.
+
+Citations as saved: [C4](#evidence-c4), [C5](#evidence-c5), [H2](#evidence-h2), [H3](#evidence-h3).
+
+### Reasoning versus lookup: reasoning-supported
+
+**Discriminating biological argument**
+
+> The sequence contains the canonical 'GGLLNGVGRGY' motif (a GGG/GxGxG variant) embedded in a two-domain architecture characteristic of the amino acid kinase (AAK) superfamily. This motif is a well-known, transferable sequence signature shared across amino acid kinases (aspartokinase, N-acetylglutamate kinase, glutamate 5-kinase, carbamate kinase). Among the four offered choices, only option B (aspartokinase, EC 2.7.2.4) belongs to the AAK superfamily. Option A (taurine dioxygenase) is a radical-SAM enzyme with a completely different fold; option C (phosphoglycerate kinase) is a P-loop NTPase with a distinct Rossmann-like fold and typically ~417 aa; option D (polyketide synthase) involves a large multi-domain PKS architecture. Recognizing the GGG motif and the ~544-aa two-domain AAK architecture eliminates A, C, and D, leaving B as the only AAK-family option. The specific aspartokinase assignment within the AAK family is further supported by the C-terminal domain sequence pattern (e.g., 'GKGTIIYPDNIGRRGEATPPHPPAAFEQLAMSSLLQRKRSATAITAKQDIVVINIHSNKKTLSHGFLAHVFTTLDKYKLVVDLISTSEVHVSMALSIQSDQESQLKHALVDLRKMGTVDVTKKMTIVSLVGKQMVNFIGIAGNMFKVLADEKINIEMISQGANEINISAVINEKDTIRALKSIHAKLLEGGSAIGDSSAVDTRLEALKLS') which aligns with aspartokinase-specific residues rather than NAGK or Glu5K subfamilies.
+
+
+**Missing item-specific fact**
+
+Empty string, as saved.
+
+
+**Reason**
+
+> The GGG motif and AAK-family architecture are well-established, transferable sequence features. A model familiar with protein families can identify the AAK superfamily from the GGG motif and then select the only AAK option among the four choices. The discrimination does not require knowing the specific UniProt accession or database entry for this exact Candida albicans protein.
+
+
+### Question ambiguity
+
+**Multiple defensible options, exactly as saved:**
+
+```json
+[]
+```
+
+> The four options represent four structurally and mechanistically distinct enzyme families (radical-SAM, amino acid kinase, P-loop NTPase, polyketide synthase). The GGG motif uniquely identifies the AAK superfamily, and only option B belongs to that superfamily. No other option is defensible for a sequence bearing this motif.
+
+
+### Important caveats
+
+- The UniProt annotation for this protein uses evidence code ECO:0000250 (inferred by similarity from P10869), meaning the aspartokinase assignment is a computational transfer, not direct experimental characterization of this exact Candida albicans protein.
+- The GGG motif is shared across the AAK superfamily; distinguishing aspartokinase from other AAK members (NAGK, Glu5K, carbamate kinase) relies on broader sequence context and domain architecture, which is consistent here but is a pattern-matching inference rather than a single-residue proof.
+- The identity of the protein as Candida albicans HOM3/aspartokinase was inferred by the reviewer from dataset metadata and is not available to the evaluated model; the model must rely on sequence features alone.
+
+<details>
+<summary>Complete saved parsed visible review</summary>
+
+```json
+{
+  "answerability_check": {
+    "discriminating_biological_argument": "The sequence contains the canonical 'GGLLNGVGRGY' motif (a GGG/GxGxG variant) embedded in a two-domain architecture characteristic of the amino acid kinase (AAK) superfamily. This motif is a well-known, transferable sequence signature shared across amino acid kinases (aspartokinase, N-acetylglutamate kinase, glutamate 5-kinase, carbamate kinase). Among the four offered choices, only option B (aspartokinase, EC 2.7.2.4) belongs to the AAK superfamily. Option A (taurine dioxygenase) is a radical-SAM enzyme with a completely different fold; option C (phosphoglycerate kinase) is a P-loop NTPase with a distinct Rossmann-like fold and typically ~417 aa; option D (polyketide synthase) involves a large multi-domain PKS architecture. Recognizing the GGG motif and the ~544-aa two-domain AAK architecture eliminates A, C, and D, leaving B as the only AAK-family option. The specific aspartokinase assignment within the AAK family is further supported by the C-terminal domain sequence pattern (e.g., 'GKGTIIYPDNIGRRGEATPPHPPAAFEQLAMSSLLQRKRSATAITAKQDIVVINIHSNKKTLSHGFLAHVFTTLDKYKLVVDLISTSEVHVSMALSIQSDQESQLKHALVDLRKMGTVDVTKKMTIVSLVGKQMVNFIGIAGNMFKVLADEKINIEMISQGANEINISAVINEKDTIRALKSIHAKLLEGGSAIGDSSAVDTRLEALKLS') which aligns with aspartokinase-specific residues rather than NAGK or Glu5K subfamilies.",
+    "judgment": "reasoning_supported",
+    "missing_item_specific_fact": "",
+    "reason": "The GGG motif and AAK-family architecture are well-established, transferable sequence features. A model familiar with protein families can identify the AAK superfamily from the GGG motif and then select the only AAK option among the four choices. The discrimination does not require knowing the specific UniProt accession or database entry for this exact Candida albicans protein."
+  },
+  "case_id": "catalytic_activity_0046",
+  "expected_answer_check": {
+    "evidence_ids": [
+      "C4",
+      "C5",
+      "H2",
+      "H3"
+    ],
+    "judgment": "supported",
+    "reason": "The UniProt annotation (both current entry version 41 and archived version 39) identifies this 544-aa sequence as Aspartokinase (EC 2.7.2.4) with the exact catalytic reaction 'L-aspartate + ATP = 4-phospho-L-aspartate + ADP' (RHEA:23776), matching option B verbatim. The sequence SHA256 matches the benchmark input exactly. The annotation evidence code is ECO:0000250 (inferred by similarity from P10869, the S. cerevisiae aspartokinase), so the assignment is a well-supported computational transfer rather than direct experimental characterization of this specific Candida albicans protein, but it is consistent with the sequence family and the reaction is well-established for the family."
+  },
+  "important_caveats": [
+    "The UniProt annotation for this protein uses evidence code ECO:0000250 (inferred by similarity from P10869), meaning the aspartokinase assignment is a computational transfer, not direct experimental characterization of this exact Candida albicans protein.",
+    "The GGG motif is shared across the AAK superfamily; distinguishing aspartokinase from other AAK members (NAGK, Glu5K, carbamate kinase) relies on broader sequence context and domain architecture, which is consistent here but is a pattern-matching inference rather than a single-residue proof.",
+    "The identity of the protein as Candida albicans HOM3/aspartokinase was inferred by the reviewer from dataset metadata and is not available to the evaluated model; the model must rely on sequence features alone."
+  ],
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The four options represent four structurally and mechanistically distinct enzyme families (radical-SAM, amino acid kinase, P-loop NTPase, polyketide synthase). The GGG motif uniquely identifies the AAK superfamily, and only option B belongs to that superfamily. No other option is defensible for a sequence bearing this motif."
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Exact saved visible final text</summary>
+
+```text
+
+
+{
+  "case_id": "catalytic_activity_0046",
+  "expected_answer_check": {
+    "judgment": "supported",
+    "reason": "The UniProt annotation (both current entry version 41 and archived version 39) identifies this 544-aa sequence as Aspartokinase (EC 2.7.2.4) with the exact catalytic reaction 'L-aspartate + ATP = 4-phospho-L-aspartate + ADP' (RHEA:23776), matching option B verbatim. The sequence SHA256 matches the benchmark input exactly. The annotation evidence code is ECO:0000250 (inferred by similarity from P10869, the S. cerevisiae aspartokinase), so the assignment is a well-supported computational transfer rather than direct experimental characterization of this specific Candida albicans protein, but it is consistent with the sequence family and the reaction is well-established for the family.",
+    "evidence_ids": ["C4", "C5", "H2", "H3"]
+  },
+  "answerability_check": {
+    "judgment": "reasoning_supported",
+    "discriminating_biological_argument": "The sequence contains the canonical 'GGLLNGVGRGY' motif (a GGG/GxGxG variant) embedded in a two-domain architecture characteristic of the amino acid kinase (AAK) superfamily. This motif is a well-known, transferable sequence signature shared across amino acid kinases (aspartokinase, N-acetylglutamate kinase, glutamate 5-kinase, carbamate kinase). Among the four offered choices, only option B (aspartokinase, EC 2.7.2.4) belongs to the AAK superfamily. Option A (taurine dioxygenase) is a radical-SAM enzyme with a completely different fold; option C (phosphoglycerate kinase) is a P-loop NTPase with a distinct Rossmann-like fold and typically ~417 aa; option D (polyketide synthase) involves a large multi-domain PKS architecture. Recognizing the GGG motif and the ~544-aa two-domain AAK architecture eliminates A, C, and D, leaving B as the only AAK-family option. The specific aspartokinase assignment within the AAK family is further supported by the C-terminal domain sequence pattern (e.g., 'GKGTIIYPDNIGRRGEATPPHPPAAFEQLAMSSLLQRKRSATAITAKQDIVVINIHSNKKTLSHGFLAHVFTTLDKYKLVVDLISTSEVHVSMALSIQSDQESQLKHALVDLRKMGTVDVTKKMTIVSLVGKQMVNFIGIAGNMFKVLADEKINIEMISQGANEINISAVINEKDTIRALKSIHAKLLEGGSAIGDSSAVDTRLEALKLS') which aligns with aspartokinase-specific residues rather than NAGK or Glu5K subfamilies.",
+    "missing_item_specific_fact": "",
+    "reason": "The GGG motif and AAK-family architecture are well-established, transferable sequence features. A model familiar with protein families can identify the AAK superfamily from the GGG motif and then select the only AAK option among the four choices. The discrimination does not require knowing the specific UniProt accession or database entry for this exact Candida albicans protein."
+  },
+  "question_ambiguity": {
+    "multiple_defensible_options": [],
+    "reason": "The four options represent four structurally and mechanistically distinct enzyme families (radical-SAM, amino acid kinase, P-loop NTPase, polyketide synthase). The GGG motif uniquely identifies the AAK superfamily, and only option B belongs to that superfamily. No other option is defensible for a sequence bearing this motif."
+  },
+  "important_caveats": [
+    "The UniProt annotation for this protein uses evidence code ECO:0000250 (inferred by similarity from P10869), meaning the aspartokinase assignment is a computational transfer, not direct experimental characterization of this exact Candida albicans protein.",
+    "The GGG motif is shared across the AAK superfamily; distinguishing aspartokinase from other AAK members (NAGK, Glu5K, carbamate kinase) relies on broader sequence context and domain architecture, which is consistent here but is a pattern-matching inference rather than a single-residue proof.",
+    "The identity of the protein as Candida albicans HOM3/aspartokinase was inferred by the reviewer from dataset metadata and is not available to the evaluated model; the model must rely on sequence features alone."
+  ]
+}
+```
+
+</details>
+
+## Existing project source checks of the old Luna review only
+
+These unchanged notes concern the earlier Luna claims. They do not validate either new review or the old Qwen review. No new scientific adjudication was performed.
+
+## Project source-check notes
+
+These project-authored, AI-assisted checks assess specific source claims. They are not expert adjudication and do not replace Luna’s saved review or the author key.
+
+No additional case-specific project note was recorded. Citation membership checks do not establish that every scientific argument is correct.
+
+## Complete reviewer-only evidence and qualifications
+
+All excerpts supplied in the original and revised reviewer user message follow. This material was not available to the original evaluated model. Accession identity came from dataset image-path metadata. Source support and transferable discrimination are separate judgments.
+
+**Applicability metadata, unchanged:**
+
+```json
+{
+  "requested_accession": "A0A1D8PMB8",
+  "identity_origin": "reviewer-only accession inferred mechanically from original dataset image-path metadata; this accession/metadata was absent from evaluated model input",
+  "benchmark_sequence_sha256": "a70e31c973f256dd8bc7aaccfa7ecf4ba1619ab22a51f5845f097e63766efe67",
+  "benchmark_sequence_length": 544,
+  "current_status": "retrieved",
+  "current_sequence_comparison": "matched",
+  "current_entry_audit": {
+    "entryVersion": 41,
+    "firstPublicDate": "2025-02-05",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2017-01-18",
+    "sequenceVersion": 1
+  },
+  "current_uniprot_release": "2026_03",
+  "current_record_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "current_source_sequence_sha256": "a70e31c973f256dd8bc7aaccfa7ecf4ba1619ab22a51f5845f097e63766efe67",
+  "current_source_sequence_length": 544,
+  "historical_status": "retrieved",
+  "historical_cutoff_date": "2026-05-07",
+  "historical_sequence_comparison": "matched",
+  "selected_historical_entry_version": 39,
+  "selected_historical_version": {
+    "accession": "A0A1D8PMB8",
+    "database": "Swiss-Prot",
+    "entryVersion": 39,
+    "firstRelease": "2025_03/2025_03",
+    "firstReleaseDate": "18-Jun-2025",
+    "lastRelease": "2026_01/2026_01",
+    "lastReleaseDate": "28-Jan-2026",
+    "name": "AK_CANAL",
+    "sequenceVersion": 1
+  },
+  "selected_historical_record_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
+  "selected_historical_source_sequence_sha256": "a70e31c973f256dd8bc7aaccfa7ecf4ba1619ab22a51f5845f097e63766efe67",
+  "selected_historical_source_sequence_length": 544,
+  "latest_at_cutoff_sequence_comparison": "matched",
+  "historical_sequence_versions_checked": [
+    {
+      "entry_version": 39,
+      "exact_sequence_comparison": "matched",
+      "sequence_version": 1
+    }
+  ],
+  "actual_author_source_snapshot": "unknown",
+  "numbering": "Canonical entry coordinates; construct or isoform numbering is not assumed."
+}
+```
+
+**Qualifications, unchanged:**
+
+- All evidence and source identity in this section are reviewer-only and were absent from the evaluated model input.
+- UniProt annotations may be experimental, computational, or transferred by similarity; evidence codes and qualifiers are retained.
+- The 2026-05-07 cutoff approximates the pinned repository date; the author data-construction date and exact source snapshot remain unknown.
+- Selected source fields are excerpts; missing annotation is not evidence of falsehood. Primary papers were not comprehensively retrieved or independently validated.
+
+### Evidence C1
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json)
+
+```json
+{
+  "evidence_id": "C1",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json",
+  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
+  "json_pointer": "/primaryAccession",
+  "excerpt": "\"A0A1D8PMB8\"",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C2
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json)
+
+```json
+{
+  "evidence_id": "C2",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json",
+  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
+  "json_pointer": "/entryAudit",
+  "excerpt": "{\"entryVersion\":41,\"firstPublicDate\":\"2025-02-05\",\"lastAnnotationUpdateDate\":\"2026-09-02\",\"lastSequenceUpdateDate\":\"2017-01-18\",\"sequenceVersion\":1}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C3
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json)
+
+```json
+{
+  "evidence_id": "C3",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json",
+  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
+  "json_pointer": "/organism",
+  "excerpt": "{\"commonName\":\"Yeast\",\"evidences\":[{\"evidenceCode\":\"ECO:0000312\",\"id\":\"UP000000559\",\"source\":\"Proteomes\"}],\"lineage\":[\"Eukaryota\",\"Fungi\",\"Dikarya\",\"Ascomycota\",\"Saccharomycotina\",\"Pichiomycetes\",\"Debaryomycetaceae\",\"Candida/Lodderomyces clade\",\"Candida\"],\"scientificName\":\"Candida albicans (strain SC5314 / ATCC MYA-2876)\",\"taxonId\":237561}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C4
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json)
+
+```json
+{
+  "evidence_id": "C4",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json",
+  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
+  "json_pointer": "/proteinDescription",
+  "excerpt": "{\"recommendedName\":{\"ecNumbers\":[{\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10869\",\"source\":\"UniProtKB\"}],\"value\":\"2.7.2.4\"}],\"fullName\":{\"value\":\"Aspartokinase\"}}}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence C5
+
+[UniProtKB current entry](https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json)
+
+```json
+{
+  "evidence_id": "C5",
+  "source": "UniProtKB current entry",
+  "url": "https://rest.uniprot.org/uniprotkb/A0A1D8PMB8.json",
+  "source_sha256": "7c688e4eaabc3e4781e5ade84edef7517de0ae1c9eaf84cba6bd0311b17eacc2",
+  "retrieved_utc": "2026-11-02T04:24:32.794689+00:00",
+  "json_pointer": "/comments/1",
+  "excerpt": "{\"commentType\":\"CATALYTIC ACTIVITY\",\"physiologicalReactions\":[{\"directionType\":\"left-to-right\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10869\",\"source\":\"UniProtKB\"}],\"reactionCrossReference\":{\"database\":\"Rhea\",\"id\":\"RHEA:23777\"}}],\"reaction\":{\"ecNumber\":\"2.7.2.4\",\"evidences\":[{\"evidenceCode\":\"ECO:0000250\",\"id\":\"P10869\",\"source\":\"UniProtKB\"}],\"name\":\"L-aspartate + ATP = 4-phospho-L-aspartate + ADP\",\"reactionCrossReferences\":[{\"database\":\"Rhea\",\"id\":\"RHEA:23776\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:29991\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:30616\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:57535\"},{\"database\":\"ChEBI\",\"id\":\"CHEBI:456216\"}]}}",
+  "excerpt_format": "canonical JSON value at JSON pointer",
+  "source_scope": "current snapshot; actual author source snapshot unknown",
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H1
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39)
+
+```json
+{
+  "evidence_id": "H1",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39",
+  "source_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
+  "retrieved_utc": "2026-11-02T04:24:35.627360+00:00",
+  "source_locator": "lines 1-14",
+  "excerpt": "ID   AK_CANAL                Reviewed;         544 AA.\nAC   A0A1D8PMB8;\nDT   05-FEB-2025, integrated into UniProtKB/Swiss-Prot.\nDT   18-JAN-2017, sequence version 1.\nDT   18-JUN-2025, entry version 39.\nDE   RecName: Full=Aspartokinase;\nDE            EC=2.7.2.4 {ECO:0000250|UniProtKB:P10869};\nGN   Name=HOM3 {ECO:0000312|CGD:CAL0000181037};\nGN   OrderedLocusNames=CAALFM_C405540WA {ECO:0000312|EMBL:AOW29286.1},\nGN   orf19.8820 {ECO:0000312|CGD:CAL0000181037};\nOS   Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast).\nOC   Eukaryota; Fungi; Dikarya; Ascomycota; Saccharomycotina; Pichiomycetes;\nOC   Debaryomycetaceae; Candida/Lodderomyces clade; Candida.\nOX   NCBI_TaxID=237561 {ECO:0000312|Proteomes:UP000000559};\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 39,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H2
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39)
+
+```json
+{
+  "evidence_id": "H2",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39",
+  "source_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
+  "retrieved_utc": "2026-11-02T04:24:35.627360+00:00",
+  "source_locator": "lines 6-7",
+  "excerpt": "DE   RecName: Full=Aspartokinase;\nDE            EC=2.7.2.4 {ECO:0000250|UniProtKB:P10869};\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 39,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+### Evidence H3
+
+[UniSave archived UniProt entry](https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39)
+
+```json
+{
+  "evidence_id": "H3",
+  "source": "UniSave archived UniProt entry",
+  "url": "https://rest.uniprot.org/unisave/A0A1D8PMB8?format=txt&versions=39",
+  "source_sha256": "25e1c2e406fb09fd648127e1e60780d1244490e7b9ae80cba023db5b2b691f93",
+  "retrieved_utc": "2026-11-02T04:24:35.627360+00:00",
+  "source_locator": "lines 63-69",
+  "excerpt": "CC   -!- CATALYTIC ACTIVITY:\nCC       Reaction=L-aspartate + ATP = 4-phospho-L-aspartate + ADP;\nCC         Xref=Rhea:RHEA:23776, ChEBI:CHEBI:29991, ChEBI:CHEBI:30616,\nCC         ChEBI:CHEBI:57535, ChEBI:CHEBI:456216; EC=2.7.2.4;\nCC         Evidence={ECO:0000250|UniProtKB:P10869};\nCC       PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:23777;\nCC         Evidence={ECO:0000250|UniProtKB:P10869};\n",
+  "excerpt_format": "literal contiguous UniProt flat-file lines",
+  "source_scope": "record released no later than 2026-05-07; actual author source snapshot unknown",
+  "entry_version": 39,
+  "sequence_version": 1,
+  "sequence_comparison": "matched"
+}
+```
+
+---
+
+Original question/key: [pinned source](https://github.com/Rongdingyi/LiveProteinBench/blob/8b9710932511f816651fc1a7e8a1bc85c3c77767/dataset/QA/catalytic_activity.json), zero-based source row 46. © 2026 LiveProteinBench contributors; [CC BY 4.0](https://huggingface.co/datasets/LiveProteinBench/LiveProteinBench/blob/8428f64e33d53330f7745376d9c45de2d2c37eaf/LICENSE). [Source credits](../THIRD_PARTY_NOTICES.md).

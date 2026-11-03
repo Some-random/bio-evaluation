@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-11-02",
+  "selected_questions": 1328,
+  "not_reassessed_questions": 408,
+  "packets_sha256": "482fabb9400a0c47ebe0d8c9251df8257a9d7e89411096e375bd46b5c4819fca",
+  "selection_input_sha256": "8fe294f3fbb532a31523fdf02cd0786a79926d18208689a96cd7d1075d8ad540",
+  "old_paired_reviews_jsonl_sha256": "7a25d3993670e98524c0a914aad993f8225b6ab5d5ed2cfac2028a99abef89c2",
+  "prior_public_tree_verification": {
+    "manifest_sha256": "189f802904ee5c37aeb96155e9c2badc68e6a9301463a0c581c11e60be150a44",
+    "file_inventory_sha256": "d30ef1caf558218071ebef28642c11ebf6cf874a6bcf309f09791df93419e58c",
+    "verified_files": 1745
+  },
+  "old_public_tree_preserved_unchanged": true,
+  "renderer_sha256": "3fef258ad3ed9cfb75fdfb1c811591c0aa41ebadeff8036458baf5f23625530c",
+  "prior_renderer_sha256": "ea06e85d7d1851c75a08b3b56a77ebd09fb9f07263ab216c5310195bc0126e05",
+  "prior_helper_sha256": "05ee3ff585c6473f9b5ed7f7c2dd898eda1a38bc0336126bd30fc70d39e0a284",
+  "system_prompt_sha256": {
+    "before": "e78bc52e87f4e9a6abb27d392456e08d203acb6473b27d75de163102fa6464f2",
+    "after": "68864a034642c7a68a45722f46cd9de9a03a40aa73b168e4cb341ef21d9bc1ee"
+  },
+  "user_template_sha256": "0588e24c834775ca6a2bb296de6fae9474fe03ea11883733d489fcf4fdd4f0bc",
+  "source_manifest_sha256": "a940ff1605b1a2625b62f36e580a2437d0861fe454c9bc047a7853ce4a7d3071",
+  "dataset_source_manifest_sha256": "be3c110bf0dfecd5041d1e79265b2791d0a97f27c25e37b4fd72e31aa3f33593",
+  "packet_lineage_sha256": "6722ed0bf47fba41b695487056c2bb6ded67497d7f192722ac2feda76e582070",
+  "original_model_inputs_sha256": "4f16e63a748a536a936f6b35540915354c187fb44aecc5cb3b71a615c484103c",
+  "original_references_sha256": "dab5185104e5ee504cbd96a3c978761530ecaf95dce7c9c6ad1c4f02bfd41bf7",
+  "terminal_client_audits": {
+    "luna": {
+      "sha256": "1f7c88d072f6d8f5debaeef477e5dc74fc110ae28bfe13faf37691696e99f25d",
+      "scope": {
+        "model_key": "luna",
+        "planned": 1328,
+        "packets_sha256": "482fabb9400a0c47ebe0d8c9251df8257a9d7e89411096e375bd46b5c4819fca",
+        "dispatch_manifest_sha256": "8790b7995508c26c239ef30721764a069ca9854bc92867e6243dd6556252ddeb",
+        "case_ids_sha256": "925fefacefd3c26ff109550460eef4bcfebdc1a57332ff9bae564a6b5ffbee6d",
+        "claimed": 1328,
+        "attempted": 1328,
+        "terminal": 1328,
+        "pending": 0,
+        "status_counts": {
+          "invalid_review": 20,
+          "valid_review": 1308
+        },
+        "valid_review": 1308,
+        "invalid_review": 20,
+        "request_pins_match": true,
+        "record_bindings_match": true,
+        "all_attempts_one": true,
+        "complete_attempt_scope": true,
+        "passed_scope": true,
+        "all_other_terminal_statuses": 0
+      }
+    },
+    "qwen": {
+      "sha256": "16bb2ab1376788e6045aba4767394cd6a7138fb37e211eaa4374fe7e9833888a",
+      "scope": {
+        "model_key": "qwen",
+        "planned": 1328,
+        "packets_sha256": "482fabb9400a0c47ebe0d8c9251df8257a9d7e89411096e375bd46b5c4819fca",
+        "dispatch_manifest_sha256": "e33662f47f40f0f9e11381c5205bb86b9da928e9d4ad309ee005666159d40c83",
+        "case_ids_sha256": "925fefacefd3c26ff109550460eef4bcfebdc1a57332ff9bae564a6b5ffbee6d",
+        "claimed": 1328,
+        "attempted": 1328,
+        "terminal": 1328,
+        "pending": 0,
+        "status_counts": {
+          "invalid_review": 23,
+          "valid_review": 1305
+        },
+        "valid_review": 1305,
+        "invalid_review": 23,
+        "request_pins_match": true,
+        "record_bindings_match": true,
+        "all_attempts_one": true,
+        "complete_attempt_scope": true,
+        "passed_scope": true,
+        "all_other_terminal_statuses": 0
+      }
+    }
+  },
+  "new_record_bindings": {
+    "luna": "c11f868b5c1eceac748ea9b22a246868097f495e75abc64f6d57ab5fb10a8c1b",
+    "qwen": "784b3e27b37b0d1392ff2c45fdba1bb6aeb1951175999f11b49098acd840d22a"
+  },
+  "public_policy": "Explicit content allowlists; exact saved visible final and parsed review only. No private reasoning, IDs, headers, credentials, server addresses or local paths.",
+  "before_after_agreement_uses_fixed_four_way_valid_intersection": true,
+  "new_model_calls_by_renderer": 0,
+  "downloads_by_renderer": 0,
+  "external_writes_by_renderer": 0,
+  "source_credit_provenance": {
+    "packets.jsonl": "19e97d3770cea7faadab526430a7791f01a2b05a5016cee76c8d99a7f32c4e14",
+    "source_verification_notes.jsonl": "a1ea2b2e8869385e812d5f41cea3e2526c3212c37877c345eb0d81b34be90408",
+    "source_verification_addendum_39.jsonl": "f30364b159da414a00251ba9b78ec604a9b2999e6e5a26011308b89bef2d8fa4",
+    "source_verification_invalid_review_note.json": "f8578b0cb3d79dd04fad693107a709a4f60c8f1e446f0ff4e397761c430904a0",
+    "source_verification_summary_full1736.json": "3503dd4661dd0291efcf7e366a0e47c41f3ca89f7611660d38eeac1b397245be"
+  }
+}
