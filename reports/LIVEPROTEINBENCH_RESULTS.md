@@ -1,25 +1,51 @@
 # LiveProteinBench model results
 
-Snapshot: **November 2, 2026**. This page collects our existing sequence-only LiveProteinBench results and the paper's published reference scores.
+Snapshot: **November 2, 2026**. This page brings together our existing sequence-only LiveProteinBench runs and the sequence-only reference results from [Table 5 of the benchmark paper](https://arxiv.org/html/2512.22257v1#A4.T5).
 
-Our evaluations use **1,736 questions across 12 tasks** from the benchmark's 1,797-question release. Accuracy is the number of answers matching the benchmark's saved choice divided by all evaluated questions; unparsed and empty answers count as incorrect in the recorded scores. The benchmark has been used in previous experiments, and answer agreement does not by itself evaluate the scientific reasoning.
+Our runs use **1,736 questions across 12 tasks**. The paper's scores use the full **1,797-question** release. The question sets and inference settings differ, so the rows are useful context rather than a strictly controlled comparison. Accuracy measures agreement with the benchmark's saved answer; it does not assess the quality of the explanation.
 
-## Our model results
+## Results
 
-| Model or checkpoint | Correct / questions | Recorded accuracy | Setting |
-|---|---:|---:|---|
-| [GPT-6 Luna](LIVEPROTEINBENCH_GPT6_LUNA_HIGH32K_RESULT.md) | 1,134 / 1,736 | 65.32% | High reasoning, 32K output |
-| Qwen3.8-Flash-Next NVFP4 | 838 / 1,736 | 48.27% | Xhigh, full context |
-| [Qwen3.8-27B](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md) | 600 / 1,736 | 34.56% | Earlier project run |
-| [Qwen3.5-4B, thinking off](LIVEPROTEINBENCH_QWEN35_4B_POSTTRAINED_EXISTING_OUTPUTS.md) | 579 / 1,736 | 33.35% | Earlier project run |
-| Qwen3.5-4B before our new training | 541 / 1,736 | 31.16% | Thinking, full context |
-| Qwen3.5-4B, low-effort training, epoch 1 | 496 / 1,736 | 28.57%* | Thinking, full context |
-| Qwen3.5-4B, low-effort training, epoch 2 | 559 / 1,736 | 32.20%* | Thinking, full context |
-| Qwen3.5-4B, low-effort training, epoch 3 | 577 / 1,736 | 33.24%* | Thinking, full context |
+| Model or checkpoint | Source | Correct / questions | Accuracy | Setting |
+|---|---|---:|---:|---|
+| [GPT-6 Luna](LIVEPROTEINBENCH_GPT6_LUNA_HIGH32K_RESULT.md) | Our run | 1,134 / 1,736 | 65.32% | High reasoning, 32K output |
+| GPT-5 | Paper | — / 1,797 | 60.49% | Sequence only |
+| OpenAI o3 | Paper | — / 1,797 | 56.04% | Sequence only |
+| Claude 3.7 Sonnet | Paper | — / 1,797 | 51.47% | Sequence only |
+| Qwen3.8-Flash-Next NVFP4 | Our run | 838 / 1,736 | 48.27% | Xhigh reasoning, full context |
+| Gemini 2.5 Pro | Paper | — / 1,797 | 43.85% | Sequence only |
+| Gemini 2.0 Flash | Paper | — / 1,797 | 43.07% | Sequence only |
+| GPT-4o | Paper | — / 1,797 | 38.39% | Sequence only |
+| Qwen3.5-4B, low-effort training, epoch 4 | Our run | 606 / 1,736 | 34.91%* | Thinking, full context |
+| [Qwen3.8-27B](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md) | Our run | 600 / 1,736 | 34.56% | Earlier project run |
+| [Qwen3.5-4B, thinking off](LIVEPROTEINBENCH_QWEN35_4B_POSTTRAINED_EXISTING_OUTPUTS.md) | Our run | 579 / 1,736 | 33.35% | Earlier project run |
+| Qwen3.5-4B, low-effort training, epoch 3 | Our run | 577 / 1,736 | 33.24%* | Thinking, full context |
+| Qwen2.5-VL-32B | Paper | — / 1,797 | 33.05% | Sequence only |
+| Qwen3.5-4B, low-effort training, epoch 2 | Our run | 559 / 1,736 | 32.20%* | Thinking, full context |
+| Qwen3.5-4B before the new training | Our run | 541 / 1,736 | 31.16% | Thinking, full context |
+| [Qwen3.5-4B before the earlier training](qwen35_before_finetuning_liveproteinbench_20261031/README.md) | Our run | 524 / 1,736 | 30.18% | Earlier matched seeded 32K evaluation |
+| [Qwen3.5-4B, thinking, 32K](LIVEPROTEINBENCH_QWEN35_4B_POST_NATIVE_THINKING32K_V3_RESULT.md) | Our run | 502 / 1,736 | 28.92% | Earlier project run |
+| Qwen3.5-4B, low-effort training, epoch 1 | Our run | 496 / 1,736 | 28.57%* | Thinking, full context |
+| InternVL3-78B | Paper | — / 1,797 | 23.37% | Sequence only |
+| Qwen3.5-4B, earlier training, epoch 5 | Our run | 389 / 1,736 | 22.41% | Earlier matched seeded 32K evaluation |
+| [Qwen3.5-4B, earlier training, epoch 5 V2](qwen35_epoch5_liveproteinbench_20261031/README.md) | Our run | 376 / 1,736 | 21.66% | Separate 32K evaluation, different sampler and seed policy |
+| Qwen3.5-4B, earlier training, epoch 1 | Our run | 318 / 1,736 | 18.32% | Earlier matched seeded 32K evaluation |
+| [Qwen3.5-4B-Base](LIVEPROTEINBENCH_QWEN35_4B_BASE_AUTHOR_SAMPLING_V2_RESULT.md) | Our run | 241 / 1,736 | 13.88% | Earlier 16K evaluation; many answers were not delivered in a scorable form |
 
-\* **Provisional parser-based scores.** The scorer failed to extract choices from some nonempty checkpoint responses, including responses that explicitly selected the saved answer. The figures shown are the original recorded counts; rescoring is pending. Epochs 4 and 5 and the xhigh-trained checkpoints are not included in this snapshot.
+* **Provisional scores:** the current scorer missed the selected choice in some nonempty checkpoint responses, which were counted as incorrect. Rescoring is pending. The low-effort epoch 5 evaluation and the xhigh-trained checkpoints are still in progress.
 
-### Delivery and parsing for the current full-context runs
+## How we made the training data
+
+The [original question set](https://huggingface.co/datasets/jiangdongwei/protein-sequence-reasoning-10k) contains **10,000 protein multiple-choice questions**, covering 1,910 protein sequences and 25 task types. GPT-6 Luna wrote the questions from UniProt annotations, and a separate Luna call and automated checks reviewed them. These are model-checked labels rather than expert-human labels. Some questions require biological knowledge beyond what can be deduced from the sequence alone.
+
+For this experiment, Flash-Next answered each question twice, once with low reasoning effort and once with xhigh reasoning effort. It did not receive the saved answer key or the source annotations. For each answer, we saved its thinking and final response for training.
+
+We kept every response that finished naturally and had a nonempty final answer, regardless of whether it matched the saved key or the scorer could extract its choice. This left **9,988 low-effort** and **9,880 xhigh** responses. To fill training batches, we repeated 124 and 104 examples respectively. There was no answer-key-based filtering. The two datasets train separate Qwen3.5-4B models using LoRA; each is evaluated on LiveProteinBench after each epoch. Low-effort training is complete; xhigh training is in progress.
+
+<details>
+<summary>Context limits, answer parsing, and run settings</summary>
+
+### Current full-context benchmark runs
 
 | Model or checkpoint | Unparsed, including empty | Nonempty but unparsed | Reached context limit |
 |---|---:|---:|---:|
@@ -28,34 +54,26 @@ Our evaluations use **1,736 questions across 12 tasks** from the benchmark's 1,7
 | Low-effort epoch 1 | 29 | 21 | 7 |
 | Low-effort epoch 2 | 28 | 25 | 3 |
 | Low-effort epoch 3 | 19 | 15 | 4 |
+| Low-effort epoch 4 | 39 | 31 | 9 |
 
-The original 4B and low-effort checkpoints use the same benchmark cases, task instructions and sampling settings. They use a 262,144-token total context, with the prompt occupying part of that allowance, on vLLM `0.32.0rc1.dev100+g77154ca61.cu129`. Sampling is temperature 1.0, top-p 0.95, top-k 20, min-p 0, presence penalty 1.5, frequency penalty 0 and repetition penalty 1.0. No per-request seed was supplied; the server's default seed was 0. Flash-Next uses xhigh reasoning and the same sampling values except for a presence penalty of 0. Earlier project runs used different model and inference settings; their linked reports contain their settings.
+Unparsed and empty answers count as incorrect in the recorded scores. Some nonempty responses explicitly select an answer that the current parser did not extract, so the starred scores can change after rescoring.
 
-The low-effort checkpoints were trained on **9,988** naturally completed, nonempty Flash-Next responses generated without the saved answer keys. The training set added 124 repeated examples to fill batches. No examples were filtered by answer-key agreement. The xhigh training run is in progress.
+The original 4B and low-effort checkpoints use the same benchmark cases, task instructions, and sampling settings. They use a **262,144-token total context**, with the prompt occupying part of that allowance, on vLLM `0.32.0rc1.dev100+g77154ca61.cu129`. Sampling is temperature 1.0, top-p 0.95, top-k 20, min-p 0, presence penalty 1.5, frequency penalty 0, and repetition penalty 1.0. No per-request seed was supplied; the server's default seed was 0. Flash-Next uses xhigh reasoning and the same sampling values except for a presence penalty of 0. Earlier project runs used different model and inference settings; their linked reports describe them.
 
-## Earlier 32K training experiment
+### Training data and length settings
 
-For an earlier, separate experiment, a matched seeded evaluation on the same 1,736 cases with a 32,768-token output allowance recorded **524/1,736 (30.2%)** before training, **318/1,736 (18.3%)** after epoch 1, and **389/1,736 (22.4%)** after epoch 5. These are not the new full-context runs above.
+Flash-Next generation used a 262,144-token total context. The low-effort training context is 65,536 tokens and the xhigh training context is 131,072 tokens. No retained training sequence exceeded its respective training context, and none was silently truncated. The training sets include the teacher's thinking and final answer. We compared generated choices with the saved keys for reporting, not selection; the xhigh comparison remains incomplete because the scorer missed many choices.
 
-## Published reference scores
+Both models use veRL supervised fine-tuning, LoRA rank 16 and alpha 32, a training batch of 128, and five epochs. The low-effort set has 10,112 rows after padding; the xhigh set has 9,984.
 
-The [LiveProteinBench paper, Table 5](https://arxiv.org/html/2512.22257v1#A4.T5), reports the following sequence-only scores on the full **1,797-question** release:
-
-| Model | Paper-reported accuracy |
-|---|---:|
-| GPT-5 | 60.49% |
-| OpenAI o3 | 56.04% |
-| Claude 3.7 Sonnet | 51.47% |
-| GPT-4o | 38.39% |
-
-The paper's full release and our 1,736-question subset differ, as do model and inference settings.
+</details>
 
 ## Available response collections
 
 - [GPT-6 Luna questions, answers and visible explanations](LIVEPROTEINBENCH_GPT6_LUNA_EXPLANATIONS.md).
 - [Original Qwen3.5-4B responses from the earlier seeded 32K evaluation](qwen35_before_finetuning_liveproteinbench_20261031/README.md).
-- [Qwen3.5-4B epoch-5 responses from a separate 32K evaluation](qwen35_epoch5_liveproteinbench_20261031/README.md). This V2 run used a different sampler and seed policy and scored 21.66%; it is distinct from the matched seeded epoch-5 score of 22.4% above.
+- [Qwen3.5-4B epoch-5 responses from a separate 32K evaluation](qwen35_epoch5_liveproteinbench_20261031/README.md).
 
-The new full-context run's per-case responses are retained locally; they are not included in this page.
+The new full-context runs' per-case responses are retained locally; they are not included in this page.
 
 [Benchmark paper](https://arxiv.org/abs/2512.22257) · [Benchmark repository](https://github.com/Rongdingyi/LiveProteinBench) · [Earlier biology evaluations page](OPENAI_ANTHROPIC_BIO_EVALUATIONS.md)
