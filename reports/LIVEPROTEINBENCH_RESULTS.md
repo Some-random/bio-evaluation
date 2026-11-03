@@ -1,38 +1,39 @@
 # LiveProteinBench model results
 
-Snapshot: **November 2, 2026**. This page brings together our existing sequence-only LiveProteinBench runs and the sequence-only reference results from [Table 5 of the benchmark paper](https://arxiv.org/html/2512.22257v1#A4.T5).
-
-Our runs use **1,736 questions across 12 tasks**. The paper's scores use the full **1,797-question** release. The question sets and inference settings differ, so the rows are useful context rather than a strictly controlled comparison. Accuracy measures agreement with the benchmark's saved answer; it does not assess the quality of the explanation.
+Snapshot: **November 2, 2026**. This page brings together sequence-only LiveProteinBench model results. Test sets and evaluation settings differ between results. Accuracy measures agreement with the benchmark's saved answer.
 
 ## Results
 
-| Model or checkpoint | Source | Correct / questions | Accuracy | Setting |
-|---|---|---:|---:|---|
-| [GPT-6 Luna](LIVEPROTEINBENCH_GPT6_LUNA_HIGH32K_RESULT.md) | Our run | 1,134 / 1,736 | 65.32% | High reasoning, 32K output |
-| GPT-5 | Paper | — / 1,797 | 60.49% | Sequence only |
-| OpenAI o3 | Paper | — / 1,797 | 56.04% | Sequence only |
-| Claude 3.7 Sonnet | Paper | — / 1,797 | 51.47% | Sequence only |
-| Qwen3.8-Flash-Next NVFP4 | Our run | 838 / 1,736 | 48.27% | Xhigh reasoning, full context |
-| Gemini 2.5 Pro | Paper | — / 1,797 | 43.85% | Sequence only |
-| Gemini 2.0 Flash | Paper | — / 1,797 | 43.07% | Sequence only |
-| GPT-4o | Paper | — / 1,797 | 38.39% | Sequence only |
-| Qwen3.5-4B, low-effort training, epoch 4 | Our run | 606 / 1,736 | 34.91%* | Thinking, full context |
-| [Qwen3.8-27B](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md) | Our run | 600 / 1,736 | 34.56% | Earlier project run |
-| [Qwen3.5-4B, thinking off](LIVEPROTEINBENCH_QWEN35_4B_POSTTRAINED_EXISTING_OUTPUTS.md) | Our run | 579 / 1,736 | 33.35% | Earlier project run |
-| Qwen3.5-4B, low-effort training, epoch 3 | Our run | 577 / 1,736 | 33.24%* | Thinking, full context |
-| Qwen2.5-VL-32B | Paper | — / 1,797 | 33.05% | Sequence only |
-| Qwen3.5-4B, low-effort training, epoch 2 | Our run | 559 / 1,736 | 32.20%* | Thinking, full context |
-| Qwen3.5-4B before the new training | Our run | 541 / 1,736 | 31.16% | Thinking, full context |
-| [Qwen3.5-4B before the earlier training](qwen35_before_finetuning_liveproteinbench_20261031/README.md) | Our run | 524 / 1,736 | 30.18% | Earlier matched seeded 32K evaluation |
-| [Qwen3.5-4B, thinking, 32K](LIVEPROTEINBENCH_QWEN35_4B_POST_NATIVE_THINKING32K_V3_RESULT.md) | Our run | 502 / 1,736 | 28.92% | Earlier project run |
-| Qwen3.5-4B, low-effort training, epoch 1 | Our run | 496 / 1,736 | 28.57%* | Thinking, full context |
-| InternVL3-78B | Paper | — / 1,797 | 23.37% | Sequence only |
-| Qwen3.5-4B, earlier training, epoch 5 | Our run | 389 / 1,736 | 22.41% | Earlier matched seeded 32K evaluation |
-| [Qwen3.5-4B, earlier training, epoch 5 V2](qwen35_epoch5_liveproteinbench_20261031/README.md) | Our run | 376 / 1,736 | 21.66% | Separate 32K evaluation, different sampler and seed policy |
-| Qwen3.5-4B, earlier training, epoch 1 | Our run | 318 / 1,736 | 18.32% | Earlier matched seeded 32K evaluation |
-| [Qwen3.5-4B-Base](LIVEPROTEINBENCH_QWEN35_4B_BASE_AUTHOR_SAMPLING_V2_RESULT.md) | Our run | 241 / 1,736 | 13.88% | Earlier 16K evaluation; many answers were not delivered in a scorable form |
+| Model or checkpoint | Accuracy | Setting |
+|---|---:|---|
+| **Our trained Qwen checkpoints** | | |
+| Qwen3.5-4B, low-effort training, epoch 5 | 35.43%* | Thinking, full context |
+| Qwen3.5-4B, low-effort training, epoch 4 | 34.91%* | Thinking, full context |
+| Qwen3.5-4B, low-effort training, epoch 3 | 33.24%* | Thinking, full context |
+| Qwen3.5-4B, low-effort training, epoch 2 | 32.20%* | Thinking, full context |
+| Qwen3.5-4B, low-effort training, epoch 1 | 28.57%* | Thinking, full context |
+| Qwen3.5-4B, earlier training, epoch 5 | 22.41% | Earlier matched seeded 32K evaluation |
+| [Qwen3.5-4B, earlier training, epoch 5 V2](qwen35_epoch5_liveproteinbench_20261031/README.md) | 21.66% | Separate 32K evaluation, different sampler and seed policy |
+| Qwen3.5-4B, earlier training, epoch 1 | 18.32% | Earlier matched seeded 32K evaluation |
+| **Base and other models** | | |
+| [GPT-6 Luna](LIVEPROTEINBENCH_GPT6_LUNA_HIGH32K_RESULT.md) | 65.32% | High reasoning, 32K output |
+| [GPT-5](https://arxiv.org/html/2512.22257v1#A4.T5) | 60.49% | Sequence only |
+| [OpenAI o3](https://arxiv.org/html/2512.22257v1#A4.T5) | 56.04% | Sequence only |
+| [Claude 3.7 Sonnet](https://arxiv.org/html/2512.22257v1#A4.T5) | 51.47% | Sequence only |
+| Qwen3.8-Flash-Next NVFP4 | 48.27% | Xhigh reasoning, full context |
+| [Gemini 2.5 Pro](https://arxiv.org/html/2512.22257v1#A4.T5) | 43.85% | Sequence only |
+| [Gemini 2.0 Flash](https://arxiv.org/html/2512.22257v1#A4.T5) | 43.07% | Sequence only |
+| [GPT-4o](https://arxiv.org/html/2512.22257v1#A4.T5) | 38.39% | Sequence only |
+| [Qwen3.8-27B](LIVEPROTEINBENCH_QWEN27B_OWN_OUTPUT_RESULT.md) | 34.56% | Earlier evaluation; see linked report |
+| [Qwen3.5-4B, thinking off](LIVEPROTEINBENCH_QWEN35_4B_POSTTRAINED_EXISTING_OUTPUTS.md) | 33.35% | Earlier evaluation; see linked report |
+| [Qwen2.5-VL-32B](https://arxiv.org/html/2512.22257v1#A4.T5) | 33.05% | Sequence only |
+| Qwen3.5-4B before the new training | 31.16% | Thinking, full context |
+| [Qwen3.5-4B before the earlier training](qwen35_before_finetuning_liveproteinbench_20261031/README.md) | 30.18% | Earlier matched seeded 32K evaluation |
+| [Qwen3.5-4B, thinking, 32K](LIVEPROTEINBENCH_QWEN35_4B_POST_NATIVE_THINKING32K_V3_RESULT.md) | 28.92% | Earlier evaluation; see linked report |
+| [InternVL3-78B](https://arxiv.org/html/2512.22257v1#A4.T5) | 23.37% | Sequence only |
+| [Qwen3.5-4B-Base](LIVEPROTEINBENCH_QWEN35_4B_BASE_AUTHOR_SAMPLING_V2_RESULT.md) | 13.88% | Earlier 16K evaluation; many answers were not delivered in a scorable form |
 
-* **Provisional scores:** the current scorer missed the selected choice in some nonempty checkpoint responses, which were counted as incorrect. Rescoring is pending. The low-effort epoch 5 evaluation and the xhigh-trained checkpoints are still in progress.
+* **Provisional scores:** the current scorer missed the selected choice in some nonempty checkpoint responses, which were counted as incorrect. Rescoring is pending. The xhigh-trained checkpoints are still in progress.
 
 ## How we made the training data
 
@@ -55,10 +56,11 @@ We kept every response that finished naturally and had a nonempty final answer, 
 | Low-effort epoch 2 | 28 | 25 | 3 |
 | Low-effort epoch 3 | 19 | 15 | 4 |
 | Low-effort epoch 4 | 39 | 31 | 9 |
+| Low-effort epoch 5 | 28 | 23 | 6 |
 
 Unparsed and empty answers count as incorrect in the recorded scores. Some nonempty responses explicitly select an answer that the current parser did not extract, so the starred scores can change after rescoring.
 
-The original 4B and low-effort checkpoints use the same benchmark cases, task instructions, and sampling settings. They use a **262,144-token total context**, with the prompt occupying part of that allowance, on vLLM `0.32.0rc1.dev100+g77154ca61.cu129`. Sampling is temperature 1.0, top-p 0.95, top-k 20, min-p 0, presence penalty 1.5, frequency penalty 0, and repetition penalty 1.0. No per-request seed was supplied; the server's default seed was 0. Flash-Next uses xhigh reasoning and the same sampling values except for a presence penalty of 0. Earlier project runs used different model and inference settings; their linked reports describe them.
+The original 4B and low-effort checkpoints use the same benchmark cases, task instructions, and sampling settings. They use a **262,144-token total context**, with the prompt occupying part of that allowance, on vLLM `0.32.0rc1.dev100+g77154ca61.cu129`. Sampling is temperature 1.0, top-p 0.95, top-k 20, min-p 0, presence penalty 1.5, frequency penalty 0, and repetition penalty 1.0. No per-request seed was supplied; the server's default seed was 0. Flash-Next uses xhigh reasoning and the same sampling values except for a presence penalty of 0. Earlier evaluation; see linked reports used different model and inference settings; their linked reports describe them.
 
 ### Training data and length settings
 
